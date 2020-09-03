@@ -18,6 +18,7 @@ export const deposit = async ({web3, address, isAll, amount, contractAddress}) =
 
 const _deposit = ({web3, contract, amount, isAll, address, gasPrice}) => {
   return new Promise((resolve, reject) => {
+    // console.log(isAll)
     if(isAll) {
       contract.methods.depositAll().send({ from: address, gasPrice: web3.utils.toWei(gasPrice, 'gwei') }).on('transactionHash', function(hash){
         console.log(hash)

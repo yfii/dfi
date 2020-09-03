@@ -117,6 +117,7 @@ export default function SectionPools() {
 
   const onWithdraw = (pool, index, isAll, singleDepositedBalance, event) => {
     event.stopPropagation();
+    // console.log(isAll)
     if (isAll) {
       setWithdrawAmount({
         ...depositedBalance,
@@ -347,7 +348,7 @@ export default function SectionPools() {
                                             disabled={
                                                 !Boolean(depositedBalance[index]) || fetchDepositPending[index] || (new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber())
                                             }
-                                            onClick={onDeposit.bind(this, pool, false, balanceSingle, index)}
+                                            onClick={onDeposit.bind(this, pool, index, false, balanceSingle)}
                                             >{t('Vault-DepositButton')}
                                         </Button>
                                         <Button 
@@ -361,7 +362,7 @@ export default function SectionPools() {
                                             disabled={
                                                 fetchDepositPending[index] || (new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber())
                                             }
-                                            onClick={onDeposit.bind(this, pool, true, balanceSingle, index)}
+                                            onClick={onDeposit.bind(this, pool, index, true, balanceSingle)}
                                             >{t('Vault-DepositButtonAll')}
                                         </Button>
                                     </div>
@@ -407,7 +408,7 @@ export default function SectionPools() {
                                 type="button"
                                 color="primary"
                                 disabled={fetchWithdrawPending[index] || !Boolean(withdrawAmount[index])}
-                                onClick={onWithdraw.bind(this, pool, false, singleDepositedBalance, index)}
+                                onClick={onWithdraw.bind(this, pool, index, false, singleDepositedBalance)}
                                 >
                                 {fetchWithdrawPending[index] ? `${t('Vault-WithdrawING')}`: `${t('Vault-WithdrawButton')}`}
                             </Button>
@@ -420,7 +421,7 @@ export default function SectionPools() {
                                 round
                                 type="button"
                                 color="primary"
-                                onClick={onWithdraw.bind(this, pool, true, singleDepositedBalance, index)}
+                                onClick={onWithdraw.bind(this, pool, index, true, singleDepositedBalance)}
                                 >
                                 {fetchWithdrawPending[index] ? `${t('Vault-WithdrawING')}`: `${t('Vault-WithdrawButtonAll')}`}
                             </Button>

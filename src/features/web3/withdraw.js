@@ -14,13 +14,14 @@ export const withdraw = async ({web3, address,isAll, amount, contractAddress}) =
   // `)
   
   // console.log(`=====================================withdraw=====================================`)
-  const data = await _withdraw({web3, contract, amount, address, gasPrice});
+  const data = await _withdraw({web3, contract, isAll, amount, address, gasPrice});
   // console.log(`=====================================withdraw success=====================================`)
   return data;
 }
 
 const _withdraw = ({web3, contract, address,isAll, amount, gasPrice}) => {
   return new Promise((resolve, reject) => {
+    // console.log(isAll)
     if (isAll) {
       contract.methods.withdrawAll().send({ from: address, gasPrice: web3.utils.toWei(gasPrice, 'gwei') }).on('transactionHash', function(hash){
         console.log(hash)
