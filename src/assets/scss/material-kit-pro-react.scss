@@ -1,0 +1,33 @@
+/*!
+
+=========================================================
+* Material Kit PRO React - v1.9.0 based on Material Kit PRO v2.0.2 (Bootstrap 4.0.0 Final Edition)
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/material-kit-pro-react
+* Copyright 2020 Creative Tim (https://www.creative-tim.com)
+
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+*/
+
+
+// Core Components
+@import "core/variables";
+@import "core/mixins";
+@import "core/fileupload";
+@import "core/keyframes";
+
+// Core Plugins
+@import "core/misc";
+
+// @import "plugins/plugin-datetime-picker";
+@import "plugins/plugin-nouislider";
+@import "plugins/plugin-react-datetime";
+@import "plugins/plugin-react-image-gallery";
+@import "plugins/plugin-react-slick";
+@import "plugins/plugin-react-tagsinput";

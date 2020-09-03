@@ -1,0 +1,251 @@
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+* {
+  letter-spacing: normal !important;
+}
+body {
+  font-size: 1rem;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 300;
+  line-height: 1.5em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: inherit;
+}
+h1,
+h2,
+h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+h4,
+h5,
+h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+h1 {
+  font-size: 3.3125rem;
+  line-height: 1.15em;
+}
+h2 {
+  font-size: 2.25rem;
+  line-height: 1.5em;
+}
+h3 {
+  font-size: 1.5625rem;
+  line-height: 1.4em;
+}
+h4 {
+  font-size: 1.125rem;
+  line-height: 1.5em;
+}
+h5 {
+  font-size: 1.0625rem;
+  line-height: 1.55em;
+}
+h6 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+p {
+  font-size: 14px;
+  margin: 0 0 10px;
+}
+b,
+strong {
+  font-weight: 700;
+}
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  background-color: #eee;
+  color: $black-color;
+  margin: 0;
+  font-size: 1rem;
+  text-align: left;
+}
+
+legend {
+  border-bottom: 0;
+}
+
+// Prevent highlight on mobile
+* {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  &:focus {
+    outline: 0;
+  }
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  background-color: transparent;
+  &:hover,
+  &:focus {
+    color: darken($link-color, 5%);
+    text-decoration: none;
+  }
+}
+
+label {
+  font-size: 14px;
+  line-height: 1.42857;
+  color: $checkboxes-text-color;
+  font-weight: 400;
+}
+small {
+  font-size: 75%;
+  color: #777;
+  font-weight: 400;
+}
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+form {
+  margin-bottom: 1.125rem;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+#images h4 {
+  margin-bottom: 30px;
+}
+
+#root {
+  overflow: hidden;
+}
+
+#cd-vertical-nav {
+  position: fixed;
+  right: -78px;
+  top: 50%;
+  bottom: auto;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 4;
+}
+#cd-vertical-nav ul {
+  list-style: none;
+  padding: 0;
+}
+#cd-vertical-nav li {
+  text-align: right;
+}
+#cd-vertical-nav a {
+  display: inline-block;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  width: 100%;
+}
+#cd-vertical-nav a:hover span,
+#cd-vertical-nav a.is-selected .cd-dot {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+#cd-vertical-nav .cd-dot {
+  position: relative;
+  top: 8px;
+  right: calc(100% - 15px);
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: #995581;
+  -webkit-transition: -webkit-transform 0.2s, background-color 0.5s;
+  -moz-transition: -moz-transform 0.2s, background-color 0.5s;
+  transition: transform 0.2s, background-color 0.5s;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+#cd-vertical-nav a span {
+  float: right;
+  display: inline-block;
+  -webkit-transform: scale(0.6);
+  -moz-transform: scale(0.6);
+  -ms-transform: scale(0.6);
+  -o-transform: scale(0.6);
+  transform: scale(0.6);
+}
+#cd-vertical-nav .cd-label {
+  position: relative;
+  margin-right: 10px;
+  padding: 4px 14px;
+  color: white;
+  background: rgba(0, 0, 0, 0.53);
+  font-size: 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  opacity: 0;
+  -webkit-transform-origin: 100% 50%;
+  -moz-transform-origin: 100% 50%;
+  -ms-transform-origin: 100% 50%;
+  -o-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+}
+#cd-vertical-nav a:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#cd-vertical-nav a:hover .cd-label {
+  opacity: 1;
+  left: -100%;
+  -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+  -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+  transition: transform 0.2s, opacity 0.2s;
+}

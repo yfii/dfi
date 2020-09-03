@@ -1,0 +1,11 @@
+@keyframes Floatingx {
+  from { -webkit-transform: translate(50px, 0px) }
+  65% { -webkit-transform: translate(0, 0) }
+  to { -webkit-transform: translate(50px, -0px) }
+}
+
+@keyframes Floatingy {
+  from { -webkit-transform: translate(0, 0px) }
+  65% { -webkit-transform: translate(50px, 0) }
+  to { -webkit-transform: translate(0, -0px) }
+}
