@@ -155,11 +155,11 @@ export default function SectionPools() {
     if (address && web3) {
       fetchBalances({address, web3, tokens});
       fetchPoolBalances({address, web3, pools});
-      // const id = setInterval(() => {
-      //   fetchBalances({address, web3, tokens});
-      //   fetchPoolBalances({address, web3, pools});
-      // }, 10000);
-      // return () => clearInterval(id);
+      const id = setInterval(() => {
+        fetchBalances({address, web3, tokens});
+        fetchPoolBalances({address, web3, pools});
+      }, 10000);
+      return () => clearInterval(id);
     }
   }, [address, web3, fetchBalances, fetchPoolBalances]);
 
@@ -217,7 +217,7 @@ export default function SectionPools() {
              * balance总数写死了 1000
              */
           let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
-          let singleDepositedBalance = byDecimals(pool.depositedBalance, pool.tokenDecimals);
+          let singleDepositedBalance = byDecimals(tokens[pool.earnedToken].tokenBalance, pool.tokenDecimals);
         //   let singleDepositedBalance = byDecimals(3000, 0);
           let depositedRoi = byDecimals(pool.depositedRoi?pool.depositedRoi:0, pool.tokenDecimals).toFormat(2);
           return (
@@ -251,10 +251,10 @@ export default function SectionPools() {
                                 <div className={classes.iconContainerMainTitle}>{forMat(balanceSingle)} { pool.token }</div>
                                 <div className={classes.iconContainerSubTitle}>{t('Vault-Balance')}</div>
                             </div>
-                            <div style={Object.assign({},gridItemStyle,{flexDirection:'column',alignItems:'space-around'})}>
-                                <div className={classes.iconContainerMainTitle}>{singleDepositedBalance.toFormat(4)}  { pool.token }</div>
+                            {/* <div style={Object.assign({},gridItemStyle,{flexDirection:'column',alignItems:'space-around'})}>
+                                <div className={classes.iconContainerMainTitle}>{singleDepositedBalance.toFormat(4)}  { pool.earnedToken }</div>
                                 <div className={classes.iconContainerSubTitle}>{t('Vault-ListDeposited')}</div>
-                            </div>
+                            </div> */}
                             <div style={Object.assign({},gridItemStyle,{flexDirection:'column',alignItems:'space-around'})}>
                                 <div className={classes.iconContainerMainTitle}>{depositedRoi} %</div>
                                 <div className={classes.iconContainerSubTitle}>{t('Vault-ListRoi')}</div>
@@ -375,11 +375,11 @@ export default function SectionPools() {
                         <div className={classes.showDetail}>
                             <div className={classes.showDetailLeft}>
                                 {
-                                    withdrawAmount['slider-'+index] ? calculateReallyNum(singleDepositedBalance.toNumber(),withdrawAmount['slider-'+index]) : '0.0000'
+                                    withdrawAmount['slider-'+index] ? calculateReallyNum(singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)).toNumber(),withdrawAmount['slider-'+index]) : '0.0000'
                                 }
                             </div>
                             <div className={classes.showDetailRight}>
-                                {singleDepositedBalance.toFormat(4)} { pool.token }
+                                {singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)).toFormat(4)} { pool.token } ({singleDepositedBalance.toFormat(4)} { pool.earnedToken })
                             </div>
                         </div>
                         <Slider 

@@ -16,13 +16,11 @@ export const pools = [
     tokenDescription: 'USDT',
     tokenAddress: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
     tokenDecimals: 6,
-    tokenDescription: 'YFII',
     tokenDescriptionUrl: 'https://docs.yfii.finance/#/trading-yfii',
     tokenDescriptionUrl2: 'https://docs.yfii.finance/#/zh-cn/buy-tokens?id=_1-yfii%e8%b4%ad%e4%b9%b0%e6%88%96%e5%85%91%e6%8d%a2',
-    earnedToken: 'YFII',
-    earnedTokenAddress: '0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83',
+    earnedToken: 'IUSDT',
+    earnedTokenAddress: '0x72Cf258c852Dc485a853370171d46B9D29fD3184',
     earnContractAddress: '0x72Cf258c852Dc485a853370171d46B9D29fD3184',
-    depositedBalance: 0,
     pricePerFullShare: 0,
   }
 ]

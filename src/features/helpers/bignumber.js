@@ -200,3 +200,20 @@ export function formatInputDecimals(
     .replace(/,/g, '')
   return result
 }
+
+export function forMat(number) {
+  return new BigNumber(
+    number
+  ).multipliedBy(
+    new BigNumber(10000)
+  ).dividedToIntegerBy(
+    new BigNumber(1)
+  ).dividedBy(
+    new BigNumber(10000)
+  ).toNumber()
+}
+
+export function byDecimals(number, tokenDecimals = 18){
+  const decimals = new BigNumber(10).exponentiatedBy(tokenDecimals);
+  return new BigNumber(number).dividedBy(decimals);
+}

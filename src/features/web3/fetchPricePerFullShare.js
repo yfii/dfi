@@ -1,3 +1,5 @@
+import { byDecimals } from 'features/helpers/bignumber';
+
 export const fetchPricePerFullShare = async ({address, contract}) => {
   // console.log(`=====================================fetchDepositedBalance begin=====================================`)
   // console.log(`
@@ -8,5 +10,5 @@ export const fetchPricePerFullShare = async ({address, contract}) => {
 
   // console.log(`=====================================fetchDepositedBalance success=====================================`)
 
-  return pricePerFullShare;
+  return byDecimals(pricePerFullShare, 18).toNumber();
 }

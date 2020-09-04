@@ -6,7 +6,7 @@ import {
   VAULT_FETCH_POOL_BALANCES_SUCCESS,
   VAULT_FETCH_POOL_BALANCES_FAILURE,
 } from './constants';
-import { fetchDepositedBalance, fetchPricePerFullShare, fetchAllowance } from "../../web3";
+import { fetchPricePerFullShare, fetchAllowance } from "../../web3";
 import async from 'async';
 
 export function fetchPoolBalances(data) {
@@ -28,22 +28,6 @@ export function fetchPoolBalances(data) {
         const earnContract = new web3.eth.Contract(earnContractABI, pool.earnContractAddress);
         const erc20Contract = new web3.eth.Contract(erc20ABI, pool.tokenAddress);
         async.parallel([
-          (callbackInner) => { 
-            fetchDepositedBalance({
-              contract: earnContract,
-              address,
-            }).then(
-              data => {
-                console.log(data)
-                return callbackInner(null, data)
-              }
-            ).catch(
-              error => {
-                // console.log(error)
-                return callbackInner(error, 0)
-              }
-            ) 
-          },
           (callbackInner) => {
             fetchAllowance({
               web3,
@@ -82,9 +66,8 @@ export function fetchPoolBalances(data) {
             if (error) {
               console.log(error)
             }
-            pool.depositedBalance = data[0] || 0;
-            pool.allowance = data[1] || 0;
-            pool.pricePerFullShare = data[2] || 0;
+            pool.allowance = data[0] || 0;
+            pool.pricePerFullShare = data[1] || 1;
             callback(null, pool);
         })
       }, (error, pools) => {
