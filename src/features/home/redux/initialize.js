@@ -24,15 +24,15 @@ export function initialize() {
         return;
       };
       ethereum.on("disconnect", async () => {
+        console.log("disconnect")
         if (web3 && web3.currentProvider && web3.currentProvider.close) {
           await web3.currentProvider.close();
         }
         dispatch({type: HOME_INITIALIZE_SUCCESS, data: {web3:null, address:''}});
       });
       ethereum.on("accountsChanged", async (accounts) => {
-        accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-        address = accounts[0];
-        dispatch({type: HOME_INITIALIZE_SUCCESS, data: {web3, address}});
+        console.log("accountsChanged")
+        dispatch({type: HOME_INITIALIZE_SUCCESS, data: {web3, address: accounts[0]}});
       });
     } else {
       dispatch({ type: HOME_INITIALIZE_FAILURE })
