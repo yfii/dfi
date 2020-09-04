@@ -13,7 +13,7 @@ import FooterLinks from 'components/Footer/FooterLinks.js'
 import Footer from "components/Footer/Footer.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
-import { useWeb3Modal, useConnectWallet, useDisconnectWallet } from 'features/home/redux/hooks';
+import { useWallet } from 'features/home/redux/hooks';
 
 import errorPageStyle from "assets/jss/material-kit-pro-react/views/errorPageStyles.js";
 
@@ -22,8 +22,8 @@ import image from "assets/img/clint-mckoy.jpg";
 const useStyles = makeStyles(errorPageStyle);
 
 export default function PageNotFound({ ...rest }) {
-  const { web3, address, connectWallet, connectWalletPending } = useConnectWallet();
-  const { disconnectWallet } = useDisconnectWallet();
+  const { web3, address } = useWallet();
+  // const { disconnectWallet } = useDisconnectWallet();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -40,10 +40,11 @@ export default function PageNotFound({ ...rest }) {
           <HeaderLinks
             dropdownHoverColor="dark"
             address={address}
-            action={{
-              connectWallet: () => connectWallet(web3Modal),
-              disconnectWallet: () => disconnectWallet({web3, web3Modal})
-            }}/>
+            // action={{
+            //   connectWallet: () => connectWallet(web3Modal),
+            //   disconnectWallet: () => disconnectWallet({web3, web3Modal})
+            // }}
+            />
           }
         {...rest}
       />

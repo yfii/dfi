@@ -7,11 +7,9 @@
 // NOTE: initialState constant is necessary so that Rekit could auto add initial state when creating async actions.
 
 const initialState = {
-  web3Modal: null,
   web3: null,
   address: "",
-  connectWalletPending: false,
-  disconnectWalletPending: false
+  initializePending: false,
 };
 
 export default initialState;

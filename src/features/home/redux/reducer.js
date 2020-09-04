@@ -7,14 +7,10 @@
 // https://medium.com/@nate_wang/a-new-approach-for-managing-redux-actions-91c26ce8b5da.
 
 import initialState from './initialState';
-import { reducer as createWeb3ModalReducer } from './createWeb3Modal';
-import { reducer as connectWalletReducer } from './connectWallet';
-import { reducer as disconnectWalletReducer } from './disconnectWallet';
+import { reducer as initializeReducer } from './initialize';
 
 const reducers = [
-  createWeb3ModalReducer,
-  connectWalletReducer,
-  disconnectWalletReducer
+  initializeReducer
 ];
 
 export default function reducer(state = initialState, action) {

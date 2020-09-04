@@ -8,7 +8,7 @@ import FooterLinks from 'components/Footer/FooterLinks.js'
 //  @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 //  hooks
-import { useWeb3Modal, useConnectWallet, useDisconnectWallet } from './redux/hooks';
+import { useWallet } from './redux/hooks';
 //  core pages
 //  style for this page
 import appStyle from "./jss/appStyle.js";
@@ -17,19 +17,11 @@ const useStyles = makeStyles(appStyle);
 
 export default function App({ children }) {
   const classes = useStyles();
-  const { web3Modal, createWeb3Modal } = useWeb3Modal();
-  const { web3, address, connectWallet, connectWalletPending } = useConnectWallet();
-  const { disconnectWallet } = useDisconnectWallet();
+  const { web3, address, initialize, initializePending } = useWallet();
 
   useEffect(() => {
-    createWeb3Modal()
-  }, [createWeb3Modal])
-
-  useEffect(() => {
-    if (web3Modal && web3Modal.cachedProvider) {
-      connectWallet(web3Modal)
-    }
-  }, [web3Modal, connectWallet])
+    initialize()
+  }, [initialize])
 
   return (
     <SnackbarProvider>
@@ -40,16 +32,16 @@ export default function App({ children }) {
             <HeaderLinks
               dropdownHoverColor="dark"
               address={address}
-              action={{
-                connectWallet: () => connectWallet(web3Modal),
-                disconnectWallet: () => disconnectWallet({web3, web3Modal})
-              }}
+              // action={{
+              //   connectWallet: () => initialize(web3Modal),
+              //   disconnectWallet: () => disconnectWallet({web3, web3Modal})
+              // }}
             />
           }
           color="dark"
         />
         <div className={classes.container}>
-          { connectWalletPending ? children : children }
+          { initializePending ? children : children }
         </div>
         <FooterLinks />
       </div>

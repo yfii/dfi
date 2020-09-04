@@ -25,23 +25,11 @@ import styles from "assets/jss/material-kit-pro-react/components/headerLinksStyl
 const useStyles = makeStyles(styles);
 
 export default function HeaderLinks(props) {
-  const { dropdownHoverColor, address, action } = props;
-  const { connectWallet, disconnectWallet } = action;
+  const { dropdownHoverColor, address } = props;
+  // const { connectWallet, disconnectWallet } = action;
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const [lng, setLanguage] = useState('en');
-
-  const [anchorEl, setAnchorEl] = useState(null);
-
-  const handlePopoverOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handlePopoverClose = () => {
-    setAnchorEl(null);
-  };
-
-  const open = Boolean(anchorEl);
 
   const switchLanguage = () => {
     switch(i18n.language) {
@@ -114,11 +102,7 @@ export default function HeaderLinks(props) {
         />
       </ListItem>
       <ListItem className={classes.listItem}>
-        {address?(
-          <>{address}<Button onClick={disconnectWallet}>disconnectWallet</Button></>
-          ):(
-          <Button onClick={connectWallet}>connectWallet</Button>)
-        }
+        {address}
       </ListItem>
     </List>
   );

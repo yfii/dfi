@@ -11,6 +11,7 @@ export function connectWallet(web3Modal) {
     const promise = new Promise(async (resolve, reject) => {
       try {
         const provider = await web3Modal.connect();
+        
         const web3 = new Web3(provider);
         if (!provider.on) { 
           console.log("provider.on")
