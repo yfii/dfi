@@ -117,9 +117,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "buildAndDeploy": "node scripts/build.js && echo 'dfi.money' >> ./build/CNAME && gh-pages -d build",
-    "deploy1": "echo 'dfi.money' >> ./build/CNAME && gh-pages -d build",
-    "testprod": "node scripts/build.js && node scripts/upload.js && echo 'testprod.dfi.money' >> ./build/CNAME && gh-pages -d build -r git@github.com:yfii/vault-testprod.git"
+    "buildAndDeploy": "node scripts/build.js && echo 'beta.dfi.money' >> ./build/CNAME && gh-pages -d build",
+    "deploy1": "echo 'beta.dfi.money' >> ./build/CNAME && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
