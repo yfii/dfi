@@ -9,24 +9,30 @@ export function initialize() {
     const { ethereum } = window;
     if(ethereum){
       const web3 = new Web3(ethereum);
-      let accounts = await web3.eth.getAccounts();
-      let address = accounts[0];
+      let accounts = '';
+      let address = '';
+      if (ethereum.isMetaMask) {
+        accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+        address = accounts[0];
+      } else {
+        accounts = await web3.eth.getAccounts();
+        address = accounts[0];
+      }
       dispatch({type: HOME_INITIALIZE_SUCCESS, data: {web3, address}}) 
       if (!ethereum.on) { 
         console.log("provider.on")
         return;
       };
-      ethereum.on("disconnect", () => {
-        web3.eth.clearSubscriptions()
-        console.log("provider.disconnect")
+      ethereum.on("disconnect", async () => {
+        if (web3 && web3.currentProvider && web3.currentProvider.close) {
+          await web3.currentProvider.close();
+        }
+        dispatch({type: HOME_INITIALIZE_SUCCESS, data: {web3:null, address:''}});
       });
       ethereum.on("accountsChanged", async (accounts) => {
-        accounts = await web3.eth.getAccounts();
+        accounts = await ethereum.request({ method: 'eth_requestAccounts' });
         address = accounts[0];
         dispatch({type: HOME_INITIALIZE_SUCCESS, data: {web3, address}});
-      });
-      ethereum.on("chainChanged", async () => {
-        console.log("provider.chainChanged")
       });
     } else {
       dispatch({ type: HOME_INITIALIZE_FAILURE })
