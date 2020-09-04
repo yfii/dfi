@@ -11,7 +11,7 @@ export function initialize() {
       const web3 = new Web3(ethereum);
       let accounts = '';
       let address = '';
-      if (ethereum.isMetaMask&&ethereum.request) {
+      if (ethereum.isMetaMask && ethereum.request) {
         accounts = await ethereum.request({ method: 'eth_requestAccounts' });
         address = accounts[0];
       } else {

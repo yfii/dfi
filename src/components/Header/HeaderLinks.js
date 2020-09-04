@@ -102,8 +102,7 @@ export default function HeaderLinks(props) {
         />
       </ListItem>
       <ListItem className={classes.listItem}>
-        {/* {address} */}
-        {JSON.stringify(Boolean(window.ethereum))}{JSON.stringify(Boolean(window.ethereum.on))}{JSON.stringify(Boolean(window.web3))}{JSON.stringify(Boolean(window.ethereum.isMetaMask))}
+        {address}
       </ListItem>
     </List>
   );
