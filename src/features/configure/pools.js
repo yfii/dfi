@@ -21,6 +21,7 @@ export const pools = [
     earnedToken: 'iUSDT',
     earnedTokenAddress: '0x72Cf258c852Dc485a853370171d46B9D29fD3184',
     earnContractAddress: '0x72Cf258c852Dc485a853370171d46B9D29fD3184',
-    pricePerFullShare: 0,
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1
   }
 ]

@@ -17,7 +17,7 @@
   "Vault-DepositButton": "存入",
   "Vault-DepositButtonAll":"全部存入",
   "Vault-ListDeposited": "已存入",
-  "Vault-ListRoi":"回报率",
+  "Vault-ListAPY":"回报率",
   "Vault-ListEarned": "已获益",
   "Vault-ListPending": "待确认",
   "Vault-Deposited": "已存入",
