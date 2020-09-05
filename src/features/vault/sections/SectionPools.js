@@ -213,13 +213,9 @@ export default function SectionPools() {
     <GridContainer justify="center">
       <GridItem xs={12} sm={10}>
         {pools.map((pool, index) => {
-            /**
-             * balance总数写死了 1000
-             */
           let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
           let singleDepositedBalance = byDecimals(tokens[pool.earnedToken].tokenBalance, pool.tokenDecimals);
-        //   let singleDepositedBalance = byDecimals(3000, 0);
-          let depositedRoi = byDecimals(pool.depositedRoi?pool.depositedRoi:0, pool.tokenDecimals).toFormat(2);
+          let depositedApy = new BigNumber(pool.pricePerFullShare).minus(new BigNumber(pool.pastPricePerFullShare)).multipliedBy(new BigNumber(100)).toFormat(4);
           return (
             <Accordion
               key={index}
@@ -228,96 +224,89 @@ export default function SectionPools() {
             >
               <AccordionSummary
                 className={classes.details}
+                style={{ justifyContent: "space-between"}}
               >
-                <GridItem xs={12}>
-                  <GridContainer>
-                    <GridItem xs={12} style={Object.assign({},{},gridItemStyle,{justifyContent:'space-between'})}>
-                        <GridItem xs={12} sm={2} style={Object.assign({},{},gridItemStyle,{justifyContent:'flex-start'})}>
-                            <GridItem xs={6}>
-                                <Avatar 
-                                alt={pool.token}
-                                src={require(`../../../images/${pool.token}-logo.png`)}
-                                style={{}}
-                                />
-                            </GridItem>
-                            <GridItem xs={6} style={Object.assign({},gridItemStyle,{flexDirection:'column',alignItems:'space-around'})}>
-                                <div className={classes.iconContainerMainTitle}>{pool.token}</div>
-                                <span className={classes.iconContainerSubTitle}>{pool.token}</span>
-                            </GridItem>
-                        </GridItem>
+                  <GridContainer style={{width: "100%", marginLeft: 0, marginRight: 0}}>
+                      <GridItem xs={6} sm={2} style={Object.assign({},{},gridItemStyle,{justifyContent:'flex-start'})}>
+                          <GridItem xs={6}>
+                              <Avatar 
+                              alt={pool.token}
+                              src={require(`../../../images/${pool.token}-logo.png`)}
+                              style={{}}
+                              />
+                          </GridItem>
+                          <GridItem xs={6} style={Object.assign({},gridItemStyle,{flexDirection:'column',alignItems:'space-around'})}>
+                              <div className={classes.iconContainerMainTitle}>{pool.token}</div>
+                              <span className={classes.iconContainerSubTitle}>{pool.token}</span>
+                          </GridItem>
+                      </GridItem>
 
-                        <GridItem xs={12} sm={9} style={Object.assign({},gridItemStyle,{justifyContent:'space-around'})}>
-                            <div style={Object.assign({},gridItemStyle,{flexDirection:'column',alignItems:'space-around'})}>
-                                <div className={classes.iconContainerMainTitle}>{forMat(balanceSingle)} { pool.token }</div>
-                                <div className={classes.iconContainerSubTitle}>{t('Vault-Balance')}</div>
-                            </div>
-                            {/* <div style={Object.assign({},gridItemStyle,{flexDirection:'column',alignItems:'space-around'})}>
-                                <div className={classes.iconContainerMainTitle}>{singleDepositedBalance.toFormat(4)}  { pool.earnedToken }</div>
-                                <div className={classes.iconContainerSubTitle}>{t('Vault-ListDeposited')}</div>
-                            </div> */}
-                            <div style={Object.assign({},gridItemStyle,{flexDirection:'column',alignItems:'space-around'})}>
-                                <div className={classes.iconContainerMainTitle}>{depositedRoi} %</div>
-                                <div className={classes.iconContainerSubTitle}>{t('Vault-ListRoi')}</div>
-                            </div>
-                        </GridItem>
+                      <GridItem xs={12} sm={7} className="hidden-xs" style={Object.assign({},gridItemStyle,{justifyContent:'space-around'})}>
+                          <div style={Object.assign({},gridItemStyle,{flexDirection:'column',alignItems:'space-around'})}>
+                              <div className={classes.iconContainerMainTitle}>{forMat(balanceSingle)} { pool.token }</div>
+                              <div className={classes.iconContainerSubTitle}>{t('Vault-Balance')}</div>
+                          </div>
+                          <div style={Object.assign({},gridItemStyle,{flexDirection:'column',alignItems:'space-around'})}>
+                              <div className={classes.iconContainerMainTitle}>{depositedApy}%</div>
+                              <div className={classes.iconContainerSubTitle}>{t('Vault-ListAPY')}</div>
+                          </div>
+                      </GridItem>
 
-                        <GridItem xs={12} sm={3} style={Object.assign({},gridItemStyle,{justifyContent:'space-around'})}>
-                            <IconButton
-                                classes={{
-                                    root:classes.iconContainerSecond
-                                }}
-                                // className={classes.iconContainerSecond}
-                                onClick={
-                                    event => {
-                                        event.stopPropagation();
-                                        window.open(isZh?pool.tokenDescriptionUrl2:pool.tokenDescriptionUrl)
-                                    }
-                                }
-                            >
-                                <i className="far fa-question-circle" />
-                            </IconButton>
-                            <IconButton
-                                className={classes.iconContainerPrimary}
-                                onClick={() => openCard(index)}
-                            >
-                                {
-                                    openedCardList.includes(index) ? <i className="fas fa-arrow-up" /> : <i className="fas fa-arrow-down" />
-                                }
-                            </IconButton>
-                        </GridItem>
-                    </GridItem>
+                      <GridItem xs={6} sm={3} style={Object.assign({},gridItemStyle,{justifyContent:'space-around'})}>
+                          <IconButton
+                              classes={{
+                                  root:classes.iconContainerSecond
+                              }}
+                              // className={classes.iconContainerSecond}
+                              onClick={
+                                  event => {
+                                      event.stopPropagation();
+                                      window.open(isZh?pool.tokenDescriptionUrl2:pool.tokenDescriptionUrl)
+                                  }
+                              }
+                          >
+                              <i className="far fa-question-circle" />
+                          </IconButton>
+                          <IconButton
+                              className={classes.iconContainerPrimary}
+                              onClick={() => openCard(index)}
+                          >
+                              {
+                                  openedCardList.includes(index) ? <i className="fas fa-arrow-up" /> : <i className="fas fa-arrow-down" />
+                              }
+                          </IconButton>
+                      </GridItem>
                   </GridContainer>
-                </GridItem>
               </AccordionSummary>
-              <AccordionDetails>
-                <GridItem xs={12}>
-                  <GridContainer style={Object.assign({},gridItemStyle,{justifyContent: "space-between",})}>
-                    <GridItem xs={6} className={classes.sliderDetailContainer}>
-                        <div className={classes.showDetail}>
-                            <div className={classes.showDetailLeft}>
-                                {
-                                    depositedBalance['slider-'+index] ? calculateReallyNum(balanceSingle.toNumber(),depositedBalance['slider-'+index]) : '0.0000'
-                                }
-                            </div>
-                            <div className={classes.showDetailRight}>
-                                {t('Vault-Balance')}:{balanceSingle.toFormat(4)} { pool.token }
-                            </div>
-                        </div>
-                        <Slider 
-                            classes={{
-                                root: classes.depositedBalanceSliderRoot,
-                                markLabel: classes.depositedBalanceSliderMarkLabel,
-                                rail:classes.depositedBalanceSliderRail,
-                                mark:classes.depositedBalanceSliderMark,
-                            }}
-                            aria-labelledby="continuous-slider" 
-                            defaultValue={0}
-                            value={depositedBalance['slider-'+index]?depositedBalance['slider-'+index]:0}
-                            getAriaValueText={valuetext}
-                            valueLabelDisplay="auto"
-                            marks={marks}
-                            onChange={handleDepositedBalance.bind(this,index,balanceSingle.toNumber())}
-                            />
+              <AccordionDetails style={{ justifyContent: "space-between"}}>
+                <GridContainer style={{width: "100%", marginLeft: 0, marginRight: 0}}>
+                  <GridItem xs={12} sm={6} className={classes.sliderDetailContainer}>
+                    <div className={classes.showDetail}>
+                      <div className={classes.showDetailLeft}>
+                          {
+                              depositedBalance['slider-'+index] ? calculateReallyNum(balanceSingle.toNumber(),depositedBalance['slider-'+index]) : '0.0000'
+                          }
+                      </div>
+                      <div className={classes.showDetailRight}>
+                          {t('Vault-Balance')}:{balanceSingle.toFormat(4)} { pool.token }
+                      </div>
+                    </div>
+                    <Slider 
+                      classes={{
+                        root: classes.depositedBalanceSliderRoot,
+                        markLabel: classes.depositedBalanceSliderMarkLabel,
+                        rail:classes.depositedBalanceSliderRail,
+                        mark:classes.depositedBalanceSliderMark,
+                      }}
+                      aria-labelledby="continuous-slider" 
+                      defaultValue={0}
+                      value={depositedBalance['slider-'+index]?depositedBalance['slider-'+index]:0}
+                      getAriaValueText={valuetext}
+                      valueLabelDisplay="auto"
+                      marks={marks}
+                      onChange={handleDepositedBalance.bind(this,index,balanceSingle.toNumber())}
+                    />
+                    
                         <div>
                             {
                                 depositedBalance[index]>pool.allowance ? (
@@ -371,7 +360,7 @@ export default function SectionPools() {
                         </div>
                     </GridItem>
 
-                    <GridItem xs={6} className={classes.sliderDetailContainer}>
+                    <GridItem xs={12} sm={6} className={classes.sliderDetailContainer}>
                         <div className={classes.showDetail}>
                             <div className={classes.showDetailLeft}>
                                 {
@@ -429,7 +418,6 @@ export default function SectionPools() {
                     </GridItem>
 
                   </GridContainer>
-                </GridItem>
               </AccordionDetails>
             </Accordion>
           )

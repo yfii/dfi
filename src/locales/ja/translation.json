@@ -17,7 +17,7 @@
   "Vault-DepositButton": "入金",
   "Vault-DepositButtonAll":"全額入金",
   "Vault-ListDeposited": "入金額",
-  "Vault-ListRoi":"見返り率",
+  "Vault-ListAPY":"見返り率",
   "Vault-ListEarned": "稼ぐ額",
   "Vault-ListPending": "確認待ち稼ぐ額",
   "Vault-Deposited": "トータル入金額",

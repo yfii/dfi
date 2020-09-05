@@ -4,6 +4,7 @@ import Root from './Root';
 import * as serviceWorker from './serviceWorker';
 
 import "assets/scss/material-kit-pro-react.scss?v=1.9.0";
+import './styles/index.scss';
 
 import './i18n';
 
