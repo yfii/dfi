@@ -3,7 +3,8 @@ import {
   mrAuto,
   mlAuto,
   primaryColor,
-  grayColor
+  hoverColor,
+  grayColor,
 } from "assets/jss/material-kit-pro-react.js";
 
 import checkboxes from "assets/jss/material-kit-pro-react/customCheckboxRadioSwitchStyle.js";
@@ -114,16 +115,16 @@ const sectionPoolsStyle = theme => ({
     minHeight: '170px',
   },
   iconContainerMainTitle:{
-    fontSize: '18px',
+    fontSize: '20px',
     fontWeight: 'bold',
     color: '#fff',
-    lineHeight: '18px',
-    marginBottom:'2px',
+    lineHeight: '20px',
+    marginBottom:'8px',
   },
   iconContainerSubTitle:{
     fontSize: '14px',
     fontWeight: '400',
-    color: 'rgb(90,92,103)',
+    color: 'rgba(255,255,255,.4)',
     lineHeight: '14px',
   },
   iconContainerSecond: {
@@ -131,28 +132,51 @@ const sectionPoolsStyle = theme => ({
       height:'48px',
       backgroundColor:'#353848',
       borderRadius:'8px',
-      color:'#FF2D82',
-      fontSize:'22px',
+      color:primaryColor[0],
+      margin: '0 -24px 0 0',
+      "& i": {
+        fontSize: '24px',
+      },
+      "&:hover,&:focus": {
+        backgroundColor: hoverColor[1],
+      }
   },
   iconContainerPrimary: {
-    width:'48px',
-    height:'48px',
-    backgroundColor:'#FF2D82',
-    borderRadius:'8px',
-    color:'#fff',
-    fontSize:'22px',
-    },
+      width:'48px',
+      height:'48px',
+      backgroundColor:primaryColor[0],
+      borderRadius:'8px',
+      color:'#fff',
+      margin: '0 -32px',
+      "& i": {
+        fontSize: '24px',
+      },
+      "&:hover,&:focus": {
+        background: hoverColor[0],
+      }
+  },
     accordionMargin:{
         backgroundColor:'#2C3040',
-        margin:'16px 0',
+        margin:'24px 0',
         color:'#fff',
         boxShadow: '0px 4px 8px 0px rgba(0, 0, 0, 0.06)',
         borderRadius: '8px',
     },
+    details:{
+      padding: '12px 0',
+      background: '#2C3040',
+      boxShadow: '0 4px 8px 0 rgba(0,0,0,0.06)',
+      borderRadius: '8px',
+    },
+    track: {
+          height: 4,
+          borderRadius: 2,
+        },
     sliderDetailContainer:{
+      padding: '16px 24px 24px 24px',
     },
     showDetail:{
-        display:'flex',
+        display:'inline-block',
         alignItems:'center',
         justifyContent:'space-around',
         width:'100%',
@@ -172,24 +196,33 @@ const sectionPoolsStyle = theme => ({
     },
     drawSliderMarkLabel:{
         color:'#635AFF',
+        
     },
     depositedBalanceSliderRail:{
         opacity:'1',
         color:'#353848',
     },
     depositedBalanceSliderMark:{
-        height:'0'
+        height:'0',
+        
     },
+
     showDetailLeft:{
+        float: 'left',
+        margin: '16px 24px',
         fontSize: '18px',
         color: '#FFFFFF',
         lineHeight: '24px',
     },
     showDetailRight:{
+        float: 'right',
+        margin: '19px 16px 19px 0',
         fontSize: '12px',
-        color: '#FFFFFF',
         lineHeight: '18px',
+        color: '#FFFFFF',
+        opacity: '.4',
     },
+
     MuiSliderRoot:{
         color: '#FF2D82',
     },
