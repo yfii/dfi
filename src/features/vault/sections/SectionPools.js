@@ -33,6 +33,7 @@ import { useWallet } from '../../home/redux/hooks';
 import { useFetchBalances, useFetchPoolBalances, useFetchApproval, useFetchDeposit, useFetchWithdraw } from '../redux/hooks';
 
 import sectionPoolsStyle from "../jss/sections/sectionPoolsStyle";
+import { reflect } from 'async';
 
 const useStyles = makeStyles(sectionPoolsStyle);
 
@@ -60,6 +61,36 @@ export default function SectionPools() {
     return byDecimals(sliderNum/100*Number(total), 0).toFormat(4);
   }
   
+  const changeDetailInputValue = (type,index,total,event) => {
+    let value = event.target.value;
+    let reg = /[a-z]/i;
+    if(reg.test(value)){
+        return;
+    }
+    let sliderNum = 0;
+    if(value){
+        sliderNum = byDecimals(Number(value.replace(',',''))/total,0).toFormat(2) * 100;
+    }
+    switch(type){
+        case 'depositedBalance':
+            setDepositedBalance({
+                ...depositedBalance,
+                [index]: value,
+                [`slider-${index}`]: sliderNum,
+            });
+            break;
+        case 'withdrawAmount':
+            setWithdrawAmount({
+                ...withdrawAmount,
+                [index]: value,
+                [`slider-${index}`]: sliderNum,
+            });
+            break;
+        default:
+            break;
+    }
+  }
+
   const handleDepositedBalance = (index,total,event,sliderNum) => {
     setDepositedBalance({
       ...depositedBalance,
@@ -295,12 +326,9 @@ export default function SectionPools() {
                             classes={{
                                 root: classes.showDetail
                             }} 
-                            id="outlined-deposit" 
-                            value={depositedBalance['slider-'+index] ? calculateReallyNum(balanceSingle.toNumber(),depositedBalance['slider-'+index]) : '0.0000'}
+                            value={depositedBalance[index]!=undefined ? depositedBalance[index] : '0.0000'}
                             variant="outlined"
-                            onChange={(event)=>{
-                                console.warn('event',event.target.value);
-                            }}
+                            onChange={changeDetailInputValue.bind(this,'depositedBalance',index,balanceSingle.toNumber())}
                             fullWidth 
                             />
                     </FormControl>
@@ -390,8 +418,8 @@ export default function SectionPools() {
                                 classes={{
                                     root: classes.showDetail
                                 }} 
-                                id="outlined-deposit" 
-                                value={withdrawAmount['slider-'+index] ? calculateReallyNum(singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)).toNumber(),withdrawAmount['slider-'+index]) : '0.0000'}
+                                value={withdrawAmount[index]!=undefined ? withdrawAmount[index] : '0.0000'}
+                                onChange={changeDetailInputValue.bind(this,'withdrawAmount',index,singleDepositedBalance.toNumber())}
                                 variant="outlined"
                                 fullWidth 
                                 />
