@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
+import Identicon from "identicon.js"
 // react components for routing our app without refresh
 import { Link } from "react-router-dom";
 // @material-ui/core components
@@ -30,6 +31,7 @@ export default function HeaderLinks(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const [lng, setLanguage] = useState('en');
+  const [data, setData] = useState('')
 
   const switchLanguage = () => {
     switch(i18n.language) {
@@ -71,6 +73,10 @@ export default function HeaderLinks(props) {
     const lng = switchLanguage()
     setLanguage(lng);
   });
+
+  useEffect(() => {
+    setData(address? new Identicon(address, {format: 'svg'}).toString() : '')
+  },[address]);
   
   return (
     <List className={classes.list + " " + classes.mlAuto}>
@@ -102,7 +108,7 @@ export default function HeaderLinks(props) {
         />
       </ListItem>
       <ListItem className={classes.listItem}>
-        {address}
+        <Avatar alt="address" src={`data:image/svg+xml;base64,${data}`} />{address}
       </ListItem>
     </List>
   );
