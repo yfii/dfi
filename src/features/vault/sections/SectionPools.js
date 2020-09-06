@@ -35,7 +35,7 @@ const useStyles = makeStyles(sectionPoolsStyle);
 export default function SectionPools() {
   const { t, i18n } = useTranslation();
   const { web3, address } = useWallet();
-  const { pools, fetchPoolBalances } = useFetchPoolBalances();
+  let { pools, fetchPoolBalances } = useFetchPoolBalances();
   const { tokens, fetchBalances } = useFetchBalances();
   const [ openedCardList, setOpenCardList ] = useState([0]);
   const classes = useStyles();

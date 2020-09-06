@@ -100,6 +100,11 @@ const footerLinksStyle = theme => ({
     paper: {
         padding: theme.spacing(1),
     },
+    extraContent: {
+        color:primaryColor[0],
+        paddingBottom:'24px',
+        fontWeight: "400",
+    }
 })
 
 export default footerLinksStyle;
