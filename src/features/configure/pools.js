@@ -39,5 +39,21 @@ export const pools = [
     defaultApy: "42.99",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1
+  },
+  {
+    id: 'dai',
+    name: 'DAI',  
+    token: 'DAI',
+    tokenDescription: 'DAI',
+    tokenAddress: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: 'https://docs.yfii.finance/#/trading-yfii',
+    tokenDescriptionUrl2: 'https://docs.yfii.finance/#/zh-cn/buy-tokens?id=_1-yfii%e8%b4%ad%e4%b9%b0%e6%88%96%e5%85%91%e6%8d%a2',
+    earnedToken: 'iDAI',
+    earnedTokenAddress: '0x1e0DC67aEa5aA74718822590294230162B5f2064',
+    earnContractAddress: '0x1e0DC67aEa5aA74718822590294230162B5f2064',
+    defaultApy: "90",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1
   }
 ]
