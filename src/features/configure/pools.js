@@ -23,5 +23,20 @@ export const pools = [
     earnContractAddress: '0x72Cf258c852Dc485a853370171d46B9D29fD3184',
     pricePerFullShare: 1,
     pastPricePerFullShare: 1
+  },{
+    id: 'ycrv',
+    name: 'yCRV',  
+    token: 'yCRV',
+    tokenDescription: 'yCRV',
+    tokenAddress: '0xdF5e0e81Dff6FAF3A7e52BA697820c5e32D806A8',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: 'https://docs.yfii.finance/#/trading-yfii',
+    tokenDescriptionUrl2: 'https://docs.yfii.finance/#/zh-cn/buy-tokens?id=_1-yfii%e8%b4%ad%e4%b9%b0%e6%88%96%e5%85%91%e6%8d%a2',
+    earnedToken: 'iYCRV',
+    earnedTokenAddress: '0x3E3db9cc5b540d2794DB3861BE5A4887cF77E48B',
+    earnContractAddress: '0x3E3db9cc5b540d2794DB3861BE5A4887cF77E48B',
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1
   }
+
 ]
