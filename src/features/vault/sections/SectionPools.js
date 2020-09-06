@@ -68,21 +68,22 @@ export default function SectionPools() {
         return;
     }
     let sliderNum = 0;
+    let inputVal = Number(value.replace(',',''));
     if(value){
-        sliderNum = byDecimals(Number(value.replace(',',''))/total,0).toFormat(2) * 100;
+        sliderNum = byDecimals(inputVal/total,0).toFormat(2) * 100;
     }
     switch(type){
         case 'depositedBalance':
             setDepositedBalance({
                 ...depositedBalance,
-                [index]: value,
+                [index]: inputVal > total ? byDecimals(total,0).toFormat(4) :value,
                 [`slider-${index}`]: sliderNum,
             });
             break;
         case 'withdrawAmount':
             setWithdrawAmount({
                 ...withdrawAmount,
-                [index]: value,
+                [index]: inputVal > total ? byDecimals(total,0).toFormat(4) :value,
                 [`slider-${index}`]: sliderNum,
             });
             break;
@@ -250,7 +251,8 @@ export default function SectionPools() {
     <GridContainer justify="center">
       <GridItem md={12} xs={12} sm={10}>
         {pools.map((pool, index) => {
-          let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
+        //   let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
+          let balanceSingle = byDecimals(1000, 0);
           let singleDepositedBalance = byDecimals(tokens[pool.earnedToken].tokenBalance, pool.tokenDecimals);
           let depositedApy = pool.defaultApy ? pool.defaultApy : new BigNumber(pool.pricePerFullShare).minus(new BigNumber(pool.pastPricePerFullShare)).multipliedBy(new BigNumber(100)).toFormat(4);
           return (
