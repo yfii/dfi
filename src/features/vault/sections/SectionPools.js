@@ -254,7 +254,7 @@ export default function SectionPools() {
                           </div>
                       </GridItem>
 
-                      <GridItem xs={6} sm={3} style={Object.assign({},gridItemStyle,{justifyContent:'space-around',paddingLeft: '80px'})}>
+                      <GridItem xs={6} sm={3} style={Object.assign({},gridItemStyle,{justifyContent:'space-around',paddingLeft: '40px'})}>
                           <IconButton
                               classes={{
                                   root:classes.iconContainerSecond
