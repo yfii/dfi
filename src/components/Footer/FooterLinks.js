@@ -71,8 +71,8 @@ export default function FooterLinks(props) {
     }
 
     const iconColorStyle={
-        fontSize: "40px",
-        color:primaryColor[0],
+        fontSize: "24px",
+        color: "#fff"
     }
 
     return (
@@ -88,14 +88,11 @@ export default function FooterLinks(props) {
                     target="_blank"
                     >
                     <i
-                        style={iconGroundStyle}
+                        style={iconColorStyle}
                         className={
-                        classes.socialIcons +
-                        " " +
-                        classes.marginRight5 +
-                        " fab fa-twitter"
+                        "yfiiicon yfii-twitter"
                         }
-                    />{" "}
+                    />
                     </Button>
                 </ListItem>
                 <ListItem className={classes.listItem}>
@@ -110,10 +107,7 @@ export default function FooterLinks(props) {
                     <i
                         style={iconColorStyle}
                         className={
-                        classes.socialIcons +
-                        " " +
-                        classes.marginRight5 +
-                        " fab fa-telegram"
+                        "yfiiicon yfii-telegram"
                         }
                     />
                     </Button>
@@ -128,9 +122,11 @@ export default function FooterLinks(props) {
                     target="_blank"
                     >
                     <i
-                        style={iconGroundStyle}
-                        className={" fab fa-discord"}
-                    />{" "}
+                        style={iconColorStyle}
+                        className={
+                        "yfiiicon yfii-discord"
+                        }
+                    />
                     </Button>
                 </ListItem>
                 <ListItem className={classes.listItem}>
@@ -145,12 +141,9 @@ export default function FooterLinks(props) {
                     <i
                         style={iconColorStyle}
                         className={
-                        classes.socialIcons +
-                        " " +
-                        classes.marginRight5 +
-                        " fab fa-github"
+                        "yfiiicon yfii-github"
                         }
-                    />{" "}
+                    />
                     </Button>
                 </ListItem>
                 <ListItem className={classes.listItem}>
@@ -165,14 +158,11 @@ export default function FooterLinks(props) {
                     onMouseLeave={handlePopoverClose}
                     >
                     <i
-                        style={iconGroundStyle}
+                        style={iconColorStyle}
                         className={
-                        classes.socialIcons +
-                        " " +
-                        classes.marginRight5 +
-                        " fab fa-weixin"
+                        "yfiiicon yfii-wechat"
                         }
-                    />{" "}
+                    />
                     </Button>
                     <Popover
                     id="mouse-over-popover"

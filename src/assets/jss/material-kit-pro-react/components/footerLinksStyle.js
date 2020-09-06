@@ -1,9 +1,13 @@
 import {
     mlAuto,
-    container
+    container,
+    primaryColor,
+    hoverColor
   } from "assets/jss/material-kit-pro-react.js";
   
   import tooltip from "assets/jss/material-kit-pro-react/tooltipsStyle.js";
+
+  
 
 const footerLinksStyle = theme => ({
     container:{
@@ -35,6 +39,7 @@ const footerLinksStyle = theme => ({
         listStyle: "none",
         padding: "0",
     },
+
     listItem:{
         float: "left",
         color: "inherit",
@@ -43,18 +48,17 @@ const footerLinksStyle = theme => ({
         width: "auto",
     },
     navLink: {
-        color: "inherit",
+        background: primaryColor[0],
         position: "relative",
         padding: "0.9375rem",
-        fontWeight: "400",
-        fontSize: "12px",
-        textTransform: "uppercase",
-        lineHeight: "20px",
+        width: "44px",
+        height: "44px",
+        borderRadius: "50%",
         textDecoration: "none",
         margin: "0px",
         display: "inline-flex",
         "&:hover,&:focus": {
-          color: "inherit"
+          background: hoverColor[0],
         },
         [theme.breakpoints.down("sm")]: {
           width: "calc(100% - 30px)",

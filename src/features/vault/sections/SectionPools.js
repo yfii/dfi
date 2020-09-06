@@ -182,6 +182,7 @@ export default function SectionPools() {
     alignItems : "center",
     alignContent: "space-around",
   }
+
   //滑块
   const marks = [
     {
@@ -205,13 +206,14 @@ export default function SectionPools() {
         label: '100%',
       },
   ];
+ 
   const valuetext = (value) => {
     return `${value}°C`;
   }
 
   return (
     <GridContainer justify="center">
-      <GridItem xs={12} sm={10}>
+      <GridItem md={12} xs={12} sm={10}>
         {pools.map((pool, index) => {
           let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
           let singleDepositedBalance = byDecimals(tokens[pool.earnedToken].tokenBalance, pool.tokenDecimals);
@@ -252,7 +254,7 @@ export default function SectionPools() {
                           </div>
                       </GridItem>
 
-                      <GridItem xs={6} sm={3} style={Object.assign({},gridItemStyle,{justifyContent:'space-around'})}>
+                      <GridItem xs={6} sm={3} style={Object.assign({},gridItemStyle,{justifyContent:'space-around',paddingLeft: '80px'})}>
                           <IconButton
                               classes={{
                                   root:classes.iconContainerSecond
@@ -265,14 +267,14 @@ export default function SectionPools() {
                                   }
                               }
                           >
-                              <i className="far fa-question-circle" />
+                              <i className={"yfiiicon yfii-help-circle"} />
                           </IconButton>
                           <IconButton
                               className={classes.iconContainerPrimary}
                               onClick={() => openCard(index)}
                           >
                               {
-                                  openedCardList.includes(index) ? <i className="fas fa-arrow-up" /> : <i className="fas fa-arrow-down" />
+                                  openedCardList.includes(index) ? <i className={"yfiiicon yfii-arrow-up"} /> : <i className={"yfiiicon yfii-arrow-down"} />
                               }
                           </IconButton>
                       </GridItem>
@@ -311,7 +313,7 @@ export default function SectionPools() {
                             {
                                 depositedBalance[index]>pool.allowance ? (
                                     <div className={classes.showDetailButtonCon}>
-                                        <Button
+                                        <Button 
                                             style={{
                                                 backgroundColor:'#353848',
                                                 color:'#FF2D82',
@@ -328,6 +330,10 @@ export default function SectionPools() {
                                     <div className={classes.showDetailButtonCon}>
                                         <Button 
                                             style={{
+                                                width: '180px',
+                                                margin: '12px 0',
+                                                fontSize: '14px',
+                                                fontWeight:'bold',
                                                 backgroundColor:'#353848',
                                                 color:'#FF2D82',
                                                 boxShadow:'0 2px 2px 0 rgba(53, 56, 72, 0.14), 0 3px 1px -2px rgba(53, 56, 72, 0.2), 0 1px 5px 0 rgba(53, 56, 72, 0.12)'
@@ -342,6 +348,10 @@ export default function SectionPools() {
                                         </Button>
                                         <Button 
                                             style={{
+                                                width: '180px',
+                                                margin: '12px 0',
+                                                fontSize: '14px',
+                                                fontWeight:'bold',
                                                 backgroundColor:'#353848',
                                                 color:'#FF2D82',
                                                 boxShadow:'0 2px 2px 0 rgba(53, 56, 72, 0.14), 0 3px 1px -2px rgba(53, 56, 72, 0.2), 0 1px 5px 0 rgba(53, 56, 72, 0.12)'
@@ -389,6 +399,10 @@ export default function SectionPools() {
                         <div className={classes.showDetailButtonCon}>
                             <Button 
                                 style={{
+                                    width: '180px',
+                                    margin: '12px 0',
+                                    fontSize: '14px',
+                                    fontWeight:'bold',
                                     backgroundColor:'#353848',
                                     color:'#635AFF',
                                     boxShadow:'0 2px 2px 0 rgba(53, 56, 72, 0.14), 0 3px 1px -2px rgba(53, 56, 72, 0.2), 0 1px 5px 0 rgba(53, 56, 72, 0.12)'
@@ -403,9 +417,13 @@ export default function SectionPools() {
                             </Button>
                             <Button 
                                 style={{
+                                    width: '180px',
+                                    margin: '12px 0',
+                                    fontSize: '14px',
+                                    fontWeight:'bold',
                                     backgroundColor:'#353848',
                                     color:'#635AFF',
-                                    boxShadow:'0 2px 2px 0 rgba(53, 56, 72, 0.14), 0 3px 1px -2px rgba(53, 56, 72, 0.2), 0 1px 5px 0 rgba(53, 56, 72, 0.12)'
+                                    boxShadow:'0 2px 2px 0 rgba(53, 56, 72, 0.14), 0 3px 1px -2px rgba(53, 56, 72, 0.2), 0 1px 5px 0 rgba(53, 56, 72, 0.12)',
                                 }}
                                 round
                                 type="button"
