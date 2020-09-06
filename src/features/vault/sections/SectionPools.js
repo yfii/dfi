@@ -263,6 +263,7 @@ export default function SectionPools() {
               <AccordionSummary
                 className={classes.details}
                 style={{ justifyContent: "space-between"}}
+                onClick={() => openCard(index)}
               >
                   <GridContainer style={{width: "100%", marginLeft: 0, marginRight: 0}}>
                       <GridItem xs={6} sm={2} style={Object.assign({},{},gridItemStyle,{justifyContent:'flex-start'})}>
