@@ -102,7 +102,31 @@ export default function HeaderLinks(props) {
         />
       </ListItem>
       <ListItem className={classes.listItem}>
-        {address}
+        <Button
+            style={{
+                width: '180px',
+                margin: '12px 0',
+                fontSize: '14px',
+                fontWeight:'bold',
+                backgroundColor:'#635AFF',
+                color:'#fff',
+                boxShadow:'0 2px 2px 0 rgba(53, 56, 72, 0.14), 0 3px 1px -2px rgba(53, 56, 72, 0.2), 0 1px 5px 0 rgba(53, 56, 72, 0.12)',
+            }}
+            className={classes.Button}
+            round
+            type="button"
+            color="primary"
+            onClick={
+                event => {
+                    event.stopPropagation();
+                }
+            }
+        >
+            <i className={"yfiiicon yfii-help-circle"} style={{
+                width:'24px',
+            }}/>
+            {' ' +  t('Vault-MyWallet')}
+        </Button>
       </ListItem>
     </List>
   );

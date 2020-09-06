@@ -183,6 +183,10 @@ const sectionPoolsStyle = theme => ({
         background: '#353848',
         borderRadius: '12px',
         fontWeight: '600',
+        fontSize: '18px',
+        color: '#FFFFFF',
+        lineHeight: '24px',
+        fontWeight: '600',
     },
     depositedBalanceSliderRoot:{
         color:'#FF2D82',
@@ -212,14 +216,15 @@ const sectionPoolsStyle = theme => ({
         fontSize: '18px',
         color: '#FFFFFF',
         lineHeight: '24px',
+        fontWeight: '600',
     },
     showDetailRight:{
         float: 'right',
-        margin: '-19px 0px 19px 0',
         fontSize: '12px',
         lineHeight: '18px',
         color: '#FFFFFF',
         opacity: '.4',
+        fontWeight: '600',
     },
 
     MuiSliderRoot:{
