@@ -143,17 +143,19 @@ export default function HeaderLinks(props) {
         >
           {address ? (
             <>
-              <canvas ref={canvasRef} style={{ display: 'none' }}/>
+              <canvas ref={canvasRef} style={{ display: 'none'}}/>
               <Avatar alt="address" src={dataUrl} style={{
                 width:'24px',
-                height:"24px"
+                height:"24px",
+                marginRight:'4px',
               }}/>{shortAddress}
             </>
           ):(
             <>
               <i className={"yfiiicon yfii-help-circle"} style={{
                 width:'24px',
-              }}/>{t('Vault-MyWallet')}
+                marginRight:'4px',
+              }}/>{t('Vault-Wallet')}
             </>
           )}
         </Button>
