@@ -124,7 +124,7 @@ export default function FooterLinks(props) {
                     className={
                         classes.navLink + " " + classes.socialIconsButton
                     }
-                    href="https://discord.com/"
+                    href="https://discord.gg/XQ4wnmz"
                     target="_blank"
                     >
                     <i
