@@ -7,8 +7,11 @@ const appStyle = theme => ({
   },
   container: {
     ...container,
-    zIndex: 1
+    zIndex: 1,
   },
+  children:{
+    minHeight:'77vh',
+  }
 });
 
 export default appStyle;

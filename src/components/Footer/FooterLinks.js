@@ -187,6 +187,15 @@ export default function FooterLinks(props) {
                     </Popover>
                 </ListItem>
             </List>
+            <List className={classNames({
+                [classes.list]:true,
+                [classes.extraContent]:true,
+            }) }>
+                <ListItem>Token Contract</ListItem>
+                <ListItem>CoinMarketCap</ListItem>
+                <ListItem>CoinGecko</ListItem>
+                <ListItem>Uniswap ETH-YFII</ListItem>
+            </List>
         </div>
     )
 }

@@ -41,9 +41,11 @@ export default function App({ children }) {
           color="dark"
         />
         <div className={classes.container}>
-          { initializePending ? children : children }
+            <div className={classes.children}>
+                { initializePending ? children : children }
+            </div>
+          <FooterLinks />
         </div>
-        <FooterLinks />
       </div>
     </SnackbarProvider>
   );
