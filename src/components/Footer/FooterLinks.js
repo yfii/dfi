@@ -187,14 +187,19 @@ export default function FooterLinks(props) {
                     </Popover>
                 </ListItem>
             </List>
-            <List className={classNames({
-                [classes.list]:true,
-                [classes.extraContent]:true,
-            }) }>
-                <ListItem>Token Contract</ListItem>
-                <ListItem>CoinMarketCap</ListItem>
-                <ListItem>CoinGecko</ListItem>
-                <ListItem>Uniswap ETH-YFII</ListItem>
+            <List className={classes.list}>
+                <ListItem>
+                    <a className={classes.extraContent} href="https://etherscan.io/address/0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83" target="_blank">Token Contract</a>
+                </ListItem>
+                <ListItem>
+                    <a className={classes.extraContent} href="https://coinmarketcap.com/zh/currencies/yearn-finance-ii/" target="_blank">CoinMarketCap</a>
+                </ListItem>
+                <ListItem>
+                    <a className={classes.extraContent} href="https://www.coingecko.com/en/coins/dfi-money" target="_blank">CoinGecko</a>
+                </ListItem>
+                <ListItem>
+                    <a className={classes.extraContent} href="https://app.uniswap.org/#/swap?outputCurrency=0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83" target="_blank">Uniswap ETH-YFII</a>
+                </ListItem>
             </List>
         </div>
     )

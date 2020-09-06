@@ -13,6 +13,10 @@ import AccordionDetails from '@material-ui/core/AccordionActions'
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import IconButton from '@material-ui/core/IconButton';
 import Slider from '@material-ui/core/Slider';
+import TextField from '@material-ui/core/TextField';
+import FormControl from '@material-ui/core/FormControl';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
+
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
@@ -283,16 +287,23 @@ export default function SectionPools() {
               <AccordionDetails style={{ justifyContent: "space-between"}}>
                 <GridContainer style={{width: "100%", marginLeft: 0, marginRight: 0}}>
                   <GridItem xs={12} sm={6} className={classes.sliderDetailContainer}>
-                    <div className={classes.showDetail}>
-                      <div className={classes.showDetailLeft}>
-                          {
-                              depositedBalance['slider-'+index] ? calculateReallyNum(balanceSingle.toNumber(),depositedBalance['slider-'+index]) : '0.0000'
-                          }
-                      </div>
-                      <div className={classes.showDetailRight}>
+                    <div className={classes.showDetailRight}>
                           {t('Vault-Balance')}:{balanceSingle.toFormat(4)} { pool.token }
-                      </div>
                     </div>
+                    <FormControl fullWidth variant="outlined">
+                        <OutlinedInput 
+                            classes={{
+                                root: classes.showDetail
+                            }} 
+                            id="outlined-deposit" 
+                            value={depositedBalance['slider-'+index] ? calculateReallyNum(balanceSingle.toNumber(),depositedBalance['slider-'+index]) : '0.0000'}
+                            variant="outlined"
+                            onChange={(event)=>{
+                                console.warn('event',event.target.value);
+                            }}
+                            fullWidth 
+                            />
+                    </FormControl>
                     <Slider 
                       classes={{
                         root: classes.depositedBalanceSliderRoot,
@@ -371,16 +382,20 @@ export default function SectionPools() {
                     </GridItem>
 
                     <GridItem xs={12} sm={6} className={classes.sliderDetailContainer}>
-                        <div className={classes.showDetail}>
-                            <div className={classes.showDetailLeft}>
-                                {
-                                    withdrawAmount['slider-'+index] ? calculateReallyNum(singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)).toNumber(),withdrawAmount['slider-'+index]) : '0.0000'
-                                }
-                            </div>
-                            <div className={classes.showDetailRight}>
+                        <div className={classes.showDetailRight}>
                                 {singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)).toFormat(4)} { pool.token } ({singleDepositedBalance.toFormat(4)} { pool.earnedToken })
                             </div>
-                        </div>
+                        <FormControl fullWidth variant="outlined">
+                            <OutlinedInput 
+                                classes={{
+                                    root: classes.showDetail
+                                }} 
+                                id="outlined-deposit" 
+                                value={withdrawAmount['slider-'+index] ? calculateReallyNum(singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)).toNumber(),withdrawAmount['slider-'+index]) : '0.0000'}
+                                variant="outlined"
+                                fullWidth 
+                                />
+                        </FormControl>
                         <Slider 
                             classes={{
                                 root: classes.drawSliderRoot,

@@ -21,7 +21,7 @@ export const pools = [
     earnedToken: 'iUSDT',
     earnedTokenAddress: '0x72Cf258c852Dc485a853370171d46B9D29fD3184',
     earnContractAddress: '0x72Cf258c852Dc485a853370171d46B9D29fD3184',
-    defaultApy: "20",
+    defaultApy: "41.43",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1
   },{
@@ -36,7 +36,7 @@ export const pools = [
     earnedToken: 'iYCRV',
     earnedTokenAddress: '0x3E3db9cc5b540d2794DB3861BE5A4887cF77E48B',
     earnContractAddress: '0x3E3db9cc5b540d2794DB3861BE5A4887cF77E48B',
-    defaultApy: "20",
+    defaultApy: "42.99",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1
   }
