@@ -280,14 +280,16 @@ export default function SectionPools() {
                       </GridItem>
 
                       <GridItem xs={12} sm={7} className="hidden-xs" style={Object.assign({},gridItemStyle,{justifyContent:'space-around'})}>
-                          <div style={Object.assign({},gridItemStyle,{flexDirection:'column',alignItems:'space-around'})}>
-                              <div className={classes.iconContainerMainTitle}>{forMat(balanceSingle)} { pool.token }</div>
-                              <div className={classes.iconContainerSubTitle}>{t('Vault-Balance')}</div>
-                          </div>
-                          <div style={Object.assign({},gridItemStyle,{flexDirection:'column',alignItems:'space-around'})}>
-                              <div className={classes.iconContainerMainTitle}>{depositedApy}%</div>
-                              <div className={classes.iconContainerSubTitle}>{t('Vault-ListAPY')}</div>
-                          </div>
+                          <GridItem sm={2}></GridItem>
+                          <GridItem sm={3} container direction='column' justify='flex-start' alignItems="flex-start">
+                                <div className={classes.iconContainerMainTitle}>{forMat(balanceSingle)} { pool.token }</div>
+                                <div className={classes.iconContainerSubTitle}>{t('Vault-Balance')}</div>
+                          </GridItem>
+                          <GridItem sm={3}></GridItem>
+                          <GridItem sm={4} container direction='column' justify='flex-start' alignItems="flex-start">
+                                <div className={classes.iconContainerMainTitle}>{depositedApy}%</div>
+                                <div className={classes.iconContainerSubTitle}>{t('Vault-ListAPY')}</div>
+                          </GridItem>
                       </GridItem>
 
                       <GridItem xs={6} sm={3} style={Object.assign({},gridItemStyle,{justifyContent:'space-around',paddingLeft: '40px'})}>
