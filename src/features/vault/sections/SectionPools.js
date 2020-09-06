@@ -217,7 +217,7 @@ export default function SectionPools() {
         {pools.map((pool, index) => {
           let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
           let singleDepositedBalance = byDecimals(tokens[pool.earnedToken].tokenBalance, pool.tokenDecimals);
-          let depositedApy = new BigNumber(pool.pricePerFullShare).minus(new BigNumber(pool.pastPricePerFullShare)).multipliedBy(new BigNumber(100)).toFormat(4);
+          let depositedApy = pool.defaultApy ? pool.defaultApy : new BigNumber(pool.pricePerFullShare).minus(new BigNumber(pool.pastPricePerFullShare)).multipliedBy(new BigNumber(100)).toFormat(4);
           return (
             <Accordion
               key={index}
@@ -254,7 +254,7 @@ export default function SectionPools() {
                           </div>
                       </GridItem>
 
-                      <GridItem xs={6} sm={3} style={Object.assign({},gridItemStyle,{justifyContent:'space-around',paddingLeft: '80px'})}>
+                      <GridItem xs={6} sm={3} style={Object.assign({},gridItemStyle,{justifyContent:'space-around',paddingLeft: '40px'})}>
                           <IconButton
                               classes={{
                                   root:classes.iconContainerSecond

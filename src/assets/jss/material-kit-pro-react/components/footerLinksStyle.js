@@ -61,14 +61,10 @@ const footerLinksStyle = theme => ({
           background: hoverColor[0],
         },
         [theme.breakpoints.down("sm")]: {
-          width: "calc(100% - 30px)",
-          marginLeft: "15px",
+          marginLeft: "0px",
           marginBottom: "8px",
           marginTop: "8px",
           textAlign: "left",
-          "& > span:first-child": {
-            justifyContent: "flex-start"
-          }
         },
         "& svg": {
           marginRight: "3px",
@@ -87,7 +83,7 @@ const footerLinksStyle = theme => ({
     socialIcons: {
         position: "relative",
         fontSize: "1.25rem",
-        // maxWidth: "44px"
+        maxWidth: "44px"
     },
     ...tooltip,
     marginRight5: {

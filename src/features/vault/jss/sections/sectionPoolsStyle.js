@@ -133,7 +133,7 @@ const sectionPoolsStyle = theme => ({
       backgroundColor:'#353848',
       borderRadius:'8px',
       color:primaryColor[0],
-      margin: '0 -24px 0 0',
+      
       "& i": {
         fontSize: '24px',
       },
@@ -147,7 +147,6 @@ const sectionPoolsStyle = theme => ({
       backgroundColor:primaryColor[0],
       borderRadius:'8px',
       color:'#fff',
-      margin: '0 -32px',
       "& i": {
         fontSize: '24px',
       },
@@ -173,7 +172,7 @@ const sectionPoolsStyle = theme => ({
           borderRadius: 2,
         },
     sliderDetailContainer:{
-      padding: '16px 24px 24px 24px',
+      padding: '24px 16px',
     },
     showDetail:{
         display:'inline-block',
@@ -216,7 +215,7 @@ const sectionPoolsStyle = theme => ({
     },
     showDetailRight:{
         float: 'right',
-        margin: '19px 16px 19px 0',
+        margin: '-19px 0px 19px 0',
         fontSize: '12px',
         lineHeight: '18px',
         color: '#FFFFFF',
