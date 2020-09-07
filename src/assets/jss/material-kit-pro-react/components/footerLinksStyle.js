@@ -12,7 +12,9 @@ import {
 const footerLinksStyle = theme => ({
     container:{
         ...container,
-        marginTop:'10px',
+        padding:'32px 0 32px 0',
+        borderTop: '1px solid rgba(255, 255, 255, .04)',
+        textAlign: 'center',
     },
     fixed:{
         position:'fixed',
@@ -98,9 +100,24 @@ const footerLinksStyle = theme => ({
     },
     extraContent: {
         color:primaryColor[0],
-        paddingBottom:'24px',
         fontWeight: "400",
-    }
+        'a&:hover, a&:focus':{
+          color:hoverColor[0],
+        },
+        'a:visited': {
+          color:primaryColor[0],
+        },
+    },
+    linkList: {
+      display: 'inline-block',
+    },
+    linkItem: {
+      width: 'auto',
+      margin: '24px 24px 0 24px',
+      float:'left',
+      display:'inline-block',
+    },
+
 })
 
 export default footerLinksStyle;
