@@ -388,7 +388,7 @@ export default function SectionPools() {
                     
                         <div>
                             {
-                                depositedBalance[index]>pool.allowance ? (
+                                pool.allowance === 0 ? (
                                     <div className={classes.showDetailButtonCon}>
                                         <Button 
                                             style={{
