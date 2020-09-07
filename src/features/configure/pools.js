@@ -24,21 +24,6 @@ export const pools = [
     defaultApy: "41.43",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1
-  },{
-    id: 'ycrv',
-    name: 'yCRV',  
-    token: 'yCRV',
-    tokenDescription: 'yCRV',
-    tokenAddress: '0xdF5e0e81Dff6FAF3A7e52BA697820c5e32D806A8',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: 'https://docs.yfii.finance/#/using-crv?id=how-to-get-ycrv',
-    tokenDescriptionUrl2: 'https://docs.yfii.finance/#/zh-cn/buy-tokens?id=_5-ycrv%e5%85%91%e6%8d%a2',
-    earnedToken: 'iYCRV',
-    earnedTokenAddress: '0x3E3db9cc5b540d2794DB3861BE5A4887cF77E48B',
-    earnContractAddress: '0x3E3db9cc5b540d2794DB3861BE5A4887cF77E48B',
-    defaultApy: "42.99",
-    pricePerFullShare: 1,
-    pastPricePerFullShare: 1
   },
   {
     id: 'dai',
@@ -55,5 +40,37 @@ export const pools = [
     defaultApy: "90",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1
+  },
+  {
+    id: 'tusd',
+    name: 'TUSD',  
+    token: 'TUSD',
+    tokenDescription: 'TUSD',
+    tokenAddress: '0x0000000000085d4780B73119b644AE5ecd22b376',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: 'iTUSD',
+    earnedTokenAddress: '0x4243f5C8683089b65a9F588B1AE578d5D84bFBC9',
+    earnContractAddress: '0x4243f5C8683089b65a9F588B1AE578d5D84bFBC9',
+    defaultApy: "42.99",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1
   }
+  ,{
+    id: 'ycrv',
+    name: 'yCRV',  
+    token: 'yCRV',
+    tokenDescription: 'yCRV',
+    tokenAddress: '0xdF5e0e81Dff6FAF3A7e52BA697820c5e32D806A8',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: 'https://docs.yfii.finance/#/using-crv?id=how-to-get-ycrv',
+    tokenDescriptionUrl2: 'https://docs.yfii.finance/#/zh-cn/buy-tokens?id=_5-ycrv%e5%85%91%e6%8d%a2',
+    earnedToken: 'iYCRV',
+    earnedTokenAddress: '0x3E3db9cc5b540d2794DB3861BE5A4887cF77E48B',
+    earnContractAddress: '0x3E3db9cc5b540d2794DB3861BE5A4887cF77E48B',
+    defaultApy: "42.99",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1
+  },
 ]
