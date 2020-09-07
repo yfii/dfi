@@ -16,7 +16,8 @@ import Slider from '@material-ui/core/Slider';
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
-
+import Hidden from '@material-ui/core/Hidden';
+import {primaryColor} from "assets/jss/material-kit-pro-react.js";
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
@@ -263,10 +264,13 @@ export default function SectionPools() {
               <AccordionSummary
                 className={classes.details}
                 style={{ justifyContent: "space-between"}}
-                onClick={() => openCard(index)}
+                onClick={(event) => {
+                    event.stopPropagation();
+                    openCard(index)
+                }}
               >
                   <GridContainer style={{width: "100%", marginLeft: 0, marginRight: 0}}>
-                      <GridItem xs={6} sm={2} style={Object.assign({},{},gridItemStyle,{justifyContent:'flex-start'})}>
+                      <GridItem xs={4} sm={2} style={Object.assign({},{},gridItemStyle,{justifyContent:'flex-start'})}>
                           <GridItem xs={6}>
                               <Avatar 
                               alt={pool.token}
@@ -275,42 +279,72 @@ export default function SectionPools() {
                               />
                           </GridItem>
                           <GridItem xs={6} style={Object.assign({},gridItemStyle,{flexDirection:'column',alignItems:'space-around'})}>
-                              <div className={classes.iconContainerMainTitle}>{pool.token}</div>
+                              <div className={classes.iconContainerMainTitle} style={Object.assign({},gridItemStyle,{justifyContent:'flex-start'})}>
+                                  {pool.token + "  "}
+                                  <Hidden smUp>
+                                    <i
+                                        style={{color:primaryColor[0],marginLeft:'4px'}}
+                                        className={"yfiiicon yfii-help-circle"} 
+                                        onClick={
+                                            event => {
+                                                event.stopPropagation();
+                                                window.open(isZh?pool.tokenDescriptionUrl2:pool.tokenDescriptionUrl)
+                                            }
+                                        }
+                                        />
+                                    </Hidden>
+                                </div>
                               <span className={classes.iconContainerSubTitle}>{pool.token}</span>
                           </GridItem>
                       </GridItem>
 
-                      <GridItem xs={12} sm={7} className="hidden-xs" style={Object.assign({},gridItemStyle,{justifyContent:'space-around'})}>
-                          <GridItem sm={2}></GridItem>
-                          <GridItem sm={3} container direction='column' justify='flex-start' alignItems="flex-start">
-                                <div className={classes.iconContainerMainTitle}>{forMat(balanceSingle)} { pool.token }</div>
-                                <div className={classes.iconContainerSubTitle}>{t('Vault-Balance')}</div>
-                          </GridItem>
-                          <GridItem sm={3}></GridItem>
-                          <GridItem sm={4} container direction='column' justify='flex-start' alignItems="flex-start">
-                                <div className={classes.iconContainerMainTitle}>{depositedApy}%</div>
-                                <div className={classes.iconContainerSubTitle}>{t('Vault-ListAPY')}</div>
-                          </GridItem>
-                      </GridItem>
+                      <Hidden xsDown>
+                        <GridItem sm={7} className="hidden-xs" style={Object.assign({},gridItemStyle,{justifyContent:'space-around'})}>
+                            <GridItem sm={2}></GridItem>
+                            <GridItem sm={3} container direction='column' justify='flex-start' alignItems="flex-start">
+                                    <div className={classes.iconContainerMainTitle}>{forMat(balanceSingle)} { pool.token }</div>
+                                    <div className={classes.iconContainerSubTitle}>{t('Vault-Balance')}</div>
+                            </GridItem>
+                            <GridItem sm={3}></GridItem>
+                            <GridItem sm={4} container direction='column' justify='flex-start' alignItems="flex-start">
+                                    <div className={classes.iconContainerMainTitle}>{depositedApy}%</div>
+                                    <div className={classes.iconContainerSubTitle}>{t('Vault-ListAPY')}</div>
+                            </GridItem>
+                        </GridItem>
+                      </Hidden>
+                      <Hidden smUp>
+                            <GridItem xs={5} container justify='center' alignItems="flex-start">
+                                    <GridItem xs={4} container direction='column' justify='center' alignItems="flex-start"></GridItem>
+                                    <GridItem xs={8} container direction='column' justify='center' alignItems="flex-start">
+                                        <div className={classes.iconContainerMainTitle}>{depositedApy}%</div>
+                                        <div className={classes.iconContainerSubTitle}>{t('Vault-ListAPY')}</div>
+                                    </GridItem>
+                            </GridItem>
+                        </Hidden>
 
-                      <GridItem xs={6} sm={3} style={Object.assign({},gridItemStyle,{justifyContent:'space-around',paddingLeft: '40px'})}>
-                          <IconButton
-                              classes={{
-                                  root:classes.iconContainerSecond
-                              }}
-                              // className={classes.iconContainerSecond}
-                              onClick={
-                                  event => {
-                                      event.stopPropagation();
-                                      window.open(isZh?pool.tokenDescriptionUrl2:pool.tokenDescriptionUrl)
-                                  }
-                              }
-                          >
-                              <i className={"yfiiicon yfii-help-circle"} />
-                          </IconButton>
+                      <GridItem xs={3} sm={3} style={Object.assign({},gridItemStyle,{justifyContent:'space-around',paddingLeft: '40px'})}>
+                        <Hidden xsDown>
+                            <IconButton
+                                classes={{
+                                    root:classes.iconContainerSecond
+                                }}
+                                // className={classes.iconContainerSecond}
+                                onClick={
+                                    event => {
+                                        event.stopPropagation();
+                                        window.open(isZh?pool.tokenDescriptionUrl2:pool.tokenDescriptionUrl)
+                                    }
+                                }
+                            >
+                                <i className={"yfiiicon yfii-help-circle"} />
+                            </IconButton>
+                        </Hidden>
                           <IconButton
                               className={classes.iconContainerPrimary}
-                              onClick={() => openCard(index)}
+                              onClick={(event) => {
+                                event.stopPropagation();
+                                openCard(index);  
+                              }}
                           >
                               {
                                   openedCardList.includes(index) ? <i className={"yfiiicon yfii-arrow-up"} /> : <i className={"yfiiicon yfii-arrow-down"} />
