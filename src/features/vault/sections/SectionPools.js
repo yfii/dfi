@@ -31,7 +31,7 @@ import CustomInput from "components/CustomInput/CustomInput.js";
 import { useSnackbar } from 'notistack';
 //  hooks
 import { useWallet } from '../../home/redux/hooks';
-import { useFetchBalances, useFetchPoolBalances, useFetchApproval, useFetchDeposit, useFetchWithdraw } from '../redux/hooks';
+import { useFetchBalances, useFetchPoolBalances, useFetchApproval, useFetchDeposit, useFetchWithdraw, useFetchContractApy } from '../redux/hooks';
 
 import sectionPoolsStyle from "../jss/sections/sectionPoolsStyle";
 import { reflect } from 'async';
@@ -49,6 +49,7 @@ export default function SectionPools() {
   const { fetchApproval, fetchApprovalPending } = useFetchApproval();
   const { fetchDeposit, fetchDepositPending } = useFetchDeposit();
   const { fetchWithdraw, fetchWithdrawPending } = useFetchWithdraw();
+  const { contractApy, fetchContractApy } = useFetchContractApy();
 
   const [ depositedBalance, setDepositedBalance ] = useState({});
   const [ withdrawAmount, setWithdrawAmount ] = useState({});
@@ -200,6 +201,10 @@ export default function SectionPools() {
     }
   }, [address, web3, fetchBalances, fetchPoolBalances]);
 
+  useEffect(() => {
+    fetchContractApy();
+  }, [pools, fetchContractApy]);
+
   const forMat = number => {
     return new BigNumber(
       number
@@ -254,7 +259,7 @@ export default function SectionPools() {
         {pools.map((pool, index) => {
           let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
           let singleDepositedBalance = byDecimals(tokens[pool.earnedToken].tokenBalance, pool.tokenDecimals);
-          let depositedApy = pool.defaultApy ? pool.defaultApy : new BigNumber(pool.pricePerFullShare).minus(new BigNumber(pool.pastPricePerFullShare)).multipliedBy(new BigNumber(100)).toFormat(4);
+          let depositedApy = contractApy[pool.id] || 0;
           return (
             <Accordion
               key={index}
@@ -307,7 +312,7 @@ export default function SectionPools() {
                             </GridItem>
                             <GridItem sm={3}></GridItem>
                             <GridItem sm={4} container direction='column' justify='flex-start' alignItems="flex-start">
-                                    <div className={classes.iconContainerMainTitle}>{depositedApy}%</div>
+                                    <div className={classes.iconContainerMainTitle}>{depositedApy}</div>
                                     <div className={classes.iconContainerSubTitle}>{t('Vault-ListAPY')}</div>
                             </GridItem>
                         </GridItem>

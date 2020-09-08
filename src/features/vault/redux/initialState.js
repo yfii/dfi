@@ -19,6 +19,8 @@ pools.map(({token, tokenAddress, earnedToken, earnedTokenAddress})=> {
 const initialState = {
   pools,
   tokens,
+  contractApy: {},
+  fetchContractApyPending: false,
   fetchPoolBalancesPending: false,
   fetchBalancesPending: false,
   fetchApprovalPending: {},

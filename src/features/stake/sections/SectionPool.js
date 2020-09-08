@@ -38,8 +38,8 @@ export default function SectionPool(props) {
             }}>
               <GridItem xs={3}>
                 <Avatar 
-                  // alt={pool.token}
-                  // src={require(`../../../images/${pool.token}-logo.png`)}
+                  alt={pool.token}
+                  src={require(`../../../images/${pool.token}-logo.png`)}
                   style={{}}
                 />
               </GridItem>
