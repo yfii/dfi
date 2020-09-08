@@ -21,7 +21,7 @@ export const pools = [
     earnedToken: 'iUSDT',
     earnedTokenAddress: '0x72Cf258c852Dc485a853370171d46B9D29fD3184',
     earnContractAddress: '0x72Cf258c852Dc485a853370171d46B9D29fD3184',
-    defaultApy: "41.43",
+    defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1
   },
@@ -37,7 +37,7 @@ export const pools = [
     earnedToken: 'iDAI',
     earnedTokenAddress: '0x1e0DC67aEa5aA74718822590294230162B5f2064',
     earnContractAddress: '0x1e0DC67aEa5aA74718822590294230162B5f2064',
-    defaultApy: "90",
+    defaultApy: "86.3",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1
   },
@@ -53,7 +53,7 @@ export const pools = [
     earnedToken: 'iTUSD',
     earnedTokenAddress: '0x4243f5C8683089b65a9F588B1AE578d5D84bFBC9',
     earnContractAddress: '0x4243f5C8683089b65a9F588B1AE578d5D84bFBC9',
-    defaultApy: "42.99",
+    defaultApy: "42.63",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1
   }
@@ -69,7 +69,7 @@ export const pools = [
     earnedToken: 'iYCRV',
     earnedTokenAddress: '0x3E3db9cc5b540d2794DB3861BE5A4887cF77E48B',
     earnContractAddress: '0x3E3db9cc5b540d2794DB3861BE5A4887cF77E48B',
-    defaultApy: "42.99",
+    defaultApy: "42.63",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1
   },
