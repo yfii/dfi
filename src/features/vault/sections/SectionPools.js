@@ -254,8 +254,6 @@ export default function SectionPools() {
     return `${value}°C`;
   }
 
-  console.warn('pools',pools);
-
   return (
     <GridContainer justify="center">
       <GridItem md={12} xs={12} sm={10}>
