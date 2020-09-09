@@ -56,9 +56,9 @@ export default function HomePage() {
         >
           {
             (i18n.language=== 'zh' || i18n.language === 'zh-CN')?(
-              <p>YFII2.0升级了iToken协议，除了yCrv cCrv以外，其他代币都需要大家从之前系统中手动取出代币存入新系统，旧系统入口：<a href="https://v1.dfi.money/" target="_blank">https://v1.dfi.money/</a></p>
+              <p>YFII机枪池已升级到2.0版本并增添了iToken机制，目前旧机枪池中除了yCrv和cCrv以外，都已不再产生收益。我们建议您尽快将资金从旧池中取出并存入新池。旧系统入口：<a href="https://v1.dfi.money/" target="_blank">https://v1.dfi.money/</a></p>
             ):(
-              <p>YFII Vault 2.0 has released with iToken implemented. Except for yCrv cCrv, all other tokens need to be manually removed from the old vault and deposited into the new vault. The entrance to the old vault: <a href="https://v1.dfi.money/" target="_blank">https://v1.dfi.money/</a></p>
+              <p>YFII Vault has been upgraded to version 2.0 which features the new iToken mechanism. The old vaults do not generate yield anymore except for yCrv and cCrv. You are encouraged to take your funds out of the old vaults and deposit them into the new ones. Entrance for old vaults:<a href="https://v1.dfi.money/" target="_blank">https://v1.dfi.money/</a></p>
           )}
         </DialogContent>
         <DialogActions className={classes.modalFooter}>
