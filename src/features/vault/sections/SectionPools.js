@@ -140,11 +140,12 @@ export default function SectionPools() {
         [`slider-${index}`]: 100,
       })
     }
+    let amountValue = depositedBalance[index].replace(',','');
     fetchDeposit({
       address,
       web3,
       isAll,
-      amount: new BigNumber(depositedBalance[index]).multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals)).toString(10),
+      amount: new BigNumber(amountValue).multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals)).toString(10),
       contractAddress: pool.earnContractAddress,
       index
     }).then(
@@ -164,11 +165,12 @@ export default function SectionPools() {
         [`slider-${index}`]: 100,
       })
     }
+    let amountValue = withdrawAmount[index].replace(',','');
     fetchWithdraw({
       address,
       web3,
       isAll,
-      amount: new BigNumber(withdrawAmount[index]).multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals)).toString(10),
+      amount: new BigNumber(amountValue).multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals)).toString(10),
       contractAddress: pool.earnContractAddress,
       index
     }).then(
