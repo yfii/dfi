@@ -72,7 +72,10 @@ const footerLinksStyle = theme => ({
           marginRight: "3px",
           width: "20px",
           height: "20px"
-        }
+        },
+        "& i": {
+          position: 'absolute',
+        },
       },
     navLinkJustIcon: {
         "& .fab,& .far,& .fal,& .fas,& .material-icons": {
@@ -80,7 +83,8 @@ const footerLinksStyle = theme => ({
         },
         "& svg": {
           marginRight: "0px"
-        }
+        },
+
     },
     socialIcons: {
         position: "relative",
