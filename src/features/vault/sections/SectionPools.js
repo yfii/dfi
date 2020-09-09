@@ -321,7 +321,7 @@ export default function SectionPools() {
                             <GridItem xs={5} container justify='center' alignItems="flex-start">
                                     <GridItem xs={4} container direction='column' justify='center' alignItems="flex-start"></GridItem>
                                     <GridItem xs={8} container direction='column' justify='center' alignItems="flex-start">
-                                        <div className={classes.iconContainerMainTitle}>{depositedApy}%</div>
+                                        <div className={classes.iconContainerMainTitle}>{depositedApy}</div>
                                         <div className={classes.iconContainerSubTitle}>{t('Vault-ListAPY')}</div>
                                     </GridItem>
                             </GridItem>
