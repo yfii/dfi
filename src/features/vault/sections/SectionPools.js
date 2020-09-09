@@ -63,10 +63,11 @@ export default function SectionPools() {
     return byDecimals(sliderNum/100*Number(total), 0).toFormat(4);
   }
   
-  const changeDetailInputValue = (type,index,total,event) => {
+  const changeDetailInputValue = (type,index,total,tokenDecimals,event) => {
     let value = event.target.value;
     let reg = /[a-z]/i;
-    if(reg.test(value)){
+    let valueArr = value.split('.');
+    if(reg.test(value) || valueArr.length<2 || (valueArr.length==2 && valueArr[1].length > tokenDecimals) ){
         return;
     }
     let sliderNum = 0;
@@ -78,14 +79,14 @@ export default function SectionPools() {
         case 'depositedBalance':
             setDepositedBalance({
                 ...depositedBalance,
-                [index]: inputVal > total ? byDecimals(total,0).toFormat(4) :value,
+                [index]: inputVal > total ? byDecimals(total,0).toFormat(tokenDecimals) :value,
                 [`slider-${index}`]: sliderNum,
             });
             break;
         case 'withdrawAmount':
             setWithdrawAmount({
                 ...withdrawAmount,
-                [index]: inputVal > total ? byDecimals(total,0).toFormat(4) :value,
+                [index]: inputVal > total ? byDecimals(total,0).toFormat(tokenDecimals) :value,
                 [`slider-${index}`]: sliderNum,
             });
             break;
@@ -369,9 +370,9 @@ export default function SectionPools() {
                             classes={{
                                 root: classes.showDetail
                             }} 
-                            value={depositedBalance[index]!=undefined ? depositedBalance[index] : '0.0000'}
+                            value={depositedBalance[index]!=undefined ? depositedBalance[index] : byDecimals(0,0).toFormat(pool.tokenDecimals)}
                             variant="outlined"
-                            onChange={changeDetailInputValue.bind(this,'depositedBalance',index,balanceSingle.toNumber())}
+                            onChange={changeDetailInputValue.bind(this,'depositedBalance',index,balanceSingle.toNumber(),pool.tokenDecimals)}
                             fullWidth 
                             />
                     </FormControl>
@@ -461,8 +462,8 @@ export default function SectionPools() {
                                 classes={{
                                     root: classes.showDetail
                                 }} 
-                                value={withdrawAmount[index]!=undefined ? withdrawAmount[index] : '0.0000'}
-                                onChange={changeDetailInputValue.bind(this,'withdrawAmount',index,singleDepositedBalance.toNumber())}
+                                value={withdrawAmount[index]!=undefined ? withdrawAmount[index] : byDecimals(0,0).toFormat(pool.tokenDecimals)}
+                                onChange={changeDetailInputValue.bind(this,'withdrawAmount',index,singleDepositedBalance.toNumber(),pool.tokenDecimals)}
                                 variant="outlined"
                                 fullWidth 
                                 />
