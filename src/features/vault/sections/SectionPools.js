@@ -140,7 +140,7 @@ export default function SectionPools() {
         [`slider-${index}`]: 100,
       })
     }
-    let amountValue = depositedBalance[index].replace(',','');
+    let amountValue =  depositedBalance[index]? depositedBalance[index].replace(',',''): depositedBalance[index];
     fetchDeposit({
       address,
       web3,
@@ -165,7 +165,7 @@ export default function SectionPools() {
         [`slider-${index}`]: 100,
       })
     }
-    let amountValue = withdrawAmount[index].replace(',','');
+    let amountValue =  withdrawAmount[index]? withdrawAmount[index].replace(',',''): withdrawAmount[index];
     fetchWithdraw({
       address,
       web3,
