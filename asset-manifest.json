@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/static/css/main.1b5fa292.chunk.css",
-    "main.js": "/static/js/main.7c5f5816.chunk.js",
-    "main.js.map": "/static/js/main.7c5f5816.chunk.js.map",
+    "main.js": "/static/js/main.18fde2b4.chunk.js",
+    "main.js.map": "/static/js/main.18fde2b4.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.817cdfcf.js",
     "runtime-main.js.map": "/static/js/runtime-main.817cdfcf.js.map",
-    "static/js/2.8051689c.chunk.js": "/static/js/2.8051689c.chunk.js",
-    "static/js/2.8051689c.chunk.js.map": "/static/js/2.8051689c.chunk.js.map",
+    "static/js/2.24579445.chunk.js": "/static/js/2.24579445.chunk.js",
+    "static/js/2.24579445.chunk.js.map": "/static/js/2.24579445.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.e15bf59355d5026a69a7640bc2d7aec3.js": "/precache-manifest.e15bf59355d5026a69a7640bc2d7aec3.js",
+    "precache-manifest.0c1eab1c1cf4de00009d3bc650af36f6.js": "/precache-manifest.0c1eab1c1cf4de00009d3bc650af36f6.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.1b5fa292.chunk.css.map": "/static/css/main.1b5fa292.chunk.css.map",
-    "static/js/2.8051689c.chunk.js.LICENSE.txt": "/static/js/2.8051689c.chunk.js.LICENSE.txt",
+    "static/js/2.24579445.chunk.js.LICENSE.txt": "/static/js/2.24579445.chunk.js.LICENSE.txt",
     "static/media/BAT-logo.png": "/static/media/BAT-logo.a36574cc.png",
     "static/media/BUSD-logo.png": "/static/media/BUSD-logo.d569caee.png",
     "static/media/COMP-logo.png": "/static/media/COMP-logo.79b64ccb.png",
     "static/media/CRV-logo.png": "/static/media/CRV-logo.64055e3f.png",
-    "static/media/DAI-logo.png": "/static/media/DAI-logo.db51a19a.png",
+    "static/media/DAI-logo.png": "/static/media/DAI-logo.219c580c.png",
     "static/media/ETH-logo.png": "/static/media/ETH-logo.cd146973.png",
     "static/media/FTM-logo.png": "/static/media/FTM-logo.60cf5ef1.png",
     "static/media/KNC-logo.png": "/static/media/KNC-logo.5f543a25.png",
@@ -27,8 +27,9 @@
     "static/media/SAI-logo.png": "/static/media/SAI-logo.dccadfa8.png",
     "static/media/SNX-logo.png": "/static/media/SNX-logo.d4651a3f.png",
     "static/media/SUSD-logo.png": "/static/media/SUSD-logo.05ddb253.png",
+    "static/media/TUSD-logo.png": "/static/media/TUSD-logo.dd698dcd.png",
     "static/media/USDC-logo.png": "/static/media/USDC-logo.7e783b80.png",
-    "static/media/USDT-logo.png": "/static/media/USDT-logo.0c96f8f2.png",
+    "static/media/USDT-logo.png": "/static/media/USDT-logo.823d8063.png",
     "static/media/WETH-logo.png": "/static/media/WETH-logo.cd146973.png",
     "static/media/YFI-logo.png": "/static/media/YFI-logo.02f2fed6.png",
     "static/media/YFII-logo.png": "/static/media/YFII-logo.290fda47.png",
@@ -41,14 +42,14 @@
     "static/media/iDAI-logo.png": "/static/media/iDAI-logo.f26d381d.png",
     "static/media/wBTC-logo.png": "/static/media/wBTC-logo.5c1a712d.png",
     "static/media/wechat.png": "/static/media/wechat.6bf53c40.png",
-    "static/media/yCRV-logo.png": "/static/media/yCRV-logo.56fb35f9.png",
+    "static/media/yCRV-logo.png": "/static/media/yCRV-logo.a2ebc204.png",
     "static/media/ycUSDC-logo.png": "/static/media/ycUSDC-logo.70f5a503.png",
     "static/media/ycUSDT-logo.png": "/static/media/ycUSDT-logo.6e50fa39.png"
   },
   "entrypoints": [
     "static/js/runtime-main.817cdfcf.js",
-    "static/js/2.8051689c.chunk.js",
+    "static/js/2.24579445.chunk.js",
     "static/css/main.1b5fa292.chunk.css",
-    "static/js/main.7c5f5816.chunk.js"
+    "static/js/main.18fde2b4.chunk.js"
   ]
 }
