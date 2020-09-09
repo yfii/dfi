@@ -160,7 +160,7 @@ export default function SectionPools() {
     // console.log(isAll)
     if (isAll) {
       setWithdrawAmount({
-        ...depositedBalance,
+        ...withdrawAmount,
         [index]: forMat(singleDepositedBalance),
         [`slider-${index}`]: 100,
       })
