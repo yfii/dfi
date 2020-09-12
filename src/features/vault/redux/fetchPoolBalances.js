@@ -26,7 +26,7 @@ export function fetchPoolBalances(data) {
       const { address, web3, pools } = data;
       async.map(pools, (pool, callback) => {
         const earnContract = new web3.eth.Contract(earnContractABI, pool.earnContractAddress);
-        const erc20Contract = new web3.eth.Contract(erc20ABI, pool.tokenAddress);
+        const erc20Contract = pool.tokenAddress ? new web3.eth.Contract(erc20ABI, pool.tokenAddress) : null;
         async.parallel([
           (callbackInner) => {
             fetchAllowance({

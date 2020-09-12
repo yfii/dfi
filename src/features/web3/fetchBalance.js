@@ -3,6 +3,10 @@ import BigNumber from "bignumber.js";
 
 export const fetchBalance = async ({web3, address, tokenAddress }) => {
   // console.log(`=====================================fetchBalance begin=====================================`)
+  if (!tokenAddress) {
+    const ethBalance = await web3.eth.getBalance(address)
+    return ethBalance;
+  }
   const contract = new web3.eth.Contract(erc20ABI, tokenAddress)
   // console.log(`
   //   address:${address}\n
