@@ -198,11 +198,6 @@ export const earnContractABI = [
 				"internalType": "address",
 				"name": "_token",
 				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_earnLowerlimit",
-				"type": "uint256"
 			}
 		],
 		"payable": false,
@@ -258,6 +253,11 @@ export const earnContractABI = [
 		],
 		"name": "Transfer",
 		"type": "event"
+	},
+	{
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "fallback"
 	},
 	{
 		"constant": true,
@@ -440,6 +440,15 @@ export const earnContractABI = [
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "depositETH",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
 		"type": "function"
 	},
 	{
@@ -748,6 +757,30 @@ export const earnContractABI = [
 		"constant": false,
 		"inputs": [],
 		"name": "withdrawAll",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "withdrawAllETH",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_shares",
+				"type": "uint256"
+			}
+		],
+		"name": "withdrawETH",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
