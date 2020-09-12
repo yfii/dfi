@@ -10,22 +10,6 @@
 // path price: 
 export const pools = [
   {
-    id: 'usdt',
-    name: 'USDT',  
-    token: 'USDT',
-    tokenDescription: 'USDT',
-    tokenAddress: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
-    tokenDecimals: 6,
-    tokenDescriptionUrl: '',
-    tokenDescriptionUrl2: '',
-    earnedToken: 'iUSDT',
-    earnedTokenAddress: '0x72Cf258c852Dc485a853370171d46B9D29fD3184',
-    earnContractAddress: '0x72Cf258c852Dc485a853370171d46B9D29fD3184',
-    defaultApy: "39.54",
-    pricePerFullShare: 1,
-    pastPricePerFullShare: 1
-  },
-  {
     id: 'eth',
     name: 'ETH',  
     token: 'ETH',
@@ -53,6 +37,22 @@ export const pools = [
     earnedToken: 'iWETH',
     earnedTokenAddress: '0xa8EA49a9e242fFfBdECc4583551c3BcB111456E6',
     earnContractAddress: '0xa8EA49a9e242fFfBdECc4583551c3BcB111456E6',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1
+  },
+  {
+    id: 'usdt',
+    name: 'USDT',  
+    token: 'USDT',
+    tokenDescription: 'USDT',
+    tokenAddress: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
+    tokenDecimals: 6,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: 'iUSDT',
+    earnedTokenAddress: '0x72Cf258c852Dc485a853370171d46B9D29fD3184',
+    earnContractAddress: '0x72Cf258c852Dc485a853370171d46B9D29fD3184',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1
