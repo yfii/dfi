@@ -33,7 +33,7 @@ export const pools = [
     tokenDecimals: 6,
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
-    earnedToken: 'iUSDT',
+    earnedToken: 'iUSDC',
     earnedTokenAddress: '0x23B4dB3a435517fd5f2661a9c5a16f78311201c1',
     earnContractAddress: '0x23B4dB3a435517fd5f2661a9c5a16f78311201c1',
     defaultApy: "39.54",
