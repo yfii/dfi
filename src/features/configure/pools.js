@@ -24,6 +24,22 @@ export const pools = [
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1
+  },
+  {
+    id: 'weth',
+    name: 'WETH',  
+    token: 'WETH',
+    tokenDescription: 'WETH',
+    tokenAddress: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: 'iWETH',
+    earnedTokenAddress: '0xa8EA49a9e242fFfBdECc4583551c3BcB111456E6',
+    earnContractAddress: '0xa8EA49a9e242fFfBdECc4583551c3BcB111456E6',
+    defaultApy: "39.54",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1
   },{
     id: 'usdc',
     name: 'USDC',  
