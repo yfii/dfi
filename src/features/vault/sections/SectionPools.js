@@ -48,7 +48,7 @@ export default function SectionPools() {
 
   const { fetchApproval, fetchApprovalPending } = useFetchApproval();
   const { fetchDeposit, fetchDepositEth, fetchDepositPending } = useFetchDeposit();
-  const { fetchWithdraw, fetchWithdrawPending } = useFetchWithdraw();
+  const { fetchWithdraw, fetchWithdrawEth, fetchWithdrawPending } = useFetchWithdraw();
   const { contractApy, fetchContractApy } = useFetchContractApy();
 
   const [ depositedBalance, setDepositedBalance ] = useState({});
@@ -180,18 +180,34 @@ export default function SectionPools() {
       })
     }
     let amountValue =  withdrawAmount[index]? withdrawAmount[index].replace(',',''): withdrawAmount[index];
-    fetchWithdraw({
-      address,
-      web3,
-      isAll,
-      amount: new BigNumber(amountValue).multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals)).toString(10),
-      contractAddress: pool.earnContractAddress,
-      index
-    }).then(
-      () => enqueueSnackbar(`Withdraw success`, {variant: 'success'})
-    ).catch(
-      error => enqueueSnackbar(`Withdraw error: ${error}`, {variant: 'error'})
-    )
+    if (!pool.tokenAddress) {// 如果是eth
+      fetchWithdrawEth({
+        address,
+        web3,
+        isAll,
+        amount: new BigNumber(amountValue).multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals)).toString(10),
+        contractAddress: pool.earnContractAddress,
+        index
+      }).then(
+        () => enqueueSnackbar(`Withdraw success`, {variant: 'success'})
+      ).catch(
+        error => enqueueSnackbar(`Withdraw error: ${error}`, {variant: 'error'})
+      )
+    } else {
+      fetchWithdraw({
+        address,
+        web3,
+        isAll,
+        amount: new BigNumber(amountValue).multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals)).toString(10),
+        contractAddress: pool.earnContractAddress,
+        index
+      }).then(
+        () => enqueueSnackbar(`Withdraw success`, {variant: 'success'})
+      ).catch(
+        error => enqueueSnackbar(`Withdraw error: ${error}`, {variant: 'error'})
+      )
+    }
+    
   }
 
   const openCard = id => {
