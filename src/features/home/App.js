@@ -51,10 +51,10 @@ export default function App({ children }) {
   
 
   useEffect(() => {
-    if (web3Modal && web3Modal.cachedProvider) {
+    if (web3Modal && (web3Modal.cachedProvider || window.ethereum)) {
       connectWallet(web3Modal);
     }
-  }, [web3Modal, connectWallet])
+  }, [web3Modal, connectWallet, window.ethereum])
 
   return (
     <SnackbarProvider>
