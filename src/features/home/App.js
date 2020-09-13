@@ -21,7 +21,7 @@ export default function App({ children }) {
 
   useEffect(() => {
     initialize()
-  }, [initialize])
+  }, [initialize, window.ethereum])
 
   return (
     <SnackbarProvider>
