@@ -51,28 +51,12 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: 'iUSDT',
-    earnedTokenAddress: '0x410D2248e14fbC11394b731e6107f60381c2191A',
-    earnContractAddress: '0x410D2248e14fbC11394b731e6107f60381c2191A',
+    earnedTokenAddress: '0x72Cf258c852Dc485a853370171d46B9D29fD3184',
+    earnContractAddress: '0x72Cf258c852Dc485a853370171d46B9D29fD3184',
     defaultApy: "39.54",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1
-  }, {
-    id: 'busd',
-    name: 'BUSD',  
-    token: 'BUSD',
-    tokenDescription: 'BUSD',
-    tokenAddress: '0x4Fabb145d64652a948d72533023f6E7A623C7C53',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '',
-    tokenDescriptionUrl2: '',
-    earnedToken: 'iBUSD',
-    earnedTokenAddress: '0xc46d2fC00554f1f874F37e6e3E828A0AdFEFfbcB',
-    earnContractAddress: '0xc46d2fC00554f1f874F37e6e3E828A0AdFEFfbcB',
-    defaultApy: "39.54",
-    pricePerFullShare: 1,
-    pastPricePerFullShare: 1
-  },
-  {
+  },{
     id: 'usdc',
     name: 'USDC',  
     token: 'USDC',
