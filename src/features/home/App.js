@@ -40,7 +40,7 @@ export default function App({ children }) {
         walletconnect: {
           package: WalletConnectProvider,
           options: {
-            infuraId: "bd80ce1ca1f94da48e151bb6868bb150"
+            infuraId: process.env.INFURA_ID
           }
         }
       }

@@ -30,7 +30,7 @@ export default function HeaderLinks(props) {
   const canvasRef = useRef(null)
 
   useEffect(() => {
-    if(!address) return;
+    if(!connected) return;
     const canvas = canvasRef.current
     renderIcon({ seed: address.toLowerCase() }, canvas)
     const updatedDataUrl = canvas.toDataURL()
