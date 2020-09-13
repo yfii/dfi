@@ -7,9 +7,12 @@
 // NOTE: initialState constant is necessary so that Rekit could auto add initial state when creating async actions.
 
 const initialState = {
-  web3: null,
   address: "",
-  initializePending: false,
+  web3: null,
+  provider: null,
+  connected: false,
+  chainId: 1,
+  networkId: 1,
 };
 
 export default initialState;

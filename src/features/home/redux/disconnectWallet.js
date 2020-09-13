@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { HOME_DISCONNECT_WALLET_BEGIN, HOME_DISCONNECT_WALLET_SUCCESS, HOME_DISCONNECT_WALLET_FAILURE } from './constants';
 
-export function disconnectWallet({web3, web3Modal}) {
+export function disconnectWallet(web3, web3Modal) {
   return dispatch => {
     dispatch({ type: HOME_DISCONNECT_WALLET_BEGIN });
 
@@ -16,7 +16,7 @@ export function disconnectWallet({web3, web3Modal}) {
         resolve()
       } catch (error) {
         dispatch({ type: HOME_DISCONNECT_WALLET_FAILURE })
-        reject(error.message || error)
+        reject(error)
       }
     });
     return promise;
@@ -26,7 +26,7 @@ export function disconnectWallet({web3, web3Modal}) {
 export function useDisconnectWallet() {
   const dispatch = useDispatch();
   const disconnectWalletPending = useSelector(state => (state.home.disconnectWalletPending), shallowEqual);
-  const boundAction = useCallback(data => dispatch(disconnectWallet(data)), [dispatch]);
+  const boundAction = useCallback((web3, web3Modal) => dispatch(disconnectWallet(web3, web3Modal)), [dispatch]);
 
   return { disconnectWalletPending, disconnectWallet: boundAction };
 }
@@ -42,8 +42,10 @@ export function reducer(state, action) {
     case HOME_DISCONNECT_WALLET_SUCCESS:
       return {
         ...state,
-        web3: null,
         address: "",
+        web3: null,
+        connected: false,
+        chainId: 1,
         disconnectWalletPending: false
       };
     case HOME_DISCONNECT_WALLET_FAILURE:

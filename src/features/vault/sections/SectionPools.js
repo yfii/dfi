@@ -30,7 +30,7 @@ import CustomInput from "components/CustomInput/CustomInput.js";
 // import SectionOpenedPool from "./SectionOpenedPool";
 import { useSnackbar } from 'notistack';
 //  hooks
-import { useWallet } from '../../home/redux/hooks';
+import { useConnectWallet } from '../../home/redux/hooks';
 import { useFetchBalances, useFetchPoolBalances, useFetchApproval, useFetchDeposit, useFetchWithdraw, useFetchContractApy } from '../redux/hooks';
 
 import sectionPoolsStyle from "../jss/sections/sectionPoolsStyle";
@@ -40,7 +40,7 @@ const useStyles = makeStyles(sectionPoolsStyle);
 
 export default function SectionPools() {
   const { t, i18n } = useTranslation();
-  const { web3, address } = useWallet();
+  const { web3, address } = useConnectWallet();
   let { pools, fetchPoolBalances } = useFetchPoolBalances();
   const { tokens, fetchBalances } = useFetchBalances();
   const [ openedCardList, setOpenCardList ] = useState([0]);
