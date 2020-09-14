@@ -13,7 +13,8 @@ export const depositEth = async ({web3, address, amount, contractAddress}) => {
       from: address,
       to: contractAddress,
       value: amount,
-      gasPrice: web3.utils.toWei(gasPrice, 'gwei')
+      gasPrice: web3.utils.toWei(gasPrice, 'gwei'),
+      gasLimit: 900000
     })
     .on('transactionHash', function(hash){
       resolve(hash)
