@@ -39,6 +39,16 @@ import {
   } from "assets/jss/material-kit-pro-react.js";
 const useStyles = makeStyles(styles);
 
+const footerLinkArr = [
+    {content:'Token Contract',href:'https://etherscan.io/address/0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83'},
+    // {content:'CoinMarketCap',href:'https://coinmarketcap.com/zh/currencies/yearn-finance-ii/'},
+    // {content:'CoinGecko',href:'https://www.coingecko.com/en/coins/dfi-money'},
+    {content:'Forum',href:'https://gov.yfii.finance/'},
+    {content:'Voting',href:'https://snapshot.page/#/dfi'},
+    {content:'Documentation',href:'https://docs.yfii.finance/'},
+    {content:'Uniswap ETH-YFII',href:'https://app.uniswap.org/#/swap?outputCurrency=0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83'},
+];
+
 export default function FooterLinks(props) {
     const classes = useStyles();
 
@@ -188,18 +198,15 @@ export default function FooterLinks(props) {
                 </ListItem>
             </List>
             <List className={classes.linkList}>
-                <ListItem className={classes.linkItem}>
-                    <a className={classes.extraContent} href="https://etherscan.io/address/0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83" target="_blank">Token Contract</a>
-                </ListItem >
-                <ListItem className={classes.linkItem}>
-                    <a className={classes.extraContent} href="https://coinmarketcap.com/zh/currencies/yearn-finance-ii/" target="_blank">CoinMarketCap</a>
-                </ListItem>
-                <ListItem className={classes.linkItem}>
-                    <a className={classes.extraContent} href="https://www.coingecko.com/en/coins/dfi-money" target="_blank">CoinGecko</a>
-                </ListItem>
-                <ListItem className={classes.linkItem}>
-                    <a className={classes.extraContent} href="https://app.uniswap.org/#/swap?outputCurrency=0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83" target="_blank">Uniswap ETH-YFII</a>
-                </ListItem>
+                {
+                    footerLinkArr.map((item)=>{
+                        return (
+                            <ListItem key={item.content} className={classes.linkItem}>
+                                <a className={classes.extraContent} href={item.href} target="_blank">{item.content}</a>
+                            </ListItem >
+                        )
+                    })
+                }
             </List>
         </div>
     )

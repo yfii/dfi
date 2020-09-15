@@ -67,7 +67,7 @@ export default function SectionPools() {
     let value = event.target.value;
     let reg = /[a-z]/i;
     let valueArr = value.split('.');
-    if(reg.test(value) || valueArr.length<2 || (valueArr.length==2 && valueArr[1].length > tokenDecimals) ){
+    if(reg.test(value) || (valueArr.length==2 && valueArr[1].length > tokenDecimals) ){
         return;
     }
     let sliderNum = 0;
@@ -402,7 +402,7 @@ export default function SectionPools() {
                             classes={{
                                 root: classes.showDetail
                             }} 
-                            value={depositedBalance[index]!=undefined ? depositedBalance[index] : byDecimals(0,0).toFormat(pool.tokenDecimals)}
+                            value={depositedBalance[index]!=undefined ? depositedBalance[index] :'0'}
                             variant="outlined"
                             onChange={changeDetailInputValue.bind(this,'depositedBalance',index,balanceSingle.toNumber(),pool.tokenDecimals)}
                             fullWidth 
@@ -495,7 +495,7 @@ export default function SectionPools() {
                                 classes={{
                                     root: classes.showDetail
                                 }} 
-                                value={withdrawAmount[index]!=undefined ? withdrawAmount[index] : byDecimals(0,0).toFormat(pool.tokenDecimals)}
+                                value={withdrawAmount[index]!=undefined ? withdrawAmount[index] : '0'}
                                 onChange={changeDetailInputValue.bind(this,'withdrawAmount',index,singleDepositedBalance.toNumber(),pool.tokenDecimals)}
                                 variant="outlined"
                                 fullWidth 
