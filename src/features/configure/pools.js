@@ -105,6 +105,22 @@ export const pools = [
     pastPricePerFullShare: 1
   },
   {
+    id: 'hbtc',
+    name: 'HBTC',  
+    token: 'HBTC',
+    tokenDescription: 'HBTC',
+    tokenAddress: '0x0316eb71485b0ab14103307bf65a021042c6d380',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: 'iHBTC',
+    earnedTokenAddress: '0x26AEdD2205FF8a87AEF2eC9691d77Ce3f40CE6E9',
+    earnContractAddress: '0x26AEdD2205FF8a87AEF2eC9691d77Ce3f40CE6E9',
+    defaultApy: "86.3",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1
+  },
+  {
     id: 'tusd',
     name: 'TUSD',  
     token: 'TUSD',
