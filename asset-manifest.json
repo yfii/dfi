@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.1b5fa292.chunk.css",
-    "main.js": "/static/js/main.a0abc277.chunk.js",
-    "main.js.map": "/static/js/main.a0abc277.chunk.js.map",
+    "main.js": "/static/js/main.d69357f4.chunk.js",
+    "main.js.map": "/static/js/main.d69357f4.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d7a64642.js",
     "runtime-main.js.map": "/static/js/runtime-main.d7a64642.js.map",
-    "static/js/2.1448be5e.chunk.js": "/static/js/2.1448be5e.chunk.js",
-    "static/js/2.1448be5e.chunk.js.map": "/static/js/2.1448be5e.chunk.js.map",
+    "static/js/2.da04ad7d.chunk.js": "/static/js/2.da04ad7d.chunk.js",
+    "static/js/2.da04ad7d.chunk.js.map": "/static/js/2.da04ad7d.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.efab30d84d412d48c3d6d5d47793f23c.js": "/precache-manifest.efab30d84d412d48c3d6d5d47793f23c.js",
+    "precache-manifest.8d31a5d2bb4ba0676f4ddef76a9cd816.js": "/precache-manifest.8d31a5d2bb4ba0676f4ddef76a9cd816.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.1b5fa292.chunk.css.map": "/static/css/main.1b5fa292.chunk.css.map",
-    "static/js/2.1448be5e.chunk.js.LICENSE.txt": "/static/js/2.1448be5e.chunk.js.LICENSE.txt",
+    "static/js/2.da04ad7d.chunk.js.LICENSE.txt": "/static/js/2.da04ad7d.chunk.js.LICENSE.txt",
     "static/media/BAT-logo.png": "/static/media/BAT-logo.a36574cc.png",
     "static/media/BUSD-logo.png": "/static/media/BUSD-logo.d569caee.png",
     "static/media/COMP-logo.png": "/static/media/COMP-logo.79b64ccb.png",
@@ -30,7 +30,7 @@
     "static/media/TUSD-logo.png": "/static/media/TUSD-logo.dd698dcd.png",
     "static/media/USDC-logo.png": "/static/media/USDC-logo.7e783b80.png",
     "static/media/USDT-logo.png": "/static/media/USDT-logo.823d8063.png",
-    "static/media/WETH-logo.png": "/static/media/WETH-logo.cd146973.png",
+    "static/media/WETH-logo.png": "/static/media/WETH-logo.9219d0ee.png",
     "static/media/YFI-logo.png": "/static/media/YFI-logo.02f2fed6.png",
     "static/media/YFII-logo.png": "/static/media/YFII-logo.290fda47.png",
     "static/media/ZRX-logo.png": "/static/media/ZRX-logo.abed095f.png",
@@ -48,8 +48,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.d7a64642.js",
-    "static/js/2.1448be5e.chunk.js",
+    "static/js/2.da04ad7d.chunk.js",
     "static/css/main.1b5fa292.chunk.css",
-    "static/js/main.a0abc277.chunk.js"
+    "static/js/main.d69357f4.chunk.js"
   ]
 }
