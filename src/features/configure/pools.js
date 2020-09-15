@@ -73,6 +73,22 @@ export const pools = [
     pastPricePerFullShare: 1
   },
   {
+    id: 'busd',
+    name: 'BUSD',  
+    token: 'BUSD',
+    tokenDescription: 'BUSD',
+    tokenAddress: '0x4Fabb145d64652a948d72533023f6E7A623C7C53',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: 'iBUSD',
+    earnedTokenAddress: '0xc46d2fC00554f1f874F37e6e3E828A0AdFEFfbcB',
+    earnContractAddress: '0xc46d2fC00554f1f874F37e6e3E828A0AdFEFfbcB',
+    defaultApy: "42.63",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1
+  },
+  {
     id: 'dai',
     name: 'DAI',  
     token: 'DAI',
