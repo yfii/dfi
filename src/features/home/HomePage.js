@@ -8,9 +8,13 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogActions from "@material-ui/core/DialogActions";
 // @material-ui/icons
+import Check from "@material-ui/icons/Check";
+import Warning from "@material-ui/icons/Warning";
 import Close from "@material-ui/icons/Close";
 // core components
 import Button from "components/CustomButtons/Button.js";
+import SnackbarContent from "components/Snackbar/SnackbarContent.js";
+import Clearfix from "components/Clearfix/Clearfix.js";
 
 import style from "assets/jss/material-kit-pro-react/modalStyle.js";
 // sections for this page
@@ -37,6 +41,16 @@ export default function HomePage() {
   
   return (
     <>
+      <SnackbarContent
+        message={
+            <span onClick={() => window.open("https://www.yuque.com/sawd49/faq/umt7p5")}>
+              <b>INFO ALERT:</b> 关于机枪池存token和itoken之间关系的说明
+            </span>
+        }
+        close
+        color="warning"
+        icon={Warning}
+      />
       <SectionPools />
       <Dialog
         classes={{
