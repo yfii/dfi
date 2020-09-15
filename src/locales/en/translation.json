@@ -4,6 +4,8 @@
   "Home-ConnectWallet": "Connect your wallet to continue.",
   "Home-ConnectButton": "Connect",
   "Home-BrowserWallet": "Connect Wallet",
+  "Home-SnackBarText": "The difference between token desposited and itoken",
+  "Home-SnackBarUrl": "https://docs.yfii.finance/#/itokens",
   "Vault-Title": "Deposit to Earn",
   "Vault-Wallet": "Wallet",
   "Vault-Balance": "Balance",

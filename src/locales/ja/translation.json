@@ -4,6 +4,8 @@
   "Home-ConnectWallet": "ウォレット接続",
   "Home-ConnectButton": "接続",
   "Home-BrowserWallet": "ウォレットを接続する",
+  "Home-SnackBarText": "The difference between token desposited and itoken",
+  "Home-SnackBarUrl": "https://docs.yfii.finance/#/itokens",
   "Vault-Title": "入金して稼ぎましょう",
   "Vault-Wallet": "ウォレット",
   "Vault-Balance": "残高",

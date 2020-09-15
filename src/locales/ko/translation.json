@@ -4,6 +4,8 @@
   "Home-ConnectWallet": "계속하려면 지갑에 연결하세요.",
   "Home-ConnectButton": "연결",
   "Home-BrowserWallet": "지갑 연결",
+  "Home-SnackBarText": "The difference between token desposited and itoken",
+  "Home-SnackBarUrl": "https://docs.yfii.finance/#/itokens",
   "Vault-Title": "입금하기",
   "Vault-Wallet": "지갑",
   "Vault-Balance": "잔고",
