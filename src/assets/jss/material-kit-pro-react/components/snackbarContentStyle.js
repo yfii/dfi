@@ -27,7 +27,7 @@ const snackbarContentStyle = {
     fontSize: "14px",
     backgroundColor: "white",
     color: grayColor[15],
-    borderRadius: "0px",
+    borderRadius: "3px",
     maxWidth: "100%",
     minWidth: "auto",
     boxShadow:

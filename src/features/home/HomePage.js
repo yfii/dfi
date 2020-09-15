@@ -43,8 +43,8 @@ export default function HomePage() {
     <>
       <SnackbarContent
         message={
-            <span onClick={() => window.open("https://www.yuque.com/sawd49/faq/umt7p5")}>
-              <b>INFO ALERT:</b> 关于机枪池存token和itoken之间关系的说明
+            <span onClick={() => window.open("https://www.yuque.com/sawd49/faq/umt7p5")} style={{fontWeight: "bold"}}>
+              关于机枪池存token和itoken之间关系的说明
             </span>
         }
         close
