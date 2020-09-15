@@ -4,18 +4,13 @@ import React, { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import { renderIcon } from '@download/blockies'
 // react components for routing our app without refresh
-import { Link } from "react-router-dom";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import Popover from '@material-ui/core/Popover';
-import Typography from '@material-ui/core/Typography';
-import Icon from "@material-ui/core/Icon";
 import Avatar from '@material-ui/core/Avatar';
 // @material-ui/icons
 import TranslateIcon from '@material-ui/icons/Translate';
-import TelegramIcon from '@material-ui/icons/Telegram';
 // core components
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
 import Button from "components/CustomButtons/Button.js";
@@ -26,8 +21,7 @@ import styles from "assets/jss/material-kit-pro-react/components/headerLinksStyl
 const useStyles = makeStyles(styles);
 
 export default function HeaderLinks(props) {
-  const { dropdownHoverColor, address } = props;
-  // const { connectWallet, disconnectWallet } = action;
+  const { dropdownHoverColor, connected, address, connectWallet, disconnectWallet } = props;
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const [lng, setLanguage] = useState('en');
@@ -36,7 +30,7 @@ export default function HeaderLinks(props) {
   const canvasRef = useRef(null)
 
   useEffect(() => {
-    if(!address) return;
+    if(!connected) return;
     const canvas = canvasRef.current
     renderIcon({ seed: address.toLowerCase() }, canvas)
     const updatedDataUrl = canvas.toDataURL()
@@ -135,13 +129,9 @@ export default function HeaderLinks(props) {
           round
           type="button"
           color="primary"
-          onClick={
-              event => {
-                  event.stopPropagation();
-              }
-          }
+          onClick={connected?disconnectWallet:connectWallet}
         >
-          {address ? (
+          {connected ? (
             <>
               <canvas ref={canvasRef} style={{ display: 'none'}}/>
               <Avatar alt="address" src={dataUrl} style={{

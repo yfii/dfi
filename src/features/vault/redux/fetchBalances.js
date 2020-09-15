@@ -43,7 +43,9 @@ export function fetchBalances(data) {
             }).then(
               data => callbackInner(null, data)
             ).catch(
-              error => callbackInner(error.message || error)
+              error => {
+                return callbackInner(error.message || error)
+              }
             )
           }
         ], (error, data) => {

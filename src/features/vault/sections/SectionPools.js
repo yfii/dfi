@@ -30,7 +30,7 @@ import CustomInput from "components/CustomInput/CustomInput.js";
 // import SectionOpenedPool from "./SectionOpenedPool";
 import { useSnackbar } from 'notistack';
 //  hooks
-import { useWallet } from '../../home/redux/hooks';
+import { useConnectWallet } from '../../home/redux/hooks';
 import { useFetchBalances, useFetchPoolBalances, useFetchApproval, useFetchDeposit, useFetchWithdraw, useFetchContractApy } from '../redux/hooks';
 
 import sectionPoolsStyle from "../jss/sections/sectionPoolsStyle";
@@ -40,15 +40,15 @@ const useStyles = makeStyles(sectionPoolsStyle);
 
 export default function SectionPools() {
   const { t, i18n } = useTranslation();
-  const { web3, address } = useWallet();
+  const { web3, address } = useConnectWallet();
   let { pools, fetchPoolBalances } = useFetchPoolBalances();
   const { tokens, fetchBalances } = useFetchBalances();
   const [ openedCardList, setOpenCardList ] = useState([0]);
   const classes = useStyles();
 
   const { fetchApproval, fetchApprovalPending } = useFetchApproval();
-  const { fetchDeposit, fetchDepositPending } = useFetchDeposit();
-  const { fetchWithdraw, fetchWithdrawPending } = useFetchWithdraw();
+  const { fetchDeposit, fetchDepositEth, fetchDepositPending } = useFetchDeposit();
+  const { fetchWithdraw, fetchWithdrawEth, fetchWithdrawPending } = useFetchWithdraw();
   const { contractApy, fetchContractApy } = useFetchContractApy();
 
   const [ depositedBalance, setDepositedBalance ] = useState({});
@@ -141,18 +141,32 @@ export default function SectionPools() {
       })
     }
     let amountValue =  depositedBalance[index]? depositedBalance[index].replace(',',''): depositedBalance[index];
-    fetchDeposit({
-      address,
-      web3,
-      isAll,
-      amount: new BigNumber(amountValue).multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals)).toString(10),
-      contractAddress: pool.earnContractAddress,
-      index
-    }).then(
-      () => enqueueSnackbar(`Deposit success`, {variant: 'success'})
-    ).catch(
-      error => enqueueSnackbar(`Deposit error: ${error}`, {variant: 'error'})
-    )
+    if (!pool.tokenAddress) {// 如果是eth
+      fetchDepositEth({
+        address,
+        web3,
+        amount: new BigNumber(amountValue).multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals)).toString(10),
+        contractAddress: pool.earnContractAddress,
+        index
+      }).then(
+        () => enqueueSnackbar(`Deposit success`, {variant: 'success'})
+      ).catch(
+        error => enqueueSnackbar(`Deposit error: ${error}`, {variant: 'error'})
+      )
+    } else {
+      fetchDeposit({
+        address,
+        web3,
+        isAll,
+        amount: new BigNumber(amountValue).multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals)).toString(10),
+        contractAddress: pool.earnContractAddress,
+        index
+      }).then(
+        () => enqueueSnackbar(`Deposit success`, {variant: 'success'})
+      ).catch(
+        error => enqueueSnackbar(`Deposit error: ${error}`, {variant: 'error'})
+      )
+    }
   }
 
   const onWithdraw = (pool, index, isAll, singleDepositedBalance, event) => {
@@ -166,18 +180,34 @@ export default function SectionPools() {
       })
     }
     let amountValue =  withdrawAmount[index]? withdrawAmount[index].replace(',',''): withdrawAmount[index];
-    fetchWithdraw({
-      address,
-      web3,
-      isAll,
-      amount: new BigNumber(amountValue).multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals)).toString(10),
-      contractAddress: pool.earnContractAddress,
-      index
-    }).then(
-      () => enqueueSnackbar(`Withdraw success`, {variant: 'success'})
-    ).catch(
-      error => enqueueSnackbar(`Withdraw error: ${error}`, {variant: 'error'})
-    )
+    if (!pool.tokenAddress) {// 如果是eth
+      fetchWithdrawEth({
+        address,
+        web3,
+        isAll,
+        amount: new BigNumber(amountValue).multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals)).toString(10),
+        contractAddress: pool.earnContractAddress,
+        index
+      }).then(
+        () => enqueueSnackbar(`Withdraw success`, {variant: 'success'})
+      ).catch(
+        error => enqueueSnackbar(`Withdraw error: ${error}`, {variant: 'error'})
+      )
+    } else {
+      fetchWithdraw({
+        address,
+        web3,
+        isAll,
+        amount: new BigNumber(amountValue).multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals)).toString(10),
+        contractAddress: pool.earnContractAddress,
+        index
+      }).then(
+        () => enqueueSnackbar(`Withdraw success`, {variant: 'success'})
+      ).catch(
+        error => enqueueSnackbar(`Withdraw error: ${error}`, {variant: 'error'})
+      )
+    }
+    
   }
 
   const openCard = id => {
@@ -432,7 +462,7 @@ export default function SectionPools() {
                                             onClick={onDeposit.bind(this, pool, index, false, balanceSingle)}
                                             >{t('Vault-DepositButton')}
                                         </Button>
-                                        <Button 
+                                        {Boolean(pool.tokenAddress) && <Button 
                                             style={{
                                                 width: '180px',
                                                 margin: '12px 0',
@@ -449,7 +479,7 @@ export default function SectionPools() {
                                             }
                                             onClick={onDeposit.bind(this, pool, index, true, balanceSingle)}
                                             >{t('Vault-DepositButtonAll')}
-                                        </Button>
+                                        </Button>}
                                     </div>
                                 )
                             }
