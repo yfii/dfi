@@ -201,7 +201,7 @@ export default function FooterLinks(props) {
                 {
                     footerLinkArr.map((item)=>{
                         return (
-                            <ListItem className={classes.linkItem}>
+                            <ListItem key={item.content} className={classes.linkItem}>
                                 <a className={classes.extraContent} href={item.href} target="_blank">{item.content}</a>
                             </ListItem >
                         )
