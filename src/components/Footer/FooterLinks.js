@@ -44,6 +44,7 @@ const footerLinkArr = [
     // {content:'CoinMarketCap',href:'https://coinmarketcap.com/zh/currencies/yearn-finance-ii/'},
     // {content:'CoinGecko',href:'https://www.coingecko.com/en/coins/dfi-money'},
     {content:'Forum',href:'https://gov.dfi.money/'},
+    {content:'Stats',href:'https://stats.dfi.money/'},
     {content:'Voting',href:'https://snapshot.page/#/dfi'},
     {content:'Documentation',href:'https://docs.yfii.finance/'},
     {content:'Uniswap ETH-YFII',href:'https://app.uniswap.org/#/swap?outputCurrency=0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83'},
@@ -145,7 +146,7 @@ export default function FooterLinks(props) {
                     className={
                         classes.navLink + " " + classes.socialIconsButton
                     }
-                    href="https://github.com/yfii/vault"
+                    href="https://github.com/yfii"
                     target="_blank"
                     >
                     <i
