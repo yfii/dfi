@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState} from "react";
+import { useHistory } from 'react-router-dom';
 import { Link } from "react-router-dom";
 // nodejs library that concatenates classes
 import classNames from "classnames";
@@ -18,10 +19,13 @@ import Menu from "@material-ui/icons/Menu";
 import Close from "@material-ui/icons/Close";
 // core components
 import styles from "assets/jss/material-kit-pro-react/components/headerStyle.js";
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 
 const useStyles = makeStyles(styles);
 
 export default function Header(props) {
+  let history = useHistory();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const classes = useStyles();
   React.useEffect(() => {
@@ -57,6 +61,19 @@ export default function Header(props) {
         .classList.remove(classes[changeColorOnScroll.color]);
     }
   };
+  let defaultTabValue = '';
+  if(window.location.hash != '#/' && window.location.hash!='#/index'){
+    defaultTabValue = window.location.hash.split('/')[1];
+  }
+  const [ tabValue, setTabValue ] = useState(defaultTabValue);
+  const changeTabs = (e,newValue) => {
+    setTabValue(newValue);
+    history.push({
+        pathname: '/'+newValue,
+        state: {
+        }
+    })
+  }
   const { color, links, brand, fixed, absolute } = props;
   const appBarClasses = classNames({
     [classes.appBar]: true,
@@ -73,6 +90,10 @@ export default function Header(props) {
             {brand}
           </Link>
         </Button>
+        <Tabs value={tabValue} onChange={changeTabs}>
+            <Tab value='' label='Home' id='bar-tab-0'/>
+            <Tab value='zap' label='Zap' id='bar-tab-1'/>
+        </Tabs>
         <Hidden smDown implementation="css" className={classes.hidden}>
           <div className={classes.collapse}>{links}</div>
         </Hidden>
