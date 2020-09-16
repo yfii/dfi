@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useConnectWallet } from '../../home/redux/hooks';
-import { useFetchBalances } from '../redux/hooks';
+import { useFetchBalances, useCheckApproval } from '../redux/hooks';
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import Card from "components/Card/Card.js";
@@ -16,10 +16,12 @@ export default function ZapCommand() {
     const classes = useStyles();
     const { web3, address } = useConnectWallet();
     const { tokens, fetchBalances } = useFetchBalances();
+    const { checkApproval } = useCheckApproval();
 
     useEffect(() => {
       if (address && web3) {
-          fetchBalances();
+        checkApproval();
+        fetchBalances();
       }
     }, [address, web3, fetchBalances]);
     return (
