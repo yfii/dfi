@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useConnectWallet } from '../../home/redux/hooks';
-import { useFetchBalances, useCheckApproval } from '../redux/hooks';
+import { useFetchBalances, useCheckApproval, useFetchApproval } from '../redux/hooks';
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import Card from "components/Card/Card.js";
@@ -17,6 +17,7 @@ export default function ZapCommand() {
     const { web3, address } = useConnectWallet();
     const { tokens, fetchBalances } = useFetchBalances();
     const { checkApproval } = useCheckApproval();
+    const { fetchApproval } = useFetchApproval();
 
     useEffect(() => {
       if (address && web3) {
@@ -24,6 +25,11 @@ export default function ZapCommand() {
         fetchBalances();
       }
     }, [address, web3, fetchBalances]);
+
+    const onFetchApproval = () => {
+      fetchApproval('DAI', "yCurveZapAddress")
+    }
+
     return (
         <div className={classes.container}>
             <div className={classes.zapContainer}>
@@ -53,7 +59,6 @@ export default function ZapCommand() {
                     
                 </div>
                 <div className={classes.boxContainer}>
-
                 </div>
             </div>
         </div>

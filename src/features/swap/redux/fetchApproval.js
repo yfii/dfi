@@ -1,19 +1,16 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
-  VAULT_FETCH_APPROVAL_BEGIN,
-  VAULT_FETCH_APPROVAL_SUCCESS,
-  VAULT_FETCH_APPROVAL_FAILURE,
+  SWAP_FETCH_APPROVAL_BEGIN,
+  SWAP_FETCH_APPROVAL_SUCCESS,
+  SWAP_FETCH_APPROVAL_FAILURE,
 } from './constants';
 import { approval } from "../../web3";
 
-export function fetchApproval({ address, web3, tokenAddress, contractAddress, index }) {
-  return dispatch => {
+export function fetchApproval(token, receiveToken) {
+  return (dispatch, getState) => {
     // optionally you can have getState as the second argument
-    dispatch({
-      type: VAULT_FETCH_APPROVAL_BEGIN,
-      index
-    });
+    dispatch({ type: SWAP_FETCH_APPROVAL_BEGIN });
 
     // Return a promise so that you could control UI flow without states in the store.
     // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
@@ -23,24 +20,43 @@ export function fetchApproval({ address, web3, tokenAddress, contractAddress, in
       // doRequest is a placeholder Promise. You should replace it with your own logic.
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/vault/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
+      const { home, swap } = getState();
+      const { address, web3 } = home;
+      const { allowance } = swap;
+      const item = allowance.filter(item => { return item.name === token })[0]
+      console.log(item)
+      const tokenAddress = item.address
+      const contractAddress = item.pools.filter(item => { return item.name === receiveToken })[0].address
+      console.log(tokenAddress)
+      console.log(contractAddress)
       approval({
         web3,
         address,
         tokenAddress,
         contractAddress
       }).then(
-        data => {
+        () => {
+          const newAllowance = allowance.map(item => {
+            if (item.name === token) {
+              item.pools = item.pools.map(pool => {
+                if(pool.name === receiveToken) {
+                  pool.allowance = 79228162514
+                }
+                return pool;
+              })
+            }
+            return item
+          });
           dispatch({
-            type: VAULT_FETCH_APPROVAL_SUCCESS,
-            data: {index, allowance: data},index
+            type: SWAP_FETCH_APPROVAL_SUCCESS,
+            data: newAllowance
           })
           resolve();
         }
       ).catch(
         error => {
           dispatch({
-            type: VAULT_FETCH_APPROVAL_FAILURE,
-            index
+            type: SWAP_FETCH_APPROVAL_FAILURE,
           })
           reject(error.message || error);
         }
@@ -58,12 +74,12 @@ export function useFetchApproval() {
 
   const { fetchApprovalPending } = useSelector(
     state => ({
-      fetchApprovalPending: state.vault.fetchApprovalPending,
+      fetchApprovalPending: state.swap.fetchApprovalPending,
     }),
     shallowEqual,
   );
 
-  const boundAction = useCallback(data => dispatch(fetchApproval(data)), [dispatch]);
+  const boundAction = useCallback((token, receiveToken) => dispatch(fetchApproval(token, receiveToken)), [dispatch]);
 
   return {
     fetchApproval: boundAction,
@@ -73,37 +89,26 @@ export function useFetchApproval() {
 
 export function reducer(state, action) {
   switch (action.type) {
-    case VAULT_FETCH_APPROVAL_BEGIN:
+    case SWAP_FETCH_APPROVAL_BEGIN:
       // Just after a request is sent
       return {
         ...state,
-        fetchApprovalPending: {
-          ...state.fetchApprovalPending,
-          [action.index]: true
-        },
+        fetchApprovalPending: true,
       };
 
-    case VAULT_FETCH_APPROVAL_SUCCESS:
+    case SWAP_FETCH_APPROVAL_SUCCESS:
       // The request is success
-      const { pools } = state;
-      pools[action.index].allowance = action.data.allowance;
       return {
         ...state,
-        pools,
-        fetchApprovalPending: {
-          ...state.fetchApprovalPending,
-          [action.index]: false
-        },
+        allowance: action.data,
+        fetchApprovalPending: false
       };
 
-    case VAULT_FETCH_APPROVAL_FAILURE:
+    case SWAP_FETCH_APPROVAL_FAILURE:
       // The request is failed
       return {
         ...state,
-        fetchApprovalPending: {
-          ...state.fetchApprovalPending,
-          [action.index]: false
-        },
+        fetchApprovalPending: false
       };
 
     default:

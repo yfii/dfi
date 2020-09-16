@@ -119,9 +119,12 @@ const tokens = [
       {
         name: 'busd.curve.fi',
         type: 'zap',
-        contractAddress: yCurveZapV4Address,
-        abi: yCurveZapV4ABI,
-        call: 'depositBUSD'
+        contract: {
+          name: 'yCurveZapV4Address',
+          address: yCurveZapV4Address,
+          abi: yCurveZapV4ABI,
+          call: 'depositBUSD'
+        },
       }
     ]
   },
@@ -329,7 +332,9 @@ const tokens = [
 const initialState = {
   allowance,
   tokens,
-  fetchBalancesPending: false
+  fetchBalancesPending: false,
+  checkApprovalPending: false,
+  fetchApprovalPending: false
 };
 
 export default initialState;
