@@ -1,8 +1,14 @@
 import initialState from './initialState';
+import { reducer as checkApprovalReducer} from './checkApproval';
 import { reducer as fetchBalancesReducer } from './fetchBalances';
+import { reducer as fetchApprovalReducer } from './fetchApproval';
+import { reducer as fetchZapOrSwapReducer } from './fetchZapOrSwap';
 
 const reducers = [
-  fetchBalancesReducer
+  fetchBalancesReducer,
+  fetchApprovalReducer,
+  fetchZapOrSwapReducer,
+  checkApprovalReducer
 ];
 
 

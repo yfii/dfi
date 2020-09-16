@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import BigNumber from "bignumber.js";
 import { useConnectWallet } from '../../home/redux/hooks';
-import { useFetchBalances, useCheckApproval, useFetchApproval } from '../redux/hooks';
+import { useFetchBalances, useCheckApproval, useFetchApproval, useFetchZapOrSwap } from '../redux/hooks';
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import Card from "components/Card/Card.js";
@@ -21,8 +22,12 @@ export default function ZapCommand() {
     const classes = useStyles();
     const { web3, address } = useConnectWallet();
     const { tokens, fetchBalances } = useFetchBalances();
-    const { checkApproval } = useCheckApproval();
+    const { allowance, checkApproval } = useCheckApproval();
     const { fetchApproval } = useFetchApproval();
+    const { fetchZapOrSwap } = useFetchZapOrSwap();
+    const [ isApproval, setIsApproval ] = useState(false);
+    const [showIndex,setShowIndex] = useState(0);
+    const [ subInfo, setSubInfo] = useState({});
 
     useEffect(() => {
       if (address && web3) {
@@ -31,12 +36,28 @@ export default function ZapCommand() {
       }
     }, [address, web3, fetchBalances]);
 
+    useEffect(() => {
+      if(!Boolean(showIndex && subInfo.contract)) return;
+      const item = allowance.filter(item => { return item.name === tokens[showIndex].name })[0]
+      console.log(item)
+      const pool = item.pools.filter(item => { return item.name === subInfo.contract.name })[0]
+      setIsApproval(!Boolean(pool.allowance==0))
+    }, [tokens, showIndex, address, subInfo.contract]);
+
     const onFetchApproval = () => {
-      fetchApproval('DAI', "yCurveZapAddress")
+      console.log(Boolean(subInfo.contract)?'1':'2')
+      console.log(Boolean(tokens[showIndex].name && subInfo.contract)?'1':'2')
+      console.log(!Boolean(tokens[showIndex].name && subInfo.contract)?'1':'2')
+      console.log(subInfo)
+      fetchApproval(tokens[showIndex].name, subInfo.contract.name)
+    }
+
+    const onFetchZapOrSwap = () => {
+      fetchZapOrSwap(tokens[showIndex].name, subInfo.name, new BigNumber(sendJson.num).multipliedBy(new BigNumber(10).exponentiatedBy(tokens[showIndex].decimals)).toString(10))
     }
 
 
-    const [showIndex,setShowIndex] = useState(0);
+    
     const handleMainDropdownClick = (event) => {
         setShowIndex(event.key);
         setSendJson({'num':0,'slider':0});
@@ -60,7 +81,6 @@ export default function ZapCommand() {
         return true;
     });
 
-    const [ subInfo, setSubInfo] = useState({})
     const handleSubDropdownClick = (event) => {
         let targetInfo = tokens[showIndex].receivableList.find((item)=>{return item.name==event.key})
         if(targetInfo){
@@ -231,8 +251,9 @@ export default function ZapCommand() {
                         lineHeight: '22px',
                     }}
                     color="primary"
-                    // onClick={onApproval.bind(this, pool, index)}
-                    >
+                    onClick={isApproval?onFetchZapOrSwap:onFetchApproval}
+                    disabled={!Boolean(tokens[showIndex].name && subInfo.contract)}
+                  >
                     {buttonTxt}
                 </Button>
             </div>

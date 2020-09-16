@@ -138,16 +138,22 @@ const tokens = [
       {
         name: 'y.curve.fi',
         type: 'zap',
-        contractAddress: yCurveZapAddress,
-        abi: yCurveZapABI,
-        call: "depositDAI"
+        contract: {
+          name: 'yCurveZapAddress',
+          address: yCurveZapAddress,
+          abi: yCurveZapABI,
+          call: "depositDAI"
+        }
       },
       {
         name: 'busd.curve.fi',
         type: 'zap',
-        contractAddress: yCurveZapV4Address,
-        abi: yCurveZapV4ABI,
-        call: "depositDAI"
+        contract: {
+          name: 'yCurveZapV4Address',
+          address: yCurveZapV4Address,
+          abi: yCurveZapV4ABI,
+          call: "depositDAI"
+        }
       }
     ]
   },
@@ -161,16 +167,22 @@ const tokens = [
       {
         name: 'y.curve.fi',
         type: 'zap',
-        contractAddress: yCurveZapAddress,
-        abi: yCurveZapABI,
-        call: 'depositUSDC'
+        contract: {
+          name: 'yCurveZapAddress',
+          address: yCurveZapAddress,
+          abi: yCurveZapABI,
+          call: "depositUSDC"
+        }
       },
       {
         name: 'busd.curve.fi',
         type: 'zap',
-        contractAddress: yCurveZapV4Address,
-        abi: yCurveZapV4ABI,
-        call: 'depositUSDC'
+        contract: {
+          name: 'yCurveZapV4Address',
+          address: yCurveZapV4Address,
+          abi: yCurveZapV4ABI,
+          call: "depositUSDC"
+        }
       }
     ]
   },
@@ -184,16 +196,22 @@ const tokens = [
       {
         name: 'y.curve.fi',
         type: 'zap',
-        contractAddress: yCurveZapAddress,
-        abi: yCurveZapABI,
-        call: 'depositUSDT'
+        contract: {
+          name: 'yCurveZapAddress',
+          address: yCurveZapAddress,
+          abi: yCurveZapABI,
+          call: "depositUSDT"
+        }
       },
       {
         name: 'busd.curve.fi',
         type: 'zap',
-        contractAddress: yCurveZapV4Address,
-        abi: yCurveZapV4ABI,
-        call: 'depositUSDT'
+        contract: {
+          name: 'yCurveZapV4Address',
+          address: yCurveZapV4Address,
+          abi: yCurveZapV4ABI,
+          call: "depositUSDT"
+        }
       }
     ]
   },
@@ -207,9 +225,12 @@ const tokens = [
       {
         name: 'y.curve.fi',
         type: 'zap',
-        contractAddress: yCurveZapAddress,
-        abi: yCurveZapABI,
-        call: 'depositTUSD'
+        contract: {
+          name: 'yCurveZapAddress',
+          address: yCurveZapAddress,
+          abi: yCurveZapABI,
+          call: "depositTUSD"
+        }
       }
     ]
   },
@@ -223,9 +244,12 @@ const tokens = [
       {
         name: 'y.curve.fi',
         type: 'swap',
-        contractAddress: yCurveZapSwapAddress,
-        abi: yCurveZapSwapABI,
-        call: 'swapv1tov3'
+        contract: {
+          name: 'yCurveZapSwapAddress',
+          address: yCurveZapSwapAddress,
+          abi: yCurveZapSwapABI,
+          call: "swapv1tov3"
+        }
       }
     ]
   },
@@ -239,9 +263,12 @@ const tokens = [
       {
         name: 'y.curve.fi',
         type: 'swap',
-        contractAddress: yCurveZapSwapAddress,
-        abi: yCurveZapSwapABI,
-        call: 'swapv2tov3'
+        contract: {
+          name: 'yCurveZapSwapAddress',
+          address: yCurveZapSwapAddress,
+          abi: yCurveZapSwapABI,
+          call: "swapv2tov3"
+        }
       }
     ]
   },
@@ -255,37 +282,52 @@ const tokens = [
       {
         name: 'DAI',
         type: 'zap',
-        contractAddress: yCurveZapOutAddress,
-        abi: yCurveZapOutABI,
-        call: 'withdrawDAI'
+        contract: {
+          name: 'yCurveZapOutAddress',
+          address: yCurveZapOutAddress,
+          abi: yCurveZapOutABI,
+          call: "withdrawDAI"
+        }
       },
       {
         name: 'USDC',
         type: 'zap',
-        contractAddress: yCurveZapOutAddress,
-        abi: yCurveZapOutABI,
-        call: 'withdrawUSDC'
+        contract: {
+          name: 'yCurveZapOutAddress',
+          address: yCurveZapOutAddress,
+          abi: yCurveZapOutABI,
+          call: "withdrawUSDC"
+        }
       },
       {
         name: 'USDT',
         type: 'zap',
-        contractAddress: yCurveZapOutAddress,
-        abi: yCurveZapOutABI,
-        call: 'withdrawUSDT'
+        contract: {
+          name: 'yCurveZapOutAddress',
+          address: yCurveZapOutAddress,
+          abi: yCurveZapOutABI,
+          call: "withdrawUSDT"
+        }
       },
       {
         name: 'TUSD',
         type: 'zap',
-        contractAddress: yCurveZapOutAddress,
-        abi: yCurveZapOutABI,
-        call: 'withdrawTUSD'
+        contract: {
+          name: 'yCurveZapOutAddress',
+          address: yCurveZapOutAddress,
+          abi: yCurveZapOutABI,
+          call: "withdrawTUSD"
+        }
       },
       {
         name: 'busd.curve.fi',
         type: 'swap',
-        contractAddress: yCurveZapSwapV4Address,
-        abi: yCurveZapSwapV4ABI,
-        call: 'swapv3tov4',
+        contract: {
+          name: 'yCurveZapSwapV4Address',
+          address: yCurveZapSwapV4Address,
+          abi: yCurveZapSwapV4ABI,
+          call: "swapv3tov4"
+        },
         needTUSD: true
       }
     ]
@@ -300,30 +342,42 @@ const tokens = [
       {
         name: 'BUSD',
         type: 'zap',
-        contractAddress: yCurveZapOutV4Address,
-        abi: yCurveZapOutV4ABI,
-        call: 'withdrawBUSD'
+        contract: {
+          name: 'yCurveZapOutV4Address',
+          address: yCurveZapOutV4Address,
+          abi: yCurveZapOutV4ABI,
+          call: "withdrawBUSD"
+        }
       },
       {
         name: 'DAI',
         type: 'zap',
-        contractAddress: yCurveZapOutV4Address,
-        abi: yCurveZapOutV4ABI,
-        call: 'withdrawDAI'
+        contract: {
+          name: 'yCurveZapOutV4Address',
+          address: yCurveZapOutV4Address,
+          abi: yCurveZapOutV4ABI,
+          call: "withdrawDAI"
+        }
       },
       {
         name: 'USDC',
         type: 'zap',
-        contractAddress: yCurveZapOutV4Address,
-        abi: yCurveZapOutV4ABI,
-        call: 'withdrawUSDC'
+        contract: {
+          name: 'yCurveZapOutV4Address',
+          address: yCurveZapOutV4Address,
+          abi: yCurveZapOutV4ABI,
+          call: "withdrawUSDC"
+        }
       },
       {
         name: 'USDT',
         type: 'zap',
-        contractAddress: yCurveZapOutV4Address,
-        abi: yCurveZapOutV4ABI,
-        call: 'withdrawUSDT'
+        contract: {
+          name: 'yCurveZapOutV4Address',
+          address: yCurveZapOutV4Address,
+          abi: yCurveZapOutV4ABI,
+          call: "withdrawUSDT"
+        }
       }
     ]
   }
@@ -334,7 +388,8 @@ const initialState = {
   tokens,
   fetchBalancesPending: false,
   checkApprovalPending: false,
-  fetchApprovalPending: false
+  fetchApprovalPending: false,
+  fetchZapOrSwapPending: false
 };
 
 export default initialState;

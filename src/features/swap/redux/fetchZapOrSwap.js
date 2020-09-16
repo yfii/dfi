@@ -1,16 +1,16 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
-  SWAP_FETCH_APPROVAL_BEGIN,
-  SWAP_FETCH_APPROVAL_SUCCESS,
-  SWAP_FETCH_APPROVAL_FAILURE,
+  SWAP_FETCH_ZAP_OR_SWAP_BEGIN,
+  SWAP_FETCH_ZAP_OR_SWAP_SUCCESS,
+  SWAP_FETCH_ZAP_OR_SWAP_FAILURE,
 } from './constants';
-import { approval } from "../../web3";
+import { zapOrSwap } from "../../web3";
 
-export function fetchApproval(token, contract) {
+export function fetchZapOrSwap(token, receiveToken, amount) {
   return (dispatch, getState) => {
     // optionally you can have getState as the second argument
-    dispatch({ type: SWAP_FETCH_APPROVAL_BEGIN });
+    dispatch({ type: SWAP_FETCH_ZAP_OR_SWAP_BEGIN });
 
     // Return a promise so that you could control UI flow without states in the store.
     // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
@@ -22,41 +22,29 @@ export function fetchApproval(token, contract) {
       // args.error here is only for test coverage purpose.
       const { home, swap } = getState();
       const { address, web3 } = home;
-      const { allowance } = swap;
-      const item = allowance.filter(item => { return item.name === token })[0]
+      const { tokens } = swap;
+      const item = tokens.filter(item => { return item.name === token })[0]
       console.log(item)
-      const tokenAddress = item.address
-      const contractAddress = item.pools.filter(item => { return item.name === contract })[0].address
-      console.log(tokenAddress)
+      const { abi, address: contractAddress, call} = item.pools.filter(item => { return item.name === receiveToken })[0].contract
+
       console.log(contractAddress)
-      approval({
+
+      const contract = new web3.eth.Contract(abi, contractAddress);
+      zapOrSwap({
         web3,
         address,
-        tokenAddress,
-        contractAddress
+        contract,
+        call,
+        amount
       }).then(
         () => {
-          const newAllowance = allowance.map(item => {
-            if (item.name === token) {
-              item.pools = item.pools.map(pool => {
-                if(pool.name === contract) {
-                  pool.allowance = 79228162514
-                }
-                return pool;
-              })
-            }
-            return item
-          });
-          dispatch({
-            type: SWAP_FETCH_APPROVAL_SUCCESS,
-            data: newAllowance
-          })
+          dispatch({ type: SWAP_FETCH_ZAP_OR_SWAP_SUCCESS })
           resolve();
         }
       ).catch(
         error => {
           dispatch({
-            type: SWAP_FETCH_APPROVAL_FAILURE,
+            type: SWAP_FETCH_ZAP_OR_SWAP_FAILURE,
           })
           reject(error.message || error);
         }
@@ -67,48 +55,47 @@ export function fetchApproval(token, contract) {
   };
 }
 
-export function useFetchApproval() {
+export function useFetchZapOrSwap() {
   // args: false value or array
   // if array, means args passed to the action creator
   const dispatch = useDispatch();
 
-  const { fetchApprovalPending } = useSelector(
+  const { fetchZapOrSwapPending } = useSelector(
     state => ({
-      fetchApprovalPending: state.swap.fetchApprovalPending,
+      fetchZapOrSwapPending: state.swap.fetchZapOrSwapPending,
     }),
     shallowEqual,
   );
 
-  const boundAction = useCallback((token, contract) => dispatch(fetchApproval(token, contract)), [dispatch]);
+  const boundAction = useCallback((token, receiveToken, amount) => dispatch(fetchZapOrSwap(token, receiveToken, amount)), [dispatch]);
 
   return {
-    fetchApproval: boundAction,
-    fetchApprovalPending,
+    fetchZapOrSwap: boundAction,
+    fetchZapOrSwapPending,
   };
 }
 
 export function reducer(state, action) {
   switch (action.type) {
-    case SWAP_FETCH_APPROVAL_BEGIN:
+    case SWAP_FETCH_ZAP_OR_SWAP_BEGIN:
       // Just after a request is sent
       return {
         ...state,
-        fetchApprovalPending: true,
+        fetchZapOrSwapPending: true,
       };
 
-    case SWAP_FETCH_APPROVAL_SUCCESS:
+    case SWAP_FETCH_ZAP_OR_SWAP_SUCCESS:
       // The request is success
       return {
         ...state,
-        allowance: action.data,
-        fetchApprovalPending: false
+        fetchZapOrSwapPending: false
       };
 
-    case SWAP_FETCH_APPROVAL_FAILURE:
+    case SWAP_FETCH_ZAP_OR_SWAP_FAILURE:
       // The request is failed
       return {
         ...state,
-        fetchApprovalPending: false
+        fetchZapOrSwapPending: false
       };
 
     default:
