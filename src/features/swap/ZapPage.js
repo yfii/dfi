@@ -7,8 +7,6 @@ export default function ZapPage() {
       document.body.scrollTop = 0;
     }, []);
     return (
-      <>
         <ZapCommand />
-      </>
     );
   }

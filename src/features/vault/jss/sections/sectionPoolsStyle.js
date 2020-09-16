@@ -199,17 +199,7 @@ const sectionPoolsStyle = theme => ({
     },
     drawSliderMarkLabel:{
         color:'#635AFF',
-        
     },
-    depositedBalanceSliderRail:{
-        opacity:'1',
-        color:'#353848',
-    },
-    depositedBalanceSliderMark:{
-        height:'0',
-        
-    },
-
     showDetailLeft:{
         float: 'left',
         margin: '16px 24px',
