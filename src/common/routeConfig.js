@@ -4,6 +4,7 @@ import homeRoute from '../features/home/route';
 import vaultRoute from '../features/vault/route';
 // import stakeRoute from '../features/stake/route';
 import commonRoute from '../features/common/route';
+import ZapPage from '../features/swap/route';
 import _ from 'lodash';
 
 // NOTE: DO NOT CHANGE the 'childRoutes' name and the declaration pattern.
@@ -13,6 +14,7 @@ const childRoutes = [
   vaultRoute,
   // stakeRoute,
   commonRoute,
+  ZapPage,
 ];
 
 const routes = [{
