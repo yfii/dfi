@@ -211,6 +211,12 @@ const headerStyle = theme => ({
     right: "8px",
     top: "9px",
     zIndex: "1"
+  },
+  tabs:{
+    width:'60xh',
+    display:'flex',
+    justifyContent:'space-between',
+    overflow:'visible',
   }
 });
 
