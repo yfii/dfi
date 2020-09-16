@@ -2,6 +2,7 @@
 import React, { useState, useEffect, createContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import BigNumber from "bignumber.js";
+import {byDecimals,calculateReallyNum} from 'components/utils';
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import InputAdornment from "@material-ui/core/InputAdornment";
@@ -56,13 +57,6 @@ export default function SectionPools() {
 
   const { enqueueSnackbar } = useSnackbar();
 
-  const calculateReallyNum = (total,sliderNum) => {
-    if(sliderNum == undefined){
-       return byDecimals(0, 0).toFormat(4);
-    }
-    return byDecimals(sliderNum/100*Number(total), 0).toFormat(4);
-  }
-  
   const changeDetailInputValue = (type,index,total,tokenDecimals,event) => {
     let value = event.target.value;
     let reg = /[a-z]/i;
@@ -110,11 +104,6 @@ export default function SectionPools() {
       [`slider-${index}`]: sliderNum == 0 ? 0: sliderNum,
     });
   };
-
-  const byDecimals = (number, tokenDecimals = 18) => {
-    const decimals = new BigNumber(10).exponentiatedBy(tokenDecimals);
-    return new BigNumber(number).dividedBy(decimals);
-  }
 
   const onApproval = (pool, index, event) => {
     event.stopPropagation();
@@ -258,7 +247,7 @@ export default function SectionPools() {
     alignContent: "space-around",
   }
 
-  
+    console.warn('~~~~~~byDecimals~~~~~~',byDecimals);  
 
   return (
     <GridContainer justify="center">

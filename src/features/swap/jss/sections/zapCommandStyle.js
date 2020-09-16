@@ -53,17 +53,33 @@ const zapCommandStyle = theme => ({
     boxHeaderMain:{
         fontSize: '18px',
         lineHeight: '18px',
+        fontWeight: "550",
     },
     boxHeaderSub:{
         fontSize: '12px',
         textAlign: 'right',
         lineHeight: '18px',
+        fontWeight: "400",
     },
     boxContainerInside:{
         borderRadius: '12px',
         background: '#635AFF',
         borderRadius: '24px',
     },
+    endAdornment:{
+        display:'flex',
+    },
+    memuStyle:{
+        display:'flex',
+        alignItems:'center',
+    },
+    marginRight:{
+        marginRight:'4px',
+    },
+    navLink:{
+        padding:'0',
+        paddingLeft:'4px',
+    }
 })
 
 export default zapCommandStyle;
