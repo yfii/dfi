@@ -43,7 +43,7 @@ const footerLinkArr = [
     {content:'Token Contract',href:'https://etherscan.io/address/0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83'},
     // {content:'CoinMarketCap',href:'https://coinmarketcap.com/zh/currencies/yearn-finance-ii/'},
     // {content:'CoinGecko',href:'https://www.coingecko.com/en/coins/dfi-money'},
-    {content:'Forum',href:'https://gov.yfii.finance/'},
+    {content:'Forum',href:'https://gov.dfi.money/'},
     {content:'Voting',href:'https://snapshot.page/#/dfi'},
     {content:'Documentation',href:'https://docs.yfii.finance/'},
     {content:'Uniswap ETH-YFII',href:'https://app.uniswap.org/#/swap?outputCurrency=0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83'},
