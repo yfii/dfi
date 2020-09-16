@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import BigNumber from "bignumber.js";
+import { useTranslation } from 'react-i18next';
 import { useConnectWallet } from '../../home/redux/hooks';
 import { useFetchBalances, useCheckApproval, useFetchApproval, useFetchZapOrSwap } from '../redux/hooks';
 import GridContainer from "components/Grid/GridContainer.js";
@@ -20,6 +21,7 @@ const useStyles = makeStyles(zapCommandStyle);
 
 export default function ZapCommand() {
     const classes = useStyles();
+    const { t, i18n } = useTranslation();
     const { web3, address } = useConnectWallet();
     const { tokens, fetchBalances } = useFetchBalances();
     const { allowance, checkApproval } = useCheckApproval();
@@ -158,12 +160,12 @@ export default function ZapCommand() {
     return (
         <div className={classes.container}>
             <div className={classes.zapContainer}>
-                <div className={classes.mainTitle}>Zap</div>
-                <h3 className={classes.secondTitle}>Exchange your assets</h3>
+                <div className={classes.mainTitle}>{t('Swap-Header')}</div>
+                <h3 className={classes.secondTitle}>{t('Swap-Title')}</h3>
                 <div className={classes.boxContainer}>
                     <div className={classes.boxHeader}>
-                        <div className={classes.boxHeaderMain}>Send</div>
-                        <div className={classes.boxHeaderSub}>Balance: {balanceTotal.toFormat(tokens[showIndex].decimals)} {tokens[showIndex].name}</div>
+                        <div className={classes.boxHeaderMain}>{t('Swap-Send')}</div>
+                        <div className={classes.boxHeaderSub}>{`${t('Swap-Balance')}: ${balanceTotal.toFormat(tokens[showIndex].decimals)} ${tokens[showIndex].name}`}</div>
                     </div>
                     <FormControl fullWidth variant="outlined">
                         <CustomOutlinedInput 
@@ -207,7 +209,7 @@ export default function ZapCommand() {
                 </div>
                 <div className={classes.boxContainer}>
                     <div className={classes.boxHeader}>
-                        <div className={classes.boxHeaderMain}>Receive</div>
+                        <div className={classes.boxHeaderMain}>{t('Swap-Receive')}</div>
                         {/* <div className={classes.boxHeaderSub}>Current Price: 1 ETH = 339.5905 USDT</div> */}
                     </div>
                     <FormControl fullWidth variant="outlined">
