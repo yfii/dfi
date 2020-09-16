@@ -12,10 +12,9 @@ import AccordionSummary from '@material-ui/core/AccordionSummary'
 import AccordionDetails from '@material-ui/core/AccordionActions'
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import IconButton from '@material-ui/core/IconButton';
-import Slider from '@material-ui/core/Slider';
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
+import CustomOutlinedInput from 'components/CustomOutlinedInput/CustomOutlinedInput';
 import Hidden from '@material-ui/core/Hidden';
 import {primaryColor} from "assets/jss/material-kit-pro-react.js";
 // core components
@@ -32,6 +31,7 @@ import { useSnackbar } from 'notistack';
 //  hooks
 import { useConnectWallet } from '../../home/redux/hooks';
 import { useFetchBalances, useFetchPoolBalances, useFetchApproval, useFetchDeposit, useFetchWithdraw, useFetchContractApy } from '../redux/hooks';
+import CustomSlider from 'components/CustomSlider/CustomSlider';
 
 import sectionPoolsStyle from "../jss/sections/sectionPoolsStyle";
 import { reflect } from 'async';
@@ -258,33 +258,7 @@ export default function SectionPools() {
     alignContent: "space-around",
   }
 
-  //滑块
-  const marks = [
-    {
-        value: 0,
-        label: '0%',
-      },
-      {
-        value: 25,
-        label: '25%',
-      },
-      {
-        value: 50,
-        label: '50%',
-      },
-      {
-        value: 75,
-        label: '75%',
-      },
-      {
-        value: 100,
-        label: '100%',
-      },
-  ];
- 
-  const valuetext = (value) => {
-    return `${value}°C`;
-  }
+  
 
   return (
     <GridContainer justify="center">
@@ -398,29 +372,18 @@ export default function SectionPools() {
                           {t('Vault-Balance')}:{balanceSingle.toFormat(4)} { pool.token }
                     </div>
                     <FormControl fullWidth variant="outlined">
-                        <OutlinedInput 
-                            classes={{
-                                root: classes.showDetail
-                            }} 
+                        <CustomOutlinedInput 
                             value={depositedBalance[index]!=undefined ? depositedBalance[index] :'0'}
-                            variant="outlined"
                             onChange={changeDetailInputValue.bind(this,'depositedBalance',index,balanceSingle.toNumber(),pool.tokenDecimals)}
-                            fullWidth 
                             />
                     </FormControl>
-                    <Slider 
+                    <CustomSlider 
                       classes={{
                         root: classes.depositedBalanceSliderRoot,
                         markLabel: classes.depositedBalanceSliderMarkLabel,
-                        rail:classes.depositedBalanceSliderRail,
-                        mark:classes.depositedBalanceSliderMark,
                       }}
                       aria-labelledby="continuous-slider" 
-                      defaultValue={0}
                       value={depositedBalance['slider-'+index]?depositedBalance['slider-'+index]:0}
-                      getAriaValueText={valuetext}
-                      valueLabelDisplay="auto"
-                      marks={marks}
                       onChange={handleDepositedBalance.bind(this,index,balanceSingle.toNumber())}
                     />
                     
@@ -491,29 +454,18 @@ export default function SectionPools() {
                                 {singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)).toFormat(4)} { pool.token } ({singleDepositedBalance.toFormat(4)} { pool.earnedToken })
                             </div>
                         <FormControl fullWidth variant="outlined">
-                            <OutlinedInput 
-                                classes={{
-                                    root: classes.showDetail
-                                }} 
+                            <CustomOutlinedInput 
                                 value={withdrawAmount[index]!=undefined ? withdrawAmount[index] : '0'}
                                 onChange={changeDetailInputValue.bind(this,'withdrawAmount',index,singleDepositedBalance.toNumber(),pool.tokenDecimals)}
-                                variant="outlined"
-                                fullWidth 
                                 />
                         </FormControl>
-                        <Slider 
+                        <CustomSlider 
                             classes={{
                                 root: classes.drawSliderRoot,
                                 markLabel: classes.drawSliderMarkLabel,
-                                rail:classes.depositedBalanceSliderRail,
-                                mark:classes.depositedBalanceSliderMark,
                             }}
                             aria-labelledby="continuous-slider" 
-                            defaultValue={0}
                             value={withdrawAmount['slider-'+index]?withdrawAmount['slider-'+index]:0}
-                            getAriaValueText={valuetext}
-                            valueLabelDisplay="auto"
-                            marks={marks}
                             onChange={handleWithdrawAmount.bind(this,index,singleDepositedBalance.toNumber())}
                             />
                         <div className={classes.showDetailButtonCon}>
