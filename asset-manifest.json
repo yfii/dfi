@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.1b5fa292.chunk.css",
-    "main.js": "/static/js/main.d69357f4.chunk.js",
-    "main.js.map": "/static/js/main.d69357f4.chunk.js.map",
+    "main.js": "/static/js/main.8499fc35.chunk.js",
+    "main.js.map": "/static/js/main.8499fc35.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d7a64642.js",
     "runtime-main.js.map": "/static/js/runtime-main.d7a64642.js.map",
-    "static/js/2.da04ad7d.chunk.js": "/static/js/2.da04ad7d.chunk.js",
-    "static/js/2.da04ad7d.chunk.js.map": "/static/js/2.da04ad7d.chunk.js.map",
+    "static/js/2.dd7ff04e.chunk.js": "/static/js/2.dd7ff04e.chunk.js",
+    "static/js/2.dd7ff04e.chunk.js.map": "/static/js/2.dd7ff04e.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.8d31a5d2bb4ba0676f4ddef76a9cd816.js": "/precache-manifest.8d31a5d2bb4ba0676f4ddef76a9cd816.js",
+    "precache-manifest.c155d3cf445abce37d6dea27b0926889.js": "/precache-manifest.c155d3cf445abce37d6dea27b0926889.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.1b5fa292.chunk.css.map": "/static/css/main.1b5fa292.chunk.css.map",
-    "static/js/2.da04ad7d.chunk.js.LICENSE.txt": "/static/js/2.da04ad7d.chunk.js.LICENSE.txt",
+    "static/js/2.dd7ff04e.chunk.js.LICENSE.txt": "/static/js/2.dd7ff04e.chunk.js.LICENSE.txt",
     "static/media/BAT-logo.png": "/static/media/BAT-logo.a36574cc.png",
     "static/media/BUSD-logo.png": "/static/media/BUSD-logo.d569caee.png",
     "static/media/COMP-logo.png": "/static/media/COMP-logo.79b64ccb.png",
@@ -19,6 +19,7 @@
     "static/media/DAI-logo.png": "/static/media/DAI-logo.219c580c.png",
     "static/media/ETH-logo.png": "/static/media/ETH-logo.cd146973.png",
     "static/media/FTM-logo.png": "/static/media/FTM-logo.60cf5ef1.png",
+    "static/media/HBTC-logo.png": "/static/media/HBTC-logo.d1803089.png",
     "static/media/KNC-logo.png": "/static/media/KNC-logo.5f543a25.png",
     "static/media/LEND-logo.png": "/static/media/LEND-logo.56615ab4.png",
     "static/media/LINK-logo.png": "/static/media/LINK-logo.c9298753.png",
@@ -48,8 +49,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.d7a64642.js",
-    "static/js/2.da04ad7d.chunk.js",
+    "static/js/2.dd7ff04e.chunk.js",
     "static/css/main.1b5fa292.chunk.css",
-    "static/js/main.d69357f4.chunk.js"
+    "static/js/main.8499fc35.chunk.js"
   ]
 }
