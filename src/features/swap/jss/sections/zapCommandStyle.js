@@ -73,8 +73,36 @@ const zapCommandStyle = theme => ({
         display:'flex',
         alignItems:'center',
     },
+    subMemuStyle:{
+        display:'flex',
+        justifyContent:'flex-start',
+        alignItems:'center',
+    },
+    papperNav:{
+        width:'100%',
+    },
     marginRight:{
         marginRight:'4px',
+    },
+    receiveStyle:{
+        display:'flex',
+        justifyContent:'space-between',
+        width:'100%',
+        height: '56px',
+        background: '#353848',
+        borderRadius: '12px',
+        fontWeight: '600',
+        fontSize: '18px',
+        color: '#FFFFFF',
+        lineHeight: '24px',
+        fontWeight: '600',
+        boxShadow:'0 2px 2px 0 #353848',
+        textAlign:'right',
+        padding:'18.5px 18px',
+        '&:hover,&:focus':{
+            background: '#353848',
+            boxShadow:'0 2px 2px 0 #353848',
+        }
     },
     navLink:{
         paddingLeft:'4px',
