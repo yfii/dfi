@@ -2,7 +2,7 @@
 import React, { useState, useEffect, createContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import BigNumber from "bignumber.js";
-import {byDecimals,calculateReallyNum} from 'components/utils';
+import {byDecimals,calculateReallyNum} from 'features/helpers/bignumber';
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import InputAdornment from "@material-ui/core/InputAdornment";
