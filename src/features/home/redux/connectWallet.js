@@ -59,15 +59,16 @@ export function connectWallet(web3Modal) {
 
 export function useConnectWallet() {
   const dispatch = useDispatch();
-  const {web3, address, connected, connectWalletPending} = useSelector(state => ({
+  const {web3, address, networkId, connected, connectWalletPending} = useSelector(state => ({
     web3:state.home.web3,
     address:state.home.address,
+    networkId: state.home.networkId,
     connected: state.home.connected,
     connectWalletPending:state.home.connectWalletPending,
   }), shallowEqual);
   const boundAction = useCallback(data => dispatch(connectWallet(data)), [dispatch]);
 
-  return { web3, address,connected,connectWalletPending, connectWallet: boundAction };
+  return { web3, address, networkId, connected,connectWalletPending, connectWallet: boundAction };
 }
 
 export function reducer(state, action) {
