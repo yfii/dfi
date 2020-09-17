@@ -19,7 +19,6 @@ const zapCommandStyle = theme => ({
     },
     zapContainer:{
         width:'588px',
-        height:'602px',
         backgroundColor:'#2C3040',
         borderRadius:'24px',
         padding:'24px',
@@ -44,6 +43,7 @@ const zapCommandStyle = theme => ({
         padding:'15px',
         border: '1px solid #353848',
         borderRadius: '16px',
+        marginBottom:'24px',
     },
     boxHeader:{
         display:'flex',
@@ -77,8 +77,39 @@ const zapCommandStyle = theme => ({
         marginRight:'4px',
     },
     navLink:{
-        padding:'0',
         paddingLeft:'4px',
+        paddingRight:'4px',
+    },
+    avatar:{
+        width:'24px',
+        height:'24px',
+        lineHeight:'48px',
+    },
+    avatarFont:{
+        ...secondStyle,
+        opacity: '1',
+        fontSize: '16px',
+        textAlign: 'center',
+        lineHeight: '16px',
+    },
+    maxButtonBox:{
+        display:'flex',
+        alignItems:'center',
+    },
+    maxButton:{
+        ...secondStyle,
+        opacity: '1',
+        width:'48px',
+        height:'24px',
+        backgroundColor: '#635AFF',
+        borderRadius: '24px',
+        fontSize: '12px',
+        lineHeight: '12px',
+        padding:'12px 24px',
+        marginRight:'8px',
+        "&:hover,&:focus": {
+            backgroundColor: "#635AFF",
+        }
     }
 })
 

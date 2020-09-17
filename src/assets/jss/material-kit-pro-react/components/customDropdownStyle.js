@@ -81,6 +81,12 @@ const customDropdownStyle = theme => ({
     backgroundColor: whiteColor,
     backgroundClip: "padding-box"
   },
+  darkModalGround:{
+    backgroundColor:'#2C3040',
+  },
+  darkModalFont:{
+    color:'#fff !important',
+  },
   menuList: {
     padding: "0"
   },

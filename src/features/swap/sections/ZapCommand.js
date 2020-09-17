@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import BigNumber from "bignumber.js";
+import classNames from "classnames";
 import { useTranslation } from 'react-i18next';
 import { useConnectWallet } from '../../home/redux/hooks';
 import { useFetchBalances, useCheckApproval, useFetchApproval, useFetchZapOrSwap } from '../redux/hooks';
@@ -14,7 +15,7 @@ import CustomButtons from "components/CustomButtons/Button.js";
 import Button from '@material-ui/core/Button';
 import zapCommandStyle from "../jss/sections/zapCommandStyle";
 import Avatar from '@material-ui/core/Avatar';
-import {byDecimals,calculateReallyNum} from 'components/utils';
+import {byDecimals,calculateReallyNum} from 'features/helpers/bignumber';
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
 
 const useStyles = makeStyles(zapCommandStyle);
@@ -57,13 +58,11 @@ export default function ZapCommand() {
     const onFetchZapOrSwap = () => {
       fetchZapOrSwap(tokens[showIndex].name, subInfo.name, new BigNumber(sendJson.num).multipliedBy(new BigNumber(10).exponentiatedBy(tokens[showIndex].decimals)).toString(10))
     }
-
-
     
     const handleMainDropdownClick = (event) => {
         setShowIndex(event.key);
         setSendJson({'num':0,'slider':0});
-        receiveJson({'num':0});
+        setReceiveJson({'num':0});
         if(!tokens[event.key].receivableList.find((item)=>{return item.name==subInfo.name})){
             setSubInfo({});
         }
@@ -75,9 +74,12 @@ export default function ZapCommand() {
                 <Avatar 
                     alt={item.name}
                     src={require(`../../../images/${item.name}-logo.png`)}
-                    className={classes.marginRight}
+                    className={classNames({
+                        [classes.marginRight]:true,
+                        [classes.avatar]:true,
+                    })}
                     />
-                {item.name}
+                <span className={classes.avatarFont}>{item.name}</span>
             </div>
         );
         return true;
@@ -98,9 +100,12 @@ export default function ZapCommand() {
                 <Avatar 
                     alt={item.name}
                     src={require(`../../../images/${item.name}-logo.png`)}
-                    className={classes.marginRight}
+                    className={classNames({
+                        [classes.marginRight]:true,
+                        [classes.avatar]:true,
+                    })}
                     />
-                {item.name}
+                <span className={classes.avatarFont}>{item.name}</span>
                 {
                     item.needTUSD && (
                         <div className={classes.memuStyle}>
@@ -108,9 +113,12 @@ export default function ZapCommand() {
                             <Avatar 
                                 alt='TUSD'
                                 src={require(`../../../images/TUSD-logo.png`)}
-                                className={classes.marginRight}
+                                className={classNames({
+                                    [classes.marginRight]:true,
+                                    [classes.avatar]:true,
+                                })}
                                 />
-                            TUSD
+                            <span className={classes.avatarFont}>TUSD</span>
                         </div>
                     )
                 }
@@ -173,23 +181,36 @@ export default function ZapCommand() {
                             onChange={changeMainInput.bind(this,balanceTotal.toNumber(),tokens[showIndex].decimals)}
                             endAdornment={
                                 <div className={classes.endAdornment}>
-                                    <CustomButtons>MAX</CustomButtons>
+                                    <div className={classes.maxButtonBox}>
+                                        <CustomButtons
+                                            onClick={()=>{
+                                                setSendJson({'num':balanceTotal.toFormat(tokens[showIndex].decimals),'slider':100})
+                                            }}
+                                            className={classes.maxButton}>
+                                            {t('Swap-Max')}
+                                        </CustomButtons>
+                                    </div>
                                     <CustomDropdown
                                         navDropdown
                                         hoverColor='primary'
+                                        darkModal
                                         buttonText={
                                             <div className={classes.memuStyle}>
                                                 <Avatar 
                                                     alt={tokens[showIndex].name}
                                                     src={require(`../../../images/${tokens[showIndex].name}-logo.png`)}
-                                                    className={classes.marginRight}
+                                                    className={classNames({
+                                                        [classes.marginRight]:true,
+                                                        [classes.avatar]:true,
+                                                    })}
                                                     />
-                                                {tokens[showIndex].name}
+                                                <span className={classes.avatarFont}>{tokens[showIndex].name}</span>
                                             </div>
                                         }
                                         buttonProps={{
                                             className: classes.navLink,
                                             color: "transparent",
+
                                         }}
                                         onClick={handleMainDropdownClick}
                                         dropdownList={mainDropdownList}
@@ -205,7 +226,6 @@ export default function ZapCommand() {
                             onChange={changeSliderVal.bind(this,balanceTotal.toNumber())}
                             />
                     </GridItem>
-                    
                 </div>
                 <div className={classes.boxContainer}>
                     <div className={classes.boxHeader}>
@@ -220,6 +240,7 @@ export default function ZapCommand() {
                                 <CustomDropdown
                                     navDropdown
                                     hoverColor='primary'
+                                    darkModal
                                     buttonText={
                                         subInfo.name && tokens[showIndex].receivableList.find((item)=>{return item.name==subInfo.name}) ? 
                                         singleSubDropDownNode(subInfo)
@@ -251,6 +272,7 @@ export default function ZapCommand() {
                         letterSpacing: '0',
                         textAlign: 'center',
                         lineHeight: '22px',
+                        marginTop:'12px',
                     }}
                     color="primary"
                     onClick={isApproval?onFetchZapOrSwap:onFetchApproval}
