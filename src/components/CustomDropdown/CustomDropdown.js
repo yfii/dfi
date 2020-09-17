@@ -56,7 +56,8 @@ export default function CustomDropdown(props) {
     noLiPadding,
     innerDropDown,
     navDropdown,
-    darkModal
+    darkModal,
+    popperClassName,
   } = props;
   const classes = useStyles();
   const caretClasses = classNames({
@@ -73,7 +74,7 @@ export default function CustomDropdown(props) {
     [classes.darkModalFont]:Boolean(darkModal),
   });
   const dropDownMenu = (
-    <MenuList role="menu" className={classes.menuList}>
+    <MenuList role="menu" style={{width:'100%'}} className={classes.menuList}>
       {dropdownHeader !== undefined ? (
         <MenuItem
           onClick={() => handleCloseMenu(dropdownHeader)}
@@ -143,7 +144,8 @@ export default function CustomDropdown(props) {
         className={classNames({
           [classes.popperClose]: !anchorEl,
           [classes.pooperResponsive]: true,
-          [classes.pooperNav]: Boolean(anchorEl) && navDropdown
+          [classes.pooperNav]: Boolean(anchorEl) && navDropdown,
+          [popperClassName]: popperClassName,
         })}
       >
         {() => (
@@ -222,4 +224,5 @@ CustomDropdown.propTypes = {
   // This is a function that returns the clicked menu item
   onClick: PropTypes.func,
   darkModal:PropTypes.bool,
+  popperClassName: PropTypes.string
 };

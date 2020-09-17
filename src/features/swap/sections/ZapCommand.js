@@ -62,7 +62,6 @@ export default function ZapCommand() {
     const handleMainDropdownClick = (event) => {
         setShowIndex(event.key);
         setSendJson({'num':0,'slider':0});
-        setReceiveJson({'num':0});
         if(!tokens[event.key].receivableList.find((item)=>{return item.name==subInfo.name})){
             setSubInfo({});
         }
@@ -96,7 +95,7 @@ export default function ZapCommand() {
 
     const singleSubDropDownNode = (item) => {
         return (
-            <div className={classes.memuStyle} key={item.name}>
+            <div className={classes.subMemuStyle} key={item.name}>
                 <Avatar 
                     alt={item.name}
                     src={require(`../../../images/${item.name}-logo.png`)}
@@ -108,7 +107,7 @@ export default function ZapCommand() {
                 <span className={classes.avatarFont}>{item.name}</span>
                 {
                     item.needTUSD && (
-                        <div className={classes.memuStyle}>
+                        <div className={classes.subMemuStyle}>
                             <span style={{margin:'0 8px'}}>+</span>
                             <Avatar 
                                 alt='TUSD'
@@ -131,7 +130,6 @@ export default function ZapCommand() {
     })
 
     const [sendJson,setSendJson] = useState({'num':0,'slider':0});
-    const [receiveJson,setReceiveJson] = useState({'num':0});
     const changeMainInput = (total,tokenDecimals,event)=>{
         event.stopPropagation();
         let value = event.target.value;
@@ -232,28 +230,21 @@ export default function ZapCommand() {
                         {/* <div className={classes.boxHeaderSub}>Current Price: 1 ETH = 339.5905 USDT</div> */}
                     </div>
                     <FormControl fullWidth variant="outlined">
-                        <CustomOutlinedInput 
-                            value={receiveJson.num}
-                            // onChange={changeDetailInputValue.bind(this,'withdrawAmount',index,singleDepositedBalance.toNumber(),pool.tokenDecimals)}
-                            endAdornment={
-                                <CustomDropdown
-                                    navDropdown
-                                    hoverColor='primary'
-                                    darkModal
-                                    buttonText={
-                                        subInfo.name && tokens[showIndex].receivableList.find((item)=>{return item.name==subInfo.name}) ? 
-                                        singleSubDropDownNode(subInfo)
-                                        :
-                                        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-                                    }
-                                    buttonProps={{
-                                        className: classes.navLink,
-                                        color: "transparent",
-                                    }}
-                                    onClick={handleSubDropdownClick}
-                                    dropdownList={subDropdownList}
-                                    />
+                        <CustomDropdown
+                            popperClassName={classes.papperNav}
+                            navDropdown
+                            hoverColor='primary'
+                            darkModal
+                            buttonText={
+                                subInfo.name && tokens[showIndex].receivableList.find((item)=>{return item.name==subInfo.name}) &&
+                                singleSubDropDownNode(subInfo)
                             }
+                            buttonProps={{
+                                className: classes.receiveStyle,
+                                color: '#353848',
+                            }}
+                            onClick={handleSubDropdownClick}
+                            dropdownList={subDropdownList}
                             />
                     </FormControl>
                 </div>
