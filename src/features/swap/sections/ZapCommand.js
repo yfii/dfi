@@ -273,6 +273,7 @@ export default function ZapCommand() {
                         textAlign: 'center',
                         lineHeight: '22px',
                         marginTop:'12px',
+                        marginBottom:'12px',
                     }}
                     color="primary"
                     onClick={isApproval?onFetchZapOrSwap:onFetchApproval}

@@ -247,8 +247,6 @@ export default function SectionPools() {
     alignContent: "space-around",
   }
 
-    console.warn('~~~~~~byDecimals~~~~~~',byDecimals);  
-
   return (
     <GridContainer justify="center">
       <GridItem md={12} xs={12} sm={10}>

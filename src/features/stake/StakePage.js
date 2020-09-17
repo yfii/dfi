@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 // import Close from "@material-ui/icons/Close";
 // core components
 // sections for this page
-import { StakePools } from './sections'
+import StakePools from './sections/StakePools'
 // hooks
 
 export default function StakePage() {
