@@ -26,7 +26,7 @@ export default function ZapCommand() {
     const { web3, address } = useConnectWallet();
     const { tokens, fetchBalances } = useFetchBalances();
     const { allowance, checkApproval } = useCheckApproval();
-    const { fetchApproval } = useFetchApproval();
+    const { fetchApproval,fetchApprovalPending } = useFetchApproval();
     const { fetchZapOrSwap } = useFetchZapOrSwap();
     const [ isApproval, setIsApproval ] = useState(false);
     const [showIndex,setShowIndex] = useState(0);
@@ -159,7 +159,6 @@ export default function ZapCommand() {
         })
     }
 
-    console.warn('~~~~~~tokens~~~~~~',tokens);
     let buttonTxt = 'Trade';
     if(subInfo.type){
         buttonTxt = subInfo.type
@@ -277,9 +276,11 @@ export default function ZapCommand() {
                     }}
                     color="primary"
                     onClick={isApproval?onFetchZapOrSwap:onFetchApproval}
-                    disabled={!Boolean(tokens[showIndex].name && subInfo.contract)}
+                    disabled={!Boolean(tokens[showIndex].name && subInfo.contract) && fetchApprovalPending}
                   >
-                    {buttonTxt}
+                      {
+                          fetchApprovalPending ? '...' :buttonTxt
+                      }
                 </Button>
             </div>
         </div>
