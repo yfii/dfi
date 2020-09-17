@@ -9,10 +9,8 @@
 const initialState = {
   address: "",
   web3: null,
-  provider: null,
   connected: false,
-  chainId: 1,
-  networkId: 1,
+  networkId: Number(process.env.NETWORK_ID),
 };
 
 export default initialState;

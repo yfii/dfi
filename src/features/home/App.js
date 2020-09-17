@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 //  notistack
 import { SnackbarProvider } from 'notistack';
 //  core components
@@ -22,7 +23,8 @@ const useStyles = makeStyles(appStyle);
 
 export default function App({ children }) {
   const classes = useStyles();
-  const { connectWallet, web3, address, connected } = useConnectWallet();
+  const { t } = useTranslation();
+  const { connectWallet, web3, address, networkId, connected, connectWalletPending } = useConnectWallet();
   const { disconnectWallet } = useDisconnectWallet();
   const [ web3Modal, setModal ] = useState(null)
 
@@ -56,6 +58,12 @@ export default function App({ children }) {
     }
   }, [web3Modal, connectWallet, window.ethereum])
 
+  useEffect(() => {
+    if (web3 && address && !connectWalletPending && networkId && Boolean(networkId !== Number(process.env.NETWORK_ID))) {
+      alert(t('App-SnackBarText'))
+    }
+  }, [web3, address, networkId])
+
   return (
     <SnackbarProvider>
       <div className={classes.page}>
@@ -74,7 +82,7 @@ export default function App({ children }) {
         />
         <div className={classes.container}>
             <div className={classes.children}>
-                { children }
+              {children}
             </div>
           <FooterLinks />
         </div>
