@@ -40,7 +40,7 @@ const useStyles = makeStyles(sectionPoolsStyle);
 
 export default function SectionPools() {
   const { t, i18n } = useTranslation();
-  const { web3, address } = useConnectWallet();
+  const { web3, address, networkId } = useConnectWallet();
   let { pools, fetchPoolBalances } = useFetchPoolBalances();
   const { tokens, fetchBalances } = useFetchBalances();
   const [ openedCardList, setOpenCardList ] = useState([0]);
@@ -289,7 +289,7 @@ export default function SectionPools() {
   return (
     <GridContainer justify="center">
       <GridItem md={12} xs={12} sm={10}>
-        {pools.map((pool, index) => {
+        {Boolean(networkId === Number(process.env.NETWORK_ID)) && pools.map((pool, index) => {
           let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
           let singleDepositedBalance = byDecimals(tokens[pool.earnedToken].tokenBalance, pool.tokenDecimals);
           let depositedApy = contractApy[pool.id] || 0;

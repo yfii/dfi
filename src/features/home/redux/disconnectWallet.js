@@ -45,7 +45,6 @@ export function reducer(state, action) {
         address: "",
         web3: null,
         connected: false,
-        chainId: 1,
         disconnectWalletPending: false
       };
     case HOME_DISCONNECT_WALLET_FAILURE:
