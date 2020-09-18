@@ -4,6 +4,7 @@ const fontDefaultStyle = {
     fontSize: '18px',
     letterSpacing: '0',
     lineHeight: '18px',
+    fontWeight:'400',
 };
 
 const normalBackgroundColor = '#2C3040';
@@ -24,8 +25,6 @@ const stakePoolsStyle = theme => ({
     },
     stakeButton:{
         ...fontDefaultStyle,
-        width:'88px',
-        height:'40px',
         backgroundColor: primaryColor,
         borderRadius: '24px',
         fontSize: '14px',
@@ -34,6 +33,21 @@ const stakePoolsStyle = theme => ({
         marginRight:'8px',
         "&:hover,&:focus": {
             backgroundColor: primaryColor,
+        }
+    },
+    rewardsButton:{
+        backgroundColor: secondColor,
+        "&:hover,&:focus": {
+            backgroundColor: secondColor,
+        }
+    },
+    grayButton:{
+        color:primaryColor,
+        backgroundColor:'#353848',
+        boxShadow:'0 2px 2px 0 #353848',
+        "&:hover,&:focus": {
+            color:primaryColor,
+            backgroundColor: '#353848',
         }
     },
     firstCell:{
@@ -71,9 +85,75 @@ const stakePoolsStyle = theme => ({
         margin:'24px 0'
     },
     detailContent:{
-        height:'288px',
         backgroundColor: normalBackgroundColor,
         borderRadius: '24px',
+        padding:'48px',
+    },
+    marginBottom:{
+        marginBottom:'48px',
+    },
+    contentTitle:{
+        display:"flex",
+        justifyContent:'center',
+    },
+    contentTitleItem:{
+        display:'flex',
+        flexDirection:'column',
+        alignItems:'center',
+        padding:'0 12px',
+        '& :first-child':{
+            ...fontDefaultStyle,
+            fontSize: '28px',
+            color: primaryColor,
+            lineHeight: '28px',
+            marginBottom:'12px',
+        },
+        '& :last-child':{
+            ...fontDefaultStyle,
+            opacity: '0.4',
+        },
+    },
+    contentTitleItemBorder:{
+        borderRight:'1px solid rgb(255,255,255,0.1)',
+    },
+    contentButtonMargin:{
+        marginRight:'36px',
+    },
+    inputContainer:{
+        height:'70px',
+        borderRadius:'35px',
+        backgroundColor:'#353848',
+        display:'flex',
+        alignItems:'center',
+        justifyContent:'space-between',
+    },
+    inputAvatarContainer:{
+        width:'40px',
+        height:'40px',
+        borderRadius:'40px',
+        backgroundColor:'#fff',
+        display:'flex',
+        alignItems:'center',
+        justifyContent:'center',
+    },
+    flexBox:{
+        display:'flex',
+        alignItems:'center',
+    },
+    inputTxt:{
+        ...fontDefaultStyle,
+        marginLeft:'8px',
+    },
+    inputSubTxt:{
+        ...fontDefaultStyle,
+        fontSize: '16px',
+        lineHeight: '16px',
+        opacity: '0.4',
+        marginRight:'8px',
+    },
+    inputCloseIcon:{
+        color:'#fff',
+        opacity: '0.4',
     },
 })
 

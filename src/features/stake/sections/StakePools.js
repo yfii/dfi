@@ -3,6 +3,7 @@ import classNames from "classnames";
 import { useTranslation } from 'react-i18next';
 import { withStyles, makeStyles } from "@material-ui/core/styles";
 import GridContainer from "components/Grid/GridContainer.js";
+import GridItem from "components/Grid/GridItem.js";
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -13,6 +14,10 @@ import CustomButtons from "components/CustomButtons/Button.js";
 import Avatar from '@material-ui/core/Avatar';
 import { isEmpty } from 'features/helpers/utils';
 import stakePoolsStyle from "../jss/sections/stakePoolsStyle";
+import InputBase from '@material-ui/core/InputBase';
+import IconButton from '@material-ui/core/IconButton';
+import Hidden from '@material-ui/core/Hidden';
+import { toBuffer } from 'ethereumjs-util';
 
 const fontDefaultStyle = {
     color: '#fff',
@@ -57,8 +62,25 @@ const rows = [{"id":"eth","name":"ETH","token":"ETH","tokenDescription":"ETH","t
 export default function StakePools() {
     const classes = useStyles();
     const { t, i18n } = useTranslation();
-    const [ showDetail, setShowDetail ] = useState({'anme':21});
-    console.warn('~~~~~showDetail~~~~~~~',showDetail);
+    const [ showDetail, setShowDetail ] = useState({"id":"eth","name":"ETH","token":"ETH","tokenDescription":"ETH","tokenAddress":"","tokenDecimals":18,"tokenDescriptionUrl":"","tokenDescriptionUrl2":"","earnedToken":"iWETH","earnedTokenAddress":"0xa8EA49a9e242fFfBdECc4583551c3BcB111456E6","earnContractAddress":"0xa8EA49a9e242fFfBdECc4583551c3BcB111456E6","defaultApy":"39.54","pricePerFullShare":1.0010872907185218,"pastPricePerFullShare":1,"allowance":79228162514});
+    const [ showInput, setShowInput ] = useState(true);
+    const [ pageSize,setPageSize ] = useState('');
+    console.warn('~~~document.body.clientWidth~~',document.body.clientWidth);
+    window.onresize = ()=>{
+        let Width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        let Height = window.innerHeight || document.documentElement.clientWidth || document.body.clientHeight;
+        let nowPageSize = '';
+        if(Width >= 960){
+            nowPageSize = 'exceedSm';
+        }else if(Width >= 600){
+            nowPageSize = 'sm';
+        }else{
+            nowPageSize = 'xs';
+        }
+        if(nowPageSize != pageSize){
+            setPageSize(nowPageSize);
+        }
+    }
     return (
         <GridContainer>
             {
@@ -116,14 +138,139 @@ export default function StakePools() {
                     <div className={classes.detailContainer}>
                         <div className={classes.detailTitle}>Stake / balancer</div>
                         <div className={classes.detailContent}>
-                            <div>
-                                
-                            </div>
+                            <GridContainer className={classNames({
+                                [classes.contentTitle]:true,
+                                [classes.marginBottom]:true,
+                            })}>
+                                <GridItem md={3} xs={6} className={classNames({
+                                        [classes.contentTitleItem]:true,
+                                        [classes.contentTitleItemBorder]:true,
+                                    })}>
+                                        <div>2345.6672 BPT</div>
+                                        <div>{t('Stake-Balancer-Your-Balance')}</div>
+                                </GridItem>
+
+                                <GridItem md={3} xs={6} className={classNames({
+                                    [classes.contentTitleItem]:true,
+                                    [classes.contentTitleItemBorder]:pageSize=='exceedSm' ? true : false,
+                                })}>
+                                    <div>2345.6672 BPT</div>
+                                    <div>{t('Stake-Balancer-Current-Staked')}</div>
+                                </GridItem>
+                                <GridItem md={3} xs={6} className={classNames({
+                                    [classes.contentTitleItem]:true,
+                                    [classes.contentTitleItemBorder]:true,
+                                })}>
+                                    <div>234.0256 YFII</div>
+                                    <div>{t('Stake-Balancer-Rewards-Available')}</div>
+                                </GridItem>
+                                <GridItem md={3} xs={6} className={classes.contentTitleItem}>
+                                    <div>01day 03:17:10</div>
+                                    <div>{t('Stake-Balancer-Half-Time')}</div>
+                                </GridItem>
+                            </GridContainer>
+                            {
+                                showInput ? (
+                                    <GridItem className={classes.inputContainer}>
+                                        <div className={classes.flexBox}>
+                                            <div className={classes.inputAvatarContainer}>
+                                                <Avatar 
+                                                    alt={showDetail.name}
+                                                    src={require(`../../../images/${showDetail.name}-logo.png`)}
+                                                    className={classNames({
+                                                        [classes.avatar]:true,
+                                                    })}
+                                                    />
+                                            </div>
+                                            <InputBase autoFocus className={classes.inputTxt}/>
+                                            <div className={classes.inputTxt}>{showDetail.name}</div>
+                                        </div>
+                                        <div className={classes.flexBox}>
+                                            <div className={classes.inputSubTxt}>Balance: 8888.0000</div>
+                                            <CustomButtons
+                                                onClick={(event)=>{
+                                                    event.stopPropagation();
+                                                }}
+                                                className={classNames({
+                                                    [classes.stakeButton]:true,
+                                                    [classes.rewardsButton]:true,
+                                                })}>
+                                                {t('Swap-Max')}
+                                            </CustomButtons>
+                                            <CustomButtons
+                                                onClick={(event)=>{
+                                                    event.stopPropagation();
+                                                }}
+                                                className={classes.stakeButton}>
+                                                {t('Stake-Button-Stake')}
+                                            </CustomButtons>
+                                            <IconButton
+                                                className={classes.inputCloseIcon}
+                                                onClick={(event) => {
+                                                    event.stopPropagation();
+                                                    setShowInput(false);
+                                                }}
+                                            >
+                                                <i class="fa fa-times"/>
+                                            </IconButton>
+                                        </div>
+                                    </GridItem>
+                                ) : (
+                                    <GridContainer className={classes.contentTitle}>
+                                        <GridContainer md={3} xs={6} justify={pageSize!='exceedSm'?'center':'flex-start'}>
+                                            <CustomButtons
+                                                onClick={(event)=>{
+                                                    event.stopPropagation();
+                                                    setShowInput(true);
+                                                }}
+                                                className={classes.stakeButton}>
+                                                {t('Stake-Button-Stake-Tokens')}
+                                            </CustomButtons>
+                                        </GridContainer>
+                                        <GridContainer md={3} xs={6} justify={pageSize!='exceedSm'?'center':'flex-start'}>
+                                            <CustomButtons
+                                                onClick={(event)=>{
+                                                    event.stopPropagation();
+                                                }}
+                                                className={classNames({
+                                                    [classes.stakeButton]:true,
+                                                    [classes.rewardsButton]:true,
+                                                })}>
+                                                {t('Stake-Button-Claim-Rewards')}
+                                            </CustomButtons>
+                                        </GridContainer>
+                                        <GridContainer md={3} xs={6} justify={pageSize!='exceedSm'?'center':'flex-start'}>
+                                            <CustomButtons
+                                                onClick={(event)=>{
+                                                    event.stopPropagation();
+                                                }}
+                                                className={classNames({
+                                                    [classes.stakeButton]:true,
+                                                    [classes.grayButton]:true,
+                                                })}>
+                                                {t('Stake-Button-Unstake-Tokens')}
+                                            </CustomButtons>
+                                        </GridContainer>
+                                        <GridContainer md={3} xs={6} justify={pageSize!='exceedSm'?'center':'flex-start'}>
+                                            <CustomButtons
+                                                onClick={(event)=>{
+                                                    event.stopPropagation();
+                                                }}
+                                                className={classNames({
+                                                    [classes.stakeButton]:true,
+                                                    [classes.grayButton]:true,
+                                                })}>
+                                                {t('Stake-Button-Exit')}
+                                            </CustomButtons>
+                                        </GridContainer>
+                                    </GridContainer>
+                                )
+                            }
+                            
                         </div>
                     </div>
                 )
             }
-            
         </GridContainer>
     )
 }
