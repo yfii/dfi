@@ -49,7 +49,7 @@ export default function HomePage() {
         }
         close
         color="warning"
-        icon={Warning}
+        // icon={Warning}
       />
       <SectionPools />
       <Dialog
