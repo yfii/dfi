@@ -48,8 +48,7 @@ export default function HomePage() {
             </span>
         }
         close
-        color="warning"
-        icon={Warning}
+        color="success"
       />
       <SectionPools />
       <Dialog

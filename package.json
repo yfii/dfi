@@ -108,7 +108,7 @@
     "style-loader": "^1.2.1",
     "ts-pnp": "1.1.6",
     "url-loader": "^4.1.0",
-    "web3": "^1.2.11",
+    "web3": "1.2.11",
     "web3modal": "^1.9.0",
     "webpack": "^4.44.1",
     "webpack-dev-server": "3.11.0",
