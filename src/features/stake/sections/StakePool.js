@@ -19,7 +19,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Hidden from '@material-ui/core/Hidden';
 
 import { useConnectWallet } from '../../home/redux/hooks';
-import { useCheckApproval, useFetchPoolsInfo, useFetchBalance, useFetchCurrentlyStaked, useFetchRewardsAvailable, useFetchHalfTime } from '../redux/hooks';
+import { useCheckApproval, useFetchPoolsInfo, useFetchBalance, useFetchCurrentlyStaked, useFetchRewardsAvailable, useFetchHalfTime, useFetchCanWithdrawTime } from '../redux/hooks';
 
 const fontDefaultStyle = {
   color: '#fff',
@@ -69,6 +69,7 @@ export default function StakePool(props) {
   const { balance, fetchBalance } = useFetchBalance();
   const { currentlyStaked, fetchCurrentlyStaked } = useFetchCurrentlyStaked();
   const { rewardsAvailable, fetchRewardsAvailable } = useFetchRewardsAvailable();
+  const { canWithdrawTime, fetchCanWithdrawTime } = useFetchCanWithdrawTime();
   const { halfTime, fetchHalfTime } = useFetchHalfTime();
   const [ showDetail, setShowDetail ] = useState({});
   const [ showInput, setShowInput ] = useState(false);
@@ -91,13 +92,17 @@ export default function StakePool(props) {
   }
 
   useEffect(() => {
-    fetchHalfTime(index);
     if(!address) return;
     checkApproval(index);
     fetchBalance(index);
     fetchCurrentlyStaked(index);
     fetchRewardsAvailable(index);
-  }, [checkApproval, address]);
+    if(index === 3) fetchCanWithdrawTime(index);
+  }, [address, index]);
+
+  useEffect(() => {
+    if(index=== 0 || index === 1) fetchHalfTime(index);
+  }, [index]);
   
   return (
     <GridContainer>

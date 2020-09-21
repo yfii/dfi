@@ -5,6 +5,7 @@ import { reducer as fetchBalanceReducer} from './fetchBalance';
 import { reducer as fetchCurrentlyStakedReducer } from './fetchCurrentlyStaked';
 import { reducer as fetchRewardsAvailableReducer } from './fetchRewardsAvailable';
 import { reducer as fetchHalfTimeReducer } from './fetchHalfTime';
+import { reducer as fetchCanWithdrawTimeReducer } from './fetchCanWithdrawTime';
 
 
 const reducers = [
@@ -13,7 +14,8 @@ const reducers = [
   fetchBalanceReducer,
   fetchCurrentlyStakedReducer,
   fetchRewardsAvailableReducer,
-  fetchHalfTimeReducer
+  fetchHalfTimeReducer,
+  fetchCanWithdrawTimeReducer
 ];
 
 export default function reducer(state = initialState, action) {

@@ -72,7 +72,8 @@ const allowance = [0,0,0,0];
 const balance = [0,0,0,0];
 const currentlyStaked = [0,0,0,0];
 const rewardsAvailable = [0,0,0,0];
-const halfTime = [0,0,false,false]
+const halfTime = [0,0,false,false];
+const canWithdrawTime = [0,0,0,0];
 
 
 const initialState = {
@@ -81,6 +82,7 @@ const initialState = {
 	currentlyStaked,
 	rewardsAvailable,
 	halfTime,
+	canWithdrawTime,
 	balance,
 	poolsInfo,
 	checkApprovalPending: false
