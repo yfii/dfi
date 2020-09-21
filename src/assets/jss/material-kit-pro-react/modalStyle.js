@@ -154,6 +154,9 @@ const modalStyle = theme => ({
   modalSignupCard: {
     padding: "40px 0",
     margin: "0"
+  },
+  modalMargin:{
+    marginBottom:'24px',
   }
 });
 

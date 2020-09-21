@@ -92,8 +92,9 @@ export default function Header(props) {
         </Button>
         <Tabs className={classes.tabs} value={tabValue} onChange={changeTabs}>
             <Tab value='' label='Home' id='bar-tab-0'/>
-            <Tab value='stake' label='Stake' id='bar-tab-1'/>
-            <Tab value='zap' label='Zap' id='bar-tab-1'/>
+            <Tab value='vault' label='Vault' id='bar-tab-1'/>
+            <Tab value='stake' label='Stake' id='bar-tab-2'/>
+            <Tab value='zap' label='Zap' id='bar-tab-3'/>
         </Tabs>
         <Hidden smDown implementation="css">
           <div className={classes.collapse}>{links}</div>

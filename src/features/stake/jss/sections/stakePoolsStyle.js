@@ -1,3 +1,7 @@
+import { withStyles } from "@material-ui/core/styles";
+import TableCell from '@material-ui/core/TableCell';
+import TableRow from '@material-ui/core/TableRow';
+
 const fontDefaultStyle = {
     color: '#fff',
     fontFamily: 'Helvetica',
@@ -10,6 +14,34 @@ const fontDefaultStyle = {
 const normalBackgroundColor = '#2C3040';
 const primaryColor = '#FF2D82';
 const secondColor = '#635AFF';
+
+const StyledTableCell = withStyles((theme) => ({
+  head: {
+    ...fontDefaultStyle,
+    backgroundColor: '#635AFF',
+    height:'48px',
+    borderColor:'rgb(40,42,55,0.5)',
+    padding:'0 40px',
+    '&:first-child':{
+      borderTopLeftRadius:'12px',
+    },
+    '&:last-child':{
+      borderTopRightRadius:'12px',
+    },
+  },
+  body: {
+    ...fontDefaultStyle,
+    padding:'20px 40px',
+    backgroundColor: '#2C3040',
+    borderColor:'rgb(40,42,55,0.5)',
+  },
+}))(TableCell);
+
+const StyledTableRow = withStyles((theme) => ({
+  root: {
+    
+  },
+}))(TableRow);
 
 const stakePoolsStyle = theme => ({
     table: {
@@ -157,4 +189,4 @@ const stakePoolsStyle = theme => ({
     },
 })
 
-export default stakePoolsStyle;
+export {StyledTableCell,StyledTableRow,stakePoolsStyle};

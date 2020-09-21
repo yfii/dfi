@@ -48,6 +48,8 @@
   "Vault-Modal-TIme": "모든 요청을 카운트다운합니다: ",
   "Vault-Modal-CloseButton": "닫기",
   "Vault-Modal-ConfirmButton": "확정",
+  "Vault-Main-Title":"Vaults",
+  "Vault-Second-Title":"Deposit & Earn money",
   "Swap-Header": "Zap",
   "Swap-Title": "Exchange your assets",
   "Swap-Send": "Send",
