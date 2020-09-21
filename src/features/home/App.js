@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 //  notistack
 import { SnackbarProvider } from 'notistack';
 //  core components
+import { Notifier } from "features/common"
 import Header from "components/Header/Header.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import FooterLinks from 'components/Footer/FooterLinks.js'
@@ -82,7 +83,8 @@ export default function App({ children }) {
         />
         <div className={classes.container}>
             <div className={classes.children}>
-              {children}
+              {Boolean(networkId === Number(process.env.NETWORK_ID)) && children}
+              <Notifier />
             </div>
           <FooterLinks />
         </div>
