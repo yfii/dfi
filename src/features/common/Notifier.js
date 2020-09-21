@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useSnackbar } from 'notistack';
 import { removeSnackbar } from './redux/actions';
+import Button from '@material-ui/core/Button';
 
 let displayed = [];
 
@@ -19,7 +20,7 @@ const Notifier = () => {
     };
 
     React.useEffect(() => {
-        notifications.forEach(({ key, message, options = {}, dismissed = false }) => {
+        notifications.forEach(({ key, message, options = {}, dismissed = false, hash }) => {
             if (dismissed) {
                 // dismiss snackbar using notistack
                 closeSnackbar(key);
@@ -43,6 +44,8 @@ const Notifier = () => {
                     dispatch(removeSnackbar(myKey));
                     removeDisplayed(myKey);
                 },
+                autoHideDuration: 3000,
+                action: hash?()=><Button onClick={() => window.open(`https://etherscan.io/tx/${hash}`, "_blank")}>View</Button>:null
             });
 
             // keep track of snackbars that we've displayed

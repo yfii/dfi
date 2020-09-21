@@ -11,6 +11,7 @@ export function fetchHalfTime(index) {
     // optionally you can have getState as the second argument
     dispatch({
       type: STAKE_FETCH_HALF_TIME_BEGIN,
+      index
     });
     // Return a promise so that you could control UI flow without states in the store.
     // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
@@ -39,6 +40,7 @@ export function fetchHalfTime(index) {
         error => {
           dispatch({
             type: STAKE_FETCH_HALF_TIME_FAILURE,
+            index
           });
           reject(error.message || error);
         }
@@ -75,30 +77,33 @@ export function useFetchHalfTime() {
 }
 
 export function reducer(state, action) {
+  const { halfTime, fetchHalfTimePending } = state;
   switch (action.type) {
     case STAKE_FETCH_HALF_TIME_BEGIN:
       // Just after a request is sent
+      fetchHalfTimePending[action.index] = true;
       return {
         ...state,
-        fetchHalfTimePending: true,
+        fetchHalfTimePending,
       };
 
     case STAKE_FETCH_HALF_TIME_SUCCESS:
       // The request is success
 
-      const { halfTime } = state;
+      fetchHalfTimePending[action.index] = false;
       halfTime[action.index] = action.data;
       return {
         ...state,
         halfTime,
-        fetchHalfTimePending: false,
+        fetchHalfTimePending,
       };
 
     case STAKE_FETCH_HALF_TIME_FAILURE:
       // The request is failed
+      fetchHalfTimePending[action.index] = false;
       return {
         ...state,
-        fetchHalfTimePending: false,
+        fetchHalfTimePending,
       };
 
     default:

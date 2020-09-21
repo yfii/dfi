@@ -12,6 +12,7 @@ export function fetchRewardsAvailable(index) {
     // optionally you can have getState as the second argument
     dispatch({
       type: STAKE_FETCH_REWARDS_AVAILABLE_BEGIN,
+      index
     });
     // Return a promise so that you could control UI flow without states in the store.
     // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
@@ -40,6 +41,7 @@ export function fetchRewardsAvailable(index) {
         error => {
           dispatch({
             type: STAKE_FETCH_REWARDS_AVAILABLE_FAILURE,
+            index
           });
           reject(error.message || error);
         }
@@ -76,30 +78,33 @@ export function useFetchRewardsAvailable() {
 }
 
 export function reducer(state, action) {
+  const { rewardsAvailable, fetchRewardsAvailablePending } = state;
   switch (action.type) {
     case STAKE_FETCH_REWARDS_AVAILABLE_BEGIN:
       // Just after a request is sent
+      fetchRewardsAvailablePending[action.index] = true;
       return {
         ...state,
-        fetchRewardsAvailablePending: true,
+        fetchRewardsAvailablePending,
       };
 
     case STAKE_FETCH_REWARDS_AVAILABLE_SUCCESS:
       // The request is success
 
-      const { rewardsAvailable } = state;
       rewardsAvailable[action.index] = action.data;
+      fetchRewardsAvailablePending[action.index] = false;
       return {
         ...state,
         rewardsAvailable,
-        fetchRewardsAvailablePending: false,
+        fetchRewardsAvailablePending,
       };
 
     case STAKE_FETCH_REWARDS_AVAILABLE_FAILURE:
       // The request is failed
+      fetchRewardsAvailablePending[action.index] = false;
       return {
         ...state,
-        fetchRewardsAvailablePending: false,
+        fetchRewardsAvailablePending,
       };
 
     default:

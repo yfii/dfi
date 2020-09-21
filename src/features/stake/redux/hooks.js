@@ -5,3 +5,8 @@ export { useFetchCurrentlyStaked } from './fetchCurrentlyStaked';
 export { useFetchRewardsAvailable } from './fetchRewardsAvailable';
 export { useFetchHalfTime } from './fetchHalfTime';
 export { useFetchCanWithdrawTime } from './fetchCanWithdrawTime';
+export { useFetchApproval } from './fetchApproval';
+export { useFetchStake } from './fetchStake';
+export { useFetchDeposit } from './fetchDeposit';
+export { useFetchClaim } from './fetchClaim';
+export { useFetchExit } from './fetchExit';

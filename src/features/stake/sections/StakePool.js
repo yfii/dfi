@@ -19,7 +19,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Hidden from '@material-ui/core/Hidden';
 
 import { useConnectWallet } from '../../home/redux/hooks';
-import { useCheckApproval, useFetchPoolsInfo, useFetchBalance, useFetchCurrentlyStaked, useFetchRewardsAvailable, useFetchHalfTime, useFetchCanWithdrawTime } from '../redux/hooks';
+import { useCheckApproval, useFetchPoolsInfo, useFetchBalance, useFetchCurrentlyStaked, useFetchRewardsAvailable, useFetchHalfTime, useFetchCanWithdrawTime, useFetchApproval, useFetchStake, useFetchDeposit, useFetchClaim, useFetchExit } from '../redux/hooks';
 
 const fontDefaultStyle = {
   color: '#fff',
@@ -70,11 +70,16 @@ export default function StakePool(props) {
   const { rewardsAvailable, fetchRewardsAvailable } = useFetchRewardsAvailable();
   const { canWithdrawTime, fetchCanWithdrawTime } = useFetchCanWithdrawTime();
   const { halfTime, fetchHalfTime } = useFetchHalfTime();
+  const { fetchApproval, fetchApprovalPending } = useFetchApproval();
+  const { fetchStake, fetchStakePending } = useFetchStake();
+  const { fetchDeposit, fetchDepositPending } = useFetchDeposit();
+  const { fetchClaim, fetchClaimPending } = useFetchClaim();
+  const { fetchExit, fetchExitPending } = useFetchExit();
   const [ index, setIndex ] = useState(Number(props.match.params.index));
-  const [ showDetail, setShowDetail ] = useState({});
   const [ showInput, setShowInput ] = useState(false);
   const [ pageSize,setPageSize ] = useState('');
-  const [ isNeedApproval, setIsNeedApproval] = useState(false);
+  const [ isNeedApproval, setIsNeedApproval] = useState(true);
+  const [ approvalAble, setApprovalAble] = useState(true);
   const [ stakeAble,setStakeAble ] = useState(true);
   const [ depositAble,setDepositAble ] = useState(true);
   const [ claimAble,setClaimAble ] = useState(true);
@@ -99,6 +104,30 @@ export default function StakePool(props) {
   useEffect(() => {
     setIndex(props.match.params.index);
   }, [Number(props.match.params.index)]);
+
+  useEffect(() => {
+    setIsNeedApproval(Boolean(allowance[index] === 0));
+  }, [allowance, index]);
+
+  useEffect(() => {
+    setApprovalAble(!Boolean(fetchApprovalPending[index]));
+  }, [fetchApprovalPending, index]);
+
+  useEffect(() => {
+    setStakeAble(!Boolean(fetchStakePending[index]));
+  }, [fetchStakePending, index]);
+
+  useEffect(() => {
+    setDepositAble(!Boolean(fetchDepositPending[index]));
+  }, [fetchDepositPending, index]);
+
+  useEffect(() => {
+    setClaimAble(!Boolean(fetchClaimPending[index]));
+  }, [fetchClaimPending, index]);
+
+  useEffect(() => {
+    setExitAble(!Boolean(fetchExitPending[index]));
+  }, [fetchExitPending, index]);
 
   useEffect(() => {
     if(!address) return;
@@ -156,15 +185,15 @@ export default function StakePool(props) {
                 <div className={classes.flexBox}>
                   <div className={classes.inputAvatarContainer}>
                     <Avatar 
-                      alt={showDetail.name}
-                      src={require(`../../../images/${showDetail.name}-logo.png`)}
+                      alt={pools[index].name}
+                      src={require(`../../../images/${pools[index].name}-logo.png`)}
                       className={classNames({
                         [classes.avatar]:true,
                       })}
                       />
                   </div>
                   <InputBase autoFocus className={classes.inputTxt}/>
-                  <div className={classes.inputTxt}>{showDetail.name}</div>
+                  <div className={classes.inputTxt}>{pools[index].name}</div>
                 </div>
                 <div className={classes.flexBox}>
                   <div className={classes.inputSubTxt}>Balance: 8888.0000</div>
@@ -210,9 +239,8 @@ export default function StakePool(props) {
                 </GridContainer>
                 <GridContainer md={3} xs={6} justify={pageSize!='exceedSm'?'center':'flex-start'}>
                   <CustomButtons
-                    onClick={(event)=>{
-                      event.stopPropagation();
-                    }}
+                    disabled={!Boolean(claimAble)}
+                    onClick={()=>fetchClaim(index)}
                     className={classNames({
                       [classes.stakeButton]:true,
                       [classes.rewardsButton]:true,

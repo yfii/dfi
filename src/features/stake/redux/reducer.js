@@ -6,6 +6,11 @@ import { reducer as fetchCurrentlyStakedReducer } from './fetchCurrentlyStaked';
 import { reducer as fetchRewardsAvailableReducer } from './fetchRewardsAvailable';
 import { reducer as fetchHalfTimeReducer } from './fetchHalfTime';
 import { reducer as fetchCanWithdrawTimeReducer } from './fetchCanWithdrawTime';
+import { reducer as fetchApprovalReducer } from './fetchApproval';
+import { reducer as fetchStakeReducer } from './fetchStake';
+import { reducer as fetchDepositReducer } from './fetchDeposit';
+import { reducer as fetchClaimReducer } from './fetchClaim';
+import { reducer as fetchExitReducer } from './fetchExit';
 
 
 const reducers = [
@@ -15,7 +20,12 @@ const reducers = [
   fetchCurrentlyStakedReducer,
   fetchRewardsAvailableReducer,
   fetchHalfTimeReducer,
-  fetchCanWithdrawTimeReducer
+  fetchCanWithdrawTimeReducer,
+  fetchApprovalReducer,
+  fetchStakeReducer,
+  fetchDepositReducer,
+  fetchClaimReducer,
+  fetchExitReducer
 ];
 
 export default function reducer(state = initialState, action) {

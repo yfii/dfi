@@ -11,6 +11,7 @@ export function fetchCanWithdrawTime(index) {
     // optionally you can have getState as the second argument
     dispatch({
       type: STAKE_FETCH_CAN_WITHDRAW_TIME_BEGIN,
+      index
     });
     // Return a promise so that you could control UI flow without states in the store.
     // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
@@ -39,6 +40,7 @@ export function fetchCanWithdrawTime(index) {
         error => {
           dispatch({
             type: STAKE_FETCH_CAN_WITHDRAW_TIME_FAILURE,
+            index
           });
           reject(error.message || error);
         }
@@ -75,30 +77,33 @@ export function useFetchCanWithdrawTime() {
 }
 
 export function reducer(state, action) {
+  const { canWithdrawTime, fetchCanWithdrawTimePending } = state;
   switch (action.type) {
     case STAKE_FETCH_CAN_WITHDRAW_TIME_BEGIN:
       // Just after a request is sent
+      fetchCanWithdrawTimePending[action.index] = true;
       return {
         ...state,
-        fetchCanWithdrawTimePending: true,
+        fetchCanWithdrawTimePending,
       };
 
     case STAKE_FETCH_CAN_WITHDRAW_TIME_SUCCESS:
       // The request is success
 
-      const { canWithdrawTime } = state;
       canWithdrawTime[action.index] = action.data;
+      fetchCanWithdrawTimePending[action.index] = false;
       return {
         ...state,
         canWithdrawTime,
-        fetchCanWithdrawTimePending: false,
+        fetchCanWithdrawTimePending,
       };
 
     case STAKE_FETCH_CAN_WITHDRAW_TIME_FAILURE:
       // The request is failed
+      fetchCanWithdrawTimePending[action.index] = false;
       return {
         ...state,
-        fetchCanWithdrawTimePending: false,
+        fetchCanWithdrawTimePending,
       };
 
     default:
