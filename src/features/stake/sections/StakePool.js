@@ -99,12 +99,9 @@ export default function StakePool(props) {
     fetchBalance(index);
     fetchCurrentlyStaked(index);
     fetchRewardsAvailable(index);
+    if(index=== 0 || index === 1) fetchHalfTime(index);
     if(index === 3) fetchCanWithdrawTime(index);
   }, [address, index]);
-
-  useEffect(() => {
-    if(index=== 0 || index === 1) fetchHalfTime(index);
-  }, [index]);
   
   return (
     <GridContainer>
