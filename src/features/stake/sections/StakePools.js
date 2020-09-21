@@ -67,7 +67,6 @@ export default function StakePools() {
   const [ showDetail, setShowDetail ] = useState({});
   const [ showInput, setShowInput ] = useState(false);
   const [ pageSize,setPageSize ] = useState('');
-  console.warn('~~~document.body.clientWidth~~',document.body.clientWidth);
   window.onresize = ()=>{
     let Width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     let Height = window.innerHeight || document.documentElement.clientWidth || document.body.clientHeight;
