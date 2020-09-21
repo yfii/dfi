@@ -93,8 +93,7 @@ export function useFetchWithdraw() {
   const { fetchWithdrawPending } = useSelector(
     state => ({
       fetchWithdrawPending: state.vault.fetchWithdrawPending,
-    }),
-    shallowEqual,
+    })
   );
 
   const boundAction = useCallback(

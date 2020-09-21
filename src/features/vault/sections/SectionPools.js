@@ -129,6 +129,7 @@ export default function SectionPools() {
         [`slider-${index}`]: 100,
       })
     }
+    console.log(depositedBalance[index])
     let amountValue =  depositedBalance[index]? depositedBalance[index].replace(',',''): depositedBalance[index];
     if (!pool.tokenAddress) {// 如果是eth
       fetchDepositEth({

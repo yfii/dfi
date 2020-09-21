@@ -59,8 +59,7 @@ export function useFetchApproval() {
   const { fetchApprovalPending } = useSelector(
     state => ({
       fetchApprovalPending: state.vault.fetchApprovalPending,
-    }),
-    shallowEqual,
+    })
   );
 
   const boundAction = useCallback(data => dispatch(fetchApproval(data)), [dispatch]);
