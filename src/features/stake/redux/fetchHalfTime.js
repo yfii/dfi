@@ -60,8 +60,7 @@ export function useFetchHalfTime() {
     state => ({
       halfTime: state.stake.halfTime,
       fetchHalfTimePending: state.stake.fetchHalfTimePending,
-    }),
-    shallowEqual,
+    })
   );
 
   const boundAction = useCallback(

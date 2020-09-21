@@ -61,8 +61,7 @@ export function useFetchRewardsAvailable() {
     state => ({
       rewardsAvailable: state.stake.rewardsAvailable,
       fetchRewardsAvailablePending: state.stake.fetchRewardsAvailablePending,
-    }),
-    shallowEqual,
+    })
   );
 
   const boundAction = useCallback(

@@ -61,8 +61,7 @@ export function useFetchCurrentlyStaked() {
     state => ({
       currentlyStaked: state.stake.currentlyStaked,
       fetchCurrentlyStakedPending: state.stake.fetchCurrentlyStakedPending,
-    }),
-    shallowEqual,
+    })
   );
 
   const boundAction = useCallback(

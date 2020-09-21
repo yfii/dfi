@@ -82,8 +82,7 @@ export function useFetchClaim() {
   const { fetchClaimPending } = useSelector(
     state => ({
       fetchClaimPending: state.stake.fetchClaimPending,
-    }),
-    shallowEqual,
+    })
   );
 
   const boundAction = useCallback(

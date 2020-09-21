@@ -63,8 +63,7 @@ export function useCheckApproval() {
     state => ({
       allowance: state.stake.allowance,
       checkApprovalPending: state.stake.checkApprovalPending,
-    }),
-    shallowEqual,
+    })
   );
 
   const boundAction = useCallback(

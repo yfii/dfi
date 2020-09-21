@@ -1,6 +1,7 @@
 import React,{ useState, useEffect } from 'react';
 import classNames from "classnames";
 import { useTranslation } from 'react-i18next';
+import { byDecimals } from 'features/helpers/bignumber';
 import { withStyles, makeStyles } from "@material-ui/core/styles";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
@@ -48,6 +49,7 @@ export default function StakePool(props) {
   const [ depositAble,setDepositAble ] = useState(true);
   const [ claimAble,setClaimAble ] = useState(true);
   const [ exitAble,setExitAble ] = useState(true);
+  const [ myBalance,setMyBalance ] = useState(0);
   console.warn('~~~document.body.clientWidth~~',document.body.clientWidth);
   window.onresize = ()=>{
     let Width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
@@ -87,11 +89,18 @@ export default function StakePool(props) {
 
   useEffect(() => {
     setClaimAble(!Boolean(fetchClaimPending[index]));
-  }, [fetchClaimPending, index]);
+  }, [fetchClaimPending[index], index]);
 
   useEffect(() => {
     setExitAble(!Boolean(fetchExitPending[index]));
   }, [fetchExitPending, index]);
+
+  useEffect(() => {
+    console.log(balance[index])
+    const amount = byDecimals(balance[index], pools[index].tokenDecimals).toFormat(4)
+    console.log(amount)
+    setMyBalance(amount);
+  }, [balance[index], setMyBalance, pools, index]);
 
   useEffect(() => {
     if(!address) return;
@@ -105,7 +114,6 @@ export default function StakePool(props) {
   
   return (
     <GridContainer>
-      
       <div className={classes.detailContainer}>
         <div className={classes.detailTitle}>{`Stake / ${pools[index].name}`}</div>
         <div className={classes.detailContent}>
@@ -117,7 +125,7 @@ export default function StakePool(props) {
                 [classes.contentTitleItem]:true,
                 [classes.contentTitleItemBorder]:true,
               })}>
-                <div>2345.6672 BPT</div>
+                <div>{`${myBalance} ${pools[index].token}`}</div>
                 <div>{t('Stake-Balancer-Your-Balance')}</div>
             </GridItem>
 

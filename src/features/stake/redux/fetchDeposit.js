@@ -82,8 +82,7 @@ export function useFetchDeposit() {
   const { fetchDepositPending } = useSelector(
     state => ({
       fetchDepositPending: state.stake.fetchDepositPending,
-    }),
-    shallowEqual,
+    })
   );
 
   const boundAction = useCallback(

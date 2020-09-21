@@ -60,8 +60,7 @@ export function useFetchCanWithdrawTime() {
     state => ({
       canWithdrawTime: state.stake.canWithdrawTime,
       fetchCanWithdrawTimePending: state.stake.fetchCanWithdrawTimePending,
-    }),
-    shallowEqual,
+    })
   );
 
   const boundAction = useCallback(

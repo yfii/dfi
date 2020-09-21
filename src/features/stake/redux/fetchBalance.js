@@ -62,8 +62,7 @@ export function useFetchBalance() {
     state => ({
       balance: state.stake.balance,
       fetchBalancePending: state.stake.fetchBalancePending,
-    }),
-    shallowEqual,
+    })
   );
 
   const boundAction = useCallback(

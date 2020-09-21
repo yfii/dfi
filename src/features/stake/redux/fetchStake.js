@@ -82,8 +82,7 @@ export function useFetchStake() {
   const { fetchStakePending } = useSelector(
     state => ({
       fetchStakePending: state.stake.fetchStakePending,
-    }),
-    shallowEqual,
+    })
   );
 
   const boundAction = useCallback(

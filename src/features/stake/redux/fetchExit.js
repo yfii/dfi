@@ -82,8 +82,7 @@ export function useFetchExit() {
   const { fetchExitPending } = useSelector(
     state => ({
       fetchExitPending: state.stake.fetchExitPending,
-    }),
-    shallowEqual,
+    })
   );
 
   const boundAction = useCallback(
