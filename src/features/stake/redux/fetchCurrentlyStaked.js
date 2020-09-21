@@ -12,6 +12,7 @@ export function fetchCurrentlyStaked(index) {
     // optionally you can have getState as the second argument
     dispatch({
       type: STAKE_FETCH_CURRENTLY_STAKED_BEGIN,
+      index
     });
     // Return a promise so that you could control UI flow without states in the store.
     // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
@@ -40,6 +41,7 @@ export function fetchCurrentlyStaked(index) {
         error => {
           dispatch({
             type: STAKE_FETCH_CURRENTLY_STAKED_FAILURE,
+            index
           });
           reject(error.message || error);
         }
@@ -76,30 +78,32 @@ export function useFetchCurrentlyStaked() {
 }
 
 export function reducer(state, action) {
+  const { currentlyStaked, fetchCurrentlyStakedPending } = state;
   switch (action.type) {
     case STAKE_FETCH_CURRENTLY_STAKED_BEGIN:
       // Just after a request is sent
+      fetchCurrentlyStakedPending[action.index] = true;
       return {
         ...state,
-        fetchCurrentlyStakedPending: true,
+        fetchCurrentlyStakedPending,
       };
 
     case STAKE_FETCH_CURRENTLY_STAKED_SUCCESS:
       // The request is success
-
-      const { currentlyStaked } = state;
       currentlyStaked[action.index] = action.data;
+      fetchCurrentlyStakedPending[action.index] = false;
       return {
         ...state,
         currentlyStaked,
-        fetchCurrentlyStakedPending: false,
+        fetchCurrentlyStakedPending,
       };
 
     case STAKE_FETCH_CURRENTLY_STAKED_FAILURE:
       // The request is failed
+      fetchCurrentlyStakedPending[action.index] = false;
       return {
         ...state,
-        fetchCurrentlyStakedPending: false,
+        fetchCurrentlyStakedPending,
       };
 
     default:

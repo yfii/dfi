@@ -1,16 +1,16 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
-  STAKE_FETCH_HALF_TIME_BEGIN,
-  STAKE_FETCH_HALF_TIME_SUCCESS,
-  STAKE_FETCH_HALF_TIME_FAILURE,
+  STAKE_FETCH_CAN_WITHDRAW_TIME_BEGIN,
+  STAKE_FETCH_CAN_WITHDRAW_TIME_SUCCESS,
+  STAKE_FETCH_CAN_WITHDRAW_TIME_FAILURE,
 } from './constants';
 
-export function fetchHalfTime(index) {
+export function fetchCanWithdrawTime(index) {
   return (dispatch, getState) => {
     // optionally you can have getState as the second argument
     dispatch({
-      type: STAKE_FETCH_HALF_TIME_BEGIN,
+      type: STAKE_FETCH_CAN_WITHDRAW_TIME_BEGIN,
       index
     });
     // Return a promise so that you could control UI flow without states in the store.
@@ -26,11 +26,11 @@ export function fetchHalfTime(index) {
       const { pools } = stake;
       const { earnContractAbi, earnContractAddress } = pools[index];
       const contract = new web3.eth.Contract(earnContractAbi, earnContractAddress);
-      contract.methods.periodFinish().call({ from: address }).then(
+      contract.methods.canWithdrawTime(address).call({ from: address }).then(
         data => {
           dispatch({
-            type: STAKE_FETCH_HALF_TIME_SUCCESS,
-            data,
+            type: STAKE_FETCH_CAN_WITHDRAW_TIME_SUCCESS,
+            data: Number(data),
             index
           });
           resolve(data);
@@ -39,7 +39,7 @@ export function fetchHalfTime(index) {
         // Use rejectHandler as the second argument so that render errors won't be caught.
         error => {
           dispatch({
-            type: STAKE_FETCH_HALF_TIME_FAILURE,
+            type: STAKE_FETCH_CAN_WITHDRAW_TIME_FAILURE,
             index
           });
           reject(error.message || error);
@@ -51,59 +51,59 @@ export function fetchHalfTime(index) {
 }
 
 
-export function useFetchHalfTime() {
+export function useFetchCanWithdrawTime() {
   // args: false value or array
   // if array, means args passed to the action creator
   const dispatch = useDispatch();
 
-  const { halfTime, fetchHalfTimePending } = useSelector(
+  const { canWithdrawTime, fetchCanWithdrawTimePending } = useSelector(
     state => ({
-      halfTime: state.stake.halfTime,
-      fetchHalfTimePending: state.stake.fetchHalfTimePending,
+      canWithdrawTime: state.stake.canWithdrawTime,
+      fetchCanWithdrawTimePending: state.stake.fetchCanWithdrawTimePending,
     }),
     shallowEqual,
   );
 
   const boundAction = useCallback(
-    data => dispatch(fetchHalfTime(data)),
+    data => dispatch(fetchCanWithdrawTime(data)),
     [dispatch],
   );
 
   return {
-    halfTime,
-    fetchHalfTime: boundAction,
-    fetchHalfTimePending
+    canWithdrawTime,
+    fetchCanWithdrawTime: boundAction,
+    fetchCanWithdrawTimePending
   };
 }
 
 export function reducer(state, action) {
-  const { halfTime, fetchHalfTimePending } = state;
+  const { canWithdrawTime, fetchCanWithdrawTimePending } = state;
   switch (action.type) {
-    case STAKE_FETCH_HALF_TIME_BEGIN:
+    case STAKE_FETCH_CAN_WITHDRAW_TIME_BEGIN:
       // Just after a request is sent
-      fetchHalfTimePending[action.index] = true;
+      fetchCanWithdrawTimePending[action.index] = true;
       return {
         ...state,
-        fetchHalfTimePending,
+        fetchCanWithdrawTimePending,
       };
 
-    case STAKE_FETCH_HALF_TIME_SUCCESS:
+    case STAKE_FETCH_CAN_WITHDRAW_TIME_SUCCESS:
       // The request is success
 
-      fetchHalfTimePending[action.index] = false;
-      halfTime[action.index] = action.data;
+      canWithdrawTime[action.index] = action.data;
+      fetchCanWithdrawTimePending[action.index] = false;
       return {
         ...state,
-        halfTime,
-        fetchHalfTimePending,
+        canWithdrawTime,
+        fetchCanWithdrawTimePending,
       };
 
-    case STAKE_FETCH_HALF_TIME_FAILURE:
+    case STAKE_FETCH_CAN_WITHDRAW_TIME_FAILURE:
       // The request is failed
-      fetchHalfTimePending[action.index] = false;
+      fetchCanWithdrawTimePending[action.index] = false;
       return {
         ...state,
-        fetchHalfTimePending,
+        fetchCanWithdrawTimePending,
       };
 
     default:

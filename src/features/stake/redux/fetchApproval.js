@@ -1,18 +1,20 @@
 import { useCallback } from 'react';
+import { erc20ABI } from "../../configure";
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
-  STAKE_FETCH_STAKE_BEGIN,
-  STAKE_FETCH_STAKE_SUCCESS,
-  STAKE_FETCH_STAKE_FAILURE,
+  STAKE_FETCH_APPROVAL_BEGIN,
+  STAKE_FETCH_APPROVAL_SUCCESS,
+  STAKE_FETCH_APPROVAL_FAILURE,
 } from './constants';
-import { enqueueSnackbar } from '../../common/redux/actions'
+import { enqueueSnackbar } from '../../common/redux/actions';
+import { checkApproval } from './action';
 import { fetchGasPrice } from "../../web3";
 
-export function fetchStake(index, amount) {
+export function fetchApproval(index) {
   return (dispatch, getState) => {
     // optionally you can have getState as the second argument
     dispatch({
-      type: STAKE_FETCH_STAKE_BEGIN,
+      type: STAKE_FETCH_APPROVAL_BEGIN,
       index
     });
     // Return a promise so that you could control UI flow without states in the store.
@@ -26,12 +28,12 @@ export function fetchStake(index, amount) {
       const { home, stake } = getState();
       const { address, web3 } = home;
       const { pools } = stake;
-      const { earnContractAbi, earnContractAddress } = pools[index];
-      const contract = new web3.eth.Contract(earnContractAbi, earnContractAddress);
+      const { tokenAddress, earnContractAddress } = pools[index];
+      const contract = new web3.eth.Contract(erc20ABI, tokenAddress);
       const gas = await fetchGasPrice();
       const gasPrice = web3.utils.toWei(gas, 'gwei')
 
-      contract.methods.stake(amount).send({ from: address, gasPrice }).on(
+      contract.methods.approve(earnContractAddress, web3.utils.toWei("79228162514", "ether")).send({ from: address, gasPrice }).on(
         'transactionHash', function(hash){
           dispatch(enqueueSnackbar({
             message: hash,
@@ -50,7 +52,8 @@ export function fetchStake(index, amount) {
               variant: 'success',
             },
           }));
-          dispatch({ type: STAKE_FETCH_STAKE_SUCCESS, index });
+          dispatch({ type: STAKE_FETCH_APPROVAL_SUCCESS, index });
+          dispatch(checkApproval(index))
           resolve();
         })
         .on('error', function(error) {
@@ -61,11 +64,11 @@ export function fetchStake(index, amount) {
               variant: 'error'
             },
           }));
-          dispatch({ type: STAKE_FETCH_STAKE_FAILURE, index });
+          dispatch({ type: STAKE_FETCH_APPROVAL_FAILURE, index });
           resolve();
         })
         .catch((error) => {
-          dispatch({ type: STAKE_FETCH_STAKE_FAILURE, index });
+          dispatch({ type: STAKE_FETCH_APPROVAL_FAILURE, index });
           reject(error)
         })
     });
@@ -74,54 +77,54 @@ export function fetchStake(index, amount) {
 }
 
 
-export function useFetchStake() {
+export function useFetchApproval() {
   // args: false value or array
   // if array, means args passed to the action creator
   const dispatch = useDispatch();
 
-  const { fetchStakePending } = useSelector(
+  const { fetchApprovalPending } = useSelector(
     state => ({
-      fetchStakePending: state.stake.fetchStakePending,
+      fetchApprovalPending: state.stake.fetchApprovalPending,
     }),
     shallowEqual,
   );
 
   const boundAction = useCallback(
-    (data, amount) => dispatch(fetchStake(data, amount)),
+    data => dispatch(fetchApproval(data)),
     [dispatch],
   );
 
   return {
-    fetchStake: boundAction,
-    fetchStakePending
+    fetchApproval: boundAction,
+    fetchApprovalPending
   };
 }
 
 export function reducer(state, action) {
-  const { fetchStakePending } = state;
+  const { fetchApprovalPending } = state;
   switch (action.type) {
-    case STAKE_FETCH_STAKE_BEGIN:
+    case STAKE_FETCH_APPROVAL_BEGIN:
       // Just after a request is sent
-      fetchStakePending[action.index] = true;
+      fetchApprovalPending[action.data] = true;
       return {
         ...state,
-        fetchStakePending
+        fetchApprovalPending,
       };
 
-    case STAKE_FETCH_STAKE_SUCCESS:
+    case STAKE_FETCH_APPROVAL_SUCCESS:
       // The request is success
-      fetchStakePending[action.index] = false;
+      fetchApprovalPending[action.data] = false;
       return {
         ...state,
-        fetchStakePending
+        fetchApprovalPending,
       };
 
-    case STAKE_FETCH_STAKE_FAILURE:
+    case STAKE_FETCH_APPROVAL_FAILURE:
       // The request is failed
-      fetchStakePending[action.index] = false;
+      fetchApprovalPending[action.data] = false;
       return {
         ...state,
-        fetchStakePending
+        fetchApprovalPending,
       };
 
     default:

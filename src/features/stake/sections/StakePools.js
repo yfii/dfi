@@ -25,8 +25,6 @@ export default function StakePools() {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const { pools, poolsInfo, fetchPoolsInfo } = useFetchPoolsInfo();
-  const [ showDetail, setShowDetail ] = useState({});
-  const [ showInput, setShowInput ] = useState(false);
 
   useEffect(() => {
     fetchPoolsInfo();

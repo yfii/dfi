@@ -1,18 +1,18 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
-  STAKE_FETCH_STAKE_BEGIN,
-  STAKE_FETCH_STAKE_SUCCESS,
-  STAKE_FETCH_STAKE_FAILURE,
+  STAKE_FETCH_EXIT_BEGIN,
+  STAKE_FETCH_EXIT_SUCCESS,
+  STAKE_FETCH_EXIT_FAILURE,
 } from './constants';
 import { enqueueSnackbar } from '../../common/redux/actions'
 import { fetchGasPrice } from "../../web3";
 
-export function fetchStake(index, amount) {
+export function fetchExit(index) {
   return (dispatch, getState) => {
     // optionally you can have getState as the second argument
     dispatch({
-      type: STAKE_FETCH_STAKE_BEGIN,
+      type: STAKE_FETCH_EXIT_BEGIN,
       index
     });
     // Return a promise so that you could control UI flow without states in the store.
@@ -31,7 +31,7 @@ export function fetchStake(index, amount) {
       const gas = await fetchGasPrice();
       const gasPrice = web3.utils.toWei(gas, 'gwei')
 
-      contract.methods.stake(amount).send({ from: address, gasPrice }).on(
+      contract.methods.exit().send({ from: address, gasPrice }).on(
         'transactionHash', function(hash){
           dispatch(enqueueSnackbar({
             message: hash,
@@ -50,7 +50,7 @@ export function fetchStake(index, amount) {
               variant: 'success',
             },
           }));
-          dispatch({ type: STAKE_FETCH_STAKE_SUCCESS, index });
+          dispatch({ type: STAKE_FETCH_EXIT_SUCCESS, index });
           resolve();
         })
         .on('error', function(error) {
@@ -61,11 +61,11 @@ export function fetchStake(index, amount) {
               variant: 'error'
             },
           }));
-          dispatch({ type: STAKE_FETCH_STAKE_FAILURE, index });
+          dispatch({ type: STAKE_FETCH_EXIT_FAILURE, index });
           resolve();
         })
         .catch((error) => {
-          dispatch({ type: STAKE_FETCH_STAKE_FAILURE, index });
+          dispatch({ type: STAKE_FETCH_EXIT_FAILURE, index });
           reject(error)
         })
     });
@@ -74,54 +74,54 @@ export function fetchStake(index, amount) {
 }
 
 
-export function useFetchStake() {
+export function useFetchExit() {
   // args: false value or array
   // if array, means args passed to the action creator
   const dispatch = useDispatch();
 
-  const { fetchStakePending } = useSelector(
+  const { fetchExitPending } = useSelector(
     state => ({
-      fetchStakePending: state.stake.fetchStakePending,
+      fetchExitPending: state.stake.fetchExitPending,
     }),
     shallowEqual,
   );
 
   const boundAction = useCallback(
-    (data, amount) => dispatch(fetchStake(data, amount)),
+    data => dispatch(fetchExit(data)),
     [dispatch],
   );
 
   return {
-    fetchStake: boundAction,
-    fetchStakePending
+    fetchExit: boundAction,
+    fetchExitPending
   };
 }
 
 export function reducer(state, action) {
-  const { fetchStakePending } = state;
+  const { fetchExitPending } = state;
   switch (action.type) {
-    case STAKE_FETCH_STAKE_BEGIN:
+    case STAKE_FETCH_EXIT_BEGIN:
       // Just after a request is sent
-      fetchStakePending[action.index] = true;
+      fetchExitPending[action.index] = true;
       return {
         ...state,
-        fetchStakePending
+        fetchExitPending,
       };
 
-    case STAKE_FETCH_STAKE_SUCCESS:
+    case STAKE_FETCH_EXIT_SUCCESS:
       // The request is success
-      fetchStakePending[action.index] = false;
+      fetchExitPending[action.index] = false;
       return {
         ...state,
-        fetchStakePending
+        fetchExitPending,
       };
 
-    case STAKE_FETCH_STAKE_FAILURE:
+    case STAKE_FETCH_EXIT_FAILURE:
       // The request is failed
-      fetchStakePending[action.index] = false;
+      fetchExitPending[action.index] = false;
       return {
         ...state,
-        fetchStakePending
+        fetchExitPending,
       };
 
     default:

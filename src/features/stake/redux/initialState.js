@@ -72,7 +72,8 @@ const allowance = [0,0,0,0];
 const balance = [0,0,0,0];
 const currentlyStaked = [0,0,0,0];
 const rewardsAvailable = [0,0,0,0];
-const halfTime = [0,0,false,false]
+const halfTime = [0,0,false,false];
+const canWithdrawTime = [0,0,0,0];
 
 
 const initialState = {
@@ -81,9 +82,21 @@ const initialState = {
 	currentlyStaked,
 	rewardsAvailable,
 	halfTime,
+	canWithdrawTime,
 	balance,
 	poolsInfo,
-	checkApprovalPending: false
+	fetchPoolsInfoPending: false,
+	checkApprovalPending: [false,false,false,false],
+	fetchBalancePending: [false,false,false,false],
+	fetchCurrentlyStakedPending: [false,false,false,false],
+	fetchRewardsAvailablePending: [false,false,false,false],
+	fetchHalfTimePending: [false,false,false,false],
+	fetchCanWithdrawTimePending: [false,false,false,false],
+	fetchApprovalPending: [false,false,false,false],
+	fetchStakePending: [false,false,false,false],
+	fetchDepositPending: [false,false,false,false],
+	fetchClaimPending: [false,false,false,false],
+	fetchExitPending: [false,false,false,false]
 };
 
 export default initialState;

@@ -13,6 +13,7 @@ export function fetchBalance(index) {
     // optionally you can have getState as the second argument
     dispatch({
       type: STAKE_FETCH_BALANCE_BEGIN,
+      index
     });
     // Return a promise so that you could control UI flow without states in the store.
     // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
@@ -41,6 +42,7 @@ export function fetchBalance(index) {
         error => {
           dispatch({
             type: STAKE_FETCH_BALANCE_FAILURE,
+            index
           });
           reject(error.message || error);
         }
@@ -77,30 +79,33 @@ export function useFetchBalance() {
 }
 
 export function reducer(state, action) {
+  const { balance, fetchBalancePending } = state;
   switch (action.type) {
     case STAKE_FETCH_BALANCE_BEGIN:
       // Just after a request is sent
+      fetchBalancePending[action.index] = true;
       return {
         ...state,
-        fetchBalancePending: true,
+        fetchBalancePending,
       };
 
     case STAKE_FETCH_BALANCE_SUCCESS:
       // The request is success
-
-      const { balance } = state;
+      
       balance[action.index] = action.data;
+      fetchBalancePending[action.index] = false;
       return {
         ...state,
         balance,
-        fetchBalancePending: false,
+        fetchBalancePending,
       };
 
     case STAKE_FETCH_BALANCE_FAILURE:
       // The request is failed
+      fetchBalancePending[action.index] = false;
       return {
         ...state,
-        fetchBalancePending: false,
+        fetchBalancePending,
       };
 
     default:

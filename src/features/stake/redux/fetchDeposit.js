@@ -1,89 +1,78 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
-  VAULT_FETCH_DEPOSIT_BEGIN,
-  VAULT_FETCH_DEPOSIT_SUCCESS,
-  VAULT_FETCH_DEPOSIT_FAILURE,
+  STAKE_FETCH_DEPOSIT_BEGIN,
+  STAKE_FETCH_DEPOSIT_SUCCESS,
+  STAKE_FETCH_DEPOSIT_FAILURE,
 } from './constants';
-import { deposit, depositEth } from "../../web3";
+import { enqueueSnackbar } from '../../common/redux/actions'
+import { fetchGasPrice } from "../../web3";
 
-export function fetchDeposit({ address, web3, isAll, amount, contractAddress, index }) {
-  return dispatch => {
+export function fetchDeposit(index, amount) {
+  return (dispatch, getState) => {
     // optionally you can have getState as the second argument
     dispatch({
-      type: VAULT_FETCH_DEPOSIT_BEGIN,
+      type: STAKE_FETCH_DEPOSIT_BEGIN,
       index
     });
-
     // Return a promise so that you could control UI flow without states in the store.
     // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
     // It's hard to use state to manage it, but returning a promise allows you to easily achieve it.
     // e.g.: handleSubmit() { this.props.actions.submitForm(data).then(()=> {}).catch(() => {}); }
-    const promise = new Promise((resolve, reject) => {
+    const promise = new Promise(async (resolve, reject) => {
       // doRequest is a placeholder Promise. You should replace it with your own logic.
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
-      deposit({ web3, address, isAll, amount, contractAddress }).then(
-        data => {
-          dispatch({
-            type: VAULT_FETCH_DEPOSIT_SUCCESS,
-            data, index
-          });
-          resolve(data);
-        },
-      ).catch(
-        // Use rejectHandler as the second argument so that render errors won't be caught.
-        error => {
-          dispatch({
-            type: VAULT_FETCH_DEPOSIT_FAILURE,
-            index
-          });
-          reject(error.message || error);
-        }
-      )
+      const { home, stake } = getState();
+      const { address, web3 } = home;
+      const { pools } = stake;
+      const { earnContractAbi, earnContractAddress } = pools[index];
+      const contract = new web3.eth.Contract(earnContractAbi, earnContractAddress);
+      const gas = await fetchGasPrice();
+      const gasPrice = web3.utils.toWei(gas, 'gwei')
+
+      contract.methods.withdraw(amount).send({ from: address, gasPrice }).on(
+        'transactionHash', function(hash){
+          dispatch(enqueueSnackbar({
+            message: hash,
+            options: {
+              key: new Date().getTime() + Math.random(),
+              variant: 'success'
+            },
+            hash
+          }));
+        })
+        .on('receipt', function(receipt){
+          dispatch(enqueueSnackbar({
+            key: new Date().getTime() + Math.random(),
+            message: '交易确认',
+            options: {
+              variant: 'success',
+            },
+          }));
+          dispatch({ type: STAKE_FETCH_DEPOSIT_SUCCESS, index });
+          resolve();
+        })
+        .on('error', function(error) {
+          dispatch(enqueueSnackbar({
+            message: error.message || error,
+            options: {
+              key: new Date().getTime() + Math.random(),
+              variant: 'error'
+            },
+          }));
+          dispatch({ type: STAKE_FETCH_DEPOSIT_FAILURE, index });
+          resolve();
+        })
+        .catch((error) => {
+          dispatch({ type: STAKE_FETCH_DEPOSIT_FAILURE, index });
+          reject(error)
+        })
     });
     return promise;
-  };
+  }
 }
 
-export function fetchDepositEth({ address, web3, amount, contractAddress, index }) {
-  return dispatch => {
-    // optionally you can have getState as the second argument
-    dispatch({
-      type: VAULT_FETCH_DEPOSIT_BEGIN,
-      index
-    });
-
-    // Return a promise so that you could control UI flow without states in the store.
-    // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
-    // It's hard to use state to manage it, but returning a promise allows you to easily achieve it.
-    // e.g.: handleSubmit() { this.props.actions.submitForm(data).then(()=> {}).catch(() => {}); }
-    const promise = new Promise((resolve, reject) => {
-      // doRequest is a placeholder Promise. You should replace it with your own logic.
-      // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
-      // args.error here is only for test coverage purpose.
-      depositEth({ web3, address, amount, contractAddress }).then(
-        data => {
-          dispatch({
-            type: VAULT_FETCH_DEPOSIT_SUCCESS,
-            data, index
-          });
-          resolve(data);
-        },
-      ).catch(
-        // Use rejectHandler as the second argument so that render errors won't be caught.
-        error => {
-          dispatch({
-            type: VAULT_FETCH_DEPOSIT_FAILURE,
-            index
-          });
-          reject(error.message || error);
-        }
-      )
-    });
-    return promise;
-  };
-}
 
 export function useFetchDeposit() {
   // args: false value or array
@@ -92,62 +81,47 @@ export function useFetchDeposit() {
 
   const { fetchDepositPending } = useSelector(
     state => ({
-      fetchDepositPending: state.vault.fetchDepositPending,
+      fetchDepositPending: state.stake.fetchDepositPending,
     }),
     shallowEqual,
   );
 
   const boundAction = useCallback(
-    (data) => {
-      return dispatch(fetchDeposit(data));
-    },
-    [dispatch],
-  );
-
-  const boundAction2 = useCallback(
-    (data) => {
-      return dispatch(fetchDepositEth(data));
-    },
+    (data, amount) => dispatch(fetchDeposit(data, amount)),
     [dispatch],
   );
 
   return {
     fetchDeposit: boundAction,
-    fetchDepositEth: boundAction2,
     fetchDepositPending
   };
 }
 
 export function reducer(state, action) {
+  const { fetchDepositPending } = state;
   switch (action.type) {
-    case VAULT_FETCH_DEPOSIT_BEGIN:
+    case STAKE_FETCH_DEPOSIT_BEGIN:
       // Just after a request is sent
+      fetchDepositPending[action.index] = true;
       return {
         ...state,
-        fetchDepositPending: {
-          ...state.fetchDepositPending,
-          [action.index]: true
-        },
+        fetchDepositPending,
       };
 
-    case VAULT_FETCH_DEPOSIT_SUCCESS:
+    case STAKE_FETCH_DEPOSIT_SUCCESS:
       // The request is success
+      fetchDepositPending[action.index] = false;
       return {
         ...state,
-        fetchDepositPending: {
-          ...state.fetchDepositPending,
-          [action.index]: false
-        },
+        fetchDepositPending,
       };
 
-    case VAULT_FETCH_DEPOSIT_FAILURE:
+    case STAKE_FETCH_DEPOSIT_FAILURE:
       // The request is failed
+      fetchDepositPending[action.index] = false;
       return {
         ...state,
-        fetchDepositPending: {
-          ...state.fetchDepositPending,
-          [action.index]: false
-        },
+        fetchDepositPending,
       };
 
     default:

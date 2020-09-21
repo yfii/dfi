@@ -1,16 +1,17 @@
 import { useCallback } from 'react';
+import BigNumber from "bignumber.js";
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
-  STAKE_FETCH_HALF_TIME_BEGIN,
-  STAKE_FETCH_HALF_TIME_SUCCESS,
-  STAKE_FETCH_HALF_TIME_FAILURE,
+  STAKE_FETCH_REWARDS_AVAILABLE_BEGIN,
+  STAKE_FETCH_REWARDS_AVAILABLE_SUCCESS,
+  STAKE_FETCH_REWARDS_AVAILABLE_FAILURE,
 } from './constants';
 
-export function fetchHalfTime(index) {
+export function fetchRewardsAvailable(index) {
   return (dispatch, getState) => {
     // optionally you can have getState as the second argument
     dispatch({
-      type: STAKE_FETCH_HALF_TIME_BEGIN,
+      type: STAKE_FETCH_REWARDS_AVAILABLE_BEGIN,
       index
     });
     // Return a promise so that you could control UI flow without states in the store.
@@ -26,11 +27,11 @@ export function fetchHalfTime(index) {
       const { pools } = stake;
       const { earnContractAbi, earnContractAddress } = pools[index];
       const contract = new web3.eth.Contract(earnContractAbi, earnContractAddress);
-      contract.methods.periodFinish().call({ from: address }).then(
+      contract.methods.earned(address).call({ from: address }).then(
         data => {
           dispatch({
-            type: STAKE_FETCH_HALF_TIME_SUCCESS,
-            data,
+            type: STAKE_FETCH_REWARDS_AVAILABLE_SUCCESS,
+            data: new BigNumber(data).toNumber(),
             index
           });
           resolve(data);
@@ -39,7 +40,7 @@ export function fetchHalfTime(index) {
         // Use rejectHandler as the second argument so that render errors won't be caught.
         error => {
           dispatch({
-            type: STAKE_FETCH_HALF_TIME_FAILURE,
+            type: STAKE_FETCH_REWARDS_AVAILABLE_FAILURE,
             index
           });
           reject(error.message || error);
@@ -51,59 +52,59 @@ export function fetchHalfTime(index) {
 }
 
 
-export function useFetchHalfTime() {
+export function useFetchRewardsAvailable() {
   // args: false value or array
   // if array, means args passed to the action creator
   const dispatch = useDispatch();
 
-  const { halfTime, fetchHalfTimePending } = useSelector(
+  const { rewardsAvailable, fetchRewardsAvailablePending } = useSelector(
     state => ({
-      halfTime: state.stake.halfTime,
-      fetchHalfTimePending: state.stake.fetchHalfTimePending,
+      rewardsAvailable: state.stake.rewardsAvailable,
+      fetchRewardsAvailablePending: state.stake.fetchRewardsAvailablePending,
     }),
     shallowEqual,
   );
 
   const boundAction = useCallback(
-    data => dispatch(fetchHalfTime(data)),
+    data => dispatch(fetchRewardsAvailable(data)),
     [dispatch],
   );
 
   return {
-    halfTime,
-    fetchHalfTime: boundAction,
-    fetchHalfTimePending
+    rewardsAvailable,
+    fetchRewardsAvailable: boundAction,
+    fetchRewardsAvailablePending
   };
 }
 
 export function reducer(state, action) {
-  const { halfTime, fetchHalfTimePending } = state;
+  const { rewardsAvailable, fetchRewardsAvailablePending } = state;
   switch (action.type) {
-    case STAKE_FETCH_HALF_TIME_BEGIN:
+    case STAKE_FETCH_REWARDS_AVAILABLE_BEGIN:
       // Just after a request is sent
-      fetchHalfTimePending[action.index] = true;
+      fetchRewardsAvailablePending[action.index] = true;
       return {
         ...state,
-        fetchHalfTimePending,
+        fetchRewardsAvailablePending,
       };
 
-    case STAKE_FETCH_HALF_TIME_SUCCESS:
+    case STAKE_FETCH_REWARDS_AVAILABLE_SUCCESS:
       // The request is success
 
-      fetchHalfTimePending[action.index] = false;
-      halfTime[action.index] = action.data;
+      rewardsAvailable[action.index] = action.data;
+      fetchRewardsAvailablePending[action.index] = false;
       return {
         ...state,
-        halfTime,
-        fetchHalfTimePending,
+        rewardsAvailable,
+        fetchRewardsAvailablePending,
       };
 
-    case STAKE_FETCH_HALF_TIME_FAILURE:
+    case STAKE_FETCH_REWARDS_AVAILABLE_FAILURE:
       // The request is failed
-      fetchHalfTimePending[action.index] = false;
+      fetchRewardsAvailablePending[action.index] = false;
       return {
         ...state,
-        fetchHalfTimePending,
+        fetchRewardsAvailablePending,
       };
 
     default:
