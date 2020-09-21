@@ -241,7 +241,6 @@ export default function ZapCommand() {
                             }
                             buttonProps={{
                                 className: classes.receiveStyle,
-                                color: '#353848',
                             }}
                             onClick={handleSubDropdownClick}
                             dropdownList={subDropdownList}
