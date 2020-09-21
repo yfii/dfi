@@ -31,7 +31,17 @@ export default function StakePools() {
   }, [fetchPoolsInfo]);
   
   return (
-    <GridContainer>
+    <GridContainer spacing={3}>
+      <GridItem>
+        <div className={classes.mainTitle}>{t('Stake-Main-Title')}</div>
+        <h3 className={classes.secondTitle}>{t('Stake-Second-Title')}</h3>
+      </GridItem>
+      <GridItem >
+        <div className={classes.listHeader}>
+          <div className={classes.mainTitle}>{t('Stake-List-Header-Main')}</div>
+          <h3 className={classes.secondTitle}>{t('Stake-List-Header-Sub')}</h3>
+        </div>
+      </GridItem>
       <GridItem>
         <Table className={classes.table} aria-label="customized table">
           <TableHead>

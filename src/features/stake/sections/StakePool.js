@@ -196,7 +196,7 @@ export default function StakePool(props) {
               </GridItem>
             ) : (
               <GridContainer className={classes.contentTitle}>
-                <GridContainer md={3} xs={6} justify={pageSize!='exceedSm'?'center':'flex-start'}>
+                <GridItem md={3} xs={6} className={classes.flexCenter}>
                   <CustomButtons
                     onClick={(event)=>{
                       event.stopPropagation();
@@ -205,8 +205,8 @@ export default function StakePool(props) {
                     className={classes.stakeButton}>
                     {t('Stake-Button-Stake-Tokens')}
                   </CustomButtons>
-                </GridContainer>
-                <GridContainer md={3} xs={6} justify={pageSize!='exceedSm'?'center':'flex-start'}>
+                </GridItem>
+                <GridItem md={3} xs={6} className={classes.flexCenter}>
                   <CustomButtons
                     disabled={!Boolean(claimAble)}
                     onClick={()=>fetchClaim(index)}
@@ -216,8 +216,8 @@ export default function StakePool(props) {
                     })}>
                     {t('Stake-Button-Claim-Rewards')}
                   </CustomButtons>
-                </GridContainer>
-                <GridContainer md={3} xs={6} justify={pageSize!='exceedSm'?'center':'flex-start'}>
+                </GridItem>
+                <GridItem md={3} xs={6} className={classes.flexCenter}>
                   <CustomButtons
                     onClick={(event)=>{
                       event.stopPropagation();
@@ -228,8 +228,8 @@ export default function StakePool(props) {
                     })}>
                     {t('Stake-Button-Unstake-Tokens')}
                   </CustomButtons>
-                </GridContainer>
-                <GridContainer md={3} xs={6} justify={pageSize!='exceedSm'?'center':'flex-start'}>
+                </GridItem>
+                <GridItem md={3} xs={6} className={classes.flexCenter}>
                   <CustomButtons
                     onClick={(event)=>{
                       event.stopPropagation();
@@ -240,7 +240,7 @@ export default function StakePool(props) {
                     })}>
                     {t('Stake-Button-Exit')}
                   </CustomButtons>
-                </GridContainer>
+                </GridItem>
               </GridContainer>
             )
           }
