@@ -219,8 +219,8 @@ export function byDecimals(number, tokenDecimals = 18){
 }
 
 export function calculateReallyNum(total,sliderNum){
-    if(sliderNum == undefined){
-       return byDecimals(0, 0);
-    }
-    return byDecimals(sliderNum/100*Number(total), 0);
+  if(sliderNum == undefined){
+      return byDecimals(0, 0).toFormat(4);
+  }
+  return byDecimals(sliderNum/100*Number(total), 0).toFormat(4);
 }
