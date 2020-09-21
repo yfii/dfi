@@ -29,10 +29,10 @@ export function checkApproval(index) {
       const contract = new web3.eth.Contract(erc20ABI, tokenAddress);
       contract.methods.allowance(address, earnContractAddress).call({ from: address }).then(
         data => {
-          const balance = web3.utils.fromWei(balance, "ether");
+          const balance = web3.utils.fromWei(data, "ether");
           dispatch({
             type: STAKE_CHECK_APPROVAL_SUCCESS,
-            data: new BigNumber(allowance).toNumber(),
+            data: new BigNumber(balance).toNumber(),
             index
           });
           resolve(data);
@@ -67,11 +67,12 @@ export function useCheckApproval() {
   );
 
   const boundAction = useCallback(
-    () => dispatch(checkApproval()),
+    data => dispatch(checkApproval(data)),
     [dispatch],
   );
 
   return {
+    allowance,
     checkApproval: boundAction,
     checkApprovalPending
   };

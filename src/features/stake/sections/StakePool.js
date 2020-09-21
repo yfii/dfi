@@ -18,7 +18,8 @@ import InputBase from '@material-ui/core/InputBase';
 import IconButton from '@material-ui/core/IconButton';
 import Hidden from '@material-ui/core/Hidden';
 
-import { useFetchPoolsInfo } from '../redux/hooks';
+import { useConnectWallet } from '../../home/redux/hooks';
+import { useCheckApproval } from '../redux/hooks';
 
 const fontDefaultStyle = {
   color: '#fff',
@@ -63,7 +64,9 @@ const useStyles = makeStyles(stakePoolsStyle);
 export default function StakePool(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
-  const { pools, poolsInfo, fetchPoolsInfo } = useFetchPoolsInfo();
+  const [ index ] = useState(Number(props.match.params.index));
+  const { address } = useConnectWallet();
+  const { allowance, checkApproval } = useCheckApproval();
   const [ showDetail, setShowDetail ] = useState({});
   const [ showInput, setShowInput ] = useState(false);
   const [ pageSize,setPageSize ] = useState('');
@@ -85,8 +88,9 @@ export default function StakePool(props) {
   }
 
   useEffect(() => {
-    console.log(props.match.params.poolId)
-  }, [fetchPoolsInfo]);
+    if(!address) return;
+    checkApproval(index)
+  }, [checkApproval, address]);
   
   return (
     <GridContainer>

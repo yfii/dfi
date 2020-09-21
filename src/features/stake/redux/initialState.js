@@ -34,6 +34,17 @@ const pools = [
 		earnContractAddress: '0xa8EA49a9e242fFfBdECc4583551c3BcB111456E6',
 		halfTime: 0
 	},
+	{
+		name: 'YFII',
+		token: 'yfii',
+		tokenDecimals: 18,
+		tokenAddress: '0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83',
+		earnedToken: 'yCrv',
+		earnedTokenDecimals: 18,
+		earnedTokenAddress: '0x72Cf258c852Dc485a853370171d46B9D29fD3184',
+		earnContractAddress: '0x3d367c9529f260b0661e1c1e91167c9319ee96ca',
+		halfTime: 0
+	},
 ];
 
 const poolsInfo = [{

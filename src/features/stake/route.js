@@ -4,6 +4,6 @@ export default {
   path: 'stake',
   childRoutes: [
     { path: 'stake', component: StakePage, isIndex: true },
-    { path: 'pool/:poolId', component: PoolPage },
+    { path: 'pool/:index', component: PoolPage },
   ],
 };

@@ -1,8 +1,11 @@
 import initialState from './initialState';
 import { reducer as fetchPoolsInfoReducer} from './fetchPoolsInfo';
+import { reducer as checkApprovalReducer} from './checkApproval';
+
 
 const reducers = [
-  fetchPoolsInfoReducer
+  fetchPoolsInfoReducer,
+  checkApprovalReducer
 ];
 
 export default function reducer(state = initialState, action) {

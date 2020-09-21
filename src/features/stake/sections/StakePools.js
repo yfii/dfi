@@ -66,22 +66,6 @@ export default function StakePools() {
   const { pools, poolsInfo, fetchPoolsInfo } = useFetchPoolsInfo();
   const [ showDetail, setShowDetail ] = useState({});
   const [ showInput, setShowInput ] = useState(false);
-  const [ pageSize,setPageSize ] = useState('');
-  window.onresize = ()=>{
-    let Width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    let Height = window.innerHeight || document.documentElement.clientWidth || document.body.clientHeight;
-    let nowPageSize = '';
-    if(Width >= 960){
-      nowPageSize = 'exceedSm';
-    }else if(Width >= 600){
-      nowPageSize = 'sm';
-    }else{
-      nowPageSize = 'xs';
-    }
-    if(nowPageSize != pageSize){
-      setPageSize(nowPageSize);
-    }
-  }
 
   useEffect(() => {
     fetchPoolsInfo();
