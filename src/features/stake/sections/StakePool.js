@@ -62,7 +62,6 @@ const useStyles = makeStyles(stakePoolsStyle);
 export default function StakePool(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
-  const [ index ] = useState(Number(props.match.params.index));
   const { address } = useConnectWallet();
   const { allowance, checkApproval } = useCheckApproval();
   const { pools } = useFetchPoolsInfo();
@@ -71,9 +70,15 @@ export default function StakePool(props) {
   const { rewardsAvailable, fetchRewardsAvailable } = useFetchRewardsAvailable();
   const { canWithdrawTime, fetchCanWithdrawTime } = useFetchCanWithdrawTime();
   const { halfTime, fetchHalfTime } = useFetchHalfTime();
+  const [ index, setIndex ] = useState(Number(props.match.params.index));
   const [ showDetail, setShowDetail ] = useState({});
   const [ showInput, setShowInput ] = useState(false);
   const [ pageSize,setPageSize ] = useState('');
+  const [ isNeedApproval, setIsNeedApproval] = useState(false);
+  const [ stakeAble,setStakeAble ] = useState(true);
+  const [ depositAble,setDepositAble ] = useState(true);
+  const [ claimAble,setClaimAble ] = useState(true);
+  const [ exitAble,setExitAble ] = useState(true);
   console.warn('~~~document.body.clientWidth~~',document.body.clientWidth);
   window.onresize = ()=>{
     let Width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
@@ -90,6 +95,10 @@ export default function StakePool(props) {
       setPageSize(nowPageSize);
     }
   }
+
+  useEffect(() => {
+    setIndex(props.match.params.index);
+  }, [Number(props.match.params.index)]);
 
   useEffect(() => {
     if(!address) return;
