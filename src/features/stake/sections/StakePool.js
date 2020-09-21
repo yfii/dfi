@@ -40,7 +40,7 @@ export default function StakePool(props) {
   const { fetchDeposit, fetchDepositPending } = useFetchDeposit();
   const { fetchClaim, fetchClaimPending } = useFetchClaim();
   const { fetchExit, fetchExitPending } = useFetchExit();
-  const [ index, setIndex ] = useState(Number(props.match.params.index));
+  const [ index, setIndex] = useState(Number(props.match.params.index));
   const [ showInput, setShowInput ] = useState(false);
   const [ pageSize,setPageSize ] = useState('');
   const [ isNeedApproval, setIsNeedApproval] = useState(true);
@@ -49,8 +49,10 @@ export default function StakePool(props) {
   const [ depositAble,setDepositAble ] = useState(true);
   const [ claimAble,setClaimAble ] = useState(true);
   const [ exitAble,setExitAble ] = useState(true);
-  const [ myBalance,setMyBalance ] = useState(0);
-  console.warn('~~~document.body.clientWidth~~',document.body.clientWidth);
+  const [ myBalance,setMyBalance ] = useState(balance[index]);
+  const [ myCurrentlyStaked, setMyCurrentlyStaked] = useState(currentlyStaked[index]);
+  const [ myRewardsAvailable, setMyRewardsAvailable] = useState(rewardsAvailable[index]);
+  const [ myHalfTime, setMyHalfTime] = useState(`0day 00:00:00`);
   window.onresize = ()=>{
     let Width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     let Height = window.innerHeight || document.documentElement.clientWidth || document.body.clientHeight;
@@ -68,7 +70,7 @@ export default function StakePool(props) {
   }
 
   useEffect(() => {
-    setIndex(props.match.params.index);
+    setIndex(Number(props.match.params.index));
   }, [Number(props.match.params.index)]);
 
   useEffect(() => {
@@ -96,11 +98,38 @@ export default function StakePool(props) {
   }, [fetchExitPending, index]);
 
   useEffect(() => {
-    console.log(balance[index])
     const amount = byDecimals(balance[index], pools[index].tokenDecimals).toFormat(4)
-    console.log(amount)
     setMyBalance(amount);
-  }, [balance[index], setMyBalance, pools, index]);
+  }, [balance[index], pools, index]);
+
+  useEffect(() => {
+    const amount = byDecimals(currentlyStaked[index], pools[index].tokenDecimals).toFormat(4)
+    setMyCurrentlyStaked(amount);
+  }, [currentlyStaked[index], pools, index]);
+
+  useEffect(() => {
+    const amount = byDecimals(rewardsAvailable[index], pools[index].earnedTokenDecimals).toFormat(4)
+    setMyRewardsAvailable(amount);
+  }, [rewardsAvailable[index], pools, index]);
+
+  useEffect(() => {
+    if(halfTime[index] === 0) return;
+    if(Boolean(index === 2) || Boolean(index=== 3)) return;
+    const formatTime = () => {
+      const currTime = new Date().getTime();
+      const deadline = halfTime[index] * 1000;
+      const time = deadline - currTime;
+      if (time <= 0) { return fetchHalfTime(index);}
+      const day = Math.floor(time / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+      const hours = Math.floor(( time / (1000 * 60 * 60)) % 24).toString().padStart(2, '0');
+      const minutes = Math.floor(( time / (1000 * 60)) % 60).toString().padStart(2, '0');
+      const seconds = Math.floor(( time / 1000) % 60).toString().padStart(2, '0');
+      setMyHalfTime(`${day}day ${hours}:${minutes}:${seconds}`);
+    }
+    formatTime();
+    const id = setInterval(formatTime, 1000);
+    return () => clearInterval(id);
+  }, [halfTime[index], pools, index]);
 
   useEffect(() => {
     if(!address) return;
@@ -108,7 +137,7 @@ export default function StakePool(props) {
     fetchBalance(index);
     fetchCurrentlyStaked(index);
     fetchRewardsAvailable(index);
-    if(index=== 0 || index === 1) fetchHalfTime(index);
+    if(Boolean(index === 0) || Boolean(index === 1)) fetchHalfTime(index);
     if(index === 3) fetchCanWithdrawTime(index);
   }, [address, index]);
   
@@ -133,18 +162,18 @@ export default function StakePool(props) {
               [classes.contentTitleItem]:true,
               [classes.contentTitleItemBorder]:pageSize=='exceedSm' ? true : false,
             })}>
-              <div>2345.6672 BPT</div>
+              <div>{`${myCurrentlyStaked} ${pools[index].token}`}</div>
               <div>{t('Stake-Balancer-Current-Staked')}</div>
             </GridItem>
             <GridItem md={3} xs={6} className={classNames({
               [classes.contentTitleItem]:true,
               [classes.contentTitleItemBorder]:true,
             })}>
-              <div>234.0256 YFII</div>
+              <div>{`${myRewardsAvailable} ${pools[index].earnedToken}`}</div>
               <div>{t('Stake-Balancer-Rewards-Available')}</div>
             </GridItem>
             <GridItem md={3} xs={6} className={classes.contentTitleItem}>
-              <div>01day 03:17:10</div>
+              <div>{myHalfTime}</div>
               <div>{t('Stake-Balancer-Half-Time')}</div>
             </GridItem>
           </GridContainer>
@@ -165,7 +194,7 @@ export default function StakePool(props) {
                   <div className={classes.inputTxt}>{pools[index].name}</div>
                 </div>
                 <div className={classes.flexBox}>
-                  <div className={classes.inputSubTxt}>Balance: 8888.0000</div>
+                  <div className={classes.inputSubTxt}>{`Balance: ${myBalance}`}</div>
                   <CustomButtons
                     onClick={(event)=>{
                       event.stopPropagation();
@@ -190,7 +219,7 @@ export default function StakePool(props) {
                       setShowInput(false);
                     }}
                   >
-                    <i class="fa fa-times"/>
+                    <i className="fa fa-times"/>
                   </IconButton>
                 </div>
               </GridItem>
