@@ -19,7 +19,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Hidden from '@material-ui/core/Hidden';
 
 import { useConnectWallet } from '../../home/redux/hooks';
-import { useCheckApproval } from '../redux/hooks';
+import { useCheckApproval, useFetchPoolsInfo, useFetchBalance, useFetchCurrentlyStaked } from '../redux/hooks';
 
 const fontDefaultStyle = {
   color: '#fff',
@@ -59,14 +59,15 @@ const StyledTableRow = withStyles((theme) => ({
 
 const useStyles = makeStyles(stakePoolsStyle);
 
-// const rows = [{"id":"eth","name":"ETH","token":"ETH","tokenDescription":"ETH","tokenAddress":"","tokenDecimals":18,"tokenDescriptionUrl":"","tokenDescriptionUrl2":"","earnedToken":"iWETH","earnedTokenAddress":"0xa8EA49a9e242fFfBdECc4583551c3BcB111456E6","earnContractAddress":"0xa8EA49a9e242fFfBdECc4583551c3BcB111456E6","defaultApy":"39.54","pricePerFullShare":1.0010872907185218,"pastPricePerFullShare":1,"allowance":79228162514},{"id":"weth","name":"WETH","token":"WETH","tokenDescription":"WETH","tokenAddress":"0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2","tokenDecimals":18,"tokenDescriptionUrl":"","tokenDescriptionUrl2":"","earnedToken":"iWETH","earnedTokenAddress":"0xa8EA49a9e242fFfBdECc4583551c3BcB111456E6","earnContractAddress":"0xa8EA49a9e242fFfBdECc4583551c3BcB111456E6","defaultApy":"39.54","pricePerFullShare":1.0010872907185218,"pastPricePerFullShare":1,"allowance":79228162513},{"id":"usdt","name":"USDT","token":"USDT","tokenDescription":"USDT","tokenAddress":"0xdAC17F958D2ee523a2206206994597C13D831ec7","tokenDecimals":6,"tokenDescriptionUrl":"","tokenDescriptionUrl2":"","earnedToken":"iUSDT","earnedTokenAddress":"0x72Cf258c852Dc485a853370171d46B9D29fD3184","earnContractAddress":"0x72Cf258c852Dc485a853370171d46B9D29fD3184","defaultApy":"39.54","pricePerFullShare":1.0073106237422547,"pastPricePerFullShare":1,"allowance":79228162514},{"id":"usdc","name":"USDC","token":"USDC","tokenDescription":"USDC","tokenAddress":"0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48","tokenDecimals":6,"tokenDescriptionUrl":"","tokenDescriptionUrl2":"","earnedToken":"iUSDC","earnedTokenAddress":"0x23B4dB3a435517fd5f2661a9c5a16f78311201c1","earnContractAddress":"0x23B4dB3a435517fd5f2661a9c5a16f78311201c1","defaultApy":"39.54","pricePerFullShare":1.0067376619070039,"pastPricePerFullShare":1,"allowance":79228162514},{"id":"busd","name":"BUSD","token":"BUSD","tokenDescription":"BUSD","tokenAddress":"0x4Fabb145d64652a948d72533023f6E7A623C7C53","tokenDecimals":18,"tokenDescriptionUrl":"","tokenDescriptionUrl2":"","earnedToken":"iBUSD","earnedTokenAddress":"0xc46d2fC00554f1f874F37e6e3E828A0AdFEFfbcB","earnContractAddress":"0xc46d2fC00554f1f874F37e6e3E828A0AdFEFfbcB","defaultApy":"42.63","pricePerFullShare":1.0000225095467328,"pastPricePerFullShare":1,"allowance":79228161688.72224},{"id":"dai","name":"DAI","token":"DAI","tokenDescription":"DAI","tokenAddress":"0x6B175474E89094C44Da98b954EedeAC495271d0F","tokenDecimals":18,"tokenDescriptionUrl":"","tokenDescriptionUrl2":"https://docs.yfii.finance/#/zh-cn/buy-tokens?id=_2-dai%e5%85%91%e6%8d%a2","earnedToken":"iDAI","earnedTokenAddress":"0x1e0DC67aEa5aA74718822590294230162B5f2064","earnContractAddress":"0x1e0DC67aEa5aA74718822590294230162B5f2064","defaultApy":"86.3","pricePerFullShare":1.013126052931122,"pastPricePerFullShare":1,"allowance":79228136867.08475}];
-
 export default function StakePool(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const [ index ] = useState(Number(props.match.params.index));
   const { address } = useConnectWallet();
   const { allowance, checkApproval } = useCheckApproval();
+  const { pools } = useFetchPoolsInfo();
+  const { balance, fetchBalance } = useFetchBalance();
+  const { currentlyStaked, fetchCurrentlyStaked } = useFetchCurrentlyStaked();
   const [ showDetail, setShowDetail ] = useState({});
   const [ showInput, setShowInput ] = useState(false);
   const [ pageSize,setPageSize ] = useState('');
@@ -90,13 +91,15 @@ export default function StakePool(props) {
   useEffect(() => {
     if(!address) return;
     checkApproval(index)
+    fetchBalance(index)
+    fetchCurrentlyStaked(index)
   }, [checkApproval, address]);
   
   return (
     <GridContainer>
       
       <div className={classes.detailContainer}>
-        <div className={classes.detailTitle}>Stake / balancer</div>
+        <div className={classes.detailTitle}>{`Stake / ${pools[index].name}`}</div>
         <div className={classes.detailContent}>
           <GridContainer className={classNames({
             [classes.contentTitle]:true,

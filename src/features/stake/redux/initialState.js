@@ -1,4 +1,4 @@
-import { yCurveZapABI, yCurveZapOutABI, yCurveZapV4ABI, yCurveZapOutV4ABI, yCurveZapSwapABI, yCurveZapSwapV4ABI } from "../../configure";
+import { yCurveFiRewardsABI, balancerRewardsABI, governanceABI, pool4Abi } from "../../configure";
 
 const pools = [
 	{
@@ -9,8 +9,8 @@ const pools = [
 		earnedToken: 'YFII',
 		earnedTokenDecimals: 18,
 		earnedTokenAddress: '0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83',
-		earnContractAddress: '0xa8EA49a9e242fFfBdECc4583551c3BcB111456E6',
-		halfTime: 0
+		earnContractAddress: '0xb81D3cB2708530ea990a287142b82D058725C092',
+		earnContractAbi: yCurveFiRewardsABI,
 	},
 	{
 		name: 'Balancer Pool',
@@ -20,8 +20,8 @@ const pools = [
 		earnedToken: 'YFII',
 		earnedTokenDecimals: 18,
 		earnedTokenAddress: '0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83',
-		earnContractAddress: '0xa8EA49a9e242fFfBdECc4583551c3BcB111456E6',
-		halfTime: 0
+		earnContractAddress: '0xAFfcD3D45cEF58B1DfA773463824c6F6bB0Dc13a',
+		earnContractAbi: balancerRewardsABI,
 	},
 	{
 		name: 'Governance',
@@ -31,8 +31,8 @@ const pools = [
 		earnedToken: 'yCrv',
 		earnedTokenDecimals: 18,
 		earnedTokenAddress: '0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83',
-		earnContractAddress: '0xa8EA49a9e242fFfBdECc4583551c3BcB111456E6',
-		halfTime: 0
+		earnContractAddress: '0xf1750B770485A5d0589A6ba1270D9FC354884D45',
+		earnContractAbi: governanceABI,
 	},
 	{
 		name: 'YFII',
@@ -43,7 +43,7 @@ const pools = [
 		earnedTokenDecimals: 18,
 		earnedTokenAddress: '0x72Cf258c852Dc485a853370171d46B9D29fD3184',
 		earnContractAddress: '0x3d367c9529f260b0661e1c1e91167c9319ee96ca',
-		halfTime: 0
+		earnContractAbi: pool4Abi
 	},
 ];
 
