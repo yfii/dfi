@@ -19,6 +19,8 @@ import Clearfix from "components/Clearfix/Clearfix.js";
 import style from "assets/jss/material-kit-pro-react/modalStyle.js";
 // sections for this page
 import SectionPools from "features/vault/sections/SectionPools.js";
+import {StakePage} from "features/stake/index.js";
+import {ZapPage} from "features/swap/index.js";
 // style for this page
 // resource file
 // hooks
@@ -50,7 +52,10 @@ export default function HomePage() {
         close
         color="success"
       />
-      <SectionPools />
+      <SectionPools/>
+      <StakePage />
+      <div className={classes.modalMargin}></div>
+      <ZapPage/>
       <Dialog
         classes={{
           root: classes.modalRoot,

@@ -48,6 +48,8 @@
   "Vault-Modal-TIme": "นับถอยหลังที่รับเต็มจำนวน：", 
   "Vault-Modal-CloseButton": "ปิดตัวลง",
   "Vault-Modal-ConfirmButton": "ยืนยัน",
+  "Vault-Main-Title":"Vaults",
+  "Vault-Second-Title":"Deposit & Earn money",
   "Swap-Header": "Zap",
   "Swap-Title": "Exchange your assets",
   "Swap-Send": "Send",

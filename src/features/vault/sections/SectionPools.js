@@ -249,6 +249,10 @@ export default function SectionPools() {
 
   return (
     <GridContainer justify="center">
+      <GridItem>
+        <div className={classes.mainTitle}>{t('Vault-Main-Title')}</div>
+        <h3 className={classes.secondTitle}>{t('Vault-Second-Title')}</h3>
+      </GridItem>
       <GridItem md={12} xs={12} sm={10}>
         {Boolean(networkId === Number(process.env.NETWORK_ID)) && pools.map((pool, index) => {
           let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);

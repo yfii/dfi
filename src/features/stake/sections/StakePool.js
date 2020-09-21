@@ -13,49 +13,13 @@ import TableRow from '@material-ui/core/TableRow';
 import CustomButtons from "components/CustomButtons/Button.js";
 import Avatar from '@material-ui/core/Avatar';
 import { isEmpty } from 'features/helpers/utils';
-import stakePoolsStyle from "../jss/sections/stakePoolsStyle";
+import {StyledTableCell,StyledTableRow,stakePoolsStyle} from "../jss/sections/stakePoolsStyle";
 import InputBase from '@material-ui/core/InputBase';
 import IconButton from '@material-ui/core/IconButton';
 import Hidden from '@material-ui/core/Hidden';
 
 import { useConnectWallet } from '../../home/redux/hooks';
 import { useCheckApproval, useFetchPoolsInfo, useFetchBalance, useFetchCurrentlyStaked, useFetchRewardsAvailable, useFetchHalfTime, useFetchCanWithdrawTime, useFetchApproval, useFetchStake, useFetchDeposit, useFetchClaim, useFetchExit } from '../redux/hooks';
-
-const fontDefaultStyle = {
-  color: '#fff',
-  fontFamily: 'Helvetica',
-  fontSize: '18px',
-  letterSpacing: '0',
-  lineHeight: '18px',
-};
-
-const StyledTableCell = withStyles((theme) => ({
-  head: {
-    ...fontDefaultStyle,
-    backgroundColor: '#635AFF',
-    height:'48px',
-    borderColor:'rgb(40,42,55,0.5)',
-    padding:'0 40px',
-    '&:first-child':{
-      borderTopLeftRadius:'12px',
-    },
-    '&:last-child':{
-      borderTopRightRadius:'12px',
-    },
-  },
-  body: {
-    ...fontDefaultStyle,
-    padding:'20px 40px',
-    backgroundColor: '#2C3040',
-    borderColor:'rgb(40,42,55,0.5)',
-  },
-}))(TableCell);
-
-const StyledTableRow = withStyles((theme) => ({
-  root: {
-    
-  },
-}))(TableRow);
 
 const useStyles = makeStyles(stakePoolsStyle);
 
