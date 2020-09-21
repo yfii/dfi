@@ -3,13 +3,17 @@ import { reducer as fetchPoolsInfoReducer} from './fetchPoolsInfo';
 import { reducer as checkApprovalReducer} from './checkApproval';
 import { reducer as fetchBalanceReducer} from './fetchBalance';
 import { reducer as fetchCurrentlyStakedReducer } from './fetchCurrentlyStaked';
+import { reducer as fetchRewardsAvailableReducer } from './fetchRewardsAvailable';
+import { reducer as fetchHalfTimeReducer } from './fetchHalfTime';
 
 
 const reducers = [
   fetchPoolsInfoReducer,
   checkApprovalReducer,
   fetchBalanceReducer,
-  fetchCurrentlyStakedReducer
+  fetchCurrentlyStakedReducer,
+  fetchRewardsAvailableReducer,
+  fetchHalfTimeReducer
 ];
 
 export default function reducer(state = initialState, action) {

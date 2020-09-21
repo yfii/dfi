@@ -2,16 +2,16 @@ import { useCallback } from 'react';
 import BigNumber from "bignumber.js";
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
-  STAKE_FETCH_HALF_TIME_BEGIN,
-  STAKE_FETCH_HALF_TIME_SUCCESS,
-  STAKE_FETCH_HALF_TIME_FAILURE,
+  STAKE_FETCH_REWARDS_AVAILABLE_BEGIN,
+  STAKE_FETCH_REWARDS_AVAILABLE_SUCCESS,
+  STAKE_FETCH_REWARDS_AVAILABLE_FAILURE,
 } from './constants';
 
-export function fetchHalfTime(index) {
+export function fetchRewardsAvailable(index) {
   return (dispatch, getState) => {
     // optionally you can have getState as the second argument
     dispatch({
-      type: STAKE_FETCH_HALF_TIME_BEGIN,
+      type: STAKE_FETCH_REWARDS_AVAILABLE_BEGIN,
     });
     // Return a promise so that you could control UI flow without states in the store.
     // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
@@ -26,11 +26,11 @@ export function fetchHalfTime(index) {
       const { pools } = stake;
       const { earnContractAbi, earnContractAddress } = pools[index];
       const contract = new web3.eth.Contract(earnContractAbi, earnContractAddress);
-      contract.methods.periodFinish().call({ from: address }).then(
+      contract.methods.earned(address).call({ from: address }).then(
         data => {
           dispatch({
-            type: STAKE_FETCH_HALF_TIME_SUCCESS,
-            data,
+            type: STAKE_FETCH_REWARDS_AVAILABLE_SUCCESS,
+            data: new BigNumber(data).toNumber(),
             index
           });
           resolve(data);
@@ -39,7 +39,7 @@ export function fetchHalfTime(index) {
         // Use rejectHandler as the second argument so that render errors won't be caught.
         error => {
           dispatch({
-            type: STAKE_FETCH_HALF_TIME_FAILURE,
+            type: STAKE_FETCH_REWARDS_AVAILABLE_FAILURE,
           });
           reject(error.message || error);
         }
@@ -50,56 +50,56 @@ export function fetchHalfTime(index) {
 }
 
 
-export function useFetchHalfTime() {
+export function useFetchRewardsAvailable() {
   // args: false value or array
   // if array, means args passed to the action creator
   const dispatch = useDispatch();
 
-  const { halfTime, fetchHalfTimePending } = useSelector(
+  const { rewardsAvailable, fetchRewardsAvailablePending } = useSelector(
     state => ({
-      halfTime: state.stake.halfTime,
-      fetchHalfTimePending: state.stake.fetchHalfTimePending,
+      rewardsAvailable: state.stake.rewardsAvailable,
+      fetchRewardsAvailablePending: state.stake.fetchRewardsAvailablePending,
     }),
     shallowEqual,
   );
 
   const boundAction = useCallback(
-    data => dispatch(fetchHalfTime(data)),
+    data => dispatch(fetchRewardsAvailable(data)),
     [dispatch],
   );
 
   return {
-    halfTime,
-    fetchHalfTime: boundAction,
-    fetchHalfTimePending
+    rewardsAvailable,
+    fetchRewardsAvailable: boundAction,
+    fetchRewardsAvailablePending
   };
 }
 
 export function reducer(state, action) {
   switch (action.type) {
-    case STAKE_FETCH_HALF_TIME_BEGIN:
+    case STAKE_FETCH_REWARDS_AVAILABLE_BEGIN:
       // Just after a request is sent
       return {
         ...state,
-        fetchHalfTimePending: true,
+        fetchRewardsAvailablePending: true,
       };
 
-    case STAKE_FETCH_HALF_TIME_SUCCESS:
+    case STAKE_FETCH_REWARDS_AVAILABLE_SUCCESS:
       // The request is success
 
-      const { halfTime } = state;
-      halfTime[action.index] = action.data;
+      const { rewardsAvailable } = state;
+      rewardsAvailable[action.index] = action.data;
       return {
         ...state,
-        halfTime,
-        fetchHalfTimePending: false,
+        rewardsAvailable,
+        fetchRewardsAvailablePending: false,
       };
 
-    case STAKE_FETCH_HALF_TIME_FAILURE:
+    case STAKE_FETCH_REWARDS_AVAILABLE_FAILURE:
       // The request is failed
       return {
         ...state,
-        fetchHalfTimePending: false,
+        fetchRewardsAvailablePending: false,
       };
 
     default:

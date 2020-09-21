@@ -19,7 +19,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Hidden from '@material-ui/core/Hidden';
 
 import { useConnectWallet } from '../../home/redux/hooks';
-import { useCheckApproval, useFetchPoolsInfo, useFetchBalance, useFetchCurrentlyStaked } from '../redux/hooks';
+import { useCheckApproval, useFetchPoolsInfo, useFetchBalance, useFetchCurrentlyStaked, useFetchRewardsAvailable, useFetchHalfTime } from '../redux/hooks';
 
 const fontDefaultStyle = {
   color: '#fff',
@@ -68,6 +68,8 @@ export default function StakePool(props) {
   const { pools } = useFetchPoolsInfo();
   const { balance, fetchBalance } = useFetchBalance();
   const { currentlyStaked, fetchCurrentlyStaked } = useFetchCurrentlyStaked();
+  const { rewardsAvailable, fetchRewardsAvailable } = useFetchRewardsAvailable();
+  const { halfTime, fetchHalfTime } = useFetchHalfTime();
   const [ showDetail, setShowDetail ] = useState({});
   const [ showInput, setShowInput ] = useState(false);
   const [ pageSize,setPageSize ] = useState('');
@@ -89,10 +91,12 @@ export default function StakePool(props) {
   }
 
   useEffect(() => {
+    fetchHalfTime(index);
     if(!address) return;
-    checkApproval(index)
-    fetchBalance(index)
-    fetchCurrentlyStaked(index)
+    checkApproval(index);
+    fetchBalance(index);
+    fetchCurrentlyStaked(index);
+    fetchRewardsAvailable(index);
   }, [checkApproval, address]);
   
   return (
