@@ -145,7 +145,7 @@ export default function StakePool(props) {
     const isPending = Boolean(fetchExitPending[index]);
     const currentlyStakedIs0 = currentlyStaked[index] === 0;
     const rewardsAvailableIs0 = rewardsAvailable[index] === 0;
-    const currentlyStakedAndRewardsAvailableIs0 = Boolean(currentlyStakedIs0 && currentlyStakedIs0);
+    const currentlyStakedAndRewardsAvailableIs0 = Boolean(currentlyStakedIs0 && rewardsAvailableIs0);
     const isPool4 = Boolean(index === 3);
     const isDisableCanWithdrawTime = Boolean(canWithdrawTime[index] === 0) || Boolean((canWithdrawTime[index] * 1000) > new Date().getTime());
     const isPool4AndDisableCanWithDraw = Boolean(isPool4 && isDisableCanWithdrawTime)
