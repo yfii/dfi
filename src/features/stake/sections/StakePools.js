@@ -22,8 +22,7 @@ import { useFetchPoolsInfo } from '../redux/hooks';
 const useStyles = makeStyles(stakePoolsStyle);
 
 export default function StakePools(props) {
-  const { from } = props;
-  console.warn('props',props);
+  const { fromPage } = props;
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const { pools, poolsInfo, fetchPoolsInfo } = useFetchPoolsInfo();
@@ -39,12 +38,25 @@ export default function StakePools(props) {
         <h3 className={classes.secondTitle}>{t('Stake-Second-Title')}</h3>
       </GridItem>
       {
-        from == 'page' && <GridItem>
-        <div className={classes.listHeader}>
-          <div className={classes.mainTitle}>{t('Stake-List-Header-Main')}</div>
-          <h3 className={classes.secondTitle}>{t('Stake-List-Header-Sub')}</h3>
-        </div>
-      </GridItem>
+        fromPage == 'page' && 
+        <GridItem>
+          <div className={classes.listHeader}>
+            <div className={classes.mainTitle}>{t('Stake-List-Header-Main')}</div>
+            <GridContainer >
+              <GridItem className={classNames({
+                [classes.flexBox]:true,
+                [classes.marginTop]:true,
+              })}>
+                <div className={classes.secondTitle}>{t('Stake-List-Header-Sub')}</div>
+                <CustomButtons
+                  className={classes.learnMoreButton}
+                >
+                  {t('Stake-Learn-More')}
+                </CustomButtons>
+              </GridItem>
+            </GridContainer>
+          </div>
+        </GridItem>
       }
       <GridItem>
         <Table className={classes.table} aria-label="customized table">
@@ -101,5 +113,5 @@ export default function StakePools(props) {
 }
 
 StakePools.defaultProps = {
-  // from:'page',
+  fromPage:'page',
 }

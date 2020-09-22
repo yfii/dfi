@@ -1,6 +1,7 @@
 import { withStyles } from "@material-ui/core/styles";
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
+import image from "assets/img/stake-header-background.png";
 
 const fontDefaultStyle = {
     color: '#fff',
@@ -66,9 +67,10 @@ const stakePoolsStyle = theme => ({
       fontWeight: "550",
   },
   listHeader:{
-    backgroundImage:'url(features/images/stake-header-background.png)',
+    backgroundImage:`url(${image})`,
     borderRadius:'6px',
-    padding:'24px',
+    height:'180px',
+    padding:'48px 60px',
   },
   table: {
       minWidth: 700,
@@ -92,6 +94,20 @@ const stakePoolsStyle = theme => ({
       "&:hover,&:focus": {
           backgroundColor: primaryColor,
       }
+  },
+  learnMoreButton:{
+    ...fontDefaultStyle,
+    height:'32px',
+    borderRadius: '24px',
+    fontSize: '12px',
+    lineHeight: '12x',
+    padding:'12px 24px',
+    marginLeft:'12px',
+    fontWeight:'600',
+    backgroundColor: secondColor,
+      "&:hover,&:focus": {
+        backgroundColor: secondColor,
+    }
   },
   rewardsButton:{
       backgroundColor: secondColor,
@@ -220,6 +236,9 @@ const stakePoolsStyle = theme => ({
     display:'flex',
     justifyContent:'center',
     alignItems:'center',
+  },
+  marginTop:{
+    marginTop:'12px',
   }
 })
 
