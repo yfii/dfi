@@ -94,7 +94,7 @@ export default function Header(props) {
             <Tab value='' label='Home' id='bar-tab-0'/>
             <Tab value='vault' label='Vault' id='bar-tab-1'/>
             <Tab value='stake' label='Stake' id='bar-tab-2'/>
-            <Tab value='zap' label='Zap' id='bar-tab-3'/>
+            {/* <Tab value='zap' label='Zap' id='bar-tab-3'/> */}
         </Tabs>
         <Hidden smDown implementation="css">
           <div className={classes.collapse}>{links}</div>
