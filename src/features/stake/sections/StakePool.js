@@ -43,7 +43,7 @@ export default function StakePool(props) {
   const { fetchWithdraw, fetchWithdrawPending } = useFetchWithdraw();
   const { fetchClaim, fetchClaimPending } = useFetchClaim();
   const { fetchExit, fetchExitPending } = useFetchExit();
-  const [ index, setIndex] = useState(Number(props.match.params.index));
+  const [ index, setIndex] = useState(Number(props.match.params.index) - 1);
   const [ showInput, setShowInput ] = useState(false);
   const [ pageSize,setPageSize ] = useState('');
   const [ isNeedApproval, setIsNeedApproval] = useState(true);
@@ -93,7 +93,7 @@ export default function StakePool(props) {
   }
 
   useEffect(() => {
-    setIndex(Number(props.match.params.index));
+    setIndex(Number(props.match.params.index) - 1);
   }, [Number(props.match.params.index)]);
 
   useEffect(() => {
