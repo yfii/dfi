@@ -99,7 +99,7 @@ export default function StakePools(props) {
                 <StyledTableCell >{poolsInfo[index].pay}</StyledTableCell>
                 <StyledTableCell component="th" >
                   <CustomButtons
-                    href={`/#/stake/pool/${index}`}
+                    href={`/#/stake/pool/${index + 1}`}
                     className={classes.stakeButton}
                   >
                     {t('Stake-Button-Stake')}

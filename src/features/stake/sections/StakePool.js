@@ -43,7 +43,7 @@ export default function StakePool(props) {
   const { fetchWithdraw, fetchWithdrawPending } = useFetchWithdraw();
   const { fetchClaim, fetchClaimPending } = useFetchClaim();
   const { fetchExit, fetchExitPending } = useFetchExit();
-  const [ index, setIndex] = useState(Number(props.match.params.index));
+  const [ index, setIndex] = useState(Number(props.match.params.index) - 1);
   const [ showInput, setShowInput ] = useState(false);
   const [ pageSize,setPageSize ] = useState('');
   const [ isNeedApproval, setIsNeedApproval] = useState(true);
@@ -93,7 +93,7 @@ export default function StakePool(props) {
   }
 
   useEffect(() => {
-    setIndex(Number(props.match.params.index));
+    setIndex(Number(props.match.params.index) - 1);
   }, [Number(props.match.params.index)]);
 
   useEffect(() => {
@@ -204,7 +204,7 @@ export default function StakePool(props) {
             [classes.contentTitle]:true,
             [classes.marginBottom]:true,
           })}>
-            <GridItem md={3} xs={6} className={classNames({
+            <GridItem md={index===3 ? 4: 3} xs={index===3 ? 4 : 6} className={classNames({
                 [classes.contentTitleItem]:true,
                 [classes.contentTitleItemBorder]:true,
               })}>
@@ -212,24 +212,24 @@ export default function StakePool(props) {
                 <div>{t('Stake-Balancer-Your-Balance')}</div>
             </GridItem>
 
-            <GridItem md={3} xs={6} className={classNames({
+            <GridItem md={index===3 ? 4: 3} xs={index===3 ? 4 : 6} className={classNames({
               [classes.contentTitleItem]:true,
               [classes.contentTitleItemBorder]:pageSize=='exceedSm' ? true : false,
             })}>
               <div>{`${Math.floor(myCurrentlyStaked * 10000)/ 10000} ${pools[index].token}`}</div>
               <div>{t('Stake-Balancer-Current-Staked')}</div>
             </GridItem>
-            <GridItem md={3} xs={6} className={classNames({
+            <GridItem md={index===3 ? 4: 3} xs={index===3 ? 4 : 6} className={classNames({
               [classes.contentTitleItem]:true,
               [classes.contentTitleItemBorder]:true,
             })}>
               <div>{`${Math.floor(myRewardsAvailable * 10000)/ 10000} ${pools[index].earnedToken}`}</div>
               <div>{t('Stake-Balancer-Rewards-Available')}</div>
             </GridItem>
-            <GridItem md={3} xs={6} className={classes.contentTitleItem}>
+            {index!==3&&<GridItem md={3} xs={6} className={classes.contentTitleItem}>
               <div>{myHalfTime}</div>
               <div>{t('Stake-Balancer-Half-Time')}</div>
-            </GridItem>
+            </GridItem>}
           </GridContainer>
           {
             showInput ? (
@@ -299,17 +299,6 @@ export default function StakePool(props) {
                 </GridItem>
                 <GridItem md={3} xs={6} className={classes.flexCenter}>
                   <CustomButtons
-                    disabled={!Boolean(claimAble)}
-                    onClick={onClaim}
-                    className={classNames({
-                      [classes.stakeButton]:true,
-                      [classes.rewardsButton]:true,
-                    })}>
-                    {t('Stake-Button-Claim-Rewards')}
-                  </CustomButtons>
-                </GridItem>
-                <GridItem md={3} xs={6} className={classes.flexCenter}>
-                  <CustomButtons
                     disabled={!Boolean(withdrawAble)}
                     onClick={onWithdraw}
                     className={classNames({
@@ -317,6 +306,17 @@ export default function StakePool(props) {
                       [classes.grayButton]:true,
                     })}>
                     {t('Stake-Button-Unstake-Tokens')}
+                  </CustomButtons>
+                </GridItem>
+                <GridItem md={3} xs={6} className={classes.flexCenter}>
+                  <CustomButtons
+                    disabled={!Boolean(claimAble)}
+                    onClick={onClaim}
+                    className={classNames({
+                      [classes.stakeButton]:true,
+                      [classes.rewardsButton]:true,
+                    })}>
+                    {t('Stake-Button-Claim-Rewards')}
                   </CustomButtons>
                 </GridItem>
                 <GridItem md={3} xs={6} className={classes.flexCenter}>
