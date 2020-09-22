@@ -299,17 +299,6 @@ export default function StakePool(props) {
                 </GridItem>
                 <GridItem md={3} xs={6} className={classes.flexCenter}>
                   <CustomButtons
-                    disabled={!Boolean(claimAble)}
-                    onClick={onClaim}
-                    className={classNames({
-                      [classes.stakeButton]:true,
-                      [classes.rewardsButton]:true,
-                    })}>
-                    {t('Stake-Button-Claim-Rewards')}
-                  </CustomButtons>
-                </GridItem>
-                <GridItem md={3} xs={6} className={classes.flexCenter}>
-                  <CustomButtons
                     disabled={!Boolean(withdrawAble)}
                     onClick={onWithdraw}
                     className={classNames({
@@ -317,6 +306,17 @@ export default function StakePool(props) {
                       [classes.grayButton]:true,
                     })}>
                     {t('Stake-Button-Unstake-Tokens')}
+                  </CustomButtons>
+                </GridItem>
+                <GridItem md={3} xs={6} className={classes.flexCenter}>
+                  <CustomButtons
+                    disabled={!Boolean(claimAble)}
+                    onClick={onClaim}
+                    className={classNames({
+                      [classes.stakeButton]:true,
+                      [classes.rewardsButton]:true,
+                    })}>
+                    {t('Stake-Button-Claim-Rewards')}
                   </CustomButtons>
                 </GridItem>
                 <GridItem md={3} xs={6} className={classes.flexCenter}>
