@@ -67,7 +67,7 @@ export default function StakePool(props) {
       value = value.replace(/(^[0-9]+)(\.?[0-9]*$)/, (word, p1, p2) => { 
         return Number(p1).toString() + p2;
       });
-      if (Number(value) > myBalance) return setInputVal(myBalance.toString());
+      if (Number(value) > (showInput === 'stake'?myBalance:myCurrentlyStaked)) return setInputVal((showInput === 'stake'?myBalance.toString():myCurrentlyStaked.toString()));
       setInputVal(value)
     }
   }
@@ -119,21 +119,23 @@ export default function StakePool(props) {
 
   useEffect(() => {
     const isPending = Boolean(fetchWithdrawPending[index]);
+    const currentlyStakedIs0 = currentlyStaked[index] === 0;
     const isPool4 = Boolean(index === 3);
     const isDisableCanWithdrawTime = Boolean(canWithdrawTime[index] === 0) || Boolean((canWithdrawTime[index] * 1000) > new Date().getTime());
     const isPool4AndDisableCanWithDraw = Boolean(isPool4 && isDisableCanWithdrawTime)
-    setWithdraw(!Boolean(isPending || isPool4AndDisableCanWithDraw));
-  }, [fetchWithdrawPending[index], index, new Date()]);
+    setWithdraw(!Boolean(isPending || isPool4AndDisableCanWithDraw || currentlyStakedIs0));
+  }, [currentlyStaked[index], fetchWithdrawPending[index], index, new Date()]);
 
   const onWithdraw = () => {
-    const amount = balance[index].toString(10);
+    const amount = new BigNumber(inputVal).multipliedBy(new BigNumber(10).exponentiatedBy(pools[index].tokenDecimals)).toString(10);
     fetchWithdraw(index, amount);
   }
 
   useEffect(() => {
     const isPending = Boolean(fetchClaimPending[index]);
-    setClaimAble(!Boolean(isPending));
-  }, [fetchClaimPending[index], index]);
+    const rewardsAvailableIs0 = rewardsAvailable[index] === 0;
+    setClaimAble(!Boolean(isPending || rewardsAvailableIs0));
+  }, [rewardsAvailable[index], fetchClaimPending[index], index]);
 
   const onClaim = () => {
     fetchClaim(index);
@@ -141,11 +143,14 @@ export default function StakePool(props) {
 
   useEffect(() => {
     const isPending = Boolean(fetchExitPending[index]);
+    const currentlyStakedIs0 = currentlyStaked[index] === 0;
+    const rewardsAvailableIs0 = rewardsAvailable[index] === 0;
+    const currentlyStakedAndRewardsAvailableIs0 = Boolean(currentlyStakedIs0 && rewardsAvailableIs0);
     const isPool4 = Boolean(index === 3);
     const isDisableCanWithdrawTime = Boolean(canWithdrawTime[index] === 0) || Boolean((canWithdrawTime[index] * 1000) > new Date().getTime());
     const isPool4AndDisableCanWithDraw = Boolean(isPool4 && isDisableCanWithdrawTime)
-    setExitAble(!Boolean(isPending || isPool4AndDisableCanWithDraw));
-  }, [fetchExitPending[index], index, new Date()]);
+    setExitAble(!Boolean(isPending || isPool4AndDisableCanWithDraw || currentlyStakedAndRewardsAvailableIs0));
+  }, [currentlyStaked[index], rewardsAvailable[index], fetchExitPending[index], index, new Date()]);
 
   const onExit = () => {
     fetchExit(index);
@@ -248,11 +253,11 @@ export default function StakePool(props) {
                   <div className={classes.inputTxt}>{pools[index].name}</div>
                 </div>
                 <div className={classes.flexBox}>
-                  <div className={classes.inputSubTxt}>{`Balance: ${myBalance}`}</div>
+                  <div className={classes.inputSubTxt}>{`Balance: ${showInput === 'stake' ? myBalance: myCurrentlyStaked}`}</div>
                   <CustomButtons
                     onClick={(event)=>{
                       event.stopPropagation();
-                      setInputVal(myBalance.toString());
+                      setInputVal(showInput === 'stake' ? myBalance.toString(): myCurrentlyStaked.toString());
                     }}
                     className={classNames({
                       [classes.stakeButton]:true,
@@ -261,10 +266,10 @@ export default function StakePool(props) {
                     {t('Swap-Max')}
                   </CustomButtons>
                   <CustomButtons
-                    disabled={!Boolean(stakeAble)}
-                    onClick={onStake}
+                    disabled={!Boolean(showInput === 'stake' ? stakeAble : withdrawAble)}
+                    onClick={showInput === 'stake' ? onStake: onWithdraw}
                     className={classes.stakeButton}>
-                    {t('Stake-Button-Stake')}
+                    {showInput === 'stake' ? t('Stake-Button-Stake'):t('Stake-Button-Unstake-Tokens')}
                   </CustomButtons>
                   <IconButton
                     className={classes.inputCloseIcon}
@@ -290,7 +295,7 @@ export default function StakePool(props) {
                   ): (<CustomButtons
                     onClick={(event)=>{
                       event.stopPropagation();
-                      setShowInput(true);
+                      setShowInput('stake');
                     }}
                     className={classes.stakeButton}>
                     {t('Stake-Button-Stake-Tokens')}
@@ -300,7 +305,10 @@ export default function StakePool(props) {
                 <GridItem md={3} xs={6} className={classes.flexCenter}>
                   <CustomButtons
                     disabled={!Boolean(withdrawAble)}
-                    onClick={onWithdraw}
+                    onClick={(event)=>{
+                      event.stopPropagation();
+                      setShowInput('unstake');
+                    }}
                     className={classNames({
                       [classes.stakeButton]:true,
                       [classes.grayButton]:true,
