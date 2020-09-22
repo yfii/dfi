@@ -19,8 +19,7 @@ import Clearfix from "components/Clearfix/Clearfix.js";
 import style from "assets/jss/material-kit-pro-react/modalStyle.js";
 // sections for this page
 import SectionPools from "features/vault/sections/SectionPools.js";
-import {StakePage} from "features/stake/index.js";
-import {ZapPage} from "features/swap/index.js";
+import StakePage from 'features/stake/sections/StakePools.js';
 // style for this page
 // resource file
 // hooks
@@ -52,8 +51,8 @@ export default function HomePage() {
         close
         color="success"
       />
-      <SectionPools from='home'/>
-      <StakePage from='home'/>
+      <SectionPools fromPage='home'/>
+      <StakePage fromPage='home'/>
       <Dialog
         classes={{
           root: classes.modalRoot,
