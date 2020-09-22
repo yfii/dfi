@@ -124,7 +124,7 @@ export default function StakePool(props) {
     const isDisableCanWithdrawTime = Boolean(canWithdrawTime[index] === 0) || Boolean((canWithdrawTime[index] * 1000) > new Date().getTime());
     const isPool4AndDisableCanWithDraw = Boolean(isPool4 && isDisableCanWithdrawTime)
     setWithdraw(!Boolean(isPending || isPool4AndDisableCanWithDraw || currentlyStakedIs0));
-  }, [fetchWithdrawPending[index], index, new Date()]);
+  }, [currentlyStaked[index], fetchWithdrawPending[index], index, new Date()]);
 
   const onWithdraw = () => {
     const amount = new BigNumber(inputVal).multipliedBy(new BigNumber(10).exponentiatedBy(pools[index].tokenDecimals)).toString(10);
@@ -135,7 +135,7 @@ export default function StakePool(props) {
     const isPending = Boolean(fetchClaimPending[index]);
     const rewardsAvailableIs0 = rewardsAvailable[index] === 0;
     setClaimAble(!Boolean(isPending || rewardsAvailableIs0));
-  }, [fetchClaimPending[index], index]);
+  }, [rewardsAvailable[index], fetchClaimPending[index], index]);
 
   const onClaim = () => {
     fetchClaim(index);
@@ -150,7 +150,7 @@ export default function StakePool(props) {
     const isDisableCanWithdrawTime = Boolean(canWithdrawTime[index] === 0) || Boolean((canWithdrawTime[index] * 1000) > new Date().getTime());
     const isPool4AndDisableCanWithDraw = Boolean(isPool4 && isDisableCanWithdrawTime)
     setExitAble(!Boolean(isPending || isPool4AndDisableCanWithDraw || currentlyStakedAndRewardsAvailableIs0));
-  }, [fetchExitPending[index], index, new Date()]);
+  }, [currentlyStaked[index], rewardsAvailable[index], fetchExitPending[index], index, new Date()]);
 
   const onExit = () => {
     fetchExit(index);
