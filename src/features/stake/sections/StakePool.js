@@ -1,6 +1,7 @@
 import React,{ useState, useEffect } from 'react';
 import classNames from "classnames";
 import { useTranslation } from 'react-i18next';
+import BigNumber from 'bignumber.js'
 import { byDecimals } from 'features/helpers/bignumber';
 import { withStyles, makeStyles } from "@material-ui/core/styles";
 import GridContainer from "components/Grid/GridContainer.js";
@@ -58,17 +59,22 @@ export default function StakePool(props) {
   const [ inputVal, setInputVal] = useState(0);
   const [ anchorEl, setAnchorEl] = useState(null);
 
-  const changeInputVal = (total,tokenDecimals,event) => {
+  const changeInputVal = (event) => {
     let value = event.target.value;
-    if(!inputLimitPass(value,tokenDecimals)){
-      return;
+    const changeIsNumber = /^[0-9]+\.?[0-9]*$/;
+    if (!value) return setInputVal(value);
+    if (changeIsNumber.test(value)) {
+      value = value.replace(/(^[0-9]+)(\.?[0-9]*$)/, (word, p1, p2) => { 
+        return Number(p1).toString() + p2;
+      });
+      if (Number(value) > myBalance) return setInputVal(myBalance.toString());
+      setInputVal(value)
     }
-    setInputVal(inputFinalVal(value,total,tokenDecimals));
   }
 
   useEffect(()=>{
     setInputVal(inputFinalVal(String(inputVal),balance[index],pools[index].tokenDecimals));
-  },[balance[index]])
+  },[balance[index], index])
 
   window.onresize = ()=>{
     let Width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
@@ -107,7 +113,7 @@ export default function StakePool(props) {
   }, [fetchStakePending[index], index]);
 
   const onStake = () => {
-    const amount = 0
+    const amount = new BigNumber(inputVal).multipliedBy(new BigNumber(10).exponentiatedBy(pools[index].tokenDecimals)).toString(10);
     fetchStake(index, amount);
   }
 
@@ -146,17 +152,17 @@ export default function StakePool(props) {
   }
 
   useEffect(() => {
-    const amount = byDecimals(balance[index], pools[index].tokenDecimals).toFormat(4)
+    const amount = byDecimals(balance[index], pools[index].tokenDecimals).toNumber();
     setMyBalance(amount);
   }, [balance[index], pools, index]);
 
   useEffect(() => {
-    const amount = byDecimals(currentlyStaked[index], pools[index].tokenDecimals).toFormat(4)
+    const amount = byDecimals(currentlyStaked[index], pools[index].tokenDecimals).toNumber();
     setMyCurrentlyStaked(amount);
   }, [currentlyStaked[index], pools, index]);
 
   useEffect(() => {
-    const amount = byDecimals(rewardsAvailable[index], pools[index].earnedTokenDecimals).toFormat(4)
+    const amount = byDecimals(rewardsAvailable[index], pools[index].earnedTokenDecimals).toNumber();
     setMyRewardsAvailable(amount);
   }, [rewardsAvailable[index], pools, index]);
 
@@ -202,7 +208,7 @@ export default function StakePool(props) {
                 [classes.contentTitleItem]:true,
                 [classes.contentTitleItemBorder]:true,
               })}>
-                <div>{`${myBalance} ${pools[index].token}`}</div>
+                <div>{`${Math.floor(myBalance * 10000)/ 10000} ${pools[index].token}`}</div>
                 <div>{t('Stake-Balancer-Your-Balance')}</div>
             </GridItem>
 
@@ -210,14 +216,14 @@ export default function StakePool(props) {
               [classes.contentTitleItem]:true,
               [classes.contentTitleItemBorder]:pageSize=='exceedSm' ? true : false,
             })}>
-              <div>{`${myCurrentlyStaked} ${pools[index].token}`}</div>
+              <div>{`${Math.floor(myCurrentlyStaked * 10000)/ 10000} ${pools[index].token}`}</div>
               <div>{t('Stake-Balancer-Current-Staked')}</div>
             </GridItem>
             <GridItem md={3} xs={6} className={classNames({
               [classes.contentTitleItem]:true,
               [classes.contentTitleItemBorder]:true,
             })}>
-              <div>{`${myRewardsAvailable} ${pools[index].earnedToken}`}</div>
+              <div>{`${Math.floor(myRewardsAvailable * 10000)/ 10000} ${pools[index].earnedToken}`}</div>
               <div>{t('Stake-Balancer-Rewards-Available')}</div>
             </GridItem>
             <GridItem md={3} xs={6} className={classes.contentTitleItem}>
@@ -238,7 +244,7 @@ export default function StakePool(props) {
                       })}
                       />
                   </div>
-                  <InputBase value={inputVal} onChange={changeInputVal.bind(this,Number(myBalance),pools[index].tokenDecimals)} autoFocus className={classes.inputTxt}/>
+                  <InputBase value={inputVal} onChange={changeInputVal} autoFocus className={classes.inputTxt} />
                   <div className={classes.inputTxt}>{pools[index].name}</div>
                 </div>
                 <div className={classes.flexBox}>
@@ -246,6 +252,7 @@ export default function StakePool(props) {
                   <CustomButtons
                     onClick={(event)=>{
                       event.stopPropagation();
+                      setInputVal(myBalance.toString());
                     }}
                     className={classNames({
                       [classes.stakeButton]:true,
