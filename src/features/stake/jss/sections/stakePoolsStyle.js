@@ -1,7 +1,6 @@
 import { withStyles } from "@material-ui/core/styles";
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
-import image from "assets/img/stake-header-background.png";
 
 const fontDefaultStyle = {
     color: '#fff',
@@ -54,6 +53,18 @@ const StyledTableRow = withStyles((theme) => ({
 }))(TableRow);
 
 const stakePoolsStyle = theme => ({
+  leftImage:{
+    position:'absolute',
+    left:'-3px',
+    bottom:'-98px',
+    zIndex:'-1',
+  },
+  rightImage:{
+    position:'absolute',
+    right:'0',
+    bottom:'0',
+    zIndex:'-1',
+  },
   mainTitle:{
     fontFamily: 'Helvetica',
     fontSize: '32px',
@@ -67,10 +78,12 @@ const stakePoolsStyle = theme => ({
       fontWeight: "550",
   },
   listHeader:{
-    backgroundImage:`url(${image})`,
+    backgroundColor: normalBackgroundColor,
+    position:'relative',
     borderRadius:'6px',
     height:'180px',
     padding:'48px 60px',
+    zIndex:'10',
   },
   table: {
       minWidth: 700,

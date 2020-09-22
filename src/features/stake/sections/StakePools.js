@@ -16,7 +16,8 @@ import {StyledTableCell,StyledTableRow,stakePoolsStyle} from "../jss/sections/st
 import InputBase from '@material-ui/core/InputBase';
 import IconButton from '@material-ui/core/IconButton';
 import Hidden from '@material-ui/core/Hidden';
-
+import leftImage from 'assets/img/stake-head-left.png';
+import rightImage from 'assets/img/stake-head-right.png';
 import { useFetchPoolsInfo } from '../redux/hooks';
 
 const useStyles = makeStyles(stakePoolsStyle);
@@ -41,6 +42,8 @@ export default function StakePools(props) {
         fromPage == 'page' && 
         <GridItem>
           <div className={classes.listHeader}>
+            <img className={classes.leftImage} src={leftImage} />
+            <img className={classes.rightImage} src={rightImage} />
             <div className={classes.mainTitle}>{t('Stake-List-Header-Main')}</div>
             <GridContainer >
               <GridItem className={classNames({
@@ -49,6 +52,8 @@ export default function StakePools(props) {
               })}>
                 <div className={classes.secondTitle}>{t('Stake-List-Header-Sub')}</div>
                 <CustomButtons
+                  href='https://docs.yfii.finance/#/yield-farming'
+                  target="_blank"
                   className={classes.learnMoreButton}
                 >
                   {t('Stake-Learn-More')}
