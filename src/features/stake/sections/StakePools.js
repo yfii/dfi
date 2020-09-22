@@ -21,7 +21,9 @@ import { useFetchPoolsInfo } from '../redux/hooks';
 
 const useStyles = makeStyles(stakePoolsStyle);
 
-export default function StakePools() {
+export default function StakePools(props) {
+  const { from } = props;
+  console.warn('props',props);
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const { pools, poolsInfo, fetchPoolsInfo } = useFetchPoolsInfo();
@@ -36,12 +38,14 @@ export default function StakePools() {
         <div className={classes.mainTitle}>{t('Stake-Main-Title')}</div>
         <h3 className={classes.secondTitle}>{t('Stake-Second-Title')}</h3>
       </GridItem>
-      <GridItem >
+      {
+        from == 'page' && <GridItem>
         <div className={classes.listHeader}>
           <div className={classes.mainTitle}>{t('Stake-List-Header-Main')}</div>
           <h3 className={classes.secondTitle}>{t('Stake-List-Header-Sub')}</h3>
         </div>
       </GridItem>
+      }
       <GridItem>
         <Table className={classes.table} aria-label="customized table">
           <TableHead>
@@ -94,4 +98,8 @@ export default function StakePools() {
       </GridItem>
     </GridContainer>
   )
+}
+
+StakePools.defaultProps = {
+  // from:'page',
 }

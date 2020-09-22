@@ -16,6 +16,7 @@ import Button from '@material-ui/core/Button';
 import zapCommandStyle from "../jss/sections/zapCommandStyle";
 import Avatar from '@material-ui/core/Avatar';
 import {byDecimals,calculateReallyNum} from 'features/helpers/bignumber';
+import { inputLimitPass,inputFinalVal } from 'features/helpers/utils';
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
 
 const useStyles = makeStyles(zapCommandStyle);
@@ -133,10 +134,8 @@ export default function ZapCommand() {
     const changeMainInput = (total,tokenDecimals,event)=>{
         event.stopPropagation();
         let value = event.target.value;
-        let reg = /[a-z]/i;
-        let valueArr = value.split('.');
-        if(reg.test(value) || (valueArr.length==2 && valueArr[1].length > tokenDecimals) ){
-            return;
+        if(!inputLimitPass(value,tokenDecimals)){
+          return;
         }
         let sliderNum = 0;
         let inputVal = Number(value.replace(',',''));
@@ -144,7 +143,7 @@ export default function ZapCommand() {
             sliderNum = byDecimals(inputVal/total,0).toFormat(2) * 100;
         }
         setSendJson({
-            'num':inputVal > total ? byDecimals(total,0).toFormat(tokenDecimals) :value,
+            'num':inputFinalVal(value,total,tokenDecimals),
             'slider': sliderNum,
         })
     }
