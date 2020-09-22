@@ -174,17 +174,6 @@ export default function StakePool(props) {
     if(Boolean(index === 0) || Boolean(index === 1)) fetchHalfTime(index);
     if(index === 3) fetchCanWithdrawTime(index);
   }, [address, index]);
-
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  const open = Boolean(anchorEl);
-  const id = open ? 'simple-popover' : undefined;
   
   return (
     <GridContainer>
@@ -323,22 +312,6 @@ export default function StakePool(props) {
               </GridContainer>
             )
           }
-          <Popover
-            id={id}
-            open={open}
-            anchorEl={anchorEl}
-            onClose={handleClose}
-            anchorOrigin={{
-              vertical: 'top',
-              horizontal: 'left',
-            }}
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'left',
-            }}
-          >
-            <Typography className={ classes.buttonText }  variant={ 'h4'}>{0 ?`${t('Stake.ComeSoon2')} ${0}`: `${t('Stake.ComeSoon')}`}</Typography>
-          </Popover>
         </div>
       </div>
     </GridContainer>
