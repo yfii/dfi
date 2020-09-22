@@ -23,7 +23,6 @@ const useStyles = makeStyles(stakePoolsStyle);
 
 export default function StakePools(props) {
   const { from } = props;
-  console.warn('props',props);
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const { pools, poolsInfo, fetchPoolsInfo } = useFetchPoolsInfo();
@@ -61,7 +60,7 @@ export default function StakePools(props) {
             root:classes.tableBodyRoot
           }}>
             {pools.map((pool, index) => (
-              <StyledTableRow key={pool.name}>
+              <StyledTableRow key={pool.name} style={{display: Boolean(index !== 3) ? "none" : "table-row"}}>
                 <StyledTableCell component="th">
                   <div className={classes.firstCell}>
                     <div className={classes.avatarContainer}>
