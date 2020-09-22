@@ -15,7 +15,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Avatar from '@material-ui/core/Avatar';
 import Popover from '@material-ui/core/Popover';
 import Typography from '@material-ui/core/Typography';
-import { isEmpty } from 'features/helpers/utils';
+import { isEmpty,inputLimitPass,inputFinalVal } from 'features/helpers/utils';
 import {StyledTableCell,StyledTableRow,stakePoolsStyle} from "../jss/sections/stakePoolsStyle";
 import InputBase from '@material-ui/core/InputBase';
 import IconButton from '@material-ui/core/IconButton';
@@ -55,7 +55,21 @@ export default function StakePool(props) {
   const [ myCurrentlyStaked, setMyCurrentlyStaked] = useState(currentlyStaked[index]);
   const [ myRewardsAvailable, setMyRewardsAvailable] = useState(rewardsAvailable[index]);
   const [ myHalfTime, setMyHalfTime] = useState(`0day 00:00:00`);
+  const [ inputVal, setInputVal] = useState(0);
   const [ anchorEl, setAnchorEl] = useState(null);
+
+  const changeInputVal = (total,tokenDecimals,event) => {
+    let value = event.target.value;
+    if(!inputLimitPass(value,tokenDecimals)){
+      return;
+    }
+    setInputVal(inputFinalVal(value,total,tokenDecimals));
+  }
+
+  useEffect(()=>{
+    setInputVal(inputFinalVal(String(inputVal),balance[index],pools[index].tokenDecimals));
+  },[balance[index]])
+
   window.onresize = ()=>{
     let Width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     let Height = window.innerHeight || document.documentElement.clientWidth || document.body.clientHeight;
@@ -174,7 +188,7 @@ export default function StakePool(props) {
     if(Boolean(index === 0) || Boolean(index === 1)) fetchHalfTime(index);
     if(index === 3) fetchCanWithdrawTime(index);
   }, [address, index]);
-  
+
   return (
     <GridContainer>
       <div className={classes.detailContainer}>
@@ -224,7 +238,7 @@ export default function StakePool(props) {
                       })}
                       />
                   </div>
-                  <InputBase autoFocus className={classes.inputTxt}/>
+                  <InputBase value={inputVal} onChange={changeInputVal.bind(this,Number(myBalance),pools[index].tokenDecimals)} autoFocus className={classes.inputTxt}/>
                   <div className={classes.inputTxt}>{pools[index].name}</div>
                 </div>
                 <div className={classes.flexBox}>

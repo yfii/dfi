@@ -36,6 +36,7 @@ import CustomSlider from 'components/CustomSlider/CustomSlider';
 
 import sectionPoolsStyle from "../jss/sections/sectionPoolsStyle";
 import { reflect } from 'async';
+import { inputLimitPass,inputFinalVal } from 'features/helpers/utils';
 
 const useStyles = makeStyles(sectionPoolsStyle);
 
@@ -59,10 +60,8 @@ export default function SectionPools() {
 
   const changeDetailInputValue = (type,index,total,tokenDecimals,event) => {
     let value = event.target.value;
-    let reg = /[a-z]/i;
-    let valueArr = value.split('.');
-    if(reg.test(value) || (valueArr.length==2 && valueArr[1].length > tokenDecimals) ){
-        return;
+    if(!inputLimitPass(value,tokenDecimals)){
+      return;
     }
     let sliderNum = 0;
     let inputVal = Number(value.replace(',',''));
@@ -73,14 +72,14 @@ export default function SectionPools() {
         case 'depositedBalance':
             setDepositedBalance({
                 ...depositedBalance,
-                [index]: inputVal > total ? byDecimals(total,0).toFormat(tokenDecimals) :value,
+                [index]: inputFinalVal(value,total,tokenDecimals),
                 [`slider-${index}`]: sliderNum,
             });
             break;
         case 'withdrawAmount':
             setWithdrawAmount({
                 ...withdrawAmount,
-                [index]: inputVal > total ? byDecimals(total,0).toFormat(tokenDecimals) :value,
+                [index]: inputFinalVal(value,total,tokenDecimals),
                 [`slider-${index}`]: sliderNum,
             });
             break;

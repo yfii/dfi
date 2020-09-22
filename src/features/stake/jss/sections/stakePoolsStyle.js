@@ -66,7 +66,7 @@ const stakePoolsStyle = theme => ({
       fontWeight: "550",
   },
   listHeader:{
-    backgroundColor: normalBackgroundColor,
+    backgroundImage:'url(features/images/stake-header-background.png)',
     borderRadius:'6px',
     padding:'24px',
   },

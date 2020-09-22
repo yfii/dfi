@@ -52,10 +52,8 @@ export default function HomePage() {
         close
         color="success"
       />
-      <SectionPools/>
-      <StakePage />
-      <div className={classes.modalMargin}></div>
-      <ZapPage/>
+      <SectionPools from='home'/>
+      <StakePage from='home'/>
       <Dialog
         classes={{
           root: classes.modalRoot,
