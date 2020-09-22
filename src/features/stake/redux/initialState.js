@@ -39,8 +39,8 @@ const pools = [
 		token: 'yfii',
 		tokenDecimals: 18,
 		tokenAddress: '0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83',
-		earnedToken: 'yCrv',
-		earnedTokenDecimals: 18,
+		earnedToken: 'iUSDT',
+		earnedTokenDecimals: 6,
 		earnedTokenAddress: '0x72Cf258c852Dc485a853370171d46B9D29fD3184',
 		earnContractAddress: '0x3d367c9529f260b0661e1c1e91167c9319ee96ca',
 		earnContractAbi: pool4Abi
@@ -94,7 +94,7 @@ const initialState = {
 	fetchCanWithdrawTimePending: [false,false,false,false],
 	fetchApprovalPending: [false,false,false,false],
 	fetchStakePending: [false,false,false,false],
-	fetchDepositPending: [false,false,false,false],
+	fetchWithdrawPending: [false,false,false,false],
 	fetchClaimPending: [false,false,false,false],
 	fetchExitPending: [false,false,false,false]
 };

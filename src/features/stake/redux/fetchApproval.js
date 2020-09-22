@@ -104,7 +104,7 @@ export function reducer(state, action) {
   switch (action.type) {
     case STAKE_FETCH_APPROVAL_BEGIN:
       // Just after a request is sent
-      fetchApprovalPending[action.data] = true;
+      fetchApprovalPending[action.index] = true;
       return {
         ...state,
         fetchApprovalPending,
@@ -112,7 +112,7 @@ export function reducer(state, action) {
 
     case STAKE_FETCH_APPROVAL_SUCCESS:
       // The request is success
-      fetchApprovalPending[action.data] = false;
+      fetchApprovalPending[action.index] = false;
       return {
         ...state,
         fetchApprovalPending,
@@ -120,7 +120,7 @@ export function reducer(state, action) {
 
     case STAKE_FETCH_APPROVAL_FAILURE:
       // The request is failed
-      fetchApprovalPending[action.data] = false;
+      fetchApprovalPending[action.index] = false;
       return {
         ...state,
         fetchApprovalPending,

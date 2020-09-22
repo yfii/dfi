@@ -1,18 +1,18 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
-  STAKE_FETCH_DEPOSIT_BEGIN,
-  STAKE_FETCH_DEPOSIT_SUCCESS,
-  STAKE_FETCH_DEPOSIT_FAILURE,
+  STAKE_FETCH_WITHDRAW_BEGIN,
+  STAKE_FETCH_WITHDRAW_SUCCESS,
+  STAKE_FETCH_WITHDRAW_FAILURE,
 } from './constants';
 import { enqueueSnackbar } from '../../common/redux/actions'
 import { fetchGasPrice } from "../../web3";
 
-export function fetchDeposit(index, amount) {
+export function fetchWithdraw(index, amount) {
   return (dispatch, getState) => {
     // optionally you can have getState as the second argument
     dispatch({
-      type: STAKE_FETCH_DEPOSIT_BEGIN,
+      type: STAKE_FETCH_WITHDRAW_BEGIN,
       index
     });
     // Return a promise so that you could control UI flow without states in the store.
@@ -50,7 +50,7 @@ export function fetchDeposit(index, amount) {
               variant: 'success',
             },
           }));
-          dispatch({ type: STAKE_FETCH_DEPOSIT_SUCCESS, index });
+          dispatch({ type: STAKE_FETCH_WITHDRAW_SUCCESS, index });
           resolve();
         })
         .on('error', function(error) {
@@ -61,11 +61,11 @@ export function fetchDeposit(index, amount) {
               variant: 'error'
             },
           }));
-          dispatch({ type: STAKE_FETCH_DEPOSIT_FAILURE, index });
+          dispatch({ type: STAKE_FETCH_WITHDRAW_FAILURE, index });
           resolve();
         })
         .catch((error) => {
-          dispatch({ type: STAKE_FETCH_DEPOSIT_FAILURE, index });
+          dispatch({ type: STAKE_FETCH_WITHDRAW_FAILURE, index });
           reject(error)
         })
     });
@@ -73,54 +73,53 @@ export function fetchDeposit(index, amount) {
   }
 }
 
-
-export function useFetchDeposit() {
+export function useFetchWithdraw() {
   // args: false value or array
   // if array, means args passed to the action creator
   const dispatch = useDispatch();
 
-  const { fetchDepositPending } = useSelector(
+  const { fetchWithdrawPending } = useSelector(
     state => ({
-      fetchDepositPending: state.stake.fetchDepositPending,
+      fetchWithdrawPending: state.stake.fetchWithdrawPending,
     })
   );
 
   const boundAction = useCallback(
-    (data, amount) => dispatch(fetchDeposit(data, amount)),
+    (data, amount) => dispatch(fetchWithdraw(data, amount)),
     [dispatch],
   );
 
   return {
-    fetchDeposit: boundAction,
-    fetchDepositPending
+    fetchWithdraw: boundAction,
+    fetchWithdrawPending
   };
 }
 
 export function reducer(state, action) {
-  const { fetchDepositPending } = state;
+  const { fetchWithdrawPending } = state;
   switch (action.type) {
-    case STAKE_FETCH_DEPOSIT_BEGIN:
+    case STAKE_FETCH_WITHDRAW_BEGIN:
       // Just after a request is sent
-      fetchDepositPending[action.index] = true;
+      fetchWithdrawPending[action.index] = true;
       return {
         ...state,
-        fetchDepositPending,
+        fetchWithdrawPending,
       };
 
-    case STAKE_FETCH_DEPOSIT_SUCCESS:
+    case STAKE_FETCH_WITHDRAW_SUCCESS:
       // The request is success
-      fetchDepositPending[action.index] = false;
+      fetchWithdrawPending[action.index] = false;
       return {
         ...state,
-        fetchDepositPending,
+        fetchWithdrawPending,
       };
 
-    case STAKE_FETCH_DEPOSIT_FAILURE:
+    case STAKE_FETCH_WITHDRAW_FAILURE:
       // The request is failed
-      fetchDepositPending[action.index] = false;
+      fetchWithdrawPending[action.index] = false;
       return {
         ...state,
-        fetchDepositPending,
+        fetchWithdrawPending,
       };
 
     default:

@@ -5,14 +5,16 @@ import { byDecimals } from 'features/helpers/bignumber';
 import { withStyles, makeStyles } from "@material-ui/core/styles";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
+import CustomButtons from "components/CustomButtons/Button.js";
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import CustomButtons from "components/CustomButtons/Button.js";
 import Avatar from '@material-ui/core/Avatar';
+import Popover from '@material-ui/core/Popover';
+import Typography from '@material-ui/core/Typography';
 import { isEmpty } from 'features/helpers/utils';
 import {StyledTableCell,StyledTableRow,stakePoolsStyle} from "../jss/sections/stakePoolsStyle";
 import InputBase from '@material-ui/core/InputBase';
@@ -20,7 +22,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Hidden from '@material-ui/core/Hidden';
 
 import { useConnectWallet } from '../../home/redux/hooks';
-import { useCheckApproval, useFetchPoolsInfo, useFetchBalance, useFetchCurrentlyStaked, useFetchRewardsAvailable, useFetchHalfTime, useFetchCanWithdrawTime, useFetchApproval, useFetchStake, useFetchDeposit, useFetchClaim, useFetchExit } from '../redux/hooks';
+import { useCheckApproval, useFetchPoolsInfo, useFetchBalance, useFetchCurrentlyStaked, useFetchRewardsAvailable, useFetchHalfTime, useFetchCanWithdrawTime, useFetchApproval, useFetchStake, useFetchWithdraw, useFetchClaim, useFetchExit } from '../redux/hooks';
 
 const useStyles = makeStyles(stakePoolsStyle);
 
@@ -37,7 +39,7 @@ export default function StakePool(props) {
   const { halfTime, fetchHalfTime } = useFetchHalfTime();
   const { fetchApproval, fetchApprovalPending } = useFetchApproval();
   const { fetchStake, fetchStakePending } = useFetchStake();
-  const { fetchDeposit, fetchDepositPending } = useFetchDeposit();
+  const { fetchWithdraw, fetchWithdrawPending } = useFetchWithdraw();
   const { fetchClaim, fetchClaimPending } = useFetchClaim();
   const { fetchExit, fetchExitPending } = useFetchExit();
   const [ index, setIndex] = useState(Number(props.match.params.index));
@@ -46,13 +48,14 @@ export default function StakePool(props) {
   const [ isNeedApproval, setIsNeedApproval] = useState(true);
   const [ approvalAble, setApprovalAble] = useState(true);
   const [ stakeAble,setStakeAble ] = useState(true);
-  const [ depositAble,setDepositAble ] = useState(true);
+  const [ withdrawAble,setWithdraw ] = useState(true);
   const [ claimAble,setClaimAble ] = useState(true);
   const [ exitAble,setExitAble ] = useState(true);
   const [ myBalance,setMyBalance ] = useState(balance[index]);
   const [ myCurrentlyStaked, setMyCurrentlyStaked] = useState(currentlyStaked[index]);
   const [ myRewardsAvailable, setMyRewardsAvailable] = useState(rewardsAvailable[index]);
   const [ myHalfTime, setMyHalfTime] = useState(`0day 00:00:00`);
+  const [ anchorEl, setAnchorEl] = useState(null);
   window.onresize = ()=>{
     let Width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     let Height = window.innerHeight || document.documentElement.clientWidth || document.body.clientHeight;
@@ -75,27 +78,58 @@ export default function StakePool(props) {
 
   useEffect(() => {
     setIsNeedApproval(Boolean(allowance[index] === 0));
-  }, [allowance, index]);
+  }, [allowance[index], index]);
 
   useEffect(() => {
     setApprovalAble(!Boolean(fetchApprovalPending[index]));
-  }, [fetchApprovalPending, index]);
+  }, [fetchApprovalPending[index], index]);
+
+  const onApproval = () => {
+    fetchApproval(index);
+  }
 
   useEffect(() => {
     setStakeAble(!Boolean(fetchStakePending[index]));
-  }, [fetchStakePending, index]);
+  }, [fetchStakePending[index], index]);
+
+  const onStake = () => {
+    const amount = 0
+    fetchStake(index, amount);
+  }
 
   useEffect(() => {
-    setDepositAble(!Boolean(fetchDepositPending[index]));
-  }, [fetchDepositPending, index]);
+    const isPending = Boolean(fetchWithdrawPending[index]);
+    const isPool4 = Boolean(index === 3);
+    const isDisableCanWithdrawTime = Boolean(canWithdrawTime[index] === 0) || Boolean((canWithdrawTime[index] * 1000) > new Date().getTime());
+    const isPool4AndDisableCanWithDraw = Boolean(isPool4 && isDisableCanWithdrawTime)
+    setWithdraw(!Boolean(isPending || isPool4AndDisableCanWithDraw));
+  }, [fetchWithdrawPending[index], index, new Date()]);
+
+  const onWithdraw = () => {
+    const amount = balance[index].toString(10);
+    fetchWithdraw(index, amount);
+  }
 
   useEffect(() => {
-    setClaimAble(!Boolean(fetchClaimPending[index]));
+    const isPending = Boolean(fetchClaimPending[index]);
+    setClaimAble(!Boolean(isPending));
   }, [fetchClaimPending[index], index]);
 
+  const onClaim = () => {
+    fetchClaim(index);
+  }
+
   useEffect(() => {
-    setExitAble(!Boolean(fetchExitPending[index]));
-  }, [fetchExitPending, index]);
+    const isPending = Boolean(fetchExitPending[index]);
+    const isPool4 = Boolean(index === 3);
+    const isDisableCanWithdrawTime = Boolean(canWithdrawTime[index] === 0) || Boolean((canWithdrawTime[index] * 1000) > new Date().getTime());
+    const isPool4AndDisableCanWithDraw = Boolean(isPool4 && isDisableCanWithdrawTime)
+    setExitAble(!Boolean(isPending || isPool4AndDisableCanWithDraw));
+  }, [fetchExitPending[index], index, new Date()]);
+
+  const onExit = () => {
+    fetchExit(index);
+  }
 
   useEffect(() => {
     const amount = byDecimals(balance[index], pools[index].tokenDecimals).toFormat(4)
@@ -140,6 +174,17 @@ export default function StakePool(props) {
     if(Boolean(index === 0) || Boolean(index === 1)) fetchHalfTime(index);
     if(index === 3) fetchCanWithdrawTime(index);
   }, [address, index]);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? 'simple-popover' : undefined;
   
   return (
     <GridContainer>
@@ -206,9 +251,8 @@ export default function StakePool(props) {
                     {t('Swap-Max')}
                   </CustomButtons>
                   <CustomButtons
-                    onClick={(event)=>{
-                      event.stopPropagation();
-                    }}
+                    disabled={!Boolean(stakeAble)}
+                    onClick={onStake}
                     className={classes.stakeButton}>
                     {t('Stake-Button-Stake')}
                   </CustomButtons>
@@ -226,7 +270,14 @@ export default function StakePool(props) {
             ) : (
               <GridContainer className={classes.contentTitle}>
                 <GridItem md={3} xs={6} className={classes.flexCenter}>
-                  <CustomButtons
+                  { isNeedApproval ? (
+                    <CustomButtons
+                      disabled={!Boolean(approvalAble)}
+                      onClick={onApproval}
+                      className={classes.stakeButton}>
+                      {t('Stake-Button-Approval')}
+                    </CustomButtons>
+                  ): (<CustomButtons
                     onClick={(event)=>{
                       event.stopPropagation();
                       setShowInput(true);
@@ -234,11 +285,12 @@ export default function StakePool(props) {
                     className={classes.stakeButton}>
                     {t('Stake-Button-Stake-Tokens')}
                   </CustomButtons>
+                  )}
                 </GridItem>
                 <GridItem md={3} xs={6} className={classes.flexCenter}>
                   <CustomButtons
                     disabled={!Boolean(claimAble)}
-                    onClick={()=>fetchClaim(index)}
+                    onClick={onClaim}
                     className={classNames({
                       [classes.stakeButton]:true,
                       [classes.rewardsButton]:true,
@@ -248,9 +300,8 @@ export default function StakePool(props) {
                 </GridItem>
                 <GridItem md={3} xs={6} className={classes.flexCenter}>
                   <CustomButtons
-                    onClick={(event)=>{
-                      event.stopPropagation();
-                    }}
+                    disabled={!Boolean(withdrawAble)}
+                    onClick={onWithdraw}
                     className={classNames({
                       [classes.stakeButton]:true,
                       [classes.grayButton]:true,
@@ -260,9 +311,8 @@ export default function StakePool(props) {
                 </GridItem>
                 <GridItem md={3} xs={6} className={classes.flexCenter}>
                   <CustomButtons
-                    onClick={(event)=>{
-                      event.stopPropagation();
-                    }}
+                    disabled={!Boolean(exitAble)}
+                    onClick={onExit}
                     className={classNames({
                       [classes.stakeButton]:true,
                       [classes.grayButton]:true,
@@ -273,7 +323,22 @@ export default function StakePool(props) {
               </GridContainer>
             )
           }
-          
+          <Popover
+            id={id}
+            open={open}
+            anchorEl={anchorEl}
+            onClose={handleClose}
+            anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'left',
+            }}
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'left',
+            }}
+          >
+            <Typography className={ classes.buttonText }  variant={ 'h4'}>{0 ?`${t('Stake.ComeSoon2')} ${0}`: `${t('Stake.ComeSoon')}`}</Typography>
+          </Popover>
         </div>
       </div>
     </GridContainer>
