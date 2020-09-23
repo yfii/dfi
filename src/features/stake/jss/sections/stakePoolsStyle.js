@@ -153,6 +153,7 @@ const stakePoolsStyle = theme => ({
   avatarContainer:{
       width:'48px',
       height:'48px',
+      borderRadius:'4px',
       backgroundColor:'#fff',
       display:'flex',
       alignItems:'center',

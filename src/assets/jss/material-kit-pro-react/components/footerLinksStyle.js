@@ -113,7 +113,7 @@ const footerLinksStyle = theme => ({
         },
     },
     linkList: {
-      display: 'inline-block',
+      margin:'24px 80px'
     },
     linkItem: {
       width: 'auto',
