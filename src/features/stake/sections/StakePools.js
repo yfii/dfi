@@ -73,7 +73,7 @@ export default function StakePools(props) {
                 <StyledTableCell >{t('Stake-Table-Pool')}</StyledTableCell>
                 <StyledTableCell >{t('Stake-Table-Staked')}</StyledTableCell>
                 <StyledTableCell >{t('Stake-Table-Total')}</StyledTableCell>
-                <StyledTableCell >{t('Stake-Table-Pay')}</StyledTableCell>
+                <StyledTableCell >{t('Stake-Table-Apy')}</StyledTableCell>
                 <StyledTableCell ></StyledTableCell>
               </TableRow>
             </TableHead>
@@ -135,7 +135,7 @@ export default function StakePools(props) {
               <div style={{fontWeight:'500'}}>{pool.token}</div>
             </div>
             <div className={classes.mobileDetail}>
-              <div style={{fontWeight:'500',marginBottom:'6px'}}>{t('Stake-Table-Pay')+": "+poolsInfo[index].pay}</div>
+              <div style={{fontWeight:'500',marginBottom:'6px'}}>{t('Stake-Table-Apy')+": "+poolsInfo[index].pay}</div>
               <div style={{fontWeight:'500',marginBottom:'6px'}}>{t('Stake-Table-Staked')+": "+poolsInfo[index].staked}</div>
               <div style={{fontWeight:'500',marginBottom:'6px'}}>{t('Stake-Table-Total')+": "+poolsInfo[index].tvl}</div>
             </div>
