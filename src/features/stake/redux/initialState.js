@@ -51,22 +51,22 @@ const poolsInfo = [{
 	name: "yearn.finance",
 	staked: 0,
 	tvl: 0,
-	pay: 0,
+	apy: 0,
 },{
 	name: "Balancer Pool",
 	staked: 0,
 	tvl: 0,
-	pay: 0,
+	apy: 0,
 },{
 	name: "Governance",
 	staked: 0,
 	tvl: 0,
-	pay: 0,
+	apy: 0,
 },{
 	name: "yfii",
 	staked: 0,
 	tvl: 0,
-	pay: 0,
+	apy: 0,
 }]
 const allowance = [0,0,0,0];
 const balance = [0,0,0,0];

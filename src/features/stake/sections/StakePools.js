@@ -102,7 +102,7 @@ export default function StakePools(props) {
                   {/* <StyledTableCell >$40,027,383.88</StyledTableCell> */}
                   <StyledTableCell >{poolsInfo[index].staked}</StyledTableCell>
                   <StyledTableCell >{poolsInfo[index].tvl}</StyledTableCell>
-                  <StyledTableCell >{poolsInfo[index].pay}</StyledTableCell>
+                  <StyledTableCell >{poolsInfo[index].apy}</StyledTableCell>
                   <StyledTableCell component="th" >
                     <CustomButtons
                       href={`/#/stake/pool/${index + 1}`}
@@ -135,7 +135,7 @@ export default function StakePools(props) {
               <div style={{fontWeight:'500'}}>{pool.token}</div>
             </div>
             <div className={classes.mobileDetail}>
-              <div style={{fontWeight:'500',marginBottom:'6px'}}>{t('Stake-Table-Apy')+": "+poolsInfo[index].pay}</div>
+              <div style={{fontWeight:'500',marginBottom:'6px'}}>{t('Stake-Table-Apy')+": "+poolsInfo[index].apy}</div>
               <div style={{fontWeight:'500',marginBottom:'6px'}}>{t('Stake-Table-Staked')+": "+poolsInfo[index].staked}</div>
               <div style={{fontWeight:'500',marginBottom:'6px'}}>{t('Stake-Table-Total')+": "+poolsInfo[index].tvl}</div>
             </div>
