@@ -45,7 +45,7 @@ export default function StakePool(props) {
   const { fetchExit, fetchExitPending } = useFetchExit();
   const [ index, setIndex] = useState(Number(props.match.params.index) - 1);
   const [ showInput, setShowInput ] = useState(false);
-  const [ pageSize,setPageSize ] = useState('');
+  // const [ pageSize,setPageSize ] = useState('');
   const [ isNeedApproval, setIsNeedApproval] = useState(true);
   const [ approvalAble, setApprovalAble] = useState(true);
   const [ stakeAble,setStakeAble ] = useState(true);
@@ -76,21 +76,21 @@ export default function StakePool(props) {
     setInputVal(inputFinalVal(String(inputVal),balance[index],pools[index].tokenDecimals));
   },[balance[index], index])
 
-  window.onresize = ()=>{
-    let Width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    let Height = window.innerHeight || document.documentElement.clientWidth || document.body.clientHeight;
-    let nowPageSize = '';
-    if(Width >= 960){
-      nowPageSize = 'exceedSm';
-    }else if(Width >= 600){
-      nowPageSize = 'sm';
-    }else{
-      nowPageSize = 'xs';
-    }
-    if(nowPageSize != pageSize){
-      setPageSize(nowPageSize);
-    }
-  }
+  // window.onresize = ()=>{
+  //   let Width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  //   let Height = window.innerHeight || document.documentElement.clientWidth || document.body.clientHeight;
+  //   let nowPageSize = '';
+  //   if(Width >= 960){
+  //     nowPageSize = 'exceedSm';
+  //   }else if(Width >= 600){
+  //     nowPageSize = 'sm';
+  //   }else{
+  //     nowPageSize = 'xs';
+  //   }
+  //   if(nowPageSize != pageSize){
+  //     setPageSize(nowPageSize);
+  //   }
+  // }
 
   useEffect(() => {
     setIndex(Number(props.match.params.index) - 1);
@@ -202,93 +202,151 @@ export default function StakePool(props) {
 
   return (
     <GridContainer>
-      <div className={classes.detailContainer}>
+      <GridItem className={classes.detailContainer}>
         <div className={classes.detailTitle}>{`Stake / ${pools[index].name}`}</div>
-        <div className={classes.detailContent}>
-          <GridContainer className={classNames({
+        <div className={classes.detailContentUp}>
+          <GridContainer spacing={3} className={classNames({
             [classes.contentTitle]:true,
-            [classes.marginBottom]:true,
+            [classes.contentTitleMarginBottom]:true,
           })}>
-            <GridItem md={index===3 ? 4: 3} xs={index===3 ? 4 : 6} className={classNames({
+            <GridItem sm={index===3 ? 4: 3} xs={12} className={classNames({
                 [classes.contentTitleItem]:true,
                 [classes.contentTitleItemBorder]:true,
               })}>
-                <div>{`${Math.floor(myBalance * 10000)/ 10000} ${pools[index].token}`}</div>
-                <div>{t('Stake-Balancer-Your-Balance')}</div>
+                <Hidden smUp>
+                  <div className={classes.contentItemTitle}>{t('Stake-Balancer-Your-Balance')}</div>
+                </Hidden>
+                <div className={classes.contentItemTitleVal}>{`${Math.floor(myBalance * 10000)/ 10000} ${pools[index].token}`}</div>
+                <Hidden xsDown>
+                  <div className={classes.contentItemTitle}>{t('Stake-Balancer-Your-Balance')}</div>
+                </Hidden>
             </GridItem>
-
-            <GridItem md={index===3 ? 4: 3} xs={index===3 ? 4 : 6} className={classNames({
-              [classes.contentTitleItem]:true,
-              [classes.contentTitleItemBorder]:pageSize=='exceedSm' ? true : false,
-            })}>
-              <div>{`${Math.floor(myCurrentlyStaked * 10000)/ 10000} ${pools[index].token}`}</div>
-              <div>{t('Stake-Balancer-Current-Staked')}</div>
-            </GridItem>
-            <GridItem md={index===3 ? 4: 3} xs={index===3 ? 4 : 6} className={classNames({
+            <GridItem sm={index===3 ? 4: 3} xs={12} className={classNames({
               [classes.contentTitleItem]:true,
               [classes.contentTitleItemBorder]:true,
             })}>
-              <div>{`${Math.floor(myRewardsAvailable * 10000)/ 10000} ${pools[index].earnedToken}`}</div>
-              <div>{t('Stake-Balancer-Rewards-Available')}</div>
+              <Hidden smUp>
+                <div className={classes.contentItemTitle}>{t('Stake-Balancer-Current-Staked')}</div>
+              </Hidden>
+              <div className={classes.contentItemTitleVal}>{`${Math.floor(myCurrentlyStaked * 10000)/ 10000} ${pools[index].token}`}</div>
+              <Hidden xsDown>
+                <div className={classes.contentItemTitle}>{t('Stake-Balancer-Current-Staked')}</div>
+              </Hidden>
             </GridItem>
-            {index!==3&&<GridItem md={3} xs={6} className={classes.contentTitleItem}>
-              <div>{myHalfTime}</div>
-              <div>{t('Stake-Balancer-Half-Time')}</div>
+            <GridItem sm={index===3 ? 4: 3} xs={12} className={classNames({
+              [classes.contentTitleItem]:true,
+              [classes.contentTitleItemBorder]:true,
+            })}>
+              <Hidden smUp>
+                <div className={classes.contentItemTitle}>{t('Stake-Balancer-Rewards-Available')}</div>
+              </Hidden>
+              <div className={classes.contentItemTitleVal}>{`${Math.floor(myRewardsAvailable * 10000)/ 10000} ${pools[index].earnedToken}`}</div>
+              <Hidden xsDown>
+                <div className={classes.contentItemTitle}>{t('Stake-Balancer-Rewards-Available')}</div>
+              </Hidden>
+            </GridItem>
+            {index!==3&&<GridItem sm={3} xs={12} className={classes.contentTitleItem}>
+            <Hidden smUp>
+                <div className={classes.contentItemTitle}>{t('Stake-Balancer-Half-Time')}</div>
+              </Hidden>
+              <div className={classes.contentItemTitleVal}>{myHalfTime}</div>
+              <Hidden xsDown>
+                <div className={classes.contentItemTitle}>{t('Stake-Balancer-Half-Time')}</div>
+              </Hidden>
             </GridItem>}
           </GridContainer>
+        </div>
+        <div className={classes.detailContentDown}>
           {
             showInput ? (
-              <GridItem className={classes.inputContainer}>
-                <div className={classes.flexBox}>
-                  <div className={classes.inputAvatarContainer}>
-                    <Avatar 
-                      alt={pools[index].name}
-                      src={require(`../../../images/${pools[index].name}-logo.png`)}
-                      className={classNames({
-                        [classes.avatar]:true,
-                      })}
-                      />
+              <div>
+                <GridItem className={classes.inputContainer}>
+                  <div className={classes.flexBox}>
+                    <div className={classes.inputAvatarContainer}>
+                      <Avatar 
+                        alt={pools[index].name}
+                        src={require(`../../../images/${pools[index].name}-logo.png`)}
+                        />
+                    </div>
+                    <InputBase value={inputVal} onChange={changeInputVal} autoFocus className={classes.inputTxt} />
+                    <Hidden xsDown>
+                      <div className={classes.inputTxt}>{pools[index].name}</div>
+                    </Hidden>
                   </div>
-                  <InputBase value={inputVal} onChange={changeInputVal} autoFocus className={classes.inputTxt} />
-                  <div className={classes.inputTxt}>{pools[index].name}</div>
-                </div>
-                <div className={classes.flexBox}>
-                  <div className={classes.inputSubTxt}>{`Balance: ${showInput === 'stake' ? myBalance: myCurrentlyStaked}`}</div>
-                  <CustomButtons
-                    onClick={(event)=>{
-                      event.stopPropagation();
-                      setInputVal(showInput === 'stake' ? myBalance.toString(): myCurrentlyStaked.toString());
-                    }}
-                    className={classNames({
-                      [classes.stakeButton]:true,
-                      [classes.rewardsButton]:true,
-                    })}>
-                    {t('Swap-Max')}
-                  </CustomButtons>
-                  <CustomButtons
-                    disabled={!Boolean(showInput === 'stake' ? stakeAble : withdrawAble)}
-                    onClick={showInput === 'stake' ? onStake: onWithdraw}
-                    className={classes.stakeButton}>
-                    {showInput === 'stake' ? t('Stake-Button-Stake'):t('Stake-Button-Unstake-Tokens')}
-                  </CustomButtons>
-                  <IconButton
-                    className={classes.inputCloseIcon}
-                    onClick={(event) => {
-                      event.stopPropagation();
-                      setShowInput(false);
-                    }}
-                  >
-                    <i className="fa fa-times"/>
-                  </IconButton>
-                </div>
-              </GridItem>
+                  <div className={classes.flexBox}>
+                    <Hidden xsDown>
+                      <div className={classes.inputSubTxt}>{`Balance: ${showInput === 'stake' ? myBalance: myCurrentlyStaked}`}</div>
+                    </Hidden>
+                    <CustomButtons
+                      onClick={(event)=>{
+                        event.stopPropagation();
+                        setInputVal(showInput === 'stake' ? myBalance.toString(): myCurrentlyStaked.toString());
+                      }}
+                      className={classNames({
+                        [classes.stakeButton]:true,
+                        [classes.rewardsButton]:true,
+                      })}>
+                      {t('Swap-Max')}
+                    </CustomButtons>
+                    <Hidden smUp>
+                      <div style={{height:'38px',lineHeight:'38px',marginLeft:'0',paddingLeft:'8px',borderLeft:'1px solid rgb(255,255,255,0.1)'}} className={classes.inputTxt}>{pools[index].name}</div>
+                    </Hidden>
+                    <Hidden xsDown>
+                      <CustomButtons
+                        disabled={!Boolean(showInput === 'stake' ? stakeAble : withdrawAble)}
+                        onClick={showInput === 'stake' ? onStake: onWithdraw}
+                        className={classes.stakeButton}>
+                        {showInput === 'stake' ? t('Stake-Button-Stake'):t('Stake-Button-Unstake-Tokens')}
+                      </CustomButtons>
+                    </Hidden>
+                    <Hidden xsDown>
+                      <IconButton
+                        className={classes.inputCloseIcon}
+                        onClick={(event) => {
+                          event.stopPropagation();
+                          setShowInput(false);
+                        }}
+                      >
+                        <i className="fa fa-times"/>
+                      </IconButton>
+                    </Hidden>
+                  </div>
+                </GridItem>
+                <Hidden smUp>
+                    <div style={{margin:'10px 0px 24px 59px'}} className={classes.inputSubTxt}>{`Balance: ${showInput === 'stake' ? myBalance: myCurrentlyStaked}`}</div>
+                    <div className={classes.flexCenter}>
+                      <CustomButtons
+                            disabled={!Boolean(showInput === 'stake' ? stakeAble : withdrawAble)}
+                            style={{width:'85%',marginBottom:'14px'}}
+                            onClick={showInput === 'stake' ? onStake: onWithdraw}
+                            className={classes.stakeButton}>
+                            {t('Stake-Button-Stake-Tokens')}
+                      </CustomButtons>
+                    </div>
+                    <div className={classes.flexCenter}>
+                      <CustomButtons
+                            style={{width:'85%',marginBottom:'14px'}}
+                            onClick={(event) => {
+                              event.stopPropagation();
+                              setShowInput(false);
+                            }}
+                            className={classNames({
+                              [classes.stakeButton]:true,
+                              [classes.grayButton]:true,
+                            })}>
+                            {t('Stake-Button-Unstake-Tokens')}
+                      </CustomButtons>
+                    </div>
+                </Hidden>
+              </div>
             ) : (
               <GridContainer className={classes.contentTitle}>
-                <GridItem md={3} xs={6} className={classes.flexCenter}>
+                <GridItem md={3} sm={6} xs={12} className={classes.flexCenter}>
                   { isNeedApproval ? (
                     <CustomButtons
                       disabled={!Boolean(approvalAble)}
                       onClick={onApproval}
+                      style={{width:'85%',marginBottom:'14px'}}
                       className={classes.stakeButton}>
                       {t('Stake-Button-Approval')}
                     </CustomButtons>
@@ -297,18 +355,20 @@ export default function StakePool(props) {
                       event.stopPropagation();
                       setShowInput('stake');
                     }}
+                    style={{width:'85%',marginBottom:'14px'}}
                     className={classes.stakeButton}>
                     {t('Stake-Button-Stake-Tokens')}
                   </CustomButtons>
                   )}
                 </GridItem>
-                <GridItem md={3} xs={6} className={classes.flexCenter}>
+                <GridItem md={3} sm={6} xs={12} className={classes.flexCenter}>
                   <CustomButtons
                     disabled={!Boolean(withdrawAble)}
                     onClick={(event)=>{
                       event.stopPropagation();
                       setShowInput('unstake');
                     }}
+                    style={{width:'85%',marginBottom:'14px'}}
                     className={classNames({
                       [classes.stakeButton]:true,
                       [classes.grayButton]:true,
@@ -316,10 +376,11 @@ export default function StakePool(props) {
                     {t('Stake-Button-Unstake-Tokens')}
                   </CustomButtons>
                 </GridItem>
-                <GridItem md={3} xs={6} className={classes.flexCenter}>
+                <GridItem md={3} sm={6} xs={12} className={classes.flexCenter}>
                   <CustomButtons
                     disabled={!Boolean(claimAble)}
                     onClick={onClaim}
+                    style={{width:'85%',marginBottom:'14px'}}
                     className={classNames({
                       [classes.stakeButton]:true,
                       [classes.rewardsButton]:true,
@@ -327,10 +388,11 @@ export default function StakePool(props) {
                     {t('Stake-Button-Claim-Rewards')}
                   </CustomButtons>
                 </GridItem>
-                <GridItem md={3} xs={6} className={classes.flexCenter}>
+                <GridItem md={3} sm={6} xs={12} className={classes.flexCenter}>
                   <CustomButtons
                     disabled={!Boolean(exitAble)}
                     onClick={onExit}
+                    style={{width:'85%',marginBottom:'14px'}}
                     className={classNames({
                       [classes.stakeButton]:true,
                       [classes.grayButton]:true,
@@ -342,7 +404,7 @@ export default function StakePool(props) {
             )
           }
         </div>
-      </div>
+      </GridItem>
     </GridContainer>
   )
 }
