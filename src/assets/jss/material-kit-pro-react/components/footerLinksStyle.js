@@ -116,10 +116,7 @@ const footerLinksStyle = theme => ({
       margin:'24px 80px'
     },
     linkItem: {
-      width: 'auto',
-      margin: '24px 24px 0 24px',
-      float:'left',
-      display:'inline-block',
+      whiteSpace:'nowrap',
     },
 
 })

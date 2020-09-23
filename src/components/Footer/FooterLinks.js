@@ -204,7 +204,7 @@ export default function FooterLinks(props) {
                 {
                     footerLinkArr.map((item)=>{
                         return (
-                            <GridItem  md={2} xs={6} key={item.content} >
+                            <GridItem className={classes.linkItem} md={2} xs={6} key={item.content} >
                                 <a className={classes.extraContent} href={item.href} target="_blank">{item.content}</a>
                             </GridItem >
                         )
