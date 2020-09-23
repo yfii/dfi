@@ -304,12 +304,16 @@ const stakePoolsStyle = theme => ({
     margin:'12px',
   },
   mobileDetail:{
-    ...secondStyle,
+    fontFamily: 'Helvetica',
+    fontSize: '16px',
+    color: '#A4A6B3',
+    letterSpacing: '0',
+    lineHeight: '14px',
     display:'flex',
     flexDirection:'column',
     justifyContent:'center',
     alignItems:'center',
-    margin:'12px',
+    margin:'18px',
   },
 })
 

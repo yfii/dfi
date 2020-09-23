@@ -268,7 +268,7 @@ export default function StakePool(props) {
                         src={require(`../../../images/${pools[index].name}-logo.png`)}
                         />
                     </div>
-                    <InputBase value={inputVal} onChange={changeInputVal} autoFocus className={classes.inputTxt} />
+                    <InputBase value={inputVal} style={{fontSize:'20px',lineHeight:'32px'}} onChange={changeInputVal} autoFocus className={classes.inputTxt} />
                     <Hidden xsDown>
                       <div className={classes.inputTxt}>{pools[index].name}</div>
                     </Hidden>
@@ -317,7 +317,7 @@ export default function StakePool(props) {
                     <div className={classes.flexCenter}>
                       <CustomButtons
                             disabled={!Boolean(showInput === 'stake' ? stakeAble : withdrawAble)}
-                            style={{width:'85%',marginBottom:'14px'}}
+                            style={{width:'85%',height:'44px',marginBottom:'14px'}}
                             onClick={showInput === 'stake' ? onStake: onWithdraw}
                             className={classes.stakeButton}>
                             {t('Stake-Button-Stake-Tokens')}
@@ -325,7 +325,7 @@ export default function StakePool(props) {
                     </div>
                     <div className={classes.flexCenter}>
                       <CustomButtons
-                            style={{width:'85%',marginBottom:'14px'}}
+                            style={{width:'85%',height:'44px',marginBottom:'14px'}}
                             onClick={(event) => {
                               event.stopPropagation();
                               setShowInput(false);
@@ -346,7 +346,7 @@ export default function StakePool(props) {
                     <CustomButtons
                       disabled={!Boolean(approvalAble)}
                       onClick={onApproval}
-                      style={{width:'85%',marginBottom:'14px'}}
+                      style={{width:'85%',height:'44px',marginBottom:'14px'}}
                       className={classes.stakeButton}>
                       {t('Stake-Button-Approval')}
                     </CustomButtons>
@@ -355,7 +355,7 @@ export default function StakePool(props) {
                       event.stopPropagation();
                       setShowInput('stake');
                     }}
-                    style={{width:'85%',marginBottom:'14px'}}
+                    style={{width:'85%',height:'44px',marginBottom:'14px'}}
                     className={classes.stakeButton}>
                     {t('Stake-Button-Stake-Tokens')}
                   </CustomButtons>
@@ -368,7 +368,7 @@ export default function StakePool(props) {
                       event.stopPropagation();
                       setShowInput('unstake');
                     }}
-                    style={{width:'85%',marginBottom:'14px'}}
+                    style={{width:'85%',height:'44px',marginBottom:'14px'}}
                     className={classNames({
                       [classes.stakeButton]:true,
                       [classes.grayButton]:true,
@@ -380,7 +380,7 @@ export default function StakePool(props) {
                   <CustomButtons
                     disabled={!Boolean(claimAble)}
                     onClick={onClaim}
-                    style={{width:'85%',marginBottom:'14px'}}
+                    style={{width:'85%',height:'44px',marginBottom:'14px'}}
                     className={classNames({
                       [classes.stakeButton]:true,
                       [classes.rewardsButton]:true,
@@ -392,7 +392,7 @@ export default function StakePool(props) {
                   <CustomButtons
                     disabled={!Boolean(exitAble)}
                     onClick={onExit}
-                    style={{width:'85%',marginBottom:'14px'}}
+                    style={{width:'85%',height:'44px',marginBottom:'14px'}}
                     className={classNames({
                       [classes.stakeButton]:true,
                       [classes.grayButton]:true,
