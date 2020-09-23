@@ -121,28 +121,26 @@ export default function StakePools(props) {
         <GridItem>
         {pools.map((pool, index) => (
           <div key={`mobile-${index}`} className={classes.mobileContainer} style={{display: Boolean(index !== 3) ? "none" : ""}}>
-            <div className={classes.avatarContainer} style={{width:'60px',height:'60px',borderRadius:'30px'}}>
+            <div className={classes.avatarContainer} style={{width:'80px',height:'80px',borderRadius:'40px'}}>
               <Avatar 
                 alt={pool.name}
                 src={require(`../../../images/${pool.name}-logo.png`)}
-                className={classNames({
-                  [classes.avatar]:true,
-                })}
+                style={{width:'54px',height:'54px'}}
                 />
             </div>
             <div className={classes.mobileHead}>
-              <div style={{fontWeight:'600',marginBottom:'6px'}}>{pool.name}</div>
-              <div style={{fontWeight:'500'}}>{pool.token}</div>
+              <div style={{fontSize:'26px',lineHeight:'18px',fontWeight:'600',marginBottom:'14px'}}>{pool.name}</div>
+              <div style={{fontSize:'18px',lineHeight:'14px',fontWeight:'500'}}>{pool.token}</div>
             </div>
             <div className={classes.mobileDetail}>
-              <div style={{fontWeight:'500',marginBottom:'6px'}}>{t('Stake-Table-Apy')+": "+poolsInfo[index].apy}</div>
-              <div style={{fontWeight:'500',marginBottom:'6px'}}>{t('Stake-Table-Staked')+": "+poolsInfo[index].staked}</div>
-              <div style={{fontWeight:'500',marginBottom:'6px'}}>{t('Stake-Table-Total')+": "+poolsInfo[index].tvl}</div>
+              <div style={{marginBottom:'10px'}}>{t('Stake-Table-Apy')+": "+poolsInfo[index].apy}</div>
+              <div style={{marginBottom:'10px'}}>{t('Stake-Table-Staked')+": "+poolsInfo[index].staked}</div>
+              <div style={{marginBottom:'12px'}}>{t('Stake-Table-Total')+": "+poolsInfo[index].tvl}</div>
             </div>
             <CustomButtons
               href={`/#/stake/pool/${index + 1}`}
               className={classes.stakeButton}
-              style={{width:'150px'}}
+              style={{width:'180px',height:'44px'}}
             >
               {t('Stake-Button-Stake')}
             </CustomButtons>
