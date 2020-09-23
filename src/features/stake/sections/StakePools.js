@@ -120,7 +120,7 @@ export default function StakePools(props) {
       <Hidden smUp>
         <GridItem>
         {pools.map((pool, index) => (
-          <div className={classes.mobileContainer} style={{display: Boolean(index !== 3) ? "none" : ""}}>
+          <div key={`mobile-${index}`} className={classes.mobileContainer} style={{display: Boolean(index !== 3) ? "none" : ""}}>
             <div className={classes.avatarContainer} style={{width:'60px',height:'60px',borderRadius:'30px'}}>
               <Avatar 
                 alt={pool.name}
