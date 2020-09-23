@@ -20,7 +20,7 @@ export function fetchPoolsInfo() {
       // doRequest is a placeholder Promise. You should replace it with your own logic.
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
-      const doRequest = axios.get('http://128.199.127.239:8008/stake/pools/');
+      const doRequest = axios.get('http://api1.dfi.money/stake/pools/');
 
       doRequest.then(
         res => {
