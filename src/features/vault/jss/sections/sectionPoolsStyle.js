@@ -136,17 +136,20 @@ const sectionPoolsStyle = theme => ({
     minHeight: '170px',
   },
   iconContainerMainTitle:{
-    fontSize: '20px',
+    fontSize: '18px',
     fontWeight: 'bold',
     color: '#fff',
-    lineHeight: '20px',
-    marginBottom:'8px',
+    lineHeight: '18px',
+    // marginBottom:'8px',
+    letterSpacing: 0,
   },
   iconContainerSubTitle:{
     fontSize: '14px',
     fontWeight: '400',
-    color: 'rgba(255,255,255,.4)',
+    color: '#fff',
     lineHeight: '14px',
+    opacity: "0.4",
+    letterSpacing: 0
   },
   iconContainerSecond: {
       width:'48px',
@@ -175,15 +178,14 @@ const sectionPoolsStyle = theme => ({
         background: hoverColor[0],
       }
   },
-    accordionMargin:{
+    accordion:{
         backgroundColor:'#2C3040',
-        margin:'24px 0',
         color:'#fff',
         boxShadow: '0px 4px 8px 0px rgba(0, 0, 0, 0.06)',
         borderRadius: '8px',
     },
     details:{
-      padding: '12px 0',
+      // padding: '12px 0',
       background: '#2C3040',
       boxShadow: '0 4px 8px 0 rgba(0,0,0,0.06)',
       borderRadius: '8px',
