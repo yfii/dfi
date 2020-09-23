@@ -174,37 +174,70 @@ const stakePoolsStyle = theme => ({
     fontWeight: "550",
     margin:'24px 0'
   },
-  detailContent:{
+  detailContentUp:{
       backgroundColor: normalBackgroundColor,
-      borderRadius: '24px',
+      borderTopLeftRadius:'24px',
+      borderTopRightRadius:'24px',
       padding:'48px',
+      paddingBottom:'1px',
+      [theme.breakpoints.down("xs")]: {
+        borderRadius:'24px',
+        marginBottom:'12px',
+        padding:'48px 48px 10px 48px',
+      },
   },
-  marginBottom:{
+  detailContentDown:{
+      backgroundColor: normalBackgroundColor,
+      borderBottomLeftRadius:'24px',
+      borderBottomRightRadius:'24px',
+      padding:'48px',
+      paddingTop:'0',
+      [theme.breakpoints.down("xs")]: {
+        borderRadius:'24px',
+        padding:'48px',
+      },
+  },
+  contentTitleMarginBottom:{
       marginBottom:'48px',
+      [theme.breakpoints.down("xs")]: {
+        marginBottom:'0',
+      },
   },
   contentTitle:{
       display:"flex",
       justifyContent:'center',
+      [theme.breakpoints.down("xs")]: {
+        flexDirection:'column',
+      },
   },
   contentTitleItem:{
       display:'flex',
       flexDirection:'column',
       alignItems:'center',
       padding:'0 12px',
-      '& :first-child':{
-          ...fontDefaultStyle,
-          fontSize: '28px',
-          color: primaryColor,
-          lineHeight: '28px',
-          marginBottom:'12px',
+      [theme.breakpoints.down("xs")]: {
+        alignItems:'flex-start',
       },
-      '& :last-child':{
-          ...fontDefaultStyle,
-          opacity: '0.4',
-      },
+  },
+  contentItemTitleVal:{
+    ...fontDefaultStyle,
+    fontSize: '28px',
+    color: primaryColor,
+    lineHeight: '28px',
+    marginBottom:'12px',
+  },
+  contentItemTitle:{
+    ...fontDefaultStyle,
+    opacity: '0.4',
+    [theme.breakpoints.down("xs")]: {
+      marginBottom:'12px',
+    }
   },
   contentTitleItemBorder:{
       borderRight:'1px solid rgb(255,255,255,0.1)',
+      [theme.breakpoints.down("xs")]: {
+        border:'0',
+      },
   },
   contentButtonMargin:{
       marginRight:'36px',
@@ -252,7 +285,32 @@ const stakePoolsStyle = theme => ({
   },
   marginTop:{
     marginTop:'12px',
-  }
+  },
+  mobileContainer:{
+    display:'flex',
+    flexDirection:'column',
+    justifyContent:'center',
+    alignItems:'center',
+    padding:'24px',
+    borderRadius:'12px',
+    backgroundColor: normalBackgroundColor,
+  },
+  mobileHead:{
+    ...fontDefaultStyle,
+    display:'flex',
+    flexDirection:'column',
+    justifyContent:'center',
+    alignItems:'center',
+    margin:'12px',
+  },
+  mobileDetail:{
+    ...secondStyle,
+    display:'flex',
+    flexDirection:'column',
+    justifyContent:'center',
+    alignItems:'center',
+    margin:'12px',
+  },
 })
 
 export {StyledTableCell,StyledTableRow,stakePoolsStyle};
