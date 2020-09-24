@@ -262,12 +262,12 @@ export default function SectionPools() {
         {Boolean(networkId === Number(process.env.NETWORK_ID)) && pools.map((pool, index) => {
             let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
             // balanceSingle = byDecimals(random(1, 1000000), 1)
-            balanceSingle = new BigNumber(random(1, 1000000000000000))
+            // balanceSingle = new BigNumber(random(1, 1000000000000000))
             let singleDepositedBalance = byDecimals(tokens[pool.earnedToken].tokenBalance, pool.tokenDecimals);
             // singleDepositedBalance = byDecimals(random(1, 1000000), 1)
-            singleDepositedBalance = new BigNumber(random(1, 1000))
+            // singleDepositedBalance = new BigNumber(random(1, 1000))
             let depositedApy = contractApy[pool.id] || 0;
-            depositedApy = random(0, 1)
+            // depositedApy = random(0, 1)
             // depositedApy =byDecimals(random(0, 100), 1)
             return (
                 <Grid item xs={12} container key={index} style={{marginBottom: "24px"}} spacing={0}>
@@ -286,7 +286,7 @@ export default function SectionPools() {
                             }}
                         >
                         <Grid container alignItems="center" justify="space-around" spacing={4} style={{paddingTop: "16px", paddingBottom: "16px"}}>
-                            <Grid item style={{minWidth: "150px"}}>
+                            <Grid item style={{minWidth: "130px"}}>
                                 <Grid container alignItems="center" spacing={2}>
                                     <Grid item>
                                         <Avatar 
