@@ -6,7 +6,6 @@ import {
   STAKE_FETCH_EXIT_FAILURE,
 } from './constants';
 import { enqueueSnackbar } from '../../common/redux/actions'
-import { fetchGasPrice } from "../../web3";
 
 export function fetchExit(index) {
   return (dispatch, getState) => {
@@ -28,9 +27,8 @@ export function fetchExit(index) {
       const { pools } = stake;
       const { earnContractAbi, earnContractAddress } = pools[index];
       const contract = new web3.eth.Contract(earnContractAbi, earnContractAddress);
-      const gasPrice = await fetchGasPrice();
 
-      contract.methods.exit().send({ from: address, gasPrice }).on(
+      contract.methods.exit().send({ from: address }).on(
         'transactionHash', function(hash){
           dispatch(enqueueSnackbar({
             message: hash,

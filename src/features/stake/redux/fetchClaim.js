@@ -6,7 +6,6 @@ import {
   STAKE_FETCH_CLAIM_FAILURE,
 } from './constants';
 import { enqueueSnackbar } from '../../common/redux/actions'
-import { fetchGasPrice } from "../../web3";
 
 export function fetchClaim(index) {
   return (dispatch, getState) => {
@@ -28,9 +27,8 @@ export function fetchClaim(index) {
       const { pools } = stake;
       const { earnContractAbi, earnContractAddress } = pools[index];
       const contract = new web3.eth.Contract(earnContractAbi, earnContractAddress);
-      const gasPrice = await fetchGasPrice();
 
-      contract.methods.getReward().send({ from: address, gasPrice }).on(
+      contract.methods.getReward().send({ from: address }).on(
         'transactionHash', function(hash){
           dispatch(enqueueSnackbar({
             message: hash,

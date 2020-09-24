@@ -1,26 +1,23 @@
 import { earnContractABI } from "../configure";
-import { fetchGasPrice } from '.';
 
 export const deposit = async ({web3, address, isAll, amount, contractAddress}) => {
   // console.log(`=====================================deposit begin=====================================`)
-  const gasPrice = await fetchGasPrice();
   console.log(`
     address:${address}\n
     contractAddress:${contractAddress}\n
-    gasPrice:${gasPrice}\n
     amount:${amount}
   `)
   const contract = new web3.eth.Contract(earnContractABI, contractAddress);
-  const data = await _deposit({web3, contract,isAll, amount,  address, gasPrice});
+  const data = await _deposit({web3, contract,isAll, amount,  address});
   // console.log(`=====================================deposit success=====================================`)
   return data;
 }
 
-const _deposit = ({web3, contract, amount, isAll, address, gasPrice}) => {
+const _deposit = ({web3, contract, amount, isAll, address}) => {
   return new Promise((resolve, reject) => {
     // console.log(isAll)
     if(isAll) {
-      contract.methods.depositAll().send({ from: address, gasPrice }).on('transactionHash', function(hash){
+      contract.methods.depositAll().send({ from: address }).on('transactionHash', function(hash){
         console.log(hash)
         resolve(hash)
       })
@@ -38,7 +35,7 @@ const _deposit = ({web3, contract, amount, isAll, address, gasPrice}) => {
         reject(error)
       })
     } else {
-      contract.methods.deposit(amount).send({ from: address, gasPrice }).on('transactionHash', function(hash){
+      contract.methods.deposit(amount).send({ from: address }).on('transactionHash', function(hash){
         console.log(hash)
         resolve(hash)
       })
