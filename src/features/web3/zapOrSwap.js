@@ -9,7 +9,7 @@ export const zapOrSwap = async ({web3, address, contract, call, amount}) => {
     call:${call}\n
     amount:${amount}
   `)
-  const data = await _zapOrSwap({web3, address, contract, call, amount, gasPrice:web3.utils.toWei(gasPrice, 'gwei')});
+  const data = await _zapOrSwap({web3, address, contract, call, amount, gasPrice});
   // console.log(`=====================================deposit success=====================================`)
   return data;
 }

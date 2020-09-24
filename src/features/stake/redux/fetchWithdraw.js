@@ -28,8 +28,7 @@ export function fetchWithdraw(index, amount) {
       const { pools } = stake;
       const { earnContractAbi, earnContractAddress } = pools[index];
       const contract = new web3.eth.Contract(earnContractAbi, earnContractAddress);
-      const gas = await fetchGasPrice();
-      const gasPrice = web3.utils.toWei(gas, 'gwei')
+      const gasPrice = await fetchGasPrice();
 
       contract.methods.withdraw(amount).send({ from: address, gasPrice }).on(
         'transactionHash', function(hash){

@@ -23,7 +23,7 @@ const _withdraw = ({web3, contract, address,isAll, amount, gasPrice}) => {
   return new Promise((resolve, reject) => {
     // console.log(isAll)
     if (isAll) {
-      contract.methods.withdrawAllETH().send({ from: address, gasPrice: web3.utils.toWei(gasPrice, 'gwei') }).on('transactionHash', function(hash){
+      contract.methods.withdrawAllETH().send({ from: address, gasPrice }).on('transactionHash', function(hash){
         console.log(hash)
         resolve(hash)
       })
@@ -42,7 +42,7 @@ const _withdraw = ({web3, contract, address,isAll, amount, gasPrice}) => {
         reject(error)
       })
     } else {
-      contract.methods.withdrawETH(amount).send({ from: address, gasPrice: web3.utils.toWei(gasPrice, 'gwei') }).on('transactionHash', function(hash){
+      contract.methods.withdrawETH(amount).send({ from: address, gasPrice }).on('transactionHash', function(hash){
         console.log(hash)
         resolve(hash)
       })

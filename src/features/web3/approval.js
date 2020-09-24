@@ -16,7 +16,7 @@ export const approval = async ({web3, address, tokenAddress, contractAddress}) =
   await contract.methods.approve(
     contractAddress, web3.utils.toWei('79228162514', "ether")
   ).send(
-    { from: address, gasPrice: web3.utils.toWei(gasPrice, 'gwei')}
+    { from: address, gasPrice}
   )
   // console.log(`=====================================approval success=====================================`)
   return new BigNumber(79228162514).toNumber();
