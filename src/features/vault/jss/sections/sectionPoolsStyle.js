@@ -245,7 +245,7 @@ const sectionPoolsStyle = theme => ({
     },
     showDetailButtonCon:{
         display:'flex',
-        justifyContent:'space-between',
+        justifyContent:'space-around',
         '& + &': {
           marginLeft: '5px'
         }
