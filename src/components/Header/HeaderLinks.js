@@ -111,7 +111,6 @@ export default function HeaderLinks(props) {
   if(window.location.hash != '#/' && window.location.hash!='#/index'){
     defaultTabValue = window.location.hash.split('/')[1];
   }
-  console.warn('~~~~~~defaultTabValue~~~~~~',defaultTabValue);
   
   return (
     <List className={classes.list + " " + classes.mlAuto}>

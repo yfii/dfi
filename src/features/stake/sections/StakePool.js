@@ -237,7 +237,7 @@ export default function StakePool(props) {
           </GridItem>
           <GridItem sm={index===3 ? 4: 3} xs={12} className={classNames({
             [classes.contentTitleItem]:true,
-            [classes.contentTitleItemBorder]:true,
+            [classes.contentTitleItemBorder]:index!==3,
           })}>
             <Hidden smUp>
               <div className={classes.contentItemTitle}>{t('Stake-Balancer-Rewards-Available')}</div>

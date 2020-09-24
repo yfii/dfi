@@ -182,12 +182,11 @@ const stakePoolsStyle = theme => ({
       backgroundColor: normalBackgroundColor,
       borderTopLeftRadius:'8px',
       borderTopRightRadius:'8px',
-      padding:'48px',
-      paddingBottom:'1px',
+      padding:'56px 120px',
       [theme.breakpoints.down("xs")]: {
         borderRadius:'8px',
         marginBottom:'12px',
-        padding:'48px 48px 10px 48px',
+        padding:'30px 16px',
       },
   },
   detailContentDown:{
