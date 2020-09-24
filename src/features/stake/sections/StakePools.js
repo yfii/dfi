@@ -15,6 +15,7 @@ import { isEmpty } from 'features/helpers/utils';
 import {StyledTableCell,StyledTableRow,stakePoolsStyle} from "../jss/sections/stakePoolsStyle";
 import InputBase from '@material-ui/core/InputBase';
 import IconButton from '@material-ui/core/IconButton';
+import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
 import leftImage from 'assets/img/stake-head-left.png';
 import rightImage from 'assets/img/stake-head-right.png';
@@ -33,11 +34,11 @@ export default function StakePools(props) {
   }, [fetchPoolsInfo]);
   
   return (
-    <GridContainer spacing={3}>
-      <GridItem>
+    <Grid container style={{paddingTop: '20px'}}>
+      <Grid item xs={12}>
         <div className={classes.mainTitle}>{t('Stake-Main-Title')}</div>
         <h3 className={classes.secondTitle}>{t('Stake-Second-Title')}</h3>
-      </GridItem>
+      </Grid>
       {
         fromPage == 'page' && 
         <Hidden xsDown>
@@ -148,7 +149,7 @@ export default function StakePools(props) {
         ))}
         </GridItem>
       </Hidden>
-    </GridContainer>
+    </Grid>
   )
 }
 
