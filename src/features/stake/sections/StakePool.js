@@ -258,7 +258,7 @@ export default function StakePool(props) {
           </GridItem>}
         </GridContainer>
       </Grid>
-        <Grid item xs={12}> className={classes.detailContentDown}>
+        <Grid item xs={12} className={classes.detailContentDown}>
           {
             showInput ? (
               <div>
