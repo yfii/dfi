@@ -84,6 +84,7 @@ const stakePoolsStyle = theme => ({
     height:'180px',
     padding:'48px 60px',
     zIndex:'10',
+    marginBottom:'40px',
   },
   table: {
       minWidth: 700,
@@ -169,6 +170,12 @@ const stakePoolsStyle = theme => ({
       width:'38px',
       height:'38px',
   },
+  inputAvatar:{
+    [theme.breakpoints.down("xs")]: {
+      width:'26px',
+      height:'26px',
+    },
+  },
   detailTitle:{
     fontFamily: 'Helvetica',
     fontSize: '32px',
@@ -197,7 +204,7 @@ const stakePoolsStyle = theme => ({
       paddingTop:'0',
       [theme.breakpoints.down("xs")]: {
         borderRadius:'8px',
-        padding:'48px',
+        padding:'30px 22px',
       },
   },
   contentTitleMarginBottom:{
@@ -228,6 +235,9 @@ const stakePoolsStyle = theme => ({
     color: primaryColor,
     lineHeight: '28px',
     marginBottom:'12px',
+    [theme.breakpoints.down("xs")]: {
+      marginBottom:'0',
+    }
   },
   contentItemTitle:{
     ...fontDefaultStyle,
@@ -246,12 +256,17 @@ const stakePoolsStyle = theme => ({
       marginRight:'36px',
   },
   inputContainer:{
-      height:'70px',
-      borderRadius:'35px',
-      backgroundColor:'#353848',
-      display:'flex',
-      alignItems:'center',
-      justifyContent:'space-between',
+    height:'70px',
+    borderRadius:'35px',
+    backgroundColor:'#353848',
+    display:'flex',
+    alignItems:'center',
+    justifyContent:'space-between',
+    [theme.breakpoints.down("xs")]: {
+      width:'300px',
+      height:'48px',
+      margin:'0 auto',
+    }
   },
   inputAvatarContainer:{
       width:'40px',
@@ -261,6 +276,10 @@ const stakePoolsStyle = theme => ({
       display:'flex',
       alignItems:'center',
       justifyContent:'center',
+      [theme.breakpoints.down("xs")]: {
+        width:'26px',
+        height:'26px',
+      },
   },
   flexBox:{
       display:'flex',
@@ -317,6 +336,19 @@ const stakePoolsStyle = theme => ({
     justifyContent:'center',
     alignItems:'center',
     margin:'18px',
+  },
+  mobileMaxButton:{
+    [theme.breakpoints.down("xs")]: {
+      width:'42px',
+      height:'24px',
+      fontSize: '12px',
+      lineHeight: '16px',
+    },
+  },
+  mobileInput:{
+    [theme.breakpoints.down("xs")]: {
+      width:'100px',
+    },
   },
 })
 
