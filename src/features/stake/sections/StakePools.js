@@ -34,7 +34,7 @@ export default function StakePools(props) {
   }, [fetchPoolsInfo]);
   
   return (
-    <Grid container style={{paddingTop: '20px'}}>
+    <Grid container style={{paddingTop: '4px'}}>
       <Grid item xs={12}>
         <div className={classes.mainTitle}>{t('Stake-Main-Title')}</div>
         <h3 className={classes.secondTitle}>{t('Stake-Second-Title')}</h3>

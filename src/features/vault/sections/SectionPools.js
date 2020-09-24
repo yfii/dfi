@@ -253,7 +253,7 @@ export default function SectionPools() {
     return Math.floor(Math.random() * (max - min)) + min;
   }
   return (
-    <Grid container style={{paddingTop: '20px'}}>
+    <Grid container style={{paddingTop: '4px'}}>
       <Grid item xs={12}>
         <div className={classes.mainTitle}>{t('Vault-Main-Title')}</div>
         <h3 className={classes.secondTitle}>{t('Vault-Second-Title')}</h3>
