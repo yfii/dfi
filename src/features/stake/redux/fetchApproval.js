@@ -8,7 +8,6 @@ import {
 } from './constants';
 import { enqueueSnackbar } from '../../common/redux/actions';
 import { checkApproval } from './action';
-import { fetchGasPrice } from "../../web3";
 
 export function fetchApproval(index) {
   return (dispatch, getState) => {
@@ -30,10 +29,8 @@ export function fetchApproval(index) {
       const { pools } = stake;
       const { tokenAddress, earnContractAddress } = pools[index];
       const contract = new web3.eth.Contract(erc20ABI, tokenAddress);
-      const gas = await fetchGasPrice();
-      const gasPrice = web3.utils.toWei(gas, 'gwei')
 
-      contract.methods.approve(earnContractAddress, web3.utils.toWei("79228162514", "ether")).send({ from: address, gasPrice }).on(
+      contract.methods.approve(earnContractAddress, web3.utils.toWei("79228162514", "ether")).send({ from: address }).on(
         'transactionHash', function(hash){
           dispatch(enqueueSnackbar({
             message: hash,

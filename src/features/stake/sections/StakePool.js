@@ -216,7 +216,7 @@ export default function StakePool(props) {
               [classes.contentTitleItemBorder]:true,
             })}>
               <Hidden smUp>
-                <div className={classes.contentItemTitle}>{t('Stake-Balancer-Your-Balance')}</div>
+                <Typography variant="body2" gutterBottom className={classes.contentItemTitle}>{t('Stake-Balancer-Your-Balance')}</Typography>
               </Hidden>
               <div className={classes.contentItemTitleVal}>{`${Math.floor(myBalance * 10000)/ 10000} ${pools[index].token}`}</div>
               <Hidden xsDown>
@@ -228,7 +228,7 @@ export default function StakePool(props) {
             [classes.contentTitleItemBorder]:true,
           })}>
             <Hidden smUp>
-              <div className={classes.contentItemTitle}>{t('Stake-Balancer-Current-Staked')}</div>
+              <Typography variant="body2" gutterBottom className={classes.contentItemTitle}>{t('Stake-Balancer-Current-Staked')}</Typography>
             </Hidden>
             <div className={classes.contentItemTitleVal}>{`${Math.floor(myCurrentlyStaked * 10000)/ 10000} ${pools[index].token}`}</div>
             <Hidden xsDown>
@@ -240,7 +240,7 @@ export default function StakePool(props) {
             [classes.contentTitleItemBorder]:index!==3,
           })}>
             <Hidden smUp>
-              <div className={classes.contentItemTitle}>{t('Stake-Balancer-Rewards-Available')}</div>
+              <Typography variant="body2" gutterBottom className={classes.contentItemTitle}>{t('Stake-Balancer-Rewards-Available')}</Typography>
             </Hidden>
             <div className={classes.contentItemTitleVal}>{`${Math.floor(myRewardsAvailable * 10000)/ 10000} ${pools[index].earnedToken}`}</div>
             <Hidden xsDown>
@@ -249,7 +249,7 @@ export default function StakePool(props) {
           </GridItem>
           {index!==3&&<GridItem sm={3} xs={12} className={classes.contentTitleItem}>
           <Hidden smUp>
-              <div className={classes.contentItemTitle}>{t('Stake-Balancer-Half-Time')}</div>
+              <Typography variant="body2" gutterBottom className={classes.contentItemTitle}>{t('Stake-Balancer-Half-Time')}</Typography>
             </Hidden>
             <div className={classes.contentItemTitleVal}>{myHalfTime}</div>
             <Hidden xsDown>
@@ -268,9 +268,14 @@ export default function StakePool(props) {
                       <Avatar 
                         alt={pools[index].name}
                         src={require(`../../../images/${pools[index].name}-logo.png`)}
+                        className={classes.inputAvatar}
                         />
                     </div>
-                    <InputBase value={inputVal} style={{fontSize:'20px',lineHeight:'32px'}} onChange={changeInputVal} autoFocus className={classes.inputTxt} />
+                    <InputBase value={inputVal} style={{fontSize:'20px',lineHeight:'32px'}} onChange={changeInputVal} autoFocus 
+                      className={classNames({
+                        [classes.inputTxt]:true,
+                        [classes.mobileInput]:true,
+                      })} />
                     <Hidden xsDown>
                       <div className={classes.inputTxt}>{pools[index].name}</div>
                     </Hidden>
@@ -287,6 +292,7 @@ export default function StakePool(props) {
                       className={classNames({
                         [classes.stakeButton]:true,
                         [classes.rewardsButton]:true,
+                        [classes.mobileMaxButton]:true,
                       })}>
                       {t('Swap-Max')}
                     </CustomButtons>
@@ -315,11 +321,11 @@ export default function StakePool(props) {
                   </div>
                 </GridItem>
                 <Hidden smUp>
-                    <div style={{margin:'10px 0px 24px 59px'}} className={classes.inputSubTxt}>{`Balance: ${showInput === 'stake' ? myBalance: myCurrentlyStaked}`}</div>
+                    <div style={{margin:'10px 0px 24px 45px'}} className={classes.inputSubTxt}>{`Balance: ${showInput === 'stake' ? myBalance: myCurrentlyStaked}`}</div>
                     <div className={classes.flexCenter}>
                       <CustomButtons
                             disabled={!Boolean(showInput === 'stake' ? stakeAble : withdrawAble)}
-                            style={{width:'85%',height:'44px',marginBottom:'14px'}}
+                            style={{width:'300px',height:'44px',marginBottom:'14px',marginRight:'0'}}
                             onClick={showInput === 'stake' ? onStake: onWithdraw}
                             className={classes.stakeButton}>
                             {t('Stake-Button-Stake-Tokens')}
@@ -327,7 +333,7 @@ export default function StakePool(props) {
                     </div>
                     <div className={classes.flexCenter}>
                       <CustomButtons
-                            style={{width:'85%',height:'44px',marginBottom:'14px'}}
+                            style={{width:'300px',height:'44px',marginBottom:'14px',marginRight:'0'}}
                             onClick={(event) => {
                               event.stopPropagation();
                               setShowInput(false);
@@ -348,7 +354,7 @@ export default function StakePool(props) {
                     <CustomButtons
                       disabled={!Boolean(approvalAble)}
                       onClick={onApproval}
-                      style={{width:'85%',height:'44px',marginBottom:'14px'}}
+                      style={{width:'300px',height:'44px',marginBottom:'14px',marginRight:'0'}}
                       className={classes.stakeButton}>
                       {t('Stake-Button-Approval')}
                     </CustomButtons>
@@ -357,7 +363,7 @@ export default function StakePool(props) {
                       event.stopPropagation();
                       setShowInput('stake');
                     }}
-                    style={{width:'85%',height:'44px',marginBottom:'14px'}}
+                    style={{width:'300px',height:'44px',marginBottom:'14px',marginRight:'0'}}
                     className={classes.stakeButton}>
                     {t('Stake-Button-Stake-Tokens')}
                   </CustomButtons>
@@ -370,7 +376,7 @@ export default function StakePool(props) {
                       event.stopPropagation();
                       setShowInput('unstake');
                     }}
-                    style={{width:'85%',height:'44px',marginBottom:'14px'}}
+                    style={{width:'300px',height:'44px',marginBottom:'14px',marginRight:'0'}}
                     className={classNames({
                       [classes.stakeButton]:true,
                       [classes.grayButton]:true,
@@ -382,7 +388,7 @@ export default function StakePool(props) {
                   <CustomButtons
                     disabled={!Boolean(claimAble)}
                     onClick={onClaim}
-                    style={{width:'85%',height:'44px',marginBottom:'14px'}}
+                    style={{width:'300px',height:'44px',marginBottom:'14px',marginRight:'0'}}
                     className={classNames({
                       [classes.stakeButton]:true,
                       [classes.rewardsButton]:true,
@@ -394,7 +400,7 @@ export default function StakePool(props) {
                   <CustomButtons
                     disabled={!Boolean(exitAble)}
                     onClick={onExit}
-                    style={{width:'85%',height:'44px',marginBottom:'14px'}}
+                    style={{width:'300px',height:'44px',marginBottom:'14px',marginRight:'0'}}
                     className={classNames({
                       [classes.stakeButton]:true,
                       [classes.grayButton]:true,
