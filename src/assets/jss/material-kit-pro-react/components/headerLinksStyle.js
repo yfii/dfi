@@ -206,6 +206,12 @@ const headerLinksStyle = theme => ({
   paper: {
     padding: theme.spacing(1),
   },
+  nowShowPage:{
+    borderBottom:'1px solid #FF2D82',
+    [theme.breakpoints.down("sm")]: {
+      border:'0'
+    },
+  },
 });
 
 export default headerLinksStyle;

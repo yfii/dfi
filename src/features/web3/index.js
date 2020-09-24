@@ -7,3 +7,5 @@ export { depositEth } from './depositEth';
 export { withdraw } from './withdraw';
 export { withdrawEth } from './withdrawEth';
 export { fetchPricePerFullShare } from './fetchPricePerFullShare';
+export { zapOrSwap } from './zapOrSwap';
+export { statke } from './stake';

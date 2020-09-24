@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState} from "react";
 import { Link } from "react-router-dom";
 // nodejs library that concatenates classes
 import classNames from "classnames";
@@ -57,6 +57,7 @@ export default function Header(props) {
         .classList.remove(classes[changeColorOnScroll.color]);
     }
   };
+
   const { color, links, brand, fixed, absolute } = props;
   const appBarClasses = classNames({
     [classes.appBar]: true,
@@ -73,7 +74,7 @@ export default function Header(props) {
             {brand}
           </Link>
         </Button>
-        <Hidden smDown implementation="css" className={classes.hidden}>
+        <Hidden smDown implementation="css">
           <div className={classes.collapse}>{links}</div>
         </Hidden>
         <Hidden mdUp>

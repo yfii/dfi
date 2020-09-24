@@ -93,8 +93,7 @@ export function useFetchDeposit() {
   const { fetchDepositPending } = useSelector(
     state => ({
       fetchDepositPending: state.vault.fetchDepositPending,
-    }),
-    shallowEqual,
+    })
   );
 
   const boundAction = useCallback(

@@ -2,6 +2,7 @@
 import React, { useState, useEffect, createContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import BigNumber from "bignumber.js";
+import {byDecimals,calculateReallyNum} from 'features/helpers/bignumber';
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import InputAdornment from "@material-ui/core/InputAdornment";
@@ -12,10 +13,11 @@ import AccordionSummary from '@material-ui/core/AccordionSummary'
 import AccordionDetails from '@material-ui/core/AccordionActions'
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import IconButton from '@material-ui/core/IconButton';
-import Slider from '@material-ui/core/Slider';
 import TextField from '@material-ui/core/TextField';
+import Typography from '@material-ui/core/Typography';
 import FormControl from '@material-ui/core/FormControl';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
+import CustomOutlinedInput from 'components/CustomOutlinedInput/CustomOutlinedInput';
+import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
 import {primaryColor} from "assets/jss/material-kit-pro-react.js";
 // core components
@@ -32,9 +34,11 @@ import { useSnackbar } from 'notistack';
 //  hooks
 import { useConnectWallet } from '../../home/redux/hooks';
 import { useFetchBalances, useFetchPoolBalances, useFetchApproval, useFetchDeposit, useFetchWithdraw, useFetchContractApy } from '../redux/hooks';
+import CustomSlider from 'components/CustomSlider/CustomSlider';
 
 import sectionPoolsStyle from "../jss/sections/sectionPoolsStyle";
 import { reflect } from 'async';
+import { inputLimitPass,inputFinalVal } from 'features/helpers/utils';
 
 const useStyles = makeStyles(sectionPoolsStyle);
 
@@ -56,19 +60,10 @@ export default function SectionPools() {
 
   const { enqueueSnackbar } = useSnackbar();
 
-  const calculateReallyNum = (total,sliderNum) => {
-    if(sliderNum == undefined){
-       return byDecimals(0, 0).toFormat(4);
-    }
-    return byDecimals(sliderNum/100*Number(total), 0).toFormat(4);
-  }
-  
   const changeDetailInputValue = (type,index,total,tokenDecimals,event) => {
     let value = event.target.value;
-    let reg = /[a-z]/i;
-    let valueArr = value.split('.');
-    if(reg.test(value) || (valueArr.length==2 && valueArr[1].length > tokenDecimals) ){
-        return;
+    if(!inputLimitPass(value,tokenDecimals)){
+      return;
     }
     let sliderNum = 0;
     let inputVal = Number(value.replace(',',''));
@@ -79,14 +74,14 @@ export default function SectionPools() {
         case 'depositedBalance':
             setDepositedBalance({
                 ...depositedBalance,
-                [index]: inputVal > total ? byDecimals(total,0).toFormat(tokenDecimals) :value,
+                [index]: inputFinalVal(value,total,tokenDecimals),
                 [`slider-${index}`]: sliderNum,
             });
             break;
         case 'withdrawAmount':
             setWithdrawAmount({
                 ...withdrawAmount,
-                [index]: inputVal > total ? byDecimals(total,0).toFormat(tokenDecimals) :value,
+                [index]: inputFinalVal(value,total,tokenDecimals),
                 [`slider-${index}`]: sliderNum,
             });
             break;
@@ -110,11 +105,6 @@ export default function SectionPools() {
       [`slider-${index}`]: sliderNum == 0 ? 0: sliderNum,
     });
   };
-
-  const byDecimals = (number, tokenDecimals = 18) => {
-    const decimals = new BigNumber(10).exponentiatedBy(tokenDecimals);
-    return new BigNumber(number).dividedBy(decimals);
-  }
 
   const onApproval = (pool, index, event) => {
     event.stopPropagation();
@@ -140,6 +130,7 @@ export default function SectionPools() {
         [`slider-${index}`]: 100,
       })
     }
+    console.log(depositedBalance[index])
     let amountValue =  depositedBalance[index]? depositedBalance[index].replace(',',''): depositedBalance[index];
     if (!pool.tokenAddress) {// 如果是eth
       fetchDepositEth({
@@ -258,169 +249,155 @@ export default function SectionPools() {
     alignContent: "space-around",
   }
 
-  //滑块
-  const marks = [
-    {
-        value: 0,
-        label: '0%',
-      },
-      {
-        value: 25,
-        label: '25%',
-      },
-      {
-        value: 50,
-        label: '50%',
-      },
-      {
-        value: 75,
-        label: '75%',
-      },
-      {
-        value: 100,
-        label: '100%',
-      },
-  ];
- 
-  const valuetext = (value) => {
-    return `${value}°C`;
+  const random = (min, max) => {
+    return Math.floor(Math.random() * (max - min)) + min;
   }
-
   return (
-    <GridContainer justify="center">
-      <GridItem md={12} xs={12} sm={10}>
+    <Grid container style={{paddingTop: '4px'}}>
+      <Grid item xs={12}>
+        <div className={classes.mainTitle}>{t('Vault-Main-Title')}</div>
+        <h3 className={classes.secondTitle}>{t('Vault-Second-Title')}</h3>
+      </Grid>
+      
         {Boolean(networkId === Number(process.env.NETWORK_ID)) && pools.map((pool, index) => {
-          let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
-          let singleDepositedBalance = byDecimals(tokens[pool.earnedToken].tokenBalance, pool.tokenDecimals);
-          let depositedApy = contractApy[pool.id] || 0;
-          return (
-            <Accordion
-              key={index}
-              expanded={Boolean(openedCardList.includes(index))}
-              className={classes.accordionMargin}
-            >
-              <AccordionSummary
-                className={classes.details}
-                style={{ justifyContent: "space-between"}}
-                onClick={(event) => {
-                    event.stopPropagation();
-                    openCard(index)
-                }}
-              >
-                  <GridContainer style={{width: "100%", marginLeft: 0, marginRight: 0}}>
-                      <GridItem xs={4} sm={2} style={Object.assign({},{},gridItemStyle,{justifyContent:'flex-start'})}>
-                          <GridItem xs={6}>
-                              <Avatar 
-                              alt={pool.token}
-                              src={require(`../../../images/${pool.token}-logo.png`)}
-                              style={{}}
-                              />
-                          </GridItem>
-                          <GridItem xs={6} style={Object.assign({},gridItemStyle,{flexDirection:'column',alignItems:'space-around'})}>
-                              <div className={classes.iconContainerMainTitle} style={Object.assign({},gridItemStyle,{justifyContent:'flex-start'})}>
-                                  {pool.token + "  "}
-                                  <Hidden smUp>
-                                    <i
-                                        style={{color:primaryColor[0],marginLeft:'4px'}}
-                                        className={"yfiiicon yfii-help-circle"} 
-                                        onClick={
-                                            event => {
-                                                event.stopPropagation();
-                                                window.open(isZh?pool.tokenDescriptionUrl2:pool.tokenDescriptionUrl)
-                                            }
-                                        }
-                                        />
-                                    </Hidden>
-                                </div>
-                              <span className={classes.iconContainerSubTitle}>{pool.token}</span>
-                          </GridItem>
-                      </GridItem>
-
-                      <Hidden xsDown>
-                        <GridItem sm={7} className="hidden-xs" style={Object.assign({},gridItemStyle,{justifyContent:'space-around'})}>
-                            <GridItem sm={2}></GridItem>
-                            <GridItem sm={3} container direction='column' justify='flex-start' alignItems="flex-start">
-                                    <div className={classes.iconContainerMainTitle}>{forMat(balanceSingle)} { pool.token }</div>
-                                    <div className={classes.iconContainerSubTitle}>{t('Vault-Balance')}</div>
-                            </GridItem>
-                            <GridItem sm={3}></GridItem>
-                            <GridItem sm={4} container direction='column' justify='flex-start' alignItems="flex-start">
-                                    <div className={classes.iconContainerMainTitle}>{depositedApy}</div>
-                                    <div className={classes.iconContainerSubTitle}>{t('Vault-ListAPY')}</div>
-                            </GridItem>
-                        </GridItem>
-                      </Hidden>
-                      <Hidden smUp>
-                            <GridItem xs={5} container justify='center' alignItems="flex-start">
-                                    <GridItem xs={4} container direction='column' justify='center' alignItems="flex-start"></GridItem>
-                                    <GridItem xs={8} container direction='column' justify='center' alignItems="flex-start">
-                                        <div className={classes.iconContainerMainTitle}>{depositedApy}</div>
-                                        <div className={classes.iconContainerSubTitle}>{t('Vault-ListAPY')}</div>
-                                    </GridItem>
-                            </GridItem>
-                        </Hidden>
-
-                      <GridItem xs={3} sm={3} style={Object.assign({},gridItemStyle,{justifyContent:'space-around',paddingLeft: '40px'})}>
-                        <Hidden xsDown>
-                            <IconButton
-                                classes={{
-                                    root:classes.iconContainerSecond
-                                }}
-                                // className={classes.iconContainerSecond}
-                                onClick={
-                                    event => {
-                                        event.stopPropagation();
-                                        window.open(isZh?pool.tokenDescriptionUrl2:pool.tokenDescriptionUrl)
-                                    }
-                                }
-                            >
-                                <i className={"yfiiicon yfii-help-circle"} />
-                            </IconButton>
-                        </Hidden>
-                          <IconButton
-                              className={classes.iconContainerPrimary}
-                              onClick={(event) => {
+            let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
+            // balanceSingle = byDecimals(random(1, 1000000), 1)
+            // balanceSingle = new BigNumber(random(1, 1000000000000000))
+            let singleDepositedBalance = byDecimals(tokens[pool.earnedToken].tokenBalance, pool.tokenDecimals);
+            // singleDepositedBalance = byDecimals(random(1, 1000000), 1)
+            // singleDepositedBalance = new BigNumber(random(1, 1000))
+            let depositedApy = contractApy[pool.id] || 0;
+            // depositedApy = random(0, 1)
+            // depositedApy =byDecimals(random(0, 100), 1)
+            return (
+                <Grid item xs={12} container key={index} style={{marginBottom: "24px"}} spacing={0}>
+                    <div style={{width: "100%"}}>
+                        <Accordion
+                            expanded={Boolean(openedCardList.includes(index))}
+                            className={classes.accordion}
+                            TransitionProps={{ unmountOnExit: true }}
+                        >
+                        <AccordionSummary
+                            className={classes.details}
+                            style={{ justifyContent: "space-between"}}
+                            onClick={(event) => {
                                 event.stopPropagation();
-                                openCard(index);  
-                              }}
-                          >
-                              {
-                                  openedCardList.includes(index) ? <i className={"yfiiicon yfii-arrow-up"} /> : <i className={"yfiiicon yfii-arrow-down"} />
-                              }
-                          </IconButton>
-                      </GridItem>
-                  </GridContainer>
+                                openCard(index)
+                            }}
+                        >
+                        <Grid container alignItems="center" justify="space-around" spacing={4} style={{paddingTop: "16px", paddingBottom: "16px"}}>
+                            <Grid item>
+                                <Grid container alignItems="center" spacing={2}>
+                                    <Grid item>
+                                        <Avatar 
+                                            alt={pool.token}
+                                            src={require(`../../../images/${pool.token}-logo.png`)}
+                                        />
+                                    </Grid>
+                                    <Grid item style={{minWidth: '100px'}}>
+                                            <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom>
+                                                {pool.token}
+                                                <Hidden smUp>
+                                                    <i
+                                                        style={{color:primaryColor[0],marginLeft:'4px'}}
+                                                        className={"yfiiicon yfii-help-circle"} 
+                                                        onClick={
+                                                            event => {
+                                                                event.stopPropagation();
+                                                                window.open(isZh?pool.tokenDescriptionUrl2:pool.tokenDescriptionUrl)
+                                                            }
+                                                        }
+                                                        />
+                                                </Hidden>
+                                            </Typography>
+                                            
+                                        <Typography className={classes.iconContainerSubTitle} variant="body2">{pool.token}</Typography>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+
+                            <Grid item md={8} xs={3}>
+                                <Grid item container justify="space-between">
+                                    <Hidden smDown>
+                                        <Grid item xs={7} container justify='center' alignItems="center">
+                                            <Grid item style={{width: "200px"}}>
+                                                <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>{forMat(balanceSingle)} { pool.token }</Typography>
+                                                <Typography className={classes.iconContainerSubTitle} variant="body2">{t('Vault-Balance')}</Typography></Grid>
+                                        </Grid>
+                                    </Hidden>
+                                    <Hidden mdDown>
+                                        <Grid item xs={4} container justify='center' alignItems="center">
+                                            <Grid item style={{width: "200px"}}>
+                                                <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>{forMat(singleDepositedBalance)} { pool.token }</Typography>
+                                                <Typography className={classes.iconContainerSubTitle} variant="body2">{t('Vault-Deposited')}</Typography>
+                                            </Grid>
+                                        </Grid>
+                                    </Hidden>
+                                    <Grid item xs={12} md={1} container justify='center' alignItems="center">
+                                        <Grid item>
+                                            <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap> {depositedApy}</Typography>
+                                            <Typography className={classes.iconContainerSubTitle} variant="body2">{t('Vault-ListAPY')}</Typography>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+
+                            <Grid item >
+                                <Grid item container justify="flex-end" alignItems="center" spacing={2}>
+                                    <Hidden mdDown>
+                                        <Grid item>
+                                        <IconButton
+                                            classes={{
+                                                root:classes.iconContainerSecond
+                                            }}
+                                            // className={classes.iconContainerSecond}
+                                            onClick={
+                                                event => {
+                                                    event.stopPropagation();
+                                                    window.open(isZh?pool.tokenDescriptionUrl2:pool.tokenDescriptionUrl)
+                                                }
+                                            }
+                                        >
+                                            <i className={"yfiiicon yfii-help-circle"} />
+                                        </IconButton>
+                                        </Grid>
+                                    </Hidden>
+                                    <Grid item>
+                                    <IconButton
+                                        className={classes.iconContainerPrimary}
+                                        onClick={(event) => {
+                                            event.stopPropagation();
+                                            openCard(index);  
+                                        }}
+                                    >
+                                        {
+                                            openedCardList.includes(index) ? <i className={"yfiiicon yfii-arrow-up"} /> : <i className={"yfiiicon yfii-arrow-down"} />
+                                        }
+                                    </IconButton>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                      </Grid>
               </AccordionSummary>
               <AccordionDetails style={{ justifyContent: "space-between"}}>
-                <GridContainer style={{width: "100%", marginLeft: 0, marginRight: 0}}>
-                  <GridItem xs={12} sm={6} className={classes.sliderDetailContainer}>
+                <Grid container style={{width: "100%", marginLeft: 0, marginRight: 0}}>
+                  <Grid item xs={12} sm={6} className={classes.sliderDetailContainer}>
                     <div className={classes.showDetailRight}>
                           {t('Vault-Balance')}:{balanceSingle.toFormat(4)} { pool.token }
                     </div>
                     <FormControl fullWidth variant="outlined">
-                        <OutlinedInput 
-                            classes={{
-                                root: classes.showDetail
-                            }} 
+                        <CustomOutlinedInput 
                             value={depositedBalance[index]!=undefined ? depositedBalance[index] :'0'}
-                            variant="outlined"
                             onChange={changeDetailInputValue.bind(this,'depositedBalance',index,balanceSingle.toNumber(),pool.tokenDecimals)}
-                            fullWidth 
                             />
                     </FormControl>
-                    <Slider 
+                    <CustomSlider 
                       classes={{
                         root: classes.depositedBalanceSliderRoot,
                         markLabel: classes.depositedBalanceSliderMarkLabel,
-                        rail:classes.depositedBalanceSliderRail,
-                        mark:classes.depositedBalanceSliderMark,
                       }}
                       aria-labelledby="continuous-slider" 
-                      defaultValue={0}
                       value={depositedBalance['slider-'+index]?depositedBalance['slider-'+index]:0}
-                      getAriaValueText={valuetext}
-                      valueLabelDisplay="auto"
-                      marks={marks}
                       onChange={handleDepositedBalance.bind(this,index,balanceSingle.toNumber())}
                     />
                     
@@ -447,7 +424,7 @@ export default function SectionPools() {
                                         <Button 
                                             style={{
                                                 width: '180px',
-                                                margin: '12px 0',
+                                                margin: '12px 5px',
                                                 fontSize: '14px',
                                                 fontWeight:'bold',
                                                 backgroundColor:'#353848',
@@ -465,7 +442,7 @@ export default function SectionPools() {
                                         {Boolean(pool.tokenAddress) && <Button 
                                             style={{
                                                 width: '180px',
-                                                margin: '12px 0',
+                                                margin: '12px 5px',
                                                 fontSize: '14px',
                                                 fontWeight:'bold',
                                                 backgroundColor:'#353848',
@@ -484,43 +461,32 @@ export default function SectionPools() {
                                 )
                             }
                         </div>
-                    </GridItem>
+                    </Grid>
 
-                    <GridItem xs={12} sm={6} className={classes.sliderDetailContainer}>
+                    <Grid item xs={12} sm={6} className={classes.sliderDetailContainer}>
                         <div className={classes.showDetailRight}>
                                 {singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)).toFormat(4)} { pool.token } ({singleDepositedBalance.toFormat(4)} { pool.earnedToken })
                             </div>
                         <FormControl fullWidth variant="outlined">
-                            <OutlinedInput 
-                                classes={{
-                                    root: classes.showDetail
-                                }} 
+                            <CustomOutlinedInput 
                                 value={withdrawAmount[index]!=undefined ? withdrawAmount[index] : '0'}
                                 onChange={changeDetailInputValue.bind(this,'withdrawAmount',index,singleDepositedBalance.toNumber(),pool.tokenDecimals)}
-                                variant="outlined"
-                                fullWidth 
                                 />
                         </FormControl>
-                        <Slider 
+                        <CustomSlider 
                             classes={{
                                 root: classes.drawSliderRoot,
                                 markLabel: classes.drawSliderMarkLabel,
-                                rail:classes.depositedBalanceSliderRail,
-                                mark:classes.depositedBalanceSliderMark,
                             }}
                             aria-labelledby="continuous-slider" 
-                            defaultValue={0}
                             value={withdrawAmount['slider-'+index]?withdrawAmount['slider-'+index]:0}
-                            getAriaValueText={valuetext}
-                            valueLabelDisplay="auto"
-                            marks={marks}
                             onChange={handleWithdrawAmount.bind(this,index,singleDepositedBalance.toNumber())}
                             />
                         <div className={classes.showDetailButtonCon}>
                             <Button 
                                 style={{
                                     width: '180px',
-                                    margin: '12px 0',
+                                    margin: '12px 5px',
                                     fontSize: '14px',
                                     fontWeight:'bold',
                                     backgroundColor:'#353848',
@@ -538,7 +504,7 @@ export default function SectionPools() {
                             <Button 
                                 style={{
                                     width: '180px',
-                                    margin: '12px 0',
+                                    margin: '12px 5px',
                                     fontSize: '14px',
                                     fontWeight:'bold',
                                     backgroundColor:'#353848',
@@ -553,14 +519,16 @@ export default function SectionPools() {
                                 {fetchWithdrawPending[index] ? `${t('Vault-WithdrawING')}`: `${t('Vault-WithdrawButtonAll')}`}
                             </Button>
                         </div>
-                    </GridItem>
+                    </Grid>
 
-                  </GridContainer>
+                  </Grid>
               </AccordionDetails>
             </Accordion>
+            </div>
+            </Grid>
           )
         })}
-      </GridItem>
-    </GridContainer>
+      
+    </Grid>
   )
 }

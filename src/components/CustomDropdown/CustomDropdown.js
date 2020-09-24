@@ -55,7 +55,9 @@ export default function CustomDropdown(props) {
     rtlActive,
     noLiPadding,
     innerDropDown,
-    navDropdown
+    navDropdown,
+    darkModal,
+    popperClassName,
   } = props;
   const classes = useStyles();
   const caretClasses = classNames({
@@ -68,10 +70,11 @@ export default function CustomDropdown(props) {
     [classes.dropdownItem]: true,
     [classes[hoverColor + "Hover"]]: true,
     [classes.noLiPadding]: noLiPadding,
-    [classes.dropdownItemRTL]: rtlActive
+    [classes.dropdownItemRTL]: rtlActive,
+    [classes.darkModalFont]:Boolean(darkModal),
   });
   const dropDownMenu = (
-    <MenuList role="menu" className={classes.menuList}>
+    <MenuList role="menu" style={{width:'100%'}} className={classes.menuList}>
       {dropdownHeader !== undefined ? (
         <MenuItem
           onClick={() => handleCloseMenu(dropdownHeader)}
@@ -141,7 +144,8 @@ export default function CustomDropdown(props) {
         className={classNames({
           [classes.popperClose]: !anchorEl,
           [classes.pooperResponsive]: true,
-          [classes.pooperNav]: Boolean(anchorEl) && navDropdown
+          [classes.pooperNav]: Boolean(anchorEl) && navDropdown,
+          [popperClassName]: popperClassName,
         })}
       >
         {() => (
@@ -154,7 +158,12 @@ export default function CustomDropdown(props) {
                 : { transformOrigin: "0 0 0" }
             }
           >
-            <Paper className={classes.dropdown}>
+            <Paper className={
+                classNames({
+                    [classes.dropdown]:true,
+                    [classes.darkModalGround]:Boolean(darkModal),
+                })
+            }>
               {innerDropDown ? (
                 dropDownMenu
               ) : (
@@ -173,7 +182,8 @@ export default function CustomDropdown(props) {
 CustomDropdown.defaultProps = {
   caret: true,
   dropup: false,
-  hoverColor: "primary"
+  hoverColor: "primary",
+  darkModal:false,
 };
 
 CustomDropdown.propTypes = {
@@ -212,5 +222,7 @@ CustomDropdown.propTypes = {
   innerDropDown: PropTypes.bool,
   navDropdown: PropTypes.bool,
   // This is a function that returns the clicked menu item
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  darkModal:PropTypes.bool,
+  popperClassName: PropTypes.string
 };

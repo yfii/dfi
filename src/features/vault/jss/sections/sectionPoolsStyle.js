@@ -12,7 +12,28 @@ import buttonGroup from "assets/jss/material-kit-pro-react/buttonGroupStyle.js";
 import tooltips from "assets/jss/material-kit-pro-react/tooltipsStyle.js";
 import { rgbToHex } from "@material-ui/core";
 
+const secondStyle = {
+  opacity: '0.4',
+  fontFamily: 'Helvetica',
+  fontSize: '14px',
+  color: '#FFFFFF',
+  letterSpacing: '0',
+  lineHeight: '14px',
+};
+
 const sectionPoolsStyle = theme => ({
+  mainTitle:{
+    fontFamily: 'Helvetica',
+    fontSize: '32px',
+    color: '#FFFFFF',
+    letterSpacing: '0',
+    lineHeight: '32px',
+    fontWeight: "550",
+  },
+  secondTitle:{
+      ...secondStyle,
+      fontWeight: "550",
+  },
   title,
   mrAuto,
   mlAuto,
@@ -115,17 +136,20 @@ const sectionPoolsStyle = theme => ({
     minHeight: '170px',
   },
   iconContainerMainTitle:{
-    fontSize: '20px',
+    fontSize: '18px',
     fontWeight: 'bold',
     color: '#fff',
-    lineHeight: '20px',
-    marginBottom:'8px',
+    lineHeight: '18px',
+    // marginBottom:'8px',
+    letterSpacing: 0,
   },
   iconContainerSubTitle:{
     fontSize: '14px',
     fontWeight: '400',
-    color: 'rgba(255,255,255,.4)',
+    color: '#fff',
     lineHeight: '14px',
+    opacity: "0.4",
+    letterSpacing: 0
   },
   iconContainerSecond: {
       width:'48px',
@@ -154,15 +178,14 @@ const sectionPoolsStyle = theme => ({
         background: hoverColor[0],
       }
   },
-    accordionMargin:{
+    accordion:{
         backgroundColor:'#2C3040',
-        margin:'24px 0',
         color:'#fff',
         boxShadow: '0px 4px 8px 0px rgba(0, 0, 0, 0.06)',
         borderRadius: '8px',
     },
     details:{
-      padding: '12px 0',
+      // padding: '12px 0',
       background: '#2C3040',
       boxShadow: '0 4px 8px 0 rgba(0,0,0,0.06)',
       borderRadius: '8px',
@@ -199,17 +222,7 @@ const sectionPoolsStyle = theme => ({
     },
     drawSliderMarkLabel:{
         color:'#635AFF',
-        
     },
-    depositedBalanceSliderRail:{
-        opacity:'1',
-        color:'#353848',
-    },
-    depositedBalanceSliderMark:{
-        height:'0',
-        
-    },
-
     showDetailLeft:{
         float: 'left',
         margin: '16px 24px',
@@ -233,6 +246,9 @@ const sectionPoolsStyle = theme => ({
     showDetailButtonCon:{
         display:'flex',
         justifyContent:'space-around',
+        '& + &': {
+          marginLeft: '5px'
+        }
     },
 });
 

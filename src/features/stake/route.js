@@ -1,8 +1,9 @@
-import { StakePage } from './';
+import { StakePage, PoolPage } from './';
 
 export default {
   path: 'stake',
   childRoutes: [
-    { path: '', component: StakePage, isIndex: true },
+    { path: 'stake', component: StakePage, isIndex: true },
+    { path: 'pool/:index', component: PoolPage },
   ],
 };
