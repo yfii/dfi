@@ -318,14 +318,14 @@ export default function SectionPools() {
 
                             <Grid item md={8} xs={3}>
                                 <Grid item container justify="space-between">
-                                    <Hidden xsDown>
+                                    <Hidden smDown>
                                         <Grid item xs={7} container justify='center' alignItems="center">
                                             <Grid item style={{width: "200px"}}>
                                                 <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>{forMat(balanceSingle)} { pool.token }</Typography>
                                                 <Typography className={classes.iconContainerSubTitle} variant="body2">{t('Vault-Balance')}</Typography></Grid>
                                         </Grid>
                                     </Hidden>
-                                    <Hidden xsDown>
+                                    <Hidden mdDown>
                                         <Grid item xs={4} container justify='center' alignItems="center">
                                             <Grid item style={{width: "200px"}}>
                                                 <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>{forMat(singleDepositedBalance)} { pool.token }</Typography>
@@ -344,7 +344,7 @@ export default function SectionPools() {
 
                             <Grid item >
                                 <Grid item container justify="flex-end" alignItems="center" spacing={2}>
-                                    <Hidden xsDown>
+                                    <Hidden mdDown>
                                         <Grid item>
                                         <IconButton
                                             classes={{
