@@ -245,7 +245,10 @@ const sectionPoolsStyle = theme => ({
     },
     showDetailButtonCon:{
         display:'flex',
-        justifyContent:'space-around',
+        justifyContent:'space-between',
+        '& + &': {
+          marginLeft: '5px'
+        }
     },
 });
 

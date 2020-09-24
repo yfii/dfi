@@ -424,7 +424,7 @@ export default function SectionPools() {
                                         <Button 
                                             style={{
                                                 width: '180px',
-                                                margin: '12px 0',
+                                                margin: '12px 5px',
                                                 fontSize: '14px',
                                                 fontWeight:'bold',
                                                 backgroundColor:'#353848',
@@ -442,7 +442,7 @@ export default function SectionPools() {
                                         {Boolean(pool.tokenAddress) && <Button 
                                             style={{
                                                 width: '180px',
-                                                margin: '12px 0',
+                                                margin: '12px 5px',
                                                 fontSize: '14px',
                                                 fontWeight:'bold',
                                                 backgroundColor:'#353848',
@@ -486,7 +486,7 @@ export default function SectionPools() {
                             <Button 
                                 style={{
                                     width: '180px',
-                                    margin: '12px 0',
+                                    margin: '12px 5px',
                                     fontSize: '14px',
                                     fontWeight:'bold',
                                     backgroundColor:'#353848',
@@ -504,7 +504,7 @@ export default function SectionPools() {
                             <Button 
                                 style={{
                                     width: '180px',
-                                    margin: '12px 0',
+                                    margin: '12px 5px',
                                     fontSize: '14px',
                                     fontWeight:'bold',
                                     backgroundColor:'#353848',
