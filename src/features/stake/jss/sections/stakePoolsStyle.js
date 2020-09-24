@@ -235,6 +235,7 @@ const stakePoolsStyle = theme => ({
     color: primaryColor,
     lineHeight: '28px',
     marginBottom:'12px',
+    textTransform:'uppercase',
     [theme.breakpoints.down("xs")]: {
       marginBottom:'0',
     }
