@@ -104,8 +104,10 @@ const stakePoolsStyle = theme => ({
       lineHeight: '14px',
       padding:'12px 24px',
       marginRight:'8px',
+      boxShadow: "0 0",
       "&:hover,&:focus": {
           backgroundColor: primaryColor,
+          boxShadow: "0 0",
       }
   },
   learnMoreButton:{
@@ -117,6 +119,7 @@ const stakePoolsStyle = theme => ({
     padding:'12px 24px',
     marginLeft:'12px',
     fontWeight:'600',
+    boxShadow: "0 0",
     backgroundColor: secondColor,
       "&:hover,&:focus": {
         backgroundColor: secondColor,
@@ -126,15 +129,18 @@ const stakePoolsStyle = theme => ({
       backgroundColor: secondColor,
       "&:hover,&:focus": {
           backgroundColor: secondColor,
+          boxShadow: "0 0",
       }
   },
   grayButton:{
       color:primaryColor,
       backgroundColor:'#353848',
       boxShadow:'0 2px 2px 0 #353848',
+      boxShadow: "0 0",
       "&:hover,&:focus": {
           color:primaryColor,
           backgroundColor: '#353848',
+          boxShadow: "0 0",
       }
   },
   firstCell:{
