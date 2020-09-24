@@ -16,6 +16,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Avatar from '@material-ui/core/Avatar';
 import Popover from '@material-ui/core/Popover';
 import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
 import { isEmpty,inputLimitPass,inputFinalVal } from 'features/helpers/utils';
 import {StyledTableCell,StyledTableRow,stakePoolsStyle} from "../jss/sections/stakePoolsStyle";
 import InputBase from '@material-ui/core/InputBase';
@@ -201,62 +202,63 @@ export default function StakePool(props) {
   }, [address, index]);
 
   return (
-    <GridContainer>
-      <GridItem className={classes.detailContainer}>
+    <Grid container style={{paddingTop: '4px'}}>
+      <Grid item xs={12}>
         <div className={classes.detailTitle}>{`Stake / ${pools[index].name}`}</div>
-        <div className={classes.detailContentUp}>
-          <GridContainer spacing={3} className={classNames({
-            [classes.contentTitle]:true,
-            [classes.contentTitleMarginBottom]:true,
+      </Grid>
+      <Grid item xs={12} className={classes.detailContentUp}>
+        <GridContainer spacing={3} className={classNames({
+          [classes.contentTitle]:true,
+          [classes.contentTitleMarginBottom]:true,
+        })}>
+          <GridItem sm={index===3 ? 4: 3} xs={12} className={classNames({
+              [classes.contentTitleItem]:true,
+              [classes.contentTitleItemBorder]:true,
+            })}>
+              <Hidden smUp>
+                <div className={classes.contentItemTitle}>{t('Stake-Balancer-Your-Balance')}</div>
+              </Hidden>
+              <div className={classes.contentItemTitleVal}>{`${Math.floor(myBalance * 10000)/ 10000} ${pools[index].token}`}</div>
+              <Hidden xsDown>
+                <div className={classes.contentItemTitle}>{t('Stake-Balancer-Your-Balance')}</div>
+              </Hidden>
+          </GridItem>
+          <GridItem sm={index===3 ? 4: 3} xs={12} className={classNames({
+            [classes.contentTitleItem]:true,
+            [classes.contentTitleItemBorder]:true,
           })}>
-            <GridItem sm={index===3 ? 4: 3} xs={12} className={classNames({
-                [classes.contentTitleItem]:true,
-                [classes.contentTitleItemBorder]:true,
-              })}>
-                <Hidden smUp>
-                  <div className={classes.contentItemTitle}>{t('Stake-Balancer-Your-Balance')}</div>
-                </Hidden>
-                <div className={classes.contentItemTitleVal}>{`${Math.floor(myBalance * 10000)/ 10000} ${pools[index].token}`}</div>
-                <Hidden xsDown>
-                  <div className={classes.contentItemTitle}>{t('Stake-Balancer-Your-Balance')}</div>
-                </Hidden>
-            </GridItem>
-            <GridItem sm={index===3 ? 4: 3} xs={12} className={classNames({
-              [classes.contentTitleItem]:true,
-              [classes.contentTitleItemBorder]:true,
-            })}>
-              <Hidden smUp>
-                <div className={classes.contentItemTitle}>{t('Stake-Balancer-Current-Staked')}</div>
-              </Hidden>
-              <div className={classes.contentItemTitleVal}>{`${Math.floor(myCurrentlyStaked * 10000)/ 10000} ${pools[index].token}`}</div>
-              <Hidden xsDown>
-                <div className={classes.contentItemTitle}>{t('Stake-Balancer-Current-Staked')}</div>
-              </Hidden>
-            </GridItem>
-            <GridItem sm={index===3 ? 4: 3} xs={12} className={classNames({
-              [classes.contentTitleItem]:true,
-              [classes.contentTitleItemBorder]:true,
-            })}>
-              <Hidden smUp>
-                <div className={classes.contentItemTitle}>{t('Stake-Balancer-Rewards-Available')}</div>
-              </Hidden>
-              <div className={classes.contentItemTitleVal}>{`${Math.floor(myRewardsAvailable * 10000)/ 10000} ${pools[index].earnedToken}`}</div>
-              <Hidden xsDown>
-                <div className={classes.contentItemTitle}>{t('Stake-Balancer-Rewards-Available')}</div>
-              </Hidden>
-            </GridItem>
-            {index!==3&&<GridItem sm={3} xs={12} className={classes.contentTitleItem}>
             <Hidden smUp>
-                <div className={classes.contentItemTitle}>{t('Stake-Balancer-Half-Time')}</div>
-              </Hidden>
-              <div className={classes.contentItemTitleVal}>{myHalfTime}</div>
-              <Hidden xsDown>
-                <div className={classes.contentItemTitle}>{t('Stake-Balancer-Half-Time')}</div>
-              </Hidden>
-            </GridItem>}
-          </GridContainer>
-        </div>
-        <div className={classes.detailContentDown}>
+              <div className={classes.contentItemTitle}>{t('Stake-Balancer-Current-Staked')}</div>
+            </Hidden>
+            <div className={classes.contentItemTitleVal}>{`${Math.floor(myCurrentlyStaked * 10000)/ 10000} ${pools[index].token}`}</div>
+            <Hidden xsDown>
+              <div className={classes.contentItemTitle}>{t('Stake-Balancer-Current-Staked')}</div>
+            </Hidden>
+          </GridItem>
+          <GridItem sm={index===3 ? 4: 3} xs={12} className={classNames({
+            [classes.contentTitleItem]:true,
+            [classes.contentTitleItemBorder]:true,
+          })}>
+            <Hidden smUp>
+              <div className={classes.contentItemTitle}>{t('Stake-Balancer-Rewards-Available')}</div>
+            </Hidden>
+            <div className={classes.contentItemTitleVal}>{`${Math.floor(myRewardsAvailable * 10000)/ 10000} ${pools[index].earnedToken}`}</div>
+            <Hidden xsDown>
+              <div className={classes.contentItemTitle}>{t('Stake-Balancer-Rewards-Available')}</div>
+            </Hidden>
+          </GridItem>
+          {index!==3&&<GridItem sm={3} xs={12} className={classes.contentTitleItem}>
+          <Hidden smUp>
+              <div className={classes.contentItemTitle}>{t('Stake-Balancer-Half-Time')}</div>
+            </Hidden>
+            <div className={classes.contentItemTitleVal}>{myHalfTime}</div>
+            <Hidden xsDown>
+              <div className={classes.contentItemTitle}>{t('Stake-Balancer-Half-Time')}</div>
+            </Hidden>
+          </GridItem>}
+        </GridContainer>
+      </Grid>
+        <Grid item xs={12}> className={classes.detailContentDown}>
           {
             showInput ? (
               <div>
@@ -403,8 +405,7 @@ export default function StakePool(props) {
               </GridContainer>
             )
           }
-        </div>
-      </GridItem>
-    </GridContainer>
+        </Grid>
+    </Grid>
   )
 }
