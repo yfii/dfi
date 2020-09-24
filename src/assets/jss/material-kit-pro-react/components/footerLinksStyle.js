@@ -113,7 +113,10 @@ const footerLinksStyle = theme => ({
         },
     },
     linkList: {
-      margin:'24px 80px'
+      margin:'24px 80px',
+      [theme.breakpoints.down("xs")]: {
+        margin:'0'
+      },
     },
     linkItem: {
       whiteSpace:'nowrap',
