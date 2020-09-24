@@ -286,7 +286,7 @@ export default function SectionPools() {
                             }}
                         >
                         <Grid container alignItems="center" justify="space-around" spacing={4} style={{paddingTop: "16px", paddingBottom: "16px"}}>
-                            <Grid item style={{minWidth: "130px"}}>
+                            <Grid item>
                                 <Grid container alignItems="center" spacing={2}>
                                     <Grid item>
                                         <Avatar 
@@ -294,7 +294,7 @@ export default function SectionPools() {
                                             src={require(`../../../images/${pool.token}-logo.png`)}
                                         />
                                     </Grid>
-                                    <Grid item>
+                                    <Grid item style={{minWidth: '100px'}}>
                                             <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom>
                                                 {pool.token}
                                                 <Hidden smUp>
