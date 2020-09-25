@@ -32,7 +32,7 @@ export function fetchBalance(index) {
         data => {
           dispatch({
             type: STAKE_FETCH_BALANCE_SUCCESS,
-            data: new BigNumber(data).toNumber(),
+            data: new BigNumber(data),
             index
           });
           resolve(data);
