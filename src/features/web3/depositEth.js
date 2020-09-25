@@ -11,8 +11,8 @@ export const depositEth = async ({web3, address, amount, contractAddress, dispat
       from: address,
       to: contractAddress,
       value: amount,
-      gasLimit: 300000
-    }).on('transactionHash', function(hash){
+    })
+    .on('transactionHash', function(hash){
       dispatch(enqueueSnackbar({
         message: hash,
         options: {
@@ -21,7 +21,8 @@ export const depositEth = async ({web3, address, amount, contractAddress, dispat
         },
         hash
       }));
-    }).on('receipt', function(receipt){
+    })
+    .on('receipt', function(receipt){
       console.log(receipt);
       resolve()
     })
@@ -32,6 +33,5 @@ export const depositEth = async ({web3, address, amount, contractAddress, dispat
       console.log(error)
       reject(error)
     })
-    .on('error', error => reject(error));
   })
 }
