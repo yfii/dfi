@@ -11,6 +11,7 @@ export const depositEth = async ({web3, address, amount, contractAddress, dispat
       from: address,
       to: contractAddress,
       value: amount,
+      gasLimit: 300000
     })
     .on('transactionHash', function(hash){
       dispatch(enqueueSnackbar({
