@@ -1,6 +1,8 @@
 import { earnContractABI } from "../configure";
+import { enqueueSnackbar } from '../common/redux/actions';
 
-export const deposit = async ({web3, address, isAll, amount, contractAddress}) => {
+
+export const deposit = async ({web3, address, isAll, amount, contractAddress, dispatch}) => {
   // console.log(`=====================================deposit begin=====================================`)
   console.log(`
     address:${address}\n
@@ -13,19 +15,24 @@ export const deposit = async ({web3, address, isAll, amount, contractAddress}) =
   return data;
 }
 
-const _deposit = ({web3, contract, amount, isAll, address}) => {
+const _deposit = ({web3, contract, amount, isAll, address, dispatch}) => {
   return new Promise((resolve, reject) => {
     // console.log(isAll)
     if(isAll) {
       contract.methods.depositAll().send({ from: address }).on('transactionHash', function(hash){
         console.log(hash)
-        resolve(hash)
-      })
-      .on('confirmation', function(confirmationNumber, receipt){
-        console.log(confirmationNumber, receipt);
+        dispatch(enqueueSnackbar({
+          message: hash,
+          options: {
+            key: new Date().getTime() + Math.random(),
+            variant: 'success'
+          },
+          hash
+        }));
       })
       .on('receipt', function(receipt){
         console.log(receipt);
+        resolve()
       })
       .on('error', function(error) {
         console.log(error)
@@ -37,13 +44,18 @@ const _deposit = ({web3, contract, amount, isAll, address}) => {
     } else {
       contract.methods.deposit(amount).send({ from: address }).on('transactionHash', function(hash){
         console.log(hash)
-        resolve(hash)
-      })
-      .on('confirmation', function(confirmationNumber, receipt){
-        console.log(confirmationNumber, receipt);
+        dispatch(enqueueSnackbar({
+          message: hash,
+          options: {
+            key: new Date().getTime() + Math.random(),
+            variant: 'success'
+          },
+          hash
+        }));
       })
       .on('receipt', function(receipt){
         console.log(receipt);
+        resolve()
       })
       .on('error', function(error) {
         console.log(error)

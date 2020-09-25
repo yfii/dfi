@@ -33,7 +33,8 @@ export function fetchApproval(token, contract) {
         web3,
         address,
         tokenAddress,
-        contractAddress
+        contractAddress,
+        dispatch
       }).then(
         () => {
           const newAllowance = allowance.map(item => {

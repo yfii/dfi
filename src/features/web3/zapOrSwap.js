@@ -1,27 +1,33 @@
-export const zapOrSwap = async ({web3, address, contract, call, amount}) => {
+import { enqueueSnackbar } from '../common/redux/actions';
+
+export const zapOrSwap = async ({web3, address, contract, call, amount, dispatch}) => {
   // console.log(`=====================================deposit begin=====================================`)
   console.log(`
     address:${address}\n
     call:${call}\n
     amount:${amount}
   `)
-  const data = await _zapOrSwap({web3, address, contract, call, amount});
+  const data = await _zapOrSwap({web3, address, contract, call, amount, dispatch});
   // console.log(`=====================================deposit success=====================================`)
   return data;
 }
 
-const _zapOrSwap = ({contract, amount, call, address}) => {
+const _zapOrSwap = ({contract, amount, call, address, dispatch}) => {
   return new Promise((resolve, reject) => {
     // console.log(isAll)
     contract.methods[call](amount).send({ from: address }).on('transactionHash', function(hash){
       console.log(hash)
-      resolve(hash)
-    })
-    .on('confirmation', function(confirmationNumber, receipt){
-      console.log(confirmationNumber, receipt);
+      dispatch(enqueueSnackbar({
+        message: hash,
+        options: {
+          key: new Date().getTime() + Math.random(),
+          variant: 'success'
+        },
+        hash
+      }));
     })
     .on('receipt', function(receipt){
-      console.log(receipt);
+      resolve()
     })
     .on('error', function(error) {
       console.log(error)

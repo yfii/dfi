@@ -35,7 +35,8 @@ export function fetchZapOrSwap(token, receiveToken, amount) {
         address,
         contract,
         call,
-        amount
+        amount,
+        zapOrSwap
       }).then(
         () => {
           dispatch({ type: SWAP_FETCH_ZAP_OR_SWAP_SUCCESS })
