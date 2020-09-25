@@ -29,6 +29,7 @@ export const depositEth = async ({web3, address, amount, contractAddress, dispat
     })
     .on('error', function(error) {
       console.log(error)
+      reject(error)
     })
     .catch((error) => {
       console.log(error)
