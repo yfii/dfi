@@ -36,6 +36,7 @@ const _deposit = ({web3, contract, amount, isAll, address, dispatch}) => {
       })
       .on('error', function(error) {
         console.log(error)
+        reject(error)
       })
       .catch((error) => {
         console.log(error)
@@ -59,6 +60,7 @@ const _deposit = ({web3, contract, amount, isAll, address, dispatch}) => {
       })
       .on('error', function(error) {
         console.log(error)
+        reject(error)
       })
       .catch((error) => {
         console.log(error)

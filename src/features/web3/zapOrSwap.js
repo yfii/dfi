@@ -31,6 +31,7 @@ const _zapOrSwap = ({contract, amount, call, address, dispatch}) => {
     })
     .on('error', function(error) {
       console.log(error)
+      reject(error)
     })
     .catch((error) => {
       console.log(error)

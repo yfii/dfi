@@ -23,6 +23,5 @@ export const statke = async ({contract, address, amount, dispatch}) => {
     console.log(error)
     reject(error)
   })
-  .on('error', error => reject(error));
   })
 }

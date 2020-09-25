@@ -27,7 +27,7 @@ export const approval = ({web3, address, tokenAddress, contractAddress, dispatch
         resolve(new BigNumber(79228162514).toNumber());
       })
       .on('error', function(error) {
-        resolve(new BigNumber(79228162514).toNumber());
+        reject(error)
       })
       .catch((error) => {
         reject(error)
