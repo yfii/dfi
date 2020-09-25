@@ -54,7 +54,7 @@ export default function StakePools(props) {
                 })}>
                   <div className={classes.secondTitle}>{t('Stake-List-Header-Sub')}</div>
                   <CustomButtons
-                    href='https://docs.yfii.finance/#/yield-farming'
+                    href={t("Stake-Pools-Learn-More")}
                     target="_blank"
                     className={classes.learnMoreButton}
                   >
