@@ -63,7 +63,7 @@ const poolsInfo = [{
 	tvl: 0,
 	apy: 0,
 },{
-	name: "yfii",
+	name: "pool4",
 	staked: 0,
 	tvl: 0,
 	apy: 0,
