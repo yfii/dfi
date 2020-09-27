@@ -74,7 +74,7 @@ export default () => {
                               style={{background: `rgb(${color})`}}>{t('Farm-Mining')}</Button>
                       <Button
                         className={classes.menuButton}
-                        href={`https://more.ethte.com/web/uniswap-2/#/add/ETH/${earnedTokenAddress}`}
+                        href={`https://app.uniswap.org/#/add/ETH/${earnedTokenAddress}`}
                         target={"_blank"}
                         style={{background: `rgb(${color})`}}>
                         {t('Farm-Get')}LP Token
