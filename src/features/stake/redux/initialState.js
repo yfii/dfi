@@ -25,7 +25,7 @@ const pools = [
 	},
 	{
 		name: 'Governance',
-		token: 'yfii',
+		token: 'YFII',
 		tokenDecimals: 18,
 		tokenAddress: '0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83',
 		earnedToken: 'yCrv',
@@ -35,8 +35,8 @@ const pools = [
 		earnContractAbi: governanceABI,
 	},
 	{
-		name: 'YFII',
-		token: 'yfii',
+		name: 'pool4',
+		token: 'YFII',
 		tokenDecimals: 18,
 		tokenAddress: '0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83',
 		earnedToken: 'iUSDT',
@@ -63,7 +63,7 @@ const poolsInfo = [{
 	tvl: 0,
 	apy: 0,
 },{
-	name: "yfii",
+	name: "pool4",
 	staked: 0,
 	tvl: 0,
 	apy: 0,

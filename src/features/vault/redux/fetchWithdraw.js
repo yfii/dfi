@@ -23,7 +23,7 @@ export function fetchWithdraw({ address, web3, isAll, amount, contractAddress, i
       // doRequest is a placeholder Promise. You should replace it with your own logic.
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
-      withdraw({ web3, address, isAll, amount, contractAddress }).then(
+      withdraw({ web3, address, isAll, amount, contractAddress, dispatch }).then(
         data => {
           dispatch({
             type: VAULT_FETCH_WITHDRAW_SUCCESS,
@@ -62,7 +62,7 @@ export function fetchWithdrawEth({ address, web3, isAll, amount, contractAddress
       // doRequest is a placeholder Promise. You should replace it with your own logic.
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
-      withdrawEth({ web3, address, isAll, amount, contractAddress }).then(
+      withdrawEth({ web3, address, isAll, amount, contractAddress, dispatch }).then(
         data => {
           dispatch({
             type: VAULT_FETCH_WITHDRAW_SUCCESS,
