@@ -28,9 +28,9 @@ const useStyles = makeStyles(styles);
 </Tabs> */}
 
 const tabArr = [
-  {value:'',label:'Home'},
-  {value:'vault',label:'Vault'},
-  {value:'stake',label:'Stake'},
+  {value:'',label:'Link.Home'},
+  {value:'vault',label:'Link.Vault'},
+  {value:'stake',label:'Link.Stake'},
 ]
 
 export default function HeaderLinks(props) {
@@ -123,7 +123,7 @@ export default function HeaderLinks(props) {
                 onClick={changeTabs.bind(this,item.value)}
                 className={item.value == defaultTabValue ? classes.nowShowPage : ''}
               >
-                {item.label}
+                {t(item.label)}
               </Button>
           </ListItem>
         ))
