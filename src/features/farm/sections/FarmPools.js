@@ -30,7 +30,7 @@ export default () => {
       </Grid>
       <Grid container item xs={12} justify={"center"}>
         {pools.map((pool, index) => {
-          const {token, name, earnedToken, earnedTokenAddress, color} = pool;
+          const {token, name, earnedToken, earnedTokenAddress, color, tokenDescription} = pool;
 
           // 根据名称是否含有LP判断是否是存 LPToken对
           const isLP = name.toLowerCase().indexOf('lp') > -1;
@@ -60,7 +60,7 @@ export default () => {
                 <div className={classes.weightFont} style={{marginTop: 10}}>{token}</div>
 
                 <div style={{fontSize: 13}}>
-                  {t('Farm-Stake')} {isLP ? token + ' UNI-V2 LP' : token}
+                  {t('Farm-Stake')} {tokenDescription}
                 </div>
                 <div style={{fontSize: 13, marginTop: -5}}>{t('Farm-Earn')} {earnedToken}</div>
 

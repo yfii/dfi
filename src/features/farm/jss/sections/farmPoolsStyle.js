@@ -394,6 +394,16 @@ const farmPoolsStyle = theme => ({
     marginLeft: 10,
     cursor: 'pointer',
     color: "#32B0FF"
+  },
+  dialogInput: {
+    color: "#ffffff"
+  },
+  dialogAction: {
+    width: 80,
+    textAlign: 'center',
+    fontSize: 15,
+    fontWeight: 450,
+    cursor: 'pointer'
   }
 })
 

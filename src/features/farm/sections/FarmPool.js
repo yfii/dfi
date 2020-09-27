@@ -3,25 +3,11 @@ import classNames from "classnames";
 import {useTranslation} from 'react-i18next';
 import BigNumber from 'bignumber.js'
 import {byDecimals} from 'features/helpers/bignumber';
-import {withStyles, makeStyles} from "@material-ui/core/styles";
-import GridContainer from "components/Grid/GridContainer.js";
+import {makeStyles} from "@material-ui/core/styles";
 import GridItem from "components/Grid/GridItem.js";
-import CustomButtons from "components/CustomButtons/Button.js";
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
 import Avatar from '@material-ui/core/Avatar';
-import Popover from '@material-ui/core/Popover';
-import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import {farmPoolsStyle} from "../jss/sections/farmPoolsStyle";
-import InputBase from '@material-ui/core/InputBase';
-import IconButton from '@material-ui/core/IconButton';
-import Hidden from '@material-ui/core/Hidden';
-import farmItemStyle from "../jss/sections/farmItemStyle";
 import Button from "../../../components/CustomButtons/Button";
 
 import {useConnectWallet} from '../../home/redux/hooks';
@@ -43,6 +29,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import TextField from "@material-ui/core/TextField";
 import DialogActions from "@material-ui/core/DialogActions";
+import {Input} from "@material-ui/core";
 
 const useStyles = makeStyles(farmPoolsStyle);
 
@@ -63,7 +50,7 @@ export default function FarmPool(props) {
   const [index, setIndex] = useState(Number(props.match.params.index) - 1);
   const [showInput, setShowInput] = useState(false);
   // const [ pageSize,setPageSize ] = useState('');
-  const [isNeedApproval, setIsNeedApproval] = useState(false);
+  const [isNeedApproval, setIsNeedApproval] = useState(true);
   const [approvalAble, setApprovalAble] = useState(false);
   const [stakeAble, setStakeAble] = useState(true);
   const [withdrawAble, setWithdraw] = useState(true);
@@ -78,7 +65,7 @@ export default function FarmPool(props) {
   // 弹窗
   const [dialogShow, setDialogShow] = useState(false);
   // 存入金额
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState('');
 
   const changeInputVal = (event) => {
     let value = event.target.value;
@@ -98,7 +85,7 @@ export default function FarmPool(props) {
   }, [Number(props.match.params.index)]);
 
   useEffect(() => {
-    // setIsNeedApproval(Boolean(allowance[index] === 0));
+    setIsNeedApproval(Boolean(allowance[index] === 0));
   }, [allowance[index], index]);
 
   useEffect(() => {
@@ -182,18 +169,17 @@ export default function FarmPool(props) {
     }
   }, [address, index]);
 
-  const {name, token, earnTime, earnedToken, earnedTokenUrl} = pools[index];
+  const {name, token, earnTime, earnedToken, earnedTokenUrl,tokenDescription} = pools[index];
   const isLP = name.toLowerCase().indexOf('lp') > -1;
   const lpTokens = isLP ? token.split('/') : [];
   const offsetImageStyle = {marginLeft: "-25%", zIndex: 0, background: '#ffffff'};
-  const tokenName = isLP ? `${token.toUpperCase()} UNI-V2 LP` : token.toUpperCase();
 
   return (
     <Grid container style={{paddingTop: '4px', marginBottom: 200}}>
       <Grid item xs={12}>
         <div className={classes.detailTitle}>{`Farm / ${pools[index].token}`}</div>
         <div className={classes.detailDesc}>
-          {`${t('Farm-Stake')} ${tokenName} ${t('Farm-CAN-GET')} ${earnedToken}，${t('Farm-Time')}${earnTime / 7}周。`}
+          {`${t('Farm-Stake')} ${tokenDescription} ${t('Farm-CAN-GET')} ${earnedToken}，${t('Farm-Time')}${earnTime / 7}周。`}
           <a href={earnedTokenUrl} target="_blank" style={{color: 'rgb(54,85,152)'}}>{t('Farm-Know')}{earnedToken}</a>
         </div>
       </Grid>
@@ -235,11 +221,11 @@ export default function FarmPool(props) {
             <Grid container item xs={12} className={classes.menuContent}>
               <div className={classes.menuNumber}>
                 <div className={classes.numberWeight}>{Math.floor(myBalance.toNumber() * 10000) / 10000}</div>
-                <span>{t('Farm-Hold')} {tokenName}</span>
+                <span>{t('Farm-Hold')} {tokenDescription}</span>
               </div>
               <div className={classes.menuNumber}>
                 <div className={classes.numberWeight}>{Math.floor(myCurrentlyStaked.toNumber() * 10000) / 10000}</div>
-                <span>{t('Farm-Pledged')} {tokenName}</span>
+                <span>{t('Farm-Pledged')} {tokenDescription}</span>
               </div>
             </Grid>
             {
@@ -247,10 +233,10 @@ export default function FarmPool(props) {
                 <Button className={classes.menuItemButton} onClick={() => {
                   // 显示存入弹窗
                   setDialogShow(true);
-                }}>{t('Farm-Stake')} {tokenName}</Button>
+                }}>{t('Farm-Stake')} {tokenDescription}</Button>
                 :
                 <Button className={classes.menuItemButton} disabled={!Boolean(approvalAble)}
-                        onClick={onApproval}>{t('Farm-Approval')} {tokenName}</Button>
+                        onClick={onApproval}>{t('Farm-Approval')} {tokenDescription}</Button>
             }
 
             {!isNeedApproval ? (
@@ -258,7 +244,7 @@ export default function FarmPool(props) {
                 <Button className={classNames({
                   [classes.menuItemButton]: true,
                   [classes.menuItemButtonExit]: true,
-                })} disabled={!Boolean(exitAble)} onClick={onExit}>{t('Farm-UnApproval')} {tokenName}</Button>
+                })} disabled={!Boolean(exitAble)} onClick={onExit}>{t('Farm-UnApproval')} {tokenDescription}</Button>
                 <Button className={classNames({
                   [classes.menuItemButton]: true,
                   [classes.menuItemButtonExit]: true,
@@ -277,41 +263,33 @@ export default function FarmPool(props) {
               }}
               aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">
-          存入 {tokenName} Tokens
+          {t('Farm-Stake')} {tokenDescription} Tokens
         </DialogTitle>
         <DialogContent>
           <DialogContentText style={{fontSize: 15, color: "#ffffff"}}>
-            可用余额： {Math.floor(myBalance.toNumber() * 10000) / 10000}
+            {t('Farm-Balance')} {Math.floor(myBalance.toNumber() * 10000) / 10000}
             <a className={classes.dialogHref}
                onClick={() => {
                  setAmount(Math.floor(myBalance.toNumber() * 10000) / 10000)
                }}>
-              全部存入
+              {t('Farm-All-Stake')}
             </a>
           </DialogContentText>
-          <TextField
-            autoFocus
-            margin="dense"
-            label="存入数量"
-            type="number"
-            value={amount}
-            onChange={e => {
-              setAmount(e.target.value);
-              // 调用父组件的存入函数
-            }}
-            fullWidth
-          />
+          <Input placeholder={t('Farm-Stake-Amount')}
+                 value={amount}
+                 fullWidth={true}
+                 classes={{root: classes.dialogInput}}
+                 onChange={e => {
+                   setAmount(e.target.value);
+                   // 调用父组件的存入函数
+                 }}/>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={() => {
-            setDialogShow(false)
-          }} color="primary">
-            取消
-          </Button>
-          <Button onClick={() => {
-          }} color="primary">
-            确认
-          </Button>
+        <DialogActions style={{height: 50}}>
+          <a className={classes.dialogAction} style={{color: "#F03278"}} onClick={() => {
+            // 提交
+          }}>{t('Farm-Dialog-Confirm')}</a>
+          <a className={classes.dialogAction} style={{color: "#000000"}}
+             onClick={() => setDialogShow(false)}>{t('Farm-Dialog-Cancel')}</a>
         </DialogActions>
       </Dialog>
     </Grid>
