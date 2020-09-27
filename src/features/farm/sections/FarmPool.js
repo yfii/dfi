@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import classNames from "classnames";
 import {useTranslation} from 'react-i18next';
 import BigNumber from 'bignumber.js'
@@ -37,6 +37,7 @@ import {
   useFetchClaim,
   useFetchExit
 } from '../redux/hooks';
+import FarmStakeDialog from "../components/FarmStakeDialog";
 
 const useStyles = makeStyles(farmPoolsStyle);
 
@@ -69,6 +70,7 @@ export default function FarmPool(props) {
   const [myHalfTime, setMyHalfTime] = useState(`0day 00:00:00`);
   const [inputVal, setInputVal] = useState(0);
   const [anchorEl, setAnchorEl] = useState(null);
+  const dialogRef = useRef();
 
   const changeInputVal = (event) => {
     let value = event.target.value;
@@ -246,6 +248,7 @@ export default function FarmPool(props) {
               approvalAble ?
                 <Button className={classes.menuItemButton} onClick={() => {
                   // 显示存入弹窗
+                  dialogRef.current.showDialog();
                 }}>{t('Farm-Stake')} {tokenName}</Button>
                 :
                 <Button className={classes.menuItemButton} onClick={() => {
@@ -260,6 +263,7 @@ export default function FarmPool(props) {
           </div>
         </GridItem>
       </Grid>
+      <FarmStakeDialog poolInfo={pools[index]} tokenName={tokenName} cRef={dialogRef}/>
       {/*<Grid item xs={12} className={classes.detailContentUp}>*/}
       {/*  <GridContainer spacing={3} className={classNames({*/}
       {/*    [classes.contentTitle]: true,*/}
