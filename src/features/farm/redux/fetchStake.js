@@ -5,7 +5,7 @@ import {
   FARM_FETCH_STAKE_SUCCESS,
   FARM_FETCH_STAKE_FAILURE,
 } from './constants';
-import { fetchBalance } from './action'
+import { fetchBalance, fetchCurrentlyStaked } from './action'
 import { enqueueSnackbar } from '../../common/redux/actions'
 
 export function fetchStake(index, amount) {
@@ -50,6 +50,7 @@ export function fetchStake(index, amount) {
           }));
           dispatch({ type: FARM_FETCH_STAKE_SUCCESS, index });
           dispatch(fetchBalance(index))
+          dispatch(fetchCurrentlyStaked(index))
           resolve();
         })
         .on('error', function(error) {
