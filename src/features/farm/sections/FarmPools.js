@@ -14,11 +14,7 @@ const useStyles = makeStyles(farmPoolsStyle);
 export default function FarmPools(props) {
   const classes = useStyles();
   const {t, i18n} = useTranslation();
-  const {pools, fetchPoolsInfo} = useFetchPoolsInfo();
-
-  useEffect(() => {
-    fetchPoolsInfo();
-  }, [pools, fetchPoolsInfo]);
+  const {pools} = useFetchPoolsInfo();
 
   return (
     <Grid container style={{paddingTop: '4px'}}>
