@@ -23,7 +23,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Hidden from '@material-ui/core/Hidden';
 
 import { useConnectWallet } from '../../home/redux/hooks';
-import { useCheckApproval, useFetchPoolsInfo, useFetchBalance, useFetchCurrentlyStaked, useFetchRewardsAvailable, useFetchHalfTime, useFetchCanWithdrawTime, useFetchApproval, useFetchStake, useFetchWithdraw, useFetchClaim, useFetchExit } from '../redux/hooks';
+import { useCheckApproval, useFetchPoolsInfo, useFetchBalance, useFetchCurrentlyStaked, useFetchRewardsAvailable, useFetchApproval, useFetchStake, useFetchWithdraw, useFetchClaim, useFetchExit } from '../redux/hooks';
 
 const useStyles = makeStyles(farmPoolsStyle);
 
@@ -36,8 +36,6 @@ export default function FarmPool(props) {
   const { balance, fetchBalance } = useFetchBalance();
   const { currentlyStaked, fetchCurrentlyStaked } = useFetchCurrentlyStaked();
   const { rewardsAvailable, fetchRewardsAvailable } = useFetchRewardsAvailable();
-  const { canWithdrawTime, fetchCanWithdrawTime } = useFetchCanWithdrawTime();
-  const { halfTime, fetchHalfTime } = useFetchHalfTime();
   const { fetchApproval, fetchApprovalPending } = useFetchApproval();
   const { fetchStake, fetchStakePending } = useFetchStake();
   const { fetchWithdraw, fetchWithdrawPending } = useFetchWithdraw();
@@ -100,10 +98,7 @@ export default function FarmPool(props) {
   useEffect(() => {
     const isPending = Boolean(fetchWithdrawPending[index]);
     const currentlyStakedIs0 = currentlyStaked[index] === 0;
-    const isPool4 = Boolean(index === 3);
-    const isDisableCanWithdrawTime = Boolean(canWithdrawTime[index] === 0) || Boolean((canWithdrawTime[index] * 1000) > new Date().getTime());
-    const isPool4AndDisableCanWithDraw = Boolean(isPool4 && isDisableCanWithdrawTime)
-    setWithdraw(!Boolean(isPending || isPool4AndDisableCanWithDraw || currentlyStakedIs0));
+    setWithdraw(!Boolean(isPending ||  currentlyStakedIs0));
   }, [currentlyStaked[index], fetchWithdrawPending[index], index, new Date()]);
 
   const onWithdraw = () => {
@@ -126,10 +121,7 @@ export default function FarmPool(props) {
     const currentlyStakedIs0 = currentlyStaked[index] === 0;
     const rewardsAvailableIs0 = rewardsAvailable[index] === 0;
     const currentlyStakedAndRewardsAvailableIs0 = Boolean(currentlyStakedIs0 && rewardsAvailableIs0);
-    const isPool4 = Boolean(index === 3);
-    const isDisableCanWithdrawTime = Boolean(canWithdrawTime[index] === 0) || Boolean((canWithdrawTime[index] * 1000) > new Date().getTime());
-    const isPool4AndDisableCanWithDraw = Boolean(isPool4 && isDisableCanWithdrawTime)
-    setExitAble(!Boolean(isPending || isPool4AndDisableCanWithDraw || currentlyStakedAndRewardsAvailableIs0));
+    setExitAble(!Boolean(isPending || currentlyStakedAndRewardsAvailableIs0));
   }, [currentlyStaked[index], rewardsAvailable[index], fetchExitPending[index], index, new Date()]);
 
   const onExit = () => {
@@ -150,40 +142,19 @@ export default function FarmPool(props) {
     const amount = byDecimals(rewardsAvailable[index], pools[index].earnedTokenDecimals);
     setMyRewardsAvailable(amount);
   }, [rewardsAvailable[index], index]);
-
-  useEffect(() => {
-    if(halfTime[index] === 0) return;
-    if(Boolean(index === 2) || Boolean(index=== 3)) return;
-    const formatTime = () => {
-      const currTime = new Date().getTime();
-      const deadline = halfTime[index] * 1000;
-      const time = deadline - currTime;
-      if (time <= 0) { return fetchHalfTime(index);}
-      const day = Math.floor(time / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
-      const hours = Math.floor(( time / (1000 * 60 * 60)) % 24).toString().padStart(2, '0');
-      const minutes = Math.floor(( time / (1000 * 60)) % 60).toString().padStart(2, '0');
-      const seconds = Math.floor(( time / 1000) % 60).toString().padStart(2, '0');
-      setMyHalfTime(`${day}day ${hours}:${minutes}:${seconds}`);
-    }
-    formatTime();
-    const id = setInterval(formatTime, 1000);
-    return () => clearInterval(id);
-  }, [halfTime[index], pools, index]);
-
+  
   useEffect(() => {
     if(!address) return;
     checkApproval(index);
     fetchBalance(index);
     fetchCurrentlyStaked(index);
     fetchRewardsAvailable(index);
-    if(Boolean(index === 0) || Boolean(index === 1)) fetchHalfTime(index);
-    if(index === 3) fetchCanWithdrawTime(index);
   }, [address, index]);
 
   return (
     <Grid container style={{paddingTop: '4px'}}>
       <Grid item xs={12}>
-        <div className={classes.detailTitle}>{`Stake / ${pools[index].name}`}</div>
+        <div className={classes.detailTitle}>{`Farm / ${pools[index].name}`}</div>
       </Grid>
       <Grid item xs={12} className={classes.detailContentUp}>
         <GridContainer spacing={3} className={classNames({
