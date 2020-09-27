@@ -46,6 +46,7 @@ const footerLinkArr = [
     // {content:'CoinMarketCap',href:'https://coinmarketcap.com/zh/currencies/yearn-finance-ii/'},
     // {content:'CoinGecko',href:'https://www.coingecko.com/en/coins/dfi-money'},
     {content:'Forum',href:'https://gov.dfi.money/'},
+    {content:'Audit',href:'https://github.com/yfii/audit'},
     {content:'Stats',href:'https://stats.dfi.money/'},
     {content:'Voting',href:'https://snapshot.page/#/dfi'},
     {content:'Documentation',href:'https://docs.yfii.finance/'},
