@@ -362,7 +362,10 @@ export default function StakePool(props) {
                     {t('Stake-Button-Stake-Tokens')}
                   </CustomButtons>
                   )}
-                  <div className={classes.stakeHintContainer}></div>
+                  <div className={classNames({
+                    [classes.stakeHintContainer]:true,
+                    [classes.stakeHintContainerHidden]:true,
+                  })}></div>
                 </GridItem>
                 <GridItem md={3} sm={6} xs={12} className={classes.flexCenter} style={{'flexDirection':'column'}}>
                   <CustomButtons
@@ -394,7 +397,10 @@ export default function StakePool(props) {
                     })}>
                     {t('Stake-Button-Claim-Rewards')}
                   </CustomButtons>
-                  <div className={classes.stakeHintContainer}></div>
+                  <div className={classNames({
+                    [classes.stakeHintContainer]:true,
+                    [classes.stakeHintContainerHidden]:true,
+                  })}></div>
                 </GridItem>
                 <GridItem md={3} sm={6} xs={12} className={classes.flexCenter} style={{'flexDirection':'column'}}>
                   <CustomButtons
