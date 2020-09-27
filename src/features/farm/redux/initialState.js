@@ -1,4 +1,4 @@
-import { yCurveFiRewardsABI, balancerRewardsABI, governanceABI, pool4Abi } from "../../configure";
+import { pool4Abi } from "../../configure";
 
 const pools = [
 	{
@@ -11,7 +11,7 @@ const pools = [
 		earnedToken: 'MEFI',
 		earnedTokenDescription: '',
 		earnedTokenDecimals: 6,
-		earnedTokenAddress: '0x72Cf258c852Dc485a853370171d46B9D29fD3184',
+		earnedTokenAddress: '0x1a969239E12F07281f8876D11AfceE081D872adf',
 		earnContractAddress: '0x6A77c0c917Da188fBfa9C380f2E60dd223c0c35a',
 		earnContractAbi: pool4Abi
 	},
@@ -25,53 +25,46 @@ const pools = [
 		earnedToken: 'MEFI',
 		earnedTokenDescription: '',
 		earnedTokenDecimals: 6,
-		earnedTokenAddress: '0x72Cf258c852Dc485a853370171d46B9D29fD3184',
+		earnedTokenAddress: '0xc4b478E749dbCFDdF96C6f84f4133E2f03c345a9',
 		earnContractAddress: '0x6CA21695CB12A251bB19aE73Bda6964f1BBc48De',
 		earnContractAbi: pool4Abi
 	},
 ];
 
-const poolsInfo = [{
-	staked: 0,
-	tvl: 0,
-	apy: 0,
-},{
-	staked: 0,
-	tvl: 0,
-	apy: 0,
-},{
-	staked: 0,
-	tvl: 0,
-	apy: 0,
-},{
-	staked: 0,
-	tvl: 0,
-	apy: 0,
-}]
-
-const allowance = [0,0,0,0];
-const balance = [0,0,0,0];
-const currentlyStaked = [0,0,0,0];
-const rewardsAvailable = [0,0,0,0];
-
+const length = pools.length;
+const poolsInfo = Array(length).fill({staked: 0, tvl: 0, apy: 0});
+const fetchPoolsInfoPending = false;
+const allowance = Array(length).fill(0);
+const checkApprovalPending = Array(length).fill(false);
+const balance = Array(length).fill(0);
+const fetchBalancePending = Array(length).fill(false);
+const currentlyStaked = Array(length).fill(0);
+const fetchCurrentlyStakedPending = Array(length).fill(false);
+const rewardsAvailable = Array(length).fill(0);
+const fetchRewardsAvailablePending = Array(length).fill(false);
+const fetchApprovalPending = Array(length).fill(false);
+const fetchStakePending = Array(length).fill(false);
+const fetchWithdrawPending = Array(length).fill(false);
+const fetchClaimPending = Array(length).fill(false);
+const fetchExitPending = Array(length).fill(false);
 
 const initialState = {
 	pools,
-	allowance,
-	currentlyStaked,
-	rewardsAvailable,
-	balance,
 	poolsInfo,
-	fetchPoolsInfoPending: false,
-	checkApprovalPending: [false,false,false,false],
-	fetchBalancePending: [false,false,false,false],
-	fetchCurrentlyStakedPending: [false,false,false,false],
-	fetchRewardsAvailablePending: [false,false,false,false],
-	fetchApprovalPending: [false,false,false,false],
-	fetchStakePending: [false,false,false,false],
-	fetchWithdrawPending: [false,false,false,false],
-	fetchClaimPending: [false,false,false,false],
-	fetchExitPending: [false,false,false,false]
+	fetchPoolsInfoPending,
+	allowance,
+	checkApprovalPending,
+	balance,
+	fetchBalancePending,
+	currentlyStaked,
+	fetchCurrentlyStakedPending,
+	rewardsAvailable,
+	fetchRewardsAvailablePending,
+	fetchApprovalPending,
+	fetchStakePending,
+	fetchWithdrawPending,
+	fetchClaimPending,
+	fetchExitPending
 };
 
 export default initialState;
