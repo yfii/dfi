@@ -299,7 +299,7 @@ export default function SectionPools() {
                                                 {pool.token}
                                                 <Hidden smUp>
                                                     <i
-                                                        style={{color:primaryColor[0],marginLeft:'4px'}}
+                                                        style={{color:primaryColor[0],marginLeft:'4px',visibility:Boolean(isZh?pool.tokenDescriptionUrl2:pool.tokenDescriptionUrl)?"visible":"hidden"}}
                                                         className={"yfiiicon yfii-help-circle"} 
                                                         onClick={
                                                             event => {
@@ -350,6 +350,7 @@ export default function SectionPools() {
                                             classes={{
                                                 root:classes.iconContainerSecond
                                             }}
+                                            style={{visibility:Boolean(isZh?pool.tokenDescriptionUrl2:pool.tokenDescriptionUrl)?"visible":"hidden"}}
                                             // className={classes.iconContainerSecond}
                                             onClick={
                                                 event => {
