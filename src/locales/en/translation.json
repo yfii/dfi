@@ -105,9 +105,11 @@
   "Farm-Approval": "授权抵押",
   "Farm-Exit": "退出： 领取奖励并取消抵押",
   "Farm-UnApproval": "解除抵押",
-  "Farm-Balance": "可用余额：",
+  "Farm-Balance": "可用余额",
   "Farm-All-Stake": "全部存入",
   "Farm-Stake-Amount": "存入数量",
   "Farm-Dialog-Confirm": "确认",
-  "Farm-Dialog-Cancel": "取消"
+  "Farm-Dialog-Cancel": "取消",
+  "Farm-All-UnApproval": "全部解除",
+  "Farm-UnApproval-Amount": "请输入要解除抵押的数量"
 }
