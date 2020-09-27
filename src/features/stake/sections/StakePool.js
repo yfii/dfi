@@ -172,14 +172,23 @@ export default function StakePool(props) {
   }, [halfTime[index], pools, index]);
 
   useEffect(() => {
-    if(!address) return;
-    checkApproval(index);
-    fetchBalance(index);
-    fetchCurrentlyStaked(index);
-    fetchRewardsAvailable(index);
-    if(Boolean(index === 0) || Boolean(index === 1)) fetchHalfTime(index);
-    console.log('stake')
-    if(index === 3) fetchCanWithdrawTime(index);
+    if (address) {
+      checkApproval(index);
+      fetchBalance(index);
+      fetchCurrentlyStaked(index);
+      fetchRewardsAvailable(index);
+      if(Boolean(index === 0) || Boolean(index === 1)) fetchHalfTime(index);
+      if(index === 3) fetchCanWithdrawTime(index);
+      const id = setInterval(() => {
+        checkApproval(index);
+        fetchBalance(index);
+        fetchCurrentlyStaked(index);
+        fetchRewardsAvailable(index);
+        if(Boolean(index === 0) || Boolean(index === 1)) fetchHalfTime(index);
+        if(index === 3) fetchCanWithdrawTime(index);
+      }, 10000);
+      return () => clearInterval(id);
+    }
   }, [address, index]);
 
   return (
