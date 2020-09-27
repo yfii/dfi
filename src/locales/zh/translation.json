@@ -103,5 +103,6 @@
   "Farm-Pledge": "抵押",
   "Farm-Proof": "通证",
   "Farm-Approval": "授权抵押",
-  "Farm-Exit": "退出： 领取奖励并取消抵押"
+  "Farm-Exit": "退出： 领取奖励并取消抵押",
+  "Farm-UnApproval": "解除抵押"
 }

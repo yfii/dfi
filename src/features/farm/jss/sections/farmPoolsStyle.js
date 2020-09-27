@@ -11,15 +11,6 @@ const fontDefaultStyle = {
   fontWeight: '400',
 };
 
-const secondStyle = {
-  opacity: '0.4',
-  fontFamily: 'Helvetica',
-  fontSize: '14px',
-  color: '#FFFFFF',
-  letterSpacing: '0',
-  lineHeight: '14px',
-};
-
 const normalBackgroundColor = '#2C3040';
 const primaryColor = '#FF2D82';
 const secondColor = '#635AFF';
@@ -62,18 +53,6 @@ const farmPoolsStyle = theme => ({
     right: '0',
     bottom: '0',
     zIndex: '-1',
-  },
-  mainTitle: {
-    fontFamily: 'Helvetica',
-    fontSize: '32px',
-    color: '#FFFFFF',
-    letterSpacing: '0',
-    lineHeight: '32px',
-    fontWeight: "550",
-  },
-  secondTitle: {
-    ...secondStyle,
-    fontWeight: "550",
   },
   listHeader: {
     backgroundColor: normalBackgroundColor,
@@ -368,7 +347,7 @@ const farmPoolsStyle = theme => ({
     background: 'rgb(43,49,64)',
     borderRadius: 15,
     padding: 15,
-    margin: '50px 0'
+    margin: "50px 0"
   },
   menuItemLogo: {
     position: 'absolute',
@@ -406,6 +385,15 @@ const farmPoolsStyle = theme => ({
   menuItemButtonExit: {
     bottom: -80,
     background: 'rgba(96,94,255)'
+  },
+  dialogRoot: {
+    background: "rgb(81,88,116)",
+    color: '#ffffff'
+  },
+  dialogHref: {
+    marginLeft: 10,
+    cursor: 'pointer',
+    color: "#32B0FF"
   }
 })
 
