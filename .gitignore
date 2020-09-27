@@ -24,3 +24,4 @@ yarn-error.log*
 scripts/upload.js
 package.json
 package-lock.json
+.idea
