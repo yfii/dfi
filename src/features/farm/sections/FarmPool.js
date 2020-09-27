@@ -66,6 +66,8 @@ export default function FarmPool(props) {
   const [dialogShow, setDialogShow] = useState(false);
   // 存入金额
   const [amount, setAmount] = useState('');
+  // 存入、解除质押 弹窗类型
+  const [dialogType, setDialogType] = useState(1);
 
   const changeInputVal = (event) => {
     let value = event.target.value;
@@ -126,6 +128,11 @@ export default function FarmPool(props) {
     fetchClaim(index);
   }
 
+  const closeDialog = () => {
+    setDialogShow(false);
+    setAmount('');
+  }
+
   useEffect(() => {
     const isPending = Boolean(fetchExitPending[index]);
     const currentlyStakedIs0 = currentlyStaked[index] === 0;
@@ -169,10 +176,11 @@ export default function FarmPool(props) {
     }
   }, [address, index]);
 
-  const {name, token, earnTime, earnedToken, earnedTokenUrl,tokenDescription} = pools[index];
+  const {name, token, earnTime, earnedToken, earnedTokenUrl, tokenDescription} = pools[index];
   const isLP = name.toLowerCase().indexOf('lp') > -1;
   const lpTokens = isLP ? token.split('/') : [];
   const offsetImageStyle = {marginLeft: "-25%", zIndex: 0, background: '#ffffff'};
+  const isStake = dialogType === 1;
 
   return (
     <Grid container style={{paddingTop: '4px', marginBottom: 200}}>
@@ -232,23 +240,29 @@ export default function FarmPool(props) {
               !isNeedApproval ?
                 <Button className={classes.menuItemButton} onClick={() => {
                   // 显示存入弹窗
+                  setDialogType(1);
                   setDialogShow(true);
                 }}>{t('Farm-Stake')} {tokenDescription}</Button>
                 :
-                <Button className={classes.menuItemButton} disabled={!Boolean(approvalAble)}
+                <Button className={classes.menuItemButton}
+                        disabled={!Boolean(approvalAble)}
                         onClick={onApproval}>{t('Farm-Approval')} {tokenDescription}</Button>
             }
 
             {!isNeedApproval ? (
               <>
-                <Button className={classNames({
-                  [classes.menuItemButton]: true,
-                  [classes.menuItemButtonExit]: true,
-                })} disabled={!Boolean(exitAble)} onClick={onExit}>{t('Farm-UnApproval')} {tokenDescription}</Button>
-                <Button className={classNames({
-                  [classes.menuItemButton]: true,
-                  [classes.menuItemButtonExit]: true,
-                })} disabled={!Boolean(exitAble)} style={{bottom: -150}} onClick={onExit}>{t('Farm-Exit')}</Button>
+                <Button className={classNames({[classes.menuItemButton]: true, [classes.menuItemButtonExit]: true,})}
+                        disabled={!Boolean(exitAble)}
+                        onClick={() => {
+                          setDialogType(2);
+                          setDialogShow(true);
+                        }}
+                >{t('Farm-UnApproval')} {tokenDescription}</Button>
+                <Button className={classNames({[classes.menuItemButton]: true, [classes.menuItemButtonExit]: true})}
+                        disabled={!Boolean(exitAble)}
+                        style={{bottom: -150}}
+                        onClick={onExit}
+                >{t('Farm-Exit')}</Button>
               </>
             ) : null}
           </div>
@@ -257,25 +271,27 @@ export default function FarmPool(props) {
       <Dialog fullWidth={true}
               disableBackdropClick={true}
               open={dialogShow}
-              onClose={() => setDialogShow(false)}
+              onClose={closeDialog}
               classes={{
                 paper: classes.dialogRoot
               }}
               aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">
-          {t('Farm-Stake')} {tokenDescription} Tokens
+          {t(isStake ? 'Farm-Stake' : 'Farm-UnApproval')} {tokenDescription} Tokens
         </DialogTitle>
         <DialogContent>
           <DialogContentText style={{fontSize: 15, color: "#ffffff"}}>
-            {t('Farm-Balance')} {Math.floor(myBalance.toNumber() * 10000) / 10000}
+            {
+              t(isStake ? 'Farm-Balance' : 'Farm-Pledged') + "：" + Math.floor((dialogType === 1 ? myBalance : myCurrentlyStaked).toNumber() * 10000) / 10000
+            }
             <a className={classes.dialogHref}
                onClick={() => {
-                 setAmount(Math.floor(myBalance.toNumber() * 10000) / 10000)
+                 setAmount(Math.floor((isStake ? myBalance : myCurrentlyStaked).toNumber() * 10000) / 10000)
                }}>
-              {t('Farm-All-Stake')}
+              {t(isStake ? 'Farm-All-Stake' : 'Farm-All-UnApproval')}
             </a>
           </DialogContentText>
-          <Input placeholder={t('Farm-Stake-Amount')}
+          <Input placeholder={t(isStake ? 'Farm-Stake-Amount' : 'Farm-UnApproval-Amount')}
                  value={amount}
                  fullWidth={true}
                  classes={{root: classes.dialogInput}}
@@ -285,11 +301,14 @@ export default function FarmPool(props) {
                  }}/>
         </DialogContent>
         <DialogActions style={{height: 50}}>
-          <a className={classes.dialogAction} style={{color: "#F03278"}} onClick={() => {
-            // 提交
-          }}>{t('Farm-Dialog-Confirm')}</a>
-          <a className={classes.dialogAction} style={{color: "#000000"}}
-             onClick={() => setDialogShow(false)}>{t('Farm-Dialog-Cancel')}</a>
+          <a className={classes.dialogAction}
+             style={{color: "#F03278"}}
+             onClick={() => {
+               // 提交
+             }}>{t('Farm-Dialog-Confirm')}</a>
+          <a className={classes.dialogAction}
+             style={{color: "#000000"}}
+             onClick={closeDialog}>{t('Farm-Dialog-Cancel')}</a>
         </DialogActions>
       </Dialog>
     </Grid>
