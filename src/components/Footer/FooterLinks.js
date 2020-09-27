@@ -12,6 +12,7 @@ import Button from "components/CustomButtons/Button.js";
 import Popover from '@material-ui/core/Popover';
 import Avatar from '@material-ui/core/Avatar';
 
+import { useTranslation } from 'react-i18next';
 import { makeStyles } from "@material-ui/core/styles";
 import styles from "assets/jss/material-kit-pro-react/components/footerLinksStyle.js";
 import classNames from "classnames";
@@ -41,21 +42,18 @@ import {
   } from "assets/jss/material-kit-pro-react.js";
 const useStyles = makeStyles(styles);
 
-const footerLinkArr = [
-    {content:'Token Contract',href:'https://etherscan.io/address/0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83'},
-    // {content:'CoinMarketCap',href:'https://coinmarketcap.com/zh/currencies/yearn-finance-ii/'},
-    // {content:'CoinGecko',href:'https://www.coingecko.com/en/coins/dfi-money'},
-    {content:'Forum',href:'https://gov.dfi.money/'},
-    {content:'Audit',href:'https://github.com/yfii/audit'},
-    {content:'Stats',href:'https://stats.dfi.money/'},
-    {content:'Voting',href:'https://snapshot.page/#/dfi'},
-    {content:'Documentation',href:'https://docs.yfii.finance/'},
-    {content:'Uniswap ETH-YFII',href:'https://app.uniswap.org/#/swap?outputCurrency=0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83'},
-];
-
 export default function FooterLinks(props) {
     const classes = useStyles();
-
+    const { t, i18n } = useTranslation();
+    const footerLinkArr = [
+      {content:t('Foot-Token'),href:'https://etherscan.io/address/0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83'},
+      {content:t('Foot-Forum'),href:'https://gov.dfi.money/'},
+      {content:t('Foot-Audit'),href:'https://github.com/yfii/audit'},
+      {content:t('Foot-Stats'),href:'https://stats.dfi.money/'},
+      {content:t('Foot-Voting'),href:'https://snapshot.page/#/dfi'},
+      {content:t('Foot-Documentation'),href:'https://docs.yfii.finance/'},
+      {content:t('Foot-Uniswap'),href:'https://app.uniswap.org/#/swap?outputCurrency=0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83'},
+    ];
     const [anchorEl, setAnchorEl] = useState(null);
     const handlePopoverOpen = (event) => {
         setAnchorEl(event.currentTarget);
