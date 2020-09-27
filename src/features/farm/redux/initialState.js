@@ -20,11 +20,11 @@ const pools = [
 		description: '',
 		token: 'MEFI/ETH',
 		tokenDescription: '',
-		tokenDecimals: 18,
+		tokenDecimals: 8,
 		tokenAddress: '0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83',
 		earnedToken: 'MEFI',
 		earnedTokenDescription: '',
-		earnedTokenDecimals: 6,
+		earnedTokenDecimals: 8,
 		earnedTokenAddress: '0x72Cf258c852Dc485a853370171d46B9D29fD3184',
 		earnContractAddress: '0x6CA21695CB12A251bB19aE73Bda6964f1BBc48De',
 		earnContractAbi: pool4Abi

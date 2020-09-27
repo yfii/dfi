@@ -1,21 +1,22 @@
-import React,{ useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import classNames from "classnames";
-import { useTranslation } from 'react-i18next';
-import { makeStyles } from "@material-ui/core/styles";
-import { farmPoolsStyle } from "../jss/sections/farmPoolsStyle";
+import {useTranslation} from 'react-i18next';
+import {makeStyles} from "@material-ui/core/styles";
+import {farmPoolsStyle} from "../jss/sections/farmPoolsStyle";
 import Grid from '@material-ui/core/Grid';
 // core components
 import Button from "components/CustomButtons/Button.js";
-import { useFetchPoolsInfo } from '../redux/hooks';
+import {useFetchPoolsInfo} from '../redux/hooks';
+import FarmItem from "../components/FarmItem";
 
 const useStyles = makeStyles(farmPoolsStyle);
 
 export default function FarmPools(props) {
   const classes = useStyles();
-  const { t, i18n } = useTranslation();
-  const { pools } = useFetchPoolsInfo();
+  const {t, i18n} = useTranslation();
+  const {pools} = useFetchPoolsInfo();
   console.log(pools)
-  
+
   return (
     <Grid container style={{paddingTop: '4px'}}>
       <Grid item xs={12}>
@@ -24,7 +25,7 @@ export default function FarmPools(props) {
       </Grid>
       {pools.map((pool, index) => (
         <Grid item xs={3} key={index}>
-          <Button href={`/#/farm/pool/${index + 1}`}>抵押</Button>
+          <FarmItem style={{background: ""}} farmInfo={pool} index={index}/>
         </Grid>
       ))}
     </Grid>
