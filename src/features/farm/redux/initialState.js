@@ -10,7 +10,7 @@ const pools = [
 		tokenAddress: '0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83',
 		earnedToken: 'MEFI',
 		earnedTokenDescription: '',
-		earnedTokenDecimals: 6,
+		earnedTokenDecimals: 8,
 		earnedTokenAddress: '0x1a969239E12F07281f8876D11AfceE081D872adf',
 		earnContractAddress: '0x6A77c0c917Da188fBfa9C380f2E60dd223c0c35a',
 		earnContractAbi: pool4Abi
@@ -24,7 +24,7 @@ const pools = [
 		tokenAddress: '0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83',
 		earnedToken: 'MEFI',
 		earnedTokenDescription: '',
-		earnedTokenDecimals: 6,
+		earnedTokenDecimals: 18,
 		earnedTokenAddress: '0xc4b478E749dbCFDdF96C6f84f4133E2f03c345a9',
 		earnContractAddress: '0x6CA21695CB12A251bB19aE73Bda6964f1BBc48De',
 		earnContractAbi: pool4Abi
