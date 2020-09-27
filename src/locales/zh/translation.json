@@ -74,5 +74,16 @@
   "Stake-Balancer-Your-Balance":"您的余额",
   "Stake-Balancer-Current-Staked":"当前已抵押",
   "Stake-Balancer-Rewards-Available":"当前可领取奖励",
-  "Stake-Balancer-Half-Time":"减半时间"
+  "Stake-Balancer-Half-Time":"减半时间",
+  "Link": {
+    "Home": "首页",
+    "Vault": "机枪池",
+    "Stake": "抵押池",
+    "Contract": "合约",
+    "Forum": "论坛",
+    "Stats": "统计",
+    "Voting": "投票",
+    "Documentation": "文档",
+    "Uniswap": "Uniswap"
+  }
 }

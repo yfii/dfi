@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
-
+import { useTranslation } from 'react-i18next';
 import Footer from "components/Footer/Footer.js";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -42,18 +42,19 @@ import {
 const useStyles = makeStyles(styles);
 
 const footerLinkArr = [
-    {content:'Token Contract',href:'https://etherscan.io/address/0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83'},
+    {content:'Link.Contract',href:'https://etherscan.io/address/0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83'},
     // {content:'CoinMarketCap',href:'https://coinmarketcap.com/zh/currencies/yearn-finance-ii/'},
     // {content:'CoinGecko',href:'https://www.coingecko.com/en/coins/dfi-money'},
-    {content:'Forum',href:'https://gov.dfi.money/'},
-    {content:'Stats',href:'https://stats.dfi.money/'},
-    {content:'Voting',href:'https://snapshot.page/#/dfi'},
-    {content:'Documentation',href:'https://docs.yfii.finance/'},
-    {content:'Uniswap ETH-YFII',href:'https://app.uniswap.org/#/swap?outputCurrency=0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83'},
+    {content:'Link.Forum',href:'https://gov.dfi.money/'},
+    {content:'Link.Stats',href:'https://stats.dfi.money/'},
+    {content:'Link.Voting',href:'https://snapshot.page/#/dfi'},
+    {content:'Link.Documentation',href:'https://docs.yfii.finance/'},
+    {content:'Link.Uniswap',href:'https://app.uniswap.org/#/swap?outputCurrency=0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83'},
 ];
 
 export default function FooterLinks(props) {
     const classes = useStyles();
+    const { t } = useTranslation();
 
     const [anchorEl, setAnchorEl] = useState(null);
     const handlePopoverOpen = (event) => {
@@ -205,7 +206,7 @@ export default function FooterLinks(props) {
                     footerLinkArr.map((item)=>{
                         return (
                             <GridItem className={classes.linkItem} md={2} xs={6} key={item.content} >
-                                <a className={classes.extraContent} href={item.href} target="_blank">{item.content}</a>
+                                <a className={classes.extraContent} href={item.href} target="_blank">{t(item.content)}</a>
                             </GridItem >
                         )
                     })
