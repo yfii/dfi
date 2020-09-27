@@ -74,6 +74,7 @@
   "Swap-Max":"最大值",
   "Swap-Receive": "接收",
   "Stake-Table-Pool":"抵押池",
+  "Stake-Pool-Unstake-Hint":"抵押3天才能赎回",
   "Stake-Table-Staked":"已抵押",
   "Stake-Table-Total":"锁仓金额",
   "Stake-Table-Apy":"回报率",

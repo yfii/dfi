@@ -73,6 +73,7 @@
   "Swap-Balance": "Balance",
   "Swap-Max":"Max",
   "Swap-Receive": "Receive",
+  "Stake-Pool-Unstake-Hint":"The mortgage will take three days to redeem",
   "Stake-Table-Pool":"POOL",
   "Stake-Table-Staked":"STAKED",
   "Stake-Table-Total":"Total Value Locked",
