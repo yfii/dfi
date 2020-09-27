@@ -49,11 +49,12 @@ export default function FarmPool(props) {
   const {fetchExit, fetchExitPending} = useFetchExit();
   const [index, setIndex] = useState(Number(props.match.params.index) - 1);
   const [showInput, setShowInput] = useState(false);
+  const [isStake, setIsStake] = useState(true);
   // const [ pageSize,setPageSize ] = useState('');
   const [isNeedApproval, setIsNeedApproval] = useState(true);
   const [approvalAble, setApprovalAble] = useState(false);
   const [stakeAble, setStakeAble] = useState(true);
-  const [withdrawAble, setWithdraw] = useState(true);
+  const [withdrawAble, setWithdrawAble] = useState(true);
   const [claimAble, setClaimAble] = useState(true);
   const [exitAble, setExitAble] = useState(true);
   const [myBalance, setMyBalance] = useState(new BigNumber(balance[index]));
@@ -64,23 +65,8 @@ export default function FarmPool(props) {
   const [anchorEl, setAnchorEl] = useState(null);
   // 弹窗
   const [dialogShow, setDialogShow] = useState(false);
-  // 存入金额
-  const [amount, setAmount] = useState('');
   // 存入、解除质押 弹窗类型
   const [dialogType, setDialogType] = useState(1);
-
-  const changeInputVal = (event) => {
-    let value = event.target.value;
-    const changeIsNumber = /^[0-9]+\.?[0-9]*$/;
-    if (!value) return setInputVal(value);
-    if (changeIsNumber.test(value)) {
-      value = value.replace(/(^[0-9]+)(\.?[0-9]*$)/, (word, p1, p2) => {
-        return Number(p1).toString() + p2;
-      });
-      if (new BigNumber(Number(value)).comparedTo(showInput === 'stake' ? myBalance : myCurrentlyStaked) === 1) return setInputVal((showInput === 'stake' ? myBalance.toString() : myCurrentlyStaked.toString()));
-      setInputVal(value)
-    }
-  }
 
   useEffect(() => {
     setIndex(Number(props.match.params.index) - 1);
@@ -88,6 +74,7 @@ export default function FarmPool(props) {
 
   useEffect(() => {
     setIsNeedApproval(Boolean(allowance[index] === 0));
+    // setIsNeedApproval(false);
   }, [allowance[index], index]);
 
   useEffect(() => {
@@ -110,8 +97,9 @@ export default function FarmPool(props) {
   useEffect(() => {
     const isPending = Boolean(fetchWithdrawPending[index]);
     const currentlyStakedIs0 = currentlyStaked[index] === 0;
-    setWithdraw(!Boolean(isPending || currentlyStakedIs0));
-  }, [currentlyStaked[index], fetchWithdrawPending[index], index, new Date()]);
+    setWithdrawAble(!Boolean(isPending || currentlyStakedIs0));
+    // setWithdrawAble(true)
+  }, [currentlyStaked[index], fetchWithdrawPending[index], index]);
 
   const onWithdraw = () => {
     const amount = new BigNumber(inputVal).multipliedBy(new BigNumber(10).exponentiatedBy(pools[index].tokenDecimals)).toString(10);
@@ -130,7 +118,7 @@ export default function FarmPool(props) {
 
   const closeDialog = () => {
     setDialogShow(false);
-    setAmount('');
+    setInputVal('');
   }
 
   useEffect(() => {
@@ -176,11 +164,28 @@ export default function FarmPool(props) {
     }
   }, [address, index]);
 
+
+  useEffect(() => {
+    setIsStake(dialogType === 1)
+  }, [dialogType])
+
   const {name, token, earnTime, earnedToken, earnedTokenUrl, tokenDescription} = pools[index];
   const isLP = name.toLowerCase().indexOf('lp') > -1;
   const lpTokens = isLP ? token.split('/') : [];
   const offsetImageStyle = {marginLeft: "-25%", zIndex: 0, background: '#ffffff'};
-  const isStake = dialogType === 1;
+
+  const changeInputVal = (event) => {
+    let value = event.target.value;
+    const changeIsNumber = /^[0-9]+\.?[0-9]*$/;
+    if (!value) return setInputVal(value);
+    if (changeIsNumber.test(value)) {
+      value = value.replace(/(^[0-9]+)(\.?[0-9]*$)/, (word, p1, p2) => {
+        return Number(p1).toString() + p2;
+      });
+      if (new BigNumber(Number(value)).comparedTo(isStake ? myBalance : myCurrentlyStaked) === 1) return setInputVal((isStake ? myBalance.toString() : myCurrentlyStaked.toString()));
+      setInputVal(value)
+    }
+  }
 
   return (
     <Grid container style={{paddingTop: '4px', marginBottom: 200}}>
@@ -252,7 +257,7 @@ export default function FarmPool(props) {
             {!isNeedApproval ? (
               <>
                 <Button className={classNames({[classes.menuItemButton]: true, [classes.menuItemButtonExit]: true,})}
-                        disabled={!Boolean(exitAble)}
+                        disabled={!Boolean(withdrawAble)}
                         onClick={() => {
                           setDialogType(2);
                           setDialogShow(true);
@@ -282,30 +287,28 @@ export default function FarmPool(props) {
         <DialogContent>
           <DialogContentText style={{fontSize: 15, color: "#ffffff"}}>
             {
-              t(isStake ? 'Farm-Balance' : 'Farm-Pledged') + "：" + Math.floor((dialogType === 1 ? myBalance : myCurrentlyStaked).toNumber() * 10000) / 10000
+              t(isStake ? 'Farm-Balance' : 'Farm-Pledged') + "：" + (isStake ? myBalance.toString(): myCurrentlyStaked.toString())
             }
             <a className={classes.dialogHref}
                onClick={() => {
-                 setAmount(Math.floor((isStake ? myBalance : myCurrentlyStaked).toNumber() * 10000) / 10000)
+                setInputVal(isStake ? myBalance.toString(): myCurrentlyStaked.toString());
                }}>
               {t(isStake ? 'Farm-All-Stake' : 'Farm-All-UnApproval')}
             </a>
           </DialogContentText>
           <Input placeholder={t(isStake ? 'Farm-Stake-Amount' : 'Farm-UnApproval-Amount')}
-                 value={amount}
-                 fullWidth={true}
-                 classes={{root: classes.dialogInput}}
-                 onChange={e => {
-                   setAmount(e.target.value);
-                   // 调用父组件的存入函数
-                 }}/>
+            value={inputVal}
+            fullWidth={true}
+            classes={{root: classes.dialogInput}}
+            onChange={changeInputVal}
+          />
         </DialogContent>
         <DialogActions style={{height: 50}}>
           <a className={classes.dialogAction}
              style={{color: "#F03278"}}
-             onClick={() => {
-               // 提交
-             }}>{t('Farm-Dialog-Confirm')}</a>
+             disabled={!Boolean(isStake ? stakeAble : withdrawAble)}
+              onClick={isStake ? onStake: onWithdraw}
+          >{t('Farm-Dialog-Confirm')}</a>
           <a className={classes.dialogAction}
              style={{color: "#000000"}}
              onClick={closeDialog}>{t('Farm-Dialog-Cancel')}</a>

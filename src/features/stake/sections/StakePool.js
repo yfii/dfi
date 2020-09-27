@@ -50,7 +50,7 @@ export default function StakePool(props) {
   const [ isNeedApproval, setIsNeedApproval] = useState(true);
   const [ approvalAble, setApprovalAble] = useState(true);
   const [ stakeAble,setStakeAble ] = useState(true);
-  const [ withdrawAble,setWithdraw ] = useState(true);
+  const [ withdrawAble,setWithdrawAble ] = useState(true);
   const [ claimAble,setClaimAble ] = useState(true);
   const [ exitAble,setExitAble ] = useState(true);
   const [ myBalance,setMyBalance ] = useState(new BigNumber(balance[index]));
@@ -104,7 +104,7 @@ export default function StakePool(props) {
     const isPool4 = Boolean(index === 3);
     const isDisableCanWithdrawTime = Boolean(canWithdrawTime[index] === 0) || Boolean((canWithdrawTime[index] * 1000) > new Date().getTime());
     const isPool4AndDisableCanWithDraw = Boolean(isPool4 && isDisableCanWithdrawTime)
-    setWithdraw(!Boolean(isPending || isPool4AndDisableCanWithDraw || currentlyStakedIs0));
+    setWithdrawAble(!Boolean(isPending || isPool4AndDisableCanWithDraw || currentlyStakedIs0));
   }, [currentlyStaked[index], fetchWithdrawPending[index], index, new Date()]);
 
   const onWithdraw = () => {
