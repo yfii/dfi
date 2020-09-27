@@ -39,6 +39,7 @@ export function fetchCurrentlyStaked(index) {
       ).catch(
         // Use rejectHandler as the second argument so that render errors won't be caught.
         error => {
+          console.log(error)
           dispatch({
             type: STAKE_FETCH_CURRENTLY_STAKED_FAILURE,
             index

@@ -2,9 +2,9 @@ import { useCallback } from 'react';
 import { erc20ABI } from "../../configure";
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
-  STAKE_FETCH_APPROVAL_BEGIN,
-  STAKE_FETCH_APPROVAL_SUCCESS,
-  STAKE_FETCH_APPROVAL_FAILURE,
+  FARM_FETCH_APPROVAL_BEGIN,
+  FARM_FETCH_APPROVAL_SUCCESS,
+  FARM_FETCH_APPROVAL_FAILURE,
 } from './constants';
 import { enqueueSnackbar } from '../../common/redux/actions';
 import { checkApproval } from './action';
@@ -13,7 +13,7 @@ export function fetchApproval(index) {
   return (dispatch, getState) => {
     // optionally you can have getState as the second argument
     dispatch({
-      type: STAKE_FETCH_APPROVAL_BEGIN,
+      type: FARM_FETCH_APPROVAL_BEGIN,
       index
     });
     // Return a promise so that you could control UI flow without states in the store.
@@ -24,9 +24,9 @@ export function fetchApproval(index) {
       // doRequest is a placeholder Promise. You should replace it with your own logic.
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
-      const { home, stake } = getState();
+      const { home, farm } = getState();
       const { address, web3 } = home;
-      const { pools } = stake;
+      const { pools } = farm;
       const { tokenAddress, earnContractAddress } = pools[index];
       const contract = new web3.eth.Contract(erc20ABI, tokenAddress);
 
@@ -49,7 +49,7 @@ export function fetchApproval(index) {
               variant: 'success',
             },
           }));
-          dispatch({ type: STAKE_FETCH_APPROVAL_SUCCESS, index });
+          dispatch({ type: FARM_FETCH_APPROVAL_SUCCESS, index });
           dispatch(checkApproval(index))
           resolve();
         })
@@ -61,11 +61,11 @@ export function fetchApproval(index) {
               variant: 'error'
             },
           }));
-          dispatch({ type: STAKE_FETCH_APPROVAL_FAILURE, index });
+          dispatch({ type: FARM_FETCH_APPROVAL_FAILURE, index });
           resolve();
         })
         .catch((error) => {
-          dispatch({ type: STAKE_FETCH_APPROVAL_FAILURE, index });
+          dispatch({ type: FARM_FETCH_APPROVAL_FAILURE, index });
           reject(error)
         })
     });
@@ -81,7 +81,7 @@ export function useFetchApproval() {
 
   const { fetchApprovalPending } = useSelector(
     state => ({
-      fetchApprovalPending: state.stake.fetchApprovalPending,
+      fetchApprovalPending: state.farm.fetchApprovalPending,
     })
   );
 
@@ -99,7 +99,7 @@ export function useFetchApproval() {
 export function reducer(state, action) {
   const { fetchApprovalPending } = state;
   switch (action.type) {
-    case STAKE_FETCH_APPROVAL_BEGIN:
+    case FARM_FETCH_APPROVAL_BEGIN:
       // Just after a request is sent
       fetchApprovalPending[action.index] = true;
       return {
@@ -107,7 +107,7 @@ export function reducer(state, action) {
         fetchApprovalPending,
       };
 
-    case STAKE_FETCH_APPROVAL_SUCCESS:
+    case FARM_FETCH_APPROVAL_SUCCESS:
       // The request is success
       fetchApprovalPending[action.index] = false;
       return {
@@ -115,7 +115,7 @@ export function reducer(state, action) {
         fetchApprovalPending,
       };
 
-    case STAKE_FETCH_APPROVAL_FAILURE:
+    case FARM_FETCH_APPROVAL_FAILURE:
       // The request is failed
       fetchApprovalPending[action.index] = false;
       return {

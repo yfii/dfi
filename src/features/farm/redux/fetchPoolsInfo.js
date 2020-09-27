@@ -2,15 +2,15 @@ import axios from 'axios';
 import { useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
-  STAKE_FETCH_POOLS_INFO_BEGIN,
-  STAKE_FETCH_POOLS_INFO_SUCCESS,
-  STAKE_FETCH_POOLS_INFO_FAILURE,
+  FARM_FETCH_POOLS_INFO_BEGIN,
+  FARM_FETCH_POOLS_INFO_SUCCESS,
+  FARM_FETCH_POOLS_INFO_FAILURE,
 } from './constants';
 
 export function fetchPoolsInfo() {
   return (dispatch, getState) => {
     // optionally you can have getState as the second argument
-    dispatch({ type: STAKE_FETCH_POOLS_INFO_BEGIN });
+    dispatch({ type: FARM_FETCH_POOLS_INFO_BEGIN });
 
     // Return a promise so that you could control UI flow without states in the store.
     // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
@@ -20,19 +20,19 @@ export function fetchPoolsInfo() {
       // doRequest is a placeholder Promise. You should replace it with your own logic.
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
-      const doRequest = axios.get('https://api1.dfi.money/stake/pools/');
+      const doRequest = axios.get('https://api1.dfi.money/farm/pools/');
 
       doRequest.then(
         res => {
           dispatch({
-            type: STAKE_FETCH_POOLS_INFO_SUCCESS,
+            type: FARM_FETCH_POOLS_INFO_SUCCESS,
             data: res.data.data,
           });
           resolve(res);
         },
         // Use rejectHandler as the second argument so that render errors won't be caught.
         err => {
-          dispatch({ type: STAKE_FETCH_POOLS_INFO_FAILURE });
+          dispatch({ type: FARM_FETCH_POOLS_INFO_FAILURE });
           reject(err);
         },
       );
@@ -67,14 +67,14 @@ export function useFetchPoolsInfo() {
 
 export function reducer(state, action) {
   switch (action.type) {
-    case STAKE_FETCH_POOLS_INFO_BEGIN:
+    case FARM_FETCH_POOLS_INFO_BEGIN:
       // Just after a request is sent
       return {
         ...state,
         fetchPoolsInfoPending: true
       };
 
-    case STAKE_FETCH_POOLS_INFO_SUCCESS:
+    case FARM_FETCH_POOLS_INFO_SUCCESS:
       // The request is success
       return {
         ...state,
@@ -82,7 +82,7 @@ export function reducer(state, action) {
         fetchPoolsInfoPending: false
       };
 
-    case STAKE_FETCH_POOLS_INFO_FAILURE:
+    case FARM_FETCH_POOLS_INFO_FAILURE:
       // The request is failed
       return {
         ...state,
