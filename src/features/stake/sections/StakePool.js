@@ -50,7 +50,7 @@ export default function StakePool(props) {
   const [ isNeedApproval, setIsNeedApproval] = useState(true);
   const [ approvalAble, setApprovalAble] = useState(true);
   const [ stakeAble,setStakeAble ] = useState(true);
-  const [ withdrawAble,setWithdraw ] = useState(true);
+  const [ withdrawAble,setWithdrawAble ] = useState(true);
   const [ claimAble,setClaimAble ] = useState(true);
   const [ exitAble,setExitAble ] = useState(true);
   const [ myBalance,setMyBalance ] = useState(new BigNumber(balance[index]));
@@ -104,7 +104,7 @@ export default function StakePool(props) {
     const isPool4 = Boolean(index === 3);
     const isDisableCanWithdrawTime = Boolean(canWithdrawTime[index] === 0) || Boolean((canWithdrawTime[index] * 1000) > new Date().getTime());
     const isPool4AndDisableCanWithDraw = Boolean(isPool4 && isDisableCanWithdrawTime)
-    setWithdraw(!Boolean(isPending || isPool4AndDisableCanWithDraw || currentlyStakedIs0));
+    setWithdrawAble(!Boolean(isPending || isPool4AndDisableCanWithDraw || currentlyStakedIs0));
   }, [currentlyStaked[index], fetchWithdrawPending[index], index, new Date()]);
 
   const onWithdraw = () => {
@@ -172,13 +172,23 @@ export default function StakePool(props) {
   }, [halfTime[index], pools, index]);
 
   useEffect(() => {
-    if(!address) return;
-    checkApproval(index);
-    fetchBalance(index);
-    fetchCurrentlyStaked(index);
-    fetchRewardsAvailable(index);
-    if(Boolean(index === 0) || Boolean(index === 1)) fetchHalfTime(index);
-    if(index === 3) fetchCanWithdrawTime(index);
+    if (address) {
+      checkApproval(index);
+      fetchBalance(index);
+      fetchCurrentlyStaked(index);
+      fetchRewardsAvailable(index);
+      if(Boolean(index === 0) || Boolean(index === 1)) fetchHalfTime(index);
+      if(index === 3) fetchCanWithdrawTime(index);
+      const id = setInterval(() => {
+        checkApproval(index);
+        fetchBalance(index);
+        fetchCurrentlyStaked(index);
+        fetchRewardsAvailable(index);
+        if(Boolean(index === 0) || Boolean(index === 1)) fetchHalfTime(index);
+        if(index === 3) fetchCanWithdrawTime(index);
+      }, 10000);
+      return () => clearInterval(id);
+    }
   }, [address, index]);
 
   return (
@@ -329,13 +339,15 @@ export default function StakePool(props) {
               </div>
             ) : (
               <GridContainer className={classes.contentTitle}>
-                <GridItem md={3} sm={6} xs={12} className={classes.flexCenter}>
+                <GridItem md={3} sm={6} xs={12} className={classes.flexCenter} style={{'flexDirection':'column'}}>
                   { isNeedApproval ? (
                     <CustomButtons
                       disabled={!Boolean(approvalAble)}
                       onClick={onApproval}
-                      style={{width:'300px',height:'44px',marginBottom:'14px',marginRight:'0'}}
-                      className={classes.stakeButton}>
+                      className={classNames({
+                        [classes.stakeButton]:true,
+                        [classes.stakeDetailButton]:true,
+                      })}>
                       {t('Stake-Button-Approval')}
                     </CustomButtons>
                   ): (<CustomButtons
@@ -343,50 +355,68 @@ export default function StakePool(props) {
                       event.stopPropagation();
                       setShowInput('stake');
                     }}
-                    style={{width:'300px',height:'44px',marginBottom:'14px',marginRight:'0'}}
-                    className={classes.stakeButton}>
+                    className={classNames({
+                      [classes.stakeButton]:true,
+                      [classes.stakeDetailButton]:true,
+                    })}>
                     {t('Stake-Button-Stake-Tokens')}
                   </CustomButtons>
                   )}
+                  <div className={classNames({
+                    [classes.stakeHintContainer]:true,
+                    [classes.stakeHintContainerHidden]:true,
+                  })}></div>
                 </GridItem>
-                <GridItem md={3} sm={6} xs={12} className={classes.flexCenter}>
+                <GridItem md={3} sm={6} xs={12} className={classes.flexCenter} style={{'flexDirection':'column'}}>
                   <CustomButtons
                     disabled={!Boolean(withdrawAble)}
                     onClick={(event)=>{
                       event.stopPropagation();
                       setShowInput('unstake');
                     }}
-                    style={{width:'300px',height:'44px',marginBottom:'14px',marginRight:'0'}}
                     className={classNames({
                       [classes.stakeButton]:true,
                       [classes.grayButton]:true,
+                      [classes.stakeDetailButton]:true,
                     })}>
                     {t('Stake-Button-Unstake-Tokens')}
                   </CustomButtons>
+                  <div className={classes.stakeHintContainer}>
+                    <img src={require(`../../../images/stake-hint.svg`)} style={{marginRight:'3px'}}/>
+                  <span className={classes.stakeHint}>{t('Stake-Pool-Unstake-Hint')}</span>
+                  </div>
                 </GridItem>
-                <GridItem md={3} sm={6} xs={12} className={classes.flexCenter}>
+                <GridItem md={3} sm={6} xs={12} className={classes.flexCenter} style={{'flexDirection':'column'}}>
                   <CustomButtons
                     disabled={!Boolean(claimAble)}
                     onClick={onClaim}
-                    style={{width:'300px',height:'44px',marginBottom:'14px',marginRight:'0'}}
                     className={classNames({
                       [classes.stakeButton]:true,
                       [classes.rewardsButton]:true,
+                      [classes.stakeDetailButton]:true,
                     })}>
                     {t('Stake-Button-Claim-Rewards')}
                   </CustomButtons>
+                  <div className={classNames({
+                    [classes.stakeHintContainer]:true,
+                    [classes.stakeHintContainerHidden]:true,
+                  })}></div>
                 </GridItem>
-                <GridItem md={3} sm={6} xs={12} className={classes.flexCenter}>
+                <GridItem md={3} sm={6} xs={12} className={classes.flexCenter} style={{'flexDirection':'column'}}>
                   <CustomButtons
                     disabled={!Boolean(exitAble)}
                     onClick={onExit}
-                    style={{width:'300px',height:'44px',marginBottom:'14px',marginRight:'0'}}
                     className={classNames({
                       [classes.stakeButton]:true,
                       [classes.grayButton]:true,
+                      [classes.stakeDetailButton]:true,
                     })}>
                     {t('Stake-Button-Exit')}
                   </CustomButtons>
+                  <div className={classes.stakeHintContainer} >
+                    <img src={require(`../../../images/stake-hint.svg`)} style={{marginRight:'3px'}}/>
+                    <span className={classes.stakeHint}>{t('Stake-Pool-Unstake-Hint')}</span>
+                  </div>
                 </GridItem>
               </GridContainer>
             )

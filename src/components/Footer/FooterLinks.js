@@ -12,6 +12,7 @@ import Button from "components/CustomButtons/Button.js";
 import Popover from '@material-ui/core/Popover';
 import Avatar from '@material-ui/core/Avatar';
 
+import { useTranslation } from 'react-i18next';
 import { makeStyles } from "@material-ui/core/styles";
 import styles from "assets/jss/material-kit-pro-react/components/footerLinksStyle.js";
 import classNames from "classnames";

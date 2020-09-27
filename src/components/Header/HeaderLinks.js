@@ -43,6 +43,13 @@ export default function HeaderLinks(props) {
   const [dataUrl, setDataUrl] = useState(null)
   const canvasRef = useRef(null)
 
+  const tabArr = [
+    {value:'',label:t('Nav-Home')},
+    {value:'vault',label:t('Nav-Vault')},
+    {value:'stake',label:t('Nav-Stake')},
+    // {value:'farm',label:t('Nav-Farm')},
+  ]
+
   useEffect(() => {
     if(!connected) return;
     const canvas = canvasRef.current

@@ -1,17 +1,18 @@
 import { useCallback } from 'react';
 import BigNumber from "bignumber.js";
-import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import { erc20ABI } from "../../configure";
+import { useDispatch, useSelector } from 'react-redux';
 import {
-  STAKE_FETCH_CURRENTLY_STAKED_BEGIN,
-  STAKE_FETCH_CURRENTLY_STAKED_SUCCESS,
-  STAKE_FETCH_CURRENTLY_STAKED_FAILURE,
+  FARM_CHECK_APPROVAL_BEGIN,
+  FARM_CHECK_APPROVAL_SUCCESS,
+  FARM_CHECK_APPROVAL_FAILURE,
 } from './constants';
 
-export function fetchCurrentlyStaked(index) {
+export function checkApproval(index) {
   return (dispatch, getState) => {
     // optionally you can have getState as the second argument
     dispatch({
-      type: STAKE_FETCH_CURRENTLY_STAKED_BEGIN,
+      type: FARM_CHECK_APPROVAL_BEGIN,
       index
     });
     // Return a promise so that you could control UI flow without states in the store.
@@ -22,16 +23,17 @@ export function fetchCurrentlyStaked(index) {
       // doRequest is a placeholder Promise. You should replace it with your own logic.
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
-      const { home, stake } = getState();
+      const { home, farm } = getState();
       const { address, web3 } = home;
-      const { pools } = stake;
-      const { earnContractAbi, earnContractAddress } = pools[index];
-      const contract = new web3.eth.Contract(earnContractAbi, earnContractAddress);
-      contract.methods.balanceOf(address).call({ from: address }).then(
+      const { pools } = farm;
+      const { tokenAddress, earnContractAddress } = pools[index];
+      const contract = new web3.eth.Contract(erc20ABI, tokenAddress);
+      contract.methods.allowance(address, earnContractAddress).call({ from: address }).then(
         data => {
+          const balance = web3.utils.fromWei(data, "ether");
           dispatch({
-            type: STAKE_FETCH_CURRENTLY_STAKED_SUCCESS,
-            data: new BigNumber(data).toNumber(),
+            type: FARM_CHECK_APPROVAL_SUCCESS,
+            data: new BigNumber(balance).toNumber(),
             index
           });
           resolve(data);
@@ -39,9 +41,8 @@ export function fetchCurrentlyStaked(index) {
       ).catch(
         // Use rejectHandler as the second argument so that render errors won't be caught.
         error => {
-          console.log(error)
           dispatch({
-            type: STAKE_FETCH_CURRENTLY_STAKED_FAILURE,
+            type: FARM_CHECK_APPROVAL_FAILURE,
             index
           });
           reject(error.message || error);
@@ -53,57 +54,57 @@ export function fetchCurrentlyStaked(index) {
 }
 
 
-export function useFetchCurrentlyStaked() {
+export function useCheckApproval() {
   // args: false value or array
   // if array, means args passed to the action creator
   const dispatch = useDispatch();
 
-  const { currentlyStaked, fetchCurrentlyStakedPending } = useSelector(
+  const { allowance, checkApprovalPending } = useSelector(
     state => ({
-      currentlyStaked: state.stake.currentlyStaked,
-      fetchCurrentlyStakedPending: state.stake.fetchCurrentlyStakedPending,
+      allowance: state.farm.allowance,
+      checkApprovalPending: state.farm.checkApprovalPending,
     })
   );
 
   const boundAction = useCallback(
-    data => dispatch(fetchCurrentlyStaked(data)),
+    data => dispatch(checkApproval(data)),
     [dispatch],
   );
 
   return {
-    currentlyStaked,
-    fetchCurrentlyStaked: boundAction,
-    fetchCurrentlyStakedPending
+    allowance,
+    checkApproval: boundAction,
+    checkApprovalPending
   };
 }
 
 export function reducer(state, action) {
-  const { currentlyStaked, fetchCurrentlyStakedPending } = state;
+  const { allowance, checkApprovalPending } = state;
   switch (action.type) {
-    case STAKE_FETCH_CURRENTLY_STAKED_BEGIN:
+    case FARM_CHECK_APPROVAL_BEGIN:
       // Just after a request is sent
-      fetchCurrentlyStakedPending[action.index] = true;
+      checkApprovalPending[action.index] = true;
       return {
         ...state,
-        fetchCurrentlyStakedPending,
+        checkApprovalPending,
       };
 
-    case STAKE_FETCH_CURRENTLY_STAKED_SUCCESS:
+    case FARM_CHECK_APPROVAL_SUCCESS:
       // The request is success
-      currentlyStaked[action.index] = action.data;
-      fetchCurrentlyStakedPending[action.index] = false;
+      checkApprovalPending[action.index] = false;
+      allowance[action.index] = action.data;
       return {
         ...state,
-        currentlyStaked,
-        fetchCurrentlyStakedPending,
+        allowance,
+        checkApprovalPending,
       };
 
-    case STAKE_FETCH_CURRENTLY_STAKED_FAILURE:
+    case FARM_CHECK_APPROVAL_FAILURE:
       // The request is failed
-      fetchCurrentlyStakedPending[action.index] = false;
+      checkApprovalPending[action.index] = false;
       return {
         ...state,
-        fetchCurrentlyStakedPending,
+        checkApprovalPending,
       };
 
     default:

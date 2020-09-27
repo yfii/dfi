@@ -2,16 +2,16 @@ import { useCallback } from 'react';
 import BigNumber from "bignumber.js";
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
-  STAKE_FETCH_CURRENTLY_STAKED_BEGIN,
-  STAKE_FETCH_CURRENTLY_STAKED_SUCCESS,
-  STAKE_FETCH_CURRENTLY_STAKED_FAILURE,
+  FARM_FETCH_REWARDS_AVAILABLE_BEGIN,
+  FARM_FETCH_REWARDS_AVAILABLE_SUCCESS,
+  FARM_FETCH_REWARDS_AVAILABLE_FAILURE,
 } from './constants';
 
-export function fetchCurrentlyStaked(index) {
+export function fetchRewardsAvailable(index) {
   return (dispatch, getState) => {
     // optionally you can have getState as the second argument
     dispatch({
-      type: STAKE_FETCH_CURRENTLY_STAKED_BEGIN,
+      type: FARM_FETCH_REWARDS_AVAILABLE_BEGIN,
       index
     });
     // Return a promise so that you could control UI flow without states in the store.
@@ -22,15 +22,15 @@ export function fetchCurrentlyStaked(index) {
       // doRequest is a placeholder Promise. You should replace it with your own logic.
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
-      const { home, stake } = getState();
+      const { home, farm } = getState();
       const { address, web3 } = home;
-      const { pools } = stake;
+      const { pools } = farm;
       const { earnContractAbi, earnContractAddress } = pools[index];
       const contract = new web3.eth.Contract(earnContractAbi, earnContractAddress);
-      contract.methods.balanceOf(address).call({ from: address }).then(
+      contract.methods.earned(address).call({ from: address }).then(
         data => {
           dispatch({
-            type: STAKE_FETCH_CURRENTLY_STAKED_SUCCESS,
+            type: FARM_FETCH_REWARDS_AVAILABLE_SUCCESS,
             data: new BigNumber(data).toNumber(),
             index
           });
@@ -39,9 +39,8 @@ export function fetchCurrentlyStaked(index) {
       ).catch(
         // Use rejectHandler as the second argument so that render errors won't be caught.
         error => {
-          console.log(error)
           dispatch({
-            type: STAKE_FETCH_CURRENTLY_STAKED_FAILURE,
+            type: FARM_FETCH_REWARDS_AVAILABLE_FAILURE,
             index
           });
           reject(error.message || error);
@@ -53,57 +52,58 @@ export function fetchCurrentlyStaked(index) {
 }
 
 
-export function useFetchCurrentlyStaked() {
+export function useFetchRewardsAvailable() {
   // args: false value or array
   // if array, means args passed to the action creator
   const dispatch = useDispatch();
 
-  const { currentlyStaked, fetchCurrentlyStakedPending } = useSelector(
+  const { rewardsAvailable, fetchRewardsAvailablePending } = useSelector(
     state => ({
-      currentlyStaked: state.stake.currentlyStaked,
-      fetchCurrentlyStakedPending: state.stake.fetchCurrentlyStakedPending,
+      rewardsAvailable: state.farm.rewardsAvailable,
+      fetchRewardsAvailablePending: state.farm.fetchRewardsAvailablePending,
     })
   );
 
   const boundAction = useCallback(
-    data => dispatch(fetchCurrentlyStaked(data)),
+    data => dispatch(fetchRewardsAvailable(data)),
     [dispatch],
   );
 
   return {
-    currentlyStaked,
-    fetchCurrentlyStaked: boundAction,
-    fetchCurrentlyStakedPending
+    rewardsAvailable,
+    fetchRewardsAvailable: boundAction,
+    fetchRewardsAvailablePending
   };
 }
 
 export function reducer(state, action) {
-  const { currentlyStaked, fetchCurrentlyStakedPending } = state;
+  const { rewardsAvailable, fetchRewardsAvailablePending } = state;
   switch (action.type) {
-    case STAKE_FETCH_CURRENTLY_STAKED_BEGIN:
+    case FARM_FETCH_REWARDS_AVAILABLE_BEGIN:
       // Just after a request is sent
-      fetchCurrentlyStakedPending[action.index] = true;
+      fetchRewardsAvailablePending[action.index] = true;
       return {
         ...state,
-        fetchCurrentlyStakedPending,
+        fetchRewardsAvailablePending,
       };
 
-    case STAKE_FETCH_CURRENTLY_STAKED_SUCCESS:
+    case FARM_FETCH_REWARDS_AVAILABLE_SUCCESS:
       // The request is success
-      currentlyStaked[action.index] = action.data;
-      fetchCurrentlyStakedPending[action.index] = false;
+
+      rewardsAvailable[action.index] = action.data;
+      fetchRewardsAvailablePending[action.index] = false;
       return {
         ...state,
-        currentlyStaked,
-        fetchCurrentlyStakedPending,
+        rewardsAvailable,
+        fetchRewardsAvailablePending,
       };
 
-    case STAKE_FETCH_CURRENTLY_STAKED_FAILURE:
+    case FARM_FETCH_REWARDS_AVAILABLE_FAILURE:
       // The request is failed
-      fetchCurrentlyStakedPending[action.index] = false;
+      fetchRewardsAvailablePending[action.index] = false;
       return {
         ...state,
-        fetchCurrentlyStakedPending,
+        fetchRewardsAvailablePending,
       };
 
     default:
