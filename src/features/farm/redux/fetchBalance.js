@@ -3,16 +3,16 @@ import BigNumber from "bignumber.js";
 import { erc20ABI } from "../../configure";
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
-  STAKE_FETCH_BALANCE_BEGIN,
-  STAKE_FETCH_BALANCE_SUCCESS,
-  STAKE_FETCH_BALANCE_FAILURE,
+  FARM_FETCH_BALANCE_BEGIN,
+  FARM_FETCH_BALANCE_SUCCESS,
+  FARM_FETCH_BALANCE_FAILURE,
 } from './constants';
 
 export function fetchBalance(index) {
   return (dispatch, getState) => {
     // optionally you can have getState as the second argument
     dispatch({
-      type: STAKE_FETCH_BALANCE_BEGIN,
+      type: FARM_FETCH_BALANCE_BEGIN,
       index
     });
     // Return a promise so that you could control UI flow without states in the store.
@@ -23,15 +23,15 @@ export function fetchBalance(index) {
       // doRequest is a placeholder Promise. You should replace it with your own logic.
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
-      const { home, stake } = getState();
+      const { home, farm } = getState();
       const { address, web3 } = home;
-      const { pools } = stake;
+      const { pools } = farm;
       const { tokenAddress } = pools[index];
       const contract = new web3.eth.Contract(erc20ABI, tokenAddress);
       contract.methods.balanceOf(address).call({ from: address }).then(
         data => {
           dispatch({
-            type: STAKE_FETCH_BALANCE_SUCCESS,
+            type: FARM_FETCH_BALANCE_SUCCESS,
             data: new BigNumber(data),
             index
           });
@@ -41,7 +41,7 @@ export function fetchBalance(index) {
         // Use rejectHandler as the second argument so that render errors won't be caught.
         error => {
           dispatch({
-            type: STAKE_FETCH_BALANCE_FAILURE,
+            type: FARM_FETCH_BALANCE_FAILURE,
             index
           });
           reject(error.message || error);
@@ -60,8 +60,8 @@ export function useFetchBalance() {
 
   const { balance, fetchBalancePending } = useSelector(
     state => ({
-      balance: state.stake.balance,
-      fetchBalancePending: state.stake.fetchBalancePending,
+      balance: state.farm.balance,
+      fetchBalancePending: state.farm.fetchBalancePending,
     })
   );
 
@@ -80,7 +80,7 @@ export function useFetchBalance() {
 export function reducer(state, action) {
   const { balance, fetchBalancePending } = state;
   switch (action.type) {
-    case STAKE_FETCH_BALANCE_BEGIN:
+    case FARM_FETCH_BALANCE_BEGIN:
       // Just after a request is sent
       fetchBalancePending[action.index] = true;
       return {
@@ -88,7 +88,7 @@ export function reducer(state, action) {
         fetchBalancePending,
       };
 
-    case STAKE_FETCH_BALANCE_SUCCESS:
+    case FARM_FETCH_BALANCE_SUCCESS:
       // The request is success
       
       balance[action.index] = action.data;
@@ -99,7 +99,7 @@ export function reducer(state, action) {
         fetchBalancePending,
       };
 
-    case STAKE_FETCH_BALANCE_FAILURE:
+    case FARM_FETCH_BALANCE_FAILURE:
       // The request is failed
       fetchBalancePending[action.index] = false;
       return {

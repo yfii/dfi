@@ -1,9 +1,9 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
-  STAKE_FETCH_CLAIM_BEGIN,
-  STAKE_FETCH_CLAIM_SUCCESS,
-  STAKE_FETCH_CLAIM_FAILURE,
+  FARM_FETCH_CLAIM_BEGIN,
+  FARM_FETCH_CLAIM_SUCCESS,
+  FARM_FETCH_CLAIM_FAILURE,
 } from './constants';
 import { enqueueSnackbar } from '../../common/redux/actions'
 
@@ -11,7 +11,7 @@ export function fetchClaim(index) {
   return (dispatch, getState) => {
     // optionally you can have getState as the second argument
     dispatch({
-      type: STAKE_FETCH_CLAIM_BEGIN,
+      type: FARM_FETCH_CLAIM_BEGIN,
       index
     });
     // Return a promise so that you could control UI flow without states in the store.
@@ -22,9 +22,9 @@ export function fetchClaim(index) {
       // doRequest is a placeholder Promise. You should replace it with your own logic.
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
-      const { home, stake } = getState();
+      const { home, farm } = getState();
       const { address, web3 } = home;
-      const { pools } = stake;
+      const { pools } = farm;
       const { earnContractAbi, earnContractAddress } = pools[index];
       const contract = new web3.eth.Contract(earnContractAbi, earnContractAddress);
 
@@ -47,7 +47,7 @@ export function fetchClaim(index) {
               variant: 'success',
             },
           }));
-          dispatch({ type: STAKE_FETCH_CLAIM_SUCCESS, index });
+          dispatch({ type: FARM_FETCH_CLAIM_SUCCESS, index });
           resolve();
         })
         .on('error', function(error) {
@@ -58,11 +58,11 @@ export function fetchClaim(index) {
               variant: 'error'
             },
           }));
-          dispatch({ type: STAKE_FETCH_CLAIM_FAILURE, index });
+          dispatch({ type: FARM_FETCH_CLAIM_FAILURE, index });
           resolve();
         })
         .catch((error) => {
-          dispatch({ type: STAKE_FETCH_CLAIM_FAILURE, index});
+          dispatch({ type: FARM_FETCH_CLAIM_FAILURE, index});
           reject(error)
         })
     });
@@ -78,7 +78,7 @@ export function useFetchClaim() {
 
   const { fetchClaimPending } = useSelector(
     state => ({
-      fetchClaimPending: state.stake.fetchClaimPending,
+      fetchClaimPending: state.farm.fetchClaimPending,
     })
   );
 
@@ -96,7 +96,7 @@ export function useFetchClaim() {
 export function reducer(state, action) {
   const { fetchClaimPending } = state;
   switch (action.type) {
-    case STAKE_FETCH_CLAIM_BEGIN:
+    case FARM_FETCH_CLAIM_BEGIN:
       // Just after a request is sent
       fetchClaimPending[action.index] = true;
       return {
@@ -104,7 +104,7 @@ export function reducer(state, action) {
         fetchClaimPending,
       };
 
-    case STAKE_FETCH_CLAIM_SUCCESS:
+    case FARM_FETCH_CLAIM_SUCCESS:
       // The request is success
       fetchClaimPending[action.index] = false;
       return {
@@ -112,7 +112,7 @@ export function reducer(state, action) {
         fetchClaimPending,
       };
 
-    case STAKE_FETCH_CLAIM_FAILURE:
+    case FARM_FETCH_CLAIM_FAILURE:
       // The request is failed
       fetchClaimPending[action.index] = false;
       return {

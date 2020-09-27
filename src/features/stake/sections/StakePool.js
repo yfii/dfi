@@ -178,6 +178,7 @@ export default function StakePool(props) {
     fetchCurrentlyStaked(index);
     fetchRewardsAvailable(index);
     if(Boolean(index === 0) || Boolean(index === 1)) fetchHalfTime(index);
+    console.log('stake')
     if(index === 3) fetchCanWithdrawTime(index);
   }, [address, index]);
 

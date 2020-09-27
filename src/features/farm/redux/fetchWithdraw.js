@@ -1,9 +1,9 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
-  STAKE_FETCH_WITHDRAW_BEGIN,
-  STAKE_FETCH_WITHDRAW_SUCCESS,
-  STAKE_FETCH_WITHDRAW_FAILURE,
+  FARM_FETCH_WITHDRAW_BEGIN,
+  FARM_FETCH_WITHDRAW_SUCCESS,
+  FARM_FETCH_WITHDRAW_FAILURE,
 } from './constants';
 import { enqueueSnackbar } from '../../common/redux/actions'
 
@@ -11,7 +11,7 @@ export function fetchWithdraw(index, amount) {
   return (dispatch, getState) => {
     // optionally you can have getState as the second argument
     dispatch({
-      type: STAKE_FETCH_WITHDRAW_BEGIN,
+      type: FARM_FETCH_WITHDRAW_BEGIN,
       index
     });
     // Return a promise so that you could control UI flow without states in the store.
@@ -22,9 +22,9 @@ export function fetchWithdraw(index, amount) {
       // doRequest is a placeholder Promise. You should replace it with your own logic.
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
-      const { home, stake } = getState();
+      const { home, farm } = getState();
       const { address, web3 } = home;
-      const { pools } = stake;
+      const { pools } = farm;
       const { earnContractAbi, earnContractAddress } = pools[index];
       const contract = new web3.eth.Contract(earnContractAbi, earnContractAddress);
 
@@ -47,7 +47,7 @@ export function fetchWithdraw(index, amount) {
               variant: 'success',
             },
           }));
-          dispatch({ type: STAKE_FETCH_WITHDRAW_SUCCESS, index });
+          dispatch({ type: FARM_FETCH_WITHDRAW_SUCCESS, index });
           resolve();
         })
         .on('error', function(error) {
@@ -58,11 +58,11 @@ export function fetchWithdraw(index, amount) {
               variant: 'error'
             },
           }));
-          dispatch({ type: STAKE_FETCH_WITHDRAW_FAILURE, index });
+          dispatch({ type: FARM_FETCH_WITHDRAW_FAILURE, index });
           resolve();
         })
         .catch((error) => {
-          dispatch({ type: STAKE_FETCH_WITHDRAW_FAILURE, index });
+          dispatch({ type: FARM_FETCH_WITHDRAW_FAILURE, index });
           reject(error)
         })
     });
@@ -77,7 +77,7 @@ export function useFetchWithdraw() {
 
   const { fetchWithdrawPending } = useSelector(
     state => ({
-      fetchWithdrawPending: state.stake.fetchWithdrawPending,
+      fetchWithdrawPending: state.farm.fetchWithdrawPending,
     })
   );
 
@@ -95,7 +95,7 @@ export function useFetchWithdraw() {
 export function reducer(state, action) {
   const { fetchWithdrawPending } = state;
   switch (action.type) {
-    case STAKE_FETCH_WITHDRAW_BEGIN:
+    case FARM_FETCH_WITHDRAW_BEGIN:
       // Just after a request is sent
       fetchWithdrawPending[action.index] = true;
       return {
@@ -103,7 +103,7 @@ export function reducer(state, action) {
         fetchWithdrawPending,
       };
 
-    case STAKE_FETCH_WITHDRAW_SUCCESS:
+    case FARM_FETCH_WITHDRAW_SUCCESS:
       // The request is success
       fetchWithdrawPending[action.index] = false;
       return {
@@ -111,7 +111,7 @@ export function reducer(state, action) {
         fetchWithdrawPending,
       };
 
-    case STAKE_FETCH_WITHDRAW_FAILURE:
+    case FARM_FETCH_WITHDRAW_FAILURE:
       // The request is failed
       fetchWithdrawPending[action.index] = false;
       return {

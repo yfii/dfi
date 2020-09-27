@@ -142,13 +142,21 @@ export default function FarmPool(props) {
     const amount = byDecimals(rewardsAvailable[index], pools[index].earnedTokenDecimals);
     setMyRewardsAvailable(amount);
   }, [rewardsAvailable[index], index]);
-  
+
   useEffect(() => {
-    if(!address) return;
-    checkApproval(index);
-    fetchBalance(index);
-    fetchCurrentlyStaked(index);
-    fetchRewardsAvailable(index);
+    if (address) {
+      checkApproval(index);
+      fetchBalance(index);
+      fetchCurrentlyStaked(index);
+      fetchRewardsAvailable(index);
+      const id = setInterval(() => {
+        checkApproval(index);
+        fetchBalance(index);
+        fetchCurrentlyStaked(index);
+        fetchRewardsAvailable(index);
+      }, 10000);
+      return () => clearInterval(id);
+    }
   }, [address, index]);
 
   return (

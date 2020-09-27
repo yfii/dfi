@@ -2,16 +2,16 @@ import { useCallback } from 'react';
 import BigNumber from "bignumber.js";
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
-  STAKE_FETCH_CURRENTLY_STAKED_BEGIN,
-  STAKE_FETCH_CURRENTLY_STAKED_SUCCESS,
-  STAKE_FETCH_CURRENTLY_STAKED_FAILURE,
+  FARM_FETCH_CURRENTLY_STAKED_BEGIN,
+  FARM_FETCH_CURRENTLY_STAKED_SUCCESS,
+  FARM_FETCH_CURRENTLY_STAKED_FAILURE,
 } from './constants';
 
 export function fetchCurrentlyStaked(index) {
   return (dispatch, getState) => {
     // optionally you can have getState as the second argument
     dispatch({
-      type: STAKE_FETCH_CURRENTLY_STAKED_BEGIN,
+      type: FARM_FETCH_CURRENTLY_STAKED_BEGIN,
       index
     });
     // Return a promise so that you could control UI flow without states in the store.
@@ -22,15 +22,15 @@ export function fetchCurrentlyStaked(index) {
       // doRequest is a placeholder Promise. You should replace it with your own logic.
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
-      const { home, stake } = getState();
+      const { home, farm } = getState();
       const { address, web3 } = home;
-      const { pools } = stake;
+      const { pools } = farm;
       const { earnContractAbi, earnContractAddress } = pools[index];
       const contract = new web3.eth.Contract(earnContractAbi, earnContractAddress);
       contract.methods.balanceOf(address).call({ from: address }).then(
         data => {
           dispatch({
-            type: STAKE_FETCH_CURRENTLY_STAKED_SUCCESS,
+            type: FARM_FETCH_CURRENTLY_STAKED_SUCCESS,
             data: new BigNumber(data).toNumber(),
             index
           });
@@ -40,7 +40,7 @@ export function fetchCurrentlyStaked(index) {
         // Use rejectHandler as the second argument so that render errors won't be caught.
         error => {
           dispatch({
-            type: STAKE_FETCH_CURRENTLY_STAKED_FAILURE,
+            type: FARM_FETCH_CURRENTLY_STAKED_FAILURE,
             index
           });
           reject(error.message || error);
@@ -59,8 +59,8 @@ export function useFetchCurrentlyStaked() {
 
   const { currentlyStaked, fetchCurrentlyStakedPending } = useSelector(
     state => ({
-      currentlyStaked: state.stake.currentlyStaked,
-      fetchCurrentlyStakedPending: state.stake.fetchCurrentlyStakedPending,
+      currentlyStaked: state.farm.currentlyStaked,
+      fetchCurrentlyStakedPending: state.farm.fetchCurrentlyStakedPending,
     })
   );
 
@@ -79,7 +79,7 @@ export function useFetchCurrentlyStaked() {
 export function reducer(state, action) {
   const { currentlyStaked, fetchCurrentlyStakedPending } = state;
   switch (action.type) {
-    case STAKE_FETCH_CURRENTLY_STAKED_BEGIN:
+    case FARM_FETCH_CURRENTLY_STAKED_BEGIN:
       // Just after a request is sent
       fetchCurrentlyStakedPending[action.index] = true;
       return {
@@ -87,7 +87,7 @@ export function reducer(state, action) {
         fetchCurrentlyStakedPending,
       };
 
-    case STAKE_FETCH_CURRENTLY_STAKED_SUCCESS:
+    case FARM_FETCH_CURRENTLY_STAKED_SUCCESS:
       // The request is success
       currentlyStaked[action.index] = action.data;
       fetchCurrentlyStakedPending[action.index] = false;
@@ -97,7 +97,7 @@ export function reducer(state, action) {
         fetchCurrentlyStakedPending,
       };
 
-    case STAKE_FETCH_CURRENTLY_STAKED_FAILURE:
+    case FARM_FETCH_CURRENTLY_STAKED_FAILURE:
       // The request is failed
       fetchCurrentlyStakedPending[action.index] = false;
       return {
