@@ -31,6 +31,7 @@ const tabArr = [
   {value:'',label:'Home'},
   {value:'vault',label:'Vault'},
   {value:'stake',label:'Stake'},
+  {value:'farm',label:'Farm'},
 ]
 
 export default function HeaderLinks(props) {
