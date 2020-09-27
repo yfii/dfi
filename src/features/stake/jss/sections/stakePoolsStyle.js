@@ -247,6 +247,30 @@ const stakePoolsStyle = theme => ({
       marginBottom:'12px',
     }
   },
+  stakeHintContainer:{
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+    marginBottom:'14px',
+    marginTop:'6px',
+    height:'18px',
+    [theme.breakpoints.down("xs")]: {
+      height:'0',
+    },
+  },
+  stakeHint:{
+    ...fontDefaultStyle,
+    color:'#979797',
+    fontSize:'14px',
+  },
+  stakeDetailButton:{
+    width:'250px',
+    height:'44px',
+    marginRight:'0',
+    [theme.breakpoints.down("xs")]: {
+      width:'300px',
+    },
+  },
   contentTitleItemBorder:{
       borderRight:'1px solid rgb(255,255,255,0.1)',
       [theme.breakpoints.down("xs")]: {

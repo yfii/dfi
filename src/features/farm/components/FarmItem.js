@@ -3,6 +3,7 @@ import classNames from "classnames";
 import {makeStyles} from "@material-ui/core/styles";
 import farmItemStyle from "../jss/sections/farmItemStyle";
 import Button from "../../../components/CustomButtons/Button";
+import {useFetchPoolsInfo} from '../redux/hooks';
 import {Avatar} from "@material-ui/core";
 import {useTranslation} from "react-i18next";
 
@@ -15,6 +16,12 @@ export default (props) => {
   const isLP = name.toLowerCase().indexOf('lp') > -1;
   const lpTokens = isLP ? token.split('/') : [];
   const {t, i18n} = useTranslation();
+  const {pools, poolsInfo, fetchPoolsInfo} = useFetchPoolsInfo();
+
+  useEffect(() => {
+    fetchPoolsInfo();
+  }, [pools, fetchPoolsInfo]);
+
 
   const offsetImageStyle = {marginLeft: "-25%", zIndex: 0, background: '#ffffff'}
 
@@ -27,6 +34,7 @@ export default (props) => {
       {isLP && lpTokens.length === 2 ? (
         <div className={classes.logo}>
           {lpTokens.map((item, index) => {
+            console.log(`../../../images/${item}-logo.png`);
             return (
               <Avatar key={index}
                       src={require(`../../../images/${item}-logo.png`)} className={classes.logoImage}
@@ -43,7 +51,7 @@ export default (props) => {
       </div>
       <div style={{fontSize: 13, marginTop: -5}}>{t('Farm-Earn')} {earnedToken}</div>
 
-      <div className={classes.weightFont} style={{margin: 15}}>APY 322%</div>
+      <div className={classes.weightFont} style={{margin: 15}}>APY {poolsInfo[index].apy}</div>
 
       {/*操作菜单*/}
       <div className={classes.menu} style={isLP ? {} : {justifyContent: 'center'}}>
