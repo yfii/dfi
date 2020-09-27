@@ -202,9 +202,10 @@ const stakePoolsStyle = theme => ({
       borderBottomRightRadius:'8px',
       padding:'48px',
       paddingTop:'0',
+      paddingBottom:'20px',
       [theme.breakpoints.down("xs")]: {
         borderRadius:'8px',
-        padding:'30px 22px',
+        padding:'36px 22px 12px 22px',
       },
   },
   contentTitleMarginBottom:{
@@ -251,11 +252,12 @@ const stakePoolsStyle = theme => ({
     display:'flex',
     justifyContent:'center',
     alignItems:'center',
-    marginBottom:'14px',
-    marginTop:'6px',
-    height:'18px',
+    marginTop:'10px',
+    height:'36px',
     [theme.breakpoints.down("xs")]: {
-      height:'0',
+      marginTop:'12px',
+      height:'14px',
+      marginBottom:'24px',
     },
   },
   stakeHint:{
@@ -270,6 +272,12 @@ const stakePoolsStyle = theme => ({
     [theme.breakpoints.down("xs")]: {
       width:'300px',
     },
+  },
+  stakeHintContainerHidden:{
+    [theme.breakpoints.down("xs")]: {
+      height:'0 !important',
+      marginBottom:'0',
+    }
   },
   contentTitleItemBorder:{
       borderRight:'1px solid rgb(255,255,255,0.1)',
