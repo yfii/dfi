@@ -26,7 +26,7 @@ export default function FarmPools(props) {
         <div className={classes.mainTitle}>{t('Stake-Main-Title')}</div>
         <h3 className={classes.secondTitle}>{t('Stake-Second-Title')}</h3>
       </Grid>
-      <Grid container xs={12} justify={"center"}>
+      <Grid container item xs={12} justify={"center"}>
         {pools.map((pool, index) => (
           <Grid item sm={6} key={index}>
             <FarmItem farmInfo={pool} index={index}/>

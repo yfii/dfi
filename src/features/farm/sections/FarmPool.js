@@ -183,11 +183,11 @@ export default function FarmPool(props) {
       <Grid item xs={12}>
         <div className={classes.detailTitle}>{`Farm / ${pools[index].token}`}</div>
         <div className={classes.detailDesc}>
-          {`存入 ${tokenName} 即可获得 ${earnedToken}，挖矿时间为${earnTime / 7}周。`}
-          <a href={earnedTokenUrl} target="_blank" style={{color: 'rgb(54,85,152)'}}>点击了解{earnedToken}</a>
+          {`${t('Farm-Stake')} ${tokenName} ${t('Farm-CAN-GET')} ${earnedToken}，${t('Farm-Time')}${earnTime / 7}周。`}
+          <a href={earnedTokenUrl} target="_blank" style={{color: 'rgb(54,85,152)'}}>{t('Farm-Know')}{earnedToken}</a>
         </div>
       </Grid>
-      <Grid container xs={12} style={{marginTop: 30}}>
+      <Grid container item xs={12} style={{marginTop: 30}}>
         <GridItem sm={6}>
           <div className={classNames({
             [classes.menuItem]: true,
@@ -199,10 +199,10 @@ export default function FarmPool(props) {
             <div className={classes.menuContent}>
               <div className={classes.menuNumber}>
                 <div className={classes.numberWeight}>10.0000</div>
-                <span>赚取的 {earnedToken}</span>
+                <span>{t('Farm-Earned')} {earnedToken}</span>
               </div>
             </div>
-            <Button className={classes.menuItemButton}>收获</Button>
+            <Button className={classes.menuItemButton}>{t('Farm-Reward')}</Button>
           </div>
         </GridItem>
         <GridItem sm={6}>
@@ -221,23 +221,23 @@ export default function FarmPool(props) {
                 }) :
                 <Avatar className={classes.menuItemLogoImg} src={require(`../../../images/${name}-logo.png`)}/>}
             </div>
-            <Grid container xs={12} className={classes.menuContent}>
+            <Grid container item xs={12} className={classes.menuContent}>
               {
                 approvalAble ? (
                   <>
                     <div className={classes.menuNumber}>
                       <div className={classes.numberWeight}>10.0000</div>
-                      <span>持有 {tokenName}</span>
+                      <span>{t('Farm-Hold')} {tokenName}</span>
                     </div>
                     <div className={classes.menuNumber}>
                       <div className={classes.numberWeight}>10.0000</div>
-                      <span>已抵押 {tokenName}</span>
+                      <span>{t('Farm-Pledged')} {tokenName}</span>
                     </div>
                   </>
                 ) : (
                   <div className={classes.menuNumber}>
                     <div className={classes.numberWeight}>10.0000</div>
-                    <span>抵押 {tokenName} {isLP ? '通证' : ''}</span>
+                    <span>{t('Farm-Pledge')} {tokenName} {isLP ? t('Farm-Proof') : ''}</span>
                   </div>
                 )
               }
@@ -246,17 +246,17 @@ export default function FarmPool(props) {
               approvalAble ?
                 <Button className={classes.menuItemButton} onClick={() => {
                   // 显示存入弹窗
-                }}>存入 {tokenName}</Button>
+                }}>{t('Farm-Stake')} {tokenName}</Button>
                 :
                 <Button className={classes.menuItemButton} onClick={() => {
                   // 唤起授权
-                }}>授权抵押 {tokenName}</Button>
+                }}>{t('Farm-Approval')} {tokenName}</Button>
             }
 
             {approvalAble ? <Button className={classNames({
               [classes.menuItemButton]: true,
               [classes.menuItemButtonExit]: true,
-            })}>退出： 领取奖励并取消抵押</Button> : null}
+            })}>{t('Farm-Exit')}</Button> : null}
           </div>
         </GridItem>
       </Grid>
