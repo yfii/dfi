@@ -253,8 +253,10 @@ const stakePoolsStyle = theme => ({
     justifyContent:'center',
     alignItems:'center',
     marginTop:'10px',
+    width:'85%',
     height:'36px',
     [theme.breakpoints.down("xs")]: {
+      width:'100%',
       marginTop:'12px',
       height:'14px',
       marginBottom:'24px',
