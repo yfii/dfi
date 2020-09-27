@@ -1,4 +1,3 @@
-<<<<<<< HEAD
  {
   "Nav-Home":"Home",
   "Nav-Vault":"Vault",
@@ -11,9 +10,6 @@
   "Foot-Voting":"Voting",
   "Foot-Documentation":"Documentation",
   "Foot-Uniswap":"Uniswap ETH-YFII",
-=======
-{
->>>>>>> 2ba54a2f7e2114677c693c7827698aefd6f054e7
   "App-SnackBarText": "ข้อผิดพลาดของเครือข่าย",
   "Home-Subtitle": "วิธีที่ดีขึ้นในการเพิ่มความมั่งคั่ง",
   "Home-Warning": "โครงการนี้เป็นรุ่นเบต้า รับความเสี่ยงด้วยตนเอง。",
