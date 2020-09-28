@@ -29,7 +29,7 @@ const farmItemStyle = theme => ({
   },
   farmItem: {
     minWidth: 260,
-    margin: '50px 10px',
+    margin: '10px 10px 50px',
     padding: 15,
     borderRadius: 20,
 

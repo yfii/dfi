@@ -20,6 +20,7 @@ import style from "assets/jss/material-kit-pro-react/modalStyle.js";
 // sections for this page
 import SectionPools from "features/vault/sections/SectionPools.js";
 import StakePage from 'features/stake/sections/StakePools.js';
+import FarmPools from 'features/farm/sections/FarmPools';
 // style for this page
 // resource file
 // hooks
@@ -51,6 +52,7 @@ export default function HomePage() {
         close
         color="success"
       />
+      <FarmPools fromPage='home'/>
       <SectionPools fromPage='home'/>
       <StakePage fromPage='home'/>
       <Dialog
