@@ -62,7 +62,6 @@ export default function StakePool(props) {
   const [ anchorEl, setAnchorEl] = useState(null);
   const [ canWithdrawTimeIsZero,setCanWithdrawTimeIsZero ] = useState(false);
   const [ canWithdrawTimeIsMoreNowTime,setCanWithdrawTimeIsMoreNowTime ] = useState(false);
-  const [ disableCanWithdrawJson,setDisableCanWithdrawJson ] = useState({hasCanTime:false,canTime:''});
 
   const changeInputVal = (event) => {
     let value = event.target.value;
