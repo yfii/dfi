@@ -218,7 +218,7 @@ export default function FarmPool(props) {
       <Grid item xs={12}>
         <div className={classes.detailTitle}>{`Farm / ${pools[index].tokenDescription}`}</div>
         <div className={classes.detailDesc}>
-          {`${t('Farm-Stake')} ${tokenDescription} ${t('Farm-CAN-GET')} ${earnedToken}，${t('Farm-Time')}${earnTime / 7 / 24 / 3600}周。`}
+          {`${t('Farm-Stake')} ${tokenDescription} ${t('Farm-CAN-GET')} ${earnedToken}，${t('Farm-Time')}${earnTime / 7 / 24 / 3600} ${t('Farm-week')}。`} 
           <a href={earnedTokenUrl} target={'_blank'} style={{color: 'rgb(54,85,152)'}}>{t('Farm-Know')}{earnedToken}</a>
         </div>
       </Grid>
