@@ -100,7 +100,7 @@
     "Audit": "監査"
   },
   "Farm-Main-Title": "Farm",
-  "Farm-Second-Title": "hold YFII, Earn Mefi",
+  "Farm-Second-Title": "Hold YFII and Earn MEFI",
   "Farm-Stake": "Deposit",
   "Farm-Earn": "Earn",
   "Farm-Get": "Get",
@@ -123,5 +123,11 @@
   "Farm-Dialog-Confirm": "Confirm",
   "Farm-Dialog-Cancel": "Cancel",
   "Farm-All-UnApproval": "All Unstaked",
-  "Farm-UnApproval-Amount": "Input unstaked amount"
+  "Farm-UnApproval-Amount": "Input unstaked amount",
+  "Farm-Mining-Over": "Mining Ended",
+  "Farm-Will-Mining-Over": "Mining available",
+  "Public-Day": " Day ",
+  "Public-Hour": " Hour ",
+  "Public-Minute": " Minute ",
+  "Public-Seconds": " Seconds "
 }
