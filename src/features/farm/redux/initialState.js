@@ -16,7 +16,7 @@ const pools = [
     earnContractAbi: pool4Abi,
     color: '255,45,130',
     startTimestamp: 1601474400,
-    earnTime: 2 * 7 * 24 * 3600,
+    earnTime: 1 * 7 * 24 * 3600,
     earnedTokenUrl: 'https://meet.one'
   },
   {
@@ -34,7 +34,7 @@ const pools = [
     earnContractAbi: pool4Abi,
     color: '254,119,0',
     startTimestamp: 1601474400,
-    earnTime: 7 * 24 * 3600,
+    earnTime: 2 * 7 * 24 * 3600,
     earnedTokenUrl: 'https://meet.one'
   },
 ];
