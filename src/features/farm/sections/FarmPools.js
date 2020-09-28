@@ -80,7 +80,7 @@ export default () => {
                         href={`https://app.uniswap.org/#/add/ETH/${earnedTokenAddress}`}
                         target={"_blank"}
                         style={{background: `rgb(${color})`}}>
-                        {t('Farm-Get')}LP Token
+                        {t('Farm-Get')} LP Token
                       </Button>
                     </>
                   ) : <Button
