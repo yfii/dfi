@@ -73,6 +73,8 @@
   "Swap-Balance": "Balance",
   "Swap-Max": "Max",
   "Swap-Receive": "Receive",
+  "Stake-Pool-Unstake-Hint": "The mortgage will take three days to redeem",
+  "Stake-Pool-Unstake-Hint-Date":"請け戻し期日:",
   "Stake-Table-Pool":"プール",
   "Stake-Table-Staked":"ステークド",
   "Stake-Table-Total":"トータル　ステークド　金額",

@@ -72,6 +72,8 @@
   "Swap-Send": "보내기",
   "Swap-Balance": "잔액",
   "Swap-Max":"최대",
+  "Stake-Pool-Unstake-Hint": "The mortgage will take three days to redeem",
+  "Stake-Pool-Unstake-Hint-Date":"상환 날짜:",
   "Swap-Receive": "받기",
   "Stake-Table-Pool":"풀",
   "Stake-Table-Staked":"스테이킹",

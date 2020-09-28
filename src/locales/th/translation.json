@@ -72,6 +72,8 @@
   "Swap-Send": "Send",
   "Swap-Balance": "Balance",
   "Swap-Max": "Max",
+  "Stake-Pool-Unstake-Hint": "The mortgage will take three days to redeem",
+  "Stake-Pool-Unstake-Hint-Date":"วันที่ไถ่ถอน:",
   "Swap-Receive": "Receive",
   "Stake-Table-Pool": "POOL",
   "Stake-Table-Staked": "STAKED",

@@ -72,6 +72,8 @@
   "Swap-Send": "发送",
   "Swap-Balance": "余额",
   "Swap-Max": "最大值",
+  "Stake-Pool-Unstake-Hint": "抵押3天才能赎回",
+  "Stake-Pool-Unstake-Hint-Date":"赎回日期:",
   "Swap-Receive": "接收",
   "Stake-Table-Pool": "抵押池",
   "Stake-Table-Staked": "已抵押",
