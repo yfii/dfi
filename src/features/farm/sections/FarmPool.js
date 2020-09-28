@@ -9,6 +9,7 @@ import Avatar from '@material-ui/core/Avatar';
 import Grid from '@material-ui/core/Grid';
 import {farmPoolsStyle} from "../jss/sections/farmPoolsStyle";
 import Button from "../../../components/CustomButtons/Button";
+import TextButton from '@material-ui/core/Button';
 
 import {useConnectWallet} from '../../home/redux/hooks';
 import {
@@ -169,10 +170,27 @@ export default function FarmPool(props) {
     setIsStake(dialogType === 1)
   }, [dialogType])
 
-  const {name, token, earnTime, earnedToken, earnedTokenUrl, tokenDescription} = pools[index];
+  const {name, token, startTimestamp, earnTime, earnedToken, earnedTokenUrl, tokenDescription} = pools[index];
   const isLP = name.toLowerCase().indexOf('lp') > -1;
   const lpTokens = isLP ? token.split('/') : [];
   const offsetImageStyle = {marginLeft: "-25%", zIndex: 0, background: '#ffffff'};
+  const [timeEnd, setTimeEnd] = useState(startTimestamp + earnTime - parseInt(String((new Date()).getTime() / 1000)));
+  // 是否挖矿结束
+  const canStake = timeEnd > 0;
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (timeEnd > 0) {
+        setTimeEnd((timeEnd) => timeEnd - 1);
+      } else {
+        clearTimeout(timer);
+      }
+    }, 1000);
+    return () => {
+      clearTimeout(timer);
+    }
+  }, [timeEnd]);
+
 
   const changeInputVal = (event) => {
     let value = event.target.value;
@@ -187,14 +205,27 @@ export default function FarmPool(props) {
     }
   }
 
+  const dateCount = (time) => {
+    const day = Math.floor(time / (60 * 60 * 24)).toString().padStart(2, '0');
+    const hours = Math.floor((time / (60 * 60)) % 24).toString().padStart(2, '0');
+    const minutes = Math.floor((time / 60) % 60).toString().padStart(2, '0');
+    const seconds = Math.floor(time % 60).toString().padStart(2, '0');
+    return day + t('Public-Day') + hours + t('Public-Hour') + +minutes + t('Public-Minute') + seconds + t('Public-Seconds');
+  }
+
   return (
     <Grid container style={{paddingTop: '4px', marginBottom: 200}}>
       <Grid item xs={12}>
-        <div className={classes.detailTitle}>{`Farm / ${pools[index].token}`}</div>
+        <div className={classes.detailTitle}>{`Farm / ${pools[index].tokenDescription}`}</div>
         <div className={classes.detailDesc}>
-          {`${t('Farm-Stake')} ${tokenDescription} ${t('Farm-CAN-GET')} ${earnedToken}，${t('Farm-Time')}${earnTime / 7}周。`}
-          <a href={earnedTokenUrl} target="_blank" style={{color: 'rgb(54,85,152)'}}>{t('Farm-Know')}{earnedToken}</a>
+          {`${t('Farm-Stake')} ${tokenDescription} ${t('Farm-CAN-GET')} ${earnedToken}，${t('Farm-Time')}${earnTime / 7 / 24 / 3600}周。`}
+          <a href={earnedTokenUrl} target={'_blank'} style={{color: 'rgb(54,85,152)'}}>{t('Farm-Know')}{earnedToken}</a>
         </div>
+      </Grid>
+      <Grid item xs={12}>
+        {canStake ? (<div className={classes.detailTime}>{t('Farm-Will-Mining-Over')}</div>) : null}
+        <div className={classes.detailTime}
+             style={{fontSize: 18, marginTop: 5}}>{canStake ? dateCount(timeEnd) : t('Farm-Mining-Over')}</div>
       </Grid>
       <Grid container item xs={12} style={{marginTop: 30}}>
         <GridItem sm={6}>
@@ -243,11 +274,13 @@ export default function FarmPool(props) {
             </Grid>
             {
               !isNeedApproval ?
-                <Button className={classes.menuItemButton} onClick={() => {
-                  // 显示存入弹窗
-                  setDialogType(1);
-                  setDialogShow(true);
-                }}>{t('Farm-Stake')} {tokenDescription}</Button>
+                <Button className={classes.menuItemButton}
+                        disabled={!canStake}
+                        onClick={() => {
+                          // 显示存入弹窗
+                          setDialogType(1);
+                          setDialogShow(true);
+                        }}>{t('Farm-Stake')} {tokenDescription}</Button>
                 :
                 <Button className={classes.menuItemButton}
                         disabled={!Boolean(approvalAble)}
@@ -273,6 +306,7 @@ export default function FarmPool(props) {
           </div>
         </GridItem>
       </Grid>
+
       <Dialog fullWidth={true}
               disableBackdropClick={true}
               open={dialogShow}
@@ -287,31 +321,34 @@ export default function FarmPool(props) {
         <DialogContent>
           <DialogContentText style={{fontSize: 15, color: "#ffffff"}}>
             {
-              t(isStake ? 'Farm-Balance' : 'Farm-Pledged') + "：" + (isStake ? myBalance.toString(): myCurrentlyStaked.toString())
+              t(isStake ? 'Farm-Balance' : 'Farm-Pledged') + "：" + (isStake ? myBalance.toString() : myCurrentlyStaked.toString())
             }
             <a className={classes.dialogHref}
                onClick={() => {
-                setInputVal(isStake ? myBalance.toString(): myCurrentlyStaked.toString());
+                 setInputVal(isStake ? myBalance.toString() : myCurrentlyStaked.toString());
                }}>
               {t(isStake ? 'Farm-All-Stake' : 'Farm-All-UnApproval')}
             </a>
           </DialogContentText>
           <Input placeholder={t(isStake ? 'Farm-Stake-Amount' : 'Farm-UnApproval-Amount')}
-            value={inputVal}
-            fullWidth={true}
-            classes={{root: classes.dialogInput}}
-            onChange={changeInputVal}
+                 value={inputVal}
+                 fullWidth={true}
+                 classes={{root: classes.dialogInput}}
+                 onChange={changeInputVal}
           />
         </DialogContent>
         <DialogActions style={{height: 50}}>
-          <a className={classes.dialogAction}
-             style={{color: "#F03278"}}
-             disabled={!Boolean(isStake ? stakeAble : withdrawAble)}
-              onClick={isStake ? onStake: onWithdraw}
-          >{t('Farm-Dialog-Confirm')}</a>
-          <a className={classes.dialogAction}
-             style={{color: "#000000"}}
-             onClick={closeDialog}>{t('Farm-Dialog-Cancel')}</a>
+          <TextButton className={classes.dialogAction}
+                      style={{color: "#F03278"}}
+                      disabled={!Boolean(isStake ? stakeAble : withdrawAble)}
+                      onClick={isStake ? onStake : onWithdraw}>
+            {t('Farm-Dialog-Confirm')}
+          </TextButton>
+          <TextButton className={classes.dialogAction}
+                      style={{color: "#000000"}}
+                      onClick={closeDialog}>
+            {t('Farm-Dialog-Cancel')}
+          </TextButton>
         </DialogActions>
       </Dialog>
     </Grid>
