@@ -113,7 +113,6 @@ const farmPoolsStyle = theme => ({
   grayButton: {
     color: primaryColor,
     backgroundColor: '#353848',
-    boxShadow: '0 2px 2px 0 #353848',
     boxShadow: "0 0",
     "&:hover,&:focus": {
       color: primaryColor,
@@ -167,8 +166,13 @@ const farmPoolsStyle = theme => ({
     color: '#FFFFFF',
     marginTop: 10,
     marginBottom: 24
-  }
-  ,
+  },
+  detailTime: {
+    textAlign: 'center',
+    color: '#ffffff',
+    fontWeight: 500,
+    fontSize: 14
+  },
   detailContentUp: {
     backgroundColor: normalBackgroundColor,
     borderTopLeftRadius: '8px',
@@ -404,6 +408,11 @@ const farmPoolsStyle = theme => ({
     fontSize: 15,
     fontWeight: 450,
     cursor: 'pointer'
+  },
+  dialogTextBtn: {
+    '& > *': {
+      margin: theme.spacing(1),
+    }
   }
 })
 

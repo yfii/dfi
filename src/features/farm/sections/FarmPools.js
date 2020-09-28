@@ -25,8 +25,8 @@ export default () => {
   return (
     <Grid container style={{paddingTop: '4px'}}>
       <Grid item xs={12}>
-        <div className={classes.mainTitle}>{t('Stake-Main-Title')}</div>
-        <h3 className={classes.secondTitle}>{t('Stake-Second-Title')}</h3>
+        <div className={classes.mainTitle}>{t('Farm-Main-Title')}</div>
+        <h3 className={classes.secondTitle}>{t('Farm-Second-Title')}</h3>
       </Grid>
       <Grid container item xs={12} justify={"center"}>
         {pools.map((pool, index) => {
@@ -70,8 +70,11 @@ export default () => {
                 <div className={classes.menu} style={isLP ? {} : {justifyContent: 'center'}}>
                   {isLP ? (
                     <>
-                      <Button className={classes.menuButton} href={`/#/farm/pool/${index + 1}`}
-                              style={{background: `rgb(${color})`}}>{t('Farm-Mining')}</Button>
+                      <Button className={classes.menuButton}
+                              href={`/#/farm/pool/${index + 1}`}
+                              style={{background: `rgb(${color})`}}>
+                        {t('Farm-Mining')}
+                      </Button>
                       <Button
                         className={classes.menuButton}
                         href={`https://app.uniswap.org/#/add/ETH/${earnedTokenAddress}`}
