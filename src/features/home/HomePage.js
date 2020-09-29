@@ -16,15 +16,6 @@ export default function HomePage() {
 
   return (
     <>
-      <SnackbarContent
-        message={
-          <span onClick={() => window.open(t('Home-SnackBarUrl'))} style={{ fontWeight: 'bold' }}>
-            {t('Home-SnackBarText')}
-          </span>
-        }
-        close
-        color='success'
-      />
       <FarmPools fromPage='home' />
       <SectionPools fromPage='home' />
       <StakePage fromPage='home' />
