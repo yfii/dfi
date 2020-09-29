@@ -406,16 +406,25 @@ export default function StakePool(props) {
                     })}>
                     {t('Stake-Button-Unstake-Tokens')}
                   </CustomButtons>
-                  <div className={classes.stakeHintContainer}>
-                    <img src={require(`../../../images/stake-hint.svg`)} style={{marginRight:'3px'}}/>
-                    {
-                      canWithdrawTimeIsMoreNowTime ? (
-                        <span className={classes.stakeHint}>{t('Stake-Pool-Unstake-Hint-Date')+momentFormatTime(canWithdrawTime[index] * 1000)}</span>
-                      ) : (
-                        <span className={classes.stakeHint}>{t('Stake-Pool-Unstake-Hint')}</span>
-                      )
-                    }
-                  </div>
+                  {
+                    (canWithdrawTimeIsZero || canWithdrawTimeIsMoreNowTime) ? (
+                      <div className={classes.stakeHintContainer}>
+                        <img src={require(`../../../images/stake-hint.svg`)} style={{marginRight:'3px'}}/>
+                        {
+                          canWithdrawTimeIsMoreNowTime ? (
+                            <span className={classes.stakeHint}>{t('Stake-Pool-Unstake-Hint-Date')+momentFormatTime(canWithdrawTime[index] * 1000)}</span>
+                          ) : (
+                            <span className={classes.stakeHint}>{t('Stake-Pool-Unstake-Hint')}</span>
+                          )
+                        }
+                      </div>
+                    ):(
+                      <div className={classNames({
+                        [classes.stakeHintContainer]:true,
+                        [classes.stakeHintContainerHidden]:true,
+                      })}></div>
+                    )
+                  }
                 </GridItem>
                 <GridItem md={3} sm={6} xs={12} className={classes.flexCenter} style={{'flexDirection':'column'}}>
                   <CustomButtons
@@ -445,16 +454,25 @@ export default function StakePool(props) {
                     })}>
                     {t('Stake-Button-Exit')}
                   </CustomButtons>
-                  <div className={classes.stakeHintContainer} >
-                    <img src={require(`../../../images/stake-hint.svg`)} style={{marginRight:'3px'}}/>
-                    {
-                      canWithdrawTimeIsMoreNowTime ? (
-                        <span className={classes.stakeHint}>{t('Stake-Pool-Unstake-Hint-Date')+momentFormatTime(canWithdrawTime[index] * 1000)}</span>
-                      ) : (
-                        <span className={classes.stakeHint}>{t('Stake-Pool-Unstake-Hint')}</span>
-                      )
-                    }
-                  </div>
+                  {
+                    (canWithdrawTimeIsZero || canWithdrawTimeIsMoreNowTime) ? (
+                      <div className={classes.stakeHintContainer} >
+                        <img src={require(`../../../images/stake-hint.svg`)} style={{marginRight:'3px'}}/>
+                        {
+                          canWithdrawTimeIsMoreNowTime ? (
+                            <span className={classes.stakeHint}>{t('Stake-Pool-Unstake-Hint-Date')+momentFormatTime(canWithdrawTime[index] * 1000)}</span>
+                          ) : (
+                            <span className={classes.stakeHint}>{t('Stake-Pool-Unstake-Hint')}</span>
+                          )
+                        }
+                      </div>
+                    ):(
+                      <div className={classNames({
+                        [classes.stakeHintContainer]:true,
+                        [classes.stakeHintContainerHidden]:true,
+                      })}></div>
+                    )
+                  }
                 </GridItem>
               </GridContainer>
             )
