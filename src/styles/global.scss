@@ -2,6 +2,12 @@
 
 // Here you put all global css rules.
 
+* {
+  font-family: 'proxima-nova', sans-serif !important;
+  color: #000;
+  text-rendering: optimizeLegibility;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -10,7 +16,7 @@ body {
 
 @media (max-width: 767px) {
   .hidden-xs {
-    display: none!important;
+    display: none !important;
   }
 }
 
@@ -21,7 +27,5 @@ body {
 // @media (min-width: 600px) {
 //   .pool-section {
 //     padding-left: 40px;
-//   }  
+//   }
 // }
-
-
