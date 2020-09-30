@@ -12,11 +12,10 @@ export default function SectionTitle() {
   const { t } = useTranslation();
   const classes = useStyles();
 
+  // TODO: Add Translation.
   return (
     <Grid container item className={classes.root} justify="center">
-      <Typography variant="h1" className={classNames(classes.title)} noWrap>
-        {t('Vault-Title')}
-      </Typography>
+      <Typography className={classes.disclaimer}>This project is in Beta. Use with caution and DYOR.</Typography>
     </Grid>
   );
 }

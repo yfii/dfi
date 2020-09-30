@@ -8,7 +8,6 @@ const useStyles = makeStyles({
     justifyContent: 'space-around',
     width: '100%',
     height: '56px',
-    background: '#353848',
     borderRadius: '12px',
     fontWeight: '600',
     fontSize: '18px',
