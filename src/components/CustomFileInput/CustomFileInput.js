@@ -1,18 +1,15 @@
-import React from "react";
-// used for making the prop types of this component
-import PropTypes from "prop-types";
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-// core components
-import CustomInput from "components/CustomInput/CustomInput.js";
-import Button from "components/CustomButtons/Button.js";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { makeStyles } from '@material-ui/core/styles';
+import CustomInput from 'components/CustomInput/CustomInput.js';
+import Button from 'components/CustomButtons/Button.js';
 
-import styles from "assets/jss/material-kit-pro-react/components/customFileInputStyle.js";
+import styles from 'assets/jss/material-kit-pro-react/components/customFileInputStyle.js';
 
 const useStyles = makeStyles(styles);
 
 export default function CustomFileInput(props) {
-  const [fileNames, setFileNames] = React.useState("");
+  const [fileNames, setFileNames] = React.useState('');
   // eslint-disable-next-line
   const [files, setFiles] = React.useState(null);
   let hiddenFile = React.createRef();
@@ -27,31 +24,24 @@ export default function CustomFileInput(props) {
     // you have to call it yourself
   };
   const addFile = e => {
-    let fileNames = "";
+    let fileNames = '';
     let files = e.target.files;
     for (let i = 0; i < e.target.files.length; i++) {
       fileNames = fileNames + e.target.files[i].name;
       if (props.multiple && i !== e.target.files.length - 1) {
-        fileNames = fileNames + ", ";
+        fileNames = fileNames + ', ';
       }
     }
     setFiles(files);
     setFileNames(fileNames);
-    if(props.onChange) {
-      props.onChange(files,fileNames);
+    if (props.onChange) {
+      props.onChange(files, fileNames);
     }
   };
-  const {
-    id,
-    endButton,
-    startButton,
-    inputProps,
-    formControlProps,
-    multiple
-  } = props;
+  const { id, endButton, startButton, inputProps, formControlProps, multiple } = props;
   const classes = useStyles();
-  if (inputProps && inputProps.type && inputProps.type === "file") {
-    inputProps.type = "text";
+  if (inputProps && inputProps.type && inputProps.type === 'file') {
+    inputProps.type = 'text';
   }
   let buttonStart;
   let buttonEnd;
@@ -73,24 +63,18 @@ export default function CustomFileInput(props) {
   }
   return (
     <div className={classes.inputFileWrapper}>
-      <input
-        type="file"
-        className={classes.inputFile}
-        multiple={multiple}
-        ref={hiddenFile}
-        onChange={addFile}
-      />
+      <input type="file" className={classes.inputFile} multiple={multiple} ref={hiddenFile} onChange={addFile} />
       <CustomInput
         id={id}
         formControlProps={{
-          ...formControlProps
+          ...formControlProps,
         }}
         inputProps={{
           ...inputProps,
           onClick: onFocus,
           value: fileNames,
           endAdornment: buttonEnd,
-          startAdornment: buttonStart
+          startAdornment: buttonStart,
         }}
       />
     </div>
@@ -98,7 +82,7 @@ export default function CustomFileInput(props) {
 }
 
 CustomFileInput.defaultProps = {
-  multiple: false
+  multiple: false,
 };
 
 CustomFileInput.propTypes = {
@@ -110,5 +94,5 @@ CustomFileInput.propTypes = {
   multiple: PropTypes.bool,
   // it is a function from which you can get the file that was uploaded
   // more can be read here: https://github.com/creativetimofficial/ct-material-kit-pro-react/issues/64 and here: https://github.com/creativetimofficial/ct-material-kit-pro-react/issues/37
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
 };

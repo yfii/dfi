@@ -1,18 +1,13 @@
-import React from "react";
-// used for making the prop types of this component
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Button from 'components/CustomButtons/Button.js';
 
-// core components
-import Button from "components/CustomButtons/Button.js";
-
-import defaultImage from "assets/img/image_placeholder.jpg";
-import defaultAvatar from "assets/img/placeholder.jpg";
+import defaultImage from 'assets/img/image_placeholder.jpg';
+import defaultAvatar from 'assets/img/placeholder.jpg';
 
 export default function ImageUpload(props) {
   const [file, setFile] = React.useState(null);
-  const [imagePreviewUrl, setImagePreviewUrl] = React.useState(
-    props.avatar ? defaultAvatar : defaultImage
-  );
+  const [imagePreviewUrl, setImagePreviewUrl] = React.useState(props.avatar ? defaultAvatar : defaultImage);
   let fileInput = React.createRef();
   const handleImageChange = e => {
     e.preventDefault();
@@ -21,7 +16,7 @@ export default function ImageUpload(props) {
     reader.onloadend = () => {
       setFile(file);
       setImagePreviewUrl(reader.result);
-      if(props.onChange) {
+      if (props.onChange) {
         props.onChange(file);
       }
     };
@@ -46,13 +41,13 @@ export default function ImageUpload(props) {
   return (
     <div className="fileinput text-center">
       <input type="file" onChange={handleImageChange} ref={fileInput} />
-      <div className={"thumbnail" + (avatar ? " img-circle" : "")}>
+      <div className={'thumbnail' + (avatar ? ' img-circle' : '')}>
         <img src={imagePreviewUrl} alt="..." />
       </div>
       <div>
         {file === null ? (
           <Button {...addButtonProps} onClick={() => handleClick()}>
-            {avatar ? "Add Photo" : "Select image"}
+            {avatar ? 'Add Photo' : 'Select image'}
           </Button>
         ) : (
           <span>
@@ -77,5 +72,5 @@ ImageUpload.propTypes = {
   removeButtonProps: PropTypes.object,
   // it is a function from which you can get the files and fileNames that were uploaded
   // more can be read here: https://github.com/creativetimofficial/ct-material-kit-pro-react/issues/64
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
 };

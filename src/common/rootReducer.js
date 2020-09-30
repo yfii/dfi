@@ -1,6 +1,5 @@
 import { combineReducers } from 'redux';
-// import { routerReducer } from 'react-router-redux';
-import { connectRouter } from 'connected-react-router'
+import { connectRouter } from 'connected-react-router';
 import history from './history';
 import homeReducer from 'features/home/redux/reducer';
 import vaultReducer from 'features/vault/redux/reducer';

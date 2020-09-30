@@ -10,6 +10,7 @@ import TranslateIcon from '@material-ui/icons/Translate';
 import CustomDropdown from 'components/CustomDropdown/CustomDropdown.js';
 import Button from 'components/CustomButtons/Button.js';
 import { useTranslation } from 'react-i18next';
+
 import styles from 'assets/jss/material-kit-pro-react/components/headerLinksStyle.js';
 
 const useStyles = makeStyles(styles);
@@ -102,7 +103,12 @@ export default function HeaderLinks(props) {
     <List className={classes.list + ' ' + classes.mlAuto}>
       {tabArr.map((item, index) => (
         <ListItem key={'tab-' + index} className={classes.listItem}>
-          <Button type='button' color='transparent' onClick={changeTabs.bind(this, item.value)} className={item.value == defaultTabValue ? classes.nowShowPage : ''}>
+          <Button
+            type="button"
+            color="transparent"
+            onClick={changeTabs.bind(this, item.value)}
+            className={item.value == defaultTabValue ? classes.nowShowPage : ''}
+          >
             {t(item.label)}
           </Button>
         </ListItem>
@@ -125,7 +131,7 @@ export default function HeaderLinks(props) {
             '한글',
             'ไทย',
             { divider: true },
-            <a href='https://github.com/yfii/vault/tree/master/src/locales' target='_blank'>
+            <a href="https://github.com/yfii/vault/tree/master/src/locales" target="_blank">
               Help to translate
             </a>,
           ]}
@@ -140,19 +146,20 @@ export default function HeaderLinks(props) {
             fontWeight: 'bold',
             backgroundColor: '#635AFF',
             color: '#fff',
-            boxShadow: '0 2px 2px 0 rgba(53, 56, 72, 0.14), 0 3px 1px -2px rgba(53, 56, 72, 0.2), 0 1px 5px 0 rgba(53, 56, 72, 0.12)',
+            boxShadow:
+              '0 2px 2px 0 rgba(53, 56, 72, 0.14), 0 3px 1px -2px rgba(53, 56, 72, 0.2), 0 1px 5px 0 rgba(53, 56, 72, 0.12)',
           }}
           className={classes.Button}
           round
-          type='button'
-          color='primary'
+          type="button"
+          color="primary"
           onClick={connected ? disconnectWallet : connectWallet}
         >
           {connected ? (
             <>
               <canvas ref={canvasRef} style={{ display: 'none' }} />
               <Avatar
-                alt='address'
+                alt="address"
                 src={dataUrl}
                 style={{
                   width: '24px',

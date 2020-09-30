@@ -1,6 +1,4 @@
-/* eslint-disable */
 import React, { useEffect, useState } from 'react';
-// nodejs library to set properties for components
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import Footer from 'components/Footer/Footer.js';
@@ -49,7 +47,10 @@ const footerLinkArr = [
   { content: 'Link.Stats', href: 'https://stats.dfi.money/' },
   { content: 'Link.Voting', href: 'https://snapshot.page/#/dfi' },
   { content: 'Link.Documentation', href: 'https://docs.yfii.finance/' },
-  { content: 'Link.Uniswap', href: 'https://app.uniswap.org/#/swap?outputCurrency=0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83' },
+  {
+    content: 'Link.Uniswap',
+    href: 'https://app.uniswap.org/#/swap?outputCurrency=0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83',
+  },
 ];
 
 export default function FooterLinks(props) {
@@ -92,22 +93,42 @@ export default function FooterLinks(props) {
     <div className={badgeClasses}>
       <List className={classes.list}>
         <ListItem className={classes.listItem}>
-          <Button color={color} className={classes.navLink + ' ' + classes.socialIconsButton} href='https://twitter.com/DfiMoney' target='_blank'>
+          <Button
+            color={color}
+            className={classes.navLink + ' ' + classes.socialIconsButton}
+            href="https://twitter.com/DfiMoney"
+            target="_blank"
+          >
             <i style={iconColorStyle} className={'yfiiicon yfii-twitter'} />
           </Button>
         </ListItem>
         <ListItem className={classes.listItem}>
-          <Button color={color} className={classes.navLink + ' ' + classes.socialIconsButton} href='https://t.me/yfiifinance' target='_blank'>
+          <Button
+            color={color}
+            className={classes.navLink + ' ' + classes.socialIconsButton}
+            href="https://t.me/yfiifinance"
+            target="_blank"
+          >
             <i style={iconColorStyle} className={'yfiiicon yfii-telegram'} />
           </Button>
         </ListItem>
         <ListItem className={classes.listItem}>
-          <Button color={color} className={classes.navLink + ' ' + classes.socialIconsButton} href='https://discord.gg/XQ4wnmz' target='_blank'>
+          <Button
+            color={color}
+            className={classes.navLink + ' ' + classes.socialIconsButton}
+            href="https://discord.gg/XQ4wnmz"
+            target="_blank"
+          >
             <i style={iconColorStyle} className={'yfiiicon yfii-discord'} />
           </Button>
         </ListItem>
         <ListItem className={classes.listItem}>
-          <Button color={color} className={classes.navLink + ' ' + classes.socialIconsButton} href='https://github.com/yfii' target='_blank'>
+          <Button
+            color={color}
+            className={classes.navLink + ' ' + classes.socialIconsButton}
+            href="https://github.com/yfii"
+            target="_blank"
+          >
             <i style={iconColorStyle} className={'yfiiicon yfii-github'} />
           </Button>
         </ListItem>
@@ -116,14 +137,14 @@ export default function FooterLinks(props) {
             color={color}
             className={classes.navLink + ' ' + classes.socialIconsButton}
             aria-owns={open ? 'mouse-over-popover' : undefined}
-            aria-haspopup='true'
+            aria-haspopup="true"
             onMouseEnter={handlePopoverOpen}
             onMouseLeave={handlePopoverClose}
           >
             <i style={iconColorStyle} className={'yfiiicon yfii-wechat'} />
           </Button>
           <Popover
-            id='mouse-over-popover'
+            id="mouse-over-popover"
             className={classes.popover}
             classes={{
               paper: classes.paper,
@@ -141,15 +162,20 @@ export default function FooterLinks(props) {
             onClose={handlePopoverClose}
             disableRestoreFocus
           >
-            <Avatar variant='square' alt='YFII' src={require(`../../images/wechat.png`)} style={{ width: '80px', height: '80px' }} />
+            <Avatar
+              variant="square"
+              alt="YFII"
+              src={require(`../../images/wechat.png`)}
+              style={{ width: '80px', height: '80px' }}
+            />
           </Popover>
         </ListItem>
       </List>
-      <GridContainer className={classes.linkList} justify='center' align='center'>
+      <GridContainer className={classes.linkList} justify="center" align="center">
         {footerLinkArr.map(item => {
           return (
             <GridItem className={classes.linkItem} md={2} xs={6} key={item.content}>
-              <a className={classes.extraContent} href={item.href} target='_blank'>
+              <a className={classes.extraContent} href={item.href} target="_blank">
                 {t(item.content)}
               </a>
             </GridItem>

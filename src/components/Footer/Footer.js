@@ -1,33 +1,24 @@
-/* eslint-disable */
-import React from "react";
-// nodejs library to set properties for components
-import PropTypes from "prop-types";
-// nodejs library that concatenates classes
-import classNames from "classnames";
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-// @material-ui/icons
-import Favorite from "@material-ui/icons/Favorite";
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import { makeStyles } from '@material-ui/core/styles';
 
-import styles from "assets/jss/material-kit-pro-react/components/footerStyle.js";
+import styles from 'assets/jss/material-kit-pro-react/components/footerStyle.js';
 
 const useStyles = makeStyles(styles);
 
 export default function Footer(props) {
   const { children, content, theme, big, className } = props;
   const classes = useStyles();
-  const themeType =
-    theme === "transparent" || theme == undefined ? false : true;
+  const themeType = theme === 'transparent' || theme == undefined ? false : true;
   const footerClasses = classNames({
     [classes.footer]: true,
     [classes[theme]]: themeType,
     [classes.big]: big || children !== undefined,
-    [className]: className !== undefined
+    [className]: className !== undefined,
   });
   const aClasses = classNames({
-    [classes.a]: true
+    [classes.a]: true,
   });
 
   return (
@@ -39,7 +30,7 @@ export default function Footer(props) {
             <hr />
           </div>
         ) : (
-          " "
+          ' '
         )}
         {content}
         <div className={classes.clearFix} />
@@ -49,7 +40,7 @@ export default function Footer(props) {
 }
 
 Footer.propTypes = {
-  theme: PropTypes.oneOf(["dark", "white", "transparent"]),
+  theme: PropTypes.oneOf(['dark', 'white', 'transparent']),
   big: PropTypes.bool,
-  content: PropTypes.node.isRequired
+  content: PropTypes.node.isRequired,
 };

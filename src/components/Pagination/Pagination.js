@@ -1,14 +1,10 @@
-import React from "react";
-// nodejs library to set properties for components
-import PropTypes from "prop-types";
-// nodejs library that concatenates classes
-import classNames from "classnames";
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
-
-import styles from "assets/jss/material-kit-pro-react/components/paginationStyle.js";
+import styles from 'assets/jss/material-kit-pro-react/components/paginationStyle.js';
 
 const useStyles = makeStyles(styles);
 
@@ -22,16 +18,12 @@ export default function Pagination(props) {
         const paginationLink = classNames({
           [classes.paginationLink]: true,
           [classes[color]]: prop.active,
-          [classes.disabled]: prop.disabled
+          [classes.disabled]: prop.disabled,
         });
         return (
           <li className={classes.paginationItem} key={key}>
             {prop.onClick !== undefined ? (
-              <Button
-                onClick={prop.onClick}
-                className={paginationLink}
-                disabled={prop.disabled}
-              >
+              <Button onClick={prop.onClick} className={paginationLink} disabled={prop.disabled}>
                 {prop.text}
               </Button>
             ) : (
@@ -51,7 +43,7 @@ export default function Pagination(props) {
 }
 
 Pagination.defaultProps = {
-  color: "primary"
+  color: 'primary',
 };
 
 Pagination.propTypes = {
@@ -59,11 +51,10 @@ Pagination.propTypes = {
     PropTypes.shape({
       active: PropTypes.bool,
       disabled: PropTypes.bool,
-      text: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
-        .isRequired,
-      onClick: PropTypes.func
+      text: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+      onClick: PropTypes.func,
     })
   ).isRequired,
-  color: PropTypes.oneOf(["primary", "info", "success", "warning", "danger"]),
-  className: PropTypes.string
+  color: PropTypes.oneOf(['primary', 'info', 'success', 'warning', 'danger']),
+  className: PropTypes.string,
 };
