@@ -1,4 +1,12 @@
-import { title, mrAuto, mlAuto, primaryColor, hoverColor, grayColor } from 'assets/jss/material-kit-pro-react.js';
+import {
+  title,
+  mrAuto,
+  mlAuto,
+  primaryColor,
+  secondaryColor,
+  hoverColor,
+  grayColor,
+} from 'assets/jss/material-kit-pro-react.js';
 
 import checkboxes from 'assets/jss/material-kit-pro-react/customCheckboxRadioSwitchStyle.js';
 import buttonGroup from 'assets/jss/material-kit-pro-react/buttonGroupStyle.js';
@@ -130,15 +138,14 @@ const sectionPoolsStyle = theme => ({
   iconContainerMainTitle: {
     fontSize: '18px',
     fontWeight: 'bold',
-    color: '#fff',
+    color: primaryColor[0],
     lineHeight: '18px',
-    // marginBottom:'8px',
     letterSpacing: 0,
   },
   iconContainerSubTitle: {
     fontSize: '14px',
     fontWeight: '400',
-    color: '#fff',
+    color: primaryColor[0],
     lineHeight: '14px',
     opacity: '0.4',
     letterSpacing: 0,
@@ -160,7 +167,9 @@ const sectionPoolsStyle = theme => ({
   iconContainerPrimary: {
     width: '48px',
     height: '48px',
-    backgroundColor: primaryColor[0],
+    backgroundColor: secondaryColor[0],
+    border: '2px',
+    borderColor: primaryColor[0],
     borderRadius: '8px',
     color: '#fff',
     '& i': {
