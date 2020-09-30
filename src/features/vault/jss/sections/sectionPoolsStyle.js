@@ -171,14 +171,13 @@ const sectionPoolsStyle = theme => ({
     },
   },
   accordion: {
-    backgroundColor: '#2C3040',
+    backgroundColor: '#FBF6F0',
     color: '#fff',
     boxShadow: '0px 4px 8px 0px rgba(0, 0, 0, 0.06)',
     borderRadius: '8px',
   },
   details: {
-    // padding: '12px 0',
-    background: '#2C3040',
+    background: '#FBF6F0',
     boxShadow: '0 4px 8px 0 rgba(0,0,0,0.06)',
     borderRadius: '8px',
   },
