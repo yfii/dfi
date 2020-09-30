@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 
 import SectionPools from 'features/vault/sections/SectionPools.js';
 import StakePage from 'features/stake/sections/StakePools.js';
+import Disclaimer from '../../components/Disclaimer/Disclaimer';
 
 export default function HomePage() {
   useEffect(() => {
@@ -11,8 +12,9 @@ export default function HomePage() {
 
   return (
     <>
-      <SectionPools fromPage='home' />
-      <StakePage fromPage='home' />
+      <Disclaimer />
+      <SectionPools fromPage="home" />
+      <StakePage fromPage="home" />
     </>
   );
 }

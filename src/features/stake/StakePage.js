@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
+
 import StakePools from './sections/StakePools';
+import Disclaimer from '../../components/Disclaimer/Disclaimer';
 
 export default function StakePage() {
   useEffect(() => {
@@ -7,5 +9,10 @@ export default function StakePage() {
     document.body.scrollTop = 0;
   }, []);
 
-  return <StakePools />;
+  return (
+    <>
+      <Disclaimer />
+      <StakePools />
+    </>
+  );
 }

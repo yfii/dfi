@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import SectionTitle from './sections/SectionTitle';
+import Disclaimer from '../../components/Disclaimer/Disclaimer';
 import SectionPools from './sections/SectionPools';
 
 export default function VaultPage() {
@@ -9,7 +9,7 @@ export default function VaultPage() {
   }, []);
   return (
     <>
-      <SectionTitle />
+      <Disclaimer />
       <SectionPools />
     </>
   );
