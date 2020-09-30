@@ -17,7 +17,6 @@ const sectionPoolsStyle = theme => ({
   mainTitle: {
     fontFamily: 'Helvetica',
     fontSize: '32px',
-    color: '#FFFFFF',
     letterSpacing: '0',
     lineHeight: '32px',
     fontWeight: '550',
@@ -25,6 +24,7 @@ const sectionPoolsStyle = theme => ({
   secondTitle: {
     ...secondStyle,
     fontWeight: '550',
+    color: '#000',
   },
   title,
   mrAuto,

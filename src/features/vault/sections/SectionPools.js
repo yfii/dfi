@@ -22,12 +22,7 @@ import { reflect } from 'async';
 import Avatar from '@material-ui/core/Avatar';
 import { useSnackbar } from 'notistack';
 
-import GridContainer from 'components/Grid/GridContainer.js';
-import GridItem from 'components/Grid/GridItem.js';
-import Card from 'components/Card/Card.js';
-import CardBody from 'components/Card/CardBody.js';
 import Button from 'components/CustomButtons/Button.js';
-import CustomInput from 'components/CustomInput/CustomInput.js';
 import { useConnectWallet } from '../../home/redux/hooks';
 import {
   useFetchBalances,
