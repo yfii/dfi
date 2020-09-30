@@ -7,9 +7,5 @@ export default function StakePage() {
     document.body.scrollTop = 0;
   }, []);
 
-  return (
-    <>
-      <StakePools />
-    </>
-  );
+  return <StakePools />;
 }

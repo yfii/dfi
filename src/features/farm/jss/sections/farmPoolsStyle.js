@@ -1,4 +1,4 @@
-import {withStyles} from "@material-ui/core/styles";
+import { withStyles } from '@material-ui/core/styles';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 
@@ -15,7 +15,7 @@ const normalBackgroundColor = '#2C3040';
 const primaryColor = '#FF2D82';
 const secondColor = '#635AFF';
 
-const StyledTableCell = withStyles((theme) => ({
+const StyledTableCell = withStyles(theme => ({
   head: {
     ...fontDefaultStyle,
     backgroundColor: secondColor,
@@ -37,7 +37,7 @@ const StyledTableCell = withStyles((theme) => ({
   },
 }))(TableCell);
 
-const StyledTableRow = withStyles((theme) => ({
+const StyledTableRow = withStyles(theme => ({
   root: {},
 }))(TableRow);
 
@@ -82,11 +82,11 @@ const farmPoolsStyle = theme => ({
     lineHeight: '14px',
     padding: '12px 24px',
     marginRight: '8px',
-    boxShadow: "0 0",
-    "&:hover,&:focus": {
+    boxShadow: '0 0',
+    '&:hover,&:focus': {
       backgroundColor: primaryColor,
-      boxShadow: "0 0",
-    }
+      boxShadow: '0 0',
+    },
   },
   learnMoreButton: {
     ...fontDefaultStyle,
@@ -97,28 +97,28 @@ const farmPoolsStyle = theme => ({
     padding: '12px 24px',
     marginLeft: '12px',
     fontWeight: '600',
-    boxShadow: "0 0",
+    boxShadow: '0 0',
     backgroundColor: secondColor,
-    "&:hover,&:focus": {
+    '&:hover,&:focus': {
       backgroundColor: secondColor,
-    }
+    },
   },
   rewardsButton: {
     backgroundColor: secondColor,
-    "&:hover,&:focus": {
+    '&:hover,&:focus': {
       backgroundColor: secondColor,
-      boxShadow: "0 0",
-    }
+      boxShadow: '0 0',
+    },
   },
   grayButton: {
     color: primaryColor,
     backgroundColor: '#353848',
-    boxShadow: "0 0",
-    "&:hover,&:focus": {
+    boxShadow: '0 0',
+    '&:hover,&:focus': {
       color: primaryColor,
       backgroundColor: '#353848',
-      boxShadow: "0 0",
-    }
+      boxShadow: '0 0',
+    },
   },
   firstCell: {
     display: 'flex',
@@ -130,8 +130,8 @@ const farmPoolsStyle = theme => ({
     justifyContent: 'center',
     marginLeft: '8px',
     '& :first-child': {
-      marginBottom: '4px'
-    }
+      marginBottom: '4px',
+    },
   },
   avatarContainer: {
     width: '48px',
@@ -147,7 +147,7 @@ const farmPoolsStyle = theme => ({
     height: '38px',
   },
   inputAvatar: {
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('xs')]: {
       width: '26px',
       height: '26px',
     },
@@ -158,27 +158,27 @@ const farmPoolsStyle = theme => ({
     color: '#FFFFFF',
     letterSpacing: '0',
     lineHeight: '32px',
-    fontWeight: "550"
+    fontWeight: '550',
   },
   detailDesc: {
     fontSize: 14,
     fontWeight: 350,
     color: '#FFFFFF',
     marginTop: 10,
-    marginBottom: 24
+    marginBottom: 24,
   },
   detailTime: {
     textAlign: 'center',
     color: '#ffffff',
     fontWeight: 500,
-    fontSize: 14
+    fontSize: 14,
   },
   detailContentUp: {
     backgroundColor: normalBackgroundColor,
     borderTopLeftRadius: '8px',
     borderTopRightRadius: '8px',
     padding: '56px 120px',
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('xs')]: {
       borderRadius: '8px',
       marginBottom: '12px',
       padding: '30px 16px',
@@ -190,21 +190,21 @@ const farmPoolsStyle = theme => ({
     borderBottomRightRadius: '8px',
     padding: '48px',
     paddingTop: '0',
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('xs')]: {
       borderRadius: '8px',
       padding: '30px 22px',
     },
   },
   contentTitleMarginBottom: {
     marginBottom: '48px',
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('xs')]: {
       marginBottom: '0',
     },
   },
   contentTitle: {
-    display: "flex",
+    display: 'flex',
     justifyContent: 'center',
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('xs')]: {
       flexDirection: 'column',
     },
   },
@@ -213,7 +213,7 @@ const farmPoolsStyle = theme => ({
     flexDirection: 'column',
     alignItems: 'center',
     padding: '0 12px',
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('xs')]: {
       alignItems: 'flex-start',
     },
   },
@@ -224,20 +224,20 @@ const farmPoolsStyle = theme => ({
     lineHeight: '28px',
     marginBottom: '12px',
     // textTransform:'uppercase',
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('xs')]: {
       marginBottom: '0',
-    }
+    },
   },
   contentItemTitle: {
     ...fontDefaultStyle,
     opacity: '0.4',
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('xs')]: {
       marginBottom: '12px',
-    }
+    },
   },
   contentTitleItemBorder: {
     borderRight: '1px solid rgb(255,255,255,0.1)',
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('xs')]: {
       border: '0',
     },
   },
@@ -251,11 +251,11 @@ const farmPoolsStyle = theme => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('xs')]: {
       width: '300px',
       height: '48px',
       margin: '0 auto',
-    }
+    },
   },
   inputAvatarContainer: {
     width: '40px',
@@ -265,7 +265,7 @@ const farmPoolsStyle = theme => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('xs')]: {
       width: '26px',
       height: '26px',
     },
@@ -327,7 +327,7 @@ const farmPoolsStyle = theme => ({
     margin: '18px',
   },
   mobileMaxButton: {
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('xs')]: {
       width: '42px',
       height: '24px',
       fontSize: '12px',
@@ -335,7 +335,7 @@ const farmPoolsStyle = theme => ({
     },
   },
   mobileInput: {
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('xs')]: {
       width: '100px',
     },
   },
@@ -344,39 +344,39 @@ const farmPoolsStyle = theme => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    position: 'relative'
+    position: 'relative',
   },
   menuItem: {
     color: '#ffffff',
     background: 'rgb(43,49,64)',
     borderRadius: 15,
     padding: 15,
-    margin: "50px 0"
+    margin: '50px 0',
   },
   menuItemLogo: {
     position: 'absolute',
     top: -30,
-    display: 'flex'
+    display: 'flex',
   },
   menuItemLogoImg: {
     width: 60,
     height: 60,
-    zIndex: 1
+    zIndex: 1,
   },
   menuContent: {
     width: '100%',
     display: 'flex',
     justifyContent: 'space-around',
-    margin: '60px 0 70px'
+    margin: '60px 0 70px',
   },
   menuNumber: {
     textAlign: 'center',
-    marginBottom: 10
+    marginBottom: 10,
   },
   numberWeight: {
     fontWeight: 500,
     fontSize: 45,
-    marginBottom: 20
+    marginBottom: 20,
   },
   menuItemButton: {
     position: 'absolute',
@@ -384,36 +384,36 @@ const farmPoolsStyle = theme => ({
     minWidth: 200,
     borderRadius: 10,
     fontSize: 15,
-    background: "#ff2d82"
+    background: '#ff2d82',
   },
   menuItemButtonExit: {
     bottom: -80,
-    background: 'rgba(96,94,255)'
+    background: 'rgba(96,94,255)',
   },
   dialogRoot: {
-    background: "rgb(81,88,116)",
-    color: '#ffffff'
+    background: 'rgb(81,88,116)',
+    color: '#ffffff',
   },
   dialogHref: {
     marginLeft: 10,
     cursor: 'pointer',
-    color: "#32B0FF"
+    color: '#32B0FF',
   },
   dialogInput: {
-    color: "#ffffff"
+    color: '#ffffff',
   },
   dialogAction: {
     width: 80,
     textAlign: 'center',
     fontSize: 15,
     fontWeight: 450,
-    cursor: 'pointer'
+    cursor: 'pointer',
   },
   dialogTextBtn: {
     '& > *': {
       margin: theme.spacing(1),
-    }
-  }
-})
+    },
+  },
+});
 
-export {StyledTableCell, StyledTableRow, farmPoolsStyle};
+export { StyledTableCell, StyledTableRow, farmPoolsStyle };

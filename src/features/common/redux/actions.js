@@ -1,1 +1,1 @@
-export { enqueueSnackbar, closeSnackbar, removeSnackbar } from './snackbar'
+export { enqueueSnackbar, closeSnackbar, removeSnackbar } from './snackbar';

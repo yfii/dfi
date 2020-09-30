@@ -4,10 +4,10 @@ import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/core/styles';
 import farmItemStyle from '../jss/sections/farmItemStyle';
 import Grid from '@material-ui/core/Grid';
-// core components
+import { Avatar } from '@material-ui/core';
+
 import Button from 'components/CustomButtons/Button.js';
 import { useFetchPoolsInfo } from '../redux/hooks';
-import { Avatar } from '@material-ui/core';
 
 const useStyles = makeStyles(farmItemStyle);
 
@@ -50,7 +50,14 @@ export default () => {
                   <div className={classes.logo}>
                     {lpTokens.map((item, index) => {
                       console.log(`../../../images/${item}-logo.png`);
-                      return <Avatar key={index} src={require(`../../../images/${item}-logo.png`)} className={classes.logoImage} style={index > 0 ? offsetImageStyle : {}} />;
+                      return (
+                        <Avatar
+                          key={index}
+                          src={require(`../../../images/${item}-logo.png`)}
+                          className={classes.logoImage}
+                          style={index > 0 ? offsetImageStyle : {}}
+                        />
+                      );
                     })}
                   </div>
                 ) : (
@@ -75,15 +82,28 @@ export default () => {
                 <div className={classes.menu} style={isLP ? {} : { justifyContent: 'center' }}>
                   {isLP ? (
                     <>
-                      <Button className={classes.menuButton} href={`/#/farm/pool/${index + 1}`} style={{ background: `rgb(${color})` }}>
+                      <Button
+                        className={classes.menuButton}
+                        href={`/#/farm/pool/${index + 1}`}
+                        style={{ background: `rgb(${color})` }}
+                      >
                         {t('Farm-Mining')}
                       </Button>
-                      <Button className={classes.menuButton} href={`https://app.uniswap.org/#/add/ETH/${earnedTokenAddress}`} target={'_blank'} style={{ background: `rgb(${color})` }}>
+                      <Button
+                        className={classes.menuButton}
+                        href={`https://app.uniswap.org/#/add/ETH/${earnedTokenAddress}`}
+                        target={'_blank'}
+                        style={{ background: `rgb(${color})` }}
+                      >
                         {t('Farm-Get')} LP Token
                       </Button>
                     </>
                   ) : (
-                    <Button className={classes.menuButton} href={`/#/farm/pool/${index + 1}`} style={{ background: `rgb(${color})` }}>
+                    <Button
+                      className={classes.menuButton}
+                      href={`/#/farm/pool/${index + 1}`}
+                      style={{ background: `rgb(${color})` }}
+                    >
                       {t('Farm-Mining')}
                     </Button>
                   )}

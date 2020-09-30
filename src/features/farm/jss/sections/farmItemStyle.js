@@ -1,4 +1,3 @@
-
 const secondStyle = {
   opacity: '0.4',
   fontFamily: 'Helvetica',
@@ -15,17 +14,17 @@ const farmItemStyle = theme => ({
     color: '#FFFFFF',
     letterSpacing: '0',
     lineHeight: '32px',
-    fontWeight: "550",
+    fontWeight: '550',
   },
   secondTitle: {
     ...secondStyle,
-    fontWeight: "550",
+    fontWeight: '550',
   },
   flexColumnCenter: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   farmItem: {
     minWidth: 260,
@@ -34,30 +33,30 @@ const farmItemStyle = theme => ({
     borderRadius: 20,
 
     color: '#ffffff',
-    textAlign: 'center'
+    textAlign: 'center',
   },
   logo: {
     display: 'flex',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   logoImage: {
     width: 60,
     height: 60,
-    zIndex: 1
+    zIndex: 1,
   },
   weightFont: {
     fontSize: 20,
-    fontWeight: 500
+    fontWeight: 500,
   },
   menu: {
     display: 'flex',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
   },
   menuButton: {
     borderRadius: 10,
     fontSize: 15,
-    margin: 10
-  }
+    margin: 10,
+  },
 });
 
 export default farmItemStyle;
