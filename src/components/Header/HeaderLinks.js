@@ -6,7 +6,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Avatar from '@material-ui/core/Avatar';
-import TranslateIcon from '@material-ui/icons/Translate';
 import CustomDropdown from 'components/CustomDropdown/CustomDropdown.js';
 import Button from 'components/CustomButtons/Button.js';
 import { useTranslation } from 'react-i18next';
@@ -60,12 +59,11 @@ export default function HeaderLinks(props) {
       case 'ko':
         return '한글';
       default:
-        return '中文';
+        return 'English';
     }
   };
 
   const handleClick = event => {
-    console.log(event);
     switch (event) {
       case 'English':
         return i18n.changeLanguage('en').then(() => setLanguage(event));
@@ -117,7 +115,6 @@ export default function HeaderLinks(props) {
         <CustomDropdown
           navDropdown
           hoverColor={dropdownHoverColor}
-          buttonIcon={TranslateIcon}
           buttonText={lng}
           buttonProps={{
             className: classes.navLink,
