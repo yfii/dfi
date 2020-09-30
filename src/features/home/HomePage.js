@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import SnackbarContent from 'components/Snackbar/SnackbarContent.js';
 import SectionPools from 'features/vault/sections/SectionPools.js';
 import StakePage from 'features/stake/sections/StakePools.js';
-import FarmPools from 'features/farm/sections/FarmPools';
 
 export default function HomePage() {
   const { t } = useTranslation();
@@ -16,7 +15,6 @@ export default function HomePage() {
 
   return (
     <>
-      <FarmPools fromPage='home' />
       <SectionPools fromPage='home' />
       <StakePage fromPage='home' />
     </>
