@@ -147,7 +147,7 @@ const headerStyle = theme => ({
   dark: {
     color: whiteColor,
     backgroundColor: '#fbf9f6',
-    boxShadow: '0px 8px 12px 0px rgba(0, 0, 0, 0.06)',
+    boxShadow: '0px 0px',
   },
   white: {
     border: '0',
