@@ -57,7 +57,7 @@ export default function Header(props) {
     <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>
         <Button className={classes.title}>
-          <Avatar alt="YFII" src={require(`../../images/YFII-logo.png`)} />
+          <img alt="BIFI" src={require(`../../images/BIFI-logo.svg`)} height="40px" />
           <Link to="/">{brand}</Link>
         </Button>
         <Hidden smDown implementation="css">

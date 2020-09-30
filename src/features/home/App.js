@@ -66,7 +66,7 @@ export default function App({ children }) {
     <SnackbarProvider>
       <div className={classes.page}>
         <Header
-          brand="YFII"
+          brand="beefy.finance"
           links={
             <HeaderLinks
               dropdownHoverColor="dark"
