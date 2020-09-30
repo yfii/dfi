@@ -1,5 +1,3 @@
-/* This is the Root component mainly initializes Redux and React Router. */
-
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
@@ -32,12 +30,10 @@ function renderRouteConfigV3(routes, contextPath) {
           key={newContextPath}
           render={props => <item.component {...props}>{childRoutes}</item.component>}
           path={newContextPath}
-        />,
+        />
       );
     } else if (item.component) {
-      children.push(
-        <Route key={newContextPath} component={item.component} path={newContextPath} exact />,
-      );
+      children.push(<Route key={newContextPath} component={item.component} path={newContextPath} exact />);
     } else if (item.childRoutes) {
       item.childRoutes.forEach(r => renderRoute(r, newContextPath));
     }
@@ -52,9 +48,9 @@ function renderRouteConfigV3(routes, contextPath) {
 function Root() {
   const children = renderRouteConfigV3(routeConfig, '/');
   return (
-      <Provider store={store}>
-        <ConnectedRouter history={history}>{children}</ConnectedRouter>
-      </Provider>
+    <Provider store={store}>
+      <ConnectedRouter history={history}>{children}</ConnectedRouter>
+    </Provider>
   );
 }
 
