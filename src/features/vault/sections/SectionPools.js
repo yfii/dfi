@@ -1,24 +1,18 @@
-import React, { useState, useEffect, createContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import BigNumber from 'bignumber.js';
 import { byDecimals, calculateReallyNum } from 'features/helpers/bignumber';
 import { makeStyles } from '@material-ui/core/styles';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Accordion from '@material-ui/core/Accordion';
-import classNames from 'classnames';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionActions';
-import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import IconButton from '@material-ui/core/IconButton';
-import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import FormControl from '@material-ui/core/FormControl';
 import CustomOutlinedInput from 'components/CustomOutlinedInput/CustomOutlinedInput';
 import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
 import { primaryColor } from 'assets/jss/material-kit-pro-react.js';
-import { reflect } from 'async';
 import Avatar from '@material-ui/core/Avatar';
 import { useSnackbar } from 'notistack';
 
@@ -156,7 +150,7 @@ export default function SectionPools() {
 
   const onWithdraw = (pool, index, isAll, singleDepositedBalance, event) => {
     event.stopPropagation();
-    // console.log(isAll)
+
     if (isAll) {
       setWithdrawAmount({
         ...withdrawAmount,
@@ -229,16 +223,7 @@ export default function SectionPools() {
   };
 
   const isZh = Boolean(i18n.language == 'zh' || i18n.language == 'zh-CN');
-  const gridItemStyle = {
-    display: 'flex',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    alignContent: 'space-around',
-  };
 
-  const random = (min, max) => {
-    return Math.floor(Math.random() * (max - min)) + min;
-  };
   return (
     <Grid container style={{ paddingTop: '4px' }}>
       <Grid item xs={12}>
@@ -249,14 +234,8 @@ export default function SectionPools() {
       {Boolean(networkId === Number(process.env.NETWORK_ID)) &&
         pools.map((pool, index) => {
           let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
-          // balanceSingle = byDecimals(random(1, 1000000), 1)
-          // balanceSingle = new BigNumber(random(1, 1000000000000000))
           let singleDepositedBalance = byDecimals(tokens[pool.earnedToken].tokenBalance, pool.tokenDecimals);
-          // singleDepositedBalance = byDecimals(random(1, 1000000), 1)
-          // singleDepositedBalance = new BigNumber(random(1, 1000))
           let depositedApy = contractApy[pool.id] || 0;
-          // depositedApy = random(0, 1)
-          // depositedApy =byDecimals(random(0, 100), 1)
           return (
             <Grid item xs={12} container key={index} style={{ marginBottom: '24px' }} spacing={0}>
               <div style={{ width: '100%' }}>

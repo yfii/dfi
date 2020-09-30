@@ -7,6 +7,7 @@ export default function VaultPage() {
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
   }, []);
+
   return (
     <>
       <Disclaimer />
