@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
-import Footer from 'components/Footer/Footer.js';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import GridContainer from 'components/Grid/GridContainer.js';
@@ -12,45 +11,17 @@ import Avatar from '@material-ui/core/Avatar';
 import { makeStyles } from '@material-ui/core/styles';
 import styles from 'assets/jss/material-kit-pro-react/components/footerLinksStyle.js';
 import classNames from 'classnames';
-import {
-  grayColor,
-  roseColor,
-  primaryColor,
-  secondaryColor,
-  infoColor,
-  successColor,
-  warningColor,
-  dangerColor,
-  blackColor,
-  whiteColor,
-  twitterColor,
-  facebookColor,
-  googleColor,
-  linkedinColor,
-  pinterestColor,
-  youtubeColor,
-  tumblrColor,
-  behanceColor,
-  dribbbleColor,
-  redditColor,
-  instagramColor,
-  hexToRgb,
-} from 'assets/jss/material-kit-pro-react.js';
+import { primaryColor } from 'assets/jss/material-kit-pro-react.js';
+
 const useStyles = makeStyles(styles);
 
 const footerLinkArr = [
   { content: 'Link.Contract', href: 'https://etherscan.io/address/0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83' },
-  // {content:'CoinMarketCap',href:'https://coinmarketcap.com/zh/currencies/yearn-finance-ii/'},
-  // {content:'CoinGecko',href:'https://www.coingecko.com/en/coins/dfi-money'},
   { content: 'Link.Forum', href: 'https://gov.dfi.money/' },
   { content: 'Link.Audit', href: 'https://github.com/yfii/audit' },
   { content: 'Link.Stats', href: 'https://stats.dfi.money/' },
   { content: 'Link.Voting', href: 'https://snapshot.page/#/dfi' },
   { content: 'Link.Documentation', href: 'https://docs.yfii.finance/' },
-  {
-    content: 'Link.Uniswap',
-    href: 'https://app.uniswap.org/#/swap?outputCurrency=0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83',
-  },
 ];
 
 export default function FooterLinks(props) {

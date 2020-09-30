@@ -250,6 +250,11 @@ const sectionPoolsStyle = theme => ({
       marginLeft: '5px',
     },
   },
+  showDetaialButton: {
+    backgroundColor: primaryColor[0],
+    color: '#ffffff !important',
+    fontWeight: 'bold',
+  },
 });
 
 export default sectionPoolsStyle;

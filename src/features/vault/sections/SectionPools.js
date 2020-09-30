@@ -360,7 +360,6 @@ export default function SectionPools() {
                                     ? 'visible'
                                     : 'hidden',
                                 }}
-                                // className={classes.iconContainerSecond}
                                 onClick={event => {
                                   event.stopPropagation();
                                   window.open(isZh ? pool.tokenDescriptionUrl2 : pool.tokenDescriptionUrl);
@@ -422,13 +421,10 @@ export default function SectionPools() {
                             <div className={classes.showDetailButtonCon}>
                               <Button
                                 style={{
-                                  backgroundColor: '#353848',
-                                  color: '#FF2D82',
-                                  boxShadow:
-                                    '0 2px 2px 0 rgba(53, 56, 72, 0.14), 0 3px 1px -2px rgba(53, 56, 72, 0.2), 0 1px 5px 0 rgba(53, 56, 72, 0.12)',
+                                  color: '#fff !important',
                                   fontWeight: 'bold',
                                 }}
-                                color="primary"
+                                variant="outlined"
                                 onClick={onApproval.bind(this, pool, index)}
                                 disabled={fetchApprovalPending[index]}
                               >
@@ -447,10 +443,7 @@ export default function SectionPools() {
                                   fontWeight: 'bold',
                                   backgroundColor: '#353848',
                                   color: '#FF2D82',
-                                  boxShadow:
-                                    '0 2px 2px 0 rgba(53, 56, 72, 0.14), 0 3px 1px -2px rgba(53, 56, 72, 0.2), 0 1px 5px 0 rgba(53, 56, 72, 0.12)',
                                 }}
-                                round
                                 onFocus={event => event.stopPropagation()}
                                 disabled={
                                   !Boolean(depositedBalance[index]) ||
@@ -470,10 +463,7 @@ export default function SectionPools() {
                                     fontWeight: 'bold',
                                     backgroundColor: '#353848',
                                     color: '#FF2D82',
-                                    boxShadow:
-                                      '0 2px 2px 0 rgba(53, 56, 72, 0.14), 0 3px 1px -2px rgba(53, 56, 72, 0.2), 0 1px 5px 0 rgba(53, 56, 72, 0.12)',
                                   }}
-                                  round
                                   onFocus={event => event.stopPropagation()}
                                   disabled={
                                     fetchDepositPending[index] ||
@@ -522,12 +512,9 @@ export default function SectionPools() {
                               margin: '12px 5px',
                               fontSize: '14px',
                               fontWeight: 'bold',
-                              backgroundColor: '#353848',
+                              backgroundColor: 'transparent',
                               color: '#635AFF',
-                              boxShadow:
-                                '0 2px 2px 0 rgba(53, 56, 72, 0.14), 0 3px 1px -2px rgba(53, 56, 72, 0.2), 0 1px 5px 0 rgba(53, 56, 72, 0.12)',
                             }}
-                            round
                             type="button"
                             color="primary"
                             disabled={fetchWithdrawPending[index] || !Boolean(withdrawAmount[index])}
@@ -541,12 +528,9 @@ export default function SectionPools() {
                               margin: '12px 5px',
                               fontSize: '14px',
                               fontWeight: 'bold',
-                              backgroundColor: '#353848',
+                              backgroundColor: 'transparent',
                               color: '#635AFF',
-                              boxShadow:
-                                '0 2px 2px 0 rgba(53, 56, 72, 0.14), 0 3px 1px -2px rgba(53, 56, 72, 0.2), 0 1px 5px 0 rgba(53, 56, 72, 0.12)',
                             }}
-                            round
                             type="button"
                             color="primary"
                             onClick={onWithdraw.bind(this, pool, index, true, singleDepositedBalance)}
