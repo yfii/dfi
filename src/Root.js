@@ -27,6 +27,7 @@ function renderRouteConfigV3(routes, contextPath) {
       const childRoutes = renderRouteConfigV3(item.childRoutes, newContextPath);
       children.push(
         <Route
+          style={{ width: '80%' }}
           key={newContextPath}
           render={props => <item.component {...props}>{childRoutes}</item.component>}
           path={newContextPath}

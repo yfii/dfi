@@ -120,10 +120,12 @@ const container = {
     maxWidth: '720px',
   },
   '@media (min-width: 992px)': {
+    width: '80%',
     maxWidth: '960px',
   },
   '@media (min-width: 1230px)': {
-    maxWidth: '1230px', // '1230px - 30px margin = 1200px', which is better in huge display
+    width: '75%',
+    maxWidth: '1230px',
   },
 };
 

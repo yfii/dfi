@@ -52,6 +52,14 @@ const headerStyle = theme => ({
     justifyContent: 'space-between',
     display: 'flex',
     flexWrap: 'nowrap',
+    '@media (min-width: 992px)': {
+      width: '100%',
+      maxWidth: '960px',
+    },
+    '@media (min-width: 1230px)': {
+      width: '100%',
+      maxWidth: '1230px',
+    },
   },
   title: {
     letterSpacing: 'unset',
