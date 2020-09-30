@@ -128,7 +128,7 @@ export default function HeaderLinks(props) {
             '한글',
             'ไทย',
             { divider: true },
-            <a href="https://github.com/yfii/vault/tree/master/src/locales" target="_blank">
+            <a href="https://github.com/beefyfinance/beefy-app/tree/master/src/locales" target="_blank">
               Help to translate
             </a>,
           ]}
