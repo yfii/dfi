@@ -1,7 +1,5 @@
 @import './mixins';
 
-// Here you put all global css rules.
-
 * {
   font-family: 'proxima-nova', sans-serif !important;
   color: #000;
@@ -19,13 +17,3 @@ body {
     display: none !important;
   }
 }
-
-// .pool-section {
-//   padding-left: 16px;
-// }
-
-// @media (min-width: 600px) {
-//   .pool-section {
-//     padding-left: 40px;
-//   }
-// }

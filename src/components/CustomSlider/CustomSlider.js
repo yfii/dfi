@@ -5,10 +5,10 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
   depositedBalanceSliderRoot: {
-    color: '#FF2D82',
+    color: '#000',
   },
   depositedBalanceSliderMarkLabel: {
-    color: '#FF2D82',
+    color: '#000',
   },
   depositedBalanceSliderRail: {
     opacity: '1',

@@ -212,16 +212,16 @@ const sectionPoolsStyle = theme => ({
     fontWeight: '600',
   },
   depositedBalanceSliderRoot: {
-    color: '#FF2D82',
+    color: '#000',
   },
   depositedBalanceSliderMarkLabel: {
-    color: '#FF2D82',
+    color: '#000',
   },
   drawSliderRoot: {
     color: '#635AFF',
   },
   drawSliderMarkLabel: {
-    color: '#635AFF',
+    color: '#000',
   },
   showDetailLeft: {
     float: 'left',

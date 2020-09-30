@@ -50,7 +50,7 @@ const drawerWidth = 260;
 
 const primaryColor = ['#000000', '#9c27b0', '#ab47bc', '#8e24aa', '#af2cc5', '#e1bee7', '#ba68c8'];
 
-const hoverColor = ['#ff5b9e', '#404456'];
+const hoverColor = ['#EFE6DC', '#404456'];
 
 const secondaryColor = ['#FBF6F0'];
 const warningColor = ['#ff9800', '#ffa726', '#fb8c00', '#ffa21a', '#fcf8e3', '#faf2cc', '#ffe0b2', '#ffb74d'];

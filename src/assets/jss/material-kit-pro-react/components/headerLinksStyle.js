@@ -1,4 +1,4 @@
-import { grayColor, whiteColor, mlAuto, hexToRgb } from 'assets/jss/material-kit-pro-react.js';
+import { grayColor, primaryColor, whiteColor, mlAuto, hexToRgb } from 'assets/jss/material-kit-pro-react.js';
 
 import tooltip from 'assets/jss/material-kit-pro-react/tooltipsStyle.js';
 
@@ -202,7 +202,7 @@ const headerLinksStyle = theme => ({
     padding: theme.spacing(1),
   },
   nowShowPage: {
-    borderBottom: '1px solid #FF2D82',
+    borderBottom: `1px solid ${primaryColor[0]}`,
     [theme.breakpoints.down('sm')]: {
       border: '0',
     },

@@ -284,14 +284,12 @@ export default function SectionPools() {
                                 />
                               </Hidden>
                             </Typography>
-
                             <Typography className={classes.iconContainerSubTitle} variant="body2">
                               {pool.token}
                             </Typography>
                           </Grid>
                         </Grid>
                       </Grid>
-
                       <Grid item md={8} xs={3}>
                         <Grid item container justify="space-between">
                           <Hidden smDown>
@@ -346,7 +344,6 @@ export default function SectionPools() {
                           </Grid>
                         </Grid>
                       </Grid>
-
                       <Grid item>
                         <Grid item container justify="flex-end" alignItems="center" spacing={2}>
                           <Hidden mdDown>
@@ -442,7 +439,7 @@ export default function SectionPools() {
                                   fontSize: '14px',
                                   fontWeight: 'bold',
                                   backgroundColor: '#353848',
-                                  color: '#FF2D82',
+                                  color: '#000',
                                 }}
                                 onFocus={event => event.stopPropagation()}
                                 disabled={
@@ -462,7 +459,7 @@ export default function SectionPools() {
                                     fontSize: '14px',
                                     fontWeight: 'bold',
                                     backgroundColor: '#353848',
-                                    color: '#FF2D82',
+                                    color: '#000',
                                   }}
                                   onFocus={event => event.stopPropagation()}
                                   disabled={
@@ -513,7 +510,7 @@ export default function SectionPools() {
                               fontSize: '14px',
                               fontWeight: 'bold',
                               backgroundColor: 'transparent',
-                              color: '#635AFF',
+                              color: '#000',
                             }}
                             type="button"
                             color="primary"
@@ -529,7 +526,7 @@ export default function SectionPools() {
                               fontSize: '14px',
                               fontWeight: 'bold',
                               backgroundColor: 'transparent',
-                              color: '#635AFF',
+                              color: '#000',
                             }}
                             type="button"
                             color="primary"
