@@ -210,6 +210,9 @@ const headerLinksStyle = theme => ({
   Button: {
     borderRadius: '.5em',
   },
+  cta: {
+    color: '#000',
+  },
 });
 
 export default headerLinksStyle;

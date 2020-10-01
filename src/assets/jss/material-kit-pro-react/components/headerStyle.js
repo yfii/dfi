@@ -66,13 +66,14 @@ const headerStyle = theme => ({
     '&,& a': {
       ...defaultFont,
       minWidth: 'unset',
-      lineHeight: '30px',
+      lineHeight: '28px',
       fontSize: '24px',
       fontWeight: '700',
       borderRadius: '3px',
       textTransform: 'none',
       whiteSpace: 'nowrap',
       color: 'inherit',
+      alignItems: 'flex-end',
       '&:hover,&:focus': {
         color: 'inherit',
         background: 'transparent',
@@ -219,6 +220,9 @@ const headerStyle = theme => ({
     display: 'flex',
     justifyContent: 'space-between',
     overflow: 'visible',
+  },
+  logo: {
+    marginRight: '12px',
   },
 });
 
