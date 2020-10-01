@@ -8,7 +8,6 @@ export default function PoolPage(props) {
   const [index] = useState(Number(props.match.params.index) - 1);
 
   useEffect(() => {
-    if (index != 3) return history.push('/stake');
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
   }, [index]);

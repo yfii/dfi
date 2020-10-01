@@ -1,4 +1,4 @@
-import {pool4Abi} from "../../configure";
+import { feeRewardsPoolAbi } from '../../configure';
 
 const pools = [
   {
@@ -13,11 +13,11 @@ const pools = [
     earnedTokenDecimals: 8,
     earnedTokenAddress: '0x1a969239E12F07281f8876D11AfceE081D872adf',
     earnContractAddress: '0x6A77c0c917Da188fBfa9C380f2E60dd223c0c35a',
-    earnContractAbi: pool4Abi,
+    earnContractAbi: feeRewardsPoolAbi,
     color: '255,45,130',
     startTimestamp: 1601373600,
     earnTime: 1 * 7 * 24 * 3600,
-    earnedTokenUrl: 'https://meet.one'
+    earnedTokenUrl: 'https://meet.one',
   },
   {
     name: 'mefilp',
@@ -31,16 +31,16 @@ const pools = [
     earnedTokenDecimals: 8,
     earnedTokenAddress: '0x1a969239E12F07281f8876D11AfceE081D872adf',
     earnContractAddress: '0x6CA21695CB12A251bB19aE73Bda6964f1BBc48De',
-    earnContractAbi: pool4Abi,
+    earnContractAbi: feeRewardsPoolAbi,
     color: '254,119,0',
     startTimestamp: 1601373600,
     earnTime: 2 * 7 * 24 * 3600,
-    earnedTokenUrl: 'https://meet.one'
+    earnedTokenUrl: 'https://meet.one',
   },
 ];
 
 const length = pools.length;
-const poolsInfo = Array(length).fill({staked: 0, tvl: 0, apy: 0});
+const poolsInfo = Array(length).fill({ staked: 0, tvl: 0, apy: 0 });
 const fetchPoolsInfoPending = false;
 const allowance = Array(length).fill(0);
 const checkApprovalPending = Array(length).fill(false);
@@ -72,7 +72,7 @@ const initialState = {
   fetchStakePending,
   fetchWithdrawPending,
   fetchClaimPending,
-  fetchExitPending
+  fetchExitPending,
 };
 
 export default initialState;

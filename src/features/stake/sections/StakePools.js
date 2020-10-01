@@ -57,7 +57,7 @@ export default function StakePools(props) {
               }}
             >
               {pools.map((pool, index) => (
-                <StyledTableRow key={pool.name} style={{ display: Boolean(index !== 3) ? 'none' : 'table-row' }}>
+                <StyledTableRow key={pool.name}>
                   <StyledTableCell component="th">
                     <div className={classes.firstCell}>
                       <div className={classes.avatarContainer}>
@@ -75,12 +75,11 @@ export default function StakePools(props) {
                       </div>
                     </div>
                   </StyledTableCell>
-                  {/* <StyledTableCell >$40,027,383.88</StyledTableCell> */}
                   <StyledTableCell>{poolsInfo[index].staked}</StyledTableCell>
                   <StyledTableCell>{poolsInfo[index].tvl}</StyledTableCell>
                   <StyledTableCell>{poolsInfo[index].apy}</StyledTableCell>
                   <StyledTableCell component="th">
-                    <CustomButtons href={`/#/stake/pool/${index + 1}`} className={classes.stakeButton} round={false}>
+                    <CustomButtons href={`/#/stake/pool/${index + 1}`} className={classes.stakeButton}>
                       {t('Stake-Button-Stake')}
                     </CustomButtons>
                   </StyledTableCell>
@@ -93,11 +92,7 @@ export default function StakePools(props) {
       <Hidden smUp>
         <GridItem>
           {pools.map((pool, index) => (
-            <div
-              key={`mobile-${index}`}
-              className={classes.mobileContainer}
-              style={{ display: Boolean(index !== 3) ? 'none' : '' }}
-            >
+            <div key={`mobile-${index}`} className={classes.mobileContainer}>
               <div className={classes.avatarContainer} style={{ width: '80px', height: '80px', borderRadius: '40px' }}>
                 <Avatar
                   alt={pool.name}
