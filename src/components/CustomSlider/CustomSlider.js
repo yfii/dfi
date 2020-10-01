@@ -6,15 +6,18 @@ import { primaryColor, secondaryColor, successColor } from 'assets/jss/material-
 const useStyles = makeStyles({
   mark: {
     height: '0',
-    color: '#fff',
   },
   markLabel: {
     color: primaryColor[0],
     weight: 400,
     fontSize: '12px',
   },
+  valueLabel: {
+    '& > span': {
+      color: successColor[0],
+    },
+  },
   rail: {
-    opacity: '1',
     color: secondaryColor[2],
   },
   thumb: {
@@ -23,6 +26,9 @@ const useStyles = makeStyles({
   track: {
     color: successColor[0],
   },
+  active: {
+    color: successColor[1],
+  },
 });
 
 export default function CustomSlider(props) {
@@ -30,11 +36,13 @@ export default function CustomSlider(props) {
   return (
     <Slider
       classes={{
-        markLabel: classes.markLabel,
-        rail: classes.rail,
         mark: classes.mark,
+        markLabel: classes.markLabel,
+        valueLabel: classes.valueLabel,
+        rail: classes.rail,
         thumb: classes.thumb,
         track: classes.track,
+        active: classes.active,
       }}
       defaultValue={0}
       valueLabelDisplay="auto"

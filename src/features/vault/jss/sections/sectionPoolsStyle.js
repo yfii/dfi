@@ -228,7 +228,7 @@ const sectionPoolsStyle = theme => ({
   },
   showDetailButtonOutlined: {
     backgroundColor: 'transparent',
-    border: `2px solid ${primaryColor[0]}`,
+    border: `1px solid ${primaryColor[0]}`,
     color: primaryColor[0],
     '&:hover': {
       '& .MuiButton-label': {
