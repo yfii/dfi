@@ -52,7 +52,7 @@ const primaryColor = ['#000000', '#9c27b0', '#ab47bc', '#8e24aa', '#af2cc5', '#e
 
 const hoverColor = ['#EFE6DC', '#404456'];
 
-const secondaryColor = ['#FBF6F0'];
+const secondaryColor = ['#FBF6F0', '#EFE6DC'];
 const warningColor = ['#ff9800', '#ffa726', '#fb8c00', '#ffa21a', '#fcf8e3', '#faf2cc', '#ffe0b2', '#ffb74d'];
 const dangerColor = ['#f44336', '#ef5350', '#e53935', '#f55a4e', '#f2dede', '#ebcccc', 'ef9a9a', '#ef5350'];
 const successColor = ['#4caf50', '#66bb6a', '#43a047', '#5cb860', '#dff0d8', '#d0e9c6', '#a5d6a7', '#66bb6a'];

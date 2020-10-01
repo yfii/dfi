@@ -44,11 +44,11 @@ export default function StakePools(props) {
           <Table className={classes.table} aria-label="customized table">
             <TableHead>
               <TableRow>
-                <StyledTableCell>{t('Stake-Table-Pool')}</StyledTableCell>
-                <StyledTableCell>{t('Stake-Table-Staked')}</StyledTableCell>
-                <StyledTableCell>{t('Stake-Table-Total')}</StyledTableCell>
-                <StyledTableCell>{t('Stake-Table-Apy')}</StyledTableCell>
-                <StyledTableCell></StyledTableCell>
+                <StyledTableCell className={classes.tableCell}>{t('Stake-Table-Pool')}</StyledTableCell>
+                <StyledTableCell className={classes.tableCell}>{t('Stake-Table-Staked')}</StyledTableCell>
+                <StyledTableCell className={classes.tableCell}>{t('Stake-Table-Total')}</StyledTableCell>
+                <StyledTableCell className={classes.tableCell}>{t('Stake-Table-Apy')}</StyledTableCell>
+                <StyledTableCell className={classes.tableCell}></StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody
@@ -80,7 +80,7 @@ export default function StakePools(props) {
                   <StyledTableCell>{poolsInfo[index].tvl}</StyledTableCell>
                   <StyledTableCell>{poolsInfo[index].apy}</StyledTableCell>
                   <StyledTableCell component="th">
-                    <CustomButtons href={`/#/stake/pool/${index + 1}`} className={classes.stakeButton}>
+                    <CustomButtons href={`/#/stake/pool/${index + 1}`} className={classes.stakeButton} round={false}>
                       {t('Stake-Button-Stake')}
                     </CustomButtons>
                   </StyledTableCell>
