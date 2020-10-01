@@ -14,7 +14,6 @@ export default function HomePage() {
     <>
       <Disclaimer />
       <SectionPools fromPage="home" />
-      <StakePage fromPage="home" />
     </>
   );
 }

@@ -24,12 +24,6 @@ export default function HeaderLinks(props) {
   const [dataUrl, setDataUrl] = useState(null);
   const canvasRef = useRef(null);
 
-  const tabArr = [
-    { value: '', label: t('Nav-Home') },
-    { value: 'vault', label: t('Nav-Vault') },
-    { value: 'stake', label: t('Nav-Stake') },
-  ];
-
   useEffect(() => {
     if (!connected) return;
 
@@ -100,18 +94,6 @@ export default function HeaderLinks(props) {
 
   return (
     <List className={classes.list + ' ' + classes.mlAuto}>
-      {tabArr.map((item, index) => (
-        <ListItem key={'tab-' + index} className={classes.listItem}>
-          <Button
-            type="button"
-            color="transparent"
-            onClick={changeTabs.bind(this, item.value)}
-            className={item.value == defaultTabValue ? classes.nowShowPage : ''}
-          >
-            {t(item.label)}
-          </Button>
-        </ListItem>
-      ))}
       <ListItem className={classes.listItem}>
         <CustomDropdown
           navDropdown
