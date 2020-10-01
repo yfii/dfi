@@ -80,7 +80,7 @@ export default function SectionPools() {
     }
   };
 
-  const handleDepositedBalance = (index, total, event, sliderNum) => {
+  const handleDepositedBalance = (index, total, _, sliderNum) => {
     setDepositedBalance({
       ...depositedBalance,
       [index]: sliderNum == 0 ? 0 : calculateReallyNum(total, sliderNum),
@@ -88,7 +88,7 @@ export default function SectionPools() {
     });
   };
 
-  const handleWithdrawAmount = (index, total, event, sliderNum) => {
+  const handleWithdrawAmount = (index, total, _, sliderNum) => {
     setWithdrawAmount({
       ...withdrawAmount,
       [index]: sliderNum == 0 ? 0 : calculateReallyNum(total, sliderNum),
@@ -398,7 +398,7 @@ export default function SectionPools() {
                         <div className={classes.showDetailRight}>
                           {t('Vault-Balance')}:{balanceSingle.toFormat(4)} {pool.token}
                         </div>
-                        <FormControl fullWidth variant="outlined">
+                        <FormControl fullWidth variant="outlined" className={classes.numericInput}>
                           <CustomOutlinedInput
                             value={depositedBalance[index] != undefined ? depositedBalance[index] : '0'}
                             onChange={changeDetailInputValue.bind(
@@ -425,7 +425,6 @@ export default function SectionPools() {
                             <div className={classes.showDetailButtonCon}>
                               <Button
                                 style={{
-                                  color: '#fff !important',
                                   fontWeight: 'bold',
                                 }}
                                 variant="outlined"
@@ -440,14 +439,8 @@ export default function SectionPools() {
                           ) : (
                             <div className={classes.showDetailButtonCon}>
                               <Button
-                                style={{
-                                  width: '180px',
-                                  margin: '12px 5px',
-                                  fontSize: '14px',
-                                  fontWeight: 'bold',
-                                  backgroundColor: '#353848',
-                                  color: '#000',
-                                }}
+                                className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
+                                color="primary"
                                 onFocus={event => event.stopPropagation()}
                                 disabled={
                                   !Boolean(depositedBalance[index]) ||
@@ -460,14 +453,7 @@ export default function SectionPools() {
                               </Button>
                               {Boolean(pool.tokenAddress) && (
                                 <Button
-                                  style={{
-                                    width: '180px',
-                                    margin: '12px 5px',
-                                    fontSize: '14px',
-                                    fontWeight: 'bold',
-                                    backgroundColor: '#353848',
-                                    color: '#000',
-                                  }}
+                                  className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`}
                                   onFocus={event => event.stopPropagation()}
                                   disabled={
                                     fetchDepositPending[index] ||
@@ -482,7 +468,6 @@ export default function SectionPools() {
                           )}
                         </div>
                       </Grid>
-
                       <Grid item xs={12} sm={6} className={classes.sliderDetailContainer}>
                         <div className={classes.showDetailRight}>
                           {singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)).toFormat(4)}{' '}
@@ -511,14 +496,7 @@ export default function SectionPools() {
                         />
                         <div className={classes.showDetailButtonCon}>
                           <Button
-                            style={{
-                              width: '180px',
-                              margin: '12px 5px',
-                              fontSize: '14px',
-                              fontWeight: 'bold',
-                              backgroundColor: 'transparent',
-                              color: '#000',
-                            }}
+                            className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
                             type="button"
                             color="primary"
                             disabled={fetchWithdrawPending[index] || !Boolean(withdrawAmount[index])}
@@ -527,14 +505,7 @@ export default function SectionPools() {
                             {fetchWithdrawPending[index] ? `${t('Vault-WithdrawING')}` : `${t('Vault-WithdrawButton')}`}
                           </Button>
                           <Button
-                            style={{
-                              width: '180px',
-                              margin: '12px 5px',
-                              fontSize: '14px',
-                              fontWeight: 'bold',
-                              backgroundColor: 'transparent',
-                              color: '#000',
-                            }}
+                            className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
                             type="button"
                             color="primary"
                             onClick={onWithdraw.bind(this, pool, index, true, singleDepositedBalance)}

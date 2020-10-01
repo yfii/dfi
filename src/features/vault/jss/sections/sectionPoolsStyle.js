@@ -197,20 +197,6 @@ const sectionPoolsStyle = theme => ({
   sliderDetailContainer: {
     padding: '24px 16px',
   },
-  showDetail: {
-    display: 'inline-block',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    width: '100%',
-    height: '56px',
-    background: '#353848',
-    borderRadius: '12px',
-    fontWeight: '600',
-    fontSize: '18px',
-    color: '#FFFFFF',
-    lineHeight: '24px',
-    fontWeight: '600',
-  },
   depositedBalanceSliderRoot: {
     color: '#000',
   },
@@ -227,7 +213,7 @@ const sectionPoolsStyle = theme => ({
     float: 'left',
     margin: '16px 24px',
     fontSize: '18px',
-    color: '#FFFFFF',
+    color: primaryColor[0],
     lineHeight: '24px',
     fontWeight: '600',
   },
@@ -235,7 +221,7 @@ const sectionPoolsStyle = theme => ({
     float: 'right',
     fontSize: '12px',
     lineHeight: '18px',
-    color: '#FFFFFF',
+    color: primaryColor[0],
     opacity: '.4',
     fontWeight: '600',
   },
@@ -250,10 +236,31 @@ const sectionPoolsStyle = theme => ({
       marginLeft: '5px',
     },
   },
-  showDetaialButton: {
-    backgroundColor: primaryColor[0],
-    color: '#ffffff !important',
+  showDetailButton: {
+    width: '180px',
+    margin: '12px 5px',
+    fontSize: '14px',
     fontWeight: 'bold',
+    borderRadius: '5px',
+  },
+  showDetailButtonOutlined: {
+    backgroundColor: 'transparent',
+    border: `2px solid ${primaryColor[0]}`,
+    color: primaryColor[0],
+    '&:hover': {
+      '& .MuiButton-label': {
+        color: 'white',
+      },
+    },
+  },
+  showDetailButtonContained: {
+    backgroundColor: primaryColor[0],
+    '& .MuiButton-label': {
+      color: 'white',
+    },
+  },
+  numericInput: {
+    color: primaryColor[0],
   },
 });
 

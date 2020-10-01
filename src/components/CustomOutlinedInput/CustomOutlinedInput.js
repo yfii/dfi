@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
+import { primaryColor } from 'assets/jss/material-kit-pro-react';
 
 const useStyles = makeStyles({
   showDetail: {
@@ -11,7 +12,7 @@ const useStyles = makeStyles({
     borderRadius: '12px',
     fontWeight: '600',
     fontSize: '18px',
-    color: '#FFFFFF',
+    color: primaryColor[0],
     lineHeight: '24px',
     fontWeight: '600',
   },
