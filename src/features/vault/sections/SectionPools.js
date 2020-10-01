@@ -237,7 +237,14 @@ export default function SectionPools() {
           let singleDepositedBalance = byDecimals(tokens[pool.earnedToken].tokenBalance, pool.tokenDecimals);
           let depositedApy = contractApy[pool.id] || 0;
           return (
-            <Grid item xs={12} container key={index} style={{ marginBottom: '24px' }} spacing={0}>
+            <Grid
+              item
+              xs={12}
+              container
+              key={index}
+              style={{ marginBottom: '24px', border: '1px solid #DED9D5' }}
+              spacing={0}
+            >
               <div style={{ width: '100%' }}>
                 <Accordion
                   expanded={Boolean(openedCardList.includes(index))}
