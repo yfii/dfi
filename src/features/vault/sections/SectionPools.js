@@ -421,10 +421,7 @@ export default function SectionPools() {
                           {pool.allowance === 0 ? (
                             <div className={classes.showDetailButtonCon}>
                               <Button
-                                style={{
-                                  fontWeight: 'bold',
-                                }}
-                                variant="outlined"
+                                className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`}
                                 onClick={onApproval.bind(this, pool, index)}
                                 disabled={fetchApprovalPending[index]}
                               >

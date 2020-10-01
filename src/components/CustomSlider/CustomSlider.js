@@ -19,12 +19,15 @@ const useStyles = makeStyles({
   },
   rail: {
     color: secondaryColor[2],
+    height: 2,
+    opacity: 1,
   },
   thumb: {
     color: successColor[0],
   },
   track: {
     color: successColor[0],
+    height: 2,
   },
   active: {
     color: successColor[1],
