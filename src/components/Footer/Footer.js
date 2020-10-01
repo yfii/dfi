@@ -1,46 +1,46 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
 import { makeStyles } from '@material-ui/core/styles';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMediumM, faTelegramPlane, faDiscord, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 
-import styles from 'assets/jss/material-kit-pro-react/components/footerStyle.js';
+import styles from './style';
 
 const useStyles = makeStyles(styles);
 
 export default function Footer(props) {
-  const { children, content, theme, big, className } = props;
   const classes = useStyles();
-  const themeType = theme === 'transparent' || theme == undefined ? false : true;
-  const footerClasses = classNames({
-    [classes.footer]: true,
-    [classes[theme]]: themeType,
-    [classes.big]: big || children !== undefined,
-    [className]: className !== undefined,
-  });
-  const aClasses = classNames({
-    [classes.a]: true,
-  });
 
   return (
-    <footer className={footerClasses}>
-      <div className={classes.container}>
-        {children !== undefined ? (
-          <div>
-            <div className={classes.content}>{children}</div>
-            <hr />
-          </div>
-        ) : (
-          ' '
-        )}
-        {content}
-        <div className={classes.clearFix} />
-      </div>
-    </footer>
+    <div className={classes.container}>
+      <List className={classes.list}>
+        <ListItem>
+          <a className={classes.navLink} href="https://twitter.com/beefyfinance" target="_blank">
+            <FontAwesomeIcon className={classes.socialIcons} icon={faTwitter} />
+          </a>
+        </ListItem>
+        <ListItem>
+          <a className={classes.navLink} href="https://t.me/beefyfinance" target="_blank">
+            <FontAwesomeIcon className={classes.socialIcons} icon={faTelegramPlane} />
+          </a>
+        </ListItem>
+        <ListItem>
+          <a className={classes.navLink} href="https://discord.gg/yq8wfHd" target="_blank">
+            <FontAwesomeIcon className={classes.socialIcons} icon={faDiscord} />
+          </a>
+        </ListItem>
+        <ListItem>
+          <a className={classes.navLink} href="https://medium.com/beefyfinance" target="_blank">
+            <FontAwesomeIcon className={classes.socialIcons} icon={faMediumM} />
+          </a>
+        </ListItem>
+        <ListItem>
+          <a className={classes.navLink} href="https://github.com/beefyfinance" target="_blank">
+            <FontAwesomeIcon className={classes.socialIcons} icon={faGithub} />
+          </a>
+        </ListItem>
+      </List>
+    </div>
   );
 }
-
-Footer.propTypes = {
-  theme: PropTypes.oneOf(['dark', 'white', 'transparent']),
-  big: PropTypes.bool,
-  content: PropTypes.node.isRequired,
-};

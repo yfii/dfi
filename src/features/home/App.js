@@ -4,7 +4,7 @@ import { SnackbarProvider } from 'notistack';
 import { Notifier } from 'features/common';
 import Header from 'components/Header/Header.js';
 import HeaderLinks from 'components/Header/HeaderLinks.js';
-import FooterLinks from 'components/Footer/FooterLinks.js';
+import Footer from 'components/Footer/Footer.js';
 import { makeStyles } from '@material-ui/core/styles';
 import { useConnectWallet, useDisconnectWallet } from './redux/hooks';
 import i18next from 'i18next';
@@ -83,7 +83,7 @@ export default function App({ children }) {
             {Boolean(networkId === Number(process.env.NETWORK_ID)) && children}
             <Notifier />
           </div>
-          <FooterLinks />
+          <Footer />
         </div>
       </div>
     </SnackbarProvider>
