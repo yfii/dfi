@@ -4,13 +4,13 @@ const footerStyle = theme => ({
   container: {
     ...container,
     width: '100%',
-    padding: '32px 0',
+    padding: '3rem 0',
     display: 'flex',
     justifyContent: 'center',
   },
   socialIcons: {
     margin: '0 15px',
-    fontSize: '2rem',
+    fontSize: '2.25rem',
     '& > path': {
       color: primaryColor[0],
     },
