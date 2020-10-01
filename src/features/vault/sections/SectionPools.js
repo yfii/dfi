@@ -7,6 +7,7 @@ import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionActions';
 import IconButton from '@material-ui/core/IconButton';
+import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
 import FormControl from '@material-ui/core/FormControl';
 import CustomOutlinedInput from 'components/CustomOutlinedInput/CustomOutlinedInput';
@@ -297,7 +298,7 @@ export default function SectionPools() {
                           </Grid>
                         </Grid>
                       </Grid>
-                      <Grid item md={8} xs={3}>
+                      <Grid item md={6} xs={3}>
                         <Grid item container justify="space-between">
                           <Hidden smDown>
                             <Grid item xs={7} container justify="center" alignItems="center">
@@ -392,10 +393,11 @@ export default function SectionPools() {
                       </Grid>
                     </Grid>
                   </AccordionSummary>
+                  <Divider variant="middle" className={classes.accordionDivider} />
                   <AccordionDetails style={{ justifyContent: 'space-between' }}>
-                    <Grid container style={{ width: '100%', marginLeft: 0, marginRight: 0 }}>
+                    <Grid container>
                       <Grid item xs={12} sm={6} className={classes.sliderDetailContainer}>
-                        <div className={classes.showDetailRight}>
+                        <div className={classes.showDetailLeft}>
                           {t('Vault-Balance')}:{balanceSingle.toFormat(4)} {pool.token}
                         </div>
                         <FormControl fullWidth variant="outlined" className={classes.numericInput}>
@@ -469,7 +471,7 @@ export default function SectionPools() {
                         </div>
                       </Grid>
                       <Grid item xs={12} sm={6} className={classes.sliderDetailContainer}>
-                        <div className={classes.showDetailRight}>
+                        <div className={classes.showDetailLeft}>
                           {singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)).toFormat(4)}{' '}
                           {pool.token} ({singleDepositedBalance.toFormat(4)} {pool.earnedToken})
                         </div>

@@ -48,8 +48,7 @@ const hexToRgb = input => {
 
 const drawerWidth = 260;
 
-const primaryColor = ['#000000', '#9c27b0', '#ab47bc', '#8e24aa', '#af2cc5', '#e1bee7', '#ba68c8'];
-
+const primaryColor = ['#000000', '#B9AEA5', '#ab47bc', '#8e24aa', '#af2cc5', '#e1bee7', '#ba68c8'];
 const hoverColor = ['#EFE6DC', '#404456'];
 
 const secondaryColor = ['#FBF6F0', '#EFE6DC'];
@@ -120,11 +119,11 @@ const container = {
     maxWidth: '720px',
   },
   '@media (min-width: 992px)': {
-    width: '80%',
+    width: '75%',
     maxWidth: '960px',
   },
   '@media (min-width: 1230px)': {
-    width: '75%',
+    width: '70%',
     maxWidth: '1230px',
   },
 };

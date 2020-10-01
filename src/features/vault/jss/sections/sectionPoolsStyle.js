@@ -185,6 +185,9 @@ const sectionPoolsStyle = theme => ({
     boxShadow: '0px 4px 8px 0px rgba(0, 0, 0, 0.06)',
     borderRadius: '8px',
   },
+  accordionDivider: {
+    margin: '0 30px',
+  },
   details: {
     background: '#FBF6F0',
     boxShadow: '0 4px 8px 0 rgba(0,0,0,0.06)',
@@ -195,7 +198,7 @@ const sectionPoolsStyle = theme => ({
     borderRadius: 2,
   },
   sliderDetailContainer: {
-    padding: '24px 16px',
+    padding: '24px 30px',
   },
   depositedBalanceSliderRoot: {
     color: '#000',
@@ -211,21 +214,12 @@ const sectionPoolsStyle = theme => ({
   },
   showDetailLeft: {
     float: 'left',
-    margin: '16px 24px',
-    fontSize: '18px',
-    color: primaryColor[0],
-    lineHeight: '24px',
-    fontWeight: '600',
+    marginBottom: '10px',
+    fontSize: '1rem',
+    lineHeight: '20px',
+    color: primaryColor[1],
+    fontWeight: '500',
   },
-  showDetailRight: {
-    float: 'right',
-    fontSize: '12px',
-    lineHeight: '18px',
-    color: primaryColor[0],
-    opacity: '.4',
-    fontWeight: '600',
-  },
-
   MuiSliderRoot: {
     color: '#FF2D82',
   },
@@ -237,11 +231,11 @@ const sectionPoolsStyle = theme => ({
     },
   },
   showDetailButton: {
-    width: '180px',
     margin: '12px 5px',
     fontSize: '14px',
     fontWeight: 'bold',
     borderRadius: '5px',
+    width: '160px',
   },
   showDetailButtonOutlined: {
     backgroundColor: 'transparent',
