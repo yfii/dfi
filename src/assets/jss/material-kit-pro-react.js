@@ -51,10 +51,10 @@ const drawerWidth = 260;
 const primaryColor = ['#000000', '#B9AEA5', '#ab47bc', '#8e24aa', '#af2cc5', '#e1bee7', '#ba68c8'];
 const hoverColor = ['#EFE6DC', '#404456'];
 
-const secondaryColor = ['#FBF6F0', '#EFE6DC'];
+const secondaryColor = ['#FBF6F0', '#EFE6DC', '#DED9D5'];
 const warningColor = ['#ff9800', '#ffa726', '#fb8c00', '#ffa21a', '#fcf8e3', '#faf2cc', '#ffe0b2', '#ffb74d'];
 const dangerColor = ['#f44336', '#ef5350', '#e53935', '#f55a4e', '#f2dede', '#ebcccc', 'ef9a9a', '#ef5350'];
-const successColor = ['#4caf50', '#66bb6a', '#43a047', '#5cb860', '#dff0d8', '#d0e9c6', '#a5d6a7', '#66bb6a'];
+const successColor = ['#78B288', '#5A8F69', '#43a047', '#5cb860', '#dff0d8', '#d0e9c6', '#a5d6a7', '#66bb6a'];
 const infoColor = ['#00acc1', '#26c6da', '#00acc1', '#00d3ee', '#d9edf7', '#c4e3f3', '#b2ebf2', '#4dd0e1'];
 const roseColor = ['#e91e63', '#ec407a', '#d81b60', '#f8bbd0', '#f06292'];
 const grayColor = [

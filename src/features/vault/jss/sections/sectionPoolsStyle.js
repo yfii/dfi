@@ -4,6 +4,7 @@ import {
   mlAuto,
   primaryColor,
   secondaryColor,
+  successColor,
   hoverColor,
   grayColor,
 } from 'assets/jss/material-kit-pro-react.js';
@@ -199,18 +200,6 @@ const sectionPoolsStyle = theme => ({
   },
   sliderDetailContainer: {
     padding: '24px 30px',
-  },
-  depositedBalanceSliderRoot: {
-    color: '#000',
-  },
-  depositedBalanceSliderMarkLabel: {
-    color: '#000',
-  },
-  drawSliderRoot: {
-    color: '#635AFF',
-  },
-  drawSliderMarkLabel: {
-    color: '#000',
   },
   showDetailLeft: {
     float: 'left',

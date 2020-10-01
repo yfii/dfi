@@ -413,15 +413,10 @@ export default function SectionPools() {
                           />
                         </FormControl>
                         <CustomSlider
-                          classes={{
-                            root: classes.depositedBalanceSliderRoot,
-                            markLabel: classes.depositedBalanceSliderMarkLabel,
-                          }}
                           aria-labelledby="continuous-slider"
                           value={depositedBalance['slider-' + index] ? depositedBalance['slider-' + index] : 0}
                           onChange={handleDepositedBalance.bind(this, index, balanceSingle.toNumber())}
                         />
-
                         <div>
                           {pool.allowance === 0 ? (
                             <div className={classes.showDetailButtonCon}>
@@ -488,10 +483,6 @@ export default function SectionPools() {
                           />
                         </FormControl>
                         <CustomSlider
-                          classes={{
-                            root: classes.drawSliderRoot,
-                            markLabel: classes.drawSliderMarkLabel,
-                          }}
                           aria-labelledby="continuous-slider"
                           value={withdrawAmount['slider-' + index] ? withdrawAmount['slider-' + index] : 0}
                           onChange={handleWithdrawAmount.bind(this, index, singleDepositedBalance.toNumber())}
