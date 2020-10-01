@@ -142,17 +142,6 @@ export default function FooterLinks(props) {
           </Popover>
         </ListItem>
       </List>
-      <GridContainer className={classes.linkList} justify="center" align="center">
-        {footerLinkArr.map(item => {
-          return (
-            <GridItem className={classes.linkItem} md={2} xs={6} key={item.content}>
-              <a className={classes.extraContent} href={item.href} target="_blank">
-                {t(item.content)}
-              </a>
-            </GridItem>
-          );
-        })}
-      </GridContainer>
     </div>
   );
 }
