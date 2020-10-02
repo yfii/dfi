@@ -1,15 +1,11 @@
-@import './mixins';
-
 * {
   font-family: 'proxima-nova', sans-serif !important;
-  box-shadow: 0px 0px !important;
   text-rendering: optimizeLegibility;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
 }
 
 @media (max-width: 767px) {
