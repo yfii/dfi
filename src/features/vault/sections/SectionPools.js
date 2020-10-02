@@ -84,16 +84,16 @@ export default function SectionPools() {
   const handleDepositedBalance = (index, total, _, sliderNum) => {
     setDepositedBalance({
       ...depositedBalance,
-      [index]: sliderNum == 0 ? 0 : calculateReallyNum(total, sliderNum),
-      [`slider-${index}`]: sliderNum == 0 ? 0 : sliderNum,
+      [index]: sliderNum === 0 ? 0 : calculateReallyNum(total, sliderNum),
+      [`slider-${index}`]: sliderNum === 0 ? 0 : sliderNum,
     });
   };
 
   const handleWithdrawAmount = (index, total, _, sliderNum) => {
     setWithdrawAmount({
       ...withdrawAmount,
-      [index]: sliderNum == 0 ? 0 : calculateReallyNum(total, sliderNum),
-      [`slider-${index}`]: sliderNum == 0 ? 0 : sliderNum,
+      [index]: sliderNum === 0 ? 0 : calculateReallyNum(total, sliderNum),
+      [`slider-${index}`]: sliderNum === 0 ? 0 : sliderNum,
     });
   };
 

@@ -4,7 +4,6 @@ import {
   mlAuto,
   primaryColor,
   secondaryColor,
-  successColor,
   hoverColor,
   grayColor,
 } from 'assets/jss/material-kit-pro-react.js';
@@ -45,10 +44,6 @@ const sectionPoolsStyle = theme => ({
     verticalAlign: 'bottom',
     height: 20,
     width: 20,
-  },
-  details: {
-    display: 'flex',
-    alignItems: 'center',
   },
   column: {
     flexBasis: '33.33%',
@@ -190,6 +185,8 @@ const sectionPoolsStyle = theme => ({
     margin: '0 30px',
   },
   details: {
+    display: 'flex',
+    alignItems: 'center',
     background: '#FBF6F0',
     boxShadow: '0 4px 8px 0 rgba(0,0,0,0.06)',
     borderRadius: '8px',

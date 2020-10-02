@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
 
 import { FarmPool } from './sections';
 
 export default function PoolPage(props) {
-  const history = useHistory();
   const [index] = useState(Number(props.match.params.index) - 1);
 
   useEffect(() => {
