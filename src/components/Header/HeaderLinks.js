@@ -124,15 +124,7 @@ export default function HeaderLinks(props) {
       <ListItem className={classes.listItem}>
         <Button
           disableElevation
-          style={{
-            width: '180px',
-            margin: '12px 0',
-            fontSize: '14px',
-            fontWeight: 'bold',
-            backgroundColor: '#F8F2EC',
-            color: '#fff',
-          }}
-          color="primary"
+          className={classes.walletDisplay}
           onClick={connected ? disconnectWallet : connectWallet}
         >
           {connected ? (

@@ -1,4 +1,11 @@
-import { grayColor, primaryColor, whiteColor, mlAuto, hexToRgb } from 'assets/jss/material-kit-pro-react.js';
+import {
+  grayColor,
+  primaryColor,
+  whiteColor,
+  mlAuto,
+  hexToRgb,
+  secondaryColor,
+} from 'assets/jss/material-kit-pro-react.js';
 
 import tooltip from 'assets/jss/material-kit-pro-react/tooltipsStyle.js';
 
@@ -212,6 +219,20 @@ const headerLinksStyle = theme => ({
   },
   cta: {
     color: '#000',
+  },
+  walletDisplay: {
+    width: '100%',
+    margin: '12px 0',
+    fontSize: '14px',
+    fontWeight: 'bold',
+    backgroundColor: '#F8F2EC',
+    color: '#fff',
+    '&:hover': {
+      backgroundColor: secondaryColor[2],
+    },
+    [theme.breakpoints.up('md')]: {
+      width: '180px',
+    },
   },
 });
 
