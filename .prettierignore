@@ -1,1 +1,9 @@
 src/features/configure/abi.js
+node_modules
+.vscode
+dist
+*.log
+*.tgz
+.envrc
+.nyc_output
+coverage

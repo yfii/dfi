@@ -8,7 +8,7 @@ export function isEmpty(key){
     }
     if (typeof(key) === 'string') {
         key = key.replace(trimReg, '');
-        if (key == '' || key == null || key == 'null' || key == undefined || key == 'undefined') {
+        if (key === '' || key === null || key === 'null' || key === undefined || key === 'undefined') {
             return true
         } else {
             return false
@@ -28,7 +28,7 @@ export function isEmpty(key){
 let inputReg = /[a-z]/i;
 export function inputLimitPass(value,tokenDecimals){
   let valueArr = value.split('.');
-  if(inputReg.test(value) || (valueArr.length==2 && valueArr[1].length > tokenDecimals) ){
+  if(inputReg.test(value) || (valueArr.length === 2 && valueArr[1].length > tokenDecimals) ){
       return false;
   }
   return true;
