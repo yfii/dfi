@@ -17,6 +17,7 @@ Opinionated Code Formatter
 Required env vars:
 
 ```
+NETWORK=...
 NETWORK_ID=...
 ```
 

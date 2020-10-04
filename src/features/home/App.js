@@ -8,7 +8,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useConnectWallet, useDisconnectWallet } from './redux/hooks';
 import i18next from 'i18next';
 import Web3Modal from 'web3modal';
-import WalletConnectProvider from '@walletconnect/web3-provider';
 
 import appStyle from './jss/appStyle.js';
 
@@ -23,7 +22,7 @@ export default function App({ children }) {
 
   useEffect(() => {
     const newModal = new Web3Modal({
-      network: process.env.NETWORK ? process.env.NETWORK : 'mainet',
+      network: process.env.NETWORK ? process.env.NETWORK : 'mainnet',
       cacheProvider: true,
       providerOptions: {
         injected: {
