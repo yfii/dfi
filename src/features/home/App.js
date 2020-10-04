@@ -31,13 +31,7 @@ export default function App({ children }) {
             name: 'Injected',
             description: i18next.t('Home-BrowserWallet'),
           },
-        },
-        walletconnect: {
-          package: WalletConnectProvider,
-          options: {
-            infuraId: process.env.INFURA_ID,
-          },
-        },
+        }
       },
     });
     setModal(newModal);
