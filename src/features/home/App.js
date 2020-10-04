@@ -84,9 +84,7 @@ export default function App({ children }) {
             {Boolean(networkId === Number(process.env.NETWORK_ID)) && children}
             <Notifier />
           </div>
-          <Footer />
         </div>
-        <Landscape />
       </div>
     </SnackbarProvider>
   );
