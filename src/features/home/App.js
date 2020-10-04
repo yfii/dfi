@@ -59,7 +59,7 @@ export default function App({ children }) {
     ) {
       alert(t('App-SnackBarText'));
     }
-  }, [web3, address, networkId]);
+  }, [web3, address, networkId, connectWalletPending, t]);
 
   return (
     <SnackbarProvider>
