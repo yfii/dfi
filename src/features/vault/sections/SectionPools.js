@@ -228,8 +228,6 @@ export default function SectionPools() {
       .toNumber();
   };
 
-  const isZh = Boolean(i18n.language == 'zh' || i18n.language == 'zh-CN');
-
   return (
     <Grid container style={{ paddingTop: '4px' }}>
       <Grid item xs={12}>
@@ -285,14 +283,14 @@ export default function SectionPools() {
                                   style={{
                                     color: primaryColor[0],
                                     marginLeft: '4px',
-                                    visibility: Boolean(isZh ? pool.tokenDescriptionUrl2 : pool.tokenDescriptionUrl)
+                                    visibility: Boolean(pool.tokenDescriptionUrl)
                                       ? 'visible'
                                       : 'hidden',
                                   }}
                                   className={'yfiiicon yfii-help-circle'}
                                   onClick={event => {
                                     event.stopPropagation();
-                                    window.open(isZh ? pool.tokenDescriptionUrl2 : pool.tokenDescriptionUrl);
+                                    window.open(pool.tokenDescriptionUrl);
                                   }}
                                 />
                               </Hidden>
@@ -366,13 +364,13 @@ export default function SectionPools() {
                                   root: classes.iconContainerSecond,
                                 }}
                                 style={{
-                                  visibility: Boolean(isZh ? pool.tokenDescriptionUrl2 : pool.tokenDescriptionUrl)
+                                  visibility: Boolean(pool.tokenDescriptionUrl)
                                     ? 'visible'
                                     : 'hidden',
                                 }}
                                 onClick={event => {
                                   event.stopPropagation();
-                                  window.open(isZh ? pool.tokenDescriptionUrl2 : pool.tokenDescriptionUrl);
+                                  window.open(pool.tokenDescriptionUrl);
                                 }}
                               >
                                 <i className={'yfiiicon yfii-help-circle'} />
