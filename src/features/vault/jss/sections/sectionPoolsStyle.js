@@ -170,7 +170,6 @@ const sectionPoolsStyle = theme => ({
   accordion: {
     backgroundColor: '#FBF6F0',
     color: '#fff',
-    boxShadow: '0px 4px 8px 0px rgba(0, 0, 0, 0.06)',
     borderRadius: '8px',
   },
   accordionDivider: {
@@ -180,7 +179,6 @@ const sectionPoolsStyle = theme => ({
     display: 'flex',
     alignItems: 'center',
     background: '#FBF6F0',
-    boxShadow: '0 4px 8px 0 rgba(0,0,0,0.06)',
     borderRadius: '8px',
   },
   track: {

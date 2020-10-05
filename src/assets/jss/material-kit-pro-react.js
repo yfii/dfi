@@ -133,7 +133,7 @@ const card = {
   position: 'relative',
   width: '100%',
   margin: '25px 0',
-  boxShadow: '0 1px 4px 0 rgba(' + hexToRgb(blackColor) + ', 0.14)',
+  boxShadow: 'none',
   borderRadius: '3px',
   color: 'rgba(' + hexToRgb(blackColor) + ', 0.87)',
   background: whiteColor,
@@ -146,25 +146,25 @@ const defaultFont = {
 };
 
 const boxShadow = {
-  boxShadow: '0 10px 30px -12px rgba(' + hexToRgb(blackColor) + ', 0.42), 0 4px 25px 0px rgba(' + hexToRgb(blackColor) + ', 0.12), 0 8px 10px -5px rgba(' + hexToRgb(blackColor) + ', 0.2)',
+  boxShadow: 'none',
 };
 const primaryBoxShadow = {
-  boxShadow: '0 12px 20px -10px rgba(' + hexToRgb(primaryColor[0]) + ', 0.28), 0 4px 20px 0px rgba(' + hexToRgb(blackColor) + ', 0.12), 0 7px 8px -5px rgba(' + hexToRgb(primaryColor[0]) + ', 0.2)',
+  boxShadow: 'none',
 };
 const infoBoxShadow = {
-  boxShadow: '0 12px 20px -10px rgba(' + hexToRgb(infoColor[0]) + ', 0.28), 0 4px 20px 0px rgba(' + hexToRgb(blackColor) + ', 0.12), 0 7px 8px -5px rgba(' + hexToRgb(infoColor[0]) + ', 0.2)',
+  boxShadow: 'none',
 };
 const successBoxShadow = {
-  boxShadow: '0 12px 20px -10px rgba(' + hexToRgb(successColor[0]) + ', 0.28), 0 4px 20px 0px rgba(' + hexToRgb(blackColor) + ', 0.12), 0 7px 8px -5px rgba(' + hexToRgb(successColor[0]) + ', 0.2)',
+  boxShadow: 'none',
 };
 const warningBoxShadow = {
-  boxShadow: '0 12px 20px -10px rgba(' + hexToRgb(warningColor[0]) + ', 0.28), 0 4px 20px 0px rgba(' + hexToRgb(blackColor) + ', 0.12), 0 7px 8px -5px rgba(' + hexToRgb(warningColor[0]) + ', 0.2)',
+  boxShadow: 'none',
 };
 const dangerBoxShadow = {
-  boxShadow: '0 12px 20px -10px rgba(' + hexToRgb(dangerColor[0]) + ', 0.28), 0 4px 20px 0px rgba(' + hexToRgb(blackColor) + ', 0.12), 0 7px 8px -5px rgba(' + hexToRgb(dangerColor[0]) + ', 0.2)',
+  boxShadow: 'none',
 };
 const roseBoxShadow = {
-  boxShadow: '0 4px 20px 0px rgba(' + hexToRgb(blackColor) + ', 0.14), 0 7px 10px -5px rgba(' + hexToRgb(roseColor[0]) + ', 0.4)',
+  boxShadow: 'none',
 };
 
 const warningCardHeader = {
