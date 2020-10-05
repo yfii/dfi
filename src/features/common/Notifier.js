@@ -45,7 +45,7 @@ const Notifier = () => {
                     removeDisplayed(myKey);
                 },
                 autoHideDuration: 3000,
-                action: hash?()=><Button onClick={() => window.open(`https://etherscan.io/tx/${hash}`, "_blank")}>View</Button>:null
+                action: hash?()=><Button onClick={() => window.open(`https://bscscan.com/tx/${hash}`, "_blank")}>View</Button>:null
             });
 
             // keep track of snackbars that we've displayed
