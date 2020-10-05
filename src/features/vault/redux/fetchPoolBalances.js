@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { earnContractABI, erc20ABI } from "../../configure";
+import { vaultABI, erc20ABI } from "../../configure";
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
   VAULT_FETCH_POOL_BALANCES_BEGIN,
@@ -25,7 +25,7 @@ export function fetchPoolBalances(data) {
       // args.error here is only for test coverage purpose.
       const { address, web3, pools } = data;
       async.map(pools, (pool, callback) => {
-        const earnContract = new web3.eth.Contract(earnContractABI, pool.earnContractAddress);
+        const earnContract = new web3.eth.Contract(vaultABI, pool.earnContractAddress);
         const erc20Contract = pool.tokenAddress ? new web3.eth.Contract(erc20ABI, pool.tokenAddress) : null;
         async.parallel([
           (callbackInner) => {

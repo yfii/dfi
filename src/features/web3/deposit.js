@@ -1,4 +1,4 @@
-import { earnContractABI } from "../configure";
+import { vaultABI } from "../configure";
 import { enqueueSnackbar } from '../common/redux/actions';
 
 
@@ -8,7 +8,7 @@ export const deposit = async ({web3, address, isAll, amount, contractAddress, di
     contractAddress:${contractAddress}\n
     amount:${amount}
   `)
-  const contract = new web3.eth.Contract(earnContractABI, contractAddress);
+  const contract = new web3.eth.Contract(vaultABI, contractAddress);
   const data = await _deposit({web3, contract,isAll, amount,  address});
   return data;
 }
