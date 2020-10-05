@@ -31,6 +31,8 @@ import CustomSlider from 'components/CustomSlider/CustomSlider';
 import sectionPoolsStyle from '../jss/sections/sectionPoolsStyle';
 import { inputLimitPass, inputFinalVal } from 'features/helpers/utils';
 
+const FETCH_INTERVAL_MS = 30 * 1000;
+
 const useStyles = makeStyles(sectionPoolsStyle);
 
 export default function SectionPools() {
@@ -206,9 +208,12 @@ export default function SectionPools() {
       const id = setInterval(() => {
         fetchBalances({ address, web3, tokens });
         fetchPoolBalances({ address, web3, pools });
-      }, 10000);
+      }, FETCH_INTERVAL_MS);
       return () => clearInterval(id);
     }
+  
+  // Adding tokens and pools to this dep list, causes an endless loop, DDoSing the api 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [address, web3, fetchBalances, fetchPoolBalances]);
 
   useEffect(() => {
