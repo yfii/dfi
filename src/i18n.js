@@ -9,6 +9,7 @@ const resources = {
   en: {
     translation: translationEN
   }
+  // TODO: more translations
 };
 
 i18n
