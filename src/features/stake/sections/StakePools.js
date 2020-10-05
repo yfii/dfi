@@ -1,32 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/core/styles';
-import GridContainer from 'components/Grid/GridContainer.js';
 import GridItem from 'components/Grid/GridItem.js';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
-import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import CustomButtons from 'components/CustomButtons/Button.js';
 import Avatar from '@material-ui/core/Avatar';
-import { isEmpty } from 'features/helpers/utils';
 import { StyledTableCell, StyledTableRow, stakePoolsStyle } from '../jss/sections/stakePoolsStyle';
-import InputBase from '@material-ui/core/InputBase';
-import IconButton from '@material-ui/core/IconButton';
 import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
-import leftImage from 'assets/img/stake-head-left.png';
-import rightImage from 'assets/img/stake-head-right.png';
 import { useFetchPoolsInfo } from '../redux/hooks';
 
 const useStyles = makeStyles(stakePoolsStyle);
 
 export default function StakePools(props) {
-  const { fromPage } = props;
   const classes = useStyles();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const { pools, poolsInfo, fetchPoolsInfo } = useFetchPoolsInfo();
 
   useEffect(() => {

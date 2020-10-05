@@ -1,5 +1,3 @@
-import { title, grayColor } from 'assets/jss/material-kit-pro-react.js';
-
 const sectionTitleStyle = theme => ({
   root: {
     flexGrow: 1,
