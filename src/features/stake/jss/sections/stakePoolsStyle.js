@@ -137,7 +137,6 @@ const stakePoolsStyle = theme => ({
     color: primaryColor,
     backgroundColor: '#353848',
     boxShadow: '0 2px 2px 0 #353848',
-    boxShadow: '0 0',
     '&:hover,&:focus': {
       color: primaryColor,
       backgroundColor: '#353848',
