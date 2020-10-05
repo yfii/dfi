@@ -1,15 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { SnackbarProvider } from 'notistack';
-import { Notifier } from 'features/common';
+
+import { makeStyles } from '@material-ui/core/styles';
+
 import Header from 'components/Header/Header.js';
 import HeaderLinks from 'components/Header/HeaderLinks.js';
-import { makeStyles } from '@material-ui/core/styles';
-import { useConnectWallet, useDisconnectWallet } from './redux/hooks';
-import i18next from 'i18next';
-import Web3Modal from 'web3modal';
 
+import i18next from 'i18next';
+import { useTranslation } from 'react-i18next';
+
+import { SnackbarProvider } from 'notistack';
+import { Notifier } from 'features/common';
+
+import Web3Modal from 'web3modal';
+import Footer from '../../components/Footer/Footer';
+import Pastures from '../../components/Pastures/Pastures';
 import appStyle from './jss/appStyle.js';
+
+import { useConnectWallet, useDisconnectWallet } from './redux/hooks';
 
 const useStyles = makeStyles(appStyle);
 
@@ -64,6 +71,9 @@ export default function App({ children }) {
             <Notifier />
           </div>
         </div>
+
+        <Footer />
+        <Pastures />
       </div>
     </SnackbarProvider>
   );

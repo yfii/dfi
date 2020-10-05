@@ -8,7 +8,7 @@ const Container = styled.section`
   max-width: 40rem;
   margin: 2rem auto;
   @media only screen and (min-width: 769px) {
-    margin: 2rem auto 8rem;
+    margin: 2rem auto 10rem;
   }
 `;
 

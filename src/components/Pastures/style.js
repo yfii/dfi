@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const PasturesContainer = styled.div`
   display: none;
+  position: relative;
   
   @media only screen and (min-width: 769px) {
     display: block;
