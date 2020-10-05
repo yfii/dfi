@@ -1,4 +1,4 @@
-@import "node_modules/react-image-gallery/styles/scss/image-gallery.scss";
+@import 'node_modules/react-image-gallery/styles/scss/image-gallery.scss';
 
 .image-gallery-left-nav,
 .image-gallery-right-nav {
@@ -21,7 +21,7 @@
     text-shadow: none;
   }
   &:before {
-    font-family: "Material Icons";
+    font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
     font-size: 24px;
@@ -32,20 +32,20 @@
     white-space: nowrap;
     word-wrap: normal;
     direction: ltr;
-    -webkit-font-feature-settings: "liga";
+    -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
   }
 }
 .image-gallery-left-nav {
   left: -20px;
   &::before {
-    content: "chevron_left";
+    content: 'chevron_left';
   }
 }
 .image-gallery-right-nav {
   right: -20px;
   &::before {
-    content: "chevron_right";
+    content: 'chevron_right';
   }
 }
 .image-gallery-thumbnail {

@@ -1,18 +1,14 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  VAULT_FETCH_APPROVAL_BEGIN,
-  VAULT_FETCH_APPROVAL_SUCCESS,
-  VAULT_FETCH_APPROVAL_FAILURE,
-} from './constants';
-import { approval } from "../../web3";
+import { VAULT_FETCH_APPROVAL_BEGIN, VAULT_FETCH_APPROVAL_SUCCESS, VAULT_FETCH_APPROVAL_FAILURE } from './constants';
+import { approval } from '../../web3';
 
 export function fetchApproval({ address, web3, tokenAddress, contractAddress, index }) {
   return dispatch => {
     // optionally you can have getState as the second argument
     dispatch({
       type: VAULT_FETCH_APPROVAL_BEGIN,
-      index
+      index,
     });
 
     // Return a promise so that you could control UI flow without states in the store.
@@ -28,24 +24,23 @@ export function fetchApproval({ address, web3, tokenAddress, contractAddress, in
         address,
         tokenAddress,
         contractAddress,
-        dispatch
-      }).then(
-        data => {
+        dispatch,
+      })
+        .then(data => {
           dispatch({
             type: VAULT_FETCH_APPROVAL_SUCCESS,
-            data: {index, allowance: data},index
-          })
+            data: { index, allowance: data },
+            index,
+          });
           resolve();
-        }
-      ).catch(
-        error => {
+        })
+        .catch(error => {
           dispatch({
             type: VAULT_FETCH_APPROVAL_FAILURE,
-            index
-          })
+            index,
+          });
           reject(error.message || error);
-        }
-      )
+        });
     });
 
     return promise;
@@ -57,11 +52,9 @@ export function useFetchApproval() {
   // if array, means args passed to the action creator
   const dispatch = useDispatch();
 
-  const { fetchApprovalPending } = useSelector(
-    state => ({
-      fetchApprovalPending: state.vault.fetchApprovalPending,
-    })
-  );
+  const { fetchApprovalPending } = useSelector(state => ({
+    fetchApprovalPending: state.vault.fetchApprovalPending,
+  }));
 
   const boundAction = useCallback(data => dispatch(fetchApproval(data)), [dispatch]);
 
@@ -79,7 +72,7 @@ export function reducer(state, action) {
         ...state,
         fetchApprovalPending: {
           ...state.fetchApprovalPending,
-          [action.index]: true
+          [action.index]: true,
         },
       };
 
@@ -92,7 +85,7 @@ export function reducer(state, action) {
         pools,
         fetchApprovalPending: {
           ...state.fetchApprovalPending,
-          [action.index]: false
+          [action.index]: false,
         },
       };
 
@@ -102,7 +95,7 @@ export function reducer(state, action) {
         ...state,
         fetchApprovalPending: {
           ...state.fetchApprovalPending,
-          [action.index]: false
+          [action.index]: false,
         },
       };
 

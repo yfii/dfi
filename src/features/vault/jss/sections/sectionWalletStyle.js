@@ -1,6 +1,4 @@
-import {
-  mlAuto,
-} from "assets/jss/material-kit-pro-react.js";
+import { mlAuto } from 'assets/jss/material-kit-pro-react.js';
 
 const sectionWalletStyle = theme => ({
   mlAuto,
@@ -8,24 +6,24 @@ const sectionWalletStyle = theme => ({
     flexGrow: 1,
   },
   walletCard: {
-    borderRadius: "50rem",
+    borderRadius: '50rem',
     marginTop: 0,
     // marginBottom: 0,
-    borderStyle: "solid",
-    borderWidth: "2px",
-    borderColor: "rgb(233, 30, 99)",
-    boxShadow: "0 0"
+    borderStyle: 'solid',
+    borderWidth: '2px',
+    borderColor: 'rgb(233, 30, 99)',
+    boxShadow: '0 0',
   },
   walletTitle: {
-    fontSize: "0.5rem",
+    fontSize: '0.5rem',
     lineHeight: 1.2,
     // fontWeight: 700
   },
   walletAddress: {
-    fontSize: "0.5rem",
-    lineHeight: 1.2
+    fontSize: '0.5rem',
+    lineHeight: 1.2,
     // display: "flex"
-  }
+  },
   // .Wallet {
   //   position: absolute;
   //   left: 0px;
@@ -109,7 +107,7 @@ const sectionWalletStyle = theme => ({
   //   height: 52px;
   //   z-index: 252;
   // }
-  
+
   // .Wallet_ {
   //   font-size: 8px;
   //   font-family: "Roboto";
@@ -125,7 +123,7 @@ const sectionWalletStyle = theme => ({
   //   top: 256.581px;
   //   z-index: 254;
   // }
-  
+
   // intro: {
   //   width: "100%",
   //   position: 'relative',

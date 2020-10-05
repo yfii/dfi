@@ -146,72 +146,25 @@ const defaultFont = {
 };
 
 const boxShadow = {
-  boxShadow:
-    '0 10px 30px -12px rgba(' +
-    hexToRgb(blackColor) +
-    ', 0.42), 0 4px 25px 0px rgba(' +
-    hexToRgb(blackColor) +
-    ', 0.12), 0 8px 10px -5px rgba(' +
-    hexToRgb(blackColor) +
-    ', 0.2)',
+  boxShadow: '0 10px 30px -12px rgba(' + hexToRgb(blackColor) + ', 0.42), 0 4px 25px 0px rgba(' + hexToRgb(blackColor) + ', 0.12), 0 8px 10px -5px rgba(' + hexToRgb(blackColor) + ', 0.2)',
 };
 const primaryBoxShadow = {
-  boxShadow:
-    '0 12px 20px -10px rgba(' +
-    hexToRgb(primaryColor[0]) +
-    ', 0.28), 0 4px 20px 0px rgba(' +
-    hexToRgb(blackColor) +
-    ', 0.12), 0 7px 8px -5px rgba(' +
-    hexToRgb(primaryColor[0]) +
-    ', 0.2)',
+  boxShadow: '0 12px 20px -10px rgba(' + hexToRgb(primaryColor[0]) + ', 0.28), 0 4px 20px 0px rgba(' + hexToRgb(blackColor) + ', 0.12), 0 7px 8px -5px rgba(' + hexToRgb(primaryColor[0]) + ', 0.2)',
 };
 const infoBoxShadow = {
-  boxShadow:
-    '0 12px 20px -10px rgba(' +
-    hexToRgb(infoColor[0]) +
-    ', 0.28), 0 4px 20px 0px rgba(' +
-    hexToRgb(blackColor) +
-    ', 0.12), 0 7px 8px -5px rgba(' +
-    hexToRgb(infoColor[0]) +
-    ', 0.2)',
+  boxShadow: '0 12px 20px -10px rgba(' + hexToRgb(infoColor[0]) + ', 0.28), 0 4px 20px 0px rgba(' + hexToRgb(blackColor) + ', 0.12), 0 7px 8px -5px rgba(' + hexToRgb(infoColor[0]) + ', 0.2)',
 };
 const successBoxShadow = {
-  boxShadow:
-    '0 12px 20px -10px rgba(' +
-    hexToRgb(successColor[0]) +
-    ', 0.28), 0 4px 20px 0px rgba(' +
-    hexToRgb(blackColor) +
-    ', 0.12), 0 7px 8px -5px rgba(' +
-    hexToRgb(successColor[0]) +
-    ', 0.2)',
+  boxShadow: '0 12px 20px -10px rgba(' + hexToRgb(successColor[0]) + ', 0.28), 0 4px 20px 0px rgba(' + hexToRgb(blackColor) + ', 0.12), 0 7px 8px -5px rgba(' + hexToRgb(successColor[0]) + ', 0.2)',
 };
 const warningBoxShadow = {
-  boxShadow:
-    '0 12px 20px -10px rgba(' +
-    hexToRgb(warningColor[0]) +
-    ', 0.28), 0 4px 20px 0px rgba(' +
-    hexToRgb(blackColor) +
-    ', 0.12), 0 7px 8px -5px rgba(' +
-    hexToRgb(warningColor[0]) +
-    ', 0.2)',
+  boxShadow: '0 12px 20px -10px rgba(' + hexToRgb(warningColor[0]) + ', 0.28), 0 4px 20px 0px rgba(' + hexToRgb(blackColor) + ', 0.12), 0 7px 8px -5px rgba(' + hexToRgb(warningColor[0]) + ', 0.2)',
 };
 const dangerBoxShadow = {
-  boxShadow:
-    '0 12px 20px -10px rgba(' +
-    hexToRgb(dangerColor[0]) +
-    ', 0.28), 0 4px 20px 0px rgba(' +
-    hexToRgb(blackColor) +
-    ', 0.12), 0 7px 8px -5px rgba(' +
-    hexToRgb(dangerColor[0]) +
-    ', 0.2)',
+  boxShadow: '0 12px 20px -10px rgba(' + hexToRgb(dangerColor[0]) + ', 0.28), 0 4px 20px 0px rgba(' + hexToRgb(blackColor) + ', 0.12), 0 7px 8px -5px rgba(' + hexToRgb(dangerColor[0]) + ', 0.2)',
 };
 const roseBoxShadow = {
-  boxShadow:
-    '0 4px 20px 0px rgba(' +
-    hexToRgb(blackColor) +
-    ', 0.14), 0 7px 10px -5px rgba(' +
-    hexToRgb(roseColor[0]) +
-    ', 0.4)',
+  boxShadow: '0 4px 20px 0px rgba(' + hexToRgb(blackColor) + ', 0.14), 0 7px 10px -5px rgba(' + hexToRgb(roseColor[0]) + ', 0.4)',
 };
 
 const warningCardHeader = {
@@ -261,14 +214,7 @@ const cardHeader = {
 const defaultBoxShadow = {
   border: '0',
   borderRadius: '3px',
-  boxShadow:
-    '0 10px 20px -12px rgba(' +
-    hexToRgb(blackColor) +
-    ', 0.42), 0 3px 20px 0px rgba(' +
-    hexToRgb(blackColor) +
-    ', 0.12), 0 8px 10px -5px rgba(' +
-    hexToRgb(blackColor) +
-    ', 0.2)',
+  boxShadow: '0 10px 20px -12px rgba(' + hexToRgb(blackColor) + ', 0.42), 0 3px 20px 0px rgba(' + hexToRgb(blackColor) + ', 0.12), 0 8px 10px -5px rgba(' + hexToRgb(blackColor) + ', 0.2)',
   padding: '10px 0',
   transition: 'all 150ms ease 0s',
 };
@@ -319,14 +265,7 @@ const mainRaised = {
   },
   margin: '-60px 30px 0px',
   borderRadius: '6px',
-  boxShadow:
-    '0 16px 24px 2px rgba(' +
-    hexToRgb(blackColor) +
-    ', 0.14), 0 6px 30px 5px rgba(' +
-    hexToRgb(blackColor) +
-    ', 0.12), 0 8px 10px -5px rgba(' +
-    hexToRgb(blackColor) +
-    ', 0.2)',
+  boxShadow: '0 16px 24px 2px rgba(' + hexToRgb(blackColor) + ', 0.14), 0 6px 30px 5px rgba(' + hexToRgb(blackColor) + ', 0.12), 0 8px 10px -5px rgba(' + hexToRgb(blackColor) + ', 0.2)',
 };
 
 const section = {

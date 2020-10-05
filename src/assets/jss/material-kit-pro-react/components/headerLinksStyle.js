@@ -1,11 +1,4 @@
-import {
-  grayColor,
-  primaryColor,
-  whiteColor,
-  mlAuto,
-  hexToRgb,
-  secondaryColor,
-} from 'assets/jss/material-kit-pro-react.js';
+import { grayColor, primaryColor, whiteColor, mlAuto, hexToRgb, secondaryColor } from 'assets/jss/material-kit-pro-react.js';
 
 import tooltip from 'assets/jss/material-kit-pro-react/tooltipsStyle.js';
 

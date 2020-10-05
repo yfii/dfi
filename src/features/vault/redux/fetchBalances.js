@@ -1,11 +1,7 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
-import {
-  VAULT_FETCH_BALANCES_BEGIN,
-  VAULT_FETCH_BALANCES_SUCCESS,
-  VAULT_FETCH_BALANCES_FAILURE,
-} from './constants';
-import { fetchBalance } from "../../web3";
+import { VAULT_FETCH_BALANCES_BEGIN, VAULT_FETCH_BALANCES_SUCCESS, VAULT_FETCH_BALANCES_FAILURE } from './constants';
+import { fetchBalance } from '../../web3';
 import async from 'async';
 
 export function fetchBalances(data) {
@@ -33,46 +29,51 @@ export function fetchBalances(data) {
           tokenBalance: tokens[key].tokenBalance,
         });
       }
-      async.map(newTokens, (token, callback) => {
-        async.parallel([
-          (callbackInner) => { 
-            fetchBalance({
-              web3,
-              address,
-              tokenAddress: token.tokenAddress
-            }).then(
-              data => callbackInner(null, data)
-            ).catch(
-              error => {
-                return callbackInner(error.message || error)
-              }
-            )
+      async.map(
+        newTokens,
+        (token, callback) => {
+          async.parallel(
+            [
+              callbackInner => {
+                fetchBalance({
+                  web3,
+                  address,
+                  tokenAddress: token.tokenAddress,
+                })
+                  .then(data => callbackInner(null, data))
+                  .catch(error => {
+                    return callbackInner(error.message || error);
+                  });
+              },
+            ],
+            (error, data) => {
+              token.tokenBalance = data[0] || 0;
+              callback(null, token);
+            }
+          );
+        },
+        (error, tokens) => {
+          if (error) {
+            console.log(error);
+            dispatch({
+              type: VAULT_FETCH_BALANCES_FAILURE,
+            });
+            return reject(error.message || error);
           }
-        ], (error, data) => {
-          token.tokenBalance = data[0] || 0
-          callback(null, token)
-        })
-      }, (error, tokens) => {
-        if(error) {
-          console.log(error)
+          const newTokens = {};
+          for (let i = 0; i < tokens.length; i++) {
+            newTokens[tokens[i].token] = {
+              tokenAddress: tokens[i].tokenAddress,
+              tokenBalance: tokens[i].tokenBalance,
+            };
+          }
           dispatch({
-            type: VAULT_FETCH_BALANCES_FAILURE,
-          })
-          return reject(error.message || error)
+            type: VAULT_FETCH_BALANCES_SUCCESS,
+            data: newTokens,
+          });
+          resolve();
         }
-        const newTokens = {};
-        for(let i = 0; i < tokens.length; i++) {
-          newTokens[tokens[i].token] = {
-            tokenAddress: tokens[i].tokenAddress,
-            tokenBalance: tokens[i].tokenBalance
-          }
-        }
-        dispatch({
-          type: VAULT_FETCH_BALANCES_SUCCESS,
-          data: newTokens,
-        })
-        resolve()
-      })
+      );
     });
 
     return promise;
@@ -89,14 +90,14 @@ export function useFetchBalances() {
       tokens: state.vault.tokens,
       fetchBalancesPending: state.vault.fetchBalancesPending,
     }),
-    shallowEqual,
+    shallowEqual
   );
 
   const boundAction = useCallback(
-    (data) => {
+    data => {
       return dispatch(fetchBalances(data));
     },
-    [dispatch],
+    [dispatch]
   );
 
   return {

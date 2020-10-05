@@ -41,8 +41,7 @@ export default function CustomTable(props) {
                   classes.tableCell +
                   ' ' +
                   cx({
-                    [customHeadCellClasses[customHeadClassesForCells.indexOf(key)]]:
-                      customHeadClassesForCells.indexOf(key) !== -1,
+                    [customHeadCellClasses[customHeadClassesForCells.indexOf(key)]]: customHeadClassesForCells.indexOf(key) !== -1,
                     [classes.tableShoppingHead]: tableShopping,
                   });
                 return (
@@ -74,9 +73,7 @@ export default function CustomTable(props) {
                   <TableCell className={classes.tableCell} colSpan={prop.colspan} />
                   <TableCell className={classes.tableCell + ' ' + classes.tableCellTotal}>Total</TableCell>
                   <TableCell className={classes.tableCell + ' ' + classes.tableCellAmount}>{prop.amount}</TableCell>
-                  {tableHead.length - (prop.colspan - 0 + 2) > 0 ? (
-                    <TableCell className={classes.tableCell} colSpan={tableHead.length - (prop.colspan - 0 + 2)} />
-                  ) : null}
+                  {tableHead.length - (prop.colspan - 0 + 2) > 0 ? <TableCell className={classes.tableCell} colSpan={tableHead.length - (prop.colspan - 0 + 2)} /> : null}
                 </TableRow>
               );
             }
@@ -100,8 +97,7 @@ export default function CustomTable(props) {
                     ' ' +
                     cx({
                       [classes[colorsColls[coloredColls.indexOf(key)]]]: coloredColls.indexOf(key) !== -1,
-                      [customCellClasses[customClassesForCells.indexOf(key)]]:
-                        customClassesForCells.indexOf(key) !== -1,
+                      [customCellClasses[customClassesForCells.indexOf(key)]]: customClassesForCells.indexOf(key) !== -1,
                     });
                   return (
                     <TableCell className={tableCellClasses} key={key}>

@@ -13,10 +13,10 @@ export function disconnectWallet(web3, web3Modal) {
         }
         await web3Modal.clearCachedProvider();
         dispatch({ type: HOME_DISCONNECT_WALLET_SUCCESS });
-        resolve()
+        resolve();
       } catch (error) {
-        dispatch({ type: HOME_DISCONNECT_WALLET_FAILURE })
-        reject(error)
+        dispatch({ type: HOME_DISCONNECT_WALLET_FAILURE });
+        reject(error);
       }
     });
     return promise;
@@ -25,7 +25,7 @@ export function disconnectWallet(web3, web3Modal) {
 
 export function useDisconnectWallet() {
   const dispatch = useDispatch();
-  const disconnectWalletPending = useSelector(state => (state.home.disconnectWalletPending), shallowEqual);
+  const disconnectWalletPending = useSelector(state => state.home.disconnectWalletPending, shallowEqual);
   const boundAction = useCallback((web3, web3Modal) => dispatch(disconnectWallet(web3, web3Modal)), [dispatch]);
 
   return { disconnectWalletPending, disconnectWallet: boundAction };
@@ -36,23 +36,23 @@ export function reducer(state, action) {
     case HOME_DISCONNECT_WALLET_BEGIN:
       return {
         ...state,
-        disconnectWalletPending: true
+        disconnectWalletPending: true,
       };
 
     case HOME_DISCONNECT_WALLET_SUCCESS:
       return {
         ...state,
-        address: "",
+        address: '',
         web3: null,
         connected: false,
-        disconnectWalletPending: false
+        disconnectWalletPending: false,
       };
     case HOME_DISCONNECT_WALLET_FAILURE:
       return {
         ...state,
         web3: null,
-        address: "",
-        disconnectWalletPending: false
+        address: '',
+        disconnectWalletPending: false,
       };
 
     default:

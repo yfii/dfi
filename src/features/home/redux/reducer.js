@@ -10,11 +10,7 @@ import initialState from './initialState';
 import { reducer as connectWalletReducer } from './connectWallet';
 import { reducer as disconnectWalletReducer } from './disconnectWallet';
 
-
-const reducers = [
-  connectWalletReducer,
-  disconnectWalletReducer
-];
+const reducers = [connectWalletReducer, disconnectWalletReducer];
 
 export default function reducer(state = initialState, action) {
   let newState;

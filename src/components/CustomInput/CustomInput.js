@@ -13,17 +13,7 @@ import styles from 'assets/jss/material-kit-pro-react/components/customInputStyl
 const useStyles = makeStyles(styles);
 
 export default function CustomInput(props) {
-  const {
-    formControlProps,
-    labelText,
-    id,
-    labelProps,
-    inputProps,
-    error,
-    white,
-    inputRootCustomClasses,
-    success,
-  } = props;
+  const { formControlProps, labelText, id, labelProps, inputProps, error, white, inputRootCustomClasses, success } = props;
   const classes = useStyles();
   const labelClasses = classNames({
     [' ' + classes.labelRootError]: error,
@@ -70,11 +60,7 @@ export default function CustomInput(props) {
         {...inputProps}
         inputProps={newInputProps}
       />
-      {error ? (
-        <Clear className={classes.feedback + ' ' + classes.labelRootError} />
-      ) : success ? (
-        <Check className={classes.feedback + ' ' + classes.labelRootSuccess} />
-      ) : null}
+      {error ? <Clear className={classes.feedback + ' ' + classes.labelRootError} /> : success ? <Check className={classes.feedback + ' ' + classes.labelRootSuccess} /> : null}
     </FormControl>
   );
 }

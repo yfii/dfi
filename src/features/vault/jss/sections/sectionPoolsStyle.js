@@ -1,12 +1,4 @@
-import {
-  title,
-  mrAuto,
-  mlAuto,
-  primaryColor,
-  secondaryColor,
-  hoverColor,
-  grayColor,
-} from 'assets/jss/material-kit-pro-react.js';
+import { title, mrAuto, mlAuto, primaryColor, secondaryColor, hoverColor, grayColor } from 'assets/jss/material-kit-pro-react.js';
 
 import checkboxes from 'assets/jss/material-kit-pro-react/customCheckboxRadioSwitchStyle.js';
 import buttonGroup from 'assets/jss/material-kit-pro-react/buttonGroupStyle.js';

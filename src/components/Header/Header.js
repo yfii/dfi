@@ -78,12 +78,7 @@ export default function Header(props) {
           }}
           onClose={handleDrawerToggle}
         >
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerToggle}
-            className={classes.closeButtonDrawer}
-          >
+          <IconButton color="inherit" aria-label="open drawer" onClick={handleDrawerToggle} className={classes.closeButtonDrawer}>
             <Close />
           </IconButton>
           <div className={classes.appResponsive}>{links}</div>
@@ -111,7 +106,6 @@ Header.propTypes = {
   // props.color (see above)
   changeColorOnScroll: PropTypes.shape({
     height: PropTypes.number.isRequired,
-    color: PropTypes.oneOf(['primary', 'info', 'success', 'warning', 'danger', 'transparent', 'white', 'rose', 'dark'])
-      .isRequired,
+    color: PropTypes.oneOf(['primary', 'info', 'success', 'warning', 'danger', 'transparent', 'white', 'rose', 'dark']).isRequired,
   }),
 };

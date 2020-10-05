@@ -30,7 +30,7 @@ export default function App({ children }) {
             name: 'Injected',
             description: i18next.t('Home-BrowserWallet'),
           },
-        }
+        },
       },
     });
     setModal(newModal);
@@ -43,13 +43,7 @@ export default function App({ children }) {
   }, [web3Modal, connectWallet]);
 
   useEffect(() => {
-    if (
-      web3 &&
-      address &&
-      !connectWalletPending &&
-      networkId &&
-      Boolean(networkId !== Number(process.env.NETWORK_ID))
-    ) {
+    if (web3 && address && !connectWalletPending && networkId && Boolean(networkId !== Number(process.env.NETWORK_ID))) {
       alert(t('Network-Error'));
     }
   }, [web3, address, networkId, connectWalletPending, t]);
@@ -60,13 +54,7 @@ export default function App({ children }) {
         <Header
           brand="beefy.finance"
           links={
-            <HeaderLinks
-              dropdownHoverColor="dark"
-              address={address}
-              connected={connected}
-              connectWallet={() => connectWallet(web3Modal)}
-              disconnectWallet={() => disconnectWallet(web3, web3Modal)}
-            />
+            <HeaderLinks dropdownHoverColor="dark" address={address} connected={connected} connectWallet={() => connectWallet(web3Modal)} disconnectWallet={() => disconnectWallet(web3, web3Modal)} />
           }
           color="dark"
         />

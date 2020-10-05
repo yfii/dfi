@@ -23,8 +23,7 @@
   }
   input.form-control {
     border: 0;
-    background-image: linear-gradient(#9c27b0, #9c27b0),
-      linear-gradient(#d2d2d2, #d2d2d2);
+    background-image: linear-gradient(#9c27b0, #9c27b0), linear-gradient(#d2d2d2, #d2d2d2);
     background-size: 0 2px, 100% 1px;
     background-repeat: no-repeat;
     background-position: center bottom, center calc(100% - 1px);
@@ -38,7 +37,7 @@
     height: 36px;
     padding: 7px 0;
     font-size: 14px;
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
     font-weight: 400;
     line-height: 1.42857;
     display: block;
@@ -47,8 +46,7 @@
   }
   input.form-control:focus {
     outline: none;
-    background-image: linear-gradient(#9c27b0, #9c27b0),
-      linear-gradient(#d2d2d2, #d2d2d2);
+    background-image: linear-gradient(#9c27b0, #9c27b0), linear-gradient(#d2d2d2, #d2d2d2);
     background-size: 100% 2px, 100% 1px;
     box-shadow: none;
     transition-duration: 0.3s;
@@ -74,7 +72,7 @@
     width: 0;
     height: 0;
     vertical-align: middle;
-    content: "";
+    content: '';
     top: -5px;
     left: 10px;
     right: auto;
@@ -87,7 +85,7 @@
     border-bottom: 0.4em solid #ffffff;
     border-right: 0.4em solid transparent;
     border-left: 0.4em solid transparent;
-    content: "";
+    content: '';
     display: inline-block;
     position: absolute;
     top: -5px;

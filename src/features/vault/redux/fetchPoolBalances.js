@@ -1,12 +1,8 @@
 import { useCallback } from 'react';
-import { vaultABI, erc20ABI } from "../../configure";
+import { vaultABI, erc20ABI } from '../../configure';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
-import {
-  VAULT_FETCH_POOL_BALANCES_BEGIN,
-  VAULT_FETCH_POOL_BALANCES_SUCCESS,
-  VAULT_FETCH_POOL_BALANCES_FAILURE,
-} from './constants';
-import { fetchPricePerFullShare, fetchAllowance } from "../../web3";
+import { VAULT_FETCH_POOL_BALANCES_BEGIN, VAULT_FETCH_POOL_BALANCES_SUCCESS, VAULT_FETCH_POOL_BALANCES_FAILURE } from './constants';
+import { fetchPricePerFullShare, fetchAllowance } from '../../web3';
 import async from 'async';
 
 export function fetchPoolBalances(data) {
@@ -24,71 +20,73 @@ export function fetchPoolBalances(data) {
       // doRequest is a placeholder Promise. You should replace it with your own logic.
       // args.error here is only for test coverage purpose.
       const { address, web3, pools } = data;
-      async.map(pools, (pool, callback) => {
-        const earnContract = new web3.eth.Contract(vaultABI, pool.earnContractAddress);
-        const erc20Contract = pool.tokenAddress ? new web3.eth.Contract(erc20ABI, pool.tokenAddress) : null;
-        async.parallel([
-          (callbackInner) => {
-            fetchAllowance({
-              web3,
-              contractAddress: pool.earnContractAddress,
-              contract: erc20Contract,
-              address
-            }).then(
-              data => {
-                // console.log('data:' + data);
-                return callbackInner(null, data)
+      async.map(
+        pools,
+        (pool, callback) => {
+          const earnContract = new web3.eth.Contract(vaultABI, pool.earnContractAddress);
+          const erc20Contract = pool.tokenAddress ? new web3.eth.Contract(erc20ABI, pool.tokenAddress) : null;
+          async.parallel(
+            [
+              callbackInner => {
+                fetchAllowance({
+                  web3,
+                  contractAddress: pool.earnContractAddress,
+                  contract: erc20Contract,
+                  address,
+                })
+                  .then(data => {
+                    // console.log('data:' + data);
+                    return callbackInner(null, data);
+                  })
+                  .catch(error => {
+                    // console.log(error)
+                    return callbackInner(error, 0);
+                  });
+              },
+              callbackInner => {
+                fetchPricePerFullShare({
+                  contract: earnContract,
+                  address,
+                })
+                  .then(data => {
+                    // console.log(data)
+                    return callbackInner(null, data);
+                  })
+                  .catch(error => {
+                    // console.log(error)
+                    return callbackInner(error, 0);
+                  });
+              },
+            ],
+            (error, data) => {
+              if (error) {
+                console.log(error);
               }
-            ).catch(
-              error => {
-                // console.log(error)
-                return callbackInner(error, 0)
-              }
-            )
-          },
-          (callbackInner) => { 
-            fetchPricePerFullShare({
-              contract: earnContract,
-              address
-            }).then(
-              data => {
-                // console.log(data)
-                return callbackInner(null, data)
-              }
-            ).catch(
-              error => {
-                // console.log(error)
-                return callbackInner(error, 0)
-              }
-            ) 
-          }
-        ], (error, data) => {
-            if (error) {
-              console.log(error)
+              pool.allowance = data[0] || 0;
+              pool.pricePerFullShare = data[1] || 1;
+              callback(null, pool);
             }
-            pool.allowance = data[0] || 0;
-            pool.pricePerFullShare = data[1] || 1;
-            callback(null, pool);
-        })
-      }, (error, pools) => {
-        if(error) {
+          );
+        },
+        (error, pools) => {
+          if (error) {
+            dispatch({
+              type: VAULT_FETCH_POOL_BALANCES_FAILURE,
+            });
+            return reject(error.message || error);
+          }
           dispatch({
-            type: VAULT_FETCH_POOL_BALANCES_FAILURE,
-          })
-          return reject(error.message || error)
+            type: VAULT_FETCH_POOL_BALANCES_SUCCESS,
+            data: pools,
+          });
+          resolve();
         }
-        dispatch({
-          type: VAULT_FETCH_POOL_BALANCES_SUCCESS,
-          data: pools,
-        })
-        resolve()
-      })
+      );
     });
 
     return promise;
-  }
+  };
 }
-
 
 export function useFetchPoolBalances() {
   // args: false value or array
@@ -100,20 +98,20 @@ export function useFetchPoolBalances() {
       pools: state.vault.pools,
       fetchPoolBalancesPending: state.vault.fetchPoolBalancesPending,
     }),
-    shallowEqual,
+    shallowEqual
   );
 
   const boundAction = useCallback(
-    (data) => {
+    data => {
       return dispatch(fetchPoolBalances(data));
     },
-    [dispatch],
+    [dispatch]
   );
 
   return {
     pools,
     fetchPoolBalances: boundAction,
-    fetchPoolBalancesPending
+    fetchPoolBalancesPending,
   };
 }
 

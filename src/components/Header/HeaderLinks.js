@@ -23,7 +23,9 @@ export default function HeaderLinks(props) {
   const canvasRef = useRef(null);
 
   useEffect(() => {
-    if (!connected) { return; }
+    if (!connected) {
+      return;
+    }
 
     const canvas = canvasRef.current;
     renderIcon({ seed: address.toLowerCase() }, canvas);
@@ -62,22 +64,14 @@ export default function HeaderLinks(props) {
           dropdownList={[
             'English',
             { divider: true },
-            <a
-              href="https://github.com/beefyfinance/beefy-app/tree/master/src/locales"
-              target="_blank" rel="noopener noreferrer"
-              className={classes.cta}
-            >
+            <a href="https://github.com/beefyfinance/beefy-app/tree/master/src/locales" target="_blank" rel="noopener noreferrer" className={classes.cta}>
               Help to translate
             </a>,
           ]}
         />
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Button
-          disableElevation
-          className={classes.walletDisplay}
-          onClick={connected ? disconnectWallet : connectWallet}
-        >
+        <Button disableElevation className={classes.walletDisplay} onClick={connected ? disconnectWallet : connectWallet}>
           {connected ? (
             <>
               <canvas ref={canvasRef} style={{ display: 'none' }} />

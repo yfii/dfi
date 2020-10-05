@@ -77,9 +77,7 @@ export default function CustomDropdown(props) {
       ) : null}
       {dropdownList.map((prop, key) => {
         if (prop.divider) {
-          return (
-            <Divider key={key} onClick={() => handleCloseMenu('divider')} className={classes.dropdownDividerItem} />
-          );
+          return <Divider key={key} onClick={() => handleCloseMenu('divider')} className={classes.dropdownDividerItem} />;
         } else if (prop.props !== undefined && prop.props['data-ref'] === 'multi') {
           return (
             <MenuItem key={key} className={dropdownItem} style={{ overflow: 'visible', padding: 0 }}>
@@ -98,13 +96,7 @@ export default function CustomDropdown(props) {
   return (
     <div className={innerDropDown ? classes.innerManager : classes.manager}>
       <div className={buttonText !== undefined ? '' : classes.target}>
-        <Button
-          aria-label="Notifications"
-          aria-owns={anchorEl ? 'menu-list' : null}
-          aria-haspopup="true"
-          {...buttonProps}
-          onClick={handleClick}
-        >
+        <Button aria-label="Notifications" aria-owns={anchorEl ? 'menu-list' : null} aria-haspopup="true" {...buttonProps} onClick={handleClick}>
           {buttonIcon !== undefined ? <props.buttonIcon className={classes.buttonIcon} /> : null}
           {buttonText !== undefined ? buttonText : null}
           {caret ? <b className={caretClasses} /> : null}
@@ -124,22 +116,14 @@ export default function CustomDropdown(props) {
         })}
       >
         {() => (
-          <Grow
-            in={Boolean(anchorEl)}
-            id="menu-list"
-            style={dropup ? { transformOrigin: '0 100% 0' } : { transformOrigin: '0 0 0' }}
-          >
+          <Grow in={Boolean(anchorEl)} id="menu-list" style={dropup ? { transformOrigin: '0 100% 0' } : { transformOrigin: '0 0 0' }}>
             <Paper
               className={classNames({
                 [classes.dropdown]: true,
                 [classes.darkModalGround]: Boolean(darkModal),
               })}
             >
-              {innerDropDown ? (
-                dropDownMenu
-              ) : (
-                <ClickAwayListener onClickAway={handleClose}>{dropDownMenu}</ClickAwayListener>
-              )}
+              {innerDropDown ? dropDownMenu : <ClickAwayListener onClickAway={handleClose}>{dropDownMenu}</ClickAwayListener>}
             </Paper>
           </Grow>
         )}
@@ -165,20 +149,7 @@ CustomDropdown.propTypes = {
   dropdownHeader: PropTypes.node,
   rtlActive: PropTypes.bool,
   caret: PropTypes.bool,
-  dropPlacement: PropTypes.oneOf([
-    'bottom',
-    'top',
-    'right',
-    'left',
-    'bottom-start',
-    'bottom-end',
-    'top-start',
-    'top-end',
-    'right-start',
-    'right-end',
-    'left-start',
-    'left-end',
-  ]),
+  dropPlacement: PropTypes.oneOf(['bottom', 'top', 'right', 'left', 'bottom-start', 'bottom-end', 'top-start', 'top-end', 'right-start', 'right-end', 'left-start', 'left-end']),
   noLiPadding: PropTypes.bool,
   innerDropDown: PropTypes.bool,
   navDropdown: PropTypes.bool,

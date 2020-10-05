@@ -19,14 +19,7 @@ import { useSnackbar } from 'notistack';
 
 import Button from 'components/CustomButtons/Button.js';
 import { useConnectWallet } from '../../home/redux/hooks';
-import {
-  useFetchBalances,
-  useFetchPoolBalances,
-  useFetchApproval,
-  useFetchDeposit,
-  useFetchWithdraw,
-  useFetchContractApy,
-} from '../redux/hooks';
+import { useFetchBalances, useFetchPoolBalances, useFetchApproval, useFetchDeposit, useFetchWithdraw, useFetchContractApy } from '../redux/hooks';
 import CustomSlider from 'components/CustomSlider/CustomSlider';
 import sectionPoolsStyle from '../jss/sections/sectionPoolsStyle';
 import { inputLimitPass, inputFinalVal } from 'features/helpers/utils';
@@ -127,9 +120,7 @@ export default function SectionPools() {
       fetchDepositEth({
         address,
         web3,
-        amount: new BigNumber(amountValue)
-          .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
-          .toString(10),
+        amount: new BigNumber(amountValue).multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals)).toString(10),
         contractAddress: pool.earnContractAddress,
         index,
       })
@@ -140,9 +131,7 @@ export default function SectionPools() {
         address,
         web3,
         isAll,
-        amount: new BigNumber(amountValue)
-          .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
-          .toString(10),
+        amount: new BigNumber(amountValue).multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals)).toString(10),
         contractAddress: pool.earnContractAddress,
         index,
       })
@@ -167,9 +156,7 @@ export default function SectionPools() {
         address,
         web3,
         isAll,
-        amount: new BigNumber(amountValue)
-          .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
-          .toString(10),
+        amount: new BigNumber(amountValue).multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals)).toString(10),
         contractAddress: pool.earnContractAddress,
         index,
       })
@@ -180,9 +167,7 @@ export default function SectionPools() {
         address,
         web3,
         isAll,
-        amount: new BigNumber(amountValue)
-          .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
-          .toString(10),
+        amount: new BigNumber(amountValue).multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals)).toString(10),
         contractAddress: pool.earnContractAddress,
         index,
       })
@@ -211,9 +196,9 @@ export default function SectionPools() {
       }, FETCH_INTERVAL_MS);
       return () => clearInterval(id);
     }
-  
-  // Adding tokens and pools to this dep list, causes an endless loop, DDoSing the api 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    // Adding tokens and pools to this dep list, causes an endless loop, DDoSing the api
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [address, web3, fetchBalances, fetchPoolBalances]);
 
   useEffect(() => {
@@ -221,11 +206,7 @@ export default function SectionPools() {
   }, [pools, fetchContractApy]);
 
   const forMat = number => {
-    return new BigNumber(number)
-      .multipliedBy(new BigNumber(10000))
-      .dividedToIntegerBy(new BigNumber(1))
-      .dividedBy(new BigNumber(10000))
-      .toNumber();
+    return new BigNumber(number).multipliedBy(new BigNumber(10000)).dividedToIntegerBy(new BigNumber(1)).dividedBy(new BigNumber(10000)).toNumber();
   };
 
   return (
@@ -241,20 +222,9 @@ export default function SectionPools() {
           let singleDepositedBalance = byDecimals(tokens[pool.earnedToken].tokenBalance, pool.tokenDecimals);
           let depositedApy = contractApy[pool.id] || 0;
           return (
-            <Grid
-              item
-              xs={12}
-              container
-              key={index}
-              style={{ marginBottom: '24px', border: '1px solid #DED9D5' }}
-              spacing={0}
-            >
+            <Grid item xs={12} container key={index} style={{ marginBottom: '24px', border: '1px solid #DED9D5' }} spacing={0}>
               <div style={{ width: '100%' }}>
-                <Accordion
-                  expanded={Boolean(openedCardList.includes(index))}
-                  className={classes.accordion}
-                  TransitionProps={{ unmountOnExit: true }}
-                >
+                <Accordion expanded={Boolean(openedCardList.includes(index))} className={classes.accordion} TransitionProps={{ unmountOnExit: true }}>
                   <AccordionSummary
                     className={classes.details}
                     style={{ justifyContent: 'space-between' }}
@@ -263,13 +233,7 @@ export default function SectionPools() {
                       openCard(index);
                     }}
                   >
-                    <Grid
-                      container
-                      alignItems="center"
-                      justify="space-around"
-                      spacing={4}
-                      style={{ paddingTop: '16px', paddingBottom: '16px' }}
-                    >
+                    <Grid container alignItems="center" justify="space-around" spacing={4} style={{ paddingTop: '16px', paddingBottom: '16px' }}>
                       <Grid item>
                         <Grid container alignItems="center" spacing={2}>
                           <Grid item>
@@ -283,9 +247,7 @@ export default function SectionPools() {
                                   style={{
                                     color: primaryColor[0],
                                     marginLeft: '4px',
-                                    visibility: Boolean(pool.tokenDescriptionUrl)
-                                      ? 'visible'
-                                      : 'hidden',
+                                    visibility: Boolean(pool.tokenDescriptionUrl) ? 'visible' : 'hidden',
                                   }}
                                   className={'yfiiicon yfii-help-circle'}
                                   onClick={event => {
@@ -306,12 +268,7 @@ export default function SectionPools() {
                           <Hidden smDown>
                             <Grid item xs={7} container justify="center" alignItems="center">
                               <Grid item style={{ width: '200px' }}>
-                                <Typography
-                                  className={classes.iconContainerMainTitle}
-                                  variant="body2"
-                                  gutterBottom
-                                  noWrap
-                                >
+                                <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
                                   {forMat(balanceSingle)} {pool.token}
                                 </Typography>
                                 <Typography className={classes.iconContainerSubTitle} variant="body2">
@@ -323,12 +280,7 @@ export default function SectionPools() {
                           <Hidden mdDown>
                             <Grid item xs={4} container justify="center" alignItems="center">
                               <Grid item style={{ width: '200px' }}>
-                                <Typography
-                                  className={classes.iconContainerMainTitle}
-                                  variant="body2"
-                                  gutterBottom
-                                  noWrap
-                                >
+                                <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
                                   {forMat(singleDepositedBalance)} {pool.token}
                                 </Typography>
                                 <Typography className={classes.iconContainerSubTitle} variant="body2">
@@ -339,12 +291,7 @@ export default function SectionPools() {
                           </Hidden>
                           <Grid item xs={12} md={1} container justify="center" alignItems="center">
                             <Grid item>
-                              <Typography
-                                className={classes.iconContainerMainTitle}
-                                variant="body2"
-                                gutterBottom
-                                noWrap
-                              >
+                              <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
                                 {' '}
                                 {depositedApy}
                               </Typography>
@@ -364,9 +311,7 @@ export default function SectionPools() {
                                   root: classes.iconContainerSecond,
                                 }}
                                 style={{
-                                  visibility: Boolean(pool.tokenDescriptionUrl)
-                                    ? 'visible'
-                                    : 'hidden',
+                                  visibility: Boolean(pool.tokenDescriptionUrl) ? 'visible' : 'hidden',
                                 }}
                                 onClick={event => {
                                   event.stopPropagation();
@@ -385,11 +330,7 @@ export default function SectionPools() {
                                 openCard(index);
                               }}
                             >
-                              {openedCardList.includes(index) ? (
-                                <i className={'yfiiicon yfii-arrow-up'} />
-                              ) : (
-                                <i className={'yfiiicon yfii-arrow-down'} />
-                              )}
+                              {openedCardList.includes(index) ? <i className={'yfiiicon yfii-arrow-up'} /> : <i className={'yfiiicon yfii-arrow-down'} />}
                             </IconButton>
                           </Grid>
                         </Grid>
@@ -406,13 +347,7 @@ export default function SectionPools() {
                         <FormControl fullWidth variant="outlined" className={classes.numericInput}>
                           <CustomOutlinedInput
                             value={depositedBalance[index] !== undefined ? depositedBalance[index] : '0'}
-                            onChange={changeDetailInputValue.bind(
-                              this,
-                              'depositedBalance',
-                              index,
-                              balanceSingle.toNumber(),
-                              pool.tokenDecimals
-                            )}
+                            onChange={changeDetailInputValue.bind(this, 'depositedBalance', index, balanceSingle.toNumber(), pool.tokenDecimals)}
                           />
                         </FormControl>
                         <CustomSlider
@@ -428,9 +363,7 @@ export default function SectionPools() {
                                 onClick={onApproval.bind(this, pool, index)}
                                 disabled={fetchApprovalPending[index]}
                               >
-                                {fetchApprovalPending[index]
-                                  ? `${t('Vault-Approving')}`
-                                  : `${t('Vault-ApproveButton')}`}
+                                {fetchApprovalPending[index] ? `${t('Vault-Approving')}` : `${t('Vault-ApproveButton')}`}
                               </Button>
                             </div>
                           ) : (
@@ -439,11 +372,7 @@ export default function SectionPools() {
                                 className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
                                 color="primary"
                                 onFocus={event => event.stopPropagation()}
-                                disabled={
-                                  !Boolean(depositedBalance[index]) ||
-                                  fetchDepositPending[index] ||
-                                  new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber()
-                                }
+                                disabled={!Boolean(depositedBalance[index]) || fetchDepositPending[index] || new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber()}
                                 onClick={onDeposit.bind(this, pool, index, false, balanceSingle)}
                               >
                                 {t('Vault-DepositButton')}
@@ -452,10 +381,7 @@ export default function SectionPools() {
                                 <Button
                                   className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`}
                                   onFocus={event => event.stopPropagation()}
-                                  disabled={
-                                    fetchDepositPending[index] ||
-                                    new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber()
-                                  }
+                                  disabled={fetchDepositPending[index] || new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber()}
                                   onClick={onDeposit.bind(this, pool, index, true, balanceSingle)}
                                 >
                                   {t('Vault-DepositButtonAll')}
@@ -467,19 +393,12 @@ export default function SectionPools() {
                       </Grid>
                       <Grid item xs={12} sm={6} className={classes.sliderDetailContainer}>
                         <div className={classes.showDetailLeft}>
-                          {singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)).toFormat(4)}{' '}
-                          {pool.token} ({singleDepositedBalance.toFormat(4)} {pool.earnedToken})
+                          {singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)).toFormat(4)} {pool.token} ({singleDepositedBalance.toFormat(4)} {pool.earnedToken})
                         </div>
                         <FormControl fullWidth variant="outlined">
                           <CustomOutlinedInput
                             value={withdrawAmount[index] !== undefined ? withdrawAmount[index] : '0'}
-                            onChange={changeDetailInputValue.bind(
-                              this,
-                              'withdrawAmount',
-                              index,
-                              singleDepositedBalance.toNumber(),
-                              pool.tokenDecimals
-                            )}
+                            onChange={changeDetailInputValue.bind(this, 'withdrawAmount', index, singleDepositedBalance.toNumber(), pool.tokenDecimals)}
                           />
                         </FormControl>
                         <CustomSlider
@@ -503,9 +422,7 @@ export default function SectionPools() {
                             color="primary"
                             onClick={onWithdraw.bind(this, pool, index, true, singleDepositedBalance)}
                           >
-                            {fetchWithdrawPending[index]
-                              ? `${t('Vault-Withdrawing')}`
-                              : `${t('Vault-WithdrawButtonAll')}`}
+                            {fetchWithdrawPending[index] ? `${t('Vault-Withdrawing')}` : `${t('Vault-WithdrawButtonAll')}`}
                           </Button>
                         </div>
                       </Grid>

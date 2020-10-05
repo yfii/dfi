@@ -1,11 +1,7 @@
 import axios from 'axios';
 import { useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
-import {
-  VAULT_FETCH_CONTRACT_APY_BEGIN,
-  VAULT_FETCH_CONTRACT_APY_SUCCESS,
-  VAULT_FETCH_CONTRACT_APY_FAILURE,
-} from './constants';
+import { VAULT_FETCH_CONTRACT_APY_BEGIN, VAULT_FETCH_CONTRACT_APY_SUCCESS, VAULT_FETCH_CONTRACT_APY_FAILURE } from './constants';
 
 // Rekit uses redux-thunk for async actions by default: https://github.com/gaearon/redux-thunk
 // If you prefer redux-saga, you can use rekit-plugin-redux-saga: https://github.com/supnate/rekit-plugin-redux-saga
@@ -41,7 +37,7 @@ export function fetchContractApy() {
             data: { error: err },
           });
           reject(err);
-        },
+        }
       );
     });
 
@@ -59,15 +55,12 @@ export function useFetchContractApy() {
       contractApy: state.vault.contractApy,
       fetchContractApyPending: state.vault.fetchContractApyPending,
     }),
-    shallowEqual,
+    shallowEqual
   );
 
-  const boundAction = useCallback(
-    () => {
-      dispatch(fetchContractApy());
-    },
-    [dispatch],
-  );
+  const boundAction = useCallback(() => {
+    dispatch(fetchContractApy());
+  }, [dispatch]);
 
   return {
     contractApy,
@@ -104,4 +97,3 @@ export function reducer(state, action) {
       return state;
   }
 }
-

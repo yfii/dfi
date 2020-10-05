@@ -9,21 +9,7 @@ import styles from 'assets/jss/material-kit-pro-react/components/buttonStyle.js'
 const useStyles = makeStyles(styles);
 
 const RegularButton = React.forwardRef((props, ref) => {
-  const {
-    color,
-    round,
-    children,
-    fullWidth,
-    disabled,
-    simple,
-    size,
-    block,
-    link,
-    justIcon,
-    fileButton,
-    className,
-    ...rest
-  } = props;
+  const { color, round, children, fullWidth, disabled, simple, size, block, link, justIcon, fileButton, className, ...rest } = props;
   const classes = useStyles();
   const btnClasses = classNames({
     [classes.button]: true,
