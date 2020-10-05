@@ -50,7 +50,7 @@ export default function App({ children }) {
       networkId &&
       Boolean(networkId !== Number(process.env.NETWORK_ID))
     ) {
-      alert(t('App-SnackBarText'));
+      alert(t('Network-Error'));
     }
   }, [web3, address, networkId, connectWalletPending, t]);
 

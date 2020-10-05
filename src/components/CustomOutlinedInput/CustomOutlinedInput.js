@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
-import { primaryColor, secondaryColor } from 'assets/jss/material-kit-pro-react';
+import { primaryColor } from 'assets/jss/material-kit-pro-react';
 
 const useStyles = makeStyles({
   showDetail: {
