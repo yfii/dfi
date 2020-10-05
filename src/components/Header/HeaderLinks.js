@@ -89,7 +89,7 @@ export default function HeaderLinks(props) {
           ) : (
             <>
               <i
-                className={'yfiiicon yfii-help-circle'}
+                className={'far fa-question-circle'}
                 style={{
                   width: '24px',
                   marginRight: '4px',

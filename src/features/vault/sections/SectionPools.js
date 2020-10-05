@@ -249,7 +249,7 @@ export default function SectionPools() {
                                     marginLeft: '4px',
                                     visibility: Boolean(pool.tokenDescriptionUrl) ? 'visible' : 'hidden',
                                   }}
-                                  className={'yfiiicon yfii-help-circle'}
+                                  className={'far fa-question-circle'}
                                   onClick={event => {
                                     event.stopPropagation();
                                     window.open(pool.tokenDescriptionUrl);
@@ -318,7 +318,7 @@ export default function SectionPools() {
                                   window.open(pool.tokenDescriptionUrl);
                                 }}
                               >
-                                <i className={'yfiiicon yfii-help-circle'} />
+                                <i className={'far fa-question-circle'} />
                               </IconButton>
                             </Grid>
                           </Hidden>
@@ -330,7 +330,7 @@ export default function SectionPools() {
                                 openCard(index);
                               }}
                             >
-                              {openedCardList.includes(index) ? <i className={'yfiiicon yfii-arrow-up'} /> : <i className={'yfiiicon yfii-arrow-down'} />}
+                              {openedCardList.includes(index) ? <i className={'far fa-arrow-alt-circle-up'} /> : <i className={'far fa-arrow-alt-circle-down'} />}
                             </IconButton>
                           </Grid>
                         </Grid>
