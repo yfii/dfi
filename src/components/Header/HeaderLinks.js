@@ -23,7 +23,7 @@ export default function HeaderLinks(props) {
   const canvasRef = useRef(null);
 
   useEffect(() => {
-    if (!connected) return;
+    if (!connected) { return; }
 
     const canvas = canvasRef.current;
     renderIcon({ seed: address.toLowerCase() }, canvas);
