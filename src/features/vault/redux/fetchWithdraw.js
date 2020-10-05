@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   VAULT_FETCH_WITHDRAW_BEGIN,
   VAULT_FETCH_WITHDRAW_SUCCESS,

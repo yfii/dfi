@@ -36,7 +36,7 @@ const FETCH_INTERVAL_MS = 30 * 1000;
 const useStyles = makeStyles(sectionPoolsStyle);
 
 export default function SectionPools() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const { web3, address, networkId } = useConnectWallet();
   let { pools, fetchPoolBalances } = useFetchPoolBalances();
   const { tokens, fetchBalances } = useFetchBalances();
@@ -405,7 +405,7 @@ export default function SectionPools() {
                         </div>
                         <FormControl fullWidth variant="outlined" className={classes.numericInput}>
                           <CustomOutlinedInput
-                            value={depositedBalance[index] != undefined ? depositedBalance[index] : '0'}
+                            value={depositedBalance[index] !== undefined ? depositedBalance[index] : '0'}
                             onChange={changeDetailInputValue.bind(
                               this,
                               'depositedBalance',
@@ -472,7 +472,7 @@ export default function SectionPools() {
                         </div>
                         <FormControl fullWidth variant="outlined">
                           <CustomOutlinedInput
-                            value={withdrawAmount[index] != undefined ? withdrawAmount[index] : '0'}
+                            value={withdrawAmount[index] !== undefined ? withdrawAmount[index] : '0'}
                             onChange={changeDetailInputValue.bind(
                               this,
                               'withdrawAmount',
