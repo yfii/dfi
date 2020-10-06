@@ -371,7 +371,7 @@ export default function SectionPools() {
                                 className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
                                 color="primary"
                                 onFocus={event => event.stopPropagation()}
-                                disabled="true"
+                                disabled={!Boolean(depositedBalance[index]) || fetchDepositPending[index] || new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber()}
                                 onClick={onDeposit.bind(this, pool, index, false, balanceSingle)}
                               >
                                 {t('Vault-DepositButton')}
@@ -380,7 +380,7 @@ export default function SectionPools() {
                                 <Button
                                   className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`}
                                   onFocus={event => event.stopPropagation()}
-                                  disabled="true"
+                                  disabled={fetchDepositPending[index] || new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber()}
                                   onClick={onDeposit.bind(this, pool, index, true, balanceSingle)}
                                 >
                                   {t('Vault-DepositButtonAll')}
@@ -410,7 +410,7 @@ export default function SectionPools() {
                             className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
                             type="button"
                             color="primary"
-                            disabled="true"
+                            disabled={fetchWithdrawPending[index] || !Boolean(withdrawAmount[index])}
                             onClick={onWithdraw.bind(this, pool, index, false, singleDepositedBalance)}
                           >
                             {fetchWithdrawPending[index] ? `${t('Vault-Withdrawing')}` : `${t('Vault-WithdrawButton')}`}
@@ -419,7 +419,6 @@ export default function SectionPools() {
                             className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
                             type="button"
                             color="primary"
-                            disabled="true"
                             onClick={onWithdraw.bind(this, pool, index, true, singleDepositedBalance)}
                           >
                             {fetchWithdrawPending[index] ? `${t('Vault-Withdrawing')}` : `${t('Vault-WithdrawButtonAll')}`}
