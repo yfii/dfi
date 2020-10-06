@@ -125,7 +125,7 @@ export function formatInputDecimals(inputOne, inputTwo) {
   return result;
 }
 
-export function forMat(number) {
+export function format(number) {
   return new BigNumber(number).multipliedBy(new BigNumber(10000)).dividedToIntegerBy(new BigNumber(1)).dividedBy(new BigNumber(10000)).toNumber();
 }
 

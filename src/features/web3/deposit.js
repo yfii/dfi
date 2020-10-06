@@ -8,7 +8,7 @@ export const deposit = async ({ web3, address, isAll, amount, contractAddress, d
     amount:${amount}
   `);
   const contract = new web3.eth.Contract(vaultABI, contractAddress);
-  const data = await _deposit({ web3, contract, isAll, amount, address });
+  const data = await _deposit({ web3, contract, isAll, amount, address, dispatch });
   return data;
 };
 

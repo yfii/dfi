@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import BigNumber from 'bignumber.js';
+import { BigNumber, format } from 'bignumber.js';
 import { byDecimals, calculateReallyNum } from 'features/helpers/bignumber';
 import { makeStyles } from '@material-ui/core/styles';
 import Accordion from '@material-ui/core/Accordion';
@@ -17,9 +17,10 @@ import { primaryColor } from 'assets/jss/material-kit-pro-react.js';
 import Avatar from '@material-ui/core/Avatar';
 import { useSnackbar } from 'notistack';
 
-import Button from 'components/CustomButtons/Button.js';
 import { useConnectWallet } from '../../home/redux/hooks';
 import { useFetchBalances, useFetchPoolBalances, useFetchApproval, useFetchDeposit, useFetchWithdraw, useFetchContractApy } from '../redux/hooks';
+
+import Button from 'components/CustomButtons/Button.js';
 import CustomSlider from 'components/CustomSlider/CustomSlider';
 import sectionPoolsStyle from '../jss/sections/sectionPoolsStyle';
 import { inputLimitPass, inputFinalVal } from 'features/helpers/utils';
@@ -110,7 +111,7 @@ export default function SectionPools() {
     if (isAll) {
       setDepositedBalance({
         ...depositedBalance,
-        [index]: forMat(balanceSingle),
+        [index]: format(balanceSingle),
         [`slider-${index}`]: 100,
       });
     }
@@ -146,10 +147,12 @@ export default function SectionPools() {
     if (isAll) {
       setWithdrawAmount({
         ...withdrawAmount,
-        [index]: forMat(singleDepositedBalance),
+        [index]: format(singleDepositedBalance),
         [`slider-${index}`]: 100,
       });
     }
+
+    console.log(withdrawAmount[index]);
     let amountValue = withdrawAmount[index] ? withdrawAmount[index].replace(',', '') : withdrawAmount[index];
     if (!pool.tokenAddress) {
       fetchWithdrawEth({
@@ -204,10 +207,6 @@ export default function SectionPools() {
   useEffect(() => {
     fetchContractApy();
   }, [pools, fetchContractApy]);
-
-  const forMat = number => {
-    return new BigNumber(number).multipliedBy(new BigNumber(10000)).dividedToIntegerBy(new BigNumber(1)).dividedBy(new BigNumber(10000)).toNumber();
-  };
 
   return (
     <Grid container style={{ paddingTop: '4px' }}>
@@ -269,7 +268,7 @@ export default function SectionPools() {
                             <Grid item xs={7} container justify="center" alignItems="center">
                               <Grid item style={{ width: '200px' }}>
                                 <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
-                                  {forMat(balanceSingle)} {pool.token}
+                                  {format(balanceSingle)} {pool.token}
                                 </Typography>
                                 <Typography className={classes.iconContainerSubTitle} variant="body2">
                                   {t('Vault-Balance')}
@@ -281,7 +280,7 @@ export default function SectionPools() {
                             <Grid item xs={4} container justify="center" alignItems="center">
                               <Grid item style={{ width: '200px' }}>
                                 <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
-                                  {forMat(singleDepositedBalance)} {pool.token}
+                                  {format(singleDepositedBalance)} {pool.token}
                                 </Typography>
                                 <Typography className={classes.iconContainerSubTitle} variant="body2">
                                   {t('Vault-Deposited')}
