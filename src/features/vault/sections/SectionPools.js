@@ -257,7 +257,7 @@ export default function SectionPools() {
                               </Hidden>
                             </Typography>
                             <Typography className={classes.iconContainerSubTitle} variant="body2">
-                              {pool.token}
+                              {pool.tokenDescription}
                             </Typography>
                           </Grid>
                         </Grid>
