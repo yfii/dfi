@@ -99,7 +99,9 @@
     "Voting": "投票",
     "Documentation": "文档",
     "Uniswap": "Uniswap",
-    "Audit": "审计报告"
+    "Audit": "审计报告",
+    "v1Vault":"v1 vault",
+    "oldVault":"old yfii finance"
   },
   "Farm-Main-Title": "Farm",
   "Farm-Second-Title": "持有二姨夫获得妹夫",

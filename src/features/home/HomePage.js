@@ -55,7 +55,7 @@ export default function HomePage() {
       <FarmPools fromPage='home'/>
       <SectionPools fromPage='home'/>
       <StakePage fromPage='home'/>
-      <Dialog
+      {/* <Dialog
         classes={{
           root: classes.modalRoot,
           paper: classes.modal
@@ -83,7 +83,7 @@ export default function HomePage() {
             Close
           </Button>
         </DialogActions>
-      </Dialog>
+      </Dialog> */}
     </>
   );
 }
