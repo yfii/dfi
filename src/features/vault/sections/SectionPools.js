@@ -39,7 +39,7 @@ export default function SectionPools() {
 
   const { fetchApproval, fetchApprovalPending } = useFetchApproval();
   const { fetchDeposit, fetchDepositEth, fetchDepositPending } = useFetchDeposit();
-  const { fetchWithdraw, fetchWithdrawEth, fetchWithdrawPending } = useFetchWithdraw();
+  const { fetchWithdraw, fetchWithdrawBnb, fetchWithdrawPending } = useFetchWithdraw();
   const { contractApy, fetchContractApy } = useFetchContractApy();
 
   const [depositedBalance, setDepositedBalance] = useState({});
@@ -155,7 +155,7 @@ export default function SectionPools() {
     console.log(withdrawAmount[index]);
     let amountValue = withdrawAmount[index] ? withdrawAmount[index].replace(',', '') : withdrawAmount[index];
     if (!pool.tokenAddress) {
-      fetchWithdrawEth({
+      fetchWithdrawBnb({
         address,
         web3,
         isAll,

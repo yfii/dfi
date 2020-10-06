@@ -43,7 +43,7 @@ export function fetchWithdraw({ address, web3, isAll, amount, contractAddress, i
   };
 }
 
-export function fetchWithdrawEth({ address, web3, isAll, amount, contractAddress, index }) {
+export function fetchWithdrawBnb({ address, web3, isAll, amount, contractAddress, index }) {
   return dispatch => {
     // optionally you can have getState as the second argument
     dispatch({
@@ -94,11 +94,11 @@ export function useFetchWithdraw() {
 
   const boundAction = useCallback(data => dispatch(fetchWithdraw(data)), [dispatch]);
 
-  const boundAction2 = useCallback(data => dispatch(fetchWithdrawEth(data)), [dispatch]);
+  const boundAction2 = useCallback(data => dispatch(fetchWithdrawBnb(data)), [dispatch]);
 
   return {
     fetchWithdraw: boundAction,
-    fetchWithdrawEth: boundAction2,
+    fetchWithdrawBnb: boundAction2,
     fetchWithdrawPending,
   };
 }
