@@ -48,7 +48,7 @@ const footerLinkArr = [
     {content:'Link.Audit',href:'https://github.com/yfii/audit'},
     {content:'Link.Stats',href:'https://stats.dfi.money/'},
     {content:'Link.Voting',href:'https://snapshot.page/#/dfi'},
-    {content:'Link.Documentation',href:'https://docs.yfii.finance/'},
+    {content:'Link.Documentation',href:'https://docs.dfi.money/'},
     {content:'Link.Uniswap',href:'https://app.uniswap.org/#/swap?outputCurrency=0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83'},
     {content:'Link.v1Vault',href:'https://v1.dfi.money/'},
     {content:'Link.oldVault',href:'https://old.dfi.money/'},
