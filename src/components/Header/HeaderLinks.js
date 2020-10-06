@@ -44,6 +44,9 @@ export default function HeaderLinks(props) {
     switch (event) {
       case 'English':
         return i18n.changeLanguage('en').then(() => setLanguage(event));
+      case 'Français':
+        return i18n.changeLanguage('fr').then(() => setLanguage(event));
+      // TODO: more translations
       default:
         return;
     }
@@ -63,6 +66,8 @@ export default function HeaderLinks(props) {
           onClick={handleClick}
           dropdownList={[
             'English',
+            'Français',
+            // TODO: more translations
             { divider: true },
             <a href="https://github.com/beefyfinance/beefy-app/tree/master/src/locales" target="_blank" rel="noopener noreferrer" className={classes.cta}>
               Help to translate

@@ -1,0 +1,17 @@
+{
+  "Disclaimer": "Ce projet est en version bêta. Soyez prudent.",
+  "Network-Error": "Erreur Réseau",
+  "Vault-Wallet": "Portefeuille",
+  "Vault-Balance": "Solde",
+  "Vault-APY": "APY",
+  "Vault-Approving": "Approbation en cours...",
+  "Vault-ApproveButton": "Approuvé",
+  "Vault-DepositButton": "Dépôser",
+  "Vault-DepositButtonAll": "Tout déposer",
+  "Vault-Deposited": "Déposé",
+  "Vault-Withdrawing": "Retrait en cours...",
+  "Vault-WithdrawButton": "Retrait",
+  "Vault-WithdrawButtonAll": "Tout retirer",
+  "Vault-MainTitle": "Coffres",
+  "Vault-SecondTitle": "Déposer & Générer des intêrets"
+}
