@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { BigNumber, format } from 'bignumber.js';
-import { byDecimals, calculateReallyNum } from 'features/helpers/bignumber';
+import BigNumber from 'bignumber.js';
+import { byDecimals, calculateReallyNum, format } from 'features/helpers/bignumber';
 import { makeStyles } from '@material-ui/core/styles';
 import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
