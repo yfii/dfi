@@ -46,6 +46,8 @@ export default function HeaderLinks(props) {
         return i18n.changeLanguage('en').then(() => setLanguage(event));
       case 'Français':
         return i18n.changeLanguage('fr').then(() => setLanguage(event));
+      case 'Svenska':
+        return i18n.changeLanguage('se').then(() => setLanguage(event));
       // TODO: more translations
       default:
         return;
@@ -67,6 +69,7 @@ export default function HeaderLinks(props) {
           dropdownList={[
             'English',
             'Français',
+            'Svenska',
             // TODO: more translations
             { divider: true },
             <a href="https://github.com/beefyfinance/beefy-app/tree/master/src/locales" target="_blank" rel="noopener noreferrer" className={classes.cta}>

@@ -1,0 +1,17 @@
+{
+  "Disclaimer": "Detta projekt är i Beta. Var försiktig och DYOR.",
+  "Network-Error": "Nätverksfel",
+  "Vault-Wallet": "Plånbok",
+  "Vault-Balance": "Balans",
+  "Vault-APY": "APY",
+  "Vault-Approving": "Tillåt...",
+  "Vault-ApproveButton": "Tillåt",
+  "Vault-DepositButton": "Insättning",
+  "Vault-DepositButtonAll": "Sätt in allt",
+  "Vault-Deposited": "Insatt",
+  "Vault-Withdrawing": "Ta ut...",
+  "Vault-WithdrawButton": "Ta ut",
+  "Vault-WithdrawButtonAll": "Ta ut All",
+  "Vault-MainTitle": "Valv",
+  "Vault-SecondTitle": "Sätt in & tjäna pengar"
+}
