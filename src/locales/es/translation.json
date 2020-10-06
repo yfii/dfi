@@ -1,0 +1,17 @@
+{
+  "Disclaimer": "Este proyecto está en fase Beta. Utilizalo con precaución y documéntate.",
+  "Network-Error": "Error de Conexión",
+  "Vault-Wallet": "Cartera",
+  "Vault-Balance": "Balance",
+  "Vault-APY": "TNA",
+  "Vault-Approving": "Aprobando...",
+  "Vault-ApproveButton": "Aprobar",
+  "Vault-DepositButton": "Depositar",
+  "Vault-DepositButtonAll": "Depositar Todo",
+  "Vault-Deposited": "Depositado",
+  "Vault-Withdrawing": "Retirando...",
+  "Vault-WithdrawButton": "Retirar",
+  "Vault-WithdrawButtonAll": "Retirar Todo",
+  "Vault-MainTitle": "Bovedas",
+  "Vault-SecondTitle": "Deposita y genera ganancias"
+}
