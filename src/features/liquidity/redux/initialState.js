@@ -1,7 +1,7 @@
 import { yCurveFiRewardsABI, balancerRewardsABI, governanceABI, pool4Abi } from "../../configure";
-
+const pools={}
 const initialState = {
-	// pools,
+	pools,
 	// allowance,
 	// currentlyStaked,
 	// rewardsAvailable,

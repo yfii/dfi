@@ -27,12 +27,6 @@ const useStyles = makeStyles(styles);
 <Tab value='stake' label='Stake' id='bar-tab-2'/>
 </Tabs> */}
 
-const tabArr = [
-  {value:'',label:'Link.Home'},
-  {value:'vault',label:'Link.Vault'},
-  {value:'stake',label:'Link.Stake'},
-]
-
 export default function HeaderLinks(props) {
   let history = useHistory();
   const { dropdownHoverColor, connected, address, connectWallet, disconnectWallet } = props;
@@ -48,6 +42,7 @@ export default function HeaderLinks(props) {
     {value:'vault',label:t('Nav-Vault')},
     {value:'stake',label:t('Nav-Stake')},
     {value:'farm',label:t('Nav-Farm')},
+    {value:'lp',label:t('Nav-lp')},
   ]
 
   useEffect(() => {

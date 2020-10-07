@@ -1,4 +1,4 @@
-import { LiquidityPoolPage } from './';
+import { LiquidityPoolPage } from '.';
 
 export default {
   path: 'lp',

@@ -4,8 +4,7 @@ import React, { useEffect } from 'react';
 // import Close from "@material-ui/icons/Close";
 // core components
 // sections for this page
-import SectionTitle from './sections/SectionTitle';
-import SectionPools from './sections/SectionPools';
+import StakePools from './sections/StakePools'
 // hooks
 
 export default function VaultPage() {
@@ -15,8 +14,7 @@ export default function VaultPage() {
   }, []);
   return (
     <>
-      <SectionTitle />
-      <SectionPools />
+      <StakePools />
     </>
   );
 }
