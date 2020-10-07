@@ -102,7 +102,6 @@
     "Uniswap": "Uniswap ETH-YFII",
     "Audit": "Audit"
   },
-  "Farm-Main-Title": "Farm",
   "Farm-Second-Title": "Hold YFII and Earn MEFI",
   "Farm-Stake": "Deposit",
   "Farm-Earn": "Earn",
@@ -133,5 +132,6 @@
   "Public-Day": " Day ",
   "Public-Hour": " Hour ",
   "Public-Minute": " Minute ",
-  "Public-Seconds": " Seconds "
+  "Public-Seconds": " Seconds ",
+  "LiquidityPool-Title": "Lp"
 }
