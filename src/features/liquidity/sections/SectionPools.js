@@ -168,18 +168,6 @@ const [ cardFirstDropdownList, setCardFirstDropdownList ] = useState([]);
                                     <Grid item style={{minWidth: '100px'}}>
                                             <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom>
                                                 {pool.token}
-                                                <Hidden smUp>
-                                                    <i
-                                                        style={{color:primaryColor[0],marginLeft:'4px',visibility:Boolean(isZh?pool.tokenDescriptionUrl2:pool.tokenDescriptionUrl)?"visible":"hidden"}}
-                                                        className={"yfiiicon yfii-help-circle"} 
-                                                        onClick={
-                                                            event => {
-                                                                event.stopPropagation();
-                                                                window.open(isZh?pool.tokenDescriptionUrl2:pool.tokenDescriptionUrl)
-                                                            }
-                                                        }
-                                                        />
-                                                </Hidden>
                                             </Typography>
                                             
                                         <Typography className={classes.iconContainerSubTitle} variant="body2">{pool.token}</Typography>
