@@ -13,3 +13,4 @@
 
 export { fetchPoolsInfo } from './fetchPoolsInfo';
 export { fetchBalance } from './fetchBalance';
+export { fetchBalances } from './fetchBalances';

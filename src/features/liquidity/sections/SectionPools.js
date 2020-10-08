@@ -35,7 +35,7 @@ import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
 import { useSnackbar } from 'notistack';
 //  hooks
 import { useConnectWallet } from '../../home/redux/hooks';
-import { useFetchPoolsInfo, useFetchBalance } from '../redux/hooks';
+import { useFetchPoolsInfo, useFetchBalance, useFetchBalances } from '../redux/hooks';
 import CustomSlider from 'components/CustomSlider/CustomSlider';
 import { isEmpty } from 'features/helpers/utils';
 import { erc20Tokens } from '../config/erc20Tokens.js'
@@ -49,6 +49,7 @@ export default function SectionPools() {
   const { pools, poolsInfo, fetchPoolsInfo } = useFetchPoolsInfo();
 //   const { pools, fetchPoolBalance } = useFetchPoolBalance();
   const { etherBalance, fetchBalance } = useFetchBalance();
+  const { erc20Tokens, fetchBalances } = useFetchBalances();
   const [ cardIsOpenedList, setCardIsOpenedList ] = useState(Array(pools.length).fill(false));
   const classes = useStyles();
 
@@ -86,6 +87,7 @@ export default function SectionPools() {
     if (address && web3) {
       fetchPoolsInfo()
       fetchBalance();
+      fetchBalances();
     //   fetchPoolBalances({address, web3, pools});
     //   const id = setInterval(() => {
     //     fetchBalances({address, web3, tokens});
@@ -181,18 +183,6 @@ export default function SectionPools() {
                                     <Grid item style={{minWidth: '100px'}}>
                                             <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom>
                                                 {pool.token}
-                                                <Hidden smUp>
-                                                    <i
-                                                        style={{color:primaryColor[0],marginLeft:'4px',visibility:Boolean(isZh?pool.tokenDescriptionUrl2:pool.tokenDescriptionUrl)?"visible":"hidden"}}
-                                                        className={"yfiiicon yfii-help-circle"} 
-                                                        onClick={
-                                                            event => {
-                                                                event.stopPropagation();
-                                                                window.open(isZh?pool.tokenDescriptionUrl2:pool.tokenDescriptionUrl)
-                                                            }
-                                                        }
-                                                        />
-                                                </Hidden>
                                             </Typography>
                                             
                                         <Typography className={classes.iconContainerSubTitle} variant="body2">{pool.token}</Typography>
