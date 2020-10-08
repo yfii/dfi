@@ -59,5 +59,19 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
   },
-
+  {
+    id: 'usdt',
+    name: 'USDT',
+    token: 'USDT',
+    tokenDescription: 'Tether USD',
+    tokenAddress: '0x55d398326f99059fF775485246999027B3197955',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: 'https://tether.to',
+    earnedToken: 'mooUSDT',
+    earnedTokenAddress: '0x9E8055A838024E2071752FDcF81c330cdd8E6d3A',
+    earnContractAddress: '0x9E8055A838024E2071752FDcF81c330cdd8E6d3A',
+    defaultApy: '12.00',
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+  },
 ];
