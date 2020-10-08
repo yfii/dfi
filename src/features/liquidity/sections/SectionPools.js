@@ -29,6 +29,7 @@ import Button from "components/CustomButtons/Button.js";
 import Avatar from '@material-ui/core/Avatar';
 import AvatarGroup from '@material-ui/lab/AvatarGroup';
 import CustomInput from "components/CustomInput/CustomInput.js";
+import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
 // sections for this section
 // import SectionOpenedPool from "./SectionOpenedPool";
 import { useSnackbar } from 'notistack';
@@ -36,6 +37,7 @@ import { useSnackbar } from 'notistack';
 import { useConnectWallet } from '../../home/redux/hooks';
 import { useFetchPoolsInfo, useFetchBalance } from '../redux/hooks';
 import CustomSlider from 'components/CustomSlider/CustomSlider';
+import { isEmpty } from 'features/helpers/utils';
 
 import sectionPoolsStyle from "../jss/sections/sectionPoolsStyle";
 
@@ -57,6 +59,7 @@ export default function SectionPools() {
 
 //   const [ depositedBalance, setDepositedBalance ] = useState({});
 //   const [ withdrawAmount, setWithdrawAmount ] = useState({});
+const [ cardFirstDropdownList, setCardFirstDropdownList ] = useState([]);
 
   const { enqueueSnackbar } = useSnackbar();
 
@@ -94,11 +97,39 @@ export default function SectionPools() {
     }
   }, [address, web3, fetchBalance]);
 
+  useEffect(() => {
+    let newCardFirstDropdownList = [];
+    pools.map((item)=>{
+      newCardFirstDropdownList.push(singleCardFirstDropDownNode(item));
+    })
+    setCardFirstDropdownList(newCardFirstDropdownList)
+  },[tokens, pools])
+
   const forMat = number => {
     
   }
 
   const isZh = Boolean((i18n.language == 'zh') || (i18n.language == 'zh-CN'));
+
+  const singleCardFirstDropDownNode = (item) => {
+    return (
+      <div className={classes.subMemuStyle} key={item.name}>
+          <Avatar 
+            alt={item.name}
+            src={require(`../../../images/${item.name}-logo.png`)}
+            className={classNames({
+                [classes.marginRight]:true,
+                [classes.avatar]:true,
+            })}
+            />
+          <span className={classes.avatarFont}>{item.name}</span>
+      </div>
+    )
+  }
+
+  const handleCardFirstDropdownListClick = (event) => {
+    console.log('~~~~event~~~~~',event,event.key);
+  }
 
   return (
     <Grid container style={{paddingTop: '4px'}}>
@@ -185,7 +216,28 @@ export default function SectionPools() {
               </AccordionSummary>
               <AccordionDetails style={{ justifyContent: "space-between"}}>
                 <Grid container style={{width: "100%", marginLeft: 0, marginRight: 0}}>
-                  <Grid item xs={12} sm={6} className={classes.sliderDetailContainer}>
+                <Grid item xs={12} sm={4} className={classes.sliderDetailContainer}>
+                    <div className={classes.showDetailRight} style={{float: 'left',opacity: '1'}}>
+                      选择币种
+                    </div>
+                    <FormControl fullWidth variant="outlined">
+                      <CustomDropdown
+                          popperClassName={classes.papperNav}
+                          navDropdown
+                          hoverColor='primary'
+                          darkModal
+                          buttonText={
+                            isEmpty(pool.choicePoolName) ? singleCardFirstDropDownNode(pool) : singleCardFirstDropDownNode({name:pool.choicePoolName})
+                          }
+                          buttonProps={{
+                              className: classes.receiveStyle,
+                          }}
+                          onClick={handleCardFirstDropdownListClick}
+                          dropdownList={cardFirstDropdownList}
+                          />
+                    </FormControl>
+                  </Grid>
+                  <Grid item xs={12} sm={4} className={classes.sliderDetailContainer}>
                     <div className={classes.showDetailRight}>
 
                     </div>
@@ -267,7 +319,7 @@ export default function SectionPools() {
                         </div>
                     </Grid>
 
-                    <Grid item xs={12} sm={6} className={classes.sliderDetailContainer}>
+                    <Grid item xs={12} sm={4} className={classes.sliderDetailContainer}>
                         <div className={classes.showDetailRight}>
                                 {/* {singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)).toFormat(4)} { pool.token } ({singleDepositedBalance.toFormat(4)} { pool.earnedToken }) */}
                             </div>
