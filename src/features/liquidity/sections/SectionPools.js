@@ -27,6 +27,7 @@ import Card from "components/Card/Card.js";
 import CardBody from "components/Card/CardBody.js";
 import Button from "components/CustomButtons/Button.js";
 import Avatar from '@material-ui/core/Avatar';
+import AvatarGroup from '@material-ui/lab/AvatarGroup';
 import CustomInput from "components/CustomInput/CustomInput.js";
 // sections for this section
 // import SectionOpenedPool from "./SectionOpenedPool";
@@ -37,8 +38,6 @@ import { useFetchPoolsInfo, useFetchBalance } from '../redux/hooks';
 import CustomSlider from 'components/CustomSlider/CustomSlider';
 
 import sectionPoolsStyle from "../jss/sections/sectionPoolsStyle";
-import { reflect } from 'async';
-import { inputLimitPass,inputFinalVal } from 'features/helpers/utils';
 
 const useStyles = makeStyles(sectionPoolsStyle);
 
@@ -129,10 +128,11 @@ export default function SectionPools() {
                             <Grid item>
                                 <Grid container alignItems="center" spacing={2}>
                                     <Grid item>
-                                        <Avatar 
-                                            alt={pool.token}
-                                            // src={require(`../../../images/${pool.token}-logo.png`)}
-                                        />
+                                    <AvatarGroup max={4}>
+                                      <Avatar alt="Remy Sharp" src={require(`../../../images/${"WETH"}-logo.png`)} />
+                                      <Avatar alt="Travis Howard" src={require(`../../../images/${"ETH"}-logo.png`)} />
+                                      <Avatar alt="Cindy Baker" src={require(`../../../images/${"USDT"}-logo.png`)} />
+                                    </AvatarGroup>
                                     </Grid>
                                     <Grid item style={{minWidth: '100px'}}>
                                             <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom>
