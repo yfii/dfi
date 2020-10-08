@@ -38,7 +38,7 @@ import { useConnectWallet } from '../../home/redux/hooks';
 import { useFetchPoolsInfo, useFetchBalance } from '../redux/hooks';
 import CustomSlider from 'components/CustomSlider/CustomSlider';
 import { isEmpty } from 'features/helpers/utils';
-
+import { erc20Tokens } from '../config/erc20Tokens.js'
 import sectionPoolsStyle from "../jss/sections/sectionPoolsStyle";
 
 const useStyles = makeStyles(sectionPoolsStyle);
@@ -59,8 +59,6 @@ export default function SectionPools() {
 
 //   const [ depositedBalance, setDepositedBalance ] = useState({});
 //   const [ withdrawAmount, setWithdrawAmount ] = useState({});
-const [ cardFirstDropdownList, setCardFirstDropdownList ] = useState([]);
-
   const { enqueueSnackbar } = useSnackbar();
 
   const changeDetailInputValue = (type,index,total,tokenDecimals,event) => {
@@ -97,19 +95,21 @@ const [ cardFirstDropdownList, setCardFirstDropdownList ] = useState([]);
     }
   }, [address, web3, fetchBalance]);
 
-  // useEffect(() => {
-  //   let newCardFirstDropdownList = [];
-  //   pools.map((item)=>{
-  //     newCardFirstDropdownList.push(singleCardFirstDropDownNode(item));
-  //   })
-  //   setCardFirstDropdownList(newCardFirstDropdownList)
-  // },[tokens, pools])
-
   const forMat = number => {
     
   }
 
   const isZh = Boolean((i18n.language == 'zh') || (i18n.language == 'zh-CN'));
+
+  const createCardFirstDropdownList = (canStakedTokenList) => {
+    let cardFirstDropdownList = [];
+    canStakedTokenList.map((id)=>{
+      if (!isEmpty(erc20Tokens[id]) && erc20Tokens[id].name != 'LP'){
+        cardFirstDropdownList.push(singleCardFirstDropDownNode(erc20Tokens[id]));
+      }
+    })
+    return cardFirstDropdownList;
+  }
 
   const singleCardFirstDropDownNode = (item) => {
     return (
@@ -127,6 +127,18 @@ const [ cardFirstDropdownList, setCardFirstDropdownList ] = useState([]);
     )
   }
 
+  const openCard = id => {
+    return setCardIsOpenedList(
+      cardIsOpenedList => {
+        if(cardIsOpenedList.includes(id)) {
+          return cardIsOpenedList.filter(item => item!==id)
+        } else {
+          return [...cardIsOpenedList, id]
+        }
+      }
+    )
+  } 
+
   const handleCardFirstDropdownListClick = (event) => {
     console.log('~~~~event~~~~~',event,event.key);
   }
@@ -139,6 +151,7 @@ const [ cardFirstDropdownList, setCardFirstDropdownList ] = useState([]);
       </Grid>
       
       {Boolean(networkId === Number(process.env.NETWORK_ID)) && pools.map((pool, index) => {
+        let cardFirstDropdownList = createCardFirstDropdownList(pool.canStakedTokenList);
         return (
           <Grid item xs={12} container key={index} style={{marginBottom: "24px"}} spacing={0}>
             <div style={{width: "100%"}}>
@@ -227,8 +240,7 @@ const [ cardFirstDropdownList, setCardFirstDropdownList ] = useState([]);
                           hoverColor='primary'
                           darkModal
                           buttonText={
-                            ''
-                            // isEmpty(pool.choicePoolName) ? singleCardFirstDropDownNode(pool) : singleCardFirstDropDownNode({name:pool.choicePoolName})
+                            isEmpty(pool.choicePoolName) ? '转换币种' : singleCardFirstDropDownNode({name:pool.choicePoolName})
                           }
                           buttonProps={{
                               className: classes.receiveStyle,
