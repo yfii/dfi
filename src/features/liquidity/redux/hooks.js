@@ -1,6 +1,8 @@
 export { useFetchPoolsInfo } from './fetchPoolsInfo';
 export { useFetchBalance } from './fetchBalance';
 export { useFetchBalances } from './fetchBalances';
+export { useFetchDeposit } from './fetchDeposit';
+export { useFetchWithdraw } from './fetchWithdraw';
 // export { useCheckApproval  } from './checkApproval';
 
 // export { useFetchCurrentlyStaked } from './fetchCurrentlyStaked';

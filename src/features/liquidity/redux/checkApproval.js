@@ -8,13 +8,10 @@ import {
   STAKE_CHECK_APPROVAL_FAILURE,
 } from './constants';
 
-export function checkApproval(index) {
+export function checkApproval() {
   return (dispatch, getState) => {
     // optionally you can have getState as the second argument
-    dispatch({
-      type: STAKE_CHECK_APPROVAL_BEGIN,
-      index
-    });
+    dispatch({ type: STAKE_CHECK_APPROVAL_BEGIN });
     // Return a promise so that you could control UI flow without states in the store.
     // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
     // It's hard to use state to manage it, but returning a promise allows you to easily achieve it.
@@ -79,32 +76,23 @@ export function useCheckApproval() {
 }
 
 export function reducer(state, action) {
-  const { allowance, checkApprovalPending } = state;
   switch (action.type) {
     case STAKE_CHECK_APPROVAL_BEGIN:
       // Just after a request is sent
-      checkApprovalPending[action.index] = true;
       return {
         ...state,
-        checkApprovalPending,
       };
 
     case STAKE_CHECK_APPROVAL_SUCCESS:
       // The request is success
-      checkApprovalPending[action.index] = false;
-      allowance[action.index] = action.data;
       return {
-        ...state,
-        allowance,
-        checkApprovalPending,
+        ...state
       };
 
     case STAKE_CHECK_APPROVAL_FAILURE:
       // The request is failed
-      checkApprovalPending[action.index] = false;
       return {
         ...state,
-        checkApprovalPending,
       };
 
     default:

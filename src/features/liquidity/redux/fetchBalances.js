@@ -8,7 +8,7 @@ import {
   LIQUIDITY_FETCH_BALANCES_FAILURE,
 } from './constants';
 
-export function fetchBalances(index) {
+export function fetchBalances() {
   return (dispatch, getState) => {
     // optionally you can have getState as the second argument
     dispatch({ type: LIQUIDITY_FETCH_BALANCES_BEGIN });
