@@ -59,9 +59,9 @@ export default function SectionPoolsCard(props) {
     event.stopPropagation();
   }
 
-  const createCardFirstDropdownList = (canStakedTokenList) => {
+  const createCardFirstDropdownList = (canDepositTokenList) => {
     let cardFirstDropdownList = [];
-    canStakedTokenList.map((id)=>{
+    canDepositTokenList.map((id)=>{
       if (!isEmpty(erc20Tokens[id]) && erc20Tokens[id].name != 'LP'){
         cardFirstDropdownList.push(singleCardFirstDropDownNode(erc20Tokens[id]));
       }
@@ -89,7 +89,7 @@ export default function SectionPoolsCard(props) {
     console.log('~~~~event~~~~~',event,event.key);
   }
 
-  const cardFirstDropdownList = createCardFirstDropdownList(pool.canStakedTokenList);
+  const cardFirstDropdownList = createCardFirstDropdownList(pool.canDepositTokenList);
   return (
     <Grid item xs={12} container key={index} style={{marginBottom: "24px"}} spacing={0}>
       <div style={{width: "100%"}}>
