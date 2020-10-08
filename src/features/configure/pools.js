@@ -44,5 +44,20 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
   },
+  {
+    id: 'dai',
+    name: 'DAI',
+    token: 'DAI',
+    tokenDescription: 'Dai Token',
+    tokenAddress: '0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: 'https://makerdao.com/',
+    earnedToken: 'mooDAI',
+    earnedTokenAddress: '0xAE8Abf860deFE819694fA28C2b032C64F4faaf5b',
+    earnContractAddress: '0xAE8Abf860deFE819694fA28C2b032C64F4faaf5b',
+    defaultApy: '10.00',
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+  },
 
 ];
