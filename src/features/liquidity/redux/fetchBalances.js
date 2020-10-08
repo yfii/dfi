@@ -1,16 +1,20 @@
 import { useCallback } from 'react';
 import BigNumber from "bignumber.js";
-import { useDispatch, useSelector } from 'react-redux';
+import { erc20ABI } from "../../configure";
+import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
-  LIQUIDITY_FETCH_BALANCE_BEGIN,
-  LIQUIDITY_FETCH_BALANCE_SUCCESS,
-  LIQUIDITY_FETCH_BALANCE_FAILURE,
+  STAKE_FETCH_BALANCE_BEGIN,
+  STAKE_FETCH_BALANCE_SUCCESS,
+  STAKE_FETCH_BALANCE_FAILURE,
 } from './constants';
 
-export function fetchBalance() {
+export function fetchBalances(index) {
   return (dispatch, getState) => {
     // optionally you can have getState as the second argument
-    dispatch({ type: LIQUIDITY_FETCH_BALANCE_BEGIN });
+    dispatch({
+      type: STAKE_FETCH_BALANCE_BEGIN,
+      index
+    });
     // Return a promise so that you could control UI flow without states in the store.
     // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
     // It's hard to use state to manage it, but returning a promise allows you to easily achieve it.
@@ -19,20 +23,27 @@ export function fetchBalance() {
       // doRequest is a placeholder Promise. You should replace it with your own logic.
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
-      const { home } = getState();
+      const { home, stake } = getState();
       const { address, web3 } = home;
-      web3.eth.getBalance(address).then(
+      const { pools } = stake;
+      const { tokenAddress } = pools[index];
+      const contract = new web3.eth.Contract(erc20ABI, tokenAddress);
+      contract.methods.balanceOf(address).call({ from: address }).then(
         data => {
           dispatch({
-            type: LIQUIDITY_FETCH_BALANCE_SUCCESS,
+            type: STAKE_FETCH_BALANCE_SUCCESS,
             data: new BigNumber(data),
+            index
           });
           resolve(data);
         },
       ).catch(
         // Use rejectHandler as the second argument so that render errors won't be caught.
         error => {
-          dispatch({ type: LIQUIDITY_FETCH_BALANCE_FAILURE });
+          dispatch({
+            type: STAKE_FETCH_BALANCE_FAILURE,
+            index
+          });
           reject(error.message || error);
         }
       )
@@ -42,49 +53,58 @@ export function fetchBalance() {
 }
 
 
-export function useFetchBalance() {
+export function useFetchBalances() {
   // args: false value or array
   // if array, means args passed to the action creator
   const dispatch = useDispatch();
 
-  const { etherBalance, fetchBalancePending } = useSelector(
+  const { balance, fetchBalancesPending } = useSelector(
     state => ({
-      etherBalance: state.liquidity.etherBalance,
-      fetchBalancePending: state.liquidity.fetchBalancePending,
+      balance: state.stake.balance,
+      fetchBalancesPending: state.stake.fetchBalancesPending,
     })
   );
 
-  const boundAction = useCallback(() => dispatch(fetchBalance()), [dispatch]);
+  const boundAction = useCallback(
+    data => dispatch(fetchBalances(data)),
+    [dispatch],
+  );
 
   return {
-    etherBalance,
-    fetchBalance: boundAction,
-    fetchBalancePending
+    balance,
+    fetchBalances: boundAction,
+    fetchBalancesPending
   };
 }
 
 export function reducer(state, action) {
+  const { balance, fetchBalancesPending } = state;
   switch (action.type) {
-    case LIQUIDITY_FETCH_BALANCE_BEGIN:
+    case STAKE_FETCH_BALANCE_BEGIN:
       // Just after a request is sent
+      fetchBalancesPending[action.index] = true;
       return {
         ...state,
-        fetchBalancePending: true,
+        fetchBalancesPending,
       };
 
-    case LIQUIDITY_FETCH_BALANCE_SUCCESS:
+    case STAKE_FETCH_BALANCE_SUCCESS:
       // The request is success
+      
+      balance[action.index] = action.data;
+      fetchBalancesPending[action.index] = false;
       return {
         ...state,
-        etherBalance: action.data,
-        fetchBalancePending: false,
+        balance,
+        fetchBalancesPending,
       };
 
-    case LIQUIDITY_FETCH_BALANCE_FAILURE:
+    case STAKE_FETCH_BALANCE_FAILURE:
       // The request is failed
+      fetchBalancesPending[action.index] = false;
       return {
         ...state,
-        fetchBalancePending: false,
+        fetchBalancesPending,
       };
 
     default:

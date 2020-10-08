@@ -1,8 +1,8 @@
-import { LiquidityPoolPage } from '.';
+import { LiquidityPage } from '.';
 
 export default {
-  path: 'lp',
+  path: 'liquidity',
   childRoutes: [
-    { path: 'index', component: LiquidityPoolPage, isIndex: true },
+    { path: 'index', component: LiquidityPage, isIndex: true },
   ],
 };

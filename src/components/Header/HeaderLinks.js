@@ -42,7 +42,7 @@ export default function HeaderLinks(props) {
     {value:'vault',label:t('Nav-Vault')},
     {value:'stake',label:t('Nav-Stake')},
     {value:'farm',label:t('Nav-Farm')},
-    {value:'lp',label:t('Nav-lp')},
+    {value:'liquidity',label:t('Nav-lp')},
   ]
 
   useEffect(() => {

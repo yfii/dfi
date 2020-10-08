@@ -81,7 +81,7 @@ export default function StakePools(props) {
             <TableBody classes={{
               root:classes.tableBodyRoot
             }}>
-              {pools.map((pool, index) => (
+              {pools.length > 1  && pools.map((pool, index) => (
                 <StyledTableRow key={pool.name} style={{display: Boolean(index !== 3) ? "none" : "table-row"}}>
                   <StyledTableCell component="th">
                     <div className={classes.firstCell}>

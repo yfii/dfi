@@ -13,9 +13,6 @@ const sectionTitleStyle = theme => ({
     fontSize: "1.5rem",
     lineHeight: 1.2,
     color: grayColor,
-  },
-  textCenter: {
-    textAlign: "center",
   }
 });
 

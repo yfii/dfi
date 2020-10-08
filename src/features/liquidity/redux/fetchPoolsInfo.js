@@ -2,15 +2,15 @@ import axios from 'axios';
 import { useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
-  STAKE_FETCH_POOLS_INFO_BEGIN,
-  STAKE_FETCH_POOLS_INFO_SUCCESS,
-  STAKE_FETCH_POOLS_INFO_FAILURE,
+  LIQUIDITY_FETCH_POOLS_INFO_BEGIN,
+  LIQUIDITY_FETCH_POOLS_INFO_SUCCESS,
+  LIQUIDITY_FETCH_POOLS_INFO_FAILURE,
 } from './constants';
 
 export function fetchPoolsInfo() {
   return (dispatch, getState) => {
     // optionally you can have getState as the second argument
-    dispatch({ type: STAKE_FETCH_POOLS_INFO_BEGIN });
+    dispatch({ type: LIQUIDITY_FETCH_POOLS_INFO_BEGIN });
 
     // Return a promise so that you could control UI flow without states in the store.
     // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
@@ -25,14 +25,14 @@ export function fetchPoolsInfo() {
       doRequest.then(
         res => {
           dispatch({
-            type: STAKE_FETCH_POOLS_INFO_SUCCESS,
+            type: LIQUIDITY_FETCH_POOLS_INFO_SUCCESS,
             data: res.data.data,
           });
           resolve(res);
         },
         // Use rejectHandler as the second argument so that render errors won't be caught.
         err => {
-          dispatch({ type: STAKE_FETCH_POOLS_INFO_FAILURE });
+          dispatch({ type: LIQUIDITY_FETCH_POOLS_INFO_FAILURE });
           reject(err);
         },
       );
@@ -48,9 +48,9 @@ export function useFetchPoolsInfo() {
 
   const { pools, poolsInfo, fetchPoolsInfoPending } = useSelector(
     state => ({
-      pools: state.stake.pools,
-      poolsInfo: state.stake.poolsInfo,
-      fetchPoolsInfoPending: state.stake.fetchPoolsInfoPending,
+      pools: state.liquidity.pools,
+      poolsInfo: state.liquidity.poolsInfo,
+      fetchPoolsInfoPending: state.liquidity.fetchPoolsInfoPending,
     }),
     shallowEqual,
   );
@@ -67,14 +67,14 @@ export function useFetchPoolsInfo() {
 
 export function reducer(state, action) {
   switch (action.type) {
-    case STAKE_FETCH_POOLS_INFO_BEGIN:
+    case LIQUIDITY_FETCH_POOLS_INFO_BEGIN:
       // Just after a request is sent
       return {
         ...state,
         fetchPoolsInfoPending: true
       };
 
-    case STAKE_FETCH_POOLS_INFO_SUCCESS:
+    case LIQUIDITY_FETCH_POOLS_INFO_SUCCESS:
       // The request is success
       return {
         ...state,
@@ -82,7 +82,7 @@ export function reducer(state, action) {
         fetchPoolsInfoPending: false
       };
 
-    case STAKE_FETCH_POOLS_INFO_FAILURE:
+    case LIQUIDITY_FETCH_POOLS_INFO_FAILURE:
       // The request is failed
       return {
         ...state,
