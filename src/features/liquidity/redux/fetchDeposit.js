@@ -5,7 +5,7 @@ import {
   LIQUIDITY_FETCH_DEPOSIT_SUCCESS,
   LIQUIDITY_FETCH_DEPOSIT_FAILURE,
 } from './constants';
-// import { notify } from '../../common'
+import { notify } from '../../common'
 import { earnContractABI } from '../config'
 
 export function fetchDeposit(amount, poolIndex, tokenIndex, isAll) {
@@ -28,7 +28,7 @@ export function fetchDeposit(amount, poolIndex, tokenIndex, isAll) {
       const func = isAll ? tokenDepositAllFunctionList[tokenIndex] : tokenDepositFunctionList[tokenIndex]
       contract.methods[func](amount).send({ from: address }).on(
         'transactionHash', function(hash){
-          // notify.hash(hash)
+          notify.hash(hash)
         })
         .on('receipt', function(receipt){
           dispatch({ type: LIQUIDITY_FETCH_DEPOSIT_SUCCESS, poolIndex, tokenIndex });
