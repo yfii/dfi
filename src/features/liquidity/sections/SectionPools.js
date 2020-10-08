@@ -35,7 +35,7 @@ import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
 import { useSnackbar } from 'notistack';
 //  hooks
 import { useConnectWallet } from '../../home/redux/hooks';
-import { useFetchPoolsInfo, useFetchBalance } from '../redux/hooks';
+import { useFetchPoolsInfo, useFetchBalance, useFetchBalances } from '../redux/hooks';
 import CustomSlider from 'components/CustomSlider/CustomSlider';
 import { isEmpty } from 'features/helpers/utils';
 
@@ -49,6 +49,7 @@ export default function SectionPools() {
   const { pools, poolsInfo, fetchPoolsInfo } = useFetchPoolsInfo();
 //   const { pools, fetchPoolBalance } = useFetchPoolBalance();
   const { etherBalance, fetchBalance } = useFetchBalance();
+  const { erc20Tokens, fetchBalances } = useFetchBalances();
   const [ cardIsOpenedList, setCardIsOpenedList ] = useState(Array(pools.length).fill(false));
   const classes = useStyles();
 
@@ -88,6 +89,7 @@ const [ cardFirstDropdownList, setCardFirstDropdownList ] = useState([]);
     if (address && web3) {
       fetchPoolsInfo()
       fetchBalance();
+      fetchBalances();
     //   fetchPoolBalances({address, web3, pools});
     //   const id = setInterval(() => {
     //     fetchBalances({address, web3, tokens});
