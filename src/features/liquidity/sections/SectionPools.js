@@ -97,13 +97,13 @@ const [ cardFirstDropdownList, setCardFirstDropdownList ] = useState([]);
     }
   }, [address, web3, fetchBalance]);
 
-  useEffect(() => {
-    let newCardFirstDropdownList = [];
-    pools.map((item)=>{
-      newCardFirstDropdownList.push(singleCardFirstDropDownNode(item));
-    })
-    setCardFirstDropdownList(newCardFirstDropdownList)
-  },[tokens, pools])
+  // useEffect(() => {
+  //   let newCardFirstDropdownList = [];
+  //   pools.map((item)=>{
+  //     newCardFirstDropdownList.push(singleCardFirstDropDownNode(item));
+  //   })
+  //   setCardFirstDropdownList(newCardFirstDropdownList)
+  // },[tokens, pools])
 
   const forMat = number => {
     
@@ -227,7 +227,8 @@ const [ cardFirstDropdownList, setCardFirstDropdownList ] = useState([]);
                           hoverColor='primary'
                           darkModal
                           buttonText={
-                            isEmpty(pool.choicePoolName) ? singleCardFirstDropDownNode(pool) : singleCardFirstDropDownNode({name:pool.choicePoolName})
+                            ''
+                            // isEmpty(pool.choicePoolName) ? singleCardFirstDropDownNode(pool) : singleCardFirstDropDownNode({name:pool.choicePoolName})
                           }
                           buttonProps={{
                               className: classes.receiveStyle,
