@@ -16,7 +16,7 @@ const Pastures = () => {
       <PastureRight />
       <PastureCenterBg />
       <PastureCenterFg />
-      {cows && cows.map((_, index) => <Cow total={cows.length} index={index} />)}
+      {cows && cows.map((_, index) => <Cow key={`cow${index}`} total={cows.length} index={index} />)}
     </PasturesContainer>
   );
 };
