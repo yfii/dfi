@@ -44,4 +44,5 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
   },
+
 ];
