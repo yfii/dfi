@@ -250,6 +250,43 @@ const sectionPoolsStyle = theme => ({
           marginLeft: '5px'
         }
     },
+    papperNav:{
+      width:'100%',
+    },
+    receiveStyle:{
+      display:'flex',
+      justifyContent:'space-between',
+      width:'100%',
+      height: '53px',
+      margin:'0',
+      background: '#353848',
+      borderRadius: '12px',
+      fontWeight: '600',
+      fontSize: '18px',
+      color: '#FFFFFF',
+      lineHeight: '24px',
+      fontWeight: '600',
+      boxShadow:'0 2px 2px 0 #353848',
+      textAlign:'right',
+      padding:'18.5px 18px',
+      border:'1px solid transparent',
+      '&:hover,&:focus':{
+          background: '#353848',
+          boxShadow:'0 2px 2px 0 #353848',
+          border:'1px solid #ff2d82',
+      }
+    },
+    subMemuStyle:{
+      display:'flex',
+      justifyContent:'flex-start',
+      alignItems:'center',
+    },
+    papperNav:{
+        width:'100%',
+    },
+    marginRight:{
+        marginRight:'4px',
+    },
 });
 
 export default sectionPoolsStyle;
