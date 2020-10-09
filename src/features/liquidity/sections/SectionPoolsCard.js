@@ -366,7 +366,7 @@ export default function SectionPoolsCard(props) {
                 />
                 <div>
                   {
-                    !isNeedApproval ? (
+                    isNeedApproval ? (
                       <div className={classes.showDetailButtonCon}>
                         <Button 
                           style={{
