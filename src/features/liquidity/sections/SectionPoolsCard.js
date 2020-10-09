@@ -302,15 +302,15 @@ export default function SectionPoolsCard(props) {
                         <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
                           {byDecimals(erc20Tokens[pool.earnedToken].tokenBalance,getTockenDecimals(pool.earnedToken)).toFixed(lpFixedNum,1)} {pool.earnedToken}
                         </Typography>
-                        <Typography className={classes.iconContainerSubTitle} variant="body2">{t('Vault-Balance')}</Typography>
+                        <Typography className={classes.iconContainerSubTitle} variant="body2">{t('Vault-Deposited')}</Typography>
                       </Grid>
                     </Grid>
                   </Hidden>
                   <Hidden mdDown>
                     <Grid item xs={4} container justify='center' alignItems="center">
                       <Grid item style={{width: "200px"}}>
-                        <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap></Typography>
-                        <Typography className={classes.iconContainerSubTitle} variant="body2">{t('Vault-Deposited')}</Typography>
+                        {/* <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap></Typography> */}
+                        {/* <Typography className={classes.iconContainerSubTitle} variant="body2">{t('Vault-Deposited')}</Typography> */}
                       </Grid>
                     </Grid>
                   </Hidden>
