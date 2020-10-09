@@ -174,7 +174,7 @@ export default function SectionPoolsCard(props) {
       if(id == 'eth'){
         cardFirstDropdownList.push(singleCardFirstDropDownNode({tockeDescriptionUrl:'ETH'},index));
       }else{
-        if (!isEmpty(erc20Tokens[id]) && erc20Tokens[id].tockeDescriptionUrl != 'LP'){
+        if (!isEmpty(erc20Tokens[id])){
           cardFirstDropdownList.push(singleCardFirstDropDownNode(erc20Tokens[id],index));
         }
       }
@@ -185,14 +185,32 @@ export default function SectionPoolsCard(props) {
   const singleCardFirstDropDownNode = (item,index) => {
     return (
       <div className={classes.subMemuStyle} key={index}>
-          <Avatar 
-            alt={item.tockeDescriptionUrl}
-            src={require(`../../../images/${item.tockeDescriptionUrl}-logo.png`)}
-            className={classNames({
-                [classes.marginRight]:true,
-                [classes.avatar]:true,
-            })}
-            />
+          {
+            item.tockeDescriptionUrl == 'LP' ? (
+              <AvatarGroup 
+                max={4}
+                className={classNames({
+                    [classes.marginRight]:true,
+                    [classes.avatar]:true,
+                })}
+              >
+                {
+                  pool.tokenLogoList.map((tokenVal)=>(
+                    <Avatar src={require(`../../../images/${tokenVal}-logo.png`)} />
+                  ))
+                }
+                </AvatarGroup>
+            ): (
+              <Avatar 
+                alt={item.tockeDescriptionUrl}
+                src={require(`../../../images/${item.tockeDescriptionUrl}-logo.png`)}
+                className={classNames({
+                    [classes.marginRight]:true,
+                    [classes.avatar]:true,
+                })}
+                />
+            )
+          }
           <span className={classes.avatarFont}>{item.tockeDescriptionUrl}</span>
       </div>
     )
@@ -234,9 +252,11 @@ export default function SectionPoolsCard(props) {
                 <Grid container alignItems="center" spacing={2}>
                   <Grid item>
                     <AvatarGroup max={4}>
-                      <Avatar alt="Remy Sharp" src={require(`../../../images/${"WETH"}-logo.png`)} />
-                      <Avatar alt="Travis Howard" src={require(`../../../images/${"ETH"}-logo.png`)} />
-                      <Avatar alt="Cindy Baker" src={require(`../../../images/${"USDT"}-logo.png`)} />
+                      {
+                        pool.tokenLogoList.map((tokenVal)=>(
+                          <Avatar src={require(`../../../images/${tokenVal}-logo.png`)} />
+                        ))
+                      }
                     </AvatarGroup>
                   </Grid>
                   <Grid item style={{minWidth: '100px'}}>
