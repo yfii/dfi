@@ -2,6 +2,7 @@
 import React, { useState, useEffect, createContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import BigNumber from "bignumber.js";
+import {byDecimals,calculateReallyNum} from 'features/helpers/bignumber';
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import classNames from "classnames";
@@ -23,11 +24,12 @@ import CustomSlider from 'components/CustomSlider/CustomSlider';
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
 //  hooks
 import { useConnectWallet } from '../../home/redux/hooks';
-import { useCheckApproval, useFetchApproval, useFetchDeposit, useFetchWithdraw } from '../redux/hooks';
-import { erc20Tokens } from '../config/erc20Tokens.js'
+import { useFetchBalance, useFetchBalances, useFetchPoolsInfo, useCheckApproval, useFetchApproval, useFetchDeposit, useFetchWithdraw } from '../redux/hooks';
 import sectionPoolsStyle from "../jss/sections/sectionPoolsStyle";
+import { inputLimitPass,inputFinalVal } from 'features/helpers/utils';
 
 const useStyles = makeStyles(sectionPoolsStyle);
+const ethTokenDecimals = 18;
 
 export default function SectionPoolsCard(props) {
   const {
@@ -44,12 +46,44 @@ export default function SectionPoolsCard(props) {
   const { fetchApproval } = useFetchApproval();
   const { fetchDeposit } = useFetchDeposit();
   const { fetchWithdraw } = useFetchWithdraw();
+  const { etherBalance, fetchBalance } = useFetchBalance();
+  const { erc20Tokens, fetchBalances } = useFetchBalances();
+  const { poolsInfo, fetchPoolsInfo } = useFetchPoolsInfo();
 
   const [ tokenIndex, setTokenIndex ] = useState(0);
   const [ isNeedApproval, setIsNeedApproval ] = useState(true);// 是否需要授权
   const [ approvalAble, setApprovalAble ] = useState(false);// 授权按钮是否可点击
   const [ depositAble, setDepositAble ] = useState(true);// 存入按钮是否可点击
   const [ withdrawAble, setWithdrawAble ] = useState(true);// 提取按钮是否可点击
+
+  //选择币种的下啦列表
+  const [ cardFirstDropdownList, setCardFirstDropdownList ] = useState([]);
+  //选择的币种信息
+  const [ selectedTokenInfo, setSelectedTokenInfo ] = useState({name:'',depositeMax:BigNumber(0),withdrawMax:BigNumber(0)});
+  //存入信息
+  const [ depositedBalance, setDepositedBalance ] = useState({});
+  //提取信息
+  const [ withdrawAmount, setWithdrawAmount ] = useState({});
+
+  useEffect(() => {
+    let tokenName = pool.canDepositTokenList[tokenIndex];
+    let depositeMax = BigNumber(0);
+    if(tokenName == 'eth'){
+      depositeMax = byDecimals(etherBalance,ethTokenDecimals);
+    }else{
+      depositeMax = byDecimals(erc20Tokens[tokenName].tokenBalance,erc20Tokens[tokenName].tokenDecimals);
+    }
+    let withdrawMax = byDecimals(erc20Tokens[pool.earnedToken].tokenBalance,erc20Tokens[pool.earnedToken].tokenDecimals);
+    setSelectedTokenInfo({
+      name:tokenName,
+      depositeMax,
+      withdrawMax,
+    })
+  }, [cardFirstDropdownList, tokenIndex, erc20Tokens]);
+
+  useEffect(() => {
+    setCardFirstDropdownList(createCardFirstDropdownList(pool.canDepositTokenList));
+  }, [pool.canDepositTokenList]);
 
   useEffect(() => {
     setIsNeedApproval(Boolean(pool.canDepositTokenAllowanceList[tokenIndex].toNumber() === 0));
@@ -64,18 +98,60 @@ export default function SectionPoolsCard(props) {
     fetchApproval(poolIndex, tokenIndex)
   }
 
-  const changeDetailInputValue = (type,index,total,tokenDecimals,event) => {
+  const changeDetailInputValue = (type,index,event) => {
+    let value = event.target.value;
+    let total = type=='depositedBalance' ? selectedTokenInfo.depositeMax.toNumber() : selectedTokenInfo.withdrawMax.toNumber();
+    let tokenDecimals = selectedTokenInfo.name == 'eth' ? ethTokenDecimals : erc20Tokens[selectedTokenInfo.name].tokenDecimals;
+    if(!inputLimitPass(value,tokenDecimals)){
+      return;
+    }
+    let sliderNum = 0;
+    let inputVal = Number(value.replace(',',''));
+    if(!isEmpty(value)){
+      sliderNum = BigNumber(inputVal/total).toFixed(2) * 100;
+    }
+    switch(type){
+      case 'depositedBalance':
+        setDepositedBalance({
+          ...depositedBalance,
+          [index]: inputFinalVal(value,total),
+          [`slider-${index}`]: sliderNum,
+        });
+        break;
+      case 'withdrawAmount':
+        setWithdrawAmount({
+          ...withdrawAmount,
+          [index]: inputFinalVal(value,total),
+          [`slider-${index}`]: sliderNum,
+        });
+        break;
+      default:
+        break;
+    }
   }
 
-  const handleDepositedBalance = (index,total,event,sliderNum) => {
+  const handleDepositedBalance = (index,event,sliderNum) => {
+    let total = selectedTokenInfo.depositeMax.toNumber();
+    setDepositedBalance({
+      ...depositedBalance,
+      [index]: sliderNum == 0 ? 0: calculateReallyNum(total,sliderNum),
+      [`slider-${index}`]: sliderNum == 0 ? 0: sliderNum,
+    });
   }
 
-  const handleWithdrawAmount = (index,total,event,sliderNum) => {
+  const handleWithdrawAmount = (index,event,sliderNum) => {
+    let total = selectedTokenInfo.withdrawMax.toNumber();
+    setWithdrawAmount({
+      ...withdrawAmount,
+      [index]: sliderNum == 0 ? 0: calculateReallyNum(total,sliderNum),
+      [`slider-${index}`]: sliderNum == 0 ? 0: sliderNum,
+    });
   };
 
   useEffect(() => {
     setDepositAble(!Boolean(pool.fetchDepositPending[tokenIndex]));
   }, [poolIndex, tokenIndex, pool.fetchDepositPending[tokenIndex]]);
+  
   // 存入
   const onDeposit = (amount, poolIndex, tokenIndex, isAll, event) => {
     event.stopPropagation();
@@ -85,6 +161,7 @@ export default function SectionPoolsCard(props) {
   useEffect(() => {
     setWithdrawAble(!Boolean(pool.fetchWithdrawPending[tokenIndex]));
   }, [poolIndex, tokenIndex, pool.fetchWithdrawPending[tokenIndex]]);
+
   // 提取
   const onWithdraw = (amount, poolIndex, tokenIndex, isAll, event) => {
     event.stopPropagation();
@@ -93,35 +170,37 @@ export default function SectionPoolsCard(props) {
 
   const createCardFirstDropdownList = (canDepositTokenList) => {
     let cardFirstDropdownList = [];
-    canDepositTokenList.map((id)=>{
-      if (!isEmpty(erc20Tokens[id]) && erc20Tokens[id].name != 'LP'){
-        cardFirstDropdownList.push(singleCardFirstDropDownNode(erc20Tokens[id]));
+    canDepositTokenList.map((id,index)=>{
+      if(id == 'eth'){
+        cardFirstDropdownList.push(singleCardFirstDropDownNode({tockeDescriptionUrl:'ETH'},index));
+      }else{
+        if (!isEmpty(erc20Tokens[id]) && erc20Tokens[id].tockeDescriptionUrl != 'LP'){
+          cardFirstDropdownList.push(singleCardFirstDropDownNode(erc20Tokens[id],index));
+        }
       }
     })
     return cardFirstDropdownList;
   }
 
-  const singleCardFirstDropDownNode = (item) => {
+  const singleCardFirstDropDownNode = (item,index) => {
     return (
-      <div className={classes.subMemuStyle} key={item.name}>
+      <div className={classes.subMemuStyle} key={index}>
           <Avatar 
-            alt={item.name}
-            src={require(`../../../images/${item.name}-logo.png`)}
+            alt={item.tockeDescriptionUrl}
+            src={require(`../../../images/${item.tockeDescriptionUrl}-logo.png`)}
             className={classNames({
                 [classes.marginRight]:true,
                 [classes.avatar]:true,
             })}
             />
-          <span className={classes.avatarFont}>{item.name}</span>
+          <span className={classes.avatarFont}>{item.tockeDescriptionUrl}</span>
       </div>
     )
   }
 
   const handleCardFirstDropdownListClick = (event) => {
-    console.log('~~~~event~~~~~',event,event.key);
+    setTokenIndex(event.key);
   }
-
-  const cardFirstDropdownList = createCardFirstDropdownList(pool.canDepositTokenList);
 
   useEffect(() => {
     if (address && web3) {
@@ -134,7 +213,7 @@ export default function SectionPoolsCard(props) {
     //   return () => clearInterval(id);
     }
   }, [address, web3]);
-
+  
   return (
     <Grid item xs={12} container key={poolIndex} style={{marginBottom: "24px"}} spacing={0}>
       <div style={{width: "100%"}}>
@@ -154,16 +233,14 @@ export default function SectionPoolsCard(props) {
               <Grid item>
                 <Grid container alignItems="center" spacing={2}>
                   <Grid item>
-                  <AvatarGroup max={4}>
-                    <Avatar alt="Remy Sharp" src={require(`../../../images/${"WETH"}-logo.png`)} />
-                    <Avatar alt="Travis Howard" src={require(`../../../images/${"ETH"}-logo.png`)} />
-                    <Avatar alt="Cindy Baker" src={require(`../../../images/${"USDT"}-logo.png`)} />
-                  </AvatarGroup>
+                    <AvatarGroup max={4}>
+                      <Avatar alt="Remy Sharp" src={require(`../../../images/${"WETH"}-logo.png`)} />
+                      <Avatar alt="Travis Howard" src={require(`../../../images/${"ETH"}-logo.png`)} />
+                      <Avatar alt="Cindy Baker" src={require(`../../../images/${"USDT"}-logo.png`)} />
+                    </AvatarGroup>
                   </Grid>
                   <Grid item style={{minWidth: '100px'}}>
-                    <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom>
-                        {pool.token}
-                    </Typography>
+                    <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom>{pool.token}</Typography>
                     <Typography className={classes.iconContainerSubTitle} variant="body2">{pool.token}</Typography>
                   </Grid>
                 </Grid>
@@ -173,9 +250,12 @@ export default function SectionPoolsCard(props) {
                   <Hidden smDown>
                     <Grid item xs={7} container justify='center' alignItems="center">
                       <Grid item style={{width: "200px"}}>
-                        <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap></Typography>
-                        <Typography className={classes.iconContainerSubTitle} variant="body2">{t('Vault-Balance')}</Typography></Grid>
+                        <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
+                          {byDecimals(erc20Tokens[pool.earnedToken].tokenBalance,erc20Tokens[pool.earnedToken].tokenDecimals).toFixed(4,1)} {pool.earnedToken}
+                        </Typography>
+                        <Typography className={classes.iconContainerSubTitle} variant="body2">{t('Vault-Balance')}</Typography>
                       </Grid>
+                    </Grid>
                   </Hidden>
                   <Hidden mdDown>
                     <Grid item xs={4} container justify='center' alignItems="center">
@@ -208,23 +288,24 @@ export default function SectionPoolsCard(props) {
                     hoverColor='primary'
                     darkModal
                     buttonText={
-                      isEmpty(pool.choicePoolName) ? '转换币种' : singleCardFirstDropDownNode({name:pool.choicePoolName})
+                      cardFirstDropdownList[tokenIndex]
                     }
                     buttonProps={{
                         className: classes.receiveStyle,
                     }}
-                    // onClick={handleCardFirstDropdownListClick}
+                    onClick={handleCardFirstDropdownListClick}
                     dropdownList={cardFirstDropdownList}
                     />
                 </FormControl>
               </Grid>
               <Grid item xs={12} sm={4} className={classes.sliderDetailContainer}>
                 <div className={classes.showDetailRight}>
+                  {t('Vault-Balance')}:{selectedTokenInfo.depositeMax.toFixed(4,1)} {selectedTokenInfo.name}
                 </div>
                 <FormControl fullWidth variant="outlined">
                   <CustomOutlinedInput 
-                    // value={}
-                    // onChange={}
+                    value={depositedBalance[poolIndex]!=undefined ? depositedBalance[poolIndex] :'0'}
+                    onChange={changeDetailInputValue.bind(this,'depositedBalance',poolIndex)}
                     />
                 </FormControl>
                 <CustomSlider 
@@ -233,25 +314,29 @@ export default function SectionPoolsCard(props) {
                     markLabel: classes.depositedBalanceSliderMarkLabel,
                   }}
                   aria-labelledby="continuous-slider" 
-                  // value={depositedBalance['slider-'+index]?depositedBalance['slider-'+index]:0}
-                  // onChange={handleDepositedBalance.bind(this,index,balanceSingle.toNumber())}
+                  value={depositedBalance['slider-'+poolIndex]?depositedBalance['slider-'+poolIndex]:0}
+                  onChange={handleDepositedBalance.bind(this,poolIndex)}
                 />
                 <div>
                   {
-                    pool.allowance === 0 ? (
+                    isNeedApproval ? (
                       <div className={classes.showDetailButtonCon}>
                         <Button 
                           style={{
-                              backgroundColor:'#353848',
-                              color:'#FF2D82',
-                              boxShadow:'0 2px 2px 0 rgba(53, 56, 72, 0.14), 0 3px 1px -2px rgba(53, 56, 72, 0.2), 0 1px 5px 0 rgba(53, 56, 72, 0.12)',
-                              fontWeight: "bold"
+                            width: '180px',
+                            margin: '12px 5px',
+                            fontSize: '14px',
+                            fontWeight:'bold',
+                            backgroundColor:'#353848',
+                            color:'#FF2D82',
+                            boxShadow:'0 2px 2px 0 rgba(53, 56, 72, 0.14), 0 3px 1px -2px rgba(53, 56, 72, 0.2), 0 1px 5px 0 rgba(53, 56, 72, 0.12)'
                           }}
+                          round
                           color="primary"
                           // onClick={onApproval.bind(this, pool, index)}
-                          // disabled={fetchApprovalPending[index] }
+                          disabled={!approvalAble}
                           >
-                          {/* {fetchApprovalPending[index] ? `${t('Vault-ApproveING')}` : `${t('Vault-ApproveButton')}`} */}
+                          {pool.fetchApprovalPending[tokenIndex] ? `${t('Vault-ApproveING')}` : `${t('Vault-ApproveButton')}`}
                         </Button>
                       </div>
                     ) : (
@@ -268,9 +353,7 @@ export default function SectionPoolsCard(props) {
                           }}
                           round
                           onFocus={(event) => event.stopPropagation()}
-                          // disabled={
-                          //     !Boolean(depositedBalance[index]) || fetchDepositPending[index] || (new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber())
-                          // }
+                          disabled={!depositAble}
                           // onClick={onDeposit.bind(this, pool, index, false, balanceSingle)}
                           >{t('Vault-DepositButton')}
                         </Button>
@@ -286,9 +369,7 @@ export default function SectionPoolsCard(props) {
                           }}
                           round
                           onFocus={(event) => event.stopPropagation()}
-                          // disabled={
-                          //     fetchDepositPending[index] || (new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber())
-                          // }
+                          disabled={!depositAble}
                           // onClick={onDeposit.bind(this, pool, index, true, balanceSingle)}
                           >{t('Vault-DepositButtonAll')}
                         </Button>}
@@ -299,12 +380,12 @@ export default function SectionPoolsCard(props) {
               </Grid>
               <Grid item xs={12} sm={4} className={classes.sliderDetailContainer}>
                 <div className={classes.showDetailRight}>
-                  {/* {singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)).toFormat(4)} { pool.token } ({singleDepositedBalance.toFormat(4)} { pool.earnedToken }) */}
+                  {selectedTokenInfo.withdrawMax.toFixed(4,1)} {pool.earnedToken}
                 </div>
                 <FormControl fullWidth variant="outlined">
                   <CustomOutlinedInput 
-                    // value={withdrawAmount[index]!=undefined ? withdrawAmount[index] : '0'}
-                    // onChange={changeDetailInputValue.bind(this,'withdrawAmount',index,singleDepositedBalance.toNumber(),pool.tokenDecimals)}
+                    value={withdrawAmount[poolIndex]!=undefined ? withdrawAmount[poolIndex] : '0'}
+                    onChange={changeDetailInputValue.bind(this,'withdrawAmount',poolIndex)}
                     />
                 </FormControl>
                 <CustomSlider 
@@ -313,8 +394,8 @@ export default function SectionPoolsCard(props) {
                       markLabel: classes.drawSliderMarkLabel,
                   }}
                   aria-labelledby="continuous-slider" 
-                  // value={withdrawAmount['slider-'+index]?withdrawAmount['slider-'+index]:0}
-                  // onChange={handleWithdrawAmount.bind(this,index,singleDepositedBalance.toNumber())}
+                  value={withdrawAmount['slider-'+poolIndex]?withdrawAmount['slider-'+poolIndex]:0}
+                  onChange={handleWithdrawAmount.bind(this,poolIndex)}
                   />
                 <div className={classes.showDetailButtonCon}>
                   <Button 
@@ -330,10 +411,10 @@ export default function SectionPoolsCard(props) {
                     round
                     type="button"
                     color="primary"
-                    // disabled={fetchWithdrawPending[index] || !Boolean(withdrawAmount[index])}
+                    disabled={!withdrawAble}
                     // onClick={onWithdraw.bind(this, pool, index, false, singleDepositedBalance)}
                     >
-                    {/* {fetchWithdrawPending[index] ? `${t('Vault-WithdrawING')}`: `${t('Vault-WithdrawButton')}`} */}
+                    {pool.fetchWithdrawPending[tokenIndex] ? `${t('Vault-WithdrawING')}`: `${t('Vault-WithdrawButton')}`}
                   </Button>
                   <Button 
                     style={{
@@ -348,9 +429,10 @@ export default function SectionPoolsCard(props) {
                     round
                     type="button"
                     color="primary"
+                    disabled={!withdrawAble}
                     // onClick={onWithdraw.bind(this, pool, index, true, singleDepositedBalance)}
                     >
-                    {/* {fetchWithdrawPending[index] ? `${t('Vault-WithdrawING')}`: `${t('Vault-WithdrawButtonAll')}`} */}
+                    {pool.fetchWithdrawPending[tokenIndex] ? `${t('Vault-WithdrawING')}`: `${t('Vault-WithdrawButtonAll')}`}
                   </Button>
                 </div>
               </Grid>
