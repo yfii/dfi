@@ -328,7 +328,7 @@ export default function SectionPoolsCard(props) {
             <Grid container style={{width: "100%", marginLeft: 0, marginRight: 0}}>
               <Grid item xs={12} sm={4} className={classes.sliderDetailContainer}>
                 <div className={classes.showDetailRight} style={{float: 'left',opacity: '1'}}>
-                  选择币种
+                    {t('Liquidity-Selete')}
                 </div>
                 <FormControl fullWidth variant="outlined">
                   <CustomDropdown
@@ -433,8 +433,8 @@ export default function SectionPoolsCard(props) {
                 <div className={classes.showDetailRight}>
                   {
                     selectedTokenInfo.name.includes(' lp') ?
-                    selectedTokenInfo.withdrawMax.toFixed(lpFixedNum,1):
-                    selectedTokenInfo.withdrawMax.toFixed(normalFixedNum,1)
+                      selectedTokenInfo.withdrawMax.toFixed(lpFixedNum,1):
+                      selectedTokenInfo.withdrawMax.toFixed(normalFixedNum,1)
                   } {pool.earnedToken}
                 </div>
                 <FormControl fullWidth variant="outlined">
