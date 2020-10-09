@@ -2,19 +2,19 @@ import { useCallback } from 'react';
 import { erc20ABI } from "../../configure";
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
-  STAKE_FETCH_APPROVAL_BEGIN,
-  STAKE_FETCH_APPROVAL_SUCCESS,
-  STAKE_FETCH_APPROVAL_FAILURE,
+  LIQUIDITY_FETCH_APPROVAL_BEGIN,
+  LIQUIDITY_FETCH_APPROVAL_SUCCESS,
+  LIQUIDITY_FETCH_APPROVAL_FAILURE,
 } from './constants';
-import { enqueueSnackbar } from '../../common/redux/actions';
-import { checkApproval } from './action';
+import { notify } from '../../common'
 
-export function fetchApproval(index) {
+
+export function fetchApproval(poolIndex, tokenIndex) {
   return (dispatch, getState) => {
     // optionally you can have getState as the second argument
     dispatch({
-      type: STAKE_FETCH_APPROVAL_BEGIN,
-      index
+      type: LIQUIDITY_FETCH_APPROVAL_BEGIN,
+      poolIndex, tokenIndex
     });
     // Return a promise so that you could control UI flow without states in the store.
     // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
@@ -24,48 +24,28 @@ export function fetchApproval(index) {
       // doRequest is a placeholder Promise. You should replace it with your own logic.
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
-      const { home, stake } = getState();
+      const { home, liquidity } = getState();
       const { address, web3 } = home;
-      const { pools } = stake;
-      const { tokenAddress, earnContractAddress } = pools[index];
-      const contract = new web3.eth.Contract(erc20ABI, tokenAddress);
+      const { pools, erc20Tokens } = liquidity;
+      const { canDepositTokenList, contractAddress } = pools[poolIndex];
+      const contract = new web3.eth.Contract(erc20ABI, erc20Tokens[canDepositTokenList[tokenIndex]].tokenContractAddress);
 
-      contract.methods.approve(earnContractAddress, web3.utils.toWei("79228162514", "ether")).send({ from: address }).on(
+      contract.methods.approve(contractAddress, web3.utils.toWei("79228162514", "ether")).send({ from: address }).on(
         'transactionHash', function(hash){
-          dispatch(enqueueSnackbar({
-            message: hash,
-            options: {
-              key: new Date().getTime() + Math.random(),
-              variant: 'success'
-            },
-            hash
-          }));
+          notify.hash(hash)
         })
         .on('receipt', function(receipt){
-          dispatch(enqueueSnackbar({
-            key: new Date().getTime() + Math.random(),
-            message: '交易确认',
-            options: {
-              variant: 'success',
-            },
-          }));
-          dispatch({ type: STAKE_FETCH_APPROVAL_SUCCESS, index });
-          dispatch(checkApproval(index))
+          
+          dispatch({ type: LIQUIDITY_FETCH_APPROVAL_SUCCESS, poolIndex, tokenIndex });
           resolve();
         })
         .on('error', function(error) {
-          dispatch(enqueueSnackbar({
-            message: error.message || error,
-            options: {
-              key: new Date().getTime() + Math.random(),
-              variant: 'error'
-            },
-          }));
-          dispatch({ type: STAKE_FETCH_APPROVAL_FAILURE, index });
+          
+          dispatch({ type: LIQUIDITY_FETCH_APPROVAL_FAILURE, poolIndex, tokenIndex });
           resolve();
         })
         .catch((error) => {
-          dispatch({ type: STAKE_FETCH_APPROVAL_FAILURE, index });
+          dispatch({ type: LIQUIDITY_FETCH_APPROVAL_FAILURE, poolIndex, tokenIndex });
           reject(error)
         })
     });
@@ -79,48 +59,41 @@ export function useFetchApproval() {
   // if array, means args passed to the action creator
   const dispatch = useDispatch();
 
-  const { fetchApprovalPending } = useSelector(
-    state => ({
-      fetchApprovalPending: state.stake.fetchApprovalPending,
-    })
-  );
-
   const boundAction = useCallback(
-    data => dispatch(fetchApproval(data)),
+    (poolIndex, tokenIndex) => dispatch(fetchApproval(poolIndex, tokenIndex)),
     [dispatch],
   );
 
   return {
     fetchApproval: boundAction,
-    fetchApprovalPending
   };
 }
 
 export function reducer(state, action) {
-  const { fetchApprovalPending } = state;
+  const { pools } = state;
   switch (action.type) {
-    case STAKE_FETCH_APPROVAL_BEGIN:
+    case LIQUIDITY_FETCH_APPROVAL_BEGIN:
       // Just after a request is sent
-      fetchApprovalPending[action.index] = true;
+      pools[action.poolIndex].fetchApprovalPending[action.tokenIndex] = true;
       return {
         ...state,
-        fetchApprovalPending,
+        pools
       };
 
-    case STAKE_FETCH_APPROVAL_SUCCESS:
+    case LIQUIDITY_FETCH_APPROVAL_SUCCESS:
       // The request is success
-      fetchApprovalPending[action.index] = false;
+      pools[action.poolIndex].fetchApprovalPending[action.tokenIndex] = false;
       return {
         ...state,
-        fetchApprovalPending,
+        pools
       };
 
-    case STAKE_FETCH_APPROVAL_FAILURE:
+    case LIQUIDITY_FETCH_APPROVAL_FAILURE:
       // The request is failed
-      fetchApprovalPending[action.index] = false;
+      pools[action.poolIndex].fetchApprovalPending[action.tokenIndex] = false;
       return {
         ...state,
-        fetchApprovalPending,
+        pools
       };
 
     default:

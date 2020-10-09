@@ -65,12 +65,7 @@ export default function SectionPools() {
     }
   }, [address, web3, fetchBalance]);
 
-  const forMat = number => {
-    
-  }
-
-  const isZh = Boolean((i18n.language == 'zh') || (i18n.language == 'zh-CN'));
-
+  
   const openCard = id => {
     return setCardIsOpenedList(
       cardIsOpenedList => {
@@ -89,11 +84,11 @@ export default function SectionPools() {
         <div className={classes.mainTitle}>{t('Vault-Main-Title')}</div>
         <h3 className={classes.secondTitle}>{t('Vault-Second-Title')}</h3>
       </Grid>
-      {Boolean(networkId === Number(process.env.NETWORK_ID)) && pools.map((pool, index) => {
+      {Boolean(networkId === Number(process.env.NETWORK_ID)) && pools.map((pool, poolIndex) => {
         return (
           <SectionPoolsCard
             pool={pool}
-            index={index}
+            poolIndex={poolIndex}
             cardIsOpenedList={cardIsOpenedList}
             openCard={openCard}/>  
         )

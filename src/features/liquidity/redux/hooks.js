@@ -3,8 +3,8 @@ export { useFetchBalance } from './fetchBalance';
 export { useFetchBalances } from './fetchBalances';
 export { useFetchDeposit } from './fetchDeposit';
 export { useFetchWithdraw } from './fetchWithdraw';
-// export { useCheckApproval  } from './checkApproval';
-
+export { useCheckApproval  } from './checkApproval';
+export { useFetchApproval } from './fetchApproval';
 // export { useFetchCurrentlyStaked } from './fetchCurrentlyStaked';
 // export { useFetchRewardsAvailable } from './fetchRewardsAvailable';
 // export { useFetchHalfTime } from './fetchHalfTime';

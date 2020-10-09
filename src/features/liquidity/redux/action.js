@@ -16,3 +16,5 @@ export { fetchBalance } from './fetchBalance';
 export { fetchBalances } from './fetchBalances';
 export { fetchDeposit } from './fetchDeposit';
 export { fetchWithdraw } from './fetchWithdraw';
+export { checkApproval } from './checkApproval';
+export { fetchApproval } from './fetchApproval';

@@ -22,6 +22,8 @@ import AvatarGroup from '@material-ui/lab/AvatarGroup';
 import CustomSlider from 'components/CustomSlider/CustomSlider';
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
 //  hooks
+import { useConnectWallet } from '../../home/redux/hooks';
+import { useCheckApproval, useFetchApproval, useFetchDeposit, useFetchWithdraw } from '../redux/hooks';
 import { erc20Tokens } from '../config/erc20Tokens.js'
 import sectionPoolsStyle from "../jss/sections/sectionPoolsStyle";
 
@@ -30,13 +32,37 @@ const useStyles = makeStyles(sectionPoolsStyle);
 export default function SectionPoolsCard(props) {
   const {
     pool,
-    index,
+    poolIndex,
     openCard,
     cardIsOpenedList,
   } = props;
 
   const { t, i18n } = useTranslation();
   const classes = useStyles();
+  const { web3, address, networkId } = useConnectWallet();
+  const { checkApproval } = useCheckApproval();
+  const { fetchApproval } = useFetchApproval();
+  const { fetchDeposit } = useFetchDeposit();
+  const { fetchWithdraw } = useFetchWithdraw();
+
+  const [ tokenIndex, setTokenIndex ] = useState(0);
+  const [ isNeedApproval, setIsNeedApproval ] = useState(true);// 是否需要授权
+  const [ approvalAble, setApprovalAble ] = useState(false);// 授权按钮是否可点击
+  const [ depositAble, setDepositAble ] = useState(true);// 存入按钮是否可点击
+  const [ withdrawAble, setWithdrawAble ] = useState(true);// 提取按钮是否可点击
+
+  useEffect(() => {
+    setIsNeedApproval(Boolean(pool.canDepositTokenAllowanceList[tokenIndex].toNumber() === 0));
+  }, [poolIndex, tokenIndex]);
+
+  useEffect(() => {
+    setApprovalAble(!Boolean(pool.fetchApprovalPending[tokenIndex]));
+  }, [poolIndex, tokenIndex, pool.fetchApprovalPending[tokenIndex]]);
+
+  const onApproval = (poolIndex, tokenIndex, event) => {
+    event.stopPropagation();
+    fetchApproval(poolIndex, tokenIndex)
+  }
 
   const changeDetailInputValue = (type,index,total,tokenDecimals,event) => {
   }
@@ -47,16 +73,22 @@ export default function SectionPoolsCard(props) {
   const handleWithdrawAmount = (index,total,event,sliderNum) => {
   };
 
-  const onApproval = (pool, index, event) => {
+  useEffect(() => {
+    setDepositAble(!Boolean(pool.fetchDepositPending[tokenIndex]));
+  }, [poolIndex, tokenIndex, pool.fetchDepositPending[tokenIndex]]);
+  // 存入
+  const onDeposit = (amount, poolIndex, tokenIndex, isAll, event) => {
     event.stopPropagation();
+    fetchDeposit(amount, poolIndex, tokenIndex, isAll)
   }
 
-  const onDeposit = (pool, index, isAll, balanceSingle, event) => {
+  useEffect(() => {
+    setWithdrawAble(!Boolean(pool.fetchWithdrawPending[tokenIndex]));
+  }, [poolIndex, tokenIndex, pool.fetchWithdrawPending[tokenIndex]]);
+  // 提取
+  const onWithdraw = (amount, poolIndex, tokenIndex, isAll, event) => {
     event.stopPropagation();
-  }
-
-  const onWithdraw = (pool, index, isAll, singleDepositedBalance, event) => {
-    event.stopPropagation();
+    fetchWithdraw(amount, poolIndex, tokenIndex, isAll)
   }
 
   const createCardFirstDropdownList = (canDepositTokenList) => {
@@ -90,11 +122,24 @@ export default function SectionPoolsCard(props) {
   }
 
   const cardFirstDropdownList = createCardFirstDropdownList(pool.canDepositTokenList);
+
+  useEffect(() => {
+    if (address && web3) {
+      checkApproval(poolIndex, tokenIndex)
+    //   fetchPoolBalances({address, web3, pools});
+    //   const id = setInterval(() => {
+    //     fetchBalances({address, web3, tokens});
+    //     fetchPoolBalances({address, web3, pools});
+    //   }, 10000);
+    //   return () => clearInterval(id);
+    }
+  }, [address, web3]);
+
   return (
-    <Grid item xs={12} container key={index} style={{marginBottom: "24px"}} spacing={0}>
+    <Grid item xs={12} container key={poolIndex} style={{marginBottom: "24px"}} spacing={0}>
       <div style={{width: "100%"}}>
         <Accordion
-          expanded={Boolean(cardIsOpenedList.includes(index))}
+          expanded={Boolean(cardIsOpenedList.includes(poolIndex))}
           className={classes.accordion}
           TransitionProps={{ unmountOnExit: true }}
           >
@@ -103,7 +148,7 @@ export default function SectionPoolsCard(props) {
             style={{ justifyContent: "space-between"}}
             onClick={(event) => {
               event.stopPropagation();
-              openCard(index)
+              openCard(poolIndex)
             }}>
             <Grid container alignItems="center" justify="space-around" spacing={4} style={{paddingTop: "16px", paddingBottom: "16px"}}>
               <Grid item>

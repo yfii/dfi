@@ -1,6 +1,6 @@
 import initialState from './initialState';
 import { reducer as fetchPoolsInfoReducer} from './fetchPoolsInfo';
-// import { reducer as checkApprovalReducer} from './checkApproval';
+import { reducer as checkApprovalReducer} from './checkApproval';
 import { reducer as fetchBalanceReducer} from './fetchBalance';
 import { reducer as fetchBalancesReducer} from './fetchBalances';
 import { reducer as fetchDepositReducer } from './fetchDeposit';
@@ -9,7 +9,7 @@ import { reducer as fetchWithdrawReducer } from './fetchWithdraw';
 // import { reducer as fetchRewardsAvailableReducer } from './fetchRewardsAvailable';
 // import { reducer as fetchHalfTimeReducer } from './fetchHalfTime';
 // import { reducer as fetchCanWithdrawTimeReducer } from './fetchCanWithdrawTime';
-// import { reducer as fetchApprovalReducer } from './fetchApproval';
+import { reducer as fetchApprovalReducer } from './fetchApproval';
 // import { reducer as fetchStakeReducer } from './fetchStake';
 // import { reducer as fetchWithdrawReducer } from './fetchWithdraw';
 // import { reducer as fetchClaimReducer } from './fetchClaim';
@@ -18,16 +18,16 @@ import { reducer as fetchWithdrawReducer } from './fetchWithdraw';
 
 const reducers = [
   fetchPoolsInfoReducer,
-  // checkApprovalReducer,
+  checkApprovalReducer,
   fetchBalanceReducer,
   fetchBalancesReducer,
   fetchDepositReducer,
-  fetchWithdrawReducer
+  fetchWithdrawReducer,
   // fetchCurrentlyStakedReducer,
   // fetchRewardsAvailableReducer,
   // fetchHalfTimeReducer,
   // fetchCanWithdrawTimeReducer,
-  // fetchApprovalReducer,
+  fetchApprovalReducer,
   // fetchStakeReducer,
   // fetchWithdrawReducer,
   // fetchClaimReducer,

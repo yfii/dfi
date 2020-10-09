@@ -1,3 +1,5 @@
+import BigNumber from "bignumber.js";
+
 export const pools = [
   {
     name: 'eth/usdt lp',
@@ -5,7 +7,8 @@ export const pools = [
     pricePerFullShare: 1,
     tokenLogoList: ["ETH", "WETH", "USDT"],
     canDepositTokenList: ["eth/usdt lp", "eth", "weth", "usdt"],
-    canDepositTokenAllowanceList: Array(4).fill(0),
+    canDepositTokenAllowanceList: Array(4).fill(new BigNumber(0)),
+    fetchApprovalPending: Array(4).fill(false),
     tokenDepositFunctionList: ["deposit", "depositETH", "depositToken0", "depositToken1"],
     tokenDepositAllFunctionList: ["depositAll", null, "depositToken0All", "depositToken1All"],
     fetchDepositPending: Array(4).fill(false),
