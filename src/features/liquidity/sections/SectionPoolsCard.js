@@ -24,7 +24,7 @@ import CustomSlider from 'components/CustomSlider/CustomSlider';
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
 //  hooks
 import { useConnectWallet } from '../../home/redux/hooks';
-import { useFetchBalance, useFetchBalances, useFetchPoolsInfo, useCheckApproval, useFetchApproval, useFetchDeposit, useFetchWithdraw } from '../redux/hooks';
+import { useFetchBalance, useFetchBalances, useFetchPoolsInfo, useCheckApproval, useFetchApproval, useFetchDeposit, useFetchWithdraw, useFetchPricePerFullShare } from '../redux/hooks';
 import sectionPoolsStyle from "../jss/sections/sectionPoolsStyle";
 import { inputLimitPass,inputFinalVal } from 'features/helpers/utils';
 
@@ -48,6 +48,7 @@ export default function SectionPoolsCard(props) {
   const { fetchApproval } = useFetchApproval();
   const { fetchDeposit } = useFetchDeposit();
   const { fetchWithdraw } = useFetchWithdraw();
+  const { fetchPricePerFullShare } = useFetchPricePerFullShare();
   const { etherBalance, fetchBalance } = useFetchBalance();
   const { erc20Tokens, fetchBalances } = useFetchBalances();
   const { poolsInfo, fetchPoolsInfo } = useFetchPoolsInfo();
@@ -185,7 +186,7 @@ export default function SectionPoolsCard(props) {
         [`slider-${poolIndex}`]: 100,
       })
     }
-    let amount = new BigNumber(withdrawAmount[poolIndex]).multipliedBy(new BigNumber(10).exponentiatedBy(getTockenDecimals(selectedTokenInfo.name))).toString(10)
+    let amount = new BigNumber(withdrawAmount[poolIndex]).multipliedBy(new BigNumber(10).exponentiatedBy(getTockenDecimals(pool.earnedToken))).toString(10)
     fetchWithdraw(amount, poolIndex, tokenIndex, isAll)
   }
 
@@ -212,16 +213,15 @@ export default function SectionPoolsCard(props) {
                 max={4}
                 className={classNames({
                     [classes.marginRight]:true,
-                    [classes.avatar]:true,
                 })}
               >
                 {
-                  pool.tokenLogoList.map((tokenVal)=>(
-                    <Avatar src={require(`../../../images/${tokenVal}-logo.png`)} />
+                  pool.tokenLogoList.map((tokenVal,tokenIndex)=>(
+                    <Avatar key={tokenIndex} className={classes.avatar} src={require(`../../../images/${tokenVal}-logo.png`)} />
                   ))
                 }
-                </AvatarGroup>
-            ): (
+              </AvatarGroup>
+            ) : (
               <Avatar 
                 alt={item.tockeDescriptionUrl}
                 src={require(`../../../images/${item.tockeDescriptionUrl}-logo.png`)}
@@ -252,15 +252,15 @@ export default function SectionPoolsCard(props) {
   useEffect(() => {
     if (address && web3) {
       checkApproval(poolIndex, tokenIndex)
-    //   fetchPoolBalances({address, web3, pools});
-    //   const id = setInterval(() => {
-    //     fetchBalances({address, web3, tokens});
-    //     fetchPoolBalances({address, web3, pools});
-    //   }, 10000);
-    //   return () => clearInterval(id);
+      fetchPricePerFullShare(poolIndex, tokenIndex)
+      const id = setInterval(() => {
+        checkApproval(poolIndex, tokenIndex)
+        fetchPricePerFullShare(poolIndex, tokenIndex)
+      }, 10000);
+      return () => clearInterval(id);
     }
   }, [address, web3]);
-  
+
   return (
     <Grid item xs={12} container key={poolIndex} style={{marginBottom: "24px"}} spacing={0}>
       <div style={{width: "100%"}}>
@@ -282,8 +282,8 @@ export default function SectionPoolsCard(props) {
                   <Grid item>
                     <AvatarGroup max={4}>
                       {
-                        pool.tokenLogoList.map((tokenVal)=>(
-                          <Avatar src={require(`../../../images/${tokenVal}-logo.png`)} />
+                        pool.tokenLogoList.map((tokenVal,tockenIndex)=>(
+                          <Avatar key={tockenIndex} src={require(`../../../images/${tokenVal}-logo.png`)} />
                         ))
                       }
                     </AvatarGroup>
@@ -431,11 +431,7 @@ export default function SectionPoolsCard(props) {
               </Grid>
               <Grid item xs={12} sm={4} className={classes.sliderDetailContainer}>
                 <div className={classes.showDetailRight}>
-                  {
-                    selectedTokenInfo.name.includes(' lp') ?
-                      selectedTokenInfo.withdrawMax.toFixed(lpFixedNum,1):
-                      selectedTokenInfo.withdrawMax.toFixed(normalFixedNum,1)
-                  } {pool.earnedToken}
+                  {selectedTokenInfo.withdrawMax.toFixed(lpFixedNum,1)} {pool.earnedToken} ({selectedTokenInfo.withdrawMax.multipliedBy(pool.pricePerFullShare).toFixed(lpFixedNum,1)} {pool.token})
                 </div>
                 <FormControl fullWidth variant="outlined">
                   <CustomOutlinedInput 

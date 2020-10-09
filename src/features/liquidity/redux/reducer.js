@@ -5,6 +5,7 @@ import { reducer as fetchBalanceReducer} from './fetchBalance';
 import { reducer as fetchBalancesReducer} from './fetchBalances';
 import { reducer as fetchDepositReducer } from './fetchDeposit';
 import { reducer as fetchWithdrawReducer } from './fetchWithdraw';
+import { reducer as fetchPricePerFullShare } from './fetchPricePerFullShare';
 // import { reducer as fetchCurrentlyStakedReducer } from './fetchCurrentlyStaked';
 // import { reducer as fetchRewardsAvailableReducer } from './fetchRewardsAvailable';
 // import { reducer as fetchHalfTimeReducer } from './fetchHalfTime';
@@ -28,6 +29,7 @@ const reducers = [
   // fetchHalfTimeReducer,
   // fetchCanWithdrawTimeReducer,
   fetchApprovalReducer,
+  fetchPricePerFullShare,
   // fetchStakeReducer,
   // fetchWithdrawReducer,
   // fetchClaimReducer,
