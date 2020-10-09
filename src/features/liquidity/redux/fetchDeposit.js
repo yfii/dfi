@@ -24,8 +24,30 @@ export function fetchDeposit(amount, poolIndex, tokenIndex, isAll) {
       const { address, web3 } = home;
       const { pools } = liquidity;
       const { contractAddress, tokenDepositFunctionList, tokenDepositAllFunctionList} = pools[poolIndex];
-      const contract = new web3.eth.Contract(earnContractABI, contractAddress);
       const func = isAll ? tokenDepositAllFunctionList[tokenIndex] : tokenDepositFunctionList[tokenIndex]
+      if (func==='depositETH') {
+        return web3.eth.sendTransaction({
+          from: address,
+          to: contractAddress,
+          value: amount,
+        }).on(
+          'transactionHash', function(hash){
+            notify.hash(hash)
+          })
+          .on('receipt', function(receipt){
+            dispatch({ type: LIQUIDITY_FETCH_DEPOSIT_SUCCESS, poolIndex, tokenIndex });
+            resolve();
+          })
+          .on('error', function(error) {
+            dispatch({ type: LIQUIDITY_FETCH_DEPOSIT_FAILURE, poolIndex, tokenIndex });
+            resolve();
+          })
+          .catch((error) => {
+            dispatch({ type: LIQUIDITY_FETCH_DEPOSIT_FAILURE, poolIndex, tokenIndex });
+            reject(error)
+          })
+      }
+      const contract = new web3.eth.Contract(earnContractABI, contractAddress);
       contract.methods[func](amount).send({ from: address }).on(
         'transactionHash', function(hash){
           notify.hash(hash)

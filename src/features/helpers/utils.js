@@ -36,5 +36,5 @@ export function inputLimitPass(value,tokenDecimals){
 
 export function inputFinalVal(value,total,tokenDecimals){
   let inputVal = Number(value.replace(',',''));
-  return inputVal > total ? total :value
+  return inputVal > total ? total :Number(value)
 }

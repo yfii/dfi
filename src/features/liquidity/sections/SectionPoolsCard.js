@@ -2,7 +2,7 @@
 import React, { useState, useEffect, createContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import BigNumber from "bignumber.js";
-import {byDecimals,calculateReallyNum} from 'features/helpers/bignumber';
+import {byDecimals, calculateReallyNum} from 'features/helpers/bignumber';
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import classNames from "classnames";
@@ -69,11 +69,11 @@ export default function SectionPoolsCard(props) {
     let tokenName = pool.canDepositTokenList[tokenIndex];
     let depositeMax = BigNumber(0);
     if(tokenName == 'eth'){
-      depositeMax = byDecimals(etherBalance,ethTokenDecimals);
+      depositeMax = byDecimals(etherBalance,getTockenDecimals(tokenName));
     }else{
-      depositeMax = byDecimals(erc20Tokens[tokenName].tokenBalance,erc20Tokens[tokenName].tokenDecimals);
+      depositeMax = byDecimals(erc20Tokens[tokenName].tokenBalance,getTockenDecimals(tokenName));
     }
-    let withdrawMax = byDecimals(erc20Tokens[pool.earnedToken].tokenBalance,erc20Tokens[pool.earnedToken].tokenDecimals);
+    let withdrawMax = byDecimals(erc20Tokens[pool.earnedToken].tokenBalance,getTockenDecimals(pool.earnedToken));
     setSelectedTokenInfo({
       name:tokenName,
       depositeMax,
@@ -93,16 +93,19 @@ export default function SectionPoolsCard(props) {
     setApprovalAble(!Boolean(pool.fetchApprovalPending[tokenIndex]));
   }, [poolIndex, tokenIndex, pool.fetchApprovalPending[tokenIndex]]);
 
-  const onApproval = (poolIndex, tokenIndex, event) => {
+  const onApproval = (event) => {
     event.stopPropagation();
     fetchApproval(poolIndex, tokenIndex)
+  }
+
+  const getTockenDecimals = (tockenName) => {
+    return tockenName == 'eth' ? ethTokenDecimals : erc20Tokens[tockenName].tokenDecimals;
   }
 
   const changeDetailInputValue = (type,index,event) => {
     let value = event.target.value;
     let total = type=='depositedBalance' ? selectedTokenInfo.depositeMax.toNumber() : selectedTokenInfo.withdrawMax.toNumber();
-    let tokenDecimals = selectedTokenInfo.name == 'eth' ? ethTokenDecimals : erc20Tokens[selectedTokenInfo.name].tokenDecimals;
-    if(!inputLimitPass(value,tokenDecimals)){
+    if(!inputLimitPass(value,getTockenDecimals(selectedTokenInfo.name))){
       return;
     }
     let sliderNum = 0;
@@ -149,22 +152,38 @@ export default function SectionPoolsCard(props) {
   };
 
   useEffect(() => {
-    setDepositAble(!Boolean(pool.fetchDepositPending[tokenIndex]));
-  }, [poolIndex, tokenIndex, pool.fetchDepositPending[tokenIndex]]);
+    setDepositAble(!Boolean(pool.fetchDepositPending[tokenIndex]) && (!isEmpty(depositedBalance[poolIndex])&&depositedBalance[poolIndex]!=0));
+  }, [poolIndex, tokenIndex, pool.fetchDepositPending[tokenIndex], depositedBalance[poolIndex]]);
   
   // 存入
-  const onDeposit = (amount, poolIndex, tokenIndex, isAll, event) => {
+  const onDeposit = (isAll, event) => {
     event.stopPropagation();
+    if (isAll) {
+      setDepositedBalance({
+        ...depositedBalance,
+        [poolIndex]: selectedTokenInfo.depositeMax.toNumber(),
+        [`slider-${poolIndex}`]: 100,
+      })
+    }
+    let amount = new BigNumber(depositedBalance[poolIndex]).multipliedBy(new BigNumber(10).exponentiatedBy(getTockenDecimals(selectedTokenInfo.name))).toString(10)
     fetchDeposit(amount, poolIndex, tokenIndex, isAll)
   }
 
   useEffect(() => {
-    setWithdrawAble(!Boolean(pool.fetchWithdrawPending[tokenIndex]));
-  }, [poolIndex, tokenIndex, pool.fetchWithdrawPending[tokenIndex]]);
+    setWithdrawAble(!Boolean(pool.fetchWithdrawPending[tokenIndex]) && (!isEmpty(withdrawAmount[poolIndex])&&withdrawAmount[poolIndex]!=0));
+  }, [poolIndex, tokenIndex, pool.fetchWithdrawPending[tokenIndex], withdrawAmount[poolIndex]]);
 
   // 提取
-  const onWithdraw = (amount, poolIndex, tokenIndex, isAll, event) => {
+  const onWithdraw = (isAll, event) => {
     event.stopPropagation();
+    if (isAll) {
+      setWithdrawAmount({
+        ...withdrawAmount,
+        [poolIndex]: selectedTokenInfo.withdrawMax.toNumber(),
+        [`slider-${poolIndex}`]: 100,
+      })
+    }
+    let amount = new BigNumber(withdrawAmount[poolIndex]).multipliedBy(new BigNumber(10).exponentiatedBy(getTockenDecimals(selectedTokenInfo.name))).toString(10)
     fetchWithdraw(amount, poolIndex, tokenIndex, isAll)
   }
 
@@ -217,7 +236,15 @@ export default function SectionPoolsCard(props) {
   }
 
   const handleCardFirstDropdownListClick = (event) => {
-    setTokenIndex(event.key);
+    setTokenIndex(Number(event.key));
+    setDepositedBalance({
+      [poolIndex]: 0,
+      [`slider-${poolIndex}`]: 0,
+    })
+    setWithdrawAmount({
+      [poolIndex]: 0,
+      [`slider-${poolIndex}`]: 0,
+    })
   }
 
   useEffect(() => {
@@ -271,7 +298,7 @@ export default function SectionPoolsCard(props) {
                     <Grid item xs={7} container justify='center' alignItems="center">
                       <Grid item style={{width: "200px"}}>
                         <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
-                          {byDecimals(erc20Tokens[pool.earnedToken].tokenBalance,erc20Tokens[pool.earnedToken].tokenDecimals).toFixed(4,1)} {pool.earnedToken}
+                          {byDecimals(erc20Tokens[pool.earnedToken].tokenBalance,getTockenDecimals(pool.earnedToken)).toFixed(4,1)} {pool.earnedToken}
                         </Typography>
                         <Typography className={classes.iconContainerSubTitle} variant="body2">{t('Vault-Balance')}</Typography>
                       </Grid>
@@ -339,7 +366,7 @@ export default function SectionPoolsCard(props) {
                 />
                 <div>
                   {
-                    isNeedApproval ? (
+                    !isNeedApproval ? (
                       <div className={classes.showDetailButtonCon}>
                         <Button 
                           style={{
@@ -353,7 +380,7 @@ export default function SectionPoolsCard(props) {
                           }}
                           round
                           color="primary"
-                          // onClick={onApproval.bind(this, pool, index)}
+                          onClick={onApproval.bind(this)}
                           disabled={!approvalAble}
                           >
                           {pool.fetchApprovalPending[tokenIndex] ? `${t('Vault-ApproveING')}` : `${t('Vault-ApproveButton')}`}
@@ -374,25 +401,27 @@ export default function SectionPoolsCard(props) {
                           round
                           onFocus={(event) => event.stopPropagation()}
                           disabled={!depositAble}
-                          // onClick={onDeposit.bind(this, pool, index, false, balanceSingle)}
+                          onClick={onDeposit.bind(this,false)}
                           >{t('Vault-DepositButton')}
                         </Button>
-                        {Boolean(pool.tokenAddress) && <Button 
-                          style={{
-                              width: '180px',
-                              margin: '12px 5px',
-                              fontSize: '14px',
-                              fontWeight:'bold',
-                              backgroundColor:'#353848',
-                              color:'#FF2D82',
-                              boxShadow:'0 2px 2px 0 rgba(53, 56, 72, 0.14), 0 3px 1px -2px rgba(53, 56, 72, 0.2), 0 1px 5px 0 rgba(53, 56, 72, 0.12)'
-                          }}
-                          round
-                          onFocus={(event) => event.stopPropagation()}
-                          disabled={!depositAble}
-                          // onClick={onDeposit.bind(this, pool, index, true, balanceSingle)}
-                          >{t('Vault-DepositButtonAll')}
-                        </Button>}
+                        {
+                          selectedTokenInfo.name!='eth' && <Button 
+                            style={{
+                                width: '180px',
+                                margin: '12px 5px',
+                                fontSize: '14px',
+                                fontWeight:'bold',
+                                backgroundColor:'#353848',
+                                color:'#FF2D82',
+                                boxShadow:'0 2px 2px 0 rgba(53, 56, 72, 0.14), 0 3px 1px -2px rgba(53, 56, 72, 0.2), 0 1px 5px 0 rgba(53, 56, 72, 0.12)'
+                            }}
+                            round
+                            onFocus={(event) => event.stopPropagation()}
+                            disabled={!depositAble}
+                            onClick={onDeposit.bind(this, true)}
+                            >{t('Vault-DepositButtonAll')}
+                          </Button>
+                        }
                       </div>
                     )
                   }
@@ -432,7 +461,7 @@ export default function SectionPoolsCard(props) {
                     type="button"
                     color="primary"
                     disabled={!withdrawAble}
-                    // onClick={onWithdraw.bind(this, pool, index, false, singleDepositedBalance)}
+                    onClick={onWithdraw.bind(this, false)}
                     >
                     {pool.fetchWithdrawPending[tokenIndex] ? `${t('Vault-WithdrawING')}`: `${t('Vault-WithdrawButton')}`}
                   </Button>
@@ -450,7 +479,7 @@ export default function SectionPoolsCard(props) {
                     type="button"
                     color="primary"
                     disabled={!withdrawAble}
-                    // onClick={onWithdraw.bind(this, pool, index, true, singleDepositedBalance)}
+                    onClick={onWithdraw.bind(this, true)}
                     >
                     {pool.fetchWithdrawPending[tokenIndex] ? `${t('Vault-WithdrawING')}`: `${t('Vault-WithdrawButtonAll')}`}
                   </Button>
