@@ -26,7 +26,7 @@ import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
 import { useConnectWallet } from '../../home/redux/hooks';
 import { useFetchBalance, useFetchBalances, useFetchPoolsInfo, useCheckApproval, useFetchApproval, useFetchDeposit, useFetchWithdraw, useFetchPricePerFullShare } from '../redux/hooks';
 import sectionPoolsStyle from "../jss/sections/sectionPoolsStyle";
-import { inputLimitPass,inputFinalVal } from 'features/helpers/utils';
+import { inputLimitPass } from 'features/helpers/utils';
 
 const useStyles = makeStyles(sectionPoolsStyle);
 const ethTokenDecimals = 18;
@@ -105,6 +105,18 @@ export default function SectionPoolsCard(props) {
     return tockenName == 'eth' ? ethTokenDecimals : erc20Tokens[tockenName].tokenDecimals;
   }
 
+  const inputFinalVal = (value,type) => {
+    const changeIsNumber = /^[0-9]+\.?[0-9]*$/;
+    if (!value) return value;
+    if (changeIsNumber.test(value)) {
+      value = value.replace(/(^[0-9]+)(\.?[0-9]*$)/, (word, p1, p2) => { 
+        return Number(p1).toString() + p2;
+      });
+      if (new BigNumber(Number(value)).comparedTo(type=='depositedBalance'?selectedTokenInfo.depositeMax.toNumber():selectedTokenInfo.withdrawMax.toNumber()) === 1) return type=='depositedBalance'?selectedTokenInfo.depositeMax.toString():selectedTokenInfo.withdrawMax.toString();
+      return value
+    }
+  }
+
   const changeDetailInputValue = (type,index,event) => {
     let value = event.target.value;
     let total = type=='depositedBalance' ? selectedTokenInfo.depositeMax.toNumber() : selectedTokenInfo.withdrawMax.toNumber();
@@ -120,14 +132,14 @@ export default function SectionPoolsCard(props) {
       case 'depositedBalance':
         setDepositedBalance({
           ...depositedBalance,
-          [index]: inputFinalVal(value,total),
+          [index]: inputFinalVal(value,type),
           [`slider-${index}`]: sliderNum,
         });
         break;
       case 'withdrawAmount':
         setWithdrawAmount({
           ...withdrawAmount,
-          [index]: inputFinalVal(value,total),
+          [index]: inputFinalVal(value,type),
           [`slider-${index}`]: sliderNum,
         });
         break;
@@ -138,9 +150,10 @@ export default function SectionPoolsCard(props) {
 
   const handleDepositedBalance = (index,event,sliderNum) => {
     let total = selectedTokenInfo.depositeMax.toNumber();
+    let formatNum = selectedTokenInfo.name.includes(' lp')?lpFixedNum:normalFixedNum;
     setDepositedBalance({
       ...depositedBalance,
-      [index]: sliderNum == 0 ? 0: calculateReallyNum(total,sliderNum),
+      [index]: sliderNum == 0||total == 0 ? 0: calculateReallyNum(total,sliderNum,formatNum),
       [`slider-${index}`]: sliderNum == 0 ? 0: sliderNum,
     });
   }
@@ -149,7 +162,7 @@ export default function SectionPoolsCard(props) {
     let total = selectedTokenInfo.withdrawMax.toNumber();
     setWithdrawAmount({
       ...withdrawAmount,
-      [index]: sliderNum == 0 ? 0: calculateReallyNum(total,sliderNum),
+      [index]: sliderNum == 0||total == 0 ? 0: calculateReallyNum(total,sliderNum,lpFixedNum),
       [`slider-${index}`]: sliderNum == 0 ? 0: sliderNum,
     });
   };
