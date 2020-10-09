@@ -233,6 +233,7 @@ const sectionPoolsStyle = theme => ({
     },
     showDetailRight:{
         float: 'right',
+        wordBreak: 'break-all',
         fontSize: '12px',
         lineHeight: '18px',
         color: '#FFFFFF',
@@ -287,6 +288,10 @@ const sectionPoolsStyle = theme => ({
     marginRight:{
         marginRight:'4px',
     },
+    avatar:{
+      width:'32px',
+      height:'32px',
+    }
 });
 
 export default sectionPoolsStyle;
