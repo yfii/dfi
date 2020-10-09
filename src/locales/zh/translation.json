@@ -137,5 +137,6 @@
   "Public-Hour": " 小时 ",
   "Public-Minute": " 分钟 ",
   "Public-Seconds": " 秒 ",
-  "Liquidity-Title": "Liquidity Pools"
+  "Liquidity-Title": "Liquidity Pools",
+  "Liquidity-Selete":"选择币种"
 }

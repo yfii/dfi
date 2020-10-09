@@ -30,6 +30,8 @@ import { inputLimitPass,inputFinalVal } from 'features/helpers/utils';
 
 const useStyles = makeStyles(sectionPoolsStyle);
 const ethTokenDecimals = 18;
+const normalFixedNum = 4;
+const lpFixedNum = 8;
 
 export default function SectionPoolsCard(props) {
   const {
@@ -298,7 +300,7 @@ export default function SectionPoolsCard(props) {
                     <Grid item xs={7} container justify='center' alignItems="center">
                       <Grid item style={{width: "200px"}}>
                         <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
-                          {byDecimals(erc20Tokens[pool.earnedToken].tokenBalance,getTockenDecimals(pool.earnedToken)).toFixed(4,1)} {pool.earnedToken}
+                          {byDecimals(erc20Tokens[pool.earnedToken].tokenBalance,getTockenDecimals(pool.earnedToken)).toFixed(lpFixedNum,1)} {pool.earnedToken}
                         </Typography>
                         <Typography className={classes.iconContainerSubTitle} variant="body2">{t('Vault-Balance')}</Typography>
                       </Grid>
@@ -326,7 +328,7 @@ export default function SectionPoolsCard(props) {
             <Grid container style={{width: "100%", marginLeft: 0, marginRight: 0}}>
               <Grid item xs={12} sm={4} className={classes.sliderDetailContainer}>
                 <div className={classes.showDetailRight} style={{float: 'left',opacity: '1'}}>
-                  选择币种
+                    {t('Liquidity-Selete')}
                 </div>
                 <FormControl fullWidth variant="outlined">
                   <CustomDropdown
@@ -347,7 +349,7 @@ export default function SectionPoolsCard(props) {
               </Grid>
               <Grid item xs={12} sm={4} className={classes.sliderDetailContainer}>
                 <div className={classes.showDetailRight}>
-                  {t('Vault-Balance')}:{selectedTokenInfo.depositeMax.toFixed(4,1)} {selectedTokenInfo.name}
+                  {t('Vault-Balance')}:{selectedTokenInfo.depositeMax.toFixed(normalFixedNum,1)} {selectedTokenInfo.name}
                 </div>
                 <FormControl fullWidth variant="outlined">
                   <CustomOutlinedInput 
@@ -366,7 +368,7 @@ export default function SectionPoolsCard(props) {
                 />
                 <div>
                   {
-                    isNeedApproval ? (
+                    (isNeedApproval&&selectedTokenInfo.name!='eth') ? (
                       <div className={classes.showDetailButtonCon}>
                         <Button 
                           style={{
@@ -429,7 +431,11 @@ export default function SectionPoolsCard(props) {
               </Grid>
               <Grid item xs={12} sm={4} className={classes.sliderDetailContainer}>
                 <div className={classes.showDetailRight}>
-                  {selectedTokenInfo.withdrawMax.toFixed(4,1)} {pool.earnedToken}
+                  {
+                    selectedTokenInfo.name.includes(' lp') ?
+                      selectedTokenInfo.withdrawMax.toFixed(lpFixedNum,1):
+                      selectedTokenInfo.withdrawMax.toFixed(normalFixedNum,1)
+                  } {pool.earnedToken}
                 </div>
                 <FormControl fullWidth variant="outlined">
                   <CustomOutlinedInput 
