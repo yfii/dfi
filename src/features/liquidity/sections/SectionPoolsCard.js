@@ -349,7 +349,12 @@ export default function SectionPoolsCard(props) {
               </Grid>
               <Grid item xs={12} sm={4} className={classes.sliderDetailContainer}>
                 <div className={classes.showDetailRight}>
-                  {t('Vault-Balance')}:{selectedTokenInfo.depositeMax.toFixed(normalFixedNum,1)} {selectedTokenInfo.name}
+                  {t('Vault-Balance')}:
+                  {
+                    selectedTokenInfo.name.includes(' lp') ?
+                    selectedTokenInfo.depositeMax.toFixed(lpFixedNum,1):
+                    selectedTokenInfo.depositeMax.toFixed(normalFixedNum,1)
+                  } {selectedTokenInfo.name}
                 </div>
                 <FormControl fullWidth variant="outlined">
                   <CustomOutlinedInput 
