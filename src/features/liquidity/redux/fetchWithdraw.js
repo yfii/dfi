@@ -26,7 +26,25 @@ export function fetchWithdraw(amount, poolIndex, tokenIndex, isAll) {
       const { contractAddress, tokenWithdrawFunctionList, tokenWithdrawAllFunctionList} = pools[poolIndex];
       const contract = new web3.eth.Contract(earnContractABI, contractAddress);
       const func = isAll ? tokenWithdrawAllFunctionList[tokenIndex] : tokenWithdrawFunctionList[tokenIndex]
-      contract.methods[func](isAll ? '' : amount).send({ from: address }).on(
+      if(isAll){
+        return contract.methods[func]().send({ from: address }).on(
+          'transactionHash', function(hash){
+            // notify.hash(hash)
+          })
+          .on('receipt', function(receipt){
+            dispatch({ type: LIQUIDITY_FETCH_WITHDRAW_SUCCESS, poolIndex, tokenIndex });
+            resolve();
+          })
+          .on('error', function(error) {
+            dispatch({ type: LIQUIDITY_FETCH_WITHDRAW_FAILURE, poolIndex, tokenIndex });
+            resolve();
+          })
+          .catch((error) => {
+            dispatch({ type: LIQUIDITY_FETCH_WITHDRAW_FAILURE, poolIndex, tokenIndex });
+            reject(error)
+          })
+      }
+      contract.methods[func](amount).send({ from: address }).on(
         'transactionHash', function(hash){
           // notify.hash(hash)
         })
