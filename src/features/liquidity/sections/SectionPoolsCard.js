@@ -90,7 +90,7 @@ export default function SectionPoolsCard(props) {
 
   useEffect(() => {
     setIsNeedApproval(Boolean(pool.canDepositTokenAllowanceList[tokenIndex].toNumber() === 0));
-  }, [poolIndex, tokenIndex]);
+  }, [poolIndex, tokenIndex, pool.canDepositTokenAllowanceList[tokenIndex]]);
 
   useEffect(() => {
     setApprovalAble(!Boolean(pool.fetchApprovalPending[tokenIndex]));
@@ -272,7 +272,7 @@ export default function SectionPoolsCard(props) {
       }, 10000);
       return () => clearInterval(id);
     }
-  }, [address, web3]);
+  }, [address, web3, poolIndex, tokenIndex]);
 
   return (
     <Grid item xs={12} container key={poolIndex} style={{marginBottom: "24px"}} spacing={0}>
