@@ -6,7 +6,7 @@ export const pools = [
     earnedToken: 'iETH/USDT',
     token: 'ETH/USDT',
     pricePerFullShare: 1,
-    tokenLogoList: ["ETH", "WETH", "USDT"],
+    tokenLogoList: ["WETH", "USDT"],
     canDepositTokenList: ["eth/usdt lp", "eth", "weth", "usdt"],
     canDepositTokenAllowanceList: Array(4).fill(new BigNumber(0)),
     fetchApprovalPending: Array(4).fill(false),
