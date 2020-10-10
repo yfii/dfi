@@ -240,7 +240,15 @@ const sectionPoolsStyle = theme => ({
         opacity: '.4',
         fontWeight: '600',
     },
-
+    showDetailSelectContainer:{
+      height:'18px',
+      display:'flex',
+      justifyContent:'space-between',
+      fontSize: '12px',
+      lineHeight: '18px',
+      color: '#FFFFFF',
+      fontWeight: '600',
+    },
     MuiSliderRoot:{
         color: '#FF2D82',
     },

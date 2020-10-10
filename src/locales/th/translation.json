@@ -135,5 +135,6 @@
   "Public-Minute": " Minute ",
   "Public-Seconds": " Seconds ",
   "Liquidity-Title": "Liquidity Pools",
+  "Liquidity-Pair-Price":"Pairprice",
   "Liquidity-Selete":"Select currency"
 }

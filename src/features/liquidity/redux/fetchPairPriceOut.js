@@ -12,7 +12,10 @@ import { byDecimals } from 'features/helpers/bignumber';
 export function fetchPairPriceOut(amountString, poolIndex, tokenIndex) {
   return (dispatch, getState) => {
     // optionally you can have getState as the second argument
-    dispatch({ type: LIQUIDITY_FETCH_PAIR_PRICE_OUT_BEGIN });
+    dispatch({ 
+      type: LIQUIDITY_FETCH_PAIR_PRICE_OUT_BEGIN,
+      poolIndex
+     });
     // Return a promise so that you could control UI flow without states in the store.
     // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
     // It's hard to use state to manage it, but returning a promise allows you to easily achieve it.
@@ -25,7 +28,8 @@ export function fetchPairPriceOut(amountString, poolIndex, tokenIndex) {
       const { address, web3 } = home;
       const { pools, erc20Tokens } = liquidity;
       const { pairPrice, pairPriceToken, name, canDepositTokenList } = pools[poolIndex];
-      if( canDepositTokenList[tokenIndex].includes(' lp') ){
+      if( canDepositTokenList[tokenIndex].includes(' lp') || amountString==0){
+        if(amountString==0) amountString = Number(amountString)
         return dispatch({
           type: LIQUIDITY_FETCH_PAIR_PRICE_OUT_SUCCESS,
           data: amountString,
@@ -80,18 +84,18 @@ export function useFetchPairPriceOut() {
 }
 
 export function reducer(state, action) {
+  const { pools } = state;
   switch (action.type) {
     case LIQUIDITY_FETCH_PAIR_PRICE_OUT_BEGIN:
       // Just after a request is sent
+      pools[action.poolIndex].pairPrice = '0';
       return {
         ...state,
+        pools
       };
-
     case LIQUIDITY_FETCH_PAIR_PRICE_OUT_SUCCESS:
       // The request is success
-      const { pools } = state;
-      const { poolIndex, data } = action;
-      pools[poolIndex].pairPrice = data; 
+      pools[action.poolIndex].pairPrice = action.data; 
       return {
         ...state,
         pools

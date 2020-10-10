@@ -36,19 +36,11 @@ export default function SectionPools() {
   const { t, i18n } = useTranslation();
   const { web3, address, networkId } = useConnectWallet();
   const { pools, poolsInfo, fetchPoolsInfo } = useFetchPoolsInfo();
-//   const { pools, fetchPoolBalance } = useFetchPoolBalance();
   const { etherBalance, fetchBalance } = useFetchBalance();
   const { erc20Tokens, fetchBalances } = useFetchBalances();
   const [ cardIsOpenedList, setCardIsOpenedList ] = useState(Array(pools.length).fill(false));
   const classes = useStyles();
 
-//   const { fetchApproval, fetchApprovalPending } = useFetchApproval();
-//   const { fetchDeposit, fetchDepositEth, fetchDepositPending } = useFetchDeposit();
-//   const { fetchWithdraw, fetchWithdrawEth, fetchWithdrawPending } = useFetchWithdraw();
-//   const { contractApy, fetchContractApy } = useFetchContractApy();
-
-//   const [ depositedBalance, setDepositedBalance ] = useState({});
-//   const [ withdrawAmount, setWithdrawAmount ] = useState({});
   const { enqueueSnackbar } = useSnackbar();
 
   useEffect(() => {
@@ -56,12 +48,6 @@ export default function SectionPools() {
       fetchPoolsInfo()
       fetchBalance();
       fetchBalances();
-    //   fetchPoolBalances({address, web3, pools});
-    //   const id = setInterval(() => {
-    //     fetchBalances({address, web3, tokens});
-    //     fetchPoolBalances({address, web3, pools});
-    //   }, 10000);
-    //   return () => clearInterval(id);
     }
   }, [address, web3, fetchBalance]);
 

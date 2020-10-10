@@ -277,7 +277,7 @@ export default function SectionPoolsCard(props) {
   useEffect(() => {
     if (address && web3) {
       if(!selectedTokenInfo.name) return;
-      let amountString = isEmpty(withdrawAmount[poolIndex])?'0':withdrawAmount[poolIndex];
+      let amountString = isEmpty(withdrawAmount[poolIndex])?'0':String(withdrawAmount[poolIndex]);
       fetchPairPriceOut(amountString, poolIndex, tokenIndex)
     }
   },[address, web3, poolIndex, tokenIndex, withdrawAmount[poolIndex], selectedTokenInfo.name])
@@ -360,8 +360,9 @@ export default function SectionPoolsCard(props) {
           <AccordionDetails style={{ justifyContent: "space-between"}}>
             <Grid container style={{width: "100%", marginLeft: 0, marginRight: 0}}>
               <Grid item xs={12} sm={4} className={classes.sliderDetailContainer}>
-                <div className={classes.showDetailRight} style={{float: 'left',opacity: '1'}}>
-                    {t('Liquidity-Selete')}
+                <div className={classes.showDetailSelectContainer}>
+                    <div>{t('Liquidity-Selete')}</div>
+                    <div style={{opacity:'.4'}}>{t('Liquidity-Pair-Price')+':'+pool.pairPrice}</div>
                 </div>
                 <FormControl fullWidth variant="outlined">
                   <CustomDropdown
