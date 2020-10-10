@@ -48,8 +48,14 @@ export default function SectionPools() {
       fetchPoolsInfo()
       fetchBalance();
       fetchBalances();
+      const id = setInterval(() => {
+        fetchPoolsInfo()
+        fetchBalance();
+        fetchBalances();
+      }, 10000);
+      return () => clearInterval(id);
     }
-  }, [address, web3, fetchBalance]);
+  }, [address, web3, fetchPoolsInfo, fetchBalance, fetchBalances]);
 
   
   const openCard = id => {
