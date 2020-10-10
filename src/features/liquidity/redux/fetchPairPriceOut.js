@@ -6,6 +6,7 @@ import {
   LIQUIDITY_FETCH_PAIR_PRICE_OUT_BEGIN,
   LIQUIDITY_FETCH_PAIR_PRICE_OUT_SUCCESS,
   LIQUIDITY_FETCH_PAIR_PRICE_OUT_FAILURE,
+  LIQUIDITY_FETCH_PAIR_PRICE_OUT_DONT_REQUEST,
 } from './constants';
 import { byDecimals } from 'features/helpers/bignumber';
 
@@ -31,7 +32,7 @@ export function fetchPairPriceOut(amountString, poolIndex, tokenIndex) {
       if( canDepositTokenList[tokenIndex].includes(' lp') || amountString==0){
         if(amountString==0) amountString = Number(amountString)
         return dispatch({
-          type: LIQUIDITY_FETCH_PAIR_PRICE_OUT_SUCCESS,
+          type: LIQUIDITY_FETCH_PAIR_PRICE_OUT_DONT_REQUEST,
           data: amountString,
           poolIndex, 
         });
@@ -94,8 +95,9 @@ export function reducer(state, action) {
         pools
       };
     case LIQUIDITY_FETCH_PAIR_PRICE_OUT_SUCCESS:
+    case LIQUIDITY_FETCH_PAIR_PRICE_OUT_DONT_REQUEST:
       // The request is success
-      pools[action.poolIndex].pairPrice = action.data; 
+      pools[action.poolIndex].pairPrice = action.data;
       return {
         ...state,
         pools

@@ -33,6 +33,9 @@ const ethTokenDecimals = 18;
 const normalFixedNum = 4;
 const lpFixedNum = 8;
 
+// 创建一个标记用来存放定时器的返回值
+let timeout = null;
+
 export default function SectionPoolsCard(props) {
   const {
     pool,
@@ -278,7 +281,12 @@ export default function SectionPoolsCard(props) {
     if (address && web3) {
       if(!selectedTokenInfo.name) return;
       let amountString = isEmpty(withdrawAmount[poolIndex])?'0':String(withdrawAmount[poolIndex]);
-      fetchPairPriceOut(amountString, poolIndex, tokenIndex)
+      // 每当用户输入的时候把前一个 setTimeout clear 掉
+      clearTimeout(timeout); 
+      // 然后又创建一个新的 setTimeout, 这样就能保证interval 间隔内如果时间持续触发，就不会执行 fn 函数
+      timeout = setTimeout(() => {
+        fetchPairPriceOut(amountString, poolIndex, tokenIndex)
+      }, 400);
     }
   },[address, web3, poolIndex, tokenIndex, withdrawAmount[poolIndex], selectedTokenInfo.name])
 
