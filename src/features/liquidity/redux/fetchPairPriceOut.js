@@ -13,10 +13,7 @@ import { byDecimals } from 'features/helpers/bignumber';
 export function fetchPairPriceOut(amountString, poolIndex, tokenIndex) {
   return (dispatch, getState) => {
     // optionally you can have getState as the second argument
-    dispatch({ 
-      type: LIQUIDITY_FETCH_PAIR_PRICE_OUT_BEGIN,
-      poolIndex
-     });
+    dispatch({ type: LIQUIDITY_FETCH_PAIR_PRICE_OUT_BEGIN});
     // Return a promise so that you could control UI flow without states in the store.
     // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
     // It's hard to use state to manage it, but returning a promise allows you to easily achieve it.
@@ -89,10 +86,8 @@ export function reducer(state, action) {
   switch (action.type) {
     case LIQUIDITY_FETCH_PAIR_PRICE_OUT_BEGIN:
       // Just after a request is sent
-      pools[action.poolIndex].pairPrice = '0';
       return {
         ...state,
-        pools
       };
     case LIQUIDITY_FETCH_PAIR_PRICE_OUT_SUCCESS:
     case LIQUIDITY_FETCH_PAIR_PRICE_OUT_DONT_REQUEST:

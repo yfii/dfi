@@ -286,7 +286,7 @@ export default function SectionPoolsCard(props) {
       // 然后又创建一个新的 setTimeout, 这样就能保证interval 间隔内如果时间持续触发，就不会执行 fn 函数
       timeout = setTimeout(() => {
         fetchPairPriceOut(amountString, poolIndex, tokenIndex)
-      }, 400);
+      }, 300);
     }
   },[address, web3, poolIndex, tokenIndex, withdrawAmount[poolIndex], selectedTokenInfo.name])
 
