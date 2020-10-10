@@ -294,8 +294,6 @@ export default function SectionPoolsCard(props) {
     }
   }, [address, web3, poolIndex, tokenIndex]);
 
-  console.log('~~~ pool ~~~~',pool);
-
   return (
     <Grid item xs={12} container key={poolIndex} style={{marginBottom: "24px"}} spacing={0}>
       <div style={{width: "100%"}}>
