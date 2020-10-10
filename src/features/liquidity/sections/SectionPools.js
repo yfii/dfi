@@ -67,7 +67,7 @@ export default function SectionPools() {
   return (
     <Grid container style={{paddingTop: '4px'}}>
       <Grid item xs={12}>
-        <div className={classes.mainTitle}>{t('Vault-Main-Title')}</div>
+        <div className={classes.mainTitle}>{t('Liquidity-Main-Title')}</div>
         <h3 className={classes.secondTitle}>{t('Vault-Second-Title')}</h3>
       </Grid>
       {Boolean(networkId === Number(process.env.NETWORK_ID)) && pools.map((pool, poolIndex) => {
