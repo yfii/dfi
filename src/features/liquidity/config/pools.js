@@ -5,8 +5,9 @@ export const pools = [
     name: 'eth/usdt lp',
     earnedToken: 'iETH/USDT',
     token: 'ETH/USDT',
+    poolsInfoToken: 'eth-usdt',
     pricePerFullShare: 1,
-    tokenLogoList: ["ETH", "WETH", "USDT"],
+    tokenLogoList: ["WETH", "USDT"],
     canDepositTokenList: ["eth/usdt lp", "eth", "weth", "usdt"],
     canDepositTokenAllowanceList: Array(4).fill(new BigNumber(0)),
     fetchApprovalPending: Array(4).fill(false),
@@ -18,6 +19,8 @@ export const pools = [
     tokenWithdrawAllFunctionList: ["withdrawAll", "withdrawETHAll", "withdrawToken0All", "withdrawToken1All"],
     fetchWithdrawPending: Array(4).fill(false),
     contractAddress: "0x7E43210a4c6831D421f57026617Fdfc8ED3A0baf",
-    pricePerFullShare: 0
+    pricePerFullShare: 0,
+    pairPriceToken: '0xc509f486e551eeb6e18e7c4e1fbb8ba0348d131c',
+    pairPrice: '0',
   }
 ]

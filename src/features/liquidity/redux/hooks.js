@@ -6,6 +6,7 @@ export { useFetchWithdraw } from './fetchWithdraw';
 export { useCheckApproval  } from './checkApproval';
 export { useFetchApproval } from './fetchApproval';
 export { useFetchPricePerFullShare } from './fetchPricePerFullShare';
+export { useFetchPairPriceOut } from './fetchPairPriceOut';
 // export { useFetchCurrentlyStaked } from './fetchCurrentlyStaked';
 // export { useFetchRewardsAvailable } from './fetchRewardsAvailable';
 // export { useFetchHalfTime } from './fetchHalfTime';
