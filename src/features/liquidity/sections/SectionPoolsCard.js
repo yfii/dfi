@@ -192,7 +192,7 @@ export default function SectionPoolsCard(props) {
     if (isAll) {
       setDepositedBalance({
         ...depositedBalance,
-        [poolIndex]: selectedTokenInfo.depositeMax.toNumber(),
+        [poolIndex]: selectedTokenInfo.depositeMax.toString(),
         [`slider-${poolIndex}`]: 100,
       })
     }
@@ -210,7 +210,7 @@ export default function SectionPoolsCard(props) {
     if (isAll) {
       setWithdrawAmount({
         ...withdrawAmount,
-        [poolIndex]: selectedTokenInfo.withdrawMax.toNumber(),
+        [poolIndex]: selectedTokenInfo.withdrawMax.toString(),
         [`slider-${poolIndex}`]: 100,
       })
     }

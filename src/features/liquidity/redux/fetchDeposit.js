@@ -48,6 +48,24 @@ export function fetchDeposit(amount, poolIndex, tokenIndex, isAll) {
           })
       }
       const contract = new web3.eth.Contract(earnContractABI, contractAddress);
+      if(isAll){
+        return contract.methods[func]().send({ from: address }).on(
+          'transactionHash', function(hash){
+            notify.hash(hash)
+          })
+          .on('receipt', function(receipt){
+            dispatch({ type: LIQUIDITY_FETCH_DEPOSIT_SUCCESS, poolIndex, tokenIndex });
+            resolve();
+          })
+          .on('error', function(error) {
+            dispatch({ type: LIQUIDITY_FETCH_DEPOSIT_FAILURE, poolIndex, tokenIndex });
+            resolve();
+          })
+          .catch((error) => {
+            dispatch({ type: LIQUIDITY_FETCH_DEPOSIT_FAILURE, poolIndex, tokenIndex });
+            reject(error)
+          })
+      }
       contract.methods[func](amount).send({ from: address }).on(
         'transactionHash', function(hash){
           notify.hash(hash)

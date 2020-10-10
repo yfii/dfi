@@ -93,7 +93,7 @@ export default function SectionPools() {
   const handleDepositedBalance = (index,total,event,sliderNum) => {
     setDepositedBalance({
       ...depositedBalance,
-      [index]: sliderNum == 0 ? 0: calculateReallyNum(total,sliderNum),
+      [index]: sliderNum == 0 ? '0': calculateReallyNum(total,sliderNum),
       [`slider-${index}`]: sliderNum == 0 ? 0: sliderNum,
     });
   }
@@ -101,7 +101,7 @@ export default function SectionPools() {
   const handleWithdrawAmount = (index,total,event,sliderNum) => {
     setWithdrawAmount({
       ...withdrawAmount,
-      [index]: sliderNum == 0 ? 0: calculateReallyNum(total,sliderNum),
+      [index]: sliderNum == 0 ? '0': calculateReallyNum(total,sliderNum),
       [`slider-${index}`]: sliderNum == 0 ? 0: sliderNum,
     });
   };
@@ -126,11 +126,10 @@ export default function SectionPools() {
     if (isAll) {
       setDepositedBalance({
         ...depositedBalance,
-        [index]: forMat(balanceSingle),
+        [index]: String(forMat(balanceSingle)),
         [`slider-${index}`]: 100,
       })
     }
-    console.log(depositedBalance[index])
     let amountValue =  depositedBalance[index]? depositedBalance[index].replace(',',''): depositedBalance[index];
     if (!pool.tokenAddress) {// 如果是eth
       fetchDepositEth({
@@ -162,11 +161,10 @@ export default function SectionPools() {
 
   const onWithdraw = (pool, index, isAll, singleDepositedBalance, event) => {
     event.stopPropagation();
-    // console.log(isAll)
     if (isAll) {
       setWithdrawAmount({
         ...withdrawAmount,
-        [index]: forMat(singleDepositedBalance),
+        [index]: String(forMat(singleDepositedBalance)),
         [`slider-${index}`]: 100,
       })
     }
