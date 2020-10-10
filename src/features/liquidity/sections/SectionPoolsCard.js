@@ -24,7 +24,7 @@ import CustomSlider from 'components/CustomSlider/CustomSlider';
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
 //  hooks
 import { useConnectWallet } from '../../home/redux/hooks';
-import { useFetchBalance, useFetchBalances, useFetchPoolsInfo, useCheckApproval, useFetchApproval, useFetchDeposit, useFetchWithdraw, useFetchPricePerFullShare } from '../redux/hooks';
+import { useFetchBalance, useFetchBalances, useFetchPoolsInfo, useCheckApproval, useFetchApproval, useFetchDeposit, useFetchWithdraw, useFetchPricePerFullShare, useFetchPairPriceOut } from '../redux/hooks';
 import sectionPoolsStyle from "../jss/sections/sectionPoolsStyle";
 import { inputLimitPass } from 'features/helpers/utils';
 
@@ -48,6 +48,7 @@ export default function SectionPoolsCard(props) {
   const { fetchApproval } = useFetchApproval();
   const { fetchDeposit } = useFetchDeposit();
   const { fetchWithdraw } = useFetchWithdraw();
+  const { fetchPairPriceOut } = useFetchPairPriceOut();
   const { fetchPricePerFullShare } = useFetchPricePerFullShare();
   const { etherBalance, fetchBalance } = useFetchBalance();
   const { erc20Tokens, fetchBalances } = useFetchBalances();
@@ -67,6 +68,17 @@ export default function SectionPoolsCard(props) {
   const [ depositedBalance, setDepositedBalance ] = useState({});
   //提取信息
   const [ withdrawAmount, setWithdrawAmount ] = useState({});
+  //APY信息
+  const [ poolApy, setPoolApy ] = useState(0);
+
+  useEffect(() => {
+    const poolInfo = poolsInfo.find((item)=>{
+      return item.name == pool.poolsInfoToken
+    })
+    if(!isEmpty(poolInfo)){
+      setPoolApy(poolInfo.apy);
+    }
+  },[poolIndex, poolsInfo])
 
   useEffect(() => {
     let tokenName = pool.canDepositTokenList[tokenIndex];
@@ -264,6 +276,14 @@ export default function SectionPoolsCard(props) {
 
   useEffect(() => {
     if (address && web3) {
+      if(!selectedTokenInfo.name) return;
+      let amountString = isEmpty(withdrawAmount[poolIndex])?'0':withdrawAmount[poolIndex];
+      fetchPairPriceOut(amountString, poolIndex, tokenIndex)
+    }
+  },[address, web3, poolIndex, tokenIndex, withdrawAmount[poolIndex], selectedTokenInfo.name])
+
+  useEffect(() => {
+    if (address && web3) {
       checkApproval(poolIndex, tokenIndex)
       fetchPricePerFullShare(poolIndex, tokenIndex)
       const id = setInterval(() => {
@@ -273,6 +293,8 @@ export default function SectionPoolsCard(props) {
       return () => clearInterval(id);
     }
   }, [address, web3, poolIndex, tokenIndex]);
+
+  console.log('~~~ pool ~~~~',pool);
 
   return (
     <Grid item xs={12} container key={poolIndex} style={{marginBottom: "24px"}} spacing={0}>
@@ -329,7 +351,7 @@ export default function SectionPoolsCard(props) {
                   </Hidden>
                   <Grid item xs={12} md={1} container justify='center' alignItems="center">
                     <Grid item>
-                      <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap></Typography>
+                    <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>{poolApy}</Typography>
                       <Typography className={classes.iconContainerSubTitle} variant="body2">{t('Vault-ListAPY')}</Typography>
                     </Grid>
                   </Grid>
