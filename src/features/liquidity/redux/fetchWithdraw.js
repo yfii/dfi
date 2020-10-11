@@ -5,7 +5,7 @@ import {
   LIQUIDITY_FETCH_WITHDRAW_SUCCESS,
   LIQUIDITY_FETCH_WITHDRAW_FAILURE,
 } from './constants';
-// import { notify } from '../../common'
+import { notify } from '../../common'
 import { earnContractABI } from '../config'
 
 export function fetchWithdraw(amount, poolIndex, tokenIndex, isAll) {
@@ -29,7 +29,7 @@ export function fetchWithdraw(amount, poolIndex, tokenIndex, isAll) {
       if(isAll){
         return contract.methods[func]().send({ from: address }).on(
           'transactionHash', function(hash){
-            // notify.hash(hash)
+            notify.hash(hash)
           })
           .on('receipt', function(receipt){
             dispatch({ type: LIQUIDITY_FETCH_WITHDRAW_SUCCESS, poolIndex, tokenIndex });
@@ -46,7 +46,7 @@ export function fetchWithdraw(amount, poolIndex, tokenIndex, isAll) {
       }
       contract.methods[func](amount).send({ from: address }).on(
         'transactionHash', function(hash){
-          // notify.hash(hash)
+          notify.hash(hash)
         })
         .on('receipt', function(receipt){
           dispatch({ type: LIQUIDITY_FETCH_WITHDRAW_SUCCESS, poolIndex, tokenIndex });
