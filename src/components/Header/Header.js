@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
@@ -52,13 +52,21 @@ export default function Header(props) {
     [classes.absolute]: absolute,
     [classes.fixed]: fixed,
   });
+
   return (
     <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>
         <Button className={classes.title}>
           <img alt="BIFI" src={require(`../../images/BIFI-logo.svg`)} height="40px" className={classes.logo} />
-          <Link to="/">{brand}</Link>
+          <a href="https://beefy.finance">{brand}</a>
         </Button>
+
+        <span>
+          { renderLink('gov', 'gov', 'landmark') }
+          { renderLink('vote', 'vote', 'vote-yea') }
+          { renderLink('app', 'app', 'hand-holding-usd') }
+        </span>
+
         <Hidden smDown implementation="css">
           <div className={classes.collapse}>{links}</div>
         </Hidden>
@@ -68,6 +76,7 @@ export default function Header(props) {
           </IconButton>
         </Hidden>
       </Toolbar>
+      
       <Hidden mdUp implementation="js">
         <Drawer
           variant="temporary"
@@ -87,6 +96,32 @@ export default function Header(props) {
     </AppBar>
   );
 }
+
+const renderLink = (name, label, icon) => {
+  const Link = styled.a`
+    margin: 0 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  `;
+
+  const Icon = styled.i`
+    margin-right: .5rem;
+    min-width: 24px;
+  `;
+
+  return (
+    <Link href={`https://${name}.beefy.finance`} target="_blank" rel="noopener noreferrer">
+      <Icon className={`fas fa-${icon}`} />
+      <span>{label}</span>
+    </Link>
+  );
+};
 
 Header.defaultProp = {
   color: 'white',
