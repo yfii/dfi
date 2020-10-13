@@ -13,6 +13,7 @@ export const pools = [
     defaultApy: '15.00',
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
+    tvl: 0,
   },
   {
     id: 'link',
@@ -28,6 +29,7 @@ export const pools = [
     defaultApy: '20.00',
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
+    tvl: 0,
   },
   {
     id: 'dot',
@@ -43,6 +45,7 @@ export const pools = [
     defaultApy: '25.00',
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
+    tvl: 0,
   },
   {
     id: 'dai',
@@ -58,6 +61,7 @@ export const pools = [
     defaultApy: '10.00',
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
+    tvl: 0,
   },
   {
     id: 'usdt',
@@ -73,6 +77,7 @@ export const pools = [
     defaultApy: '12.00',
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
+    tvl: 0,
   },
   {
     id: 'eth',
@@ -88,6 +93,7 @@ export const pools = [
     defaultApy: '10.00',
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
+    tvl: 0,
   },
   {
     id: 'btcb',
@@ -103,6 +109,7 @@ export const pools = [
     defaultApy: '7.00',
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
+    tvl: 0,
   },
   
 ];
