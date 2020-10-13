@@ -2,8 +2,10 @@ import { useCallback } from 'react';
 import { vaultABI, erc20ABI } from '../../configure';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { VAULT_FETCH_POOL_BALANCES_BEGIN, VAULT_FETCH_POOL_BALANCES_SUCCESS, VAULT_FETCH_POOL_BALANCES_FAILURE } from './constants';
-import { fetchPricePerFullShare, fetchAllowance, fetchTvl } from '../../web3';
+import { fetchPricePerFullShare, fetchAllowance, fetchTvl, fetchPrice } from '../../web3';
 import async from 'async';
+
+// FIXME: this function now getches all the information related to the pool, not only balances
 
 export function fetchPoolBalances(data) {
   return dispatch => {
