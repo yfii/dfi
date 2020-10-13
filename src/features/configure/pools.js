@@ -14,6 +14,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tvl: 0,
+    bandPair: 'BUSD/USD',
   },
   {
     id: 'link',
@@ -30,6 +31,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tvl: 0,
+    bandPair: 'LINK/USD',
   },
   {
     id: 'dot',
@@ -46,6 +48,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tvl: 0,
+    bandPair: 'DOT/USD',
   },
   {
     id: 'dai',
@@ -62,6 +65,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tvl: 0,
+    bandPair: 'DAI/USD',
   },
   {
     id: 'usdt',
@@ -78,6 +82,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tvl: 0,
+    bandPair: 'USDT/USD',
   },
   {
     id: 'eth',
@@ -94,6 +99,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tvl: 0,
+    bandPair: 'ETH/USD',
   },
   {
     id: 'btcb',
@@ -110,6 +116,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tvl: 0,
+    bandPair: 'BTC/USD',
   },
   
 ];
