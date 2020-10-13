@@ -262,10 +262,11 @@ export default function SectionPools() {
                           </Grid>
                         </Grid>
                       </Grid>
-                      <Grid item md={6} xs={3}>
+
+                      <Grid item md={6} xs={4}>
                         <Grid item container justify="space-between">
                           <Hidden smDown>
-                            <Grid item xs={7} container justify="center" alignItems="center">
+                            <Grid item xs={4} container justify="center" alignItems="center">
                               <Grid item style={{ width: '200px' }}>
                                 <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
                                   {format(balanceSingle)} {pool.token}
@@ -276,6 +277,7 @@ export default function SectionPools() {
                               </Grid>
                             </Grid>
                           </Hidden>
+                        
                           <Hidden mdDown>
                             <Grid item xs={4} container justify="center" alignItems="center">
                               <Grid item style={{ width: '200px' }}>
@@ -288,7 +290,8 @@ export default function SectionPools() {
                               </Grid>
                             </Grid>
                           </Hidden>
-                          <Grid item xs={12} md={1} container justify="center" alignItems="center">
+                         
+                          <Grid item xs={5} md={2} container justify="center" alignItems="center">
                             <Grid item>
                               <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
                                 {' '}
@@ -299,28 +302,24 @@ export default function SectionPools() {
                               </Typography>
                             </Grid>
                           </Grid>
+
+                          <Grid item xs={5} md={2} container justify="center" alignItems="center">
+                            <Grid item>
+                              <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
+                                {' '}
+                                {depositedApy}
+                              </Typography>
+                              <Typography className={classes.iconContainerSubTitle} variant="body2">
+                                {t('Vault-TVL')}
+                              </Typography>
+                            </Grid>
+                          </Grid>
                         </Grid>
+                        
                       </Grid>
+                      
                       <Grid item>
                         <Grid item container justify="flex-end" alignItems="center" spacing={2}>
-                          <Hidden mdDown>
-                            <Grid item>
-                              <IconButton
-                                classes={{
-                                  root: classes.iconContainerSecond,
-                                }}
-                                style={{
-                                  visibility: Boolean(pool.tokenDescriptionUrl) ? 'visible' : 'hidden',
-                                }}
-                                onClick={event => {
-                                  event.stopPropagation();
-                                  window.open(pool.tokenDescriptionUrl);
-                                }}
-                              >
-                                <i className={'far fa-question-circle'} />
-                              </IconButton>
-                            </Grid>
-                          </Hidden>
                           <Grid item>
                             <IconButton
                               className={classes.iconContainerPrimary}
@@ -336,6 +335,8 @@ export default function SectionPools() {
                       </Grid>
                     </Grid>
                   </AccordionSummary>
+
+
                   <Divider variant="middle" className={classes.accordionDivider} />
                   <AccordionDetails style={{ justifyContent: 'space-between' }}>
                     <Grid container>
