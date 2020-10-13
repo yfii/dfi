@@ -34,39 +34,30 @@ export function fetchPoolBalances(data) {
                   contract: erc20Contract,
                   address,
                 })
-                  .then(data => {
-                    // console.log('data:' + data);
-                    return callbackInner(null, data);
-                  })
-                  .catch(error => {
-                    // console.log(error)
-                    return callbackInner(error, 0);
-                  });
+                .then(data => { return callbackInner(null, data); })
+                .catch(error => { return callbackInner(error, 0); });
               },
               callbackInner => {
                 fetchPricePerFullShare({
                   contract: earnContract,
                   address,
                 })
-                  .then(data => {
-                    // console.log(data)
-                    return callbackInner(null, data);
-                  })
-                  .catch(error => {
-                    // console.log(error)
-                    return callbackInner(error, 0);
-                  });
+                .then(data => { return callbackInner(null, data); })
+                .catch(error => { return callbackInner(error, 0); });
               },
               callbackInner => {
                 fetchTvl({
                   contract: earnContract
                 })
-                  .then(data => {
-                    return callbackInner(null, data);
-                  })
-                  .catch(error => {
-                    return callbackInner(error, 0);
-                  });
+                .then(data => { return callbackInner(null, data); })
+                .catch(error => { return callbackInner(error, 0); });
+              },
+              callbackInner => {
+                fetchPrice({
+                  pair: pool.oraclePair
+                })
+                .then(data => { return callbackInner(null, data); })
+                .catch(error => { return callbackInner(error, 0); });
               },
             ],
             (error, data) => {
@@ -76,6 +67,7 @@ export function fetchPoolBalances(data) {
               pool.allowance = data[0] || 0;
               pool.pricePerFullShare = data[1] || 1;
               pool.tvl = data[2] || 0;
+              pool.oraclePrice = data[3] || 0;
               callback(null, pool);
             }
           );
