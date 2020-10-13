@@ -329,6 +329,24 @@ export default function SectionPools() {
                       
                       <Grid item>
                         <Grid item container justify="flex-end" alignItems="center" spacing={2}>
+                          <Hidden mdDown>
+                            <Grid item>
+                              <IconButton
+                                classes={{
+                                  root: classes.iconContainerSecond,
+                                }}
+                                style={{
+                                  visibility: Boolean(pool.tokenDescriptionUrl) ? 'visible' : 'hidden',
+                                }}
+                                onClick={event => {
+                                  event.stopPropagation();
+                                  window.open(pool.tokenDescriptionUrl);
+                                }}
+                              >
+                                <i className={'far fa-question-circle'} />
+                              </IconButton>
+                            </Grid>
+                          </Hidden>
                           <Grid item>
                             <IconButton
                               className={classes.iconContainerPrimary}
