@@ -32,7 +32,7 @@ export default function StakePools(props) {
   useEffect(() => {
     fetchPoolsInfo();
   }, [fetchPoolsInfo]);
-  
+
   return (
     <Grid container style={{paddingTop: '4px'}}>
       <Grid item xs={12}>
@@ -82,7 +82,7 @@ export default function StakePools(props) {
               root:classes.tableBodyRoot
             }}>
               {pools.map((pool, index) => (
-                <StyledTableRow key={pool.name} style={{display: Boolean(index !== 3) ? "none" : "table-row"}}>
+                <StyledTableRow key={pool.name} style={{display: Boolean(index !== 3 && index !== 4) ? "none" : "table-row"}}>
                   <StyledTableCell component="th">
                     <div className={classes.firstCell}>
                       <div className={classes.avatarContainer}>
@@ -121,7 +121,7 @@ export default function StakePools(props) {
       <Hidden smUp>
         <GridItem>
         {pools.map((pool, index) => (
-          <div key={`mobile-${index}`} className={classes.mobileContainer} style={{display: Boolean(index !== 3) ? "none" : ""}}>
+          <div key={`mobile-${index}`} className={classes.mobileContainer} style={{display: Boolean(index !== 3 && index !== 4) ? "none" : ""}}>
             <div className={classes.avatarContainer} style={{width:'80px',height:'80px',borderRadius:'40px'}}>
               <Avatar 
                 alt={pool.name}
