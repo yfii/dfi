@@ -218,9 +218,9 @@ export function byDecimals(number, tokenDecimals = 18){
   return new BigNumber(number).dividedBy(decimals);
 }
 
-export function calculateReallyNum(total,sliderNum){
+export function calculateReallyNum(total,sliderNum,formatNum=4){
   if(sliderNum == undefined){
-      return byDecimals(0, 0).toFormat(4);
+    return byDecimals(0, 0).toFormat(formatNum);
   }
-  return byDecimals(sliderNum/100*Number(total), 0).toFormat(4);
+  return byDecimals(sliderNum/100*Number(total), 0).toFormat(formatNum);
 }

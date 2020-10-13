@@ -3,6 +3,7 @@
   "Nav-Vault": "机枪池",
   "Nav-Stake": "抵押",
   "Nav-Farm": "挖矿",
+  "Nav-lp": "Lp",
   "Foot-Token": "通证合约",
   "Foot-Forum": "论坛",
   "Foot-Audit": "审计",
@@ -135,5 +136,9 @@
   "Public-Day": " 天 ",
   "Public-Hour": " 小时 ",
   "Public-Minute": " 分钟 ",
-  "Public-Seconds": " 秒 "
+  "Public-Seconds": " 秒 ",
+  "Liquidity-Title": "Liquidity Pools",
+  "Liquidity-Main-Title": "Liquidity",
+  "Liquidity-Pair-Price":"预估提取",
+  "Liquidity-Selete":"选择币种"
 }

@@ -3,6 +3,7 @@
   "Nav-Vault":"채굴풀",
   "Nav-Stake":"스테이킹",
   "Nav-Farm":"채굴",
+  "Nav-lp": "Lp",
   "Foot-Token":"토큰 계약",
   "Foot-Forum":"포럼",
   "Foot-Audit":"심사",
@@ -102,7 +103,6 @@
     "Uniswap": "Uniswap ETH-YFII",
     "Audit": "Audit"
   },
-  "Farm-Main-Title": "Farm",
   "Farm-Second-Title": "Hold YFII and Earn MEFI",
   "Farm-Stake": "Deposit",
   "Farm-Earn": "Earn",
@@ -133,5 +133,9 @@
   "Public-Day": " Day ",
   "Public-Hour": " Hour ",
   "Public-Minute": " Minute ",
-  "Public-Seconds": " Seconds "
+  "Public-Seconds": " Seconds ",
+  "Liquidity-Title": "Liquidity Pools",
+  "Liquidity-Main-Title": "Liquidity",
+  "Liquidity-Pair-Price":"Pairprice",
+  "Liquidity-Selete":"Select currency"
 }

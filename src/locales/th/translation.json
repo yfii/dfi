@@ -3,6 +3,7 @@
   "Nav-Vault": "Vault",
   "Nav-Stake": "Stake",
   "Nav-Farm": "Farm",
+  "Nav-lp": "Lp",
   "Foot-Token": "Token Contract",
   "Foot-Forum": "Forum",
   "Foot-Audit": "Audit",
@@ -132,5 +133,9 @@
   "Public-Day": " Day ",
   "Public-Hour": " Hour ",
   "Public-Minute": " Minute ",
-  "Public-Seconds": " Seconds "
+  "Public-Seconds": " Seconds ",
+  "Liquidity-Title": "Liquidity Pools",
+  "Liquidity-Main-Title": "Liquidity",
+  "Liquidity-Pair-Price":"Pairprice",
+  "Liquidity-Selete":"Select currency"
 }
