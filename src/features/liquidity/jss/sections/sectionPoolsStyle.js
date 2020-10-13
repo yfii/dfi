@@ -266,7 +266,6 @@ const sectionPoolsStyle = theme => ({
       display:'flex',
       justifyContent:'space-between',
       width:'100%',
-      height: '53px',
       margin:'0',
       background: '#353848',
       borderRadius: '12px',
@@ -277,7 +276,7 @@ const sectionPoolsStyle = theme => ({
       fontWeight: '600',
       boxShadow:'0 2px 2px 0 #353848',
       textAlign:'right',
-      padding:'18.5px 18px',
+      padding:'12px 18px',
       border:'1px solid transparent',
       '&:hover,&:focus':{
           background: '#353848',
