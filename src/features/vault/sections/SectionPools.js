@@ -306,7 +306,7 @@ export default function SectionPools() {
                             <Grid item>
                               <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
                                 {' '}
-                                {depositedTvl}
+                                {pool.tvl}
                               </Typography>
                               <Typography className={classes.iconContainerSubTitle} variant="body2">
                                 {t('Vault-TVL')}

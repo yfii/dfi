@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { vaultABI, erc20ABI } from '../../configure';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { VAULT_FETCH_POOL_BALANCES_BEGIN, VAULT_FETCH_POOL_BALANCES_SUCCESS, VAULT_FETCH_POOL_BALANCES_FAILURE } from './constants';
-import { fetchPricePerFullShare, fetchAllowance } from '../../web3';
+import { fetchPricePerFullShare, fetchAllowance, fetchTvl } from '../../web3';
 import async from 'async';
 
 export function fetchPoolBalances(data) {
@@ -57,6 +57,17 @@ export function fetchPoolBalances(data) {
                     return callbackInner(error, 0);
                   });
               },
+              callbackInner => {
+                fetchTvl({
+                  contract: earnContract
+                })
+                  .then(data => {
+                    return callbackInner(null, data);
+                  })
+                  .catch(error => {
+                    return callbackInner(error, 0);
+                  });
+              },
             ],
             (error, data) => {
               if (error) {
@@ -64,6 +75,7 @@ export function fetchPoolBalances(data) {
               }
               pool.allowance = data[0] || 0;
               pool.pricePerFullShare = data[1] || 1;
+              pool.tvl = data[2] || 0;
               callback(null, pool);
             }
           );
