@@ -21,6 +21,7 @@ const initialState = {
   tokens,
   contractApy: {},
   fetchContractApyPending: false,
+  fetchContractTvlPending: false,
   fetchPoolBalancesPending: false,
   fetchBalancesPending: false,
   fetchApprovalPending: {},
