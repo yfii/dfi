@@ -51,7 +51,7 @@ const pools = [
 		tokenDecimals: 18,
 		tokenAddress: '0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83',
 		earnedToken: 'YFII',
-		earnedTokenDecimals: 19,
+		earnedTokenDecimals: 18,
 		earnedTokenAddress: '0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83',
 		earnContractAddress: '0xB6C7Bf515828c1eBf0D5F34930Cda0741eD9263F',
 		earnContractAbi: pool4Abi
