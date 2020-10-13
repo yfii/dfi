@@ -77,6 +77,16 @@ export default function SectionPools() {
     }
   };
 
+  const formatTvl = tvl => {
+    // TODO: bignum?
+    const order = Math.floor(Math.log10(tvl) / 3);
+    if (order < 0) { return '0.00'; }
+    
+    const units = ['','k','M','B','T'];
+    const num = tvl / 1000 ** order;
+    return num.toFixed(2) + units[order];
+  }
+  
   const handleDepositedBalance = (index, total, _, sliderNum) => {
     setDepositedBalance({
       ...depositedBalance,
@@ -115,7 +125,7 @@ export default function SectionPools() {
         [`slider-${index}`]: 100,
       });
     }
-    console.log(depositedBalance[index]);
+    
     let amountValue = depositedBalance[index] ? depositedBalance[index].replace(',', '') : depositedBalance[index];
     if (!pool.tokenAddress) {
       fetchDepositEth({
@@ -152,7 +162,6 @@ export default function SectionPools() {
       });
     }
 
-    console.log(withdrawAmount[index]);
     let amountValue = withdrawAmount[index] ? withdrawAmount[index].replace(',', '') : withdrawAmount[index];
     if (!pool.tokenAddress) {
       fetchWithdrawBnb({
@@ -262,10 +271,11 @@ export default function SectionPools() {
                           </Grid>
                         </Grid>
                       </Grid>
-                      <Grid item md={6} xs={3}>
+
+                      <Grid item md={7} xs={4}>
                         <Grid item container justify="space-between">
                           <Hidden smDown>
-                            <Grid item xs={7} container justify="center" alignItems="center">
+                            <Grid item xs={4} md={3} container justify="center" alignItems="center">
                               <Grid item style={{ width: '200px' }}>
                                 <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
                                   {format(balanceSingle)} {pool.token}
@@ -276,8 +286,9 @@ export default function SectionPools() {
                               </Grid>
                             </Grid>
                           </Hidden>
+                        
                           <Hidden mdDown>
-                            <Grid item xs={4} container justify="center" alignItems="center">
+                            <Grid item xs={4} md={3} container justify="center" alignItems="center">
                               <Grid item style={{ width: '200px' }}>
                                 <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
                                   {format(singleDepositedBalance)} {pool.token}
@@ -288,7 +299,8 @@ export default function SectionPools() {
                               </Grid>
                             </Grid>
                           </Hidden>
-                          <Grid item xs={12} md={1} container justify="center" alignItems="center">
+                         
+                          <Grid item xs={5} md={2} container justify="center" alignItems="center">
                             <Grid item>
                               <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
                                 {' '}
@@ -299,8 +311,23 @@ export default function SectionPools() {
                               </Typography>
                             </Grid>
                           </Grid>
+
+                          <Grid item xs={5} md={2} container justify="center" alignItems="center">
+                            <Grid item>
+                              <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
+                                {' '}
+                                {/* TODO: multiply by price? */}
+                                {formatTvl(pool.tvl)}
+                              </Typography>
+                              <Typography className={classes.iconContainerSubTitle} variant="body2">
+                                {t('Vault-TVL')}
+                              </Typography>
+                            </Grid>
+                          </Grid>
                         </Grid>
+                        
                       </Grid>
+                      
                       <Grid item>
                         <Grid item container justify="flex-end" alignItems="center" spacing={2}>
                           <Hidden mdDown>
@@ -336,6 +363,8 @@ export default function SectionPools() {
                       </Grid>
                     </Grid>
                   </AccordionSummary>
+
+
                   <Divider variant="middle" className={classes.accordionDivider} />
                   <AccordionDetails style={{ justifyContent: 'space-between' }}>
                     <Grid container>
