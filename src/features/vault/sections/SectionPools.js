@@ -316,6 +316,7 @@ export default function SectionPools() {
                             <Grid item>
                               <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
                                 {' '}
+                                {/* TODO: multiply by price? */}
                                 {formatTvl(pool.tvl)}
                               </Typography>
                               <Typography className={classes.iconContainerSubTitle} variant="body2">
