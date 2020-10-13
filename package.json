@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "@babel/core": "7.9.0",
+    "@bandprotocol/bandchain.js": "^1.1.5",
     "@download/blockies": "^1.0.3",
     "@ethersproject/providers": "^5.0.5",
     "@ethersproject/units": "^5.0.2",
