@@ -77,6 +77,16 @@ export default function SectionPools() {
     }
   };
 
+  const formatTvl = tvl => {
+    // TODO: bignum?
+    const order = Math.floor(Math.log10(tvl) / 3);
+    if (order < 0) { return '0.00'; }
+    
+    const units = ['','k','M','B','T'];
+    const num = tvl / 1000 ** order;
+    return num.toFixed(2) + units[order];
+  }
+  
   const handleDepositedBalance = (index, total, _, sliderNum) => {
     setDepositedBalance({
       ...depositedBalance,
@@ -262,10 +272,10 @@ export default function SectionPools() {
                         </Grid>
                       </Grid>
 
-                      <Grid item md={6} xs={4}>
+                      <Grid item md={7} xs={4}>
                         <Grid item container justify="space-between">
                           <Hidden smDown>
-                            <Grid item xs={4} container justify="center" alignItems="center">
+                            <Grid item xs={4} md={3} container justify="center" alignItems="center">
                               <Grid item style={{ width: '200px' }}>
                                 <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
                                   {format(balanceSingle)} {pool.token}
@@ -278,7 +288,7 @@ export default function SectionPools() {
                           </Hidden>
                         
                           <Hidden mdDown>
-                            <Grid item xs={4} container justify="center" alignItems="center">
+                            <Grid item xs={4} md={3} container justify="center" alignItems="center">
                               <Grid item style={{ width: '200px' }}>
                                 <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
                                   {format(singleDepositedBalance)} {pool.token}
@@ -306,7 +316,7 @@ export default function SectionPools() {
                             <Grid item>
                               <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
                                 {' '}
-                                {pool.tvl}
+                                {formatTvl(pool.tvl)}
                               </Typography>
                               <Typography className={classes.iconContainerSubTitle} variant="body2">
                                 {t('Vault-TVL')}
