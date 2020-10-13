@@ -5,9 +5,8 @@ import { reducer as fetchApprovalReducer } from './fetchApproval';
 import { reducer as fetchDepositReducer } from './fetchDeposit';
 import { reducer as fetchWithdrawReducer } from './fetchWithdraw';
 import { reducer as fetchContractApyReducer } from './fetchContractApy';
-import { reducer as fetchContractTvlReducer } from './fetchContractTvl';
 
-const reducers = [fetchBalancesReducer, fetchPoolBalancesReducer, fetchApprovalReducer, fetchDepositReducer, fetchWithdrawReducer, fetchContractApyReducer, fetchContractTvlReducer];
+const reducers = [fetchBalancesReducer, fetchPoolBalancesReducer, fetchApprovalReducer, fetchDepositReducer, fetchWithdrawReducer, fetchContractApyReducer];
 
 export default function reducer(state = initialState, action) {
   let newState;

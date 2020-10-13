@@ -18,7 +18,7 @@ import Avatar from '@material-ui/core/Avatar';
 import { useSnackbar } from 'notistack';
 
 import { useConnectWallet } from '../../home/redux/hooks';
-import { useFetchBalances, useFetchPoolBalances, useFetchApproval, useFetchDeposit, useFetchWithdraw, useFetchContractApy, useFetchContractTvl } from '../redux/hooks';
+import { useFetchBalances, useFetchPoolBalances, useFetchApproval, useFetchDeposit, useFetchWithdraw, useFetchContractApy } from '../redux/hooks';
 
 import Button from 'components/CustomButtons/Button.js';
 import CustomSlider from 'components/CustomSlider/CustomSlider';
@@ -41,7 +41,6 @@ export default function SectionPools() {
   const { fetchDeposit, fetchDepositEth, fetchDepositPending } = useFetchDeposit();
   const { fetchWithdraw, fetchWithdrawBnb, fetchWithdrawPending } = useFetchWithdraw();
   const { contractApy, fetchContractApy } = useFetchContractApy();
-  const { contractTvl, fetchContractTvl } = useFetchContractTvl();
 
   const [depositedBalance, setDepositedBalance] = useState({});
   const [withdrawAmount, setWithdrawAmount] = useState({});
@@ -206,8 +205,7 @@ export default function SectionPools() {
 
   useEffect(() => {
     fetchContractApy();
-    fetchContractTvl();
-  }, [pools, fetchContractApy, fetchContractTvl]);
+  }, [pools, fetchContractApy]);
 
   return (
     <Grid container style={{ paddingTop: '4px' }}>
@@ -221,7 +219,6 @@ export default function SectionPools() {
           let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
           let singleDepositedBalance = byDecimals(tokens[pool.earnedToken].tokenBalance, pool.tokenDecimals);
           let depositedApy = contractApy[pool.id] || 0;
-          let depositedTvl = contractTvl[pool.id] || 0;
           return (
             <Grid item xs={12} container key={index} style={{ marginBottom: '24px', border: '1px solid #DED9D5' }} spacing={0}>
               <div style={{ width: '100%' }}>

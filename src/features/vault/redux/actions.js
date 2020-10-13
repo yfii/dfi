@@ -7,4 +7,3 @@ export { fetchWithdraw } from './fetchWithdraw';
 export { fetchFarm } from './fetchFarm';
 export { fetchHarvest } from './fetchHarvest';
 export { fetchContractApy } from './fetchContractApy';
-export { fetchContractTvl } from './fetchContractTvl';
