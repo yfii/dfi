@@ -82,7 +82,7 @@ export default function SectionPools() {
     tvl *= oraclePrice || fallbackPrice;
     
     const order = Math.floor(Math.log10(tvl) / 3);
-    if (order < 0) { return '0.00'; }
+    if (order < 0) { return '$0.00'; }
     
     const units = ['','k','M','B','T'];
     const num = tvl / 1000 ** order;
