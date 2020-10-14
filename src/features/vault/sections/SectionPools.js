@@ -77,14 +77,18 @@ export default function SectionPools() {
     }
   };
 
-  const formatTvl = tvl => {
+  const formatTvl = (tvl, oraclePrice, fallbackPrice) => {
     // TODO: bignum?
+    tvl *= oraclePrice || fallbackPrice;
+    
     const order = Math.floor(Math.log10(tvl) / 3);
     if (order < 0) { return '0.00'; }
     
     const units = ['','k','M','B','T'];
     const num = tvl / 1000 ** order;
-    return num.toFixed(2) + units[order];
+    const prefix = oraclePrice === 0 ? '~' : '';
+    
+    return prefix + num.toFixed(2) + units[order];
   }
   
   const handleDepositedBalance = (index, total, _, sliderNum) => {
@@ -316,8 +320,7 @@ export default function SectionPools() {
                             <Grid item>
                               <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
                                 {' '}
-                                {/* TODO: multiply by price? */}
-                                {formatTvl(pool.tvl)}
+                                {formatTvl(pool.tvl, pool.oraclePrice, pool.fallbackPrice)}
                               </Typography>
                               <Typography className={classes.iconContainerSubTitle} variant="body2">
                                 {t('Vault-TVL')}
