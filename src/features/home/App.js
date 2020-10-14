@@ -43,7 +43,11 @@ export default function App({ children }) {
         walletconnect: {
           package: WalletConnectProvider,
           options: {
-            infuraId: process.env.INFURA_ID
+            // infuraId: process.env.INFURA_ID
+            rpc: {
+              1: "https://eth-mainnet.alchemyapi.io/v2/4bdDVB5QAaorY2UE-GBUbM2yQB3QJqzv",
+              // ...
+            },
           }
         }
       }
