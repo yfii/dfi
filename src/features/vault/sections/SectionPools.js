@@ -86,7 +86,7 @@ export default function SectionPools() {
     
     const units = ['','k','M','B','T'];
     const num = tvl / 1000 ** order;
-    const prefix = oraclePrice === 0 ? '~' : '';
+    const prefix = oraclePrice === 0 ? '~$' : '$';
     
     return prefix + num.toFixed(2) + units[order];
   }
