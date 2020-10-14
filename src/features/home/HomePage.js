@@ -52,9 +52,9 @@ export default function HomePage() {
         close
         color="success"
       />
-      <FarmPools fromPage='home'/>
-      <SectionPools fromPage='home'/>
+      {/* <FarmPools fromPage='home'/> */}
       <StakePage fromPage='home'/>
+      <SectionPools fromPage='home'/>
       {/* <Dialog
         classes={{
           root: classes.modalRoot,
