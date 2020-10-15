@@ -9,15 +9,15 @@ export const pools = [
     tokenDecimals: 18,
     tokenDescriptionUrl: 'https://fry.world/',
     earnedToken: 'mooFryBURGER',
-    earnedTokenAddress: '--',
-    earnContractAddress: '--',
+    earnedTokenAddress: '-',
+    earnContractAddress: '-',
     defaultApy: '255.00',
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tvl: 0,
     oracle: 'fallback',
     oraclePrice: 0,
-    fallbackPrice: 7,
+    fallbackPrice: 0.44,
   },
 
   {
@@ -36,9 +36,10 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tvl: 0,
-    oracle: 'fallback',
+    oracle: 'Band',
+    oraclePair: 'BNB/USD',
     oraclePrice: 0,
-    fallbackPrice: 7,
+    fallbackPrice: 31,
   },
 
   {
@@ -57,9 +58,10 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tvl: 0,
-    oracle: 'fallback',
+    oracle: 'Band',
+    oraclePair: 'BUSD/USD',
     oraclePrice: 0,
-    fallbackPrice: 7,
+    fallbackPrice: 1,
   },
 
   {
