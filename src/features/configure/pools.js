@@ -1,26 +1,5 @@
 export const pools = [
   {
-    id: 'fry-burger',
-    logo: 'fry/BURGER',
-    name: 'BURGER',
-    token: 'BURGER',
-    tokenDescription: 'Farms: $FRIES',
-    tokenAddress: '0xAe9269f27437f0fcBC232d39Ec814844a51d6b8f',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: 'https://fry.world/',
-    earnedToken: 'mooFryBURGER',
-    earnedTokenAddress: '-',
-    earnContractAddress: '-',
-    defaultApy: '255.00',
-    pricePerFullShare: 1,
-    pastPricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'fallback',
-    oraclePrice: 0,
-    fallbackPrice: 0.44,
-  },
-
-  {
     id: 'fry-wbnb',
     logo: 'fry/WBNB',
     name: 'WBNB',
@@ -85,6 +64,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 1,
   },
+
   {
     id: 'link',
     logo: 'fortube/LINK',
@@ -106,6 +86,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 11,
   },
+
   {
     id: 'dot',
     logo: 'fortube/DOT',
@@ -127,6 +108,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 4.14,
   },
+
   {
     id: 'dai',
     logo: 'fortube/DAI',
@@ -148,6 +130,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 1,
   },
+  
   {
     id: 'usdt',
     logo: 'fortube/USDT',
@@ -169,6 +152,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 1,
   },
+
   {
     id: 'eth',
     logo: 'fortube/ETH',
@@ -190,6 +174,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 378,
   },
+  
   {
     id: 'btcb',
     logo: 'fortube/BTCB',
