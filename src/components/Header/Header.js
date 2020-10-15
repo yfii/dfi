@@ -57,7 +57,7 @@ export default function Header(props) {
     <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>
         <Button className={classes.title}>
-          <img alt="BIFI" src={require(`../../images/BIFI-logo.svg`)} height="40px" className={classes.logo} />
+          <img alt="BIFI" src={require(`../../images/BIFI.svg`)} height="40px" className={classes.logo} />
           <a href="https://beefy.finance">{brand}</a>
         </Button>
 
