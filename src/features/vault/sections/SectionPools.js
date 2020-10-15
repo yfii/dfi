@@ -249,7 +249,7 @@ export default function SectionPools() {
                       <Grid item>
                         <Grid container alignItems="center" spacing={2}>
                           <Grid item>
-                            <Avatar alt={pool.name} src={require(`../../../images/${pool.logo}.png`)} />
+                            <Avatar alt={pool.name} variant='square' src={require(`../../../images/${pool.logo}.png`)} />
                           </Grid>
                           <Grid item style={{ minWidth: '100px' }}>
                             <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom>
