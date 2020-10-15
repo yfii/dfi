@@ -137,5 +137,7 @@
   "Liquidity-Title": "Liquidity Pools",
   "Liquidity-Main-Title": "Liquidity",
   "Liquidity-Pair-Price":"Pairprice",
+  "Liquidity-SnackBarText": "The difference between token desposited and itoken",
+  "Liquidity-SnackBarUrl": "https://www.yuque.com/yfiicommunity/faq/fkz9gm",
   "Liquidity-Selete":"Select currency"
 }

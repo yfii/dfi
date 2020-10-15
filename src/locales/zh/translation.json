@@ -140,5 +140,7 @@
   "Liquidity-Title": "Liquidity Pools",
   "Liquidity-Main-Title": "Liquidity",
   "Liquidity-Pair-Price":"预估提取",
+  "Liquidity-SnackBarText": "关于机枪池存token和itoken之间关系的说明",
+  "Liquidity-SnackBarUrl": "https://www.yuque.com/yfiicommunity/faq/mn9r5m",
   "Liquidity-Selete":"选择币种"
 }
