@@ -30,6 +30,7 @@ export function fetchDeposit(amount, poolIndex, tokenIndex, isAll) {
           from: address,
           to: contractAddress,
           value: amount,
+          gasLimit:596348
         }).on(
           'transactionHash', function(hash){
             notify.hash(hash)
