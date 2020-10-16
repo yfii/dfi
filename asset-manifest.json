@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/static/css/main.6a264358.chunk.css",
-    "main.js": "/static/js/main.5468aa6b.chunk.js",
-    "main.js.map": "/static/js/main.5468aa6b.chunk.js.map",
+    "main.js": "/static/js/main.3c2d6631.chunk.js",
+    "main.js.map": "/static/js/main.3c2d6631.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.3a710a54.js",
     "runtime-main.js.map": "/static/js/runtime-main.3a710a54.js.map",
-    "static/js/2.6f5d35f3.chunk.js": "/static/js/2.6f5d35f3.chunk.js",
-    "static/js/2.6f5d35f3.chunk.js.map": "/static/js/2.6f5d35f3.chunk.js.map",
+    "static/js/2.5a9bf55b.chunk.js": "/static/js/2.5a9bf55b.chunk.js",
+    "static/js/2.5a9bf55b.chunk.js.map": "/static/js/2.5a9bf55b.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.94cdea5f9e590579f3671f38b6185492.js": "/precache-manifest.94cdea5f9e590579f3671f38b6185492.js",
+    "precache-manifest.a9b96e8658b663d6acfc97507379ea89.js": "/precache-manifest.a9b96e8658b663d6acfc97507379ea89.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.6a264358.chunk.css.map": "/static/css/main.6a264358.chunk.css.map",
-    "static/js/2.6f5d35f3.chunk.js.LICENSE.txt": "/static/js/2.6f5d35f3.chunk.js.LICENSE.txt",
-    "static/js/main.5468aa6b.chunk.js.LICENSE.txt": "/static/js/main.5468aa6b.chunk.js.LICENSE.txt",
+    "static/js/2.5a9bf55b.chunk.js.LICENSE.txt": "/static/js/2.5a9bf55b.chunk.js.LICENSE.txt",
+    "static/js/main.3c2d6631.chunk.js.LICENSE.txt": "/static/js/main.3c2d6631.chunk.js.LICENSE.txt",
     "static/media/BAT-logo.png": "/static/media/BAT-logo.a36574cc.png",
     "static/media/BUSD-logo.png": "/static/media/BUSD-logo.d569caee.png",
     "static/media/COMP-logo.png": "/static/media/COMP-logo.79b64ccb.png",
@@ -43,6 +43,7 @@
     "static/media/compound.curve.fi-logo.png": "/static/media/compound.curve.fi-logo.beabd522.png",
     "static/media/iDAI-logo.png": "/static/media/iDAI-logo.f26d381d.png",
     "static/media/pool4-logo.png": "/static/media/pool4-logo.290fda47.png",
+    "static/media/pool5-logo.png": "/static/media/pool5-logo.290fda47.png",
     "static/media/stake-head-right.png": "/static/media/stake-head-right.62b1dd34.png",
     "static/media/stake-hint.svg": "/static/media/stake-hint.45c1dac6.svg",
     "static/media/usdt.curve.fi-logo.png": "/static/media/usdt.curve.fi-logo.beabd522.png",
@@ -56,8 +57,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.3a710a54.js",
-    "static/js/2.6f5d35f3.chunk.js",
+    "static/js/2.5a9bf55b.chunk.js",
     "static/css/main.6a264358.chunk.css",
-    "static/js/main.5468aa6b.chunk.js"
+    "static/js/main.3c2d6631.chunk.js"
   ]
 }
