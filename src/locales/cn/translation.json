@@ -1,0 +1,18 @@
+{
+  "Disclaimer": "This project is in Beta. Use with caution and DYOR.",
+  "Network-Error": "Network error",
+  "Vault-Wallet": "Wallet",
+  "Vault-Balance": "Balance",
+  "Vault-APY": "APY",
+  "Vault-TVL": "TVL",
+  "Vault-Approving": "Approve...",
+  "Vault-ApproveButton": "Approve",
+  "Vault-DepositButton": "Deposit",
+  "Vault-DepositButtonAll": "Deposit All",
+  "Vault-Deposited": "Deposited",
+  "Vault-Withdrawing": "Withdraw...",
+  "Vault-WithdrawButton": "Withdraw",
+  "Vault-WithdrawButtonAll": "Withdraw All",
+  "Vault-MainTitle": "Vaults",
+  "Vault-SecondTitle": "Deposit & Earn money"
+}
