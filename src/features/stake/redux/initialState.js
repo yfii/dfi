@@ -45,6 +45,17 @@ const pools = [
 		earnContractAddress: '0x3d367c9529f260b0661e1c1e91167c9319ee96ca',
 		earnContractAbi: pool4Abi
 	},
+	{
+		name: 'pool5',
+		token: 'YFII',
+		tokenDecimals: 18,
+		tokenAddress: '0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83',
+		earnedToken: 'YFII',
+		earnedTokenDecimals: 18,
+		earnedTokenAddress: '0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83',
+		earnContractAddress: '0xB6C7Bf515828c1eBf0D5F34930Cda0741eD9263F',
+		earnContractAbi: pool4Abi
+	},
 ];
 
 const poolsInfo = [{
@@ -67,13 +78,18 @@ const poolsInfo = [{
 	staked: 0,
 	tvl: 0,
 	apy: 0,
+},{
+	name: "pool5",
+	staked: 0,
+	tvl: 0,
+	apy: 0,
 }]
-const allowance = [0,0,0,0];
-const balance = [0,0,0,0];
-const currentlyStaked = [0,0,0,0];
-const rewardsAvailable = [0,0,0,0];
-const halfTime = [0,0,0,0];
-const canWithdrawTime = [0,0,0,0];
+const allowance = [0,0,0,0,0];
+const balance = [0,0,0,0,0];
+const currentlyStaked = [0,0,0,0,0];
+const rewardsAvailable = [0,0,0,0,0];
+const halfTime = [0,0,0,0,0];
+const canWithdrawTime = [0,0,0,0,0];
 
 
 const initialState = {
@@ -86,17 +102,17 @@ const initialState = {
 	balance,
 	poolsInfo,
 	fetchPoolsInfoPending: false,
-	checkApprovalPending: [false,false,false,false],
-	fetchBalancePending: [false,false,false,false],
-	fetchCurrentlyStakedPending: [false,false,false,false],
-	fetchRewardsAvailablePending: [false,false,false,false],
-	fetchHalfTimePending: [false,false,false,false],
-	fetchCanWithdrawTimePending: [false,false,false,false],
-	fetchApprovalPending: [false,false,false,false],
-	fetchStakePending: [false,false,false,false],
-	fetchWithdrawPending: [false,false,false,false],
-	fetchClaimPending: [false,false,false,false],
-	fetchExitPending: [false,false,false,false]
+	checkApprovalPending: [false,false,false,false,false],
+	fetchBalancePending: [false,false,false,false,false],
+	fetchCurrentlyStakedPending: [false,false,false,false,false],
+	fetchRewardsAvailablePending: [false,false,false,false,false],
+	fetchHalfTimePending: [false,false,false,false,false],
+	fetchCanWithdrawTimePending: [false,false,false,false,false],
+	fetchApprovalPending: [false,false,false,false,false],
+	fetchStakePending: [false,false,false,false,false],
+	fetchWithdrawPending: [false,false,false,false,false],
+	fetchClaimPending: [false,false,false,false,false],
+	fetchExitPending: [false,false,false,false,false]
 };
 
 export default initialState;

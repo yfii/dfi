@@ -127,9 +127,11 @@ export default function StakePool(props) {
     const isPending = Boolean(fetchWithdrawPending[index]);
     const currentlyStakedIs0 = currentlyStaked[index] === 0;
     const isPool4 = Boolean(index === 3);
+    const isPool5 = Boolean(index === 4);
     const isDisableCanWithdrawTime = canWithdrawTimeIsZero || canWithdrawTimeIsMoreNowTime;
     const isPool4AndDisableCanWithDraw = Boolean(isPool4 && isDisableCanWithdrawTime)
-    setWithdrawAble(!Boolean(isPending || isPool4AndDisableCanWithDraw || currentlyStakedIs0));
+    const isPool5AndDisableCanWithDraw = Boolean(isPool5 && isDisableCanWithdrawTime)
+    setWithdrawAble(!Boolean(isPending || isPool4AndDisableCanWithDraw || currentlyStakedIs0 || isPool5AndDisableCanWithDraw));
   }, [currentlyStaked[index], fetchWithdrawPending[index], index, canWithdrawTimeIsZero, canWithdrawTimeIsMoreNowTime]);
 
   const onWithdraw = () => {
@@ -153,9 +155,11 @@ export default function StakePool(props) {
     const rewardsAvailableIs0 = rewardsAvailable[index] === 0;
     const currentlyStakedAndRewardsAvailableIs0 = Boolean(currentlyStakedIs0 && rewardsAvailableIs0);
     const isPool4 = Boolean(index === 3);
+    const isPool5 = Boolean(index === 4);
     const isDisableCanWithdrawTime = canWithdrawTimeIsZero || canWithdrawTimeIsMoreNowTime;
     const isPool4AndDisableCanWithDraw = Boolean(isPool4 && isDisableCanWithdrawTime)
-    setExitAble(!Boolean(isPending || isPool4AndDisableCanWithDraw || currentlyStakedAndRewardsAvailableIs0));
+    const isPool5AndDisableCanWithDraw = Boolean(isPool5 && isDisableCanWithdrawTime)
+    setExitAble(!Boolean(isPending || isPool4AndDisableCanWithDraw || currentlyStakedAndRewardsAvailableIs0 || isPool5AndDisableCanWithDraw));
   }, [currentlyStaked[index], rewardsAvailable[index], fetchExitPending[index], index, canWithdrawTimeIsZero, canWithdrawTimeIsMoreNowTime]);
 
   const onExit = () => {
@@ -179,7 +183,7 @@ export default function StakePool(props) {
 
   useEffect(() => {
     if(halfTime[index] === 0) return;
-    if(Boolean(index === 2) || Boolean(index=== 3)) return;
+    if(Boolean(index === 2) || Boolean(index=== 3) || Boolean(index=== 4)) return;
     const formatTime = () => {
       const currTime = new Date().getTime();
       const deadline = halfTime[index] * 1000;
@@ -203,14 +207,14 @@ export default function StakePool(props) {
       fetchCurrentlyStaked(index);
       fetchRewardsAvailable(index);
       if(Boolean(index === 0) || Boolean(index === 1)) fetchHalfTime(index);
-      if(index === 3) fetchCanWithdrawTime(index);
+      if(index === 3 || index === 4) fetchCanWithdrawTime(index);
       const id = setInterval(() => {
         checkApproval(index);
         fetchBalance(index);
         fetchCurrentlyStaked(index);
         fetchRewardsAvailable(index);
         if(Boolean(index === 0) || Boolean(index === 1)) fetchHalfTime(index);
-        if(index === 3) fetchCanWithdrawTime(index);
+        if(index === 3 || index === 4) fetchCanWithdrawTime(index);
       }, 10000);
       return () => clearInterval(id);
     }
@@ -226,7 +230,7 @@ export default function StakePool(props) {
           [classes.contentTitle]:true,
           [classes.contentTitleMarginBottom]:true,
         })}>
-          <GridItem sm={index===3 ? 4: 3} xs={12} className={classNames({
+          <GridItem sm={(index=== 3 || index===4) ? 4: 3} xs={12} className={classNames({
               [classes.contentTitleItem]:true,
               [classes.contentTitleItemBorder]:true,
             })}>
@@ -238,7 +242,7 @@ export default function StakePool(props) {
                 <div className={classes.contentItemTitle}>{t('Stake-Balancer-Your-Balance')}</div>
               </Hidden>
           </GridItem>
-          <GridItem sm={index===3 ? 4: 3} xs={12} className={classNames({
+          <GridItem sm={(index=== 3 || index===4) ? 4: 3} xs={12} className={classNames({
             [classes.contentTitleItem]:true,
             [classes.contentTitleItemBorder]:true,
           })}>
@@ -250,9 +254,9 @@ export default function StakePool(props) {
               <div className={classes.contentItemTitle}>{t('Stake-Balancer-Current-Staked')}</div>
             </Hidden>
           </GridItem>
-          <GridItem sm={index===3 ? 4: 3} xs={12} className={classNames({
+          <GridItem sm={(index=== 3 || index===4) ? 4: 3} xs={12} className={classNames({
             [classes.contentTitleItem]:true,
-            [classes.contentTitleItemBorder]:index!==3,
+            [classes.contentTitleItemBorder]:(index!==3 && index!==4),
           })}>
             <Hidden smUp>
               <Typography variant="body2" gutterBottom className={classes.contentItemTitle}>{t('Stake-Balancer-Rewards-Available')}</Typography>
@@ -262,7 +266,7 @@ export default function StakePool(props) {
               <div className={classes.contentItemTitle}>{t('Stake-Balancer-Rewards-Available')}</div>
             </Hidden>
           </GridItem>
-          {index!==3&&<GridItem sm={3} xs={12} className={classes.contentTitleItem}>
+          {(index!==3 && index!==4)&&<GridItem sm={3} xs={12} className={classes.contentTitleItem}>
           <Hidden smUp>
               <Typography variant="body2" gutterBottom className={classes.contentItemTitle}>{t('Stake-Balancer-Half-Time')}</Typography>
             </Hidden>
