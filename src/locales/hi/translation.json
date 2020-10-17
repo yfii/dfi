@@ -1,0 +1,18 @@
+{
+  "Disclaimer": "यह परियोजना बीटा में है। सावधानी और अपनी खोज के बाद उपयोग करें।",
+  "Network-Error": "नेटवर्क में समस्या",
+  "Vault-Wallet": "वॉलेट",
+  "Vault-Balance": "बैलेंस",
+  "Vault-APY": "सालाना प्रतिशत आय",
+  "Vault-TVL": "कुल मूल्य लॉक",
+  "Vault-Approving": "प्रगति मे है. . .",
+  "Vault-ApproveButton": "मंजूर",
+  "Vault-DepositButton": "जमा करें",
+  "Vault-DepositButtonAll": "कुल जमा करें",
+  "Vault-Deposited": "जमा किया",
+  "Vault-Withdrawing": "विदड्रॉ...",
+  "Vault-WithdrawButton": "विदड्रॉ",
+  "Vault-WithdrawButtonAll": "सब वपिस निकलो",
+  "Vault-MainTitle": "तिजोरी",
+  "Vault-SecondTitle": "जमा करें और पैसे कमाएँ"
+}
