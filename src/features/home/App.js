@@ -40,13 +40,14 @@ export default function App({ children }) {
             description: i18next.t('Home-BrowserWallet'),
           },
         },
-        walletconnect: {
-          package: WalletConnectProvider,
-          rpc: {
-            56: 'https://bsc-dataseed.binance.org/',
-            97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
-          },
-        },
+        // FIXME: Disabled until the webpack config is fixed
+        // walletconnect: {
+        //   package: WalletConnectProvider,
+        //   rpc: {
+        //     56: 'https://bsc-dataseed.binance.org/',
+        //     97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
+        //   },
+        // },
       },
     });
     setModal(newModal);
