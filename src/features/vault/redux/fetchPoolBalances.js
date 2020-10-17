@@ -36,30 +36,46 @@ export function fetchPoolBalances(data) {
                   contract: erc20Contract,
                   address,
                 })
-                .then(data => { return callbackInner(null, data); })
-                .catch(error => { return callbackInner(error, 0); });
+                  .then(data => {
+                    return callbackInner(null, data);
+                  })
+                  .catch(error => {
+                    return callbackInner(error, 0);
+                  });
               },
               callbackInner => {
                 fetchPricePerFullShare({
                   contract: earnContract,
                   address,
                 })
-                .then(data => { return callbackInner(null, data); })
-                .catch(error => { return callbackInner(error, 0); });
+                  .then(data => {
+                    return callbackInner(null, data);
+                  })
+                  .catch(error => {
+                    return callbackInner(error, 0);
+                  });
               },
               callbackInner => {
                 fetchTvl({
-                  contract: earnContract
+                  contract: earnContract,
                 })
-                .then(data => { return callbackInner(null, data); })
-                .catch(error => { return callbackInner(error, 0); });
+                  .then(data => {
+                    return callbackInner(null, data);
+                  })
+                  .catch(error => {
+                    return callbackInner(error, 0);
+                  });
               },
               callbackInner => {
                 fetchPrice({
-                  pair: pool.oraclePair
+                  pair: pool.oraclePair,
                 })
-                .then(data => { return callbackInner(null, data); })
-                .catch(error => { return callbackInner(error, 0); });
+                  .then(data => {
+                    return callbackInner(null, data);
+                  })
+                  .catch(error => {
+                    return callbackInner(error, 0);
+                  });
               },
             ],
             (error, data) => {

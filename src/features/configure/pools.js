@@ -211,5 +211,4 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 11530,
   },
-  
 ];

@@ -1623,7 +1623,7 @@ button.slick-arrow.slick-next {
 .slick-prev::before {
   content: '\f053';
   font-weight: 600;
-  font-family: Font Awesome\5 Free;
+  font-family: Font awesome\5 Free;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
@@ -1641,7 +1641,7 @@ button.slick-arrow.slick-next {
 .slick-next::before {
   content: '\f054';
   font-weight: 600;
-  font-family: Font Awesome\5 Free;
+  font-family: Font awesome\5 Free;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
@@ -1736,7 +1736,7 @@ button.slick-arrow.slick-next {
   font-weight: bold;
 }
 .react-tagsinput-tag a::before {
-  font-family: Font Awesome\5 Free;
+  font-family: Font awesome\5 Free;
   content: '\f00d';
   padding: 0px 2px;
   font-weight: 900;

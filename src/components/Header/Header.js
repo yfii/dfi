@@ -62,9 +62,9 @@ export default function Header(props) {
         </Button>
 
         <span>
-          { renderLink('gov', 'gov', 'landmark') }
-          { renderLink('vote', 'vote', 'vote-yea') }
-          { renderLink('app', 'app', 'hand-holding-usd') }
+          {renderLink('gov', 'gov', 'landmark')}
+          {renderLink('vote', 'vote', 'vote-yea')}
+          {renderLink('app', 'app', 'hand-holding-usd')}
         </span>
 
         <Hidden smDown implementation="css">
@@ -76,7 +76,7 @@ export default function Header(props) {
           </IconButton>
         </Hidden>
       </Toolbar>
-      
+
       <Hidden mdUp implementation="js">
         <Drawer
           variant="temporary"
@@ -111,7 +111,7 @@ const renderLink = (name, label, icon) => {
   `;
 
   const Icon = styled.i`
-    margin-right: .5rem;
+    margin-right: 0.5rem;
     min-width: 24px;
   `;
 

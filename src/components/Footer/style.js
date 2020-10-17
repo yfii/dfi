@@ -36,7 +36,7 @@ const Link = styled.a`
 `;
 
 const LinkIcon = styled.i`
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   min-width: 24px;
 `;
 

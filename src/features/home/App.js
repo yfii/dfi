@@ -12,7 +12,7 @@ import { SnackbarProvider } from 'notistack';
 import { Notifier } from 'features/common';
 
 import Web3Modal from 'web3modal';
-import WalletConnectProvider from "@walletconnect/web3-provider";
+import WalletConnectProvider from '@walletconnect/web3-provider';
 
 import Footer from '../../components/Footer/Footer';
 import Pastures from '../../components/Pastures/Pastures';
@@ -43,16 +43,14 @@ export default function App({ children }) {
         walletconnect: {
           package: WalletConnectProvider,
           rpc: {
-            56: "https://bsc-dataseed.binance.org/",
-            97: "https://data-seed-prebsc-1-s1.binance.org:8545/",
-          }
-        }
-      }
-    })
-    setModal(newModal)
-  }, [setModal])
-
-  
+            56: 'https://bsc-dataseed.binance.org/',
+            97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
+          },
+        },
+      },
+    });
+    setModal(newModal);
+  }, [setModal]);
 
   useEffect(() => {
     if (web3Modal && (web3Modal.cachedProvider || window.ethereum)) {

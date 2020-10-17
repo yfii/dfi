@@ -17,7 +17,7 @@ const Cow = ({ total, index }) => {
 
   return (
     <img
-      alt='cow'
+      alt="cow"
       src={require('../../assets/img/beefy.svg')}
       style={{
         position: 'absolute',
