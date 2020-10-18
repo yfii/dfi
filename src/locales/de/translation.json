@@ -1,0 +1,18 @@
+{
+  "Disclaimer": "Das Projekt ist noch in der Beta-Phase. Mit Vorsicht nutzen und vorher informieren - DYOR.",
+  "Network-Error": "Netzwerkfehler",
+  "Vault-Wallet": "Wallet",
+  "Vault-Balance": "Guthaben",
+  "Vault-APY": "APY",
+  "Vault-TVL": "TVL",
+  "Vault-Approving": "Genehmigen...",
+  "Vault-ApproveButton": "Genehmigen",
+  "Vault-DepositButton": "Einzahlen",
+  "Vault-DepositButtonAll": "Alles einzahlen",
+  "Vault-Deposited": "Eingezahlt",
+  "Vault-Withdrawing": "Abheben...",
+  "Vault-WithdrawButton": "Abheben",
+  "Vault-WithdrawButtonAll": "Alles abheben",
+  "Vault-MainTitle": "Vaults",
+  "Vault-SecondTitle": "Einzahlen & Geld verdienen"
+}
