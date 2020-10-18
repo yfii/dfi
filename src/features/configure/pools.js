@@ -89,6 +89,21 @@ export const pools = [
     pastPricePerFullShare: 1
   },
   {
+    id: 'husd',
+    name: 'HUSD',  
+    token: 'HUSD',
+    tokenDescription: 'HUSD',
+    tokenAddress: '0xdF574c24545E5FfEcb9a659c229253D4111d87e1',
+    tokenDecimals: 8,
+    tokenDescriptionUrl: '',
+    tokenDescriptionUrl2: '',
+    earnedToken: 'iHUSD',
+    earnedTokenAddress: '0x27cD6c92Ef1e5aa5286EFA1Ede3AEbDaD623Bf3b',
+    earnContractAddress: '0x27cD6c92Ef1e5aa5286EFA1Ede3AEbDaD623Bf3b',
+    defaultApy: "42.63",
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1
+  },{
     id: 'busd',
     name: 'BUSD',  
     token: 'BUSD',
