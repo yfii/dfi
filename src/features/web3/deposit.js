@@ -10,7 +10,7 @@ export const deposit = async ({web3, address, isAll, amount, contractAddress, di
     amount:${amount}
   `)
   const contract = new web3.eth.Contract(earnContractABI, contractAddress);
-  const data = await _deposit({web3, contract,isAll, amount,  address});
+  const data = await _deposit({web3, contract,isAll, amount,  address, dispatch});
   // console.log(`=====================================deposit success=====================================`)
   return data;
 }
