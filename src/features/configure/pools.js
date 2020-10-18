@@ -98,8 +98,8 @@ export const pools = [
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: 'iHUSD',
-    earnedTokenAddress: '0x27cD6c92Ef1e5aa5286EFA1Ede3AEbDaD623Bf3b',
-    earnContractAddress: '0x27cD6c92Ef1e5aa5286EFA1Ede3AEbDaD623Bf3b',
+    earnedTokenAddress: '0xED434A25612B8d64E3257Fff5f96B33031729fDF',
+    earnContractAddress: '0xED434A25612B8d64E3257Fff5f96B33031729fDF',
     defaultApy: "42.63",
     pricePerFullShare: 1,
     pastPricePerFullShare: 1
