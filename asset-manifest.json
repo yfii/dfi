@@ -5,13 +5,13 @@
     "main.js.map": "/static/js/main.d41069c1.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.3a710a54.js",
     "runtime-main.js.map": "/static/js/runtime-main.3a710a54.js.map",
-    "static/js/2.517aab09.chunk.js": "/static/js/2.517aab09.chunk.js",
-    "static/js/2.517aab09.chunk.js.map": "/static/js/2.517aab09.chunk.js.map",
+    "static/js/2.350b5f23.chunk.js": "/static/js/2.350b5f23.chunk.js",
+    "static/js/2.350b5f23.chunk.js.map": "/static/js/2.350b5f23.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.ee341d9c7c75e91736f27557a975e8f8.js": "/precache-manifest.ee341d9c7c75e91736f27557a975e8f8.js",
+    "precache-manifest.cfc6c019de071853e6c38f70916a2ddc.js": "/precache-manifest.cfc6c019de071853e6c38f70916a2ddc.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.6a264358.chunk.css.map": "/static/css/main.6a264358.chunk.css.map",
-    "static/js/2.517aab09.chunk.js.LICENSE.txt": "/static/js/2.517aab09.chunk.js.LICENSE.txt",
+    "static/js/2.350b5f23.chunk.js.LICENSE.txt": "/static/js/2.350b5f23.chunk.js.LICENSE.txt",
     "static/js/main.d41069c1.chunk.js.LICENSE.txt": "/static/js/main.d41069c1.chunk.js.LICENSE.txt",
     "static/media/BAT-logo.png": "/static/media/BAT-logo.a36574cc.png",
     "static/media/BUSD-logo.png": "/static/media/BUSD-logo.d569caee.png",
@@ -57,7 +57,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.3a710a54.js",
-    "static/js/2.517aab09.chunk.js",
+    "static/js/2.350b5f23.chunk.js",
     "static/css/main.6a264358.chunk.css",
     "static/js/main.d41069c1.chunk.js"
   ]
