@@ -223,9 +223,9 @@ export default function SectionPools() {
     }
   }, [address, web3, fetchBalances, fetchPoolBalances]);
 
-  const isMoreDepostLimit = (inputValueNum,depostLimit) => {
-    if(isEmpty(inputValueNum) || depostLimit==0 || inputValueNum<depostLimit){
-      return false;
+  const isMoreDepostLimit = (value,depostLimit) => {
+    if(isEmpty(value) ||  depostLimit==0 || value < depostLimit){
+      return false
     }
     return true;
   }
@@ -440,7 +440,7 @@ export default function SectionPools() {
                                             round
                                             onFocus={(event) => event.stopPropagation()}
                                             disabled={
-                                                !Boolean(depositedBalance[index]) || fetchDepositPending[index] || (new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber() || isMoreDepostLimit(new BigNumber(depositedBalance[index]).toNumber(),pool.depostLimit))
+                                                !Boolean(depositedBalance[index]) || !Boolean(depositedBalance[index]!=0) || fetchDepositPending[index] || (new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber() || isMoreDepostLimit(new BigNumber(depositedBalance[index]).toNumber(),pool.depostLimit) )
                                             }
                                             onClick={onDeposit.bind(this, pool, index, false, balanceSingle)}
                                             >{t('Vault-DepositButton')}
@@ -458,7 +458,7 @@ export default function SectionPools() {
                                             round
                                             onFocus={(event) => event.stopPropagation()}
                                             disabled={
-                                                fetchDepositPending[index] || (new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber() || isMoreDepostLimit(new BigNumber(depositedBalance[index]).toNumber(),pool.depostLimit))
+                                                fetchDepositPending[index] || (new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber() || isMoreDepostLimit(balanceSingle.toNumber(),pool.depostLimit) )
                                             }
                                             onClick={onDeposit.bind(this, pool, index, true, balanceSingle)}
                                             >{t('Vault-DepositButtonAll')}
@@ -502,7 +502,7 @@ export default function SectionPools() {
                                 round
                                 type="button"
                                 color="primary"
-                                disabled={fetchWithdrawPending[index] || !Boolean(withdrawAmount[index])}
+                                disabled={fetchWithdrawPending[index] || !Boolean(withdrawAmount[index])  || !Boolean(withdrawAmount[index]!=0)}
                                 onClick={onWithdraw.bind(this, pool, index, false, singleDepositedBalance)}
                                 >
                                 {fetchWithdrawPending[index] ? `${t('Vault-WithdrawING')}`: `${t('Vault-WithdrawButton')}`}
