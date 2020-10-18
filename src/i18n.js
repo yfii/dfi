@@ -12,30 +12,14 @@ import translationSE from './locales/se/translation.json';
 import translationZH from './locales/zh/translation.json';
 
 const resources = {
-  cn: {
-    translation: translationCN,
-  },
-  de: {
-    translation: translationDE,
-  },
-  en: {
-    translation: translationEN,
-  },
-  es: {
-    translation: translationES,
-  },
-  fr: {
-    translation: translationFR,
-  },
-  hi: {
-    translation: translationHI,
-  },
-  se: {
-    translation: translationSE,
-  },
-  zh: {
-    translation: translationZH,
-  },
+  cn: { translation: translationCN },
+  de: { translation: translationDE },
+  en: { translation: translationEN },
+  es: { translation: translationES },
+  fr: { translation: translationFR },
+  hi: { translation: translationHI },
+  se: { translation: translationSE },
+  zh: { translation: translationZH },
   // TODO: more translations
 };
 

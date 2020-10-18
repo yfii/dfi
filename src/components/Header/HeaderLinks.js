@@ -42,7 +42,7 @@ export default function HeaderLinks(props) {
 
   const handleClick = event => {
     switch (event) {
-      case 'Deutsch ':
+      case 'Deutsch':
         return i18n.changeLanguage('de').then(() => setLanguage(event));
       case 'English':
         return i18n.changeLanguage('en').then(() => setLanguage(event));
