@@ -82,7 +82,7 @@ export default function HeaderLinks(props) {
             'Español',
             'Français',
             'हिन्दी',
-            '한국어',
+            '한글',
             'Svenska',
             '中文',
             // TODO: more translations
