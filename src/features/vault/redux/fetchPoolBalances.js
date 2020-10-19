@@ -68,7 +68,8 @@ export function fetchPoolBalances(data) {
               },
               callbackInner => {
                 fetchPrice({
-                  pair: pool.oraclePair,
+                  oracle: pool.oracle,
+                  id: pool.oracleId,
                 })
                   .then(data => {
                     return callbackInner(null, data);
