@@ -3,7 +3,7 @@ const BandChain = require('@bandprotocol/bandchain.js');
 const endpoint = 'https://poa-api.bandchain.org';
 const bandchain = new BandChain(endpoint);
 
-export const fetchPrice = async ({ pair }) => {
+export const fetchPrice = async ({ oracle, pair }) => {
   if (pair === undefined) {
     return 0;
   }
@@ -15,3 +15,14 @@ export const fetchPrice = async ({ pair }) => {
     return 0;
   }
 };
+
+
+// const getPrice = async id => {
+//   const response = await axios.get('https://api.coingecko.com/api/v3/simple/price', {
+//     params: {
+//       ids: id,
+//       vs_currencies: 'usd',
+//     },
+//   });
+//   return response.data[id].usd;
+// };
