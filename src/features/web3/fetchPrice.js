@@ -28,13 +28,27 @@ const fetchPancake = async (id) => {
   }
 };
 
+const fetchCoingecko = async (id) => {
+  try {
+    const response = await axios.get(endpoints.coingecko, {
+      params: {ids: id, vs_currencies: 'usd' }
+    });
+    console.log('coingecko', response);
+    return response.data[id].usd;
+  } catch (err) {
+    console.error(err);
+    return 0;
+  }
+};
+
 export const fetchPrice = async ({ oracle, id }) => {
   if (oracle === undefined) { console.error('Undefined oracle'); return 0; }
   if (id === undefined) { console.error('Undefined pair'); return 0; }
 
   switch(oracle) {
-    case 'Band':    return await fetchBand(id);
-    case 'Pancake': return await fetchPancake(id);
+    case 'band':      return await fetchBand(id);
+    case 'pancake':   return await fetchPancake(id);
+    case 'coingecko': return await fetchCoingecko(id);
     default: console.error('Unknown oracle:', oracle);
   }
 };
