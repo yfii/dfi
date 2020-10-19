@@ -1,8 +1,11 @@
-const BandChain = require('@bandprotocol/bandchain.js');
+import axios from 'axios';
+import BandChain from '@bandprotocol/bandchain.js';
 
 const endpoints = {
   bandchain: 'https://poa-api.bandchain.org',
-  pancake:   'https://api.pancakeswap.finance/api/v1/price',
+  //pancake:   'https://beefy-api.herokuapp.com/proxy/pancake',
+  pancake:   'http://localhost:3000/proxy/pancake',
+  coingecko: 'https://api.coingecko.com/api/v3/simple/price',
 };
 
 const fetchBand = async (id) => {
@@ -17,8 +20,13 @@ const fetchBand = async (id) => {
 };
 
 const fetchPancake = async (id) => {
-  // TODO: implement this
-  return 0;
+  try {
+    const response = await axios.get(endpoints.pancake);
+    return response.data.prices[id];
+  } catch (err) {
+    console.error(err);
+    return 0;
+  }
 };
 
 export const fetchPrice = async ({ oracle, id }) => {
