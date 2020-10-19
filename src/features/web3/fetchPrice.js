@@ -3,14 +3,13 @@ import BandChain from '@bandprotocol/bandchain.js';
 
 const endpoints = {
   bandchain: 'https://poa-api.bandchain.org',
-  //pancake:   'https://beefy-api.herokuapp.com/proxy/pancake',
-  pancake:   'http://localhost:3000/proxy/pancake',
+  pancake:   'https://beefy-api.herokuapp.com/proxy/pancake',
   coingecko: 'https://api.coingecko.com/api/v3/simple/price',
 };
 
 const fetchBand = async (id) => {
-  const bandchain = new BandChain(endpoints.bandchain);
   try {
+    const bandchain = new BandChain(endpoints.bandchain);
     const price = await bandchain.getReferenceData([id]);
     return price[0].rate;
   } catch (err) {
