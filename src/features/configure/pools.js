@@ -15,7 +15,7 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'Pancake',
     oracleId: 'BURGER',
     oraclePrice: 0,
     fallbackPrice: 0.44,
