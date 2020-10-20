@@ -86,8 +86,8 @@ export default function HeaderLinks(props) {
             'हिन्दी',
             '한글',
             'Svenska',
-            '中文',
             'Українська',
+            '中文',
             // TODO: more translations
             { divider: true },
             <a href="https://github.com/beefyfinance/beefy-app/tree/master/src/locales" target="_blank" rel="noopener noreferrer" className={classes.cta}>
