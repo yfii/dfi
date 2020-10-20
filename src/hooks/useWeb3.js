@@ -27,14 +27,14 @@ const providerOptions = {
 const useWeb3 = () => {
   const [web3, setWeb3] = useState(false);
   const [connected, setConnected] = useState(false);
-  const [address, setAddress] = useState(null);
+  const [address, setAddress] = useState('0x0000000000000000000000000000000000000000');
 
   useEffect(() => {
     (async () => {
       console.log('>>>>>', 'web3ModalConnect');
       const web3Modal = new Web3Modal({
-        network: "mainnet",
-        cacheProvider: true,
+        network: "binance",
+        cacheProvider: false,
         providerOptions
       });
       
@@ -50,7 +50,6 @@ const useWeb3 = () => {
 
       if(web3 && web3.eth) { 
         const accs = await web3.eth.getAccounts();
-        console.log('accs', accs);
         if(accs && accs.length > 0) { setAddress(accs[0]); }
       }
 
