@@ -13,11 +13,6 @@ let devToolsExtension = f => f;
 
 /* istanbul ignore if  */
 if (process.env.NODE_ENV === 'development') {
-  const { createLogger } = require('redux-logger');
-
-  const logger = createLogger({ collapsed: true });
-  middlewares.push(logger);
-
   if (window.__REDUX_DEVTOOLS_EXTENSION__) {
     devToolsExtension = window.__REDUX_DEVTOOLS_EXTENSION__();
   }
