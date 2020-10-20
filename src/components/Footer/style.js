@@ -2,14 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  display: flex !important;
-  flex-direction: row !important;
-  justify-content: space-around !important;
-  width: 40rem !important;
-  height: auto !important;
-  margin: 2rem auto 6rem !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  max-width: 40rem;
+  margin: 2rem auto;
   @media only screen and (min-width: 769px) {
-    margin: 2rem auto 10rem !important;
+    margin: 2rem auto 10rem;
   }
 `;
 
