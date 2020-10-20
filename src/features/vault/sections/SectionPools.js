@@ -17,7 +17,7 @@ import { primaryColor } from 'assets/jss/material-kit-pro-react.js';
 import Avatar from '@material-ui/core/Avatar';
 import { useSnackbar } from 'notistack';
 
-import { useConnectWallet } from '../../home/redux/hooks';
+import { useConnectWallet } from 'features/home/redux/hooks';
 import { useFetchBalances, useFetchPoolBalances, useFetchApproval, useFetchDeposit, useFetchWithdraw, useFetchContractApy } from '../redux/hooks';
 
 import Button from 'components/CustomButtons/Button.js';

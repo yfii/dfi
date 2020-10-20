@@ -14,9 +14,9 @@ import { Notifier } from 'features/common';
 import Web3Modal from 'web3modal';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 
-import Footer from '../../components/Footer/Footer';
-import Pastures from '../../components/Pastures/Pastures';
-import appStyle from './jss/appStyle.js';
+import Footer from 'components/Footer/Footer';
+import Pastures from 'components/Pastures/Pastures';
+import appStyle from './jss/appStyle';
 
 import { useConnectWallet, useDisconnectWallet } from './redux/hooks';
 
@@ -30,6 +30,8 @@ export default function App({ children }) {
   const [web3Modal, setModal] = useState(null);
 
   useEffect(() => {
+    console.log('process.env.NETWORK', process.env.NETWORK);
+
     const newModal = new Web3Modal({
       network: process.env.NETWORK ? process.env.NETWORK : 'mainnet',
       cacheProvider: true,
@@ -40,14 +42,13 @@ export default function App({ children }) {
             description: i18next.t('Home-BrowserWallet'),
           },
         },
-        // FIXME: Disabled until the webpack config is fixed
-        // walletconnect: {
-        //   package: WalletConnectProvider,
-        //   rpc: {
-        //     56: 'https://bsc-dataseed.binance.org/',
-        //     97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
-        //   },
-        // },
+        walletconnect: {
+          package: WalletConnectProvider,
+          rpc: {
+            56: 'https://bsc-dataseed.binance.org/',
+            97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
+          },
+        },
       },
     });
     setModal(newModal);
