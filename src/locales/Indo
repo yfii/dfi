@@ -1,0 +1,18 @@
+{
+  "Disclaimer": "Proyek ini adalah dalam Beta. Gunakan dengan hati-hati dan lakukan penelitian anda sendiri.",
+  "Network-Error": "Kesalahan jaringan",
+  "Vault-Wallet": "Dompet",
+  "Vault-Balance": "Saldo",
+  "Vault-APY": "Persentase hasil tahunan",
+  "Vault-TVL": "Nilai total terkunci",
+  "Vault-Approving": "Menyetujui...",
+  "Vault-ApproveButton": "Disetujui",
+  "Vault-DepositButton": "Menyetor",
+  "Vault-DepositButtonAll": "Setor Semua",
+  "Vault-Deposited": "Disetor",
+  "Vault-Withdrawing": "Penarikan...",
+  "Vault-WithdrawButton": "Tarik",
+  "Vault-WithdrawButtonAll": "Tarik Semua",
+  "Vault-MainTitle": "Kubah",
+  "Vault-SecondTitle": "Setor & Dapatkan uang"
+}
