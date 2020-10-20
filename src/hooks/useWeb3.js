@@ -34,17 +34,11 @@ const useWeb3 = () => {
       console.log('>>>>>', 'web3ModalConnect');
       const web3Modal = new Web3Modal({
         network: "binance",
-        cacheProvider: false,
+        cacheProvider: true,
         providerOptions
       });
       
       const provider = await web3Modal.connect();
-
-      console.log('>>>>>>>>>>', 'PRE');
-      console.log('>>>>>', 'web3', web3);
-      console.log('>>>>>', 'connected', connected);
-      console.log('>>>>>', 'address', address);
-      
       setWeb3(new Web3(provider));
       setConnected(true);
 
@@ -58,7 +52,7 @@ const useWeb3 = () => {
       console.log('>>>>>', 'connected', connected);
       console.log('>>>>>', 'address', address);
     })();
-  });
+  }, []);
 
   return { web3, address, connected };
 };
