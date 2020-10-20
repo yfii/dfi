@@ -1,0 +1,18 @@
+{
+  "Disclaimer": "Проєкт знаходиться на стадії Бета. Використовуйте на свій страх і ризик і робіть власне дослідження.",
+  "Network-Error": "Помилка мережі",
+  "Vault-Wallet": "Гаманець",
+  "Vault-Balance": "Баланс",
+  "Vault-APY": "APY",
+  "Vault-TVL": "TVL",
+  "Vault-Approving": "Підтвердження...",
+  "Vault-ApproveButton": "Підтвердити",
+  "Vault-DepositButton": "Внести",
+  "Vault-DepositButtonAll": "Внести Все",
+  "Vault-Deposited": "Внесено",
+  "Vault-Withdrawing": "Зняття...",
+  "Vault-WithdrawButton": "Зняти",
+  "Vault-WithdrawButtonAll": "Зняти Все",
+  "Vault-MainTitle": "Сховище",
+  "Vault-SecondTitle": "Зробити Вклад і Отримати Дохід"
+}

@@ -58,6 +58,8 @@ export default function HeaderLinks(props) {
         return i18n.changeLanguage('se').then(() => setLanguage(event));
       case '中文':
         return i18n.changeLanguage('zh').then(() => setLanguage(event));
+      case 'Українська':
+        return i18n.changeLanguage('uk').then(() => setLanguage(event));
       // TODO: more translations
       default:
         return;
@@ -84,6 +86,7 @@ export default function HeaderLinks(props) {
             'हिन्दी',
             '한글',
             'Svenska',
+            'Українська',
             '中文',
             // TODO: more translations
             { divider: true },
