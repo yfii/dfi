@@ -15,9 +15,11 @@ const providerOptions = {
   },
   walletconnect: {
     package: WalletConnectProvider,
-    rpc: {
-      56: 'https://bsc-dataseed.binance.org/',
-      97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
+    options: {
+      rpc: {
+        56: 'https://bsc-dataseed.binance.org/',
+        97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
+      },
     },
   },
 };
@@ -47,8 +49,9 @@ const useWeb3 = () => {
       setConnected(true);
 
       if(web3 && web3.eth) { 
-        const accs = web3.eth.getAccounts();
-        if(accs && accs.length > 0) { setAddress([0]); }
+        const accs = await web3.eth.getAccounts();
+        console.log('accs', accs);
+        if(accs && accs.length > 0) { setAddress(accs[0]); }
       }
 
       console.log('>>>>>>>>>>', 'POST');
