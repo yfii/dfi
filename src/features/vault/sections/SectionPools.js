@@ -17,7 +17,6 @@ import { primaryColor } from 'assets/jss/material-kit-pro-react.js';
 import Avatar from '@material-ui/core/Avatar';
 import { useSnackbar } from 'notistack';
 
-import { useConnectWallet } from 'features/home/redux/hooks';
 import { useFetchBalances, useFetchPoolBalances, useFetchApproval, useFetchDeposit, useFetchWithdraw, useFetchContractApy } from '../redux/hooks';
 
 import Button from 'components/CustomButtons/Button.js';
@@ -31,7 +30,6 @@ const useStyles = makeStyles(sectionPoolsStyle);
 
 export default function SectionPools() {
   const { t } = useTranslation();
-  const { web3, address, networkId } = useConnectWallet();
   let { pools, fetchPoolBalances } = useFetchPoolBalances();
   const { tokens, fetchBalances } = useFetchBalances();
   const [openedCardList, setOpenCardList] = useState([0]);
@@ -46,6 +44,12 @@ export default function SectionPools() {
   const [withdrawAmount, setWithdrawAmount] = useState({});
 
   const { enqueueSnackbar } = useSnackbar();
+
+
+  // FIXME: implement this
+  const address = '0x0000000000000000000000000000000000000000';
+  const web3 = null;
+
 
   const changeDetailInputValue = (type, index, total, tokenDecimals, event) => {
     let value = event.target.value;
@@ -230,8 +234,7 @@ export default function SectionPools() {
         <h3 className={classes.secondTitle}>{t('Vault-SecondTitle')}</h3>
       </Grid>
 
-      {Boolean(networkId === Number(process.env.NETWORK_ID)) &&
-        pools.map((pool, index) => {
+      { pools.map((pool, index) => {
           let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
           let singleDepositedBalance = byDecimals(tokens[pool.earnedToken].tokenBalance, pool.tokenDecimals);
           let depositedApy = contractApy[pool.id] || 0;

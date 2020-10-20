@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
 import history from './history';
-import homeReducer from 'features/home/redux/reducer';
 import vaultReducer from 'features/vault/redux/reducer';
 import commonReducer from 'features/common/redux/reducer';
 
@@ -12,7 +11,6 @@ import commonReducer from 'features/common/redux/reducer';
 
 const reducerMap = {
   router: connectRouter(history),
-  home: homeReducer,
   vault: vaultReducer,
   common: commonReducer,
 };
