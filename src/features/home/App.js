@@ -59,7 +59,6 @@ export default function App({ children }) {
   }, [web3Modal, connectWallet]);
 
   useEffect(() => {
-    console.log('STATS', networkId, 'Address', address, 'Pending', connectWalletPending, process.env.REACT_APP_NETWORK_ID);
     if (web3 && address && !connectWalletPending && networkId && Boolean(networkId !== Number(process.env.REACT_APP_NETWORK_ID))) {
       alert(t('Network-Error'));
     }
