@@ -42,8 +42,8 @@ export default function App({ children }) {
           package: WalletConnectProvider,
           options: {
             rpc: {
-              1: 'https://bsc-dataseed1.defibit.io/',
-              56: 'https://bsc-dataseed1.defibit.io/',
+              1: 'https://bsc-dataseed.binance.org/',
+              56: 'https://bsc-dataseed.binance.org/',
             },
           },
         },
