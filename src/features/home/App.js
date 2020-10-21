@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import { StylesProvider } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/core/styles';
 
 import Header from 'components/Header/Header.js';
@@ -65,25 +65,33 @@ export default function App({ children }) {
   }, [web3, address, networkId, connectWalletPending, t]);
 
   return (
-    <SnackbarProvider>
-      <div className={classes.page}>
-        <Header
-          brand="beefy.finance"
-          links={
-            <HeaderLinks dropdownHoverColor="dark" address={address} connected={connected} connectWallet={() => connectWallet(web3Modal)} disconnectWallet={() => disconnectWallet(web3, web3Modal)} />
-          }
-          color="dark"
-        />
-        <div className={classes.container}>
-          <div className={classes.children}>
-            {Boolean(networkId === Number(process.env.REACT_APP_NETWORK_ID)) && children}
-            <Notifier />
+    <StylesProvider injectFirst>
+      <SnackbarProvider>
+        <div className={classes.page}>
+          <Header
+            brand="beefy.finance"
+            links={
+              <HeaderLinks
+                dropdownHoverColor="dark"
+                address={address}
+                connected={connected}
+                connectWallet={() => connectWallet(web3Modal)}
+                disconnectWallet={() => disconnectWallet(web3, web3Modal)}
+              />
+            }
+            color="dark"
+          />
+          <div className={classes.container}>
+            <div className={classes.children}>
+              {Boolean(networkId === Number(process.env.REACT_APP_NETWORK_ID)) && children}
+              <Notifier />
+            </div>
           </div>
-        </div>
 
-        <Footer />
-        <Pastures />
-      </div>
-    </SnackbarProvider>
+          <Footer />
+          <Pastures />
+        </div>
+      </SnackbarProvider>
+    </StylesProvider>
   );
 }

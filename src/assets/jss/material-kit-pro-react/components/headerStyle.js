@@ -184,6 +184,20 @@ const headerStyle = theme => ({
   logo: {
     marginRight: '12px',
   },
+  link: {
+    margin: '0 1rem',
+    fontSize: '1rem',
+    fontWeight: 400,
+    color: '#000',
+    textDecoration: 'none',
+    '&:hover': {
+      textDecoration: 'underline',
+    },
+  },
+  icon: {
+    marginRight: '0.5rem',
+    minWidth: '24px',
+  },
 });
 
 export default headerStyle;
