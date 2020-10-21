@@ -5,7 +5,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Header from 'components/Header/Header.js';
 import HeaderLinks from 'components/Header/HeaderLinks.js';
 
-import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
 
 import { SnackbarProvider } from 'notistack';
@@ -51,7 +50,7 @@ export default function App({ children }) {
       },
     });
     setModal(newModal);
-  }, [setModal]);
+  }, [setModal, t]);
 
   useEffect(() => {
     if (web3Modal && (web3Modal.cachedProvider || window.ethereum)) {
@@ -60,7 +59,8 @@ export default function App({ children }) {
   }, [web3Modal, connectWallet]);
 
   useEffect(() => {
-    if (web3 && address && !connectWalletPending && networkId && Boolean(networkId !== Number(process.env.NETWORK_ID))) {
+    console.log('STATS', networkId, 'Address', address, 'Pending', connectWalletPending, process.env.REACT_APP_NETWORK_ID);
+    if (web3 && address && !connectWalletPending && networkId && Boolean(networkId !== Number(process.env.REACT_APP_NETWORK_ID))) {
       alert(t('Network-Error'));
     }
   }, [web3, address, networkId, connectWalletPending, t]);
@@ -77,7 +77,7 @@ export default function App({ children }) {
         />
         <div className={classes.container}>
           <div className={classes.children}>
-            {Boolean(networkId === Number(process.env.NETWORK_ID)) && children}
+            {Boolean(networkId === Number(process.env.REACT_APP_NETWORK_ID)) && children}
             <Notifier />
           </div>
         </div>
