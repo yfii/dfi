@@ -398,7 +398,7 @@ export default function SectionPools() {
                       <div>
                         {pool.allowance === 0 ? (
                           <div className={classes.showDetailButtonCon}>
-                            <Button className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`} onClick={onApproval.bind(this, pool, index)} disabled={fetchApprovalPending[index]}>
+                            <Button className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`} onClick={onApproval.bind(this, pool, index)} disabled={pool.depositsPaused || fetchApprovalPending[index]}>
                               {fetchApprovalPending[index] ? `${t('Vault-Approving')}` : `${t('Vault-ApproveButton')}`}
                             </Button>
                           </div>
