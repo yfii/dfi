@@ -1,6 +1,6 @@
 export const pools = [
   {
-    id: 'fry-burger',
+    id: 'fry-burger-v2',
     logo: 'fry/BURGER',
     name: 'BURGER v2',
     token: 'BURGER',
@@ -8,9 +8,9 @@ export const pools = [
     tokenAddress: '0xAe9269f27437f0fcBC232d39Ec814844a51d6b8f',
     tokenDecimals: 18,
     tokenDescriptionUrl: 'https://fry.world/',
-    earnedToken: 'mooFryBURGER',
-    earnedTokenAddress: '0x78d60Da18c09bdE41397010198F454021Ec810Ad',
-    earnContractAddress: '0x78d60Da18c09bdE41397010198F454021Ec810Ad',
+    earnedToken: 'mooFryBURGERv2',
+    earnedTokenAddress: '0x2fd5f579e2cF9e3cb8127BBAd1B52c25750b1aCE',
+    earnContractAddress: '0x2fd5f579e2cF9e3cb8127BBAd1B52c25750b1aCE',
     defaultApy: '200.00',
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
@@ -23,7 +23,7 @@ export const pools = [
   },
 
   {
-    id: 'fry-wbnb',
+    id: 'fry-wbnb-v2',
     logo: 'fry/WBNB',
     name: 'WBNB v2',
     token: 'WBNB',
@@ -31,9 +31,9 @@ export const pools = [
     tokenAddress: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
     tokenDecimals: 18,
     tokenDescriptionUrl: 'https://fry.world/',
-    earnedToken: 'mooFryWBNB',
-    earnedTokenAddress: '0x0ec9BAf75EB009233bA7DCa385f0BF5377510C8B',
-    earnContractAddress: '0x0ec9BAf75EB009233bA7DCa385f0BF5377510C8B',
+    earnedToken: 'mooFryWBNBv2',
+    earnedTokenAddress: '0x70B7eBf5999C3CA1FE66F6b574ee38bc99C960C1',
+    earnContractAddress: '0x70B7eBf5999C3CA1FE66F6b574ee38bc99C960C1',
     defaultApy: '80.00',
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
@@ -46,7 +46,7 @@ export const pools = [
   },
 
   {
-    id: 'fry-busd',
+    id: 'fry-busd-v2',
     logo: 'fry/BUSD',
     name: 'BUSD v2',
     token: 'BUSD',
@@ -54,9 +54,9 @@ export const pools = [
     tokenAddress: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
     tokenDecimals: 18,
     tokenDescriptionUrl: 'https://fry.world/',
-    earnedToken: 'mooFryBUSD',
-    earnedTokenAddress: '0x2DEb5B935F1a2DB140Eb1d6bC45De7C080E12311',
-    earnContractAddress: '0x2DEb5B935F1a2DB140Eb1d6bC45De7C080E12311',
+    earnedToken: 'mooFryBUSDv2',
+    earnedTokenAddress: '0x9412EFED190138044B3b5444eEF87A16dcC4BE43',
+    earnContractAddress: '0x9412EFED190138044B3b5444eEF87A16dcC4BE43',
     defaultApy: '25.00',
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
@@ -69,7 +69,7 @@ export const pools = [
   },
 
   {
-    id: 'fry-burger',
+    id: 'fry-burger-v1',
     logo: 'fry/BURGER',
     name: 'BURGER v1',
     token: 'BURGER',
@@ -92,7 +92,7 @@ export const pools = [
   },
 
   {
-    id: 'fry-wbnb',
+    id: 'fry-wbnb-v1',
     logo: 'fry/WBNB',
     name: 'WBNB v1',
     token: 'WBNB',
@@ -115,7 +115,7 @@ export const pools = [
   },
 
   {
-    id: 'fry-busd',
+    id: 'fry-busd-v1',
     logo: 'fry/BUSD',
     name: 'BUSD v1',
     token: 'BUSD',
