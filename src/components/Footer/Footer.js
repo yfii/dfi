@@ -12,9 +12,9 @@ const Footer = () => {
     <div className={classes.root}>
       <div className={classes.column}>
         <div className={classes.title}>beefy.finance</div>
-        <a href="https://beefy.finance" target="_blank" rel="noopener noreferrer" className={classes.link}>
-          <i className={`fas fa-globe ${classes.linkIcon}`}></i>
-          <span>website</span>
+        <a href="https://docs.beefy.finance" target="_blank" rel="noopener noreferrer" className={classes.link}>
+          <i className={`fas fa-book ${classes.linkIcon}`}></i>
+          <span>docs</span>
         </a>
 
         <a href="https://medium.com/beefyfinance" target="_blank" rel="noopener noreferrer" className={classes.link}>
