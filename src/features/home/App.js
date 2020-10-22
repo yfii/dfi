@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-
+import { StylesProvider } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/core/styles';
 
 import Header from 'components/Header/Header.js';
 import HeaderLinks from 'components/Header/HeaderLinks.js';
 
-import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
 
 import { SnackbarProvider } from 'notistack';
@@ -31,27 +30,27 @@ export default function App({ children }) {
 
   useEffect(() => {
     const newModal = new Web3Modal({
-      network: process.env.NETWORK ? process.env.NETWORK : 'mainnet',
-      cacheProvider: true,
+      network: 'binance',
       providerOptions: {
         injected: {
           display: {
             name: 'Injected',
-            description: i18next.t('Home-BrowserWallet'),
+            description: t('Home-BrowserWallet'),
           },
         },
-        // FIXME: Disabled until the webpack config is fixed
-        // walletconnect: {
-        //   package: WalletConnectProvider,
-        //   rpc: {
-        //     56: 'https://bsc-dataseed.binance.org/',
-        //     97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
-        //   },
-        // },
+        walletconnect: {
+          package: WalletConnectProvider,
+          options: {
+            rpc: {
+              1: 'https://bsc-dataseed.binance.org/',
+              56: 'https://bsc-dataseed.binance.org/',
+            },
+          },
+        },
       },
     });
     setModal(newModal);
-  }, [setModal]);
+  }, [setModal, t]);
 
   useEffect(() => {
     if (web3Modal && (web3Modal.cachedProvider || window.ethereum)) {
@@ -60,31 +59,39 @@ export default function App({ children }) {
   }, [web3Modal, connectWallet]);
 
   useEffect(() => {
-    if (web3 && address && !connectWalletPending && networkId && Boolean(networkId !== Number(process.env.NETWORK_ID))) {
+    if (web3 && address && !connectWalletPending && networkId && Boolean(networkId !== Number(process.env.REACT_APP_NETWORK_ID))) {
       alert(t('Network-Error'));
     }
   }, [web3, address, networkId, connectWalletPending, t]);
 
   return (
-    <SnackbarProvider>
-      <div className={classes.page}>
-        <Header
-          brand="beefy.finance"
-          links={
-            <HeaderLinks dropdownHoverColor="dark" address={address} connected={connected} connectWallet={() => connectWallet(web3Modal)} disconnectWallet={() => disconnectWallet(web3, web3Modal)} />
-          }
-          color="dark"
-        />
-        <div className={classes.container}>
-          <div className={classes.children}>
-            {Boolean(networkId === Number(process.env.NETWORK_ID)) && children}
-            <Notifier />
+    <StylesProvider injectFirst>
+      <SnackbarProvider>
+        <div className={classes.page}>
+          <Header
+            brand="beefy.finance"
+            links={
+              <HeaderLinks
+                dropdownHoverColor="dark"
+                address={address}
+                connected={connected}
+                connectWallet={() => connectWallet(web3Modal)}
+                disconnectWallet={() => disconnectWallet(web3, web3Modal)}
+              />
+            }
+            color="dark"
+          />
+          <div className={classes.container}>
+            <div className={classes.children}>
+              {Boolean(networkId === Number(process.env.REACT_APP_NETWORK_ID)) && children}
+              <Notifier />
+            </div>
           </div>
-        </div>
 
-        <Footer />
-        <Pastures />
-      </div>
-    </SnackbarProvider>
+          <Footer />
+          <Pastures />
+        </div>
+      </SnackbarProvider>
+    </StylesProvider>
   );
 }

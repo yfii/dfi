@@ -44,13 +44,14 @@ export function connectWallet(web3Modal) {
           dispatch({ type: HOME_NETWORK_CHANGED, data: networkId });
         });
       };
-      await subscribeProvider(provider);
+      subscribeProvider(provider);
 
       const accounts = await web3.eth.getAccounts();
       const address = accounts[0];
       const networkId = await web3.eth.net.getId();
       dispatch({ type: HOME_CONNECT_WALLET_SUCCESS, data: { web3, address, networkId } });
     } catch (error) {
+      console.log('ERROR', error);
       dispatch({ type: HOME_CONNECT_WALLET_FAILURE });
     }
   };

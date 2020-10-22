@@ -33,7 +33,6 @@ const fetchCoingecko = async (id) => {
     const response = await axios.get(endpoints.coingecko, {
       params: {ids: id, vs_currencies: 'usd' }
     });
-    console.log('coingecko', response);
     return response.data[id].usd;
   } catch (err) {
     console.error(err);

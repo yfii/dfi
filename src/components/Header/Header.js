@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
@@ -57,14 +56,14 @@ export default function Header(props) {
     <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>
         <Button className={classes.title}>
-          <img alt="BIFI" src={require(`../../images/BIFI.svg`)} height="40px" className={classes.logo} />
+          <img alt="BIFI" src={require(`images/BIFI.svg`)} height="40px" className={classes.logo} />
           <a href="https://beefy.finance">{brand}</a>
         </Button>
 
         <span>
-          {renderLink('gov', 'gov', 'landmark')}
-          {renderLink('vote', 'vote', 'vote-yea')}
-          {renderLink('app', 'app', 'hand-holding-usd')}
+          {renderLink('gov', 'gov', 'landmark', classes)}
+          {renderLink('vote', 'vote', 'vote-yea', classes)}
+          {renderLink('app', 'app', 'hand-holding-usd', classes)}
         </span>
 
         <Hidden smDown implementation="css">
@@ -97,29 +96,12 @@ export default function Header(props) {
   );
 }
 
-const renderLink = (name, label, icon) => {
-  const Link = styled.a`
-    margin: 0 1rem;
-    font-size: 1rem;
-    font-weight: 400;
-    color: #000;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  `;
-
-  const Icon = styled.i`
-    margin-right: 0.5rem;
-    min-width: 24px;
-  `;
-
+const renderLink = (name, label, icon, classes) => {
   return (
-    <Link href={`https://${name}.beefy.finance`} target="_blank" rel="noopener noreferrer">
-      <Icon className={`fas fa-${icon}`} />
+    <a href={`https://${name}.beefy.finance`} target="_blank" rel="noopener noreferrer" className={classes.link}>
+      <i className={`fas fa-${icon} ${classes.icon}`} />
       <span>{label}</span>
-    </Link>
+    </a>
   );
 };
 
