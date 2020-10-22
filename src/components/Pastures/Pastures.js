@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { PasturesContainer, PastureLeft, PastureCenterBg, PastureCenterFg, PastureRight } from './style';
+import { makeStyles } from '@material-ui/core/styles';
+
 import Cow from '../Cow/Cow';
+import styles from './style';
+
+const useStyles = makeStyles(styles);
 
 const Pastures = () => {
+  const classes = useStyles();
   const [cows, setCows] = useState([]);
 
   useEffect(() => {
@@ -11,13 +16,13 @@ const Pastures = () => {
   }, []);
 
   return (
-    <PasturesContainer>
-      <PastureLeft />
-      <PastureRight />
-      <PastureCenterBg />
-      <PastureCenterFg />
+    <div className={classes.root}>
+      <div className={classes.pastureLeft} />
+      <div className={classes.pastureRight} />
+      <div className={classes.pastureCenterBg} />
+      <div className={classes.pastureCenterFg} />
       {cows && cows.map((_, index) => <Cow key={`cow${index}`} total={cows.length} index={index} />)}
-    </PasturesContainer>
+    </div>
   );
 };
 
