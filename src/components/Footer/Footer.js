@@ -1,62 +1,69 @@
 import React from 'react';
-import { Container, Column, Title, Link, FAIcon, BrandIcon, LinkLabel } from './style';
+import { makeStyles } from '@material-ui/core/styles';
+
+import styles from 'assets/jss/material-kit-pro-react/components/footerStyle.js';
+
+const useStyles = makeStyles(styles);
 
 const Footer = () => {
+  const classes = useStyles();
+
   return (
-    <Container>
-      <Column>
-        <Title>beefy.finance</Title>
+    <div className={classes.root}>
+      <div className={classes.column}>
+        <div className={classes.title}>beefy.finance</div>
+        <a href="https://beefy.finance" target="_blank" rel="noopener noreferrer" className={classes.link}>
+          <i className={`fas fa-globe ${classes.linkIcon}`}></i>
+          <span>website</span>
+        </a>
 
-        <Link href="https://beefy.finance" target="_blank">
-          <FAIcon type="globe" />
-          <LinkLabel>website</LinkLabel>
-        </Link>
+        <a href="https://medium.com/beefyfinance" target="_blank" rel="noopener noreferrer" className={classes.link}>
+          <i className={`fab fa-medium ${classes.linkIcon}`}></i>
+          <span>news</span>
+        </a>
 
-        <Link href="https://medium.com/beefyfinance" target="_blank">
-          <BrandIcon type="medium" />
-          <LinkLabel>news</LinkLabel>
-        </Link>
+        <a href="https://github.com/beefyfinance" target="_blank" rel="noopener noreferrer" className={classes.link}>
+          <i className={`fab fa-github ${classes.linkIcon}`}></i>
+          <span>source</span>
+        </a>
+      </div>
 
-        <Link href="https://github.com/beefyfinance" target="_blank">
-          <BrandIcon type="github" />
-          <LinkLabel>source</LinkLabel>
-        </Link>
-      </Column>
+      <div className={classes.column}>
+        <div className={classes.title}>products</div>
+        <a href="https://gov.beefy.finance" target="_blank" rel="noopener noreferrer" className={classes.link}>
+          <i className={`fas fa-landmark ${classes.linkIcon}`}></i>
+          <span>gov</span>
+        </a>
 
-      <Column>
-        <Title>products</Title>
-        <Link href="https://gov.beefy.finance" target="_blank">
-          <FAIcon type="landmark" />
-          <LinkLabel>gov</LinkLabel>
-        </Link>
+        <a href="https://vote.beefy.finance" target="_blank" rel="noopener noreferrer" className={classes.link}>
+          <i className={`fas fa-vote-yea ${classes.linkIcon}`}></i>
+          <span>vote</span>
+        </a>
 
-        <Link href="https://vote.beefy.finance" target="_blank">
-          <FAIcon type="vote-yea" />
-          <LinkLabel>vote</LinkLabel>
-        </Link>
+        <a href="https://app.beefy.finance" target="_blank" rel="noopener noreferrer" className={classes.link}>
+          <i className={`fas fa-hand-holding-usd ${classes.linkIcon}`}></i>
+          <span>app</span>
+        </a>
+      </div>
 
-        <Link href="https://app.beefy.finance" target="_blank">
-          <FAIcon type="hand-holding-usd" />
-          <LinkLabel>app</LinkLabel>
-        </Link>
-      </Column>
+      <div className={classes.column}>
+        <div className={classes.title}>socials</div>
+        <a href="https://twitter.com/beefyfinance" target="_blank" rel="noopener noreferrer" className={classes.link}>
+          <i className={`fab fa-twitter ${classes.linkIcon}`}></i>
 
-      <Column>
-        <Title>socials</Title>
-        <Link href="https://twitter.com/beefyfinance" target="_blank">
-          <BrandIcon type="twitter" />
-          <LinkLabel>twitter</LinkLabel>
-        </Link>
-        <Link href="https://t.me/beefyfinance" target="_blank">
-          <BrandIcon type="telegram" />
-          <LinkLabel>telegram</LinkLabel>
-        </Link>
-        <Link href="https://discord.gg/9xfMvJY" target="_blank">
-          <BrandIcon type="discord" />
-          <LinkLabel>discord</LinkLabel>
-        </Link>
-      </Column>
-    </Container>
+          <span>twitter</span>
+        </a>
+        <a href="https://t.me/beefyfinance" target="_blank" rel="noopener noreferrer" className={classes.link}>
+          <i className={`fab fa-telegram ${classes.linkIcon}`}></i>
+
+          <span>telegram</span>
+        </a>
+        <a href="https://discord.gg/9xfMvJY" target="_blank" rel="noopener noreferrer" className={classes.link}>
+          <i className={`fab fa-discord ${classes.linkIcon}`}></i>
+          <span>discord</span>
+        </a>
+      </div>
+    </div>
   );
 };
 
