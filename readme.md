@@ -2,7 +2,7 @@
 
 ## Overview
 
-Yield farming optimizer for Binance Smart Chain
+Yield farming optimizer for Binance Smart Chain.
 
 ## Dependencies
 
