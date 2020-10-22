@@ -264,7 +264,7 @@ export default function SectionPools() {
                         </Grid>
                         <Grid item style={{ minWidth: '100px' }}>
                           <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom>
-                            {pool.token}
+                            {pool.name}
                             <Hidden smUp>
                               <i
                                 style={{
