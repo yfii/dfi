@@ -33,7 +33,7 @@
     "react-scripts": "3.4.3",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "web3": "1.2.1",
+    "web3": "1.2.11",
     "web3modal": "^1.9.1"
   },
   "scripts": {
