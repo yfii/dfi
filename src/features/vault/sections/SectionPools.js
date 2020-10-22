@@ -124,6 +124,12 @@ export default function SectionPools() {
 
   const onDeposit = (pool, index, isAll, balanceSingle, event) => {
     event.stopPropagation();
+
+    if (pool.depositsPaused) {
+      console.error('Deposits paused!');
+      return;
+    }
+
     if (isAll) {
       setDepositedBalance({
         ...depositedBalance,
@@ -402,7 +408,7 @@ export default function SectionPools() {
                               className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
                               color="primary"
                               onFocus={event => event.stopPropagation()}
-                              disabled={!Boolean(depositedBalance[index]) || fetchDepositPending[index] || new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber()}
+                              disabled={pool.depositsPaused || !Boolean(depositedBalance[index]) || fetchDepositPending[index] || new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber()}
                               onClick={onDeposit.bind(this, pool, index, false, balanceSingle)}
                             >
                               {t('Vault-DepositButton')}
@@ -411,7 +417,7 @@ export default function SectionPools() {
                               <Button
                                 className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`}
                                 onFocus={event => event.stopPropagation()}
-                                disabled={fetchDepositPending[index] || new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber()}
+                                disabled={pool.depositsPaused || fetchDepositPending[index] || new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber()}
                                 onClick={onDeposit.bind(this, pool, index, true, balanceSingle)}
                               >
                                 {t('Vault-DepositButtonAll')}

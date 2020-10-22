@@ -19,6 +19,7 @@ export const pools = [
     oracleId: 'burger-swap',
     oraclePrice: 0,
     fallbackPrice: 0.44,
+    depositsPaused: false,
   },
 
   {
@@ -41,6 +42,7 @@ export const pools = [
     oracleId: 'BNB/USD',
     oraclePrice: 0,
     fallbackPrice: 31,
+    depositsPaused: false,
   },
 
   {
@@ -63,6 +65,7 @@ export const pools = [
     oracleId: 'BUSD/USD',
     oraclePrice: 0,
     fallbackPrice: 1,
+    depositsPaused: false,
   },
 
   {
@@ -85,7 +88,9 @@ export const pools = [
     oracleId: 'BUSD/USD',
     oraclePrice: 0,
     fallbackPrice: 1,
+    depositsPaused: false,
   },
+  
   {
     id: 'link',
     logo: 'fortube/LINK',
@@ -105,8 +110,10 @@ export const pools = [
     oracle: 'band',
     oracleId: 'LINK/USD',
     oraclePrice: 0,
-    fallbackPrice: 11,
+    fallbackPrice: 12,
+    depositsPaused: false,
   },
+
   {
     id: 'dot',
     logo: 'fortube/DOT',
@@ -126,8 +133,10 @@ export const pools = [
     oracle: 'band',
     oracleId: 'DOT/USD',
     oraclePrice: 0,
-    fallbackPrice: 4.14,
+    fallbackPrice: 4.27,
+    depositsPaused: false,
   },
+
   {
     id: 'dai',
     logo: 'fortube/DAI',
@@ -148,7 +157,9 @@ export const pools = [
     oracleId: 'DAI/USD',
     oraclePrice: 0,
     fallbackPrice: 1,
+    depositsPaused: false,
   },
+
   {
     id: 'usdt',
     logo: 'fortube/USDT',
@@ -169,7 +180,9 @@ export const pools = [
     oracleId: 'USDT/USD',
     oraclePrice: 0,
     fallbackPrice: 1,
+    depositsPaused: false,
   },
+
   {
     id: 'eth',
     logo: 'fortube/ETH',
@@ -189,8 +202,10 @@ export const pools = [
     oracle: 'band',
     oracleId: 'ETH/USD',
     oraclePrice: 0,
-    fallbackPrice: 378,
+    fallbackPrice: 414,
+    depositsPaused: false,
   },
+
   {
     id: 'btcb',
     logo: 'fortube/BTCB',
@@ -210,6 +225,7 @@ export const pools = [
     oracle: 'band',
     oracleId: 'BTC/USD',
     oraclePrice: 0,
-    fallbackPrice: 11700,
+    fallbackPrice: 12995,
+    depositsPaused: false,
   },
 ];
