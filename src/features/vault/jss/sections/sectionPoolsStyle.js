@@ -181,6 +181,12 @@ const sectionPoolsStyle = theme => ({
     background: '#FBF6F0',
     borderRadius: '8px',
   },
+  detailsPaused: {
+    display: 'flex',
+    alignItems: 'center',
+    background: '#FCE57E',
+    borderRadius: '0',
+  },
   track: {
     height: 4,
     borderRadius: 2,

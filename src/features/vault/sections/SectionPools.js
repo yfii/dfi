@@ -249,7 +249,7 @@ export default function SectionPools() {
             <div style={{ width: '100%' }}>
               <Accordion expanded={Boolean(openedCardList.includes(index))} className={classes.accordion} TransitionProps={{ unmountOnExit: true }}>
                 <AccordionSummary
-                  className={classes.details}
+                  className={pool.depositsPaused ? classes.detailsPaused : classes.details}
                   style={{ justifyContent: 'space-between' }}
                   onClick={event => {
                     event.stopPropagation();
