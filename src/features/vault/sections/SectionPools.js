@@ -249,7 +249,7 @@ export default function SectionPools() {
             <div style={{ width: '100%' }}>
               <Accordion expanded={Boolean(openedCardList.includes(index))} className={classes.accordion} TransitionProps={{ unmountOnExit: true }}>
                 <AccordionSummary
-                  className={classes.details}
+                  className={pool.depositsPaused ? classes.detailsPaused : classes.details}
                   style={{ justifyContent: 'space-between' }}
                   onClick={event => {
                     event.stopPropagation();
@@ -398,7 +398,7 @@ export default function SectionPools() {
                       <div>
                         {pool.allowance === 0 ? (
                           <div className={classes.showDetailButtonCon}>
-                            <Button className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`} onClick={onApproval.bind(this, pool, index)} disabled={fetchApprovalPending[index]}>
+                            <Button className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`} onClick={onApproval.bind(this, pool, index)} disabled={pool.depositsPaused || fetchApprovalPending[index]}>
                               {fetchApprovalPending[index] ? `${t('Vault-Approving')}` : `${t('Vault-ApproveButton')}`}
                             </Button>
                           </div>
