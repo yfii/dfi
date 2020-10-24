@@ -13,6 +13,7 @@
   "Vault-Withdrawing": "Retirando...",
   "Vault-WithdrawButton": "Retirar",
   "Vault-WithdrawButtonAll": "Retirar Todo",
+  "Vault-WithdrawFee": "Hay una tarifa de retiro del 0.1% en todas las bóvedas",
   "Vault-MainTitle": "Bovedas",
   "Vault-SecondTitle": "Deposita y genera ganancias"
 }

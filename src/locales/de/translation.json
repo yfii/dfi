@@ -13,6 +13,7 @@
   "Vault-Withdrawing": "Abheben...",
   "Vault-WithdrawButton": "Abheben",
   "Vault-WithdrawButtonAll": "Alles abheben",
+  "Vault-WithdrawFee": "Für alle Tresore wird eine Abhebungsgebühr von 0,1% erhoben",
   "Vault-MainTitle": "Vaults",
   "Vault-SecondTitle": "Einzahlen & Geld verdienen"
 }

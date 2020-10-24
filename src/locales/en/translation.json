@@ -13,6 +13,7 @@
   "Vault-Withdrawing": "Withdraw...",
   "Vault-WithdrawButton": "Withdraw",
   "Vault-WithdrawButtonAll": "Withdraw All",
+  "Vault-WithdrawFee": "There is a 0.1% withdrawal fee on all vaults",
   "Vault-MainTitle": "Vaults",
   "Vault-SecondTitle": "Deposit & Earn money"
 }
