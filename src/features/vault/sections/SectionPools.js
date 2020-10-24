@@ -4,17 +4,18 @@ import BigNumber from 'bignumber.js';
 import { byDecimals, calculateReallyNum, format } from 'features/helpers/bignumber';
 import { makeStyles } from '@material-ui/core/styles';
 import Accordion from '@material-ui/core/Accordion';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionActions';
-import IconButton from '@material-ui/core/IconButton';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import Avatar from '@material-ui/core/Avatar';
 import Divider from '@material-ui/core/Divider';
-import Typography from '@material-ui/core/Typography';
 import FormControl from '@material-ui/core/FormControl';
-import CustomOutlinedInput from 'components/CustomOutlinedInput/CustomOutlinedInput';
 import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
+import IconButton from '@material-ui/core/IconButton';
+import Popover from '@material-ui/core/Popover';
+import Typography from '@material-ui/core/Typography';
+import CustomOutlinedInput from 'components/CustomOutlinedInput/CustomOutlinedInput';
 import { primaryColor } from 'assets/jss/material-kit-pro-react.js';
-import Avatar from '@material-ui/core/Avatar';
 import { useSnackbar } from 'notistack';
 import { useConnectWallet } from '../../home/redux/hooks';
 
@@ -236,8 +237,15 @@ export default function SectionPools() {
   return (
     <Grid container style={{ paddingTop: '4px' }}>
       <Grid item xs={12}>
-        <div className={classes.mainTitle}>{t('Vault-MainTitle')}</div>
-        <h3 className={classes.secondTitle}>{t('Vault-SecondTitle')}</h3>
+        <h1 className={classes.mainTitle}>{t('Vault-MainTitle')}</h1>
+        <Grid item container justify="space-between">
+          <Grid item>
+            <h3 className={classes.secondTitle}>{t('Vault-SecondTitle')}</h3>
+          </Grid>
+          <Grid item>
+            <h3 className={classes.secondTitle}>{t('Vault-WithdrawFee')}</h3>
+          </Grid>
+        </Grid>
       </Grid>
 
       {pools.map((pool, index) => {
