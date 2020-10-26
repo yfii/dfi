@@ -110,7 +110,7 @@ export const pools = [
     tokenAddress: '0xdF574c24545E5FfEcb9a659c229253D4111d87e1',
     tokenDecimals: 8,
     itokenDecimals: 18,
-    depostLimit:new BigNumber('10').pow(5).toNumber(),
+    depostLimit:50000,
     tokenDescriptionUrl: '',
     tokenDescriptionUrl2: '',
     earnedToken: 'iHUSD',
