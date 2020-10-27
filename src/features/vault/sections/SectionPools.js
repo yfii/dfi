@@ -95,11 +95,19 @@ export default function SectionPools() {
   };
 
   const formatApy = (apy) => {
-    return `${(apy * 100).toFixed(1)}%`;
+    if (apy) {
+      return `${(apy * 100).toFixed(1)}%`;
+    } else {
+      return '- %';
+    }
   }
 
   const calcDaily = (apy, hpy) => {
+    if (!apy) { return '- %'; }
+    
     const g = Math.pow(10, Math.log10((apy - 1) * 100) / hpy) - 1;
+    if (isNaN(g)) { return '- %'; }
+    
     return `${(g * 100).toFixed(2)}%`;
   }
 
