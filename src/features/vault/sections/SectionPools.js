@@ -99,7 +99,7 @@ export default function SectionPools() {
   }
 
   const calcDaily = (apy, hpy) => {
-    const g = Math.pow(10, Math.log10(apy * 100) / hpy) - 1;
+    const g = Math.pow(10, Math.log10((apy - 1) * 100) / hpy) - 1;
     return `${(g * 100).toFixed(2)}%`;
   }
 
