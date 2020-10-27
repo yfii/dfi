@@ -94,6 +94,15 @@ export default function SectionPools() {
     return prefix + num.toFixed(2) + units[order];
   };
 
+  const formatApy = (apy) => {
+    return `${(apy * 100).toFixed(1)}%`;
+  }
+
+  const calcDaily = (apy, hpy) => {
+    const g = Math.pow(10, Math.log10((apy - 1) * 100) / hpy) - 1;
+    return `${(g * 100).toFixed(2)}%`;
+  }
+
   const handleDepositedBalance = (index, total, _, sliderNum) => {
     setDepositedBalance({
       ...depositedBalance,
@@ -314,7 +323,7 @@ export default function SectionPools() {
                           <Grid item xs={4} md={3} container justify="center" alignItems="center">
                             <Grid item style={{ width: '200px' }}>
                               <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
-                                {format(singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)))} {pool.token}
+                                {format(singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)))}
                               </Typography>
                               <Typography className={classes.iconContainerSubTitle} variant="body2">
                                 {t('Vault-Deposited')}
@@ -326,8 +335,7 @@ export default function SectionPools() {
                         <Grid item xs={5} md={2} container justify="center" alignItems="center">
                           <Grid item>
                             <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
-                              {' '}
-                              {depositedApy}
+                              {formatApy(depositedApy)}
                             </Typography>
                             <Typography className={classes.iconContainerSubTitle} variant="body2">
                               {t('Vault-APY')}
@@ -335,6 +343,17 @@ export default function SectionPools() {
                           </Grid>
                         </Grid>
 
+                        <Grid item xs={5} md={2} container justify="center" alignItems="center">
+                          <Grid item>
+                            <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
+                              {calcDaily(depositedApy, pool.hpy)}
+                            </Typography>
+                            <Typography className={classes.iconContainerSubTitle} variant="body2">
+                              {t('Vault-APYDaily')}
+                            </Typography>
+                          </Grid>
+                        </Grid>
+                        
                         <Grid item xs={5} md={2} container justify="center" alignItems="center">
                           <Grid item>
                             <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>

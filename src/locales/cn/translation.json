@@ -4,6 +4,7 @@
   "Vault-Wallet": "钱包",
   "Vault-Balance": "余额",
   "Vault-APY": "年收益率",
+  "Vault-APYDaily": "Daily",
   "Vault-TVL": "锁定总价值",
   "Vault-Approving": "在批准中...",
   "Vault-ApproveButton": "批准",
