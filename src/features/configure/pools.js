@@ -8,7 +8,7 @@ export const pools = [
     tokenAddress: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
     tokenDecimals: 18,
     tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-twt-with-cake',
-    earnedToken: 'mockCakeTWT',
+    earnedToken: 'mooCakeTWT',
     earnedTokenAddress: '0x214e640c638fbe68Fb24e11BfBd8Cd7d6cb8E37b',
     earnContractAddress: '0x214e640c638fbe68Fb24e11BfBd8Cd7d6cb8E37b',
     defaultApy: '20000.00',
