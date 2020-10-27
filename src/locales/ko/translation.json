@@ -4,6 +4,7 @@
   "Vault-Wallet": "지갑",
   "Vault-Balance": "잔고",
   "Vault-APY": "APY",
+  "Vault-APYDaily": "Daily",
   "Vault-TVL": "TVL",
   "Vault-Approving": "승인중...",
   "Vault-ApproveButton": "승인",
