@@ -1,26 +1,27 @@
 export const pools = [
-  // {
-  //   id: 'cake-twt',
-  //   logo: 'cake/TWT',
-  //   name: 'CAKE TWT v1',
-  //   token: 'CAKE',
-  //   tokenDescription: 'Uses: Syrup Pool',
-  //   tokenAddress: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
-  //   tokenDecimals: 18,
-  //   tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-twt-with-cake',
-  //   earnedToken: 'mooCakeTWT',
-  //   earnedTokenAddress: '-',
-  //   earnContractAddress: '-',
-  //   defaultApy: '17000.00',
-  //   pricePerFullShare: 1,
-  //   pastPricePerFullShare: 1,
-  //   tvl: 0,
-  //   oracle: 'coingecko',
-  //   oracleId: 'trust-wallet-token',
-  //   oraclePrice: 0,
-  //   fallbackPrice: 0.08,
-  //   depositsPaused: false,
-  // },
+  {
+    id: 'cake-twt',
+    logo: 'cake/TWT',
+    name: 'CAKE TWT v1',
+    token: 'CAKE',
+    tokenDescription: 'Uses: Syrup Pool',
+    tokenAddress: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-twt-with-cake',
+    earnedToken: 'mockCakeTWT',
+    earnedTokenAddress: '0x0Ea57FedA5FEae5E28b2E48F80f79d2826E241dB',
+    earnContractAddress: '0x0Ea57FedA5FEae5E28b2E48F80f79d2826E241dB',
+    defaultApy: '20000.00',
+    pricePerFullShare: 1,
+    pastPricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'coingecko',
+    oracleId: 'trust-wallet-token',
+    oraclePrice: 0,
+    fallbackPrice: 0.08,
+    depositsPaused: false,
+    hpy: 365,
+  },
 
   // {
   //   id: 'cake-inj',
@@ -43,6 +44,7 @@ export const pools = [
   //   oraclePrice: 0,
   //   fallbackPrice: 0.784,
   //   depositsPaused: false,
+  //   hpy: 365,
   // },
 
   // {
@@ -66,6 +68,7 @@ export const pools = [
   //   oraclePrice: 0,
   //   fallbackPrice: 1.4,
   //   depositsPaused: false,
+  //   hpy: 365,
   // },
 
   {
@@ -89,6 +92,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 0.44,
     depositsPaused: false,
+    hpy: 2000,
   },
 
   {
@@ -112,6 +116,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 31,
     depositsPaused: false,
+    hpy: 2000,
   },
 
   {
@@ -135,6 +140,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 1,
     depositsPaused: false,
+    hpy: 2000,
   },
 
   {
@@ -158,6 +164,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 1,
     depositsPaused: false,
+    hpy: 50,
   },
 
   {
@@ -181,6 +188,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 12,
     depositsPaused: false,
+    hpy: 50,
   },
 
   {
@@ -204,6 +212,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 4.27,
     depositsPaused: false,
+    hpy: 50,
   },
 
   {
@@ -227,6 +236,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 1,
     depositsPaused: false,
+    hpy: 50,
   },
 
   {
@@ -250,6 +260,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 1,
     depositsPaused: false,
+    hpy: 50,
   },
 
   {
@@ -273,6 +284,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 414,
     depositsPaused: false,
+    hpy: 50,
   },
 
   {
@@ -296,6 +308,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 12995,
     depositsPaused: false,
+    hpy: 50,
   },
 
   {
@@ -319,6 +332,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 0.44,
     depositsPaused: true,
+    hpy: 50,
   },
 
   {
@@ -342,6 +356,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 31,
     depositsPaused: true,
+    hpy: 50,
   },
 
   {
@@ -365,5 +380,6 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 1,
     depositsPaused: true,
+    hpy: 50,
   },
 ];

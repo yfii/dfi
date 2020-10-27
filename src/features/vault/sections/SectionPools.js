@@ -95,11 +95,11 @@ export default function SectionPools() {
   };
 
   const formatApy = (apy) => {
-    return `${(apy * 100).toFixed(0)}%`;
+    return `${(apy * 100).toFixed(1)}%`;
   }
 
-  const calcDaily = (apy) => {
-    const g = Math.pow(10, Math.log10(apy * 100) / 365) - 1;
+  const calcDaily = (apy, hpy) => {
+    const g = Math.pow(10, Math.log10(apy * 100) / hpy) - 1;
     return `${(g * 100).toFixed(2)}%`;
   }
 
@@ -346,7 +346,7 @@ export default function SectionPools() {
                         <Grid item xs={5} md={2} container justify="center" alignItems="center">
                           <Grid item>
                             <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
-                              {calcDaily(depositedApy)}
+                              {calcDaily(depositedApy, pool.hpy)}
                             </Typography>
                             <Typography className={classes.iconContainerSubTitle} variant="body2">
                               {t('Vault-APYDaily')}
