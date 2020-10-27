@@ -105,7 +105,7 @@ export default function SectionPools() {
   const calcDaily = (apy, hpy) => {
     if (!apy) { return '- %'; }
     
-    const g = Math.pow(10, Math.log10((apy - 1) * 100) / hpy) - 1;
+    const g = (Math.pow(10, Math.log10(apy + 1) / hpy)) - 1;
     if (isNaN(g)) { return '- %'; }
     
     return `${(g * 100).toFixed(2)}%`;
