@@ -333,7 +333,7 @@ export default function SectionPools() {
                                     <Hidden mdDown>
                                         <Grid item xs={4} container justify='center' alignItems="center">
                                             <Grid item style={{width: "200px"}}>
-                                                <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>{forMat(singleDepositedBalance)} { pool.token }</Typography>
+                                                <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>{forMat(singleDepositedBalance)} { pool.earnedToken }</Typography>
                                                 <Typography className={classes.iconContainerSubTitle} variant="body2">{t('Vault-Deposited')}</Typography>
                                             </Grid>
                                         </Grid>
