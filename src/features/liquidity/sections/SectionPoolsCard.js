@@ -204,7 +204,7 @@ export default function SectionPoolsCard(props) {
   }
 
   useEffect(() => {
-    setWithdrawAble(!Boolean(pool.fetchWithdrawPending[tokenIndex]) && (!isEmpty(withdrawAmount[poolIndex])&&withdrawAmount[poolIndex]!=0));
+    setWithdrawAble(!Boolean(pool.fetchWithdrawPending[tokenIndex]));
   }, [poolIndex, tokenIndex, pool.fetchWithdrawPending[tokenIndex], withdrawAmount[poolIndex]]);
 
   // 提取
@@ -218,6 +218,9 @@ export default function SectionPoolsCard(props) {
       })
     }
     let amount = new BigNumber(withdrawAmount[poolIndex]).multipliedBy(new BigNumber(10).exponentiatedBy(getTockenDecimals(pool.earnedToken))).toString(10)
+    if(amount == 'NaN'){
+      amount = '0'
+    }
     fetchWithdraw(amount, poolIndex, tokenIndex, isAll)
   }
 
