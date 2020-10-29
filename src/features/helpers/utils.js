@@ -3,7 +3,7 @@ import { byDecimals } from './bignumber';
 let trimReg = /(^\s*)|(\s*$)/g;
 
 export function isEmpty(key){
-    if (key === undefined || key === '' || key === null){
+    if (key === undefined || key === '' || key === null || Number.isNaN(key)){
         return true;
     }
     if (typeof(key) === 'string') {

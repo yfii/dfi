@@ -131,6 +131,9 @@ export default function SectionPools() {
       })
     }
     let amountValue =  depositedBalance[index]? depositedBalance[index].replace(',',''): depositedBalance[index];
+    if(amountValue == undefined){
+      amountValue = '0';
+    }
     if (!pool.tokenAddress) {// 如果是eth
       fetchDepositEth({
         address,
@@ -440,7 +443,7 @@ export default function SectionPools() {
                                             round
                                             onFocus={(event) => event.stopPropagation()}
                                             disabled={
-                                                !Boolean(depositedBalance[index]) || !Boolean(depositedBalance[index]!=0) || fetchDepositPending[index] || (new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber() || isMoreDepostLimit(new BigNumber(depositedBalance[index]).toNumber(),pool.depostLimit) )
+                                                fetchDepositPending[index] || (new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber() || isMoreDepostLimit(new BigNumber(depositedBalance[index]).toNumber(),pool.depostLimit) )
                                             }
                                             onClick={onDeposit.bind(this, pool, index, false, balanceSingle)}
                                             >{t('Vault-DepositButton')}
