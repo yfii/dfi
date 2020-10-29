@@ -172,6 +172,9 @@ export default function SectionPools() {
       })
     }
     let amountValue =  withdrawAmount[index]? withdrawAmount[index].replace(',',''): withdrawAmount[index];
+    if(amountValue == undefined){
+      amountValue = '0';
+    }
     if (!pool.tokenAddress) {// 如果是eth
       fetchWithdrawEth({
         address,
@@ -505,7 +508,7 @@ export default function SectionPools() {
                                 round
                                 type="button"
                                 color="primary"
-                                disabled={fetchWithdrawPending[index] || !Boolean(withdrawAmount[index])  || !Boolean(withdrawAmount[index]!=0)}
+                                disabled={fetchWithdrawPending[index]}
                                 onClick={onWithdraw.bind(this, pool, index, false, singleDepositedBalance)}
                                 >
                                 {fetchWithdrawPending[index] ? `${t('Vault-WithdrawING')}`: `${t('Vault-WithdrawButton')}`}
