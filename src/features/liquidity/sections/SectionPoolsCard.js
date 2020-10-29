@@ -183,7 +183,7 @@ export default function SectionPoolsCard(props) {
   };
 
   useEffect(() => {
-    setDepositAble(!Boolean(pool.fetchDepositPending[tokenIndex]) && (!isEmpty(depositedBalance[poolIndex])&&depositedBalance[poolIndex]!=0));
+    setDepositAble(!Boolean(pool.fetchDepositPending[tokenIndex]));
   }, [poolIndex, tokenIndex, pool.fetchDepositPending[tokenIndex], depositedBalance[poolIndex]]);
   
   // 存入
@@ -197,6 +197,9 @@ export default function SectionPoolsCard(props) {
       })
     }
     let amount = new BigNumber(depositedBalance[poolIndex]).multipliedBy(new BigNumber(10).exponentiatedBy(getTockenDecimals(selectedTokenInfo.name))).toString(10)
+    if(amount == 'NaN'){
+      amount = '0'
+    }
     fetchDeposit(amount, poolIndex, tokenIndex, isAll)
   }
 
