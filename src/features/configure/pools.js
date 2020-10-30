@@ -44,7 +44,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 0.45,
     depositsPaused: false,
-    hpy: 365,
+    hpy: 1000,
   },
 
   {
@@ -68,7 +68,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 0.45,
     depositsPaused: false,
-    hpy: 365,
+    hpy: 1000,
   },
 
   {
@@ -92,7 +92,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 0.45,
     depositsPaused: false,
-    hpy: 365,
+    hpy: 1000,
   },
 
   {
