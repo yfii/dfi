@@ -9,8 +9,8 @@ export const pools = [
     tokenDecimals: 18,
     tokenDescriptionUrl: 'https://thugs.fi/',
     earnedToken: 'mooThugsGuns',
-    earnedTokenAddress: '0x214e640c638fbe68Fb24e11BfBd8Cd7d6cb8E37b',
-    earnContractAddress: '0x214e640c638fbe68Fb24e11BfBd8Cd7d6cb8E37b',
+    earnedTokenAddress: '0x49263a1Ba199602a8Ef327B34a1AAe11a5FccaAf',
+    earnContractAddress: '0x49263a1Ba199602a8Ef327B34a1AAe11a5FccaAf',
     defaultApy: '20000.00',
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
@@ -20,7 +20,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 0.11,
     depositsPaused: false,
-    hpy: 365,
+    hpy: 1000,
   },
 
   {
