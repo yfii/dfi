@@ -7,7 +7,7 @@ export const pools = [
     tokenDescription: 'Uses: Hoes Pool',
     tokenAddress: '0xfD26889cd6454D8751562f1c0FcF88b18B46F7B7',
     tokenDecimals: 18,
-    tokenDescriptionUrl: 'https://thugs.fi/',
+    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/thugs#farming-guns-with-drugs',
     earnedToken: 'mooThugsGuns',
     earnedTokenAddress: '0x49263a1Ba199602a8Ef327B34a1AAe11a5FccaAf',
     earnContractAddress: '0x49263a1Ba199602a8Ef327B34a1AAe11a5FccaAf',
