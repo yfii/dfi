@@ -21,6 +21,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 0.11,
     depositsPaused: false,
+    status: 'active',
   },
 
   {
@@ -45,6 +46,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 0.45,
     depositsPaused: false,
+    status: 'active',
   },
 
   {
@@ -69,6 +71,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 0.45,
     depositsPaused: false,
+    status: 'active',
   },
 
   {
@@ -93,6 +96,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 0.45,
     depositsPaused: false,
+    status: 'active',
   },
 
   {
@@ -117,6 +121,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 0.44,
     depositsPaused: false,
+    status: 'active',
   },
 
   {
@@ -140,7 +145,8 @@ export const pools = [
     oracleId: 'BNB/USD',
     oraclePrice: 0,
     fallbackPrice: 31,
-    depositsPaused: false,
+    depositsPaused: true,
+    status: 'eol',
   },
 
   {
@@ -164,7 +170,8 @@ export const pools = [
     oracleId: 'BUSD/USD',
     oraclePrice: 0,
     fallbackPrice: 1,
-    depositsPaused: false,
+    depositsPaused: true,
+    status: 'eol',
   },
 
   {
@@ -189,6 +196,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 1,
     depositsPaused: false,
+    status: 'active',
   },
 
   {
@@ -213,6 +221,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 12,
     depositsPaused: false,
+    status: 'active',
   },
 
   {
@@ -237,6 +246,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 4.27,
     depositsPaused: false,
+    status: 'active',
   },
 
   {
@@ -261,6 +271,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 1,
     depositsPaused: false,
+    status: 'active',
   },
 
   {
@@ -285,6 +296,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 1,
     depositsPaused: false,
+    status: 'active',
   },
 
   {
@@ -309,6 +321,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 414,
     depositsPaused: false,
+    status: 'active',
   },
 
   {
@@ -333,6 +346,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 12995,
     depositsPaused: false,
+    status: 'active',
   },
 
   {
@@ -357,6 +371,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 0.44,
     depositsPaused: true,
+    status: 'eol',
   },
 
   {
@@ -381,6 +396,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 31,
     depositsPaused: true,
+    status: 'eol',
   },
 
   {
@@ -405,5 +421,6 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 1,
     depositsPaused: true,
+    status: 'eol',
   },
 ];
