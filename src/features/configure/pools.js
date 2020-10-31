@@ -21,7 +21,6 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 0.11,
     depositsPaused: false,
-    hpy: 1000,
   },
 
   {
@@ -46,7 +45,6 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 0.45,
     depositsPaused: false,
-    hpy: 1000,
   },
 
   {
@@ -71,7 +69,6 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 0.45,
     depositsPaused: false,
-    hpy: 1000,
   },
 
   {
@@ -96,7 +93,6 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 0.45,
     depositsPaused: false,
-    hpy: 1000,
   },
 
   {
@@ -121,7 +117,6 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 0.44,
     depositsPaused: false,
-    hpy: 1000,
   },
 
   {
@@ -146,7 +141,6 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 31,
     depositsPaused: false,
-    hpy: 1000,
   },
 
   {
@@ -171,7 +165,6 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 1,
     depositsPaused: false,
-    hpy: 1000,
   },
 
   {
@@ -196,7 +189,6 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 1,
     depositsPaused: false,
-    hpy: 50,
   },
 
   {
@@ -221,7 +213,6 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 12,
     depositsPaused: false,
-    hpy: 50,
   },
 
   {
@@ -246,7 +237,6 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 4.27,
     depositsPaused: false,
-    hpy: 50,
   },
 
   {
@@ -271,7 +261,6 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 1,
     depositsPaused: false,
-    hpy: 50,
   },
 
   {
@@ -296,7 +285,6 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 1,
     depositsPaused: false,
-    hpy: 50,
   },
 
   {
@@ -321,7 +309,6 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 414,
     depositsPaused: false,
-    hpy: 50,
   },
 
   {
@@ -346,7 +333,6 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 12995,
     depositsPaused: false,
-    hpy: 50,
   },
 
   {
@@ -371,7 +357,6 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 0.44,
     depositsPaused: true,
-    hpy: 1000,
   },
 
   {
@@ -396,7 +381,6 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 31,
     depositsPaused: true,
-    hpy: 1000,
   },
 
   {
@@ -421,6 +405,5 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 1,
     depositsPaused: true,
-    hpy: 1000,
   },
 ];
