@@ -21,6 +21,7 @@ import style from "assets/jss/material-kit-pro-react/modalStyle.js";
 import SectionPools from "features/vault/sections/SectionPools.js";
 import StakePage from 'features/stake/sections/StakePools.js';
 import FarmPools from 'features/farm/sections/FarmPools';
+import LiquidityPage from 'features/liquidity/LiquidityPage.js'
 // style for this page
 // resource file
 // hooks
@@ -43,6 +44,7 @@ export default function HomePage() {
   
   return (
     <>
+      <LiquidityPage/>
       <SnackbarContent
         message={
             <span onClick={() => window.open(t('Home-SnackBarUrl'))} style={{fontWeight: "bold"}}>
