@@ -173,8 +173,8 @@ export const pools = [
   //   defaultApy: "42.63",
   //   pricePerFullShare: 1,
   //   pastPricePerFullShare: 1
-  // }
-  ,{
+  // },
+  {
     id: 'ycrv',
     name: 'yCRV',  
     token: 'yCRV',
