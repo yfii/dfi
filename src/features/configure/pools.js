@@ -156,24 +156,24 @@ export const pools = [
     pricePerFullShare: 1,
     pastPricePerFullShare: 1
   },
-  {
-    id: 'tusd',
-    name: 'TUSD',  
-    token: 'TUSD',
-    tokenDescription: 'TUSD',
-    tokenAddress: '0x0000000000085d4780B73119b644AE5ecd22b376',
-    tokenDecimals: 18,
-    itokenDecimals: 18,
-    depostLimit:0,
-    tokenDescriptionUrl: '',
-    tokenDescriptionUrl2: '',
-    earnedToken: 'iTUSD',
-    earnedTokenAddress: '0x4243f5C8683089b65a9F588B1AE578d5D84bFBC9',
-    earnContractAddress: '0x4243f5C8683089b65a9F588B1AE578d5D84bFBC9',
-    defaultApy: "42.63",
-    pricePerFullShare: 1,
-    pastPricePerFullShare: 1
-  }
+  // {
+  //   id: 'tusd',
+  //   name: 'TUSD',  
+  //   token: 'TUSD',
+  //   tokenDescription: 'TUSD',
+  //   tokenAddress: '0x0000000000085d4780B73119b644AE5ecd22b376',
+  //   tokenDecimals: 18,
+  //   itokenDecimals: 18,
+  //   depostLimit:0,
+  //   tokenDescriptionUrl: '',
+  //   tokenDescriptionUrl2: '',
+  //   earnedToken: 'iTUSD',
+  //   earnedTokenAddress: '0x4243f5C8683089b65a9F588B1AE578d5D84bFBC9',
+  //   earnContractAddress: '0x4243f5C8683089b65a9F588B1AE578d5D84bFBC9',
+  //   defaultApy: "42.63",
+  //   pricePerFullShare: 1,
+  //   pastPricePerFullShare: 1
+  // }
   ,{
     id: 'ycrv',
     name: 'yCRV',  
