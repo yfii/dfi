@@ -20,7 +20,7 @@ export const pools = [
     oracleId: 'DRUGS',
     oraclePrice: 0,
     fallbackPrice: 0.11,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
   },
 
