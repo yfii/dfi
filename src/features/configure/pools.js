@@ -45,7 +45,7 @@ export const pools = [
     oracleId: 'pancakeswap-token',
     oraclePrice: 0,
     fallbackPrice: 0.45,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
   },
 
@@ -70,7 +70,7 @@ export const pools = [
     oracleId: 'pancakeswap-token',
     oraclePrice: 0,
     fallbackPrice: 0.45,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
   },
 
@@ -95,7 +95,7 @@ export const pools = [
     oracleId: 'pancakeswap-token',
     oraclePrice: 0,
     fallbackPrice: 0.45,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
   },
 
