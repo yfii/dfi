@@ -3,6 +3,7 @@ const customCarouselStyle = {
     borderRadius: "6px",
     overflow: "hidden",
     backgroundColor: "#42475A",
+    marginBottom: "30px",
   },
   slider: {
     width: "100%",
