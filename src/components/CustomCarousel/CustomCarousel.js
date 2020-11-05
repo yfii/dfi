@@ -9,6 +9,7 @@ import ElementResizeDetector from "element-resize-detector";
 import ImgWePiggy from "assets/img/carousel/wepiggy.jpg";
 import ImgSFinance from "assets/img/carousel/sfinance.jpg";
 import ImgSakeSwap from "assets/img/carousel/sakeswap.jpg";
+import ImgQian from "assets/img/carousel/qian.png";
 
 import styles from "assets/jss/material-kit-pro-react/components/customCarouselStyle.js";
 
@@ -147,6 +148,16 @@ function CustomCarousel(props) {
             rel="nofollow noopener noreferrer"
           >
             <img src={ImgSFinance} alt="slider" width={width} height={height} />
+          </a>
+        </div>
+        <div>
+          <a
+            className={classes.link}
+            href="https://qian.finance/"
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+          >
+            <img src={ImgQian} alt="slider" width={width} height={height} />
           </a>
         </div>
       </Slider>
