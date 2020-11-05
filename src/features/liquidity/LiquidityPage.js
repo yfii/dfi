@@ -31,7 +31,7 @@ export default function LiquidityPage() {
         color="success"
       />
       <CustomCarousel />
-      <SectionTitle />
+      {/* <SectionTitle /> */}
       <SectionPools />
     </>
   );

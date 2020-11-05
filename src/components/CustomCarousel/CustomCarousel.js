@@ -34,25 +34,22 @@ function useResize() {
     left: 0,
   });
 
-  React.useEffect(() => {
-    // console.log('Mount');
-    return () => {
-      // console.log('unMount');
-      const uninstall = reSizer.current.uninstall;
-      if (uninstall && refDom.current) {
-        uninstall(refDom.current);
+  React.useEffect(
+    () => () => {
+      if (reSizer.current && reSizer.current.uninstall && refDom.current) {
+        reSizer.current.uninstall(refDom.current);
       }
 
       refDom.current = undefined;
       reSizer.current = undefined;
-    };
-  }, []);
+    },
+    []
+  );
 
   const ref = React.useCallback((dom) => {
-    const listenTo = reSizer.current.listenTo;
-    if (dom && listenTo) {
+    if (reSizer.current && reSizer.current.listenTo && !refDom.current && dom) {
       refDom.current = dom;
-      listenTo(refDom.current, (element) =>
+      reSizer.current.listenTo(refDom.current, (element) =>
         setRect(element.getBoundingClientRect())
       );
     }
