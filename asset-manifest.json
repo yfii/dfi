@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/static/css/main.6a264358.chunk.css",
-    "main.js": "/static/js/main.28e8d0d4.chunk.js",
-    "main.js.map": "/static/js/main.28e8d0d4.chunk.js.map",
+    "main.js": "/static/js/main.7cbd2290.chunk.js",
+    "main.js.map": "/static/js/main.7cbd2290.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.3a710a54.js",
     "runtime-main.js.map": "/static/js/runtime-main.3a710a54.js.map",
-    "static/js/2.1661e229.chunk.js": "/static/js/2.1661e229.chunk.js",
-    "static/js/2.1661e229.chunk.js.map": "/static/js/2.1661e229.chunk.js.map",
+    "static/js/2.f5461d46.chunk.js": "/static/js/2.f5461d46.chunk.js",
+    "static/js/2.f5461d46.chunk.js.map": "/static/js/2.f5461d46.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.9ba0dd5d34246f6b6f73c6ab1703805d.js": "/precache-manifest.9ba0dd5d34246f6b6f73c6ab1703805d.js",
+    "precache-manifest.80fa498019d8a49a2c1a26cef40b7543.js": "/precache-manifest.80fa498019d8a49a2c1a26cef40b7543.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.6a264358.chunk.css.map": "/static/css/main.6a264358.chunk.css.map",
-    "static/js/2.1661e229.chunk.js.LICENSE.txt": "/static/js/2.1661e229.chunk.js.LICENSE.txt",
-    "static/js/main.28e8d0d4.chunk.js.LICENSE.txt": "/static/js/main.28e8d0d4.chunk.js.LICENSE.txt",
+    "static/js/2.f5461d46.chunk.js.LICENSE.txt": "/static/js/2.f5461d46.chunk.js.LICENSE.txt",
+    "static/js/main.7cbd2290.chunk.js.LICENSE.txt": "/static/js/main.7cbd2290.chunk.js.LICENSE.txt",
     "static/media/BAT-logo.png": "/static/media/BAT-logo.a36574cc.png",
     "static/media/BUSD-logo.png": "/static/media/BUSD-logo.d569caee.png",
     "static/media/COMP-logo.png": "/static/media/COMP-logo.79b64ccb.png",
@@ -44,11 +44,14 @@
     "static/media/iDAI-logo.png": "/static/media/iDAI-logo.f26d381d.png",
     "static/media/pool4-logo.png": "/static/media/pool4-logo.290fda47.png",
     "static/media/pool5-logo.png": "/static/media/pool5-logo.290fda47.png",
+    "static/media/sakeswap.jpg": "/static/media/sakeswap.e6e9c7fd.jpg",
+    "static/media/sfinance.jpg": "/static/media/sfinance.f1e7f914.jpg",
     "static/media/stake-head-right.png": "/static/media/stake-head-right.62b1dd34.png",
     "static/media/stake-hint.svg": "/static/media/stake-hint.45c1dac6.svg",
     "static/media/usdt.curve.fi-logo.png": "/static/media/usdt.curve.fi-logo.beabd522.png",
     "static/media/wBTC-logo.png": "/static/media/wBTC-logo.5c1a712d.png",
     "static/media/wechat.png": "/static/media/wechat.6bf53c40.png",
+    "static/media/wepiggy.jpg": "/static/media/wepiggy.613ea5c2.jpg",
     "static/media/y.curve.fi-logo.png": "/static/media/y.curve.fi-logo.beabd522.png",
     "static/media/yCRV-logo.png": "/static/media/yCRV-logo.beabd522.png",
     "static/media/ycUSDC-logo.png": "/static/media/ycUSDC-logo.70f5a503.png",
@@ -57,8 +60,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.3a710a54.js",
-    "static/js/2.1661e229.chunk.js",
+    "static/js/2.f5461d46.chunk.js",
     "static/css/main.6a264358.chunk.css",
-    "static/js/main.28e8d0d4.chunk.js"
+    "static/js/main.7cbd2290.chunk.js"
   ]
 }
