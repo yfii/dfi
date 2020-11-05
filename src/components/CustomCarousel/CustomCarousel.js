@@ -51,7 +51,6 @@ function useResize() {
   const ref = React.useCallback((dom) => {
     const listenTo = reSizer.current.listenTo;
     if (dom && listenTo) {
-      console.log("0000", dom);
       refDom.current = dom;
       listenTo(refDom.current, (element) =>
         setRect(element.getBoundingClientRect())
@@ -68,7 +67,6 @@ function CustomCarousel(props) {
   const classes = useStyles();
 
   const [ref, rect] = useResize();
-  console.log(rect);
 
   const { width } = rect;
   const height = width / (1200 / 300);
