@@ -11,7 +11,7 @@ export const pools = [
     earnedToken: 'mooCake',
     earnedTokenAddress: '0x9f221134C301189AB7248Dd4fDF7757b8D3A39cB',
     earnContractAddress: '0x9f221134C301189AB7248Dd4fDF7757b8D3A39cB',
-    defaultApy: '15.00',
+    defaultApy: '300.00',
     unstableApy: true,
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
