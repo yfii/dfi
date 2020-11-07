@@ -325,7 +325,7 @@ export const pools = [
   },
   
   {
-    id: 'drugs-guns',
+    id: 'thugs-drugs-guns',
     logo: 'thugs/GUNS',
     name: 'DRUGS GUNS v1',
     token: 'DRUGS',

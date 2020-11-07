@@ -3,7 +3,8 @@ import BandChain from '@bandprotocol/bandchain.js';
 
 const endpoints = {
   bandchain: 'https://poa-api.bandchain.org',
-  pancake:   'https://beefy-api.herokuapp.com/proxy/pancake',
+  pancake:   'https://beefy-api.herokuapp.com/pancake/price',
+  pancakeLp: 'https://beefy-api.herokuapp.com/pancake/lps',
   coingecko: 'https://api.coingecko.com/api/v3/simple/price',
 };
 
@@ -33,9 +34,8 @@ const fetchPancake = async (id) => {
 const fetchPancakeLP = async (id) => {
   try {
     // TODO: add client-side cache
-    const [lp0, lp1] = id.split('-');
-    const response = await axios.get(endpoints.pancake);
-    return response.data.prices[lp0] * 0.5 + response.data.prices[lp1] * 0.5;
+    const response = await axios.get(endpoints.pancakeLp);
+    return response.data.prices[id];
   } catch (err) {
     console.error(err);
     return 0;
