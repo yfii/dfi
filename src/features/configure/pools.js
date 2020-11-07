@@ -150,7 +150,7 @@ export const pools = [
   },
 
   {
-    id: 'link',
+    id: 'fortube-link',
     logo: 'fortube/LINK',
     name: 'ChainLink',
     token: 'LINK',
@@ -175,7 +175,7 @@ export const pools = [
   },
 
   {
-    id: 'dot',
+    id: 'fortube-dot',
     logo: 'fortube/DOT',
     name: 'DOT',
     token: 'DOT',
@@ -200,7 +200,7 @@ export const pools = [
   },
 
   {
-    id: 'dai',
+    id: 'fortube-dai',
     logo: 'fortube/DAI',
     name: 'DAI',
     token: 'DAI',
@@ -225,7 +225,7 @@ export const pools = [
   },
 
   {
-    id: 'usdt',
+    id: 'fortube-usdt',
     logo: 'fortube/USDT',
     name: 'USDT',
     token: 'USDT',
@@ -250,7 +250,7 @@ export const pools = [
   },
 
   {
-    id: 'eth',
+    id: 'fortube-eth',
     logo: 'fortube/ETH',
     name: 'ETH',
     token: 'ETH',
@@ -275,7 +275,7 @@ export const pools = [
   },
 
   {
-    id: 'btcb',
+    id: 'fortube-btcb',
     logo: 'fortube/BTCB',
     name: 'BTCB',
     token: 'BTCB',
@@ -350,7 +350,7 @@ export const pools = [
   },
 
   {
-    id: 'cake-twt',
+    id: 'cake-syrup-twt',
     logo: 'cake/TWT',
     name: 'CAKE TWT v1',
     token: 'CAKE',
@@ -375,7 +375,7 @@ export const pools = [
   },
 
   {
-    id: 'cake-inj',
+    id: 'cake-syrup-inj',
     logo: 'cake/INJ',
     name: 'CAKE INJ v1',
     token: 'CAKE',
@@ -400,7 +400,7 @@ export const pools = [
   },
 
   {
-    id: 'cake-ctk',
+    id: 'cake-syrup-ctk',
     logo: 'cake/CTK',
     name: 'CAKE CTK v1',
     token: 'CAKE',
