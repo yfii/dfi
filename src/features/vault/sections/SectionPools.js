@@ -53,11 +53,14 @@ export default function SectionPools() {
     if (!inputLimitPass(value, tokenDecimals)) {
       return;
     }
+
     let sliderNum = 0;
-    let inputVal = Number(value.replace(',', ''));
+    let inputVal = 0;
     if (value) {
+      inputVal = Number(value.replace(',', ''));
       sliderNum = byDecimals(inputVal / total, 0).toFormat(2) * 100;
     }
+
     switch (type) {
       case 'depositedBalance':
         setDepositedBalance({
