@@ -12,7 +12,6 @@ import FormControl from '@material-ui/core/FormControl';
 import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
-import Popover from '@material-ui/core/Popover';
 import Typography from '@material-ui/core/Typography';
 import CustomOutlinedInput from 'components/CustomOutlinedInput/CustomOutlinedInput';
 import { primaryColor } from 'assets/jss/material-kit-pro-react.js';

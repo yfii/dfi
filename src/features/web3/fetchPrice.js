@@ -35,7 +35,7 @@ const fetchPancakeLP = async (id) => {
   try {
     // TODO: add client-side cache
     const response = await axios.get(endpoints.pancakeLp);
-    return response.data.prices[id];
+    return response.data[id];
   } catch (err) {
     console.error(err);
     return 0;
