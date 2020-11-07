@@ -97,15 +97,12 @@ export default function SectionPools() {
   };
 
   const formatApy = (apy, fallbackApy) => {
-    if (apy) {
-      return `${(apy * 100).toFixed(1)}%`;
-    } else {
-      return `~${fallbackApy} %`;
-    }
+    if (!apy) { apy = fallbackApy; }
+    return `${(apy * 100).toFixed(1)}%`;
   }
 
-  const calcDaily = (apy) => {
-    if (!apy) { return '- %'; }
+  const calcDaily = (apy, fallbackApy) => {
+    if (!apy) { apy = fallbackApy; }
 
     const g = (Math.pow(10, Math.log10(apy + 1) / 365)) - 1;
     if (isNaN(g)) { return '- %'; }
@@ -356,7 +353,7 @@ export default function SectionPools() {
                         <Grid item xs={5} md={2} container justify="center" alignItems="center">
                           <Grid item>
                             <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
-                              {pool.unstableApy ? '??? %' : calcDaily(depositedApy)}
+                              {pool.unstableApy ? '??? %' : calcDaily(depositedApy, pool.defaultApy)}
                             </Typography>
                             <Typography className={classes.iconContainerSubTitle} variant="body2">
                               {t('Vault-APYDaily')}
