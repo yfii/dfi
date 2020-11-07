@@ -125,7 +125,7 @@ export const pools = [
   },
   
   {
-    id: 'busd',
+    id: 'fortube-busd',
     logo: 'fortube/BUSD',
     name: 'BUSD',
     token: 'BUSD',
