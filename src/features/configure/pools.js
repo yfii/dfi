@@ -50,7 +50,7 @@ export const pools = [
   },
 
   {
-    id: 'cake-bnb-busd',
+    id: 'cake-busd-bnb',
     logo: 'cake/BUSD-BNB',
     name: 'BUSD-BNB LP',
     token: 'BUSD-BNB LP',
@@ -100,7 +100,7 @@ export const pools = [
   },
 
   {
-    id: 'cake-bnb-btcb',
+    id: 'cake-btcb-bnb',
     logo: 'cake/BTCB-BNB',
     name: 'BTCB-BNB LP',
     token: 'BTCB-BNB LP',
