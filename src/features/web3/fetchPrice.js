@@ -9,6 +9,7 @@ const endpoints = {
 
 const fetchBand = async (id) => {
   try {
+    // TODO: add client-side cache
     const bandchain = new BandChain(endpoints.bandchain);
     const price = await bandchain.getReferenceData([id]);
     return price[0].rate;
@@ -20,8 +21,21 @@ const fetchBand = async (id) => {
 
 const fetchPancake = async (id) => {
   try {
+    // TODO: add client-side cache 
     const response = await axios.get(endpoints.pancake);
     return response.data.prices[id];
+  } catch (err) {
+    console.error(err);
+    return 0;
+  }
+};
+
+const fetchPancakeLP = async (id) => {
+  try {
+    // TODO: add client-side cache
+    const [lp0, lp1] = id.split('-');
+    const response = await axios.get(endpoints.pancake);
+    return response.data.prices[lp0] * 0.5 + response.data.prices[lp1] * 0.5;
   } catch (err) {
     console.error(err);
     return 0;
@@ -45,9 +59,10 @@ export const fetchPrice = async ({ oracle, id }) => {
   if (id === undefined) { console.error('Undefined pair'); return 0; }
 
   switch(oracle) {
-    case 'band':      return await fetchBand(id);
-    case 'pancake':   return await fetchPancake(id);
-    case 'coingecko': return await fetchCoingecko(id);
+    case 'band':       return await fetchBand(id);
+    case 'pancake':    return await fetchPancake(id);
+    case 'pancake-lp': return await fetchPancakeLP(id);
+    case 'coingecko':  return await fetchCoingecko(id);
     default: console.error('Unknown oracle:', oracle);
   }
 };
