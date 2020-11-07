@@ -318,7 +318,7 @@ export default function SectionPools() {
                           <Grid item xs={4} md={3} container justify="center" alignItems="center">
                             <Grid item style={{ width: '200px' }}>
                               <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
-                                {format(balanceSingle)} {pool.token}
+                                {format(balanceSingle)}
                               </Typography>
                               <Typography className={classes.iconContainerSubTitle} variant="body2">
                                 {t('Vault-Balance')}
