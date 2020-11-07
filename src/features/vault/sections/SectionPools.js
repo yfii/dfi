@@ -96,11 +96,11 @@ export default function SectionPools() {
     return prefix + num.toFixed(2) + units[order];
   };
 
-  const formatApy = (apy) => {
+  const formatApy = (apy, fallbackApy) => {
     if (apy) {
       return `${(apy * 100).toFixed(1)}%`;
     } else {
-      return '- %';
+      return `~${fallbackApy} %`;
     }
   }
 
@@ -345,7 +345,7 @@ export default function SectionPools() {
                         <Grid item xs={5} md={2} container justify="center" alignItems="center">
                           <Grid item>
                             <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
-                              {pool.unstableApy ? '??? %' : formatApy(depositedApy)}
+                              {pool.unstableApy ? '??? %' : formatApy(depositedApy, pool.defaultApy)}
                             </Typography>
                             <Typography className={classes.iconContainerSubTitle} variant="body2">
                               {t('Vault-APY')}
