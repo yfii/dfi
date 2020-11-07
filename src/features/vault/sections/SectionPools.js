@@ -464,7 +464,7 @@ export default function SectionPools() {
                     </Grid>
                     <Grid item xs={12} sm={6} className={classes.sliderDetailContainer}>
                       <div className={classes.showDetailLeft}>
-                        {singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)).toFormat(4)} {pool.token} ({singleDepositedBalance.toFormat(4)} {pool.earnedToken})
+                        {singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)).toFormat(4)} {pool.token} ({singleDepositedBalance.toFormat(4)} shares)
                       </div>
                       <FormControl fullWidth variant="outlined">
                         <CustomOutlinedInput
