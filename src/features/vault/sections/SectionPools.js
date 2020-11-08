@@ -248,10 +248,6 @@ export default function SectionPools() {
     fetchContractApy();
   }, [pools, fetchContractApy]);
 
-  useEffect(() => {
-    fetchContractApy();
-  }, [pools, fetchContractApy]);
-
   return (
     <Grid container style={{ paddingTop: '4px' }}>
       <Grid item xs={12}>
