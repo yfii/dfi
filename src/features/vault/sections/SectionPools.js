@@ -97,14 +97,14 @@ export default function SectionPools() {
   };
 
   const formatApy = (id, apy, fallbackApy) => {
-    // console.log('>>>>>>>>', id, apy, fallbackApy);
-
-    if (!apy) { apy = fallbackApy; }
+    // if (!apy) { apy = fallbackApy; }
+    apy = fallbackApy;
     return `${(apy * 100).toFixed(1)}%`;
   }
 
   const calcDaily = (apy, fallbackApy) => {
-    if (!apy) { apy = fallbackApy; }
+    // if (!apy) { apy = fallbackApy; }
+    apy = fallbackApy;
 
     const g = (Math.pow(10, Math.log10(apy + 1) / 365)) - 1;
     if (isNaN(g)) { return '- %'; }
