@@ -236,11 +236,7 @@ export const pools = [
     earnedToken: 'mooForFIL',
     earnedTokenAddress: '0x5Bea18aBa4825bbE6450c280fBE8c22B1489cDd4',
     earnContractAddress: '0x5Bea18aBa4825bbE6450c280fBE8c22B1489cDd4',
-<<<<<<< HEAD
-    defaultApy: 3.8632,
-=======
     defaultApy: 0.20998,
->>>>>>> prod
     unstableApy: false,
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
