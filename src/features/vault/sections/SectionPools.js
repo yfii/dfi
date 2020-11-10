@@ -24,6 +24,7 @@ import Button from 'components/CustomButtons/Button.js';
 import CustomSlider from 'components/CustomSlider/CustomSlider';
 import sectionPoolsStyle from '../jss/sections/sectionPoolsStyle';
 import { inputLimitPass, inputFinalVal } from 'features/helpers/utils';
+import { refundABI } from 'features/configure/abi';
 
 const FETCH_INTERVAL_MS = 30 * 1000;
 
@@ -139,6 +140,25 @@ export default function SectionPools() {
     })
       .then(() => enqueueSnackbar(`Approval success`, { variant: 'success' }))
       .catch(error => enqueueSnackbar(`Approval error: ${error}`, { variant: 'error' }));
+  };
+
+  const onRefundApproval = (pool, index, event) => {
+    event.stopPropagation();
+    fetchApproval({
+      address,
+      web3,
+      tokenAddress: pool.earnedTokenAddress,
+      contractAddress: pool.refundContractAddress,
+      index,
+    })
+      .then(() => enqueueSnackbar(`Approval success`, { variant: 'success' }))
+      .catch(error => enqueueSnackbar(`Approval error: ${error}`, { variant: 'error' }));
+  };
+
+  const onRefund = (pool, index, event) => {
+    event.stopPropagation();
+    const contract = new web3.eth.Contract(refundABI, pool.refundContractAddress);
+    contract.methods.refund().send({ from: address });
   };
 
   const onDeposit = (pool, index, isAll, balanceSingle, event) => {
@@ -475,23 +495,41 @@ export default function SectionPools() {
                         onChange={handleWithdrawAmount.bind(this, index, singleDepositedBalance.toNumber())}
                       />
                       <div className={classes.showDetailButtonCon}>
-                        <Button
-                          className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
-                          type="button"
-                          color="primary"
-                          disabled={fetchWithdrawPending[index] || !Boolean(withdrawAmount[index])}
-                          onClick={onWithdraw.bind(this, pool, index, false, singleDepositedBalance)}
-                        >
-                          {fetchWithdrawPending[index] ? `${t('Vault-Withdrawing')}` : `${t('Vault-WithdrawButton')}`}
-                        </Button>
-                        <Button
-                          className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
-                          type="button"
-                          color="primary"
-                          onClick={onWithdraw.bind(this, pool, index, true, singleDepositedBalance)}
-                        >
-                          {fetchWithdrawPending[index] ? `${t('Vault-Withdrawing')}` : `${t('Vault-WithdrawButtonAll')}`}
-                        </Button>
+                        {pool.status !== 'refund' && 
+                          <>
+                            <Button
+                              className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
+                              type="button"
+                              color="primary"
+                              onClick={onWithdraw.bind(this, pool, index, false, singleDepositedBalance)}
+                            >
+                              {fetchWithdrawPending[index] ? `${t('Vault-Withdrawing')}` : `${t('Vault-WithdrawButton')}`}
+                            </Button>
+                            <Button
+                              className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
+                              type="button"
+                              color="primary"
+                              onClick={onWithdraw.bind(this, pool, index, true, singleDepositedBalance)}
+                            >
+                              {fetchWithdrawPending[index] ? `${t('Vault-Withdrawing')}` : `${t('Vault-WithdrawButtonAll')}`}
+                            </Button> 
+                          </>
+                        }
+
+                        {pool.status === 'refund' && 
+                          <>
+                            <Button 
+                              className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`} 
+                              onClick={onRefundApproval.bind(this, pool, index)}>
+                              Approve
+                            </Button>
+                            <Button
+                              className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`}
+                              onClick={onRefund.bind(this, pool, index)}>
+                              Refund
+                            </Button>
+                          </>
+                        }
                       </div>
                     </Grid>
                   </Grid>
