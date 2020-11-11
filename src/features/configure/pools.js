@@ -550,7 +550,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 0.45,
     depositsPaused: true,
-    status: 'active',
+    status: 'refund',
     refundContractAddress: '0xc3EC78dc85D20D2CC0808C5a32B5556C7DD2d282',
   },
 
