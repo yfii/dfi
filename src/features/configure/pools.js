@@ -525,7 +525,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'refund',
     refundContractAddress: '0x2fd5caAB20191dcd4423F588e254CC298C7F66A1',
   },
 
@@ -575,7 +575,7 @@ export const pools = [
     oraclePrice: 0,
     fallbackPrice: 0.45,
     depositsPaused: true,
-    status: 'active',
+    status: 'refund',
     refundContractAddress: '0x76A65f4C9a404561b88C43b4Aaf13258Aa1F1f26',
   },
 
