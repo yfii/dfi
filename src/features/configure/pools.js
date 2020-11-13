@@ -592,7 +592,7 @@ export const pools = [
     earnedTokenAddress: '0x9412EFED190138044B3b5444eEF87A16dcC4BE43',
     earnContractAddress: '0x9412EFED190138044B3b5444eEF87A16dcC4BE43',
     defaultApy: '25.00',
-    unstableApy: false,
+    unstableApy: true,
     pricePerFullShare: 1,
     pastPricePerFullShare: 1,
     tvl: 0,
