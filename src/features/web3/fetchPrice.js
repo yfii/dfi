@@ -8,9 +8,26 @@ const endpoints = {
   coingecko: 'https://api.coingecko.com/api/v3/simple/price',
 };
 
+const CACHE_TIMEOUT = 30 * 60 * 1000;
+const cache = {};
+
+function isCached({oracle, id}) {
+  if (`${oracle}-${id}` in cache) {
+    return cache[`${oracle}-${id}`].t + CACHE_TIMEOUT > Date.now();
+  }
+  return false;
+}
+
+function getCachedPrice({oracle, id}) {
+  return cache[`${oracle}-${id}`].price;
+}
+
+function addToCache({oracle, id, price}) {
+  cache[`${oracle}-${id}`] = {price: price, t: Date.now()};
+}
+
 const fetchBand = async (id) => {
   try {
-    // TODO: add client-side cache
     const bandchain = new BandChain(endpoints.bandchain);
     const price = await bandchain.getReferenceData([id]);
     return price[0].rate;
@@ -22,7 +39,6 @@ const fetchBand = async (id) => {
 
 const fetchPancake = async (id) => {
   try {
-    // TODO: add client-side cache 
     const response = await axios.get(endpoints.pancake);
     return response.data.prices[id];
   } catch (err) {
@@ -33,7 +49,6 @@ const fetchPancake = async (id) => {
 
 const fetchPancakeLP = async (id) => {
   try {
-    // TODO: add client-side cache
     const response = await axios.get(endpoints.pancakeLp);
     return response.data[id];
   } catch (err) {
@@ -58,11 +73,19 @@ export const fetchPrice = async ({ oracle, id }) => {
   if (oracle === undefined) { console.error('Undefined oracle'); return 0; }
   if (id === undefined) { console.error('Undefined pair'); return 0; }
 
+  if (isCached({oracle, id})){
+    return getCachedPrice({oracle, id});
+  }
+
+  let price = 0;
   switch(oracle) {
-    case 'band':       return await fetchBand(id);
-    case 'pancake':    return await fetchPancake(id);
-    case 'pancake-lp': return await fetchPancakeLP(id);
-    case 'coingecko':  return await fetchCoingecko(id);
+    case 'band':       price = await fetchBand(id); break;
+    case 'pancake':    price = await fetchPancake(id); break;
+    case 'pancake-lp': price = await fetchPancakeLP(id); break;
+    case 'coingecko':  price = await fetchCoingecko(id); break;
     default: console.error('Unknown oracle:', oracle);
   }
+  
+  addToCache({oracle, id, price});
+  return price;
 };
