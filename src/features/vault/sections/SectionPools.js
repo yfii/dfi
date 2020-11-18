@@ -99,7 +99,13 @@ export default function SectionPools() {
 
   const formatApy = (id, apy, fallbackApy) => {
     if (!apy) { apy = fallbackApy; }
-    return `${(apy * 100).toFixed(1)}%`;
+    apy *= 100;
+
+    const order = Math.floor(Math.log10(apy) / 3);
+    const units = ['', 'k', 'M', 'B', 'T'];
+    const num = apy / 1000 ** order;
+
+    return `${num.toFixed(2)}${units[order]}%`;
   }
 
   const calcDaily = (apy, fallbackApy) => {
