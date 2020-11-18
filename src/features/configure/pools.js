@@ -365,7 +365,7 @@ export const pools = [
     name: 'ETH-BNB LP',
     token: 'ETH-BNB LP',
     tokenDescription: 'Uses: Pancake',
-    tokenAddress: '0xaebe45e3a03b734c68e5557ae04bfc76917b4686',
+    tokenAddress: '0x70d8929d04b60af4fb9b58713ebcf18765ade422',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooPancakeETH-BNB',
