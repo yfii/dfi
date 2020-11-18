@@ -5,6 +5,7 @@ const endpoints = {
   bandchain: 'https://poa-api.bandchain.org',
   pancake:   'https://beefy-api.herokuapp.com/pancake/price',
   pancakeLp: 'https://beefy-api.herokuapp.com/pancake/lps',
+  thugsLp:   'https://beefy-api.herokuapp.com/thugs/lps',
   coingecko: 'https://api.coingecko.com/api/v3/simple/price',
 };
 
@@ -57,6 +58,16 @@ const fetchPancakeLP = async (id) => {
   }
 };
 
+const fetchThugsLP = async (id) => {
+  try {
+    const response = await axios.get(endpoints.thugsLp);
+    return response.data[id];
+  } catch (err) {
+    console.error(err);
+    return 0;
+  }
+};
+
 const fetchCoingecko = async (id) => {
   try {
     const response = await axios.get(endpoints.coingecko, {
@@ -82,6 +93,7 @@ export const fetchPrice = async ({ oracle, id }) => {
     case 'band':       price = await fetchBand(id); break;
     case 'pancake':    price = await fetchPancake(id); break;
     case 'pancake-lp': price = await fetchPancakeLP(id); break;
+    case 'thugs-lp':   price = await fetchThugsLP(id); break;
     case 'coingecko':  price = await fetchCoingecko(id); break;
     default: console.error('Unknown oracle:', oracle);
   }
