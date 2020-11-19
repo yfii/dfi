@@ -3,7 +3,7 @@ export const pools = [
     id: 'cake-smart',
     logo: 'cake/SMART',
     name: 'CAKE SMART',
-    token: 'CAKE SMART',
+    token: 'CAKE',
     tokenDescription: 'Uses: Pancake',
     tokenAddress: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
     tokenDecimals: 18,
