@@ -64,6 +64,7 @@ export default function Header(props) {
           {renderLink('gov', 'gov', 'landmark', classes)}
           {renderLink('vote', 'vote', 'vote-yea', classes)}
           {renderLink('app', 'app', 'hand-holding-usd', classes)}
+          {renderLink('dashboard', 'stats', 'chart-bar', classes)}
           {renderLink('docs', 'docs', 'book', classes)}
         </span>
 
