@@ -375,8 +375,7 @@ export default function SectionPools() {
                         <Grid item xs={5} md={2} container justify="center" alignItems="center">
                           <Grid item>
                             <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
-                              {/* {pool.unstableApy ? '??? %' : calcDaily(depositedApy, pool.defaultApy)} */}
-                              {calcDaily(depositedApy, pool.defaultApy)}
+                              {pool.unstableApy ? '??? %' : calcDaily(depositedApy, pool.defaultApy)}
                             </Typography>
                             <Typography className={classes.iconContainerSubTitle} variant="body2">
                               {t('Vault-APYDaily')}
