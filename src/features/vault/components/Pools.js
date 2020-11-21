@@ -5,21 +5,22 @@ import { byDecimals, calculateReallyNum, format } from 'features/helpers/bignumb
 import { makeStyles } from '@material-ui/core/styles';
 import Accordion from '@material-ui/core/Accordion';
 import AccordionDetails from '@material-ui/core/AccordionActions';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import Avatar from '@material-ui/core/Avatar';
 import Divider from '@material-ui/core/Divider';
 import FormControl from '@material-ui/core/FormControl';
 import Grid from '@material-ui/core/Grid';
-import Hidden from '@material-ui/core/Hidden';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import CustomOutlinedInput from 'components/CustomOutlinedInput/CustomOutlinedInput';
-import { primaryColor } from 'assets/jss/material-kit-pro-react.js';
 import { useSnackbar } from 'notistack';
+
+import CustomOutlinedInput from 'components/CustomOutlinedInput/CustomOutlinedInput';
 import { useConnectWallet } from '../../home/redux/hooks';
-
-import { useFetchBalances, useFetchPoolBalances, useFetchApproval, useFetchDeposit, useFetchWithdraw, useFetchContractApy } from '../redux/hooks';
-
+import {
+  useFetchBalances,
+  useFetchPoolBalances,
+  useFetchApproval,
+  useFetchDeposit,
+  useFetchWithdraw,
+  useFetchContractApy,
+} from '../redux/hooks';
+import PoolSummary from './PoolSummary';
 import Button from 'components/CustomButtons/Button.js';
 import CustomSlider from 'components/CustomSlider/CustomSlider';
 import sectionPoolsStyle from '../styles/poolsStyle';
@@ -79,48 +80,6 @@ export default function Pools() {
       default:
         break;
     }
-  };
-
-  const formatTvl = (tvl, oraclePrice, fallbackPrice) => {
-    // TODO: bignum?
-    tvl *= oraclePrice || fallbackPrice;
-
-    const order = Math.floor(Math.log10(tvl) / 3);
-    if (order < 0) {
-      return '$0.00';
-    }
-
-    const units = ['', 'k', 'M', 'B', 'T'];
-    const num = tvl / 1000 ** order;
-    const prefix = oraclePrice === 0 ? '~$' : '$';
-
-    return prefix + num.toFixed(2) + units[order];
-  };
-
-  const formatApy = (id, apy, fallbackApy) => {
-    if (!apy) {
-      apy = fallbackApy;
-    }
-    apy *= 100;
-
-    const order = Math.floor(Math.log10(apy) / 3);
-    const units = ['', 'k', 'M', 'B', 'T'];
-    const num = apy / 1000 ** order;
-
-    return `${num.toFixed(2)}${units[order]}%`;
-  };
-
-  const calcDaily = (apy, fallbackApy) => {
-    if (!apy) {
-      apy = fallbackApy;
-    }
-
-    const g = Math.pow(10, Math.log10(apy + 1) / 365) - 1;
-    if (isNaN(g)) {
-      return '- %';
-    }
-
-    return `${(g * 100).toFixed(2)}%`;
   };
 
   const handleDepositedBalance = (index, total, _, sliderNum) => {
@@ -192,7 +151,9 @@ export default function Pools() {
       fetchDepositEth({
         address,
         web3,
-        amount: new BigNumber(amountValue).multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals)).toString(10),
+        amount: new BigNumber(amountValue)
+          .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
+          .toString(10),
         contractAddress: pool.earnContractAddress,
         index,
       })
@@ -203,7 +164,9 @@ export default function Pools() {
         address,
         web3,
         isAll,
-        amount: new BigNumber(amountValue).multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals)).toString(10),
+        amount: new BigNumber(amountValue)
+          .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
+          .toString(10),
         contractAddress: pool.earnContractAddress,
         index,
       })
@@ -229,7 +192,9 @@ export default function Pools() {
         address,
         web3,
         isAll,
-        amount: new BigNumber(amountValue).multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals)).toString(10),
+        amount: new BigNumber(amountValue)
+          .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
+          .toString(10),
         contractAddress: pool.earnContractAddress,
         index,
       })
@@ -240,7 +205,9 @@ export default function Pools() {
         address,
         web3,
         isAll,
-        amount: new BigNumber(amountValue).multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals)).toString(10),
+        amount: new BigNumber(amountValue)
+          .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
+          .toString(10),
         contractAddress: pool.earnContractAddress,
         index,
       })
@@ -297,148 +264,30 @@ export default function Pools() {
         let singleDepositedBalance = byDecimals(tokens[pool.earnedToken].tokenBalance, pool.tokenDecimals);
         let depositedApy = contractApy[pool.id] || 0;
         return (
-          <Grid item xs={12} container key={index} style={{ marginBottom: '24px', border: '1px solid #DED9D5' }} spacing={0}>
+          <Grid
+            item
+            xs={12}
+            container
+            key={index}
+            style={{ marginBottom: '24px', border: '1px solid #DED9D5' }}
+            spacing={0}
+          >
             <div style={{ width: '100%' }}>
-              <Accordion expanded={Boolean(openedCardList.includes(index))} className={classes.accordion} TransitionProps={{ unmountOnExit: true }}>
-                <AccordionSummary
-                  className={pool.depositsPaused ? classes.detailsPaused : classes.details}
-                  style={{ justifyContent: 'space-between' }}
-                  onClick={event => {
-                    event.stopPropagation();
-                    openCard(index);
-                  }}
-                >
-                  <Grid container alignItems="center" justify="space-around" spacing={4} style={{ paddingTop: '16px', paddingBottom: '16px' }}>
-                    <Grid item>
-                      <Grid container alignItems="center" spacing={2}>
-                        <Grid item>
-                          <Avatar alt={pool.name} variant="square" src={require(`../../../images/${pool.logo}.png`)} />
-                        </Grid>
-                        <Grid item style={{ minWidth: '100px' }}>
-                          <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom>
-                            {pool.name}
-                            <Hidden smUp>
-                              <i
-                                style={{
-                                  color: primaryColor[0],
-                                  marginLeft: '4px',
-                                  visibility: Boolean(pool.tokenDescriptionUrl) ? 'visible' : 'hidden',
-                                }}
-                                className={'far fa-question-circle'}
-                                onClick={event => {
-                                  event.stopPropagation();
-                                  window.open(pool.tokenDescriptionUrl);
-                                }}
-                              />
-                            </Hidden>
-                          </Typography>
-                          <Typography className={classes.iconContainerSubTitle} variant="body2">
-                            {pool.tokenDescription}
-                          </Typography>
-                        </Grid>
-                      </Grid>
-                    </Grid>
-
-                    <Grid item md={7} xs={4}>
-                      <Grid item container justify="space-between">
-                        <Hidden smDown>
-                          <Grid item xs={4} md={3} container justify="center" alignItems="center">
-                            <Grid item style={{ width: '200px' }}>
-                              <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
-                                {format(balanceSingle)}
-                              </Typography>
-                              <Typography className={classes.iconContainerSubTitle} variant="body2">
-                                {t('Vault-Balance')}
-                              </Typography>
-                            </Grid>
-                          </Grid>
-                        </Hidden>
-
-                        <Hidden mdDown>
-                          <Grid item xs={4} md={3} container justify="center" alignItems="center">
-                            <Grid item style={{ width: '200px' }}>
-                              <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
-                                {format(singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)))}
-                              </Typography>
-                              <Typography className={classes.iconContainerSubTitle} variant="body2">
-                                {t('Vault-Deposited')}
-                              </Typography>
-                            </Grid>
-                          </Grid>
-                        </Hidden>
-
-                        <Grid item xs={5} md={2} container justify="center" alignItems="center">
-                          <Grid item>
-                            <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
-                              {pool.unstableApy ? '??? %' : formatApy(pool.id, depositedApy, pool.defaultApy)}
-                            </Typography>
-                            <Typography className={classes.iconContainerSubTitle} variant="body2">
-                              {t('Vault-APY')}
-                            </Typography>
-                          </Grid>
-                        </Grid>
-
-                        <Grid item xs={5} md={2} container justify="center" alignItems="center">
-                          <Grid item>
-                            <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
-                              {pool.unstableApy ? '??? %' : calcDaily(depositedApy, pool.defaultApy)}
-                            </Typography>
-                            <Typography className={classes.iconContainerSubTitle} variant="body2">
-                              {t('Vault-APYDaily')}
-                            </Typography>
-                          </Grid>
-                        </Grid>
-
-                        <Grid item xs={5} md={2} container justify="center" alignItems="center">
-                          <Grid item>
-                            <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
-                              {' '}
-                              {formatTvl(pool.tvl, pool.oraclePrice, pool.fallbackPrice)}
-                            </Typography>
-                            <Typography className={classes.iconContainerSubTitle} variant="body2">
-                              {t('Vault-TVL')}
-                            </Typography>
-                          </Grid>
-                        </Grid>
-                      </Grid>
-                    </Grid>
-
-                    <Grid item>
-                      <Grid item container justify="flex-end" alignItems="center" spacing={2}>
-                        <Hidden mdDown>
-                          <Grid item>
-                            <IconButton
-                              classes={{
-                                root: classes.iconContainerSecond,
-                              }}
-                              style={{
-                                visibility: Boolean(pool.tokenDescriptionUrl) ? 'visible' : 'hidden',
-                              }}
-                              onClick={event => {
-                                event.stopPropagation();
-                                window.open(pool.tokenDescriptionUrl);
-                              }}
-                            >
-                              <i className={'far fa-question-circle'} />
-                            </IconButton>
-                          </Grid>
-                        </Hidden>
-                        <Grid item>
-                          <IconButton
-                            className={classes.iconContainerPrimary}
-                            onClick={event => {
-                              event.stopPropagation();
-                              openCard(index);
-                            }}
-                          >
-                            {openedCardList.includes(index) ? <i className={'far fa-arrow-alt-circle-up'} /> : <i className={'far fa-arrow-alt-circle-down'} />}
-                          </IconButton>
-                        </Grid>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                </AccordionSummary>
-
+              <Accordion
+                expanded={Boolean(openedCardList.includes(index))}
+                className={classes.accordion}
+                TransitionProps={{ unmountOnExit: true }}
+              >
+                <PoolSummary
+                  pool={pool}
+                  index={index}
+                  classes={classes}
+                  onClick={openCard}
+                  balanceSingle={balanceSingle}
+                  openedCardList={openedCardList}
+                  singleDepositedBalance={singleDepositedBalance}
+                  depositedApy={depositedApy}
+                />
                 <Divider variant="middle" className={classes.accordionDivider} />
                 <AccordionDetails style={{ justifyContent: 'space-between' }}>
                   <Grid container>
@@ -449,7 +298,13 @@ export default function Pools() {
                       <FormControl fullWidth variant="outlined" className={classes.numericInput}>
                         <CustomOutlinedInput
                           value={depositedBalance[index] !== undefined ? depositedBalance[index] : '0'}
-                          onChange={changeDetailInputValue.bind(this, 'depositedBalance', index, balanceSingle.toNumber(), pool.tokenDecimals)}
+                          onChange={changeDetailInputValue.bind(
+                            this,
+                            'depositedBalance',
+                            index,
+                            balanceSingle.toNumber(),
+                            pool.tokenDecimals
+                          )}
                         />
                       </FormControl>
                       <CustomSlider
@@ -475,7 +330,10 @@ export default function Pools() {
                               color="primary"
                               onFocus={event => event.stopPropagation()}
                               disabled={
-                                pool.depositsPaused || !Boolean(depositedBalance[index]) || fetchDepositPending[index] || new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber()
+                                pool.depositsPaused ||
+                                !Boolean(depositedBalance[index]) ||
+                                fetchDepositPending[index] ||
+                                new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber()
                               }
                               onClick={onDeposit.bind(this, pool, index, false, balanceSingle)}
                             >
@@ -485,7 +343,11 @@ export default function Pools() {
                               <Button
                                 className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`}
                                 onFocus={event => event.stopPropagation()}
-                                disabled={pool.depositsPaused || fetchDepositPending[index] || new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber()}
+                                disabled={
+                                  pool.depositsPaused ||
+                                  fetchDepositPending[index] ||
+                                  new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber()
+                                }
                                 onClick={onDeposit.bind(this, pool, index, true, balanceSingle)}
                               >
                                 {t('Vault-DepositButtonAll')}
@@ -497,12 +359,19 @@ export default function Pools() {
                     </Grid>
                     <Grid item xs={12} sm={6} className={classes.sliderDetailContainer}>
                       <div className={classes.showDetailLeft}>
-                        {singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)).toFormat(4)} {pool.token} ({singleDepositedBalance.toFormat(4)} shares)
+                        {singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)).toFormat(4)}{' '}
+                        {pool.token} ({singleDepositedBalance.toFormat(4)} shares)
                       </div>
                       <FormControl fullWidth variant="outlined">
                         <CustomOutlinedInput
                           value={withdrawAmount[index] !== undefined ? withdrawAmount[index] : '0'}
-                          onChange={changeDetailInputValue.bind(this, 'withdrawAmount', index, singleDepositedBalance.toNumber(), pool.tokenDecimals)}
+                          onChange={changeDetailInputValue.bind(
+                            this,
+                            'withdrawAmount',
+                            index,
+                            singleDepositedBalance.toNumber(),
+                            pool.tokenDecimals
+                          )}
                         />
                       </FormControl>
                       <CustomSlider
@@ -519,7 +388,9 @@ export default function Pools() {
                               color="primary"
                               onClick={onWithdraw.bind(this, pool, index, false, singleDepositedBalance)}
                             >
-                              {fetchWithdrawPending[index] ? `${t('Vault-Withdrawing')}` : `${t('Vault-WithdrawButton')}`}
+                              {fetchWithdrawPending[index]
+                                ? `${t('Vault-Withdrawing')}`
+                                : `${t('Vault-WithdrawButton')}`}
                             </Button>
                             <Button
                               className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
@@ -527,17 +398,25 @@ export default function Pools() {
                               color="primary"
                               onClick={onWithdraw.bind(this, pool, index, true, singleDepositedBalance)}
                             >
-                              {fetchWithdrawPending[index] ? `${t('Vault-Withdrawing')}` : `${t('Vault-WithdrawButtonAll')}`}
+                              {fetchWithdrawPending[index]
+                                ? `${t('Vault-Withdrawing')}`
+                                : `${t('Vault-WithdrawButtonAll')}`}
                             </Button>
                           </>
                         )}
 
                         {pool.status === 'refund' && (
                           <>
-                            <Button className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`} onClick={onRefundApproval.bind(this, pool, index)}>
+                            <Button
+                              className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`}
+                              onClick={onRefundApproval.bind(this, pool, index)}
+                            >
                               Approve
                             </Button>
-                            <Button className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`} onClick={onRefund.bind(this, pool, index)}>
+                            <Button
+                              className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`}
+                              onClick={onRefund.bind(this, pool, index)}
+                            >
                               Refund
                             </Button>
                           </>
