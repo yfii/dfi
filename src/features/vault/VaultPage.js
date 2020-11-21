@@ -1,12 +1,12 @@
 import React from 'react';
 import Disclaimer from 'components/Disclaimer/Disclaimer';
-import SectionPools from './sections/SectionPools';
+import Pools from './components/Pools';
 
 export default function VaultPage() {
   return (
     <>
       <Disclaimer />
-      <SectionPools />
+      <Pools />
     </>
   );
 }

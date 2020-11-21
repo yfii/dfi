@@ -22,7 +22,7 @@ import { useFetchBalances, useFetchPoolBalances, useFetchApproval, useFetchDepos
 
 import Button from 'components/CustomButtons/Button.js';
 import CustomSlider from 'components/CustomSlider/CustomSlider';
-import sectionPoolsStyle from '../jss/sections/sectionPoolsStyle';
+import sectionPoolsStyle from '../styles/poolsStyle';
 import { inputLimitPass, inputFinalVal } from 'features/helpers/utils';
 import { refundABI } from 'features/configure/abi';
 
@@ -30,7 +30,7 @@ const FETCH_INTERVAL_MS = 30 * 1000;
 
 const useStyles = makeStyles(sectionPoolsStyle);
 
-export default function SectionPools() {
+export default function Pools() {
   const { t } = useTranslation();
   const { web3, address } = useConnectWallet();
   let { pools, fetchPoolBalances } = useFetchPoolBalances();
@@ -98,7 +98,9 @@ export default function SectionPools() {
   };
 
   const formatApy = (id, apy, fallbackApy) => {
-    if (!apy) { apy = fallbackApy; }
+    if (!apy) {
+      apy = fallbackApy;
+    }
     apy *= 100;
 
     const order = Math.floor(Math.log10(apy) / 3);
@@ -106,16 +108,20 @@ export default function SectionPools() {
     const num = apy / 1000 ** order;
 
     return `${num.toFixed(2)}${units[order]}%`;
-  }
+  };
 
   const calcDaily = (apy, fallbackApy) => {
-    if (!apy) { apy = fallbackApy; }
-    
-    const g = (Math.pow(10, Math.log10(apy + 1) / 365)) - 1;
-    if (isNaN(g)) { return '- %'; }
-    
+    if (!apy) {
+      apy = fallbackApy;
+    }
+
+    const g = Math.pow(10, Math.log10(apy + 1) / 365) - 1;
+    if (isNaN(g)) {
+      return '- %';
+    }
+
     return `${(g * 100).toFixed(2)}%`;
-  }
+  };
 
   const handleDepositedBalance = (index, total, _, sliderNum) => {
     setDepositedBalance({
@@ -382,7 +388,7 @@ export default function SectionPools() {
                             </Typography>
                           </Grid>
                         </Grid>
-                        
+
                         <Grid item xs={5} md={2} container justify="center" alignItems="center">
                           <Grid item>
                             <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
@@ -454,7 +460,11 @@ export default function SectionPools() {
                       <div>
                         {pool.allowance === 0 ? (
                           <div className={classes.showDetailButtonCon}>
-                            <Button className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`} onClick={onApproval.bind(this, pool, index)} disabled={pool.depositsPaused || fetchApprovalPending[index]}>
+                            <Button
+                              className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`}
+                              onClick={onApproval.bind(this, pool, index)}
+                              disabled={pool.depositsPaused || fetchApprovalPending[index]}
+                            >
                               {fetchApprovalPending[index] ? `${t('Vault-Approving')}` : `${t('Vault-ApproveButton')}`}
                             </Button>
                           </div>
@@ -464,7 +474,9 @@ export default function SectionPools() {
                               className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
                               color="primary"
                               onFocus={event => event.stopPropagation()}
-                              disabled={pool.depositsPaused || !Boolean(depositedBalance[index]) || fetchDepositPending[index] || new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber()}
+                              disabled={
+                                pool.depositsPaused || !Boolean(depositedBalance[index]) || fetchDepositPending[index] || new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber()
+                              }
                               onClick={onDeposit.bind(this, pool, index, false, balanceSingle)}
                             >
                               {t('Vault-DepositButton')}
@@ -499,7 +511,7 @@ export default function SectionPools() {
                         onChange={handleWithdrawAmount.bind(this, index, singleDepositedBalance.toNumber())}
                       />
                       <div className={classes.showDetailButtonCon}>
-                        {pool.status !== 'refund' && 
+                        {pool.status !== 'refund' && (
                           <>
                             <Button
                               className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
@@ -516,24 +528,20 @@ export default function SectionPools() {
                               onClick={onWithdraw.bind(this, pool, index, true, singleDepositedBalance)}
                             >
                               {fetchWithdrawPending[index] ? `${t('Vault-Withdrawing')}` : `${t('Vault-WithdrawButtonAll')}`}
-                            </Button> 
+                            </Button>
                           </>
-                        }
+                        )}
 
-                        {pool.status === 'refund' && 
+                        {pool.status === 'refund' && (
                           <>
-                            <Button 
-                              className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`} 
-                              onClick={onRefundApproval.bind(this, pool, index)}>
+                            <Button className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`} onClick={onRefundApproval.bind(this, pool, index)}>
                               Approve
                             </Button>
-                            <Button
-                              className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`}
-                              onClick={onRefund.bind(this, pool, index)}>
+                            <Button className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`} onClick={onRefund.bind(this, pool, index)}>
                               Refund
                             </Button>
                           </>
-                        }
+                        )}
                       </div>
                     </Grid>
                   </Grid>
