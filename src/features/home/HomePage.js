@@ -1,13 +1,13 @@
 import React from 'react';
 
-import Pools from 'features/vault/components/Pools.js';
+import PoolList from 'features/vault/components/PoolList.js';
 import Disclaimer from '../../components/Disclaimer/Disclaimer';
 
 export default function HomePage() {
   return (
     <>
       <Disclaimer />
-      <Pools fromPage="home" />
+      <PoolList fromPage="home" />
     </>
   );
 }

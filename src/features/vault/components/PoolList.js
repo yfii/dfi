@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { byDecimals } from 'features/helpers/bignumber';
 import { makeStyles } from '@material-ui/core/styles';
-import Accordion from '@material-ui/core/Accordion';
-import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 
 import { useConnectWallet } from '../../home/redux/hooks';
 import { useFetchBalances, useFetchPoolBalances, useFetchContractApy } from '../redux/hooks';
-import PoolSummary from './PoolSummary';
-import PoolDetails from './PoolDetails';
+import Pool from './Pool';
 import sectionPoolsStyle from '../styles/poolsStyle';
 
 const FETCH_INTERVAL_MS = 30 * 1000;
@@ -69,47 +65,17 @@ export default function Pools() {
         </Grid>
       </Grid>
 
-      {pools.map((pool, index) => {
-        let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
-        let singleDepositedBalance = byDecimals(tokens[pool.earnedToken].tokenBalance, pool.tokenDecimals);
-        let depositedApy = contractApy[pool.id] || 0;
-        return (
-          <Grid
-            item
-            xs={12}
-            container
-            key={index}
-            style={{ marginBottom: '24px', border: '1px solid #DED9D5' }}
-            spacing={0}
-          >
-            <div style={{ width: '100%' }}>
-              <Accordion
-                expanded={Boolean(openedCardList.includes(index))}
-                className={classes.accordion}
-                TransitionProps={{ unmountOnExit: true }}
-              >
-                <PoolSummary
-                  pool={pool}
-                  index={index}
-                  classes={classes}
-                  onClick={openCard}
-                  balanceSingle={balanceSingle}
-                  openedCardList={openedCardList}
-                  singleDepositedBalance={singleDepositedBalance}
-                  depositedApy={depositedApy}
-                />
-                <PoolDetails
-                  classes={classes}
-                  pool={pool}
-                  balanceSingle={balanceSingle}
-                  singleDepositedBalance={singleDepositedBalance}
-                />
-                <Divider variant="middle" className={classes.accordionDivider} />
-              </Accordion>
-            </div>
-          </Grid>
-        );
-      })}
+      {pools.map((pool, index) => (
+        <Pool
+          pool={pool}
+          classes={classes}
+          index={index}
+          openedCardList={openedCardList}
+          openCard={openCard}
+          tokens={tokens}
+          contractApy={contractApy}
+        />
+      ))}
     </Grid>
   );
 }
