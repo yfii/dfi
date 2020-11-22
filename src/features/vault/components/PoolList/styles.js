@@ -8,6 +8,9 @@ const secondStyle = {
 };
 
 const styles = theme => ({
+  container: {
+    paddingTop: '4px',
+  },
   mainTitle: {
     fontFamily: 'Helvetica',
     fontSize: '32px',

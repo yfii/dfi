@@ -22,37 +22,28 @@ const Pool = ({ pool, index, openedCardList, openCard, tokens, contractApy }) =>
   let depositedApy = contractApy[pool.id] || 0;
 
   return (
-    <Grid
-      item
-      xs={12}
-      container
-      key={index}
-      style={{ marginBottom: '24px', border: '1px solid #DED9D5' }}
-      spacing={0}
-    >
-      <div style={{ width: '100%' }}>
-        <Accordion
-          expanded={Boolean(openedCardList.includes(index))}
-          className={classes.accordion}
-          TransitionProps={{ unmountOnExit: true }}
-        >
-          <PoolSummary
-            pool={pool}
-            index={index}
-            onClick={openCard}
-            balanceSingle={balanceSingle}
-            openedCardList={openedCardList}
-            singleDepositedBalance={singleDepositedBalance}
-            depositedApy={depositedApy}
-          />
-          <PoolDetails
-            pool={pool}
-            balanceSingle={balanceSingle}
-            singleDepositedBalance={singleDepositedBalance}
-          />
-          <Divider variant="middle" className={classes.accordionDivider} />
-        </Accordion>
-      </div>
+    <Grid item xs={12} container key={index} className={classes.container} spacing={0}>
+      <Accordion
+        expanded={Boolean(openedCardList.includes(index))}
+        className={classes.accordion}
+        TransitionProps={{ unmountOnExit: true }}
+      >
+        <PoolSummary
+          pool={pool}
+          index={index}
+          onClick={openCard}
+          balanceSingle={balanceSingle}
+          openedCardList={openedCardList}
+          singleDepositedBalance={singleDepositedBalance}
+          depositedApy={depositedApy}
+        />
+        <PoolDetails
+          pool={pool}
+          balanceSingle={balanceSingle}
+          singleDepositedBalance={singleDepositedBalance}
+        />
+        <Divider variant="middle" className={classes.divider} />
+      </Accordion>
     </Grid>
   );
 };
