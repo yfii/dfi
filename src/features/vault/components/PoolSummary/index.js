@@ -7,15 +7,18 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { useTranslation } from 'react-i18next';
 import BigNumber from 'bignumber.js';
+import { makeStyles } from '@material-ui/core/styles';
 
 import { primaryColor } from 'assets/jss/material-kit-pro-react.js';
 import { formatApy, formatTvl, calcDaily } from 'features/helpers/format';
 import { format } from 'features/helpers/bignumber';
+import styles from './styles';
+
+const useStyles = makeStyles(styles);
 
 const PoolSummary = ({
   pool,
   index,
-  classes,
   onClick,
   balanceSingle,
   openedCardList,
@@ -23,6 +26,7 @@ const PoolSummary = ({
   depositedApy,
 }) => {
   const { t } = useTranslation();
+  const classes = useStyles();
 
   return (
     <AccordionSummary
@@ -43,7 +47,11 @@ const PoolSummary = ({
         <Grid item>
           <Grid container alignItems="center" spacing={2}>
             <Grid item>
-              <Avatar alt={pool.name} variant="square" src={require(`../../../images/${pool.logo}.png`)} />
+              <Avatar
+                alt={pool.name}
+                variant="square"
+                src={require(`../../../../images/${pool.logo}.png`)}
+              />
             </Grid>
             <Grid item style={{ minWidth: '100px' }}>
               <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom>
@@ -75,7 +83,12 @@ const PoolSummary = ({
             <Hidden smDown>
               <Grid item xs={4} md={3} container justify="center" alignItems="center">
                 <Grid item style={{ width: '200px' }}>
-                  <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
+                  <Typography
+                    className={classes.iconContainerMainTitle}
+                    variant="body2"
+                    gutterBottom
+                    noWrap
+                  >
                     {format(balanceSingle)}
                   </Typography>
                   <Typography className={classes.iconContainerSubTitle} variant="body2">
@@ -88,8 +101,15 @@ const PoolSummary = ({
             <Hidden mdDown>
               <Grid item xs={4} md={3} container justify="center" alignItems="center">
                 <Grid item style={{ width: '200px' }}>
-                  <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
-                    {format(singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)))}
+                  <Typography
+                    className={classes.iconContainerMainTitle}
+                    variant="body2"
+                    gutterBottom
+                    noWrap
+                  >
+                    {format(
+                      singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare))
+                    )}
                   </Typography>
                   <Typography className={classes.iconContainerSubTitle} variant="body2">
                     {t('Vault-Deposited')}
@@ -100,7 +120,12 @@ const PoolSummary = ({
 
             <Grid item xs={5} md={2} container justify="center" alignItems="center">
               <Grid item>
-                <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
+                <Typography
+                  className={classes.iconContainerMainTitle}
+                  variant="body2"
+                  gutterBottom
+                  noWrap
+                >
                   {pool.unstableApy ? '??? %' : formatApy(pool.id, depositedApy, pool.defaultApy)}
                 </Typography>
                 <Typography className={classes.iconContainerSubTitle} variant="body2">
@@ -111,7 +136,12 @@ const PoolSummary = ({
 
             <Grid item xs={5} md={2} container justify="center" alignItems="center">
               <Grid item>
-                <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
+                <Typography
+                  className={classes.iconContainerMainTitle}
+                  variant="body2"
+                  gutterBottom
+                  noWrap
+                >
                   {pool.unstableApy ? '??? %' : calcDaily(depositedApy, pool.defaultApy)}
                 </Typography>
                 <Typography className={classes.iconContainerSubTitle} variant="body2">
@@ -122,7 +152,12 @@ const PoolSummary = ({
 
             <Grid item xs={5} md={2} container justify="center" alignItems="center">
               <Grid item>
-                <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom noWrap>
+                <Typography
+                  className={classes.iconContainerMainTitle}
+                  variant="body2"
+                  gutterBottom
+                  noWrap
+                >
                   {' '}
                   {formatTvl(pool.tvl, pool.oraclePrice, pool.fallbackPrice)}
                 </Typography>

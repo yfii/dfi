@@ -2,12 +2,18 @@ import React from 'react';
 import Accordion from '@material-ui/core/Accordion';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
+import { makeStyles } from '@material-ui/core/styles';
 
 import { byDecimals } from 'features/helpers/bignumber';
-import PoolSummary from './PoolSummary';
-import PoolDetails from './PoolDetails';
+import PoolSummary from '../PoolSummary';
+import PoolDetails from '../PoolDetails';
+import styles from './styles';
 
-const Pool = ({ pool, index, openedCardList, classes, openCard, tokens, contractApy }) => {
+const useStyles = makeStyles(styles);
+
+const Pool = ({ pool, index, openedCardList, openCard, tokens, contractApy }) => {
+  const classes = useStyles();
+
   let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
   let singleDepositedBalance = byDecimals(
     tokens[pool.earnedToken].tokenBalance,
@@ -33,7 +39,6 @@ const Pool = ({ pool, index, openedCardList, classes, openCard, tokens, contract
           <PoolSummary
             pool={pool}
             index={index}
-            classes={classes}
             onClick={openCard}
             balanceSingle={balanceSingle}
             openedCardList={openedCardList}
@@ -41,7 +46,6 @@ const Pool = ({ pool, index, openedCardList, classes, openCard, tokens, contract
             depositedApy={depositedApy}
           />
           <PoolDetails
-            classes={classes}
             pool={pool}
             balanceSingle={balanceSingle}
             singleDepositedBalance={singleDepositedBalance}

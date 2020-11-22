@@ -5,18 +5,23 @@ import { useTranslation } from 'react-i18next';
 import Grid from '@material-ui/core/Grid';
 import BigNumber from 'bignumber.js';
 import { useSnackbar } from 'notistack';
+import { makeStyles } from '@material-ui/core/styles';
 
 import CustomOutlinedInput from 'components/CustomOutlinedInput/CustomOutlinedInput';
 import Button from 'components/CustomButtons/Button.js';
 import CustomSlider from 'components/CustomSlider/CustomSlider';
-import { useFetchApproval, useFetchDeposit, useFetchWithdraw } from '../redux/hooks';
-import { useConnectWallet } from '../../home/redux/hooks';
+import { useFetchApproval, useFetchDeposit, useFetchWithdraw } from '../../redux/hooks';
+import { useConnectWallet } from '../../../home/redux/hooks';
 import { inputLimitPass, inputFinalVal } from 'features/helpers/utils';
 import { byDecimals, calculateReallyNum, format } from 'features/helpers/bignumber';
 import { refundABI } from 'features/configure/abi';
+import styles from './styles';
 
-const PoolDetails = ({ pool, balanceSingle, index, classes, singleDepositedBalance }) => {
+const useStyles = makeStyles(styles);
+
+const PoolDetails = ({ pool, balanceSingle, index, singleDepositedBalance }) => {
   const { t } = useTranslation();
+  const classes = useStyles();
   const { web3, address } = useConnectWallet();
   const { enqueueSnackbar } = useSnackbar();
   const { fetchApproval, fetchApprovalPending } = useFetchApproval();
@@ -122,7 +127,9 @@ const PoolDetails = ({ pool, balanceSingle, index, classes, singleDepositedBalan
       });
     }
 
-    let amountValue = depositedBalance[index] ? depositedBalance[index].replace(',', '') : depositedBalance[index];
+    let amountValue = depositedBalance[index]
+      ? depositedBalance[index].replace(',', '')
+      : depositedBalance[index];
     if (!pool.tokenAddress) {
       fetchDepositEth({
         address,
@@ -162,7 +169,9 @@ const PoolDetails = ({ pool, balanceSingle, index, classes, singleDepositedBalan
       });
     }
 
-    let amountValue = withdrawAmount[index] ? withdrawAmount[index].replace(',', '') : withdrawAmount[index];
+    let amountValue = withdrawAmount[index]
+      ? withdrawAmount[index].replace(',', '')
+      : withdrawAmount[index];
     if (!pool.tokenAddress) {
       fetchWithdrawBnb({
         address,
@@ -224,7 +233,9 @@ const PoolDetails = ({ pool, balanceSingle, index, classes, singleDepositedBalan
                   onClick={onApproval.bind(this, pool, index)}
                   disabled={pool.depositsPaused || fetchApprovalPending[index]}
                 >
-                  {fetchApprovalPending[index] ? `${t('Vault-Approving')}` : `${t('Vault-ApproveButton')}`}
+                  {fetchApprovalPending[index]
+                    ? `${t('Vault-Approving')}`
+                    : `${t('Vault-ApproveButton')}`}
                 </Button>
               </div>
             ) : (
@@ -263,8 +274,8 @@ const PoolDetails = ({ pool, balanceSingle, index, classes, singleDepositedBalan
         </Grid>
         <Grid item xs={12} sm={6} className={classes.sliderDetailContainer}>
           <div className={classes.showDetailLeft}>
-            {singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)).toFormat(4)} {pool.token} (
-            {singleDepositedBalance.toFormat(4)} shares)
+            {singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)).toFormat(4)}{' '}
+            {pool.token} ({singleDepositedBalance.toFormat(4)} shares)
           </div>
           <FormControl fullWidth variant="outlined">
             <CustomOutlinedInput
@@ -292,7 +303,9 @@ const PoolDetails = ({ pool, balanceSingle, index, classes, singleDepositedBalan
                   color="primary"
                   onClick={onWithdraw.bind(this, pool, index, false, singleDepositedBalance)}
                 >
-                  {fetchWithdrawPending[index] ? `${t('Vault-Withdrawing')}` : `${t('Vault-WithdrawButton')}`}
+                  {fetchWithdrawPending[index]
+                    ? `${t('Vault-Withdrawing')}`
+                    : `${t('Vault-WithdrawButton')}`}
                 </Button>
                 <Button
                   className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
@@ -300,7 +313,9 @@ const PoolDetails = ({ pool, balanceSingle, index, classes, singleDepositedBalan
                   color="primary"
                   onClick={onWithdraw.bind(this, pool, index, true, singleDepositedBalance)}
                 >
-                  {fetchWithdrawPending[index] ? `${t('Vault-Withdrawing')}` : `${t('Vault-WithdrawButtonAll')}`}
+                  {fetchWithdrawPending[index]
+                    ? `${t('Vault-Withdrawing')}`
+                    : `${t('Vault-WithdrawButtonAll')}`}
                 </Button>
               </>
             )}
