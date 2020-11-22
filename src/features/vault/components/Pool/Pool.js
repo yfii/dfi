@@ -5,8 +5,8 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { byDecimals } from 'features/helpers/bignumber';
-import PoolSummary from '../PoolSummary';
-import PoolDetails from '../PoolDetails';
+import PoolSummary from '../PoolSummary/PoolSummary';
+import PoolDetails from '../PoolDetails/PoolDetails';
 import styles from './styles';
 
 const useStyles = makeStyles(styles);

@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 
 import { useConnectWallet } from '../../../home/redux/hooks';
 import { useFetchBalances, useFetchPoolBalances, useFetchContractApy } from '../../redux/hooks';
-import VisiblePools from '../VisiblePools';
+import VisiblePools from '../VisiblePools/VisiblePools';
 import styles from './styles';
 
 const FETCH_INTERVAL_MS = 30 * 1000;

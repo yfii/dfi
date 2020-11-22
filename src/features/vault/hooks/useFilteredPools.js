@@ -11,6 +11,9 @@ const useFilteredPools = (pools, tokens, filter) => {
       case 'hasBalance':
         setFilteredPools(handleHasBalance(pools, tokens));
         break;
+      case 'hasShares':
+        setFilteredPools(handleHasShares(pools, tokens));
+        break;
     }
   }, [pools, tokens, filter]);
 
@@ -21,6 +24,15 @@ const handleHasBalance = (pools, tokens) => {
   return pools.filter(pool => {
     if (tokens[pool.name] !== undefined) {
       return tokens[pool.name].tokenBalance !== 0;
+    }
+    return false;
+  });
+};
+
+const handleHasShares = (pools, tokens) => {
+  return pools.filter(pool => {
+    if (tokens[pool.earnedToken] !== undefined) {
+      return tokens[pool.earnedToken].tokenBalance !== 0;
     }
     return false;
   });

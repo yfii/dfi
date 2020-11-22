@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import useFilteredPools from '../../hooks/useFilteredPools';
 import useSortedPools from '../../hooks/useSortedPools';
-import Pool from '../Pool';
+import Pool from '../Pool/Pool';
 
 const VisiblePools = ({ pools, tokens, apys }) => {
   const [filter, setFilter] = useState('all');
@@ -26,6 +26,8 @@ const VisiblePools = ({ pools, tokens, apys }) => {
     <>
       <button onClick={() => setFilter('all')}>All</button>
       <button onClick={() => setFilter('hasBalance')}>Has Balance</button>
+      <button onClick={() => setFilter('hasShares')}>Has Shares</button>
+
       <button onClick={() => setOrder('default')}>Default</button>
       <button onClick={() => setOrder('apy')}>APY</button>
       <button onClick={() => setOrder('tvl')}>TVL</button>
