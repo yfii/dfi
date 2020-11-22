@@ -1,31 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import BigNumber from 'bignumber.js';
-import { byDecimals, calculateReallyNum, format } from 'features/helpers/bignumber';
+import { byDecimals } from 'features/helpers/bignumber';
 import { makeStyles } from '@material-ui/core/styles';
 import Accordion from '@material-ui/core/Accordion';
-import AccordionDetails from '@material-ui/core/AccordionActions';
 import Divider from '@material-ui/core/Divider';
-import FormControl from '@material-ui/core/FormControl';
 import Grid from '@material-ui/core/Grid';
-import { useSnackbar } from 'notistack';
 
-import CustomOutlinedInput from 'components/CustomOutlinedInput/CustomOutlinedInput';
 import { useConnectWallet } from '../../home/redux/hooks';
-import {
-  useFetchBalances,
-  useFetchPoolBalances,
-  useFetchApproval,
-  useFetchDeposit,
-  useFetchWithdraw,
-  useFetchContractApy,
-} from '../redux/hooks';
+import { useFetchBalances, useFetchPoolBalances, useFetchContractApy } from '../redux/hooks';
 import PoolSummary from './PoolSummary';
-import Button from 'components/CustomButtons/Button.js';
-import CustomSlider from 'components/CustomSlider/CustomSlider';
+import PoolDetails from './PoolDetails';
 import sectionPoolsStyle from '../styles/poolsStyle';
-import { inputLimitPass, inputFinalVal } from 'features/helpers/utils';
-import { refundABI } from 'features/configure/abi';
 
 const FETCH_INTERVAL_MS = 30 * 1000;
 
@@ -39,182 +24,7 @@ export default function Pools() {
   const [openedCardList, setOpenCardList] = useState([0]);
   const classes = useStyles();
 
-  const { fetchApproval, fetchApprovalPending } = useFetchApproval();
-  const { fetchDeposit, fetchDepositEth, fetchDepositPending } = useFetchDeposit();
-  const { fetchWithdraw, fetchWithdrawBnb, fetchWithdrawPending } = useFetchWithdraw();
   const { contractApy, fetchContractApy } = useFetchContractApy();
-
-  const [depositedBalance, setDepositedBalance] = useState({});
-  const [withdrawAmount, setWithdrawAmount] = useState({});
-
-  const { enqueueSnackbar } = useSnackbar();
-
-  const changeDetailInputValue = (type, index, total, tokenDecimals, event) => {
-    let value = event.target.value;
-    if (!inputLimitPass(value, tokenDecimals)) {
-      return;
-    }
-
-    let sliderNum = 0;
-    let inputVal = 0;
-    if (value) {
-      inputVal = Number(value.replace(',', ''));
-      sliderNum = byDecimals(inputVal / total, 0).toFormat(2) * 100;
-    }
-
-    switch (type) {
-      case 'depositedBalance':
-        setDepositedBalance({
-          ...depositedBalance,
-          [index]: inputFinalVal(value, total, tokenDecimals),
-          [`slider-${index}`]: sliderNum,
-        });
-        break;
-      case 'withdrawAmount':
-        setWithdrawAmount({
-          ...withdrawAmount,
-          [index]: inputFinalVal(value, total, tokenDecimals),
-          [`slider-${index}`]: sliderNum,
-        });
-        break;
-      default:
-        break;
-    }
-  };
-
-  const handleDepositedBalance = (index, total, _, sliderNum) => {
-    setDepositedBalance({
-      ...depositedBalance,
-      [index]: sliderNum === 0 ? 0 : calculateReallyNum(total, sliderNum),
-      [`slider-${index}`]: sliderNum === 0 ? 0 : sliderNum,
-    });
-  };
-
-  const handleWithdrawAmount = (index, total, _, sliderNum) => {
-    setWithdrawAmount({
-      ...withdrawAmount,
-      [index]: sliderNum === 0 ? 0 : calculateReallyNum(total, sliderNum),
-      [`slider-${index}`]: sliderNum === 0 ? 0 : sliderNum,
-    });
-  };
-
-  const onApproval = (pool, index, event) => {
-    event.stopPropagation();
-    fetchApproval({
-      address,
-      web3,
-      tokenAddress: pool.tokenAddress,
-      contractAddress: pool.earnContractAddress,
-      index,
-    })
-      .then(() => enqueueSnackbar(`Approval success`, { variant: 'success' }))
-      .catch(error => enqueueSnackbar(`Approval error: ${error}`, { variant: 'error' }));
-  };
-
-  const onRefundApproval = (pool, index, event) => {
-    event.stopPropagation();
-    fetchApproval({
-      address,
-      web3,
-      tokenAddress: pool.earnedTokenAddress,
-      contractAddress: pool.refundContractAddress,
-      index,
-    })
-      .then(() => enqueueSnackbar(`Approval success`, { variant: 'success' }))
-      .catch(error => enqueueSnackbar(`Approval error: ${error}`, { variant: 'error' }));
-  };
-
-  const onRefund = (pool, index, event) => {
-    event.stopPropagation();
-    const contract = new web3.eth.Contract(refundABI, pool.refundContractAddress);
-    contract.methods.refund().send({ from: address });
-  };
-
-  const onDeposit = (pool, index, isAll, balanceSingle, event) => {
-    event.stopPropagation();
-
-    if (pool.depositsPaused) {
-      console.error('Deposits paused!');
-      return;
-    }
-
-    if (isAll) {
-      setDepositedBalance({
-        ...depositedBalance,
-        [index]: format(balanceSingle),
-        [`slider-${index}`]: 100,
-      });
-    }
-
-    let amountValue = depositedBalance[index] ? depositedBalance[index].replace(',', '') : depositedBalance[index];
-    if (!pool.tokenAddress) {
-      fetchDepositEth({
-        address,
-        web3,
-        amount: new BigNumber(amountValue)
-          .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
-          .toString(10),
-        contractAddress: pool.earnContractAddress,
-        index,
-      })
-        .then(() => enqueueSnackbar(`Deposit success`, { variant: 'success' }))
-        .catch(error => enqueueSnackbar(`Deposit error: ${error}`, { variant: 'error' }));
-    } else {
-      fetchDeposit({
-        address,
-        web3,
-        isAll,
-        amount: new BigNumber(amountValue)
-          .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
-          .toString(10),
-        contractAddress: pool.earnContractAddress,
-        index,
-      })
-        .then(() => enqueueSnackbar(`Deposit success`, { variant: 'success' }))
-        .catch(error => enqueueSnackbar(`Deposit error: ${error}`, { variant: 'error' }));
-    }
-  };
-
-  const onWithdraw = (pool, index, isAll, singleDepositedBalance, event) => {
-    event.stopPropagation();
-
-    if (isAll) {
-      setWithdrawAmount({
-        ...withdrawAmount,
-        [index]: format(singleDepositedBalance),
-        [`slider-${index}`]: 100,
-      });
-    }
-
-    let amountValue = withdrawAmount[index] ? withdrawAmount[index].replace(',', '') : withdrawAmount[index];
-    if (!pool.tokenAddress) {
-      fetchWithdrawBnb({
-        address,
-        web3,
-        isAll,
-        amount: new BigNumber(amountValue)
-          .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
-          .toString(10),
-        contractAddress: pool.earnContractAddress,
-        index,
-      })
-        .then(() => enqueueSnackbar(`Withdraw success`, { variant: 'success' }))
-        .catch(error => enqueueSnackbar(`Withdraw error: ${error}`, { variant: 'error' }));
-    } else {
-      fetchWithdraw({
-        address,
-        web3,
-        isAll,
-        amount: new BigNumber(amountValue)
-          .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
-          .toString(10),
-        contractAddress: pool.earnContractAddress,
-        index,
-      })
-        .then(() => enqueueSnackbar(`Withdraw success`, { variant: 'success' }))
-        .catch(error => enqueueSnackbar(`Withdraw error: ${error}`, { variant: 'error' }));
-    }
-  };
 
   const openCard = id => {
     return setOpenCardList(openedCardList => {
@@ -288,143 +98,13 @@ export default function Pools() {
                   singleDepositedBalance={singleDepositedBalance}
                   depositedApy={depositedApy}
                 />
+                <PoolDetails
+                  classes={classes}
+                  pool={pool}
+                  balanceSingle={balanceSingle}
+                  singleDepositedBalance={singleDepositedBalance}
+                />
                 <Divider variant="middle" className={classes.accordionDivider} />
-                <AccordionDetails style={{ justifyContent: 'space-between' }}>
-                  <Grid container>
-                    <Grid item xs={12} sm={6} className={classes.sliderDetailContainer}>
-                      <div className={classes.showDetailLeft}>
-                        {t('Vault-Balance')}:{balanceSingle.toFormat(4)} {pool.token}
-                      </div>
-                      <FormControl fullWidth variant="outlined" className={classes.numericInput}>
-                        <CustomOutlinedInput
-                          value={depositedBalance[index] !== undefined ? depositedBalance[index] : '0'}
-                          onChange={changeDetailInputValue.bind(
-                            this,
-                            'depositedBalance',
-                            index,
-                            balanceSingle.toNumber(),
-                            pool.tokenDecimals
-                          )}
-                        />
-                      </FormControl>
-                      <CustomSlider
-                        aria-labelledby="continuous-slider"
-                        value={depositedBalance['slider-' + index] ? depositedBalance['slider-' + index] : 0}
-                        onChange={handleDepositedBalance.bind(this, index, balanceSingle.toNumber())}
-                      />
-                      <div>
-                        {pool.allowance === 0 ? (
-                          <div className={classes.showDetailButtonCon}>
-                            <Button
-                              className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`}
-                              onClick={onApproval.bind(this, pool, index)}
-                              disabled={pool.depositsPaused || fetchApprovalPending[index]}
-                            >
-                              {fetchApprovalPending[index] ? `${t('Vault-Approving')}` : `${t('Vault-ApproveButton')}`}
-                            </Button>
-                          </div>
-                        ) : (
-                          <div className={classes.showDetailButtonCon}>
-                            <Button
-                              className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
-                              color="primary"
-                              onFocus={event => event.stopPropagation()}
-                              disabled={
-                                pool.depositsPaused ||
-                                !Boolean(depositedBalance[index]) ||
-                                fetchDepositPending[index] ||
-                                new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber()
-                              }
-                              onClick={onDeposit.bind(this, pool, index, false, balanceSingle)}
-                            >
-                              {t('Vault-DepositButton')}
-                            </Button>
-                            {Boolean(pool.tokenAddress) && (
-                              <Button
-                                className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`}
-                                onFocus={event => event.stopPropagation()}
-                                disabled={
-                                  pool.depositsPaused ||
-                                  fetchDepositPending[index] ||
-                                  new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber()
-                                }
-                                onClick={onDeposit.bind(this, pool, index, true, balanceSingle)}
-                              >
-                                {t('Vault-DepositButtonAll')}
-                              </Button>
-                            )}
-                          </div>
-                        )}
-                      </div>
-                    </Grid>
-                    <Grid item xs={12} sm={6} className={classes.sliderDetailContainer}>
-                      <div className={classes.showDetailLeft}>
-                        {singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)).toFormat(4)}{' '}
-                        {pool.token} ({singleDepositedBalance.toFormat(4)} shares)
-                      </div>
-                      <FormControl fullWidth variant="outlined">
-                        <CustomOutlinedInput
-                          value={withdrawAmount[index] !== undefined ? withdrawAmount[index] : '0'}
-                          onChange={changeDetailInputValue.bind(
-                            this,
-                            'withdrawAmount',
-                            index,
-                            singleDepositedBalance.toNumber(),
-                            pool.tokenDecimals
-                          )}
-                        />
-                      </FormControl>
-                      <CustomSlider
-                        aria-labelledby="continuous-slider"
-                        value={withdrawAmount['slider-' + index] ? withdrawAmount['slider-' + index] : 0}
-                        onChange={handleWithdrawAmount.bind(this, index, singleDepositedBalance.toNumber())}
-                      />
-                      <div className={classes.showDetailButtonCon}>
-                        {pool.status !== 'refund' && (
-                          <>
-                            <Button
-                              className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
-                              type="button"
-                              color="primary"
-                              onClick={onWithdraw.bind(this, pool, index, false, singleDepositedBalance)}
-                            >
-                              {fetchWithdrawPending[index]
-                                ? `${t('Vault-Withdrawing')}`
-                                : `${t('Vault-WithdrawButton')}`}
-                            </Button>
-                            <Button
-                              className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
-                              type="button"
-                              color="primary"
-                              onClick={onWithdraw.bind(this, pool, index, true, singleDepositedBalance)}
-                            >
-                              {fetchWithdrawPending[index]
-                                ? `${t('Vault-Withdrawing')}`
-                                : `${t('Vault-WithdrawButtonAll')}`}
-                            </Button>
-                          </>
-                        )}
-
-                        {pool.status === 'refund' && (
-                          <>
-                            <Button
-                              className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`}
-                              onClick={onRefundApproval.bind(this, pool, index)}
-                            >
-                              Approve
-                            </Button>
-                            <Button
-                              className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`}
-                              onClick={onRefund.bind(this, pool, index)}
-                            >
-                              Refund
-                            </Button>
-                          </>
-                        )}
-                      </div>
-                    </Grid>
-                  </Grid>
-                </AccordionDetails>
               </Accordion>
             </div>
           </Grid>

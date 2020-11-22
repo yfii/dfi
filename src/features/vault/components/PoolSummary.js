@@ -4,11 +4,11 @@ import Avatar from '@material-ui/core/Avatar';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import { primaryColor } from 'assets/jss/material-kit-pro-react.js';
 import Grid from '@material-ui/core/Grid';
 import { useTranslation } from 'react-i18next';
 import BigNumber from 'bignumber.js';
 
+import { primaryColor } from 'assets/jss/material-kit-pro-react.js';
 import { formatApy, formatTvl, calcDaily } from 'features/helpers/format';
 import { format } from 'features/helpers/bignumber';
 
