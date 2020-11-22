@@ -3,14 +3,14 @@ import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
-import { useConnectWallet } from '../../home/redux/hooks';
-import { useFetchBalances, useFetchPoolBalances, useFetchContractApy } from '../redux/hooks';
-import Pool from './Pool';
-import sectionPoolsStyle from '../styles/poolsStyle';
+import { useConnectWallet } from '../../../home/redux/hooks';
+import { useFetchBalances, useFetchPoolBalances, useFetchContractApy } from '../../redux/hooks';
+import Pool from '../Pool';
+import styles from './styles';
 
 const FETCH_INTERVAL_MS = 30 * 1000;
 
-const useStyles = makeStyles(sectionPoolsStyle);
+const useStyles = makeStyles(styles);
 
 export default function Pools() {
   const { t } = useTranslation();

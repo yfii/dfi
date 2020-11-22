@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PoolList from 'features/vault/components/PoolList.js';
+import PoolList from 'features/vault/components/PoolList';
 import Disclaimer from '../../components/Disclaimer/Disclaimer';
 
 export default function HomePage() {
