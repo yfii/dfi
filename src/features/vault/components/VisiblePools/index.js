@@ -28,6 +28,7 @@ const VisiblePools = ({ pools, tokens, apys }) => {
       <button onClick={() => setFilter('hasBalance')}>Has Balance</button>
       <button onClick={() => setOrder('default')}>Default</button>
       <button onClick={() => setOrder('apy')}>APY</button>
+      <button onClick={() => setOrder('tvl')}>TVL</button>
 
       {sortedPools.map((pool, index) => (
         <Pool
