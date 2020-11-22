@@ -7,7 +7,8 @@ export const pools = [
     tokenDescription: 'Uses: StreetSwap',
     tokenAddress: '0x9354caB0F1083135439B23aA6c364329e578F39a',
     tokenDecimals: 18,
-    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/thugs#farming-drugs-with-thugs-bnb-lp',
+    tokenDescriptionUrl:
+      'https://docs.beefy.finance/beefyfinance/products/thugs#farming-drugs-with-thugs-bnb-lp',
     earnedToken: 'mooStreetTHUGS-BNB',
     earnedTokenAddress: '0x938922808d98d6A9B130AEdAfF9F263c8C1830cA',
     earnContractAddress: '0x938922808d98d6A9B130AEdAfF9F263c8C1830cA',
@@ -31,7 +32,8 @@ export const pools = [
     tokenDescription: 'Uses: StreetSwap',
     tokenAddress: '0x5BcE5d58682f15541EFc72d8f56C7d6221d541f1',
     tokenDecimals: 18,
-    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/thugs#farming-drugs-with-drugs-bnb-lp',
+    tokenDescriptionUrl:
+      'https://docs.beefy.finance/beefyfinance/products/thugs#farming-drugs-with-drugs-bnb-lp',
     earnedToken: 'mooStreetDRUGS-BNB',
     earnedTokenAddress: '0xa4aB709f5eB75f3213734fC227D9e27352d1DB6c',
     earnContractAddress: '0xa4aB709f5eB75f3213734fC227D9e27352d1DB6c',
@@ -55,7 +57,8 @@ export const pools = [
     tokenDescription: 'Uses: StreetSwap',
     tokenAddress: '0xa5e5eeB6b51fa0fDc59915C81d75C83470BFA4f0',
     tokenDecimals: 18,
-    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/thugs#farming-drugs-with-guns-bnb-lp',
+    tokenDescriptionUrl:
+      'https://docs.beefy.finance/beefyfinance/products/thugs#farming-drugs-with-guns-bnb-lp',
     earnedToken: 'mooStreetGUNS-BNB',
     earnedTokenAddress: '0xA2bcB1D7955AEa2F5B93C308E199337a77E7bAd4',
     earnContractAddress: '0xA2bcB1D7955AEa2F5B93C308E199337a77E7bAd4',
@@ -79,7 +82,8 @@ export const pools = [
     tokenDescription: 'Uses: StreetSwap',
     tokenAddress: '0xf2e4E3F9B58b3eDaC88Ad11D689a23f3119a782D',
     tokenDecimals: 18,
-    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/thugs#farming-drugs-with-busd-bnb-lp',
+    tokenDescriptionUrl:
+      'https://docs.beefy.finance/beefyfinance/products/thugs#farming-drugs-with-busd-bnb-lp',
     earnedToken: 'mooStreetBUSD-BNB',
     earnedTokenAddress: '0x26e6dA6AF638Df79a790911dAe6381d3e96B9DAc',
     earnContractAddress: '0x26e6dA6AF638Df79a790911dAe6381d3e96B9DAc',
@@ -103,7 +107,8 @@ export const pools = [
     tokenDescription: 'Uses: StreetSwap',
     tokenAddress: '0xdFb193940E1317f38e91568fdb05EFE18ee4A3c7',
     tokenDecimals: 18,
-    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/thugs#farming-drugs-with-btc-bnb-lp',
+    tokenDescriptionUrl:
+      'https://docs.beefy.finance/beefyfinance/products/thugs#farming-drugs-with-btc-bnb-lp',
     earnedToken: 'mooStreetBTC-BNB',
     earnedTokenAddress: '0x62C857Ae71Ad9ab671ca4F278eC28d89AcCf1bB2',
     earnContractAddress: '0x62C857Ae71Ad9ab671ca4F278eC28d89AcCf1bB2',
@@ -127,7 +132,8 @@ export const pools = [
     tokenDescription: 'Uses: StreetSwap',
     tokenAddress: '0x75115C644F9661A761A333Ba0A38e42B1649f143',
     tokenDecimals: 18,
-    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/thugs#farming-drugs-with-eth-bnb-lp',
+    tokenDescriptionUrl:
+      'https://docs.beefy.finance/beefyfinance/products/thugs#farming-drugs-with-eth-bnb-lp',
     earnedToken: 'mooStreetETH-BNB',
     earnedTokenAddress: '0xE17701b569C616cC636a07ece63e4A0f0Da60218',
     earnContractAddress: '0xE17701b569C616cC636a07ece63e4A0f0Da60218',
@@ -151,7 +157,8 @@ export const pools = [
     tokenDescription: 'Uses: Pancake',
     tokenAddress: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
     tokenDecimals: 18,
-    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-cake-with-cake',
+    tokenDescriptionUrl:
+      'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-cake-with-cake',
     earnedToken: 'mooCake',
     earnedTokenAddress: '0xc713ca7cb8edfE238ea652D772d41dde47A9a62d',
     earnContractAddress: '0xc713ca7cb8edfE238ea652D772d41dde47A9a62d',
@@ -199,7 +206,8 @@ export const pools = [
     tokenDescription: 'Uses: Pancake',
     tokenAddress: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
     tokenDecimals: 18,
-    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-twt-with-cake',
+    tokenDescriptionUrl:
+      'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-twt-with-cake',
     earnedToken: 'mooCakeTWTV2',
     earnedTokenAddress: '0x260879777DB293541DbC9a27c3C2fAD9c9bb48D3',
     earnContractAddress: '0x260879777DB293541DbC9a27c3C2fAD9c9bb48D3',
@@ -223,7 +231,8 @@ export const pools = [
     tokenDescription: 'Uses: Pancake',
     tokenAddress: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
     tokenDecimals: 18,
-    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-hard-with-cake',
+    tokenDescriptionUrl:
+      'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-hard-with-cake',
     earnedToken: 'mooCakeHARD',
     earnedTokenAddress: '0x4B4e5F2CeEdfF00D2DD13874714C1Ef6Ea1Cd8a7',
     earnContractAddress: '0x4B4e5F2CeEdfF00D2DD13874714C1Ef6Ea1Cd8a7',
@@ -247,11 +256,12 @@ export const pools = [
     tokenDescription: 'Uses: Pancake',
     tokenAddress: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
     tokenDecimals: 18,
-    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-roobee-with-cake',
+    tokenDescriptionUrl:
+      'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-roobee-with-cake',
     earnedToken: 'mooCakebROOBEE',
     earnedTokenAddress: '0x836527F28Fd3A90ad0ed335E1a868932Bb28939E',
     earnContractAddress: '0x836527F28Fd3A90ad0ed335E1a868932Bb28939E',
-    defaultApy: 17.26457,
+    defaultApy: 0,
     unstableApy: true,
     pricePerFullShare: 1,
     tvl: 0,
@@ -271,7 +281,8 @@ export const pools = [
     tokenDescription: 'Uses: Pancake',
     tokenAddress: '0xA527a61703D82139F8a06Bc30097cC9CAA2df5A6',
     tokenDecimals: 18,
-    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-cake-with-cake-bnb-lp',
+    tokenDescriptionUrl:
+      'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-cake-with-cake-bnb-lp',
     earnedToken: 'mooPancakeCAKE-BNB',
     earnedTokenAddress: '0x502AB55Cf22f38c4fd8663dEE041A96B72264c53',
     earnContractAddress: '0x502AB55Cf22f38c4fd8663dEE041A96B72264c53',
@@ -295,7 +306,8 @@ export const pools = [
     tokenDescription: 'Uses: Pancake',
     tokenAddress: '0xaebe45e3a03b734c68e5557ae04bfc76917b4686',
     tokenDecimals: 18,
-    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-cake-with-link-bnb-lp',
+    tokenDescriptionUrl:
+      'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-cake-with-link-bnb-lp',
     earnedToken: 'mooPancakeLINK-BNB',
     earnedTokenAddress: '0xaB9C4a0fD179315b005a5f6D3793cb30Af718152',
     earnContractAddress: '0xaB9C4a0fD179315b005a5f6D3793cb30Af718152',
@@ -319,7 +331,8 @@ export const pools = [
     tokenDescription: 'Uses: Pancake',
     tokenAddress: '0x20bcc3b8a0091ddac2d0bc30f68e6cbb97de59cd',
     tokenDecimals: 18,
-    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-cake-with-usdt-bnb-lp',
+    tokenDescriptionUrl:
+      'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-cake-with-usdt-bnb-lp',
     earnedToken: 'mooPancakeUSDT-BNB',
     earnedTokenAddress: '0x72F758cb79cA71CE9010dc9c0fA0155431435B72',
     earnContractAddress: '0x72F758cb79cA71CE9010dc9c0fA0155431435B72',
@@ -343,7 +356,8 @@ export const pools = [
     tokenDescription: 'Uses: Pancake',
     tokenAddress: '0x1B96B92314C44b159149f7E0303511fB2Fc4774f',
     tokenDecimals: 18,
-    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-cake-with-busd-bnb-lp',
+    tokenDescriptionUrl:
+      'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-cake-with-busd-bnb-lp',
     earnedToken: 'mooPancakeBNB-BUSD',
     earnedTokenAddress: '0x0c36Bee5cF5E5b1BE5371574cEBF9A5f01DE5Fc4',
     earnContractAddress: '0x0c36Bee5cF5E5b1BE5371574cEBF9A5f01DE5Fc4',
@@ -367,7 +381,8 @@ export const pools = [
     tokenDescription: 'Uses: Pancake',
     tokenAddress: '0xc15fa3E22c912A276550F3E5FE3b0Deb87B55aCd',
     tokenDecimals: 18,
-    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-cake-with-usdt-busd-lp',
+    tokenDescriptionUrl:
+      'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-cake-with-usdt-busd-lp',
     earnedToken: 'mooPancakeUSDT-BUSD',
     earnedTokenAddress: '0x348039C69B5fD7b333CE0a17E8361E501D2e3fa8',
     earnContractAddress: '0x348039C69B5fD7b333CE0a17E8361E501D2e3fa8',
@@ -391,7 +406,8 @@ export const pools = [
     tokenDescription: 'Uses: Pancake',
     tokenAddress: '0x70d8929d04b60af4fb9b58713ebcf18765ade422',
     tokenDecimals: 18,
-    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-cake-with-eth-bnb-lp',
+    tokenDescriptionUrl:
+      'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-cake-with-eth-bnb-lp',
     earnedToken: 'mooPancakeETH-BNB',
     earnedTokenAddress: '0x1CfEAef83Bb688Ac5926df1feEB8F05244054C07',
     earnContractAddress: '0x1CfEAef83Bb688Ac5926df1feEB8F05244054C07',
@@ -415,7 +431,8 @@ export const pools = [
     tokenDescription: 'Uses: Pancake',
     tokenAddress: '0x7561EEe90e24F3b348E1087A005F78B4c8453524',
     tokenDecimals: 18,
-    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-cake-with-btcb-bnb-lp',
+    tokenDescriptionUrl:
+      'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-cake-with-btcb-bnb-lp',
     earnedToken: 'mooPancakeBNB-BTCB',
     earnedTokenAddress: '0xd9542B833C6B0D9E4f882d2c4F01d5b5bd005Ac7',
     earnContractAddress: '0xd9542B833C6B0D9E4f882d2c4F01d5b5bd005Ac7',
@@ -432,7 +449,7 @@ export const pools = [
   },
 
   {
-    id: 'fil',
+    id: 'fortube-fil',
     logo: 'fortube/FIL',
     name: 'FIL',
     token: 'FIL',
@@ -456,7 +473,7 @@ export const pools = [
   },
 
   {
-    id: 'atom',
+    id: 'fortube-atom',
     logo: 'fortube/ATOM',
     name: 'ATOM',
     token: 'ATOM',
@@ -480,7 +497,7 @@ export const pools = [
   },
 
   {
-    id: 'xtz',
+    id: 'fortube-xtz',
     logo: 'fortube/XTZ',
     name: 'XTZ',
     token: 'XTZ',
@@ -655,7 +672,8 @@ export const pools = [
     tokenDescription: 'Uses: fryWorld',
     tokenAddress: '0xAe9269f27437f0fcBC232d39Ec814844a51d6b8f',
     tokenDecimals: 18,
-    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/fryworld#farming-fries-with-burgers',
+    tokenDescriptionUrl:
+      'https://docs.beefy.finance/beefyfinance/products/fryworld#farming-fries-with-burgers',
     earnedToken: 'mooFryBURGERv2',
     earnedTokenAddress: '0x2fd5f579e2cF9e3cb8127BBAd1B52c25750b1aCE',
     earnContractAddress: '0x2fd5f579e2cF9e3cb8127BBAd1B52c25750b1aCE',
@@ -679,7 +697,8 @@ export const pools = [
     tokenDescription: 'Refunds available',
     tokenAddress: '0xfD26889cd6454D8751562f1c0FcF88b18B46F7B7',
     tokenDecimals: 18,
-    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/thugs#farming-guns-with-drugs',
+    tokenDescriptionUrl:
+      'https://docs.beefy.finance/beefyfinance/products/thugs#farming-guns-with-drugs',
     earnedToken: 'mooThugsGuns',
     earnedTokenAddress: '0x49263a1Ba199602a8Ef327B34a1AAe11a5FccaAf',
     earnContractAddress: '0x49263a1Ba199602a8Ef327B34a1AAe11a5FccaAf',
@@ -704,7 +723,8 @@ export const pools = [
     tokenDescription: 'Refunds available',
     tokenAddress: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
     tokenDecimals: 18,
-    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-twt-with-cake',
+    tokenDescriptionUrl:
+      'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-twt-with-cake',
     earnedToken: 'mooCakeTWT',
     earnedTokenAddress: '0x214e640c638fbe68Fb24e11BfBd8Cd7d6cb8E37b',
     earnContractAddress: '0x214e640c638fbe68Fb24e11BfBd8Cd7d6cb8E37b',
@@ -729,7 +749,8 @@ export const pools = [
     tokenDescription: 'Refunds available',
     tokenAddress: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
     tokenDecimals: 18,
-    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-inj-with-cake',
+    tokenDescriptionUrl:
+      'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-inj-with-cake',
     earnedToken: 'mooCakeINJ',
     earnedTokenAddress: '0xD8bC83E80C88263b8494E8f48FdDEba6261C9B1c',
     earnContractAddress: '0xD8bC83E80C88263b8494E8f48FdDEba6261C9B1c',
@@ -754,7 +775,8 @@ export const pools = [
     tokenDescription: 'Refunds available',
     tokenAddress: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
     tokenDecimals: 18,
-    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-ctk-with-cake',
+    tokenDescriptionUrl:
+      'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-ctk-with-cake',
     earnedToken: 'mooCakeCTK',
     earnedTokenAddress: '0x489afbAED0Ea796712c9A6d366C16CA3876D8184',
     earnContractAddress: '0x489afbAED0Ea796712c9A6d366C16CA3876D8184',
@@ -779,7 +801,8 @@ export const pools = [
     tokenDescription: 'EOL',
     tokenAddress: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
     tokenDecimals: 18,
-    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-stax-with-cake',
+    tokenDescriptionUrl:
+      'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-stax-with-cake',
     earnedToken: 'mooCakeSTAX',
     earnedTokenAddress: '0xa72D14bec8c37f3A9487B057C7635e55f85f50c4',
     earnContractAddress: '0xa72D14bec8c37f3A9487B057C7635e55f85f50c4',

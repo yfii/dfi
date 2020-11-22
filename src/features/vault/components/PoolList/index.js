@@ -6,6 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import { useConnectWallet } from '../../../home/redux/hooks';
 import { useFetchBalances, useFetchPoolBalances, useFetchContractApy } from '../../redux/hooks';
 import useFilteredPools from '../../hooks/useFilteredPools';
+import useSortedPools from '../../hooks/useSortedPools';
 import Pool from '../Pool';
 import Filters from '../Filters';
 import styles from './styles';
@@ -19,12 +20,13 @@ export default function PoolList() {
   const { web3, address } = useConnectWallet();
   let { pools, fetchPoolBalances } = useFetchPoolBalances();
   const [filter, setFilter] = useState('all');
+  const [order, setOrder] = useState('default');
   const { tokens, fetchBalances } = useFetchBalances();
+  const { contractApy, fetchContractApy } = useFetchContractApy();
   const filteredPools = useFilteredPools(pools, tokens, filter);
+  const sortedPools = useSortedPools(filteredPools, contractApy, order);
   const [openedCardList, setOpenCardList] = useState([0]);
   const classes = useStyles();
-
-  const { contractApy, fetchContractApy } = useFetchContractApy();
 
   const openCard = id => {
     return setOpenCardList(openedCardList => {
@@ -61,6 +63,9 @@ export default function PoolList() {
       <>
         <button onClick={() => setFilter('all')}>All</button>
         <button onClick={() => setFilter('hasBalance')}>Has Balance</button>
+
+        <button onClick={() => setOrder('default')}>Default</button>
+        <button onClick={() => setOrder('apy')}>APY</button>
       </>
       <Grid container className={classes.container}>
         <Grid item xs={12}>
@@ -75,7 +80,7 @@ export default function PoolList() {
           </Grid>
         </Grid>
 
-        {filteredPools.map((pool, index) => (
+        {sortedPools.map((pool, index) => (
           <Pool
             pool={pool}
             classes={classes}

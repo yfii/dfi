@@ -6,7 +6,7 @@ const useFilteredPools = (pools, tokens, filter) => {
   useEffect(() => {
     switch (filter) {
       case 'all':
-        setFilteredPools(handleAll(pools, tokens));
+        setFilteredPools(pools);
         break;
       case 'hasBalance':
         setFilteredPools(handleHasBalance(pools, tokens));
@@ -16,8 +16,6 @@ const useFilteredPools = (pools, tokens, filter) => {
 
   return filteredPoools;
 };
-
-const handleAll = (pools, _) => pools;
 
 const handleHasBalance = (pools, tokens) => {
   return pools.filter(pool => {
