@@ -19,12 +19,10 @@ const useSortedPools = (pools, apys, order) => {
 };
 
 const handleApy = (pools, apys) => {
-  console.time('sort');
-  let sorted = pools.sort((a, b) => {
+  let newPools = [...pools];
+  return newPools.sort((a, b) => {
     return apys[b.id] - apys[a.id];
   });
-  console.timeEnd('sort');
-  return sorted;
 };
 
 export default useSortedPools;

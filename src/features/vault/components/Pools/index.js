@@ -37,7 +37,10 @@ export default function Pools() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [address, web3, fetchBalances, fetchPoolBalances]);
 
-  useEffect(() => {}, [pools, getContractApy]);
+  useEffect(() => {
+    fetchContractApy();
+  }, [pools, fetchContractApy]);
+
   return (
     <Grid container className={classes.container}>
       <Grid item xs={12}>
