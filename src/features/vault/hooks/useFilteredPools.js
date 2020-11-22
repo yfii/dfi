@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 const useFilteredPools = (pools, tokens, filter) => {
   const [filteredPoools, setFilteredPools] = useState(pools);
+  console.log('useFiltered being called.');
 
   useEffect(() => {
     switch (filter) {
