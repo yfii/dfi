@@ -5,6 +5,7 @@ const useSortedPools = (pools, apys) => {
   const [sortedPools, setSortedPools] = useState(pools);
 
   useEffect(() => {
+    console.log(pools);
     switch (order) {
       case 'default':
         setSortedPools(pools);
@@ -31,7 +32,9 @@ const handleApy = (pools, apys) => {
 const handleTvl = pools => {
   let newPools = [...pools];
   return newPools.sort((a, b) => {
-    return b.tvl - a.tvl;
+    const aPrice = a.oraclePrice || a.fallbackPrice;
+    const bPrice = b.oraclePrice || b.fallbackPrice;
+    return b.tvl * bPrice - a.tvl * aPrice;
   });
 };
 

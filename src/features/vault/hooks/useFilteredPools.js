@@ -1,17 +1,35 @@
 import { useState, useEffect } from 'react';
 
-const useMultiFilter = (pools, tokens) => {
+const initialFilters = {
+  hideDecomissioned: {
+    active: false,
+    filter: hideDecomissioned,
+  },
+  hideZeroBalances: {
+    active: false,
+    filter: hideZeroBalances,
+  },
+  hidePancake: {
+    active: false,
+    filter: (pools, tokens) => hidePlatform(pools, tokens, 'pancake'),
+  },
+  hideThugs: {
+    active: false,
+    filter: (pools, tokens) => hidePlatform(pools, tokens, 'thugs'),
+  },
+  hideFortube: {
+    active: false,
+    filter: (pools, tokens) => hidePlatform(pools, tokens, 'fortube'),
+  },
+  hideFry: {
+    active: false,
+    filter: (pools, tokens) => hidePlatform(pools, tokens, 'fry'),
+  },
+};
+
+const useFilteredPools = (pools, tokens) => {
   const [filteredPools, setFilteredPools] = useState(pools);
-  const [filters, setFilters] = useState({
-    hideDecomissioned: {
-      active: false,
-      filter: hideDecomissioned,
-    },
-    hideZeroBalances: {
-      active: false,
-      filter: hideZeroBalances,
-    },
-  });
+  const [filters, setFilters] = useState(initialFilters);
 
   const toggleFilter = key => {
     setFilters({
@@ -38,13 +56,13 @@ const useMultiFilter = (pools, tokens) => {
   return { filteredPools, toggleFilter, filters };
 };
 
-const hideDecomissioned = pools => {
+function hideDecomissioned(pools) {
   return pools.filter(pool => {
     return pool.status !== 'eol' && pool.status !== 'refund';
   });
-};
+}
 
-const hideZeroBalances = (pools, tokens) => {
+function hideZeroBalances(pools, tokens) {
   return pools.filter(pool => {
     if (tokens[pool.name] !== undefined) {
       if (tokens[pool.name].tokenBalance > 0) return true;
@@ -54,6 +72,10 @@ const hideZeroBalances = (pools, tokens) => {
     }
     return false;
   });
-};
+}
 
-export default useMultiFilter;
+function hidePlatform(pools, _, platform) {
+  return pools.filter(pool => pool.platform !== platform);
+}
+
+export default useFilteredPools;

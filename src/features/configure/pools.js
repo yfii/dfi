@@ -23,6 +23,7 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
     platform: 'thugs',
+    assets: ['THUGS', 'BNB'],
   },
 
   {
@@ -49,6 +50,7 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
     platform: 'thugs',
+    assets: ['DRUGS', 'BNB'],
   },
 
   {
@@ -75,6 +77,7 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
     platform: 'thugs',
+    assets: ['GUNS', 'BNB'],
   },
 
   {
@@ -101,6 +104,7 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
     platform: 'thugs',
+    assets: ['BUSD', 'BNB'],
   },
 
   {
@@ -127,6 +131,7 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
     platform: 'thugs',
+    assets: ['BTC', 'BNB'],
   },
 
   {
@@ -153,6 +158,7 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
     platform: 'thugs',
+    assets: ['ETH', 'BNB'],
   },
 
   {
@@ -179,6 +185,7 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
     platform: 'pancake',
+    assets: ['CAKE'],
   },
 
   {
@@ -204,6 +211,7 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
     platform: 'pancake',
+    assets: ['CAKE'],
   },
 
   {
@@ -230,6 +238,7 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
     platform: 'pancake',
+    assets: ['CAKE'],
   },
 
   {
@@ -256,6 +265,7 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
     platform: 'pancake',
+    assets: ['CAKE'],
   },
 
   {
@@ -282,6 +292,7 @@ export const pools = [
     depositsPaused: true,
     status: 'eol',
     platform: 'pancake',
+    assets: ['CAKE'],
   },
 
   {
@@ -308,6 +319,7 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
     platform: 'pancake',
+    assets: ['CAKE', 'BNB'],
   },
 
   {
@@ -334,6 +346,7 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
     platform: 'pancake',
+    assets: ['LINK', 'BNB'],
   },
 
   {
@@ -360,6 +373,7 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
     platform: 'pancake',
+    assets: ['USDT', 'BNB'],
   },
 
   {
@@ -386,6 +400,7 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
     platform: 'pancake',
+    assets: ['BUSD', 'BNB'],
   },
 
   {
@@ -412,6 +427,7 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
     platform: 'pancake',
+    assets: ['USDT', 'BUSD'],
   },
 
   {
@@ -438,6 +454,7 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
     platform: 'pancake',
+    assets: ['ETH', 'BNB'],
   },
 
   {
@@ -464,6 +481,7 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
     platform: 'pancake',
+    assets: ['BTC', 'BNB'],
   },
 
   {
@@ -489,6 +507,7 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
     platform: 'fortube',
+    assets: ['FIL'],
   },
 
   {
@@ -514,6 +533,7 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
     platform: 'fortube',
+    assets: ['ATOM'],
   },
 
   {
@@ -539,6 +559,7 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
     platform: 'fortube',
+    assets: ['XTZ'],
   },
 
   {
@@ -564,6 +585,7 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
     platform: 'fortube',
+    assets: ['BUSD'],
   },
 
   {
@@ -589,6 +611,7 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
     platform: 'fortube',
+    assets: ['LINK'],
   },
 
   {
@@ -614,6 +637,7 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
     platform: 'fortube',
+    assets: ['DOT'],
   },
 
   {
@@ -639,6 +663,7 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
     platform: 'fortube',
+    assets: ['USDT'],
   },
 
   {
@@ -664,6 +689,7 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
     platform: 'fortube',
+    assets: ['ETH'],
   },
 
   {
@@ -689,6 +715,7 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
     platform: 'fortube',
+    assets: ['BTC'],
   },
 
   {
@@ -715,6 +742,7 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
     platform: 'fry',
+    assets: ['BURGER'],
   },
 
   {
@@ -742,6 +770,7 @@ export const pools = [
     status: 'refund',
     refundContractAddress: '0x9284403F066f9200c1Ad4A6B5b2Dd0195092803E',
     platform: 'thugs',
+    assets: ['DRUGS', 'GUNS'],
   },
 
   {
@@ -769,6 +798,7 @@ export const pools = [
     status: 'refund',
     refundContractAddress: '0x2fd5caAB20191dcd4423F588e254CC298C7F66A1',
     platform: 'pancake',
+    assets: ['CAKE'],
   },
 
   {
@@ -796,6 +826,7 @@ export const pools = [
     status: 'refund',
     refundContractAddress: '0xc3EC78dc85D20D2CC0808C5a32B5556C7DD2d282',
     platform: 'pancake',
+    assets: ['CAKE'],
   },
 
   {
@@ -823,6 +854,7 @@ export const pools = [
     status: 'refund',
     refundContractAddress: '0x76A65f4C9a404561b88C43b4Aaf13258Aa1F1f26',
     platform: 'pancake',
+    assets: ['CAKE'],
   },
 
   {
@@ -849,6 +881,7 @@ export const pools = [
     depositsPaused: true,
     status: 'eol',
     platform: 'pancake',
+    assets: ['CAKE'],
   },
 
   {
@@ -874,5 +907,6 @@ export const pools = [
     depositsPaused: true,
     status: 'eol',
     platform: 'fry',
+    assets: ['BURGER'],
   },
 ];
