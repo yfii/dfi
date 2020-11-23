@@ -25,6 +25,34 @@ export const pools = [
   },
 
   {
+    id: 'street-thugs-bnb-v2',
+    logo: 'thugs/THUGS-BNB',
+    name: 'THUGS-BNB LP v2',
+    token: 'THUGS-BNB LP',
+    tokenDescription: 'Uses: StreetSwap',
+    tokenAddress: '0x9354caB0F1083135439B23aA6c364329e578F39a',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/thugs#farming-drugs-with-thugs-bnb-lp',
+    earnedToken: 'mooStreetTHUGS-BNBV2',
+    earnedTokenAddress: '0xe789711992020575e07381fdb3dFDc251Ec4d027',
+    earnContractAddress: '0xe789711992020575e07381fdb3dFDc251Ec4d027',
+    defaultApy: 52.65007,
+    unstableApy: false,
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'thugs-lp',
+    oracleId: 'street-thugs-bnb',
+    oraclePrice: 0,
+    fallbackPrice: 22.91525,
+    depositsPaused: false,
+    status: 'active',
+  },
+
+
+  //
+  // < ---- > OLD STRATS < ---- >
+  //
+  {
     id: 'street-thugs-bnb',
     logo: 'thugs/THUGS-BNB',
     name: 'THUGS-BNB LP v1',
