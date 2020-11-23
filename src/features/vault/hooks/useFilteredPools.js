@@ -1,41 +1,59 @@
 import { useState, useEffect } from 'react';
 
-const useFilteredPools = (pools, tokens, filter) => {
-  const [filteredPoools, setFilteredPools] = useState(pools);
+const useMultiFilter = (pools, tokens) => {
+  const [filteredPools, setFilteredPools] = useState(pools);
+  const [filters, setFilters] = useState({
+    hideDecomissioned: {
+      active: false,
+      filter: hideDecomissioned,
+    },
+    hideZeroBalances: {
+      active: false,
+      filter: hideZeroBalances,
+    },
+  });
+
+  const toggleFilter = key => {
+    setFilters({
+      ...filters,
+      [key]: {
+        ...filters[key],
+        active: !filters[key].active,
+      },
+    });
+  };
 
   useEffect(() => {
-    switch (filter) {
-      case 'all':
-        setFilteredPools(pools);
-        break;
-      case 'hasBalance':
-        setFilteredPools(handleHasBalance(pools, tokens));
-        break;
-      case 'hasShares':
-        setFilteredPools(handleHasShares(pools, tokens));
-        break;
-    }
-  }, [pools, tokens, filter]);
+    let newPools = [...pools];
 
-  return filteredPoools;
+    for (const key in filters) {
+      if (filters[key].active) {
+        newPools = filters[key].filter(newPools, tokens);
+      }
+    }
+
+    setFilteredPools(newPools);
+  }, [pools, tokens, filters]);
+
+  return { filteredPools, toggleFilter, filters };
 };
 
-const handleHasBalance = (pools, tokens) => {
+const hideDecomissioned = pools => {
+  return pools.filter(pool => {
+    return pool.status !== 'eol' && pool.status !== 'refund';
+  });
+};
+
+const hideZeroBalances = (pools, tokens) => {
   return pools.filter(pool => {
     if (tokens[pool.name] !== undefined) {
-      return tokens[pool.name].tokenBalance !== 0;
+      if (tokens[pool.name].tokenBalance > 0) return true;
     }
-    return false;
-  });
-};
-
-const handleHasShares = (pools, tokens) => {
-  return pools.filter(pool => {
     if (tokens[pool.earnedToken] !== undefined) {
-      return tokens[pool.earnedToken].tokenBalance !== 0;
+      if (tokens[pool.earnedToken].tokenBalance > 0) return true;
     }
     return false;
   });
 };
 
-export default useFilteredPools;
+export default useMultiFilter;

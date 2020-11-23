@@ -22,6 +22,7 @@ export const pools = [
     fallbackPrice: 19.7566,
     depositsPaused: false,
     status: 'active',
+    platform: 'thugs',
   },
 
   {
@@ -47,6 +48,7 @@ export const pools = [
     fallbackPrice: 3.5434,
     depositsPaused: false,
     status: 'active',
+    platform: 'thugs',
   },
 
   {
@@ -72,6 +74,7 @@ export const pools = [
     fallbackPrice: 3.9689,
     depositsPaused: false,
     status: 'active',
+    platform: 'thugs',
   },
 
   {
@@ -97,6 +100,7 @@ export const pools = [
     fallbackPrice: 10.786,
     depositsPaused: false,
     status: 'active',
+    platform: 'thugs',
   },
 
   {
@@ -122,6 +126,7 @@ export const pools = [
     fallbackPrice: 1428.077,
     depositsPaused: false,
     status: 'active',
+    platform: 'thugs',
   },
 
   {
@@ -147,6 +152,7 @@ export const pools = [
     fallbackPrice: 236.7713,
     depositsPaused: false,
     status: 'active',
+    platform: 'thugs',
   },
 
   {
@@ -172,6 +178,7 @@ export const pools = [
     fallbackPrice: 0.29,
     depositsPaused: false,
     status: 'active',
+    platform: 'pancake',
   },
 
   {
@@ -196,6 +203,7 @@ export const pools = [
     fallbackPrice: 0.29,
     depositsPaused: false,
     status: 'active',
+    platform: 'pancake',
   },
 
   {
@@ -221,6 +229,7 @@ export const pools = [
     fallbackPrice: 0.29,
     depositsPaused: false,
     status: 'active',
+    platform: 'pancake',
   },
 
   {
@@ -246,6 +255,7 @@ export const pools = [
     fallbackPrice: 0.57,
     depositsPaused: false,
     status: 'active',
+    platform: 'pancake',
   },
 
   {
@@ -271,6 +281,7 @@ export const pools = [
     fallbackPrice: 0.0042,
     depositsPaused: true,
     status: 'eol',
+    platform: 'pancake',
   },
 
   {
@@ -296,6 +307,7 @@ export const pools = [
     fallbackPrice: 5.83,
     depositsPaused: false,
     status: 'active',
+    platform: 'pancake',
   },
 
   {
@@ -321,6 +333,7 @@ export const pools = [
     fallbackPrice: 38.5021,
     depositsPaused: false,
     status: 'active',
+    platform: 'pancake',
   },
 
   {
@@ -346,6 +359,7 @@ export const pools = [
     fallbackPrice: 10.900750864365174,
     depositsPaused: false,
     status: 'active',
+    platform: 'pancake',
   },
 
   {
@@ -371,6 +385,7 @@ export const pools = [
     fallbackPrice: 10.58,
     depositsPaused: false,
     status: 'active',
+    platform: 'pancake',
   },
 
   {
@@ -396,6 +411,7 @@ export const pools = [
     fallbackPrice: 2,
     depositsPaused: false,
     status: 'active',
+    platform: 'pancake',
   },
 
   {
@@ -421,6 +437,7 @@ export const pools = [
     fallbackPrice: 232.19252,
     depositsPaused: false,
     status: 'active',
+    platform: 'pancake',
   },
 
   {
@@ -446,6 +463,7 @@ export const pools = [
     fallbackPrice: 1290,
     depositsPaused: false,
     status: 'active',
+    platform: 'pancake',
   },
 
   {
@@ -470,6 +488,7 @@ export const pools = [
     fallbackPrice: 30,
     depositsPaused: false,
     status: 'active',
+    platform: 'fortube',
   },
 
   {
@@ -494,6 +513,7 @@ export const pools = [
     fallbackPrice: 4.5,
     depositsPaused: false,
     status: 'active',
+    platform: 'fortube',
   },
 
   {
@@ -518,6 +538,7 @@ export const pools = [
     fallbackPrice: 2,
     depositsPaused: false,
     status: 'active',
+    platform: 'fortube',
   },
 
   {
@@ -542,6 +563,7 @@ export const pools = [
     fallbackPrice: 1,
     depositsPaused: false,
     status: 'active',
+    platform: 'fortube',
   },
 
   {
@@ -566,6 +588,7 @@ export const pools = [
     fallbackPrice: 12,
     depositsPaused: false,
     status: 'active',
+    platform: 'fortube',
   },
 
   {
@@ -590,6 +613,7 @@ export const pools = [
     fallbackPrice: 4.27,
     depositsPaused: false,
     status: 'active',
+    platform: 'fortube',
   },
 
   {
@@ -614,6 +638,7 @@ export const pools = [
     fallbackPrice: 1,
     depositsPaused: false,
     status: 'active',
+    platform: 'fortube',
   },
 
   {
@@ -638,6 +663,7 @@ export const pools = [
     fallbackPrice: 414,
     depositsPaused: false,
     status: 'active',
+    platform: 'fortube',
   },
 
   {
@@ -662,6 +688,7 @@ export const pools = [
     fallbackPrice: 12995,
     depositsPaused: false,
     status: 'active',
+    platform: 'fortube',
   },
 
   {
@@ -687,6 +714,7 @@ export const pools = [
     fallbackPrice: 0.44,
     depositsPaused: false,
     status: 'active',
+    platform: 'fry',
   },
 
   {
@@ -713,6 +741,7 @@ export const pools = [
     depositsPaused: true,
     status: 'refund',
     refundContractAddress: '0x9284403F066f9200c1Ad4A6B5b2Dd0195092803E',
+    platform: 'thugs',
   },
 
   {
@@ -739,6 +768,7 @@ export const pools = [
     depositsPaused: true,
     status: 'refund',
     refundContractAddress: '0x2fd5caAB20191dcd4423F588e254CC298C7F66A1',
+    platform: 'pancake',
   },
 
   {
@@ -765,6 +795,7 @@ export const pools = [
     depositsPaused: true,
     status: 'refund',
     refundContractAddress: '0xc3EC78dc85D20D2CC0808C5a32B5556C7DD2d282',
+    platform: 'pancake',
   },
 
   {
@@ -791,6 +822,7 @@ export const pools = [
     depositsPaused: true,
     status: 'refund',
     refundContractAddress: '0x76A65f4C9a404561b88C43b4Aaf13258Aa1F1f26',
+    platform: 'pancake',
   },
 
   {
@@ -816,6 +848,7 @@ export const pools = [
     fallbackPrice: 0.035,
     depositsPaused: true,
     status: 'eol',
+    platform: 'pancake',
   },
 
   {
@@ -840,5 +873,6 @@ export const pools = [
     fallbackPrice: 0.44,
     depositsPaused: true,
     status: 'eol',
+    platform: 'fry',
   },
 ];

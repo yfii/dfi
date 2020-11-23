@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
-const useSortedPools = (pools, apys, order) => {
+const useSortedPools = (pools, apys) => {
+  const [order, setOrder] = useState('default');
   const [sortedPools, setSortedPools] = useState(pools);
 
   useEffect(() => {
@@ -17,7 +18,7 @@ const useSortedPools = (pools, apys, order) => {
     }
   }, [pools, apys, order]);
 
-  return sortedPools;
+  return { sortedPools, order, setOrder };
 };
 
 const handleApy = (pools, apys) => {
