@@ -32,7 +32,7 @@ export const pools = [
     tokenDescription: 'Uses: StreetSwap',
     tokenAddress: '0x9354caB0F1083135439B23aA6c364329e578F39a',
     tokenDecimals: 18,
-    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/thugs#farming-drugs-with-thugs-bnb-lp',
+    tokenDescriptionUrl: '#',
     earnedToken: 'mooStreetTHUGS-BNBV2',
     earnedTokenAddress: '0xe789711992020575e07381fdb3dFDc251Ec4d027',
     earnContractAddress: '0xe789711992020575e07381fdb3dFDc251Ec4d027',
@@ -44,6 +44,30 @@ export const pools = [
     oracleId: 'street-thugs-bnb',
     oraclePrice: 0,
     fallbackPrice: 22.91525,
+    depositsPaused: false,
+    status: 'active',
+  },
+
+  {
+    id: 'street-cred-bnb-v1',
+    logo: 'thugs/THUGS-BNB',
+    name: 'CRED-BNB LP v1',
+    token: 'CRED-BNB LP',
+    tokenDescription: 'Uses: StreetSwap',
+    tokenAddress: '0x9CBE4F200b474a1C33bfFe7c6e531e1D47ECab46',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooStreetCRED-BNB',
+    earnedTokenAddress: '0x0adc208151e6b7AE1D884b64fDA662d10B4F6174',
+    earnContractAddress: '0x0adc208151e6b7AE1D884b64fDA662d10B4F6174',
+    defaultApy: 3.9535,
+    unstableApy: false,
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'thugs-lp',
+    oracleId: 'street-cred-bnb',
+    oraclePrice: 0,
+    fallbackPrice: 22.9005,
     depositsPaused: false,
     status: 'active',
   },
@@ -72,7 +96,7 @@ export const pools = [
     oracleId: 'street-thugs-bnb',
     oraclePrice: 0,
     fallbackPrice: 19.7566,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
   },
 
@@ -96,8 +120,8 @@ export const pools = [
     oracleId: 'street-drugs-bnb',
     oraclePrice: 0,
     fallbackPrice: 3.5434,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
   },
 
   {
@@ -120,8 +144,8 @@ export const pools = [
     oracleId: 'street-guns-bnb',
     oraclePrice: 0,
     fallbackPrice: 3.9689,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
   },
 
   {
@@ -144,8 +168,8 @@ export const pools = [
     oracleId: 'street-busd-bnb',
     oraclePrice: 0,
     fallbackPrice: 10.786,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
   },
 
   {
@@ -168,8 +192,8 @@ export const pools = [
     oracleId: 'street-btc-bnb',
     oraclePrice: 0,
     fallbackPrice: 1428.077,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
   },
 
   {
@@ -192,8 +216,8 @@ export const pools = [
     oracleId: 'street-eth-bnb',
     oraclePrice: 0,
     fallbackPrice: 236.7713,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
   },
 
   {
