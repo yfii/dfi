@@ -8,7 +8,7 @@ import Pool from '../Pool/Pool';
 import Filters from '../Filters/Filters';
 
 const VisiblePools = ({ pools, tokens, apys }) => {
-  const { filteredPools, toggleFilter } = useFilteredPools(pools, tokens);
+  const { filteredPools, toggleFilter, filters } = useFilteredPools(pools, tokens);
   const { sortedPools, order, setOrder } = useSortedPools(filteredPools, apys);
   const { poolsByAsset, asset, setAsset } = usePoolsByAsset(sortedPools);
 
@@ -28,6 +28,7 @@ const VisiblePools = ({ pools, tokens, apys }) => {
     <>
       <Filters
         toggleFilter={toggleFilter}
+        filters={filters}
         order={order}
         setOrder={setOrder}
         asset={asset}
