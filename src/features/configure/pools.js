@@ -8,7 +8,7 @@ export const pools = [
     tokenAddress: '0x339550404Ca4d831D12B1b2e4768869997390010',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
-    earnedToken: 'mooThugsGuns',
+    earnedToken: 'mooDrugsGunsV2',
     earnedTokenAddress: '0x8AE31751A226B0C5357a377E53B6DB12bDF5e64d',
     earnContractAddress: '0x8AE31751A226B0C5357a377E53B6DB12bDF5e64d',
     defaultApy: 3949.80974,
