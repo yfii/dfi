@@ -963,7 +963,7 @@ export const pools = [
 
   {
     id: 'thugs-drugs-guns',
-    logo: 'thugs/GUNS',
+    logo: 'thugs/DRUGS-V2',
     name: 'DRUGS GUNS v1',
     token: 'DRUGS',
     tokenDescription: 'Refunds available',
