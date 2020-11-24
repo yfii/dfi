@@ -4,17 +4,34 @@ import MenuItem from '@material-ui/core/MenuItem';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormLabel from '@material-ui/core/FormLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormGroup from '@material-ui/core/FormGroup';
 import Checkbox from '@material-ui/core/Checkbox';
 import InputLabel from '@material-ui/core/InputLabel';
-import Divider from '@material-ui/core/Divider';
-import Typography from '@material-ui/core/Typography';
 
 import styles from './styles';
 
-const assets = ['ALL', 'CAKE', 'DRUGS', 'BTC', 'DOT', 'ETH', 'BURGER'];
+const assets = [
+  'ALL',
+  'ATOM',
+  'BNB',
+  'BLIQ',
+  'BURGER',
+  'BUSD',
+  'BTC',
+  'CAKE',
+  'CRED',
+  'DAI',
+  'DOT',
+  'DRUGS',
+  'ETH',
+  'FIL',
+  'GUNS',
+  'LINK',
+  'THUGS',
+  'USDT',
+  'XTZ',
+];
 
 const useStyles = makeStyles(styles);
 
