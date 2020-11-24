@@ -123,11 +123,11 @@ export const pools = [
     id: 'street-busd-bnb',
     logo: 'thugs/BUSD-BNB',
     name: 'BUSD-BNB LP v2',
-    token: 'BUSD-BNB LP',
+    token: 'BUSD-BNB LP v2',
     tokenDescription: 'Uses: Traphouse',
     tokenAddress: '0xf2e4E3F9B58b3eDaC88Ad11D689a23f3119a782D',
     tokenDecimals: 18,
-    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/thugs#farming-drugs-with-busd-bnb-lp',
+    tokenDescriptionUrl: '#',
     earnedToken: 'mooStreetBUSD-BNBV2',
     earnedTokenAddress: '0x2091b25f02275a4D791075f83c904Fa5Fb96B5A7',
     earnContractAddress: '0x2091b25f02275a4D791075f83c904Fa5Fb96B5A7',
@@ -138,7 +138,7 @@ export const pools = [
     oracle: 'thugs-lp',
     oracleId: 'street-busd-bnb',
     oraclePrice: 0,
-    fallbackPrice: 10.786,
+    fallbackPrice: 11.4725,
     depositsPaused: false,
     status: 'active',
   },
@@ -325,7 +325,7 @@ export const pools = [
     earnedToken: 'mooStreetPancakeLP-THUGS-BNB',
     earnedTokenAddress: '0x318819D668770c3551494278E7201cf2F2D0bd96',
     earnContractAddress: '0x318819D668770c3551494278E7201cf2F2D0bd96',
-    defaultApy: 7.62,
+    defaultApy: 0,
     unstableApy: true,
     pricePerFullShare: 1,
     tvl: 0,
@@ -349,7 +349,7 @@ export const pools = [
     earnedToken: 'mooStreetNarwhalLP-THUGS-BNB',
     earnedTokenAddress: '0x2f53EB88f10aBbEA2FAfBcDfC4F4b2ee3b2bEfeE',
     earnContractAddress: '0x2f53EB88f10aBbEA2FAfBcDfC4F4b2ee3b2bEfeE',
-    defaultApy: 16.817,
+    defaultApy: 0,
     unstableApy: true,
     pricePerFullShare: 1,
     tvl: 0,
@@ -373,7 +373,7 @@ export const pools = [
     earnedToken: 'mooStreetTHUGS-BNB',
     earnedTokenAddress: '0x938922808d98d6A9B130AEdAfF9F263c8C1830cA',
     earnContractAddress: '0x938922808d98d6A9B130AEdAfF9F263c8C1830cA',
-    defaultApy: 31.7484,
+    defaultApy: 0,
     unstableApy: true,
     pricePerFullShare: 1,
     tvl: 0,
@@ -397,7 +397,7 @@ export const pools = [
     earnedToken: 'mooStreetDRUGS-BNB',
     earnedTokenAddress: '0xa4aB709f5eB75f3213734fC227D9e27352d1DB6c',
     earnContractAddress: '0xa4aB709f5eB75f3213734fC227D9e27352d1DB6c',
-    defaultApy: 37.119,
+    defaultApy: 0,
     unstableApy: true,
     pricePerFullShare: 1,
     tvl: 0,
@@ -421,7 +421,7 @@ export const pools = [
     earnedToken: 'mooStreetGUNS-BNB',
     earnedTokenAddress: '0xA2bcB1D7955AEa2F5B93C308E199337a77E7bAd4',
     earnContractAddress: '0xA2bcB1D7955AEa2F5B93C308E199337a77E7bAd4',
-    defaultApy: 65.7197,
+    defaultApy: 0,
     unstableApy: true,
     pricePerFullShare: 1,
     tvl: 0,
@@ -445,7 +445,7 @@ export const pools = [
     earnedToken: 'mooStreetBUSD-BNB',
     earnedTokenAddress: '0x26e6dA6AF638Df79a790911dAe6381d3e96B9DAc',
     earnContractAddress: '0x26e6dA6AF638Df79a790911dAe6381d3e96B9DAc',
-    defaultApy: 0.5433,
+    defaultApy: 0,
     unstableApy: true,
     pricePerFullShare: 1,
     tvl: 0,
@@ -469,7 +469,7 @@ export const pools = [
     earnedToken: 'mooStreetBTC-BNB',
     earnedTokenAddress: '0x62C857Ae71Ad9ab671ca4F278eC28d89AcCf1bB2',
     earnContractAddress: '0x62C857Ae71Ad9ab671ca4F278eC28d89AcCf1bB2',
-    defaultApy: 1.09829,
+    defaultApy: 0,
     unstableApy: true,
     pricePerFullShare: 1,
     tvl: 0,
@@ -493,7 +493,7 @@ export const pools = [
     earnedToken: 'mooStreetETH-BNB',
     earnedTokenAddress: '0xE17701b569C616cC636a07ece63e4A0f0Da60218',
     earnContractAddress: '0xE17701b569C616cC636a07ece63e4A0f0Da60218',
-    defaultApy: 0.9913,
+    defaultApy: 0,
     unstableApy: true,
     pricePerFullShare: 1,
     tvl: 0,
@@ -504,7 +504,9 @@ export const pools = [
     depositsPaused: true,
     status: 'eol',
   },
-
+  //
+  // < ---- > PANCAKE < ---- >
+  //
   {
     id: 'cake-cake',
     logo: 'cake/CAKE',
@@ -613,7 +615,7 @@ export const pools = [
     earnedToken: 'mooCakebROOBEE',
     earnedTokenAddress: '0x836527F28Fd3A90ad0ed335E1a868932Bb28939E',
     earnContractAddress: '0x836527F28Fd3A90ad0ed335E1a868932Bb28939E',
-    defaultApy: 17.26457,
+    defaultApy: 0,
     unstableApy: true,
     pricePerFullShare: 1,
     tvl: 0,
@@ -792,7 +794,9 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
   },
-
+  //
+  // < ---- > ForTube < ---- >
+  //
   {
     id: 'fil',
     logo: 'fortube/FIL',
@@ -1032,7 +1036,9 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
   },
-
+  //
+  // < ---- > REFUNDS < ---- >
+  //
   {
     id: 'thugs-drugs-guns-v1',
     logo: 'thugs/DRUGS-V2',
@@ -1169,7 +1175,7 @@ export const pools = [
     earnedToken: 'mooFryBURGER',
     earnedTokenAddress: '0x78d60Da18c09bdE41397010198F454021Ec810Ad',
     earnContractAddress: '0x78d60Da18c09bdE41397010198F454021Ec810Ad',
-    defaultApy: '200.00',
+    defaultApy: 0,
     unstableApy: true,
     pricePerFullShare: 1,
     tvl: 0,

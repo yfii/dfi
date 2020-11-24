@@ -114,7 +114,7 @@ export const fetchPrice = async ({ oracle, id }) => {
     return getCachedPrice({oracle, id});
   }
 
-  let price = 0;
+  let price;
   switch(oracle) {
     case 'band':       price = await fetchBand(id); break;
     case 'pancake':    price = await fetchPancake(id); break;
@@ -122,7 +122,7 @@ export const fetchPrice = async ({ oracle, id }) => {
     case 'thugs-lp':   price = await fetchThugsLP(id); break;
     case 'coingecko':  price = await fetchCoingecko(id); break;
     case 'thugs':      price = await fetchThugs(id); break;
-    default: console.error('Unknown oracle:', oracle);
+    default: price = 0;
   }
   
   addToCache({oracle, id, price});
