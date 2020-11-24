@@ -6,8 +6,8 @@ const endpoints = {
   pancake:   'https://beefy-api.herokuapp.com/pancake/price',
   pancakeLp: 'https://beefy-api.herokuapp.com/pancake/lps',
   thugsLp:   'https://beefy-api.herokuapp.com/thugs/lps',
+  thugs:     'https://beefy-api.herokuapp.com/thugs/tickers',
   coingecko: 'https://api.coingecko.com/api/v3/simple/price',
-  thugs:     'https://api.streetswap.vip/tickers',
 };
 
 const WBNB = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c';
@@ -98,7 +98,7 @@ const fetchThugs = async (id) => {
     } else {
       price = bnb * ticker['last_price'];
     }
-
+    
     return price;
   } catch (err) {
     console.error(err);
