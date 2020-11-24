@@ -7,7 +7,11 @@ const endpoints = {
   pancakeLp: 'https://beefy-api.herokuapp.com/pancake/lps',
   thugsLp:   'https://beefy-api.herokuapp.com/thugs/lps',
   coingecko: 'https://api.coingecko.com/api/v3/simple/price',
+  thugs:     'https://api.streetswap.vip/tickers',
 };
+
+const WBNB = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c';
+const WBNB_BUSD = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c_0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56';
 
 const CACHE_TIMEOUT = 30 * 60 * 1000;
 const cache = {};
@@ -80,6 +84,28 @@ const fetchCoingecko = async (id) => {
   }
 };
 
+const fetchThugs = async (id) => {
+  try {
+    const response = await axios.get(endpoints.thugs);
+    const ticker = response.data[id];
+    const bnb = response.data[WBNB_BUSD]['last_price'];
+
+    let price = 0;
+
+    const pair = id.split('_');
+    if(pair[0] === WBNB) {
+      price = bnb / ticker['last_price'];
+    } else {
+      price = bnb * ticker['last_price'];
+    }
+
+    return price;
+  } catch (err) {
+    console.error(err);
+    return 0;
+  }
+};
+
 export const fetchPrice = async ({ oracle, id }) => {
   if (oracle === undefined) { console.error('Undefined oracle'); return 0; }
   if (id === undefined) { console.error('Undefined pair'); return 0; }
@@ -95,6 +121,7 @@ export const fetchPrice = async ({ oracle, id }) => {
     case 'pancake-lp': price = await fetchPancakeLP(id); break;
     case 'thugs-lp':   price = await fetchThugsLP(id); break;
     case 'coingecko':  price = await fetchCoingecko(id); break;
+    case 'thugs':      price = await fetchThugs(id); break;
     default: console.error('Unknown oracle:', oracle);
   }
   
