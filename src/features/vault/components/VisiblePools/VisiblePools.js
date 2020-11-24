@@ -38,6 +38,8 @@ const VisiblePools = ({ pools, tokens, apys }) => {
       <button onClick={() => setOrder('tvl')}>TVL</button>
 
       <button onClick={() => setAsset('DRUGS')}>DRUGS</button>
+      <button onClick={() => setAsset('BTC')}>BTC</button>
+      <button onClick={() => setAsset('CAKE')}>CAKE</button>
 
       {poolsByAsset.map((pool, index) => (
         <Pool
