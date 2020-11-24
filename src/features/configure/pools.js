@@ -192,10 +192,10 @@ export const pools = [
   },
 
   {
-    id: 'street-narwhalslp-thugs-bnb',
+    id: 'street-narwhallp-thugs-bnb',
     logo: 'thugs/THUGS-BNB',
-    name: 'THUGS-BNB Narwhals LP',
-    token: 'THUGS-BNB Narwhals LP',
+    name: 'THUGS-BNB Narwhal LP',
+    token: 'THUGS-BNB Narwhal LP',
     tokenDescription: 'Uses: StreetSwap',
     tokenAddress: '0x40Ff83ac2890DD5469f5eCa2c17dcAf10ee09957',
     tokenDecimals: 18,
@@ -208,7 +208,7 @@ export const pools = [
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'thugs-lp',
-    oracleId: 'street-narwhalslp-thugs-bnb',
+    oracleId: 'street-narwhallp-thugs-bnb',
     oraclePrice: 0,
     fallbackPrice: 81.644,
     depositsPaused: false,
