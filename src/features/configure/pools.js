@@ -294,7 +294,11 @@ export const pools = [
     logo: 'thugs/THUGS-BNB',
     name: 'THUGS-BNB LP v1',
     token: 'THUGS-BNB LP v1',
+<<<<<<< HEAD
     tokenDescription: 'Uses: Traphouse',
+=======
+    tokenDescription: 'Please migrate to v2',
+>>>>>>> ebe48ff0096b57dec56f83b30cc381a5300834e1
     tokenAddress: '0x9354caB0F1083135439B23aA6c364329e578F39a',
     tokenDecimals: 18,
     tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/thugs#farming-drugs-with-thugs-bnb-lp',
@@ -318,7 +322,11 @@ export const pools = [
     logo: 'thugs/DRUGS-BNB',
     name: 'DRUGS-BNB LP v1',
     token: 'DRUGS-BNB LP v1',
+<<<<<<< HEAD
     tokenDescription: 'Uses: Traphouse',
+=======
+    tokenDescription: 'Please migrate to v2',
+>>>>>>> ebe48ff0096b57dec56f83b30cc381a5300834e1
     tokenAddress: '0x5BcE5d58682f15541EFc72d8f56C7d6221d541f1',
     tokenDecimals: 18,
     tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/thugs#farming-drugs-with-drugs-bnb-lp',
@@ -342,7 +350,11 @@ export const pools = [
     logo: 'thugs/GUNS-BNB',
     name: 'GUNS-BNB LP v1',
     token: 'GUNS-BNB LP v1',
+<<<<<<< HEAD
     tokenDescription: 'Uses: Traphouse',
+=======
+    tokenDescription: 'Please migrate to v2',
+>>>>>>> ebe48ff0096b57dec56f83b30cc381a5300834e1
     tokenAddress: '0xa5e5eeB6b51fa0fDc59915C81d75C83470BFA4f0',
     tokenDecimals: 18,
     tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/thugs#farming-drugs-with-guns-bnb-lp',
@@ -366,7 +378,11 @@ export const pools = [
     logo: 'thugs/BUSD-BNB',
     name: 'BUSD-BNB LP v1',
     token: 'BUSD-BNB LP v1',
+<<<<<<< HEAD
     tokenDescription: 'Uses: Traphouse',
+=======
+    tokenDescription: 'Please migrate to v2',
+>>>>>>> ebe48ff0096b57dec56f83b30cc381a5300834e1
     tokenAddress: '0xf2e4E3F9B58b3eDaC88Ad11D689a23f3119a782D',
     tokenDecimals: 18,
     tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/thugs#farming-drugs-with-busd-bnb-lp',
@@ -390,7 +406,11 @@ export const pools = [
     logo: 'thugs/BTC-BNB',
     name: 'BTC-BNB LP v1',
     token: 'BTC-BNB LP v1',
+<<<<<<< HEAD
     tokenDescription: 'Uses: Traphouse',
+=======
+    tokenDescription: 'Please migrate to v2',
+>>>>>>> ebe48ff0096b57dec56f83b30cc381a5300834e1
     tokenAddress: '0xdFb193940E1317f38e91568fdb05EFE18ee4A3c7',
     tokenDecimals: 18,
     tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/thugs#farming-drugs-with-btc-bnb-lp',
@@ -414,7 +434,11 @@ export const pools = [
     logo: 'thugs/ETH-BNB',
     name: 'ETH-BNB LP v1',
     token: 'ETH-BNB LP v1',
+<<<<<<< HEAD
     tokenDescription: 'Uses: Traphouse',
+=======
+    tokenDescription: 'Please migrate to v2',
+>>>>>>> ebe48ff0096b57dec56f83b30cc381a5300834e1
     tokenAddress: '0x75115C644F9661A761A333Ba0A38e42B1649f143',
     tokenDecimals: 18,
     tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/thugs#farming-drugs-with-eth-bnb-lp',
