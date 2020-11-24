@@ -49,8 +49,8 @@ export const pools = [
 
   {
     id: 'street-cred-bnb',
-    logo: 'thugs/THUGS-BNB',
-    name: 'CRED-BNB LP v1',
+    logo: 'thugs/CRED-BNB',
+    name: 'CRED-BNB LP',
     token: 'CRED-BNB LP',
     tokenDescription: 'Uses: StreetSwap',
     tokenAddress: '0x9CBE4F200b474a1C33bfFe7c6e531e1D47ECab46',
