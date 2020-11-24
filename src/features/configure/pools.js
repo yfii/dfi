@@ -315,7 +315,7 @@ export const pools = [
   //
   {
     id: 'street-panacakelp-thugs-bnb-v1',
-    logo: 'thugs/THUGS-BNB',
+    logo: 'thugs/THUGS-BNB v1',
     name: 'THUGS-BNB Pancake LP',
     token: 'THUGS-BNB Pancake LP',
     tokenDescription: 'Uses: Traphouse',
@@ -339,7 +339,7 @@ export const pools = [
 
   {
     id: 'street-narwhallp-thugs-bnb',
-    logo: 'thugs/THUGS-BNB',
+    logo: 'thugs/THUGS-BNB v1',
     name: 'THUGS-BNB Narwhal LP',
     token: 'THUGS-BNB Narwhal LP',
     tokenDescription: 'Uses: Traphouse',
