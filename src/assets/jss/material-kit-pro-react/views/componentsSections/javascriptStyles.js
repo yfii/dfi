@@ -1,4 +1,15 @@
-import { container, title, cardTitle, description, mlAuto, mrAuto, blackColor, whiteColor, grayColor, hexToRgb } from 'assets/jss/material-kit-pro-react.js';
+import {
+  container,
+  title,
+  cardTitle,
+  description,
+  mlAuto,
+  mrAuto,
+  blackColor,
+  whiteColor,
+  grayColor,
+  hexToRgb,
+} from 'assets/jss/material-kit-pro-react.js';
 
 import modalStyle from 'assets/jss/material-kit-pro-react/modalStyle.js';
 import tooltipsStyle from 'assets/jss/material-kit-pro-react/tooltipsStyle.js';
@@ -70,9 +81,6 @@ const javascriptStyles = theme => ({
     WebkitBoxPack: 'center !important',
     MsFlexPack: 'center !important',
     justifyContent: 'center !important',
-  },
-  infoArea: {
-    padding: '0px 0px 20px !important',
   },
   space50: {
     height: '50px',

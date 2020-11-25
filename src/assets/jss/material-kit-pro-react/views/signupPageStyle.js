@@ -1,4 +1,12 @@
-import { primaryColor, grayColor, container, cardTitle, whiteColor, blackColor, hexToRgb } from 'assets/jss/material-kit-pro-react.js';
+import {
+  primaryColor,
+  grayColor,
+  container,
+  cardTitle,
+  whiteColor,
+  blackColor,
+  hexToRgb,
+} from 'assets/jss/material-kit-pro-react.js';
 
 import customCheckboxRadioSwitchStyle from 'assets/jss/material-kit-pro-react/customCheckboxRadioSwitchStyle.js';
 
@@ -23,7 +31,12 @@ const signupPageStyle = {
       background: 'rgba(' + hexToRgb(blackColor) + ', 0.5)',
     },
     '&:after': {
-      background: 'linear-gradient(60deg,rgba(' + hexToRgb(primaryColor[4]) + ',.56),rgba(' + hexToRgb(primaryColor[5]) + ',.95))',
+      background:
+        'linear-gradient(60deg,rgba(' +
+        hexToRgb(primaryColor[4]) +
+        ',.56),rgba(' +
+        hexToRgb(primaryColor[5]) +
+        ',.95))',
     },
     '&:before,&:after': {
       position: 'absolute',
@@ -38,7 +51,14 @@ const signupPageStyle = {
   },
   cardSignup: {
     borderRadius: '6px',
-    boxShadow: '0 16px 24px 2px rgba(' + hexToRgb(blackColor) + ', 0.14), 0 6px 30px 5px rgba(' + hexToRgb(blackColor) + ', 0.12), 0 8px 10px -5px rgba(' + hexToRgb(blackColor) + ', 0.2);',
+    boxShadow:
+      '0 16px 24px 2px rgba(' +
+      hexToRgb(blackColor) +
+      ', 0.14), 0 6px 30px 5px rgba(' +
+      hexToRgb(blackColor) +
+      ', 0.12), 0 8px 10px -5px rgba(' +
+      hexToRgb(blackColor) +
+      ', 0.2);',
     marginBottom: '100px',
     padding: '40px 0px',
   },
@@ -72,9 +92,6 @@ const signupPageStyle = {
   },
   form: {
     margin: '0',
-  },
-  infoArea: {
-    padding: '0px 0px 20px !important',
   },
   block: {
     color: 'inherit',

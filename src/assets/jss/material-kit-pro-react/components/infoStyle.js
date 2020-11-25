@@ -1,11 +1,15 @@
-import { primaryColor, warningColor, dangerColor, successColor, infoColor, roseColor, grayColor, title } from 'assets/jss/material-kit-pro-react.js';
+import {
+  primaryColor,
+  warningColor,
+  dangerColor,
+  successColor,
+  infoColor,
+  roseColor,
+  grayColor,
+  title,
+} from 'assets/jss/material-kit-pro-react.js';
 
 const infoStyle = {
-  infoArea: {
-    maxWidth: '360px',
-    margin: '0 auto',
-    padding: '70px 0 30px',
-  },
   iconWrapper: {
     float: 'left',
     marginTop: '24px',

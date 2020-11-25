@@ -69,10 +69,6 @@ const profilePageStyle = {
   followButton: {
     marginTop: '-28px !important',
   },
-  gridItem: {
-    ...mlAuto,
-    ...mrAuto,
-  },
   collections: {
     marginTop: '20px',
   },

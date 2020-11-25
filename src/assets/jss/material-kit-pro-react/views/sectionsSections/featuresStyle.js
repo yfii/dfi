@@ -1,4 +1,13 @@
-import { container, mlAuto, mrAuto, title, description, blackColor, whiteColor, hexToRgb } from 'assets/jss/material-kit-pro-react.js';
+import {
+  container,
+  mlAuto,
+  mrAuto,
+  title,
+  description,
+  blackColor,
+  whiteColor,
+  hexToRgb,
+} from 'assets/jss/material-kit-pro-react.js';
 
 const features = {
   container,
@@ -51,32 +60,7 @@ const features = {
       left: '0px',
       top: '0px',
     },
-    '& $container': {
-      '& $gridContainer:last-child': {
-        '& $gridItem': {
-          borderBottom: '0',
-        },
-      },
-      '& $gridItem': {
-        border: '1px solid rgba(' + hexToRgb(whiteColor) + ', 0.35)',
-        borderTop: '0',
-        borderLeft: '0',
-        '&:last-child': {
-          borderRight: '0',
-        },
-      },
-    },
-    '& $infoArea5': {
-      textAlign: 'center',
-      maxWidth: '310px',
-      minHeight: '320px',
-      '& h4,& p,& svg,& .fab,& .fas,& .far,& .fal,& .material-icons': {
-        color: whiteColor,
-      },
-    },
   },
-  gridContainer: {},
-  gridItem: {},
   textCenter: {
     textAlign: 'center',
   },
@@ -85,12 +69,6 @@ const features = {
       width: '100%',
     },
   },
-  infoArea: {
-    maxWidth: 'none',
-    margin: '0 auto',
-    padding: '10px 0 0px',
-  },
-  infoArea5: {},
 };
 
 export default features;

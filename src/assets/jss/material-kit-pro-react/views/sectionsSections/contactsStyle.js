@@ -1,4 +1,15 @@
-import { container, section, sectionDark, mlAuto, title, description, cardTitle, blackColor, whiteColor, hexToRgb } from 'assets/jss/material-kit-pro-react.js';
+import {
+  container,
+  section,
+  sectionDark,
+  mlAuto,
+  title,
+  description,
+  cardTitle,
+  blackColor,
+  whiteColor,
+  hexToRgb,
+} from 'assets/jss/material-kit-pro-react.js';
 
 import customCheckboxRadioSwitch from 'assets/jss/material-kit-pro-react/customCheckboxRadioSwitchStyle.js';
 
@@ -34,21 +45,9 @@ const contactsSection = {
     '& $description': {
       color: 'rgba(' + hexToRgb(whiteColor) + ', 0.76)',
     },
-    '& $infoArea': {},
   },
   contacts: {
     padding: '80px 0',
-  },
-  infoArea: {
-    padding: '0',
-    margin: '0',
-    '& svg,& .fab,& .fas,& .far,& .fal,& .material-icons': {
-      color: whiteColor,
-    },
-    '& h4': {
-      marginTop: '20px',
-      color: whiteColor,
-    },
   },
   card1: {
     marginTop: '30px',
@@ -88,14 +87,6 @@ const contactsSection = {
   contacts2: {
     padding: '0',
     height: '800px',
-  },
-  infoArea2: {
-    padding: '0',
-    margin: '0',
-    '& h4': {
-      fontSize: '1.0625rem',
-      lineHeight: '1.55em',
-    },
   },
 };
 

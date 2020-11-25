@@ -70,9 +70,6 @@ const modalStyle = theme => ({
     marginLeft: 'auto',
     marginRight: 'auto',
   },
-  instructionNoticeModal: {
-    marginBottom: '25px',
-  },
   imageNoticeModal: {
     maxWidth: '150px',
   },
