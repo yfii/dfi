@@ -5,6 +5,7 @@ const appStyle = theme => ({
     backgroundColor: '#fbf9f6',
     minHeight: '100vh',
     position: 'relative',
+    overflow: 'hidden',
   },
   container: {
     ...container,

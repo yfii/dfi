@@ -9,7 +9,7 @@ import CustomDropdown from 'components/CustomDropdown/CustomDropdown.js';
 import Button from 'components/CustomButtons/Button.js';
 import { useTranslation } from 'react-i18next';
 
-import styles from 'assets/jss/material-kit-pro-react/components/headerLinksStyle.js';
+import styles from './styles';
 
 const useStyles = makeStyles(styles);
 

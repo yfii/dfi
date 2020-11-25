@@ -11,7 +11,7 @@ import Drawer from '@material-ui/core/Drawer';
 import Menu from '@material-ui/icons/Menu';
 import Close from '@material-ui/icons/Close';
 
-import styles from 'assets/jss/material-kit-pro-react/components/headerStyle.js';
+import styles from './styles';
 
 const useStyles = makeStyles(styles);
 

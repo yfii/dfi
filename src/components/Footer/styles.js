@@ -1,4 +1,4 @@
-const footerStyle = theme => ({
+const styles = theme => ({
   root: {
     display: 'flex',
     flexDirection: 'row',
@@ -33,4 +33,4 @@ const footerStyle = theme => ({
   },
 });
 
-export default footerStyle;
+export default styles;

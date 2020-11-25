@@ -1,4 +1,4 @@
-const sectionTitleStyle = theme => ({
+const styles = theme => ({
   root: {
     flexGrow: 1,
     alignItems: 'center',
@@ -17,4 +17,4 @@ const sectionTitleStyle = theme => ({
   },
 });
 
-export default sectionTitleStyle;
+export default styles;

@@ -37,12 +37,12 @@ const Pool = ({ pool, index, openedCardList, openCard, tokens, contractApy }) =>
           singleDepositedBalance={singleDepositedBalance}
           depositedApy={depositedApy}
         />
+        <Divider variant="middle" className={classes.divider} />
         <PoolDetails
           pool={pool}
           balanceSingle={balanceSingle}
           singleDepositedBalance={singleDepositedBalance}
         />
-        <Divider variant="middle" className={classes.divider} />
       </Accordion>
     </Grid>
   );

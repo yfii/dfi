@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { StylesProvider } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/core/styles';
 
-import Header from 'components/Header/Header.js';
-import HeaderLinks from 'components/Header/HeaderLinks.js';
+import Header from 'components/Header/Header';
+import HeaderLinks from 'components/HeaderLinks/HeaderLinks';
 
 import { useTranslation } from 'react-i18next';
 

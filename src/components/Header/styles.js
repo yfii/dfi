@@ -9,14 +9,13 @@ import {
   roseColor,
   transition,
   boxShadow,
-  drawerWidth,
   blackColor,
   whiteColor,
   grayColor,
   hexToRgb,
 } from 'assets/jss/material-kit-pro-react.js';
 
-const headerStyle = theme => ({
+const styles = theme => ({
   appBar: {
     display: 'flex',
     border: '0',
@@ -26,7 +25,12 @@ const headerStyle = theme => ({
     color: grayColor[15],
     width: '100%',
     backgroundColor: whiteColor,
-    boxShadow: '0 4px 18px 0px rgba(' + hexToRgb(blackColor) + ', 0.12), 0 7px 10px -5px rgba(' + hexToRgb(blackColor) + ', 0.15)',
+    boxShadow:
+      '0 4px 18px 0px rgba(' +
+      hexToRgb(blackColor) +
+      ', 0.12), 0 7px 10px -5px rgba(' +
+      hexToRgb(blackColor) +
+      ', 0.15)',
     transition: 'all 150ms ease 0s',
     alignItems: 'center',
     flexFlow: 'row nowrap',
@@ -85,32 +89,62 @@ const headerStyle = theme => ({
   primary: {
     backgroundColor: primaryColor[0],
     color: whiteColor,
-    boxShadow: '0 4px 20px 0px rgba(' + hexToRgb(blackColor) + ', 0.14), 0 7px 12px -5px rgba(' + hexToRgb(primaryColor[0]) + ', 0.46)',
+    boxShadow:
+      '0 4px 20px 0px rgba(' +
+      hexToRgb(blackColor) +
+      ', 0.14), 0 7px 12px -5px rgba(' +
+      hexToRgb(primaryColor[0]) +
+      ', 0.46)',
   },
   info: {
     backgroundColor: infoColor[0],
     color: whiteColor,
-    boxShadow: '0 4px 20px 0px rgba(' + hexToRgb(blackColor) + ', 0.14), 0 7px 12px -5px rgba(' + hexToRgb(infoColor[0]) + ', 0.46)',
+    boxShadow:
+      '0 4px 20px 0px rgba(' +
+      hexToRgb(blackColor) +
+      ', 0.14), 0 7px 12px -5px rgba(' +
+      hexToRgb(infoColor[0]) +
+      ', 0.46)',
   },
   success: {
     backgroundColor: successColor[0],
     color: whiteColor,
-    boxShadow: '0 4px 20px 0px rgba(' + hexToRgb(blackColor) + ', 0.14), 0 7px 12px -5px rgba(' + hexToRgb(successColor[0]) + ', 0.46)',
+    boxShadow:
+      '0 4px 20px 0px rgba(' +
+      hexToRgb(blackColor) +
+      ', 0.14), 0 7px 12px -5px rgba(' +
+      hexToRgb(successColor[0]) +
+      ', 0.46)',
   },
   warning: {
     backgroundColor: warningColor[0],
     color: whiteColor,
-    boxShadow: '0 4px 20px 0px rgba(' + hexToRgb(blackColor) + ', 0.14), 0 7px 12px -5px rgba(' + hexToRgb(warningColor[0]) + ', 0.46)',
+    boxShadow:
+      '0 4px 20px 0px rgba(' +
+      hexToRgb(blackColor) +
+      ', 0.14), 0 7px 12px -5px rgba(' +
+      hexToRgb(warningColor[0]) +
+      ', 0.46)',
   },
   danger: {
     backgroundColor: dangerColor[0],
     color: whiteColor,
-    boxShadow: '0 4px 20px 0px rgba(' + hexToRgb(blackColor) + ', 0.14), 0 7px 12px -5px rgba(' + hexToRgb(dangerColor[0]) + ', 0.46)',
+    boxShadow:
+      '0 4px 20px 0px rgba(' +
+      hexToRgb(blackColor) +
+      ', 0.14), 0 7px 12px -5px rgba(' +
+      hexToRgb(dangerColor[0]) +
+      ', 0.46)',
   },
   rose: {
     backgroundColor: roseColor[0],
     color: whiteColor,
-    boxShadow: '0 4px 20px 0px rgba(' + hexToRgb(blackColor) + ', 0.14), 0 7px 12px -5px rgba(' + hexToRgb(roseColor[0]) + ', 0.46)',
+    boxShadow:
+      '0 4px 20px 0px rgba(' +
+      hexToRgb(blackColor) +
+      ', 0.14), 0 7px 12px -5px rgba(' +
+      hexToRgb(roseColor[0]) +
+      ', 0.46)',
   },
   transparent: {
     backgroundColor: 'transparent !important',
@@ -129,7 +163,12 @@ const headerStyle = theme => ({
     marginBottom: '20px',
     color: grayColor[15],
     backgroundColor: whiteColor + ' !important',
-    boxShadow: '0 4px 18px 0px rgba(' + hexToRgb(blackColor) + ', 0.12), 0 7px 10px -5px rgba(' + hexToRgb(blackColor) + ', 0.15)',
+    boxShadow:
+      '0 4px 18px 0px rgba(' +
+      hexToRgb(blackColor) +
+      ', 0.12), 0 7px 10px -5px rgba(' +
+      hexToRgb(blackColor) +
+      ', 0.15)',
   },
   drawerPaper: {
     border: 'none',
@@ -137,7 +176,7 @@ const headerStyle = theme => ({
     transitionProperty: 'top, bottom, width',
     transitionDuration: '.2s, .2s, .35s',
     transitionTimingFunction: 'linear, linear, ease',
-    width: drawerWidth,
+    width: 260,
     ...boxShadow,
     position: 'fixed',
     display: 'block',
@@ -200,4 +239,4 @@ const headerStyle = theme => ({
   },
 });
 
-export default headerStyle;
+export default styles;

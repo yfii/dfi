@@ -7,7 +7,7 @@ import {
   secondaryColor,
 } from 'assets/jss/material-kit-pro-react.js';
 
-const headerLinksStyle = theme => ({
+const styles = theme => ({
   list: {
     [theme.breakpoints.up('md')]: {
       WebkitBoxAlign: 'center',
@@ -230,4 +230,4 @@ const headerLinksStyle = theme => ({
   },
 });
 
-export default headerLinksStyle;
+export default styles;

@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
@@ -11,7 +10,7 @@ import Divider from '@material-ui/core/Divider';
 import Popper from '@material-ui/core/Popper';
 import Button from 'components/CustomButtons/Button.js';
 
-import styles from 'assets/jss/material-kit-pro-react/components/customDropdownStyle.js';
+import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
@@ -71,16 +70,29 @@ export default function CustomDropdown(props) {
   const dropDownMenu = (
     <MenuList role="menu" style={{ width: '100%' }} className={classes.menuList}>
       {dropdownHeader !== undefined ? (
-        <MenuItem onClick={() => handleCloseMenu(dropdownHeader)} className={classes.dropdownHeader}>
+        <MenuItem
+          onClick={() => handleCloseMenu(dropdownHeader)}
+          className={classes.dropdownHeader}
+        >
           {dropdownHeader}
         </MenuItem>
       ) : null}
       {dropdownList.map((prop, key) => {
         if (prop.divider) {
-          return <Divider key={key} onClick={() => handleCloseMenu('divider')} className={classes.dropdownDividerItem} />;
+          return (
+            <Divider
+              key={key}
+              onClick={() => handleCloseMenu('divider')}
+              className={classes.dropdownDividerItem}
+            />
+          );
         } else if (prop.props !== undefined && prop.props['data-ref'] === 'multi') {
           return (
-            <MenuItem key={key} className={dropdownItem} style={{ overflow: 'visible', padding: 0 }}>
+            <MenuItem
+              key={key}
+              className={dropdownItem}
+              style={{ overflow: 'visible', padding: 0 }}
+            >
               {prop}
             </MenuItem>
           );
@@ -96,7 +108,13 @@ export default function CustomDropdown(props) {
   return (
     <div className={innerDropDown ? classes.innerManager : classes.manager}>
       <div className={buttonText !== undefined ? '' : classes.target}>
-        <Button aria-label="Notifications" aria-owns={anchorEl ? 'menu-list' : null} aria-haspopup="true" {...buttonProps} onClick={handleClick}>
+        <Button
+          aria-label="Notifications"
+          aria-owns={anchorEl ? 'menu-list' : null}
+          aria-haspopup="true"
+          {...buttonProps}
+          onClick={handleClick}
+        >
           {buttonIcon !== undefined ? <props.buttonIcon className={classes.buttonIcon} /> : null}
           {buttonText !== undefined ? buttonText : null}
           {caret ? <b className={caretClasses} /> : null}
@@ -116,14 +134,22 @@ export default function CustomDropdown(props) {
         })}
       >
         {() => (
-          <Grow in={Boolean(anchorEl)} id="menu-list" style={dropup ? { transformOrigin: '0 100% 0' } : { transformOrigin: '0 0 0' }}>
+          <Grow
+            in={Boolean(anchorEl)}
+            id="menu-list"
+            style={dropup ? { transformOrigin: '0 100% 0' } : { transformOrigin: '0 0 0' }}
+          >
             <Paper
               className={classNames({
                 [classes.dropdown]: true,
                 [classes.darkModalGround]: Boolean(darkModal),
               })}
             >
-              {innerDropDown ? dropDownMenu : <ClickAwayListener onClickAway={handleClose}>{dropDownMenu}</ClickAwayListener>}
+              {innerDropDown ? (
+                dropDownMenu
+              ) : (
+                <ClickAwayListener onClickAway={handleClose}>{dropDownMenu}</ClickAwayListener>
+              )}
             </Paper>
           </Grow>
         )}
@@ -131,30 +157,3 @@ export default function CustomDropdown(props) {
     </div>
   );
 }
-
-CustomDropdown.defaultProps = {
-  caret: true,
-  dropup: false,
-  hoverColor: 'primary',
-  darkModal: false,
-};
-
-CustomDropdown.propTypes = {
-  hoverColor: PropTypes.oneOf(['dark', 'primary', 'info', 'success', 'warning', 'danger', 'rose']),
-  buttonText: PropTypes.node,
-  buttonIcon: PropTypes.object,
-  dropdownList: PropTypes.array,
-  buttonProps: PropTypes.object,
-  dropup: PropTypes.bool,
-  dropdownHeader: PropTypes.node,
-  rtlActive: PropTypes.bool,
-  caret: PropTypes.bool,
-  dropPlacement: PropTypes.oneOf(['bottom', 'top', 'right', 'left', 'bottom-start', 'bottom-end', 'top-start', 'top-end', 'right-start', 'right-end', 'left-start', 'left-end']),
-  noLiPadding: PropTypes.bool,
-  innerDropDown: PropTypes.bool,
-  navDropdown: PropTypes.bool,
-  // This is a function that returns the clicked menu item
-  onClick: PropTypes.func,
-  darkModal: PropTypes.bool,
-  popperClassName: PropTypes.string,
-};

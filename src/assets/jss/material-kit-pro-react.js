@@ -1,20 +1,3 @@
-/*!
-
-=========================================================
-* Material Kit PRO React - v1.9.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-pro-react
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-
 // ##############################
 // // // Function that converts from hex color to rgb color
 // // // Example: input = #9c27b0 => output = 156, 39, 176
@@ -46,53 +29,15 @@ const hexToRgb = input => {
 // // // Variables - Styles that are used on more than one component
 // #############################
 
-const drawerWidth = 260;
-
-const primaryColor = ['#000000', '#B9AEA5', '#ab47bc', '#8e24aa', '#af2cc5', '#e1bee7', '#ba68c8'];
-const hoverColor = ['#EFE6DC', '#404456'];
+const primaryColor = ['#000000', '#B9AEA5'];
+const hoverColor = ['#EFE6DC'];
 
 const secondaryColor = ['#FBF6F0', '#EFE6DC', '#DED9D5'];
-const warningColor = [
-  '#ff9800',
-  '#ffa726',
-  '#fb8c00',
-  '#ffa21a',
-  '#fcf8e3',
-  '#faf2cc',
-  '#ffe0b2',
-  '#ffb74d',
-];
-const dangerColor = [
-  '#f44336',
-  '#ef5350',
-  '#e53935',
-  '#f55a4e',
-  '#f2dede',
-  '#ebcccc',
-  'ef9a9a',
-  '#ef5350',
-];
-const successColor = [
-  '#78B288',
-  '#5A8F69',
-  '#43a047',
-  '#5cb860',
-  '#dff0d8',
-  '#d0e9c6',
-  '#a5d6a7',
-  '#66bb6a',
-];
-const infoColor = [
-  '#00acc1',
-  '#26c6da',
-  '#00acc1',
-  '#00d3ee',
-  '#d9edf7',
-  '#c4e3f3',
-  '#b2ebf2',
-  '#4dd0e1',
-];
-const roseColor = ['#e91e63', '#ec407a', '#d81b60', '#f8bbd0', '#f06292'];
+const warningColor = ['#ff9800'];
+const dangerColor = ['#f44336'];
+const successColor = ['#78B288', '#5A8F69'];
+const infoColor = ['#00acc1'];
+const roseColor = ['#e91e63'];
 const grayColor = [
   '#999',
   '#3C4858',
@@ -216,83 +161,11 @@ const title = {
   fontFamily: `"Roboto Slab", "Times New Roman", serif`,
 };
 
-const main = {
-  background: 'whiteColor',
-  position: 'relative',
-  zIndex: '3',
-};
-
-const mainRaised = {
-  '@media (max-width: 576px)': {
-    marginTop: '-30px',
-  },
-  '@media (max-width: 830px)': {
-    marginLeft: '10px',
-    marginRight: '10px',
-  },
-  margin: '-60px 30px 0px',
-  borderRadius: '6px',
-  boxShadow:
-    '0 16px 24px 2px rgba(' +
-    hexToRgb(blackColor) +
-    ', 0.14), 0 6px 30px 5px rgba(' +
-    hexToRgb(blackColor) +
-    ', 0.12), 0 8px 10px -5px rgba(' +
-    hexToRgb(blackColor) +
-    ', 0.2)',
-};
-
-const section = {
-  backgroundPosition: '50%',
-  backgroundSize: 'cover',
-};
-
-const sectionDark = {
-  backgroundColor: grayColor[3],
-  background: 'radial-gradient(ellipse at center,' + grayColor[4] + ' 0,' + grayColor[5] + ' 100%)',
-};
-
-const sectionDescription = {
-  marginTop: '130px',
-};
-
-const description = {
-  color: grayColor[0],
-};
-
 const mlAuto = {
   marginLeft: 'auto',
 };
 
-const mrAuto = {
-  marginRight: 'auto',
-};
-
-const btnLink = {
-  backgroundColor: 'transparent',
-  boxShdow: 'none',
-  marginTop: '5px',
-  marginBottom: '5px',
-};
-const coloredShadow = {
-  // some jss/css to make the cards look a bit better on Internet Explorer
-  '@media all and (-ms-high-contrast: none), (-ms-high-contrast: active)': {
-    display: 'none !important',
-  },
-  transform: 'scale(0.94)',
-  top: '12px',
-  filter: 'blur(12px)',
-  position: 'absolute',
-  width: '100%',
-  height: '100%',
-  backgroundSize: 'cover',
-  zIndex: '-1',
-  transition: 'opacity .45s',
-  opacity: '0',
-};
-
 export {
-  drawerWidth,
   transition,
   container,
   containerFluid,
@@ -328,15 +201,6 @@ export {
   roseBoxShadow,
   defaultBoxShadow,
   title,
-  description,
-  main,
-  mainRaised,
-  section,
-  sectionDark,
-  sectionDescription,
   mlAuto,
-  mrAuto,
-  btnLink,
-  coloredShadow,
   hexToRgb,
 };

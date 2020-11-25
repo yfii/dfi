@@ -1,12 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Snack from '@material-ui/core/SnackbarContent';
 import IconButton from '@material-ui/core/IconButton';
 import Icon from '@material-ui/core/Icon';
 import Close from '@material-ui/icons/Close';
 
-import styles from 'assets/jss/material-kit-pro-react/components/snackbarContentStyle.js';
+import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
@@ -19,7 +18,13 @@ export default function SnackbarContent(props) {
   };
   if (close !== undefined) {
     action = [
-      <IconButton className={classes.iconButton} key="close" aria-label="Close" color="inherit" onClick={closeAlert}>
+      <IconButton
+        className={classes.iconButton}
+        key="close"
+        aria-label="Close"
+        color="inherit"
+        onClick={closeAlert}
+      >
         <Close className={classes.close} />
       </IconButton>,
     ];
@@ -53,10 +58,3 @@ export default function SnackbarContent(props) {
   );
   return alert;
 }
-
-SnackbarContent.propTypes = {
-  message: PropTypes.node.isRequired,
-  color: PropTypes.oneOf(['info', 'success', 'warning', 'danger', 'primary']),
-  close: PropTypes.bool,
-  icon: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-};
