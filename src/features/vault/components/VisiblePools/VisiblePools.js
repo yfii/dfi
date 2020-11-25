@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 
 import useFilteredPools from '../../hooks/useFilteredPools';
 import useSortedPools from '../../hooks/useSortedPools';
@@ -14,15 +14,18 @@ const VisiblePools = ({ pools, tokens, apys }) => {
 
   const [openedCardList, setOpenCardList] = useState([0]);
 
-  const openCard = id => {
-    return setOpenCardList(openedCardList => {
-      if (openedCardList.includes(id)) {
-        return openedCardList.filter(item => item !== id);
-      } else {
-        return [...openedCardList, id];
-      }
-    });
-  };
+  const toggleCard = useCallback(
+    id => {
+      return setOpenCardList(openedCardList => {
+        if (openedCardList.includes(id)) {
+          return openedCardList.filter(item => item !== id);
+        } else {
+          return [...openedCardList, id];
+        }
+      });
+    },
+    [openedCardList]
+  );
 
   return (
     <>
@@ -38,8 +41,8 @@ const VisiblePools = ({ pools, tokens, apys }) => {
         <Pool
           pool={pool}
           index={index}
-          openedCardList={openedCardList}
-          openCard={openCard}
+          isOpen={openedCardList.includes(index)}
+          toggleCard={toggleCard}
           tokens={tokens}
           contractApy={apys}
           key={index}

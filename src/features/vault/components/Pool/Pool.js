@@ -11,7 +11,7 @@ import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-const Pool = ({ pool, index, openedCardList, openCard, tokens, contractApy }) => {
+const Pool = ({ pool, index, isOpen, toggleCard, tokens, contractApy }) => {
   const classes = useStyles();
 
   let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
@@ -24,16 +24,16 @@ const Pool = ({ pool, index, openedCardList, openCard, tokens, contractApy }) =>
   return (
     <Grid item xs={12} container key={index} className={classes.container} spacing={0}>
       <Accordion
-        expanded={Boolean(openedCardList.includes(index))}
+        expanded={isOpen}
         className={classes.accordion}
         TransitionProps={{ unmountOnExit: true }}
       >
         <PoolSummary
           pool={pool}
           index={index}
-          onClick={openCard}
+          toggleCard={toggleCard}
           balanceSingle={balanceSingle}
-          openedCardList={openedCardList}
+          isOpen={isOpen}
           singleDepositedBalance={singleDepositedBalance}
           depositedApy={depositedApy}
         />

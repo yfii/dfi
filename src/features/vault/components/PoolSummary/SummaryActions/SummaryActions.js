@@ -8,8 +8,12 @@ import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-const SummaryActions = ({ helpUrl }) => {
+const SummaryActions = ({ helpUrl, index, toggleCard, isOpen }) => {
   const classes = useStyles();
+
+  if (index === 0) {
+    console.log('Render', helpUrl, index, toggleCard, isOpen);
+  }
 
   return (
     <Grid item>
@@ -37,10 +41,10 @@ const SummaryActions = ({ helpUrl }) => {
             className={classes.iconContainerPrimary}
             onClick={event => {
               event.stopPropagation();
-              onClick(index);
+              toggleCard(index);
             }}
           >
-            {openedCardList.includes(index) ? (
+            {isOpen ? (
               <i className={'far fa-arrow-alt-circle-up'} />
             ) : (
               <i className={'far fa-arrow-alt-circle-down'} />
