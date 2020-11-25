@@ -1,12 +1,17 @@
-import { container, main, mainRaised, title, whiteColor, grayColor, section, hexToRgb } from 'assets/jss/material-kit-pro-react.js';
+import {
+  container,
+  main,
+  mainRaised,
+  title,
+  whiteColor,
+  grayColor,
+  section,
+  hexToRgb,
+} from 'assets/jss/material-kit-pro-react.js';
 
 const componentsStyle = {
   main,
   mainRaised,
-  parallax: {
-    height: '90vh',
-    overflow: 'hidden',
-  },
   container: {
     ...container,
     zIndex: '2',

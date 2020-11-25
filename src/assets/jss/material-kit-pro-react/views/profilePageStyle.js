@@ -1,4 +1,14 @@
-import { container, cardTitle, title, mlAuto, mrAuto, main, whiteColor, mainRaised, grayColor } from 'assets/jss/material-kit-pro-react.js';
+import {
+  container,
+  cardTitle,
+  title,
+  mlAuto,
+  mrAuto,
+  main,
+  whiteColor,
+  mainRaised,
+  grayColor,
+} from 'assets/jss/material-kit-pro-react.js';
 
 import imagesStyle from 'assets/jss/material-kit-pro-react/imagesStyles.js';
 
@@ -128,10 +138,6 @@ const profilePageStyle = {
     height: '18px',
     top: '3px',
     position: 'relative',
-  },
-  parallax: {
-    height: '380px',
-    backgroundPosition: 'top center',
   },
 };
 

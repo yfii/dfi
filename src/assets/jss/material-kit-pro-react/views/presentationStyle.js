@@ -1,4 +1,12 @@
-import { container, title, main, whiteColor, grayColor, mainRaised, hexToRgb } from 'assets/jss/material-kit-pro-react.js';
+import {
+  container,
+  title,
+  main,
+  whiteColor,
+  grayColor,
+  mainRaised,
+  hexToRgb,
+} from 'assets/jss/material-kit-pro-react.js';
 import footerStyle from 'assets/jss/material-kit-pro-react/views/componentsSections/footerStyle.js';
 
 const presentationStyle = {
@@ -8,10 +16,6 @@ const presentationStyle = {
     /*overflow: "hidden"*/
   },
   mainRaised,
-  parallax: {
-    height: '90vh',
-    overflow: 'hidden',
-  },
   container: {
     ...container,
     zIndex: 1,
