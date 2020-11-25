@@ -1,13 +1,7 @@
-$bmd-label-color-focus: $brand-primary !default;
-$bmd-invalid-underline: $brand-danger !default;
 $bmd-readonly-underline: $input-border-color !default;
 
 //---
 // verified in use with refactoring to v4
-
-//---
-//-- unverified below here
-$bmd-brand-inverse: $indigo !default;
 
 // --------------------
 // inputs
@@ -66,14 +60,6 @@ $pale-bg: #f9f7f3 !default;
 
 $font-color: #66615b !default;
 
-$brand-default: #cecece !default;
-$brand-primary: $purple !default;
-$brand-success: $green !default;
-$brand-danger: $red !default;
-$brand-warning: $orange !default;
-$brand-info: $cyan !default;
-$brand-rose: $pink !default;
-
 $black-color: #3c4858 !default;
 
 // Dropdowns
@@ -91,14 +77,10 @@ $bmd-switch-width: 2.125rem !default; // 34px
 $bmd-switch-height: 0.875rem !default; // 14px
 $bmd-switch-handle-size: 1.25rem !default; // 20px (was 18px)
 
-$bmd-switch-handle-checked-bg: $brand-primary !default;
 $bmd-switch-handle-unchecked-bg: #f1f1f1 !default;
 $bmd-switch-handle-disabled-bg: #bdbdbd !default;
 $bmd-switch-unchecked-bg: $gray-lighter !default;
-$bmd-switch-checked-bg: desaturate(
-  lighten($bmd-switch-handle-checked-bg, 28%),
-  32%
-); // kind of magic recipe
+
 $bmd-switch-disabled-bg: $gray-lighter !default;
 
 // Radio:
@@ -108,7 +90,6 @@ $bmd-radio-ripple-offset: 1em !default;
 $bmd-radio-label-padding: 0.3125rem !default; // 5px
 
 $bmd-radio-color-off: $bmd-label-color-inner-focus !default;
-$bmd-radio-color-on: $brand-primary !default;
 $bmd-radio-color-disabled: $gray-lighter; //
 $bmd-radio-color-disabled-inverse: rgba(
   $white,
@@ -119,18 +100,8 @@ $white-color: #fff !default;
 $navbar-color: #555 !default;
 $pills-color: $navbar-color !default;
 $black-color: #3c4858 !default;
-$link-color: $brand-primary;
 $white-transparent: rgba($white-color, 0.8);
 $transparent: transparent;
-
-// Background colors
-$bg-primary: $brand-primary;
-$bg-danger: $brand-danger;
-$bg-warning: $brand-warning;
-$bg-info: $brand-info;
-$bg-rose: $brand-rose;
-$bg-success: $brand-success;
-$bg-dark: $grey-900;
 
 //Paddings
 $padding-general-y: 0.625rem !default;
@@ -209,7 +180,6 @@ $mdb-label-color-toggle-focus: unquote('rgba(#{$rgb-black}, .54)') !default;
 $mdb-checkbox-size: 20px !default;
 $mdb-checkbox-animation-ripple: 500ms !default;
 $mdb-checkbox-animation-check: 0.3s !default;
-$mdb-checkbox-checked-color: $brand-primary !default;
 
 $mdb-checkbox-label-color: $mdb-label-color !default;
 $mdb-checkbox-border-color: $mdb-label-color-toggle-focus !default;
@@ -217,4 +187,3 @@ $mdb-checkbox-border-color: $mdb-label-color-toggle-focus !default;
 // Radio:
 $mdb-radio-label-color: $mdb-label-color !default;
 $mdb-radio-color-off: $mdb-label-color-toggle-focus !default;
-$mdb-radio-color-on: $brand-primary !default;
