@@ -125,13 +125,6 @@ const modalStyle = theme => ({
       paddingTop: '0',
     },
   },
-  modalLoginCard: {
-    marginBottom: '0',
-    margin: '0',
-    '& $modalHeader': {
-      paddingTop: '0',
-    },
-  },
   modalSignup: {
     maxWidth: '900px',
     width: '100%',
@@ -147,10 +140,6 @@ const modalStyle = theme => ({
       paddingBottom: '0',
       paddingTop: '0',
     },
-  },
-  modalSignupCard: {
-    padding: '40px 0',
-    margin: '0',
   },
   modalMargin: {
     marginBottom: '24px',

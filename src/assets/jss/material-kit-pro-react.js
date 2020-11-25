@@ -52,10 +52,46 @@ const primaryColor = ['#000000', '#B9AEA5', '#ab47bc', '#8e24aa', '#af2cc5', '#e
 const hoverColor = ['#EFE6DC', '#404456'];
 
 const secondaryColor = ['#FBF6F0', '#EFE6DC', '#DED9D5'];
-const warningColor = ['#ff9800', '#ffa726', '#fb8c00', '#ffa21a', '#fcf8e3', '#faf2cc', '#ffe0b2', '#ffb74d'];
-const dangerColor = ['#f44336', '#ef5350', '#e53935', '#f55a4e', '#f2dede', '#ebcccc', 'ef9a9a', '#ef5350'];
-const successColor = ['#78B288', '#5A8F69', '#43a047', '#5cb860', '#dff0d8', '#d0e9c6', '#a5d6a7', '#66bb6a'];
-const infoColor = ['#00acc1', '#26c6da', '#00acc1', '#00d3ee', '#d9edf7', '#c4e3f3', '#b2ebf2', '#4dd0e1'];
+const warningColor = [
+  '#ff9800',
+  '#ffa726',
+  '#fb8c00',
+  '#ffa21a',
+  '#fcf8e3',
+  '#faf2cc',
+  '#ffe0b2',
+  '#ffb74d',
+];
+const dangerColor = [
+  '#f44336',
+  '#ef5350',
+  '#e53935',
+  '#f55a4e',
+  '#f2dede',
+  '#ebcccc',
+  'ef9a9a',
+  '#ef5350',
+];
+const successColor = [
+  '#78B288',
+  '#5A8F69',
+  '#43a047',
+  '#5cb860',
+  '#dff0d8',
+  '#d0e9c6',
+  '#a5d6a7',
+  '#66bb6a',
+];
+const infoColor = [
+  '#00acc1',
+  '#26c6da',
+  '#00acc1',
+  '#00d3ee',
+  '#d9edf7',
+  '#c4e3f3',
+  '#b2ebf2',
+  '#4dd0e1',
+];
 const roseColor = ['#e91e63', '#ec407a', '#d81b60', '#f8bbd0', '#f06292'];
 const grayColor = [
   '#999',
@@ -128,17 +164,6 @@ const container = {
   },
 };
 
-const card = {
-  display: 'inline-block',
-  position: 'relative',
-  width: '100%',
-  margin: '25px 0',
-  boxShadow: 'none',
-  borderRadius: '3px',
-  color: 'rgba(' + hexToRgb(blackColor) + ', 0.87)',
-  background: whiteColor,
-};
-
 const defaultFont = {
   fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
   fontWeight: '300',
@@ -166,55 +191,17 @@ const dangerBoxShadow = {
 const roseBoxShadow = {
   boxShadow: 'none',
 };
-
-const warningCardHeader = {
-  color: whiteColor,
-  background: 'linear-gradient(60deg, ' + warningColor[1] + ', ' + warningColor[2] + ')',
-  ...warningBoxShadow,
-};
-const successCardHeader = {
-  color: whiteColor,
-  background: 'linear-gradient(60deg, ' + successColor[1] + ', ' + successColor[2] + ')',
-  ...successBoxShadow,
-};
-const dangerCardHeader = {
-  color: whiteColor,
-  background: 'linear-gradient(60deg, ' + dangerColor[1] + ', ' + dangerColor[2] + ')',
-  ...dangerBoxShadow,
-};
-const infoCardHeader = {
-  color: whiteColor,
-  background: 'linear-gradient(60deg, ' + infoColor[1] + ', ' + infoColor[2] + ')',
-  ...infoBoxShadow,
-};
-const primaryCardHeader = {
-  color: whiteColor,
-  background: 'linear-gradient(60deg, ' + primaryColor[1] + ', ' + primaryColor[2] + ')',
-  ...primaryBoxShadow,
-};
-const roseCardHeader = {
-  color: whiteColor,
-  background: 'linear-gradient(60deg, ' + roseColor[1] + ', ' + roseColor[2] + ')',
-  ...roseBoxShadow,
-};
-const cardActions = {
-  margin: '0 20px 10px',
-  paddingTop: '10px',
-  borderTop: '1px solid  ' + grayColor[2],
-  height: 'auto',
-  ...defaultFont,
-};
-
-const cardHeader = {
-  margin: '-30px 15px 0',
-  borderRadius: '3px',
-  padding: '15px',
-};
-
 const defaultBoxShadow = {
   border: '0',
   borderRadius: '3px',
-  boxShadow: '0 10px 20px -12px rgba(' + hexToRgb(blackColor) + ', 0.42), 0 3px 20px 0px rgba(' + hexToRgb(blackColor) + ', 0.12), 0 8px 10px -5px rgba(' + hexToRgb(blackColor) + ', 0.2)',
+  boxShadow:
+    '0 10px 20px -12px rgba(' +
+    hexToRgb(blackColor) +
+    ', 0.42), 0 3px 20px 0px rgba(' +
+    hexToRgb(blackColor) +
+    ', 0.12), 0 8px 10px -5px rgba(' +
+    hexToRgb(blackColor) +
+    ', 0.2)',
   padding: '10px 0',
   transition: 'all 150ms ease 0s',
 };
@@ -227,26 +214,6 @@ const title = {
   marginBottom: '25px',
   minHeight: '32px',
   fontFamily: `"Roboto Slab", "Times New Roman", serif`,
-};
-
-const cardTitle = {
-  '&, & a': {
-    ...title,
-    marginTop: '.625rem',
-    marginBottom: '0.75rem',
-    minHeight: 'auto',
-  },
-};
-
-const cardLink = {
-  '& + $cardLink': {
-    marginLeft: '1.25rem',
-  },
-};
-
-const cardSubtitle = {
-  marginBottom: '0',
-  marginTop: '-.375rem',
 };
 
 const main = {
@@ -265,7 +232,14 @@ const mainRaised = {
   },
   margin: '-60px 30px 0px',
   borderRadius: '6px',
-  boxShadow: '0 16px 24px 2px rgba(' + hexToRgb(blackColor) + ', 0.14), 0 6px 30px 5px rgba(' + hexToRgb(blackColor) + ', 0.12), 0 8px 10px -5px rgba(' + hexToRgb(blackColor) + ', 0.2)',
+  boxShadow:
+    '0 16px 24px 2px rgba(' +
+    hexToRgb(blackColor) +
+    ', 0.14), 0 6px 30px 5px rgba(' +
+    hexToRgb(blackColor) +
+    ', 0.12), 0 8px 10px -5px rgba(' +
+    hexToRgb(blackColor) +
+    ', 0.2)',
 };
 
 const section = {
@@ -318,13 +292,11 @@ const coloredShadow = {
 };
 
 export {
-  //variables
   drawerWidth,
   transition,
   container,
   containerFluid,
   boxShadow,
-  card,
   defaultFont,
   primaryColor,
   hoverColor,
@@ -354,20 +326,9 @@ export {
   warningBoxShadow,
   dangerBoxShadow,
   roseBoxShadow,
-  warningCardHeader,
-  successCardHeader,
-  dangerCardHeader,
-  infoCardHeader,
-  primaryCardHeader,
-  roseCardHeader,
-  cardActions,
-  cardHeader,
   defaultBoxShadow,
   title,
-  cardTitle,
   description,
-  cardLink,
-  cardSubtitle,
   main,
   mainRaised,
   section,
