@@ -84,10 +84,6 @@ const profilePageStyle = {
     boxPack: 'center',
     justifyContent: 'center',
   },
-  badge: {
-    display: 'inline-table',
-    margin: '0 auto',
-  },
   listUnstyled: {
     paddingLeft: '0',
     listStyle: 'none',

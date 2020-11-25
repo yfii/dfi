@@ -42,20 +42,6 @@ const componentsStyle = {
   textCenter: {
     textAlign: 'center',
   },
-  proBadge: {
-    position: 'absolute',
-    fontSize: '22px',
-    textTransform: 'uppercase',
-    fontWeight: 'bold',
-    right: '-90px',
-    top: '-3px',
-    padding: '10px 18px',
-    backgroundColor: whiteColor,
-    borderRadius: '3px',
-    color: grayColor[18],
-    lineHeight: '22px',
-    boxShadow: '0px 5px 5px -2px rgba(' + hexToRgb(grayColor[25]) + ',0.4)',
-  },
   section: {
     ...section,
     padding: '70px 0px',

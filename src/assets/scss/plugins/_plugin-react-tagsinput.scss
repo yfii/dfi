@@ -76,27 +76,6 @@
       }
     }
 
-    // @include badges-color($gray-light);
-    //
-    // &.primary{
-    //   @include badges-color($brand-primary);
-    // }
-    // &.info{
-    //   @include badges-color($brand-info);
-    // }
-    // &.success{
-    //   @include badges-color($brand-success);
-    // }
-    // &.warning{
-    //   @include badges-color($brand-warning);
-    // }
-    // &.danger{
-    //   @include badges-color($brand-danger);
-    // }
-    // .rose{
-    //   @include badges-color($brand-rose);
-    // }
-
     &.primary {
       background-color: $brand-primary;
     }

@@ -34,20 +34,6 @@ const presentationStyle = {
       position: 'relative',
     },
   },
-  proBadge: {
-    position: 'relative',
-    fontSize: '22px',
-    textTransform: 'uppercase',
-    fontWeight: '700',
-    right: '-10px',
-    padding: '10px 18px',
-    top: '-30px',
-    background: whiteColor,
-    borderRadius: '3px',
-    color: grayColor[18],
-    lineHeight: '22px',
-    boxShadow: '0 5px 5px -2px rgba(' + hexToRgb(grayColor[25]) + ',.4)',
-  },
 };
 
 export default presentationStyle;
