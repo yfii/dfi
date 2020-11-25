@@ -1,6 +1,10 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
-import { VAULT_FETCH_BALANCES_BEGIN, VAULT_FETCH_BALANCES_SUCCESS, VAULT_FETCH_BALANCES_FAILURE } from './constants';
+import {
+  VAULT_FETCH_BALANCES_BEGIN,
+  VAULT_FETCH_BALANCES_SUCCESS,
+  VAULT_FETCH_BALANCES_FAILURE,
+} from './constants';
 import { fetchBalance } from '../../web3';
 import async from 'async';
 
@@ -110,14 +114,12 @@ export function useFetchBalances() {
 export function reducer(state, action) {
   switch (action.type) {
     case VAULT_FETCH_BALANCES_BEGIN:
-      // Just after a request is sent
       return {
         ...state,
         fetchBalancesPending: true,
       };
 
     case VAULT_FETCH_BALANCES_SUCCESS:
-      // The request is success
       return {
         ...state,
         tokens: action.data,
@@ -125,7 +127,6 @@ export function reducer(state, action) {
       };
 
     case VAULT_FETCH_BALANCES_FAILURE:
-      // The request is failed
       return {
         ...state,
         fetchBalancesPending: false,

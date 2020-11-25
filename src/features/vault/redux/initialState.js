@@ -2,7 +2,7 @@ import { pools } from '../../configure';
 
 const tokens = {};
 
-pools.map(({ token, tokenAddress, earnedToken, earnedTokenAddress }) => {
+pools.forEach(({ token, tokenAddress, earnedToken, earnedTokenAddress }) => {
   tokens[token] = {
     tokenAddress: tokenAddress,
     tokenBalance: 0,
@@ -11,10 +11,7 @@ pools.map(({ token, tokenAddress, earnedToken, earnedTokenAddress }) => {
     tokenAddress: earnedTokenAddress,
     tokenBalance: 0,
   };
-  return '';
 });
-
-// console.log(tokens)
 
 const initialState = {
   pools,
