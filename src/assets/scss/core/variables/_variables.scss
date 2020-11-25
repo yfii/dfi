@@ -311,30 +311,6 @@ $mark-bg: #fcf8e3 !default;
 
 $hr-margin-y: $spacer !default;
 
-// Tables
-//
-// Customizes the `.table` component with basic values, each used across all table variations.
-
-$table-cell-padding: 0.75rem !default;
-$table-cell-padding-sm: 0.3rem !default;
-
-$table-bg: transparent !default;
-$table-accent-bg: rgba($black, 0.05) !default;
-$table-hover-bg: rgba($black, 0.075) !default;
-$table-active-bg: $table-hover-bg !default;
-
-$table-border-width: $border-width !default;
-$table-border-color: $gray-300 !default;
-
-$table-head-bg: $gray-200 !default;
-$table-head-color: $gray-700 !default;
-
-$table-dark-bg: $gray-900 !default;
-$table-dark-accent-bg: rgba($white, 0.05) !default;
-$table-dark-hover-bg: rgba($white, 0.075) !default;
-$table-dark-border-color: lighten($gray-900, 7.5%) !default;
-$table-dark-color: $body-bg !default;
-
 // Buttons + Forms
 //
 // Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
@@ -594,7 +570,6 @@ $zindex-sticky: 1020 !default;
 $zindex-fixed: 1030 !default;
 $zindex-modal-backdrop: 1040 !default;
 $zindex-modal: 1050 !default;
-$zindex-popover: 1060 !default;
 $zindex-tooltip: 1070 !default;
 
 // Navs
@@ -654,87 +629,6 @@ $navbar-light-toggler-icon-bg: str-replace(
   '%23'
 ) !default;
 $navbar-light-toggler-border-color: rgba($black, 0.1) !default;
-
-// Pagination
-
-$pagination-padding-y: 0.5rem !default;
-$pagination-padding-x: 0.75rem !default;
-$pagination-padding-y-sm: 0.25rem !default;
-$pagination-padding-x-sm: 0.5rem !default;
-$pagination-padding-y-lg: 0.75rem !default;
-$pagination-padding-x-lg: 1.5rem !default;
-$pagination-line-height: 1.25 !default;
-
-$pagination-color: $link-color !default;
-$pagination-bg: $white !default;
-$pagination-border-width: $border-width !default;
-$pagination-border-color: $gray-300 !default;
-
-$pagination-focus-box-shadow: $input-btn-focus-box-shadow !default;
-
-$pagination-hover-color: $link-hover-color !default;
-$pagination-hover-bg: $gray-200 !default;
-$pagination-hover-border-color: $gray-300 !default;
-
-$pagination-active-color: $component-active-color !default;
-$pagination-active-bg: $component-active-bg !default;
-$pagination-active-border-color: $pagination-active-bg !default;
-
-$pagination-disabled-color: $gray-600 !default;
-$pagination-disabled-bg: $white !default;
-$pagination-disabled-border-color: $gray-300 !default;
-
-// Jumbotron
-
-$jumbotron-padding: 2rem !default;
-$jumbotron-bg: $gray-200 !default;
-
-// Cards
-
-$card-spacer-y: 0.75rem !default;
-$card-spacer-x: 1.25rem !default;
-$card-border-width: $border-width !default;
-$card-border-radius: $border-radius !default;
-$card-border-color: rgba($black, 0.125) !default;
-$card-inner-border-radius: calc(#{$card-border-radius} - #{$card-border-width}) !default;
-$card-cap-bg: rgba($black, 0.03) !default;
-$card-bg: $white !default;
-
-$card-img-overlay-padding: 1.25rem !default;
-
-$card-group-margin: ($grid-gutter-width / 2) !default;
-$card-deck-margin: $card-group-margin !default;
-
-$card-columns-count: 3 !default;
-$card-columns-gap: 1.25rem !default;
-$card-columns-margin: $card-spacer-y !default;
-
-// Popovers
-
-$popover-font-size: $font-size-sm !default;
-$popover-bg: $white !default;
-$popover-max-width: 276px !default;
-$popover-border-width: $border-width !default;
-$popover-border-color: rgba($black, 0.2) !default;
-$popover-border-radius: $border-radius-lg !default;
-$popover-box-shadow: 0 0.25rem 0.5rem rgba($black, 0.2) !default;
-
-$popover-header-bg: darken($popover-bg, 3%) !default;
-$popover-header-color: $headings-color !default;
-$popover-header-padding-y: 0.5rem !default;
-$popover-header-padding-x: 0.75rem !default;
-
-$popover-body-color: $body-color !default;
-$popover-body-padding-y: $popover-header-padding-y !default;
-$popover-body-padding-x: $popover-header-padding-x !default;
-
-$popover-arrow-width: 1rem !default;
-$popover-arrow-height: 0.5rem !default;
-$popover-arrow-color: $popover-bg !default;
-
-$popover-arrow-outer-color: fade-in($popover-border-color, 0.05) !default;
-
-// Modals
 
 // Padding applied to the modal body
 $modal-inner-padding: 1rem !default;

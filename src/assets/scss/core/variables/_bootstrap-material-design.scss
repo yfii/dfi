@@ -8,8 +8,6 @@ $bmd-readonly-underline: $input-border-color !default;
 //---
 //-- unverified below here
 $bmd-brand-inverse: $indigo !default;
-// Typography elements FIXME: review to see if we actually need these
-$icon-color: rgba($black, 0.5) !default;
 
 // --------------------
 // inputs
@@ -103,10 +101,6 @@ $bmd-switch-checked-bg: desaturate(
 ); // kind of magic recipe
 $bmd-switch-disabled-bg: $gray-lighter !default;
 
-// Popovers and Popups
-$bmd-popover-background: rgba(101, 101, 101, 0.9) !default;
-$bmd-popover-color: #ececec !default;
-
 // Radio:
 $bmd-radio-border: 0.0625rem !default; // 1px
 $bmd-radio-size: 1rem !default;
@@ -128,9 +122,6 @@ $black-color: #3c4858 !default;
 $link-color: $brand-primary;
 $white-transparent: rgba($white-color, 0.8);
 $transparent: transparent;
-
-//Popovers
-$popover-color: $navbar-color !default;
 
 // Background colors
 $bg-primary: $brand-primary;

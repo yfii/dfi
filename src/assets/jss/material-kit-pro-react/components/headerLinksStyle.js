@@ -199,9 +199,6 @@ const headerLinksStyle = theme => ({
     alignItems: 'center',
   },
   mlAuto,
-  popover: {
-    pointerEvents: 'none',
-  },
   paper: {
     padding: theme.spacing(1),
   },
