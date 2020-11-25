@@ -1,20 +1,16 @@
 import React from 'react';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import Hidden from '@material-ui/core/Hidden';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { useTranslation } from 'react-i18next';
 import BigNumber from 'bignumber.js';
-import { makeStyles } from '@material-ui/core/styles';
 
 import { formatApy, formatTvl, calcDaily } from 'features/helpers/format';
 import { format } from 'features/helpers/bignumber';
 import styles from './styles';
 import PoolTitle from './PoolTitle/PoolTitle';
 import LabeledStat from './LabeledStat/LabeledStat';
-
-const useStyles = makeStyles(styles);
+import SummaryActions from './SummaryActions/SummaryActions';
 
 const PoolSummary = ({
   pool,
@@ -26,7 +22,6 @@ const PoolSummary = ({
   depositedApy,
 }) => {
   const { t } = useTranslation();
-  const classes = useStyles();
 
   return (
     <AccordionSummary
@@ -86,43 +81,7 @@ const PoolSummary = ({
           </Grid>
         </Grid>
 
-        <Grid item>
-          <Grid item container justify="flex-end" alignItems="center" spacing={2}>
-            <Hidden mdDown>
-              <Grid item>
-                <IconButton
-                  classes={{
-                    root: classes.iconContainerSecond,
-                  }}
-                  style={{
-                    visibility: Boolean(pool.tokenDescriptionUrl) ? 'visible' : 'hidden',
-                  }}
-                  onClick={event => {
-                    event.stopPropagation();
-                    window.open(pool.tokenDescriptionUrl);
-                  }}
-                >
-                  <i className={'far fa-question-circle'} />
-                </IconButton>
-              </Grid>
-            </Hidden>
-            <Grid item>
-              <IconButton
-                className={classes.iconContainerPrimary}
-                onClick={event => {
-                  event.stopPropagation();
-                  onClick(index);
-                }}
-              >
-                {openedCardList.includes(index) ? (
-                  <i className={'far fa-arrow-alt-circle-up'} />
-                ) : (
-                  <i className={'far fa-arrow-alt-circle-down'} />
-                )}
-              </IconButton>
-            </Grid>
-          </Grid>
-        </Grid>
+        <SummaryActions />
       </Grid>
     </AccordionSummary>
   );

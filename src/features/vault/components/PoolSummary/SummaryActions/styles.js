@@ -1,21 +1,6 @@
 import { primaryColor, secondaryColor, hoverColor } from 'assets/jss/material-kit-pro-react.js';
 
-const styles = theme => ({
-  iconContainerMainTitle: {
-    fontSize: '18px',
-    fontWeight: 'bold',
-    color: primaryColor[0],
-    lineHeight: '18px',
-    letterSpacing: 0,
-  },
-  iconContainerSubTitle: {
-    fontSize: '14px',
-    fontWeight: '400',
-    color: primaryColor[0],
-    lineHeight: '14px',
-    opacity: '0.4',
-    letterSpacing: 0,
-  },
+const styles = {
   iconContainerSecond: {
     width: '48px',
     height: '48px',
@@ -45,6 +30,6 @@ const styles = theme => ({
       background: hoverColor[0],
     },
   },
-});
+};
 
 export default styles;
