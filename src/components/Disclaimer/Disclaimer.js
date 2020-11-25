@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -8,7 +8,7 @@ import styles from 'assets/jss/material-kit-pro-react/components/disclaimerStyle
 
 const useStyles = makeStyles(styles);
 
-export default function SectionTitle() {
+const Disclaimer = () => {
   const { t } = useTranslation();
   const classes = useStyles();
 
@@ -17,4 +17,6 @@ export default function SectionTitle() {
       <Typography className={classes.disclaimer}>{t('Disclaimer')}</Typography>
     </Grid>
   );
-}
+};
+
+export default memo(Disclaimer);

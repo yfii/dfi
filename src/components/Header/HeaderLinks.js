@@ -93,14 +93,23 @@ export default function HeaderLinks(props) {
             '中文',
             // TODO: more translations
             { divider: true },
-            <a href="https://github.com/beefyfinance/beefy-app/tree/master/src/locales" target="_blank" rel="noopener noreferrer" className={classes.cta}>
+            <a
+              href="https://github.com/beefyfinance/beefy-app/tree/master/src/locales"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={classes.cta}
+            >
               Help to translate
             </a>,
           ]}
         />
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Button disableElevation className={classes.walletDisplay} onClick={connected ? disconnectWallet : connectWallet}>
+        <Button
+          disableElevation
+          className={classes.walletDisplay}
+          onClick={connected ? disconnectWallet : connectWallet}
+        >
           {connected ? (
             <>
               <canvas ref={canvasRef} style={{ display: 'none' }} />
@@ -132,11 +141,3 @@ export default function HeaderLinks(props) {
     </List>
   );
 }
-
-HeaderLinks.defaultProps = {
-  hoverColor: 'primary',
-};
-
-HeaderLinks.propTypes = {
-  dropdownHoverColor: PropTypes.oneOf(['dark', 'primary', 'info', 'success', 'warning', 'danger', 'rose']),
-};

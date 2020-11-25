@@ -18,30 +18,9 @@ const useStyles = makeStyles(styles);
 export default function Header(props) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const classes = useStyles();
-  React.useEffect(() => {
-    if (props.changeColorOnScroll) {
-      window.addEventListener('scroll', headerColorChange);
-    }
-    return function cleanup() {
-      if (props.changeColorOnScroll) {
-        window.removeEventListener('scroll', headerColorChange);
-      }
-    };
-  });
+
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
-  };
-  const headerColorChange = () => {
-    const { color, changeColorOnScroll } = props;
-
-    const windowsScrollTop = window.pageYOffset;
-    if (windowsScrollTop > changeColorOnScroll.height) {
-      document.body.getElementsByTagName('header')[0].classList.remove(classes[color]);
-      document.body.getElementsByTagName('header')[0].classList.add(classes[changeColorOnScroll.color]);
-    } else {
-      document.body.getElementsByTagName('header')[0].classList.add(classes[color]);
-      document.body.getElementsByTagName('header')[0].classList.remove(classes[changeColorOnScroll.color]);
-    }
   };
 
   const { color, links, brand, fixed, absolute } = props;
@@ -88,7 +67,12 @@ export default function Header(props) {
           }}
           onClose={handleDrawerToggle}
         >
-          <IconButton color="inherit" aria-label="open drawer" onClick={handleDrawerToggle} className={classes.closeButtonDrawer}>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleDrawerToggle}
+            className={classes.closeButtonDrawer}
+          >
             <Close />
           </IconButton>
           <div className={classes.appResponsive}>{links}</div>
@@ -100,31 +84,14 @@ export default function Header(props) {
 
 const renderLink = (name, label, icon, classes) => {
   return (
-    <a href={`https://${name}.beefy.finance`} target="_blank" rel="noopener noreferrer" className={classes.link}>
+    <a
+      href={`https://${name}.beefy.finance`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={classes.link}
+    >
       <i className={`fas fa-${icon} ${classes.icon}`} />
       <span>{label}</span>
     </a>
   );
-};
-
-Header.defaultProp = {
-  color: 'white',
-};
-
-Header.propTypes = {
-  color: PropTypes.oneOf(['primary', 'info', 'success', 'warning', 'danger', 'transparent', 'white', 'rose', 'dark']),
-  links: PropTypes.node,
-  brand: PropTypes.string,
-  fixed: PropTypes.bool,
-  absolute: PropTypes.bool,
-  // this will cause the sidebar to change the color from
-  // props.color (see above) to changeColorOnScroll.color
-  // when the window.pageYOffset is heigher or equal to
-  // changeColorOnScroll.height and then when it is smaller than
-  // changeColorOnScroll.height change it back to
-  // props.color (see above)
-  changeColorOnScroll: PropTypes.shape({
-    height: PropTypes.number.isRequired,
-    color: PropTypes.oneOf(['primary', 'info', 'success', 'warning', 'danger', 'transparent', 'white', 'rose', 'dark']).isRequired,
-  }),
 };

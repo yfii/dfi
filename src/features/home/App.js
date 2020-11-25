@@ -24,7 +24,14 @@ const useStyles = makeStyles(appStyle);
 export default function App({ children }) {
   const classes = useStyles();
   const { t } = useTranslation();
-  const { connectWallet, web3, address, networkId, connected, connectWalletPending } = useConnectWallet();
+  const {
+    connectWallet,
+    web3,
+    address,
+    networkId,
+    connected,
+    connectWalletPending,
+  } = useConnectWallet();
   const { disconnectWallet } = useDisconnectWallet();
   const [web3Modal, setModal] = useState(null);
 
@@ -59,7 +66,13 @@ export default function App({ children }) {
   }, [web3Modal, connectWallet]);
 
   useEffect(() => {
-    if (web3 && address && !connectWalletPending && networkId && Boolean(networkId !== Number(process.env.REACT_APP_NETWORK_ID))) {
+    if (
+      web3 &&
+      address &&
+      !connectWalletPending &&
+      networkId &&
+      Boolean(networkId !== Number(process.env.REACT_APP_NETWORK_ID))
+    ) {
       alert(t('Network-Error'));
     }
   }, [web3, address, networkId, connectWalletPending, t]);
@@ -72,7 +85,6 @@ export default function App({ children }) {
             brand="beefy.finance"
             links={
               <HeaderLinks
-                dropdownHoverColor="dark"
                 address={address}
                 connected={connected}
                 connectWallet={() => connectWallet(web3Modal)}
