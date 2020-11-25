@@ -1,6 +1,5 @@
 import React from 'react';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
-import Avatar from '@material-ui/core/Avatar';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
@@ -9,10 +8,11 @@ import { useTranslation } from 'react-i18next';
 import BigNumber from 'bignumber.js';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { primaryColor } from 'assets/jss/material-kit-pro-react.js';
 import { formatApy, formatTvl, calcDaily } from 'features/helpers/format';
 import { format } from 'features/helpers/bignumber';
 import styles from './styles';
+import PoolTitle from './PoolTitle/PoolTitle';
+import LabeledStat from './LabeledStat/LabeledStat';
 
 const useStyles = makeStyles(styles);
 
@@ -44,128 +44,45 @@ const PoolSummary = ({
         spacing={4}
         style={{ paddingTop: '16px', paddingBottom: '16px' }}
       >
-        <Grid item>
-          <Grid container alignItems="center" spacing={2}>
-            <Grid item>
-              <Avatar
-                alt={pool.name}
-                variant="square"
-                src={require(`../../../../images/${pool.logo}.png`)}
-              />
-            </Grid>
-            <Grid item style={{ minWidth: '100px' }}>
-              <Typography className={classes.iconContainerMainTitle} variant="body2" gutterBottom>
-                {pool.name}
-                <Hidden smUp>
-                  <i
-                    style={{
-                      color: primaryColor[0],
-                      marginLeft: '4px',
-                      visibility: Boolean(pool.tokenDescriptionUrl) ? 'visible' : 'hidden',
-                    }}
-                    className={'far fa-question-circle'}
-                    onClick={event => {
-                      event.stopPropagation();
-                      window.open(pool.tokenDescriptionUrl);
-                    }}
-                  />
-                </Hidden>
-              </Typography>
-              <Typography className={classes.iconContainerSubTitle} variant="body2">
-                {pool.tokenDescription}
-              </Typography>
-            </Grid>
-          </Grid>
-        </Grid>
-
+        <PoolTitle
+          name={pool.name}
+          logo={pool.logo}
+          description={pool.tokenDescription}
+          url={pool.tokenDescriptionUrl}
+        />
         <Grid item md={7} xs={4}>
           <Grid item container justify="space-between">
             <Hidden smDown>
-              <Grid item xs={4} md={3} container justify="center" alignItems="center">
-                <Grid item style={{ width: '200px' }}>
-                  <Typography
-                    className={classes.iconContainerMainTitle}
-                    variant="body2"
-                    gutterBottom
-                    noWrap
-                  >
-                    {format(balanceSingle)}
-                  </Typography>
-                  <Typography className={classes.iconContainerSubTitle} variant="body2">
-                    {t('Vault-Balance')}
-                  </Typography>
-                </Grid>
-              </Grid>
+              <LabeledStat value={format(balanceSingle)} label={t('Vault-Balance')} xs={4} md={3} />
             </Hidden>
-
             <Hidden mdDown>
-              <Grid item xs={4} md={3} container justify="center" alignItems="center">
-                <Grid item style={{ width: '200px' }}>
-                  <Typography
-                    className={classes.iconContainerMainTitle}
-                    variant="body2"
-                    gutterBottom
-                    noWrap
-                  >
-                    {format(
-                      singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare))
-                    )}
-                  </Typography>
-                  <Typography className={classes.iconContainerSubTitle} variant="body2">
-                    {t('Vault-Deposited')}
-                  </Typography>
-                </Grid>
-              </Grid>
+              <LabeledStat
+                value={format(
+                  singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare))
+                )}
+                label={t('Vault-Deposited')}
+                xs={4}
+                md={3}
+              />
             </Hidden>
-
-            <Grid item xs={5} md={2} container justify="center" alignItems="center">
-              <Grid item>
-                <Typography
-                  className={classes.iconContainerMainTitle}
-                  variant="body2"
-                  gutterBottom
-                  noWrap
-                >
-                  {pool.unstableApy ? '??? %' : formatApy(pool.id, depositedApy, pool.defaultApy)}
-                </Typography>
-                <Typography className={classes.iconContainerSubTitle} variant="body2">
-                  {t('Vault-APY')}
-                </Typography>
-              </Grid>
-            </Grid>
-
-            <Grid item xs={5} md={2} container justify="center" alignItems="center">
-              <Grid item>
-                <Typography
-                  className={classes.iconContainerMainTitle}
-                  variant="body2"
-                  gutterBottom
-                  noWrap
-                >
-                  {pool.unstableApy ? '??? %' : calcDaily(depositedApy, pool.defaultApy)}
-                </Typography>
-                <Typography className={classes.iconContainerSubTitle} variant="body2">
-                  {t('Vault-APYDaily')}
-                </Typography>
-              </Grid>
-            </Grid>
-
-            <Grid item xs={5} md={2} container justify="center" alignItems="center">
-              <Grid item>
-                <Typography
-                  className={classes.iconContainerMainTitle}
-                  variant="body2"
-                  gutterBottom
-                  noWrap
-                >
-                  {' '}
-                  {formatTvl(pool.tvl, pool.oraclePrice, pool.fallbackPrice)}
-                </Typography>
-                <Typography className={classes.iconContainerSubTitle} variant="body2">
-                  {t('Vault-TVL')}
-                </Typography>
-              </Grid>
-            </Grid>
+            <LabeledStat
+              value={pool.unstableApy ? '??? %' : formatApy(pool.id, depositedApy, pool.defaultApy)}
+              label={t('Vault-APY')}
+              xs={5}
+              md={2}
+            />
+            <LabeledStat
+              value={pool.unstableApy ? '??? %' : calcDaily(depositedApy, pool.defaultApy)}
+              label={t('Vault-APYDaily')}
+              xs={5}
+              md={2}
+            />
+            <LabeledStat
+              value={formatTvl(pool.tvl, pool.oraclePrice, pool.fallbackPrice)}
+              label={t('Vault-TVL')}
+              xs={5}
+              md={2}
+            />
           </Grid>
         </Grid>
 

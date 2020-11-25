@@ -94,7 +94,10 @@ export function convertAmountFromRawNumber(value, decimals = 18) {
 }
 
 export function handleSignificantDecimals(value, decimals, buffer) {
-  if (!new BigNumber(`${decimals}`).isInteger() || (buffer && !new BigNumber(`${buffer}`).isInteger())) {
+  if (
+    !new BigNumber(`${decimals}`).isInteger() ||
+    (buffer && !new BigNumber(`${buffer}`).isInteger())
+  ) {
     return null;
   }
   buffer = buffer ? convertStringToNumber(buffer) : 3;
@@ -108,7 +111,9 @@ export function handleSignificantDecimals(value, decimals, buffer) {
   }
   let result = new BigNumber(`${value}`).toFixed(decimals);
   result = new BigNumber(`${result}`).toString();
-  return new BigNumber(`${result}`).dp() <= 2 ? new BigNumber(`${result}`).toFormat(2) : new BigNumber(`${result}`).toFormat();
+  return new BigNumber(`${result}`).dp() <= 2
+    ? new BigNumber(`${result}`).toFormat(2)
+    : new BigNumber(`${result}`).toFormat();
 }
 
 export function formatFixedDecimals(value, decimals) {
@@ -121,12 +126,18 @@ export function formatFixedDecimals(value, decimals) {
 export function formatInputDecimals(inputOne, inputTwo) {
   const _nativeAmountDecimalPlaces = countDecimalPlaces(inputTwo);
   const decimals = _nativeAmountDecimalPlaces > 8 ? _nativeAmountDecimalPlaces : 8;
-  const result = new BigNumber(formatFixedDecimals(inputOne, decimals)).toFormat().replace(/,/g, '');
+  const result = new BigNumber(formatFixedDecimals(inputOne, decimals))
+    .toFormat()
+    .replace(/,/g, '');
   return result;
 }
 
 export function format(number) {
-  return new BigNumber(number).multipliedBy(new BigNumber(10000)).dividedToIntegerBy(new BigNumber(1)).dividedBy(new BigNumber(10000)).toNumber();
+  return new BigNumber(number)
+    .multipliedBy(new BigNumber(10000))
+    .dividedToIntegerBy(new BigNumber(1))
+    .dividedBy(new BigNumber(10000))
+    .toNumber();
 }
 
 export function byDecimals(number, tokenDecimals = 18) {
