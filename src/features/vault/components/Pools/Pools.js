@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -44,15 +44,11 @@ export default function Pools() {
   return (
     <Grid container className={classes.container}>
       <Grid item xs={12}>
-        <h1 className={classes.mainTitle}>{t('Vault-MainTitle')}</h1>
-        <Grid item container justify="space-between">
-          <Grid item>
-            <h3 className={classes.secondTitle}>{t('Vault-SecondTitle')}</h3>
-          </Grid>
-          <Grid item>
-            <h3 className={classes.secondTitle}>{t('Vault-WithdrawFee')}</h3>
-          </Grid>
-        </Grid>
+        <h1 className={classes.title}>{t('Vault-MainTitle')}</h1>
+        <div className={classes.subtitles}>
+          <h3 className={classes.subtitle}>{t('Vault-SecondTitle')}</h3>
+          <h3 className={classes.subtitle}>{t('Vault-WithdrawFee')}</h3>
+        </div>
       </Grid>
 
       <VisiblePools pools={pools} apys={contractApy} tokens={tokens} />

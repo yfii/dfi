@@ -1,6 +1,5 @@
 import {
   container,
-  defaultFont,
   primaryColor,
   infoColor,
   successColor,
@@ -63,7 +62,6 @@ const styles = theme => ({
   title: {
     letterSpacing: 'unset',
     '&,& a': {
-      ...defaultFont,
       minWidth: 'unset',
       lineHeight: '28px',
       fontSize: '24px',

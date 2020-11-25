@@ -58,7 +58,6 @@ export function fetchBalances(data) {
         },
         (error, tokens) => {
           if (error) {
-            console.log(error);
             dispatch({
               type: VAULT_FETCH_BALANCES_FAILURE,
             });

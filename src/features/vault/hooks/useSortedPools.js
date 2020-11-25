@@ -5,7 +5,6 @@ const useSortedPools = (pools, apys) => {
   const [sortedPools, setSortedPools] = useState(pools);
 
   useEffect(() => {
-    console.log(pools);
     switch (order) {
       case 'default':
         setSortedPools(pools);

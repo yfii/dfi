@@ -1,7 +1,13 @@
 import Web3 from 'web3';
 import { useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
-import { HOME_CONNECT_WALLET_BEGIN, HOME_CONNECT_WALLET_SUCCESS, HOME_CONNECT_WALLET_FAILURE, HOME_ACCOUNTS_CHANGED, HOME_NETWORK_CHANGED } from './constants';
+import {
+  HOME_CONNECT_WALLET_BEGIN,
+  HOME_CONNECT_WALLET_SUCCESS,
+  HOME_CONNECT_WALLET_FAILURE,
+  HOME_ACCOUNTS_CHANGED,
+  HOME_NETWORK_CHANGED,
+} from './constants';
 import { disconnectWallet } from './actions';
 
 export function connectWallet(web3Modal) {
@@ -21,19 +27,15 @@ export function connectWallet(web3Modal) {
       });
       const subscribeProvider = provider => {
         if (!provider.on) {
-          console.log('provider.on');
           return;
         }
         provider.on('close', () => {
           dispatch(disconnectWallet(web3, web3Modal));
         });
         provider.on('disconnect', async () => {
-          console.log('provider.close');
           dispatch(disconnectWallet(web3, web3Modal));
         });
         provider.on('accountsChanged', async accounts => {
-          console.log('provider.accountsChanged');
-          console.log(accounts[0]);
           if (accounts[0]) {
             dispatch({ type: HOME_ACCOUNTS_CHANGED, data: accounts[0] });
           } else {
@@ -51,7 +53,6 @@ export function connectWallet(web3Modal) {
       const networkId = await web3.eth.net.getId();
       dispatch({ type: HOME_CONNECT_WALLET_SUCCESS, data: { web3, address, networkId } });
     } catch (error) {
-      console.log('ERROR', error);
       dispatch({ type: HOME_CONNECT_WALLET_FAILURE });
     }
   };

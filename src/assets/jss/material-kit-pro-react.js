@@ -109,12 +109,6 @@ const container = {
   },
 };
 
-const defaultFont = {
-  fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-  fontWeight: '300',
-  lineHeight: '1.5em',
-};
-
 const boxShadow = {
   boxShadow: 'none',
 };
@@ -170,7 +164,6 @@ export {
   container,
   containerFluid,
   boxShadow,
-  defaultFont,
   primaryColor,
   hoverColor,
   secondaryColor,
