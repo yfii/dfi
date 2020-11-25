@@ -1,6 +1,11 @@
-import { grayColor, primaryColor, whiteColor, mlAuto, hexToRgb, secondaryColor } from 'assets/jss/material-kit-pro-react.js';
-
-import tooltip from 'assets/jss/material-kit-pro-react/tooltipsStyle.js';
+import {
+  grayColor,
+  primaryColor,
+  whiteColor,
+  mlAuto,
+  hexToRgb,
+  secondaryColor,
+} from 'assets/jss/material-kit-pro-react.js';
 
 const headerLinksStyle = theme => ({
   list: {
@@ -177,7 +182,6 @@ const headerLinksStyle = theme => ({
       padding: '0.75rem 1.25rem 0.75rem 0.75rem',
     },
   },
-  ...tooltip,
   marginRight5: {
     marginRight: '5px',
   },
