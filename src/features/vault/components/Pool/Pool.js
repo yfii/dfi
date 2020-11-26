@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import Accordion from '@material-ui/core/Accordion';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
@@ -11,8 +11,11 @@ import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-const Pool = ({ pool, index, isOpen, toggleCard, tokens, contractApy }) => {
+const Pool = ({ pool, index, tokens, contractApy }) => {
   const classes = useStyles();
+
+  const [isOpen, setIsOpen] = useState(index === 0 ? true : false);
+  const toggleCard = useCallback(() => setIsOpen(!isOpen), [isOpen]);
 
   let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
   let singleDepositedBalance = byDecimals(
@@ -31,8 +34,8 @@ const Pool = ({ pool, index, isOpen, toggleCard, tokens, contractApy }) => {
         <PoolSummary
           pool={pool}
           index={index}
-          toggleCard={toggleCard}
           balanceSingle={balanceSingle}
+          toggleCard={toggleCard}
           isOpen={isOpen}
           singleDepositedBalance={singleDepositedBalance}
           depositedApy={depositedApy}
