@@ -5,21 +5,13 @@ const styles = theme => ({
     border: '1px solid #DED9D5',
     justifyContent: 'space-between',
   },
-  
-  selectors: {
-    display: 'flex'
-  },
 
   selectorContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    padding: '0 1rem',
-    width: '8rem',
+    width: '100%',
   },
 
   selectorLabel: {
-    marginBottom: '10px',
-    maxWidth: '200px',
+    marginBottom: '10px'
   },
 
   selector: {

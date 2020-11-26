@@ -22,38 +22,43 @@ const Filters = ({ toggleFilter, filters, platform, asset, order, setPlatform, s
   const handleOrderChange = event => setOrder(event.target.value);
 
   return (
-    <Grid container spacing={0} className={classes.container}>
-      <Grid item>
+    <Grid container spacing={2} className={classes.container}>
+      <Grid item xs={6} md={2}>
         <FormControl>
-          <FormGroup className={classes.miscFilters}>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={filters.hideZeroBalances}
-                  onChange={() => toggleFilter('hideZeroBalances')}
-                  color="primary"
-                />
-              }
-              label="My Vaults"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={!filters.hideDecomissioned}
-                  onChange={() => toggleFilter('hideDecomissioned')}
-                  color="primary"
-                />
-              }
-              label="Retired Vaults"
-            />
-          </FormGroup>
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={filters.hideZeroBalances}
+                onChange={() => toggleFilter('hideZeroBalances')}
+                color="primary"
+              />
+            }
+            // TODO: translate labels
+            label="My Vaults"
+          /> 
+        </FormControl>
+      </Grid>
+      
+      <Grid item xs={6} md={3}>
+        <FormControl>
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={!filters.hideDecomissioned}
+                onChange={() => toggleFilter('hideDecomissioned')}
+                color="primary"
+              />
+            }
+            // TODO: translate labels
+            label="Retired Vaults"
+          />
         </FormControl>
       </Grid>
 
-      <Grid item className={classes.selectors}>
+      <Grid item xs={4} md={2}>
         <FormControl className={classes.selectorContainer}>
           <InputLabel id="select-asset-label" className={classes.selectorLabel}>
-            Filter by Platform
+            Platform
           </InputLabel>
           <Select
             value={platform}
@@ -69,10 +74,12 @@ const Filters = ({ toggleFilter, filters, platform, asset, order, setPlatform, s
             ))}
           </Select>
         </FormControl>
-
+      </Grid>
+      
+      <Grid item xs={4} md={2}>
         <FormControl className={classes.selectorContainer}>
           <InputLabel id="select-asset-label" className={classes.selectorLabel}>
-            Filter by Asset
+            Asset
           </InputLabel>
           <Select
             value={asset}
@@ -88,7 +95,9 @@ const Filters = ({ toggleFilter, filters, platform, asset, order, setPlatform, s
             ))}
           </Select>
         </FormControl>
-
+      </Grid>
+      
+      <Grid item xs={4} md={2}>
         <FormControl className={classes.selectorContainer}>
           <InputLabel id="select-order-label" className={classes.selectorLabel}>
             Sort by
@@ -99,7 +108,6 @@ const Filters = ({ toggleFilter, filters, platform, asset, order, setPlatform, s
             className={classes.selector}
             id="select-order"
             labelId="select-order-label"
-            margin="dense"
           >
             <MenuItem value={'default'}>Default</MenuItem>
             <MenuItem value={'apy'}>APY</MenuItem>

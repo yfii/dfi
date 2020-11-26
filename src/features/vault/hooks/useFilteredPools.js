@@ -18,8 +18,18 @@ const useFilteredPools = (pools, tokens) => {
   useEffect(() => {
     let newPools = [...pools];
 
-    if (filters.hideDecomissioned) { newPools = hideDecomissioned(newPools); }
-    if (filters.hideZeroBalances) { newPools = hideZeroBalances(newPools, tokens); }
+    if (filters.hideZeroBalances) { 
+      newPools = hideZeroBalances(newPools, tokens);
+    }
+    
+    // Show all vaults to new users
+    if (pools.length === 0) { 
+      newPools = [...pools];
+    }
+
+    if (filters.hideDecomissioned) { 
+      newPools = hideDecomissioned(newPools);
+    }
 
     setFilteredPools(newPools);
   }, [pools, tokens, filters]);
