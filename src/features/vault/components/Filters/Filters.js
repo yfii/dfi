@@ -31,7 +31,7 @@ const Filters = ({
 
   return (
     <Grid container spacing={2} className={classes.container}>
-      <Grid item xs={6} md={2}>
+      <Grid item xs={6} md={3}>
         <FormControl>
           <FormControlLabel
             control={
@@ -42,7 +42,7 @@ const Filters = ({
               />
             }
             // TODO: translate labels
-            label="My Vaults"
+            label="Hide Zero Balances"
           />
         </FormControl>
       </Grid>
