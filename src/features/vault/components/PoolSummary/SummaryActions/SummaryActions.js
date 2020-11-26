@@ -11,10 +11,6 @@ const useStyles = makeStyles(styles);
 const SummaryActions = ({ helpUrl, index, toggleCard, isOpen }) => {
   const classes = useStyles();
 
-  if (index === 0) {
-    console.log('Render', helpUrl, index, toggleCard, isOpen);
-  }
-
   return (
     <Grid item>
       <Grid item container justify="flex-end" alignItems="center" spacing={2}>
