@@ -17,9 +17,9 @@ const useStyles = makeStyles(styles);
 
 const PoolSummary = ({
   pool,
-  balanceSingle,
   toggleCard,
   isOpen,
+  balanceSingle,
   singleDepositedBalance,
   depositedApy,
 }) => {
@@ -51,7 +51,7 @@ const PoolSummary = ({
         <Grid item md={7} xs={4}>
           <Grid item container justify="space-between">
             <Hidden smDown>
-              <LabeledStat value={format(balanceSingle)} label={t('Vault-Balance')} xs={4} md={3} />
+              <LabeledStat value={format(balanceSingle)} label={t('Vault-Balance')} xs={5} md={3} />
             </Hidden>
             <Hidden mdDown>
               <LabeledStat
@@ -59,8 +59,9 @@ const PoolSummary = ({
                   singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare))
                 )}
                 label={t('Vault-Deposited')}
-                xs={4}
+                xs={5}
                 md={3}
+                align="start"
               />
             </Hidden>
             <LabeledStat
@@ -68,6 +69,7 @@ const PoolSummary = ({
               label={t('Vault-APY')}
               xs={5}
               md={2}
+              align="start"
             />
             <LabeledStat
               value={pool.unstableApy ? '??? %' : calcDaily(depositedApy, pool.defaultApy)}

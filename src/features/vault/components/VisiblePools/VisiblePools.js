@@ -23,7 +23,7 @@ const VisiblePools = ({ pools, tokens, apys }) => {
         setAsset={setAsset}
       />
       {poolsByAsset.map((pool, index) => (
-        <Pool pool={pool} index={index} tokens={tokens} contractApy={apys} key={index} />
+        <Pool pool={pool} index={index} tokens={tokens} contractApy={apys} key={pool.id} />
       ))}
     </>
   );

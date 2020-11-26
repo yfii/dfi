@@ -1,6 +1,11 @@
 import { primaryColor } from 'assets/jss/material-kit-pro-react.js';
 
 const styles = {
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: props => (props.align ? props.align : 'center'),
+  },
   stat: {
     fontSize: '18px',
     fontWeight: 'bold',

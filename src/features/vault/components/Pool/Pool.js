@@ -23,7 +23,7 @@ const Pool = ({ pool, index, tokens, contractApy }) => {
     pool.tokenDecimals
   );
   let depositedApy = contractApy[pool.id] || 0;
-
+  console.log('Rendered');
   return (
     <Grid item xs={12} container key={index} className={classes.container} spacing={0}>
       <Accordion
