@@ -8,7 +8,7 @@ import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-const SummaryActions = ({ helpUrl, index, toggleCard, isOpen }) => {
+const SummaryActions = ({ helpUrl, toggleCard, isOpen }) => {
   const classes = useStyles();
 
   return (
@@ -37,7 +37,7 @@ const SummaryActions = ({ helpUrl, index, toggleCard, isOpen }) => {
             className={classes.iconContainerPrimary}
             onClick={event => {
               event.stopPropagation();
-              toggleCard(index);
+              toggleCard();
             }}
           >
             {isOpen ? (

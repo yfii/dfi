@@ -17,7 +17,6 @@ const useStyles = makeStyles(styles);
 
 const PoolSummary = ({
   pool,
-  index,
   balanceSingle,
   toggleCard,
   isOpen,
@@ -33,7 +32,7 @@ const PoolSummary = ({
       style={{ justifyContent: 'space-between' }}
       onClick={event => {
         event.stopPropagation();
-        toggleCard(index);
+        toggleCard();
       }}
     >
       <Grid
@@ -86,7 +85,6 @@ const PoolSummary = ({
         </Grid>
         <SummaryActions
           helpUrl={pool.tokenDescriptionUrl}
-          index={index}
           toggleCard={toggleCard}
           isOpen={isOpen}
         />

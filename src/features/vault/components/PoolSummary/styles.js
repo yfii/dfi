@@ -1,5 +1,3 @@
-import { primaryColor } from 'assets/jss/material-kit-pro-react.js';
-
 const styles = {
   details: {
     display: 'flex',

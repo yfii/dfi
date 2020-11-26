@@ -33,7 +33,6 @@ const Pool = ({ pool, index, tokens, contractApy }) => {
       >
         <PoolSummary
           pool={pool}
-          index={index}
           balanceSingle={balanceSingle}
           toggleCard={toggleCard}
           isOpen={isOpen}

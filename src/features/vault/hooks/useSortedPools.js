@@ -6,14 +6,14 @@ const useSortedPools = (pools, apys) => {
 
   useEffect(() => {
     switch (order) {
-      case 'default':
-        setSortedPools(pools);
-        break;
       case 'apy':
         setSortedPools(handleApy(pools, apys));
         break;
       case 'tvl':
         setSortedPools(handleTvl(pools));
+        break;
+      default:
+        setSortedPools(pools);
         break;
     }
   }, [pools, apys, order]);
