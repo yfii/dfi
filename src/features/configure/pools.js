@@ -1145,5 +1145,5 @@ export const pools = [
     status: 'eol',
     platform: 'fry',
     assets: ['BURGER'],
-  },
+  }
 ];

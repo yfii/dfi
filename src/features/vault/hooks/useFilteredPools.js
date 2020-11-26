@@ -44,10 +44,18 @@ function hideDecomissioned(pools) {
 }
 
 function hideZeroBalances(pools, tokens) {
-  return pools.filter(pool => 
-    (tokens[pool.name] !== undefined && tokens[pool.name].tokenBalance > 0) ||
-    (tokens[pool.earnedToken] !== undefined && tokens[pool.earnedToken].tokenBalance > 0)
-  );
+  return pools.filter(pool => {
+
+    if (tokens[pool.token]) {
+      if (tokens[pool.token].tokenBalance > 1e12) { return true; }
+    }
+
+    if(tokens[pool.earnedToken]) {
+      if (tokens[pool.earnedToken].tokenBalance > 1e12) { return true; }
+    }
+
+    return false;
+  });
 }
 
 export default useFilteredPools;
