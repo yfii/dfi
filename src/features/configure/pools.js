@@ -22,7 +22,7 @@ export const pools = [
     fallbackPrice: 0.14,
     depositsPaused: false,
     status: 'active',
-    platform: 'thugs',
+    platform: 'Thugs',
     assets: ['DRUGS'],
   },
 
@@ -48,7 +48,7 @@ export const pools = [
     fallbackPrice: 4.12346,
     depositsPaused: false,
     status: 'active',
-    platform: 'thugs',
+    platform: 'Thugs',
     assets: ['DRUGS', 'BNB'],
   },
 
@@ -74,7 +74,7 @@ export const pools = [
     fallbackPrice: 22.91525,
     depositsPaused: false,
     status: 'active',
-    platform: 'thugs',
+    platform: 'Thugs',
     assets: ['THUGS', 'BNB'],
   },
 
@@ -100,7 +100,7 @@ export const pools = [
     fallbackPrice: 22.9005,
     depositsPaused: false,
     status: 'active',
-    platform: 'thugs',
+    platform: 'Thugs',
     assets: ['CRED', 'BNB'],
   },
 
@@ -127,7 +127,7 @@ export const pools = [
     fallbackPrice: 3.9689,
     depositsPaused: false,
     status: 'active',
-    platform: 'thugs',
+    platform: 'Thugs',
     assets: ['GUNS', 'BNB'],
   },
 
@@ -153,7 +153,7 @@ export const pools = [
     fallbackPrice: 11.4725,
     depositsPaused: false,
     status: 'active',
-    platform: 'thugs',
+    platform: 'Thugs',
     assets: ['BUSD', 'BNB'],
   },
 
@@ -180,7 +180,7 @@ export const pools = [
     fallbackPrice: 1428.077,
     depositsPaused: false,
     status: 'active',
-    platform: 'thugs',
+    platform: 'Thugs',
     assets: ['BTC', 'BNB'],
   },
 
@@ -207,7 +207,7 @@ export const pools = [
     fallbackPrice: 236.7713,
     depositsPaused: false,
     status: 'active',
-    platform: 'thugs',
+    platform: 'Thugs',
     assets: ['ETH', 'BNB'],
   },
 
@@ -233,7 +233,7 @@ export const pools = [
     fallbackPrice: 81.644,
     depositsPaused: false,
     status: 'active',
-    platform: 'thugs',
+    platform: 'Thugs',
     assets: ['THUGS', 'BNB'],
   },
 
@@ -259,7 +259,7 @@ export const pools = [
     fallbackPrice: 81.644,
     depositsPaused: false,
     status: 'active',
-    platform: 'thugs',
+    platform: 'Thugs',
     assets: ['THUGS', 'BNB'],
   },
 
@@ -285,7 +285,7 @@ export const pools = [
     fallbackPrice: 11.1372,
     depositsPaused: false,
     status: 'active',
-    platform: 'thugs',
+    platform: 'Thugs',
     assets: ['DAI', 'BNB'],
   },
 
@@ -311,7 +311,7 @@ export const pools = [
     fallbackPrice: 11.194,
     depositsPaused: false,
     status: 'active',
-    platform: 'thugs',
+    platform: 'Thugs',
     assets: ['USDT', 'BNB'],
   },
 
@@ -337,7 +337,7 @@ export const pools = [
     fallbackPrice: 46.194,
     depositsPaused: false,
     status: 'active',
-    platform: 'thugs',
+    platform: 'Thugs',
     assets: ['BLIQ', 'BNB'],
   },
 
@@ -364,7 +364,7 @@ export const pools = [
     fallbackPrice: 3.5434,
     depositsPaused: true,
     status: 'eol',
-    platform: 'thugs',
+    platform: 'Thugs',
     assets: ['DRUGS', 'BNB'],
   },
 
@@ -391,7 +391,7 @@ export const pools = [
     fallbackPrice: 3.9689,
     depositsPaused: true,
     status: 'eol',
-    platform: 'thugs',
+    platform: 'Thugs',
     assets: ['GUNS', 'BNB'],
   },
 
@@ -418,7 +418,7 @@ export const pools = [
     fallbackPrice: 10.786,
     depositsPaused: true,
     status: 'eol',
-    platform: 'thugs',
+    platform: 'Thugs',
     assets: ['BUSD', 'BNB'],
   },
 
@@ -445,7 +445,7 @@ export const pools = [
     fallbackPrice: 1428.077,
     depositsPaused: true,
     status: 'eol',
-    platform: 'thugs',
+    platform: 'Thugs',
     assets: ['BTC', 'BNB'],
   },
 
@@ -472,7 +472,7 @@ export const pools = [
     fallbackPrice: 236.7713,
     depositsPaused: true,
     status: 'eol',
-    platform: 'thugs',
+    platform: 'Thugs',
     assets: ['ETH', 'BNB'],
   },
   //
@@ -501,7 +501,7 @@ export const pools = [
     fallbackPrice: 0.29,
     depositsPaused: false,
     status: 'active',
-    platform: 'pancake',
+    platform: 'Pancake',
     assets: ['CAKE'],
   },
 
@@ -527,7 +527,7 @@ export const pools = [
     fallbackPrice: 0.29,
     depositsPaused: false,
     status: 'active',
-    platform: 'pancake',
+    platform: 'Pancake',
     assets: ['CAKE'],
   },
 
@@ -554,7 +554,7 @@ export const pools = [
     fallbackPrice: 0.29,
     depositsPaused: false,
     status: 'active',
-    platform: 'pancake',
+    platform: 'Pancake',
     assets: ['CAKE'],
   },
 
@@ -581,7 +581,7 @@ export const pools = [
     fallbackPrice: 0.57,
     depositsPaused: false,
     status: 'active',
-    platform: 'pancake',
+    platform: 'Pancake',
     assets: ['CAKE'],
   },
 
@@ -608,7 +608,7 @@ export const pools = [
     fallbackPrice: 0.0042,
     depositsPaused: true,
     status: 'eol',
-    platform: 'pancake',
+    platform: 'Pancake',
     assets: ['CAKE'],
   },
 
@@ -635,7 +635,7 @@ export const pools = [
     fallbackPrice: 5.83,
     depositsPaused: false,
     status: 'active',
-    platform: 'pancake',
+    platform: 'Pancake',
     assets: ['CAKE', 'BNB'],
   },
 
@@ -662,7 +662,7 @@ export const pools = [
     fallbackPrice: 38.5021,
     depositsPaused: false,
     status: 'active',
-    platform: 'pancake',
+    platform: 'Pancake',
     assets: ['LINK', 'BNB'],
   },
 
@@ -689,7 +689,7 @@ export const pools = [
     fallbackPrice: 10.900750864365174,
     depositsPaused: false,
     status: 'active',
-    platform: 'pancake',
+    platform: 'Pancake',
     assets: ['USDT', 'BNB'],
   },
 
@@ -716,7 +716,7 @@ export const pools = [
     fallbackPrice: 10.58,
     depositsPaused: false,
     status: 'active',
-    platform: 'pancake',
+    platform: 'Pancake',
     assets: ['BUSD', 'BNB'],
   },
 
@@ -743,7 +743,7 @@ export const pools = [
     fallbackPrice: 2,
     depositsPaused: false,
     status: 'active',
-    platform: 'pancake',
+    platform: 'Pancake',
     assets: ['USDT', 'BUSD'],
   },
 
@@ -770,7 +770,7 @@ export const pools = [
     fallbackPrice: 232.19252,
     depositsPaused: false,
     status: 'active',
-    platform: 'pancake',
+    platform: 'Pancake',
     assets: ['ETH', 'BNB'],
   },
 
@@ -797,7 +797,7 @@ export const pools = [
     fallbackPrice: 1290,
     depositsPaused: false,
     status: 'active',
-    platform: 'pancake',
+    platform: 'Pancake',
     assets: ['BTC', 'BNB'],
   },
   //
@@ -825,7 +825,7 @@ export const pools = [
     fallbackPrice: 30,
     depositsPaused: false,
     status: 'active',
-    platform: 'fortube',
+    platform: 'ForTube',
     assets: ['FIL'],
   },
 
@@ -851,7 +851,7 @@ export const pools = [
     fallbackPrice: 4.5,
     depositsPaused: false,
     status: 'active',
-    platform: 'fortube',
+    platform: 'ForTube',
     assets: ['ATOM'],
   },
 
@@ -877,7 +877,7 @@ export const pools = [
     fallbackPrice: 2,
     depositsPaused: false,
     status: 'active',
-    platform: 'fortube',
+    platform: 'ForTube',
     assets: ['XTZ'],
   },
 
@@ -903,7 +903,7 @@ export const pools = [
     fallbackPrice: 1,
     depositsPaused: false,
     status: 'active',
-    platform: 'fortube',
+    platform: 'ForTube',
     assets: ['BUSD'],
   },
 
@@ -929,7 +929,7 @@ export const pools = [
     fallbackPrice: 12,
     depositsPaused: false,
     status: 'active',
-    platform: 'fortube',
+    platform: 'ForTube',
     assets: ['LINK'],
   },
 
@@ -955,7 +955,7 @@ export const pools = [
     fallbackPrice: 4.27,
     depositsPaused: false,
     status: 'active',
-    platform: 'fortube',
+    platform: 'ForTube',
     assets: ['DOT'],
   },
 
@@ -981,7 +981,7 @@ export const pools = [
     fallbackPrice: 1,
     depositsPaused: false,
     status: 'active',
-    platform: 'fortube',
+    platform: 'ForTube',
     assets: ['USDT'],
   },
 
@@ -1007,7 +1007,7 @@ export const pools = [
     fallbackPrice: 414,
     depositsPaused: false,
     status: 'active',
-    platform: 'fortube',
+    platform: 'ForTube',
     assets: ['ETH'],
   },
 
@@ -1033,7 +1033,7 @@ export const pools = [
     fallbackPrice: 12995,
     depositsPaused: false,
     status: 'active',
-    platform: 'fortube',
+    platform: 'ForTube',
     assets: ['BTC'],
   },
 
@@ -1090,7 +1090,7 @@ export const pools = [
     depositsPaused: true,
     status: 'refund',
     refundContractAddress: '0x9284403F066f9200c1Ad4A6B5b2Dd0195092803E',
-    platform: 'thugs',
+    platform: 'Thugs',
     assets: ['DRUGS', 'GUNS'],
   },
 
@@ -1118,7 +1118,7 @@ export const pools = [
     depositsPaused: true,
     status: 'refund',
     refundContractAddress: '0x2fd5caAB20191dcd4423F588e254CC298C7F66A1',
-    platform: 'pancake',
+    platform: 'Pancake',
     assets: ['CAKE'],
   },
   {

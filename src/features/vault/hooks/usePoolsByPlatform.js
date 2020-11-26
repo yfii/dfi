@@ -9,7 +9,6 @@ const usePoolsByPlatform = pools => {
       setPoolsByPlatform(pools);
     } else {
       let newPools = pools.filter(pool => pool.platform === platform);
-
       setPoolsByPlatform(newPools);
     }
   }, [pools, platform]);

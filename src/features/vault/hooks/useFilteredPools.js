@@ -1,14 +1,8 @@
 import { useState, useEffect } from 'react';
 
 const initialFilters = {
-  showDecomissioned: {
-    active: false,
-    filter: showDecomissioned,
-  },
-  showZeroBalances: {
-    active: true,
-    filter: showZeroBalances,
-  }
+  hideDecomissioned: true,
+  hideZeroBalances: true
 };
 
 const useFilteredPools = (pools, tokens) => {
@@ -16,23 +10,16 @@ const useFilteredPools = (pools, tokens) => {
   const [filters, setFilters] = useState(initialFilters);
 
   const toggleFilter = key => {
-    setFilters({
-      ...filters,
-      [key]: {
-        ...filters[key],
-        active: !filters[key].active,
-      },
-    });
+    let newFilters = {...filters}
+    newFilters[key] = !filters[key]
+    setFilters(newFilters);
   };
 
   useEffect(() => {
     let newPools = [...pools];
 
-    for (const key in filters) {
-      if (filters[key].active) {
-        newPools = filters[key].filter(newPools, tokens);
-      }
-    }
+    if (filters.hideDecomissioned) { newPools = hideDecomissioned(newPools); }
+    if (filters.hideZeroBalances) { newPools = hideZeroBalances(newPools, tokens); }
 
     setFilteredPools(newPools);
   }, [pools, tokens, filters]);
@@ -40,24 +27,17 @@ const useFilteredPools = (pools, tokens) => {
   return { filteredPools, toggleFilter, filters };
 };
 
-function showDecomissioned(pools) {
+function hideDecomissioned(pools) {
   return pools.filter(pool => {
-    return pool.status === 'eol' && pool.status === 'refund';
+    return pool.status !== 'eol' && pool.status !== 'refund';
   });
 }
 
-function showZeroBalances(pools, tokens) {
-  return pools.filter(pool => {
-    console.log(tokens[pool.name]);
-
-    if (tokens[pool.name] !== undefined) {
-      if (tokens[pool.name].tokenBalance > 0) return true;
-    }
-    if (tokens[pool.earnedToken] !== undefined) {
-      if (tokens[pool.earnedToken].tokenBalance > 0) return true;
-    }
-    return false;
-  });
+function hideZeroBalances(pools, tokens) {
+  return pools.filter(pool => 
+    (tokens[pool.name] !== undefined && tokens[pool.name].tokenBalance > 0) ||
+    (tokens[pool.earnedToken] !== undefined && tokens[pool.earnedToken].tokenBalance > 0)
+  );
 }
 
 export default useFilteredPools;

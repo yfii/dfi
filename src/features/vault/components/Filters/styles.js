@@ -1,26 +1,27 @@
 const styles = theme => ({
   container: {
     padding: '24px',
-    marginBottom: '24px',
+    marginBottom: '2rem',
     border: '1px solid #DED9D5',
     justifyContent: 'space-between',
   },
-  platformFilters: {
-    display: 'flex',
-    flexDirection: 'row',
+  
+  selectors: {
+    display: 'flex'
   },
-  miscFilters: {
-    display: 'flex',
-    flexDirection: 'row',
-  },
-  selectors: {},
+
   selectorContainer: {
-    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    padding: '0 1rem',
+    width: '8rem',
   },
+
   selectorLabel: {
     marginBottom: '10px',
-    width: '200px',
+    maxWidth: '200px',
   },
+
   selector: {
     padding: '0',
     margin: '0',

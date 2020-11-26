@@ -1,17 +1,14 @@
 import { useState, useEffect } from 'react';
 
 const usePoolsByAsset = pools => {
-  const [asset, setAsset] = useState('ALL');
+  const [asset, setAsset] = useState('All');
   const [poolsByAsset, setPoolsByAsset] = useState(pools);
 
   useEffect(() => {
-    if (asset === 'ALL') {
+    if (asset === 'All') {
       setPoolsByAsset(pools);
     } else {
-      let newPools = pools.filter(pool => {
-        return pool.assets.includes(asset);
-      });
-
+      let newPools = pools.filter(pool => pool.assets.includes(asset));
       setPoolsByAsset(newPools);
     }
   }, [pools, asset]);
