@@ -5,6 +5,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: props => (props.align ? props.align : 'center'),
+    justifyContent: 'center',
   },
   stat: {
     fontSize: '18px',

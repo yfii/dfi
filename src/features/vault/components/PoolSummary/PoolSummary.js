@@ -39,7 +39,7 @@ const PoolSummary = ({
         container
         alignItems="center"
         justify="space-around"
-        spacing={4}
+        spacing={1}
         style={{ paddingTop: '16px', paddingBottom: '16px' }}
       >
         <PoolTitle
