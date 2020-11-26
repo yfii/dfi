@@ -1,6 +1,8 @@
 export const assets = [
   'All',
   'ATOM',
+  'BHC',
+  'BIFI',
   'BNB',
   'BLIQ',
   'BURGER',
@@ -11,6 +13,7 @@ export const assets = [
   'DAI',
   'DOT',
   'DRUGS',
+  'EOS',
   'ETH',
   'FIL',
   'GUNS',
