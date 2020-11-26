@@ -8,19 +8,7 @@ const initialFilters = {
   showZeroBalances: {
     active: true,
     filter: showZeroBalances,
-  },
-  showPancake: {
-    active: false,
-    filter: (pools, tokens) => showPlatform(pools, tokens, 'pancake'),
-  },
-  showThugs: {
-    active: false,
-    filter: (pools, tokens) => showPlatform(pools, tokens, 'thugs'),
-  },
-  showFortube: {
-    active: false,
-    filter: (pools, tokens) => showPlatform(pools, tokens, 'fortube'),
-  },
+  }
 };
 
 const useFilteredPools = (pools, tokens) => {
@@ -54,7 +42,7 @@ const useFilteredPools = (pools, tokens) => {
 
 function showDecomissioned(pools) {
   return pools.filter(pool => {
-    return pool.status !== 'eol' && pool.status !== 'refund';
+    return pool.status === 'eol' && pool.status === 'refund';
   });
 }
 
@@ -70,10 +58,6 @@ function showZeroBalances(pools, tokens) {
     }
     return false;
   });
-}
-
-function showPlatform(pools, _, platform) {
-  return pools.filter(pool => pool.platform !== platform);
 }
 
 export default useFilteredPools;
