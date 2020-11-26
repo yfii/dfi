@@ -82,7 +82,6 @@ export default function App({ children }) {
       <SnackbarProvider>
         <div className={classes.page}>
           <Header
-            brand="beefy.finance"
             links={
               <HeaderLinks
                 address={address}
@@ -91,7 +90,6 @@ export default function App({ children }) {
                 disconnectWallet={() => disconnectWallet(web3, web3Modal)}
               />
             }
-            color="dark"
           />
           <div className={classes.container}>
             <div className={classes.children}>

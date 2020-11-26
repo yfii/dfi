@@ -5,16 +5,24 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
-import FormGroup from '@material-ui/core/FormGroup';
 import Checkbox from '@material-ui/core/Checkbox';
 import InputLabel from '@material-ui/core/InputLabel';
 
 import styles from './styles';
-import { platforms, assets } from "./constants";
+import { platforms, assets } from './constants';
 
 const useStyles = makeStyles(styles);
 
-const Filters = ({ toggleFilter, filters, platform, asset, order, setPlatform, setAsset, setOrder }) => {
+const Filters = ({
+  toggleFilter,
+  filters,
+  platform,
+  asset,
+  order,
+  setPlatform,
+  setAsset,
+  setOrder,
+}) => {
   const classes = useStyles();
 
   const handlePlatformChange = event => setPlatform(event.target.value);
@@ -35,10 +43,10 @@ const Filters = ({ toggleFilter, filters, platform, asset, order, setPlatform, s
             }
             // TODO: translate labels
             label="My Vaults"
-          /> 
+          />
         </FormControl>
       </Grid>
-      
+
       <Grid item xs={6} md={3}>
         <FormControl>
           <FormControlLabel
@@ -75,7 +83,7 @@ const Filters = ({ toggleFilter, filters, platform, asset, order, setPlatform, s
           </Select>
         </FormControl>
       </Grid>
-      
+
       <Grid item xs={4} md={2}>
         <FormControl className={classes.selectorContainer}>
           <InputLabel id="select-asset-label" className={classes.selectorLabel}>
@@ -96,7 +104,7 @@ const Filters = ({ toggleFilter, filters, platform, asset, order, setPlatform, s
           </Select>
         </FormControl>
       </Grid>
-      
+
       <Grid item xs={4} md={2}>
         <FormControl className={classes.selectorContainer}>
           <InputLabel id="select-order-label" className={classes.selectorLabel}>

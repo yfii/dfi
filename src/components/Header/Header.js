@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -10,11 +9,12 @@ import Drawer from '@material-ui/core/Drawer';
 import Menu from '@material-ui/icons/Menu';
 import Close from '@material-ui/icons/Close';
 
+import HeaderLinks from '../HeaderLinks/HeaderLinks';
 import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-export default function Header(props) {
+const Header = ({ links }) => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const classes = useStyles();
 
@@ -22,20 +22,12 @@ export default function Header(props) {
     setMobileOpen(!mobileOpen);
   };
 
-  const { color, links, brand, fixed, absolute } = props;
-  const appBarClasses = classNames({
-    [classes.appBar]: true,
-    [classes[color]]: color,
-    [classes.absolute]: absolute,
-    [classes.fixed]: fixed,
-  });
-
   return (
-    <AppBar className={appBarClasses}>
+    <AppBar className={`${classes.appBar} ${classes.dark}`}>
       <Toolbar className={classes.container}>
         <Button className={classes.title}>
           <img alt="BIFI" src={require(`images/BIFI.svg`)} height="40px" className={classes.logo} />
-          <a href="https://beefy.finance">{brand}</a>
+          <a href="https://beefy.finance">beefy.finance</a>
         </Button>
 
         <span>
@@ -79,7 +71,7 @@ export default function Header(props) {
       </Hidden>
     </AppBar>
   );
-}
+};
 
 const renderLink = (name, label, icon, classes) => {
   return (
@@ -94,3 +86,5 @@ const renderLink = (name, label, icon, classes) => {
     </a>
   );
 };
+
+export default Header;

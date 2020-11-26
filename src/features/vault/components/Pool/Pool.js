@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, memo } from 'react';
 import Accordion from '@material-ui/core/Accordion';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
@@ -50,4 +50,4 @@ const Pool = ({ pool, index, tokens, contractApy }) => {
   );
 };
 
-export default Pool;
+export default memo(Pool);

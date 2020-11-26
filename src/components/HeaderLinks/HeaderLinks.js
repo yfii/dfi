@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, memo } from 'react';
 import { renderIcon } from '@download/blockies';
 import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
@@ -12,8 +12,7 @@ import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-export default function HeaderLinks(props) {
-  const { dropdownHoverColor, connected, address, connectWallet, disconnectWallet } = props;
+const HeaderLinks = ({ connected, address, connectWallet, disconnectWallet }) => {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const [lng, setLanguage] = useState('en');
@@ -72,7 +71,7 @@ export default function HeaderLinks(props) {
       <ListItem className={classes.listItem}>
         <CustomDropdown
           navDropdown
-          hoverColor={dropdownHoverColor}
+          hoverColor="dark"
           buttonText={lng}
           buttonProps={{
             className: classes.navLink,
@@ -139,4 +138,6 @@ export default function HeaderLinks(props) {
       </ListItem>
     </List>
   );
-}
+};
+
+export default HeaderLinks;
