@@ -1,29 +1,25 @@
 import { useState, useEffect } from 'react';
 
 const initialFilters = {
-  hideDecomissioned: {
+  showDecomissioned: {
     active: false,
-    filter: hideDecomissioned,
+    filter: showDecomissioned,
   },
-  hideZeroBalances: {
-    active: false,
-    filter: hideZeroBalances,
+  showZeroBalances: {
+    active: true,
+    filter: showZeroBalances,
   },
-  hidePancake: {
+  showPancake: {
     active: false,
-    filter: (pools, tokens) => hidePlatform(pools, tokens, 'pancake'),
+    filter: (pools, tokens) => showPlatform(pools, tokens, 'pancake'),
   },
-  hideThugs: {
+  showThugs: {
     active: false,
-    filter: (pools, tokens) => hidePlatform(pools, tokens, 'thugs'),
+    filter: (pools, tokens) => showPlatform(pools, tokens, 'thugs'),
   },
-  hideFortube: {
+  showFortube: {
     active: false,
-    filter: (pools, tokens) => hidePlatform(pools, tokens, 'fortube'),
-  },
-  hideFry: {
-    active: false,
-    filter: (pools, tokens) => hidePlatform(pools, tokens, 'fry'),
+    filter: (pools, tokens) => showPlatform(pools, tokens, 'fortube'),
   },
 };
 
@@ -56,14 +52,16 @@ const useFilteredPools = (pools, tokens) => {
   return { filteredPools, toggleFilter, filters };
 };
 
-function hideDecomissioned(pools) {
+function showDecomissioned(pools) {
   return pools.filter(pool => {
     return pool.status !== 'eol' && pool.status !== 'refund';
   });
 }
 
-function hideZeroBalances(pools, tokens) {
+function showZeroBalances(pools, tokens) {
   return pools.filter(pool => {
+    console.log(tokens[pool.name]);
+
     if (tokens[pool.name] !== undefined) {
       if (tokens[pool.name].tokenBalance > 0) return true;
     }
@@ -74,7 +72,7 @@ function hideZeroBalances(pools, tokens) {
   });
 }
 
-function hidePlatform(pools, _, platform) {
+function showPlatform(pools, _, platform) {
   return pools.filter(pool => pool.platform !== platform);
 }
 

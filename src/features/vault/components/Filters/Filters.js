@@ -48,72 +48,27 @@ const Filters = ({ toggleFilter, filters, setOrder, asset, order, setAsset }) =>
             <FormControlLabel
               control={
                 <Checkbox
-                  checked={filters.hideZeroBalances.active}
-                  onChange={() => toggleFilter('hideZeroBalances')}
+                  checked={filters.showZeroBalances.active}
+                  onChange={() => toggleFilter('showZeroBalances')}
                   color="primary"
                 />
               }
-              label="Hide Zero Balances"
+              label="My Vaults"
             />
             <FormControlLabel
               control={
                 <Checkbox
-                  checked={filters.hideDecomissioned.active}
-                  onChange={() => toggleFilter('hideDecomissioned')}
+                  checked={filters.showDecomissioned.active}
+                  onChange={() => toggleFilter('showDecomissioned')}
                   color="primary"
                 />
               }
-              label="Hide Inactive Vaults"
+              label="Retired Vaults"
             />
           </FormGroup>
         </FormControl>
-        <div>
-          <FormControl>
-            <FormGroup className={classes.platformFilters}>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={!filters.hideThugs.active}
-                    onChange={() => toggleFilter('hideThugs')}
-                    color="primary"
-                  />
-                }
-                label="Thugs"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={!filters.hidePancake.active}
-                    onChange={() => toggleFilter('hidePancake')}
-                    color="primary"
-                  />
-                }
-                label="Pancake"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={!filters.hideFortube.active}
-                    onChange={() => toggleFilter('hideFortube')}
-                    color="primary"
-                  />
-                }
-                label="Fortube"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={!filters.hideFry.active}
-                    onChange={() => toggleFilter('hideFry')}
-                    color="primary"
-                  />
-                }
-                label="Fry"
-              />
-            </FormGroup>
-          </FormControl>
-        </div>
       </Grid>
+
       <Grid container item xs={4} className={classes.selectors}>
         <FormControl className={classes.selectorContainer}>
           <InputLabel id="select-asset-label" className={classes.selectorLabel}>
@@ -133,6 +88,7 @@ const Filters = ({ toggleFilter, filters, setOrder, asset, order, setAsset }) =>
             ))}
           </Select>
         </FormControl>
+
         <FormControl className={classes.selectorContainer}>
           <InputLabel id="select-order-label" className={classes.selectorLabel}>
             Order by
