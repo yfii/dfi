@@ -21,9 +21,9 @@ const useFilteredPools = (pools, tokens) => {
     if (filters.hideZeroBalances) { 
       newPools = hideZeroBalances(newPools, tokens);
     }
-    
+
     // Show all vaults to new users
-    if (pools.length === 0) { 
+    if (newPools.length === 0) { 
       newPools = [...pools];
     }
 
