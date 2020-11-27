@@ -16,5 +16,12 @@
   "Vault-WithdrawButtonAll": "모두 철회",
   "Vault-WithdrawFee": "모든 금고에는 0.1 %의 인출 수수료가 있습니다.",
   "Vault-MainTitle": "Vaults",
-  "Vault-SecondTitle": "입금 & 수익 창출"
+  "Vault-SecondTitle": "입금 & 수익 창출",
+  "Hide-Zero-Balances": "Hide Zero Balances",
+  "Retired-Vaults": "Retired Vaults",
+  "Filters-Platform": "Platform",
+  "Filters-Asset": "Asset",
+  "Filters-Sort": "Sort by",
+  "Filters-All": "All",
+  "Filters-Default": "Default"
 }

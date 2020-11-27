@@ -2,6 +2,7 @@ import React from 'react';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import { makeStyles } from '@material-ui/core/styles';
+import { useTranslation } from 'react-i18next';
 import Grid from '@material-ui/core/Grid';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
@@ -23,6 +24,7 @@ const Filters = ({
   setAsset,
   setOrder,
 }) => {
+  const { t } = useTranslation();
   const classes = useStyles();
 
   const handlePlatformChange = event => setPlatform(event.target.value);
@@ -42,7 +44,7 @@ const Filters = ({
               />
             }
             // TODO: translate labels
-            label="Hide Zero Balances"
+            label={t('Hide-Zero-Balances')}
           />
         </FormControl>
       </Grid>
@@ -58,7 +60,7 @@ const Filters = ({
               />
             }
             // TODO: translate labels
-            label="Retired Vaults"
+            label={t('Retired-Vaults')}
           />
         </FormControl>
       </Grid>
@@ -66,7 +68,7 @@ const Filters = ({
       <Grid item xs={4} md={2}>
         <FormControl className={classes.selectorContainer}>
           <InputLabel id="select-asset-label" className={classes.selectorLabel}>
-            Platform
+            {t('Filters-Platform')}
           </InputLabel>
           <Select
             value={platform}
@@ -75,6 +77,9 @@ const Filters = ({
             id="select-platform"
             labelId="select-platform-label"
           >
+            <MenuItem key={'All'} value={'All'}>
+              {t('Filters-All')}
+            </MenuItem>
             {platforms.map(platform => (
               <MenuItem key={platform} value={platform}>
                 {platform}
@@ -87,7 +92,7 @@ const Filters = ({
       <Grid item xs={4} md={2}>
         <FormControl className={classes.selectorContainer}>
           <InputLabel id="select-asset-label" className={classes.selectorLabel}>
-            Asset
+            {t('Filters-Asset')}
           </InputLabel>
           <Select
             value={asset}
@@ -96,6 +101,9 @@ const Filters = ({
             id="select-asset"
             labelId="select-asset-label"
           >
+            <MenuItem key={'All'} value={'All'}>
+              {t('Filters-All')}
+            </MenuItem>
             {assets.map(asset => (
               <MenuItem key={asset} value={asset}>
                 {asset}
@@ -108,7 +116,7 @@ const Filters = ({
       <Grid item xs={4} md={2}>
         <FormControl className={classes.selectorContainer}>
           <InputLabel id="select-order-label" className={classes.selectorLabel}>
-            Sort by
+            {t('Filters-Sort')}
           </InputLabel>
           <Select
             value={order}
@@ -117,7 +125,7 @@ const Filters = ({
             id="select-order"
             labelId="select-order-label"
           >
-            <MenuItem value={'default'}>Default</MenuItem>
+            <MenuItem value={'default'}>{t('Filters-Default')}</MenuItem>
             <MenuItem value={'apy'}>APY</MenuItem>
             <MenuItem value={'tvl'}>TVL</MenuItem>
           </Select>

@@ -16,5 +16,12 @@
   "Vault-WithdrawButtonAll": "सब वपिस निकलो",
   "Vault-WithdrawFee": "सभी वाल्टों पर 0.1% निकासी शुल्क है",
   "Vault-MainTitle": "तिजोरी",
-  "Vault-SecondTitle": "जमा करें और पैसे कमाएँ"
+  "Vault-SecondTitle": "जमा करें और पैसे कमाएँ",
+  "Hide-Zero-Balances": "Hide Zero Balances",
+  "Retired-Vaults": "Retired Vaults",
+  "Filters-Platform": "Platform",
+  "Filters-Asset": "Asset",
+  "Filters-Sort": "Sort by",
+  "Filters-All": "All",
+  "Filters-Default": "Default"
 }

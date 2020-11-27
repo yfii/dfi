@@ -4,7 +4,7 @@
   "Vault-Wallet": "Wallet",
   "Vault-Balance": "Balance",
   "Vault-APY": "APY",
-  "Vault-APYDaily": "Daily",  
+  "Vault-APYDaily": "Daily",
   "Vault-TVL": "TVL",
   "Vault-Approving": "Approve...",
   "Vault-ApproveButton": "Approve",
@@ -16,5 +16,12 @@
   "Vault-WithdrawButtonAll": "Withdraw All",
   "Vault-WithdrawFee": "There is a 0.1% withdrawal fee on all vaults",
   "Vault-MainTitle": "Vaults",
-  "Vault-SecondTitle": "Deposit & Earn money"
+  "Vault-SecondTitle": "Deposit & Earn money",
+  "Hide-Zero-Balances": "Hide Zero Balances",
+  "Retired-Vaults": "Retired Vaults",
+  "Filters-Platform": "Platform",
+  "Filters-Asset": "Asset",
+  "Filters-Sort": "Sort by",
+  "Filters-All": "All",
+  "Filters-Default": "Default"
 }

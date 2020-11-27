@@ -16,5 +16,12 @@
   "Vault-WithdrawButtonAll": "提出全部",
   "Vault-WithdrawFee": "所有金库均收取0.1％的提款费",
   "Vault-MainTitle": "保险库",
-  "Vault-SecondTitle": "存入赚币"
+  "Vault-SecondTitle": "存入赚币",
+  "Hide-Zero-Balances": "隐藏0余额机枪池",
+  "Retired-Vaults": "往期机枪池",
+  "Filters-Platform": "平台",
+  "Filters-Asset": "资产",
+  "Filters-Sort": "排序",
+  "Filters-All": "全部",
+  "Filters-Default": "默认"
 }
