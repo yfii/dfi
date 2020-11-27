@@ -7,7 +7,7 @@ export const pools = [
     tokenDescription: 'Uses: Beefy.Finance',
     tokenAddress: '0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
     tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
+    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/bifi-maxi',
     earnedToken: 'mooBIFI',
     earnedTokenAddress: '0xf7069e41C57EcC5F122093811d8c75bdB5f7c14e',
     earnContractAddress: '0xf7069e41C57EcC5F122093811d8c75bdB5f7c14e',
