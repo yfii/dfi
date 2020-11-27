@@ -22,4 +22,4 @@ export const assets = [
   'XTZ',
 ];
 
-export const platforms = ['Thugs', 'Pancake', 'ForTube'];
+export const platforms = ['Beefy', 'Thugs', 'Pancake', 'ForTube'];
