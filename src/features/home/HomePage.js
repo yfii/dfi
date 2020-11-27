@@ -44,7 +44,7 @@ export default function HomePage() {
   
   return (
     <>
-      <LiquidityPage/>
+      {/* <LiquidityPage/> */}
       <SnackbarContent
         message={
             <span onClick={() => window.open(t('Home-SnackBarUrl'))} style={{fontWeight: "bold"}}>
