@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 const initialFilters = {
   hideDecomissioned: true,
-  hideZeroBalances: true
+  hideZeroBalances: false,
 };
 
 const useFilteredPools = (pools, tokens) => {
@@ -10,24 +10,24 @@ const useFilteredPools = (pools, tokens) => {
   const [filters, setFilters] = useState(initialFilters);
 
   const toggleFilter = key => {
-    let newFilters = {...filters}
-    newFilters[key] = !filters[key]
+    let newFilters = { ...filters };
+    newFilters[key] = !filters[key];
     setFilters(newFilters);
   };
 
   useEffect(() => {
     let newPools = [...pools];
 
-    if (filters.hideZeroBalances) { 
+    if (filters.hideZeroBalances) {
       newPools = hideZeroBalances(newPools, tokens);
     }
 
     // Show all vaults to new users
-    if (newPools.length === 0) { 
+    if (newPools.length === 0) {
       newPools = [...pools];
     }
 
-    if (filters.hideDecomissioned) { 
+    if (filters.hideDecomissioned) {
       newPools = hideDecomissioned(newPools);
     }
 
@@ -45,13 +45,16 @@ function hideDecomissioned(pools) {
 
 function hideZeroBalances(pools, tokens) {
   return pools.filter(pool => {
-
     if (tokens[pool.token]) {
-      if (tokens[pool.token].tokenBalance > 1e14) { return true; }
+      if (tokens[pool.token].tokenBalance > 1e14) {
+        return true;
+      }
     }
 
-    if(tokens[pool.earnedToken]) {
-      if (tokens[pool.earnedToken].tokenBalance > 1e14) { return true; }
+    if (tokens[pool.earnedToken]) {
+      if (tokens[pool.earnedToken].tokenBalance > 1e14) {
+        return true;
+      }
     }
 
     return false;
