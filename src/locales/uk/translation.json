@@ -16,5 +16,12 @@
   "Vault-WithdrawButtonAll": "Зняти Все",
   "Vault-WithdrawFee": "На всі сховища стягується плата за зняття 0,1%",
   "Vault-MainTitle": "Сховище",
-  "Vault-SecondTitle": "Зробити Вклад і Отримати Дохід"
+  "Vault-SecondTitle": "Зробити Вклад і Отримати Дохід",
+  "Hide-Zero-Balances": "Hide Zero Balances",
+  "Retired-Vaults": "Retired Vaults",
+  "Filters-Platform": "Platform",
+  "Filters-Asset": "Asset",
+  "Filters-Sort": "Sort by",
+  "Filters-All": "All",
+  "Filters-Default": "Default"
 }

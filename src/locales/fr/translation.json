@@ -16,5 +16,12 @@
   "Vault-WithdrawButtonAll": "Tout retirer",
   "Vault-WithdrawFee": "Il y a des frais de retrait de 0,1% sur tous les coffres",
   "Vault-MainTitle": "Coffres",
-  "Vault-SecondTitle": "Déposer & Générer des intêrets"
+  "Vault-SecondTitle": "Déposer & Générer des intêrets",
+  "Hide-Zero-Balances": "Hide Zero Balances",
+  "Retired-Vaults": "Retired Vaults",
+  "Filters-Platform": "Platform",
+  "Filters-Asset": "Asset",
+  "Filters-Sort": "Sort by",
+  "Filters-All": "All",
+  "Filters-Default": "Default"
 }

@@ -16,5 +16,12 @@
   "Vault-WithdrawButtonAll": "Tarik Semua",
   "Vault-WithdrawFee": "Ada biaya penarikan 0,1% di semua vault",
   "Vault-MainTitle": "Kubah",
-  "Vault-SecondTitle": "Setor & Dapatkan uang"
+  "Vault-SecondTitle": "Setor & Dapatkan uang",
+  "Hide-Zero-Balances": "Hide Zero Balances",
+  "Retired-Vaults": "Retired Vaults",
+  "Filters-Platform": "Platform",
+  "Filters-Asset": "Asset",
+  "Filters-Sort": "Sort by",
+  "Filters-All": "All",
+  "Filters-Default": "Default"
 }

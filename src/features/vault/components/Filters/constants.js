@@ -1,5 +1,4 @@
 export const assets = [
-  'All',
   'ATOM',
   'BHC',
   'BIFI',
@@ -23,6 +22,4 @@ export const assets = [
   'XTZ',
 ];
 
-export const platforms = [
-  'All', 'Thugs', 'Pancake', 'ForTube'
-];
+export const platforms = ['Thugs', 'Pancake', 'ForTube'];

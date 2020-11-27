@@ -16,5 +16,12 @@
   "Vault-WithdrawButtonAll": "Alles abheben",
   "Vault-WithdrawFee": "Für alle Tresore wird eine Abhebungsgebühr von 0,1% erhoben",
   "Vault-MainTitle": "Vaults",
-  "Vault-SecondTitle": "Einzahlen & Geld verdienen"
+  "Vault-SecondTitle": "Einzahlen & Geld verdienen",
+  "Hide-Zero-Balances": "Hide Zero Balances",
+  "Retired-Vaults": "Retired Vaults",
+  "Filters-Platform": "Platform",
+  "Filters-Asset": "Asset",
+  "Filters-Sort": "Sort by",
+  "Filters-All": "All",
+  "Filters-Default": "Default"
 }
