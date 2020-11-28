@@ -3,7 +3,7 @@ export const pools = [
     id: 'bifi-maxi',
     logo: 'bifi/BIFI',
     name: 'BIFI Maxi',
-    token: 'BIFI Maxi',
+    token: 'BIFI',
     tokenDescription: 'Uses: Beefy.Finance',
     tokenAddress: '0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
     tokenDecimals: 18,
