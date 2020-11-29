@@ -30,10 +30,7 @@ const PoolSummary = ({
     <AccordionSummary
       className={pool.depositsPaused ? classes.detailsPaused : classes.details}
       style={{ justifyContent: 'space-between' }}
-      onClick={event => {
-        event.stopPropagation();
-        toggleCard();
-      }}
+      onClick={toggleCard}
     >
       <Grid
         container

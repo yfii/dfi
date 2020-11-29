@@ -37,14 +37,14 @@ const PoolDetails = ({ pool, balanceSingle, index, singleDepositedBalance }) => 
     });
   };
 
-  const handleWithdrawAmount = (index, total, _, sliderNum) => {
+  const handleWithdrawAmount = (total, sliderNum) => {
     setWithdrawAmount({
       [index]: sliderNum === 0 ? 0 : calculateReallyNum(total, sliderNum),
       [`slider-${index}`]: sliderNum === 0 ? 0 : sliderNum,
     });
   };
 
-  const changeDetailInputValue = (type, index, total, tokenDecimals, event) => {
+  const changeDetailInputValue = (type, total, tokenDecimals, event) => {
     let value = event.target.value;
     if (!inputLimitPass(value, tokenDecimals)) {
       return;
@@ -75,8 +75,7 @@ const PoolDetails = ({ pool, balanceSingle, index, singleDepositedBalance }) => 
     }
   };
 
-  const onApproval = (pool, index, event) => {
-    event.stopPropagation();
+  const onApproval = () => {
     fetchApproval({
       address,
       web3,
@@ -88,9 +87,7 @@ const PoolDetails = ({ pool, balanceSingle, index, singleDepositedBalance }) => 
       .catch(error => enqueueSnackbar(`Approval error: ${error}`, { variant: 'error' }));
   };
 
-  const onDeposit = (pool, index, isAll, balanceSingle, event) => {
-    event.stopPropagation();
-
+  const onDeposit = isAll => {
     if (pool.depositsPaused) {
       console.error('Deposits paused!');
       return;
@@ -121,9 +118,7 @@ const PoolDetails = ({ pool, balanceSingle, index, singleDepositedBalance }) => 
       .catch(error => enqueueSnackbar(`Deposit error: ${error}`, { variant: 'error' }));
   };
 
-  const onWithdraw = (pool, index, isAll, singleDepositedBalance, event) => {
-    event.stopPropagation();
-
+  const onWithdraw = (pool, index, isAll, singleDepositedBalance) => {
     if (isAll) {
       setWithdrawAmount({
         [index]: format(singleDepositedBalance),
@@ -159,13 +154,9 @@ const PoolDetails = ({ pool, balanceSingle, index, singleDepositedBalance }) => 
           <FormControl fullWidth variant="outlined" className={classes.numericInput}>
             <CustomOutlinedInput
               value={depositedBalance[index] !== undefined ? depositedBalance[index] : '0'}
-              onChange={changeDetailInputValue.bind(
-                this,
-                'depositedBalance',
-                index,
-                balanceSingle.toNumber(),
-                pool.tokenDecimals
-              )}
+              onChange={e =>
+                changeDetailInputValue('depositedBalance', balanceSingle.toNumber(), e)
+              }
             />
           </FormControl>
           <CustomSlider
@@ -178,7 +169,7 @@ const PoolDetails = ({ pool, balanceSingle, index, singleDepositedBalance }) => 
               <div className={classes.showDetailButtonCon}>
                 <Button
                   className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`}
-                  onClick={onApproval.bind(this, pool, index)}
+                  onClick={onApproval}
                   disabled={pool.depositsPaused || fetchApprovalPending[index]}
                 >
                   {fetchApprovalPending[index]
@@ -191,27 +182,25 @@ const PoolDetails = ({ pool, balanceSingle, index, singleDepositedBalance }) => 
                 <Button
                   className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
                   color="primary"
-                  onFocus={event => event.stopPropagation()}
                   disabled={
                     pool.depositsPaused ||
                     !Boolean(depositedBalance[index]) ||
                     fetchDepositPending[index] ||
                     new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber()
                   }
-                  onClick={onDeposit.bind(this, pool, index, false, balanceSingle)}
+                  onClick={() => onDeposit(false)}
                 >
                   {t('Vault-DepositButton')}
                 </Button>
                 {Boolean(pool.tokenAddress) && (
                   <Button
                     className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`}
-                    onFocus={event => event.stopPropagation()}
                     disabled={
                       pool.depositsPaused ||
                       fetchDepositPending[index] ||
                       new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber()
                     }
-                    onClick={onDeposit.bind(this, pool, index, true, balanceSingle)}
+                    onClick={() => onDeposit(true)}
                   >
                     {t('Vault-DepositButtonAll')}
                   </Button>
@@ -229,23 +218,25 @@ const PoolDetails = ({ pool, balanceSingle, index, singleDepositedBalance }) => 
           <FormControl fullWidth variant="outlined">
             <CustomOutlinedInput
               value={withdrawAmount[index] !== undefined ? withdrawAmount[index] : '0'}
-              onChange={changeDetailInputValue.bind(
-                this,
-                'withdrawAmount',
-                index,
-                format(singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare))),
-                pool.tokenDecimals
-              )}
+              onChange={e =>
+                changeDetailInputValue(
+                  'withdrawAmount',
+                  format(
+                    singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare))
+                  ),
+                  e
+                )
+              }
             />
           </FormControl>
           <CustomSlider
             aria-labelledby="continuous-slider"
             value={withdrawAmount['slider-' + index] ? withdrawAmount['slider-' + index] : 0}
-            onChange={handleWithdrawAmount.bind(
-              this,
-              index,
-              format(singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)))
-            )}
+            onChange={() =>
+              handleWithdrawAmount(
+                format(singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)))
+              )
+            }
           />
           <div className={classes.showDetailButtonCon}>
             {pool.status === 'refund' ? (
