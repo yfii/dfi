@@ -27,11 +27,11 @@ const WithdrawSection = ({ pool, index, singleDepositedBalance }) => {
   const [withdrawAmount, setWithdrawAmount] = useState({});
 
   const handleWithdrawAmount = (_, sliderNum) => {
-    let total = singleDepositedBalance.toNumber();
+    const total = singleDepositedBalance.toNumber();
 
     setWithdrawAmount({
-      [index]: sliderNum === 0 ? 0 : calculateReallyNum(total, sliderNum),
-      [`slider-${index}`]: sliderNum === 0 ? 0 : sliderNum,
+      amount: sliderNum === 0 ? 0 : calculateReallyNum(total, sliderNum),
+      slider: sliderNum,
     });
   };
 
@@ -50,22 +50,22 @@ const WithdrawSection = ({ pool, index, singleDepositedBalance }) => {
     }
 
     setWithdrawAmount({
-      [index]: inputFinalVal(value, total, pool.tokenDecimals),
-      [`slider-${index}`]: sliderNum,
+      amount: inputFinalVal(value, total, pool.tokenDecimals),
+      slider: sliderNum,
     });
   };
 
   const onWithdraw = (pool, index, isAll, singleDepositedBalance) => {
     if (isAll) {
       setWithdrawAmount({
-        [index]: format(singleDepositedBalance),
-        [`slider-${index}`]: 100,
+        value: format(singleDepositedBalance),
+        slider: 100,
       });
     }
 
-    let amountValue = withdrawAmount[index]
-      ? withdrawAmount[index].replace(',', '')
-      : withdrawAmount[index];
+    const amountValue = withdrawAmount.amount
+      ? withdrawAmount.amount.replace(',', '')
+      : withdrawAmount.amount;
 
     fetchWithdraw({
       address,
@@ -90,13 +90,13 @@ const WithdrawSection = ({ pool, index, singleDepositedBalance }) => {
       </div>
       <FormControl fullWidth variant="outlined">
         <CustomOutlinedInput
-          value={withdrawAmount[index] !== undefined ? withdrawAmount[index] : '0'}
+          value={withdrawAmount.amount !== undefined ? withdrawAmount.amount : '0'}
           onChange={changeDetailInputValue}
         />
       </FormControl>
       <CustomSlider
         aria-labelledby="continuous-slider"
-        value={withdrawAmount['slider-' + index] ? withdrawAmount['slider-' + index] : 0}
+        value={withdrawAmount.slider ? withdrawAmount.slider : 0}
         onChange={handleWithdrawAmount}
       />
       <div className={classes.showDetailButtonCon}>
