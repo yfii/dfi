@@ -60,6 +60,8 @@ const HeaderLinks = ({ connected, address, connectWallet, disconnectWallet }) =>
         return i18n.changeLanguage('zh').then(() => setLanguage(event));
       case 'Українська':
         return i18n.changeLanguage('uk').then(() => setLanguage(event));
+      case 'Português':
+        return i18n.changeLanguage('pt').then(() => setLanguage(event));
       // TODO: more translations
       default:
         return;
@@ -89,6 +91,7 @@ const HeaderLinks = ({ connected, address, connectWallet, disconnectWallet }) =>
             'Svenska',
             'Українська',
             '中文',
+            'Português',
             // TODO: more translations
             { divider: true },
             <a
