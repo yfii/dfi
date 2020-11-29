@@ -65,7 +65,7 @@ const PoolSummary = ({
               />
             </Hidden>
             <LabeledStat
-              value={pool.unstableApy ? '??? %' : formatApy(pool.id, depositedApy, pool.defaultApy)}
+              value={pool.unstableApy ? '??? %' : formatApy(depositedApy, pool.defaultApy)}
               label={t('Vault-APY')}
               xs={5}
               md={2}

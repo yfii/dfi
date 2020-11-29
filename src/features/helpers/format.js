@@ -1,4 +1,4 @@
-export const formatApy = (id, apy, fallbackApy) => {
+export const formatApy = (apy, fallbackApy) => {
   if (!apy) {
     apy = fallbackApy;
   }

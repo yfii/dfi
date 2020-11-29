@@ -10,11 +10,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import CustomOutlinedInput from 'components/CustomOutlinedInput/CustomOutlinedInput';
 import Button from 'components/CustomButtons/Button.js';
 import CustomSlider from 'components/CustomSlider/CustomSlider';
+import RefundButtons from './RefundButtons/RefundButtons';
 import { useFetchApproval, useFetchDeposit, useFetchWithdraw } from '../../redux/hooks';
 import { useConnectWallet } from '../../../home/redux/hooks';
 import { inputLimitPass, inputFinalVal } from 'features/helpers/utils';
 import { byDecimals, calculateReallyNum, format } from 'features/helpers/bignumber';
-import { refundABI } from 'features/configure/abi';
 import styles from './styles';
 
 const useStyles = makeStyles(styles);
@@ -32,7 +32,6 @@ const PoolDetails = ({ pool, balanceSingle, index, singleDepositedBalance }) => 
 
   const handleDepositedBalance = (index, total, _, sliderNum) => {
     setDepositedBalance({
-      ...depositedBalance,
       [index]: sliderNum === 0 ? 0 : calculateReallyNum(total, sliderNum),
       [`slider-${index}`]: sliderNum === 0 ? 0 : sliderNum,
     });
@@ -40,7 +39,6 @@ const PoolDetails = ({ pool, balanceSingle, index, singleDepositedBalance }) => 
 
   const handleWithdrawAmount = (index, total, _, sliderNum) => {
     setWithdrawAmount({
-      ...withdrawAmount,
       [index]: sliderNum === 0 ? 0 : calculateReallyNum(total, sliderNum),
       [`slider-${index}`]: sliderNum === 0 ? 0 : sliderNum,
     });
@@ -62,14 +60,12 @@ const PoolDetails = ({ pool, balanceSingle, index, singleDepositedBalance }) => 
     switch (type) {
       case 'depositedBalance':
         setDepositedBalance({
-          ...depositedBalance,
           [index]: inputFinalVal(value, total, tokenDecimals),
           [`slider-${index}`]: sliderNum,
         });
         break;
       case 'withdrawAmount':
         setWithdrawAmount({
-          ...withdrawAmount,
           [index]: inputFinalVal(value, total, tokenDecimals),
           [`slider-${index}`]: sliderNum,
         });
@@ -92,25 +88,6 @@ const PoolDetails = ({ pool, balanceSingle, index, singleDepositedBalance }) => 
       .catch(error => enqueueSnackbar(`Approval error: ${error}`, { variant: 'error' }));
   };
 
-  const onRefundApproval = (pool, index, event) => {
-    event.stopPropagation();
-    fetchApproval({
-      address,
-      web3,
-      tokenAddress: pool.earnedTokenAddress,
-      contractAddress: pool.refundContractAddress,
-      index,
-    })
-      .then(() => enqueueSnackbar(`Approval success`, { variant: 'success' }))
-      .catch(error => enqueueSnackbar(`Approval error: ${error}`, { variant: 'error' }));
-  };
-
-  const onRefund = (pool, index, event) => {
-    event.stopPropagation();
-    const contract = new web3.eth.Contract(refundABI, pool.refundContractAddress);
-    contract.methods.refund().send({ from: address });
-  };
-
   const onDeposit = (pool, index, isAll, balanceSingle, event) => {
     event.stopPropagation();
 
@@ -121,7 +98,6 @@ const PoolDetails = ({ pool, balanceSingle, index, singleDepositedBalance }) => 
 
     if (isAll) {
       setDepositedBalance({
-        ...depositedBalance,
         [index]: format(balanceSingle),
         [`slider-${index}`]: 100,
       });
@@ -163,7 +139,6 @@ const PoolDetails = ({ pool, balanceSingle, index, singleDepositedBalance }) => 
 
     if (isAll) {
       setWithdrawAmount({
-        ...withdrawAmount,
         [index]: format(singleDepositedBalance),
         [`slider-${index}`]: 100,
       });
@@ -274,8 +249,9 @@ const PoolDetails = ({ pool, balanceSingle, index, singleDepositedBalance }) => 
         </Grid>
         <Grid item xs={12} sm={6} className={classes.sliderDetailContainer}>
           <div className={classes.showDetailLeft}>
-            {singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)).toFormat(4)}{' '}
-            {pool.token} ({singleDepositedBalance.toFormat(4)} shares)
+            Deposited:{' '}
+            {format(singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)))}{' '}
+            {pool.token}
           </div>
           <FormControl fullWidth variant="outlined">
             <CustomOutlinedInput
@@ -284,7 +260,7 @@ const PoolDetails = ({ pool, balanceSingle, index, singleDepositedBalance }) => 
                 this,
                 'withdrawAmount',
                 index,
-                singleDepositedBalance.toNumber(),
+                format(singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare))),
                 pool.tokenDecimals
               )}
             />
@@ -292,10 +268,20 @@ const PoolDetails = ({ pool, balanceSingle, index, singleDepositedBalance }) => 
           <CustomSlider
             aria-labelledby="continuous-slider"
             value={withdrawAmount['slider-' + index] ? withdrawAmount['slider-' + index] : 0}
-            onChange={handleWithdrawAmount.bind(this, index, singleDepositedBalance.toNumber())}
+            onChange={handleWithdrawAmount.bind(
+              this,
+              index,
+              format(singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)))
+            )}
           />
           <div className={classes.showDetailButtonCon}>
-            {pool.status !== 'refund' && (
+            {pool.status === 'refund' ? (
+              <RefundButtons
+                tokenAddress={pool.earnedTokenAddress}
+                contractAddress={pool.refundContractAddress}
+                index={index}
+              />
+            ) : (
               <>
                 <Button
                   className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
@@ -316,23 +302,6 @@ const PoolDetails = ({ pool, balanceSingle, index, singleDepositedBalance }) => 
                   {fetchWithdrawPending[index]
                     ? `${t('Vault-Withdrawing')}`
                     : `${t('Vault-WithdrawButtonAll')}`}
-                </Button>
-              </>
-            )}
-
-            {pool.status === 'refund' && (
-              <>
-                <Button
-                  className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`}
-                  onClick={onRefundApproval.bind(this, pool, index)}
-                >
-                  Approve
-                </Button>
-                <Button
-                  className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`}
-                  onClick={onRefund.bind(this, pool, index)}
-                >
-                  Refund
                 </Button>
               </>
             )}
