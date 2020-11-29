@@ -54,14 +54,14 @@ const HeaderLinks = ({ connected, address, connectWallet, disconnectWallet }) =>
         return i18n.changeLanguage('id').then(() => setLanguage(event));
       case '한글':
         return i18n.changeLanguage('ko').then(() => setLanguage(event));
+      case 'Português':
+        return i18n.changeLanguage('pt').then(() => setLanguage(event));
       case 'Svenska':
         return i18n.changeLanguage('se').then(() => setLanguage(event));
       case '中文':
         return i18n.changeLanguage('zh').then(() => setLanguage(event));
       case 'Українська':
         return i18n.changeLanguage('uk').then(() => setLanguage(event));
-      case 'Português':
-        return i18n.changeLanguage('pt').then(() => setLanguage(event));
       // TODO: more translations
       default:
         return;
@@ -88,10 +88,10 @@ const HeaderLinks = ({ connected, address, connectWallet, disconnectWallet }) =>
             'हिन्दी',
             'Bahasa Indonesia',
             '한글',
+            'Português',
             'Svenska',
             'Українська',
             '中文',
-            'Português',
             // TODO: more translations
             { divider: true },
             <a
