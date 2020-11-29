@@ -26,16 +26,19 @@ const WithdrawSection = ({ pool, index, singleDepositedBalance }) => {
   const { fetchWithdraw, fetchWithdrawPending } = useFetchWithdraw();
   const [withdrawAmount, setWithdrawAmount] = useState({});
 
-  const handleWithdrawAmount = (total, sliderNum) => {
+  const handleWithdrawAmount = (_, sliderNum) => {
+    let total = singleDepositedBalance.toNumber();
+
     setWithdrawAmount({
       [index]: sliderNum === 0 ? 0 : calculateReallyNum(total, sliderNum),
       [`slider-${index}`]: sliderNum === 0 ? 0 : sliderNum,
     });
   };
 
-  const changeDetailInputValue = (type, total, tokenDecimals, event) => {
+  const changeDetailInputValue = event => {
     let value = event.target.value;
-    if (!inputLimitPass(value, tokenDecimals)) {
+    let total = singleDepositedBalance.toNumber();
+    if (!inputLimitPass(value, pool.tokenDecimals)) {
       return;
     }
 
@@ -46,16 +49,10 @@ const WithdrawSection = ({ pool, index, singleDepositedBalance }) => {
       sliderNum = byDecimals(inputVal / total, 0).toFormat(2) * 100;
     }
 
-    switch (type) {
-      case 'withdrawAmount':
-        setWithdrawAmount({
-          [index]: inputFinalVal(value, total, tokenDecimals),
-          [`slider-${index}`]: sliderNum,
-        });
-        break;
-      default:
-        break;
-    }
+    setWithdrawAmount({
+      [index]: inputFinalVal(value, total, pool.tokenDecimals),
+      [`slider-${index}`]: sliderNum,
+    });
   };
 
   const onWithdraw = (pool, index, isAll, singleDepositedBalance) => {
@@ -94,23 +91,13 @@ const WithdrawSection = ({ pool, index, singleDepositedBalance }) => {
       <FormControl fullWidth variant="outlined">
         <CustomOutlinedInput
           value={withdrawAmount[index] !== undefined ? withdrawAmount[index] : '0'}
-          onChange={e =>
-            changeDetailInputValue(
-              'withdrawAmount',
-              format(singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare))),
-              e
-            )
-          }
+          onChange={changeDetailInputValue}
         />
       </FormControl>
       <CustomSlider
         aria-labelledby="continuous-slider"
         value={withdrawAmount['slider-' + index] ? withdrawAmount['slider-' + index] : 0}
-        onChange={() =>
-          handleWithdrawAmount(
-            format(singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)))
-          )
-        }
+        onChange={handleWithdrawAmount}
       />
       <div className={classes.showDetailButtonCon}>
         {pool.status === 'refund' ? (

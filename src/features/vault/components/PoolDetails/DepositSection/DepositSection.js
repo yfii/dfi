@@ -76,7 +76,7 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
       .catch(error => enqueueSnackbar(`Deposit error: ${error}`, { variant: 'error' }));
   };
 
-  const changeDetailInputValue = (type, total, tokenDecimals, event) => {
+  const changeDetailInputValue = (total, tokenDecimals, event) => {
     let value = event.target.value;
     if (!inputLimitPass(value, tokenDecimals)) {
       return;
