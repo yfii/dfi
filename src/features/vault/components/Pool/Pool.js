@@ -3,6 +3,7 @@ import Accordion from '@material-ui/core/Accordion';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
+import BigNumber from 'bignumber.js';
 
 import { byDecimals } from 'features/helpers/bignumber';
 import PoolSummary from '../PoolSummary/PoolSummary';

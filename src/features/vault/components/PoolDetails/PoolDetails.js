@@ -25,8 +25,8 @@ const PoolDetails = ({ pool, balanceSingle, index, singleDepositedBalance }) => 
   const { web3, address } = useConnectWallet();
   const { enqueueSnackbar } = useSnackbar();
   const { fetchApproval, fetchApprovalPending } = useFetchApproval();
-  const { fetchDeposit, fetchDepositEth, fetchDepositPending } = useFetchDeposit();
-  const { fetchWithdraw, fetchWithdrawBnb, fetchWithdrawPending } = useFetchWithdraw();
+  const { fetchDeposit, fetchDepositPending } = useFetchDeposit();
+  const { fetchWithdraw, fetchWithdrawPending } = useFetchWithdraw();
   const [depositedBalance, setDepositedBalance] = useState({});
   const [withdrawAmount, setWithdrawAmount] = useState({});
 
@@ -106,32 +106,19 @@ const PoolDetails = ({ pool, balanceSingle, index, singleDepositedBalance }) => 
     let amountValue = depositedBalance[index]
       ? depositedBalance[index].replace(',', '')
       : depositedBalance[index];
-    if (!pool.tokenAddress) {
-      fetchDepositEth({
-        address,
-        web3,
-        amount: new BigNumber(amountValue)
-          .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
-          .toString(10),
-        contractAddress: pool.earnContractAddress,
-        index,
-      })
-        .then(() => enqueueSnackbar(`Deposit success`, { variant: 'success' }))
-        .catch(error => enqueueSnackbar(`Deposit error: ${error}`, { variant: 'error' }));
-    } else {
-      fetchDeposit({
-        address,
-        web3,
-        isAll,
-        amount: new BigNumber(amountValue)
-          .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
-          .toString(10),
-        contractAddress: pool.earnContractAddress,
-        index,
-      })
-        .then(() => enqueueSnackbar(`Deposit success`, { variant: 'success' }))
-        .catch(error => enqueueSnackbar(`Deposit error: ${error}`, { variant: 'error' }));
-    }
+
+    fetchDeposit({
+      address,
+      web3,
+      isAll,
+      amount: new BigNumber(amountValue)
+        .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
+        .toString(10),
+      contractAddress: pool.earnContractAddress,
+      index,
+    })
+      .then(() => enqueueSnackbar(`Deposit success`, { variant: 'success' }))
+      .catch(error => enqueueSnackbar(`Deposit error: ${error}`, { variant: 'error' }));
   };
 
   const onWithdraw = (pool, index, isAll, singleDepositedBalance, event) => {
@@ -147,33 +134,19 @@ const PoolDetails = ({ pool, balanceSingle, index, singleDepositedBalance }) => 
     let amountValue = withdrawAmount[index]
       ? withdrawAmount[index].replace(',', '')
       : withdrawAmount[index];
-    if (!pool.tokenAddress) {
-      fetchWithdrawBnb({
-        address,
-        web3,
-        isAll,
-        amount: new BigNumber(amountValue)
-          .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
-          .toString(10),
-        contractAddress: pool.earnContractAddress,
-        index,
-      })
-        .then(() => enqueueSnackbar(`Withdraw success`, { variant: 'success' }))
-        .catch(error => enqueueSnackbar(`Withdraw error: ${error}`, { variant: 'error' }));
-    } else {
-      fetchWithdraw({
-        address,
-        web3,
-        isAll,
-        amount: new BigNumber(amountValue)
-          .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
-          .toString(10),
-        contractAddress: pool.earnContractAddress,
-        index,
-      })
-        .then(() => enqueueSnackbar(`Withdraw success`, { variant: 'success' }))
-        .catch(error => enqueueSnackbar(`Withdraw error: ${error}`, { variant: 'error' }));
-    }
+
+    fetchWithdraw({
+      address,
+      web3,
+      isAll,
+      amount: new BigNumber(amountValue)
+        .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
+        .toString(10),
+      contractAddress: pool.earnContractAddress,
+      index,
+    })
+      .then(() => enqueueSnackbar(`Withdraw success`, { variant: 'success' }))
+      .catch(error => enqueueSnackbar(`Withdraw error: ${error}`, { variant: 'error' }));
   };
 
   return (
