@@ -3,35 +3,36 @@ import BandChain from '@bandprotocol/bandchain.js';
 
 const endpoints = {
   bandchain: 'https://poa-api.bandchain.org',
-  pancake:   'https://beefy-api.herokuapp.com/pancake/price',
-  pancakeLp: 'https://beefy-api.herokuapp.com/pancake/lps',
-  thugsLp:   'https://beefy-api.herokuapp.com/thugs/lps',
-  thugs:     'https://beefy-api.herokuapp.com/thugs/tickers',
+  pancake: 'https://api.beefy.finance/pancake/price',
+  pancakeLp: 'https://api.beefy.finance/pancake/lps',
+  thugsLp: 'https://api.beefy.finance/thugs/lps',
+  thugs: 'https://api.beefy.finance/thugs/tickers',
   coingecko: 'https://api.coingecko.com/api/v3/simple/price',
 };
 
 const WBNB = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c';
-const WBNB_BUSD = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c_0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56';
+const WBNB_BUSD =
+  '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c_0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56';
 
 const CACHE_TIMEOUT = 30 * 60 * 1000;
 const cache = {};
 
-function isCached({oracle, id}) {
+function isCached({ oracle, id }) {
   if (`${oracle}-${id}` in cache) {
     return cache[`${oracle}-${id}`].t + CACHE_TIMEOUT > Date.now();
   }
   return false;
 }
 
-function getCachedPrice({oracle, id}) {
+function getCachedPrice({ oracle, id }) {
   return cache[`${oracle}-${id}`].price;
 }
 
-function addToCache({oracle, id, price}) {
-  cache[`${oracle}-${id}`] = {price: price, t: Date.now()};
+function addToCache({ oracle, id, price }) {
+  cache[`${oracle}-${id}`] = { price: price, t: Date.now() };
 }
 
-const fetchBand = async (id) => {
+const fetchBand = async id => {
   try {
     const bandchain = new BandChain(endpoints.bandchain);
     const price = await bandchain.getReferenceData([id]);
@@ -42,7 +43,7 @@ const fetchBand = async (id) => {
   }
 };
 
-const fetchPancake = async (id) => {
+const fetchPancake = async id => {
   try {
     const response = await axios.get(endpoints.pancake);
     return response.data.prices[id];
@@ -52,7 +53,7 @@ const fetchPancake = async (id) => {
   }
 };
 
-const fetchPancakeLP = async (id) => {
+const fetchPancakeLP = async id => {
   try {
     const response = await axios.get(endpoints.pancakeLp);
     return response.data[id];
@@ -62,7 +63,7 @@ const fetchPancakeLP = async (id) => {
   }
 };
 
-const fetchThugsLP = async (id) => {
+const fetchThugsLP = async id => {
   try {
     const response = await axios.get(endpoints.thugsLp);
     return response.data[id];
@@ -72,10 +73,10 @@ const fetchThugsLP = async (id) => {
   }
 };
 
-const fetchCoingecko = async (id) => {
+const fetchCoingecko = async id => {
   try {
     const response = await axios.get(endpoints.coingecko, {
-      params: {ids: id, vs_currencies: 'usd' }
+      params: { ids: id, vs_currencies: 'usd' },
     });
     return response.data[id].usd;
   } catch (err) {
@@ -84,7 +85,7 @@ const fetchCoingecko = async (id) => {
   }
 };
 
-const fetchThugs = async (id) => {
+const fetchThugs = async id => {
   try {
     const response = await axios.get(endpoints.thugs);
     const ticker = response.data[id];
@@ -93,12 +94,12 @@ const fetchThugs = async (id) => {
     let price = 0;
 
     const pair = id.split('_');
-    if(pair[0] === WBNB) {
+    if (pair[0] === WBNB) {
       price = bnb / ticker['last_price'];
     } else {
       price = bnb * ticker['last_price'];
     }
-    
+
     return price;
   } catch (err) {
     console.error(err);
@@ -107,24 +108,43 @@ const fetchThugs = async (id) => {
 };
 
 export const fetchPrice = async ({ oracle, id }) => {
-  if (oracle === undefined) { console.error('Undefined oracle'); return 0; }
-  if (id === undefined) { console.error('Undefined pair'); return 0; }
+  if (oracle === undefined) {
+    console.error('Undefined oracle');
+    return 0;
+  }
+  if (id === undefined) {
+    console.error('Undefined pair');
+    return 0;
+  }
 
-  if (isCached({oracle, id})){
-    return getCachedPrice({oracle, id});
+  if (isCached({ oracle, id })) {
+    return getCachedPrice({ oracle, id });
   }
 
   let price;
-  switch(oracle) {
-    case 'band':       price = await fetchBand(id); break;
-    case 'pancake':    price = await fetchPancake(id); break;
-    case 'pancake-lp': price = await fetchPancakeLP(id); break;
-    case 'thugs-lp':   price = await fetchThugsLP(id); break;
-    case 'coingecko':  price = await fetchCoingecko(id); break;
-    case 'thugs':      price = await fetchThugs(id); break;
-    default: price = 0;
+  switch (oracle) {
+    case 'band':
+      price = await fetchBand(id);
+      break;
+    case 'pancake':
+      price = await fetchPancake(id);
+      break;
+    case 'pancake-lp':
+      price = await fetchPancakeLP(id);
+      break;
+    case 'thugs-lp':
+      price = await fetchThugsLP(id);
+      break;
+    case 'coingecko':
+      price = await fetchCoingecko(id);
+      break;
+    case 'thugs':
+      price = await fetchThugs(id);
+      break;
+    default:
+      price = 0;
   }
-  
-  addToCache({oracle, id, price});
+
+  addToCache({ oracle, id, price });
   return price;
 };

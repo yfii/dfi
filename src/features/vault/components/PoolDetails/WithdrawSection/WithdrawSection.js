@@ -27,7 +27,10 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
   const [withdrawAmount, setWithdrawAmount] = useState({ amount: 0, slider: 0 });
 
   const onSliderChange = (_, sliderNum) => {
-    const total = sharesBalance.toNumber();
+    const total = sharesBalance
+      .multipliedBy(new BigNumber(pool.pricePerFullShare))
+      .dividedBy(pool.tokenDecimals)
+      .toNumber();
 
     setWithdrawAmount({
       amount: sliderNum === 0 ? 0 : calculateReallyNum(total, sliderNum),
@@ -37,7 +40,10 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
 
   const onInputChange = event => {
     const value = event.target.value;
-    const total = sharesBalance.toNumber();
+    const total = sharesBalance
+      .multipliedBy(new BigNumber(pool.pricePerFullShare))
+      .dividedBy(pool.tokenDecimals)
+      .toFormat(4);
 
     if (!inputLimitPass(value, pool.tokenDecimals)) {
       return;
@@ -59,10 +65,12 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
   const onWithdraw = isAll => {
     if (isAll) {
       setWithdrawAmount({
-        value: format(sharesBalance),
+        amount: sharesBalance.multipliedBy(pool.pricePerFullShare).dividedBy('1e18').toFormat(4),
         slider: 100,
       });
     }
+
+    if (withdrawAmount.slider == 100) isAll = true;
 
     const amountValue = withdrawAmount.amount
       ? withdrawAmount.amount.replace(',', '')
@@ -74,7 +82,8 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
       isAll,
       amount: new BigNumber(amountValue)
         .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
-        .toString(10),
+        .dividedBy(pool.pricePerFullShare)
+        .toFixed(0),
       contractAddress: pool.earnContractAddress,
       index,
     })
@@ -85,7 +94,11 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
   return (
     <Grid item xs={12} sm={6} className={classes.sliderDetailContainer}>
       <div className={classes.showDetailLeft}>
-        Deposited: {format(sharesBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)))}{' '}
+        Deposited:{' '}
+        {byDecimals(
+          sharesBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)),
+          pool.tokenDecimals
+        ).toFormat(4)}{' '}
         {pool.token}
       </div>
       <FormControl fullWidth variant="outlined">

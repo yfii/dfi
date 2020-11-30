@@ -7,7 +7,7 @@ import BigNumber from 'bignumber.js';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { formatApy, formatTvl, calcDaily } from 'features/helpers/format';
-import { format, convertAmountFromRawNumber, byDecimals } from 'features/helpers/bignumber';
+import { format, byDecimals } from 'features/helpers/bignumber';
 import styles from './styles';
 import PoolTitle from './PoolTitle/PoolTitle';
 import LabeledStat from './LabeledStat/LabeledStat';
