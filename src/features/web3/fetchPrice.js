@@ -3,10 +3,10 @@ import BandChain from '@bandprotocol/bandchain.js';
 
 const endpoints = {
   bandchain: 'https://poa-api.bandchain.org',
-  pancake: 'https://api.beefy.finance/pancake/price',
+  pancake:   'https://api.beefy.finance/pancake/price',
   pancakeLp: 'https://api.beefy.finance/pancake/lps',
-  thugsLp: 'https://api.beefy.finance/thugs/lps',
-  thugs: 'https://api.beefy.finance/thugs/tickers',
+  thugsLp:   'https://api.beefy.finance/thugs/lps',
+  thugs:     'https://api.beefy.finance/thugs/tickers',
   coingecko: 'https://api.coingecko.com/api/v3/simple/price',
 };
 

@@ -21,8 +21,7 @@ export function fetchContractApy() {
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
 
-      const t = Math.trunc(Date.now() / (30 * 60 * 1000));
-      const doRequest = axios.get(`https://beefy-api.herokuapp.com/apy?_=${t}`);
+      const doRequest = axios.get(`https://api.beefy.finance/apy`);
 
       doRequest.then(
         res => {
