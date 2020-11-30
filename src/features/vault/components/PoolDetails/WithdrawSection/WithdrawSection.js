@@ -10,7 +10,7 @@ import Button from 'components/CustomButtons/Button.js';
 import CustomOutlinedInput from 'components/CustomOutlinedInput/CustomOutlinedInput';
 import CustomSlider from 'components/CustomSlider/CustomSlider';
 import RefundButtons from '../RefundButtons/RefundButtons';
-import { byDecimals, calculateReallyNum, format } from 'features/helpers/bignumber';
+import { byDecimals, calculateReallyNum } from 'features/helpers/bignumber';
 import { inputLimitPass, inputFinalVal } from 'features/helpers/utils';
 import { useFetchWithdraw } from 'features/vault/redux/hooks';
 import { useConnectWallet } from 'features/home/redux/hooks';
@@ -70,7 +70,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
       });
     }
 
-    if (withdrawAmount.slider == 100) isAll = true;
+    if (withdrawAmount.slider === 100) isAll = true;
 
     const amountValue = withdrawAmount.amount
       ? withdrawAmount.amount.replace(',', '')

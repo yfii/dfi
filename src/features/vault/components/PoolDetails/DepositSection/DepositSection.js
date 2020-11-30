@@ -24,12 +24,17 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
   const { enqueueSnackbar } = useSnackbar();
   const { fetchApproval, fetchApprovalPending } = useFetchApproval();
   const { fetchDeposit, fetchDepositPending } = useFetchDeposit();
-  const [depositedBalance, setDepositedBalance] = useState({});
+  const [depositBalance, setDepositBalance] = useState({
+    amount: 0,
+    slider: 0,
+  });
 
-  const handleDepositedBalance = (index, total, _, sliderNum) => {
-    setDepositedBalance({
-      [index]: sliderNum === 0 ? 0 : calculateReallyNum(total, sliderNum),
-      [`slider-${index}`]: sliderNum === 0 ? 0 : sliderNum,
+  const handleDepositedBalance = (_, sliderNum) => {
+    const total = balanceSingle.toNumber();
+
+    setDepositBalance({
+      amount: sliderNum === 0 ? 0 : calculateReallyNum(total, sliderNum),
+      slider: sliderNum,
     });
   };
 
@@ -52,15 +57,15 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
     }
 
     if (isAll) {
-      setDepositedBalance({
-        [index]: format(balanceSingle),
-        [`slider-${index}`]: 100,
+      setDepositBalance({
+        amount: format(balanceSingle),
+        slider: 100,
       });
     }
 
-    let amountValue = depositedBalance[index]
-      ? depositedBalance[index].replace(',', '')
-      : depositedBalance[index];
+    let amountValue = depositBalance.amount
+      ? depositBalance.amount.replace(',', '')
+      : depositBalance.amount;
 
     fetchDeposit({
       address,
@@ -76,9 +81,11 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
       .catch(error => enqueueSnackbar(`Deposit error: ${error}`, { variant: 'error' }));
   };
 
-  const changeDetailInputValue = (total, tokenDecimals, event) => {
+  const changeDetailInputValue = event => {
     let value = event.target.value;
-    if (!inputLimitPass(value, tokenDecimals)) {
+    const total = balanceSingle.toNumber();
+
+    if (!inputLimitPass(value, pool.tokenDecimals)) {
       return;
     }
 
@@ -89,9 +96,9 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
       sliderNum = byDecimals(inputVal / total, 0).toFormat(2) * 100;
     }
 
-    setDepositedBalance({
-      [index]: inputFinalVal(value, total, tokenDecimals),
-      [`slider-${index}`]: sliderNum,
+    setDepositBalance({
+      amount: inputFinalVal(value, total, pool.tokenDecimals),
+      slider: sliderNum,
     });
   };
 
@@ -101,15 +108,12 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
         {t('Vault-Balance')}:{balanceSingle.toFormat(4)} {pool.token}
       </div>
       <FormControl fullWidth variant="outlined" className={classes.numericInput}>
-        <CustomOutlinedInput
-          value={depositedBalance[index] !== undefined ? depositedBalance[index] : '0'}
-          onChange={e => changeDetailInputValue(balanceSingle.toNumber(), e)}
-        />
+        <CustomOutlinedInput value={depositBalance.amount} onChange={changeDetailInputValue} />
       </FormControl>
       <CustomSlider
         aria-labelledby="continuous-slider"
-        value={depositedBalance['slider-' + index] ? depositedBalance['slider-' + index] : 0}
-        onChange={handleDepositedBalance.bind(this, index, balanceSingle.toNumber())}
+        value={depositBalance.slider}
+        onChange={handleDepositedBalance}
       />
       <div>
         {pool.allowance === 0 ? (
@@ -131,9 +135,9 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
               color="primary"
               disabled={
                 pool.depositsPaused ||
-                !Boolean(depositedBalance[index]) ||
+                !Boolean(depositBalance.amount) ||
                 fetchDepositPending[index] ||
-                new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber()
+                new BigNumber(depositBalance.amount).toNumber() > balanceSingle.toNumber()
               }
               onClick={() => onDeposit(false)}
             >
@@ -145,7 +149,7 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
                 disabled={
                   pool.depositsPaused ||
                   fetchDepositPending[index] ||
-                  new BigNumber(depositedBalance[index]).toNumber() > balanceSingle.toNumber()
+                  new BigNumber(depositBalance.amount).toNumber() > balanceSingle.toNumber()
                 }
                 onClick={() => onDeposit(true)}
               >
