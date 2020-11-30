@@ -24,9 +24,9 @@ const WithdrawSection = ({ pool, index, singleDepositedBalance }) => {
   const { web3, address } = useConnectWallet();
   const { enqueueSnackbar } = useSnackbar();
   const { fetchWithdraw, fetchWithdrawPending } = useFetchWithdraw();
-  const [withdrawAmount, setWithdrawAmount] = useState({});
+  const [withdrawAmount, setWithdrawAmount] = useState({ amount: 0, slider: 0 });
 
-  const handleWithdrawAmount = (_, sliderNum) => {
+  const onSliderChange = (_, sliderNum) => {
     const total = singleDepositedBalance.toNumber();
 
     setWithdrawAmount({
@@ -35,15 +35,18 @@ const WithdrawSection = ({ pool, index, singleDepositedBalance }) => {
     });
   };
 
-  const changeDetailInputValue = event => {
-    let value = event.target.value;
-    let total = singleDepositedBalance.toNumber();
+  console.log(withdrawAmount);
+
+  const onInputChange = event => {
+    const value = event.target.value;
+    const total = singleDepositedBalance.toNumber();
+
     if (!inputLimitPass(value, pool.tokenDecimals)) {
       return;
     }
 
-    let sliderNum = 0;
     let inputVal = 0;
+    let sliderNum = 0;
     if (value) {
       inputVal = Number(value.replace(',', ''));
       sliderNum = byDecimals(inputVal / total, 0).toFormat(2) * 100;
@@ -55,7 +58,7 @@ const WithdrawSection = ({ pool, index, singleDepositedBalance }) => {
     });
   };
 
-  const onWithdraw = (pool, index, isAll, singleDepositedBalance) => {
+  const onWithdraw = isAll => {
     if (isAll) {
       setWithdrawAmount({
         value: format(singleDepositedBalance),
@@ -89,15 +92,12 @@ const WithdrawSection = ({ pool, index, singleDepositedBalance }) => {
         {pool.token}
       </div>
       <FormControl fullWidth variant="outlined">
-        <CustomOutlinedInput
-          value={withdrawAmount.amount !== undefined ? withdrawAmount.amount : '0'}
-          onChange={changeDetailInputValue}
-        />
+        <CustomOutlinedInput value={withdrawAmount.amount} onChange={onInputChange} />
       </FormControl>
       <CustomSlider
         aria-labelledby="continuous-slider"
-        value={withdrawAmount.slider ? withdrawAmount.slider : 0}
-        onChange={handleWithdrawAmount}
+        value={withdrawAmount.slider}
+        onChange={onSliderChange}
       />
       <div className={classes.showDetailButtonCon}>
         {pool.status === 'refund' ? (
@@ -112,7 +112,7 @@ const WithdrawSection = ({ pool, index, singleDepositedBalance }) => {
               className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
               type="button"
               color="primary"
-              onClick={onWithdraw.bind(this, pool, index, false, singleDepositedBalance)}
+              onClick={() => onWithdraw(false)}
             >
               {fetchWithdrawPending[index]
                 ? `${t('Vault-Withdrawing')}`
@@ -122,7 +122,7 @@ const WithdrawSection = ({ pool, index, singleDepositedBalance }) => {
               className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
               type="button"
               color="primary"
-              onClick={onWithdraw.bind(this, pool, index, true, singleDepositedBalance)}
+              onClick={() => onWithdraw(true)}
             >
               {fetchWithdrawPending[index]
                 ? `${t('Vault-Withdrawing')}`
