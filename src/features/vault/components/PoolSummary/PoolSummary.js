@@ -7,7 +7,7 @@ import BigNumber from 'bignumber.js';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { formatApy, formatTvl, calcDaily } from 'features/helpers/format';
-import { format } from 'features/helpers/bignumber';
+import { format, convertAmountFromRawNumber, byDecimals } from 'features/helpers/bignumber';
 import styles from './styles';
 import PoolTitle from './PoolTitle/PoolTitle';
 import LabeledStat from './LabeledStat/LabeledStat';
@@ -15,14 +15,7 @@ import SummaryActions from './SummaryActions/SummaryActions';
 
 const useStyles = makeStyles(styles);
 
-const PoolSummary = ({
-  pool,
-  toggleCard,
-  isOpen,
-  balanceSingle,
-  singleDepositedBalance,
-  depositedApy,
-}) => {
+const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, depositedApy }) => {
   const { t } = useTranslation();
   const classes = useStyles();
 
@@ -30,7 +23,10 @@ const PoolSummary = ({
     <AccordionSummary
       className={pool.depositsPaused ? classes.detailsPaused : classes.details}
       style={{ justifyContent: 'space-between' }}
-      onClick={toggleCard}
+      onClick={event => {
+        event.stopPropagation();
+        toggleCard();
+      }}
     >
       <Grid
         container
@@ -53,7 +49,10 @@ const PoolSummary = ({
             <Hidden mdDown>
               <LabeledStat
                 value={format(
-                  singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare))
+                  byDecimals(
+                    sharesBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)),
+                    pool.tokenDecimals
+                  )
                 )}
                 label={t('Vault-Deposited')}
                 xs={5}

@@ -3,6 +3,7 @@ import Accordion from '@material-ui/core/Accordion';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
+import BigNumber from 'bignumber.js';
 
 import { byDecimals } from 'features/helpers/bignumber';
 import PoolSummary from '../PoolSummary/PoolSummary';
@@ -18,10 +19,8 @@ const Pool = ({ pool, index, tokens, contractApy }) => {
   const toggleCard = useCallback(() => setIsOpen(!isOpen), [isOpen]);
 
   let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
-  let singleDepositedBalance = byDecimals(
-    tokens[pool.earnedToken].tokenBalance,
-    pool.tokenDecimals
-  );
+  let sharesBalance = new BigNumber(tokens[pool.earnedToken].tokenBalance);
+
   let depositedApy = contractApy[pool.id] || 0;
 
   return (
@@ -36,15 +35,11 @@ const Pool = ({ pool, index, tokens, contractApy }) => {
           balanceSingle={balanceSingle}
           toggleCard={toggleCard}
           isOpen={isOpen}
-          singleDepositedBalance={singleDepositedBalance}
+          sharesBalance={sharesBalance}
           depositedApy={depositedApy}
         />
         <Divider variant="middle" className={classes.divider} />
-        <PoolDetails
-          pool={pool}
-          balanceSingle={balanceSingle}
-          singleDepositedBalance={singleDepositedBalance}
-        />
+        <PoolDetails pool={pool} balanceSingle={balanceSingle} sharesBalance={sharesBalance} />
       </Accordion>
     </Grid>
   );

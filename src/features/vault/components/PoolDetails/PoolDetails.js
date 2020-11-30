@@ -5,16 +5,12 @@ import Grid from '@material-ui/core/Grid';
 import DepositSection from './DepositSection/DepositSection';
 import WithdrawSection from './WithdrawSection/WithdrawSection';
 
-const PoolDetails = ({ pool, balanceSingle, index, singleDepositedBalance }) => {
+const PoolDetails = ({ pool, balanceSingle, index, sharesBalance }) => {
   return (
     <AccordionDetails style={{ justifyContent: 'space-between' }}>
       <Grid container>
         <DepositSection index={index} pool={pool} balanceSingle={balanceSingle} />
-        <WithdrawSection
-          index={index}
-          pool={pool}
-          singleDepositedBalance={singleDepositedBalance}
-        />
+        <WithdrawSection index={index} pool={pool} sharesBalance={sharesBalance} />
       </Grid>
     </AccordionDetails>
   );

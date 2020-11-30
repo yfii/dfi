@@ -18,7 +18,7 @@ import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-const WithdrawSection = ({ pool, index, singleDepositedBalance }) => {
+const WithdrawSection = ({ pool, index, sharesBalance }) => {
   const { t } = useTranslation();
   const classes = useStyles();
   const { web3, address } = useConnectWallet();
@@ -27,7 +27,7 @@ const WithdrawSection = ({ pool, index, singleDepositedBalance }) => {
   const [withdrawAmount, setWithdrawAmount] = useState({ amount: 0, slider: 0 });
 
   const onSliderChange = (_, sliderNum) => {
-    const total = singleDepositedBalance.toNumber();
+    const total = sharesBalance.toNumber();
 
     setWithdrawAmount({
       amount: sliderNum === 0 ? 0 : calculateReallyNum(total, sliderNum),
@@ -35,11 +35,9 @@ const WithdrawSection = ({ pool, index, singleDepositedBalance }) => {
     });
   };
 
-  console.log(withdrawAmount);
-
   const onInputChange = event => {
     const value = event.target.value;
-    const total = singleDepositedBalance.toNumber();
+    const total = sharesBalance.toNumber();
 
     if (!inputLimitPass(value, pool.tokenDecimals)) {
       return;
@@ -61,7 +59,7 @@ const WithdrawSection = ({ pool, index, singleDepositedBalance }) => {
   const onWithdraw = isAll => {
     if (isAll) {
       setWithdrawAmount({
-        value: format(singleDepositedBalance),
+        value: format(sharesBalance),
         slider: 100,
       });
     }
@@ -87,8 +85,7 @@ const WithdrawSection = ({ pool, index, singleDepositedBalance }) => {
   return (
     <Grid item xs={12} sm={6} className={classes.sliderDetailContainer}>
       <div className={classes.showDetailLeft}>
-        Deposited:{' '}
-        {format(singleDepositedBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)))}{' '}
+        Deposited: {format(sharesBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)))}{' '}
         {pool.token}
       </div>
       <FormControl fullWidth variant="outlined">
