@@ -29,8 +29,8 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
   const onSliderChange = (_, sliderNum) => {
     const total = sharesBalance
       .multipliedBy(new BigNumber(pool.pricePerFullShare))
-      .dividedBy(pool.tokenDecimals)
-      .toNumber();
+      .dividedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
+      .toFormat(4);
 
     setWithdrawAmount({
       amount: sliderNum === 0 ? 0 : calculateReallyNum(total, sliderNum),
@@ -42,7 +42,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
     const value = event.target.value;
     const total = sharesBalance
       .multipliedBy(new BigNumber(pool.pricePerFullShare))
-      .dividedBy(pool.tokenDecimals)
+      .dividedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
       .toFormat(4);
 
     if (!inputLimitPass(value, pool.tokenDecimals)) {
