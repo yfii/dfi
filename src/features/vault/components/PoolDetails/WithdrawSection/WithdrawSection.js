@@ -70,7 +70,9 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
       });
     }
 
-    if (withdrawAmount.slider === 100) isAll = true;
+    if (withdrawAmount.slider >= 99) {
+      isAll = true;
+    }
 
     const amountValue = withdrawAmount.amount
       ? withdrawAmount.amount.replace(',', '')
