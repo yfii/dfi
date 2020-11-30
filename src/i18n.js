@@ -10,6 +10,7 @@ import translationFR from './locales/fr/translation.json';
 import translationHI from './locales/hi/translation.json';
 import translationID from './locales/id/translation.json';
 import translationKO from './locales/ko/translation.json';
+import translationPT from './locales/pt/translation.json';
 import translationSE from './locales/se/translation.json';
 import translationUK from './locales/uk/translation.json';
 import translationZH from './locales/zh/translation.json';
@@ -23,6 +24,7 @@ const resources = {
   hi: { translation: translationHI },
   id: { translation: translationID },
   ko: { translation: translationKO },
+  pt: { translation: translationPT },
   se: { translation: translationSE },
   uk: { translation: translationUK },
   zh: { translation: translationZH },
