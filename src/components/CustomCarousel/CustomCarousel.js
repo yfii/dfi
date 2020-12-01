@@ -10,6 +10,7 @@ import ImgWePiggy from "assets/img/carousel/wepiggy.jpg";
 import ImgSFinance from "assets/img/carousel/sfinance.jpg";
 import ImgSakeSwap from "assets/img/carousel/sakeswap.jpg";
 import ImgQian from "assets/img/carousel/qian.png";
+import ImgUnisave from "assets/img/carousel/unisave.png";
 
 import styles from "assets/jss/material-kit-pro-react/components/customCarouselStyle.js";
 
@@ -120,6 +121,16 @@ function CustomCarousel(props) {
   return (
     <div ref={ref} className={classes.container}>
       <Slider className={classes.slider} {...sliderProps}>
+        <div>
+          <a
+            className={classes.link}
+            href="https://https://app.unisave.exchange/#/swap"
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+          >
+            <img src={ImgUnisave alt="slider" width={width} height={height} />
+          </a>
+        </div>        
         <div>
           <a
             className={classes.link}
