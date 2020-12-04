@@ -1,6 +1,7 @@
 export const assets = [
   'ATOM',
   'BHC',
+  'BAKE',
   'BIFI',
   'BNB',
   'BLIQ',
@@ -22,4 +23,4 @@ export const assets = [
   'XTZ',
 ];
 
-export const platforms = ['Beefy', 'Thugs', 'Pancake', 'ForTube'];
+export const platforms = ['Bakery', 'Beefy', 'Thugs', 'Pancake', 'ForTube'];
