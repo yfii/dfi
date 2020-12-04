@@ -3,11 +3,12 @@ import BandChain from '@bandprotocol/bandchain.js';
 
 const endpoints = {
   bandchain: 'https://poa-api.bandchain.org',
+  bakeryLp:  'https://api.beefy.finance/bakery/lps',
+  coingecko: 'https://api.coingecko.com/api/v3/simple/price',
   pancake:   'https://api.beefy.finance/pancake/price',
   pancakeLp: 'https://api.beefy.finance/pancake/lps',
   thugsLp:   'https://api.beefy.finance/thugs/lps',
   thugs:     'https://api.beefy.finance/thugs/tickers',
-  coingecko: 'https://api.coingecko.com/api/v3/simple/price',
 };
 
 const WBNB = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c';
@@ -43,42 +44,22 @@ const fetchBand = async id => {
   }
 };
 
-const fetchPancake = async id => {
-  try {
-    const response = await axios.get(endpoints.pancake);
-    return response.data.prices[id];
-  } catch (err) {
-    console.error(err);
-    return 0;
-  }
-};
-
-const fetchPancakeLP = async id => {
-  try {
-    const response = await axios.get(endpoints.pancakeLp);
-    return response.data[id];
-  } catch (err) {
-    console.error(err);
-    return 0;
-  }
-};
-
-const fetchThugsLP = async id => {
-  try {
-    const response = await axios.get(endpoints.thugsLp);
-    return response.data[id];
-  } catch (err) {
-    console.error(err);
-    return 0;
-  }
-};
-
 const fetchCoingecko = async id => {
   try {
     const response = await axios.get(endpoints.coingecko, {
       params: { ids: id, vs_currencies: 'usd' },
     });
     return response.data[id].usd;
+  } catch (err) {
+    console.error(err);
+    return 0;
+  }
+};
+
+const fetchPancake = async id => {
+  try {
+    const response = await axios.get(endpoints.pancake);
+    return response.data.prices[id];
   } catch (err) {
     console.error(err);
     return 0;
@@ -107,6 +88,16 @@ const fetchThugs = async id => {
   }
 };
 
+const fetchLP = async (id, endpoint) => {
+  try {
+    const response = await axios.get(endpoint);
+    return response.data[id];
+  } catch (err) {
+    console.error(err);
+    return 0;
+  }
+};
+
 export const fetchPrice = async ({ oracle, id }) => {
   if (oracle === undefined) {
     console.error('Undefined oracle');
@@ -126,23 +117,32 @@ export const fetchPrice = async ({ oracle, id }) => {
     case 'band':
       price = await fetchBand(id);
       break;
-    case 'pancake':
-      price = await fetchPancake(id);
+
+    case 'bakery-lp':
+      price = await fetchLP(id, endpoints.bakeryLp);
       break;
-    case 'pancake-lp':
-      price = await fetchPancakeLP(id);
-      break;
-    case 'thugs-lp':
-      price = await fetchThugsLP(id);
-      break;
+    
     case 'coingecko':
       price = await fetchCoingecko(id);
       break;
+    
+    case 'pancake':
+      price = await fetchPancake(id);
+      break;
+
+    case 'pancake-lp':
+      price = await fetchLP(id, endpoints.pancakeLp);
+      break;
+
     case 'thugs':
       price = await fetchThugs(id);
       break;
-    default:
-      price = 0;
+
+    case 'thugs-lp':
+      price = await fetchLP(id, endpoints.thugsLp);
+      break;
+
+    default: price = 0;
   }
 
   addToCache({ oracle, id, price });
