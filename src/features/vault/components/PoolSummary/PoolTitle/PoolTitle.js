@@ -15,7 +15,7 @@ const PoolTitle = ({ name, logo, description, url }) => {
 
   return (
     <Grid item xs={3} className={classes.container}>
-      <Avatar alt={name} variant="square" src={require(`../../../../../images/${logo}.png`)} />
+      <Avatar alt={name} variant="square" src={require(`../../../../../images/${logo}`)} />
       <div className={classes.texts}>
         <Typography className={classes.title} variant="body2" gutterBottom>
           {name}
