@@ -1,13 +1,14 @@
 export const assets = [
+  'ALPHA',
   'ATOM',
-  'BHC',
   'BAKE',
+  'BHC',
   'BIFI',
-  'BNB',
   'BLIQ',
+  'BNB',
+  'BTC',
   'BURGER',
   'BUSD',
-  'BTC',
   'CAKE',
   'CRED',
   'DAI',
@@ -16,11 +17,22 @@ export const assets = [
   'EOS',
   'ETH',
   'FIL',
+  'GOLD',
   'GUNS',
+  'INJ',
   'LINK',
   'THUGS',
+  'TWT',
   'USDT',
   'XTZ',
+  'XVS',
 ];
 
-export const platforms = ['Bakery', 'Beefy', 'Thugs', 'Pancake', 'ForTube'];
+export const platforms = [
+  'Bakery', 
+  'Beefy', 
+  'Thugs', 
+  'Pancake', 
+  'ForTube',
+  'Narwhal'
+];
