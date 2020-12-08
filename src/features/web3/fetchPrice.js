@@ -126,6 +126,10 @@ export const fetchPrice = async ({ oracle, id }) => {
     case 'coingecko':
       price = await fetchCoingecko(id);
       break;
+
+    case 'narwhal-lp':
+      price = await fetchLP(id, endpoints.narwhalLp);
+      break;
     
     case 'pancake':
       price = await fetchPancake(id);
