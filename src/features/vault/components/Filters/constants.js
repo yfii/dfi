@@ -1,4 +1,5 @@
 export const assets = [
+  'Stables',
   'ALPHA',
   'ATOM',
   'BAKE',

@@ -5,6 +5,7 @@ const endpoints = {
   bandchain: 'https://poa-api.bandchain.org',
   bakeryLp:  'https://api.beefy.finance/bakery/lps',
   coingecko: 'https://api.coingecko.com/api/v3/simple/price',
+  narwhalLp: 'https://api.beefy.finance/narwhal/lps',
   pancake:   'https://api.beefy.finance/pancake/price',
   pancakeLp: 'https://api.beefy.finance/pancake/lps',
   thugsLp:   'https://api.beefy.finance/thugs/lps',
