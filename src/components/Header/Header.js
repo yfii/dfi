@@ -35,6 +35,7 @@ const Header = ({ links }) => {
           {renderLink('app', 'app', 'hand-holding-usd', classes)}
           {renderLink('dashboard', 'stats', 'chart-bar', classes)}
           {renderLink('docs', 'docs', 'book', classes)}
+          {renderLink('buy', 'buy', 'dollar-sign', classes)}
         </span>
 
         <Hidden smDown implementation="css">
@@ -73,6 +74,21 @@ const Header = ({ links }) => {
 };
 
 const renderLink = (name, label, icon, classes) => {
+  
+  if (name === "buy") {
+    return (
+      <a
+        href="https://streetswap.vip/#/swap?inputCurrency=BNB&outputCurrency=0xca3f508b8e4dd382ee878a314789373d80a5190a"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={classes.link}
+      >
+      <i className={`fas fa-${icon} ${classes.icon}`} />
+      <span>{label}</span>
+    </a>
+    );
+  }
+
   return (
     <a
       href={`https://${name}.beefy.finance`}
