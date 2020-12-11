@@ -43,10 +43,10 @@ const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, d
         />
         <Grid item md={7} xs={4}>
           <Grid item container justify="space-between">
-            <Hidden smDown>
+            <Hidden mdDown>
               <LabeledStat value={format(balanceSingle)} label={t('Vault-Balance')} xs={5} md={3} />
             </Hidden>
-            <Hidden mdDown>
+            <Hidden smDown>
               <LabeledStat
                 value={format(
                   byDecimals(
