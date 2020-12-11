@@ -13,8 +13,8 @@ const endpoints = {
 };
 
 const WBNB = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c';
-const WBNB_BUSD =
-  '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c_0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56';
+const BUSD = '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56';
+const WBNB_BUSD = `${WBNB}_${BUSD}`;
 
 const CACHE_TIMEOUT = 30 * 60 * 1000;
 const cache = {};
@@ -76,7 +76,9 @@ const fetchThugs = async id => {
     let price = 0;
 
     const pair = id.split('_');
-    if (pair[0] === WBNB) {
+    if (pair[0] === WBNB && pair[1] === BUSD) {
+      price = bnb;
+    } else if (pair[0] === WBNB) {
       price = bnb / ticker['last_price'];
     } else {
       price = bnb * ticker['last_price'];
