@@ -42,7 +42,8 @@ export function connectWallet(web3Modal) {
             dispatch(disconnectWallet(web3, web3Modal));
           }
         });
-        provider.on('networkChanged', async networkId => {
+        provider.on('chainChanged', async chainId => {
+          const networkId = web3.utils.isHex(chainId) ? web3.utils.hexToNumber(chainId) : chainId;
           dispatch({ type: HOME_NETWORK_CHANGED, data: networkId });
         });
       };
