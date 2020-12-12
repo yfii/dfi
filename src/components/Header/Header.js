@@ -32,7 +32,6 @@ const Header = ({ links }) => {
         <span>
           {renderLink('gov', 'gov', 'landmark', classes)}
           {renderLink('vote', 'vote', 'vote-yea', classes)}
-          {renderLink('app', 'app', 'hand-holding-usd', classes)}
           {renderLink('dashboard', 'stats', 'chart-bar', classes)}
           {renderLink('docs', 'docs', 'book', classes)}
           {renderLink('buy', 'buy', 'dollar-sign', classes)}
