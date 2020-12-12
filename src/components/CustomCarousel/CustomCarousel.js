@@ -124,7 +124,7 @@ function CustomCarousel(props) {
         <div>
           <a
             className={classes.link}
-            href="https://https://app.unisave.exchange/#/swap"
+            href="https://unisave.exchange/"
             target="_blank"
             rel="nofollow noopener noreferrer"
           >
