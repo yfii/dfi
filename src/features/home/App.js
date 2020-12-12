@@ -54,6 +54,19 @@ export default function App({ children }) {
             },
           },
         },
+        "custom-binance": {
+          display: {
+            name: 'Binance',
+            description: t('Binance Chain Wallet'),
+            logo: require(`images/binance-wallet.png`),
+          },
+          package: 'binance',
+          connector: async (ProviderPackage, options) => {
+            const provider = window.BinanceChain;
+            await provider.enable();
+            return provider;
+          }
+        },
       },
     });
     setModal(newModal);
