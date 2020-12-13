@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/static/css/main.6a264358.chunk.css",
-    "main.js": "/static/js/main.abe40c04.chunk.js",
-    "main.js.map": "/static/js/main.abe40c04.chunk.js.map",
+    "main.js": "/static/js/main.cd843d98.chunk.js",
+    "main.js.map": "/static/js/main.cd843d98.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.3a710a54.js",
     "runtime-main.js.map": "/static/js/runtime-main.3a710a54.js.map",
-    "static/js/2.6988a028.chunk.js": "/static/js/2.6988a028.chunk.js",
-    "static/js/2.6988a028.chunk.js.map": "/static/js/2.6988a028.chunk.js.map",
+    "static/js/2.92cbd4ad.chunk.js": "/static/js/2.92cbd4ad.chunk.js",
+    "static/js/2.92cbd4ad.chunk.js.map": "/static/js/2.92cbd4ad.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.100f95e431673f8c1610a6ae8e8406ae.js": "/precache-manifest.100f95e431673f8c1610a6ae8e8406ae.js",
+    "precache-manifest.6426990935d7dba2fffa8e225ab783d5.js": "/precache-manifest.6426990935d7dba2fffa8e225ab783d5.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.6a264358.chunk.css.map": "/static/css/main.6a264358.chunk.css.map",
-    "static/js/2.6988a028.chunk.js.LICENSE.txt": "/static/js/2.6988a028.chunk.js.LICENSE.txt",
-    "static/js/main.abe40c04.chunk.js.LICENSE.txt": "/static/js/main.abe40c04.chunk.js.LICENSE.txt",
+    "static/js/2.92cbd4ad.chunk.js.LICENSE.txt": "/static/js/2.92cbd4ad.chunk.js.LICENSE.txt",
+    "static/js/main.cd843d98.chunk.js.LICENSE.txt": "/static/js/main.cd843d98.chunk.js.LICENSE.txt",
     "static/media/BAT-logo.png": "/static/media/BAT-logo.a36574cc.png",
     "static/media/BUSD-logo.png": "/static/media/BUSD-logo.d569caee.png",
     "static/media/COMP-logo.png": "/static/media/COMP-logo.79b64ccb.png",
@@ -49,7 +49,7 @@
     "static/media/sfinance.jpg": "/static/media/sfinance.f1e7f914.jpg",
     "static/media/stake-head-right.png": "/static/media/stake-head-right.62b1dd34.png",
     "static/media/stake-hint.svg": "/static/media/stake-hint.45c1dac6.svg",
-    "static/media/unisave.png": "/static/media/unisave.97400d6a.png",
+    "static/media/unisave.png": "/static/media/unisave.1eb8d014.png",
     "static/media/usdt.curve.fi-logo.png": "/static/media/usdt.curve.fi-logo.beabd522.png",
     "static/media/wBTC-logo.png": "/static/media/wBTC-logo.5c1a712d.png",
     "static/media/wechat.png": "/static/media/wechat.6bf53c40.png",
@@ -62,8 +62,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.3a710a54.js",
-    "static/js/2.6988a028.chunk.js",
+    "static/js/2.92cbd4ad.chunk.js",
     "static/css/main.6a264358.chunk.css",
-    "static/js/main.abe40c04.chunk.js"
+    "static/js/main.cd843d98.chunk.js"
   ]
 }
