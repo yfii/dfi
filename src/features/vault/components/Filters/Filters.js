@@ -104,6 +104,15 @@ const Filters = ({
             <MenuItem key={'All'} value={'All'}>
               {t('Filters-All')}
             </MenuItem>
+            <MenuItem key={'Singles'} value={'Singles'}>
+              {t('Single Assets')}
+            </MenuItem>
+            <MenuItem key={'StableLPs'} value={'StableLPs'}>
+              {t('Stable LPs')}
+            </MenuItem>
+            <MenuItem key={'Stables'} value={'Stables'}>
+              {t('Stables')}
+            </MenuItem>
             {assets.map(asset => (
               <MenuItem key={asset} value={asset}>
                 {asset}
