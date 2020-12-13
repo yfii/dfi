@@ -10,7 +10,7 @@ import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-const RefundButtons = ({ tokenAddress, contractAddress, index }) => {
+const RefundButtons = ({ tokenAddress, refundAddress, index }) => {
   const classes = useStyles();
   const { web3, address } = useConnectWallet();
   const { enqueueSnackbar } = useSnackbar();
@@ -21,15 +21,15 @@ const RefundButtons = ({ tokenAddress, contractAddress, index }) => {
       address,
       web3,
       tokenAddress,
-      contractAddress,
+      refundAddress,
       index,
     })
       .then(() => enqueueSnackbar(`Approval success`, { variant: 'success' }))
       .catch(error => enqueueSnackbar(`Approval error: ${error}`, { variant: 'error' }));
   };
 
-  const onRefund = pool => {
-    const vault = new web3.eth.Contract(refundABI, pool.refundContractAddress);
+  const onRefund = () => {
+    const vault = new web3.eth.Contract(refundABI, refundAddress);
     vault.methods.refund().send({ from: address });
   };
 

@@ -113,7 +113,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
         {pool.status === 'refund' ? (
           <RefundButtons
             tokenAddress={pool.earnedTokenAddress}
-            contractAddress={pool.refundContractAddress}
+            refundAddress={pool.refundContractAddress}
             index={index}
           />
         ) : (
