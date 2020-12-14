@@ -43,10 +43,8 @@ const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, d
         />
         <Grid item md={7} xs={4}>
           <Grid item container justify="space-between">
-            <Hidden mdDown>
+            <Hidden xsDown>
               <LabeledStat value={format(balanceSingle)} label={t('Vault-Balance')} xs={5} md={3} />
-            </Hidden>
-            <Hidden smDown>
               <LabeledStat
                 value={format(
                   byDecimals(
@@ -59,26 +57,26 @@ const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, d
                 md={3}
                 align="start"
               />
+              <LabeledStat
+                value={pool.unstableApy ? '??? %' : formatApy(depositedApy, pool.defaultApy)}
+                label={t('Vault-APY')}
+                xs={5}
+                md={2}
+                align="start"
+              />
+              <LabeledStat
+                value={pool.unstableApy ? '??? %' : calcDaily(depositedApy, pool.defaultApy)}
+                label={t('Vault-APYDaily')}
+                xs={5}
+                md={2}
+              />
+              <LabeledStat
+                value={formatTvl(pool.tvl, pool.oraclePrice, pool.fallbackPrice)}
+                label={t('Vault-TVL')}
+                xs={5}
+                md={2}
+              />
             </Hidden>
-            <LabeledStat
-              value={pool.unstableApy ? '??? %' : formatApy(depositedApy, pool.defaultApy)}
-              label={t('Vault-APY')}
-              xs={5}
-              md={2}
-              align="start"
-            />
-            <LabeledStat
-              value={pool.unstableApy ? '??? %' : calcDaily(depositedApy, pool.defaultApy)}
-              label={t('Vault-APYDaily')}
-              xs={5}
-              md={2}
-            />
-            <LabeledStat
-              value={formatTvl(pool.tvl, pool.oraclePrice, pool.fallbackPrice)}
-              label={t('Vault-TVL')}
-              xs={5}
-              md={2}
-            />
           </Grid>
         </Grid>
         <SummaryActions
@@ -86,6 +84,41 @@ const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, d
           toggleCard={toggleCard}
           isOpen={isOpen}
         />
+
+        <Hidden smUp>
+          <Grid item xs={12} style={{ display: 'flex' }}>
+            <LabeledStat value={format(balanceSingle)} label={t('Vault-Balance')} xs={6} />
+            <LabeledStat
+              value={format(
+                byDecimals(
+                  sharesBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)),
+                  pool.tokenDecimals
+                )
+              )}
+              label={t('Vault-Deposited')}
+              xs={6}
+              align="start"
+            />
+          </Grid>
+          <Grid item xs={12} style={{ display: 'flex' }}>
+            <LabeledStat
+              value={pool.unstableApy ? '??? %' : formatApy(depositedApy, pool.defaultApy)}
+              label={t('Vault-APY')}
+              xs={4}
+              align="start"
+            />
+            <LabeledStat
+              value={pool.unstableApy ? '??? %' : calcDaily(depositedApy, pool.defaultApy)}
+              label={t('Vault-APYDaily')}
+              xs={4}
+            />
+            <LabeledStat
+              value={formatTvl(pool.tvl, pool.oraclePrice, pool.fallbackPrice)}
+              label={t('Vault-TVL')}
+              xs={4}
+            />
+          </Grid>
+        </Hidden>
       </Grid>
     </AccordionSummary>
   );
