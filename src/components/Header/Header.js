@@ -25,15 +25,22 @@ const Header = ({ links }) => {
     <AppBar className={`${classes.appBar} ${classes.dark}`}>
       <Toolbar className={classes.container}>
         <Button className={classes.title}>
-          <img alt="BIFI" src={require(`images/BIFI.svg`)} height="40px" className={classes.logo} />
-          <a href="https://beefy.finance">beefy.finance</a>
+          <Hidden xsDown>
+            <img alt="BIFI" src={require(`images/BIFI.svg`)} height={"40px"} className={classes.logo} />
+            <a href="https://beefy.finance">beefy.finance</a>
+          </Hidden>
+          <Hidden smUp>
+            <img alt="BIFI" src={require(`images/BIFI.svg`)} height={"35px"} className={classes.logo} />
+          </Hidden>
         </Button>
 
         <span>
           {renderLink('gov', 'gov', 'landmark', classes)}
           {renderLink('vote', 'vote', 'vote-yea', classes)}
-          {renderLink('dashboard', 'stats', 'chart-bar', classes)}
-          {renderLink('docs', 'docs', 'book', classes)}
+          <Hidden xsDown>
+            {renderLink('dashboard', 'stats', 'chart-bar', classes)}
+            {renderLink('docs', 'docs', 'book', classes)}
+          </Hidden>
           {renderLink('buy', 'buy', 'dollar-sign', classes)}
         </span>
 
@@ -66,6 +73,13 @@ const Header = ({ links }) => {
             <Close />
           </IconButton>
           <div className={classes.appResponsive}>{links}</div>
+          <div style={{ textAlign: "center" }}>
+            {renderLinkSidebar('gov', 'gov', 'landmark', classes)}
+            {renderLinkSidebar('vote', 'vote', 'vote-yea', classes)}
+            {renderLinkSidebar('dashboard', 'stats', 'chart-bar', classes)}
+            {renderLinkSidebar('docs', 'docs', 'book', classes)}
+            {renderLinkSidebar('buy', 'buy', 'dollar-sign', classes)}
+          </div>
         </Drawer>
       </Hidden>
     </AppBar>
@@ -73,32 +87,26 @@ const Header = ({ links }) => {
 };
 
 const renderLink = (name, label, icon, classes) => {
-  
-  if (name === "buy") {
-    return (
-      <a
-        href="https://streetswap.vip/#/swap?inputCurrency=BNB&outputCurrency=0xca3f508b8e4dd382ee878a314789373d80a5190a"
-        target="_blank"
-        rel="noopener noreferrer"
-        className={classes.link}
-      >
-      <i className={`fas fa-${icon} ${classes.icon}`} />
-      <span>{label}</span>
-    </a>
-    );
-  }
-
   return (
-    <a
-      href={`https://${name}.beefy.finance`}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={classes.link}
-    >
+    <a href={getLinkUrl(name)} target="_blank" rel="noopener noreferrer" className={classes.link} style={{ marginLeft: "5px", marginRight: "5px" }}>
       <i className={`fas fa-${icon} ${classes.icon}`} />
       <span>{label}</span>
     </a>
   );
 };
+
+const renderLinkSidebar = (name, label, icon, classes) => {
+  return (
+    <div style={{ width: "100%", paddingTop: "10px" }}>
+      {renderLink(name, label, icon, classes)}
+    </div>
+  );
+};
+
+const getLinkUrl = (name) => {
+  return name === "buy" 
+    ? "https://streetswap.vip/#/swap?inputCurrency=BNB&outputCurrency=0xca3f508b8e4dd382ee878a314789373d80a5190a" 
+    : `https://${name}.beefy.finance`
+}
 
 export default Header;
