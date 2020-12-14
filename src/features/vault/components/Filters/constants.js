@@ -36,7 +36,8 @@ export const platforms = [
   'Thugs',
   'Pancake',
   'ForTube',
-  'Narwhal'
+  'Narwhal',
+  'Venus'
 ];
 
 export const stables = [
