@@ -9,7 +9,7 @@ const usePoolsByAsset = pools => {
     if (asset === 'All') {
       setPoolsByAsset(pools);
     } else if (asset === 'Singles') {
-      let newPools = pools.filter(pool => pool.assets.length == 1);
+      let newPools = pools.filter(pool => pool.assets.length === 1);
       setPoolsByAsset(newPools);
     } else if (asset === 'StableLPs') {
       const isStable = (asset) => stables.includes(asset);
