@@ -1,5 +1,4 @@
 export const assets = [
-  // 'Stables',
   'ALPHA',
   'ATOM',
   'BAKE',
@@ -32,10 +31,19 @@ export const assets = [
 ];
 
 export const platforms = [
-  'Bakery', 
-  'Beefy', 
-  'Thugs', 
-  'Pancake', 
+  'Bakery',
+  'Beefy',
+  'Thugs',
+  'Pancake',
   'ForTube',
   'Narwhal'
 ];
+
+export const stables = [
+  'BUSD',
+  'USDT',
+  'USDC',
+  'DAI',
+  'VAI',
+  'QUSD',
+]
