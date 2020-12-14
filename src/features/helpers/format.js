@@ -27,6 +27,8 @@ export const formatTvl = (tvl, oraclePrice, fallbackPrice) => {
   return prefix + num.toFixed(2) + units[order];
 };
 
+export const formatGlobalTvl = (tvl) => formatTvl(tvl, 1, 1);
+
 export const calcDaily = (apy, fallbackApy) => {
   if (!apy) {
     apy = fallbackApy;

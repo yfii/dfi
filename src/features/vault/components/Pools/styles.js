@@ -2,6 +2,10 @@ const styles = theme => ({
   container: {
     paddingTop: '4px',
   },
+  titles: {
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
   title: {
     fontSize: '32px',
     letterSpacing: '0',

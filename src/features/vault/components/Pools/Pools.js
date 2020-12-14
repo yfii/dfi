@@ -7,6 +7,8 @@ import { useConnectWallet } from '../../../home/redux/hooks';
 import { useFetchBalances, useFetchPoolBalances, useFetchContractApy } from '../../redux/hooks';
 import VisiblePools from '../VisiblePools/VisiblePools';
 import styles from './styles';
+import usePoolsTvl from '../../hooks/usePoolsTvl';
+import { formatGlobalTvl } from 'features/helpers/format';
 
 const FETCH_INTERVAL_MS = 30 * 1000;
 
@@ -18,6 +20,7 @@ export default function Pools() {
   let { pools, fetchPoolBalances } = useFetchPoolBalances();
   const { tokens, fetchBalances } = useFetchBalances();
   const { contractApy, fetchContractApy } = useFetchContractApy();
+  const { poolsTvl } = usePoolsTvl(pools);
   const classes = useStyles();
 
   useEffect(() => {
@@ -44,7 +47,10 @@ export default function Pools() {
   return (
     <Grid container className={classes.container}>
       <Grid item xs={12}>
-        <h1 className={classes.title}>{t('Vault-MainTitle')}</h1>
+        <div className={classes.titles}>
+          <h1 className={classes.title}>{t('Vault-MainTitle')}</h1>
+          <h1 className={classes.title}>TVL {formatGlobalTvl(poolsTvl)}</h1>
+        </div>
         <div className={classes.subtitles}>
           <h3 className={classes.subtitle}>{t('Vault-SecondTitle')}</h3>
           <h3 className={classes.subtitle}>{t('Vault-WithdrawFee')}</h3>
