@@ -12,7 +12,7 @@ const PoolDetails = ({ pool, balanceSingle, index, sharesBalance }) => {
       <Grid container>
         <DepositSection index={index} pool={pool} balanceSingle={balanceSingle} />
         <WithdrawSection index={index} pool={pool} sharesBalance={sharesBalance} />
-        <HarvestSection index={index} pool={pool} />
+        { pool.name !== 'BIFI Maxi' ? <HarvestSection index={index} pool={pool} /> : '' }
       </Grid>
     </AccordionDetails>
   );
