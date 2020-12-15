@@ -17,6 +17,7 @@
   "Vault-WithdrawFee": "There is a 0.05%-0.1% withdrawal fee on all vaults",
   "Vault-Harvesting": "Harvesting...",
   "Vault-HarvestButton": "Harvest",
+  "Vault-LastHarvest": "Last Harvest",
   "Vault-MainTitle": "Vaults",
   "Vault-SecondTitle": "Deposit & Earn money",
   "Hide-Zero-Balances": "Hide Zero Balances",
