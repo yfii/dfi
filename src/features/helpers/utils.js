@@ -38,3 +38,9 @@ export function inputFinalVal(value, total, tokenDecimals) {
   let inputVal = Number(value.replace(',', ''));
   return inputVal > total ? byDecimals(total, 0).toFormat(tokenDecimals) : value;
 }
+
+export const shouldHideFromHarvest = (vaultName) => {
+  return HarvestBlacklistVaultNames.includes(vaultName)
+}
+
+const HarvestBlacklistVaultNames = ['BIFI Maxi', 'CAKE SMART']
