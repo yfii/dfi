@@ -33,7 +33,7 @@ const HarvestSection = ({ pool, index }) => {
     <Grid item xs={12} sm={2} className={classes.sliderDetailContainer}>
       <div className={classes.showDetailBottom}>
         <div className={classes.showDetailLeft}>
-          {t('Vault-LastHarvest')}:
+          {/* {t('Vault-LastHarvest')}: */}
         </div>
         <div>
           <Button
