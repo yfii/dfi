@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import BigNumber from 'bignumber.js';
 import { makeStyles } from '@material-ui/core/styles';
 import { useTranslation } from 'react-i18next';
 import { useSnackbar } from 'notistack';
-import FormControl from '@material-ui/core/FormControl';
 
 import Button from 'components/CustomButtons/Button.js';
 import { useFetchHarvest } from 'features/vault/redux/hooks';
@@ -13,7 +11,7 @@ import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-const HarvestSection = ({ pool, index, sharesBalance }) => {
+const HarvestSection = ({ pool, index }) => {
   const { t } = useTranslation();
   const classes = useStyles();
   const { web3, address } = useConnectWallet();
@@ -21,7 +19,14 @@ const HarvestSection = ({ pool, index, sharesBalance }) => {
   const { fetchHarvest, fetchHarvestPending } = useFetchHarvest();
 
   const onHarvest = () => {
-    console.log('on harvest');
+    fetchHarvest({
+      address,
+      web3,
+      contractAddress: pool.earnContractAddress,
+      index,
+    })
+      .then(() => enqueueSnackbar(`Harvest success`, { variant: 'success' }))
+      .catch(error => enqueueSnackbar(`Harvest error: ${error}`, { variant: 'error' }));
   };
 
   return (
