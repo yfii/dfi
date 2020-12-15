@@ -9,3 +9,4 @@ export { withdrawBnb } from './withdrawBnb';
 export { fetchPrice } from './fetchPrice';
 export { fetchPricePerFullShare } from './fetchPricePerFullShare';
 export { fetchTvl } from './fetchTvl';
+export { harvest } from './harvest';
