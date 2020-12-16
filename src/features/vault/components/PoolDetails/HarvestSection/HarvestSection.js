@@ -35,12 +35,11 @@ const HarvestSection = ({ pool, index }) => {
         <div className={classes.showDetailLeft}>
           {/* {t('Vault-LastHarvest')}: */}
         </div>
-        <div>
+        <div style={{ textAlign: "center" }}>
           <Button
-            className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
+            className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined} ${classes.showResponsiveButtonCon}`}
             type="button"
             color="primary"
-            style={{ maxWidth: "100px" }}
             onClick={() => onHarvest()}
           >
             {fetchHarvestPending[index]
