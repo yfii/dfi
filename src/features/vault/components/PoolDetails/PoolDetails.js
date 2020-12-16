@@ -13,7 +13,7 @@ const PoolDetails = ({ pool, balanceSingle, index, sharesBalance }) => {
       <Grid container>
         <DepositSection index={index} pool={pool} balanceSingle={balanceSingle} />
         <WithdrawSection index={index} pool={pool} sharesBalance={sharesBalance} />
-        { shouldHideFromHarvest(pool.name) ? '' : <HarvestSection index={index} pool={pool} /> }
+        { shouldHideFromHarvest(pool.id) ? '' : <HarvestSection index={index} pool={pool} /> }
       </Grid>
     </AccordionDetails>
   );

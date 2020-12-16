@@ -40,7 +40,7 @@ export function inputFinalVal(value, total, tokenDecimals) {
 }
 
 export const shouldHideFromHarvest = (vaultName) => {
-  return HarvestBlacklistVaultNames.includes(vaultName)
+  return HarvestBlacklistVaultIds.includes(vaultName)
 }
 
-const HarvestBlacklistVaultNames = ['BIFI Maxi', 'CAKE SMART']
+const HarvestBlacklistVaultIds = ['bifi-maxi', 'cake-smart']
