@@ -1,8 +1,8 @@
-import { vaultABI } from '../configure';
+import { bnbVaultABI } from '../configure';
 import { enqueueSnackbar } from '../common/redux/actions';
 
-export const withdrawEth = async ({ web3, address, isAll, amount, contractAddress, dispatch }) => {
-  const contract = new web3.eth.Contract(vaultABI, contractAddress);
+export const withdrawBnb = async ({ web3, address, isAll, amount, contractAddress, dispatch }) => {
+  const contract = new web3.eth.Contract(bnbVaultABI, contractAddress);
   const data = await _withdraw({ web3, contract, isAll, amount, address, dispatch });
   return data;
 };
@@ -11,7 +11,7 @@ const _withdraw = ({ web3, contract, address, isAll, amount, dispatch }) => {
   return new Promise((resolve, reject) => {
     if (isAll) {
       contract.methods
-        .withdrawAllETH()
+        .withdrawAllBNB()
         .send({ from: address })
         .on('transactionHash', function (hash) {
           console.log(hash);
@@ -40,7 +40,7 @@ const _withdraw = ({ web3, contract, address, isAll, amount, dispatch }) => {
         });
     } else {
       contract.methods
-        .withdrawETH(amount)
+        .withdrawBNB(amount)
         .send({ from: address })
         .on('transactionHash', function (hash) {
           console.log(hash);

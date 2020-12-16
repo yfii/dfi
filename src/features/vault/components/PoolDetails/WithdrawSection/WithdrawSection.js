@@ -23,7 +23,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
   const classes = useStyles();
   const { web3, address } = useConnectWallet();
   const { enqueueSnackbar } = useSnackbar();
-  const { fetchWithdraw, fetchWithdrawPending } = useFetchWithdraw();
+  const { fetchWithdraw, fetchWithdrawBnb, fetchWithdrawPending } = useFetchWithdraw();
   const [withdrawAmount, setWithdrawAmount] = useState({ amount: 0, slider: 0 });
 
   const onSliderChange = (_, sliderNum) => {
@@ -76,19 +76,34 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
       ? withdrawAmount.amount.replace(',', '')
       : withdrawAmount.amount;
 
-    fetchWithdraw({
-      address,
-      web3,
-      isAll,
-      amount: new BigNumber(amountValue)
-        .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
-        .dividedBy(pool.pricePerFullShare)
-        .toFixed(0),
-      contractAddress: pool.earnContractAddress,
-      index,
-    })
-      .then(() => enqueueSnackbar(`Withdraw success`, { variant: 'success' }))
-      .catch(error => enqueueSnackbar(`Withdraw error: ${error}`, { variant: 'error' }));
+    if (pool.tokenAddress) {
+      fetchWithdraw({
+        address,
+        web3,
+        isAll,
+        amount: new BigNumber(amountValue)
+          .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
+          .dividedBy(pool.pricePerFullShare)
+          .toFixed(0),
+        contractAddress: pool.earnContractAddress,
+        index,
+      })
+        .then(() => enqueueSnackbar(`Withdraw success`, { variant: 'success' }))
+        .catch(error => enqueueSnackbar(`Withdraw error: ${error}`, { variant: 'error' }));
+    } else {
+      fetchWithdrawBnb({
+        address,
+        web3,
+        isAll,
+        amount: new BigNumber(amountValue)
+          .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
+          .toString(10),
+        contractAddress: pool.earnContractAddress,
+        index,
+      })
+        .then(() => enqueueSnackbar(`Withdraw success`, { variant: 'success' }))
+        .catch(error => enqueueSnackbar(`Withdraw error: ${error}`, { variant: 'error' }));
+    }
   };
 
   return (

@@ -1,7 +1,11 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { VAULT_FETCH_DEPOSIT_BEGIN, VAULT_FETCH_DEPOSIT_SUCCESS, VAULT_FETCH_DEPOSIT_FAILURE } from './constants';
-import { deposit, depositEth } from '../../web3';
+import {
+  VAULT_FETCH_DEPOSIT_BEGIN,
+  VAULT_FETCH_DEPOSIT_SUCCESS,
+  VAULT_FETCH_DEPOSIT_FAILURE,
+} from './constants';
+import { deposit, depositBnb } from '../../web3';
 
 export function fetchDeposit({ address, web3, isAll, amount, contractAddress, index }) {
   return dispatch => {
@@ -43,7 +47,7 @@ export function fetchDeposit({ address, web3, isAll, amount, contractAddress, in
   };
 }
 
-export function fetchDepositEth({ address, web3, amount, contractAddress, index }) {
+export function fetchDepositBnb({ address, web3, amount, contractAddress, index }) {
   return dispatch => {
     // optionally you can have getState as the second argument
     dispatch({
@@ -59,7 +63,7 @@ export function fetchDepositEth({ address, web3, amount, contractAddress, index 
       // doRequest is a placeholder Promise. You should replace it with your own logic.
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
-      depositEth({ web3, address, amount, contractAddress, dispatch })
+      depositBnb({ web3, address, amount, contractAddress, dispatch })
         .then(data => {
           dispatch({
             type: VAULT_FETCH_DEPOSIT_SUCCESS,
@@ -101,14 +105,14 @@ export function useFetchDeposit() {
 
   const boundAction2 = useCallback(
     data => {
-      return dispatch(fetchDepositEth(data));
+      return dispatch(fetchDepositBnb(data));
     },
     [dispatch]
   );
 
   return {
     fetchDeposit: boundAction,
-    fetchDepositEth: boundAction2,
+    fetchDepositBnb: boundAction2,
     fetchDepositPending,
   };
 }

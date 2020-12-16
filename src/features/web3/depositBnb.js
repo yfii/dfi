@@ -1,20 +1,19 @@
+import { bnbVaultABI } from '../configure';
 import { enqueueSnackbar } from '../common/redux/actions';
 
-export const depositEth = async ({ web3, address, amount, contractAddress, dispatch }) => {
+export const depositBnb = async ({ web3, address, amount, contractAddress, dispatch }) => {
+  const contract = new web3.eth.Contract(bnbVaultABI, contractAddress);
+  const data = await _deposit({ web3, contract, amount, address, dispatch });
+  return data;
+};
+
+const _deposit = ({ web3, contract, amount, address, dispatch }) => {
   return new Promise((resolve, reject) => {
-    console.log(`
-      address:${address}\n
-      contractAddress:${contractAddress}\n
-      amount:${amount}
-    `);
-    web3.eth
-      .sendTransaction({
-        from: address,
-        to: contractAddress,
-        value: amount,
-        gasLimit: 300000,
-      })
+    contract.methods
+      .depositBNB()
+      .send({ from: address, value: amount })
       .on('transactionHash', function (hash) {
+        console.log(hash);
         dispatch(
           enqueueSnackbar({
             message: hash,

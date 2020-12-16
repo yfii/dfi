@@ -1,7 +1,11 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { VAULT_FETCH_WITHDRAW_BEGIN, VAULT_FETCH_WITHDRAW_SUCCESS, VAULT_FETCH_WITHDRAW_FAILURE } from './constants';
-import { withdraw, withdrawEth } from '../../web3';
+import {
+  VAULT_FETCH_WITHDRAW_BEGIN,
+  VAULT_FETCH_WITHDRAW_SUCCESS,
+  VAULT_FETCH_WITHDRAW_FAILURE,
+} from './constants';
+import { withdraw, withdrawBnb } from '../../web3';
 
 export function fetchWithdraw({ address, web3, isAll, amount, contractAddress, index }) {
   return dispatch => {
@@ -59,7 +63,7 @@ export function fetchWithdrawBnb({ address, web3, isAll, amount, contractAddress
       // doRequest is a placeholder Promise. You should replace it with your own logic.
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
-      withdrawEth({ web3, address, isAll, amount, contractAddress, dispatch })
+      withdrawBnb({ web3, address, isAll, amount, contractAddress, dispatch })
         .then(data => {
           dispatch({
             type: VAULT_FETCH_WITHDRAW_SUCCESS,

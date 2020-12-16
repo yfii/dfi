@@ -23,7 +23,7 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
   const { web3, address } = useConnectWallet();
   const { enqueueSnackbar } = useSnackbar();
   const { fetchApproval, fetchApprovalPending } = useFetchApproval();
-  const { fetchDeposit, fetchDepositPending } = useFetchDeposit();
+  const { fetchDeposit, fetchDepositBnb, fetchDepositPending } = useFetchDeposit();
   const [depositBalance, setDepositBalance] = useState({
     amount: 0,
     slider: 0,
@@ -67,18 +67,32 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
       ? depositBalance.amount.replace(',', '')
       : depositBalance.amount;
 
-    fetchDeposit({
-      address,
-      web3,
-      isAll,
-      amount: new BigNumber(amountValue)
-        .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
-        .toString(10),
-      contractAddress: pool.earnContractAddress,
-      index,
-    })
-      .then(() => enqueueSnackbar(`Deposit success`, { variant: 'success' }))
-      .catch(error => enqueueSnackbar(`Deposit error: ${error}`, { variant: 'error' }));
+    if (pool.tokenAddress) {
+      fetchDeposit({
+        address,
+        web3,
+        isAll,
+        amount: new BigNumber(amountValue)
+          .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
+          .toString(10),
+        contractAddress: pool.earnContractAddress,
+        index,
+      })
+        .then(() => enqueueSnackbar(`Deposit success`, { variant: 'success' }))
+        .catch(error => enqueueSnackbar(`Deposit error: ${error}`, { variant: 'error' }));
+    } else {
+      fetchDepositBnb({
+        address,
+        web3,
+        amount: new BigNumber(amountValue)
+          .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
+          .toString(10),
+        contractAddress: pool.earnContractAddress,
+        index,
+      })
+        .then(() => enqueueSnackbar(`Deposit success`, { variant: 'success' }))
+        .catch(error => enqueueSnackbar(`Deposit error: ${error}`, { variant: 'error' }));
+    }
   };
 
   const changeDetailInputValue = event => {
