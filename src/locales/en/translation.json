@@ -17,6 +17,8 @@
   "Vault-WithdrawFee": "There is a 0.05%-0.1% withdrawal fee on all vaults",
   "Vault-Harvesting": "Harvesting...",
   "Vault-HarvestButton": "Harvest",
+  "Vault-HarvestConfirm": "Confirm Harvest?",
+  "Vault-HarvestDescription": "By harvesting, you are helping everyone to collect the profits generated in this vault. You will receive 0.5% of the vault earnings.",
   "Vault-LastHarvest": "Last Harvest",
   "Vault-MainTitle": "Vaults",
   "Vault-SecondTitle": "Deposit & Earn money",
@@ -26,5 +28,7 @@
   "Filters-Asset": "Asset",
   "Filters-Sort": "Sort by",
   "Filters-All": "All",
-  "Filters-Default": "Default"
+  "Filters-Default": "Default",
+  "Confirm": "Confirm",
+  "Cancel": "Cancel"
 }
