@@ -27,12 +27,11 @@ export const pools = [
   },
 
   {
-    id: 'venus-wbnb',
-    logo: 'venus/wbnb.svg',
-    name: 'WBNB',
-    token: 'WBNB',
+    id: 'venus-bnb',
+    logo: 'venus/bnb.png',
+    name: 'BNB',
+    token: 'BNB',
     tokenDescription: 'Uses: Venus',
-    tokenAddress: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooVenusBNB',
@@ -53,11 +52,12 @@ export const pools = [
   },
 
   {
-    id: 'venus-bnb',
-    logo: 'venus/bnb.png',
-    name: 'BNB',
-    token: 'BNB',
+    id: 'venus-wbnb',
+    logo: 'venus/wbnb.svg',
+    name: 'WBNB',
+    token: 'WBNB',
     tokenDescription: 'Uses: Venus',
+    tokenAddress: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooVenusBNB',
