@@ -43,4 +43,9 @@ export const shouldHideFromHarvest = (vaultName) => {
   return HarvestBlacklistVaultIds.includes(vaultName)
 }
 
-const HarvestBlacklistVaultIds = ['bifi-maxi', 'cake-smart']
+const HarvestBlacklistVaultIds = [
+  'bifi-maxi', 
+  'cake-smart', 
+  'fortube-fil', 'fortube-atom', 'fortube-xtz', 'fortube-busd', 'fortube-link', , 'fortube-dot', , 'fortube-usdt', , 'fortube-eth', 'fortube-btcb',
+  'fry-burger-v2'
+]
