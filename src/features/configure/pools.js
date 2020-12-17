@@ -206,7 +206,7 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Venus',
-    assets: ['BTCB'],
+    assets: ['BTCB', 'BTC'],
   },
 
   {
