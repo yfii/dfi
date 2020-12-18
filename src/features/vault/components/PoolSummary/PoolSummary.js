@@ -44,9 +44,9 @@ const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, d
         <Grid item md={7} xs={4}>
           <Grid item container justify="space-between">
             <Hidden xsDown>
-              <LabeledStat value={format(balanceSingle)} label={t('Vault-Balance')} xs={5} md={3} />
+              <LabeledStat value={formatDecimals(balanceSingle)} label={t('Vault-Balance')} xs={5} md={3} />
               <LabeledStat
-                value={format(
+                value={formatDecimals(
                   byDecimals(
                     sharesBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)),
                     pool.tokenDecimals
@@ -87,9 +87,9 @@ const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, d
 
         <Hidden smUp>
           <Grid item xs={12} style={{ display: 'flex' }}>
-            <LabeledStat value={format(balanceSingle)} label={t('Vault-Balance')} xs={6} />
+            <LabeledStat value={formatDecimals(balanceSingle)} label={t('Vault-Balance')} xs={6} />
             <LabeledStat
-              value={format(
+              value={formatDecimals(
                 byDecimals(
                   sharesBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)),
                   pool.tokenDecimals
@@ -123,5 +123,11 @@ const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, d
     </AccordionSummary>
   );
 };
+
+const formatDecimals = (number) => {
+  return  (number >= 10) ?
+          number.toFixed(4) :  number.isEqualTo(0) ?
+          0 : number.toFixed(8)
+}
 
 export default PoolSummary;
