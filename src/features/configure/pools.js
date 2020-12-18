@@ -106,6 +106,7 @@ export const pools = [
     status: 'active',
     platform: 'Venus',
     assets: ['SXP'],
+    callFee: 1,
   },
 
   {
@@ -132,6 +133,7 @@ export const pools = [
     status: 'active',
     platform: 'Venus',
     assets: ['USDC'],
+    callFee: 1,
   },
 
   {
@@ -158,6 +160,7 @@ export const pools = [
     status: 'active',
     platform: 'Venus',
     assets: ['USDT'],
+    callFee: 1,
   },
 
   {
@@ -184,6 +187,7 @@ export const pools = [
     status: 'active',
     platform: 'Venus',
     assets: ['BUSD'],
+    callFee: 1,
   },
 
   {
@@ -210,6 +214,7 @@ export const pools = [
     status: 'active',
     platform: 'Venus',
     assets: ['BTC'],
+    callFee: 1,
   },
 
   {
@@ -236,6 +241,7 @@ export const pools = [
     status: 'active',
     platform: 'Venus',
     assets: ['ETH'],
+    callFee: 1,
   },
 
   {
@@ -263,6 +269,7 @@ export const pools = [
     status: 'active',
     platform: 'Venus',
     assets: ['LTC'],
+    callFee: 1,
   },
 
   {
@@ -289,6 +296,7 @@ export const pools = [
     status: 'active',
     platform: 'Venus',
     assets: ['XRP'],
+    callFee: 1,
   },
 
   // End of venus vaults.
