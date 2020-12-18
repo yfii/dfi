@@ -24,6 +24,7 @@ export const pools = [
     status: 'active',
     platform: 'Beefy',
     assets: ['BIFI'],
+    callFee: 0.5
   },
 
   {
@@ -49,6 +50,7 @@ export const pools = [
     status: 'active',
     platform: 'Venus',
     assets: ['BNB'],
+    callFee: 1
   },
 
   {
@@ -75,6 +77,7 @@ export const pools = [
     status: 'active',
     platform: 'Venus',
     assets: ['BNB'],
+    callFee: 1
   },
 
   // Start of new venus vaults
@@ -314,6 +317,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['ALPHA', 'BNB'],
+    callFee: 0.5
   },
 
   {
@@ -340,6 +344,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['INJ', 'BNB'],
+    callFee: 0.5
   },
 
   {
@@ -366,6 +371,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['TWT', 'BNB'],
+    callFee: 0.5
   },
 
   {
@@ -392,6 +398,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['XVS', 'BNB'],
+    callFee: 0.5
   },
 
   // Narwhal
@@ -420,6 +427,7 @@ export const pools = [
     status: 'active',
     platform: 'Narwhal',
     assets: ['GOLD', 'BNB'],
+    callFee: 1
   },
 
   {
@@ -446,6 +454,7 @@ export const pools = [
     status: 'active',
     platform: 'Narwhal',
     assets: ['THUGS', 'NAR'],
+    callFee: 1
   },
 
   // Bakery
@@ -474,6 +483,7 @@ export const pools = [
     status: 'active',
     platform: 'Bakery',
     assets: ['BAKE'],
+    callFee: 0.5
   },
 
   {
@@ -500,6 +510,7 @@ export const pools = [
     status: 'active',
     platform: 'Bakery',
     assets: ['BAKE', 'BNB'],
+    callFee: 0.5
   },
 
   // {
@@ -552,6 +563,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['BCH', 'BNB'],
+    callFee: 0.5
   },
   {
     id: 'street-link-bnb',
@@ -577,6 +589,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['LINK', 'BNB'],
+    callFee: 0.5
   },
   {
     id: 'street-nar-bnb',
@@ -602,6 +615,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['NAR', 'BNB'],
+    callFee: 0.5
   },
   {
     id: 'street-bifi-bnb',
@@ -627,6 +641,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['BIFI', 'BNB'],
+    callFee: 0.5
   },
 
   {
@@ -654,6 +669,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['DRUGS'],
+    callFee: 0.5
   },
 
   {
@@ -680,6 +696,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['DRUGS', 'BNB'],
+    callFee: 0.5
   },
 
   {
@@ -706,6 +723,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['THUGS', 'BNB'],
+    callFee: 0.5
   },
 
   {
@@ -732,6 +750,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['CRED', 'BNB'],
+    callFee: 0.5
   },
 
   {
@@ -759,6 +778,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['GUNS', 'BNB'],
+    callFee: 0.5
   },
 
   {
@@ -785,6 +805,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['BUSD', 'BNB'],
+    callFee: 0.5
   },
 
   {
@@ -812,6 +833,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['BTC', 'BNB'],
+    callFee: 0.5
   },
 
   {
@@ -839,6 +861,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['ETH', 'BNB'],
+    callFee: 0.5
   },
 
   {
@@ -865,6 +888,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['THUGS', 'BNB'],
+    callFee: 0.5
   },
 
   {
@@ -891,6 +915,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['THUGS', 'BNB'],
+    callFee: 0.5
   },
 
   {
@@ -917,6 +942,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['DAI', 'BNB'],
+    callFee: 0.5
   },
 
   {
@@ -943,6 +969,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['USDT', 'BNB'],
+    callFee: 0.5
   },
 
   {
@@ -969,6 +996,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['BLIQ', 'BNB'],
+    callFee: 0.5
   },
 
   {
@@ -995,6 +1023,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['EOS', 'BNB'],
+    callFee: 0.5
   },
 
   {
@@ -1021,6 +1050,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['BHC', 'BNB'],
+    callFee: 0.5
   },
 
   {
@@ -1048,6 +1078,7 @@ export const pools = [
     status: 'eol',
     platform: 'Thugs',
     assets: ['DRUGS', 'BNB'],
+    callFee: 0.5
   },
 
   {
@@ -1075,6 +1106,7 @@ export const pools = [
     status: 'eol',
     platform: 'Thugs',
     assets: ['GUNS', 'BNB'],
+    callFee: 0.5
   },
 
   //
@@ -1105,6 +1137,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['CAKE'],
+    callFee: 0.5
   },
 
   {
@@ -1131,6 +1164,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['CAKE'],
+    callFee: 0.5
   },
 
   {
@@ -1158,6 +1192,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['CAKE'],
+    callFee: 0.5
   },
 
   {
@@ -1185,6 +1220,7 @@ export const pools = [
     status: 'eol',
     platform: 'Pancake',
     assets: ['CAKE'],
+    callFee: 0.5
   },
 
   {
@@ -1212,6 +1248,7 @@ export const pools = [
     status: 'eol',
     platform: 'Pancake',
     assets: ['CAKE'],
+    callFee: 0.5
   },
 
   {
@@ -1239,6 +1276,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['CAKE', 'BNB'],
+    callFee: 0.5
   },
 
   {
@@ -1266,6 +1304,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['LINK', 'BNB'],
+    callFee: 0.5
   },
 
   {
@@ -1293,6 +1332,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['USDT', 'BNB'],
+    callFee: 0.5
   },
 
   {
@@ -1320,6 +1360,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['BUSD', 'BNB'],
+    callFee: 0.5
   },
 
   {
@@ -1347,6 +1388,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['USDT', 'BUSD'],
+    callFee: 0.5
   },
 
   {
@@ -1374,6 +1416,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['ETH', 'BNB'],
+    callFee: 0.5
   },
 
   {
@@ -1401,6 +1444,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['BTC', 'BNB'],
+    callFee: 0.5
   },
   //
   // < ---- > ForTube < ---- >
@@ -1429,6 +1473,7 @@ export const pools = [
     status: 'active',
     platform: 'ForTube',
     assets: ['FIL'],
+    callFee: 1
   },
 
   {
@@ -1455,6 +1500,7 @@ export const pools = [
     status: 'active',
     platform: 'ForTube',
     assets: ['ATOM'],
+    callFee: 1
   },
 
   {
@@ -1481,6 +1527,7 @@ export const pools = [
     status: 'active',
     platform: 'ForTube',
     assets: ['XTZ'],
+    callFee: 1
   },
 
   {
@@ -1507,6 +1554,7 @@ export const pools = [
     status: 'active',
     platform: 'ForTube',
     assets: ['BUSD'],
+    callFee: 1
   },
 
   {
@@ -1533,6 +1581,7 @@ export const pools = [
     status: 'active',
     platform: 'ForTube',
     assets: ['LINK'],
+    callFee: 1
   },
 
   {
@@ -1559,6 +1608,7 @@ export const pools = [
     status: 'active',
     platform: 'ForTube',
     assets: ['DOT'],
+    callFee: 1
   },
 
   {
@@ -1585,6 +1635,7 @@ export const pools = [
     status: 'active',
     platform: 'ForTube',
     assets: ['USDT'],
+    callFee: 1
   },
 
   {
@@ -1611,6 +1662,7 @@ export const pools = [
     status: 'active',
     platform: 'ForTube',
     assets: ['ETH'],
+    callFee: 1
   },
 
   {
@@ -1637,6 +1689,7 @@ export const pools = [
     status: 'active',
     platform: 'ForTube',
     assets: ['BTC'],
+    callFee: 1
   },
 
   {
@@ -1664,6 +1717,7 @@ export const pools = [
     status: 'active',
     platform: 'fry',
     assets: ['BURGER'],
+    callFee: 1
   },
   //
   // < ---- > REFUNDS < ---- >
@@ -1694,6 +1748,7 @@ export const pools = [
     refundContractAddress: '0x9284403F066f9200c1Ad4A6B5b2Dd0195092803E',
     platform: 'Thugs',
     assets: ['DRUGS', 'GUNS'],
+    callFee: 0.5
   },
 
   {
@@ -1722,6 +1777,7 @@ export const pools = [
     refundContractAddress: '0x2fd5caAB20191dcd4423F588e254CC298C7F66A1',
     platform: 'Pancake',
     assets: ['CAKE'],
+    callFee: 0.5
   },
   {
     id: 'fry-burger-v1',
@@ -1747,5 +1803,6 @@ export const pools = [
     status: 'eol',
     platform: 'fry',
     assets: ['BURGER'],
+    callFee: 1
   },
 ];
