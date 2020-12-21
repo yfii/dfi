@@ -35,9 +35,10 @@ const Header = ({ links }) => {
         </Button>
 
         <span>
-          {renderLink('gov', 'gov', 'landmark', classes)}
+          {renderLink('christmas', 'xmas', 'gift', classes)}
           {renderLink('vote', 'vote', 'vote-yea', classes)}
           <Hidden xsDown>
+            {renderLink('gov', 'gov', 'landmark', classes)}
             {renderLink('dashboard', 'stats', 'chart-bar', classes)}
             {renderLink('docs', 'docs', 'book', classes)}
           </Hidden>
@@ -75,6 +76,7 @@ const Header = ({ links }) => {
           <div className={classes.appResponsive}>{links}</div>
           <div style={{ textAlign: "center" }}>
             {renderLinkSidebar('gov', 'gov', 'landmark', classes)}
+            {renderLinkSidebar('christmas', 'xmas', 'gift', classes)}
             {renderLinkSidebar('vote', 'vote', 'vote-yea', classes)}
             {renderLinkSidebar('dashboard', 'stats', 'chart-bar', classes)}
             {renderLinkSidebar('docs', 'docs', 'book', classes)}
