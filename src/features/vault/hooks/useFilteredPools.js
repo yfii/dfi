@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 const initialFilters = {
   hideDecomissioned: true,
   hideZeroBalances: false,
+  hideZeroVaultBalances: false,
 };
 
 const useFilteredPools = (pools, tokens) => {
@@ -20,6 +21,10 @@ const useFilteredPools = (pools, tokens) => {
 
     if (filters.hideZeroBalances) {
       newPools = hideZeroBalances(newPools, tokens);
+    }
+
+    if (filters.hideZeroVaultBalances) {
+      newPools = hideZeroVaultBalances(newPools, tokens);
     }
 
     // Show all vaults to new users
@@ -53,6 +58,18 @@ function hideZeroBalances(pools, tokens) {
 
     if (tokens[pool.earnedToken]) {
       if (tokens[pool.earnedToken].tokenBalance > 1e14) {
+        return true;
+      }
+    }
+
+    return false;
+  });
+}
+
+function hideZeroVaultBalances(pools, tokens) {
+  return pools.filter(pool => {
+    if (tokens[pool.earnedToken]) {
+      if (tokens[pool.earnedToken].tokenBalance > 0) {
         return true;
       }
     }
