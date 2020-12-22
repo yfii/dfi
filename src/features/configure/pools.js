@@ -29,7 +29,7 @@ export const pools = [
 
   {
     id: 'street-twt-bnb',
-    logo: 'thugs/THUGS-BNB.png',
+    logo: 'thugs/TWT-BNB.png',
     name: 'TWT-BNB TLP',
     token: 'TWT-BNB TLP',
     tokenDescription: 'Uses: Traphouse',
@@ -56,7 +56,7 @@ export const pools = [
 
   {
     id: 'street-sxp-bnb',
-    logo: 'thugs/THUGS-BNB.png',
+    logo: 'thugs/SXP-BNB.png',
     name: 'SXP-BNB TLP',
     token: 'SXP-BNB TLP',
     tokenDescription: 'Uses: Traphouse',
@@ -83,7 +83,7 @@ export const pools = [
 
   {
     id: 'street-xvs-bnb',
-    logo: 'thugs/THUGS-BNB.png',
+    logo: 'thugs/XVS-BNB.png',
     name: 'XVS-BNB TLP',
     token: 'XVS-BNB TLP',
     tokenDescription: 'Uses: Traphouse',
@@ -110,7 +110,7 @@ export const pools = [
 
   {
     id: 'street-inj-bnb',
-    logo: 'thugs/THUGS-BNB.png',
+    logo: 'thugs/INJ-BNB.png',
     name: 'INJ-BNB TLP',
     token: 'INJ-BNB TLP',
     tokenDescription: 'Uses: Traphouse',
@@ -137,7 +137,7 @@ export const pools = [
 
   {
     id: 'street-unfi-bnb',
-    logo: 'thugs/THUGS-BNB.png',
+    logo: 'thugs/UNFI-BNB.png',
     name: 'UNFI-BNB TLP',
     token: 'UNFI-BNB TLP',
     tokenDescription: 'Uses: Traphouse',
@@ -164,7 +164,7 @@ export const pools = [
 
   {
     id: 'street-ltc-bnb',
-    logo: 'thugs/THUGS-BNB.png',
+    logo: 'thugs/LTC-BNB.png',
     name: 'LTC-BNB TLP',
     token: 'LTC-BNB TLP',
     tokenDescription: 'Uses: Traphouse',
@@ -191,7 +191,7 @@ export const pools = [
 
   {
     id: 'street-alpha-bnb',
-    logo: 'thugs/THUGS-BNB.png',
+    logo: 'thugs/ALPHA-BNB.png',
     name: 'ALPHA-BNB TLP',
     token: 'ALPHA-BNB TLP',
     tokenDescription: 'Uses: Traphouse',
