@@ -67,7 +67,7 @@ export const pools = [
     earnedTokenAddress: '0x8AE31751A226B0C5357a377E53B6DB12bDF5e64d',
     earnContractAddress: '0x8AE31751A226B0C5357a377E53B6DB12bDF5e64d',
     defaultApy: 3.96657,
-    unstableApy: false,
+    unstableApy: true,
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'thugs',
