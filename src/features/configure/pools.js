@@ -55,7 +55,7 @@ export const pools = [
   },
 
   {
-    id: 'thugs-drugs-guns',
+    id: 'thugs-drugs-drugs',
     logo: 'thugs/DRUGS-V2.png',
     name: 'DRUGS v2',
     token: 'DRUGS v2',
@@ -66,15 +66,14 @@ export const pools = [
     earnedToken: 'mooDrugsGunsV2',
     earnedTokenAddress: '0x8AE31751A226B0C5357a377E53B6DB12bDF5e64d',
     earnContractAddress: '0x8AE31751A226B0C5357a377E53B6DB12bDF5e64d',
-    defaultApy: 3.96657,
-    unstableApy: true,
+    defaultApy: 5.1605,
+    unstableApy: false,
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'thugs',
-    oracleId:
-      '0x339550404Ca4d831D12B1b2e4768869997390010_0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+    oracleId: '0x339550404Ca4d831D12B1b2e4768869997390010_0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
     oraclePrice: 0,
-    fallbackPrice: 0.14,
+    fallbackPrice: 0.10,
     depositsPaused: false,
     status: 'active',
     platform: 'Thugs',
