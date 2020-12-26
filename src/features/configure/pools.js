@@ -24,7 +24,7 @@ export const pools = [
     status: 'active',
     platform: 'Beefy',
     assets: ['BIFI'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -51,7 +51,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['CAKE'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -71,14 +71,96 @@ export const pools = [
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'thugs',
-    oracleId: '0x339550404Ca4d831D12B1b2e4768869997390010_0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+    oracleId:
+      '0x339550404Ca4d831D12B1b2e4768869997390010_0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
     oraclePrice: 0,
-    fallbackPrice: 0.10,
+    fallbackPrice: 0.1,
     depositsPaused: false,
     status: 'active',
     platform: 'Thugs',
     assets: ['DRUGS'],
-    callFee: 0.5
+    callFee: 0.5,
+  },
+
+  {
+    id: 'venus-bch',
+    logo: 'venus/bch.svg',
+    name: 'BCH',
+    token: 'BCH',
+    tokenDescription: 'Uses: Venus',
+    tokenAddress: '0x8fF795a6F4D97E7887C79beA79aba5cc76444aDf',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooVenusBCH',
+    earnedTokenAddress: '0xf19878DE084C3c9753bB0DAD8aC5b9070fb7813c',
+    earnContractAddress: '0xf19878DE084C3c9753bB0DAD8aC5b9070fb7813c',
+    defaultApy: 0.06827,
+    unstableApy: false,
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'pancake',
+    oracleId: 'BCH',
+    oraclePrice: 0,
+    fallbackPrice: 322.417,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Venus',
+    assets: ['BCH'],
+    callFee: 1,
+  },
+
+  {
+    id: 'venus-dot',
+    logo: 'venus/dot.png',
+    name: 'DOT',
+    token: 'DOT',
+    tokenDescription: 'Uses: Venus',
+    tokenAddress: '0x7083609fCE4d1d8Dc0C979AAb8c869Ea2C873402',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooVenusDOT',
+    earnedTokenAddress: '0x2211191ff72505ED54Aa6aD3F6Fcc72c87CAb338',
+    earnContractAddress: '0x2211191ff72505ED54Aa6aD3F6Fcc72c87CAb338',
+    defaultApy: 0.08,
+    unstableApy: false,
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'pancake',
+    oracleId: 'DOT',
+    oraclePrice: 0,
+    fallbackPrice: 5.2253,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Venus',
+    assets: ['DOT'],
+    callFee: 1,
+  },
+
+  {
+    id: 'venus-link',
+    logo: 'venus/link.png',
+    name: 'LINK',
+    token: 'LINK',
+    tokenDescription: 'Uses: Venus',
+    tokenAddress: '0xF8A0BF9cF54Bb92F17374d9e9A321E6a111a51bD',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooVenusLINK',
+    earnedTokenAddress: '0x8da7167860EDfc2bFfd790f217AB5e398803Bbc8',
+    earnContractAddress: '0x8da7167860EDfc2bFfd790f217AB5e398803Bbc8',
+    defaultApy: 0.08585,
+    unstableApy: false,
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'pancake',
+    oracleId: 'LINK',
+    oraclePrice: 0,
+    fallbackPrice: 10.984,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Venus',
+    assets: ['LINK'],
+    callFee: 1,
   },
 
   {
@@ -105,7 +187,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['TWT', 'BNB'],
-    callFee: 1
+    callFee: 1,
   },
 
   {
@@ -132,7 +214,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['SXP', 'BNB'],
-    callFee: 1
+    callFee: 1,
   },
 
   {
@@ -159,7 +241,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['XVS', 'BNB'],
-    callFee: 1
+    callFee: 1,
   },
 
   {
@@ -186,7 +268,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['INJ', 'BNB'],
-    callFee: 1
+    callFee: 1,
   },
 
   {
@@ -213,7 +295,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['UNFI', 'BNB'],
-    callFee: 1
+    callFee: 1,
   },
 
   {
@@ -240,7 +322,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['LTC', 'BNB'],
-    callFee: 1
+    callFee: 1,
   },
 
   {
@@ -267,7 +349,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['ALPHA', 'BNB'],
-    callFee: 1
+    callFee: 1,
   },
 
   {
@@ -294,7 +376,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['YFII', 'BNB'],
-    callFee: 1
+    callFee: 1,
   },
 
   {
@@ -321,7 +403,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['YFI', 'BNB'],
-    callFee: 1
+    callFee: 1,
   },
 
   {
@@ -348,7 +430,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['FIL', 'BNB'],
-    callFee: 1
+    callFee: 1,
   },
 
   {
@@ -375,7 +457,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['BAND', 'BNB'],
-    callFee: 1
+    callFee: 1,
   },
 
   {
@@ -402,7 +484,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['ATOM', 'BNB'],
-    callFee: 1
+    callFee: 1,
   },
 
   {
@@ -429,7 +511,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['VAI', 'BUSD'],
-    callFee: 1
+    callFee: 1,
   },
 
   {
@@ -456,7 +538,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['BROOBEE', 'CAKE'],
-    callFee: 1
+    callFee: 1,
   },
 
   {
@@ -482,7 +564,7 @@ export const pools = [
     status: 'active',
     platform: 'Venus',
     assets: ['BNB'],
-    callFee: 1
+    callFee: 1,
   },
 
   {
@@ -509,10 +591,8 @@ export const pools = [
     status: 'active',
     platform: 'Venus',
     assets: ['BNB'],
-    callFee: 1
+    callFee: 1,
   },
-
-  // Start of new venus vaults
 
   {
     id: 'venus-sxp',
@@ -580,7 +660,7 @@ export const pools = [
     earnedToken: 'mooVenusUSDT',
     earnedTokenAddress: '0x1997D7cF0A63A374A853ca9d5b1dAcCFeCa5cEb8',
     earnContractAddress: '0x1997D7cF0A63A374A853ca9d5b1dAcCFeCa5cEb8',
-    defaultApy: 0.28880,
+    defaultApy: 0.2888,
     unstableApy: false,
     pricePerFullShare: 1,
     tvl: 0,
@@ -757,7 +837,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['ALPHA', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -784,7 +864,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['INJ', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -811,7 +891,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['TWT', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -838,7 +918,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['XVS', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   // Narwhal
@@ -867,7 +947,7 @@ export const pools = [
     status: 'active',
     platform: 'Narwhal',
     assets: ['GOLD', 'BNB'],
-    callFee: 1
+    callFee: 1,
   },
 
   {
@@ -894,7 +974,7 @@ export const pools = [
     status: 'active',
     platform: 'Narwhal',
     assets: ['THUGS', 'NAR'],
-    callFee: 1
+    callFee: 1,
   },
 
   // Bakery
@@ -923,7 +1003,7 @@ export const pools = [
     status: 'active',
     platform: 'Bakery',
     assets: ['BAKE'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -950,7 +1030,7 @@ export const pools = [
     status: 'active',
     platform: 'Bakery',
     assets: ['BAKE', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   // {
@@ -1003,7 +1083,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['BCH', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -1030,7 +1110,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['LINK', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
   {
     id: 'street-nar-bnb',
@@ -1056,7 +1136,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['NAR', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
   {
     id: 'street-bifi-bnb',
@@ -1070,7 +1150,7 @@ export const pools = [
     earnedToken: 'mooStreetBIFI-BNB',
     earnedTokenAddress: '0x29C36e5fcB1dC4a3D4B46C00F82b2cee39c5540e',
     earnContractAddress: '0x29C36e5fcB1dC4a3D4B46C00F82b2cee39c5540e',
-    defaultApy: 3.6350,
+    defaultApy: 3.635,
     unstableApy: false,
     pricePerFullShare: 1,
     tvl: 0,
@@ -1082,7 +1162,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['BIFI', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -1109,7 +1189,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['DRUGS', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -1136,7 +1216,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['THUGS', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -1163,7 +1243,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['CRED', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -1191,7 +1271,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['GUNS', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -1218,7 +1298,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['BUSD', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -1246,7 +1326,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['BTC', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -1274,7 +1354,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['ETH', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -1301,7 +1381,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['THUGS', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -1328,7 +1408,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['THUGS', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -1355,7 +1435,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['DAI', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -1382,7 +1462,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['USDT', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -1409,7 +1489,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['BLIQ', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -1436,7 +1516,7 @@ export const pools = [
     status: 'active',
     platform: 'Thugs',
     assets: ['EOS', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -1463,7 +1543,7 @@ export const pools = [
     status: 'eol',
     platform: 'Thugs',
     assets: ['BHC', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -1491,7 +1571,7 @@ export const pools = [
     status: 'eol',
     platform: 'Thugs',
     assets: ['DRUGS', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -1519,7 +1599,7 @@ export const pools = [
     status: 'eol',
     platform: 'Thugs',
     assets: ['GUNS', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   //
@@ -1550,7 +1630,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['CAKE'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -1578,7 +1658,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['CAKE'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -1606,7 +1686,7 @@ export const pools = [
     status: 'eol',
     platform: 'Pancake',
     assets: ['CAKE'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -1634,7 +1714,7 @@ export const pools = [
     status: 'eol',
     platform: 'Pancake',
     assets: ['CAKE'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -1650,7 +1730,7 @@ export const pools = [
     earnedToken: 'mooPancakeCAKE-BNB',
     earnedTokenAddress: '0x502AB55Cf22f38c4fd8663dEE041A96B72264c53',
     earnContractAddress: '0x502AB55Cf22f38c4fd8663dEE041A96B72264c53',
-    defaultApy: 6.68140,
+    defaultApy: 6.6814,
     unstableApy: false,
     pricePerFullShare: 1,
     tvl: 0,
@@ -1662,7 +1742,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['CAKE', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -1690,7 +1770,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['LINK', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -1718,7 +1798,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['USDT', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -1746,7 +1826,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['BUSD', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -1774,7 +1854,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['USDT', 'BUSD'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -1802,7 +1882,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['ETH', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -1830,7 +1910,7 @@ export const pools = [
     status: 'active',
     platform: 'Pancake',
     assets: ['BTC', 'BNB'],
-    callFee: 0.5
+    callFee: 0.5,
   },
   //
   // < ---- > ForTube < ---- >
@@ -1859,7 +1939,7 @@ export const pools = [
     status: 'active',
     platform: 'ForTube',
     assets: ['FIL'],
-    callFee: 1
+    callFee: 1,
   },
 
   {
@@ -1886,7 +1966,7 @@ export const pools = [
     status: 'active',
     platform: 'ForTube',
     assets: ['ATOM'],
-    callFee: 1
+    callFee: 1,
   },
 
   {
@@ -1913,7 +1993,7 @@ export const pools = [
     status: 'active',
     platform: 'ForTube',
     assets: ['XTZ'],
-    callFee: 1
+    callFee: 1,
   },
 
   {
@@ -1928,7 +2008,7 @@ export const pools = [
     earnedToken: 'mooBUSD',
     earnedTokenAddress: '0xD6fca61Edb1cD0259320A6E0899E8aD1044BBCda',
     earnContractAddress: '0xD6fca61Edb1cD0259320A6E0899E8aD1044BBCda',
-    defaultApy: 0.060850,
+    defaultApy: 0.06085,
     unstableApy: false,
     pricePerFullShare: 1,
     tvl: 0,
@@ -1940,7 +2020,7 @@ export const pools = [
     status: 'active',
     platform: 'ForTube',
     assets: ['BUSD'],
-    callFee: 1
+    callFee: 1,
   },
 
   {
@@ -1967,7 +2047,7 @@ export const pools = [
     status: 'active',
     platform: 'ForTube',
     assets: ['LINK'],
-    callFee: 1
+    callFee: 1,
   },
 
   {
@@ -1994,7 +2074,7 @@ export const pools = [
     status: 'active',
     platform: 'ForTube',
     assets: ['DOT'],
-    callFee: 1
+    callFee: 1,
   },
 
   {
@@ -2021,7 +2101,7 @@ export const pools = [
     status: 'active',
     platform: 'ForTube',
     assets: ['USDT'],
-    callFee: 1
+    callFee: 1,
   },
 
   {
@@ -2048,7 +2128,7 @@ export const pools = [
     status: 'active',
     platform: 'ForTube',
     assets: ['ETH'],
-    callFee: 1
+    callFee: 1,
   },
 
   {
@@ -2075,7 +2155,7 @@ export const pools = [
     status: 'active',
     platform: 'ForTube',
     assets: ['BTC'],
-    callFee: 1
+    callFee: 1,
   },
 
   {
@@ -2103,7 +2183,7 @@ export const pools = [
     status: 'eol',
     platform: 'fry',
     assets: ['BURGER'],
-    callFee: 1
+    callFee: 1,
   },
   //
   // < ---- > REFUNDS < ---- >
@@ -2134,7 +2214,7 @@ export const pools = [
     refundContractAddress: '0x9284403F066f9200c1Ad4A6B5b2Dd0195092803E',
     platform: 'Thugs',
     assets: ['DRUGS', 'GUNS'],
-    callFee: 0.5
+    callFee: 0.5,
   },
 
   {
@@ -2163,7 +2243,7 @@ export const pools = [
     refundContractAddress: '0x2fd5caAB20191dcd4423F588e254CC298C7F66A1',
     platform: 'Pancake',
     assets: ['CAKE'],
-    callFee: 0.5
+    callFee: 0.5,
   },
   {
     id: 'fry-burger-v1',
@@ -2189,6 +2269,6 @@ export const pools = [
     status: 'eol',
     platform: 'fry',
     assets: ['BURGER'],
-    callFee: 1
+    callFee: 1,
   },
 ];
