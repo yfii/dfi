@@ -225,7 +225,7 @@ export const pools = [
     tokenAddress: '0x8Ea481FE8e35c74355DaF9B5f6b3b69F3c864aFc',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
-    earnedToken: 'mooStreetUNFI-BNB',
+    earnedToken: 'mooStreetLTC-BNB',
     earnedTokenAddress: '0x40BBdaD2e12A3E9900F2e6e6A5B605c36182BEa0',
     earnContractAddress: '0x40BBdaD2e12A3E9900F2e6e6A5B605c36182BEa0',
     defaultApy: 0.74373,
