@@ -11,7 +11,7 @@ export const pools = [
     earnedToken: 'mooBIFI',
     earnedTokenAddress: '0xf7069e41C57EcC5F122093811d8c75bdB5f7c14e',
     earnContractAddress: '0xf7069e41C57EcC5F122093811d8c75bdB5f7c14e',
-    defaultApy: 0.189061,
+    defaultApy: 0.0487558,
     unstableApy: false,
     pricePerFullShare: 1,
     tvl: 0,
