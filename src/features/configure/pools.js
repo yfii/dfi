@@ -1361,8 +1361,8 @@ export const pools = [
   {
     id: 'street-usdt-bnb',
     logo: 'thugs/USDT-BNB.png',
-    name: 'USDT-BNB LP',
-    token: 'USDT-BNB LP',
+    name: 'USDT-BNB TLP',
+    token: 'USDT-BNB TLP',
     tokenDescription: 'Uses: Traphouse',
     tokenAddress: '0x0d29724d1834Fc65869812BAe5d63dce8aCB7921',
     tokenDecimals: 18,
