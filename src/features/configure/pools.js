@@ -84,7 +84,7 @@ export const pools = [
 
   {
     id: 'venus-bch',
-    logo: 'venus/bch.jpg',
+    logo: 'venus/bch.svg',
     name: 'BCH',
     token: 'BCH',
     tokenDescription: 'Uses: Venus',
