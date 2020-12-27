@@ -24,6 +24,7 @@ export const assets = [
   'GOLD',
   'GUNS',
   'INJ',
+  'JETS',
   'LINK',
   'LTC',
   'NAR',
