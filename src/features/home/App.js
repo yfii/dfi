@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StylesProvider } from '@material-ui/core/styles';
+import { ThemeProvider, StylesProvider } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/core/styles';
 
 import Header from 'components/Header/Header';
@@ -18,6 +18,8 @@ import Pastures from '../../components/Pastures/Pastures';
 import appStyle from './jss/appStyle.js';
 
 import { useConnectWallet, useDisconnectWallet } from './redux/hooks';
+import useNightMode from './hooks/useNightMode';
+import createTheme from './jss/appTheme';
 
 const useStyles = makeStyles(appStyle);
 
@@ -34,6 +36,10 @@ export default function App({ children }) {
   } = useConnectWallet();
   const { disconnectWallet } = useDisconnectWallet();
   const [web3Modal, setModal] = useState(null);
+  const [isModalShown, setModalShown] = useState(false);
+
+  const { isNightMode, setNightMode } = useNightMode();
+  const theme = createTheme(isNightMode);
 
   useEffect(() => {
     const newModal = new Web3Modal({
@@ -54,7 +60,7 @@ export default function App({ children }) {
             },
           },
         },
-        "custom-binance": {
+        'custom-binance': {
           display: {
             name: 'Binance',
             description: t('Binance Chain Wallet'),
@@ -65,18 +71,20 @@ export default function App({ children }) {
             const provider = window.BinanceChain;
             await provider.enable();
             return provider;
-          }
+          },
         },
       },
+      theme: isNightMode ? 'dark' : 'light',
     });
     setModal(newModal);
-  }, [setModal, t]);
+  }, [setModal, t, isNightMode]);
 
   useEffect(() => {
-    if (web3Modal && (web3Modal.cachedProvider || window.ethereum)) {
+    if (web3Modal && (web3Modal.cachedProvider || window.ethereum) && !isModalShown) {
+      setModalShown(true);
       connectWallet(web3Modal);
     }
-  }, [web3Modal, connectWallet]);
+  }, [web3Modal, connectWallet, isModalShown]);
 
   useEffect(() => {
     if (
@@ -92,29 +100,35 @@ export default function App({ children }) {
 
   return (
     <StylesProvider injectFirst>
-      <SnackbarProvider>
-        <div className={classes.page}>
-          <Header
-            links={
-              <HeaderLinks
-                address={address}
-                connected={connected}
-                connectWallet={() => connectWallet(web3Modal)}
-                disconnectWallet={() => disconnectWallet(web3, web3Modal)}
-              />
-            }
-          />
-          <div className={classes.container}>
-            <div className={classes.children}>
-              {Boolean(networkId === Number(process.env.REACT_APP_NETWORK_ID)) && children}
-              <Notifier />
+      <ThemeProvider theme={theme}>
+        <SnackbarProvider>
+          <div className={classes.page} style={{ backgroundColor: theme.palette.background.default }}>
+            <Header
+              links={
+                <HeaderLinks
+                  address={address}
+                  connected={connected}
+                  connectWallet={() => connectWallet(web3Modal)}
+                  disconnectWallet={() => disconnectWallet(web3, web3Modal)}
+                  isNightMode={isNightMode}
+                  setNightMode={() => setNightMode(!isNightMode)}
+                />
+              }
+              isNightMode={isNightMode}
+              setNightMode={() => setNightMode(!isNightMode)}
+            />
+            <div className={classes.container}>
+              <div className={classes.children}>
+                {Boolean(networkId === Number(process.env.REACT_APP_NETWORK_ID)) && children}
+                <Notifier />
+              </div>
             </div>
-          </div>
 
-          <Footer />
-          <Pastures />
-        </div>
-      </SnackbarProvider>
+            <Footer />
+            <Pastures />
+          </div>
+        </SnackbarProvider>
+      </ThemeProvider>
     </StylesProvider>
   );
 }

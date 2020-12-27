@@ -28,6 +28,7 @@ const Pool = ({ pool, index, tokens, contractApy }) => {
       <Accordion
         expanded={isOpen}
         className={classes.accordion}
+        square={true}
         TransitionProps={{ unmountOnExit: true }}
       >
         <PoolSummary

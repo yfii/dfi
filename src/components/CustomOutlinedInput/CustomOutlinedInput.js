@@ -1,9 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
-import { primaryColor } from 'assets/jss/material-kit-pro-react';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   showDetail: {
     alignItems: 'center',
     justifyContent: 'space-around',
@@ -11,17 +10,17 @@ const useStyles = makeStyles({
     height: '56px',
     borderRadius: '12px',
     fontSize: '18px',
-    color: primaryColor[0],
+    color: theme.palette.text.primary,
     lineHeight: '24px',
     fontWeight: '500',
     outline: 'none',
   },
   focused: {
     '& fieldset': {
-      border: `1px solid${primaryColor[0]} !important`,
+      border: `1px solid${theme.palette.text.primary} !important`,
     },
   },
-});
+}));
 
 export default function CustomOutlinedInput(props) {
   const commonStyle = useStyles();

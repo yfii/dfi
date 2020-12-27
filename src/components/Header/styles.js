@@ -69,7 +69,7 @@ const styles = theme => ({
       borderRadius: '3px',
       textTransform: 'none',
       whiteSpace: 'nowrap',
-      color: 'inherit',
+      color: theme.palette.text.primary,
       alignItems: 'flex-end',
       '&:hover,&:focus': {
         color: 'inherit',
@@ -152,7 +152,7 @@ const styles = theme => ({
   },
   dark: {
     color: whiteColor,
-    backgroundColor: '#fbf9f6',
+    backgroundColor: theme.palette.background.default,
     boxShadow: '0px 0px',
   },
   white: {
@@ -230,10 +230,17 @@ const styles = theme => ({
     '&:hover': {
       textDecoration: 'underline',
     },
+    '& span': {
+      color: theme.palette.text.primary
+    }
   },
   icon: {
+    color: theme.palette.text.primary,
     marginRight: '0.5rem',
     minWidth: '24px',
+  },
+  iconButton: {
+    color: theme.palette.text.primary,
   },
 });
 

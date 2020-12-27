@@ -8,12 +8,14 @@ import Hidden from '@material-ui/core/Hidden';
 import Drawer from '@material-ui/core/Drawer';
 import Menu from '@material-ui/icons/Menu';
 import Close from '@material-ui/icons/Close';
+import WbSunny from '@material-ui/icons/WbSunny';
+import NightsStay from '@material-ui/icons/NightsStay';
 
 import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-const Header = ({ links }) => {
+const Header = ({ links, isNightMode, setNightMode }) => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const classes = useStyles();
 
@@ -49,7 +51,7 @@ const Header = ({ links }) => {
           <div className={classes.collapse}>{links}</div>
         </Hidden>
         <Hidden mdUp>
-          <IconButton color="inherit" aria-label="open drawer" onClick={handleDrawerToggle}>
+          <IconButton className={classes.iconButton} aria-label='open drawer' onClick={handleDrawerToggle}>
             <Menu />
           </IconButton>
         </Hidden>
@@ -81,6 +83,9 @@ const Header = ({ links }) => {
             {renderLinkSidebar('dashboard', 'stats', 'chart-bar', classes)}
             {renderLinkSidebar('docs', 'docs', 'book', classes)}
             {renderLinkSidebar('buy', 'buy', 'dollar-sign', classes)}
+            <IconButton onClick={setNightMode} className={classes.icon}>
+              {isNightMode ? <WbSunny /> : <NightsStay />}
+            </IconButton>
           </div>
         </Drawer>
       </Hidden>

@@ -23,7 +23,7 @@ import {
   hexToRgb,
 } from 'assets/jss/material-kit-pro-react.js';
 
-const styles = {
+const styles = (theme) => ({
   button: {
     minHeight: 'auto',
     minWidth: 'auto',
@@ -57,7 +57,7 @@ const styles = {
     cursor: 'pointer',
     '&:hover,&:focus': {
       color: whiteColor,
-      backgroundColor: grayColor[0],
+      backgroundColor: theme.palette.background.dark,
       boxShadow:
         '0 14px 26px -12px rgba(' +
         hexToRgb(grayColor[0]) +
@@ -115,6 +115,7 @@ const styles = {
       hexToRgb(primaryColor[0]) +
       ', 0.12)',
     '&:hover,&:focus': {
+      border: `1px solid ${primaryColor[0]}`,
       backgroundColor: primaryColor[0],
       boxShadow:
         '0 14px 26px -12px rgba(' +
@@ -735,6 +736,6 @@ const styles = {
       },
     },
   },
-};
+});
 
 export default styles;

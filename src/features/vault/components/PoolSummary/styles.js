@@ -1,16 +1,14 @@
-const styles = {
+const styles = (theme) => ({
   details: {
     display: 'flex',
     alignItems: 'center',
-    background: '#FBF6F0',
-    borderRadius: '8px',
+    background: theme.palette.background.primary,
   },
   detailsPaused: {
     display: 'flex',
     alignItems: 'center',
-    background: '#FCE57E',
-    borderRadius: '0',
+    background: theme.palette.background.paused,
   },
-};
+});
 
 export default styles;

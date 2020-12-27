@@ -1,35 +1,35 @@
-import { primaryColor, secondaryColor, hoverColor } from 'assets/jss/material-kit-pro-react.js';
+import { primaryColor } from 'assets/jss/material-kit-pro-react.js';
 
-const styles = {
+const styles = (theme) => ({
   iconContainerSecond: {
     width: '48px',
     height: '48px',
-    backgroundColor: secondaryColor[0],
+    backgroundColor: theme.palette.background.primary,
     borderRadius: '8px',
-    color: primaryColor[0],
+    color: theme.palette.text.primary,
 
     '& i': {
       fontSize: '24px',
     },
     '&:hover,&:focus': {
-      backgroundColor: hoverColor[0],
+      backgroundColor: theme.palette.background.hover,
     },
   },
   iconContainerPrimary: {
     width: '48px',
     height: '48px',
-    backgroundColor: secondaryColor[0],
+    backgroundColor: theme.palette.background.primary,
     border: '2px',
     borderColor: primaryColor[0],
     borderRadius: '8px',
-    color: '#fff',
+    color: theme.palette.text.primary,
     '& i': {
       fontSize: '24px',
     },
     '&:hover,&:focus': {
-      background: hoverColor[0],
+      background: theme.palette.background.hover,
     },
   },
-};
+});
 
 export default styles;
