@@ -111,8 +111,8 @@ export const pools = [
   {
     id: 'jetfuel-bhc-bnb',
     logo: 'jetfuel/bhc-bnb.png',
-    name: 'BHC-BNB LP',
-    token: 'BHC-BNB LP',
+    name: 'BHC-BNB LP jf',
+    token: 'BHC-BNB LP jf',
     tokenDescription: 'Uses: Traphouse',
     tokenAddress: '0xd46E7f33f8788f87D6017074dC4e4d781D3df91E',
     tokenDecimals: 18,
