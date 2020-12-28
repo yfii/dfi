@@ -52,6 +52,8 @@ const HeaderLinks = ({ connected, address, connectWallet, disconnectWallet }) =>
         return i18n.changeLanguage('hi').then(() => setLanguage(event));
       case 'Bahasa Indonesia':
         return i18n.changeLanguage('id').then(() => setLanguage(event));
+      case 'Italiano':
+        return i18n.changeLanguage('it').then(() => setLanguage(event));
       case '한글':
         return i18n.changeLanguage('ko').then(() => setLanguage(event));
       case 'Português':
@@ -87,6 +89,7 @@ const HeaderLinks = ({ connected, address, connectWallet, disconnectWallet }) =>
             'Français',
             'हिन्दी',
             'Bahasa Indonesia',
+            'Italiano',
             '한글',
             'Português',
             'Svenska',
