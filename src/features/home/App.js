@@ -38,6 +38,7 @@ export default function App({ children }) {
   useEffect(() => {
     const newModal = new Web3Modal({
       network: 'binance',
+      cacheProvider: true,
       providerOptions: {
         injected: {
           display: {
