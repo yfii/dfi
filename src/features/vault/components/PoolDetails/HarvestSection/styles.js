@@ -9,7 +9,7 @@ const styles = theme => ({
     marginBottom: '10px',
     fontSize: '1rem',
     lineHeight: '20px',
-    color: primaryColor[1],
+    color: theme.palette.text.secondary,
     fontWeight: '500',
   },
   showDetailBottom: {
@@ -42,12 +42,15 @@ const styles = theme => ({
   },
   showDetailButtonOutlined: {
     backgroundColor: 'transparent',
-    border: `1px solid ${primaryColor[0]}`,
+    border: `1px solid ${theme.palette.primary.main}`,
     color: primaryColor[0],
     '&:hover': {
       '& .MuiButton-label': {
         color: 'white',
       },
+    },
+    '& .MuiTouchRipple-root span': {
+      backgroundColor: primaryColor[0],
     },
   },
   showDetailButtonContained: {
@@ -59,7 +62,7 @@ const styles = theme => ({
   title: {
     fontSize: '18px',
     fontWeight: 'bold',
-    color: primaryColor[0],
+    color: theme.palette.text.primary,
     lineHeight: '18px',
     letterSpacing: 0,
     wordBreak: 'break-word',
@@ -68,9 +71,8 @@ const styles = theme => ({
   subtitle: {
     fontSize: '14px',
     fontWeight: '400',
-    color: primaryColor[0],
+    color: theme.palette.text.secondary,
     lineHeight: '20px',
-    opacity: '0.4',
     letterSpacing: 0,
   },
 });

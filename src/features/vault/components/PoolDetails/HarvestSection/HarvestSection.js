@@ -58,7 +58,6 @@ const HarvestSection = ({ pool, index }) => {
         <DialogActions>
           <Button
             className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined} `}
-            type="button"
             color="primary"
             onClick={() => setShowHarvestModal(false)}
           >
@@ -66,8 +65,6 @@ const HarvestSection = ({ pool, index }) => {
           </Button>
           <Button
             className={`${classes.showDetailButton} ${classes.showDetailButtonContained} `}
-            type="button"
-            color="primary"
             onClick={() => onHarvest()}
           >
             {t('Confirm')}

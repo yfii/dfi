@@ -36,6 +36,7 @@ const Filters = ({
       <Grid item xs={4} md={2}>
         <FormControl>
           <FormControlLabel
+            className={classes.label}
             control={
               <Checkbox
                 checked={filters.hideZeroBalances}
@@ -52,6 +53,7 @@ const Filters = ({
       <Grid item xs={4} md={2}>
         <FormControl>
           <FormControlLabel
+            className={classes.label}
             control={
               <Checkbox
                 checked={!filters.hideDecomissioned}
@@ -64,10 +66,11 @@ const Filters = ({
           />
         </FormControl>
       </Grid>
-            
+
       <Grid item xs={4} md={2}>
         <FormControl>
           <FormControlLabel
+            className={classes.label}
             control={
               <Checkbox
                 checked={filters.hideZeroVaultBalances}

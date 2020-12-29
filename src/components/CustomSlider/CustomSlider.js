@@ -1,14 +1,14 @@
 import React from 'react';
 import Slider from '@material-ui/core/Slider';
 import { makeStyles } from '@material-ui/core/styles';
-import { primaryColor, secondaryColor, successColor } from 'assets/jss/material-kit-pro-react';
+import { secondaryColor, successColor } from 'assets/jss/material-kit-pro-react';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   mark: {
     height: '0',
   },
   markLabel: {
-    color: primaryColor[0],
+    color: theme.palette.text.primary,
     weight: 400,
     fontSize: '12px',
   },
@@ -32,7 +32,7 @@ const useStyles = makeStyles({
   active: {
     color: successColor[1],
   },
-});
+}));
 
 export default function CustomSlider(props) {
   const classes = useStyles();

@@ -11,13 +11,13 @@ const styles = theme => ({
     letterSpacing: '0',
     lineHeight: '32px',
     fontWeight: '550',
+    color: theme.palette.text.primary,
   },
   subtitles: {
     display: 'flex',
     justifyContent: 'space-between',
   },
   subtitle: {
-    opacity: '0.4',
     fontSize: '14px',
     letterSpacing: '0',
     lineHeight: '8px',
@@ -25,7 +25,7 @@ const styles = theme => ({
       lineHeight: '16px',
     },
     fontWeight: '550',
-    color: '#000',
+    color: theme.palette.text.secondary,
   },
 });
 

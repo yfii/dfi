@@ -4,7 +4,6 @@ import Hidden from '@material-ui/core/Hidden';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import { primaryColor } from 'assets/jss/material-kit-pro-react.js';
 
 import styles from './styles';
 
@@ -19,16 +18,14 @@ const PoolTitle = ({ name, logo, description, url }) => {
               imgProps={{ style: { objectFit: 'contain' } }}
               src={require(`../../../../../images/${logo}`)} />
       <div className={classes.texts}>
-        <Typography className={classes.title} variant="body2" gutterBottom>
+        <Typography className={classes.title} variant='body2' gutterBottom>
           {name}
           <Hidden smUp>
             <i
               style={{
-                color: primaryColor[0],
-                marginLeft: '4px',
                 visibility: Boolean(url) ? 'visible' : 'hidden',
               }}
-              className={'far fa-question-circle'}
+              className={classes.icon + ' far fa-question-circle'}
               onClick={e => {
                 e.stopPropagation();
                 window.open(url);
@@ -36,7 +33,7 @@ const PoolTitle = ({ name, logo, description, url }) => {
             />
           </Hidden>
         </Typography>
-        <Typography className={classes.subtitle} variant="body2">
+        <Typography className={classes.subtitle} variant='body2'>
           {description}
         </Typography>
       </div>
