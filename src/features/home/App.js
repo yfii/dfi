@@ -36,7 +36,6 @@ export default function App({ children }) {
   } = useConnectWallet();
   const { disconnectWallet } = useDisconnectWallet();
   const [web3Modal, setModal] = useState(null);
-  const [isModalShown, setModalShown] = useState(false);
 
   const { isNightMode, setNightMode } = useNightMode();
   const theme = createTheme(isNightMode);
@@ -74,17 +73,15 @@ export default function App({ children }) {
           },
         },
       },
-      theme: isNightMode ? 'dark' : 'light',
     });
     setModal(newModal);
-  }, [setModal, t, isNightMode]);
+  }, [setModal, t]);
 
   useEffect(() => {
-    if (web3Modal && (web3Modal.cachedProvider || window.ethereum) && !isModalShown) {
-      setModalShown(true);
+    if (web3Modal && (web3Modal.cachedProvider || window.ethereum)) {
       connectWallet(web3Modal);
     }
-  }, [web3Modal, connectWallet, isModalShown]);
+  }, [web3Modal, connectWallet]);
 
   useEffect(() => {
     if (
