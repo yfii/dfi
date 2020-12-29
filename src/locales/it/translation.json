@@ -1,5 +1,5 @@
 {
-  "Disclaimer": "Utilizzare Smart Contracts, Token, e Cripto comporta sempre dei rischi. Documentati personalmente prima di investire.",
+  "Disclaimer": "Utilizzare Smart Contract, Token, e Cripto comporta sempre dei rischi. Documentati personalmente prima di investire.",
   "Network-Error": "Errore di rete",
   "Vault-Wallet": "Portafoglio",
   "Vault-Balance": "Saldo",
@@ -21,7 +21,7 @@
   "Vault-HarvestDescription": "Effettuando il raccolto, stai aiutando tutti a ricevere i profitti generati in questa cassaforte. Riceverai {{callFee}}% dei guadagni della cassaforte realizzati dall'ultimo raccolto.",
   "Vault-LastHarvest": "Ultimo raccolto",
   "Vault-MainTitle": "Casseforti",
-  "Vault-SecondTitle": "Deposita e guadagna soldi",
+  "Vault-SecondTitle": "Deposita e ottieni una rendita passiva",
   "Hide-Zero-Balances": "Nascondi saldi nulli",
   "Hide-Zero-Vault-Balances": "Casseforti con deposito",
   "Retired-Vaults": "Casseforti ritirate",
