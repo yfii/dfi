@@ -29,7 +29,7 @@ export const pools = [
 
   {
     id: 'thugs-drugs-bhc',
-    logo: 'thugs/DRUGS-V2.png',
+    logo: 'thugs/DRUGS.png',
     name: 'DRUGS BHC',
     token: 'DRUGS​',
     tokenDescription: 'Uses: Traphouse',
@@ -57,7 +57,7 @@ export const pools = [
 
   {
     id: 'thugs-drugs-jgn',
-    logo: 'thugs/DRUGS-V2.png',
+    logo: 'thugs/DRUGS.png',
     name: 'DRUGS JGN',
     token: 'DRUGS​​',
     tokenDescription: 'Uses: Traphouse',
@@ -382,7 +382,7 @@ export const pools = [
 
   {
     id: 'thugs-drugs-drugs',
-    logo: 'thugs/DRUGS-V2.png',
+    logo: 'thugs/DRUGS.png',
     name: 'DRUGS v2',
     token: 'DRUGS v2',
     tokenDescription: 'Uses: Traphouse',
