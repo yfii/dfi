@@ -111,7 +111,7 @@ export const pools = [
   },
 
   {
-    id: 'thugs-drugs-drugs',
+    id: 'thugs-drugs-jgn',
     logo: 'thugs/DRUGS-V2.png',
     name: 'DRUGS JGN',
     token: 'DRUGS',
