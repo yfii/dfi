@@ -1,6 +1,4 @@
-import { primaryColor } from 'assets/jss/material-kit-pro-react.js';
-
-const styles = {
+const styles = (theme) => ({
   container: {
     display: 'flex',
   },
@@ -10,7 +8,7 @@ const styles = {
   title: {
     fontSize: '18px',
     fontWeight: 'bold',
-    color: primaryColor[0],
+    color: theme.palette.text.primary,
     lineHeight: '18px',
     letterSpacing: 0,
     wordBreak: 'break-word',
@@ -19,11 +17,14 @@ const styles = {
   subtitle: {
     fontSize: '14px',
     fontWeight: '400',
-    color: primaryColor[0],
+    color: theme.palette.text.secondary,
     lineHeight: '14px',
-    opacity: '0.4',
     letterSpacing: 0,
   },
-};
+  icon: {
+    color: theme.palette.text.primary,
+    marginLeft: '4px',
+  },
+});
 
 export default styles;

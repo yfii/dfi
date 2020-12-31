@@ -4,7 +4,6 @@ import {
   whiteColor,
   mlAuto,
   hexToRgb,
-  secondaryColor,
 } from 'assets/jss/material-kit-pro-react.js';
 
 const styles = theme => ({
@@ -212,21 +211,29 @@ const styles = theme => ({
     borderRadius: '.5em',
   },
   cta: {
-    color: '#000',
+    color: theme.palette.text.primary,
   },
   walletDisplay: {
     width: '100%',
     margin: '12px 0',
     fontSize: '14px',
     fontWeight: 'bold',
-    backgroundColor: '#F8F2EC',
+    backgroundColor: theme.palette.background.secondary,
     color: '#fff',
     '&:hover': {
-      backgroundColor: secondaryColor[2],
+      backgroundColor: theme.palette.background.border,
     },
     [theme.breakpoints.up('md')]: {
       width: '180px',
     },
+  },
+  icon: {
+    color: theme.palette.text.primary,
+    width: '24px',
+    marginRight: '4px',
+  },
+  iconButton: {
+    color: theme.palette.text.primary,
   },
 });
 

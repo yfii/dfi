@@ -4,6 +4,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Avatar from '@material-ui/core/Avatar';
+import Hidden from '@material-ui/core/Hidden';
+import IconButton from '@material-ui/core/IconButton';
+import { WbSunny, NightsStay } from '@material-ui/icons';
 import CustomDropdown from 'components/CustomDropdown/CustomDropdown.js';
 import Button from 'components/CustomButtons/Button.js';
 import { useTranslation } from 'react-i18next';
@@ -12,7 +15,7 @@ import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-const HeaderLinks = ({ connected, address, connectWallet, disconnectWallet }) => {
+const HeaderLinks = ({ connected, address, connectWallet, disconnectWallet, isNightMode, setNightMode }) => {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const [lng, setLanguage] = useState('en');
@@ -52,6 +55,8 @@ const HeaderLinks = ({ connected, address, connectWallet, disconnectWallet }) =>
         return i18n.changeLanguage('hi').then(() => setLanguage(event));
       case 'Bahasa Indonesia':
         return i18n.changeLanguage('id').then(() => setLanguage(event));
+      case 'Italiano':
+        return i18n.changeLanguage('it').then(() => setLanguage(event));
       case '한글':
         return i18n.changeLanguage('ko').then(() => setLanguage(event));
       case 'Português':
@@ -70,6 +75,13 @@ const HeaderLinks = ({ connected, address, connectWallet, disconnectWallet }) =>
 
   return (
     <List className={classes.list + ' ' + classes.mlAuto}>
+      <Hidden smDown>
+        <ListItem className={classes.listItem}>
+          <IconButton onClick={setNightMode} className={classes.iconButton}>
+            {isNightMode ? <WbSunny /> : <NightsStay />}
+          </IconButton>
+        </ListItem>
+      </Hidden>
       <ListItem className={classes.listItem}>
         <CustomDropdown
           navDropdown
@@ -87,6 +99,7 @@ const HeaderLinks = ({ connected, address, connectWallet, disconnectWallet }) =>
             'Français',
             'हिन्दी',
             'Bahasa Indonesia',
+            'Italiano',
             '한글',
             'Português',
             'Svenska',
@@ -127,13 +140,7 @@ const HeaderLinks = ({ connected, address, connectWallet, disconnectWallet }) =>
             </>
           ) : (
             <>
-              <i
-                className={'far fa-question-circle'}
-                style={{
-                  width: '24px',
-                  marginRight: '4px',
-                }}
-              />
+              <i className={classes.icon + ' far fa-question-circle'} />
               {t('Vault-Wallet')}
             </>
           )}

@@ -5,6 +5,7 @@ const endpoints = {
   bandchain: 'https://poa-api.bandchain.org',
   bakeryLp:  'https://api.beefy.finance/bakery/lps',
   coingecko: 'https://api.coingecko.com/api/v3/simple/price',
+  jetfuelLp: 'https://api.beefy.finance/jetfuel/lps',
   narwhalLp: 'https://api.beefy.finance/narwhal/lps',
   pancake:   'https://api.beefy.finance/pancake/price',
   pancakeLp: 'https://api.beefy.finance/pancake/lps',
@@ -127,6 +128,10 @@ export const fetchPrice = async ({ oracle, id }) => {
     
     case 'coingecko':
       price = await fetchCoingecko(id);
+      break;
+
+    case 'jetfuel-lp':
+      price = await fetchLP(id, endpoints.jetfuelLp);
       break;
 
     case 'narwhal-lp':

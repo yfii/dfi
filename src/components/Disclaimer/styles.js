@@ -8,12 +8,11 @@ const styles = theme => ({
   },
   disclaimer: {
     padding: '12px',
-    border: '1px solid #F8F2EC',
     borderRadius: '0',
-    background: '#F8F2EC',
+    background: theme.palette.background.secondary,
     marginBottom: '2rem',
     fontWeight: 900,
-    color: '#000',
+    color: theme.palette.text.primary,
   },
 });
 
