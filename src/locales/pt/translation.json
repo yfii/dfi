@@ -1,4 +1,5 @@
 {
+  "Disclaimer": "Usar smart contracts, tokens, e crypto é sempre um risco. Faça sua própria pesquisa(DYOR) antes de investir.",
   "Network-Error": "Erro de conexão",
   "Vault-Wallet": "Carteira",
   "Vault-Balance": "Saldo",
@@ -13,7 +14,7 @@
   "Vault-Withdrawing": "Retirando...",
   "Vault-WithdrawButton": "Retirar",
   "Vault-WithdrawButtonAll": "Retirar tudo",
-  "Vault-WithdrawFee": "Há uma taxa de retirada de 0,1% em todos os cofres",
+  "Vault-WithdrawFee": "Há uma taxa de retirada de 0.05%-0.1% em todos os cofres",
   "Vault-MainTitle": "Cofres",
   "Vault-SecondTitle": "Deposite e Ganhe Dinheiro",
   "Hide-Zero-Balances": "Ocultar Ativos Com Saldo Zero",
