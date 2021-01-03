@@ -18,7 +18,7 @@ const WBNB = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c';
 const BUSD = '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56';
 const WBNB_BUSD = `${WBNB}_${BUSD}`;
 
-const CACHE_TIMEOUT = 30 * 60 * 1000;
+const CACHE_TIMEOUT_MS = 30 * 60 * 1000; // 30 minutes
 const priceCache = {
   cache: new Map(),
   lastUpdated: undefined
@@ -26,11 +26,18 @@ const priceCache = {
 
 function isCached(id) {
   return priceCache.cache.has(id)
-  // return cache.get(id).t + CACHE_TIMEOUT > Date.now();
 }
 
 function getCachedPrice(id) {
   return priceCache.cache.get(id);
+}
+
+function maybeUpdateCache() {
+  const currentTimestamp = new Date()
+  if (priceCache.lastUpdated && currentTimestamp.getTime() > priceCache.lastUpdated.getTime() + CACHE_TIMEOUT_MS) {
+    initializePriceCache()
+    console.trace('price cache updated')
+  }
 }
 
 // Fetch prices from different sources
@@ -127,6 +134,9 @@ const oracleEndpoints = {
 }
 
 export async function initializePriceCache () {
+  const currentTimestamp = new Date()
+  priceCache.lastUpdated = currentTimestamp
+
   const oracleToIds = new Map();
   pools.forEach(pool => {
     if (!oracleToIds.has(pool.oracle)) {
@@ -136,11 +146,9 @@ export async function initializePriceCache () {
   })
 
   const promises = [...oracleToIds.keys()].map(key => oracleEndpoints[key](oracleToIds.get(key)));
-  const currentTimestamp = new Date()
   const results = await Promise.all(promises);
   const allPrices = results.reduce((accPrices, curPrices) => ({...accPrices, ...curPrices}), {});
   [...oracleToIds.values()].flat().forEach(id => priceCache.cache.set(id, allPrices[id]));
-  priceCache.lastUpdated = currentTimestamp
 }
 
 
@@ -155,6 +163,8 @@ export const fetchPrice = async ({ id }) => {
     console.trace(id, 'price not cached');
     counter++;
   }
+
+  maybeUpdateCache()
 
   return getCachedPrice(id) ? getCachedPrice(id) : 0;
 };
