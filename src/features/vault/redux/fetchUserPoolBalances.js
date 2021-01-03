@@ -1,17 +1,17 @@
 import { useCallback } from 'react';
-import { vaultABI } from '../../configure';
+import { vaultABI, erc20ABI } from '../../configure';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
-import { VAULT_FETCH_POOL_BALANCES_BEGIN, VAULT_FETCH_POOL_BALANCES_SUCCESS, VAULT_FETCH_POOL_BALANCES_FAILURE } from './constants';
-import { fetchTvl, fetchPrice } from '../../web3';
+import { VAULT_FETCH_USER_POOL_BALANCES_BEGIN, VAULT_FETCH_USER_POOL_BALANCES_SUCCESS, VAULT_FETCH_USER_POOL_BALANCES_FAILURE } from './constants';
+import { fetchPricePerFullShare, fetchAllowance } from '../../web3';
 import async from 'async';
 
 // FIXME: this function now getches all the information related to the pool, not only balances
 
-export function fetchPoolBalances(data) {
+export function fetchUserPoolBalances(data) {
   return dispatch => {
     // optionally you can have getState as the second argument
     dispatch({
-      type: VAULT_FETCH_POOL_BALANCES_BEGIN,
+      type: VAULT_FETCH_USER_POOL_BALANCES_BEGIN,
     });
 
     // Return a promise so that you could control UI flow without states in the store.
@@ -21,16 +21,20 @@ export function fetchPoolBalances(data) {
     const promise = new Promise((resolve, reject) => {
       // doRequest is a placeholder Promise. You should replace it with your own logic.
       // args.error here is only for test coverage purpose.
-      const { web3, pools } = data;
+      const { address, web3, pools } = data;
       async.map(
         pools,
         (pool, callback) => {
           const earnContract = new web3.eth.Contract(vaultABI, pool.earnContractAddress);
+          const erc20Contract = pool.tokenAddress ? new web3.eth.Contract(erc20ABI, pool.tokenAddress) : null;
           async.parallel(
             [
               callbackInner => {
-                fetchTvl({
-                  contract: earnContract,
+                fetchAllowance({
+                  web3,
+                  contractAddress: pool.earnContractAddress,
+                  contract: erc20Contract,
+                  address,
                 })
                   .then(data => {
                     return callbackInner(null, data);
@@ -40,8 +44,9 @@ export function fetchPoolBalances(data) {
                   });
               },
               callbackInner => {
-                fetchPrice({
-                  id: pool.oracleId,
+                fetchPricePerFullShare({
+                  contract: earnContract,
+                  address,
                 })
                   .then(data => {
                     return callbackInner(null, data);
@@ -55,8 +60,8 @@ export function fetchPoolBalances(data) {
               if (error) {
                 console.log(error);
               }
-              pool.tvl = data[0] || 0;
-              pool.oraclePrice = data[1] || 0;
+              pool.allowance = data[0] || 0;
+              pool.pricePerFullShare = data[1] || 1;
               callback(null, pool);
             }
           );
@@ -64,12 +69,12 @@ export function fetchPoolBalances(data) {
         (error, pools) => {
           if (error) {
             dispatch({
-              type: VAULT_FETCH_POOL_BALANCES_FAILURE,
+              type: VAULT_FETCH_USER_POOL_BALANCES_FAILURE,
             });
             return reject(error.message || error);
           }
           dispatch({
-            type: VAULT_FETCH_POOL_BALANCES_SUCCESS,
+            type: VAULT_FETCH_USER_POOL_BALANCES_SUCCESS,
             data: pools,
           });
           resolve();
@@ -81,55 +86,55 @@ export function fetchPoolBalances(data) {
   };
 }
 
-export function useFetchPoolBalances() {
+export function useFetchUserPoolBalances() {
   // args: false value or array
   // if array, means args passed to the action creator
   const dispatch = useDispatch();
 
-  const { pools, fetchPoolBalancesPending } = useSelector(
+  const { pools, fetchUserPoolBalancesPending } = useSelector(
     state => ({
       pools: state.vault.pools,
-      fetchPoolBalancesPending: state.vault.fetchPoolBalancesPending,
+      fetchUserPoolBalancesPending: state.vault.fetchUserPoolBalancesPending,
     }),
     shallowEqual
   );
 
   const boundAction = useCallback(
     data => {
-      return dispatch(fetchPoolBalances(data));
+      return dispatch(fetchUserPoolBalances(data));
     },
     [dispatch]
   );
 
   return {
     pools,
-    fetchPoolBalances: boundAction,
-    fetchPoolBalancesPending,
+    fetchUserPoolBalances: boundAction,
+    fetchUserPoolBalancesPending,
   };
 }
 
 export function reducer(state, action) {
   switch (action.type) {
-    case VAULT_FETCH_POOL_BALANCES_BEGIN:
+    case VAULT_FETCH_USER_POOL_BALANCES_BEGIN:
       // Just after a request is sent
       return {
         ...state,
-        fetchPoolBalancesPending: true,
+        fetchUserPoolBalancesPending: true,
       };
 
-    case VAULT_FETCH_POOL_BALANCES_SUCCESS:
+    case VAULT_FETCH_USER_POOL_BALANCES_SUCCESS:
       // The request is success
       return {
         ...state,
         pools: action.data,
-        fetchPoolBalancesPending: false,
+        fetchUserPoolBalancesPending: false,
       };
 
-    case VAULT_FETCH_POOL_BALANCES_FAILURE:
+    case VAULT_FETCH_USER_POOL_BALANCES_FAILURE:
       // The request is failed
       return {
         ...state,
-        fetchPoolBalancesPending: false,
+        fetchUserPoolBalancesPending: false,
       };
 
     default:
