@@ -27,14 +27,12 @@ export default function Pools() {
   const classes = useStyles();
 
   useEffect(() => {
-    fetchPoolBalances({ web3: web3Default, pools });
     if (address && web3) {
       fetchBalances({ address, web3, tokens });
       fetchUserPoolBalances({ address, web3, pools });
       fetchContractApy();
       const id = setInterval(() => {
         fetchBalances({ address, web3, tokens });
-        fetchPoolBalances({ web3: web3Default, pools });
         fetchUserPoolBalances({ address, web3, pools });
         fetchContractApy();
       }, FETCH_INTERVAL_MS);
@@ -48,6 +46,12 @@ export default function Pools() {
   useEffect(() => {
     fetchContractApy();
   }, [pools, fetchContractApy]);
+  
+  useEffect(() => {
+    if (pools.length > 0 && pools[0].oraclePrice === 0) {
+      fetchPoolBalances({ web3: web3Default, pools });
+    }
+  }, [pools, fetchPoolBalances]);
 
   return (
     <Grid container className={classes.container}>
