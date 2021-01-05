@@ -23,9 +23,6 @@ const styles = theme => ({
   },
   showResponsiveButtonCon: {
     width: '160px',
-    [theme.breakpoints.up('sm')]: {
-      maxWidth: '75px',
-    },
     [theme.breakpoints.up('md')]: {
       maxWidth: '80px',
     },

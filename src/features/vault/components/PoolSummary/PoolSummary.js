@@ -7,7 +7,7 @@ import BigNumber from 'bignumber.js';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { formatApy, formatTvl, calcDaily } from 'features/helpers/format';
-import { format, byDecimals } from 'features/helpers/bignumber';
+import { byDecimals } from 'features/helpers/bignumber';
 import styles from './styles';
 import PoolTitle from './PoolTitle/PoolTitle';
 import LabeledStat from './LabeledStat/LabeledStat';
@@ -43,7 +43,7 @@ const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, d
         />
         <Grid item md={7} xs={4}>
           <Grid item container justify="space-between">
-            <Hidden xsDown>
+            <Hidden smDown>
               <LabeledStat value={formatDecimals(balanceSingle)} label={t('Vault-Balance')} xs={5} md={3} />
               <LabeledStat
                 value={formatDecimals(
@@ -85,7 +85,7 @@ const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, d
           isOpen={isOpen}
         />
 
-        <Hidden smUp>
+        <Hidden mdUp>
           <Grid item xs={12} style={{ display: 'flex' }}>
             <LabeledStat value={formatDecimals(balanceSingle)} label={t('Vault-Balance')} xs={6} />
             <LabeledStat
