@@ -19,6 +19,7 @@ const initialState = {
   contractApy: {},
   fetchContractApyPending: false,
   fetchPoolBalancesPending: false,
+  fetchUserPoolBalancesPending: false,
   fetchBalancesPending: false,
   fetchApprovalPending: {},
   fetchDepositPending: {},
