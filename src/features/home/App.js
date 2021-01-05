@@ -79,12 +79,6 @@ export default function App({ children }) {
   }, [setModal, t]);
 
   useEffect(() => {
-    if (web3Modal && (web3Modal.cachedProvider || window.ethereum)) {
-      connectWallet(web3Modal);
-    }
-  }, [web3Modal, connectWallet]);
-
-  useEffect(() => {
     if (
       web3 &&
       address &&
