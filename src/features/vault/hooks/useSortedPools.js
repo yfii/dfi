@@ -31,8 +31,8 @@ const handleApy = (pools, apys) => {
 const handleTvl = pools => {
   let newPools = [...pools];
   return newPools.sort((a, b) => {
-    const aPrice = a.oraclePrice || a.fallbackPrice;
-    const bPrice = b.oraclePrice || b.fallbackPrice;
+    const aPrice = a.oraclePrice;
+    const bPrice = b.oraclePrice;
     return b.tvl * bPrice - a.tvl * aPrice;
   });
 };

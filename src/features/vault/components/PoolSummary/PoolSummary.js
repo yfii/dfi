@@ -71,7 +71,7 @@ const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, d
                 md={2}
               />
               <LabeledStat
-                value={formatTvl(pool.tvl, pool.oraclePrice, pool.fallbackPrice)}
+                value={formatTvl(pool.tvl, pool.oraclePrice)}
                 label={t('Vault-TVL')}
                 xs={5}
                 md={2}
@@ -113,7 +113,7 @@ const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, d
               xs={4}
             />
             <LabeledStat
-              value={formatTvl(pool.tvl, pool.oraclePrice, pool.fallbackPrice)}
+              value={formatTvl(pool.tvl, pool.oraclePrice)}
               label={t('Vault-TVL')}
               xs={4}
             />

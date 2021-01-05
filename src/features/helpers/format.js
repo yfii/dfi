@@ -11,9 +11,9 @@ export const formatApy = (apy, fallbackApy) => {
   return `${num.toFixed(2)}${units[order]}%`;
 };
 
-export const formatTvl = (tvl, oraclePrice, fallbackPrice) => {
+export const formatTvl = (tvl, oraclePrice) => {
   // TODO: bignum?
-  tvl *= oraclePrice || fallbackPrice;
+  tvl *= oraclePrice;
 
   const order = Math.floor(Math.log10(tvl) / 3);
   if (order < 0) {
@@ -27,7 +27,7 @@ export const formatTvl = (tvl, oraclePrice, fallbackPrice) => {
   return prefix + num.toFixed(2) + units[order];
 };
 
-export const formatGlobalTvl = (tvl) => formatTvl(tvl, 1, 1);
+export const formatGlobalTvl = (tvl) => formatTvl(tvl, 1);
 
 export const calcDaily = (apy, fallbackApy) => {
   if (!apy) {
