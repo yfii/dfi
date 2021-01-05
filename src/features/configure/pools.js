@@ -1958,7 +1958,7 @@ export const pools = [
   },
 
   {
-    id: 'street-bhc-bnb',
+    id: 'street-bhc-bnb-v1',
     logo: 'thugs/BHC-BNB.png',
     name: 'BHC-BNB LP ss',
     token: 'BHC-BNB LP ss',
