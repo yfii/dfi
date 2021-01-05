@@ -32,6 +32,7 @@ export const assets = [
   'THUGS',
   'TWT',
   'UNFI',
+  'UNI',  
   'USDT',
   'VAI',
   'XTZ',
