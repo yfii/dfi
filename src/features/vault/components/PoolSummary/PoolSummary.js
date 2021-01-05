@@ -43,7 +43,7 @@ const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, d
         />
         <Grid item md={7} xs={4}>
           <Grid item container justify="space-between">
-            <Hidden xsDown>
+            <Hidden smDown>
               <LabeledStat value={formatDecimals(balanceSingle)} label={t('Vault-Balance')} xs={5} md={3} />
               <LabeledStat
                 value={formatDecimals(
@@ -85,7 +85,7 @@ const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, d
           isOpen={isOpen}
         />
 
-        <Hidden smUp>
+        <Hidden mdUp>
           <Grid item xs={12} style={{ display: 'flex' }}>
             <LabeledStat value={formatDecimals(balanceSingle)} label={t('Vault-Balance')} xs={6} />
             <LabeledStat

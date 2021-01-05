@@ -117,7 +117,7 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
   };
 
   return (
-    <Grid item xs={12} sm={shouldHideFromHarvest(pool.id) ? 6 : 5} className={classes.sliderDetailContainer}>
+    <Grid item xs={12} md={shouldHideFromHarvest(pool.id) ? 6 : 5} className={classes.sliderDetailContainer}>
       <div className={classes.showDetailLeft}>
         {t('Vault-Balance')}:{balanceSingle.toFormat(4)} {pool.token}
       </div>

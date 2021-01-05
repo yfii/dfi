@@ -71,7 +71,7 @@ const HarvestSection = ({ pool, index }) => {
           </Button>
         </DialogActions>
       </Dialog>
-      <Grid item xs={12} sm={2} className={classes.sliderDetailContainer}>
+      <Grid item xs={12} md={2} className={classes.sliderDetailContainer}>
         <div className={classes.showDetailBottom}>
           <div className={classes.showDetailLeft}>
             {/* {t('Vault-LastHarvest')}: */}

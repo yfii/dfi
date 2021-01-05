@@ -107,7 +107,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
   };
 
   return (
-    <Grid item xs={12} sm={shouldHideFromHarvest(pool.name) ? 6 : 5} className={classes.sliderDetailContainer}>
+    <Grid item xs={12} md={shouldHideFromHarvest(pool.name) ? 6 : 5} className={classes.sliderDetailContainer}>
       <div className={classes.showDetailLeft}>
         Deposited:{' '}
         {byDecimals(
