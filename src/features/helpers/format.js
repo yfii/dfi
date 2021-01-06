@@ -4,7 +4,7 @@ export const formatApy = (apy, fallbackApy) => {
   }
   apy *= 100;
 
-  const order = Math.floor(Math.log10(apy) / 3);
+  const order = apy < 1 ? 0 : Math.floor(Math.log10(apy) / 3);
   const units = ['', 'k', 'M', 'B', 'T'];
   const num = apy / 1000 ** order;
 
