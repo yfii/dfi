@@ -980,7 +980,7 @@ export const pools = [
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'pancake-lp',
-    oracleId: 'cake-vai-bnb',
+    oracleId: 'cake-vai-busd',
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
