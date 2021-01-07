@@ -1,5 +1,32 @@
 export const pools = [
   {
+    id: 'bifi-maxi',
+    logo: 'bifi/BIFI.png',
+    name: 'BIFI Maxi',
+    token: 'BIFI',
+    tokenDescription: 'Uses: Beefy.Finance',
+    tokenAddress: '0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/bifi-maxi',
+    earnedToken: 'mooBIFI',
+    earnedTokenAddress: '0xf7069e41C57EcC5F122093811d8c75bdB5f7c14e',
+    earnContractAddress: '0xf7069e41C57EcC5F122093811d8c75bdB5f7c14e',
+    defaultApy: 0.0487558,
+    unstableApy: false,
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'thugs',
+    oracleId:
+      '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c_0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Beefy',
+    assets: ['BIFI'],
+    callFee: 0.5,
+  },
+
+  {
     id: 'street-bhc-bnb',
     logo: 'thugs/BHC-BNB.png',
     name: 'BHC-BNB TLP',
@@ -178,32 +205,6 @@ export const pools = [
     platform: 'Pancake',
     assets: ['NYA', 'CAKE'],
     callFee: 1,
-  },
-  {
-    id: 'bifi-maxi',
-    logo: 'bifi/BIFI.png',
-    name: 'BIFI Maxi',
-    token: 'BIFI',
-    tokenDescription: 'Uses: Beefy.Finance',
-    tokenAddress: '0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/bifi-maxi',
-    earnedToken: 'mooBIFI',
-    earnedTokenAddress: '0xf7069e41C57EcC5F122093811d8c75bdB5f7c14e',
-    earnContractAddress: '0xf7069e41C57EcC5F122093811d8c75bdB5f7c14e',
-    defaultApy: 0.0487558,
-    unstableApy: false,
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'thugs',
-    oracleId:
-      '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c_0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
-    oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
-    platform: 'Beefy',
-    assets: ['BIFI'],
-    callFee: 0.5,
   },
 
   {
@@ -1274,8 +1275,6 @@ export const pools = [
     assets: ['XRP'],
     callFee: 1,
   },
-
-  // End of venus vaults.
 
   {
     id: 'cake-alpha-bnb',
