@@ -28,16 +28,25 @@ const Header = ({ links, isNightMode, setNightMode }) => {
       <Toolbar className={classes.container}>
         <Button className={classes.title}>
           <Hidden xsDown>
-            <img alt="BIFI" src={require(`images/BIFI.svg`)} height={"40px"} className={classes.logo} />
+            <img
+              alt="BIFI"
+              src={require(`images/BIFI.svg`)}
+              height={'40px'}
+              className={classes.logo}
+            />
             <a href="https://beefy.finance">beefy.finance</a>
           </Hidden>
           <Hidden smUp>
-            <img alt="BIFI" src={require(`images/BIFI.svg`)} height={"35px"} className={classes.logo} />
+            <img
+              alt="BIFI"
+              src={require(`images/BIFI.svg`)}
+              height={'35px'}
+              className={classes.logo}
+            />
           </Hidden>
         </Button>
 
         <span>
-          {renderLink('christmas', 'xmas', 'gift', classes)}
           {renderLink('vote', 'vote', 'vote-yea', classes)}
           <Hidden xsDown>
             {renderLink('gov', 'gov', 'landmark', classes)}
@@ -51,7 +60,11 @@ const Header = ({ links, isNightMode, setNightMode }) => {
           <div className={classes.collapse}>{links}</div>
         </Hidden>
         <Hidden mdUp>
-          <IconButton className={classes.iconButton} aria-label='open drawer' onClick={handleDrawerToggle}>
+          <IconButton
+            className={classes.iconButton}
+            aria-label="open drawer"
+            onClick={handleDrawerToggle}
+          >
             <Menu />
           </IconButton>
         </Hidden>
@@ -76,9 +89,8 @@ const Header = ({ links, isNightMode, setNightMode }) => {
             <Close />
           </IconButton>
           <div className={classes.appResponsive}>{links}</div>
-          <div style={{ textAlign: "center" }}>
+          <div style={{ textAlign: 'center' }}>
             {renderLinkSidebar('gov', 'gov', 'landmark', classes)}
-            {renderLinkSidebar('christmas', 'xmas', 'gift', classes)}
             {renderLinkSidebar('vote', 'vote', 'vote-yea', classes)}
             {renderLinkSidebar('dashboard', 'stats', 'chart-bar', classes)}
             {renderLinkSidebar('docs', 'docs', 'book', classes)}
@@ -95,7 +107,13 @@ const Header = ({ links, isNightMode, setNightMode }) => {
 
 const renderLink = (name, label, icon, classes) => {
   return (
-    <a href={getLinkUrl(name)} target="_blank" rel="noopener noreferrer" className={classes.link} style={{ marginLeft: "5px", marginRight: "5px" }}>
+    <a
+      href={getLinkUrl(name)}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={classes.link}
+      style={{ marginLeft: '5px', marginRight: '5px' }}
+    >
       <i className={`fas fa-${icon} ${classes.icon}`} />
       <span>{label}</span>
     </a>
@@ -104,16 +122,16 @@ const renderLink = (name, label, icon, classes) => {
 
 const renderLinkSidebar = (name, label, icon, classes) => {
   return (
-    <div style={{ width: "100%", paddingTop: "10px" }}>
+    <div style={{ width: '100%', paddingTop: '10px' }}>
       {renderLink(name, label, icon, classes)}
     </div>
   );
 };
 
-const getLinkUrl = (name) => {
-  return name === "buy" 
-    ? "https://streetswap.vip/#/swap?inputCurrency=BNB&outputCurrency=0xca3f508b8e4dd382ee878a314789373d80a5190a" 
-    : `https://${name}.beefy.finance`
-}
+const getLinkUrl = name => {
+  return name === 'buy'
+    ? 'https://streetswap.vip/#/swap?inputCurrency=BNB&outputCurrency=0xca3f508b8e4dd382ee878a314789373d80a5190a'
+    : `https://${name}.beefy.finance`;
+};
 
 export default Header;
