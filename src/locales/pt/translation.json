@@ -15,13 +15,21 @@
   "Vault-WithdrawButton": "Retirar",
   "Vault-WithdrawButtonAll": "Retirar tudo",
   "Vault-WithdrawFee": "Há uma taxa de retirada de 0.05%-0.1% em todos os cofres",
+  "Vault-Harvesting": "Colhendo...",
+  "Vault-HarvestButton": "Colheita",
+  "Vault-HarvestConfirm": "Confirmar Colheita?",
+  "Vault-HarvestDescription": "Ao realizar a colheita, você está ajudando todos a coletar os lucros gerados neste cofre. Você irá receber {{callFee}}% dos ganhos do cofre desde a última colheita.",
+  "Vault-LastHarvest": "Última Colheita",
   "Vault-MainTitle": "Cofres",
   "Vault-SecondTitle": "Deposite e Ganhe Dinheiro",
   "Hide-Zero-Balances": "Ocultar Ativos Com Saldo Zero",
+  "Hide-Zero-Vault-Balances": "Cofres com Depósitos",
   "Retired-Vaults": "Cofres Aposentados",
   "Filters-Platform": "Plataforma",
   "Filters-Asset": "Ativos",
   "Filters-Sort": "Ordenar por",
   "Filters-All": "Todos",
-  "Filters-Default": "Padrão"
+  "Filters-Default": "Padrão",
+  "Confirm": "Confirmar",
+  "Cancel": "Cancelar"
 }
