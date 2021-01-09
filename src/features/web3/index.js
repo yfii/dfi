@@ -10,3 +10,4 @@ export { fetchPrice } from './fetchPrice';
 export { fetchPricePerFullShare } from './fetchPricePerFullShare';
 export { fetchTvl } from './fetchTvl';
 export { harvest } from './harvest';
+export { createWeb3Modal } from './createWeb3Modal';

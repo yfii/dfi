@@ -10,13 +10,11 @@ import { useTranslation } from 'react-i18next';
 import { SnackbarProvider } from 'notistack';
 import { Notifier } from 'features/common';
 
-import Web3Modal from 'web3modal';
-import WalletConnectProvider from '@walletconnect/web3-provider';
-
 import Footer from '../../components/Footer/Footer';
 import Pastures from '../../components/Pastures/Pastures';
 import appStyle from './jss/appStyle.js';
 
+import { createWeb3Modal } from '../web3';
 import { useConnectWallet, useDisconnectWallet } from './redux/hooks';
 import useNightMode from './hooks/useNightMode';
 import createTheme from './jss/appTheme';
@@ -41,41 +39,7 @@ export default function App({ children }) {
   const theme = createTheme(isNightMode);
 
   useEffect(() => {
-    const newModal = new Web3Modal({
-      network: 'binance',
-      cacheProvider: true,
-      providerOptions: {
-        injected: {
-          display: {
-            name: 'Injected',
-            description: t('Home-BrowserWallet'),
-          },
-        },
-        walletconnect: {
-          package: WalletConnectProvider,
-          options: {
-            rpc: {
-              1: 'https://bsc-dataseed.binance.org/',
-              56: 'https://bsc-dataseed.binance.org/',
-            },
-          },
-        },
-        'custom-binance': {
-          display: {
-            name: 'Binance',
-            description: t('Binance Chain Wallet'),
-            logo: require(`images/binance-wallet.png`),
-          },
-          package: 'binance',
-          connector: async (ProviderPackage, options) => {
-            const provider = window.BinanceChain;
-            await provider.enable();
-            return provider;
-          },
-        },
-      },
-    });
-    setModal(newModal);
+    setModal(createWeb3Modal(t));
   }, [setModal, t]);
 
   useEffect(() => {
