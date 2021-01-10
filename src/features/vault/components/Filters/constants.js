@@ -26,17 +26,22 @@ export const assets = [
   'GUNS',
   'INJ',
   'JETS',
+  'JGN',
   'LINK',
   'LTC',
   'NAR',
+  'NYA',
+  'REEF',
+  'STAX',
   'SXP',
   'THUGS',
   'TWT',
   'UNFI',
-  'UNI',  
+  'UNI',
+  'USDC',
   'USDT',
   'VAI',
-  'XTZ',
+  'XRP',
   'XVS',
   'YFI',
   'YFII',
@@ -50,14 +55,7 @@ export const platforms = [
   'Narwhal',
   'Pancake',
   'Thugs',
-  'Venus'
+  'Venus',
 ];
 
-export const stables = [
-  'BUSD',
-  'USDT',
-  'USDC',
-  'DAI',
-  'VAI',
-  'QUSD',
-]
+export const stables = ['BUSD', 'USDT', 'USDC', 'DAI', 'VAI', 'QUSD'];
