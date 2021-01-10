@@ -27,6 +27,33 @@ export const pools = [
   },
 
   {
+    id: 'thugs-drugs-btri',
+    logo: 'thugs/DRUGS.png',
+    name: 'DRUGS bTRI',
+    token: 'DRUGS​​​',
+    tokenDescription: 'Uses: Traphouse',
+    tokenAddress: '0x339550404Ca4d831D12B1b2e4768869997390010',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooDrugsbTRI',
+    earnedTokenAddress: '',
+    earnContractAddress: '',
+    defaultApy: 10.6562,
+    unstableApy: false,
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'thugs',
+    oracleId:
+      '0x339550404Ca4d831D12B1b2e4768869997390010_0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Thugs',
+    assets: ['DRUGS'],
+    callFee: 0.5,
+  },
+
+  {
     id: 'cake-bscx-bnb',
     logo: 'cake/bscx-bnb.svg',
     name: 'BSCX-BNB LP',
