@@ -4,6 +4,7 @@ export const assets = [
   'BAKE',
   'BAND',
   'BCH',
+  'BDO',
   'BHC',
   'BIFI',
   'BLIQ',

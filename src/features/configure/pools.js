@@ -27,7 +27,7 @@ export const pools = [
   },
 
   {
-    id: 'bdollar-bdo-bnb',
+    id: 'cake-bdo-bnb',
     logo: 'bdollar/bdo-bnb.png',
     name: 'BDO-BNB LP',
     token: 'BDO-BNB LP',
@@ -42,7 +42,7 @@ export const pools = [
     unstableApy: false,
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake-lp',
+    oracle: 'bdollar-lp',
     oracleId: 'cake-bdo-bnb',
     oraclePrice: 0,
     depositsPaused: false,
