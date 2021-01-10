@@ -27,6 +27,32 @@ export const pools = [
   },
 
   {
+    id: 'cake-bdo-bnb',
+    logo: 'bdollar/bdo-bnb.png',
+    name: 'BDO-BNB LP',
+    token: 'BDO-BNB LP',
+    tokenDescription: 'Uses: Pancake',
+    tokenAddress: '0x74690f829fec83ea424ee1F1654041b2491A7bE9',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooBdollarBDO-BNB',
+    earnedTokenAddress: '0x2B19461954cCBa9e1b60bD0bC6453FeaC8aa1a17',
+    earnContractAddress: '0x2B19461954cCBa9e1b60bD0bC6453FeaC8aa1a17',
+    defaultApy: 19.79,
+    unstableApy: false,
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'pancake-lp',
+    oracleId: 'cake-bdo-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['BDO', 'BNB'],
+    callFee: 0.5,
+  },
+
+  {
     id: 'cake-bscx-bnb',
     logo: 'cake/bscx-bnb.svg',
     name: 'BSCX-BNB LP',
@@ -2549,32 +2575,6 @@ export const pools = [
   //
   // < ---- > REFUNDS < ---- >
   //
-
-  {
-    id: 'cake-bdo-bnb',
-    logo: 'bdollar/bdo-bnb.png',
-    name: 'BDO-BNB LP',
-    token: 'BDO-BNB LP',
-    tokenDescription: 'Uses: Pancake',
-    tokenAddress: '0x74690f829fec83ea424ee1F1654041b2491A7bE9',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooBdollarBDO-BNB',
-    earnedTokenAddress: '0x2B19461954cCBa9e1b60bD0bC6453FeaC8aa1a17',
-    earnContractAddress: '0x2B19461954cCBa9e1b60bD0bC6453FeaC8aa1a17',
-    defaultApy: 19.79,
-    unstableApy: false,
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'pancake-lp',
-    oracleId: 'cake-bdo-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'active',
-    platform: 'Pancake',
-    assets: ['BDO', 'BNB'],
-    callFee: 0.5,
-  },
   
   {
     id: 'thugs-drugs-guns-v1',
