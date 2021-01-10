@@ -9,6 +9,7 @@ export const assets = [
   'BLIQ',
   'BNB',
   'BROOBEE',
+  'BSCX',
   'BTC',
   'BURGER',
   'BUSD',
