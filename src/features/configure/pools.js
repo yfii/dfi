@@ -38,7 +38,7 @@ export const pools = [
     earnedToken: 'mooDrugsbTRI',
     earnedTokenAddress: '0x616aa813c04Fa7c432657b2CD1a2fB8E46ca8889',
     earnContractAddress: '0x616aa813c04Fa7c432657b2CD1a2fB8E46ca8889',
-    defaultApy: 10.6562,
+    defaultApy: 4.75,
     unstableApy: false,
     pricePerFullShare: 1,
     tvl: 0,
