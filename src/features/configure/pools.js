@@ -38,7 +38,7 @@ export const pools = [
     earnedToken: 'mooVenusBETH',
     earnedTokenAddress: '0xB38D32336538559Ce6680952B0Be4917ed015c39',
     earnContractAddress: '0xB38D32336538559Ce6680952B0Be4917ed015c39',
-    defaultApy: 0.2447,
+    defaultApy: 0.1077,
     unstableApy: false,
     pricePerFullShare: 1,
     tvl: 0,
