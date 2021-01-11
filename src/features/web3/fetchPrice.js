@@ -5,6 +5,7 @@ import { pools } from '../configure/pools'
 const endpoints = {
   bandchain: 'https://poa-api.bandchain.org',
   bakeryLp:  'https://api.beefy.finance/bakery/lps',
+  bakery:    'https://api.beefy.finance/bakery/price',
   bdollarLp: 'https://api.beefy.finance/bdollar/lps',
   coingecko: 'https://api.coingecko.com/api/v3/simple/price',
   jetfuelLp: 'https://api.beefy.finance/jetfuel/lps',
@@ -122,9 +123,20 @@ const fetchLP = async (endpoint) => {
   }
 };
 
+const fetchBakery = async () => {
+  try {
+    const response = await axios.get(endpoints.bakery);
+    return response.data;
+  } catch (err) {
+    console.error(err);
+    return {};
+  }
+};
+
 const oracleEndpoints = {
   'band': (ids) => fetchBand(ids),
   'bakery-lp': () => fetchLP(endpoints.bakeryLp),
+  'bakery': () => fetchBakery(),
   'bdollar-lp':() => fetchLP(endpoints.bdollarLp),
   'coingecko': (ids) => fetchCoingecko(ids),
   'jetfuel-lp': () => fetchLP(endpoints.jetfuelLp),
