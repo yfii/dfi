@@ -4,8 +4,8 @@ import { pools } from '../configure/pools'
 
 const endpoints = {
   bandchain: 'https://poa-api.bandchain.org',
-  bakeryLp:  'https://api.beefy.finance/bakery/lps',
   bakery:    'https://api.beefy.finance/bakery/price',
+  bakeryLp:  'https://api.beefy.finance/bakery/lps',
   bdollarLp: 'https://api.beefy.finance/bdollar/lps',
   coingecko: 'https://api.coingecko.com/api/v3/simple/price',
   jetfuelLp: 'https://api.beefy.finance/jetfuel/lps',
