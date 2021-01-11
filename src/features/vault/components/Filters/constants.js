@@ -34,6 +34,7 @@ export const assets = [
   'NAR',
   'NYA',
   'REEF',
+  'SBDO',
   'STAX',
   'SXP',
   'TEN',
