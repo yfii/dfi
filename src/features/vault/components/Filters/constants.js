@@ -6,6 +6,7 @@ export const assets = [
   'BAND',
   'BCH',
   'BDO',
+  'BETH',
   'BHC',
   'BIFI',
   'BLIQ',
