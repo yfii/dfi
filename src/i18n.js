@@ -13,6 +13,7 @@ import translationIT from './locales/it/translation.json';
 import translationKO from './locales/ko/translation.json';
 import translationPT from './locales/pt/translation.json';
 import translationSE from './locales/se/translation.json';
+import translationTR from './locales/tr/translation.json';
 import translationUK from './locales/uk/translation.json';
 import translationZH from './locales/zh/translation.json';
 
@@ -28,6 +29,7 @@ const resources = {
   ko: { translation: translationKO },
   pt: { translation: translationPT },
   se: { translation: translationSE },
+  tr: { translation: translationTR },
   uk: { translation: translationUK },
   zh: { translation: translationZH },
   // TODO: more translations
