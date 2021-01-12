@@ -27,7 +27,7 @@ export const pools = [
   },
 
   {
-    id: 'bdollar-sbdo-busd',
+    id: 'cake-sbdo-busd',
     logo: 'bdollar/sbdo.png',
     name: 'SBDO-BUSD LP',
     token: 'SBDO-BUSD LP',
@@ -53,7 +53,7 @@ export const pools = [
   },
 
   {
-    id: 'bdollar-bdo-busd',
+    id: 'cake-bdo-busd',
     logo: 'bdollar/sbdo.png',
     name: 'BDO-BUSD LP',
     token: 'BDO-BUSD LP',
@@ -79,7 +79,7 @@ export const pools = [
   },
 
   {
-    id: 'bdollar-bdo-bfi',
+    id: 'cake-bdo-bfi',
     logo: 'bdollar/bdo.png',
     name: 'BDO-BFI LP',
     token: 'BDO-BFI LP',
@@ -105,7 +105,7 @@ export const pools = [
   },
 
   {
-    id: 'bdollar-bdo-bnb',
+    id: 'cake-bdo-bnb',
     logo: 'bdollar/bdo.png',
     name: 'BDO-BNB LP',
     token: 'BDO-BNB LP',
