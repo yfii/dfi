@@ -567,8 +567,8 @@ export const pools = [
     oracleId:
       '0x339550404Ca4d831D12B1b2e4768869997390010_0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Thugs',
     assets: ['DRUGS'],
     callFee: 0.5,
