@@ -43,7 +43,7 @@ export const pools = [
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'bdollar-lp',
-    oracleId: 'cake-bdo-bnb-sbdo',
+    oracleId: 'cake-bdo-bnb',
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
