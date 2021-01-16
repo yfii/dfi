@@ -9,6 +9,7 @@
   "Vault-Approving": "Aprovando...",
   "Vault-ApproveButton": "Aprovar",
   "Vault-ApprovalSuccess": "Aprovado com sucesso",
+  "Vault-ApprovalError": "Erro ao aprovar: {{error}}",
   "Vault-DepositButton": "Depósito",
   "Vault-DepositButtonAll": "Depositar tudo",
   "Vault-Deposited": "Depositado",

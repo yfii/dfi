@@ -47,7 +47,7 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
       index,
     })
       .then(() => enqueueSnackbar(t('Vault-ApprovalSuccess'), { variant: 'success' }))
-      .catch(error => enqueueSnackbar(`Approval error: ${error}`, { variant: 'error' }));
+      .catch(error => enqueueSnackbar(t('Vault-ApprovalError', { error }), { variant: 'error' }));
   };
 
   const onDeposit = isAll => {
@@ -79,7 +79,7 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
         index,
       })
         .then(() => enqueueSnackbar(t('Vault-DepositSuccess'), { variant: 'success' }))
-        .catch(error => enqueueSnackbar(`Deposit error: ${error}`, { variant: 'error' }));
+        .catch(error => enqueueSnackbar(t('Vault-DepositError', { error }), { variant: 'error' }));
     } else {
       fetchDepositBnb({
         address,
