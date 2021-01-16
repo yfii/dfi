@@ -54,6 +54,7 @@ export const assets = [
 
 export const platforms = [
   'Bakery',
+  'bDollar',
   'Beefy',
   'ForTube',
   'JetFuel',

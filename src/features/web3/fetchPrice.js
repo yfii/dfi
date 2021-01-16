@@ -38,7 +38,7 @@ function maybeUpdateCache() {
   const currentTimestamp = new Date()
   if (priceCache.lastUpdated && currentTimestamp.getTime() > priceCache.lastUpdated.getTime() + CACHE_TIMEOUT_MS) {
     initializePriceCache()
-    console.trace('price cache updated')
+    // console.trace('price cache updated')
   }
 }
 
@@ -174,7 +174,7 @@ export const fetchPrice = async ({ id }) => {
   
   let counter = 0 // safe guard, though it shouldn't happen
   while (!isCached(id) && counter < 10) {
-    console.trace(id, 'price not cached');
+    // console.trace(id, 'price not cached');
     counter++;
   }
 
