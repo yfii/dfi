@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/core/styles';
 
 import styles from './styles';
@@ -7,6 +8,7 @@ const useStyles = makeStyles(styles);
 
 const Footer = () => {
   const classes = useStyles();
+  const { t } = useTranslation();
 
   return (
     <div className={classes.root}>
@@ -19,7 +21,7 @@ const Footer = () => {
           className={classes.link}
         >
           <i className={`fas fa-book ${classes.linkIcon}`}></i>
-          <span>docs</span>
+          <span>{t('docs')}</span>
         </a>
 
         <a
@@ -29,7 +31,7 @@ const Footer = () => {
           className={classes.link}
         >
           <i className={`fab fa-medium ${classes.linkIcon}`}></i>
-          <span>news</span>
+          <span>{t('news')}</span>
         </a>
 
         <a
@@ -39,12 +41,12 @@ const Footer = () => {
           className={classes.link}
         >
           <i className={`fab fa-github ${classes.linkIcon}`}></i>
-          <span>source</span>
+          <span>{t('source')}</span>
         </a>
       </div>
 
       <div className={classes.column}>
-        <div className={classes.title}>products</div>
+        <div className={classes.title}>{t('products')}</div>
         <a
           href="https://gov.beefy.finance"
           target="_blank"
@@ -52,7 +54,7 @@ const Footer = () => {
           className={classes.link}
         >
           <i className={`fas fa-landmark ${classes.linkIcon}`}></i>
-          <span>gov</span>
+          <span>{t('gov')}</span>
         </a>
 
         <a
@@ -62,7 +64,7 @@ const Footer = () => {
           className={classes.link}
         >
           <i className={`fas fa-vote-yea ${classes.linkIcon}`}></i>
-          <span>vote</span>
+          <span>{t('vote')}</span>
         </a>
 
         <a
@@ -72,12 +74,12 @@ const Footer = () => {
           className={classes.link}
         >
           <i className={`fas fa-hand-holding-usd ${classes.linkIcon}`}></i>
-          <span>app</span>
+          <span>{t('app')}</span>
         </a>
       </div>
 
       <div className={classes.column}>
-        <div className={classes.title}>socials</div>
+        <div className={classes.title}>{t('socials')}</div>
         <a
           href="https://twitter.com/beefyfinance"
           target="_blank"

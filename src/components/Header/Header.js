@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -106,6 +107,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
 };
 
 const renderLink = (name, label, icon, classes) => {
+  const { t } = useTranslation();
   return (
     <a
       href={getLinkUrl(name)}
@@ -115,15 +117,16 @@ const renderLink = (name, label, icon, classes) => {
       style={{ marginLeft: '5px', marginRight: '5px' }}
     >
       <i className={`fas fa-${icon} ${classes.icon}`} />
-      <span>{label}</span>
+      <span>{t(label)}</span>
     </a>
   );
 };
 
 const renderLinkSidebar = (name, label, icon, classes) => {
+  const { t } = useTranslation();
   return (
     <div style={{ width: '100%', paddingTop: '10px' }}>
-      {renderLink(name, label, icon, classes)}
+      {renderLink(name, t(label), icon, classes)}
     </div>
   );
 };
