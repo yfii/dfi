@@ -18,9 +18,11 @@ const Filters = ({
   toggleFilter,
   filters,
   platform,
+  vaultType,
   asset,
   order,
   setPlatform,
+  setVaultType,
   setAsset,
   setOrder,
 }) => {
@@ -28,12 +30,13 @@ const Filters = ({
   const classes = useStyles();
 
   const handlePlatformChange = event => setPlatform(event.target.value);
+  const handleVaultTypeChange = event => setVaultType(event.target.value);
   const handleAssetChange = event => setAsset(event.target.value);
   const handleOrderChange = event => setOrder(event.target.value);
 
   return (
     <Grid container spacing={2} className={classes.container}>
-      <Grid item xs={4} md={2}>
+      <Grid item xs={4}>
         <FormControl>
           <FormControlLabel
             className={classes.label}
@@ -50,7 +53,7 @@ const Filters = ({
         </FormControl>
       </Grid>
 
-      <Grid item xs={4} md={2}>
+      <Grid item xs={4}>
         <FormControl>
           <FormControlLabel
             className={classes.label}
@@ -67,7 +70,7 @@ const Filters = ({
         </FormControl>
       </Grid>
 
-      <Grid item xs={4} md={2}>
+      <Grid item xs={4}>
         <FormControl>
           <FormControlLabel
             className={classes.label}
@@ -84,9 +87,9 @@ const Filters = ({
         </FormControl>
       </Grid>
 
-      <Grid item xs={4} md={2}>
+      <Grid item xs={6} md={3}>
         <FormControl className={classes.selectorContainer}>
-          <InputLabel id="select-asset-label" className={classes.selectorLabel}>
+          <InputLabel id="select-platform-label" className={classes.selectorLabel}>
             {t('Filters-Platform')}
           </InputLabel>
           <Select
@@ -108,7 +111,35 @@ const Filters = ({
         </FormControl>
       </Grid>
 
-      <Grid item xs={4} md={2}>
+      <Grid item xs={6} md={3}>
+        <FormControl className={classes.selectorContainer}>
+          <InputLabel id="select-vault-type-label" className={classes.selectorLabel}>
+            {t('Filters-Vault-Type')}
+          </InputLabel>
+          <Select
+            value={vaultType}
+            onChange={handleVaultTypeChange}
+            className={classes.selector}
+            id="select-vault-type"
+            labelId="select-vault-type-label"
+          >
+            <MenuItem key={'All'} value={'All'}>
+              {t('Filters-All')}
+            </MenuItem>
+            <MenuItem key={'Singles'} value={'Singles'}>
+              {t('Single Assets')}
+            </MenuItem>
+            <MenuItem key={'StableLPs'} value={'StableLPs'}>
+              {t('Stable LPs')}
+            </MenuItem>
+            <MenuItem key={'Stables'} value={'Stables'}>
+              {t('Stables')}
+            </MenuItem>
+          </Select>
+        </FormControl>
+      </Grid>
+
+      <Grid item xs={6} md={3}>
         <FormControl className={classes.selectorContainer}>
           <InputLabel id="select-asset-label" className={classes.selectorLabel}>
             {t('Filters-Asset')}
@@ -123,15 +154,6 @@ const Filters = ({
             <MenuItem key={'All'} value={'All'}>
               {t('Filters-All')}
             </MenuItem>
-            <MenuItem key={'Singles'} value={'Singles'}>
-              {t('Single Assets')}
-            </MenuItem>
-            <MenuItem key={'StableLPs'} value={'StableLPs'}>
-              {t('Stable LPs')}
-            </MenuItem>
-            <MenuItem key={'Stables'} value={'Stables'}>
-              {t('Stables')}
-            </MenuItem>
             {assets.map(asset => (
               <MenuItem key={asset} value={asset}>
                 {asset}
@@ -141,7 +163,7 @@ const Filters = ({
         </FormControl>
       </Grid>
 
-      <Grid item xs={4} md={2}>
+      <Grid item xs={6} md={3}>
         <FormControl className={classes.selectorContainer}>
           <InputLabel id="select-order-label" className={classes.selectorLabel}>
             {t('Filters-Sort')}
