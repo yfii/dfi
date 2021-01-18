@@ -8,6 +8,9 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Checkbox from '@material-ui/core/Checkbox';
 import InputLabel from '@material-ui/core/InputLabel';
+import Autocomplete from '@material-ui/lab/Autocomplete';
+import TextField from '@material-ui/core/TextField';
+import _ from 'lodash';
 
 import styles from './styles';
 import { platforms, assets } from './constants';
@@ -31,8 +34,19 @@ const Filters = ({
 
   const handlePlatformChange = event => setPlatform(event.target.value);
   const handleVaultTypeChange = event => setVaultType(event.target.value);
-  const handleAssetChange = event => setAsset(event.target.value);
+  const handleAssetChange = (_event, option) => setAsset(option.value);
   const handleOrderChange = event => setOrder(event.target.value);
+
+  const options = [
+    {
+      value: 'All',
+      label: t('Filters-All')
+    },
+    ...assets.map(asset => ({
+      value: asset,
+      label: asset
+    }))
+  ];
 
   return (
     <Grid container spacing={2} className={classes.container}>
@@ -141,25 +155,24 @@ const Filters = ({
 
       <Grid item xs={6} md={3}>
         <FormControl className={classes.selectorContainer}>
-          <InputLabel id="select-asset-label" className={classes.selectorLabel}>
-            {t('Filters-Asset')}
-          </InputLabel>
-          <Select
-            value={asset}
+          <Autocomplete
+            value={_.find(options, { value: asset })}
             onChange={handleAssetChange}
             className={classes.selector}
             id="select-asset"
-            labelId="select-asset-label"
-          >
-            <MenuItem key={'All'} value={'All'}>
-              {t('Filters-All')}
-            </MenuItem>
-            {assets.map(asset => (
-              <MenuItem key={asset} value={asset}>
-                {asset}
-              </MenuItem>
-            ))}
-          </Select>
+            options={options}
+            getOptionLabel={option => option.label}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                label={t('Filters-Asset')}
+                InputLabelProps={{
+                  className: classes.selectorLabel
+                }}
+              />
+            )}
+            disableClearable
+          />
         </FormControl>
       </Grid>
 
