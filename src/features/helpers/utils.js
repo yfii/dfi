@@ -39,13 +39,23 @@ export function inputFinalVal(value, total, tokenDecimals) {
   return inputVal > total ? byDecimals(total, 0).toFormat(tokenDecimals) : value;
 }
 
-export const shouldHideFromHarvest = (vaultName) => {
-  return HarvestBlacklistVaultIds.includes(vaultName)
-}
+export const shouldHideFromHarvest = vaultName => {
+  return HarvestBlacklistVaultIds.includes(vaultName);
+};
 
 const HarvestBlacklistVaultIds = [
-  'bifi-maxi', 
-  'cake-smart', 
-  'fortube-fil', 'fortube-atom', 'fortube-xtz', 'fortube-busd', 'fortube-link', , 'fortube-dot', , 'fortube-usdt', , 'fortube-eth', 'fortube-btcb',
-  'fry-burger-v2'
-]
+  'bifi-maxi',
+  'fortube-fil',
+  'fortube-atom',
+  'fortube-xtz',
+  'fortube-busd',
+  'fortube-link',
+  ,
+  'fortube-dot',
+  ,
+  'fortube-usdt',
+  ,
+  'fortube-eth',
+  'fortube-btcb',
+  'fry-burger-v2',
+];
