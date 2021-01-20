@@ -2,8 +2,6 @@ import React,{ useState, useEffect } from 'react';
 import classNames from "classnames";
 import { useTranslation } from 'react-i18next';
 import { makeStyles } from "@material-ui/core/styles";
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableContainer from '@material-ui/core/TableContainer';
@@ -40,11 +38,11 @@ export default function StakePools(props) {
       {
         fromPage == 'page' &&
         <Hidden xsDown>
-          <GridItem>
+          <Grid item xs={12}>
             <div className={classes.listHeader}>
               <div className={classes.mainTitle}>{t('Stake-List-Header-Main')}</div>
-              <GridContainer >
-                <GridItem className={classNames({
+              <Grid container>
+                <Grid item xs={12} className={classNames({
                   [classes.flexBox]:true,
                   [classes.marginTop]:true,
                 })}>
@@ -56,14 +54,14 @@ export default function StakePools(props) {
                   >
                     {t('Stake-Learn-More')}
                   </CustomButtons>
-                </GridItem>
-              </GridContainer>
+                </Grid>
+              </Grid>
             </div>
-          </GridItem>
+          </Grid>
         </Hidden>
       }
       <Hidden xsDown>
-        <GridItem>
+        <Grid item xs={12}>
           <Table className={classes.table} aria-label="customized table">
             <TableHead>
               <TableRow>
@@ -112,10 +110,10 @@ export default function StakePools(props) {
               ))}
             </TableBody>
           </Table>
-        </GridItem>
+        </Grid>
       </Hidden>
       <Hidden smUp>
-        <GridItem>
+        <Grid item xs={12}>
         {pools.map((pool, index) => (
           <div key={`mobile-${index}`} className={classes.mobileContainer} style={{display: Boolean(index !== 3 && index !== 4) ? "none" : ""}}>
             <div className={classes.avatarContainer} style={{width:'80px',height:'80px',borderRadius:'40px'}}>
@@ -143,7 +141,7 @@ export default function StakePools(props) {
             </CustomButtons>
           </div>
         ))}
-        </GridItem>
+        </Grid>
       </Hidden>
     </Grid>
   )
