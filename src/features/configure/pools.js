@@ -2962,37 +2962,6 @@ export const pools = [
     assets: ['BURGER'],
     callFee: 1,
   },
-  //
-  // < ---- > REFUNDS < ---- >
-  //
-
-  {
-    id: 'thugs-drugs-guns-v1',
-    logo: 'thugs/DRUGS.png',
-    name: 'DRUGS GUNS v1',
-    token: 'DRUGS',
-    tokenDescription: 'Refunds available',
-    tokenAddress: '0xfD26889cd6454D8751562f1c0FcF88b18B46F7B7',
-    tokenDecimals: 18,
-    tokenDescriptionUrl:
-      'https://docs.beefy.finance/beefyfinance/products/thugs#farming-guns-with-drugs',
-    earnedToken: 'mooThugsGuns',
-    earnedTokenAddress: '0x49263a1Ba199602a8Ef327B34a1AAe11a5FccaAf',
-    earnContractAddress: '0x49263a1Ba199602a8Ef327B34a1AAe11a5FccaAf',
-    defaultApy: 0,
-    unstableApy: false,
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'pancake',
-    oracleId: 'DRUGS',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'refund',
-    refundContractAddress: '0x9284403F066f9200c1Ad4A6B5b2Dd0195092803E',
-    platform: 'Thugs',
-    assets: ['DRUGS', 'GUNS'],
-    callFee: 0.5,
-  },
 
   {
     id: 'cake-syrup-twt',
