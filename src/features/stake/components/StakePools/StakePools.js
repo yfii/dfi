@@ -11,10 +11,13 @@ import Hidden from '@material-ui/core/Hidden';
 
 import CustomButtons from 'components/CustomButtons/Button';
 
+import { useConnectWallet } from '../../../home/redux/hooks';
 import { useFetchPoolsInfo } from '../../redux/hooks';
 import StyledTableCell from '../StyledTableCell/StyledTableCell';
 
 import styles from './styles';
+
+const FETCH_INTERVAL_MS = 30 * 1000;
 
 const useStyles = makeStyles(styles);
 
@@ -22,11 +25,21 @@ export default function StakePools(props) {
   const { fromPage } = props;
   const classes = useStyles();
   const { t } = useTranslation();
-  const { pools, poolsInfo, fetchPoolsInfo } = useFetchPoolsInfo();
+  const { pools, fetchPoolsInfo } = useFetchPoolsInfo();
+  const { web3, address } = useConnectWallet();
 
   useEffect(() => {
-    fetchPoolsInfo();
-  }, [fetchPoolsInfo]);
+    if (address && web3) {
+      fetchPoolsInfo({ address, web3, pools });
+      const id = setInterval(() => {
+        fetchPoolsInfo({ address, web3, pools });
+      }, FETCH_INTERVAL_MS);
+      return () => clearInterval(id);
+    }
+
+    // Adding pools to this dep list, causes an endless loop, DDoSing the api
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [address, web3, fetchPoolsInfo]);
 
   return (
     <>
@@ -56,7 +69,6 @@ export default function StakePools(props) {
               <StyledTableCell>{t('Stake-Table-Pool')}</StyledTableCell>
               <StyledTableCell>{t('Stake-Table-Staked')}</StyledTableCell>
               <StyledTableCell>{t('Stake-Table-Total')}</StyledTableCell>
-              <StyledTableCell>{t('Stake-Table-Apy')}</StyledTableCell>
               <StyledTableCell />
             </TableRow>
           </TableHead>
@@ -70,7 +82,7 @@ export default function StakePools(props) {
                     <div className={classes.avatarContainer}>
                       <Avatar
                         alt={pool.name}
-                        src={require(`../../../../images/${pool.name}-logo.png`)}
+                        src={require(`../../images/${pool.id}-logo.png`)}
                         className={classes.avatar}
                       />
                     </div>
@@ -80,9 +92,8 @@ export default function StakePools(props) {
                     </div>
                   </div>
                 </StyledTableCell>
-                <StyledTableCell>{poolsInfo[index].staked}</StyledTableCell>
-                <StyledTableCell>{poolsInfo[index].tvl}</StyledTableCell>
-                <StyledTableCell>{poolsInfo[index].apy}</StyledTableCell>
+                <StyledTableCell>{pool.staked ? pool.staked.toFixed(2) : 0}</StyledTableCell>
+                <StyledTableCell>{pool.tvl ? pool.tvl.toFixed() : 0}</StyledTableCell>
                 <StyledTableCell>
                   <CustomButtons
                     href={`/#/stake/pool/${index + 1}`}
@@ -102,7 +113,7 @@ export default function StakePools(props) {
             <div className={classNames(classes.avatarContainer, classes.mobileAvatarContainer)}>
               <Avatar
                 alt={pool.name}
-                src={require(`../../../../images/${pool.name}-logo.png`)}
+                src={require(`../../images/${pool.id}-logo.png`)}
                 className={classes.mobileAvatar}
               />
             </div>
@@ -111,9 +122,8 @@ export default function StakePools(props) {
               <div style={{ fontSize: '18px', lineHeight: '14px', fontWeight: '500' }}>{pool.token}</div>
             </div>
             <div className={classes.mobileDetail}>
-              <div style={{ marginBottom: '10px' }}>{t('Stake-Table-Apy')}: {poolsInfo[index].apy}</div>
-              <div style={{ marginBottom: '10px' }}>{t('Stake-Table-Staked')}: {poolsInfo[index].staked}</div>
-              <div style={{ marginBottom: '12px' }}>{t('Stake-Table-Total')}: {poolsInfo[index].tvl}</div>
+              <div style={{ marginBottom: '10px' }}>{t('Stake-Table-Staked')}: {pool.staked ? pool.staked.toFixed(2) : 0}</div>
+              <div style={{ marginBottom: '12px' }}>{t('Stake-Table-Total')}: {pool.tvl ? pool.tvl.toFixed() : 0}</div>
             </div>
             <CustomButtons
               href={`/#/stake/pool/${index + 1}`}
