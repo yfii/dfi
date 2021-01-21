@@ -76,23 +76,23 @@ export default function StakePools(props) {
             root: classes.tableBodyRoot
           }}>
             {pools.map((pool, index) => (
-              <TableRow key={pool.name}>
+              <TableRow key={pool.brief}>
                 <StyledTableCell>
                   <div className={classes.firstCell}>
                     <div className={classes.avatarContainer}>
                       <Avatar
-                        alt={pool.name}
+                        alt={pool.brief}
                         src={require(`../../images/${pool.id}-logo.png`)}
                         className={classes.avatar}
                       />
                     </div>
                     <div className={classes.firstCellContent}>
                       <div>{pool.name}</div>
-                      <div>{pool.token}</div>
+                      <div>{pool.brief}</div>
                     </div>
                   </div>
                 </StyledTableCell>
-                <StyledTableCell>{pool.staked ? pool.staked.toFixed(2) : 0}</StyledTableCell>
+                <StyledTableCell>{pool.stakedBalance ? pool.stakedBalance.toFixed(2) : 0}</StyledTableCell>
                 <StyledTableCell>{pool.tvl ? pool.tvl.toFixed() : 0}</StyledTableCell>
                 <StyledTableCell>
                   <CustomButtons
@@ -112,17 +112,17 @@ export default function StakePools(props) {
           <div key={`mobile-${index}`} className={classes.mobileContainer}>
             <div className={classNames(classes.avatarContainer, classes.mobileAvatarContainer)}>
               <Avatar
-                alt={pool.name}
+                alt={pool.brief}
                 src={require(`../../images/${pool.id}-logo.png`)}
                 className={classes.mobileAvatar}
               />
             </div>
             <div className={classes.mobileHead}>
-              <div style={{ fontSize: '26px', lineHeight: '18px', fontWeight: '600', marginBottom: '14px' }}>{pool.name}</div>
-              <div style={{ fontSize: '18px', lineHeight: '14px', fontWeight: '500' }}>{pool.token}</div>
+              <div style={{ fontSize: '18px', lineHeight: '14px', fontWeight: '500' }}>{pool.name}</div>
+              <div style={{ fontSize: '26px', lineHeight: '18px', fontWeight: '600', marginBottom: '14px' }}>{pool.brief}</div>
             </div>
             <div className={classes.mobileDetail}>
-              <div style={{ marginBottom: '10px' }}>{t('Stake-Table-Staked')}: {pool.staked ? pool.staked.toFixed(2) : 0}</div>
+              <div style={{ marginBottom: '10px' }}>{t('Stake-Table-Staked')}: {pool.stakedBalance ? pool.stakedBalance.toFixed(2) : 0}</div>
               <div style={{ marginBottom: '12px' }}>{t('Stake-Table-Total')}: {pool.tvl ? pool.tvl.toFixed() : 0}</div>
             </div>
             <CustomButtons

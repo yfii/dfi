@@ -60,7 +60,7 @@ export function fetchPoolsInfo(data) {
               if (error) {
                 console.log(error);
               }
-              pool.staked = data[0] || 0;
+              pool.stakedBalance = data[0] || 0;
               pool.tvl = data[1] || 0;
               callback(null, pool);
             }
