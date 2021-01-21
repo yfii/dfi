@@ -27,6 +27,32 @@ export const pools = [
   },
 
   {
+    id: 'bhc-bhc',
+    logo: 'bhc/bhc.png',
+    name: 'BHC',
+    token: 'BHC',
+    tokenDescription: 'Uses: BillionHappiness',
+    tokenAddress: '0x6fd7c98458a943f469E1Cf4eA85B173f5Cd342F4',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooBHC',
+    earnedTokenAddress: '0x56E899E56F6B8635B4A01b724db23674a64A7231',
+    earnContractAddress: '0x56E899E56F6B8635B4A01b724db23674a64A7231',
+    defaultApy: 0.8518,
+    unstableApy: false,
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'thugs',
+    oracleId:
+      '0x6fd7c98458a943f469E1Cf4eA85B173f5Cd342F4_0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    assets: ['BHC'],
+    callFee: 0.5,
+  },
+
+  {
     id: 'thugs-drugs-btri',
     logo: 'thugs/DRUGS.png',
     name: 'DRUGS BTRI',
