@@ -11,7 +11,7 @@ const useFilteredPools = (pools, tokens) => {
   const [filters, setFilters] = useState(initialFilters);
 
   const toggleFilter = key => {
-    let newFilters = { ...filters };
+    const newFilters = { ...filters };
     newFilters[key] = !filters[key];
     setFilters(newFilters);
   };
