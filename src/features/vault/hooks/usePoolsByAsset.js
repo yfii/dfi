@@ -8,7 +8,7 @@ const usePoolsByAsset = pools => {
     if (asset === 'All') {
       setPoolsByAsset(pools);
     } else {
-      let newPools = pools.filter(pool => pool.assets.includes(asset));
+      const newPools = pools.filter(pool => pool.assets.includes(asset));
       setPoolsByAsset(newPools);
     }
   }, [pools, asset]);
