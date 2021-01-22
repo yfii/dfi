@@ -48,5 +48,6 @@
   "app": "app",
   "socials": "socials",
   "buy": "buy",
-  "dashboard": "dashboard"
+  "dashboard": "dashboard",
+  "products": "products"
 }

@@ -1,5 +1,4 @@
-import React, { memo } from 'react';
-import { useTranslation } from 'react-i18next';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -19,7 +18,6 @@ const useStyles = makeStyles(styles);
 const Header = ({ links, isNightMode, setNightMode }) => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const classes = useStyles();
-  const { t } = useTranslation();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -49,13 +47,13 @@ const Header = ({ links, isNightMode, setNightMode }) => {
         </Button>
 
         <span>
-          {renderLink('vote', 'vote', 'vote-yea', classes, t)}
+          {renderLink('vote', 'vote', 'vote-yea', classes)}
           <Hidden xsDown>
-            {renderLink('gov', 'gov', 'landmark', classes, t)}
-            {renderLink('dashboard', 'stats', 'chart-bar', classes, t)}
-            {renderLink('docs', 'docs', 'book', classes, t)}
+            {renderLink('gov', 'gov', 'landmark', classes)}
+            {renderLink('dashboard', 'stats', 'chart-bar', classes)}
+            {renderLink('docs', 'docs', 'book', classes)}
           </Hidden>
-          {renderLink('buy', 'buy', 'dollar-sign', classes, t)}
+          {renderLink('buy', 'buy', 'dollar-sign', classes)}
         </span>
 
         <Hidden smDown implementation="css">
@@ -92,11 +90,11 @@ const Header = ({ links, isNightMode, setNightMode }) => {
           </IconButton>
           <div className={classes.appResponsive}>{links}</div>
           <div style={{ textAlign: 'center' }}>
-            {renderLinkSidebar('gov', 'gov', 'landmark', classes, t)}
-            {renderLinkSidebar('vote', 'vote', 'vote-yea', classes, t)}
-            {renderLinkSidebar('dashboard', 'stats', 'chart-bar', classes, t)}
-            {renderLinkSidebar('docs', 'docs', 'book', classes, t)}
-            {renderLinkSidebar('buy', 'buy', 'dollar-sign', classes, t)}
+            {renderLinkSidebar('gov', 'gov', 'landmark', classes)}
+            {renderLinkSidebar('vote', 'vote', 'vote-yea', classes)}
+            {renderLinkSidebar('dashboard', 'stats', 'chart-bar', classes)}
+            {renderLinkSidebar('docs', 'docs', 'book', classes)}
+            {renderLinkSidebar('buy', 'buy', 'dollar-sign', classes)}
             <IconButton onClick={setNightMode} className={classes.icon}>
               {isNightMode ? <WbSunny /> : <NightsStay />}
             </IconButton>
@@ -107,7 +105,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
   );
 };
 
-const renderLink = (name, label, icon, classes, t) => {
+const renderLink = (name, label, icon, classes) => {
   return (
     <a
       href={getLinkUrl(name)}
@@ -117,15 +115,15 @@ const renderLink = (name, label, icon, classes, t) => {
       style={{ marginLeft: '5px', marginRight: '5px' }}
     >
       <i className={`fas fa-${icon} ${classes.icon}`} />
-      <span>{t(label)}</span>
+      <span>{label}</span>
     </a>
   );
 };
 
-const renderLinkSidebar = (name, label, icon, classes, t) => {
+const renderLinkSidebar = (name, label, icon, classes) => {
   return (
     <div style={{ width: '100%', paddingTop: '10px' }}>
-      {renderLink(name, t(label), icon, classes)}
+      {renderLink(name, label, icon, classes)}
     </div>
   );
 };
@@ -136,4 +134,4 @@ const getLinkUrl = name => {
     : `https://${name}.beefy.finance`;
 };
 
-export default memo(Header);
+export default Header;
