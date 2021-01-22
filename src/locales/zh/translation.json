@@ -24,15 +24,7 @@
   "Filters-Sort": "排序",
   "Filters-All": "全部",
   "Filters-Default": "默认",
-  "Stake-Main-Title": "YFII / 抵押",
-  "Stake-Second-Title": "回报率将在收益开始计算后更新，有时稍有延迟",
-  "Stake-List-Header-Main": "关于 YFII 你所需知道的一切都在这里",
-  "Stake-List-Header-Sub": "您想抵押哪种代币？",
-  "Stake-Pools-Learn-More": "https://www.yuque.com/yfiicommunity",
-  "Stake-Learn-More": "了解更多",
-  "Stake-Table-Pool": "抵押池",
   "Stake-Table-Staked": "已抵押",
   "Stake-Table-Total": "锁仓金额",
-  "Stake-Table-Apy": "回报率",
-  "Stake-Button-Stake": "抵押"
+  "Stake-Table-Apy": "回报率"
 }

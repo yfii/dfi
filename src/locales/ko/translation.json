@@ -24,12 +24,6 @@
   "Filters-Sort": "Sort by",
   "Filters-All": "All",
   "Filters-Default": "Default",
-  "Stake-Second-Title": "보상이 시작되거나 조금 후에 APY가 공개됩니다.",
-  "Stake-List-Header-Main": "자료: YFII에 대해 알아야 할 모든 것",
-  "Stake-List-Header-Sub": "어떤 토큰을 스테이킹 하시겠습니까?",
-  "Stake-Learn-More": "자세한 정보",
-  "Stake-Table-Pool": "풀",
   "Stake-Table-Staked": "스테이킹",
-  "Stake-Table-Total": "전체 잠금 금액",
-  "Stake-Button-Stake": "스테이킹"
+  "Stake-Table-Total": "전체 잠금 금액"
 }

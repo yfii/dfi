@@ -33,15 +33,8 @@
   "Filters-Default": "Default",
   "Confirm": "Confirm",
   "Cancel": "Cancel",
-  "Stake-Main-Title": "YFII / Stake",
-  "Stake-Second-Title": "APY will be revealed once rewards have begun, or a little bit later",
-  "Stake-List-Header-Main": "Knowledge base: Everything you need to know about YFII",
-  "Stake-List-Header-Sub": "Which tokens would you like to stake?",
-  "Stake-Pools-Learn-More": "https://docs.dfi.money/#/yield-farming",
-  "Stake-Learn-More": "Learn More",
-  "Stake-Table-Pool": "POOL",
-  "Stake-Table-Staked": "STAKED",
-  "Stake-Table-Total": "Total Value Locked",
-  "Stake-Table-Apy": "APY",
-  "Stake-Button-Stake": "STAKE"
+  "Powered-By": "POWERED BY",
+  "Stake-Table-Staked": "STAKE",
+  "Stake-Table-Total": "POOL",
+  "Stake-Table-Apy": "APY"
 }

@@ -2,27 +2,22 @@ import React, { useEffect } from 'react';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Avatar from '@material-ui/core/Avatar';
-import Hidden from '@material-ui/core/Hidden';
-
-import CustomButtons from 'components/CustomButtons/Button';
+import Grid from '@material-ui/core/Grid';
 
 import { useConnectWallet } from '../../../home/redux/hooks';
 import { useFetchPoolsInfo } from '../../redux/hooks';
-import StyledTableCell from '../StyledTableCell/StyledTableCell';
+import PoolCard from '../PoolCard/PoolCard';
 
 import styles from './styles';
+import banner from './banner.png';
+import barn from './barn.png';
+import projects from './projects.png';
 
 const FETCH_INTERVAL_MS = 30 * 1000;
 
 const useStyles = makeStyles(styles);
 
-export default function StakePools(props) {
-  const { fromPage } = props;
+export default function StakePools() {
   const classes = useStyles();
   const { t } = useTranslation();
   const { pools, fetchPoolsInfo } = useFetchPoolsInfo();
@@ -43,101 +38,25 @@ export default function StakePools(props) {
 
   return (
     <>
-      <div className={classes.mainTitle}>{t('Stake-Main-Title')}</div>
-      <h3 className={classes.secondTitle}>{t('Stake-Second-Title')}</h3>
-      {fromPage === 'page' && (
-        <Hidden xsDown>
-          <div className={classes.listHeader}>
-            <div className={classes.mainTitle}>{t('Stake-List-Header-Main')}</div>
-            <div className={classNames(classes.flexBox, classes.marginTop)}>
-              <div className={classes.secondTitle}>{t('Stake-List-Header-Sub')}</div>
-              <CustomButtons
-                href={t('Stake-Pools-Learn-More')}
-                target="_blank"
-                className={classes.learnMoreButton}
-              >
-                {t('Stake-Learn-More')}
-              </CustomButtons>
-            </div>
-          </div>
-        </Hidden>
-      )}
-      <Hidden xsDown>
-        <Table className={classes.table} aria-label="customized table">
-          <TableHead>
-            <TableRow>
-              <StyledTableCell>{t('Stake-Table-Pool')}</StyledTableCell>
-              <StyledTableCell>{t('Stake-Table-Staked')}</StyledTableCell>
-              <StyledTableCell>{t('Stake-Table-Total')}</StyledTableCell>
-              <StyledTableCell />
-            </TableRow>
-          </TableHead>
-          <TableBody classes={{
-            root: classes.tableBodyRoot
-          }}>
-            {pools.map((pool, index) => (
-              <TableRow key={pool.brief}>
-                <StyledTableCell>
-                  <div className={classes.firstCell}>
-                    <div className={classes.avatarContainer}>
-                      <Avatar
-                        alt={pool.brief}
-                        src={require(`../../images/${pool.id}-logo.png`)}
-                        className={classes.avatar}
-                      />
-                    </div>
-                    <div className={classes.firstCellContent}>
-                      <div>{pool.name}</div>
-                      <div>{pool.brief}</div>
-                    </div>
-                  </div>
-                </StyledTableCell>
-                <StyledTableCell>{pool.stakedBalance ? pool.stakedBalance.toFixed(2) : 0}</StyledTableCell>
-                <StyledTableCell>{pool.tvl ? pool.tvl.toFixed() : 0}</StyledTableCell>
-                <StyledTableCell>
-                  <CustomButtons
-                    href={`/#/stake/pool/${index + 1}`}
-                    className={classes.stakeButton}
-                  >
-                    {t('Stake-Button-Stake')}
-                  </CustomButtons>
-                </StyledTableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </Hidden>
-      <Hidden smUp>
-        {pools.map((pool, index) => (
-          <div key={`mobile-${index}`} className={classes.mobileContainer}>
-            <div className={classNames(classes.avatarContainer, classes.mobileAvatarContainer)}>
-              <Avatar
-                alt={pool.brief}
-                src={require(`../../images/${pool.id}-logo.png`)}
-                className={classes.mobileAvatar}
-              />
-            </div>
-            <div className={classes.mobileHead}>
-              <div style={{ fontSize: '18px', lineHeight: '14px', fontWeight: '500' }}>{pool.name}</div>
-              <div style={{ fontSize: '26px', lineHeight: '18px', fontWeight: '600', marginBottom: '14px' }}>{pool.brief}</div>
-            </div>
-            <div className={classes.mobileDetail}>
-              <div style={{ marginBottom: '10px' }}>{t('Stake-Table-Staked')}: {pool.stakedBalance ? pool.stakedBalance.toFixed(2) : 0}</div>
-              <div style={{ marginBottom: '12px' }}>{t('Stake-Table-Total')}: {pool.tvl ? pool.tvl.toFixed() : 0}</div>
-            </div>
-            <CustomButtons
-              href={`/#/stake/pool/${index + 1}`}
-              className={classNames(classes.stakeButton, classes.mobileStakeButton)}
-            >
-              {t('Stake-Button-Stake')}
-            </CustomButtons>
-          </div>
+      <img className={classes.banner} src={banner} />
+      <div className={classes.poweredByBeefy}>{t('Powered-By')} BEEFY.FINANCE</div>
+      <Grid container spacing={8}>
+        {pools.map(pool => (
+          <Grid key={pool.id} item xs={12} md={4}>
+            <PoolCard pool={pool} />
+          </Grid>
         ))}
-      </Hidden>
+      </Grid>
+      <Grid className={classNames(classes.imageContainer, classes.barn)} container>
+        <Grid item xs={6} md={2}>
+          <img className={classes.image} src={barn} />
+        </Grid>
+      </Grid>
+      <Grid className={classNames(classes.imageContainer, classes.projects)} container>
+        <Grid item xs={12} md={4}>
+          <img className={classes.image} src={projects} />
+        </Grid>
+      </Grid>
     </>
   )
-}
-
-StakePools.defaultProps = {
-  fromPage:'page',
 }
