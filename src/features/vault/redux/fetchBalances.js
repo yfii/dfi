@@ -10,19 +10,11 @@ import async from 'async';
 
 export function fetchBalances(data) {
   return dispatch => {
-    // optionally you can have getState as the second argument
     dispatch({
       type: VAULT_FETCH_BALANCES_BEGIN,
     });
 
-    // Return a promise so that you could control UI flow without states in the store.
-    // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
-    // It's hard to use state to manage it, but returning a promise allows you to easily achieve it.
-    // e.g.: handleSubmit() { this.props.actions.submitForm(data).then(()=> {}).catch(() => {}); }
     const promise = new Promise((resolve, reject) => {
-      // doRequest is a placeholder Promise. You should replace it with your own logic.
-      // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/vault/redux/fetchRedditReactjsList.js
-      // args.error here is only for test coverage purpose.
       const { address, web3, tokens } = data;
 
       const newTokens = [];
@@ -84,8 +76,6 @@ export function fetchBalances(data) {
 }
 
 export function useFetchBalances() {
-  // args: false value or array
-  // if array, means args passed to the action creator
   const dispatch = useDispatch();
 
   const { tokens, fetchBalancesPending } = useSelector(

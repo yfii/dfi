@@ -37,7 +37,12 @@ export function useSnackbar() {
   const closeAction = useCallback(data => dispatch(closeSnackbar(data)), [dispatch]);
   const removeAction = useCallback(data => dispatch(removeSnackbar(data)), [dispatch]);
 
-  return { notification, enqueueSnackbar: enqueueAction, closeSnackbar: closeAction, removeSnackbar: removeAction };
+  return {
+    notification,
+    enqueueSnackbar: enqueueAction,
+    closeSnackbar: closeAction,
+    removeSnackbar: removeAction,
+  };
 }
 
 export function reducer(state, action) {
@@ -57,7 +62,11 @@ export function reducer(state, action) {
     case CLOSE_SNACKBAR:
       return {
         ...state,
-        notifications: state.notifications.map(notification => (action.dismissAll || notification.key === action.key ? { ...notification, dismissed: true } : { ...notification })),
+        notifications: state.notifications.map(notification =>
+          action.dismissAll || notification.key === action.key
+            ? { ...notification, dismissed: true }
+            : { ...notification }
+        ),
       };
 
     case REMOVE_SNACKBAR:
