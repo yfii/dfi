@@ -6,15 +6,34 @@ const initialFilters = {
   hideZeroVaultBalances: false,
 };
 
+const FILTERS = 'filteredPools';
+
 const useFilteredPools = (pools, tokens) => {
   const [filteredPools, setFilteredPools] = useState(pools);
-  const [filters, setFilters] = useState(initialFilters);
+
+  let storedFilters;
+
+  if (localStorage) {
+    try {
+      storedFilters = JSON.parse(localStorage.getItem(FILTERS));
+    } catch (e) {
+    }
+  }
+
+  const [filters, setFilters] = useState(storedFilters ? storedFilters : initialFilters);
 
   const toggleFilter = key => {
     const newFilters = { ...filters };
     newFilters[key] = !filters[key];
     setFilters(newFilters);
   };
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(FILTERS, JSON.stringify(filters));
+    } catch (e) {
+    }
+  }, [filters]);
 
   useEffect(() => {
     let newPools = [...pools];
