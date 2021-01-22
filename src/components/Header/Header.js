@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -136,4 +136,4 @@ const getLinkUrl = name => {
     : `https://${name}.beefy.finance`;
 };
 
-export default Header;
+export default memo(Header);
