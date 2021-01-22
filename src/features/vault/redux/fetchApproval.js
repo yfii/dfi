@@ -1,6 +1,10 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { VAULT_FETCH_APPROVAL_BEGIN, VAULT_FETCH_APPROVAL_SUCCESS, VAULT_FETCH_APPROVAL_FAILURE } from './constants';
+import {
+  VAULT_FETCH_APPROVAL_BEGIN,
+  VAULT_FETCH_APPROVAL_SUCCESS,
+  VAULT_FETCH_APPROVAL_FAILURE,
+} from './constants';
 import { approval } from '../../web3';
 
 export function fetchApproval({ address, web3, tokenAddress, contractAddress, index }) {
@@ -67,7 +71,6 @@ export function useFetchApproval() {
 export function reducer(state, action) {
   switch (action.type) {
     case VAULT_FETCH_APPROVAL_BEGIN:
-      // Just after a request is sent
       return {
         ...state,
         fetchApprovalPending: {
@@ -77,7 +80,6 @@ export function reducer(state, action) {
       };
 
     case VAULT_FETCH_APPROVAL_SUCCESS:
-      // The request is success
       const { pools } = state;
       pools[action.index].allowance = action.data.allowance;
       return {
@@ -90,7 +92,6 @@ export function reducer(state, action) {
       };
 
     case VAULT_FETCH_APPROVAL_FAILURE:
-      // The request is failed
       return {
         ...state,
         fetchApprovalPending: {

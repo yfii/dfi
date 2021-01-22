@@ -1,6 +1,10 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { VAULT_FETCH_STRATEGY_HARVEST_BEGIN, VAULT_FETCH_STRATEGY_HARVEST_SUCCESS, VAULT_FETCH_STRATEGY_HARVEST_FAILURE } from './constants';
+import {
+  VAULT_FETCH_STRATEGY_HARVEST_BEGIN,
+  VAULT_FETCH_STRATEGY_HARVEST_SUCCESS,
+  VAULT_FETCH_STRATEGY_HARVEST_FAILURE,
+} from './constants';
 import { harvest } from '../../web3';
 
 export function fetchHarvest({ address, web3, contractAddress, index }) {
@@ -63,7 +67,6 @@ export function useFetchHarvest() {
 export function reducer(state, action) {
   switch (action.type) {
     case VAULT_FETCH_STRATEGY_HARVEST_BEGIN:
-      // Just after a request is sent
       return {
         ...state,
         fetchHarvestPending: {
@@ -73,7 +76,6 @@ export function reducer(state, action) {
       };
 
     case VAULT_FETCH_STRATEGY_HARVEST_SUCCESS:
-      // The request is success
       return {
         ...state,
         fetchHarvestPending: {
@@ -83,7 +85,6 @@ export function reducer(state, action) {
       };
 
     case VAULT_FETCH_STRATEGY_HARVEST_FAILURE:
-      // The request is failed
       return {
         ...state,
         fetchHarvestPending: {

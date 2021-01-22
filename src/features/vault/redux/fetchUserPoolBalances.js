@@ -1,7 +1,11 @@
 import { useCallback } from 'react';
 import { vaultABI, erc20ABI } from '../../configure';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
-import { VAULT_FETCH_USER_POOL_BALANCES_BEGIN, VAULT_FETCH_USER_POOL_BALANCES_SUCCESS, VAULT_FETCH_USER_POOL_BALANCES_FAILURE } from './constants';
+import {
+  VAULT_FETCH_USER_POOL_BALANCES_BEGIN,
+  VAULT_FETCH_USER_POOL_BALANCES_SUCCESS,
+  VAULT_FETCH_USER_POOL_BALANCES_FAILURE,
+} from './constants';
 import { fetchPricePerFullShare, fetchAllowance } from '../../web3';
 import async from 'async';
 
@@ -26,7 +30,9 @@ export function fetchUserPoolBalances(data) {
         pools,
         (pool, callback) => {
           const earnContract = new web3.eth.Contract(vaultABI, pool.earnContractAddress);
-          const erc20Contract = pool.tokenAddress ? new web3.eth.Contract(erc20ABI, pool.tokenAddress) : null;
+          const erc20Contract = pool.tokenAddress
+            ? new web3.eth.Contract(erc20ABI, pool.tokenAddress)
+            : null;
           async.parallel(
             [
               callbackInner => {
@@ -116,14 +122,12 @@ export function useFetchUserPoolBalances() {
 export function reducer(state, action) {
   switch (action.type) {
     case VAULT_FETCH_USER_POOL_BALANCES_BEGIN:
-      // Just after a request is sent
       return {
         ...state,
         fetchUserPoolBalancesPending: true,
       };
 
     case VAULT_FETCH_USER_POOL_BALANCES_SUCCESS:
-      // The request is success
       return {
         ...state,
         pools: action.data,
@@ -131,7 +135,6 @@ export function reducer(state, action) {
       };
 
     case VAULT_FETCH_USER_POOL_BALANCES_FAILURE:
-      // The request is failed
       return {
         ...state,
         fetchUserPoolBalancesPending: false,

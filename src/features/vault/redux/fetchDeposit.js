@@ -120,7 +120,6 @@ export function useFetchDeposit() {
 export function reducer(state, action) {
   switch (action.type) {
     case VAULT_FETCH_DEPOSIT_BEGIN:
-      // Just after a request is sent
       return {
         ...state,
         fetchDepositPending: {
@@ -130,7 +129,6 @@ export function reducer(state, action) {
       };
 
     case VAULT_FETCH_DEPOSIT_SUCCESS:
-      // The request is success
       return {
         ...state,
         fetchDepositPending: {
@@ -140,7 +138,6 @@ export function reducer(state, action) {
       };
 
     case VAULT_FETCH_DEPOSIT_FAILURE:
-      // The request is failed
       return {
         ...state,
         fetchDepositPending: {

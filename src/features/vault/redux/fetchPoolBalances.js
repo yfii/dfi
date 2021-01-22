@@ -1,11 +1,15 @@
 import { useCallback } from 'react';
 import { vaultABI } from '../../configure';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
-import { VAULT_FETCH_POOL_BALANCES_BEGIN, VAULT_FETCH_POOL_BALANCES_SUCCESS, VAULT_FETCH_POOL_BALANCES_FAILURE } from './constants';
+import {
+  VAULT_FETCH_POOL_BALANCES_BEGIN,
+  VAULT_FETCH_POOL_BALANCES_SUCCESS,
+  VAULT_FETCH_POOL_BALANCES_FAILURE,
+} from './constants';
 import { fetchTvl, fetchPrice } from '../../web3';
 import async from 'async';
 
-// FIXME: this function now getches all the information related to the pool, not only balances
+// FIXME: this function now fetches all the information related to the pool, not only balances
 
 export function fetchPoolBalances(data) {
   return dispatch => {
@@ -111,14 +115,12 @@ export function useFetchPoolBalances() {
 export function reducer(state, action) {
   switch (action.type) {
     case VAULT_FETCH_POOL_BALANCES_BEGIN:
-      // Just after a request is sent
       return {
         ...state,
         fetchPoolBalancesPending: true,
       };
 
     case VAULT_FETCH_POOL_BALANCES_SUCCESS:
-      // The request is success
       return {
         ...state,
         pools: action.data,
@@ -126,7 +128,6 @@ export function reducer(state, action) {
       };
 
     case VAULT_FETCH_POOL_BALANCES_FAILURE:
-      // The request is failed
       return {
         ...state,
         fetchPoolBalancesPending: false,

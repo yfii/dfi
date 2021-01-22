@@ -110,7 +110,6 @@ export function useFetchWithdraw() {
 export function reducer(state, action) {
   switch (action.type) {
     case VAULT_FETCH_WITHDRAW_BEGIN:
-      // Just after a request is sent
       return {
         ...state,
         fetchWithdrawPending: {
@@ -120,7 +119,6 @@ export function reducer(state, action) {
       };
 
     case VAULT_FETCH_WITHDRAW_SUCCESS:
-      // The request is success
       return {
         ...state,
         fetchWithdrawPending: {
@@ -130,7 +128,6 @@ export function reducer(state, action) {
       };
 
     case VAULT_FETCH_WITHDRAW_FAILURE:
-      // The request is failed
       return {
         ...state,
         fetchWithdrawPending: {
