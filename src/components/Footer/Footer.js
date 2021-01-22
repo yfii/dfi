@@ -21,7 +21,7 @@ const Footer = () => {
           className={classes.link}
         >
           <i className={`fas fa-book ${classes.linkIcon}`}></i>
-          <span>{t('docs')}</span>
+          <span>docs</span>
         </a>
 
         <a
@@ -54,7 +54,7 @@ const Footer = () => {
           className={classes.link}
         >
           <i className={`fas fa-landmark ${classes.linkIcon}`}></i>
-          <span>{t('gov')}</span>
+          <span>gov</span>
         </a>
 
         <a
@@ -64,7 +64,7 @@ const Footer = () => {
           className={classes.link}
         >
           <i className={`fas fa-vote-yea ${classes.linkIcon}`}></i>
-          <span>{t('vote')}</span>
+          <span>vote</span>
         </a>
 
         <a
@@ -74,7 +74,7 @@ const Footer = () => {
           className={classes.link}
         >
           <i className={`fas fa-hand-holding-usd ${classes.linkIcon}`}></i>
-          <span>{t('app')}</span>
+          <span>app</span>
         </a>
       </div>
 
