@@ -38,7 +38,7 @@ export default function StakePools() {
 
   return (
     <>
-      <img className={classes.banner} src={banner} />
+      <img className={classes.banner} src={banner} alt="stake TWT earn IFO tokens" />
       <div className={classes.poweredByBeefy}>{t('Powered-By')} BEEFY.FINANCE</div>
       <Grid container spacing={8}>
         {pools.map(pool => (
@@ -49,12 +49,12 @@ export default function StakePools() {
       </Grid>
       <Grid className={classNames(classes.imageContainer, classes.barn)} container>
         <Grid item xs={6} md={2}>
-          <img className={classes.image} src={barn} />
+          <img className={classes.image} src={barn} alt="the barn of trust" />
         </Grid>
       </Grid>
       <Grid className={classNames(classes.imageContainer, classes.projects)} container>
         <Grid item xs={12} md={4}>
-          <img className={classes.image} src={projects} />
+          <img className={classes.image} src={projects} alt="project logos" />
         </Grid>
       </Grid>
     </>

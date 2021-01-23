@@ -28,11 +28,11 @@ const PoolCard = ({ pool }) => {
 
   return (
     <div className={classes.card}>
-      <img className={classes.background} src={card} />
+      <img className={classes.background} src={card} alt="card background" />
       <div className={classes.foreground}>
         <div className={classes.stakeButtons}>
-          <img className={classes.button} src={stakeButton} />
-          <img className={classes.button} src={unstakeButton} />
+          <img className={classes.button} src={stakeButton} alt="stake button" />
+          <img className={classes.button} src={unstakeButton} alt="unstake button" />
         </div>
         <div className={classes.text}>
           {t('Stake-Table-Staked')}: {stakedBalance} {pool.name}
@@ -40,7 +40,7 @@ const PoolCard = ({ pool }) => {
         <div className={classes.text}>
           {t('Stake-Balancer-Earned')}: {pool.rewardsAvailable ? pool.rewardsAvailable.toFixed(3) : 0} {pool.rewardsSymbol}
         </div>
-        <img className={classes.button} src={harvestButton} />
+        <img className={classes.button} src={harvestButton} alt="harvest button" />
         <div className={classes.text}>
           {t('Stake-Table-Total')}: {tvl}
         </div>
