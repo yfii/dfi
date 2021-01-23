@@ -62,6 +62,11 @@ export default function StakePools() {
       <Grid className={classNames(classes.imageContainer, classes.projects)} container>
         <Grid item xs={12} md={4}>
           <img className={classes.image} src={projects} alt="project logos" />
+          <div className={classes.links}>
+            <a href="https://beefy.finance/" target="_blank" rel="noopener noreferrer">beefy.finance</a>
+            <a href="https://trustwallet.com/" target="_blank" rel="noopener noreferrer">Trust Wallet</a>
+            <a href="https://docs.beefy.finance/beefyfinance/" target="_blank" rel="noopener noreferrer">{t('IFO-Guide')}</a>
+          </div>
         </Grid>
       </Grid>
     </>

@@ -9,7 +9,8 @@ const styles = () => ({
     textAlign: 'right',
   },
   imageContainer: {
-    justifyContent: 'center',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
   barn: {
     marginTop: 100,
@@ -20,6 +21,16 @@ const styles = () => ({
   image: {
     width: '100%',
   },
-})
+  links: {
+    display: 'flex',
+    fontWeight: 'bold',
+    justifyContent: 'space-between',
+    marginTop: 50,
+    textTransform: 'uppercase',
+    '& a': {
+      color: 'inherit',
+    },
+  },
+});
 
 export default styles;
