@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/core/styles';
@@ -8,6 +8,7 @@ import Hidden from '@material-ui/core/Hidden';
 import { useConnectWallet } from '../../../home/redux/hooks';
 import { useFetchPoolsInfo } from '../../redux/hooks';
 import PoolCard from '../PoolCard/PoolCard';
+import Switch from '../Switch/Switch';
 
 import styles from './styles';
 import banner from './banner.png';
@@ -24,6 +25,8 @@ export default function StakePools() {
   const { t } = useTranslation();
   const { pools, fetchPoolsInfo } = useFetchPoolsInfo();
   const { web3, address } = useConnectWallet();
+
+  const [switchValue, setSwitchValue] = useState('TWT');
 
   useEffect(() => {
     if (address && web3) {
@@ -47,12 +50,21 @@ export default function StakePools() {
         <img className={classes.banner} src={mobileBanner} alt="stake TWT earn IFO tokens" />
       </Hidden>
       <div className={classes.poweredByBeefy}>{t('Powered-By')} BEEFY.FINANCE</div>
+      <Switch
+        className={classes.switch}
+        value={switchValue}
+        onChange={setSwitchValue}
+        options={['TWT', 'BIFI']}
+      />
       <Grid container spacing={8}>
-        {pools.map(pool => (
-          <Grid key={pool.id} item xs={12} md={4}>
-            <PoolCard pool={pool} />
-          </Grid>
-        ))}
+        {pools
+          .filter(pool => switchValue === 'BIFI' ? (pool.name === 'BIFI') : (pool.name !== 'BIFI'))
+          .map(pool => (
+            <Grid key={pool.id} item xs={12} md={4}>
+              <PoolCard pool={pool} />
+            </Grid>
+          )
+        )}
       </Grid>
       <Grid className={classNames(classes.imageContainer, classes.barn)} container>
         <Grid item xs={6} md={2}>

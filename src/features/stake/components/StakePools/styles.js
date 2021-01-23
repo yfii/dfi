@@ -8,6 +8,9 @@ const styles = () => ({
     padding: '0 20px',
     textAlign: 'right',
   },
+  switch: {
+    margin: '20px auto 50px',
+  },
   imageContainer: {
     flexDirection: 'column',
     alignItems: 'center',
