@@ -8,41 +8,41 @@ import {
   STAKE_FETCH_POOLS_INFO_FAILURE,
 } from './constants';
 
-const _getStakedBalance = async (web3, asset, account, callback) => {
-  let erc20Contract = new web3.eth.Contract(asset.rewardsABI, asset.rewardsAddress);
-
-  try {
-    var balance = await erc20Contract.methods.balanceOf(account.address).call({ from: account.address });
-    balance = parseFloat(balance) / 10 ** asset.decimals;
-    callback(null, parseFloat(balance));
-  } catch (ex) {
-    return callback(ex);
-  }
-};
-
-const _getRewardsAvailable = async (web3, asset, account, callback) => {
-  let erc20Contract = new web3.eth.Contract(asset.rewardsABI, asset.rewardsAddress);
-
-  try {
-    var earned = await erc20Contract.methods.earned(account.address).call({ from: account.address });
-    earned = parseFloat(earned) / 10 ** asset.decimals;
-    callback(null, parseFloat(earned));
-  } catch (ex) {
-    return callback(ex);
-  }
-};
-
-const _getTotalValueLocked = async (web3, asset, account, callback) => {
-  let lpTokenContract = new web3.eth.Contract(asset.abi, asset.address);
-
-  try {
-    let tvl = await lpTokenContract.methods.balanceOf(asset.rewardsAddress).call({ from: account.address });
-    tvl = parseFloat(tvl) / 10 ** asset.decimals;
-    callback(null, parseFloat(tvl));
-  } catch (ex) {
-    return callback(ex);
-  }
-};
+// const _getStakedBalance = async (web3, asset, account, callback) => {
+//   let erc20Contract = new web3.eth.Contract(asset.rewardsABI, asset.rewardsAddress);
+//
+//   try {
+//     var balance = await erc20Contract.methods.balanceOf(account.address).call({ from: account.address });
+//     balance = parseFloat(balance) / 10 ** asset.decimals;
+//     callback(null, parseFloat(balance));
+//   } catch (ex) {
+//     return callback(ex);
+//   }
+// };
+//
+// const _getRewardsAvailable = async (web3, asset, account, callback) => {
+//   let erc20Contract = new web3.eth.Contract(asset.rewardsABI, asset.rewardsAddress);
+//
+//   try {
+//     var earned = await erc20Contract.methods.earned(account.address).call({ from: account.address });
+//     earned = parseFloat(earned) / 10 ** asset.decimals;
+//     callback(null, parseFloat(earned));
+//   } catch (ex) {
+//     return callback(ex);
+//   }
+// };
+//
+// const _getTotalValueLocked = async (web3, asset, account, callback) => {
+//   let lpTokenContract = new web3.eth.Contract(asset.abi, asset.address);
+//
+//   try {
+//     let tvl = await lpTokenContract.methods.balanceOf(asset.rewardsAddress).call({ from: account.address });
+//     tvl = parseFloat(tvl) / 10 ** asset.decimals;
+//     callback(null, parseFloat(tvl));
+//   } catch (ex) {
+//     return callback(ex);
+//   }
+// };
 
 export function fetchPoolsInfo(data) {
   return (dispatch, getState) => {
@@ -54,7 +54,8 @@ export function fetchPoolsInfo(data) {
     // It's hard to use state to manage it, but returning a promise allows you to easily achieve it.
     // e.g.: handleSubmit() { this.props.actions.submitForm(data).then(()=> {}).catch(() => {}); }
     const promise = new Promise((resolve, reject) => {
-      const { web3, address, pools } = data;
+      // const { web3, address, pools } = data;
+      const { pools } = data;
 
       async.map(
         pools,
@@ -62,13 +63,13 @@ export function fetchPoolsInfo(data) {
           async.parallel(
             [
               callbackInner => {
-                _getStakedBalance(web3, pool, { address }, callbackInner);
+                // _getStakedBalance(web3, pool, { address }, callbackInner);
               },
               callbackInner => {
-                _getRewardsAvailable(web3, pool, { address }, callbackInner);
+                // _getRewardsAvailable(web3, pool, { address }, callbackInner);
               },
               callbackInner => {
-                _getTotalValueLocked(web3, pool, { address }, callbackInner);
+                // _getTotalValueLocked(web3, pool, { address }, callbackInner);
               },
             ],
             (error, data) => {

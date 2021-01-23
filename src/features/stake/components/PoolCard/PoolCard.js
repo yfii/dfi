@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import { makeStyles } from '@material-ui/core/styles';
 import { useTranslation } from 'react-i18next';
 
-import card from '../../images/card.png';
 import ProgressBar from '../ProgressBar/ProgressBar';
 
 import styles from './styles';
@@ -28,14 +27,18 @@ const PoolCard = ({ pool }) => {
 
   return (
     <div className={classes.card}>
-      <img className={classes.background} src={card} alt="card background" />
+      <img
+        className={classes.background}
+        src={require(`../../images/cards/${pool.symbol}_${pool.rewardsSymbol}.png`)}
+        alt="card background"
+      />
       <div className={classes.foreground}>
         <div className={classes.stakeButtons}>
           <img className={classes.button} src={stakeButton} alt="stake button" />
           <img className={classes.button} src={unstakeButton} alt="unstake button" />
         </div>
         <div className={classes.text}>
-          {t('Stake-Table-Staked')}: {stakedBalance} {pool.name}
+          {t('Stake-Table-Staked')}: {stakedBalance} {pool.symbol}
         </div>
         <div className={classes.text}>
           {t('Stake-Balancer-Earned')}: {pool.rewardsAvailable ? pool.rewardsAvailable.toFixed(3) : 0} {pool.rewardsSymbol}

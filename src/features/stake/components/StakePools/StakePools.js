@@ -58,9 +58,9 @@ export default function StakePools() {
       />
       <Grid container spacing={8}>
         {pools
-          .filter(pool => switchValue === 'BIFI' ? (pool.name === 'BIFI') : (pool.name !== 'BIFI'))
+          .filter(pool => pool.partner === switchValue)
           .map(pool => (
-            <Grid key={pool.id} item xs={12} md={4}>
+            <Grid key={`${pool.symbol} ${pool.rewardsSymbol}`} item xs={12} md={4}>
               <PoolCard pool={pool} />
             </Grid>
           )
