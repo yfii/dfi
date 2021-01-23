@@ -11,6 +11,7 @@ const pools = [
     stakedBalance: 0,
     rewardsAvailable: 0,
     tvl: 0,
+    rewardRate: 0,
   },
   {
     partner: 'BIFI',
@@ -24,6 +25,7 @@ const pools = [
     stakedBalance: 0,
     rewardsAvailable: 0,
     tvl: 0,
+    rewardRate: 0,
   },
 ];
 

@@ -43,6 +43,17 @@ import {
 //     return callback(ex);
 //   }
 // };
+//
+// const _getRewardRate = async (web3, asset, account, callback) => {
+//   let rewardsPoolContract = new web3.eth.Contract(asset.rewardsABI, asset.rewardsAddress);
+//   try {
+//     let rewardRate = await rewardsPoolContract.methods.rewardRate().call({ from: account.address });
+//     rewardRate = parseFloat(rewardRate) / 10 ** asset.decimals;
+//     callback(null, parseFloat(rewardRate));
+//   } catch (ex) {
+//     return callback(ex);
+//   }
+// };
 
 export function fetchPoolsInfo(data) {
   return (dispatch, getState) => {
@@ -71,6 +82,9 @@ export function fetchPoolsInfo(data) {
               callbackInner => {
                 // _getTotalValueLocked(web3, pool, { address }, callbackInner);
               },
+              callbackInner => {
+                // _getRewardRate(web3, pool, { address }, callbackInner);
+              },
             ],
             (error, data) => {
               if (error) {
@@ -79,6 +93,7 @@ export function fetchPoolsInfo(data) {
               pool.stakedBalance = data[0] || 0;
               pool.rewardsAvailable = data[1] || 0;
               pool.tvl = data[2] || 0;
+              pool.rewardRate = data[3] || 0;
               callback(null, pool);
             }
           );

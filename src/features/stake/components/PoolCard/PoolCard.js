@@ -45,6 +45,9 @@ const PoolCard = ({ pool }) => {
         </div>
         <img className={classes.button} src={harvestButton} alt="harvest button" />
         <div className={classes.text}>
+          {t('Stake-Table-Apy')}:
+        </div>
+        <div className={classes.text}>
           {t('Stake-Table-Total')}: {tvl}
         </div>
         <ProgressBar className={classes.percentageBar} percentage={percentage} />
