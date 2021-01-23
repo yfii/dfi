@@ -20,6 +20,18 @@ const _getStakedBalance = async (web3, asset, account, callback) => {
   }
 };
 
+const _getRewardsAvailable = async (web3, asset, account, callback) => {
+  let erc20Contract = new web3.eth.Contract(asset.rewardsABI, asset.rewardsAddress);
+
+  try {
+    var earned = await erc20Contract.methods.earned(account.address).call({ from: account.address });
+    earned = parseFloat(earned) / 10 ** asset.decimals;
+    callback(null, parseFloat(earned));
+  } catch (ex) {
+    return callback(ex);
+  }
+};
+
 const _getTotalValueLocked = async (web3, asset, account, callback) => {
   let lpTokenContract = new web3.eth.Contract(asset.abi, asset.address);
 
@@ -53,6 +65,9 @@ export function fetchPoolsInfo(data) {
                 _getStakedBalance(web3, pool, { address }, callbackInner);
               },
               callbackInner => {
+                _getRewardsAvailable(web3, pool, { address }, callbackInner);
+              },
+              callbackInner => {
                 _getTotalValueLocked(web3, pool, { address }, callbackInner);
               },
             ],
@@ -61,7 +76,8 @@ export function fetchPoolsInfo(data) {
                 console.log(error);
               }
               pool.stakedBalance = data[0] || 0;
-              pool.tvl = data[1] || 0;
+              pool.rewardsAvailable = data[1] || 0;
+              pool.tvl = data[2] || 0;
               callback(null, pool);
             }
           );

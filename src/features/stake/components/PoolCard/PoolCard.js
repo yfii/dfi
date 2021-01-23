@@ -26,6 +26,9 @@ const PoolCard = ({ pool }) => {
         <div className={classes.text}>
           {t('Stake-Table-Staked')}: {pool.stakedBalance ? pool.stakedBalance.toFixed(2) : 0} {pool.name}
         </div>
+        <div className={classes.text}>
+          {t('Stake-Balancer-Earned')}: {pool.rewardsAvailable ? pool.rewardsAvailable.toFixed(3) : 0} {pool.rewardsSymbol}
+        </div>
         <img className={classes.button} src={harvestButton} />
         <div className={classes.text}>
           {t('Stake-Table-Total')}: {pool.tvl ? pool.tvl.toFixed() : 0}

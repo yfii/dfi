@@ -36,5 +36,6 @@
   "Powered-By": "POWERED BY",
   "Stake-Table-Staked": "STAKE",
   "Stake-Table-Total": "POOL",
-  "Stake-Table-Apy": "APY"
+  "Stake-Table-Apy": "APY",
+  "Stake-Balancer-Earned": "EARNED"
 }

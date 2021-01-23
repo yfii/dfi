@@ -26,5 +26,6 @@
   "Filters-Default": "默认",
   "Stake-Table-Staked": "已抵押",
   "Stake-Table-Total": "锁仓金额",
-  "Stake-Table-Apy": "回报率"
+  "Stake-Table-Apy": "回报率",
+  "Stake-Balancer-Earned": "当前可领取奖励"
 }

@@ -25,5 +25,6 @@
   "Filters-All": "All",
   "Filters-Default": "Default",
   "Stake-Table-Staked": "스테이킹",
-  "Stake-Table-Total": "전체 잠금 금액"
+  "Stake-Table-Total": "전체 잠금 금액,",
+  "Stake-Balancer-Earned": "보상 인출"
 }
