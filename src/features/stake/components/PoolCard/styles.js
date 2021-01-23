@@ -28,6 +28,13 @@ const styles = () => ({
   text: {
     fontWeight: 'bold',
   },
+  percentageBar: {
+    margin: '10px 0',
+  },
+  percentage: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
 });
 
 export default styles;
