@@ -1,39 +1,25 @@
 import { useCallback } from 'react';
-import { vaultABI } from '../../configure';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
-  VAULT_FETCH_POOL_BALANCES_BEGIN,
-  VAULT_FETCH_POOL_BALANCES_SUCCESS,
-  VAULT_FETCH_POOL_BALANCES_FAILURE,
+  VAULT_FETCH_ORACLE_PRICES_BEGIN,
+  VAULT_FETCH_ORACLE_PRICES_SUCCESS,
+  VAULT_FETCH_ORACLE_PRICES_FAILURE,
 } from './constants';
-import { fetchTvl, fetchPrice } from '../../web3';
+import { fetchPrice } from '../../web3';
 import async from 'async';
 
-export function fetchPoolBalances(data) {
+export function fetchPoolBalances({ web3, pools }) {
   return dispatch => {
     dispatch({
-      type: VAULT_FETCH_POOL_BALANCES_BEGIN,
+      type: VAULT_FETCH_ORACLE_PRICES_BEGIN,
     });
 
     const promise = new Promise((resolve, reject) => {
-      const { web3, pools } = data;
       async.map(
         pools,
         (pool, callback) => {
-          const earnContract = new web3.eth.Contract(vaultABI, pool.earnContractAddress);
           async.parallel(
             [
-              callbackInner => {
-                fetchTvl({
-                  contract: earnContract,
-                })
-                  .then(data => {
-                    return callbackInner(null, data);
-                  })
-                  .catch(error => {
-                    return callbackInner(error, 0);
-                  });
-              },
               callbackInner => {
                 fetchPrice({
                   id: pool.oracleId,
@@ -50,7 +36,6 @@ export function fetchPoolBalances(data) {
               if (error) {
                 console.log(error);
               }
-              pool.tvl = data[0] || 0;
               pool.oraclePrice = data[1] || 0;
               callback(null, pool);
             }
@@ -59,12 +44,12 @@ export function fetchPoolBalances(data) {
         (error, pools) => {
           if (error) {
             dispatch({
-              type: VAULT_FETCH_POOL_BALANCES_FAILURE,
+              type: VAULT_FETCH_ORACLE_PRICES_FAILURE,
             });
             return reject(error.message || error);
           }
           dispatch({
-            type: VAULT_FETCH_POOL_BALANCES_SUCCESS,
+            type: VAULT_FETCH_ORACLE_PRICES_SUCCESS,
             data: pools,
           });
           resolve();
@@ -79,47 +64,47 @@ export function fetchPoolBalances(data) {
 export function useFetchPoolBalances() {
   const dispatch = useDispatch();
 
-  const { pools, fetchPoolBalancesPending } = useSelector(
+  const { pools, fetchOraclePricesPending } = useSelector(
     state => ({
       pools: state.vault.pools,
-      fetchPoolBalancesPending: state.vault.fetchPoolBalancesPending,
+      fetchOraclePricesPending: state.vault.fetchOraclePricesPending,
     }),
     shallowEqual
   );
 
   const boundAction = useCallback(
     data => {
-      return dispatch(fetchPoolBalances(data));
+      return dispatch(fetchOraclePrices(data));
     },
     [dispatch]
   );
 
   return {
     pools,
-    fetchPoolBalances: boundAction,
-    fetchPoolBalancesPending,
+    fetchOraclePrices: boundAction,
+    fetchOraclePricesPending,
   };
 }
 
 export function reducer(state, action) {
   switch (action.type) {
-    case VAULT_FETCH_POOL_BALANCES_BEGIN:
+    case VAULT_FETCH_ORACLE_PRICES_BEGIN:
       return {
         ...state,
-        fetchPoolBalancesPending: true,
+        fetchOraclePricesPending: true,
       };
 
-    case VAULT_FETCH_POOL_BALANCES_SUCCESS:
+    case VAULT_FETCH_ORACLE_PRICES_SUCCESS:
       return {
         ...state,
         pools: action.data,
-        fetchPoolBalancesPending: false,
+        fetchOraclePricesPending: false,
       };
 
-    case VAULT_FETCH_POOL_BALANCES_FAILURE:
+    case VAULT_FETCH_ORACLE_PRICES_FAILURE:
       return {
         ...state,
-        fetchPoolBalancesPending: false,
+        fetchOraclePricesPending: false,
       };
 
     default:
