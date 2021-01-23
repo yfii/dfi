@@ -6,7 +6,8 @@ import {
   VAULT_FETCH_BALANCES_FAILURE,
 } from './constants';
 import { MultiCall } from 'eth-multicall';
-import { erc20ABI, balanceProxyBNB } from '../../configure';
+import { erc20ABI, multicallBnbShimABI } from '../../configure';
+import BigNumber from 'bignumber.js';
 
 export function fetchBalances(data) {
   return dispatch => {
@@ -30,10 +31,10 @@ export function fetchBalances(data) {
 
       const calls = tokensList.map(token => {
         if (!token.tokenAddress) {
-          const bnbProxyAddress = '0x1d1c397FBe76f47A44D353b08Cd41CDAFcF75Bc6';
-          const bnbProxyContract = new web3.eth.Contract(balanceProxyBNB, bnbProxyAddress);
+          const shimAddress = '0xC72E5edaE5D7bA628A2Acb39C8Aa0dbbD06daacF';
+          const shimContract = new web3.eth.Contract(multicallBnbShimABI, shimAddress);
           return {
-            tokenBalance: bnbProxyContract.methods.balanceOf(address),
+            tokenBalance: shimContract.methods.balanceOf(address),
           };
         } else {
           const tokenContract = new web3.eth.Contract(erc20ABI, token.tokenAddress);
@@ -50,7 +51,7 @@ export function fetchBalances(data) {
           for (let i = 0; i < tokensList.length; i++) {
             newTokens[tokensList[i].token] = {
               tokenAddress: tokensList[i].tokenAddress,
-              tokenBalance: results[i].tokenBalance || 0,
+              tokenBalance: new BigNumber(results[i].tokenBalance).toNumber() || 0,
             };
           }
 

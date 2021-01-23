@@ -1,2 +1,2 @@
-export { vaultABI, bnbVaultABI, erc20ABI, strategyABI, balanceProxyBNB } from './abi';
+export { vaultABI, bnbVaultABI, erc20ABI, strategyABI, multicallBnbShimABI } from './abi';
 export { pools } from './pools';
