@@ -9,15 +9,15 @@ const usePoolsByVaultType = pools => {
     if (vaultType === 'All') {
       setPoolsByVaultType(pools);
     } else if (vaultType === 'Singles') {
-      let newPools = pools.filter(pool => pool.assets.length === 1);
+      const newPools = pools.filter(pool => pool.assets.length === 1);
       setPoolsByVaultType(newPools);
     } else if (vaultType === 'StableLPs') {
       const isStable = (vaultType) => stables.includes(vaultType);
-      let newPools = pools.filter(pool => pool.assets.every(isStable));
+      const newPools = pools.filter(pool => pool.assets.every(isStable));
       setPoolsByVaultType(newPools);
     } else if (vaultType === 'Stables') {
       const isStable = (vaultType) => stables.includes(vaultType);
-      let newPools = pools.filter(pool => pool.assets.some(isStable));
+      const newPools = pools.filter(pool => pool.assets.some(isStable));
       setPoolsByVaultType(newPools);
     }
   }, [pools, vaultType]);

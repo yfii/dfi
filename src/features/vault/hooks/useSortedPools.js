@@ -22,14 +22,14 @@ const useSortedPools = (pools, apys) => {
 };
 
 const handleApy = (pools, apys) => {
-  let newPools = [...pools];
+  const newPools = [...pools];
   return newPools.sort((a, b) => {
     return apys[b.id] - apys[a.id];
   });
 };
 
 const handleTvl = pools => {
-  let newPools = [...pools];
+  const newPools = [...pools];
   return newPools.sort((a, b) => {
     const aPrice = a.oraclePrice;
     const bPrice = b.oraclePrice;

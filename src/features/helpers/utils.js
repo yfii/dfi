@@ -8,11 +8,7 @@ export function isEmpty(key) {
   }
   if (typeof key === 'string') {
     key = key.replace(trimReg, '');
-    if (key === '' || key === null || key === 'null' || key === undefined || key === 'undefined') {
-      return true;
-    } else {
-      return false;
-    }
+    return key === '' || key === null || key === 'null' || key === undefined || key === 'undefined';
   } else if (typeof key === 'undefined') {
     return true;
   } else if (typeof key == 'object') {
@@ -28,10 +24,7 @@ export function isEmpty(key) {
 let inputReg = /[a-z]/i;
 export function inputLimitPass(value, tokenDecimals) {
   let valueArr = value.split('.');
-  if (inputReg.test(value) || (valueArr.length === 2 && valueArr[1].length > tokenDecimals)) {
-    return false;
-  }
-  return true;
+  return !(inputReg.test(value) || (valueArr.length === 2 && valueArr[1].length > tokenDecimals));
 }
 
 export function inputFinalVal(value, total, tokenDecimals) {
@@ -50,11 +43,8 @@ const HarvestBlacklistVaultIds = [
   'fortube-xtz',
   'fortube-busd',
   'fortube-link',
-  ,
   'fortube-dot',
-  ,
   'fortube-usdt',
-  ,
   'fortube-eth',
   'fortube-btcb',
   'fry-burger-v2',
