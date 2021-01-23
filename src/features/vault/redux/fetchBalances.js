@@ -5,8 +5,8 @@ import {
   VAULT_FETCH_BALANCES_SUCCESS,
   VAULT_FETCH_BALANCES_FAILURE,
 } from './constants';
-import { fetchBalance } from '../../web3';
-import async from 'async';
+import { MultiCall } from 'eth-multicall';
+import { erc20ABI, balanceProxyBNB } from '../../configure';
 
 export function fetchBalances(data) {
   return dispatch => {
@@ -17,58 +17,57 @@ export function fetchBalances(data) {
     const promise = new Promise((resolve, reject) => {
       const { address, web3, tokens } = data;
 
-      const newTokens = [];
+      const tokensList = [];
       for (let key in tokens) {
-        newTokens.push({
+        tokensList.push({
           token: key,
           tokenAddress: tokens[key].tokenAddress,
           tokenBalance: tokens[key].tokenBalance,
         });
       }
-      async.map(
-        newTokens,
-        (token, callback) => {
-          async.parallel(
-            [
-              callbackInner => {
-                fetchBalance({
-                  web3,
-                  address,
-                  tokenAddress: token.tokenAddress,
-                })
-                  .then(data => callbackInner(null, data))
-                  .catch(error => {
-                    return callbackInner(error.message || error);
-                  });
-              },
-            ],
-            (error, data) => {
-              token.tokenBalance = data[0] || 0;
-              callback(null, token);
-            }
+
+      const multicall = new MultiCall(web3, '0xB94858b0bB5437498F5453A16039337e5Fdc269C');
+
+      const calls = tokensList.map(token => {
+        if (!token.tokenAddress) {
+          const bnbProxyContract = new web3.eth.Contract(
+            balanceProxyBNB,
+            '0x1d1c397FBe76f47A44D353b08Cd41CDAFcF75Bc6'
           );
-        },
-        (error, tokens) => {
-          if (error) {
-            dispatch({
-              type: VAULT_FETCH_BALANCES_FAILURE,
-            });
-            return reject(error.message || error);
-          }
+          return {
+            tokenBalance: bnbProxyContract.methods.balanceOf(address),
+          };
+        } else {
+          const tokenContract = new web3.eth.Contract(erc20ABI, token.tokenAddress);
+          return {
+            tokenBalance: tokenContract.methods.balanceOf(address),
+          };
+        }
+      });
+
+      multicall
+        .all([calls])
+        .then(([results]) => {
           const newTokens = {};
-          for (let i = 0; i < tokens.length; i++) {
-            newTokens[tokens[i].token] = {
-              tokenAddress: tokens[i].tokenAddress,
-              tokenBalance: tokens[i].tokenBalance,
+          for (let i = 0; i < tokensList.length; i++) {
+            newTokens[tokensList[i].token] = {
+              tokenAddress: tokensList[i].tokenAddress,
+              tokenBalance: results[i].tokenBalance || 0,
             };
           }
+
           dispatch({
             type: VAULT_FETCH_BALANCES_SUCCESS,
             data: newTokens,
           });
           resolve();
-        }
-      );
+        })
+        .catch(error => {
+          dispatch({
+            type: VAULT_FETCH_BALANCES_FAILURE,
+          });
+          return reject(error.message || error);
+        });
     });
 
     return promise;
