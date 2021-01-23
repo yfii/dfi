@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
+import Hidden from '@material-ui/core/Hidden';
 
 import { useConnectWallet } from '../../../home/redux/hooks';
 import { useFetchPoolsInfo } from '../../redux/hooks';
@@ -11,6 +12,7 @@ import PoolCard from '../PoolCard/PoolCard';
 import styles from './styles';
 import banner from './banner.png';
 import barn from './barn.png';
+import mobileBanner from './mobile_banner.png';
 import projects from './projects.png';
 
 const FETCH_INTERVAL_MS = 30 * 1000;
@@ -38,7 +40,12 @@ export default function StakePools() {
 
   return (
     <>
-      <img className={classes.banner} src={banner} alt="stake TWT earn IFO tokens" />
+      <Hidden xsDown>
+        <img className={classes.banner} src={banner} alt="stake TWT earn IFO tokens" />
+      </Hidden>
+      <Hidden smUp>
+        <img className={classes.banner} src={mobileBanner} alt="stake TWT earn IFO tokens" />
+      </Hidden>
       <div className={classes.poweredByBeefy}>{t('Powered-By')} BEEFY.FINANCE</div>
       <Grid container spacing={8}>
         {pools.map(pool => (
