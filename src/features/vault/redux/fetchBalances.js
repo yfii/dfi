@@ -30,10 +30,8 @@ export function fetchBalances(data) {
 
       const calls = tokensList.map(token => {
         if (!token.tokenAddress) {
-          const bnbProxyContract = new web3.eth.Contract(
-            balanceProxyBNB,
-            '0x1d1c397FBe76f47A44D353b08Cd41CDAFcF75Bc6'
-          );
+          const bnbProxyAddress = '0x1d1c397FBe76f47A44D353b08Cd41CDAFcF75Bc6';
+          const bnbProxyContract = new web3.eth.Contract(balanceProxyBNB, bnbProxyAddress);
           return {
             tokenBalance: bnbProxyContract.methods.balanceOf(address),
           };
