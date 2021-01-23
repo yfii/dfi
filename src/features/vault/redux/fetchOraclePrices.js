@@ -8,7 +8,7 @@ import {
 import { fetchPrice } from '../../web3';
 import async from 'async';
 
-export function fetchPoolBalances({ web3, pools }) {
+export function fetchOraclePrices({ pools }) {
   return dispatch => {
     dispatch({
       type: VAULT_FETCH_ORACLE_PRICES_BEGIN,
