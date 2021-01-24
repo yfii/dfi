@@ -15,7 +15,7 @@ import SummaryActions from './SummaryActions/SummaryActions';
 
 const useStyles = makeStyles(styles);
 
-const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, depositedApy }) => {
+const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, apy }) => {
   const { t } = useTranslation();
   const classes = useStyles();
 
@@ -44,7 +44,12 @@ const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, d
         <Grid item md={7} xs={4}>
           <Grid item container justify="space-between">
             <Hidden smDown>
-              <LabeledStat value={formatDecimals(balanceSingle)} label={t('Vault-Balance')} xs={5} md={3} />
+              <LabeledStat
+                value={formatDecimals(balanceSingle)}
+                label={t('Vault-Balance')}
+                xs={5}
+                md={3}
+              />
               <LabeledStat
                 value={formatDecimals(
                   byDecimals(
@@ -58,14 +63,14 @@ const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, d
                 align="start"
               />
               <LabeledStat
-                value={pool.unstableApy ? '??? %' : formatApy(depositedApy, pool.defaultApy)}
+                value={pool.unstableApy ? '??? %' : formatApy(apy, pool.defaultApy)}
                 label={t('Vault-APY')}
                 xs={5}
                 md={2}
                 align="start"
               />
               <LabeledStat
-                value={pool.unstableApy ? '??? %' : calcDaily(depositedApy, pool.defaultApy)}
+                value={pool.unstableApy ? '??? %' : calcDaily(apy, pool.defaultApy)}
                 label={t('Vault-APYDaily')}
                 xs={5}
                 md={2}
@@ -102,13 +107,13 @@ const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, d
           </Grid>
           <Grid item xs={12} style={{ display: 'flex' }}>
             <LabeledStat
-              value={pool.unstableApy ? '??? %' : formatApy(depositedApy, pool.defaultApy)}
+              value={pool.unstableApy ? '??? %' : formatApy(apy, pool.defaultApy)}
               label={t('Vault-APY')}
               xs={4}
               align="start"
             />
             <LabeledStat
-              value={pool.unstableApy ? '??? %' : calcDaily(depositedApy, pool.defaultApy)}
+              value={pool.unstableApy ? '??? %' : calcDaily(apy, pool.defaultApy)}
               label={t('Vault-APYDaily')}
               xs={4}
             />
@@ -124,10 +129,8 @@ const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, d
   );
 };
 
-const formatDecimals = (number) => {
-  return  (number >= 10) ?
-          number.toFixed(4) :  number.isEqualTo(0) ?
-          0 : number.toFixed(8)
-}
+const formatDecimals = number => {
+  return number >= 10 ? number.toFixed(4) : number.isEqualTo(0) ? 0 : number.toFixed(8);
+};
 
 export default PoolSummary;

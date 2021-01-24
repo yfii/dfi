@@ -31,7 +31,7 @@ const VisiblePools = ({ pools, tokens, apys }) => {
         setOrder={setOrder}
       />
       {sortedPools.map((pool, index) => (
-        <Pool pool={pool} index={index} tokens={tokens} contractApy={apys} key={pool.id} />
+        <Pool pool={pool} index={index} tokens={tokens} apy={apys[pool.id] || 0} key={pool.id} />
       ))}
     </>
   );

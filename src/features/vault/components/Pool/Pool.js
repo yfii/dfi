@@ -12,7 +12,7 @@ import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-const Pool = ({ pool, index, tokens, contractApy }) => {
+const Pool = ({ pool, index, tokens, apy }) => {
   const classes = useStyles();
 
   const [isOpen, setIsOpen] = useState(index === 0 ? true : false);
@@ -20,8 +20,6 @@ const Pool = ({ pool, index, tokens, contractApy }) => {
 
   let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
   let sharesBalance = new BigNumber(tokens[pool.earnedToken].tokenBalance);
-
-  let depositedApy = contractApy[pool.id] || 0;
 
   return (
     <Grid item xs={12} container key={index} className={classes.container} spacing={0}>
@@ -37,7 +35,7 @@ const Pool = ({ pool, index, tokens, contractApy }) => {
           toggleCard={toggleCard}
           isOpen={isOpen}
           sharesBalance={sharesBalance}
-          depositedApy={depositedApy}
+          apy={apy}
         />
         <Divider variant="middle" className={classes.divider} />
         <PoolDetails

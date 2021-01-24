@@ -6,5 +6,5 @@ export { useFetchUserPoolBalances } from './fetchUserPoolBalances';
 export { useFetchApproval } from './fetchApproval';
 export { useFetchDeposit } from './fetchDeposit';
 export { useFetchWithdraw } from './fetchWithdraw';
-export { useFetchContractApy } from './fetchContractApy';
+export { useFetchApys } from './fetchApys';
 export { useFetchHarvest } from './fetchHarvest';

@@ -9,7 +9,7 @@ import {
   useFetchBalances,
   useFetchPoolBalances,
   useFetchUserPoolBalances,
-  useFetchContractApy,
+  useFetchApys,
   useFetchOraclePrices,
   useFetchPricePerShare,
 } from '../../redux/hooks';
@@ -31,7 +31,7 @@ export default function Pools() {
   const { fetchOraclePrices } = useFetchOraclePrices();
   const { fetchPricePerShare } = useFetchPricePerShare();
   const { tokens, fetchBalances } = useFetchBalances();
-  const { contractApy, fetchContractApy } = useFetchContractApy();
+  const { apys, fetchApys } = useFetchApys();
   const { poolsTvl } = usePoolsTvl(pools);
   const classes = useStyles();
 
@@ -39,14 +39,14 @@ export default function Pools() {
     if (address && web3) {
       fetchBalances({ address, web3, tokens });
       fetchUserPoolBalances({ address, web3, pools });
-      fetchContractApy();
+      fetchApys();
       fetchPoolBalances({ web3: web3Default, pools });
       fetchOraclePrices({ pools });
       fetchPricePerShare({ web3, pools });
       const id = setInterval(() => {
         fetchBalances({ address, web3, tokens });
         fetchUserPoolBalances({ address, web3, pools });
-        fetchContractApy();
+        fetchApys();
         fetchPoolBalances({ web3: web3Default, pools });
         fetchOraclePrices({ pools });
         fetchPricePerShare({ web3, pools });
@@ -71,7 +71,7 @@ export default function Pools() {
         </div>
       </Grid>
 
-      <VisiblePools pools={pools} apys={contractApy} tokens={tokens} />
+      <VisiblePools pools={pools} apys={apys} tokens={tokens} />
     </Grid>
   );
 }

@@ -16,8 +16,8 @@ pools.forEach(({ token, tokenAddress, earnedToken, earnedTokenAddress }) => {
 const initialState = {
   pools,
   tokens,
-  contractApy: {},
-  fetchContractApyPending: false,
+  apys: {},
+  fetchApysPending: false,
   fetchPoolBalancesPending: false,
   fetchOraclePricesPending: false,
   fetchPricePerSharePending: false,
