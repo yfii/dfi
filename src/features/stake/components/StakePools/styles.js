@@ -11,18 +11,28 @@ const styles = () => ({
   switch: {
     margin: '20px auto 50px',
   },
+  pools: {
+    justifyContent: 'center',
+  },
   imageContainer: {
-    flexDirection: 'column',
     alignItems: 'center',
+    flexDirection: 'column',
+    '& img': {
+      display: 'block',
+      margin: '0 auto',
+    },
   },
   barn: {
     marginTop: 100,
+    '& img' : {
+      width: '70%',
+    }
   },
   projects: {
     margin: '50px 0',
-  },
-  image: {
-    width: '100%',
+    '& img' : {
+      width: '50%',
+    }
   },
   links: {
     display: 'flex',

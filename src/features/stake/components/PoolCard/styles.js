@@ -3,6 +3,8 @@ const styles = () => ({
     position: 'relative',
   },
   background: {
+    border: '1px solid #bbb',
+    borderRadius: 15,
     width: '100%',
   },
   foreground: {

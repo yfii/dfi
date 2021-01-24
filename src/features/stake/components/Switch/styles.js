@@ -4,6 +4,7 @@ const styles = () => ({
   container: {
     height: 30,
     position: 'relative',
+    transform: 'scale(0.75)',
     width: 147,
     '& > *': {
       height: '100%',

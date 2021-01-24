@@ -65,7 +65,7 @@ export default function StakePools() {
         onChange={setSwitchValue}
         options={switchOptions}
       />
-      <Grid container spacing={8}>
+      <Grid className={classes.pools} container spacing={8}>
         {pools
           .filter(pool => pool.partner === switchValue)
           .map(pool => (
