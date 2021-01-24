@@ -32,8 +32,8 @@ const HarvestSection = ({ pool, index }) => {
       contractAddress: pool.earnContractAddress,
       index,
     })
-      .then(() => enqueueSnackbar(`Harvest success`, { variant: 'success' }))
-      .catch(error => enqueueSnackbar(`Harvest error: ${error}`, { variant: 'error' }));
+      .then(() => enqueueSnackbar(t('Vault-HarvestSuccess'), { variant: 'success' }))
+      .catch(error => enqueueSnackbar(t('Vault-HarvestError', { error }), { variant: 'error' }));
     setShowHarvestModal(false)
   };
 

@@ -10,7 +10,6 @@ import Checkbox from '@material-ui/core/Checkbox';
 import InputLabel from '@material-ui/core/InputLabel';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
-import _ from 'lodash';
 
 import styles from './styles';
 import { platforms, assets } from './constants';
@@ -156,7 +155,7 @@ const Filters = ({
       <Grid item xs={6} md={3}>
         <FormControl className={classes.selectorContainer}>
           <Autocomplete
-            value={_.find(options, { value: asset })}
+            value={options.find(option => option.value === asset)}
             onChange={handleAssetChange}
             className={classes.selector}
             id="select-asset"

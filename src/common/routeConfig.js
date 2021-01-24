@@ -1,6 +1,5 @@
 import { App } from '../features/home';
 import homeRoute from '../features/home/route';
-import _ from 'lodash';
 
 // NOTE: DO NOT CHANGE the 'childRoutes' name and the declaration pattern.
 // This is used for Rekit cmds to register routes config for new features, and remove config when remove features, etc.
@@ -21,7 +20,7 @@ function handleIndexRoute(route) {
     return;
   }
 
-  const indexRoute = _.find(route.childRoutes, child => child.isIndex);
+  const indexRoute = route.childRoutes.find(child => child.isIndex);
   if (indexRoute) {
     const first = { ...indexRoute };
     first.path = '';
