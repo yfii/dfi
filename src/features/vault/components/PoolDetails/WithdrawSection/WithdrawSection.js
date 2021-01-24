@@ -88,8 +88,8 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
         contractAddress: pool.earnContractAddress,
         index,
       })
-        .then(() => enqueueSnackbar(`Withdraw success`, { variant: 'success' }))
-        .catch(error => enqueueSnackbar(`Withdraw error: ${error}`, { variant: 'error' }));
+        .then(() => enqueueSnackbar(t('Vault-WithdrawSuccess'), { variant: 'success' }))
+        .catch(error => enqueueSnackbar(t('Vault-WithdrawError', { error }), { variant: 'error' }));
     } else {
       fetchWithdrawBnb({
         address,
@@ -101,15 +101,15 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
         contractAddress: pool.earnContractAddress,
         index,
       })
-        .then(() => enqueueSnackbar(`Withdraw success`, { variant: 'success' }))
-        .catch(error => enqueueSnackbar(`Withdraw error: ${error}`, { variant: 'error' }));
+        .then(() => enqueueSnackbar(t('Vault-WithdrawSuccess'), { variant: 'success' }))
+        .catch(error => enqueueSnackbar(t('Vault-WithdrawError', { error }), { variant: 'error' }));
     }
   };
 
   return (
     <Grid item xs={12} md={shouldHideFromHarvest(pool.name) ? 6 : 5} className={classes.sliderDetailContainer}>
       <div className={classes.showDetailLeft}>
-        Deposited:{' '}
+        {t('Vault-Deposited')}:{' '}
         {byDecimals(
           sharesBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)),
           pool.tokenDecimals

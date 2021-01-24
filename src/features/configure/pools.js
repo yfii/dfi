@@ -2528,7 +2528,7 @@ export const pools = [
     oracle: 'pancake',
     oracleId: 'Cake',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Pancake',
     assets: ['CAKE'],
