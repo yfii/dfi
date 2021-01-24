@@ -1,8 +1,19 @@
 import { useState, useEffect } from 'react';
+import useFilterStorage from '../../home/hooks/useFiltersStorage';
+
+const DEFAULT = 'default';
+const KEY = 'sortedPools';
 
 const useSortedPools = (pools, apys) => {
-  const [order, setOrder] = useState('default');
+  const { getStorage, setStorage } = useFilterStorage();
+  const data = getStorage(KEY);
+
+  const [order, setOrder] = useState(data ? data : DEFAULT);
   const [sortedPools, setSortedPools] = useState(pools);
+
+  useEffect(() => {
+    setStorage(KEY, order);
+  }, [setStorage, order]);
 
   useEffect(() => {
     switch (order) {
