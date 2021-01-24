@@ -1,4 +1,5 @@
 {
+  "Disclaimer": "Smart Contracts, Tokens und Crypto allgemein beinhaltet immer Risiko. DYOR vor dem Invest.",
   "Network-Error": "Netzwerkfehler",
   "Vault-Wallet": "Wallet",
   "Vault-Balance": "Guthaben",
@@ -13,14 +14,23 @@
   "Vault-Withdrawing": "Abheben...",
   "Vault-WithdrawButton": "Abheben",
   "Vault-WithdrawButtonAll": "Alles abheben",
-  "Vault-WithdrawFee": "Für alle Vaults wird eine Abhebegebühr von 0,1% erhoben",
+  "Vault-WithdrawFee": "Für alle Vaults wird eine Abhebegebühr von 0.05%-0.1% erhoben",
+  "Vault-Harvesting": "Am Harvesten...",
+  "Vault-HarvestButton": "Harvest",
+  "Vault-HarvestConfirm": "Harvest bestätigen?",
+  "Vault-HarvestDescription": "Durch Harvesten helft Ihr allen ihre Gewinne aus diesem Vault einzusammeln. Ihr werdet {{callFee}}% der Vault-Gewinne seit dem letzten Harvest als Belohnung erhalten.",
+  "Vault-LastHarvest": "Letzter Harvest",
   "Vault-MainTitle": "Vaults",
   "Vault-SecondTitle": "Einzahlen & Geld verdienen",
   "Hide-Zero-Balances": "Ohne Guthaben ausblenden",
+  "Hide-Zero-Vault-Balances": "Genutzte Vaults",
   "Retired-Vaults": "Inaktive Vaults",
   "Filters-Platform": "Plattform",
+  "Filters-Vault-Type": "Vault-Typ",
   "Filters-Asset": "Asset",
   "Filters-Sort": "Sortieren nach",
   "Filters-All": "Alle",
-  "Filters-Default": "Default"
+  "Filters-Default": "Default",
+  "Confirm": "Bestätigen",
+  "Cancel": "Abbrechen"
 }
