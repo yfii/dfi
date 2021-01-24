@@ -1,31 +1,28 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
-  VAULT_FETCH_USER_POOL_BALANCES_BEGIN,
-  VAULT_FETCH_USER_POOL_BALANCES_SUCCESS,
-  VAULT_FETCH_USER_POOL_BALANCES_FAILURE,
+  VAULT_FETCH_PRICE_PER_SHARE_BEGIN,
+  VAULT_FETCH_PRICE_PER_SHARE_SUCCESS,
+  VAULT_FETCH_PRICE_PER_SHARE_FAILURE,
 } from './constants';
 import { MultiCall } from 'eth-multicall';
-import { erc20ABI } from '../../configure';
+import { vaultABI } from '../../configure';
 import BigNumber from 'bignumber.js';
 import { byDecimals } from 'features/helpers/bignumber';
 
-export function fetchUserPoolBalances(data) {
+export function fetchPricePerShare({ web3, pools }) {
   return dispatch => {
     dispatch({
-      type: VAULT_FETCH_USER_POOL_BALANCES_BEGIN,
+      type: VAULT_FETCH_PRICE_PER_SHARE_BEGIN,
     });
 
     const promise = new Promise((resolve, reject) => {
-      const { address, web3, pools } = data;
-
       const multicall = new MultiCall(web3, '0xB94858b0bB5437498F5453A16039337e5Fdc269C');
 
       const calls = pools.map(pool => {
-        const bnbShimAddress = '0xC72E5edaE5D7bA628A2Acb39C8Aa0dbbD06daacF';
-        const token = new web3.eth.Contract(erc20ABI, pool.tokenAddress | bnbShimAddress);
+        const vault = new web3.eth.Contract(vaultABI, pool.earnedTokenAddress);
         return {
-          allowance: token.methods.allowance(address, pool.earnContractAddress),
+          pricePerFullShare: vault.methods.getPricePerFullShare(),
         };
       });
 
@@ -33,22 +30,22 @@ export function fetchUserPoolBalances(data) {
         .all([calls])
         .then(([results]) => {
           const newPools = pools.map((pool, i) => {
-            const allowance = web3.utils.fromWei(results[i].allowance, 'ether');
+            const pricePerFullShare = byDecimals(results[i].pricePerFullShare, 18).toNumber();
             return {
               ...pool,
-              allowance: new BigNumber(allowance).toNumber() || 0,
+              pricePerFullShare: new BigNumber(pricePerFullShare).toNumber() || 1,
             };
           });
 
           dispatch({
-            type: VAULT_FETCH_USER_POOL_BALANCES_SUCCESS,
+            type: VAULT_FETCH_PRICE_PER_SHARE_SUCCESS,
             data: newPools,
           });
           resolve();
         })
         .catch(error => {
           dispatch({
-            type: VAULT_FETCH_USER_POOL_BALANCES_FAILURE,
+            type: VAULT_FETCH_PRICE_PER_SHARE_FAILURE,
           });
           return reject(error.message || error);
         });
@@ -58,50 +55,50 @@ export function fetchUserPoolBalances(data) {
   };
 }
 
-export function useFetchUserPoolBalances() {
+export function useFetchPricePerShare() {
   const dispatch = useDispatch();
 
-  const { pools, fetchUserPoolBalancesPending } = useSelector(
+  const { pools, fetchPricePerSharePending } = useSelector(
     state => ({
       pools: state.vault.pools,
-      fetchUserPoolBalancesPending: state.vault.fetchUserPoolBalancesPending,
+      fetchPricePerSharePending: state.vault.fetchPricePerSharePending,
     }),
     shallowEqual
   );
 
   const boundAction = useCallback(
     data => {
-      return dispatch(fetchUserPoolBalances(data));
+      return dispatch(fetchPricePerShare(data));
     },
     [dispatch]
   );
 
   return {
     pools,
-    fetchUserPoolBalances: boundAction,
-    fetchUserPoolBalancesPending,
+    fetchPricePerShare: boundAction,
+    fetchPricePerSharePending,
   };
 }
 
 export function reducer(state, action) {
   switch (action.type) {
-    case VAULT_FETCH_USER_POOL_BALANCES_BEGIN:
+    case VAULT_FETCH_PRICE_PER_SHARE_BEGIN:
       return {
         ...state,
-        fetchUserPoolBalancesPending: true,
+        fetchPricePerSharePending: true,
       };
 
-    case VAULT_FETCH_USER_POOL_BALANCES_SUCCESS:
+    case VAULT_FETCH_PRICE_PER_SHARE_SUCCESS:
       return {
         ...state,
         pools: action.data,
-        fetchUserPoolBalancesPending: false,
+        fetchPricePerSharePending: false,
       };
 
-    case VAULT_FETCH_USER_POOL_BALANCES_FAILURE:
+    case VAULT_FETCH_PRICE_PER_SHARE_FAILURE:
       return {
         ...state,
-        fetchUserPoolBalancesPending: false,
+        fetchPricePerSharePending: false,
       };
 
     default:

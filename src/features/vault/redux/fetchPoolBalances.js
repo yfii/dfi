@@ -6,17 +6,16 @@ import {
   VAULT_FETCH_POOL_BALANCES_SUCCESS,
   VAULT_FETCH_POOL_BALANCES_FAILURE,
 } from './constants';
-import { fetchTvl, fetchPrice } from '../../web3';
+import { fetchTvl } from '../../web3';
 import async from 'async';
 
-export function fetchPoolBalances(data) {
+export function fetchPoolBalances({ web3, pools }) {
   return dispatch => {
     dispatch({
       type: VAULT_FETCH_POOL_BALANCES_BEGIN,
     });
 
     const promise = new Promise((resolve, reject) => {
-      const { web3, pools } = data;
       async.map(
         pools,
         (pool, callback) => {
@@ -34,24 +33,12 @@ export function fetchPoolBalances(data) {
                     return callbackInner(error, 0);
                   });
               },
-              callbackInner => {
-                fetchPrice({
-                  id: pool.oracleId,
-                })
-                  .then(data => {
-                    return callbackInner(null, data);
-                  })
-                  .catch(error => {
-                    return callbackInner(error, 0);
-                  });
-              },
             ],
             (error, data) => {
               if (error) {
                 console.log(error);
               }
               pool.tvl = data[0] || 0;
-              pool.oraclePrice = data[1] || 0;
               callback(null, pool);
             }
           );

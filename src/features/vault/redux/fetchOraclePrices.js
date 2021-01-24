@@ -36,7 +36,7 @@ export function fetchOraclePrices({ pools }) {
               if (error) {
                 console.log(error);
               }
-              pool.oraclePrice = data[1] || 0;
+              pool.oraclePrice = data[0] || 0;
               callback(null, pool);
             }
           );
@@ -48,6 +48,7 @@ export function fetchOraclePrices({ pools }) {
             });
             return reject(error.message || error);
           }
+          console.log('Oracle', pools);
           dispatch({
             type: VAULT_FETCH_ORACLE_PRICES_SUCCESS,
             data: pools,
@@ -61,7 +62,7 @@ export function fetchOraclePrices({ pools }) {
   };
 }
 
-export function useFetchPoolBalances() {
+export function useFetchOraclePrices() {
   const dispatch = useDispatch();
 
   const { pools, fetchOraclePricesPending } = useSelector(
