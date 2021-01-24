@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/core/styles';
 
 import styles from './styles';
@@ -7,6 +8,7 @@ const useStyles = makeStyles(styles);
 
 const Footer = () => {
   const classes = useStyles();
+  const { t } = useTranslation();
 
   return (
     <div className={classes.root}>
@@ -29,7 +31,7 @@ const Footer = () => {
           className={classes.link}
         >
           <i className={`fab fa-medium ${classes.linkIcon}`}></i>
-          <span>news</span>
+          <span>{t('news')}</span>
         </a>
 
         <a
@@ -39,12 +41,12 @@ const Footer = () => {
           className={classes.link}
         >
           <i className={`fab fa-github ${classes.linkIcon}`}></i>
-          <span>source</span>
+          <span>{t('source')}</span>
         </a>
       </div>
 
       <div className={classes.column}>
-        <div className={classes.title}>products</div>
+        <div className={classes.title}>{t('products')}</div>
         <a
           href="https://gov.beefy.finance"
           target="_blank"
@@ -77,7 +79,7 @@ const Footer = () => {
       </div>
 
       <div className={classes.column}>
-        <div className={classes.title}>socials</div>
+        <div className={classes.title}>{t('socials')}</div>
         <a
           href="https://twitter.com/beefyfinance"
           target="_blank"
