@@ -1,5 +1,9 @@
 import React from 'react';
 
+import { useTranslation } from 'react-i18next';
+import { makeStyles } from '@material-ui/core/styles';
+import styles from './styles';
+
 import useFilteredPools from '../../hooks/useFilteredPools';
 import usePoolsByPlatform from '../../hooks/usePoolsByPlatform';
 import usePoolsByVaultType from '../../hooks/usePoolsByVaultType';
@@ -9,7 +13,12 @@ import useSortedPools from '../../hooks/useSortedPools';
 import Pool from '../Pool/Pool';
 import Filters from '../Filters/Filters';
 
+const useStyles = makeStyles(styles);
+
 const VisiblePools = ({ pools, tokens, apys }) => {
+  const classes = useStyles();
+  const { t } = useTranslation();
+
   const { filteredPools, toggleFilter, filters } = useFilteredPools(pools, tokens);
   const { poolsByPlatform, platform, setPlatform } = usePoolsByPlatform(filteredPools);
   const { poolsByVaultType, vaultType, setVaultType } = usePoolsByVaultType(poolsByPlatform);
@@ -30,9 +39,11 @@ const VisiblePools = ({ pools, tokens, apys }) => {
         setAsset={setAsset}
         setOrder={setOrder}
       />
-      {sortedPools.map((pool, index) => (
+      {sortedPools.map((pool, index) =>
         <Pool pool={pool} index={index} tokens={tokens} contractApy={apys} key={pool.id} />
-      ))}
+      )}
+
+      {!sortedPools.length && <h3 className={classes.subtitle}>{t('No-Results')}</h3>}
     </>
   );
 };

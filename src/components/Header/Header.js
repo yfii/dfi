@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -18,6 +19,7 @@ const useStyles = makeStyles(styles);
 const Header = ({ links, isNightMode, setNightMode }) => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const classes = useStyles();
+  const { t } = useTranslation();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -50,10 +52,10 @@ const Header = ({ links, isNightMode, setNightMode }) => {
           {renderLink('vote', 'vote', 'vote-yea', classes)}
           <Hidden xsDown>
             {renderLink('gov', 'gov', 'landmark', classes)}
-            {renderLink('dashboard', 'stats', 'chart-bar', classes)}
+            {renderLink('dashboard', t('stats'), 'chart-bar', classes)}
             {renderLink('docs', 'docs', 'book', classes)}
           </Hidden>
-          {renderLink('buy', 'buy', 'dollar-sign', classes)}
+          {renderLink('buy', t('buy'), 'dollar-sign', classes)}
         </span>
 
         <Hidden smDown implementation="css">
@@ -92,9 +94,9 @@ const Header = ({ links, isNightMode, setNightMode }) => {
           <div style={{ textAlign: 'center' }}>
             {renderLinkSidebar('gov', 'gov', 'landmark', classes)}
             {renderLinkSidebar('vote', 'vote', 'vote-yea', classes)}
-            {renderLinkSidebar('dashboard', 'stats', 'chart-bar', classes)}
+            {renderLinkSidebar('dashboard', t('stats'), 'chart-bar', classes)}
             {renderLinkSidebar('docs', 'docs', 'book', classes)}
-            {renderLinkSidebar('buy', 'buy', 'dollar-sign', classes)}
+            {renderLinkSidebar('buy', t('buy'), 'dollar-sign', classes)}
             <IconButton onClick={setNightMode} className={classes.icon}>
               {isNightMode ? <WbSunny /> : <NightsStay />}
             </IconButton>

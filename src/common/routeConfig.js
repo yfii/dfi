@@ -22,7 +22,7 @@ function handleIndexRoute(route) {
     return;
   }
 
-  const indexRoute = _.find(route.childRoutes, child => child.isIndex);
+  const indexRoute = route.childRoutes.find(child => child.isIndex);
   if (indexRoute) {
     const first = { ...indexRoute };
     first.path = '';

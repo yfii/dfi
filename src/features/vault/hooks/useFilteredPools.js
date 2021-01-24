@@ -1,20 +1,30 @@
 import { useState, useEffect } from 'react';
+import useFilterStorage from '../../home/hooks/useFiltersStorage';
 
-const initialFilters = {
+const DEFAULT = {
   hideDecomissioned: true,
   hideZeroBalances: false,
   hideZeroVaultBalances: false,
 };
 
+const KEY = 'filteredPools';
+
 const useFilteredPools = (pools, tokens) => {
+  const { getStorage, setStorage } = useFilterStorage();
+  const data = getStorage(KEY);
+
   const [filteredPools, setFilteredPools] = useState(pools);
-  const [filters, setFilters] = useState(initialFilters);
+  const [filters, setFilters] = useState(data ? data : DEFAULT);
 
   const toggleFilter = key => {
-    let newFilters = { ...filters };
+    const newFilters = { ...filters };
     newFilters[key] = !filters[key];
     setFilters(newFilters);
   };
+
+  useEffect(() => {
+    setStorage(KEY, filters);
+  }, [setStorage, filters]);
 
   useEffect(() => {
     let newPools = [...pools];

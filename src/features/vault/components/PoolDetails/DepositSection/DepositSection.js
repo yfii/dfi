@@ -46,8 +46,8 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
       contractAddress: pool.earnContractAddress,
       index,
     })
-      .then(() => enqueueSnackbar(`Approval success`, { variant: 'success' }))
-      .catch(error => enqueueSnackbar(`Approval error: ${error}`, { variant: 'error' }));
+      .then(() => enqueueSnackbar(t('Vault-ApprovalSuccess'), { variant: 'success' }))
+      .catch(error => enqueueSnackbar(t('Vault-ApprovalError', { error }), { variant: 'error' }));
   };
 
   const onDeposit = isAll => {
@@ -78,8 +78,8 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
         contractAddress: pool.earnContractAddress,
         index,
       })
-        .then(() => enqueueSnackbar(`Deposit success`, { variant: 'success' }))
-        .catch(error => enqueueSnackbar(`Deposit error: ${error}`, { variant: 'error' }));
+        .then(() => enqueueSnackbar(t('Vault-DepositSuccess'), { variant: 'success' }))
+        .catch(error => enqueueSnackbar(t('Vault-DepositError', { error }), { variant: 'error' }));
     } else {
       fetchDepositBnb({
         address,
@@ -90,8 +90,8 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
         contractAddress: pool.earnContractAddress,
         index,
       })
-        .then(() => enqueueSnackbar(`Deposit success`, { variant: 'success' }))
-        .catch(error => enqueueSnackbar(`Deposit error: ${error}`, { variant: 'error' }));
+        .then(() => enqueueSnackbar(t('Vault-DepositSuccess'), { variant: 'success' }))
+        .catch(error => enqueueSnackbar(t('Vault-DepositError', { error }), { variant: 'error' }));
     }
   };
 
@@ -119,7 +119,7 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
   return (
     <Grid item xs={12} md={shouldHideFromHarvest(pool.id) ? 6 : 5} className={classes.sliderDetailContainer}>
       <div className={classes.showDetailLeft}>
-        {t('Vault-Balance')}:{balanceSingle.toFormat(4)} {pool.token}
+        {t('Vault-Balance')}: {balanceSingle.toFormat(4)} {pool.token}
       </div>
       <FormControl fullWidth variant="outlined" className={classes.numericInput}>
         <CustomOutlinedInput value={depositBalance.amount} onChange={changeDetailInputValue} />

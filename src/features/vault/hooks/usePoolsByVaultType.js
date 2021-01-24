@@ -1,26 +1,41 @@
 import { useState, useEffect } from 'react';
 import { stables } from '../components/Filters/constants.js';
+import useFilterStorage from '../../home/hooks/useFiltersStorage';
+
+const DEFAULT = 'All';
+const KEY = 'poolsByVaultType';
 
 const usePoolsByVaultType = pools => {
-  const [vaultType, setVaultType] = useState('All');
+  const { getStorage, setStorage } = useFilterStorage();
+  const data = getStorage(KEY);
+
+  const [vaultType, setVaultType] = useState(data ? data : DEFAULT);
   const [poolsByVaultType, setPoolsByVaultType] = useState(pools);
 
   useEffect(() => {
-    if (vaultType === 'All') {
-      setPoolsByVaultType(pools);
-    } else if (vaultType === 'Singles') {
-      let newPools = pools.filter(pool => pool.assets.length === 1);
-      setPoolsByVaultType(newPools);
-    } else if (vaultType === 'StableLPs') {
+    setStorage(KEY, vaultType);
+  }, [setStorage, vaultType])
+
+  useEffect(() => {
+    let newPools;
+
+    if (vaultType === 'Singles') {
+      newPools = pools.filter(pool => pool.assets.length === 1);
+    } else {
       const isStable = (vaultType) => stables.includes(vaultType);
-      let newPools = pools.filter(pool => pool.assets.every(isStable));
-      setPoolsByVaultType(newPools);
-    } else if (vaultType === 'Stables') {
-      const isStable = (vaultType) => stables.includes(vaultType);
-      let newPools = pools.filter(pool => pool.assets.some(isStable));
-      setPoolsByVaultType(newPools);
+      if (vaultType === 'StableLPs') {
+        newPools = pools.filter(pool => pool.assets.every(isStable)); // every
+      } else if (vaultType === 'Stables') {
+        newPools = pools.filter(pool => pool.assets.some(isStable)); // some
+      }
     }
-  }, [pools, vaultType]);
+
+    if (newPools && newPools.length) {
+      setPoolsByVaultType(newPools);
+    } else {
+      setPoolsByVaultType(pools);
+    }
+  }, [pools, vaultType, setPoolsByVaultType]);
 
   return { poolsByVaultType, vaultType, setVaultType };
 };
