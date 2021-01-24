@@ -15,6 +15,7 @@ const StakingDialog = ({
   submitLabel,
   onSubmit,
   pool,
+  availableAmount,
 }) => {
   const classes = useStyles();
   const { t } = useTranslation();
@@ -34,7 +35,7 @@ const StakingDialog = ({
     >
       <div className={classes.label}>
         <span>{inputLabel}</span>
-        <span>{pool && pool.symbol}</span>
+        <span>{availableAmount} {pool && pool.symbol}</span>
       </div>
       <div className={classes.inputWrapper}>
         <input

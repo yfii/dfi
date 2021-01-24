@@ -101,6 +101,7 @@ export default function StakePools() {
         submitLabel={t('Stake')}
         onSubmit={(value) => { handleCloseStakingDialog(); }}
         pool={currentPool}
+        availableAmount={currentPool && currentPool.balance}
       />
       <StakingDialog
         open={action === 'unstake'}
@@ -109,6 +110,7 @@ export default function StakePools() {
         submitLabel={t('Unstake')}
         onSubmit={(value) => { handleCloseStakingDialog(); }}
         pool={currentPool}
+        availableAmount={currentPool && currentPool.stakedBalance}
       />
     </>
   )

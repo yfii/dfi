@@ -2,12 +2,26 @@ import async from 'async';
 import { useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 
+// import { erc20ABI } from '../../configure/abi';
+
 import {
   STAKE_FETCH_POOLS_INFO_BEGIN,
   STAKE_FETCH_POOLS_INFO_SUCCESS,
   STAKE_FETCH_POOLS_INFO_FAILURE,
 } from './constants';
 
+// const _getERC20Balance = async (web3, asset, account, callback) => {
+//   let erc20Contract = new web3.eth.Contract(erc20ABI, asset.address);
+//
+//   try {
+//     var balance = await erc20Contract.methods.balanceOf(account.address).call({ from: account.address });
+//     balance = parseFloat(balance) / 10 ** asset.decimals;
+//     callback(null, parseFloat(balance));
+//   } catch (ex) {
+//     return callback(ex);
+//   }
+// };
+//
 // const _getStakedBalance = async (web3, asset, account, callback) => {
 //   let erc20Contract = new web3.eth.Contract(asset.rewardsABI, asset.rewardsAddress);
 //
@@ -74,6 +88,9 @@ export function fetchPoolsInfo(data) {
           async.parallel(
             [
               callbackInner => {
+                // _getERC20Balance(web3, pool, { address }, callbackInner);
+              },
+              callbackInner => {
                 // _getStakedBalance(web3, pool, { address }, callbackInner);
               },
               callbackInner => {
@@ -90,10 +107,11 @@ export function fetchPoolsInfo(data) {
               if (error) {
                 console.log(error);
               }
-              pool.stakedBalance = data[0] || 0;
-              pool.rewardsAvailable = data[1] || 0;
-              pool.tvl = data[2] || 0;
-              pool.rewardRate = data[3] || 0;
+              pool.balance = data[0] || 0;
+              pool.stakedBalance = data[1] || 0;
+              pool.rewardsAvailable = data[2] || 0;
+              pool.tvl = data[3] || 0;
+              pool.rewardRate = data[4] || 0;
               callback(null, pool);
             }
           );
