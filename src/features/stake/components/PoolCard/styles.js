@@ -20,6 +20,7 @@ const styles = () => ({
     justifyContent: 'flex-end',
   },
   button: {
+    cursor: 'pointer',
     height: 34,
     '& + &': {
       marginLeft: 20,

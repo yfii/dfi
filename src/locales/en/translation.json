@@ -38,5 +38,10 @@
   "Stake-Table-Total": "POOL",
   "Stake-Table-Apy": "APY",
   "Stake-Balancer-Earned": "EARNED",
-  "IFO-Guide": "IFO Guide"
+  "IFO-Guide": "IFO Guide",
+  "Available-To-Stake": "Available to Stake",
+  "Stake": "Stake",
+  "Available-To-Unstake": "Available to Unstake",
+  "Unstake": "Unstake",
+  "Max": "Max"
 }

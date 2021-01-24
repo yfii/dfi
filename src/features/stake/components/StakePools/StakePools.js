@@ -8,6 +8,7 @@ import Hidden from '@material-ui/core/Hidden';
 import { useConnectWallet } from '../../../home/redux/hooks';
 import { useFetchPoolsInfo } from '../../redux/hooks';
 import PoolCard from '../PoolCard/PoolCard';
+import StakingDialog from '../StakingDialog/StakingDialog';
 import Switch from '../Switch/Switch';
 
 import styles from './styles';
@@ -27,6 +28,8 @@ export default function StakePools() {
   const { web3, address } = useConnectWallet();
 
   const [switchValue, setSwitchValue] = useState('TWT');
+  const [action, setAction] = useState(null);
+  const [currentPool, setCurrentPool] = useState(null);
 
   useEffect(() => {
     if (address && web3) {
@@ -40,6 +43,11 @@ export default function StakePools() {
     // Adding pools to this dep list, causes an endless loop, DDoSing the api
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [address, web3, fetchPoolsInfo]);
+
+  const handleCloseStakingDialog = () => {
+    setAction(null);
+    setCurrentPool(null);
+  };
 
   return (
     <>
@@ -61,7 +69,12 @@ export default function StakePools() {
           .filter(pool => pool.partner === switchValue)
           .map(pool => (
             <Grid key={`${pool.symbol} ${pool.rewardsSymbol}`} item xs={12} md={4}>
-              <PoolCard pool={pool} />
+              <PoolCard
+                pool={pool}
+                onStake={() => { setAction('stake'); setCurrentPool(pool); }}
+                onUnstake={() => { setAction('unstake'); setCurrentPool(pool); }}
+                onHarvest={() => {}}
+              />
             </Grid>
           )
         )}
@@ -81,6 +94,22 @@ export default function StakePools() {
           </div>
         </Grid>
       </Grid>
+      <StakingDialog
+        open={action === 'stake'}
+        onClose={handleCloseStakingDialog}
+        inputLabel={t('Available-To-Stake')}
+        submitLabel={t('Stake')}
+        onSubmit={(value) => { handleCloseStakingDialog(); }}
+        pool={currentPool}
+      />
+      <StakingDialog
+        open={action === 'unstake'}
+        onClose={handleCloseStakingDialog}
+        inputLabel={t('Available-To-Unstake')}
+        submitLabel={t('Unstake')}
+        onSubmit={(value) => { handleCloseStakingDialog(); }}
+        pool={currentPool}
+      />
     </>
   )
 }

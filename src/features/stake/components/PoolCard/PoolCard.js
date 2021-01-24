@@ -17,7 +17,7 @@ const calcUserPoolPercentage = ({ stakedBalance, tvl }) => {
   return poolPercentage.toFixed();
 };
 
-const PoolCard = ({ pool }) => {
+const PoolCard = ({ pool, onStake, onUnstake, onHarvest }) => {
   const classes = useStyles();
   const { t } = useTranslation();
 
@@ -34,8 +34,18 @@ const PoolCard = ({ pool }) => {
       />
       <div className={classes.foreground}>
         <div className={classes.stakeButtons}>
-          <img className={classes.button} src={stakeButton} alt="stake button" />
-          <img className={classes.button} src={unstakeButton} alt="unstake button" />
+          <img
+            className={classes.button}
+            src={stakeButton}
+            alt="stake button"
+            onClick={onStake}
+          />
+          <img
+            className={classes.button}
+            src={unstakeButton}
+            alt="unstake button"
+            onClick={onUnstake}
+          />
         </div>
         <div className={classes.text}>
           {t('Stake-Table-Staked')}: {stakedBalance} {pool.symbol}
@@ -43,7 +53,12 @@ const PoolCard = ({ pool }) => {
         <div className={classes.text}>
           {t('Stake-Balancer-Earned')}: {pool.rewardsAvailable ? pool.rewardsAvailable.toFixed(3) : 0} {pool.rewardsSymbol}
         </div>
-        <img className={classes.button} src={harvestButton} alt="harvest button" />
+        <img
+          className={classes.button}
+          src={harvestButton}
+          alt="harvest button"
+          onClick={onHarvest}
+        />
         <div className={classes.text}>
           {t('Stake-Table-Apy')}:
         </div>
