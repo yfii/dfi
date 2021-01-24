@@ -1,17 +1,29 @@
 import { useState, useEffect } from 'react';
+import useFilterStorage from '../../home/hooks/useFiltersStorage';
+
+const DEFAULT = 'All';
+const KEY = 'poolsByPlatform';
 
 const usePoolsByPlatform = pools => {
-  const [platform, setPlatform] = useState('All');
+
+  const { getStorage, setStorage } = useFilterStorage();
+  const data = getStorage(KEY);
+
+  const [platform, setPlatform] = useState(data ? data : DEFAULT);
   const [poolsByPlatform, setPoolsByPlatform] = useState(pools);
 
   useEffect(() => {
-    if (platform === 'All') {
+    setStorage(KEY, platform);
+  }, [setStorage, platform])
+
+  useEffect(() => {
+    if (platform === DEFAULT) {
       setPoolsByPlatform(pools);
     } else {
       const newPools = pools.filter(pool => pool.platform === platform);
       setPoolsByPlatform(newPools);
     }
-  }, [pools, platform]);
+  }, [pools, platform, setPlatform]);
 
   return { poolsByPlatform, platform, setPlatform };
 };
