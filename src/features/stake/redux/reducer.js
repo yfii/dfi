@@ -1,7 +1,5 @@
-
 import initialState from './initialState';
 import { reducer as fetchPoolsInfoReducer} from './fetchPoolsInfo';
-
 
 const reducers = [
   fetchPoolsInfoReducer,

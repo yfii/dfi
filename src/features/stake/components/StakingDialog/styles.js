@@ -25,10 +25,10 @@ const styles = theme => ({
   },
   inputWrapper: {
     ...inputBackground,
+    alignItems: 'center',
     display: 'flex',
     flexWrap: 'nowrap',
     fontWeight: 'bold',
-    alignItems: 'center',
     margin: '5px 0 40px',
     paddingRight: inputPadding,
   },

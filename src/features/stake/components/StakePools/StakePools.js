@@ -18,6 +18,7 @@ import mobileBanner from './mobile_banner.png';
 import projects from './projects.png';
 
 const FETCH_INTERVAL_MS = 30 * 1000;
+const switchOptions = ['TWT', 'BIFI'];
 
 const useStyles = makeStyles(styles);
 
@@ -27,7 +28,7 @@ export default function StakePools() {
   const { pools, fetchPoolsInfo } = useFetchPoolsInfo();
   const { web3, address } = useConnectWallet();
 
-  const [switchValue, setSwitchValue] = useState('TWT');
+  const [switchValue, setSwitchValue] = useState(switchOptions[0]);
   const [action, setAction] = useState(null);
   const [currentPool, setCurrentPool] = useState(null);
 
@@ -62,7 +63,7 @@ export default function StakePools() {
         className={classes.switch}
         value={switchValue}
         onChange={setSwitchValue}
-        options={['TWT', 'BIFI']}
+        options={switchOptions}
       />
       <Grid container spacing={8}>
         {pools

@@ -22,7 +22,7 @@ const styles = () => ({
     width: '100%',
     '& > *': {
       cursor: 'pointer',
-    }
+    },
   },
   selected: {
     color: 'white',

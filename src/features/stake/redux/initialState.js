@@ -32,8 +32,8 @@ const pools = [
 ];
 
 const initialState = {
-	pools,
-	fetchPoolsInfoPending: false
+  pools,
+  fetchPoolsInfoPending: false
 };
 
 export default initialState;
