@@ -1,6 +1,5 @@
 import initialState from './initialState';
 import { reducer as fetchBalancesReducer } from './fetchBalances';
-import { reducer as fetchOraclePricesReducer } from './fetchOraclePrices';
 import { reducer as fetchVaultsData } from './fetchVaultsData';
 import { reducer as fetchApprovalReducer } from './fetchApproval';
 import { reducer as fetchDepositReducer } from './fetchDeposit';
@@ -9,7 +8,6 @@ import { reducer as fetchApysReducer } from './fetchApys';
 
 const reducers = [
   fetchBalancesReducer,
-  fetchOraclePricesReducer,
   fetchVaultsData,
   fetchApprovalReducer,
   fetchDepositReducer,

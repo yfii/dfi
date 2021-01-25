@@ -8,6 +8,7 @@ import {
   VAULT_FETCH_VAULTS_DATA_SUCCESS,
   VAULT_FETCH_VAULTS_DATA_FAILURE,
 } from './constants';
+import { fetchPrice } from '../../web3';
 import { erc20ABI, vaultABI } from '../../configure';
 import { byDecimals } from 'features/helpers/bignumber';
 
@@ -54,6 +55,28 @@ export function fetchVaultsData({ address, web3, pools }) {
                 return callbackInner(error.message || error);
               });
           },
+          callbackInner => {
+            async.map(
+              pools,
+              (pool, callbackInnerInner) => {
+                fetchPrice({
+                  id: pool.oracleId,
+                })
+                  .then(data => {
+                    return callbackInnerInner(null, data);
+                  })
+                  .catch(error => {
+                    return callbackInnerInner(error, 0);
+                  });
+              },
+              (error, data) => {
+                if (error) {
+                  return callbackInner(error.message || error);
+                }
+                callbackInner(null, data);
+              }
+            );
+          },
         ],
         (error, data) => {
           if (error) {
@@ -71,6 +94,7 @@ export function fetchVaultsData({ address, web3, pools }) {
               allowance: new BigNumber(allowance).toNumber() || 0,
               pricePerFullShare: new BigNumber(pricePerFullShare).toNumber() || 1,
               tvl: byDecimals(data[1][i].tvl, 18).toNumber(),
+              oraclePrice: data[2][i] || 0,
             };
           });
 

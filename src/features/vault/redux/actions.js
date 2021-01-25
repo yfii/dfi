@@ -1,5 +1,4 @@
 export { fetchBalances } from './fetchBalances';
-export { fetchOraclePrices } from './fetchOraclePrices';
 export { fetchVaultsData } from './fetchVaultsData';
 export { fetchApproval } from './fetchApproval';
 export { fetchDeposit } from './fetchDeposit';
