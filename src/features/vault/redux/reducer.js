@@ -2,7 +2,6 @@ import initialState from './initialState';
 import { reducer as fetchBalancesReducer } from './fetchBalances';
 import { reducer as fetchPoolBalancesReducer } from './fetchPoolBalances';
 import { reducer as fetchOraclePricesReducer } from './fetchOraclePrices';
-import { reducer as fetchPricePerShareReducer } from './fetchPricePerShare';
 import { reducer as fetchUserPoolBalancesReducer } from './fetchUserPoolBalances';
 import { reducer as fetchApprovalReducer } from './fetchApproval';
 import { reducer as fetchDepositReducer } from './fetchDeposit';
@@ -13,7 +12,6 @@ const reducers = [
   fetchBalancesReducer,
   fetchPoolBalancesReducer,
   fetchOraclePricesReducer,
-  fetchPricePerShareReducer,
   fetchUserPoolBalancesReducer,
   fetchApprovalReducer,
   fetchDepositReducer,

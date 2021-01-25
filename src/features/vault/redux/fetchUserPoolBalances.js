@@ -6,8 +6,10 @@ import {
   VAULT_FETCH_USER_POOL_BALANCES_FAILURE,
 } from './constants';
 import { MultiCall } from 'eth-multicall';
-import { erc20ABI } from '../../configure';
+import { erc20ABI, vaultABI } from '../../configure';
 import BigNumber from 'bignumber.js';
+import async from 'async';
+import { byDecimals } from 'features/helpers/bignumber';
 
 export function fetchUserPoolBalances({ address, web3, pools }) {
   return dispatch => {
@@ -18,7 +20,7 @@ export function fetchUserPoolBalances({ address, web3, pools }) {
     const promise = new Promise((resolve, reject) => {
       const multicall = new MultiCall(web3, '0xB94858b0bB5437498F5453A16039337e5Fdc269C');
 
-      const calls = pools.map(pool => {
+      const allowanceCalls = pools.map(pool => {
         const bnbShimAddress = '0xC72E5edaE5D7bA628A2Acb39C8Aa0dbbD06daacF';
         const token = new web3.eth.Contract(erc20ABI, pool.tokenAddress || bnbShimAddress);
         return {
@@ -26,14 +28,47 @@ export function fetchUserPoolBalances({ address, web3, pools }) {
         };
       });
 
-      multicall
-        .all([calls])
-        .then(([results]) => {
+      const pricePerFullShareCalls = pools.map(pool => {
+        const vault = new web3.eth.Contract(vaultABI, pool.earnedTokenAddress);
+        return {
+          pricePerFullShare: vault.methods.getPricePerFullShare(),
+        };
+      });
+
+      async.parallel(
+        [
+          callbackInner => {
+            multicall
+              .all([allowanceCalls])
+              .then(([data]) => callbackInner(null, data))
+              .catch(error => {
+                return callbackInner(error.message || error);
+              });
+          },
+          callbackInner => {
+            multicall
+              .all([pricePerFullShareCalls])
+              .then(([data]) => callbackInner(null, data))
+              .catch(error => {
+                return callbackInner(error.message || error);
+              });
+          },
+        ],
+        (error, data) => {
+          if (error) {
+            dispatch({
+              type: VAULT_FETCH_USER_POOL_BALANCES_FAILURE,
+            });
+            return reject(error.message || error);
+          }
+
           const newPools = pools.map((pool, i) => {
-            const allowance = web3.utils.fromWei(results[i].allowance, 'ether');
+            const allowance = web3.utils.fromWei(data[0][i].allowance, 'ether');
+            const pricePerFullShare = byDecimals(data[1][i].pricePerFullShare, 18).toNumber();
             return {
               ...pool,
               allowance: new BigNumber(allowance).toNumber() || 0,
+              pricePerFullShare: new BigNumber(pricePerFullShare).toNumber() || 1,
             };
           });
 
@@ -42,14 +77,8 @@ export function fetchUserPoolBalances({ address, web3, pools }) {
             data: newPools,
           });
           resolve();
-        })
-        .catch(error => {
-          console.log('ERROR', error);
-          dispatch({
-            type: VAULT_FETCH_USER_POOL_BALANCES_FAILURE,
-          });
-          return reject(error.message || error);
-        });
+        }
+      );
     });
 
     return promise;

@@ -11,7 +11,6 @@ import {
   useFetchUserPoolBalances,
   useFetchApys,
   useFetchOraclePrices,
-  useFetchPricePerShare,
 } from '../../redux/hooks';
 import VisiblePools from '../VisiblePools/VisiblePools';
 import styles from './styles';
@@ -29,7 +28,6 @@ export default function Pools() {
   const { pools, fetchPoolBalances } = useFetchPoolBalances();
   const { fetchUserPoolBalances } = useFetchUserPoolBalances();
   const { fetchOraclePrices } = useFetchOraclePrices();
-  const { fetchPricePerShare } = useFetchPricePerShare();
   const { tokens, fetchBalances } = useFetchBalances();
   const { apys, fetchApys } = useFetchApys();
   const { poolsTvl } = usePoolsTvl(pools);
@@ -42,14 +40,12 @@ export default function Pools() {
       fetchApys();
       fetchPoolBalances({ web3: web3Default, pools });
       fetchOraclePrices({ pools });
-      fetchPricePerShare({ web3, pools });
       const id = setInterval(() => {
         fetchBalances({ address, web3, tokens });
         fetchUserPoolBalances({ address, web3, pools });
         fetchApys();
         fetchPoolBalances({ web3: web3Default, pools });
         fetchOraclePrices({ pools });
-        fetchPricePerShare({ web3, pools });
       }, FETCH_INTERVAL_MS);
       return () => clearInterval(id);
     }

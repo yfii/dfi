@@ -20,7 +20,6 @@ const initialState = {
   fetchApysPending: false,
   fetchPoolBalancesPending: false,
   fetchOraclePricesPending: false,
-  fetchPricePerSharePending: false,
   fetchUserPoolBalancesPending: false,
   fetchBalancesPending: false,
   fetchApprovalPending: {},
