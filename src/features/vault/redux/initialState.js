@@ -18,7 +18,6 @@ const initialState = {
   tokens,
   apys: {},
   fetchApysPending: false,
-  fetchPoolBalancesPending: false,
   fetchOraclePricesPending: false,
   fetchUserPoolBalancesPending: false,
   fetchBalancesPending: false,

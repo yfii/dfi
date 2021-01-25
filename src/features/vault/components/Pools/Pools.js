@@ -7,7 +7,6 @@ import Grid from '@material-ui/core/Grid';
 import { useConnectWallet } from '../../../home/redux/hooks';
 import {
   useFetchBalances,
-  useFetchPoolBalances,
   useFetchUserPoolBalances,
   useFetchApys,
   useFetchOraclePrices,
@@ -25,8 +24,7 @@ const useStyles = makeStyles(styles);
 export default function Pools() {
   const { t } = useTranslation();
   const { web3, address } = useConnectWallet();
-  const { pools, fetchPoolBalances } = useFetchPoolBalances();
-  const { fetchUserPoolBalances } = useFetchUserPoolBalances();
+  const { pools, fetchUserPoolBalances } = useFetchUserPoolBalances();
   const { fetchOraclePrices } = useFetchOraclePrices();
   const { tokens, fetchBalances } = useFetchBalances();
   const { apys, fetchApys } = useFetchApys();
@@ -38,13 +36,11 @@ export default function Pools() {
       fetchBalances({ address, web3, tokens });
       fetchUserPoolBalances({ address, web3, pools });
       fetchApys();
-      fetchPoolBalances({ web3: web3Default, pools });
       fetchOraclePrices({ pools });
       const id = setInterval(() => {
         fetchBalances({ address, web3, tokens });
         fetchUserPoolBalances({ address, web3, pools });
         fetchApys();
-        fetchPoolBalances({ web3: web3Default, pools });
         fetchOraclePrices({ pools });
       }, FETCH_INTERVAL_MS);
       return () => clearInterval(id);
@@ -52,7 +48,7 @@ export default function Pools() {
 
     // Adding tokens and pools to this dep list, causes an endless loop, DDoSing the api
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [address, web3, fetchBalances, fetchPoolBalances, fetchUserPoolBalances, fetchOraclePrices]);
+  }, [address, web3, fetchBalances, fetchUserPoolBalances, fetchOraclePrices]);
 
   return (
     <Grid container className={classes.container}>

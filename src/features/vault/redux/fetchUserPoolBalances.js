@@ -32,6 +32,7 @@ export function fetchUserPoolBalances({ address, web3, pools }) {
         const vault = new web3.eth.Contract(vaultABI, pool.earnedTokenAddress);
         return {
           pricePerFullShare: vault.methods.getPricePerFullShare(),
+          tvl: vault.methods.balance(),
         };
       });
 
@@ -65,10 +66,12 @@ export function fetchUserPoolBalances({ address, web3, pools }) {
           const newPools = pools.map((pool, i) => {
             const allowance = web3.utils.fromWei(data[0][i].allowance, 'ether');
             const pricePerFullShare = byDecimals(data[1][i].pricePerFullShare, 18).toNumber();
+
             return {
               ...pool,
               allowance: new BigNumber(allowance).toNumber() || 0,
               pricePerFullShare: new BigNumber(pricePerFullShare).toNumber() || 1,
+              tvl: byDecimals(data[1][i].tvl, 18).toNumber(),
             };
           });
 
