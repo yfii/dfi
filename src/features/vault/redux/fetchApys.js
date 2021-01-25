@@ -2,15 +2,15 @@ import axios from 'axios';
 import { useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
-  VAULT_FETCH_CONTRACT_APY_BEGIN,
-  VAULT_FETCH_CONTRACT_APY_SUCCESS,
-  VAULT_FETCH_CONTRACT_APY_FAILURE,
+  VAULT_FETCH_APYS_BEGIN,
+  VAULT_FETCH_APYS_SUCCESS,
+  VAULT_FETCH_APYS_FAILURE,
 } from './constants';
 
-export function fetchContractApy() {
+export function fetchApys() {
   return dispatch => {
     dispatch({
-      type: VAULT_FETCH_CONTRACT_APY_BEGIN,
+      type: VAULT_FETCH_APYS_BEGIN,
     });
 
     const promise = new Promise((resolve, reject) => {
@@ -19,14 +19,14 @@ export function fetchContractApy() {
       doRequest.then(
         res => {
           dispatch({
-            type: VAULT_FETCH_CONTRACT_APY_SUCCESS,
+            type: VAULT_FETCH_APYS_SUCCESS,
             data: res.data,
           });
           resolve(res);
         },
         err => {
           dispatch({
-            type: VAULT_FETCH_CONTRACT_APY_FAILURE,
+            type: VAULT_FETCH_APYS_FAILURE,
             data: { error: err },
           });
           reject(err);
@@ -38,47 +38,47 @@ export function fetchContractApy() {
   };
 }
 
-export function useFetchContractApy() {
+export function useFetchApys() {
   const dispatch = useDispatch();
 
-  const { contractApy, fetchContractApyPending } = useSelector(
+  const { apys, fetchApysPending } = useSelector(
     state => ({
-      contractApy: state.vault.contractApy,
-      fetchContractApyPending: state.vault.fetchContractApyPending,
+      apys: state.vault.apys,
+      fetchApysPending: state.vault.fetchApysPending,
     }),
     shallowEqual
   );
 
   const boundAction = useCallback(() => {
-    dispatch(fetchContractApy());
+    dispatch(fetchApys());
   }, [dispatch]);
 
   return {
-    contractApy,
-    fetchContractApy: boundAction,
-    fetchContractApyPending,
+    apys,
+    fetchApys: boundAction,
+    fetchApysPending,
   };
 }
 
 export function reducer(state, action) {
   switch (action.type) {
-    case VAULT_FETCH_CONTRACT_APY_BEGIN:
+    case VAULT_FETCH_APYS_BEGIN:
       return {
         ...state,
-        fetchContractApyPending: true,
+        fetchApysPending: true,
       };
 
-    case VAULT_FETCH_CONTRACT_APY_SUCCESS:
+    case VAULT_FETCH_APYS_SUCCESS:
       return {
         ...state,
-        contractApy: action.data,
-        fetchContractApyPending: false,
+        apys: action.data,
+        fetchApysPending: false,
       };
 
-    case VAULT_FETCH_CONTRACT_APY_FAILURE:
+    case VAULT_FETCH_APYS_FAILURE:
       return {
         ...state,
-        fetchContractApyPending: false,
+        fetchApysPending: false,
       };
 
     default:

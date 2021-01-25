@@ -1,9 +1,6 @@
 export { fetchBalances } from './fetchBalances';
-export { fetchPoolBalances } from './fetchPoolBalances';
-export { fetchOraclePrices } from './fetchOraclePrices';
-export { fetchPricePerShare } from './fetchPricePerShare';
-export { fetchUserPoolBalances } from './fetchUserPoolBalances';
+export { fetchVaultsData } from './fetchVaultsData';
 export { fetchApproval } from './fetchApproval';
 export { fetchDeposit } from './fetchDeposit';
 export { fetchWithdraw } from './fetchWithdraw';
-export { fetchContractApy } from './fetchContractApy';
+export { fetchApys } from './fetchApys';

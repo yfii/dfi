@@ -1,10 +1,7 @@
 export { useFetchBalances } from './fetchBalances';
-export { useFetchPoolBalances } from './fetchPoolBalances';
-export { useFetchOraclePrices } from './fetchOraclePrices';
-export { useFetchPricePerShare } from './fetchPricePerShare';
-export { useFetchUserPoolBalances } from './fetchUserPoolBalances';
+export { useFetchVaultsData } from './fetchVaultsData';
 export { useFetchApproval } from './fetchApproval';
 export { useFetchDeposit } from './fetchDeposit';
 export { useFetchWithdraw } from './fetchWithdraw';
-export { useFetchContractApy } from './fetchContractApy';
+export { useFetchApys } from './fetchApys';
 export { useFetchHarvest } from './fetchHarvest';

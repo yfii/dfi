@@ -39,10 +39,10 @@ const VisiblePools = ({ pools, tokens, apys }) => {
         setAsset={setAsset}
         setOrder={setOrder}
       />
-      {sortedPools.map((pool, index) =>
-        <Pool pool={pool} index={index} tokens={tokens} contractApy={apys} key={pool.id} />
-      )}
-
+      {sortedPools.map((pool, index) => (
+        <Pool pool={pool} index={index} tokens={tokens} apy={apys[pool.id] || 0} key={pool.id} />
+      ))}
+      
       {!sortedPools.length && <h3 className={classes.subtitle}>{t('No-Results')}</h3>}
     </>
   );

@@ -9,15 +9,13 @@ import { MultiCall } from 'eth-multicall';
 import { erc20ABI, multicallBnbShimABI } from '../../configure';
 import BigNumber from 'bignumber.js';
 
-export function fetchBalances(data) {
+export function fetchBalances({ address, web3, tokens }) {
   return dispatch => {
     dispatch({
       type: VAULT_FETCH_BALANCES_BEGIN,
     });
 
     const promise = new Promise((resolve, reject) => {
-      const { address, web3, tokens } = data;
-
       const tokensList = [];
       for (let key in tokens) {
         tokensList.push({
