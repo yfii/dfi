@@ -10,7 +10,7 @@ import styles from './styles';
 import usePoolsTvl from '../../hooks/usePoolsTvl';
 import { formatGlobalTvl } from 'features/helpers/format';
 
-const FETCH_INTERVAL_MS = 15 * 1000;
+const FETCH_INTERVAL_MS = 30 * 1000;
 
 const useStyles = makeStyles(styles);
 
