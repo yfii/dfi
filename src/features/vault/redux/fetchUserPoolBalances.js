@@ -8,22 +8,19 @@ import {
 import { MultiCall } from 'eth-multicall';
 import { erc20ABI } from '../../configure';
 import BigNumber from 'bignumber.js';
-import { byDecimals } from 'features/helpers/bignumber';
 
-export function fetchUserPoolBalances(data) {
+export function fetchUserPoolBalances({ address, web3, pools }) {
   return dispatch => {
     dispatch({
       type: VAULT_FETCH_USER_POOL_BALANCES_BEGIN,
     });
 
     const promise = new Promise((resolve, reject) => {
-      const { address, web3, pools } = data;
-
       const multicall = new MultiCall(web3, '0xB94858b0bB5437498F5453A16039337e5Fdc269C');
 
       const calls = pools.map(pool => {
         const bnbShimAddress = '0xC72E5edaE5D7bA628A2Acb39C8Aa0dbbD06daacF';
-        const token = new web3.eth.Contract(erc20ABI, pool.tokenAddress | bnbShimAddress);
+        const token = new web3.eth.Contract(erc20ABI, pool.tokenAddress || bnbShimAddress);
         return {
           allowance: token.methods.allowance(address, pool.earnContractAddress),
         };
@@ -47,6 +44,7 @@ export function fetchUserPoolBalances(data) {
           resolve();
         })
         .catch(error => {
+          console.log('ERROR', error);
           dispatch({
             type: VAULT_FETCH_USER_POOL_BALANCES_FAILURE,
           });
