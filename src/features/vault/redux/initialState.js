@@ -19,7 +19,7 @@ const initialState = {
   apys: {},
   fetchApysPending: false,
   fetchOraclePricesPending: false,
-  fetchUserPoolBalancesPending: false,
+  fetchVaultsDataPending: false,
   fetchBalancesPending: false,
   fetchApprovalPending: {},
   fetchDepositPending: {},

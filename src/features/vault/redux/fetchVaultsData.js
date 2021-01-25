@@ -1,26 +1,26 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
-import {
-  VAULT_FETCH_USER_POOL_BALANCES_BEGIN,
-  VAULT_FETCH_USER_POOL_BALANCES_SUCCESS,
-  VAULT_FETCH_USER_POOL_BALANCES_FAILURE,
-} from './constants';
-import { MultiCall } from 'eth-multicall';
-import { erc20ABI, vaultABI } from '../../configure';
 import BigNumber from 'bignumber.js';
 import async from 'async';
+import { MultiCall } from 'eth-multicall';
+import {
+  VAULT_FETCH_VAULTS_DATA_BEGIN,
+  VAULT_FETCH_VAULTS_DATA_SUCCESS,
+  VAULT_FETCH_VAULTS_DATA_FAILURE,
+} from './constants';
+import { erc20ABI, vaultABI } from '../../configure';
 import { byDecimals } from 'features/helpers/bignumber';
 
-export function fetchUserPoolBalances({ address, web3, pools }) {
+export function fetchVaultsData({ address, web3, pools }) {
   return dispatch => {
     dispatch({
-      type: VAULT_FETCH_USER_POOL_BALANCES_BEGIN,
+      type: VAULT_FETCH_VAULTS_DATA_BEGIN,
     });
 
     const promise = new Promise((resolve, reject) => {
       const multicall = new MultiCall(web3, '0xB94858b0bB5437498F5453A16039337e5Fdc269C');
 
-      const allowanceCalls = pools.map(pool => {
+      const tokenCalls = pools.map(pool => {
         const bnbShimAddress = '0xC72E5edaE5D7bA628A2Acb39C8Aa0dbbD06daacF';
         const token = new web3.eth.Contract(erc20ABI, pool.tokenAddress || bnbShimAddress);
         return {
@@ -28,7 +28,7 @@ export function fetchUserPoolBalances({ address, web3, pools }) {
         };
       });
 
-      const pricePerFullShareCalls = pools.map(pool => {
+      const vaultCalls = pools.map(pool => {
         const vault = new web3.eth.Contract(vaultABI, pool.earnedTokenAddress);
         return {
           pricePerFullShare: vault.methods.getPricePerFullShare(),
@@ -40,7 +40,7 @@ export function fetchUserPoolBalances({ address, web3, pools }) {
         [
           callbackInner => {
             multicall
-              .all([allowanceCalls])
+              .all([tokenCalls])
               .then(([data]) => callbackInner(null, data))
               .catch(error => {
                 return callbackInner(error.message || error);
@@ -48,7 +48,7 @@ export function fetchUserPoolBalances({ address, web3, pools }) {
           },
           callbackInner => {
             multicall
-              .all([pricePerFullShareCalls])
+              .all([vaultCalls])
               .then(([data]) => callbackInner(null, data))
               .catch(error => {
                 return callbackInner(error.message || error);
@@ -58,7 +58,7 @@ export function fetchUserPoolBalances({ address, web3, pools }) {
         (error, data) => {
           if (error) {
             dispatch({
-              type: VAULT_FETCH_USER_POOL_BALANCES_FAILURE,
+              type: VAULT_FETCH_VAULTS_DATA_FAILURE,
             });
             return reject(error.message || error);
           }
@@ -66,7 +66,6 @@ export function fetchUserPoolBalances({ address, web3, pools }) {
           const newPools = pools.map((pool, i) => {
             const allowance = web3.utils.fromWei(data[0][i].allowance, 'ether');
             const pricePerFullShare = byDecimals(data[1][i].pricePerFullShare, 18).toNumber();
-
             return {
               ...pool,
               allowance: new BigNumber(allowance).toNumber() || 0,
@@ -76,7 +75,7 @@ export function fetchUserPoolBalances({ address, web3, pools }) {
           });
 
           dispatch({
-            type: VAULT_FETCH_USER_POOL_BALANCES_SUCCESS,
+            type: VAULT_FETCH_VAULTS_DATA_SUCCESS,
             data: newPools,
           });
           resolve();
@@ -88,50 +87,50 @@ export function fetchUserPoolBalances({ address, web3, pools }) {
   };
 }
 
-export function useFetchUserPoolBalances() {
+export function useFetchVaultsData() {
   const dispatch = useDispatch();
 
-  const { pools, fetchUserPoolBalancesPending } = useSelector(
+  const { pools, fetchVaultsDataPending } = useSelector(
     state => ({
       pools: state.vault.pools,
-      fetchUserPoolBalancesPending: state.vault.fetchUserPoolBalancesPending,
+      fetchVaultsData: state.vault.fetchVaultsData,
     }),
     shallowEqual
   );
 
   const boundAction = useCallback(
     data => {
-      return dispatch(fetchUserPoolBalances(data));
+      return dispatch(fetchVaultsData(data));
     },
     [dispatch]
   );
 
   return {
     pools,
-    fetchUserPoolBalances: boundAction,
-    fetchUserPoolBalancesPending,
+    fetchVaultsData: boundAction,
+    fetchVaultsDataPending,
   };
 }
 
 export function reducer(state, action) {
   switch (action.type) {
-    case VAULT_FETCH_USER_POOL_BALANCES_BEGIN:
+    case VAULT_FETCH_VAULTS_DATA_BEGIN:
       return {
         ...state,
-        fetchUserPoolBalancesPending: true,
+        fetchVaultsDataPending: true,
       };
 
-    case VAULT_FETCH_USER_POOL_BALANCES_SUCCESS:
+    case VAULT_FETCH_VAULTS_DATA_SUCCESS:
       return {
         ...state,
         pools: action.data,
-        fetchUserPoolBalancesPending: false,
+        fetchVaultsDataPending: false,
       };
 
-    case VAULT_FETCH_USER_POOL_BALANCES_FAILURE:
+    case VAULT_FETCH_VAULTS_DATA_FAILURE:
       return {
         ...state,
-        fetchUserPoolBalancesPending: false,
+        fetchVaultsDataPending: false,
       };
 
     default:
