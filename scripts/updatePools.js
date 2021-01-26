@@ -25,7 +25,7 @@ async function main() {
         arr.push(pools[i]);
     }
 
-    const payload = `export const pools = ${JSON.stringify((arr),null,0)};`
+    const payload = `export const pools = ${JSON.stringify((arr),null,1)};`
 
     fs.writeFile('../src/features/configure/pools.js', payload, function (err) {
         if (err) return console.log(err);
