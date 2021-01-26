@@ -13,14 +13,14 @@ async function main() {
    for (let i=0; i < pools.length; i++){
 
         let contractAddress = pools[i].earnContractAddress;
-        if (!pools[i].strategyAddress) {
-            let strat = await fetchStrategy({web3, contractAddress: contractAddress});
-            pools[i].strategyAddress = strat
-        }
-        
-        let response = await axios.get(`https://api.bscscan.com/api?module=account&action=txlist&address=${contractAddress}&startblock=0&sort=asc&page=1&offset=1`).then() 
-        pools[i].creationBlock = response.data["result"][0]["blockNumber"];
 
+        let strat = await fetchStrategy({web3, contractAddress: contractAddress});
+        pools[i].strategyAddress = strat
+        
+        if (!pools[i].strategyAddress) {
+            let response = await axios.get(`https://api.bscscan.com/api?module=account&action=txlist&address=${contractAddress}&startblock=0&sort=asc&page=1&offset=1`).then() 
+            pools[i].creationBlock = response.data["result"][0]["blockNumber"];
+        }
         console.log(pools[i])
         arr.push(pools[i]);
     }
