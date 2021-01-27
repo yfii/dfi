@@ -35,7 +35,7 @@ export const pools = [
     tokenAddress: '0x3Ef4952C7a9AfbE374EA02d1Bf5eD5a0015b7716',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
-    earnedToken: 'mooPancakeWSOTE-BNB',
+    earnedToken: 'mooPancakeEGLD-BNB',
     earnedTokenAddress: '0x3d0bd3C73eF66C8b487A49f50410173C44261285',
     earnContractAddress: '0x3d0bd3C73eF66C8b487A49f50410173C44261285',
     defaultApy: 8.11,
