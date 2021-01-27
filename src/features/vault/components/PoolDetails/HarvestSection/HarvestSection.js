@@ -51,7 +51,7 @@ const HarvestSection = ({ pool, index }) => {
         <DialogContent>
           <DialogContentText>
             <Typography className={classes.subtitle} variant="body2">
-              {t('Vault-HarvestDescription', { callFee: pool.callFee })}
+              {t('Vault-HarvestDescription')}
             </Typography>
           </DialogContentText>
         </DialogContent>

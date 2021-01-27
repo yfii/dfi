@@ -24,7 +24,7 @@
   "Vault-Harvesting": "Harvesting...",
   "Vault-HarvestButton": "Harvest",
   "Vault-HarvestConfirm": "Confirm Harvest?",
-  "Vault-HarvestDescription": "By harvesting, you are helping everyone to collect the profits generated in this vault. You will receive {{callFee}}% of the vault earnings since the last harvest.",
+  "Vault-HarvestDescription": "Manual harvesting is NOT NEEDED. All vaults auto compound. This is an advanced feature aimed at experienced users. Are you sure you want to harvest?",
   "Vault-HarvestSuccess": "Harvest Success",
   "Vault-HarvestError": "Harvest error: {{error}}",
   "Vault-LastHarvest": "Last Harvest",
