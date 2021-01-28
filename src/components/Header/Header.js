@@ -132,7 +132,7 @@ const renderLinkSidebar = (name, label, icon, classes) => {
 
 const getLinkUrl = name => {
   return name === 'buy'
-    ? 'https://streetswap-mirror.bsctools.xyz/#/swap?inputCurrency=BNB&outputCurrency=0xca3f508b8e4dd382ee878a314789373d80a5190a'
+    ? 'https://thugswap.vip/#/swap?inputCurrency=BNB&outputCurrency=0xca3f508b8e4dd382ee878a314789373d80a5190a'
     : `https://${name}.beefy.finance`;
 };
 
