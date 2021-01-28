@@ -14,7 +14,8 @@ const Disclaimer = () => {
 
   return (
     <Grid container item className={classes.root} justify="center">
-      <Typography className={classes.disclaimer}>{t('Disclaimer')}</Typography>
+      {/* <Typography className={classes.disclaimer}>{t('Disclaimer')}</Typography> */}
+      <Typography className={classes.disclaimer}>TVL AND APY DISPLAY ISSUE: THUGS PRICE API IS DOWN, CANNOT FETCH THE PRICE OF ASSETS. ALL SAFU.</Typography>
     </Grid>
   );
 };
