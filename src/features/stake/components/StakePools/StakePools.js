@@ -69,16 +69,21 @@ export default function StakePools() {
         {pools
           .filter(pool => pool.partner === switchValue)
           .map(pool => (
-            <Grid key={`${pool.symbol} ${pool.rewardsSymbol}`} item xs={12} md={4}>
+            <Grid key={`${pool.symbol} ${pool.rewardsSymbol}`} item xs={12} md={6} lg={5} xl={4}>
               <PoolCard
                 pool={pool}
-                onStake={() => { setAction('stake'); setCurrentPool(pool); }}
-                onUnstake={() => { setAction('unstake'); setCurrentPool(pool); }}
+                onStake={() => {
+                  setAction('stake');
+                  setCurrentPool(pool);
+                }}
+                onUnstake={() => {
+                  setAction('unstake');
+                  setCurrentPool(pool);
+                }}
                 onHarvest={() => {}}
               />
             </Grid>
-          )
-        )}
+          ))}
       </Grid>
       <Grid className={classNames(classes.imageContainer, classes.barn)} container>
         <Grid item xs={6} md={2}>
@@ -86,12 +91,22 @@ export default function StakePools() {
         </Grid>
       </Grid>
       <Grid className={classNames(classes.imageContainer, classes.projects)} container>
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12} md={5}>
           <img className={classes.image} src={projects} alt="project logos" />
           <div className={classes.links}>
-            <a href="https://beefy.finance/" target="_blank" rel="noopener noreferrer">beefy.finance</a>
-            <a href="https://trustwallet.com/" target="_blank" rel="noopener noreferrer">Trust Wallet</a>
-            <a href="https://docs.beefy.finance/beefyfinance/" target="_blank" rel="noopener noreferrer">{t('IFO-Guide')}</a>
+            <a href="https://beefy.finance/" target="_blank" rel="noopener noreferrer">
+              beefy.finance
+            </a>
+            <a href="https://trustwallet.com/" target="_blank" rel="noopener noreferrer">
+              Trust Wallet
+            </a>
+            <a
+              href="https://docs.beefy.finance/beefyfinance/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t('IFO-Guide')}
+            </a>
           </div>
         </Grid>
       </Grid>
@@ -100,7 +115,9 @@ export default function StakePools() {
         onClose={handleCloseStakingDialog}
         inputLabel={t('Available-To-Stake')}
         submitLabel={t('Stake')}
-        onSubmit={(value) => { handleCloseStakingDialog(); }}
+        onSubmit={value => {
+          handleCloseStakingDialog();
+        }}
         pool={currentPool}
         availableAmount={currentPool && currentPool.balance}
       />
@@ -109,10 +126,12 @@ export default function StakePools() {
         onClose={handleCloseStakingDialog}
         inputLabel={t('Available-To-Unstake')}
         submitLabel={t('Unstake')}
-        onSubmit={(value) => { handleCloseStakingDialog(); }}
+        onSubmit={value => {
+          handleCloseStakingDialog();
+        }}
         pool={currentPool}
         availableAmount={currentPool && currentPool.stakedBalance}
       />
     </>
-  )
+  );
 }
