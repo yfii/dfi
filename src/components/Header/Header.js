@@ -49,8 +49,9 @@ const Header = ({ links, isNightMode, setNightMode }) => {
         </Button>
 
         <span>
-          {renderLink('vote', 'vote', 'vote-yea', classes)}
+          {renderLink('barn', 'barn', 'warehouse', classes)}
           <Hidden xsDown>
+            {renderLink('vote', 'vote', 'vote-yea', classes)}
             {renderLink('gov', 'gov', 'landmark', classes)}
             {renderLink('dashboard', t('stats'), 'chart-bar', classes)}
             {renderLink('docs', 'docs', 'book', classes)}
@@ -93,6 +94,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
           <div className={classes.appResponsive}>{links}</div>
           <div style={{ textAlign: 'center' }}>
             {renderLinkSidebar('gov', 'gov', 'landmark', classes)}
+            {renderLinkSidebar('barn', 'barn', 'warehouse', classes)}
             {renderLinkSidebar('vote', 'vote', 'vote-yea', classes)}
             {renderLinkSidebar('dashboard', t('stats'), 'chart-bar', classes)}
             {renderLinkSidebar('docs', 'docs', 'book', classes)}
