@@ -4,6 +4,7 @@
   "repository": "beefyfinance/beefy-app",
   "license": "MIT",
   "private": true,
+  "type" : "module",
   "dependencies": {
     "@bandprotocol/bandchain.js": "^1.1.5",
     "@download/blockies": "^1.0.3",
