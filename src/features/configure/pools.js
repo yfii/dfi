@@ -2070,9 +2070,8 @@ export const pools = [
     unstableApy: false,
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'thugs',
-    oracleId:
-      '0x4338665CBB7B2485A8855A139b75D5e34AB0DB94_0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+    oracle: 'pancake',
+    oracleId: 'LTC',
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
