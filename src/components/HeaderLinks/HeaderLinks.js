@@ -24,6 +24,16 @@ const HeaderLinks = ({ connected, address, connectWallet, disconnectWallet, isNi
   const canvasRef = useRef(null);
 
   useEffect(() => {
+    const cachedLanguage = i18n.language
+    if (!cachedLanguage) {
+      return;
+    }
+
+    const languageCode = cachedLanguage.split('-')[0].toLowerCase()
+    setLanguage(languageCode)
+  }, [])
+
+  useEffect(() => {
     if (!connected) {
       return;
     }
