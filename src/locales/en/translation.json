@@ -51,5 +51,16 @@
   "app": "app",
   "socials": "socials",
   "buy": "buy",
-  "products": "products"
+  "products": "products",
+  "Powered-By": "POWERED BY",
+  "Stake-Table-Staked": "STAKE",
+  "Stake-Table-Total": "POOL",
+  "Stake-Table-Apy": "APY",
+  "Stake-Balancer-Earned": "EARNED",
+  "IFO-Guide": "IFO Guide",
+  "Available-To-Stake": "Available to Stake",
+  "Stake": "Stake",
+  "Available-To-Unstake": "Available to Unstake",
+  "Unstake": "Unstake",
+  "Max": "Max"
 }

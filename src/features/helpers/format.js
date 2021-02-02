@@ -1,7 +1,6 @@
-export const formatApy = (apy, fallbackApy) => {
-  if (!apy) {
-    apy = fallbackApy;
-  }
+export const formatApy = apy => {
+  if (!apy) return `???`;
+
   apy *= 100;
 
   const order = apy < 1 ? 0 : Math.floor(Math.log10(apy) / 3);
@@ -27,12 +26,10 @@ export const formatTvl = (tvl, oraclePrice) => {
   return prefix + num.toFixed(2) + units[order];
 };
 
-export const formatGlobalTvl = (tvl) => formatTvl(tvl, 1);
+export const formatGlobalTvl = tvl => formatTvl(tvl, 1);
 
-export const calcDaily = (apy, fallbackApy) => {
-  if (!apy) {
-    apy = fallbackApy;
-  }
+export const calcDaily = apy => {
+  if (!apy) return `???`;
 
   const g = Math.pow(10, Math.log10(apy + 1) / 365) - 1;
   if (isNaN(g)) {

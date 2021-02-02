@@ -1,0 +1,1 @@
+export { useFetchPoolsInfo } from './fetchPoolsInfo';
