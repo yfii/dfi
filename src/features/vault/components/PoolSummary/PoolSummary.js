@@ -63,14 +63,14 @@ const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, a
                 align="start"
               />
               <LabeledStat
-                value={pool.unstableApy ? '??? %' : formatApy(apy, pool.defaultApy)}
+                value={formatApy(apy, pool.defaultApy)}
                 label={t('Vault-APY')}
                 xs={5}
                 md={2}
                 align="start"
               />
               <LabeledStat
-                value={pool.unstableApy ? '??? %' : calcDaily(apy, pool.defaultApy)}
+                value={calcDaily(apy, pool.defaultApy)}
                 label={t('Vault-APYDaily')}
                 xs={5}
                 md={2}
@@ -107,13 +107,13 @@ const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, a
           </Grid>
           <Grid item xs={12} style={{ display: 'flex' }}>
             <LabeledStat
-              value={pool.unstableApy ? '??? %' : formatApy(apy, pool.defaultApy)}
+              value={formatApy(apy, pool.defaultApy)}
               label={t('Vault-APY')}
               xs={4}
               align="start"
             />
             <LabeledStat
-              value={pool.unstableApy ? '??? %' : calcDaily(apy, pool.defaultApy)}
+              value={calcDaily(apy, pool.defaultApy)}
               label={t('Vault-APYDaily')}
               xs={4}
             />
