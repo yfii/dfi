@@ -231,13 +231,14 @@ const styles = theme => ({
       textDecoration: 'underline',
     },
     '& span': {
-      color: theme.palette.text.primary
-    }
+      color: theme.palette.text.primary,
+    },
   },
   icon: {
     color: theme.palette.text.primary,
     marginRight: '0.5rem',
     minWidth: '24px',
+    textAlign: 'end',
   },
   iconButton: {
     color: theme.palette.text.primary,

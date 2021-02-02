@@ -3,17 +3,18 @@ import BandChain from '@bandprotocol/bandchain.js';
 import { pools } from '../configure/pools'
 
 const endpoints = {
-  bandchain: 'https://poa-api.bandchain.org',
   bakery:    'https://api.beefy.finance/bakery/price',
   bakeryLp:  'https://api.beefy.finance/bakery/lps',
+  bandchain: 'https://poa-api.bandchain.org',
   bdollarLp: 'https://api.beefy.finance/bdollar/lps',
   coingecko: 'https://api.coingecko.com/api/v3/simple/price',
   jetfuelLp: 'https://api.beefy.finance/jetfuel/lps',
+  kebabLp:   'https://api.beefy.finance/kebab/lps',
   narwhalLp: 'https://api.beefy.finance/narwhal/lps',
   pancake:   'https://api.beefy.finance/pancake/price',
   pancakeLp: 'https://api.beefy.finance/pancake/lps',
-  thugsLp:   'https://api.beefy.finance/thugs/lps',
   thugs:     'https://api.beefy.finance/thugs/tickers',
+  thugsLp:   'https://api.beefy.finance/thugs/lps',
 };
 
 const WBNB = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c';
@@ -144,7 +145,8 @@ const oracleEndpoints = {
   'pancake': () => fetchPancake(),
   'pancake-lp': () => fetchLP(endpoints.pancakeLp),
   'thugs': () => fetchThugs(),
-  'thugs-lp': () => fetchLP(endpoints.thugsLp)
+  'thugs-lp': () => fetchLP(endpoints.thugsLp),
+  'kebab-lp': () => fetchLP(endpoints.kebabLp)
 }
 
 export async function initializePriceCache () {
