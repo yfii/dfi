@@ -63,18 +63,13 @@ const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, a
                 align="start"
               />
               <LabeledStat
-                value={formatApy(apy, pool.defaultApy)}
+                value={formatApy(apy)}
                 label={t('Vault-APY')}
                 xs={5}
                 md={2}
                 align="start"
               />
-              <LabeledStat
-                value={calcDaily(apy, pool.defaultApy)}
-                label={t('Vault-APYDaily')}
-                xs={5}
-                md={2}
-              />
+              <LabeledStat value={calcDaily(apy)} label={t('Vault-APYDaily')} xs={5} md={2} />
               <LabeledStat
                 value={formatTvl(pool.tvl, pool.oraclePrice)}
                 label={t('Vault-TVL')}
@@ -106,17 +101,8 @@ const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, a
             />
           </Grid>
           <Grid item xs={12} style={{ display: 'flex' }}>
-            <LabeledStat
-              value={formatApy(apy, pool.defaultApy)}
-              label={t('Vault-APY')}
-              xs={4}
-              align="start"
-            />
-            <LabeledStat
-              value={calcDaily(apy, pool.defaultApy)}
-              label={t('Vault-APYDaily')}
-              xs={4}
-            />
+            <LabeledStat value={formatApy(apy)} label={t('Vault-APY')} xs={4} align="start" />
+            <LabeledStat value={calcDaily(apy)} label={t('Vault-APYDaily')} xs={4} />
             <LabeledStat
               value={formatTvl(pool.tvl, pool.oraclePrice)}
               label={t('Vault-TVL')}
