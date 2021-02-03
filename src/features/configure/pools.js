@@ -35,8 +35,6 @@ export const pools = [
     earnedToken: 'mooPancakeBDO-BNB',
     earnedTokenAddress: '0x48Cb3540CB0BB4C6dDF638209e0631Ec85c1a477',
     earnContractAddress: '0x48Cb3540CB0BB4C6dDF638209e0631Ec85c1a477',
-    defaultApy: 3.04,
-    unstableApy: false,
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'pancake-lp',
