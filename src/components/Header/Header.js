@@ -134,7 +134,7 @@ const renderLinkSidebar = (name, label, icon, classes) => {
 
 const getLinkUrl = name => {
   return name === 'buy'
-    ? 'https://streetswap.vip/#/swap?inputCurrency=BNB&outputCurrency=0xca3f508b8e4dd382ee878a314789373d80a5190a'
+    ? 'https://openocean.finance/exchange/BNB'
     : `https://${name}.beefy.finance`;
 };
 
