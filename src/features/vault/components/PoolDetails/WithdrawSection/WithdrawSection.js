@@ -51,7 +51,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
     let sliderNum = 0;
     if (value) {
       inputVal = Number(value.replace(',', ''));
-      sliderNum = byDecimals(inputVal / total, 0).toFormat(2) * 100;
+      sliderNum = Math.round(byDecimals(inputVal / total, 0).toNumber() * 100);
     }
 
     setWithdrawAmount({
