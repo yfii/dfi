@@ -24,7 +24,7 @@ export const pools = [
   },
 
   {
-    id: 'cake-bdo-bnb',
+    id: 'cake-bdo-bnb-cake',
     logo: 'bdollar/bdo.png',
     name: 'BDO-BNB LP',
     token: 'BDO-BNB LP',
