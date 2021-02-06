@@ -134,7 +134,7 @@ const renderLinkSidebar = (name, label, icon, classes) => {
 
 const getLinkUrl = name => {
   return name === 'buy'
-    ? 'https://openocean.finance/exchange/BNB'
+    ? 'https://classic.openocean.finance/exchange/BNB'
     : `https://${name}.beefy.finance`;
 };
 
