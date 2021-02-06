@@ -35,6 +35,7 @@ export const assets = [
   'INJ',
   'JETS',
   'JGN',
+  'JULD',
   'KEBAB',
   'LINK',
   'LTC',
