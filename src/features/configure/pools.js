@@ -22,6 +22,7 @@ export const pools = [
     assets: ['BIFI'],
     callFee: 0.5,
   },
+  
   {
     id: 'soak-soak',
     logo: 'sponge/SOAK.png',
@@ -45,7 +46,6 @@ export const pools = [
     assets: ['SOAK'],
     callFee: 0.5,
   },
-
   {
     id: 'sponge-sponge-bnb',
     logo: 'sponge/spg-bnb.svg',

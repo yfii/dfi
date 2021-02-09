@@ -12,7 +12,7 @@ const endpoints = {
   narwhalLp: 'https://api.beefy.finance/narwhal/lps',
   nyanswopLp: 'https://api.beefy.finance/nyanswop/lps',
   pancake: 'https://api.beefy.finance/pancake/price',
-  pancakeLp: 'http://api.beefy.finance/pancake/lps',
+  pancakeLp: 'https://api.beefy.finance/pancake/lps',
   thugs: 'https://api.beefy.finance/thugs/tickers',
   thugsLp: 'https://api.beefy.finance/thugs/lps',
   spongeLp:   'https://api.beefy.finance/sponge/lps',
