@@ -45,6 +45,8 @@ export const assets = [
   'NYA',
   'REEF',
   'SBDO',
+  'SOAK',
+  'SPG',
   'STAX',
   'SXP',
   'TEN',
@@ -73,6 +75,7 @@ export const platforms = [
   'MonsterSlayer',
   'Narwhal',
   'Pancake',
+  'Sponge',
   'Thugs',
   'Venus',
 ];
