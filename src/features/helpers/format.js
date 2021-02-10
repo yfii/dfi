@@ -4,7 +4,7 @@ export const formatApy = apy => {
   apy *= 100;
 
   const order = apy < 1 ? 0 : Math.floor(Math.log10(apy) / 3);
-  const units = ['', 'k', 'M', 'B', 'T', 'Q', 'Q'];
+  const units = ['', 'k', 'M', 'B', 'T', 'Q', 'Q','S','S'];
   const num = apy / 1000 ** order;
 
   return `${num.toFixed(2)}${units[order]}%`;
