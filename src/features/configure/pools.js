@@ -22,6 +22,30 @@ export const pools = [
     assets: ['BIFI'],
     callFee: 0.5,
   },
+
+  {
+    id: 'cake-ditto-bnb',
+    logo: 'cake/ditto-bnb.svg',
+    name: 'DITTO-BNB LP',
+    token: 'DITTO-BNB LP',
+    tokenDescription: 'Uses: Pancake',
+    tokenAddress: '0x470BC451810B312BBb1256f96B0895D95eA659B1',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooPancakeDITTO-BNB',
+    earnedTokenAddress: '0x8FF55869e05492c127cEEc6A400D7e3803fC44E1',
+    earnContractAddress: '0x8FF55869e05492c127cEEc6A400D7e3803fC44E1',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'pancake-lp',
+    oracleId: 'cake-ditto-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['DITTO', 'BNB'],
+    callFee: 0.5,
+  },
   
   {
     id: 'soak-soak',
@@ -93,7 +117,7 @@ export const pools = [
     assets: ['SOAK', 'BNB'],
     callFee: 0.5,
   },
-
+    
   {
     id: 'cake-sfp-bnb',
     logo: 'cake/sfp-bnb.svg',
