@@ -47,6 +47,7 @@ export const assets = [
   'REEF',
   'SBDO',
   'STAX',
+  'SFP',
   'SXP',
   'TEN',
   'THUGS',
