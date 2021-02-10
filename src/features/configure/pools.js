@@ -25,7 +25,7 @@ export const pools = [
 
   {
     id: 'cake-hget-bnb',
-    logo: 'cake/hget-bnb.png',
+    logo: 'cake/hget-bnb.svg',
     name: 'HGET-BNB LP',
     token: 'HGET-BNB LP',
     tokenDescription: 'Uses: Pancake',
