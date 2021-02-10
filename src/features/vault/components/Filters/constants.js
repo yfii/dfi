@@ -32,6 +32,7 @@ export const assets = [
   'GOLD',
   'GUNS',
   'HELMET',
+  'HGET',
   'INJ',
   'JETS',
   'JGN',

@@ -23,6 +23,30 @@ export const pools = [
     callFee: 0.5,
   },
 
+  {
+    id: 'cake-hget-bnb',
+    logo: 'cake/hget-bnb.svg',
+    name: 'HGET-BNB LP',
+    token: 'HGET-BNB LP',
+    tokenDescription: 'Uses: Pancake',
+    tokenAddress: '0x66b9e1eac8a81f3752f7f3a5e95de460688a17ee',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooPancakeHGET-BNB',
+    earnedTokenAddress: '0xf34629872aC0e9152C1E4204b253143e619aFf0A',
+    earnContractAddress: '0xf34629872aC0e9152C1E4204b253143e619aFf0A',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'pancake-lp',
+    oracleId: 'cake-hget-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['HGET', 'BNB'],
+    callFee: 0.5,
+  },
+
   // Disable until stable ~$1
   // {
   //   id: 'nyacash-nyac-usdt',
