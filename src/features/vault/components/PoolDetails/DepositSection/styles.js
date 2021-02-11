@@ -48,6 +48,17 @@ const styles = theme => ({
   numericInput: {
     color: primaryColor[0],
   },
+  subtitle: {
+    textAlign: 'center',
+    fontSize: '14px',
+    letterSpacing: '0',
+    lineHeight: '8px',
+    [theme.breakpoints.down('xs')]: {
+      lineHeight: '16px',
+    },
+    fontWeight: '550',
+    color: theme.palette.text.secondary,
+  },
 });
 
 export default styles;

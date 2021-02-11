@@ -173,6 +173,7 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
           </div>
         )}
       </div>
+      {pool.platform === 'Auto' ? <h3 className={classes.subtitle}>{t('Vault-DepositFee')}</h3> : ''}
     </Grid>
   );
 };
