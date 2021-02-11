@@ -12,6 +12,7 @@
   "Vault-ApprovalError": "Approval error: {{error}}",
   "Vault-DepositButton": "Deposit",
   "Vault-DepositButtonAll": "Deposit All",
+  "Vault-DepositFee": "There is a <0.1% deposit fee, no withdrawal fee",
   "Vault-Deposited": "Deposited",
   "Vault-DepositSuccess": "Deposit success",
   "Vault-DepositError": "Deposit error: {{error}}",
