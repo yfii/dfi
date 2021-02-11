@@ -46,7 +46,7 @@ export const pools = [
     assets: ['DITTO', 'BNB'],
     callFee: 0.5,
   },
-  
+
   {
     id: 'soak-soak',
     logo: 'sponge/SOAK.png',
@@ -87,7 +87,7 @@ export const pools = [
     oracle: 'sponge-lp',
     oracleId: 'sponge-sponge-bnb',
     oraclePrice: 0,
-    depositsPaused: true,
+    depositsPaused: false,
     status: 'active',
     platform: 'Sponge',
     assets: ['SPG', 'BNB'],
@@ -99,7 +99,7 @@ export const pools = [
     logo: 'sponge/soak-bnb.svg',
     name: 'SOAK-BNB LP',
     token: 'SOAK-BNB LP',
-    tokenDescription: 'Uses: Sponge',   
+    tokenDescription: 'Uses: Sponge',
     tokenAddress: '0xc8FCBA816eF9B0c5bc03d9178CfCc7EF785B4f2f',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
@@ -111,13 +111,13 @@ export const pools = [
     oracle: 'sponge-lp',
     oracleId: 'sponge-soak-bnb',
     oraclePrice: 0,
-    depositsPaused: true,
+    depositsPaused: false,
     status: 'active',
     platform: 'SOAK',
     assets: ['SOAK', 'BNB'],
     callFee: 0.5,
   },
-    
+
   {
     id: 'cake-sfp-bnb',
     logo: 'cake/sfp-bnb.svg',
