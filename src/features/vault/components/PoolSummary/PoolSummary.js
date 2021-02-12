@@ -9,6 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { formatApy, formatTvl, calcDaily } from 'features/helpers/format';
 import { byDecimals } from 'features/helpers/bignumber';
 import styles from './styles';
+import PoolPaused from './PoolPaused/PoolPaused';
 import PoolTitle from './PoolTitle/PoolTitle';
 import LabeledStat from './LabeledStat/LabeledStat';
 import SummaryActions from './SummaryActions/SummaryActions';
@@ -35,6 +36,11 @@ const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, a
         spacing={1}
         style={{ paddingTop: '16px', paddingBottom: '16px' }}
       >
+      {pool.depositsPaused ? (
+        <PoolPaused
+          message={t('Vault-DepositsPausedTitle')}
+        />
+      ) : ''}
         <PoolTitle
           name={pool.name}
           logo={pool.logo}

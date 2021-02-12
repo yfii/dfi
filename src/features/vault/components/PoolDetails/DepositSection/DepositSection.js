@@ -129,6 +129,11 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
         value={depositBalance.slider}
         onChange={handleDepositedBalance}
       />
+      {pool.depositsPaused ? (
+          <div className={classes.showDetailButtonCon}>
+            <div className={classes.showPausedMsg}>{t(pool.platform === 'Auto' ? 'Vault-DepositsPausedMsgAuto' : 'Vault-DepositsPausedMsg')}</div>
+          </div>
+      ) : (
       <div>
         {pool.allowance === 0 ? (
           <div className={classes.showDetailButtonCon}>
@@ -173,6 +178,7 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
           </div>
         )}
       </div>
+      )}
       {pool.platform === 'Auto' ? <h3 className={classes.subtitle}>{t('Vault-DepositFee')}</h3> : ''}
     </Grid>
   );
