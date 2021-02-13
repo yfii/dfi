@@ -1,4 +1,4 @@
-#  Beefy Finance (\$BIFI)
+# Beefy Finance (\$BIFI)
 
 ## Overview
 
@@ -17,7 +17,7 @@ Opinionated Code Formatter
 Required env vars:
 
 ```
-REACT_APP_NETWORK_ID = ...
+REACT_APP_NETWORK_ID = ..
 ```
 
 ## License
