@@ -31,7 +31,7 @@
   "Vault-LastHarvest": "Last Harvest",
   "Vault-MainTitle": "Vaults",
   "Vault-SecondTitle": "Deposit & Earn money",
-  "Vault-DepositsPausedTitle": "PAUSED",
+  "Vault-DepositsPausedTitle": "Deposits paused",
   "Vault-DepositsPausedMsg": "Deposits are paused for this vault.",
   "Vault-DepositsPausedMsgAuto": "Please migrate to new vault",
   "Vault-DepositsRetiredTitle": "RETIRED",
