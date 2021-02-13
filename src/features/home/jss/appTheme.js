@@ -10,6 +10,7 @@ const createTheme = (isNightMode) => createMuiTheme({
       secondary: isNightMode ? '#3B3A4D' : '#F8F2EC',
       dark: isNightMode ? '#2B2A3D' : '#999',
       paused: isNightMode ? '#2B2A5A' : '#FCE57E',
+      retired: isNightMode ? '#d32f2f' : '#e57373',
       hover: isNightMode ? '#2B2A3D' : '#EFE6DC',
       border: isNightMode ? '#2B2A3D' : '#DED9D5',
     },

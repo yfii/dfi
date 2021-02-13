@@ -9,6 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { formatApy, formatTvl, calcDaily } from 'features/helpers/format';
 import { byDecimals } from 'features/helpers/bignumber';
 import styles from './styles';
+import PoolPaused from './PoolPaused/PoolPaused';
 import PoolTitle from './PoolTitle/PoolTitle';
 import LabeledStat from './LabeledStat/LabeledStat';
 import SummaryActions from './SummaryActions/SummaryActions';
@@ -18,10 +19,14 @@ const useStyles = makeStyles(styles);
 const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, apy }) => {
   const { t } = useTranslation();
   const classes = useStyles();
+  const vaultStateTitle = (status, paused) => {
+    let state = status === 'eol' ? t('Vault-DepositsRetiredTitle') : (paused ? t('Vault-DepositsPausedTitle') : null)
+    return state === null ? '' : <PoolPaused message={t(state)} />
+  }
 
   return (
     <AccordionSummary
-      className={pool.depositsPaused ? classes.detailsPaused : classes.details}
+      className={pool.status === 'eol' ? classes.detailsRetired : (pool.depositsPaused ? classes.detailsPaused : classes.details)}
       style={{ justifyContent: 'space-between' }}
       onClick={event => {
         event.stopPropagation();
@@ -35,6 +40,7 @@ const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, a
         spacing={1}
         style={{ paddingTop: '16px', paddingBottom: '16px' }}
       >
+        {vaultStateTitle(pool.status, pool.depositsPaused)}
         <PoolTitle
           name={pool.name}
           logo={pool.logo}
