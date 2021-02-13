@@ -1642,7 +1642,7 @@ export const pools = [
     tokenDescription: 'Uses: Pancake',
     tokenAddress: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
     tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
+    tokenDescriptionUrl: 'https://docs.beefy.finance/beefyfinance/products/pancake-swap#cake-smart',
     earnedToken: 'mooCakeSmart',
     earnedTokenAddress: '0xB0BDBB9E507dBF55f4aC1ef6ADa3E216202e06FD',
     earnContractAddress: '0xB0BDBB9E507dBF55f4aC1ef6ADa3E216202e06FD',
