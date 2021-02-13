@@ -33,7 +33,6 @@
   "Vault-SecondTitle": "Deposit & Earn money",
   "Vault-DepositsPausedTitle": "Deposits paused",
   "Vault-DepositsPausedMsg": "Deposits are paused for this vault.",
-  "Vault-DepositsPausedMsgAuto": "Please migrate to new vault",
   "Vault-DepositsRetiredTitle": "RETIRED",
   "Vault-DepositsRetiredMsg": "Vault retired, withdraw your funds ASAP",
   "Hide-Zero-Balances": "Hide Zero Balances",
