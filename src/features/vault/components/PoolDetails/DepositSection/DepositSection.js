@@ -116,6 +116,29 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
     });
   };
 
+  const getVaultState = (status, paused) => {
+    let display = false
+    let cont = null
+
+    if(status === 'eol') {
+      display = true;
+      cont = <div className={classes.showDetailButtonCon}>
+        <div className={classes.showRetiredMsg}>{t('Vault-DepositsRetiredMsg')}</div>
+      </div>
+    } else {
+      if(paused) {
+        display = true;
+        cont = <div className={classes.showDetailButtonCon}>
+          <div className={classes.showPausedMsg}>{t(pool.platform === 'Auto' ? 'Vault-DepositsPausedMsgAuto' : 'Vault-DepositsPausedMsg')}</div>
+        </div>
+      }
+    }
+
+    return {display:display, content: cont}
+  }
+
+  const vaultState = getVaultState(pool.status, pool.depositsPaused);
+
   return (
     <Grid item xs={12} md={shouldHideFromHarvest(pool.id) ? 6 : 5} className={classes.sliderDetailContainer}>
       <div className={classes.showDetailLeft}>
@@ -129,11 +152,7 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
         value={depositBalance.slider}
         onChange={handleDepositedBalance}
       />
-      {pool.depositsPaused ? (
-          <div className={classes.showDetailButtonCon}>
-            <div className={classes.showPausedMsg}>{t(pool.platform === 'Auto' ? 'Vault-DepositsPausedMsgAuto' : 'Vault-DepositsPausedMsg')}</div>
-          </div>
-      ) : (
+      {vaultState.display === true ? vaultState.content : (
       <div>
         {pool.allowance === 0 ? (
           <div className={classes.showDetailButtonCon}>

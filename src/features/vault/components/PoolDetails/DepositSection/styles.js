@@ -29,6 +29,16 @@ const styles = theme => ({
     background: `${theme.palette.background.paused}`,
     border: `1px solid ${theme.palette.primary.main}`,
   },
+  showRetiredMsg: {
+    display: 'flex',
+    margin: '12px 5px',
+    padding: '15px',
+    fontSize: '14px',
+    fontWeight: 'bold',
+    borderRadius: '5px',
+    background: `${theme.palette.background.retired}`,
+    border: `1px solid ${theme.palette.primary.main}`,
+  },
   showDetailButton: {
     margin: '12px 5px',
     fontSize: '14px',

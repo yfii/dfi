@@ -9,6 +9,11 @@ const styles = (theme) => ({
     alignItems: 'center',
     background: theme.palette.background.paused,
   },
+  detailsRetired: {
+    display: 'flex',
+    alignItems: 'center',
+    background: theme.palette.background.retired,
+  },
 });
 
 export default styles;
