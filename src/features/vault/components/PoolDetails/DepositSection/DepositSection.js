@@ -129,7 +129,7 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
       if(paused) {
         display = true;
         cont = <div className={classes.showDetailButtonCon}>
-          <div className={classes.showPausedMsg}>{t(pool.platform === 'Auto' ? 'Vault-DepositsPausedMsgAuto' : 'Vault-DepositsPausedMsg')}</div>
+          <div className={classes.showPausedMsg}>{t('Vault-DepositsPausedMsg')}</div>
         </div>
       }
     }

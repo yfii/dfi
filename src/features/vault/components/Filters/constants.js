@@ -78,6 +78,7 @@ export const platforms = [
   'Beefy',
   'ForTube',
   'JetFuel',
+  'JulSwap',
   'Kebab',
   'MonsterSlayer',
   'Narwhal',
