@@ -81,7 +81,7 @@ export const pools = [
     tokenAddress: '0xC1800c29CF91954357cd0bf3f0accAADa3D0109c', // vault
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
-    earnedToken: 'mooPancakeLIT-BNB',
+    earnedToken: 'mooPancakeSWGB-BNB',
     earnedTokenAddress: '0xed324b068e31c6fB7C7921e79E54d95B1Ca9d759',
     earnContractAddress: '0xed324b068e31c6fB7C7921e79E54d95B1Ca9d759',
     pricePerFullShare: 1,
