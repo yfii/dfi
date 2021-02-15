@@ -61,13 +61,13 @@ function hideDecomissioned(pools) {
 function hideZeroBalances(pools, tokens) {
   return pools.filter(pool => {
     if (tokens[pool.token]) {
-      if (tokens[pool.token].tokenBalance > 1e10) {
+      if (tokens[pool.token].tokenBalance > 0) {
         return true;
       }
     }
 
     if (tokens[pool.earnedToken]) {
-      if (tokens[pool.earnedToken].tokenBalance > 1e10) {
+      if (tokens[pool.earnedToken].tokenBalance > 0) {
         return true;
       }
     }
