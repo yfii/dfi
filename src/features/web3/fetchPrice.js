@@ -16,6 +16,7 @@ const endpoints = {
   thugs: 'https://api.beefy.finance/thugs/tickers',
   thugsLp: 'https://api.beefy.finance/thugs/lps',
   spongeLp:   'https://api.beefy.finance/sponge/lps',
+  boltLp:   'https://api.beefy.finance/bolt/lps',
 };
 
 const WBNB = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c';
@@ -136,6 +137,7 @@ const oracleEndpoints = {
   'thugs-lp': () => fetchLP(endpoints.thugsLp),
   'kebab-lp': () => fetchLP(endpoints.kebabLp),
   'sponge-lp': () => fetchLP(endpoints.spongeLp),
+  'bolt-lp': () => fetchLP(endpoints.boltLp),
 };
 
 export async function initializePriceCache() {
