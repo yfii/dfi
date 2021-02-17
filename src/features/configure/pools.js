@@ -450,7 +450,7 @@ export const pools = [
     oracle: 'nyanswop-lp',
     oracleId: 'nyanswop-nyas-usdt',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Nyanswop',
     assets: ['NYAS', 'USDT'],
