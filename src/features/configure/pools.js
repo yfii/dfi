@@ -71,6 +71,30 @@ export const pools = [
     callFee: 0.5,
   },
 
+  {
+    id: 'kebab-kebab-btc',
+    logo: 'kebab/KEBAB-BTCB.png',
+    name: 'KEBAB-BTCB LP',
+    token: 'KEBAB-BTCB LP',
+    tokenDescription: 'Uses: Kebab',
+    tokenAddress: '0x45D8D5d9bD425Efc26e3259848BCFEfA16F927F0',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooKebabKEBAB-BTCB',
+    earnedTokenAddress: '0x02a77B01BE5BB6a73b70E2b5615694F71a2c4F41',
+    earnContractAddress: '0x02a77B01BE5BB6a73b70E2b5615694F71a2c4F41',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'kebab-lp',
+    oracleId: 'kebab-kebab-btc',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Kebab',
+    assets: ['KEBAB', 'BTC'],
+    callFee: 0.5,
+  },
+
   // FIXME: apy missing 
   // {
   //   id: 'nyanswop-nya-bnb',
