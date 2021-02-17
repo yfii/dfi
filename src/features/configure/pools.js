@@ -23,6 +23,30 @@ export const pools = [
     callFee: 0.5,
   },
 
+  {
+    id: 'auto-wbnb',
+    logo: 'venus/wbnb.svg',
+    name: 'WBNB × AUTO',
+    token: 'WBNB',
+    tokenDescription: 'Uses: Venus',
+    tokenAddress: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooAutoWbnbFixed',
+    earnedTokenAddress: '0x5B06aA1ebd2e15bC6001076355E5B4C39Cbc83F3',
+    earnContractAddress: '0x5B06aA1ebd2e15bC6001076355E5B4C39Cbc83F3',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'pancake',
+    oracleId: 'WBNB',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Auto',
+    assets: ['BNB'],
+    callFee: 0.5,
+  },
+
   // FIXME: apy missing 
   // {
   //   id: 'nyanswop-nya-bnb',
@@ -241,7 +265,7 @@ export const pools = [
   },
 
   {
-    id: 'auto-wbnb',
+    id: 'auto-wbnb-old',
     logo: 'venus/wbnb.svg',
     name: 'WBNB × AUTO',
     token: 'WBNB',
