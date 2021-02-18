@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
+import TVLLoader from './TVLLoader/TVLLoader';
 import { useConnectWallet } from '../../../home/redux/hooks';
 import { useFetchBalances, useFetchVaultsData, useFetchApys } from '../../redux/hooks';
 import VisiblePools from '../VisiblePools/VisiblePools';
@@ -17,7 +18,7 @@ const useStyles = makeStyles(styles);
 export default function Pools() {
   const { t } = useTranslation();
   const { web3, address } = useConnectWallet();
-  const { pools, fetchVaultsData } = useFetchVaultsData();
+  const { pools, fetchVaultsData, fetchVaultsDataLoaded } = useFetchVaultsData();
   const { tokens, fetchBalances } = useFetchBalances();
   const { apys, fetchApys } = useFetchApys();
   const { poolsTvl } = usePoolsTvl(pools);
@@ -45,7 +46,14 @@ export default function Pools() {
       <Grid item xs={12}>
         <div className={classes.titles}>
           <h1 className={classes.title}>{t('Vault-MainTitle')}</h1>
-          <h1 className={classes.title}>TVL {formatGlobalTvl(poolsTvl)}</h1>
+          <h1 className={classes.title}>
+            TVL{' '}
+            {fetchVaultsDataLoaded && poolsTvl > 0 ? (
+              formatGlobalTvl(poolsTvl)
+            ) : (
+              <TVLLoader className={classes.titleLoader} />
+            )}
+          </h1>
         </div>
         <div className={classes.subtitles}>
           <h3 className={classes.subtitle}>{t('Vault-SecondTitle')}</h3>
