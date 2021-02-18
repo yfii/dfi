@@ -215,7 +215,7 @@ export const pools = [
     callFee: 0.5,
   },
 
-  // FIXME: apy missing 
+  // FIXME: apy missing
   // {
   //   id: 'nyanswop-nya-bnb',
   //   logo: 'nyanswop/nya.png',
@@ -474,7 +474,7 @@ export const pools = [
     oracleId: 'SOAK',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Sponge',
     assets: ['SOAK'],
     callFee: 0.5,
