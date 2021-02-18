@@ -12,6 +12,11 @@ const styles = theme => ({
     lineHeight: '32px',
     fontWeight: '550',
     color: theme.palette.text.primary,
+    display: 'flex',
+    alignItems: 'center',
+  },
+  titleLoader: {
+    marginLeft: '12px',
   },
   subtitles: {
     display: 'flex',
