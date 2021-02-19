@@ -79,7 +79,7 @@ const HarvestSection = ({ pool, index }) => {
           <div style={{ textAlign: "center" }}>
             <Button
               className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined} ${classes.showResponsiveButtonCon}`}
-              style={{ marginBottom: pool.platform === 'Auto' ? '48px' : '12px' }}
+              style={{ marginBottom: pool.platform === 'Autofarm' ? '48px' : '12px' }}
               type="button"
               color="primary"
               onClick={() => setShowHarvestModal(true)}
