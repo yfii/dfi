@@ -41,9 +41,10 @@ export function fetchApys() {
 export function useFetchApys() {
   const dispatch = useDispatch();
 
-  const { apys, fetchApysPending } = useSelector(
+  const { apys, fetchApysPending, fetchApysDone } = useSelector(
     state => ({
       apys: state.vault.apys,
+      fetchApysDone: state.vault.fetchApysDone,
       fetchApysPending: state.vault.fetchApysPending,
     }),
     shallowEqual
@@ -56,6 +57,7 @@ export function useFetchApys() {
   return {
     apys,
     fetchApys: boundAction,
+    fetchApysDone,
     fetchApysPending,
   };
 }
@@ -72,6 +74,7 @@ export function reducer(state, action) {
       return {
         ...state,
         apys: action.data,
+        fetchApysDone: true,
         fetchApysPending: false,
       };
 

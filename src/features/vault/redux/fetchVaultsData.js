@@ -114,11 +114,11 @@ export function fetchVaultsData({ address, web3, pools }) {
 export function useFetchVaultsData() {
   const dispatch = useDispatch();
 
-  const { pools, fetchVaultsDataLoaded } = useSelector(
+  const { pools, fetchVaultsDataDone } = useSelector(
     state => ({
       pools: state.vault.pools,
       fetchVaultsData: state.vault.fetchVaultsData,
-      fetchVaultsDataLoaded: state.vault.fetchVaultsDataLoaded,
+      fetchVaultsDataDone: state.vault.fetchVaultsDataDone,
     }),
     shallowEqual
   );
@@ -133,7 +133,7 @@ export function useFetchVaultsData() {
   return {
     pools,
     fetchVaultsData: boundAction,
-    fetchVaultsDataLoaded,
+    fetchVaultsDataDone,
   };
 }
 
@@ -150,7 +150,7 @@ export function reducer(state, action) {
         ...state,
         pools: action.data,
         fetchVaultsDataPending: false,
-        fetchVaultsDataLoaded: true,
+        fetchVaultsDataDone: true,
       };
 
     case VAULT_FETCH_VAULTS_DATA_FAILURE:
