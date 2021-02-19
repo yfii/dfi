@@ -13,7 +13,6 @@ const useFilteredPools = (pools, tokens) => {
   const { getStorage, setStorage } = useFilterStorage();
   const data = getStorage(KEY);
 
-  const [filteredPools, setFilteredPools] = useState(pools);
   const [filters, setFilters] = useState(data ? data : DEFAULT);
 
   const toggleFilter = key => {
@@ -26,28 +25,24 @@ const useFilteredPools = (pools, tokens) => {
     setStorage(KEY, filters);
   }, [setStorage, filters]);
 
-  useEffect(() => {
-    let newPools = [...pools];
+  let filteredPools = [...pools];
 
-    if (filters.hideZeroBalances) {
-      newPools = hideZeroBalances(newPools, tokens);
-    }
+  if (filters.hideZeroBalances) {
+    filteredPools = hideZeroBalances(filteredPools, tokens);
+  }
 
-    if (filters.hideZeroVaultBalances) {
-      newPools = hideZeroVaultBalances(newPools, tokens);
-    }
+  if (filters.hideZeroVaultBalances) {
+    filteredPools = hideZeroVaultBalances(filteredPools, tokens);
+  }
 
-    // Show all vaults to new users
-    if (newPools.length === 0) {
-      newPools = [...pools];
-    }
+  // Show all vaults to new users
+  if (filteredPools.length === 0) {
+    filteredPools = [...pools];
+  }
 
-    if (filters.hideDecomissioned) {
-      newPools = hideDecomissioned(newPools);
-    }
-
-    setFilteredPools(newPools);
-  }, [pools, tokens, filters]);
+  if (filters.hideDecomissioned) {
+    filteredPools = hideDecomissioned(filteredPools);
+  }
 
   return { filteredPools, toggleFilter, filters };
 };
