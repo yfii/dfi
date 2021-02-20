@@ -669,6 +669,7 @@ export const pools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
+    platform: 'JulSwap',
     assets: ['JULD'],
     callFee: 0.5,
   },
