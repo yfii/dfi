@@ -25,7 +25,7 @@ export const pools = [
 
   {
     id: 'auto-btc',
-    logo: 'single-assets/btcb.svg',
+    logo: 'single-assets/BTCB.png',
     name: 'BTCB',
     token: 'BTCB',
     tokenDescription: 'Uses: Autofarm',
@@ -1084,7 +1084,7 @@ export const pools = [
 
   {
     id: 'cake-ltc-bnb',
-    logo: 'bnb-pairs/ltc-bnb.svg',
+    logo: 'bnb-pairs/LTC-BNB.png',
     name: 'LTC-BNB LP',
     token: 'LTC-BNB LP',
     tokenDescription: 'Uses: Pancake',
@@ -1443,7 +1443,7 @@ export const pools = [
 
   {
     id: 'bakery-btc-bnb',
-    logo: 'bnb-pairs/BTC-BNB.svg',
+    logo: 'bnb-pairs/BTC-BNB.png',
     name: 'BTC-BNB BLP',
     token: 'BTC-BNB BLP',
     tokenDescription: 'Uses: Bakery',
@@ -1515,7 +1515,7 @@ export const pools = [
 
   {
     id: 'cake-unfi-bnb',
-    logo: 'bnb-pairs/unfi-bnb.svg',
+    logo: 'bnb-pairs/UNFI-BNB.png',
     name: 'UNFI-BNB LP',
     token: 'UNFI-BNB LP',
     tokenDescription: 'Uses: Pancake',
@@ -1782,7 +1782,7 @@ export const pools = [
 
   {
     id: 'jetfuel-bhc-bnb',
-    logo: 'bnb-pairs/bhc-bnb.png',
+    logo: 'bnb-pairs/BHC-BNB.png',
     name: 'BHC-BNB LP',
     token: 'BHC-BNB LP',
     tokenDescription: 'Uses: Traphouse',
@@ -1806,7 +1806,7 @@ export const pools = [
 
   {
     id: 'jetfuel-eth-bnb',
-    logo: 'bnb-pairs/eth-bnb.png',
+    logo: 'bnb-pairs/ETH-BNB.png',
     name: 'ETH-BNB LP',
     token: 'ETH-BNB LP',
     tokenDescription: 'Uses: Pancake',
@@ -1878,7 +1878,7 @@ export const pools = [
 
   {
     id: 'jetfuel-link-bnb',
-    logo: 'bnb-pairs/link-bnb.png',
+    logo: 'bnb-pairs/LINK-BNB.png',
     name: 'LINK-BNB LP',
     token: 'LINK-BNB LP',
     tokenDescription: 'Uses: Pancake',
@@ -1902,7 +1902,7 @@ export const pools = [
 
   {
     id: 'jetfuel-busd-bnb',
-    logo: 'bnb-pairs/busd-bnb.png',
+    logo: 'bnb-pairs/BUSD-BNB.png',
     name: 'BUSD-BNB LP',
     token: 'BUSD-BNB LP',
     tokenDescription: 'Uses: Pancake',
@@ -1926,7 +1926,7 @@ export const pools = [
 
   {
     id: 'jetfuel-usdt-bnb',
-    logo: 'bnb-pairs/usdt-bnb.png',
+    logo: 'bnb-pairs/USDT-BNB.png',
     name: 'USDT-BNB LP',
     token: 'USDT-BNB LP',
     tokenDescription: 'Uses: Pancake',
@@ -1998,7 +1998,7 @@ export const pools = [
 
   {
     id: 'venus-dot',
-    logo: 'single-assets/dot.png',
+    logo: 'single-assets/DOT.png',
     name: 'DOT',
     token: 'DOT',
     tokenDescription: 'Uses: Venus',
@@ -2022,7 +2022,7 @@ export const pools = [
 
   {
     id: 'venus-link',
-    logo: 'single-assets/link.png',
+    logo: 'single-assets/LINK.png',
     name: 'LINK',
     token: 'LINK',
     tokenDescription: 'Uses: Venus',
@@ -2525,7 +2525,7 @@ export const pools = [
 
   {
     id: 'venus-btcb',
-    logo: 'single-assets/btcb.svg',
+    logo: 'single-assets/BTCB.png',
     name: 'BTCB',
     token: 'BTCB',
     tokenDescription: 'Uses: Venus',
@@ -2621,7 +2621,7 @@ export const pools = [
 
   {
     id: 'cake-alpha-bnb',
-    logo: 'bnb-pairs/alpha-bnb.svg',
+    logo: 'bnb-pairs/ALPHA-BNB.png',
     name: 'ALPHA-BNB LP',
     token: 'ALPHA-BNB LP',
     tokenDescription: 'Uses: Pancake',
@@ -2645,7 +2645,7 @@ export const pools = [
 
   {
     id: 'cake-inj-bnb',
-    logo: 'bnb-pairs/inj-bnb.svg',
+    logo: 'bnb-pairs/INJ-BNB.png',
     name: 'INJ-BNB LP',
     token: 'INJ-BNB LP',
     tokenDescription: 'Uses: Pancake',
@@ -2669,7 +2669,7 @@ export const pools = [
 
   {
     id: 'cake-twt-bnb',
-    logo: 'bnb-pairs/twt-bnb.svg',
+    logo: 'bnb-pairs/TWT-BNB.png',
     name: 'TWT-BNB LP',
     token: 'TWT-BNB LP',
     tokenDescription: 'Uses: Pancake',
@@ -2693,7 +2693,7 @@ export const pools = [
 
   {
     id: 'cake-xvs-bnb',
-    logo: 'bnb-pairs/xvs-bnb.svg',
+    logo: 'bnb-pairs/XVS-BNB.png',
     name: 'XVS-BNB LP',
     token: 'XVS-BNB LP',
     tokenDescription: 'Uses: Pancake',
@@ -3379,7 +3379,7 @@ export const pools = [
 
   {
     id: 'cake-link-bnb',
-    logo: 'bnb-pairs/link-bnb.svg',
+    logo: 'bnb-pairs/LINK-BNB.png',
     name: 'LINK-BNB LP',
     token: 'LINK-BNB LP',
     tokenDescription: 'Uses: Pancake',
@@ -3404,7 +3404,7 @@ export const pools = [
 
   {
     id: 'cake-usdt-bnb',
-    logo: 'bnb-pairs/usdt-bnb.svg',
+    logo: 'bnb-pairs/USDT-BNB.png',
     name: 'USDT-BNB LP',
     token: 'USDT-BNB LP',
     tokenDescription: 'Uses: Pancake',
@@ -3429,7 +3429,7 @@ export const pools = [
 
   {
     id: 'cake-busd-bnb',
-    logo: 'bnb-pairs/busd-bnb.svg',
+    logo: 'bnb-pairs/BUSD-BNB.png',
     name: 'BUSD-BNB LP',
     token: 'BUSD-BNB LP',
     tokenDescription: 'Uses: Pancake',
@@ -3479,7 +3479,7 @@ export const pools = [
 
   {
     id: 'cake-eth-bnb',
-    logo: 'bnb-pairs/eth-bnb.svg',
+    logo: 'bnb-pairs/ETH-BNB.png',
     name: 'ETH-BNB LP',
     token: 'ETH-BNB LP',
     tokenDescription: 'Uses: Pancake',
@@ -3531,7 +3531,7 @@ export const pools = [
   //
   {
     id: 'fortube-fil',
-    logo: 'single-assets/FIL.png',
+    logo: 'single-assets/fil.svg',
     name: 'FIL',
     token: 'FIL',
     tokenDescription: 'Uses: ForTube',
@@ -3555,7 +3555,7 @@ export const pools = [
 
   {
     id: 'fortube-busd',
-    logo: 'single-assets/BUSD.png',
+    logo: 'single-assets/busd.svg',
     name: 'BUSD',
     token: 'BUSD',
     tokenDescription: 'Uses: ForTube',
@@ -3627,7 +3627,7 @@ export const pools = [
 
   {
     id: 'fortube-usdt',
-    logo: 'single-assets/USDT.png',
+    logo: 'single-assets/usdt.svg',
     name: 'USDT',
     token: 'USDT',
     tokenDescription: 'Uses: ForTube',
