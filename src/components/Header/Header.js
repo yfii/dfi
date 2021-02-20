@@ -32,7 +32,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
           <Hidden xsDown>
             <img
               alt="BIFI"
-              src={require(`images/BIFI.svg`)}
+              src={require(`images/single-assets/BIFI.svg`)}
               height={'40px'}
               className={classes.logo}
             />
@@ -41,7 +41,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
           <Hidden smUp>
             <img
               alt="BIFI"
-              src={require(`images/BIFI.svg`)}
+              src={require(`images/single-assets/BIFI.svg`)}
               height={'35px'}
               className={classes.logo}
             />
