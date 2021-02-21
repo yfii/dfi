@@ -4,7 +4,12 @@ const useVisiblePools = (pools, chunk) => {
   const [ visiblePools, setVisiblePools ] = useState([]);
 
   useEffect(() => {
-    setVisiblePools(pools.slice(0, chunk));
+    // Attempt to load as many pools as there were already loaded
+    // this should stop the window jumping to the top when pools
+    // are updated.
+    setVisiblePools((previousVisiblePools) => (
+      pools.slice(0, Math.max(previousVisiblePools.length, chunk))
+    ));
   }, [pools, chunk]);
 
   const fetchVisiblePools = () => {
