@@ -19,6 +19,7 @@ const initialState = {
   apys: {},
   fetchApysPending: false,
   fetchVaultsDataPending: false,
+  fetchVaultsDataLoaded: false,
   fetchBalancesPending: false,
   fetchApprovalPending: {},
   fetchDepositPending: {},

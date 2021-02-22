@@ -75,12 +75,14 @@ export const assets = [
 ];
 
 export const platforms = [
+  'Autofarm',
   'Bakery',
   'bDollar',
   'Beefy',
   'BoltDollar',
   'ForTube',
   'JetFuel',
+  'JulSwap',
   'Kebab',
   'MonsterSlayer',
   'Narwhal',
