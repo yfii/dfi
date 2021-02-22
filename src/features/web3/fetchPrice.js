@@ -5,7 +5,7 @@ const endpoints = {
   bakery: 'https://api.beefy.finance/bakery/price',
   bakeryLp: 'https://api.beefy.finance/bakery/lps',
   bdollarLp: 'https://api.beefy.finance/bdollar/lps',
-  boltLp:   'https://api.beefy.finance/bolt/lps',
+  boltLp: 'https://api.beefy.finance/bolt/lps',
   coingecko: 'https://api.coingecko.com/api/v3/simple/price',
   jetfuelLp: 'https://api.beefy.finance/jetfuel/lps',
   kebabLp: 'https://api.beefy.finance/kebab/lps',
@@ -16,7 +16,7 @@ const endpoints = {
   pancakeLp: 'https://api.beefy.finance/pancake/lps',
   thugs: 'https://api.beefy.finance/thugs/tickers',
   thugsLp: 'https://api.beefy.finance/thugs/lps',
-  spongeLp:   'https://api.beefy.finance/sponge/lps',
+  spongeLp: 'https://api.beefy.finance/sponge/lps',
 };
 
 const WBNB = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c';
@@ -67,7 +67,7 @@ const fetchCoingecko = async ids => {
 const fetchPancake = async () => {
   try {
     const response = await axios.get(endpoints.pancake);
-    return response.data.prices;
+    return response.data;
   } catch (err) {
     console.error(err);
     return {};
