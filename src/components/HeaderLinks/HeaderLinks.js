@@ -71,6 +71,8 @@ const HeaderLinks = ({ connected, address, connectWallet, disconnectWallet, isNi
         return i18n.changeLanguage('ko').then(() => setLanguage(event));
       case 'Português':
         return i18n.changeLanguage('pt').then(() => setLanguage(event));
+      case 'Pусский':
+        return i18n.changeLanguage('ru').then(() => setLanguage(event));
       case 'Svenska':
         return i18n.changeLanguage('se').then(() => setLanguage(event));
       case 'Türkçe':
@@ -114,6 +116,7 @@ const HeaderLinks = ({ connected, address, connectWallet, disconnectWallet, isNi
             'Italiano',
             '한글',
             'Português',
+            'русский',
             'Svenska',
             'Türkçe',
             'Українська',
