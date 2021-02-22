@@ -15,7 +15,7 @@ const endpoints = {
   pancakeLp: 'https://api.beefy.finance/pancake/lps',
   thugs: 'https://api.beefy.finance/thugs/tickers',
   thugsLp: 'https://api.beefy.finance/thugs/lps',
-  spongeLp:   'https://api.beefy.finance/sponge/lps',
+  spongeLp: 'https://api.beefy.finance/sponge/lps',
 };
 
 const WBNB = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c';
@@ -73,34 +73,6 @@ const fetchPancake = async () => {
   }
 };
 
-const fetchThugs = async () => {
-  try {
-    const response = await axios.get(endpoints.thugs);
-    const bnb = response.data[WBNB_BUSD]['last_price'];
-    const prices = {};
-
-    for (let pair in response.data) {
-      const ticker = response.data[pair];
-
-      let price = 0;
-      if (pair === `${WBNB}_${BUSD}`) {
-        price = bnb;
-      } else if (pair.startsWith(`${WBNB}_`)) {
-        price = bnb / ticker['last_price'];
-      } else {
-        price = bnb * ticker['last_price'];
-      }
-
-      prices[pair] = price;
-    }
-
-    return prices;
-  } catch (err) {
-    console.error(err);
-    return {};
-  }
-};
-
 const fetchLP = async endpoint => {
   try {
     const response = await axios.get(endpoint);
@@ -123,16 +95,15 @@ const fetchBakery = async () => {
 
 const oracleEndpoints = {
   'bakery-lp': () => fetchLP(endpoints.bakeryLp),
-  'bakery': () => fetchBakery(),
+  bakery: () => fetchBakery(),
   'bdollar-lp': () => fetchLP(endpoints.bdollarLp),
-  'coingecko': ids => fetchCoingecko(ids),
+  coingecko: ids => fetchCoingecko(ids),
   'jetfuel-lp': () => fetchLP(endpoints.jetfuelLp),
   'monster-lp': () => fetchLP(endpoints.monsterLp),
   'narwhal-lp': () => fetchLP(endpoints.narwhalLp),
   'nyanswop-lp': () => fetchLP(endpoints.nyanswopLp),
-  'pancake': () => fetchPancake(),
+  pancake: () => fetchPancake(),
   'pancake-lp': () => fetchLP(endpoints.pancakeLp),
-  'thugs': () => fetchThugs(),
   'thugs-lp': () => fetchLP(endpoints.thugsLp),
   'kebab-lp': () => fetchLP(endpoints.kebabLp),
   'sponge-lp': () => fetchLP(endpoints.spongeLp),
