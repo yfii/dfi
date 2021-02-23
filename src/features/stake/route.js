@@ -1,5 +1,3 @@
-import { StakePage } from './';
-
 export default {
   path: 'stake',
   childRoutes: [

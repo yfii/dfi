@@ -15,7 +15,14 @@ import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-const HeaderLinks = ({ connected, address, connectWallet, disconnectWallet, isNightMode, setNightMode }) => {
+const HeaderLinks = ({
+  connected,
+  address,
+  connectWallet,
+  disconnectWallet,
+  isNightMode,
+  setNightMode,
+}) => {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const [lng, setLanguage] = useState('en');
@@ -24,14 +31,14 @@ const HeaderLinks = ({ connected, address, connectWallet, disconnectWallet, isNi
   const canvasRef = useRef(null);
 
   useEffect(() => {
-    const cachedLanguage = i18n.language
+    const cachedLanguage = i18n.language;
     if (!cachedLanguage) {
       return;
     }
 
-    const languageCode = cachedLanguage.split('-')[0].toLowerCase()
-    setLanguage(languageCode)
-  }, [])
+    const languageCode = cachedLanguage.split('-')[0].toLowerCase();
+    setLanguage(languageCode);
+  }, [i18n.language]);
 
   useEffect(() => {
     if (!connected) {

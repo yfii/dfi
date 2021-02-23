@@ -19,10 +19,6 @@ const endpoints = {
   spongeLp: 'https://api.beefy.finance/sponge/lps',
 };
 
-const WBNB = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c';
-const BUSD = '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56';
-const WBNB_BUSD = `${WBNB}_${BUSD}`;
-
 const CACHE_TIMEOUT_MS = 1 * 60 * 1000; // 1 minute(s)
 const priceCache = {
   cache: new Map(),
