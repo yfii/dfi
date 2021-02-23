@@ -12,6 +12,7 @@ import translationID from './locales/id/translation.json';
 import translationIT from './locales/it/translation.json';
 import translationKO from './locales/ko/translation.json';
 import translationPT from './locales/pt/translation.json';
+import translationRU from './locales/ru/translation.json';
 import translationSE from './locales/se/translation.json';
 import translationTR from './locales/tr/translation.json';
 import translationUK from './locales/uk/translation.json';
@@ -28,6 +29,7 @@ const resources = {
   it: { translation: translationIT },
   ko: { translation: translationKO },
   pt: { translation: translationPT },
+  ru: { translation: translationRU },
   se: { translation: translationSE },
   tr: { translation: translationTR },
   uk: { translation: translationUK },
