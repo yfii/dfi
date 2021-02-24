@@ -15,7 +15,14 @@ import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-const HeaderLinks = ({ connected, address, connectWallet, disconnectWallet, isNightMode, setNightMode }) => {
+const HeaderLinks = ({
+  connected,
+  address,
+  connectWallet,
+  disconnectWallet,
+  isNightMode,
+  setNightMode,
+}) => {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const [lng, setLanguage] = useState('en');
@@ -24,14 +31,14 @@ const HeaderLinks = ({ connected, address, connectWallet, disconnectWallet, isNi
   const canvasRef = useRef(null);
 
   useEffect(() => {
-    const cachedLanguage = i18n.language
+    const cachedLanguage = i18n.language;
     if (!cachedLanguage) {
       return;
     }
 
-    const languageCode = cachedLanguage.split('-')[0].toLowerCase()
-    setLanguage(languageCode)
-  }, [])
+    const languageCode = cachedLanguage.split('-')[0].toLowerCase();
+    setLanguage(languageCode);
+  }, [i18n.language]);
 
   useEffect(() => {
     if (!connected) {
@@ -71,6 +78,8 @@ const HeaderLinks = ({ connected, address, connectWallet, disconnectWallet, isNi
         return i18n.changeLanguage('ko').then(() => setLanguage(event));
       case 'Português':
         return i18n.changeLanguage('pt').then(() => setLanguage(event));
+      case 'Pусский':
+        return i18n.changeLanguage('ru').then(() => setLanguage(event));
       case 'Svenska':
         return i18n.changeLanguage('se').then(() => setLanguage(event));
       case 'Türkçe':
@@ -114,6 +123,7 @@ const HeaderLinks = ({ connected, address, connectWallet, disconnectWallet, isNi
             'Italiano',
             '한글',
             'Português',
+            'Pусский',
             'Svenska',
             'Türkçe',
             'Українська',

@@ -22,4 +22,4 @@ REACT_APP_NETWORK_ID = ..
 
 ## License
 
-[MIT](LICENSE).
+[MIT](LICENSE)

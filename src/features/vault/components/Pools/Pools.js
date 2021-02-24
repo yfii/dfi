@@ -18,22 +18,22 @@ const useStyles = makeStyles(styles);
 export default function Pools() {
   const { t } = useTranslation();
   const { web3, address } = useConnectWallet();
-  const { pools, fetchVaultsData, fetchVaultsDataLoaded } = useFetchVaultsData();
-  const { tokens, fetchBalances } = useFetchBalances();
-  const { apys, fetchApys } = useFetchApys();
+  const { pools, fetchVaultsData, fetchVaultsDataDone } = useFetchVaultsData();
+  const { tokens, fetchBalances, fetchBalancesDone } = useFetchBalances();
+  const { apys, fetchApys, fetchApysDone } = useFetchApys();
   const { poolsTvl } = usePoolsTvl(pools);
   const classes = useStyles();
 
   useEffect(() => {
     if (address && web3) {
-      fetchBalances({ address, web3, tokens });
-      fetchVaultsData({ address, web3, pools });
-      fetchApys();
-      const id = setInterval(() => {
+      const fetch = () => {
         fetchBalances({ address, web3, tokens });
         fetchVaultsData({ address, web3, pools });
         fetchApys();
-      }, FETCH_INTERVAL_MS);
+      };
+      fetch();
+
+      const id = setInterval(fetch, FETCH_INTERVAL_MS);
       return () => clearInterval(id);
     }
 
@@ -48,7 +48,7 @@ export default function Pools() {
           <h1 className={classes.title}>{t('Vault-MainTitle')}</h1>
           <h1 className={classes.title}>
             TVL{' '}
-            {fetchVaultsDataLoaded && poolsTvl > 0 ? (
+            {fetchVaultsDataDone && poolsTvl > 0 ? (
               formatGlobalTvl(poolsTvl)
             ) : (
               <TVLLoader className={classes.titleLoader} />
@@ -61,7 +61,14 @@ export default function Pools() {
         </div>
       </Grid>
 
-      <VisiblePools pools={pools} apys={apys} tokens={tokens} />
+      <VisiblePools
+        pools={pools}
+        apys={apys}
+        tokens={tokens}
+        fetchBalancesDone={fetchBalancesDone}
+        fetchApysDone={fetchApysDone}
+        fetchVaultsDataDone={fetchVaultsDataDone}
+      />
     </Grid>
   );
 }

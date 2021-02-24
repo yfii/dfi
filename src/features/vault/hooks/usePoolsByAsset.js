@@ -9,20 +9,15 @@ const usePoolsByAsset = pools => {
   const data = getStorage(KEY);
 
   const [asset, setAsset] = useState(data ? data : DEFAULT);
-  const [poolsByAsset, setPoolsByAsset] = useState(pools);
 
   useEffect(() => {
     setStorage(KEY, asset);
   }, [setStorage, asset]);
 
-  useEffect(() => {
-    if (asset === DEFAULT) {
-      setPoolsByAsset(pools);
-    } else {
-      const newPools = pools.filter(pool => pool.assets.includes(asset));
-      setPoolsByAsset(newPools);
-    }
-  }, [pools, asset]);
+  let poolsByAsset = pools;
+  if (asset !== DEFAULT) {
+    poolsByAsset = pools.filter(pool => pool.assets.includes(asset));
+  }
 
   return { poolsByAsset, asset, setAsset };
 };
