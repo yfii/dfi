@@ -73,7 +73,7 @@ export const pools = [
 
   {
     id: 'cake-bts-busd',
-    logo: 'bolt/BTS.png',
+    logo: 'single-assets/BTS.png',
     name: 'BTS-BUSD LP',
     token: 'BTS-BUSD LP',
     tokenDescription: 'Uses: Pancake',
@@ -96,7 +96,7 @@ export const pools = [
   },
   {
     id: 'cake-btd-busd',
-    logo: 'bolt/BTD.png',
+    logo: 'single-assets/BTD.png',
     name: 'BTD-BUSD LP',
     token: 'BTD-BUSD LP',
     tokenDescription: 'Uses: Pancake',
