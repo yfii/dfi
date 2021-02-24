@@ -10,32 +10,30 @@ const usePoolsByVaultType = pools => {
   const data = getStorage(KEY);
 
   const [vaultType, setVaultType] = useState(data ? data : DEFAULT);
-  const [poolsByVaultType, setPoolsByVaultType] = useState(pools);
 
   useEffect(() => {
     setStorage(KEY, vaultType);
-  }, [setStorage, vaultType])
+  }, [setStorage, vaultType]);
 
-  useEffect(() => {
-    let newPools;
+  let newPools;
 
-    if (vaultType === 'Singles') {
-      newPools = pools.filter(pool => pool.assets.length === 1);
-    } else {
-      const isStable = (vaultType) => stables.includes(vaultType);
-      if (vaultType === 'StableLPs') {
-        newPools = pools.filter(pool => pool.assets.every(isStable)); // every
-      } else if (vaultType === 'Stables') {
-        newPools = pools.filter(pool => pool.assets.some(isStable)); // some
-      }
+  if (vaultType === 'Singles') {
+    newPools = pools.filter(pool => pool.assets.length === 1);
+  } else {
+    const isStable = vaultType => stables.includes(vaultType);
+    if (vaultType === 'StableLPs') {
+      newPools = pools.filter(pool => pool.assets.every(isStable)); // every
+    } else if (vaultType === 'Stables') {
+      newPools = pools.filter(pool => pool.assets.some(isStable)); // some
     }
+  }
 
-    if (newPools && newPools.length) {
-      setPoolsByVaultType(newPools);
-    } else {
-      setPoolsByVaultType(pools);
-    }
-  }, [pools, vaultType, setPoolsByVaultType]);
+  let poolsByVaultType;
+  if (newPools && newPools.length) {
+    poolsByVaultType = newPools;
+  } else {
+    poolsByVaultType = pools;
+  }
 
   return { poolsByVaultType, vaultType, setVaultType };
 };

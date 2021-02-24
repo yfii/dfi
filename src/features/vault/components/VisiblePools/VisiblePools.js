@@ -17,7 +17,14 @@ import Filters from '../Filters/Filters';
 
 const useStyles = makeStyles(styles);
 
-const VisiblePools = ({ pools, tokens, apys }) => {
+const VisiblePools = ({
+  pools,
+  tokens,
+  apys,
+  fetchBalancesDone,
+  fetchApysDone,
+  fetchVaultsDataDone,
+}) => {
   const classes = useStyles();
   const { t } = useTranslation();
 
@@ -45,7 +52,16 @@ const VisiblePools = ({ pools, tokens, apys }) => {
       <div className={classes.scroller}>
         <InfiniteScroll dataLength={visiblePools.length} hasMore={true} next={fetchVisiblePools}>
           {visiblePools.map((pool, index) => (
-            <Pool pool={pool} index={index} tokens={tokens} apy={apys[pool.id] || 0} key={pool.id} />
+            <Pool
+              pool={pool}
+              index={index}
+              tokens={tokens}
+              apy={apys[pool.id] || 0}
+              key={pool.id}
+              fetchBalancesDone={fetchBalancesDone}
+              fetchApysDone={fetchApysDone}
+              fetchVaultsDataDone={fetchVaultsDataDone}
+            />
           ))}
         </InfiniteScroll>
       </div>

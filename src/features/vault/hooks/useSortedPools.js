@@ -9,25 +9,22 @@ const useSortedPools = (pools, apys) => {
   const data = getStorage(KEY);
 
   const [order, setOrder] = useState(data ? data : DEFAULT);
-  const [sortedPools, setSortedPools] = useState(pools);
 
   useEffect(() => {
     setStorage(KEY, order);
   }, [setStorage, order]);
 
-  useEffect(() => {
-    switch (order) {
-      case 'apy':
-        setSortedPools(handleApy(pools, apys));
-        break;
-      case 'tvl':
-        setSortedPools(handleTvl(pools));
-        break;
-      default:
-        setSortedPools(pools);
-        break;
-    }
-  }, [pools, apys, order]);
+  let sortedPools = pools;
+  switch (order) {
+    case 'apy':
+      sortedPools = handleApy(pools, apys);
+      break;
+    case 'tvl':
+      sortedPools = handleTvl(pools);
+      break;
+    default:
+      break;
+  }
 
   return { sortedPools, order, setOrder };
 };

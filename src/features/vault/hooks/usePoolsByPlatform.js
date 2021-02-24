@@ -5,25 +5,20 @@ const DEFAULT = 'All';
 const KEY = 'poolsByPlatform';
 
 const usePoolsByPlatform = pools => {
-
   const { getStorage, setStorage } = useFilterStorage();
   const data = getStorage(KEY);
 
   const [platform, setPlatform] = useState(data ? data : DEFAULT);
-  const [poolsByPlatform, setPoolsByPlatform] = useState(pools);
 
   useEffect(() => {
     setStorage(KEY, platform);
-  }, [setStorage, platform])
+  }, [setStorage, platform]);
 
-  useEffect(() => {
-    if (platform === DEFAULT) {
-      setPoolsByPlatform(pools);
-    } else {
-      const newPools = pools.filter(pool => pool.platform === platform);
-      setPoolsByPlatform(newPools);
-    }
-  }, [pools, platform, setPlatform]);
+  let poolsByPlatform = pools;
+  if (platform !== DEFAULT) {
+    const newPools = pools.filter(pool => pool.platform === platform);
+    poolsByPlatform = newPools;
+  }
 
   return { poolsByPlatform, platform, setPlatform };
 };

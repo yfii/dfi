@@ -16,17 +16,38 @@ import SummaryActions from './SummaryActions/SummaryActions';
 
 const useStyles = makeStyles(styles);
 
-const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, apy }) => {
+const PoolSummary = ({
+  pool,
+  toggleCard,
+  isOpen,
+  balanceSingle,
+  sharesBalance,
+  apy,
+  fetchBalancesDone,
+  fetchApysDone,
+  fetchVaultsDataDone,
+}) => {
   const { t } = useTranslation();
   const classes = useStyles();
   const vaultStateTitle = (status, paused) => {
-    let state = status === 'eol' ? t('Vault-DepositsRetiredTitle') : (paused ? t('Vault-DepositsPausedTitle') : null)
-    return state === null ? '' : <PoolPaused message={t(state)} />
-  }
+    let state =
+      status === 'eol'
+        ? t('Vault-DepositsRetiredTitle')
+        : paused
+        ? t('Vault-DepositsPausedTitle')
+        : null;
+    return state === null ? '' : <PoolPaused message={t(state)} />;
+  };
 
   return (
     <AccordionSummary
-      className={pool.status === 'eol' ? classes.detailsRetired : (pool.depositsPaused ? classes.detailsPaused : classes.details)}
+      className={
+        pool.status === 'eol'
+          ? classes.detailsRetired
+          : pool.depositsPaused
+          ? classes.detailsPaused
+          : classes.details
+      }
       style={{ justifyContent: 'space-between' }}
       onClick={event => {
         event.stopPropagation();
@@ -53,6 +74,7 @@ const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, a
               <LabeledStat
                 value={formatDecimals(balanceSingle)}
                 label={t('Vault-Balance')}
+                isLoading={!fetchBalancesDone}
                 xs={5}
                 md={3}
               />
@@ -64,6 +86,7 @@ const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, a
                   )
                 )}
                 label={t('Vault-Deposited')}
+                isLoading={!fetchBalancesDone}
                 xs={5}
                 md={3}
                 align="start"
@@ -71,14 +94,22 @@ const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, a
               <LabeledStat
                 value={formatApy(apy)}
                 label={t('Vault-APY')}
+                isLoading={!fetchApysDone}
                 xs={5}
                 md={2}
                 align="start"
               />
-              <LabeledStat value={calcDaily(apy)} label={t('Vault-APYDaily')} xs={5} md={2} />
+              <LabeledStat
+                value={calcDaily(apy)}
+                label={t('Vault-APYDaily')}
+                isLoading={!fetchApysDone}
+                xs={5}
+                md={2}
+              />
               <LabeledStat
                 value={formatTvl(pool.tvl, pool.oraclePrice)}
                 label={t('Vault-TVL')}
+                isLoading={!fetchVaultsDataDone}
                 xs={5}
                 md={2}
               />
@@ -93,7 +124,12 @@ const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, a
 
         <Hidden mdUp>
           <Grid item xs={12} style={{ display: 'flex' }}>
-            <LabeledStat value={formatDecimals(balanceSingle)} label={t('Vault-Balance')} xs={6} />
+            <LabeledStat
+              value={formatDecimals(balanceSingle)}
+              label={t('Vault-Balance')}
+              isLoading={!fetchBalancesDone}
+              xs={6}
+            />
             <LabeledStat
               value={formatDecimals(
                 byDecimals(
@@ -107,11 +143,23 @@ const PoolSummary = ({ pool, toggleCard, isOpen, balanceSingle, sharesBalance, a
             />
           </Grid>
           <Grid item xs={12} style={{ display: 'flex' }}>
-            <LabeledStat value={formatApy(apy)} label={t('Vault-APY')} xs={4} align="start" />
-            <LabeledStat value={calcDaily(apy)} label={t('Vault-APYDaily')} xs={4} />
+            <LabeledStat
+              value={formatApy(apy)}
+              label={t('Vault-APY')}
+              isLoading={!fetchApysDone}
+              xs={4}
+              align="start"
+            />
+            <LabeledStat
+              value={calcDaily(apy)}
+              label={t('Vault-APYDaily')}
+              isLoading={!fetchApysDone}
+              xs={4}
+            />
             <LabeledStat
               value={formatTvl(pool.tvl, pool.oraclePrice)}
               label={t('Vault-TVL')}
+              isLoading={!fetchVaultsDataDone}
               xs={4}
             />
           </Grid>

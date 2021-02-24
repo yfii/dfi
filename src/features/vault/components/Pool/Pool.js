@@ -12,7 +12,15 @@ import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-const Pool = ({ pool, index, tokens, apy }) => {
+const Pool = ({
+  pool,
+  index,
+  tokens,
+  apy,
+  fetchBalancesDone,
+  fetchApysDone,
+  fetchVaultsDataDone,
+}) => {
   const classes = useStyles();
 
   const [isOpen, setIsOpen] = useState(index === 0 ? true : false);
@@ -36,6 +44,9 @@ const Pool = ({ pool, index, tokens, apy }) => {
           isOpen={isOpen}
           sharesBalance={sharesBalance}
           apy={apy}
+          fetchBalancesDone={fetchBalancesDone}
+          fetchApysDone={fetchApysDone}
+          fetchVaultsDataDone={fetchVaultsDataDone}
         />
         <Divider variant="middle" className={classes.divider} />
         <PoolDetails
