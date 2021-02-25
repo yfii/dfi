@@ -12,6 +12,7 @@ export const assets = [
   'BIFI',
   'BLIQ',
   'BNB',
+  'BREW',
   'BTD',
   'BTS',
   'BROOBEE',
