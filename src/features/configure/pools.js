@@ -22,8 +22,8 @@ export const pools = [
     assets: ['BIFI'],
     callFee: 0.5,
   },
-  
- {
+
+  {
    id: 'cake-bry-bnb',
    logo: 'bnb-pairs/BRY-BNB.svg',
    name: 'BRY-BNB LP',
@@ -70,6 +70,7 @@ export const pools = [
    assets: ['ZEE', 'BNB'],
    callFee: 0.5,
  },
+  
  {
    id: 'cake-xtz-bnb',
    logo: 'bnb-pairs/XTZ-BNB.svg',
@@ -92,7 +93,7 @@ export const pools = [
    platform: 'Pancake',
    assets: ['XTZ', 'BNB'],
    callFee: 0.5,
- },
+  },
 
   {
    id: 'cake-bch-bnb',
@@ -116,7 +117,55 @@ export const pools = [
    platform: 'Pancake',
    assets: ['BCH', 'BNB'],
    callFee: 0.5,
- },
+  },
+  
+  {
+    id: 'cake-dodo-bnb',
+    logo: 'cake/dodo-bnb.svg',
+    name: 'DODO-BNB LP',
+    token: 'DODO-BNB LP',
+    tokenDescription: 'Uses: Pancake',
+    tokenAddress: '0x9e642d174B14fAEa31D842Dc83037c42b53236E6', // vault
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooPancakeDODO-BNB',
+    earnedTokenAddress: '0x00AeC34489A7ADE91A0507B6b9dBb0a50938B7c0',
+    earnContractAddress: '0x00AeC34489A7ADE91A0507B6b9dBb0a50938B7c0',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'pancake-lp',
+    oracleId: 'cake-dodo-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['DODO', 'BNB'],
+    callFee: 0.5,
+  },
+  
+  {
+    id: 'cake-swingby-bnb',
+    logo: 'cake/swingby-bnb.svg',
+    name: 'SWINGBY-BNB LP',
+    token: 'SWINGBY-BNB LP',
+    tokenDescription: 'Uses: Pancake',
+    tokenAddress: '0x4576C456AF93a37a096235e5d83f812AC9aeD027', // vault
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooPancakeSWINGBY-BNB',
+    earnedTokenAddress: '0xc1C1eB984218B9570beA53C0Dad14283a6E9E81C',
+    earnContractAddress: '0xc1C1eB984218B9570beA53C0Dad14283a6E9E81C',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'pancake-lp',
+    oracleId: 'cake-swingby-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['SWINGBY', 'BNB'],
+    callFee: 0.5,
+  },
   
   {
     id: 'cafe-brew-busd',
@@ -165,8 +214,7 @@ export const pools = [
     assets: ['BREW', 'BNB'],
     callFee: 0.5,
   },
-
-
+  
   {
     id: 'monster-msc-busd',
     logo: 'single-assets/MSC.png',
