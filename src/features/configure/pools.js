@@ -265,7 +265,7 @@ export const pools = [
 
   {
     id: 'kebab-eth-btcb',
-    logo: 'kebab/eth-btcb.png',
+    logo: 'kebab/ETH-BTCB.png',
     name: 'ETH-BTCB LP',
     token: 'ETH-BTCB LP',
     tokenDescription: 'Uses: Kebab',
