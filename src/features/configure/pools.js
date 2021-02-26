@@ -265,7 +265,7 @@ export const pools = [
   
   {
     id: 'kebab-usdt-busd',
-    logo: 'kebab/usdt-busd.png',
+    logo: 'kebab/USDT-BUSD.png',
     name: 'USDT-BUSD LP',
     token: 'USDT-BUSD LP',
     tokenDescription: 'Uses: Kebab',
