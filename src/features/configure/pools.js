@@ -769,7 +769,7 @@ export const pools = [
 
   {
     id: 'auto-wbnb-old',
-    logo: 'single-assets/wbnb.svg',
+    logo: 'single-assets/WBNB.svg',
     name: 'WBNB',
     token: 'WBNB',
     tokenDescription: 'Uses: Autofarm',
