@@ -25,7 +25,7 @@ export const pools = [
   
  {
    id: 'cake-bry-bnb',
-   logo: 'cake/bry-bnb.svg',
+   logo: 'bnb-pairs/BRY-BNB.svg',
    name: 'BRY-BNB LP',
    token: 'BRY-BNB LP',
    tokenDescription: 'Uses: Pancake',
@@ -49,7 +49,7 @@ export const pools = [
 
  {
    id: 'cake-zee-bnb',
-   logo: 'cake/zee-bnb.svg',
+   logo: 'bnb-pairs/ZEE-BNB.svg',
    name: 'ZEE-BNB LP',
    token: 'ZEE-BNB LP',
    tokenDescription: 'Uses: Pancake',
@@ -72,7 +72,7 @@ export const pools = [
  },
  {
    id: 'cake-xtz-bnb',
-   logo: 'cake/xtz-bnb.svg',
+   logo: 'bnb-pairs/XTZ-BNB.svg',
    name: 'XTZ-BNB LP',
    token: 'XTZ-BNB LP',
    tokenDescription: 'Uses: Pancake',
@@ -96,7 +96,7 @@ export const pools = [
 
   {
    id: 'cake-bch-bnb',
-   logo: 'cake/bch-bnb.svg',
+   logo: 'bnb-pairs/BCH-BNB.svg',
    name: 'BCH-BNB LP',
    token: 'BCH-BNB LP',
    tokenDescription: 'Uses: Pancake',
@@ -554,7 +554,6 @@ export const pools = [
   {
     id: 'cake-hard-bnb',
     logo: 'bnb-pairs/HARD-BNB.svg',
-
     name: 'HARD-BNB LP',
     token: 'HARD-BNB LP',
     tokenDescription: 'Uses: Pancake',
