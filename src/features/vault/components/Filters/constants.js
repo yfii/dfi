@@ -51,6 +51,7 @@ export const assets = [
   'NYA',
   'NYAC',
   'NYAS',
+  'RAMEN',
   'REEF',
   'SBDO',
   'SOAK',
