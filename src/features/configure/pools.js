@@ -166,7 +166,31 @@ export const pools = [
     assets: ['SWINGBY', 'BNB'],
     callFee: 0.5,
   },
-  
+
+  {
+    id: 'kebab-eth-btcb',
+    logo: 'kebab/eth-btcb.png',
+    name: 'ETH-BTCB LP',
+    token: 'ETH-BTCB LP',
+    tokenDescription: 'Uses: Kebab',
+    tokenAddress: '0x7380E10F5C5f9DFF4857de3cf9c39Bb16F4C6dcf',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooKebabETH-BTCB',
+    earnedTokenAddress: '0x70CBc8B3a74A857056a6acE7e994229A24D4ab94',
+    earnContractAddress: '0x70CBc8B3a74A857056a6acE7e994229A24D4ab94',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'kebab-lp',
+    oracleId: 'kebab-eth-btcb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Kebab',
+    assets: ['ETH', 'BTCB'],
+    callFee: 0.5,
+  },
+
   {
     id: 'cafe-brew-busd',
     logo: 'cafe/brew-busd.svg',
@@ -480,7 +504,7 @@ export const pools = [
 
   {
     id: 'kebab-kebab-btc',
-    logo: 'uncategorized/KEBAB-BTCB.png',
+    logo: 'kebab/KEBAB-BTCB.png',
     name: 'KEBAB-BTCB LP',
     token: 'KEBAB-BTCB LP',
     tokenDescription: 'Uses: Kebab',
