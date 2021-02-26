@@ -6,6 +6,7 @@ const endpoints = {
   bakeryLp: 'https://api.beefy.finance/bakery/lps',
   bdollarLp: 'https://api.beefy.finance/bdollar/lps',
   boltLp: 'https://api.beefy.finance/bolt/lps',
+  cafeLp: 'https://api.beefy.finance/cafe/lps',
   coingecko: 'https://api.coingecko.com/api/v3/simple/price',
   jetfuelLp: 'https://api.beefy.finance/jetfuel/lps',
   kebabLp: 'https://api.beefy.finance/kebab/lps',
@@ -14,6 +15,7 @@ const endpoints = {
   nyanswopLp: 'https://api.beefy.finance/nyanswop/lps',
   pancake: 'https://api.beefy.finance/pancake/price',
   pancakeLp: 'https://api.beefy.finance/pancake/lps',
+  ramenLp: 'https://api.beefy.finance/ramen/lps',
   thugs: 'https://api.beefy.finance/thugs/tickers',
   thugsLp: 'https://api.beefy.finance/thugs/lps',
   spongeLp: 'https://api.beefy.finance/sponge/lps',
@@ -105,6 +107,8 @@ const oracleEndpoints = {
   'kebab-lp': () => fetchLP(endpoints.kebabLp),
   'sponge-lp': () => fetchLP(endpoints.spongeLp),
   'bolt-lp': () => fetchLP(endpoints.boltLp),
+  'cafe-lp': () => fetchLP(endpoints.cafeLp),
+  'ramen-lp': () => fetchLP(endpoints.ramenLp),
 };
 
 export async function initializePriceCache() {
