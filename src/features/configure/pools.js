@@ -121,7 +121,7 @@ export const pools = [
   
   {
     id: 'cake-dodo-bnb',
-    logo: 'cake/dodo-bnb.svg',
+    logo: 'bnb-pairs/DODO-BNB.svg',
     name: 'DODO-BNB LP',
     token: 'DODO-BNB LP',
     tokenDescription: 'Uses: Pancake',
@@ -145,7 +145,7 @@ export const pools = [
   
   {
     id: 'cake-swingby-bnb',
-    logo: 'cake/swingby-bnb.svg',
+    logo: 'bnb-pairs/SWINGBY-BNB.svg',
     name: 'SWINGBY-BNB LP',
     token: 'SWINGBY-BNB LP',
     tokenDescription: 'Uses: Pancake',
