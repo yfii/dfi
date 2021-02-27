@@ -33,7 +33,9 @@ export function inputFinalVal(value, total, tokenDecimals) {
 }
 
 export const shouldHideFromHarvest = vaultName => {
-  return HarvestBlacklistVaultIds.includes(vaultName);
+  // FIXME: hidden until we implement an 'advanced' toggle
+  // return HarvestBlacklistVaultIds.includes(vaultName);
+  return true;
 };
 
 const HarvestBlacklistVaultIds = [
