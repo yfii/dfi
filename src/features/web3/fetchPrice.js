@@ -110,6 +110,7 @@ const oracleEndpoints = {
   'bolt-lp': () => fetchLP(endpoints.boltLp),
   'cafe-lp': () => fetchLP(endpoints.cafeLp),
   'ramen-lp': () => fetchLP(endpoints.ramenLp),
+  'crow-lp': () => fetchLP(endpoints.crowLp),
 };
 
 export async function initializePriceCache() {
