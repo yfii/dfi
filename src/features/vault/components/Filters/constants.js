@@ -13,6 +13,7 @@ export const assets = [
   'BLIQ',
   'BNB',
   'BREW',
+  'BRY',
   'BTD',
   'BTS',
   'BROOBEE',
@@ -26,6 +27,7 @@ export const assets = [
   'CRED',
   'DAI',
   'DITTO',
+  'DODO',
   'DOT',
   'DRUGS',
   'EGLD',
@@ -58,7 +60,8 @@ export const assets = [
   'SOAK',
   'SPG',
   'STAX',
-  'STEAM',  
+  'STEAM',
+  'SWINGBY',
   'SXP',
   'TEN',
   'THUGS',
@@ -75,6 +78,7 @@ export const assets = [
   'XVS',
   'YFI',
   'YFII',
+  'ZEE',
 ];
 
 export const platforms = [
