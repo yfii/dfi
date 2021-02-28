@@ -18,7 +18,8 @@ const endpoints = {
   ramenLp: 'https://api.beefy.finance/ramen/lps',
   thugs: 'https://api.beefy.finance/thugs/tickers',
   thugsLp: 'https://api.beefy.finance/thugs/lps',
-  spongeLp: 'https://api.beefy.finance/sponge/lps',
+  spongeLp:   'https://api.beefy.finance/sponge/lps',
+  crowLp: 'https://api.beefy.finance/crow/lps',
 };
 
 const CACHE_TIMEOUT_MS = 1 * 60 * 1000; // 1 minute(s)
