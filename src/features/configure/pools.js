@@ -977,7 +977,7 @@ export const pools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'SOAK',
+    platform: 'Sponge',
     assets: ['SOAK', 'BNB'],
     callFee: 0.5,
   },
