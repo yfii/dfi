@@ -331,7 +331,7 @@ export const pools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Kebab',
-    assets: ['ETH', 'BTCB'],
+    assets: ['ETH', 'BTC'],
     callFee: 0.5,
   },
 
