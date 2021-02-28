@@ -38,16 +38,16 @@ export const shouldHideFromHarvest = vaultName => {
   return true;
 };
 
-const HarvestBlacklistVaultIds = [
-  'bifi-maxi',
-  'fortube-fil',
-  'fortube-atom',
-  'fortube-xtz',
-  'fortube-busd',
-  'fortube-link',
-  'fortube-dot',
-  'fortube-usdt',
-  'fortube-eth',
-  'fortube-btcb',
-  'fry-burger-v2',
-];
+// const HarvestBlacklistVaultIds = [
+//   'bifi-maxi',
+//   'fortube-fil',
+//   'fortube-atom',
+//   'fortube-xtz',
+//   'fortube-busd',
+//   'fortube-link',
+//   'fortube-dot',
+//   'fortube-usdt',
+//   'fortube-eth',
+//   'fortube-btcb',
+//   'fry-burger-v2',
+// ];
