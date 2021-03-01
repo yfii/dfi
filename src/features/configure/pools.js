@@ -189,6 +189,30 @@ export const pools = [
     assets: ['STEAM', 'BNB'],
     callFee: 0.5,
   },
+  
+  {
+    id: 'cake-sushi-eth',
+    logo: 'uncategorized/SUSHI-ETH.svg',
+    name: 'SUSHI-ETH LP',
+    token: 'SUSHI-ETH LP',
+    tokenDescription: 'Uses: Pancake',
+    tokenAddress: '0x17580340F3dAEDAE871a8C21D15911742ec79e0F', // vault
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooPancakeSUSHI-ETH',
+    earnedTokenAddress: '0x07622B8cF9130934643522E7c9D621707EF1d34F',
+    earnContractAddress: '0x07622B8cF9130934643522E7c9D621707EF1d34F',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'pancake-lp',
+    oracleId: 'cake-sushi-eth',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['SUSHI', 'ETH'],
+    callFee: 0.5,
+  },
 
   {
    id: 'cake-bry-bnb',

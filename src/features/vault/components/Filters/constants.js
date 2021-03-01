@@ -62,6 +62,7 @@ export const assets = [
   'SPG',
   'STAX',
   'STEAM',
+  'SUSHI',
   'SWINGBY',
   'SXP',
   'TEN',
