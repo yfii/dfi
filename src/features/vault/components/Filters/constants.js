@@ -1,4 +1,5 @@
 export const assets = [
+  '1INCH',
   'ADA',
   'ALPHA',
   'ATOM',
