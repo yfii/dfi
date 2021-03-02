@@ -20,6 +20,7 @@ const endpoints = {
   thugsLp: 'https://api.beefy.finance/thugs/lps',
   spongeLp:   'https://api.beefy.finance/sponge/lps',
   crowLp: 'https://api.beefy.finance/crow/lps',
+  lps: 'https://api.beefy.finance/lps',
 };
 
 const CACHE_TIMEOUT_MS = 1 * 60 * 1000; // 1 minute(s)
@@ -111,6 +112,7 @@ const oracleEndpoints = {
   'cafe-lp': () => fetchLP(endpoints.cafeLp),
   'ramen-lp': () => fetchLP(endpoints.ramenLp),
   'crow-lp': () => fetchLP(endpoints.crowLp),
+  'lps': () => fetchLP(endpoints.lps),
 };
 
 export async function initializePriceCache() {
