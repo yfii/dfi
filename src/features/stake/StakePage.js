@@ -1,5 +1,5 @@
 import React from 'react';
-import StakePools from './components/StakePools/StakePools';
+import {StakePools} from './sections'
 
 export default function StakePage() {
   return <StakePools />;

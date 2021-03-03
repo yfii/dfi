@@ -12,7 +12,9 @@ export const formatApy = apy => {
 
 export const formatTvl = (tvl, oraclePrice) => {
   // TODO: bignum?
-  tvl *= oraclePrice;
+  if(oraclePrice) {
+    tvl *= oraclePrice;
+  }
 
   const order = Math.floor(Math.log10(tvl) / 3);
   if (order < 0) {
@@ -21,7 +23,7 @@ export const formatTvl = (tvl, oraclePrice) => {
 
   const units = ['', 'k', 'M', 'B', 'T'];
   const num = tvl / 1000 ** order;
-  const prefix = oraclePrice === 0 ? '~$' : '$';
+  const prefix = '$';
 
   return prefix + num.toFixed(2) + units[order];
 };

@@ -10,6 +10,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import InputLabel from '@material-ui/core/InputLabel';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
+import {Avatar, Box} from "@material-ui/core";
 
 import styles from './styles';
 import { platforms, assets } from './constants';
@@ -49,7 +50,7 @@ const Filters = ({
 
   return (
     <Grid container spacing={2} className={classes.container}>
-      <Grid item xs={4}>
+      <Grid item xs={6} md={3}>
         <FormControl>
           <FormControlLabel
             className={classes.label}
@@ -66,7 +67,7 @@ const Filters = ({
         </FormControl>
       </Grid>
 
-      <Grid item xs={4}>
+      <Grid item xs={6} md={3}>
         <FormControl>
           <FormControlLabel
             className={classes.label}
@@ -83,7 +84,7 @@ const Filters = ({
         </FormControl>
       </Grid>
 
-      <Grid item xs={4}>
+      <Grid item xs={6} md={3}>
         <FormControl>
           <FormControlLabel
             className={classes.label}
@@ -99,6 +100,24 @@ const Filters = ({
           />
         </FormControl>
       </Grid>
+
+      <Grid item xs={6} md={3}>
+            <FormControl>
+                <FormControlLabel
+                    className={classes.label}
+                    control={
+                        <Checkbox
+                            checked={filters.showBoosted}
+                            onChange={() => toggleFilter('showBoosted')}
+                            color="primary"
+                        />
+                    }
+                    label={<Box className={classes.boost}>Boost
+                        <Avatar className={classes.fire} src={require('../../../../images/stake/fire.png')} />
+                    </Box>}
+                />
+            </FormControl>
+        </Grid>
 
       <Grid item xs={6} md={3}>
         <FormControl className={classes.selectorContainer}>

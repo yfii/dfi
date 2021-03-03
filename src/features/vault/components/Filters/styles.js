@@ -24,6 +24,15 @@ const styles = theme => ({
   label: {
     color: theme.palette.text.primary,
   },
+  boost: {
+    color: '#5a8f69',
+    fontWeight: 'bold',
+    '& .MuiAvatar-root': {
+      position: 'absolute',
+      top: 0,
+      right: '-20px',
+    },
+  },
 });
 
 export default styles;
