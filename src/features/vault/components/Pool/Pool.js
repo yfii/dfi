@@ -14,6 +14,7 @@ const useStyles = makeStyles(styles);
 
 const Pool = ({
   pool,
+  poolsInfo,
   index,
   tokens,
   apy,
@@ -23,11 +24,20 @@ const Pool = ({
 }) => {
   const classes = useStyles();
 
-  const [isOpen, setIsOpen] = useState(index === 0 ? true : false);
+  const [isOpen, setIsOpen] = useState(index === 0);
   const toggleCard = useCallback(() => setIsOpen(!isOpen), [isOpen]);
 
   let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
   let sharesBalance = new BigNumber(tokens[pool.earnedToken].tokenBalance);
+
+  const checkLaunchpool = () => {
+    for (let index in poolsInfo) {
+      if(pool.launchpool && poolsInfo[index].id === pool.launchpool) {
+        poolsInfo[index].poolIndex = Number(index) + 1;
+        return poolsInfo[index];
+      }
+    }
+  }
 
   return (
     <Grid item xs={12} container key={index} className={classes.container} spacing={0}>
@@ -39,6 +49,7 @@ const Pool = ({
       >
         <PoolSummary
           pool={pool}
+          launchpool={checkLaunchpool()}
           balanceSingle={balanceSingle}
           toggleCard={toggleCard}
           isOpen={isOpen}

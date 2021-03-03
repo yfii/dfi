@@ -10,6 +10,10 @@ const styles = (theme) => ({
     fontSize: '14px',
     fontWeight: 'bold',
   },
+  launchpool: {
+    color: '#ffffff',
+    backgroundColor: theme.palette.type === 'dark' ? '#3e754e' : '#5a8f69',
+  },
 });
 
 export default styles;
