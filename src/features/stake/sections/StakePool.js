@@ -347,10 +347,11 @@ export default function StakePool(props) {
                     </Button>
                 </Grid>
             </Grid>
-            {pools[index].partnership ? (
                 <Grid container className={classes.row} style={customBgImg(pools[index].partner.background)}>
                     <Grid item xs={12} className={classes.partnerHeader}>
-                        <img alt={pools[index].name} src={require('../../../images/' + pools[index].partner.logo)} height="60"/>
+                        {pools[index].partner.logo ? (
+                            <img alt={pools[index].name} src={require('../../../images/' + pools[index].partner.logo)} height="60"/>
+                        ) : ''}
                     </Grid>
                     <Grid item xs={12} className={classes.partnerBody}>{pools[index].partner.text}</Grid>
                     <Grid item xs={12}>
@@ -368,7 +369,6 @@ export default function StakePool(props) {
                         ) : ''}
                     </Grid>
                 </Grid>
-            ) : ''}
 
             <Dialog onClose={() => {handleModal(false)}} aria-labelledby="customized-dialog-title" open={open}>
 
