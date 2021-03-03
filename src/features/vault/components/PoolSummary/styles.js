@@ -14,6 +14,12 @@ const styles = (theme) => ({
     alignItems: 'center',
     background: theme.palette.background.retired,
   },
+  mobilePadding: {
+    paddingTop: '20px',
+    [theme.breakpoints.up('sm')]: {
+      paddingTop: 0,
+    },
+  },
 });
 
 export default styles;
