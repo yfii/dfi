@@ -128,6 +128,46 @@ export default function StakePools(props) {
                             </Typography>
                         </AccordionDetails>
                     </Accordion>
+                    <Accordion square expanded={expanded === 'faq-8'} onChange={handleChange('faq-8')}>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            <Typography>If I enter a partner vault with my mooTokens, will I still earn the ordinary vault reward?</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <Typography>
+                                Yes! The ordinary tokens you deposited in our main vaults even if it’s boosted will earn the ordinary reward and be compounded as usual. What you place in these partner vaults is your “receipt” from the ordinary vault that normally is worth nothing. By using these partner vaults, you earn both tokens on the ordinary vault and tokens from our partner vaults.
+                            </Typography>
+                        </AccordionDetails>
+                    </Accordion>
+                    <Accordion square expanded={expanded === 'faq-9'} onChange={handleChange('faq-9')}>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            <Typography>Why is APY and Daily rates not matching?</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <Typography>
+                                That’s because APR and APY show two different things. APR means “Annual percentage rate” and is a fixed rate. Beefy shows APR by dividing the annual yield into 365 days and presents that to you as “Daily”. APY on the other hand means “Annual percentage yield” which is when you take the daily yield and compound it. Beefy compounds your rewards automatically most of the time multiple times a day, this makes the APY much higher than a yearly APR would be.
+                            </Typography>
+                        </AccordionDetails>
+                    </Accordion>
+                    <Accordion square expanded={expanded === 'faq-10'} onChange={handleChange('faq-10')}>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            <Typography>How come the APY shown when deposited is not the same now?</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <Typography>
+                                APY is the “Annual percentage yield” and is your daily yield compounded. The daily yield in turn is based on factors such as the yield rate and the total amount deposited that share this yield. When more people and in turn tokens enter the pool, the fixed yield is shared by more people (tokens) hence the daily yield will become lower and in turn lower the APY. In the same way if people (tokens) exit the vault, there are less people (tokens) sharing the fixed reward and the daily yield will increase and in turn APY will increase.
+                            </Typography>
+                        </AccordionDetails>
+                    </Accordion>
+                    <Accordion square expanded={expanded === 'faq-11'} onChange={handleChange('faq-11')}>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            <Typography>Is these partner vaults safe to use?</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <Typography>
+                                Yes! These partner vaults are hosted by Beefy and are completely safe. Beefy have gotten tokens from our partners and use our own vaults for the reward. Those mooTokens you stake doesn’t leave Beefy.
+                            </Typography>
+                        </AccordionDetails>
+                    </Accordion>
                 </Grid>
                 <Grid item xs={12}>
                     <Disclaimer />

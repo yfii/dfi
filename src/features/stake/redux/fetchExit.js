@@ -42,7 +42,7 @@ export function fetchExit(index) {
         .on('receipt', function(receipt){
           dispatch(enqueueSnackbar({
             key: new Date().getTime() + Math.random(),
-            message: '交易确认',
+            message: 'Success',
             options: {
               variant: 'success',
             },

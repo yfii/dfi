@@ -185,7 +185,6 @@ export default function StakePool(props) {
 
     useEffect(() => {
         if(halfTime[index] === 0) return;
-        if(Boolean(index === 2) || Boolean(index=== 3) || Boolean(index=== 4)) return;
         const formatTime = () => {
             const currTime = new Date().getTime();
             const deadline = halfTime[index] * 1000;
@@ -208,15 +207,13 @@ export default function StakePool(props) {
             fetchBalance(index);
             fetchCurrentlyStaked(index);
             fetchRewardsAvailable(index);
-            if(Boolean(index === 0) || Boolean(index === 1)) fetchHalfTime(index);
-            if(index === 3 || index === 4) fetchCanWithdrawTime(index);
+            fetchHalfTime(index);
             const id = setInterval(() => {
                 checkApproval(index);
                 fetchBalance(index);
                 fetchCurrentlyStaked(index);
                 fetchRewardsAvailable(index);
-                if(Boolean(index === 0) || Boolean(index === 1)) fetchHalfTime(index);
-                if(index === 3 || index === 4) fetchCanWithdrawTime(index);
+                fetchHalfTime(index);
             }, 10000);
             return () => clearInterval(id);
         }
