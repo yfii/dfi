@@ -5,6 +5,7 @@ export const assets = [
   'ATOM',
   'BAKE',
   'bALBT',
+  'BANANA',
   'BAND',
   'BCH',
   'BDO',
