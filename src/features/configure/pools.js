@@ -334,6 +334,30 @@ export const pools = [
   },
 
   {
+    id: 'cafe-bifi-bnb',
+    logo: 'degens/BIFI-BNB.svg',
+    name: 'BIFI-BNB LP',
+    token: 'BIFI-BNB LP',
+    tokenDescription: 'Uses: CafeSwap',
+    tokenAddress: '0xd132D2C24F29EE8ABb64a66559d1b7aa627Bd7fD', // vault
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooCafeBIFI-BNB',
+    earnedTokenAddress: '0x8afc0f9BdC5DcA9f0408Df03A03520bFa98A15aF',
+    earnContractAddress: '0x8afc0f9BdC5DcA9f0408Df03A03520bFa98A15aF',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'cafe-lp',
+    oracleId: 'cafe-bifi-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'CafeSwap',
+    assets: ['BIFI', 'BNB'],
+    callFee: 0.5,
+  },
+
+  {
     id: 'cake-bry-bnb',
     logo: 'bnb-pairs/BRY-BNB.svg',
     name: 'BRY-BNB LP',
