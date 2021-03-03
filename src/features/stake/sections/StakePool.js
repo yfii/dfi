@@ -127,12 +127,8 @@ export default function StakePool(props) {
     useEffect(() => {
         const isPending = Boolean(fetchWithdrawPending[index]);
         const currentlyStakedIs0 = currentlyStaked[index] === 0;
-        const isPool4 = Boolean(index === 3);
-        const isPool5 = Boolean(index === 4);
         const isDisableCanWithdrawTime = canWithdrawTimeIsZero || canWithdrawTimeIsMoreNowTime;
-        const isPool4AndDisableCanWithDraw = Boolean(isPool4 && isDisableCanWithdrawTime)
-        const isPool5AndDisableCanWithDraw = Boolean(isPool5 && isDisableCanWithdrawTime)
-        setWithdrawAble(!Boolean(isPending || isPool4AndDisableCanWithDraw || currentlyStakedIs0 || isPool5AndDisableCanWithDraw));
+        setWithdrawAble(!Boolean(isPending || currentlyStakedIs0));
     }, [currentlyStaked[index], fetchWithdrawPending[index], index, canWithdrawTimeIsZero, canWithdrawTimeIsMoreNowTime]);
 
     const onWithdraw = () => {
