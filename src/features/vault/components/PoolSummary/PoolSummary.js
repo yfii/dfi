@@ -132,7 +132,7 @@ const PoolSummary = ({
         />
 
         <Hidden mdUp>
-          <Grid item xs={12} style={{ display: 'flex' }}>
+          <Grid item xs={12} style={{ display: 'flex' }} className={classes.mobilePadding}>
             <LabeledStat
               value={formatDecimals(balanceSingle)}
               label={t('Vault-Balance')}
@@ -151,11 +151,12 @@ const PoolSummary = ({
               align="start"
             />
           </Grid>
-          <Grid item xs={12} style={{ display: 'flex' }}>
+          <Grid item xs={12} style={{ display: 'flex', paddingTop: '20px' }}>
             <LabeledStat
               value={formatApy(apy)}
               label={t('Vault-APY')}
               isLoading={!fetchApysDone}
+              boosted={launchpool ? formatApy(launchpool.apy + apy) : ''}
               xs={4}
               align="start"
             />
@@ -163,6 +164,7 @@ const PoolSummary = ({
               value={calcDaily(apy)}
               label={t('Vault-APYDaily')}
               isLoading={!fetchApysDone}
+              boosted={launchpool ? calcDaily(launchpool.apy + apy) : ''}
               xs={4}
             />
             <LabeledStat
