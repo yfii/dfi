@@ -14,7 +14,7 @@ export function fetchApys() {
     });
 
     const promise = new Promise((resolve, reject) => {
-      const doRequest = axios.get(`https://api.beefy.finance/apy?_=1614687410`);
+      const doRequest = axios.get(`https://api.beefy.finance/apy?_=1614803021`);
 
       doRequest.then(
         res => {
