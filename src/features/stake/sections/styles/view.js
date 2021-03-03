@@ -47,9 +47,15 @@ const styles = theme => ({
 
     title: {
         textAlign: 'center',
-        fontSize: '22px',
+        fontSize: '16px',
         fontWeight: 'bold',
         color: theme.palette.text.primary,
+        [theme.breakpoints.up('md')]: {
+            fontSize: '18px',
+        },
+        [theme.breakpoints.up('lg')]: {
+            fontSize: '22px',
+        },
         '& .MuiSvgIcon-root': {
             color: 'red',
         }
