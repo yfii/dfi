@@ -28,7 +28,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
   return (
     <AppBar className={`${classes.appBar} ${classes.dark}`}>
       <Toolbar className={classes.container}>
-        <Button className={classes.title}>
+        <Button href="/" className={classes.title}>
           <Hidden xsDown>
             <img
               alt="BIFI"
@@ -52,7 +52,6 @@ const Header = ({ links, isNightMode, setNightMode }) => {
           <Hidden mdDown>
             {renderLink('barn', 'barn', 'warehouse', classes)}
             {renderLink('vote', 'vote', 'vote-yea', classes)}
-            {renderLink('gov', 'gov', 'landmark', classes)}
             {renderLink('dashboard', t('stats'), 'chart-bar', classes)}
             {renderLink('docs', 'docs', 'book', classes)}
           </Hidden>
@@ -94,7 +93,6 @@ const Header = ({ links, isNightMode, setNightMode }) => {
           </IconButton>
           <div className={classes.appResponsive}>{links}</div>
           <div style={{ textAlign: 'center' }}>
-            {renderLinkSidebar('gov', 'gov', 'landmark', classes)}
             {renderLinkSidebar('barn', 'barn', 'warehouse', classes)}
             {renderLinkSidebar('vote', 'vote', 'vote-yea', classes)}
             {renderLinkSidebar('dashboard', t('stats'), 'chart-bar', classes)}
