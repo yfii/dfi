@@ -62,6 +62,8 @@ export const assets = [
   'SBDO',
   'SFP',
   'SOAK',
+  'SOUP',
+  'SOUPS',
   'SPG',
   'STAX',
   'STEAM',
