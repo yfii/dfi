@@ -370,7 +370,6 @@ export default function StakePool(props) {
               className={[classes.actionBtn, pools[index].partnership ? classes.btnBoost : ''].join(
                 ' '
               )}
-              disabled={!Boolean(poolsInfo[index].status === 'active')}
               onClick={() => {
                 handleModal(true, 'stake');
               }}
