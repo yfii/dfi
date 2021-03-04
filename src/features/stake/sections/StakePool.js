@@ -144,22 +144,10 @@ export default function StakePool(props) {
     return () => clearInterval(id);
   }, [canWithdrawTime[index]]);
 
-  const momentFormatTime = timestamp => {
-    return moment(timestamp).format('YYYY-MM-DD HH:mm:ss');
-  };
-
   useEffect(() => {
     const isPending = Boolean(fetchWithdrawPending[index]);
-    const currentlyStakedIs0 = currentlyStaked[index] === 0;
-    const isDisableCanWithdrawTime = canWithdrawTimeIsZero || canWithdrawTimeIsMoreNowTime;
-    setWithdrawAble(!Boolean(isPending || currentlyStakedIs0));
-  }, [
-    currentlyStaked[index],
-    fetchWithdrawPending[index],
-    index,
-    canWithdrawTimeIsZero,
-    canWithdrawTimeIsMoreNowTime,
-  ]);
+    setWithdrawAble(!isPending);
+  }, [fetchWithdrawPending[index], index]);
 
   const onWithdraw = () => {
     const amount = new BigNumber(inputVal)
@@ -465,7 +453,9 @@ export default function StakePool(props) {
           )}
           {pools[index].partner.website ? (
             <Grid item xs={12}>
-              <Link target="_blank" href={pools[index].partner.website}>{pools[index].partner.website}</Link>
+              <Link target="_blank" href={pools[index].partner.website}>
+                {pools[index].partner.website}
+              </Link>
             </Grid>
           ) : (
             ''
