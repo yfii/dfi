@@ -465,7 +465,7 @@ export default function StakePool(props) {
           )}
           {pools[index].partner.website ? (
             <Grid item xs={12}>
-              <Link href={pools[index].partner.website}>{pools[index].partner.website}</Link>
+              <Link target="_blank" href={pools[index].partner.website}>{pools[index].partner.website}</Link>
             </Grid>
           ) : (
             ''

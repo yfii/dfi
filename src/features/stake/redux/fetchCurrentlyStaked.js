@@ -31,7 +31,7 @@ export function fetchCurrentlyStaked(index) {
         data => {
           dispatch({
             type: STAKE_FETCH_CURRENTLY_STAKED_SUCCESS,
-            data: new BigNumber(data).toNumber(),
+            data: new BigNumber(data).toString(),
             index
           });
           resolve(data);

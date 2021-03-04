@@ -36,7 +36,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
               height={'40px'}
               className={classes.logo}
             />
-            <a href="/">beefy.finance</a>
+            beefy.finance
           </Hidden>
           <Hidden smUp>
             <img
