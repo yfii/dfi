@@ -1071,7 +1071,7 @@ export const pools = [
     oracle: 'pancake',
     oracleId: 'WBNB',
     oraclePrice: 0,
-    depositsPaused: true,
+    depositsPaused: false,
     status: 'active',
     platform: 'Autofarm',
     assets: ['BNB'],
