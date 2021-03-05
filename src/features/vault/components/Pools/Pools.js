@@ -10,6 +10,7 @@ import VisiblePools from '../VisiblePools/VisiblePools';
 import styles from './styles';
 import usePoolsTvl from '../../hooks/usePoolsTvl';
 import { formatGlobalTvl } from 'features/helpers/format';
+import {useFetchPoolsInfo} from "../../../stake/redux/fetchPoolsInfo";
 
 const FETCH_INTERVAL_MS = 30 * 1000;
 
@@ -19,10 +20,15 @@ export default function Pools() {
   const { t } = useTranslation();
   const { web3, address } = useConnectWallet();
   const { pools, fetchVaultsData, fetchVaultsDataDone } = useFetchVaultsData();
+  const { poolsInfo, fetchPoolsInfo } = useFetchPoolsInfo();
   const { tokens, fetchBalances, fetchBalancesDone } = useFetchBalances();
   const { apys, fetchApys, fetchApysDone } = useFetchApys();
   const { poolsTvl } = usePoolsTvl(pools);
   const classes = useStyles();
+
+  useEffect(() => {
+    fetchPoolsInfo();
+  }, [fetchPoolsInfo]);
 
   useEffect(() => {
     if (address && web3) {
@@ -63,6 +69,7 @@ export default function Pools() {
 
       <VisiblePools
         pools={pools}
+        poolsInfo={poolsInfo}
         apys={apys}
         tokens={tokens}
         fetchBalancesDone={fetchBalancesDone}

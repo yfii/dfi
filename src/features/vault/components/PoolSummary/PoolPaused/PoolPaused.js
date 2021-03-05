@@ -5,11 +5,11 @@ import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-const PoolPaused = ({ message }) => {
+const PoolPaused = ({ message, isBoosted }) => {
   const classes = useStyles();
 
   return (
-      <div className={classes.container}>
+      <div className={[classes.container, isBoosted ? classes.launchpool : ''].join(' ')}>
         <div className={classes.texts}>{message}</div>
       </div>
   );

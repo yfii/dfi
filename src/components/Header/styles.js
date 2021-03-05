@@ -243,6 +243,23 @@ const styles = theme => ({
   iconButton: {
     color: theme.palette.text.primary,
   },
+  btnBoost: {
+    marginLeft: '10px',
+    marginRight: '5px',
+    padding: '3px 4px',
+    border: 'solid 2px #5a8f69',
+    borderRadius: '4px',
+    '& img': {
+      verticalAlign: 'middle',
+      height: '15px',
+    },
+    '&:hover': {
+      backgroundColor: '#5a8f69',
+    },
+    '&:hover img': {
+      filter: 'invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(1000%) contrast(1000%)',
+    }
+  },
 });
 
 export default styles;

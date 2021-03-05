@@ -8,13 +8,18 @@ import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-const LabeledStat = ({ value, label, xs, md, isLoading = false }) => {
+const LabeledStat = ({ value, label, xs, md, boosted, isLoading = false}) => {
   const classes = useStyles();
 
   return (
     <Grid item xs={xs} md={md} className={classes.container}>
-      <Typography className={classes.stat} variant="body2" gutterBottom noWrap>
-        {isLoading ? <ValueLoader /> : value}
+      <Typography className={classes.stat} variant="body2" gutterBottom>
+          {boosted ? (
+                  isLoading ? <ValueLoader /> :
+                      <span className={classes.boosted}>{boosted}</span>
+          ) : ''}
+
+          {isLoading ? <ValueLoader /> : <span className={boosted ? classes.crossed : ''}>{value}</span>}
       </Typography>
       <Typography className={classes.label} variant="body2">
         {label}

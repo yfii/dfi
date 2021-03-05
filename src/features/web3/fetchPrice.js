@@ -2,25 +2,10 @@ import axios from 'axios';
 import { pools } from '../configure/pools';
 
 const endpoints = {
-  bakery: 'https://api.beefy.finance/bakery/price?_=1614687410',
-  bakeryLp: 'https://api.beefy.finance/bakery/lps?_=1614687410',
-  bdollarLp: 'https://api.beefy.finance/bdollar/lps?_=1614687410',
-  boltLp: 'https://api.beefy.finance/bolt/lps?_=1614687410',
-  cafeLp: 'https://api.beefy.finance/cafe/lps?_=1614687410',
+  bakery: 'https://api.beefy.finance/bakery/price?_=1614803021',
   coingecko: 'https://api.coingecko.com/api/v3/simple/price',
-  jetfuelLp: 'https://api.beefy.finance/jetfuel/lps?_=1614687410',
-  kebabLp: 'https://api.beefy.finance/kebab/lps?_=1614687410',
-  monsterLp: 'https://api.beefy.finance/monster/lps?_=1614687410',
-  narwhalLp: 'https://api.beefy.finance/narwhal/lps?_=1614687410',
-  nyanswopLp: 'https://api.beefy.finance/nyanswop/lps?_=1614687410',
-  pancake: 'https://api.beefy.finance/pancake/price?_=1614687410',
-  pancakeLp: 'https://api.beefy.finance/pancake/lps?_=1614687410',
-  ramenLp: 'https://api.beefy.finance/ramen/lps?_=1614687410',
-  thugs: 'https://api.beefy.finance/thugs/tickers?_=1614687410',
-  thugsLp: 'https://api.beefy.finance/thugs/lps?_=1614687410',
-  spongeLp:   'https://api.beefy.finance/sponge/lps?_=1614687410',
-  crowLp: 'https://api.beefy.finance/crow/lps?_=1614687410',
-  lps: 'https://api.beefy.finance/lps?_=1614687410',
+  pancake: 'https://api.beefy.finance/pancake/price?_=1614803021',
+  lps: 'https://api.beefy.finance/lps?_=1614803021',
 };
 
 const CACHE_TIMEOUT_MS = 1 * 60 * 1000; // 1 minute(s)
@@ -95,24 +80,10 @@ const fetchBakery = async () => {
 };
 
 const oracleEndpoints = {
-  'bakery-lp': () => fetchLP(endpoints.bakeryLp),
   bakery: () => fetchBakery(),
-  'bdollar-lp': () => fetchLP(endpoints.bdollarLp),
   coingecko: ids => fetchCoingecko(ids),
-  'jetfuel-lp': () => fetchLP(endpoints.jetfuelLp),
-  'monster-lp': () => fetchLP(endpoints.monsterLp),
-  'narwhal-lp': () => fetchLP(endpoints.narwhalLp),
-  'nyanswop-lp': () => fetchLP(endpoints.nyanswopLp),
   pancake: () => fetchPancake(),
-  'pancake-lp': () => fetchLP(endpoints.pancakeLp),
-  'thugs-lp': () => fetchLP(endpoints.thugsLp),
-  'kebab-lp': () => fetchLP(endpoints.kebabLp),
-  'sponge-lp': () => fetchLP(endpoints.spongeLp),
-  'bolt-lp': () => fetchLP(endpoints.boltLp),
-  'cafe-lp': () => fetchLP(endpoints.cafeLp),
-  'ramen-lp': () => fetchLP(endpoints.ramenLp),
-  'crow-lp': () => fetchLP(endpoints.crowLp),
-  'lps': () => fetchLP(endpoints.lps),
+  lps: () => fetchLP(endpoints.lps),
 };
 
 export async function initializePriceCache() {

@@ -18,6 +18,7 @@ const useStyles = makeStyles(styles);
 
 const PoolSummary = ({
   pool,
+  launchpool,
   toggleCard,
   isOpen,
   balanceSingle,
@@ -36,7 +37,12 @@ const PoolSummary = ({
         : paused
         ? t('Vault-DepositsPausedTitle')
         : null;
-    return state === null ? '' : <PoolPaused message={t(state)} />;
+
+    if(launchpool) {
+      state = 'Boosted by ' + launchpool.name
+    }
+
+    return state === null ? '' : <PoolPaused message={t(state)} isBoosted={!!launchpool} />;
   };
 
   return (
@@ -67,6 +73,7 @@ const PoolSummary = ({
           logo={pool.logo}
           description={pool.tokenDescription}
           url={pool.tokenDescriptionUrl}
+          launchpool={launchpool}
         />
         <Grid item md={7} xs={4}>
           <Grid item container justify="space-between">
@@ -94,6 +101,7 @@ const PoolSummary = ({
               <LabeledStat
                 value={formatApy(apy)}
                 label={t('Vault-APY')}
+                boosted={launchpool ? formatApy(launchpool.apy + apy) : ''}
                 isLoading={!fetchApysDone}
                 xs={5}
                 md={2}
@@ -102,6 +110,7 @@ const PoolSummary = ({
               <LabeledStat
                 value={calcDaily(apy)}
                 label={t('Vault-APYDaily')}
+                boosted={launchpool ? calcDaily(launchpool.apy + apy) : ''}
                 isLoading={!fetchApysDone}
                 xs={5}
                 md={2}
@@ -123,7 +132,7 @@ const PoolSummary = ({
         />
 
         <Hidden mdUp>
-          <Grid item xs={12} style={{ display: 'flex' }}>
+          <Grid item xs={12} style={{ display: 'flex' }} className={classes.mobilePadding}>
             <LabeledStat
               value={formatDecimals(balanceSingle)}
               label={t('Vault-Balance')}
@@ -142,11 +151,12 @@ const PoolSummary = ({
               align="start"
             />
           </Grid>
-          <Grid item xs={12} style={{ display: 'flex' }}>
+          <Grid item xs={12} style={{ display: 'flex', paddingTop: '20px' }}>
             <LabeledStat
               value={formatApy(apy)}
               label={t('Vault-APY')}
               isLoading={!fetchApysDone}
+              boosted={launchpool ? formatApy(launchpool.apy + apy) : ''}
               xs={4}
               align="start"
             />
@@ -154,6 +164,7 @@ const PoolSummary = ({
               value={calcDaily(apy)}
               label={t('Vault-APYDaily')}
               isLoading={!fetchApysDone}
+              boosted={launchpool ? calcDaily(launchpool.apy + apy) : ''}
               xs={4}
             />
             <LabeledStat

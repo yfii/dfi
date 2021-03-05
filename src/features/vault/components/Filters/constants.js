@@ -62,6 +62,8 @@ export const assets = [
   'SBDO',
   'SFP',
   'SOAK',
+  'SOUP',
+  'SOUPS',
   'SPG',
   'STAX',
   'STEAM',
@@ -87,6 +89,7 @@ export const assets = [
 ];
 
 export const platforms = [
+  '1Inch',
   'Autofarm',
   'Bakery',
   'bDollar',

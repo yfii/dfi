@@ -1,75 +1,13 @@
-import async from 'async';
+import axios from 'axios';
 import { useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
-
-// import { erc20ABI } from '../../configure/abi';
-
 import {
   STAKE_FETCH_POOLS_INFO_BEGIN,
   STAKE_FETCH_POOLS_INFO_SUCCESS,
   STAKE_FETCH_POOLS_INFO_FAILURE,
 } from './constants';
 
-// const _getERC20Balance = async (web3, asset, account, callback) => {
-//   let erc20Contract = new web3.eth.Contract(erc20ABI, asset.address);
-//
-//   try {
-//     var balance = await erc20Contract.methods.balanceOf(account.address).call({ from: account.address });
-//     balance = parseFloat(balance) / 10 ** asset.decimals;
-//     callback(null, parseFloat(balance));
-//   } catch (ex) {
-//     return callback(ex);
-//   }
-// };
-//
-// const _getStakedBalance = async (web3, asset, account, callback) => {
-//   let erc20Contract = new web3.eth.Contract(asset.rewardsABI, asset.rewardsAddress);
-//
-//   try {
-//     var balance = await erc20Contract.methods.balanceOf(account.address).call({ from: account.address });
-//     balance = parseFloat(balance) / 10 ** asset.decimals;
-//     callback(null, parseFloat(balance));
-//   } catch (ex) {
-//     return callback(ex);
-//   }
-// };
-//
-// const _getRewardsAvailable = async (web3, asset, account, callback) => {
-//   let erc20Contract = new web3.eth.Contract(asset.rewardsABI, asset.rewardsAddress);
-//
-//   try {
-//     var earned = await erc20Contract.methods.earned(account.address).call({ from: account.address });
-//     earned = parseFloat(earned) / 10 ** asset.decimals;
-//     callback(null, parseFloat(earned));
-//   } catch (ex) {
-//     return callback(ex);
-//   }
-// };
-//
-// const _getTotalValueLocked = async (web3, asset, account, callback) => {
-//   let lpTokenContract = new web3.eth.Contract(asset.abi, asset.address);
-//
-//   try {
-//     let tvl = await lpTokenContract.methods.balanceOf(asset.rewardsAddress).call({ from: account.address });
-//     tvl = parseFloat(tvl) / 10 ** asset.decimals;
-//     callback(null, parseFloat(tvl));
-//   } catch (ex) {
-//     return callback(ex);
-//   }
-// };
-//
-// const _getRewardRate = async (web3, asset, account, callback) => {
-//   let rewardsPoolContract = new web3.eth.Contract(asset.rewardsABI, asset.rewardsAddress);
-//   try {
-//     let rewardRate = await rewardsPoolContract.methods.rewardRate().call({ from: account.address });
-//     rewardRate = parseFloat(rewardRate) / 10 ** asset.decimals;
-//     callback(null, parseFloat(rewardRate));
-//   } catch (ex) {
-//     return callback(ex);
-//   }
-// };
-
-export function fetchPoolsInfo(data) {
+export function fetchPoolsInfo() {
   return (dispatch, getState) => {
     // optionally you can have getState as the second argument
     dispatch({ type: STAKE_FETCH_POOLS_INFO_BEGIN });
@@ -79,59 +17,27 @@ export function fetchPoolsInfo(data) {
     // It's hard to use state to manage it, but returning a promise allows you to easily achieve it.
     // e.g.: handleSubmit() { this.props.actions.submitForm(data).then(()=> {}).catch(() => {}); }
     const promise = new Promise((resolve, reject) => {
-      // const { web3, address, pools } = data;
-      const { pools } = data;
+      // doRequest is a placeholder Promise. You should replace it with your own logic.
+      // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
+      // args.error here is only for test coverage purpose.
+      const t = Math.trunc(Date.now() / (60 * 1000));
+      const doRequest = axios.get(`https://api.beefy.finance/stake?_=${t}`);
 
-      async.map(
-        pools,
-        (pool, callback) => {
-          async.parallel(
-            [
-              callbackInner => {
-                // _getERC20Balance(web3, pool, { address }, callbackInner);
-              },
-              callbackInner => {
-                // _getStakedBalance(web3, pool, { address }, callbackInner);
-              },
-              callbackInner => {
-                // _getRewardsAvailable(web3, pool, { address }, callbackInner);
-              },
-              callbackInner => {
-                // _getTotalValueLocked(web3, pool, { address }, callbackInner);
-              },
-              callbackInner => {
-                // _getRewardRate(web3, pool, { address }, callbackInner);
-              },
-            ],
-            (error, data) => {
-              if (error) {
-                console.log(error);
-              }
-              pool.balance = data[0] || 0;
-              pool.stakedBalance = data[1] || 0;
-              pool.rewardsAvailable = data[2] || 0;
-              pool.tvl = data[3] || 0;
-              pool.rewardRate = data[4] || 0;
-              callback(null, pool);
-            }
-          );
-        },
-        (error, pools) => {
-          if (error) {
+      doRequest.then(
+          res => {
             dispatch({
-              type: STAKE_FETCH_POOLS_INFO_FAILURE,
+              type: STAKE_FETCH_POOLS_INFO_SUCCESS,
+              data: res.data.data,
             });
-            return reject(error.message || error);
-          }
-          dispatch({
-            type: STAKE_FETCH_POOLS_INFO_SUCCESS,
-            data: pools,
-          });
-          resolve();
-        }
+            resolve(res);
+          },
+          // Use rejectHandler as the second argument so that render errors won't be caught.
+          err => {
+            dispatch({ type: STAKE_FETCH_POOLS_INFO_FAILURE });
+            reject(err);
+          },
       );
     });
-
     return promise;
   };
 }
@@ -142,15 +48,15 @@ export function useFetchPoolsInfo() {
   const dispatch = useDispatch();
 
   const { pools, poolsInfo, fetchPoolsInfoPending } = useSelector(
-    state => ({
-      pools: state.stake.pools,
-      poolsInfo: state.stake.poolsInfo,
-      fetchPoolsInfoPending: state.stake.fetchPoolsInfoPending,
-    }),
-    shallowEqual,
+      state => ({
+        pools: state.stake.pools,
+        poolsInfo: state.stake.poolsInfo,
+        fetchPoolsInfoPending: state.stake.fetchPoolsInfoPending,
+      }),
+      shallowEqual,
   );
 
-  const boundAction = useCallback(data => dispatch(fetchPoolsInfo(data)), [dispatch]);
+  const boundAction = useCallback(() => dispatch(fetchPoolsInfo()), [dispatch]);
 
   return {
     fetchPoolsInfo: boundAction,
@@ -171,9 +77,17 @@ export function reducer(state, action) {
 
     case STAKE_FETCH_POOLS_INFO_SUCCESS:
       // The request is success
+      for(let index in action.data) {
+        for(let key in state.poolsInfo) {
+          if(state.poolsInfo[key].id === action.data[index].id) {
+            state.poolsInfo[key] = action.data[index]
+            break;
+          }
+        }
+      }
+
       return {
         ...state,
-        poolsInfo: action.data,
         fetchPoolsInfoPending: false
       };
 

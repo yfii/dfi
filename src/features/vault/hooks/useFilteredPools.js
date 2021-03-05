@@ -5,6 +5,7 @@ const DEFAULT = {
   hideDecomissioned: true,
   hideZeroBalances: false,
   hideZeroVaultBalances: false,
+  showBoosted: false,
 };
 
 const KEY = 'filteredPools';
@@ -44,8 +45,19 @@ const useFilteredPools = (pools, tokens) => {
     filteredPools = hideDecomissioned(filteredPools);
   }
 
+
+  if(filters.showBoosted) {
+    filteredPools = showBoosted(filteredPools);
+  }
+
   return { filteredPools, toggleFilter, filters };
 };
+
+function showBoosted(pools) {
+  return pools.filter(pool => {
+    return pool.launchpool;
+  });
+}
 
 function hideDecomissioned(pools) {
   return pools.filter(pool => {

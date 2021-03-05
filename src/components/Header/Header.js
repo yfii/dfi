@@ -28,7 +28,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
   return (
     <AppBar className={`${classes.appBar} ${classes.dark}`}>
       <Toolbar className={classes.container}>
-        <Button className={classes.title}>
+        <Button href="/" className={classes.title}>
           <Hidden xsDown>
             <img
               alt="BIFI"
@@ -36,7 +36,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
               height={'40px'}
               className={classes.logo}
             />
-            <a href="https://beefy.finance">beefy.finance</a>
+            beefy.finance
           </Hidden>
           <Hidden smUp>
             <img
@@ -49,14 +49,14 @@ const Header = ({ links, isNightMode, setNightMode }) => {
         </Button>
 
         <span>
-          {renderLink('barn', 'barn', 'warehouse', classes)}
-          <Hidden xsDown>
+          <Hidden mdDown>
+            {renderLink('barn', 'barn', 'warehouse', classes)}
             {renderLink('vote', 'vote', 'vote-yea', classes)}
-            {renderLink('gov', 'gov', 'landmark', classes)}
             {renderLink('dashboard', t('stats'), 'chart-bar', classes)}
             {renderLink('docs', 'docs', 'book', classes)}
           </Hidden>
           {renderLink('buy', t('buy'), 'dollar-sign', classes)}
+          {renderBoost(classes)}
         </span>
 
         <Hidden smDown implementation="css">
@@ -93,7 +93,6 @@ const Header = ({ links, isNightMode, setNightMode }) => {
           </IconButton>
           <div className={classes.appResponsive}>{links}</div>
           <div style={{ textAlign: 'center' }}>
-            {renderLinkSidebar('gov', 'gov', 'landmark', classes)}
             {renderLinkSidebar('barn', 'barn', 'warehouse', classes)}
             {renderLinkSidebar('vote', 'vote', 'vote-yea', classes)}
             {renderLinkSidebar('dashboard', t('stats'), 'chart-bar', classes)}
@@ -123,6 +122,14 @@ const renderLink = (name, label, icon, classes) => {
     </a>
   );
 };
+
+const renderBoost = (classes) => {
+  return (
+      <a className={classes.btnBoost} href="/stake" >
+        <img alt='Boost' src={require('../../images/stake/boost.svg')} />
+      </a>
+  );
+}
 
 const renderLinkSidebar = (name, label, icon, classes) => {
   return (
