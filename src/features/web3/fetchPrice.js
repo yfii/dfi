@@ -2,10 +2,10 @@ import axios from 'axios';
 import { pools } from '../configure/pools';
 
 const endpoints = {
-  bakery: 'https://api.beefy.finance/bakery/price?_=1614803021',
+  bakery: 'https://api.beefy.finance/bakery/price',
   coingecko: 'https://api.coingecko.com/api/v3/simple/price',
-  pancake: 'https://api.beefy.finance/pancake/price?_=1614803021',
-  lps: 'https://api.beefy.finance/lps?_=1614803021',
+  pancake: 'https://api.beefy.finance/pancake/price',
+  lps: 'https://api.beefy.finance/lps',
 };
 
 const CACHE_TIMEOUT_MS = 1 * 60 * 1000; // 1 minute(s)
