@@ -101,7 +101,7 @@ const Footer = () => {
           <span>telegram</span>
         </a>
         <a
-          href="https://discord.gg/9xfMvJY"
+          href="https://discord.gg/yq8wfHd"
           target="_blank"
           rel="noopener noreferrer"
           className={classes.link}
