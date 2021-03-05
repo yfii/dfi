@@ -66,24 +66,32 @@ export default function StakePools(props) {
                 variant="square"
                 imgProps={{ style: { objectFit: 'contain' } }}
               />
-              <Typography className={classes.countdown}>
-                {poolsInfo[index].status === 'closed' ? 'FINISHED' : ''}
-              </Typography>
+              {/* 
+                <Typography className={classes.countdown}>
+                  {poolsInfo[index].status === 'closed' ? 'FINISHED' : ''}
+                </Typography>
+              */}
+
               <Typography className={classes.subtitle} variant="body2">
                 {pool.token}
               </Typography>
               <Button xs={5} md={2} className={classes.stakeBtn} href={`/stake/pool/${index + 1}`}>
-                {poolsInfo[index].status === 'closed'
+                {t('Stake-Button-Stake')}
+                {/*
+                  {poolsInfo[index].status === 'closed'
                   ? t('Stake-Button-Claim')
                   : t('Stake-Button-Stake')}
+                */}
               </Button>
-              {poolsInfo[index].status === 'closed' ? (
-                <Box className={classes.ribbon}>
-                  <span>FINISHED</span>
-                </Box>
-              ) : (
-                ''
-              )}
+              {/*
+                {poolsInfo[index].status === 'closed' ? (
+                  <Box className={classes.ribbon}>
+                    <span>FINISHED</span>
+                  </Box>
+                ) : (
+                  ''
+                )}
+              */}
             </Grid>
           </Grid>
         ))}

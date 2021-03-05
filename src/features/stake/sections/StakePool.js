@@ -277,9 +277,12 @@ export default function StakePool(props) {
         </Button>
       </Grid>
       <Grid item xs={6} className={classes.mb}>
-        <Typography className={classes.countdown}>
-          {poolsInfo[index].status === 'closed' ? 'FINISHED' : 'End: ' + myHalfTime}
-        </Typography>
+        <Typography className={classes.countdown}>{'End: ' + myHalfTime}</Typography>
+        {/*
+          <Typography className={classes.countdown}>
+            {poolsInfo[index].status === 'closed' ? 'FINISHED' : 'End: ' + myHalfTime}
+          </Typography>
+        */}
       </Grid>
 
       <Grid
@@ -341,13 +344,16 @@ export default function StakePool(props) {
           </Typography>
           <Typography className={classes.subtitle}>{t('Stake-Current-Daily')}</Typography>
         </Grid>
-        {poolsInfo[index].status === 'closed' ? (
-          <Box className={classes.ribbon}>
-            <span>FINISHED</span>
-          </Box>
-        ) : (
-          ''
-        )}
+        {/*   
+          Temporarily hide this while we fix the api.
+          {poolsInfo[index].status === 'closed' ? (
+            <Box className={classes.ribbon}>
+              <span>FINISHED</span>
+            </Box>
+          ) : (
+            ''
+          )}
+        */}
       </Grid>
 
       <Grid container className={classes.row}>
