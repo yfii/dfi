@@ -89,6 +89,7 @@ export const assets = [
 ];
 
 export const platforms = [
+  '1Inch',
   'Autofarm',
   'Bakery',
   'bDollar',
