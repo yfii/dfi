@@ -88,6 +88,7 @@ export const assets = [
   'UST',
   'VAI',
   'VAPOR',
+  'WATCH',
   'WSOTE',
   'XRP',
   'XTZ',
