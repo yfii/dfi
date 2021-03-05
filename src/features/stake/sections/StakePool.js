@@ -279,6 +279,7 @@ export default function StakePool(props) {
       <Grid item xs={6} className={classes.mb}>
         <Typography className={classes.countdown}>{'End: ' + myHalfTime}</Typography>
         {/*
+          TEMP FIX
           <Typography className={classes.countdown}>
             {poolsInfo[index].status === 'closed' ? 'FINISHED' : 'End: ' + myHalfTime}
           </Typography>
@@ -287,9 +288,10 @@ export default function StakePool(props) {
 
       <Grid
         container
-        className={[classes.row, poolsInfo[index].status === 'closed' ? classes.retired : ''].join(
-          ' '
-        )}
+        className={[
+          classes.row,
+          /*poolsInfo[index].status === 'closed' ? classes.retired :*/ '',
+        ].join(' ')}
       >
         <Grid item xs={6} sm={6} md={3}>
           <Avatar
@@ -326,9 +328,10 @@ export default function StakePool(props) {
 
       <Grid
         container
-        className={[classes.row, poolsInfo[index].status === 'closed' ? classes.retired : ''].join(
-          ' '
-        )}
+        className={[
+          classes.row,
+          /* TEMP FIX poolsInfo[index].status === 'closed' ? classes.retired :*/ '',
+        ].join(' ')}
       >
         <Grid item xs={12} sm={4}>
           <Typography className={classes.title}>{poolsInfo[index].staked}</Typography>
@@ -345,7 +348,7 @@ export default function StakePool(props) {
           <Typography className={classes.subtitle}>{t('Stake-Current-Daily')}</Typography>
         </Grid>
         {/*   
-          Temporarily hide this while we fix the api.
+          TEMP FIX
           {poolsInfo[index].status === 'closed' ? (
             <Box className={classes.ribbon}>
               <span>FINISHED</span>

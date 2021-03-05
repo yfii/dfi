@@ -49,7 +49,8 @@ export default function StakePools(props) {
             <Grid
               className={[
                 classes.item,
-                poolsInfo[index].status === 'closed' ? classes.itemRetired : '',
+                /* TEMP FIX
+                poolsInfo[index].status === 'closed' ? classes.itemRetired :*/ '',
               ].join(' ')}
             >
               {pool.partnership ? (
@@ -67,6 +68,7 @@ export default function StakePools(props) {
                 imgProps={{ style: { objectFit: 'contain' } }}
               />
               {/* 
+                TEMP FIX
                 <Typography className={classes.countdown}>
                   {poolsInfo[index].status === 'closed' ? 'FINISHED' : ''}
                 </Typography>
@@ -78,12 +80,14 @@ export default function StakePools(props) {
               <Button xs={5} md={2} className={classes.stakeBtn} href={`/stake/pool/${index + 1}`}>
                 {t('Stake-Button-Stake')}
                 {/*
+                  TEMP FIX
                   {poolsInfo[index].status === 'closed'
                   ? t('Stake-Button-Claim')
                   : t('Stake-Button-Stake')}
                 */}
               </Button>
               {/*
+                TEMP FIX
                 {poolsInfo[index].status === 'closed' ? (
                   <Box className={classes.ribbon}>
                     <span>FINISHED</span>
