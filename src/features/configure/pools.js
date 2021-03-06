@@ -23,6 +23,30 @@ export const pools = [
     callFee: 0.5,
   },
 
+  {
+    id: 'auto-beth-eth',
+    logo: 'uncategorized/BETH-ETH.svg',
+    name: 'BETH-ETH LP',
+    token: 'BETH-ETH LP',
+    tokenDescription: 'Uses: Autofarm',
+    tokenAddress: '0x99d865Ed50D2C32c1493896810FA386c1Ce81D91',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooAutoBETH-ETH',
+    earnedTokenAddress: '0xF3C1EB01E40c47fd32D0397e56569809aae0e9c7',
+    earnContractAddress: '0xF3C1EB01E40c47fd32D0397e56569809aae0e9c7',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'auto-beth-eth',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Autofarm',
+    assets: ['BETH', 'ETH'],
+    callFee: 0.5,
+  },
+
   // FIXME: reviewed, waiting for yieldwatch team approval 
   // {
   //   id: 'cake-watch-bnb',
