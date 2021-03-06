@@ -36,7 +36,7 @@ import TelegramIcon from '@material-ui/icons/Telegram';
 import Button from '../../../components/CustomButtons/Button';
 import { styles } from './styles/view';
 import Divider from '@material-ui/core/Divider';
-import {formatApy} from "../../helpers/format";
+import { formatApy } from '../../helpers/format';
 
 const useStyles = makeStyles(styles);
 
@@ -71,8 +71,6 @@ export default function StakePool(props) {
   );
   const [myHalfTime, setMyHalfTime] = useState(`0day 00:00:00`);
   const [inputVal, setInputVal] = useState(0);
-  const [canWithdrawTimeIsZero, setCanWithdrawTimeIsZero] = useState(false);
-  const [canWithdrawTimeIsMoreNowTime, setCanWithdrawTimeIsMoreNowTime] = useState(false);
   const [open, setOpen] = React.useState(false);
 
   const changeInputVal = event => {
@@ -126,24 +124,6 @@ export default function StakePool(props) {
     fetchStake(index, amount);
     setOpen(false);
   };
-
-  useEffect(() => {
-    const func = () => {
-      if (Boolean(canWithdrawTime[index] === 0)) {
-        setCanWithdrawTimeIsZero(true);
-        setCanWithdrawTimeIsMoreNowTime(false);
-      } else {
-        setCanWithdrawTimeIsZero(false);
-        if (Boolean(canWithdrawTime[index] * 1000 > new Date().getTime())) {
-          setCanWithdrawTimeIsMoreNowTime(true);
-        } else {
-          setCanWithdrawTimeIsMoreNowTime(false);
-        }
-      }
-    };
-    const id = setInterval(func, 1000);
-    return () => clearInterval(id);
-  }, [canWithdrawTime[index]]);
 
   useEffect(() => {
     const isPending = Boolean(fetchWithdrawPending[index]);
@@ -336,9 +316,7 @@ export default function StakePool(props) {
           <Typography className={classes.subtitle}>{t('Stake-Your-Pool')}%</Typography>
         </Grid>
         <Grid item xs={12} sm={4}>
-          <Typography className={classes.title}>
-            {formatApy(poolsInfo[index].apy)}
-          </Typography>
+          <Typography className={classes.title}>{formatApy(poolsInfo[index].apy)}</Typography>
           <Typography className={classes.subtitle}>{t('Vault-APY')}</Typography>
         </Grid>
         {/*   
