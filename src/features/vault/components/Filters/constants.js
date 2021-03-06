@@ -90,6 +90,7 @@ export const assets = [
   'VAPOR',
   'WATCH',
   'WSOTE',
+  'XMARK',
   'XRP',
   'XTZ',
   'XVS',
