@@ -36,6 +36,7 @@ import TelegramIcon from '@material-ui/icons/Telegram';
 import Button from '../../../components/CustomButtons/Button';
 import { styles } from './styles/view';
 import Divider from '@material-ui/core/Divider';
+import {formatApy} from "../../helpers/format";
 
 const useStyles = makeStyles(styles);
 
@@ -252,13 +253,6 @@ export default function StakePool(props) {
       : 0;
   };
 
-  const getDailyReward = () => {
-    const daily = (Math.pow(10, Math.log10(poolsInfo[index].apy + 1) / 365) - 1) * 100;
-    const reward = (Math.floor(myCurrentlyStaked.toNumber() * 10000) / 10000 / 100) * daily;
-
-    return reward.toFixed(8);
-  };
-
   const customBgImg = img => {
     return img
       ? {
@@ -343,9 +337,9 @@ export default function StakePool(props) {
         </Grid>
         <Grid item xs={12} sm={4}>
           <Typography className={classes.title}>
-            {getDailyReward()} {pools[index].earnedToken}
+            {formatApy(poolsInfo[index].apy)}
           </Typography>
-          <Typography className={classes.subtitle}>{t('Stake-Current-Daily')}</Typography>
+          <Typography className={classes.subtitle}>{t('Vault-APY')}</Typography>
         </Grid>
         {/*   
           TEMP FIX
