@@ -28,7 +28,7 @@ export const pools = [
     logo: 'uncategorized/BETH-ETH.svg',
     name: 'BETH-ETH LP',
     token: 'BETH-ETH LP',
-    tokenDescription: 'Uses: Autofarm',
+    tokenDescription: 'Uses: Pancake',
     tokenAddress: '0x99d865Ed50D2C32c1493896810FA386c1Ce81D91',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
