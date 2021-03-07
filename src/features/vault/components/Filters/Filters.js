@@ -10,7 +10,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import InputLabel from '@material-ui/core/InputLabel';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
-import {Avatar, Box} from "@material-ui/core";
+import {Avatar, Box, Button} from "@material-ui/core";
 
 import styles from './styles';
 import { platforms, assets } from './constants';
@@ -48,9 +48,18 @@ const Filters = ({
     }))
   ];
 
+  const resetFilter = () => {
+      toggleFilter('resetAll');
+      setPlatform('All');
+      setVaultType('All');
+      setAsset('All');
+      setOrder('All');
+  }
+
   return (
     <Grid container spacing={2} className={classes.container}>
       <Grid item xs={6} md={3}>
+          <Button className={classes.reset} onClick={resetFilter}>Reset Filter</Button>
         <FormControl>
           <FormControlLabel
             className={classes.label}
