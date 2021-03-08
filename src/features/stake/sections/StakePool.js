@@ -49,7 +49,6 @@ export default function StakePool(props) {
   const { balance, fetchBalance } = useFetchBalance();
   const { currentlyStaked, fetchCurrentlyStaked } = useFetchCurrentlyStaked();
   const { rewardsAvailable, fetchRewardsAvailable } = useFetchRewardsAvailable();
-  const { canWithdrawTime, fetchCanWithdrawTime } = useFetchCanWithdrawTime();
   const { halfTime, fetchHalfTime } = useFetchHalfTime();
   const { fetchApproval, fetchApprovalPending } = useFetchApproval();
   const { fetchStake, fetchStakePending } = useFetchStake();
