@@ -15,6 +15,7 @@ export const staking = [
     earnContractAbi: govPoolABI,
     partnership: false,
     status: 'active',
+    hideCountdown: true,
     partner: {
       logo: 'stake/beefy/beefyfinance.png',
       background: 'stake/beefy/background.png',

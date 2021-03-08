@@ -19,7 +19,7 @@ const allowance = [0, 0, 0, 0, 0];
 const balance = [0, 0, 0, 0, 0];
 const currentlyStaked = [0, 0, 0, 0, 0];
 const rewardsAvailable = [0, 0, 0, 0, 0];
-const halfTime = [0, 0, 0, 0, 0];
+const halfTime = [];
 const canWithdrawTime = [0, 0, 0, 0, 0];
 
 const initialState = {
