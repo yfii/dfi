@@ -40,7 +40,7 @@ export const staking = [
     earnContractAddress: '0xC7e3795259e9f74F4F2265Bf28680a70b41B4334',
     earnContractAbi: govPoolABI,
     partnership: true,
-    status: 'active',
+    status: 'closed',
     partner: {
       logo: 'stake/cafeswap/cafeswap.png',
       background: 'stake/cafeswap/background.png',
@@ -66,7 +66,7 @@ export const staking = [
     earnContractAddress: '0x07613c90c6f4F4910e53A1A6fF5dAc352C6a16e4',
     earnContractAbi: govPoolABI,
     partnership: true,
-    status: 'active',
+    status: 'closed',
     partner: {
       logo: 'stake/ramenswap/ramenswap.png',
       background: 'stake/ramenswap/background.png',
@@ -92,7 +92,7 @@ export const staking = [
     earnContractAddress: '0xDda39b0a11de6e0Ebce995D4A065960532EB332E',
     earnContractAbi: govPoolABI,
     partnership: true,
-    status: 'active',
+    status: 'closed',
     partner: {
       logo: 'stake/saltswap/saltswap.png',
       background: 'stake/saltswap/background.png',
