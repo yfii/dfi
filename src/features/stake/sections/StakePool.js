@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import BigNumber from 'bignumber.js';
-import moment from 'moment';
 import { byDecimals } from 'features/helpers/bignumber';
 import { useConnectWallet } from '../../home/redux/hooks';
 import {
@@ -11,7 +10,6 @@ import {
   useFetchCurrentlyStaked,
   useFetchRewardsAvailable,
   useFetchHalfTime,
-  useFetchCanWithdrawTime,
   useFetchApproval,
   useFetchStake,
   useFetchWithdraw,
@@ -250,21 +248,14 @@ export default function StakePool(props) {
         </Button>
       </Grid>
       <Grid item xs={6} className={classes.mb}>
-        <Typography className={classes.countdown}>{'End: ' + myHalfTime}</Typography>
-        {/*
-          TEMP FIX
-          <Typography className={classes.countdown}>
-            {poolsInfo[index].status === 'closed' ? 'FINISHED' : 'End: ' + myHalfTime}
-          </Typography>
-        */}
+        <Typography className={classes.countdown}>
+          {pools[index].status === 'closed' ? 'FINISHED' : 'End: ' + myHalfTime}
+        </Typography>
       </Grid>
 
       <Grid
         container
-        className={[
-          classes.row,
-          /*poolsInfo[index].status === 'closed' ? classes.retired :*/ '',
-        ].join(' ')}
+        className={[classes.row, pools[index].status === 'closed' ? classes.retired : ''].join(' ')}
       >
         <Grid item xs={6} sm={6} md={3}>
           <Avatar
@@ -301,10 +292,7 @@ export default function StakePool(props) {
 
       <Grid
         container
-        className={[
-          classes.row,
-          /* TEMP FIX poolsInfo[index].status === 'closed' ? classes.retired :*/ '',
-        ].join(' ')}
+        className={[classes.row, pools[index].status === 'closed' ? classes.retired : ''].join(' ')}
       >
         <Grid item xs={12} sm={4}>
           <Typography className={classes.title}>{poolsInfo[index].staked}</Typography>
@@ -318,16 +306,14 @@ export default function StakePool(props) {
           <Typography className={classes.title}>{formatApy(poolsInfo[index].apy)}</Typography>
           <Typography className={classes.subtitle}>{t('Vault-APY')}</Typography>
         </Grid>
-        {/*   
-          TEMP FIX
-          {poolsInfo[index].status === 'closed' ? (
-            <Box className={classes.ribbon}>
-              <span>FINISHED</span>
-            </Box>
-          ) : (
-            ''
-          )}
-        */}
+
+        {pools[index].status === 'closed' ? (
+          <Box className={classes.ribbon}>
+            <span>FINISHED</span>
+          </Box>
+        ) : (
+          ''
+        )}
       </Grid>
 
       <Grid container className={classes.row}>
@@ -340,7 +326,7 @@ export default function StakePool(props) {
           {isNeedApproval ? (
             <Button
               className={classes.actionBtn}
-              disabled={!Boolean(approvalAble && poolsInfo[index].status === 'active')}
+              disabled={!Boolean(approvalAble && pools[index].status === 'active')}
               onClick={onApproval}
             >
               {t('Stake-Button-Approval')}

@@ -10,7 +10,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import InputLabel from '@material-ui/core/InputLabel';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
-import {Avatar, Box, Button} from "@material-ui/core";
+import { Avatar, Box, Button } from '@material-ui/core';
 
 import styles from './styles';
 import { platforms, assets } from './constants';
@@ -40,26 +40,28 @@ const Filters = ({
   const options = [
     {
       value: 'All',
-      label: t('Filters-All')
+      label: t('Filters-All'),
     },
     ...assets.map(asset => ({
       value: asset,
-      label: asset
-    }))
+      label: asset,
+    })),
   ];
 
   const resetFilter = () => {
-      toggleFilter('resetAll');
-      setPlatform('All');
-      setVaultType('All');
-      setAsset('All');
-      setOrder('All');
-  }
+    toggleFilter('resetAll');
+    setPlatform('All');
+    setVaultType('All');
+    setAsset('All');
+    setOrder('All');
+  };
 
   return (
     <Grid container spacing={2} className={classes.container}>
       <Grid item xs={6} md={3}>
-          <Button className={classes.reset} onClick={resetFilter}>Reset Filter</Button>
+        <Button className={classes.reset} onClick={resetFilter}>
+          Reset Filters
+        </Button>
         <FormControl>
           <FormControlLabel
             className={classes.label}
@@ -111,22 +113,28 @@ const Filters = ({
       </Grid>
 
       <Grid item xs={6} md={3}>
-            <FormControl>
-                <FormControlLabel
-                    className={classes.label}
-                    control={
-                        <Checkbox
-                            checked={filters.showBoosted}
-                            onChange={() => toggleFilter('showBoosted')}
-                            color="primary"
-                        />
-                    }
-                    label={<Box className={classes.boost}>Boost
-                        <Avatar className={classes.fire} src={require('../../../../images/stake/fire.png')} />
-                    </Box>}
+        <FormControl>
+          <FormControlLabel
+            className={classes.label}
+            control={
+              <Checkbox
+                checked={filters.showBoosted}
+                onChange={() => toggleFilter('showBoosted')}
+                color="primary"
+              />
+            }
+            label={
+              <Box className={classes.boost}>
+                Boost
+                <Avatar
+                  className={classes.fire}
+                  src={require('../../../../images/stake/fire.png')}
                 />
-            </FormControl>
-        </Grid>
+              </Box>
+            }
+          />
+        </FormControl>
+      </Grid>
 
       <Grid item xs={6} md={3}>
         <FormControl className={classes.selectorContainer}>
@@ -189,12 +197,12 @@ const Filters = ({
             id="select-asset"
             options={options}
             getOptionLabel={option => option.label}
-            renderInput={(params) => (
+            renderInput={params => (
               <TextField
                 {...params}
                 label={t('Filters-Asset')}
                 InputLabelProps={{
-                  className: classes.selectorLabel
+                  className: classes.selectorLabel,
                 }}
               />
             )}

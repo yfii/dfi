@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import BigNumber from 'bignumber.js';
 import { useTranslation } from 'react-i18next';
 import { useFetchPoolsInfo } from '../redux/hooks';
 import {
@@ -49,8 +48,7 @@ export default function StakePools(props) {
             <Grid
               className={[
                 classes.item,
-                /* TEMP FIX
-                poolsInfo[index].status === 'closed' ? classes.itemRetired :*/ '',
+                pools[index].status === 'closed' ? classes.itemRetired : '',
               ].join(' ')}
             >
               {pool.partnership ? (
@@ -67,35 +65,26 @@ export default function StakePools(props) {
                 variant="square"
                 imgProps={{ style: { objectFit: 'contain' } }}
               />
-              {/* 
-                TEMP FIX
-                <Typography className={classes.countdown}>
-                  {poolsInfo[index].status === 'closed' ? 'FINISHED' : ''}
-                </Typography>
-              */}
+
+              <Typography className={classes.countdown}>
+                {pools[index].status === 'closed' ? 'FINISHED' : ''}
+              </Typography>
 
               <Typography className={classes.subtitle} variant="body2">
                 {pool.token}
               </Typography>
               <Button xs={5} md={2} className={classes.stakeBtn} href={`/stake/pool/${index + 1}`}>
-                {t('Stake-Button-Stake')}
-                {/*
-                  TEMP FIX
-                  {poolsInfo[index].status === 'closed'
+                {pools[index].status === 'closed'
                   ? t('Stake-Button-Claim')
                   : t('Stake-Button-Stake')}
-                */}
               </Button>
-              {/*
-                TEMP FIX
-                {poolsInfo[index].status === 'closed' ? (
-                  <Box className={classes.ribbon}>
-                    <span>FINISHED</span>
-                  </Box>
-                ) : (
-                  ''
-                )}
-              */}
+              {pools[index].status === 'closed' ? (
+                <Box className={classes.ribbon}>
+                  <span>FINISHED</span>
+                </Box>
+              ) : (
+                ''
+              )}
             </Grid>
           </Grid>
         ))}
