@@ -95,7 +95,6 @@ export const pools = [
     platform: 'Venus',
     assets: ['BTC'],
     callFee: 1,
-    launchpool: 'moo_venus_btc-ramen',
   },
 
   {
@@ -120,7 +119,6 @@ export const pools = [
     platform: 'Venus',
     assets: ['ETH'],
     callFee: 1,
-    launchpool: 'moo_venus_eth-brew',
   },
 
   {
@@ -145,7 +143,6 @@ export const pools = [
     platform: 'Autofarm',
     assets: ['CAKE'],
     callFee: 0.5,
-    launchpool: 'moo_auto_cake-salt',
   },
 
   {
