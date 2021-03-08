@@ -5,6 +5,7 @@ const styles = theme => ({
     border: '1px solid ' + theme.palette.background.border,
     backgroundColor: theme.palette.background.primary,
     justifyContent: 'space-between',
+    position: 'relative',
   },
 
   selectorContainer: {
@@ -33,6 +34,18 @@ const styles = theme => ({
       right: '-20px',
     },
   },
+  reset: {
+    border: '1px solid ' + theme.palette.background.border,
+    padding: '4px 8px',
+    position: 'absolute',
+    top: '5px',
+    right: '5px',
+    backgroundColor: theme.palette.background.default,
+    '& .MuiButton-label': {
+      fontWeight: 'bold',
+      textTransform: 'capitalize',
+    }
+  }
 });
 
 export default styles;

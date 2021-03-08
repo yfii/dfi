@@ -28,6 +28,10 @@ const useFilteredPools = (pools, tokens) => {
 
   let filteredPools = [...pools];
 
+  if(filters.resetAll) {
+    setFilters(DEFAULT)
+  }
+
   if (filters.hideZeroBalances) {
     filteredPools = hideZeroBalances(filteredPools, tokens);
   }
