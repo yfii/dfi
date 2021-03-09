@@ -34,7 +34,7 @@ import TelegramIcon from '@material-ui/icons/Telegram';
 import Button from '../../../components/CustomButtons/Button';
 import { styles } from './styles/view';
 import Divider from '@material-ui/core/Divider';
-import { formatApy } from '../../helpers/format';
+import {formatApy, formatCountdown} from '../../helpers/format';
 
 const useStyles = makeStyles(styles);
 
@@ -170,27 +170,18 @@ export default function StakePool(props) {
   }, [rewardsAvailable[index], index]);
 
   useEffect(() => {
-    if (halfTime[index] === 0) return;
+    if (halfTime[index] === 0) {
+      pools[index].status = 'soon';
+      return;
+    }
     const formatTime = () => {
-      const currTime = new Date().getTime();
       const deadline = halfTime[index] * 1000;
-      const time = deadline - currTime;
+      const time = deadline - new Date().getTime();
       if (time <= 0) {
+        pools[index].status = 'closed'
         return fetchHalfTime(index);
       }
-      const day = Math.floor(time / (1000 * 60 * 60 * 24))
-        .toString()
-        .padStart(2, '0');
-      const hours = Math.floor((time / (1000 * 60 * 60)) % 24)
-        .toString()
-        .padStart(2, '0');
-      const minutes = Math.floor((time / (1000 * 60)) % 60)
-        .toString()
-        .padStart(2, '0');
-      const seconds = Math.floor((time / 1000) % 60)
-        .toString()
-        .padStart(2, '0');
-      setMyHalfTime(`${day}day ${hours}:${minutes}:${seconds}`);
+      setMyHalfTime(formatCountdown(deadline));
     };
     formatTime();
     const id = setInterval(formatTime, 1000);
@@ -249,13 +240,17 @@ export default function StakePool(props) {
       </Grid>
       <Grid item xs={6} className={classes.mb}>
         <Typography className={classes.countdown}>
-          {pools[index].status === 'closed' ? 'FINISHED' : 'End: ' + myHalfTime}
+          {pools[index].hideCountdown ? '' : (
+            pools[index].status === 'closed' ? t('Finished') :
+              (pools[index].status === 'soon' ? t('Coming-Soon') : t('End') + ': ' + myHalfTime)
+          )}
         </Typography>
       </Grid>
 
       <Grid
         container
-        className={[classes.row, pools[index].status === 'closed' ? classes.retired : ''].join(' ')}
+        className={[classes.row, pools[index].status === 'closed' || pools[index].status ===  'soon' ?
+          classes.retired : ''].join(' ')}
       >
         <Grid item xs={6} sm={6} md={3}>
           <Avatar
@@ -292,7 +287,8 @@ export default function StakePool(props) {
 
       <Grid
         container
-        className={[classes.row, pools[index].status === 'closed' ? classes.retired : ''].join(' ')}
+        className={[classes.row, pools[index].status === 'closed' || pools[index].status ===  'soon' ?
+          classes.retired : ''].join(' ')}
       >
         <Grid item xs={12} sm={4}>
           <Typography className={classes.title}>{poolsInfo[index].staked}</Typography>
@@ -307,9 +303,10 @@ export default function StakePool(props) {
           <Typography className={classes.subtitle}>{t('Vault-APY')}</Typography>
         </Grid>
 
-        {pools[index].status === 'closed' ? (
+        {pools[index].status === 'closed' || pools[index].status ===  'soon' ? (
           <Box className={classes.ribbon}>
-            <span>FINISHED</span>
+            <span className={pools[index].status}>{pools[index].status === 'closed' ?
+              t('Finished') : (pools[index].status === 'soon' ? t('Coming-Soon') : '')}</span>
           </Box>
         ) : (
           ''
@@ -333,6 +330,7 @@ export default function StakePool(props) {
             </Button>
           ) : (
             <Button
+              disabled={!Boolean(pools[index].status === 'active')}
               className={[classes.actionBtn, pools[index].partnership ? classes.btnBoost : ''].join(
                 ' '
               )}

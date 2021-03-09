@@ -115,6 +115,8 @@ const styles = theme => ({
     partnerBody: {
         textAlign: 'left',
         color: theme.palette.text.primary,
+        background: theme.palette.type === 'dark' ? 'rgba(0, 0, 0, 0.1)' : 'rgba(255, 255, 255, 0.5)',
+        padding: '15px',
     },
 
     ribbon: {
@@ -123,23 +125,29 @@ const styles = theme => ({
         bottom: '0',
         zIndex: 1,
         overflow: 'hidden',
-        width: '75px',
-        height: '75px',
+        width: '90px',
+        height: '90px',
         textAlign: 'right',
         '& span': {
-            fontSize: '12px',
             fontWeight: 'bold',
             color: '#FFF',
             textTransform: 'uppercase',
             textAlign: 'center',
             lineHeight: '20px',
             transform: 'rotate(-45deg)',
-            width: '100px',
+            width: '110px',
             display: 'block',
-            background: theme.palette.type === 'dark' ? '#5a8f69' : '#57ad82',
             position: 'absolute',
-            bottom: '19px',
-            right: '-21px',
+            bottom: '22px',
+            right: '-23px',
+        },
+        '& .soon': {
+            fontSize: '11px',
+            background: theme.palette.type === 'dark' ? '#1e67b4' : '#56a0ee',
+        },
+        '& .closed': {
+            fontSize: '12px',
+            background: theme.palette.type === 'dark' ? '#5a8f69' : '#57ad82',
         }
     },
 

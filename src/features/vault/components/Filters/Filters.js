@@ -60,7 +60,7 @@ const Filters = ({
     <Grid container spacing={2} className={classes.container}>
       <Grid item xs={6} md={3}>
         <Button className={classes.reset} onClick={resetFilter}>
-          Reset Filters
+          {t('Filters-Reset')}
         </Button>
         <FormControl>
           <FormControlLabel

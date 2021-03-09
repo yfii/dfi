@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useFetchPoolsInfo } from '../redux/hooks';
+import {useFetchHalfTime, useFetchPoolsInfo} from '../redux/hooks';
 import {
   Grid,
   Typography,
   Avatar,
   makeStyles,
   Box,
-  Link,
   Accordion,
   AccordionDetails,
 } from '@material-ui/core';
@@ -16,6 +15,8 @@ import Button from '../../../components/CustomButtons/Button';
 import styles from './styles/list';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { useConnectWallet } from '../../home/redux/hooks';
+import {formatCountdown} from "../../helpers/format";
 
 const useStyles = makeStyles(styles);
 
@@ -23,17 +24,70 @@ export default function StakePools(props) {
   const { fromPage } = props;
   const classes = useStyles();
   const { t } = useTranslation();
-  const { pools, poolsInfo, fetchPoolsInfo } = useFetchPoolsInfo();
+  const { pools } = useFetchPoolsInfo();
+  const { address } = useConnectWallet();
+  const { halfTime, fetchHalfTime } = useFetchHalfTime();
+  const [time, setTime] = React.useState(new Date())
 
   useEffect(() => {
-    fetchPoolsInfo();
-  }, [fetchPoolsInfo]);
+    if (address) {
+      const fetchEndPeriod = () => {
+        for (const key in pools) {
+          if(halfTime[key] === undefined || halfTime[key] === 0) {
+            fetchHalfTime(key);
+          }
+        }
+      }
+
+      fetchEndPeriod();
+
+      const id = setInterval(() => {
+        fetchEndPeriod();
+      }, 10000);
+      return () => clearInterval(id);
+    }
+  }, [address, halfTime]);
+
 
   const [expanded, setExpanded] = React.useState('faq-1');
 
   const handleChange = panel => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
   };
+
+  useEffect(() => {
+    const fetchCountdown = () => {
+      setTime(new Date())
+
+      let obj = {}
+
+      for (const key in pools) {
+        if(halfTime[key] === undefined) {
+          pools[key].countdown = pools[key].status === 'closed' ? t('Finished') : '';
+          continue;
+        }
+
+        if(halfTime[key] === 0) {
+          obj = {status: 'soon', countdown: t('Coming-Soon')};
+        } else {
+          const deadline = halfTime[key] * 1000;
+          const diff = deadline - time;
+
+          obj = diff > 0 ? {status: 'active', countdown: formatCountdown(deadline)} : {status: 'closed', countdown: t('Finished')};
+        }
+
+        pools[key].status = obj.status;
+        pools[key].countdown = obj.countdown;
+      }
+    }
+
+    fetchCountdown();
+
+    const id = setInterval(() => {
+      fetchCountdown()
+    }, 1000);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <Grid container>
@@ -48,7 +102,8 @@ export default function StakePools(props) {
             <Grid
               className={[
                 classes.item,
-                pools[index].status === 'closed' ? classes.itemRetired : '',
+                pools[index].status === 'closed' ?
+                  classes.itemRetired : (pools[index].status === 'soon' ? classes.itemSoon : ''),
               ].join(' ')}
             >
               {pool.partnership ? (
@@ -67,20 +122,22 @@ export default function StakePools(props) {
               />
 
               <Typography className={classes.countdown}>
-                {pools[index].status === 'closed' ? 'FINISHED' : ''}
+                {pools[index].hideCountdown ? '' : (
+                    pools[index].countdown
+                )}
               </Typography>
 
               <Typography className={classes.subtitle} variant="body2">
                 {pool.token}
               </Typography>
-              <Button xs={5} md={2} className={classes.stakeBtn} href={`/stake/pool/${index + 1}`}>
+              <Button disabled={pools[index].status === 'soon'} xs={5} md={2} className={classes.stakeBtn} href={`/stake/pool/${index + 1}`}>
                 {pools[index].status === 'closed'
                   ? t('Stake-Button-Claim')
                   : t('Stake-Button-Stake')}
               </Button>
-              {pools[index].status === 'closed' ? (
+              {pools[index].status === 'closed' || pools[index].status === 'soon' ? (
                 <Box className={classes.ribbon}>
-                  <span>FINISHED</span>
+                  <span className={pools[index].status}>{pools[index].countdown}</span>
                 </Box>
               ) : (
                 ''
