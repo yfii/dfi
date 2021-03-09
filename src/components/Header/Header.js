@@ -50,6 +50,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
 
         <span>
           <Hidden mdDown>
+            {renderLink('heco', 'app', 'hand-holding-usd', classes)}
             {renderLink('barn', 'barn', 'warehouse', classes)}
             {renderLink('vote', 'vote', 'vote-yea', classes)}
             {renderLink('dashboard', t('stats'), 'chart-bar', classes)}
@@ -93,6 +94,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
           </IconButton>
           <div className={classes.appResponsive}>{links}</div>
           <div style={{ textAlign: 'center' }}>
+            {renderLinkSidebar('heco', 'app', 'hand-holding-usd', classes)} 
             {renderLinkSidebar('barn', 'barn', 'warehouse', classes)}
             {renderLinkSidebar('vote', 'vote', 'vote-yea', classes)}
             {renderLinkSidebar('dashboard', t('stats'), 'chart-bar', classes)}
