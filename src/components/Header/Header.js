@@ -50,7 +50,6 @@ const Header = ({ links, isNightMode, setNightMode }) => {
 
         <span>
           <Hidden mdDown>
-            {renderLink('app', 'app', 'hand-holding-usd', classes)}
             {renderLink('barn', 'barn', 'warehouse', classes)}
             {renderLink('vote', 'vote', 'vote-yea', classes)}
             {renderLink('dashboard', t('stats'), 'chart-bar', classes)}
@@ -94,7 +93,6 @@ const Header = ({ links, isNightMode, setNightMode }) => {
           </IconButton>
           <div className={classes.appResponsive}>{links}</div>
           <div style={{ textAlign: 'center' }}>
-            {renderLinkSidebar('heco', 'app', 'hand-holding-usd', classes)} 
             {renderLinkSidebar('barn', 'barn', 'warehouse', classes)}
             {renderLinkSidebar('vote', 'vote', 'vote-yea', classes)}
             {renderLinkSidebar('dashboard', t('stats'), 'chart-bar', classes)}
@@ -125,13 +123,13 @@ const renderLink = (name, label, icon, classes) => {
   );
 };
 
-const renderBoost = (classes) => {
+const renderBoost = classes => {
   return (
-      <a className={classes.btnBoost} href="/stake" >
-        <img alt='Boost' src={require('../../images/stake/boost.svg')} />
-      </a>
+    <a className={classes.btnBoost} href="/stake">
+      <img alt="Boost" src={require('../../images/stake/boost.svg')} />
+    </a>
   );
-}
+};
 
 const renderLinkSidebar = (name, label, icon, classes) => {
   return (
