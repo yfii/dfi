@@ -533,7 +533,7 @@ export const pools = [
     id: 'jul-juld-bnb',
     logo: 'bnb-pairs/JULD-BNB.svg',
     name: 'JulD-BNB LP',
-    token: 'JulD-BNB LP',
+    token: 'JulD-BNB SLP',
     tokenDescription: 'Uses: JulSwap',
     tokenAddress: '0x0c8f9a56544cc988f1873a038de2f3e4c6fe6f27',
     tokenDecimals: 18,
