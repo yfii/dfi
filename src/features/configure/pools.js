@@ -74,10 +74,34 @@ export const pools = [
   },
 
   {
+    id: 'cake-belt-bnb',
+    logo: 'bnb-pairs/BELT-BNB.svg',
+    name: 'BELT-BNB LP',
+    token: 'BELT-BNB LP',
+    tokenDescription: 'Uses: Pancake',
+    tokenAddress: '0x83B92D283cd279fF2e057BD86a95BdEfffED6faa',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooPancakeBELT-BNB',
+    earnedTokenAddress: '0xee43C2D11Bc6DF95dcECd9be05ae648863D6f9dC',
+    earnContractAddress: '0xee43C2D11Bc6DF95dcECd9be05ae648863D6f9dC',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cake-belt-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['BELT', 'BNB'],
+    callFee: 0.5,
+  },
+
+  {
     id: 'cake-ramp-busd',
     logo: 'busd-pairs/RAMP-BUSD.svg',
     name: 'RAMP-BUSD LP',
-    token: 'RAMO-BUSD LP',
+    token: 'RAMP-BUSD LP',
     tokenDescription: 'Uses: Pancake',
     tokenAddress: '0xbf36959939982d0d34b37fb3f3425da9676c13a3',
     tokenDecimals: 18,
@@ -433,7 +457,7 @@ export const pools = [
     callFee: 0.5,
   },
 
-   {
+  {
     id: 'venus-ada',
     logo: 'single-assets/ADA.svg',
     name: 'ADA',
