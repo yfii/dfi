@@ -50,7 +50,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
 
         <span>
           <Hidden mdDown>
-            {renderLink('heco', 'app', 'hand-holding-usd', classes)}
+            {renderLink('app', 'app', 'hand-holding-usd', classes)}
             {renderLink('barn', 'barn', 'warehouse', classes)}
             {renderLink('vote', 'vote', 'vote-yea', classes)}
             {renderLink('dashboard', t('stats'), 'chart-bar', classes)}
