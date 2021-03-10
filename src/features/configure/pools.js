@@ -389,7 +389,7 @@ export const pools = [
     id: 'jul-bifi-bnb',
     logo: 'bnb-pairs/BIFI-BNB.png',
     name: 'BIFI-BNB LP',
-    token: 'BIFI-BNB LP',
+    token: 'BIFI-BNB SLP',
     tokenDescription: 'Uses: Julswap',
     tokenAddress: '0xd3665568474cC090aB6B243333c2A1A3f13a9C7F',
     tokenDecimals: 18,
