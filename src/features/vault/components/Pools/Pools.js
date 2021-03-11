@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Modal from 'react-modal';
 
 import TVLLoader from './TVLLoader/TVLLoader';
+import NetworksToggle from 'components/NetworksToggle/NetworksToggle';
 import { useConnectWallet } from '../../../home/redux/hooks';
 import { useFetchBalances, useFetchVaultsData, useFetchApys } from '../../redux/hooks';
 import VisiblePools from '../VisiblePools/VisiblePools';
@@ -20,7 +20,7 @@ const useStyles = makeStyles(styles);
 export default function Pools() {
   const { t } = useTranslation();
   const { web3, address } = useConnectWallet();
-  const [isOpen, setIsOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const { pools, fetchVaultsData, fetchVaultsDataDone } = useFetchVaultsData();
   const { poolsInfo, fetchPoolsInfo } = useFetchPoolsInfo();
   const { tokens, fetchBalances, fetchBalancesDone } = useFetchBalances();
@@ -53,50 +53,7 @@ export default function Pools() {
     <Grid container className={classes.container}>
       <Grid item xs={6}>
         <h1 className={classes.title}>Network</h1>
-        <Modal
-          isOpen={isOpen}
-          onRequestClose={() => setIsOpen(false)}
-          style={{
-            content: {
-              backgroundColor: 'rgb(251, 249, 246)',
-            },
-          }}
-        >
-          <div container className={classes.networks}>
-            <div className={classes.networkProfile}>
-              <img
-                className={classes.networkImgLarge}
-                src={require('../../../../images/single-assets/BNB.png')}
-              />
-              <p className={classes.networkName}>BSC Mainnet</p>
-            </div>
-            <div className={classes.networkProfile}>
-              <img
-                className={classes.networkImgLarge}
-                src={require('../../../../images/single-assets/BNB.png')}
-              />
-              <p className={classes.networkName}>BSC Mainnet</p>
-            </div>
-          </div>
-        </Modal>
-        <div
-          className={classes.networkToggle}
-          onClick={() => {
-            setIsOpen(true);
-          }}
-          style={{
-            content: { zIndex: '1500' },
-          }}
-        >
-          <img
-            className={classes.networkImg}
-            src={require('../../../../images/single-assets/BNB.png')}
-          />
-          <div className={classes.networkTag}>
-            <div className={classes.status}></div>
-            <p className={classes.networkText}>BSC Mainnet</p>
-          </div>
-        </div>
+        <NetworksToggle />
       </Grid>
       <Grid item xs={6}>
         <div className={classes.tvl}>

@@ -4,6 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import Header from 'components/Header/Header';
 import HeaderLinks from 'components/HeaderLinks/HeaderLinks';
+import NetworksProvider from 'components/NetworksProvider/NetworksProvider';
+import NetworksModal from 'components/NetworksModal/NetworksModal';
 
 import { useTranslation } from 'react-i18next';
 
@@ -64,31 +66,37 @@ export default function App({ children }) {
     <StylesProvider injectFirst>
       <ThemeProvider theme={theme}>
         <SnackbarProvider>
-          <div className={classes.page} style={{ backgroundColor: theme.palette.background.default }}>
-            <Header
-              links={
-                <HeaderLinks
-                  address={address}
-                  connected={connected}
-                  connectWallet={() => connectWallet(web3Modal)}
-                  disconnectWallet={() => disconnectWallet(web3, web3Modal)}
-                  isNightMode={isNightMode}
-                  setNightMode={() => setNightMode(!isNightMode)}
-                />
-              }
-              isNightMode={isNightMode}
-              setNightMode={() => setNightMode(!isNightMode)}
-            />
-            <div className={classes.container}>
-              <div className={classes.children}>
-                {Boolean(networkId === Number(process.env.REACT_APP_NETWORK_ID)) && children}
-                <Notifier />
+          <NetworksProvider>
+            <NetworksModal />
+            <div
+              className={classes.page}
+              style={{ backgroundColor: theme.palette.background.default }}
+            >
+              <Header
+                links={
+                  <HeaderLinks
+                    address={address}
+                    connected={connected}
+                    connectWallet={() => connectWallet(web3Modal)}
+                    disconnectWallet={() => disconnectWallet(web3, web3Modal)}
+                    isNightMode={isNightMode}
+                    setNightMode={() => setNightMode(!isNightMode)}
+                  />
+                }
+                isNightMode={isNightMode}
+                setNightMode={() => setNightMode(!isNightMode)}
+              />
+              <div className={classes.container}>
+                <div className={classes.children}>
+                  {Boolean(networkId === Number(process.env.REACT_APP_NETWORK_ID)) && children}
+                  <Notifier />
+                </div>
               </div>
-            </div>
 
-            <Footer />
-            <Pastures />
-          </div>
+              <Footer />
+              <Pastures />
+            </div>
+          </NetworksProvider>
         </SnackbarProvider>
       </ThemeProvider>
     </StylesProvider>
