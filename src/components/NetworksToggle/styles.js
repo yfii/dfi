@@ -1,3 +1,5 @@
+import { successColor } from 'assets/jss/material-kit-pro-react.js';
+
 const styles = theme => ({
   container: {
     display: 'inline-flex',
@@ -16,7 +18,7 @@ const styles = theme => ({
   connected: {
     width: '10px',
     height: '10px',
-    backgroundColor: 'green',
+    backgroundColor: successColor[1],
     borderRadius: '50%',
   },
   tag: {

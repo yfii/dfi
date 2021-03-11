@@ -248,14 +248,14 @@ const styles = theme => ({
     marginLeft: '10px',
     marginRight: '5px',
     padding: '3px 4px',
-    border: 'solid 2px #5a8f69',
+    border: `solid 2px ${successColor[1]}`,
     borderRadius: '4px',
     '& img': {
       verticalAlign: 'middle',
       height: '15px',
     },
     '&:hover': {
-      backgroundColor: '#5a8f69',
+      backgroundColor: successColor[1],
     },
     '&:hover img': {
       filter:
