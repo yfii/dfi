@@ -59,10 +59,23 @@ const styles = theme => ({
     backgroundColor: 'green', // Change
     borderRadius: '50%',
   },
-  overlay: {},
-  portal: {
-    opacity: '0.7',
+  networks: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100%',
   },
+  networkProfile: {
+    margin: '24px',
+    textAlign: 'center',
+    backgroundColor: '#FBF6F0',
+    border: '1px solid #DED9D5',
+    padding: '24px',
+  },
+  networkImgLarge: {
+    height: '100px',
+  },
+  networkName: {},
 });
 
 export default styles;

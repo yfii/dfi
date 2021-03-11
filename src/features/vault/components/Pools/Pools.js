@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import ReactModal from 'react-modal';
+import Modal from 'react-modal';
 
 import TVLLoader from './TVLLoader/TVLLoader';
 import { useConnectWallet } from '../../../home/redux/hooks';
@@ -53,7 +53,32 @@ export default function Pools() {
     <Grid container className={classes.container}>
       <Grid item xs={6}>
         <h1 className={classes.title}>Network</h1>
-        <ReactModal isOpen={isOpen} onRequestClose={() => setIsOpen(false)} />
+        <Modal
+          isOpen={isOpen}
+          onRequestClose={() => setIsOpen(false)}
+          style={{
+            content: {
+              backgroundColor: 'rgb(251, 249, 246)',
+            },
+          }}
+        >
+          <div container className={classes.networks}>
+            <div className={classes.networkProfile}>
+              <img
+                className={classes.networkImgLarge}
+                src={require('../../../../images/single-assets/BNB.png')}
+              />
+              <p className={classes.networkName}>BSC Mainnet</p>
+            </div>
+            <div className={classes.networkProfile}>
+              <img
+                className={classes.networkImgLarge}
+                src={require('../../../../images/single-assets/BNB.png')}
+              />
+              <p className={classes.networkName}>BSC Mainnet</p>
+            </div>
+          </div>
+        </Modal>
         <div
           className={classes.networkToggle}
           onClick={() => {
@@ -66,7 +91,7 @@ export default function Pools() {
           <img
             className={classes.networkImg}
             src={require('../../../../images/single-assets/BNB.png')}
-          ></img>
+          />
           <div className={classes.networkTag}>
             <div className={classes.status}></div>
             <p className={classes.networkText}>BSC Mainnet</p>
