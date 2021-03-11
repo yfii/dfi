@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
+import ReactModal from 'react-modal';
 
 import TVLLoader from './TVLLoader/TVLLoader';
 import { useConnectWallet } from '../../../home/redux/hooks';
@@ -19,6 +20,7 @@ const useStyles = makeStyles(styles);
 export default function Pools() {
   const { t } = useTranslation();
   const { web3, address } = useConnectWallet();
+  const [isOpen, setIsOpen] = useState(false);
   const { pools, fetchVaultsData, fetchVaultsDataDone } = useFetchVaultsData();
   const { poolsInfo, fetchPoolsInfo } = useFetchPoolsInfo();
   const { tokens, fetchBalances, fetchBalancesDone } = useFetchBalances();
@@ -51,7 +53,16 @@ export default function Pools() {
     <Grid container className={classes.container}>
       <Grid item xs={6}>
         <h1 className={classes.title}>Network</h1>
-        <div className={classes.networkToggle}>
+        <ReactModal isOpen={isOpen} onRequestClose={() => setIsOpen(false)} />
+        <div
+          className={classes.networkToggle}
+          onClick={() => {
+            setIsOpen(true);
+          }}
+          style={{
+            content: { zIndex: '1500' },
+          }}
+        >
           <img
             className={classes.networkImg}
             src={require('../../../../images/single-assets/BNB.png')}

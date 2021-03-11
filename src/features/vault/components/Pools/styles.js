@@ -59,6 +59,10 @@ const styles = theme => ({
     backgroundColor: 'green', // Change
     borderRadius: '50%',
   },
+  overlay: {},
+  portal: {
+    opacity: '0.7',
+  },
 });
 
 export default styles;

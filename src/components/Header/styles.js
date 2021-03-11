@@ -35,6 +35,7 @@ const styles = theme => ({
     flexFlow: 'row nowrap',
     justifyContent: 'flex-start',
     position: 'relative',
+    zIndex: 0,
   },
   absolute: {
     position: 'absolute',
@@ -257,8 +258,9 @@ const styles = theme => ({
       backgroundColor: '#5a8f69',
     },
     '&:hover img': {
-      filter: 'invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(1000%) contrast(1000%)',
-    }
+      filter:
+        'invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(1000%) contrast(1000%)',
+    },
   },
 });
 
