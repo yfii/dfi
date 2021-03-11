@@ -27,6 +27,7 @@ const NetworksModal = () => {
         },
       }}
     >
+      <h1 className={classes.title}>Select Network</h1>
       <div className={classes.networks}>
         <a href="https://app.beefy.finance" className={classes.networkContainer}>
           <img className={classes.logo} src={require('../../images/single-assets/BNB.png')} />
