@@ -18,20 +18,24 @@ const NetworksModal = () => {
       style={{
         content: {
           backgroundColor: 'rgb(251, 249, 246)',
-          width: '50%',
-          height: '50vh',
+          top: '50%',
+          left: '50%',
+          right: 'auto',
+          bottom: 'auto',
+          marginRight: '-50%',
+          transform: 'translate(-50%, -50%)',
         },
       }}
     >
       <div className={classes.networks}>
-        <div className={classes.networkContainer}>
+        <a href="https://app.beefy.finance" className={classes.networkContainer}>
           <img className={classes.logo} src={require('../../images/single-assets/BNB.png')} />
           <p className={classes.networkName}>BSC Mainnet</p>
-        </div>
-        <div className={classes.networkContainer}>
+        </a>
+        <a href="https://heco.beefy.finance" className={classes.networkContainer}>
           <img className={classes.logo} src={require('../../images/single-assets/HT.png')} />
           <p className={classes.networkName}>HECO</p>
-        </div>
+        </a>
       </div>
     </Modal>
   );

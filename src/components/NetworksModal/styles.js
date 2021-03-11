@@ -1,3 +1,5 @@
+import { secondaryColor } from 'assets/jss/material-kit-pro-react';
+
 const styles = theme => ({
   networks: {
     display: 'flex',
@@ -9,9 +11,12 @@ const styles = theme => ({
   networkContainer: {
     margin: '24px',
     textAlign: 'center',
-    backgroundColor: '#FBF6F0',
-    border: '1px solid #DED9D5',
     padding: '24px',
+    transition: 'all 300ms ease 0s',
+    '&:hover': {
+      cursor: 'pointer',
+      transform: `scale(1.1)`,
+    },
   },
   logo: {
     height: '100px',
