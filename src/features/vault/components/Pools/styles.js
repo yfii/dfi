@@ -30,60 +30,6 @@ const styles = theme => ({
     color: theme.palette.text.secondary,
     marginTop: '0',
   },
-  networkToggle: {
-    display: 'inline-flex',
-    borderRadius: '35px',
-    backgroundColor: theme.palette.background.secondary,
-    '&:hover': {
-      backgroundColor: theme.palette.background.border,
-      cursor: 'pointer',
-    },
-    padding: '0 16px 0 0',
-    alignItems: 'center',
-  },
-  networkImg: {
-    height: '40px',
-  },
-  networkTag: {
-    display: 'flex',
-    alignItems: 'center',
-    marginLeft: '16px',
-  },
-  networkText: {
-    margin: '0 0 0 8px',
-    fontWeight: 'bold',
-  },
-  status: {
-    width: '10px',
-    height: '10px',
-    backgroundColor: 'green', // Change
-    borderRadius: '50%',
-  },
-  networks: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexWrap: 'wrap',
-    height: '100%',
-  },
-  networkProfile: {
-    margin: '24px',
-    textAlign: 'center',
-    backgroundColor: '#FBF6F0',
-    border: '1px solid #DED9D5',
-    padding: '24px',
-  },
-  networkImgLarge: {
-    height: '100px',
-  },
-  networkName: {
-    color: '#000',
-    fontSize: '18px',
-    minWidth: '150px',
-    fontWeight: 'bold',
-    lineHeight: '18px',
-    marginBottom: '0',
-  },
 });
 
 export default styles;

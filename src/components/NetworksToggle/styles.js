@@ -1,5 +1,5 @@
 const styles = theme => ({
-  networkToggle: {
+  container: {
     display: 'inline-flex',
     borderRadius: '35px',
     backgroundColor: theme.palette.background.secondary,
@@ -10,23 +10,23 @@ const styles = theme => ({
     padding: '0 16px 0 0',
     alignItems: 'center',
   },
-  networkImg: {
+  logo: {
     height: '40px',
   },
-  networkTag: {
+  connected: {
+    width: '10px',
+    height: '10px',
+    backgroundColor: 'green',
+    borderRadius: '50%',
+  },
+  tag: {
     display: 'flex',
     alignItems: 'center',
     marginLeft: '16px',
   },
-  networkText: {
+  networkName: {
     margin: '0 0 0 8px',
     fontWeight: 'bold',
-  },
-  status: {
-    width: '10px',
-    height: '10px',
-    backgroundColor: 'green', // Change
-    borderRadius: '50%',
   },
 });
 

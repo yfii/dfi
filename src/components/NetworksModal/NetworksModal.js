@@ -23,19 +23,13 @@ const NetworksModal = () => {
         },
       }}
     >
-      <div container className={classes.networks}>
-        <div className={classes.networkProfile}>
-          <img
-            className={classes.networkImgLarge}
-            src={require('../../images/single-assets/BNB.png')}
-          />
+      <div className={classes.networks}>
+        <div className={classes.networkContainer}>
+          <img className={classes.logo} src={require('../../images/single-assets/BNB.png')} />
           <p className={classes.networkName}>BSC Mainnet</p>
         </div>
-        <div className={classes.networkProfile}>
-          <img
-            className={classes.networkImgLarge}
-            src={require('../../images/single-assets/HT.png')}
-          />
+        <div className={classes.networkContainer}>
+          <img className={classes.logo} src={require('../../images/single-assets/HT.png')} />
           <p className={classes.networkName}>HECO</p>
         </div>
       </div>
