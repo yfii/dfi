@@ -5,7 +5,6 @@ import { byDecimals } from 'features/helpers/bignumber';
 import { useConnectWallet } from '../../home/redux/hooks';
 import {
   useCheckApproval,
-  useFetchPoolsInfo,
   useFetchBalance,
   useFetchCurrentlyStaked,
   useFetchRewardsAvailable,
@@ -15,6 +14,7 @@ import {
   useFetchWithdraw,
   useFetchClaim,
   useFetchExit,
+  useFetchPoolData,
 } from '../redux/hooks';
 
 import {
@@ -43,7 +43,6 @@ export default function StakePool(props) {
   const { t, i18n } = useTranslation();
   const { address } = useConnectWallet();
   const { allowance, checkApproval } = useCheckApproval();
-  const { pools, poolsInfo, fetchPoolsInfo } = useFetchPoolsInfo();
   const { balance, fetchBalance } = useFetchBalance();
   const { currentlyStaked, fetchCurrentlyStaked } = useFetchCurrentlyStaked();
   const { rewardsAvailable, fetchRewardsAvailable } = useFetchRewardsAvailable();
@@ -53,6 +52,7 @@ export default function StakePool(props) {
   const { fetchWithdraw, fetchWithdrawPending } = useFetchWithdraw();
   const { fetchClaim, fetchClaimPending } = useFetchClaim();
   const { fetchExit, fetchExitPending } = useFetchExit();
+  const { pools, poolData, fetchPoolData} = useFetchPoolData();
   const [index, setIndex] = useState(Number(props.match.params.index) - 1);
   const [showInput, setShowInput] = useState(false);
   const [isNeedApproval, setIsNeedApproval] = useState(true);
@@ -89,10 +89,6 @@ export default function StakePool(props) {
       setInputVal(value);
     }
   };
-
-  useEffect(() => {
-    fetchPoolsInfo();
-  }, [fetchPoolsInfo]);
 
   useEffect(() => {
     setIndex(Number(props.match.params.index) - 1);
@@ -195,12 +191,14 @@ export default function StakePool(props) {
       fetchCurrentlyStaked(index);
       fetchRewardsAvailable(index);
       fetchHalfTime(index);
+      fetchPoolData(index);
       const id = setInterval(() => {
         checkApproval(index);
         fetchBalance(index);
         fetchCurrentlyStaked(index);
         fetchRewardsAvailable(index);
         fetchHalfTime(index);
+        fetchPoolData(index);
       }, 10000);
       return () => clearInterval(id);
     }
@@ -215,7 +213,7 @@ export default function StakePool(props) {
   const getPoolShare = () => {
     return myCurrentlyStaked.toNumber() > 0
       ? (
-          (Math.floor(myCurrentlyStaked.toNumber() * 10000) / 10000 / poolsInfo[index].staked) *
+          (Math.floor(myCurrentlyStaked.toNumber() * 10000) / 10000 / poolData[index].staked) *
           100
         ).toFixed(4)
       : 0;
@@ -291,7 +289,7 @@ export default function StakePool(props) {
           classes.retired : ''].join(' ')}
       >
         <Grid item xs={12} sm={4}>
-          <Typography className={classes.title}>{poolsInfo[index].staked}</Typography>
+          <Typography className={classes.title}>{poolData[index].staked}</Typography>
           <Typography className={classes.subtitle}>{t('Stake-Total-Value-Locked')}</Typography>
         </Grid>
         <Grid item xs={12} sm={4}>
@@ -299,7 +297,7 @@ export default function StakePool(props) {
           <Typography className={classes.subtitle}>{t('Stake-Your-Pool')}%</Typography>
         </Grid>
         <Grid item xs={12} sm={4}>
-          <Typography className={classes.title}>{formatApy(poolsInfo[index].apy)}</Typography>
+          <Typography className={classes.title}>{formatApy(poolData[index].apy)}</Typography>
           <Typography className={classes.subtitle}>{t('Vault-APY')}</Typography>
         </Grid>
 

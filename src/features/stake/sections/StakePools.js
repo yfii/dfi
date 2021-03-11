@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import {useFetchHalfTime, useFetchPoolsInfo} from '../redux/hooks';
+import {useFetchHalfTime, useFetchPoolData} from '../redux/hooks';
 import {
   Grid,
   Typography,
@@ -24,7 +24,7 @@ export default function StakePools(props) {
   const { fromPage } = props;
   const classes = useStyles();
   const { t } = useTranslation();
-  const { pools } = useFetchPoolsInfo();
+  const { pools } = useFetchPoolData();
   const { address } = useConnectWallet();
   const { halfTime, fetchHalfTime } = useFetchHalfTime();
   const [time, setTime] = React.useState(new Date())

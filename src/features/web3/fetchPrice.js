@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { pools } from '../configure/pools';
+import { pools, staking } from '../configure';
 
 const endpoints = {
   bakery: 'https://api.beefy.finance/bakery/price?_=1615324223',
@@ -97,6 +97,13 @@ export async function initializePriceCache() {
     }
     oracleToIds.get(pool.oracle).push(pool.oracleId);
   });
+
+  staking.forEach(pool => {
+    if (!oracleToIds.has(pool.earnedOracle)) {
+      oracleToIds.set(pool.earnedOracle, []);
+    }
+    oracleToIds.get(pool.earnedOracle).push(pool.earnedOracleId);
+  })
 
   const promises = [...oracleToIds.keys()].map(key => oracleEndpoints[key](oracleToIds.get(key)));
   const results = await Promise.all(promises);
