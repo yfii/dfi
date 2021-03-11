@@ -6,8 +6,9 @@ import {
   VAULT_FETCH_BALANCES_FAILURE,
 } from './constants';
 import { MultiCall } from 'eth-multicall';
-import { erc20ABI, multicallBnbShimABI } from '../../configure';
+import { erc20ABI, multicallBnbShimABI } from 'features/configure';
 import BigNumber from 'bignumber.js';
+import { getNetworkMulticall } from 'features/helpers/getNetworkData';
 
 export function fetchBalances({ address, web3, tokens }) {
   return dispatch => {
@@ -25,7 +26,7 @@ export function fetchBalances({ address, web3, tokens }) {
         });
       }
 
-      const multicall = new MultiCall(web3, '0xB94858b0bB5437498F5453A16039337e5Fdc269C');
+      const multicall = new MultiCall(web3, getNetworkMulticall());
 
       const calls = tokensList.map(token => {
         if (!token.tokenAddress) {

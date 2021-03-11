@@ -11,6 +11,7 @@ import {
 import { fetchPrice } from '../../web3';
 import { erc20ABI, vaultABI } from '../../configure';
 import { byDecimals } from 'features/helpers/bignumber';
+import { getNetworkMulticall } from 'features/helpers/getNetworkData';
 
 export function fetchVaultsData({ address, web3, pools }) {
   return dispatch => {
@@ -19,7 +20,7 @@ export function fetchVaultsData({ address, web3, pools }) {
     });
 
     const promise = new Promise((resolve, reject) => {
-      const multicall = new MultiCall(web3, '0xB94858b0bB5437498F5453A16039337e5Fdc269C');
+      const multicall = new MultiCall(web3, getNetworkMulticall());
 
       const tokenCalls = pools.map(pool => {
         const bnbShimAddress = '0xC72E5edaE5D7bA628A2Acb39C8Aa0dbbD06daacF';
