@@ -1,4 +1,4 @@
-export const pools = [
+export const bscPools = [
   {
     id: 'bifi-maxi',
     logo: 'single-assets/BIFI.png',

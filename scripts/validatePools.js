@@ -1,5 +1,6 @@
 // To run: yarn validate
 
+// FIXME: Adapt validatePools to multichain.
 import { pools } from '../src/features/configure/pools.js';
 
 let valid = true;

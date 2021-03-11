@@ -1,6 +1,7 @@
-import { pools } from '../../configure';
+import { getNetworkPools } from '../../helpers/getNetworkData';
 
 const tokens = {};
+const pools = getNetworkPools();
 
 pools.forEach(({ token, tokenAddress, earnedToken, earnedTokenAddress }) => {
   tokens[token] = {

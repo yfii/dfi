@@ -1,6 +1,15 @@
-import { pools } from '../../../configure/pools.js';
+import { getNetworkPools, getNetworkStables } from '../../../helpers/getNetworkData';
 
-const unique = (key) => [...new Set(pools.map(pool => pool[key]).flat().filter(data => data !== undefined).sort())];
+const unique = key => [
+  ...new Set(
+    getNetworkPools()
+      .map(pool => pool[key])
+      .flat()
+      .filter(data => data !== undefined)
+      .sort()
+  ),
+];
+
 export const assets = unique('assets');
 export const platforms = unique('platform');
-export const stables = ['BUSD', 'USDT', 'USDC', 'DAI', 'VAI', 'QUSD'];
+export const stables = getNetworkStables();
