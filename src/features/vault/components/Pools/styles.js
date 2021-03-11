@@ -2,9 +2,10 @@ const styles = theme => ({
   container: {
     paddingTop: '4px',
   },
-  titles: {
+  tvl: {
     display: 'flex',
-    justifyContent: 'space-between',
+    flexDirection: 'column',
+    alignItems: 'flex-end',
   },
   title: {
     fontSize: '32px',
@@ -18,10 +19,6 @@ const styles = theme => ({
   titleLoader: {
     marginLeft: '12px',
   },
-  subtitles: {
-    display: 'flex',
-    justifyContent: 'space-between',
-  },
   subtitle: {
     fontSize: '14px',
     letterSpacing: '0',
@@ -31,6 +28,36 @@ const styles = theme => ({
     },
     fontWeight: '550',
     color: theme.palette.text.secondary,
+    marginTop: '0',
+  },
+  networkToggle: {
+    display: 'inline-flex',
+    borderRadius: '35px',
+    backgroundColor: theme.palette.background.secondary,
+    '&:hover': {
+      backgroundColor: theme.palette.background.border,
+      cursor: 'pointer',
+    },
+    padding: '0 16px 0 0',
+    alignItems: 'center',
+  },
+  networkImg: {
+    height: '40px',
+  },
+  networkTag: {
+    display: 'flex',
+    alignItems: 'center',
+    marginLeft: '16px',
+  },
+  networkText: {
+    margin: '0 0 0 8px',
+    fontWeight: 'bold',
+  },
+  status: {
+    width: '10px',
+    height: '10px',
+    backgroundColor: 'green', // Change
+    borderRadius: '50%',
   },
 });
 

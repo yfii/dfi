@@ -10,7 +10,7 @@ import VisiblePools from '../VisiblePools/VisiblePools';
 import styles from './styles';
 import usePoolsTvl from '../../hooks/usePoolsTvl';
 import { formatGlobalTvl } from 'features/helpers/format';
-import {useFetchPoolsInfo} from "../../../stake/redux/fetchPoolsInfo";
+import { useFetchPoolsInfo } from '../../../stake/redux/fetchPoolsInfo';
 
 const FETCH_INTERVAL_MS = 30 * 1000;
 
@@ -49,9 +49,21 @@ export default function Pools() {
 
   return (
     <Grid container className={classes.container}>
-      <Grid item xs={12}>
-        <div className={classes.titles}>
-          <h1 className={classes.title}>{t('Vault-MainTitle')}</h1>
+      <Grid item xs={6}>
+        <h1 className={classes.title}>Network</h1>
+        <div className={classes.networkToggle}>
+          <img
+            className={classes.networkImg}
+            src={require('../../../../images/single-assets/BNB.png')}
+          ></img>
+          <div className={classes.networkTag}>
+            <div className={classes.status}></div>
+            <p className={classes.networkText}>BSC Mainnet</p>
+          </div>
+        </div>
+      </Grid>
+      <Grid item xs={6}>
+        <div className={classes.tvl}>
           <h1 className={classes.title}>
             TVL{' '}
             {fetchVaultsDataDone && poolsTvl > 0 ? (
@@ -60,9 +72,6 @@ export default function Pools() {
               <TVLLoader className={classes.titleLoader} />
             )}
           </h1>
-        </div>
-        <div className={classes.subtitles}>
-          <h3 className={classes.subtitle}>{t('Vault-SecondTitle')}</h3>
           <h3 className={classes.subtitle}>{t('Vault-WithdrawFee')}</h3>
         </div>
       </Grid>
