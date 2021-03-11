@@ -1,4 +1,4 @@
-import { secondaryColor } from 'assets/jss/material-kit-pro-react';
+import { successColor } from 'assets/jss/material-kit-pro-react';
 
 const styles = theme => ({
   close: {
@@ -43,6 +43,24 @@ const styles = theme => ({
     fontWeight: 'bold',
     lineHeight: '18px',
     marginBottom: '0',
+  },
+  connected: {
+    width: '10px',
+    height: '10px',
+    backgroundColor: successColor[1],
+    borderRadius: '50%',
+    margin: 'auto 8px auto -10px',
+  },
+  tag: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: '8px',
+  },
+  networkName: {
+    margin: '0',
+    fontWeight: 'bold',
+    color: theme.palette.text.primary,
   },
 });
 

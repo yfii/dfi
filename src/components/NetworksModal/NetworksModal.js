@@ -36,11 +36,16 @@ const NetworksModal = () => {
       <div className={classes.networks}>
         <a href="https://app.beefy.finance" className={classes.networkContainer}>
           <img className={classes.logo} src={require('../../images/single-assets/BNB.png')} />
-          <p className={classes.networkName}>BSC</p>
+          <div className={classes.tag}>
+            <div className={classes.connected}></div>
+            <p className={classes.networkName}>BSC</p>
+          </div>
         </a>
         <a href="https://heco.beefy.finance" className={classes.networkContainer}>
           <img className={classes.logo} src={require('../../images/single-assets/HT.png')} />
-          <p className={classes.networkName}>HECO</p>
+          <div className={classes.tag}>
+            <p className={classes.networkName}>HECO</p>
+          </div>
         </a>
       </div>
     </Modal>
