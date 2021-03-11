@@ -1,6 +1,11 @@
 import { secondaryColor } from 'assets/jss/material-kit-pro-react';
 
 const styles = theme => ({
+  close: {
+    position: 'absolute',
+    right: '8px',
+    top: '8px',
+  },
   title: {
     fontSize: '32px',
     letterSpacing: '0',
@@ -9,6 +14,7 @@ const styles = theme => ({
     color: theme.palette.text.primary,
     display: 'flex',
     alignItems: 'center',
+    justifyContent: 'center',
   },
   networks: {
     display: 'flex',

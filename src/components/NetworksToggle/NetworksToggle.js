@@ -15,7 +15,7 @@ const NetworksToggle = () => {
       <img className={classes.logo} src={require('images/single-assets/BNB.png')} />
       <div className={classes.tag}>
         <div className={classes.connected}></div>
-        <p className={classes.networkName}>BSC Mainnet</p>
+        <p className={classes.networkName}>BSC</p>
       </div>
     </div>
   );

@@ -1,6 +1,8 @@
 import React from 'react';
 import Modal from 'react-modal';
 import { makeStyles } from '@material-ui/core/styles';
+import IconButton from '@material-ui/core/IconButton';
+import Close from '@material-ui/icons/Close';
 
 import styles from './styles';
 import { useNetworks } from 'components/NetworksProvider/NetworksProvider';
@@ -27,11 +29,14 @@ const NetworksModal = () => {
         },
       }}
     >
+      <IconButton className={classes.close} onClick={closeModal}>
+        <Close />
+      </IconButton>
       <h1 className={classes.title}>Select Network</h1>
       <div className={classes.networks}>
         <a href="https://app.beefy.finance" className={classes.networkContainer}>
           <img className={classes.logo} src={require('../../images/single-assets/BNB.png')} />
-          <p className={classes.networkName}>BSC Mainnet</p>
+          <p className={classes.networkName}>BSC</p>
         </a>
         <a href="https://heco.beefy.finance" className={classes.networkContainer}>
           <img className={classes.logo} src={require('../../images/single-assets/HT.png')} />
