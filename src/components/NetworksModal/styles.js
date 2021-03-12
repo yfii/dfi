@@ -7,14 +7,18 @@ const styles = theme => ({
     top: '8px',
   },
   title: {
-    fontSize: '32px',
+    fontSize: '24px',
     letterSpacing: '0',
-    lineHeight: '32px',
+    lineHeight: '24px',
     fontWeight: '550',
     color: theme.palette.text.primary,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    [theme.breakpoints.up('md')]: {
+      fontSize: '32px',
+      lineHeight: '32px',
+    },
   },
   networks: {
     display: 'flex',
@@ -24,17 +28,22 @@ const styles = theme => ({
     height: '100%',
   },
   networkContainer: {
-    margin: '24px',
+    margin: '16px',
     textAlign: 'center',
-    padding: '24px',
     transition: 'all 300ms ease 0s',
     '&:hover': {
       cursor: 'pointer',
       transform: `scale(1.1)`,
     },
+    [theme.breakpoints.up('md')]: {
+      margin: '24px',
+    },
   },
   logo: {
-    height: '100px',
+    height: '75px',
+    [theme.breakpoints.up('md')]: {
+      margin: '100px',
+    },
   },
   networkName: {
     color: '#000',
