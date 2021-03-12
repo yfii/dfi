@@ -5,7 +5,7 @@ const endpoints = {
   bakery: 'https://api.beefy.finance/bakery/price?_=1615324223',
   coingecko: 'https://api.coingecko.com/api/v3/simple/price',
   pancake: 'https://api.beefy.finance/pancake/price?_=1615324223',
-  lps: 'https://api.beefy.finance/lps?_=1615324299',
+  lps: 'https://api.beefy.finance/lps?_=1615324888',
 };
 
 const CACHE_TIMEOUT_MS = 1 * 60 * 1000; // 1 minute(s)
