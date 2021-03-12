@@ -12,11 +12,13 @@ const NetworksProvider = ({ children }) => {
       name: 'BSC',
       asset: 'BNB',
       id: '56',
+      url: 'https://app.beefy.finance',
     },
     {
       name: 'HECO',
       asset: 'HT',
       id: '128',
+      url: 'https://heco.beefy.finance',
     },
   ];
 

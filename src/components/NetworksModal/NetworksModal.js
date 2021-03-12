@@ -11,11 +11,19 @@ const useStyles = makeStyles(styles);
 
 const NetworksModal = () => {
   const classes = useStyles();
-  const { isModalOpen, closeModal } = useNetworks();
+  const { isModalOpen, closeModal, networks, currentNetwork } = useNetworks();
 
   useEffect(() => {
     Modal.setAppElement('#root');
   }, []);
+
+  const handleNetworkClick = network => {
+    if (network.id === currentNetwork.id) {
+      closeModal();
+    } else {
+      window.open(network.url, '_self');
+    }
+  };
 
   return (
     <Modal
@@ -38,19 +46,18 @@ const NetworksModal = () => {
       </IconButton>
       <h1 className={classes.title}>Select Network</h1>
       <div className={classes.networks}>
-        <a href="https://app.beefy.finance" className={classes.networkContainer}>
-          <img className={classes.logo} src={require('../../images/single-assets/BNB.png')} />
-          <div className={classes.tag}>
-            <div className={classes.connected}></div>
-            <p className={classes.networkName}>BSC</p>
+        {networks.map(network => (
+          <div onClick={() => handleNetworkClick(network)} className={classes.networkContainer}>
+            <img
+              className={classes.logo}
+              src={require(`images/single-assets/${network.asset}.png`)}
+            />
+            <div className={classes.tag}>
+              {network.id === currentNetwork.id && <div className={classes.connected}></div>}
+              <p className={classes.networkName}>{network.name}</p>
+            </div>
           </div>
-        </a>
-        <a href="https://heco.beefy.finance" className={classes.networkContainer}>
-          <img className={classes.logo} src={require('../../images/single-assets/HT.png')} />
-          <div className={classes.tag}>
-            <p className={classes.networkName}>HECO</p>
-          </div>
-        </a>
+        ))}
       </div>
     </Modal>
   );
