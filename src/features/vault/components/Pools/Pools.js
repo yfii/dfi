@@ -20,7 +20,6 @@ const useStyles = makeStyles(styles);
 export default function Pools() {
   const { t } = useTranslation();
   const { web3, address } = useConnectWallet();
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const { pools, fetchVaultsData, fetchVaultsDataDone } = useFetchVaultsData();
   const { poolsInfo, fetchPoolsInfo } = useFetchPoolsInfo();
   const { tokens, fetchBalances, fetchBalancesDone } = useFetchBalances();
