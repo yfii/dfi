@@ -1,11 +1,13 @@
 import axios from 'axios';
+
 import { getNetworkPools } from '../helpers/getNetworkData';
+import { staking } from '../configure';
 
 const endpoints = {
   bakery: 'https://api.beefy.finance/bakery/price?_=1615324223',
   coingecko: 'https://api.coingecko.com/api/v3/simple/price',
   pancake: 'https://api.beefy.finance/pancake/price?_=1615324223',
-  lps: 'https://api.beefy.finance/lps?_=1615324228',
+  lps: 'https://api.beefy.finance/lps?_=1615324888',
 };
 
 const pools = getNetworkPools();
@@ -98,6 +100,13 @@ export async function initializePriceCache() {
       oracleToIds.set(pool.oracle, []);
     }
     oracleToIds.get(pool.oracle).push(pool.oracleId);
+  });
+
+  staking.forEach(pool => {
+    if (!oracleToIds.has(pool.earnedOracle)) {
+      oracleToIds.set(pool.earnedOracle, []);
+    }
+    oracleToIds.get(pool.earnedOracle).push(pool.earnedOracleId);
   });
 
   const promises = [...oracleToIds.keys()].map(key => oracleEndpoints[key](oracleToIds.get(key)));

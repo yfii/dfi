@@ -17,7 +17,7 @@ export const getNetworkPools = () => {
 export const getNetworkStables = () => {
   switch (process.env.REACT_APP_NETWORK_ID) {
     case '56':
-      return ['BUSD', 'USDT', 'USDC', 'DAI', 'VAI', 'QUSD'];
+      return ['BUSD', 'USDT', 'USDC', 'DAI', 'VAI', 'QUSD', 'UST'];
     case '128':
       return ['USDT', 'HUSD'];
     default:

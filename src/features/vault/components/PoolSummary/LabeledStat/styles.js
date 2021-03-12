@@ -13,6 +13,13 @@ const styles = (theme) => ({
     letterSpacing: 0,
     position: 'relative',
   },
+  substat: {
+    fontSize: '16px',
+    fontWeight: '400',
+    color: theme.palette.text.secondary,
+    lineHeight: '14px',
+    letterSpacing: 0,
+  },
   label: {
     fontSize: '14px',
     fontWeight: '400',
