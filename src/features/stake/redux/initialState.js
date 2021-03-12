@@ -1,9 +1,9 @@
 import { staking as pools } from '../../configure';
 
-const poolsInfo = [];
+const poolData = [];
 const initPoolsInfo = () => {
   for (let key in pools) {
-    poolsInfo.push({
+    poolData.push({
       id: pools[key].id,
       name: pools[key].name,
       staked: 0,
@@ -30,8 +30,8 @@ const initialState = {
   halfTime,
   canWithdrawTime,
   balance,
-  poolsInfo,
-  fetchPoolsInfoPending: false,
+  poolData,
+  fetchPoolDataPending: [false],
   checkApprovalPending: [false, false, false, false, false],
   fetchBalancePending: [false, false, false, false, false],
   fetchCurrentlyStakedPending: [false, false, false, false, false],
