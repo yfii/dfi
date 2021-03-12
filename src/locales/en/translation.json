@@ -1,6 +1,6 @@
 {
   "Disclaimer": "Using Smart Contracts, Tokens, and Crypto is always a risk. DYOR before investing.",
-  "Network-Error": "Network error",
+  "Network-Error": "Connect to the correct network please.",
   "Vault-Wallet": "Wallet",
   "Vault-Balance": "Balance",
   "Vault-APY": "APY",
