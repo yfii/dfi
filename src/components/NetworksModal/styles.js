@@ -36,13 +36,13 @@ const styles = theme => ({
       transform: `scale(1.1)`,
     },
     [theme.breakpoints.up('md')]: {
-      margin: '24px',
+      margin: '32px',
     },
   },
   logo: {
     height: '75px',
     [theme.breakpoints.up('md')]: {
-      margin: '100px',
+      height: '100px',
     },
   },
   networkName: {
