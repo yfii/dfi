@@ -45,7 +45,6 @@ export const pools = [
     platform: 'Autofarm',
     assets: ['BETH', 'ETH'],
     callFee: 0.5,
-    launchpool: 'moo_auto_beth-soups',
   },
 
   {
@@ -70,7 +69,6 @@ export const pools = [
     platform: 'Autofarm',
     assets: ['BNB'],
     callFee: 0.5,
-    launchpool: 'moo_auto_wbnb-banana',
   },
 
   {
