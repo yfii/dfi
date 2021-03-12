@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useMemo } from 'react';
 
 export const NetworksContext = createContext(null);
 
@@ -7,12 +7,32 @@ const NetworksProvider = ({ children }) => {
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
+  const networks = [
+    {
+      name: 'BSC',
+      asset: 'BNB',
+      id: '56',
+    },
+    {
+      name: 'HECO',
+      asset: 'HT',
+      id: '128',
+    },
+  ];
+
+  const currentNetwork = useMemo(
+    () => networks.find(network => network.id === process.env.REACT_APP_NETWORK_ID),
+    []
+  );
+
   return (
     <NetworksContext.Provider
       value={{
         isModalOpen,
         openModal,
         closeModal,
+        networks,
+        currentNetwork,
       }}
     >
       {children}

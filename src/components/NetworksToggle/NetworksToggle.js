@@ -8,14 +8,17 @@ const useStyles = makeStyles(styles);
 
 const NetworksToggle = () => {
   const classes = useStyles();
-  const { openModal } = useNetworks();
+  const { openModal, currentNetwork } = useNetworks();
 
   return (
     <div className={classes.container} onClick={openModal}>
-      <img className={classes.logo} src={require('images/single-assets/BNB.png')} />
+      <img
+        className={classes.logo}
+        src={require(`images/single-assets/${currentNetwork.asset}.png`)}
+      />
       <div className={classes.tag}>
         <div className={classes.connected}></div>
-        <p className={classes.networkName}>BSC</p>
+        <p className={classes.networkName}>{currentNetwork.name}</p>
       </div>
     </div>
   );
