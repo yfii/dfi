@@ -45,9 +45,9 @@ const PoolSummary = ({
     return state === null ? '' : <PoolPaused message={t(state)} isBoosted={!!launchpool} />;
   };
 
-  const balanceUsd = balanceSingle > 0 ? formatTvl(balanceSingle, pool.oraclePrice) : '';
+  const balanceUsd = balanceSingle && fetchVaultsDataDone > 0 ? formatTvl(balanceSingle, pool.oraclePrice) : '';
   const deposited = byDecimals(sharesBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)), pool.tokenDecimals);
-  const depositedUsd = deposited > 0 ? formatTvl(deposited, pool.oraclePrice) : '';
+  const depositedUsd = deposited && fetchVaultsDataDone > 0 ? formatTvl(deposited, pool.oraclePrice) : '';
 
   return (
     <AccordionSummary
