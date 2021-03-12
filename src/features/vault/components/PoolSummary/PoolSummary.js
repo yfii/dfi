@@ -45,6 +45,10 @@ const PoolSummary = ({
     return state === null ? '' : <PoolPaused message={t(state)} isBoosted={!!launchpool} />;
   };
 
+  const balanceUsd = balanceSingle > 0 ? formatTvl(balanceSingle, pool.oraclePrice) : '';
+  const deposited = byDecimals(sharesBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)), pool.tokenDecimals);
+  const depositedUsd = deposited > 0 ? formatTvl(deposited, pool.oraclePrice) : '';
+
   return (
     <AccordionSummary
       className={
@@ -80,18 +84,15 @@ const PoolSummary = ({
             <Hidden smDown>
               <LabeledStat
                 value={formatDecimals(balanceSingle)}
+                subvalue={balanceUsd}
                 label={t('Vault-Balance')}
                 isLoading={!fetchBalancesDone}
                 xs={5}
                 md={3}
               />
               <LabeledStat
-                value={formatDecimals(
-                  byDecimals(
-                    sharesBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)),
-                    pool.tokenDecimals
-                  )
-                )}
+                value={formatDecimals(deposited)}
+                subvalue={depositedUsd}
                 label={t('Vault-Deposited')}
                 isLoading={!fetchBalancesDone}
                 xs={5}
@@ -135,17 +136,14 @@ const PoolSummary = ({
           <Grid item xs={12} style={{ display: 'flex' }} className={classes.mobilePadding}>
             <LabeledStat
               value={formatDecimals(balanceSingle)}
+              subvalue={balanceUsd}
               label={t('Vault-Balance')}
               isLoading={!fetchBalancesDone}
               xs={6}
             />
             <LabeledStat
-              value={formatDecimals(
-                byDecimals(
-                  sharesBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)),
-                  pool.tokenDecimals
-                )
-              )}
+              value={formatDecimals(deposited)}
+              subvalue={depositedUsd}
               label={t('Vault-Deposited')}
               xs={6}
               align="start"

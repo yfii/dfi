@@ -8,7 +8,7 @@ import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-const LabeledStat = ({ value, label, xs, md, boosted, isLoading = false}) => {
+const LabeledStat = ({ value, label, xs, md, boosted, isLoading = false, subvalue}) => {
   const classes = useStyles();
 
   return (
@@ -21,6 +21,10 @@ const LabeledStat = ({ value, label, xs, md, boosted, isLoading = false}) => {
 
           {isLoading ? <ValueLoader /> : <span className={boosted ? classes.crossed : ''}>{value}</span>}
       </Typography>
+      {subvalue && !isLoading ?
+        <Typography className={classes.substat} variant='body2' gutterBottom>
+          {subvalue}
+        </Typography> : ''}
       <Typography className={classes.label} variant="body2">
         {label}
       </Typography>
