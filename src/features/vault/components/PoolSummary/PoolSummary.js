@@ -48,6 +48,7 @@ const PoolSummary = ({
   const balanceUsd = balanceSingle > 0 && fetchVaultsDataDone ? formatTvl(balanceSingle, pool.oraclePrice) : '';
   const deposited = byDecimals(sharesBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)), pool.tokenDecimals);
   const depositedUsd = deposited > 0 && fetchVaultsDataDone ? formatTvl(deposited, pool.oraclePrice) : '';
+  const mobilePadding = balanceSingle > 0 || deposited > 0 ? '24px' : '10px';
 
   return (
     <AccordionSummary
@@ -68,18 +69,16 @@ const PoolSummary = ({
         container
         alignItems="center"
         justify="space-around"
-        spacing={1}
-        style={{ paddingTop: '16px', paddingBottom: '16px' }}
+        style={{ paddingTop: '20px', paddingBottom: '20px' }}
       >
         {vaultStateTitle(pool.status, pool.depositsPaused)}
         <PoolTitle
           name={pool.name}
           logo={pool.logo}
           description={pool.tokenDescription}
-          url={pool.tokenDescriptionUrl}
           launchpool={launchpool}
         />
-        <Grid item md={7} xs={4}>
+        <Grid item md={8} xs={7}>
           <Grid item container justify="space-between">
             <Hidden smDown>
               <LabeledStat
@@ -126,14 +125,9 @@ const PoolSummary = ({
             </Hidden>
           </Grid>
         </Grid>
-        <SummaryActions
-          helpUrl={pool.tokenDescriptionUrl}
-          toggleCard={toggleCard}
-          isOpen={isOpen}
-        />
 
         <Hidden mdUp>
-          <Grid item xs={12} style={{ display: 'flex' }} className={classes.mobilePadding}>
+          <Grid item xs={12} style={{ display: 'flex', paddingTop: mobilePadding }} className={classes.mobilePadding}>
             <LabeledStat
               value={formatDecimals(balanceSingle)}
               subvalue={balanceUsd}
