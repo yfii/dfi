@@ -13,6 +13,7 @@ REACT_APP_NETWORK_ID = 56 // Network ID of BSC
 ```
 
 ## To Run
+
 ```
 yarn
 yarn start
@@ -26,4 +27,4 @@ Beefy.Finance exists thanks to its contributors. There are many ways you can par
 
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE).
