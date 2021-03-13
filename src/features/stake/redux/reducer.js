@@ -1,4 +1,5 @@
 import initialState from './initialState';
+import { reducer as fetchPoolsInfoReducer } from './fetchPoolsInfo';
 import { reducer as fetchPoolDataReducer } from './fetchPoolData';
 import { reducer as checkApprovalReducer} from './checkApproval';
 import { reducer as fetchBalanceReducer} from './fetchBalance';
@@ -14,6 +15,7 @@ import { reducer as fetchExitReducer } from './fetchExit';
 
 
 const reducers = [
+  fetchPoolsInfoReducer,
   fetchPoolDataReducer,
   checkApprovalReducer,
   fetchBalanceReducer,
