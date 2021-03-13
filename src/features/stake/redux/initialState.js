@@ -1,5 +1,6 @@
 import { staking as pools } from '../../configure';
 
+let poolsInfo = [];
 const poolData = [];
 const initPoolsInfo = () => {
   for (let key in pools) {
@@ -11,6 +12,7 @@ const initPoolsInfo = () => {
       apy: 0,
     });
   }
+  poolsInfo = poolData
 };
 
 initPoolsInfo();
@@ -30,7 +32,9 @@ const initialState = {
   halfTime,
   canWithdrawTime,
   balance,
+  poolsInfo,
   poolData,
+  fetchPoolsInfoPending: false,
   fetchPoolDataPending: [false],
   checkApprovalPending: [false, false, false, false, false],
   fetchBalancePending: [false, false, false, false, false],
