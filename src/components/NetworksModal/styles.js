@@ -45,14 +45,6 @@ const styles = theme => ({
       height: '100px',
     },
   },
-  networkName: {
-    color: '#000',
-    fontSize: '18px',
-    minWidth: '150px',
-    fontWeight: 'bold',
-    lineHeight: '18px',
-    marginBottom: '0',
-  },
   connected: {
     width: '10px',
     height: '10px',

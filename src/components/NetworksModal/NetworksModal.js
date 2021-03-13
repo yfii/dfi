@@ -51,6 +51,7 @@ const NetworksModal = () => {
             <img
               className={classes.logo}
               src={require(`images/single-assets/${network.asset}.png`)}
+              alt={`${currentNetwork.asset} logo`}
             />
             <div className={classes.tag}>
               {network.id === currentNetwork.id && <div className={classes.connected}></div>}

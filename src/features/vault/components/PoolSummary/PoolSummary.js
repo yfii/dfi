@@ -12,7 +12,6 @@ import styles from './styles';
 import PoolPaused from './PoolPaused/PoolPaused';
 import PoolTitle from './PoolTitle/PoolTitle';
 import LabeledStat from './LabeledStat/LabeledStat';
-import SummaryActions from './SummaryActions/SummaryActions';
 
 const useStyles = makeStyles(styles);
 
@@ -38,16 +37,21 @@ const PoolSummary = ({
         ? t('Vault-DepositsPausedTitle')
         : null;
 
-    if(launchpool) {
-      state = 'Boosted by ' + launchpool.name
+    if (launchpool) {
+      state = 'Boosted by ' + launchpool.name;
     }
 
     return state === null ? '' : <PoolPaused message={t(state)} isBoosted={!!launchpool} />;
   };
 
-  const balanceUsd = balanceSingle > 0 && fetchVaultsDataDone ? formatTvl(balanceSingle, pool.oraclePrice) : '';
-  const deposited = byDecimals(sharesBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)), pool.tokenDecimals);
-  const depositedUsd = deposited > 0 && fetchVaultsDataDone ? formatTvl(deposited, pool.oraclePrice) : '';
+  const balanceUsd =
+    balanceSingle > 0 && fetchVaultsDataDone ? formatTvl(balanceSingle, pool.oraclePrice) : '';
+  const deposited = byDecimals(
+    sharesBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)),
+    pool.tokenDecimals
+  );
+  const depositedUsd =
+    deposited > 0 && fetchVaultsDataDone ? formatTvl(deposited, pool.oraclePrice) : '';
   const mobilePadding = balanceSingle > 0 || deposited > 0 ? '24px' : '10px';
 
   return (
@@ -127,7 +131,12 @@ const PoolSummary = ({
         </Grid>
 
         <Hidden mdUp>
-          <Grid item xs={12} style={{ display: 'flex', paddingTop: mobilePadding }} className={classes.mobilePadding}>
+          <Grid
+            item
+            xs={12}
+            style={{ display: 'flex', paddingTop: mobilePadding }}
+            className={classes.mobilePadding}
+          >
             <LabeledStat
               value={formatDecimals(balanceSingle)}
               subvalue={balanceUsd}

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useFetchHalfTime, useFetchPoolData } from '../redux/hooks';
+import { useFetchHalfTime, useFetchPoolsInfo } from '../redux/hooks';
 import {
   Grid,
   Typography,

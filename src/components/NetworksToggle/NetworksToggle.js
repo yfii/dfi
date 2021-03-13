@@ -15,6 +15,7 @@ const NetworksToggle = () => {
       <img
         className={classes.logo}
         src={require(`images/single-assets/${currentNetwork.asset}.png`)}
+        alt={`${currentNetwork.asset} logo`}
       />
       <div className={classes.tag}>
         <div className={classes.connected}></div>
