@@ -119,7 +119,7 @@ export const bscPools = [
   },
 
   {
-    id: 'moo_belt_venus-slime',
+    id: 'belt-venus-blp',
     logo: 'uncategorized/BELT-VENUSBLP.png',
     name: 'BELT VENUS BLP',
     token: 'VENUS BLP',
