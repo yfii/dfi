@@ -49,12 +49,13 @@ export const staking = [
     earnedOracle: 'pancake',
     earnedOracleId: 'SLIME',
     partnership: true,
-    status: 'active',
+    status: 'soon',
     isMooStaked: true,
     partner: {
       logo: 'stake/slimefinance/logo.png',
       background: 'stake/slimefinance/background.png',
-      text: 'Slime Finance is a new yield farming project on the Binance Smart Chain. We yearn to offer competitive yield rates for our investors by delivering innovative updates in a timely manner. What differentiates us from other yield services is how we interact with our community. We strive to listen to all suggestions given on our social media and let the community vote for features. We are a team of software developers with bold ideas, working rigorously, passionately, and tirelessly on the Slime Finance project. We promise to deliver on the mid to long term a true utility to our Slime Token and fight against traditional yield farm inflation.',
+      text:
+        'Slime Finance is a new yield farming project on the Binance Smart Chain. We yearn to offer competitive yield rates for our investors by delivering innovative updates in a timely manner. What differentiates us from other yield services is how we interact with our community. We strive to listen to all suggestions given on our social media and let the community vote for features. We are a team of software developers with bold ideas, working rigorously, passionately, and tirelessly on the Slime Finance project. We promise to deliver on the mid to long term a true utility to our Slime Token and fight against traditional yield farm inflation.',
       website: 'https://slime.finance/',
       social: {
         telegram: 'https://t.me/slimefinance',
@@ -203,7 +204,7 @@ export const staking = [
     earnedOracle: 'pancake',
     earnedOracleId: 'BANANA',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     partner: {
       logo: 'stake/apeswap/logo.png',
@@ -234,7 +235,7 @@ export const staking = [
     earnedOracle: 'pancake',
     earnedOracleId: 'SOUPS',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     partner: {
       logo: 'stake/soup/logo.png',
