@@ -49,7 +49,7 @@ export const staking = [
     earnedOracle: 'pancake',
     earnedOracleId: 'SLIME',
     partnership: true,
-    status: 'soon',
+    status: 'active',
     isMooStaked: true,
     partner: {
       logo: 'stake/slimefinance/logo.png',
