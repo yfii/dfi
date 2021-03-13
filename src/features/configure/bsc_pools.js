@@ -138,7 +138,7 @@ export const bscPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Belt',
-    assets: ['USDT', 'BUSD', 'USDC', 'DAI'],
+    assets: ['USDT', 'BUSD', 'USDC', 'DAI', 'VENUS BLP'],
     callFee: 0.5,
   },
 
