@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   STAKE_FETCH_EXIT_BEGIN,
   STAKE_FETCH_EXIT_SUCCESS,

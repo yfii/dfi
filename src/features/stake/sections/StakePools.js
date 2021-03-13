@@ -21,10 +21,9 @@ import { formatCountdown } from '../../helpers/format';
 const useStyles = makeStyles(styles);
 
 export default function StakePools(props) {
-  const { fromPage } = props;
   const classes = useStyles();
   const { t } = useTranslation();
-  const { pools } = useFetchPoolData();
+  const { pools } = useFetchPoolsInfo();
   const { address } = useConnectWallet();
   const { halfTime, fetchHalfTime } = useFetchHalfTime();
   const [time, setTime] = React.useState(new Date());
@@ -46,7 +45,7 @@ export default function StakePools(props) {
       }, 10000);
       return () => clearInterval(id);
     }
-  }, [address, halfTime]);
+  }, [address, halfTime, fetchHalfTime, pools]);
 
   const [expanded, setExpanded] = React.useState('faq-1');
 
@@ -89,7 +88,7 @@ export default function StakePools(props) {
       fetchCountdown();
     }, 1000);
     return () => clearInterval(id);
-  }, []);
+  }, [halfTime, pools, t, time]);
 
   return (
     <Grid container>
