@@ -24,7 +24,7 @@ const NetworksProvider = ({ children }) => {
 
   const currentNetwork = useMemo(
     () => networks.find(network => network.id === process.env.REACT_APP_NETWORK_ID),
-    []
+    [networks]
   );
 
   return (
