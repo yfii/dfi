@@ -33,7 +33,7 @@ export const staking = [
     },
   },
   {
-    id: 'moo_auto_belt-slime',
+    id: 'moo_belt_venus-slime',
     name: 'Slime Finance',
     logo: 'uncategorized/BELT-VENUSBLP.png',
     token: 'mooBeltVenusBLP',
