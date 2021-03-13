@@ -17,8 +17,10 @@ const styles = (theme) => ({
     fontSize: '16px',
     fontWeight: '400',
     color: theme.palette.text.secondary,
-    lineHeight: '14px',
-    letterSpacing: 0,
+    width: '100%',
+    textAlign: 'center',
+    position: 'absolute',
+    top: '-20px',
   },
   label: {
     fontSize: '14px',

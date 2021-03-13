@@ -9,7 +9,7 @@ import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-const PoolTitle = ({ name, logo, description, url, launchpool }) => {
+const PoolTitle = ({ name, logo, description, launchpool }) => {
   const classes = useStyles();
 
   return (
@@ -23,18 +23,6 @@ const PoolTitle = ({ name, logo, description, url, launchpool }) => {
       <div className={classes.texts}>
         <Typography className={classes.title} variant="body2" gutterBottom>
           {name}
-          <Hidden smUp>
-            <i
-              style={{
-                visibility: Boolean(url) ? 'visible' : 'hidden',
-              }}
-              className={classes.icon + ' far fa-question-circle'}
-              onClick={e => {
-                e.stopPropagation();
-                window.open(url);
-              }}
-            />
-          </Hidden>
         </Typography>
         <Typography className={classes.subtitle} variant="body2">
           {description}

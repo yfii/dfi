@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import {useFetchHalfTime, useFetchPoolsInfo} from '../redux/hooks';
+import { useFetchHalfTime, useFetchPoolData } from '../redux/hooks';
 import {
   Grid,
   Typography,
@@ -16,7 +16,7 @@ import styles from './styles/list';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { useConnectWallet } from '../../home/redux/hooks';
-import {formatCountdown} from "../../helpers/format";
+import { formatCountdown } from '../../helpers/format';
 
 const useStyles = makeStyles(styles);
 
@@ -26,17 +26,17 @@ export default function StakePools(props) {
   const { pools } = useFetchPoolsInfo();
   const { address } = useConnectWallet();
   const { halfTime, fetchHalfTime } = useFetchHalfTime();
-  const [time, setTime] = React.useState(new Date())
+  const [time, setTime] = React.useState(new Date());
 
   useEffect(() => {
     if (address) {
       const fetchEndPeriod = () => {
         for (const key in pools) {
-          if(halfTime[key] === undefined || halfTime[key] === 0) {
+          if (halfTime[key] === undefined || halfTime[key] === 0) {
             fetchHalfTime(key);
           }
         }
-      }
+      };
 
       fetchEndPeriod();
 
@@ -47,7 +47,6 @@ export default function StakePools(props) {
     }
   }, [address, halfTime, fetchHalfTime, pools]);
 
-
   const [expanded, setExpanded] = React.useState('faq-1');
 
   const handleChange = panel => (event, newExpanded) => {
@@ -56,34 +55,37 @@ export default function StakePools(props) {
 
   useEffect(() => {
     const fetchCountdown = () => {
-      setTime(new Date())
+      setTime(new Date());
 
-      let obj = {}
+      let obj = {};
 
       for (const key in pools) {
-        if(halfTime[key] === undefined) {
+        if (halfTime[key] === undefined) {
           pools[key].countdown = pools[key].status === 'closed' ? t('Finished') : '';
           continue;
         }
 
-        if(halfTime[key] === 0) {
-          obj = {status: 'soon', countdown: t('Coming-Soon')};
+        if (halfTime[key] === '0') {
+          obj = { status: 'soon', countdown: t('Coming-Soon') };
         } else {
           const deadline = halfTime[key] * 1000;
           const diff = deadline - time;
 
-          obj = diff > 0 ? {status: 'active', countdown: formatCountdown(deadline)} : {status: 'closed', countdown: t('Finished')};
+          obj =
+            diff > 0
+              ? { status: 'active', countdown: formatCountdown(deadline) }
+              : { status: 'closed', countdown: t('Finished') };
         }
 
         pools[key].status = obj.status;
         pools[key].countdown = obj.countdown;
       }
-    }
+    };
 
     fetchCountdown();
 
     const id = setInterval(() => {
-      fetchCountdown()
+      fetchCountdown();
     }, 1000);
     return () => clearInterval(id);
   }, [halfTime, pools, t, time]);
@@ -101,8 +103,11 @@ export default function StakePools(props) {
             <Grid
               className={[
                 classes.item,
-                pools[index].status === 'closed' ?
-                  classes.itemRetired : (pools[index].status === 'soon' ? classes.itemSoon : ''),
+                pools[index].status === 'closed'
+                  ? classes.itemRetired
+                  : pools[index].status === 'soon'
+                  ? classes.itemSoon
+                  : '',
               ].join(' ')}
             >
               {pool.partnership ? (
@@ -121,15 +126,19 @@ export default function StakePools(props) {
               />
 
               <Typography className={classes.countdown}>
-                {pools[index].hideCountdown ? '' : (
-                    pools[index].countdown
-                )}
+                {pools[index].hideCountdown ? '' : pools[index].countdown}
               </Typography>
 
               <Typography className={classes.subtitle} variant="body2">
                 {pool.token}
               </Typography>
-              <Button disabled={pools[index].status === 'soon'} xs={5} md={2} className={classes.stakeBtn} href={`/stake/pool/${index + 1}`}>
+              <Button
+                disabled={pools[index].status === 'soon'}
+                xs={5}
+                md={2}
+                className={classes.stakeBtn}
+                href={`/stake/pool/${index + 1}`}
+              >
                 {pools[index].status === 'closed'
                   ? t('Stake-Button-Claim')
                   : t('Stake-Button-Stake')}

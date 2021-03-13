@@ -24,18 +24,18 @@ export function fetchPoolsInfo() {
       const doRequest = axios.get(`https://api.beefy.finance/stake?_=${t}`);
 
       doRequest.then(
-          res => {
-            dispatch({
-              type: STAKE_FETCH_POOLS_INFO_SUCCESS,
-              data: res.data.data,
-            });
-            resolve(res);
-          },
-          // Use rejectHandler as the second argument so that render errors won't be caught.
-          err => {
-            dispatch({ type: STAKE_FETCH_POOLS_INFO_FAILURE });
-            reject(err);
-          },
+        res => {
+          dispatch({
+            type: STAKE_FETCH_POOLS_INFO_SUCCESS,
+            data: res.data.data,
+          });
+          resolve(res);
+        },
+        // Use rejectHandler as the second argument so that render errors won't be caught.
+        err => {
+          dispatch({ type: STAKE_FETCH_POOLS_INFO_FAILURE });
+          reject(err);
+        }
       );
     });
     return promise;
@@ -48,12 +48,12 @@ export function useFetchPoolsInfo() {
   const dispatch = useDispatch();
 
   const { pools, poolsInfo, fetchPoolsInfoPending } = useSelector(
-      state => ({
-        pools: state.stake.pools,
-        poolsInfo: state.stake.poolsInfo,
-        fetchPoolsInfoPending: state.stake.fetchPoolsInfoPending,
-      }),
-      shallowEqual,
+    state => ({
+      pools: state.stake.pools,
+      poolsInfo: state.stake.poolsInfo,
+      fetchPoolsInfoPending: state.stake.fetchPoolsInfoPending,
+    }),
+    shallowEqual
   );
 
   const boundAction = useCallback(() => dispatch(fetchPoolsInfo()), [dispatch]);
@@ -62,7 +62,7 @@ export function useFetchPoolsInfo() {
     fetchPoolsInfo: boundAction,
     pools,
     poolsInfo,
-    fetchPoolsInfoPending
+    fetchPoolsInfoPending,
   };
 }
 
@@ -72,15 +72,15 @@ export function reducer(state, action) {
       // Just after a request is sent
       return {
         ...state,
-        fetchPoolsInfoPending: true
+        fetchPoolsInfoPending: true,
       };
 
     case STAKE_FETCH_POOLS_INFO_SUCCESS:
       // The request is success
-      for(let index in action.data) {
-        for(let key in state.poolsInfo) {
-          if(state.poolsInfo[key].id === action.data[index].id) {
-            state.poolsInfo[key] = action.data[index]
+      for (let index in action.data) {
+        for (let key in state.poolsInfo) {
+          if (state.poolsInfo[key].id === action.data[index].id) {
+            state.poolsInfo[key] = action.data[index];
             break;
           }
         }
@@ -88,14 +88,14 @@ export function reducer(state, action) {
 
       return {
         ...state,
-        fetchPoolsInfoPending: false
+        fetchPoolsInfoPending: false,
       };
 
     case STAKE_FETCH_POOLS_INFO_FAILURE:
       // The request is failed
       return {
         ...state,
-        fetchPoolsInfoPending: false
+        fetchPoolsInfoPending: false,
       };
 
     default:
