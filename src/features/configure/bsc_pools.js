@@ -45,7 +45,7 @@ export const bscPools = [
     platform: 'Belt',
     assets: ['USDT', 'BUSD', 'USDC', 'DAI', 'VENUS BLP'],
     callFee: 0.5,
-    launchpool: 'moo_auto_belt-slime',
+    launchpool: 'moo_belt_venus-slime',
   },
 
   {
