@@ -119,7 +119,7 @@ export const bscPools = [
   },
 
   {
-    id: 'belt-venus-blp',
+    id: 'moo_belt_venus-slime',
     logo: 'uncategorized/BELT-VENUSBLP.png',
     name: 'BELT VENUS BLP',
     token: 'VENUS BLP',
@@ -140,6 +140,7 @@ export const bscPools = [
     platform: 'Belt',
     assets: ['USDT', 'BUSD', 'USDC', 'DAI', 'VENUS BLP'],
     callFee: 0.5,
+    launchpool: 'moo_auto_belt-slime',
   },
 
   {
