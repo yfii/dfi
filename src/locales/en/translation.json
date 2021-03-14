@@ -19,7 +19,7 @@
   "Vault-Withdrawing": "Withdraw...",
   "Vault-WithdrawButton": "Withdraw",
   "Vault-WithdrawButtonAll": "Withdraw All",
-  "Vault-WithdrawFee": "There is a 0.05%-0.1% withdrawal fee on all vaults",
+  "Vault-WithdrawFee": "There is a 0.05%-0.1% withdrawal or deposit fee on all vaults",
   "Vault-WithdrawSuccess": "Withdraw success",
   "Vault-WithdrawError": "Withdraw error: {{error}}",
   "Vault-Harvesting": "Harvesting...",
