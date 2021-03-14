@@ -24,7 +24,7 @@ const Pool = ({
 }) => {
   const classes = useStyles();
 
-  const [isOpen, setIsOpen] = useState(index === 0);
+  const [isOpen, setIsOpen] = useState(false);
   const toggleCard = useCallback(() => setIsOpen(!isOpen), [isOpen]);
 
   let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
