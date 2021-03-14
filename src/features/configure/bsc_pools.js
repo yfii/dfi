@@ -71,6 +71,7 @@ export const bscPools = [
     platform: 'SlimeFinance',
     assets: ['SLME', 'BUSD'],
     callFee: 0.5,
+    addLiquidityUrl: 'https://slime.finance/swap-slimeeees#/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0x4fCfA6cC8914ab455B5b33Df916d90BFe70b6AB1',
   },
   {
     id: 'slime-slime-bnb',
@@ -94,6 +95,7 @@ export const bscPools = [
     platform: 'SlimeFinance',
     assets: ['SLME', 'BNB'],
     callFee: 0.5,
+    addLiquidityUrl: 'https://slime.finance/swap-slimeeees#/add/ETH/0x4fCfA6cC8914ab455B5b33Df916d90BFe70b6AB1',
   },
 
   {
