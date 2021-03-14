@@ -30,6 +30,15 @@ const styles = theme => ({
     color: theme.palette.text.secondary,
     marginTop: '0',
   },
+  text: {
+    fontSize: '24px',
+    letterSpacing: '0',
+    lineHeight: '32px',
+    fontWeight: '550',
+    color: theme.palette.text.primary,
+    display: 'flex',
+    alignItems: 'center',
+  },
 });
 
 export default styles;
