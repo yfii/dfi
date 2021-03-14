@@ -21,6 +21,16 @@ const styles = (theme) => ({
     lineHeight: '14px',
     letterSpacing: 0,
   },
+  url: {
+    fontSize: '16px',
+    fontWeight: '600',
+    color: theme.palette.text.primary,
+    lineHeight: '14px',
+    letterSpacing: 0,
+    '&:hover,&:focus': {
+      color: theme.palette.text.secondary,
+    },
+  },
   icon: {
     color: theme.palette.text.primary,
     marginLeft: '4px',
@@ -49,7 +59,7 @@ const styles = (theme) => ({
     },
     '&:hover img': {
       filter: 'invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(1000%) contrast(1000%)',
-    }
+    },
   },
 });
 
