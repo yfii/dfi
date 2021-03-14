@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import Avatar from '@material-ui/core/Avatar';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -8,8 +9,9 @@ import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-const PoolTitle = ({ name, logo, description, launchpool }) => {
+const PoolTitle = ({ name, logo, description, launchpool, addLiquidityUrl }) => {
   const classes = useStyles();
+  const { t } = useTranslation();
 
   return (
     <Grid item xs={3} className={classes.container}>
@@ -26,6 +28,14 @@ const PoolTitle = ({ name, logo, description, launchpool }) => {
         <Typography className={classes.subtitle} variant="body2">
           {description}
         </Typography>
+        {addLiquidityUrl ?
+          <div style={{ marginTop: '4px' }}>
+            <a className={classes.url} href={addLiquidityUrl} target='_blank' rel='noopener noreferrer'>
+              <span>{t('Add-Liquidity')}</span>
+            </a>
+          </div>
+          : ''}
+
         {launchpool ? (
           <a className={classes.btnBoost} href={'/stake/pool/' + launchpool.poolIndex}>
             <img alt="Boost" src={require('../../../../../images/stake/boost.svg')} height={15} />

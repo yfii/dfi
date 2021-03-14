@@ -84,5 +84,6 @@
   "Stake-Pool-Retired": "The pool has finished, withdraw your funds.",
   "Stake-Total-Value-Locked": "Total Value Locked",
   "Stake-Your-Pool": "Your Pool",
-  "Stake-Current-Daily": "Current Daily Rate"
+  "Stake-Current-Daily": "Current Daily Rate",
+  "Add-Liquidity": "Add Liquidity"
 }

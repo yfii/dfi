@@ -81,6 +81,7 @@ const PoolSummary = ({
           logo={pool.logo}
           description={pool.tokenDescription}
           launchpool={launchpool}
+          addLiquidityUrl={pool.addLiquidityUrl}
         />
         <Grid item md={8} xs={7}>
           <Grid item container justify="space-between">
