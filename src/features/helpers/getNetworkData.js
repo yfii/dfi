@@ -53,7 +53,6 @@ export const getNetworkConnectors = t => {
             package: WalletConnectProvider,
             options: {
               rpc: {
-                1: 'https://bsc-dataseed.binance.org/',
                 56: 'https://bsc-dataseed.binance.org/',
               },
             },
@@ -115,7 +114,6 @@ export const getNetworkConnectors = t => {
             package: WalletConnectProvider,
             options: {
               rpc: {
-                1: 'https://http-mainnet.hecochain.com',
                 128: 'https://http-mainnet.hecochain.com',
               },
             },
