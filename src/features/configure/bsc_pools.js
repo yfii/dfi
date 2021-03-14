@@ -120,6 +120,7 @@ export const bscPools = [
     platform: 'Autofarm',
     assets: ['BETH', 'ETH'],
     callFee: 0.5,
+    addLiquidityUrl: 'https://exchange.pancakeswap.finance/#/add/0x2170Ed0880ac9A755fd29B2688956BD959F933F8/0x250632378E573c6Be1AC2f97Fcdf00515d0Aa91B',
   },
 
   {
@@ -168,6 +169,7 @@ export const bscPools = [
     platform: 'Belt',
     assets: ['BELT', 'BNB'],
     callFee: 0.5,
+    addLiquidityUrl: 'https://exchange.pancakeswap.finance/#/add/ETH/0xE0e514c71282b6f4e823703a39374Cf58dc3eA4f',
   },
 
   {
@@ -192,6 +194,7 @@ export const bscPools = [
     platform: 'Pancake',
     assets: ['NULS', 'BUSD'],
     callFee: 0.5,
+    addLiquidityUrl: 'https://exchange.pancakeswap.finance/#/add/0x8CD6e29d3686d24d3C2018CEe54621eA0f89313B/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
   },
 
   {
