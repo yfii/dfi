@@ -20,6 +20,7 @@ import { createWeb3Modal } from '../web3';
 import { useConnectWallet, useDisconnectWallet } from './redux/hooks';
 import useNightMode from './hooks/useNightMode';
 import createTheme from './jss/appTheme';
+import { networkSetup } from 'common/networkSetup';
 
 const useStyles = makeStyles(appStyle);
 
@@ -58,7 +59,10 @@ export default function App({ children }) {
       networkId &&
       Boolean(networkId !== Number(process.env.REACT_APP_NETWORK_ID))
     ) {
-      alert(t('Network-Error'));
+      networkSetup(process.env.REACT_APP_NETWORK_ID).catch((e) => {
+        console.error(e)
+        alert(t('Network-Error'));
+      })
     }
   }, [web3, address, networkId, connectWalletPending, t]);
 
