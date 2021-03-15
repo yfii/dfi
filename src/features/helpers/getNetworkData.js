@@ -137,7 +137,7 @@ export const getNetworkConnectors = t => {
           },
         },
       };
-      case '43114':
+    case '43114':
       return {
         network: 'avalanche',
         cacheProvider: true,
