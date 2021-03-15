@@ -1,4 +1,4 @@
-#  Beefy Finance (\$BIFI)
+# Beefy Finance (\$BIFI)
 
 ## Overview
 
