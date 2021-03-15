@@ -14,7 +14,9 @@ export function fetchApys() {
     });
 
     const promise = new Promise((resolve, reject) => {
-      const doRequest = axios.get(`https://api.beefy.finance/apy?_=1615828675`);
+      const doRequest = axios.get(
+        `https://api.beefy.finance/apy?_=${process.env.VERCEL_GIT_COMMIT_SHA}`
+      );
 
       doRequest.then(
         res => {

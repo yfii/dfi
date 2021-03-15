@@ -9,3 +9,4 @@ export {
 export { staking } from './stake';
 export { bscPools } from './bsc_pools';
 export { hecoPools } from './heco_pools';
+export { avalanchePools } from './avalanche_pools';

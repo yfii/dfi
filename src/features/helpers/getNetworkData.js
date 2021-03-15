@@ -1,7 +1,7 @@
 import { connectors } from 'web3modal';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 
-import { bscPools, hecoPools } from '../configure';
+import { bscPools, hecoPools, avalanchePools } from '../configure';
 
 export const getNetworkPools = () => {
   switch (process.env.REACT_APP_NETWORK_ID) {
@@ -9,6 +9,8 @@ export const getNetworkPools = () => {
       return hecoPools;
     case '56':
       return bscPools;
+    case '43114':
+      return avalanchePools;
     default:
       return [];
   }
@@ -20,6 +22,8 @@ export const getNetworkStables = () => {
       return ['BUSD', 'USDT', 'USDC', 'DAI', 'VAI', 'QUSD', 'UST'];
     case '128':
       return ['USDT', 'HUSD'];
+    case '43114':
+      return ['USDT', 'DAI'];
     default:
       return [];
   }
@@ -31,6 +35,8 @@ export const getNetworkMulticall = () => {
       return '0xB94858b0bB5437498F5453A16039337e5Fdc269C';
     case '128':
       return '0x2776CF9B6E2Fa7B33A37139C3CB1ee362Ff0356e';
+    case '43114':
+      return '0x6FfF95AC47b586bDDEea244b3c2fe9c4B07b9F76';
     default:
       return '';
   }
@@ -128,6 +134,28 @@ export const getNetworkConnectors = t => {
             },
             package: 'math',
             connector: connectors.injected,
+          },
+        },
+      };
+    case '43114':
+      return {
+        network: 'avalanche',
+        cacheProvider: true,
+        providerOptions: {
+          injected: {
+            display: {
+              name: 'Injected',
+              description: t('Home-BrowserWallet'),
+            },
+          },
+          walletconnect: {
+            package: WalletConnectProvider,
+            options: {
+              rpc: {
+                1: 'https://api.avax.network/ext/bc/C/rpc',
+                43114: 'https://api.avax.network/ext/bc/C/rpc',
+              },
+            },
           },
         },
       };
