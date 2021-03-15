@@ -20,6 +20,17 @@ const networkSettings = {
     },
     rpcUrls: ['https://http-mainnet.hecochain.com'],
     blockExplorerUrls: ['https://scan.hecochain.com/'],
+  },
+  '43114': {
+    chainId: '0xa86a',
+    chainName: 'Avalanche C-Chain',
+    nativeCurrency: {
+      name: 'AVAX',
+      symbol: 'AVAX',
+      decimals: 18,
+    },
+    rpcUrls: ['https://api.avax.network/ext/bc/C/rpc'],
+    blockExplorerUrls: ['https://cchain.explorer.avax.network/'],
   }
 }
 
