@@ -99,7 +99,7 @@ export const bscPools = [
   },
 
   {
-    id: 'pancake-alice-bnb',
+    id: 'cake-alice-bnb',
     logo: 'bnb-pairs/ALICE-BNB.svg',
     name: 'ALICE-BNB LP',
     token: 'ALICE-BNB LP',
@@ -113,7 +113,7 @@ export const bscPools = [
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
-    oracleId: 'pancake-alice-bnb',
+    oracleId: 'cake-alice-bnb',
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
