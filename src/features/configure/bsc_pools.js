@@ -676,6 +676,7 @@ export const bscPools = [
     platform: 'Venus',
     assets: ['ETH'],
     callFee: 1,
+    launchpool: 'moo_venus_eth-ape',
   },
 
   {
