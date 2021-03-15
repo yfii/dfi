@@ -43,7 +43,7 @@ export const staking = [
     tokenOracleId: 'ETH',
     earnedToken: 'APE',
     earnedTokenDecimals: 18,
-    earnedTokenAddress: '0xa9ea4b786ee5b7a733c035564bfd9341a4c9fc1e',
+    earnedTokenAddress: '0xa9eA4b786ee5b7A733c035564Bfd9341A4c9FC1e',
     earnContractAddress: '0xEd1B64D539b945Fb291E5487F527D19B7748321e',
     earnContractAbi: govPoolABI,
     earnedOracle: 'pancake',
@@ -54,7 +54,8 @@ export const staking = [
     partner: {
       logo: 'stake/memefarm/logo.png',
       background: 'stake/memefarm/background.png',
-      text: 'Meme Farm is an exciting protocol that combines DeFi yield-farming and rare non-fungible tokens (NFTs). You’re probably familiar with various food farming coin clones, most of which have a lifespan of 48 hours or less. While these tokens can make a small fortune for early adopters, most of them die out quickly because they lack actual utility. Most are simply governance tokens that get dumped by big farmers because they aren’t interested in participating in creating and voting on proposals. So what’s our solution for creating a high-yield farming token that can last in the long term? It’s to give the tokens actual utility and value (and thus, buy pressure) by combining them with one of the hottest cryptocurrency industries: NFTs.\n',
+      text:
+        'Meme Farm is an exciting protocol that combines DeFi yield-farming and rare non-fungible tokens (NFTs). You’re probably familiar with various food farming coin clones, most of which have a lifespan of 48 hours or less. While these tokens can make a small fortune for early adopters, most of them die out quickly because they lack actual utility. Most are simply governance tokens that get dumped by big farmers because they aren’t interested in participating in creating and voting on proposals. So what’s our solution for creating a high-yield farming token that can last in the long term? It’s to give the tokens actual utility and value (and thus, buy pressure) by combining them with one of the hottest cryptocurrency industries: NFTs.\n',
       website: 'https://memefarm.io/',
       social: {
         telegram: 'https://t.me/APEcoin_Chat',
@@ -73,7 +74,7 @@ export const staking = [
     tokenOracleId: 'belt-venus-blp',
     earnedToken: 'SLIME',
     earnedTokenDecimals: 18,
-    earnedTokenAddress: '0x4fcfa6cc8914ab455b5b33df916d90bfe70b6ab1',
+    earnedTokenAddress: '0x4fCfA6cC8914ab455B5b33Df916d90BFe70b6AB1',
     earnContractAddress: '0xba4Ee74E45De614bd8c2DFEEf16a4c13922C5659',
     earnContractAbi: govPoolABI,
     earnedOracle: 'pancake',
