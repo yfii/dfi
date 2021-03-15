@@ -20,6 +20,12 @@ const NetworksProvider = ({ children }) => {
       id: '128',
       url: 'https://heco.beefy.finance',
     },
+    {
+      name: 'AVALANCHE',
+      asset: 'AVAX',
+      id: '43114',
+      url: 'https://avalanche.beefy.finance',
+    },
   ];
 
   const currentNetwork = useMemo(
