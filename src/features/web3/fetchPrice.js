@@ -4,10 +4,10 @@ import { getNetworkPools } from '../helpers/getNetworkData';
 import { staking } from '../configure';
 
 const endpoints = {
-  bakery: `https://api.beefy.finance/bakery/price?_=${process.env.VERCEL_GIT_COMMIT_SHA}`,
+  bakery: `https://api.beefy.finance/bakery/price?_=1615849468`,
   coingecko: 'https://api.coingecko.com/api/v3/simple/price',
-  pancake: `https://api.beefy.finance/pancake/price?_=${process.env.VERCEL_GIT_COMMIT_SHA}`,
-  lps: `https://api.beefy.finance/lps?_=${process.env.VERCEL_GIT_COMMIT_SHA}`,
+  pancake: `https://api.beefy.finance/pancake/price?_=1615849468`,
+  lps: `https://api.beefy.finance/lps?_=1615849468`,
 };
 
 const pools = getNetworkPools();
