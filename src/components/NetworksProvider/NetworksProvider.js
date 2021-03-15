@@ -24,7 +24,7 @@ const NetworksProvider = ({ children }) => {
       name: 'AVALANCHE',
       asset: 'AVAX',
       id: '43114',
-      url: 'https://avalanche.beefy.finance',
+      url: 'https://avax.beefy.finance',
     },
   ];
 
