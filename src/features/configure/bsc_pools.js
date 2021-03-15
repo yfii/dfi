@@ -50,6 +50,31 @@ export const bscPools = [
   },
 
   {
+    id: 'venus-eth',
+    logo: 'single-assets/ETH.png',
+    name: 'ETH',
+    token: 'ETH',
+    tokenDescription: 'Uses: Venus',
+    tokenAddress: '0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooVenusETH',
+    earnedTokenAddress: '0xA9936272065e6DDAc9D2453C9a2712B581e9aE1B',
+    earnContractAddress: '0xA9936272065e6DDAc9D2453C9a2712B581e9aE1B',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'pancake',
+    oracleId: 'ETH',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Venus',
+    assets: ['ETH'],
+    callFee: 1,
+    launchpool: 'moo_venus_eth-ape',
+  },
+
+  {
     id: 'memefarm-ape-bnb',
     logo: 'degens/ape-bnb.png',
     name: 'APE-BNB LP',
@@ -71,7 +96,8 @@ export const bscPools = [
     platform: 'MemeFarm',
     assets: ['APE', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl: 'https://exchange.pancakeswap.finance/#/add/ETH/0xa9eA4b786ee5b7A733c035564Bfd9341A4c9FC1e',
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/ETH/0xa9eA4b786ee5b7A733c035564Bfd9341A4c9FC1e',
   },
   {
     id: 'memefarm-mfrm-bnb',
@@ -95,7 +121,8 @@ export const bscPools = [
     platform: 'MemeFarm',
     assets: ['MFRM', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl: 'https://exchange.pancakeswap.finance/#/add/ETH/0x206340f3361404910F45cA0893980EF3f9b418ea',
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/ETH/0x206340f3361404910F45cA0893980EF3f9b418ea',
   },
 
   {
@@ -120,7 +147,8 @@ export const bscPools = [
     platform: 'SlimeFinance',
     assets: ['SLME', 'BUSD'],
     callFee: 0.5,
-    addLiquidityUrl: 'https://slime.finance/swap-slimeeees#/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0x4fCfA6cC8914ab455B5b33Df916d90BFe70b6AB1',
+    addLiquidityUrl:
+      'https://slime.finance/swap-slimeeees#/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0x4fCfA6cC8914ab455B5b33Df916d90BFe70b6AB1',
   },
   {
     id: 'slime-slime-bnb',
@@ -144,7 +172,8 @@ export const bscPools = [
     platform: 'SlimeFinance',
     assets: ['SLME', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl: 'https://slime.finance/swap-slimeeees#/add/ETH/0x4fCfA6cC8914ab455B5b33Df916d90BFe70b6AB1',
+    addLiquidityUrl:
+      'https://slime.finance/swap-slimeeees#/add/ETH/0x4fCfA6cC8914ab455B5b33Df916d90BFe70b6AB1',
   },
 
   {
@@ -169,7 +198,8 @@ export const bscPools = [
     platform: 'Autofarm',
     assets: ['BETH', 'ETH'],
     callFee: 0.5,
-    addLiquidityUrl: 'https://exchange.pancakeswap.finance/#/add/0x2170Ed0880ac9A755fd29B2688956BD959F933F8/0x250632378E573c6Be1AC2f97Fcdf00515d0Aa91B',
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0x2170Ed0880ac9A755fd29B2688956BD959F933F8/0x250632378E573c6Be1AC2f97Fcdf00515d0Aa91B',
   },
 
   {
@@ -218,7 +248,8 @@ export const bscPools = [
     platform: 'Belt',
     assets: ['BELT', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl: 'https://exchange.pancakeswap.finance/#/add/ETH/0xE0e514c71282b6f4e823703a39374Cf58dc3eA4f',
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/ETH/0xE0e514c71282b6f4e823703a39374Cf58dc3eA4f',
   },
 
   {
@@ -243,7 +274,8 @@ export const bscPools = [
     platform: 'Pancake',
     assets: ['NULS', 'BUSD'],
     callFee: 0.5,
-    addLiquidityUrl: 'https://exchange.pancakeswap.finance/#/add/0x8CD6e29d3686d24d3C2018CEe54621eA0f89313B/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0x8CD6e29d3686d24d3C2018CEe54621eA0f89313B/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
   },
 
   {
@@ -652,31 +684,6 @@ export const bscPools = [
     platform: 'Venus',
     assets: ['BTC'],
     callFee: 1,
-  },
-
-  {
-    id: 'venus-eth',
-    logo: 'single-assets/ETH.png',
-    name: 'ETH',
-    token: 'ETH',
-    tokenDescription: 'Uses: Venus',
-    tokenAddress: '0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooVenusETH',
-    earnedTokenAddress: '0xA9936272065e6DDAc9D2453C9a2712B581e9aE1B',
-    earnContractAddress: '0xA9936272065e6DDAc9D2453C9a2712B581e9aE1B',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'pancake',
-    oracleId: 'ETH',
-    oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
-    platform: 'Venus',
-    assets: ['ETH'],
-    callFee: 1,
-    launchpool: 'moo_venus_eth-ape',
   },
 
   {
