@@ -99,6 +99,32 @@ export const bscPools = [
   },
 
   {
+    id: 'pancake-alice-bnb',
+    logo: 'bnb-pairs/ALICE-BNB.svg',
+    name: 'ALICE-BNB LP',
+    token: 'ALICE-BNB LP',
+    tokenDescription: 'Uses: Pancake',
+    tokenAddress: '0xe022baa3E5E87658f789c9132B10d7425Fd3a389',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooPancakeALICE-BNB',
+    earnedTokenAddress: '0x0C098a54FeE7EC15a59587E69cD340BBd9d22077',
+    earnContractAddress: '0x0C098a54FeE7EC15a59587E69cD340BBd9d22077',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'pancake-alice-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['ALICE', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl: 'https://exchange.pancakeswap.finance/#/add/ETH/0xAC51066d7bEC65Dc4589368da368b212745d63E8',
+
+  },
+
+  {
     id: 'auto-beth-eth',
     logo: 'uncategorized/BETH-ETH.svg',
     name: 'BETH-ETH LP',
