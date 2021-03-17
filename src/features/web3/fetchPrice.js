@@ -3,11 +3,10 @@ import axios from 'axios';
 import { getNetworkPools } from '../helpers/getNetworkData';
 import { staking } from '../configure';
 
+const t = () => Math.trunc(Date.now() / (5 * 60 * 1000));
+
 const endpoints = {
-  bakery: `https://api.beefy.finance/bakery/price?_=1616966131`,
   coingecko: 'https://api.coingecko.com/api/v3/simple/price',
-  pancake: `https://api.beefy.finance/pancake/price?_=1616966131`,
-  lps: `https://api.beefy.finance/lps?_=1616966131`,
 };
 
 const pools = getNetworkPools();
@@ -55,7 +54,7 @@ const fetchCoingecko = async ids => {
 
 const fetchPancake = async () => {
   try {
-    const response = await axios.get(endpoints.pancake);
+    const response = await axios.get(`https://api.beefy.finance/pancake/price?_=${t()}`);
     return response.data;
   } catch (err) {
     console.error(err);
@@ -63,9 +62,9 @@ const fetchPancake = async () => {
   }
 };
 
-const fetchLP = async endpoint => {
+const fetchLP = async () => {
   try {
-    const response = await axios.get(endpoint);
+    const response = await axios.get(`https://api.beefy.finance/lps?_=${t()}`);
     return response.data;
   } catch (err) {
     console.error(err);
@@ -75,7 +74,7 @@ const fetchLP = async endpoint => {
 
 const fetchBakery = async () => {
   try {
-    const response = await axios.get(endpoints.bakery);
+    const response = await axios.get(`https://api.beefy.finance/bakery/price?_=${t()}`);
     return response.data;
   } catch (err) {
     console.error(err);
@@ -87,7 +86,7 @@ const oracleEndpoints = {
   bakery: () => fetchBakery(),
   coingecko: ids => fetchCoingecko(ids),
   pancake: () => fetchPancake(),
-  lps: () => fetchLP(endpoints.lps),
+  lps: () => fetchLP(),
 };
 
 export async function initializePriceCache() {

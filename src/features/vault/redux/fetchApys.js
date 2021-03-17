@@ -14,7 +14,8 @@ export function fetchApys() {
     });
 
     const promise = new Promise((resolve, reject) => {
-      const doRequest = axios.get(`https://api.beefy.finance/apy?_=1616966131`);
+      const t = Math.trunc(Date.now() / (5 * 60 * 1000));
+      const doRequest = axios.get(`https://api.beefy.finance/apy?_=${t}`);
 
       doRequest.then(
         res => {
