@@ -24,6 +24,33 @@ export const bscPools = [
   },
 
   {
+    id: 'cake-bifi-bnb',
+    logo: 'bnb-pairs/BIFI-BNB.svg',
+    name: 'BIFI-BNB LP',
+    token: 'BIFI-BNB LP',
+    tokenDescription: 'Uses: Pancake',
+    tokenAddress: '0xd132D2C24F29EE8ABb64a66559d1b7aa627Bd7fD',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooPancakeBIFI-BNB',
+    earnedTokenAddress: '0x3B5332A476AbCdb80Cde6645e9e5563435e97772',
+    earnContractAddress: '0x3B5332A476AbCdb80Cde6645e9e5563435e97772',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cake-bifi-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['BIFI', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
+    launchpool: 'moo_bifi_wbnb-nuts',
+  },
+
+  {
     id: 'belt-venus-blp',
     logo: 'uncategorized/BELT-VENUSBLP.png',
     name: 'BELT VENUS BLP',
@@ -96,7 +123,8 @@ export const bscPools = [
     platform: 'Squirrel',
     assets: ['NUTS', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl: 'https://exchange.pancakeswap.finance/#/add/BNB/0x8893D5fA71389673C5c4b9b3cb4EE1ba71207556',
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0x8893D5fA71389673C5c4b9b3cb4EE1ba71207556',
   },
 
   {
@@ -120,33 +148,7 @@ export const bscPools = [
     status: 'active',
     platform: 'Squirrel',
     assets: ['NUTS'],
-    callFee: 0.5
-  },
-
-  {
-    id: 'cake-bifi-bnb',
-    logo: 'bnb-pairs/BIFI-BNB.svg',
-    name: 'BIFI-BNB LP',
-    token: 'BIFI-BNB LP',
-    tokenDescription: 'Uses: Pancake',
-    tokenAddress: '0xd132D2C24F29EE8ABb64a66559d1b7aa627Bd7fD',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooPancakeBIFI-BNB',
-    earnedTokenAddress: '0x3B5332A476AbCdb80Cde6645e9e5563435e97772',
-    earnContractAddress: '0x3B5332A476AbCdb80Cde6645e9e5563435e97772',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'cake-bifi-bnb',
-    oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
-    platform: 'Pancake',
-    assets: ['BIFI', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl: 'https://exchange.pancakeswap.finance/#/add/BNB/0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
-    launchpool: 'moo_bifi_wbnb-nuts',
   },
 
   {
@@ -171,7 +173,8 @@ export const bscPools = [
     platform: 'Bakery',
     assets: ['BAT', 'BAKE'],
     callFee: 0.5,
-    addLiquidityUrl: 'https://www.bakeryswap.org/#/add/0x101d82428437127bf1608f699cd651e6abf9766e/0xe02df9e3e622debdd69fb838bb799e3f168902c5',
+    addLiquidityUrl:
+      'https://www.bakeryswap.org/#/add/0x101d82428437127bf1608f699cd651e6abf9766e/0xe02df9e3e622debdd69fb838bb799e3f168902c5',
   },
 
   {
@@ -298,8 +301,8 @@ export const bscPools = [
     platform: 'Pancake',
     assets: ['ALICE', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl: 'https://exchange.pancakeswap.finance/#/add/ETH/0xAC51066d7bEC65Dc4589368da368b212745d63E8',
-
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/ETH/0xAC51066d7bEC65Dc4589368da368b212745d63E8',
   },
 
   {
