@@ -146,6 +146,7 @@ export const bscPools = [
     assets: ['BIFI', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl: 'https://exchange.pancakeswap.finance/#/add/BNB/0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
+    launchpool: 'moo_bifi_wbnb-nuts',
   },
 
   {
