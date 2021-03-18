@@ -21,6 +21,7 @@ export const avalanchePools = [
     platform: 'Complus',
     assets: ['COM', 'AVAX'],
     callFee: 0.25,
+    addLiquidityUrl: 'https://avadex.complus.exchange/#/add/AVAX/0x3711c397B6c8F7173391361e27e67d72F252cAad',
   },
   {
     id: 'com-dai-avax',
@@ -44,6 +45,7 @@ export const avalanchePools = [
     platform: 'Complus',
     assets: ['DAI', 'AVAX'],
     callFee: 0.25,
+    addLiquidityUrl: 'https://avadex.complus.exchange/#/add/AVAX/0xbA7dEebBFC5fA1100Fb055a87773e1E99Cd3507a',
   },
 
   {
