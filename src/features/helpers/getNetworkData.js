@@ -1,16 +1,36 @@
 import { connectors } from 'web3modal';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 
-import { bscPools, hecoPools, avalanchePools } from '../configure';
+import {
+  bscPools,
+  hecoPools,
+  avalanchePools,
+  bscStakePools,
+  hecoStakePools,
+  avalancheStakePools,
+} from '../configure';
 
 export const getNetworkPools = () => {
   switch (process.env.REACT_APP_NETWORK_ID) {
-    case '128':
-      return hecoPools;
     case '56':
       return bscPools;
+    case '128':
+      return hecoPools;
     case '43114':
       return avalanchePools;
+    default:
+      return [];
+  }
+};
+
+export const getNetworkStakePools = () => {
+  switch (process.env.REACT_APP_NETWORK_ID) {
+    case '56':
+      return bscStakePools;
+    case '128':
+      return hecoStakePools;
+    case '43114':
+      return avalancheStakePools;
     default:
       return [];
   }
