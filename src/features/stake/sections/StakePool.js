@@ -313,7 +313,7 @@ export default function StakePool(props) {
 
       <Grid container className={classes.row}>
         {pools[index].partnership ? (
-          <Box className={classes.boosted}>Boosted by {pools[index].name}</Box>
+          <Box className={classes.boosted}>{t('Stake-BoostedBy', { name: pools[index].name })}</Box>
         ) : (
           ''
         )}

@@ -38,7 +38,7 @@ const PoolSummary = ({
         : null;
 
     if (launchpool) {
-      state = 'Boosted by ' + launchpool.name;
+      state = t('Stake-BoostedBy', { name: launchpool.name }) ;
     }
 
     return state === null ? '' : <PoolPaused message={t(state)} isBoosted={!!launchpool} />;
@@ -79,7 +79,7 @@ const PoolSummary = ({
         <PoolTitle
           name={pool.name}
           logo={pool.logo}
-          description={pool.tokenDescription}
+          description={t('Vault-Description', { vault: pool.tokenDescription })}
           launchpool={launchpool}
           addLiquidityUrl={pool.addLiquidityUrl}
         />
