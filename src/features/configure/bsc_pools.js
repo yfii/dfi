@@ -73,7 +73,6 @@ export const bscPools = [
     assets: ['USDT', 'BUSD', 'USDC', 'DAI', 'VENUS BLP'],
     callFee: 0.5,
     addLiquidityUrl: 'https://belt.fi/',
-    launchpool: 'moo_belt_venus-slime',
   },
 
   {
