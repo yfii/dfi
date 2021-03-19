@@ -62,7 +62,7 @@ export default function Pools() {
   return (
     <Grid container className={classes.container}>
       <Grid item xs={6}>
-        <h1 className={classes.title}>Network</h1>
+        <h1 className={classes.title}>{t('Vault-Network')}</h1>
         <NetworksToggle />
       </Grid>
       <Grid item xs={6}>
@@ -77,7 +77,7 @@ export default function Pools() {
           </span>
 
           <span className={classes.text}>
-            Deposited {' '}
+            {t('Vault-Deposited')} {' '}
             {fetchVaultsDataDone ? formatGlobalTvl(myTvl) : (
               <TVLLoader className={classes.titleLoader} />
             )}
