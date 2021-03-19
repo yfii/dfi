@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-import { getNetworkPools } from '../helpers/getNetworkData';
-import { staking } from '../configure';
+import { getNetworkPools, getNetworkStakePools } from '../helpers/getNetworkData';
 
 const t = () => Math.trunc(Date.now() / (5 * 60 * 1000));
 
@@ -10,6 +9,7 @@ const endpoints = {
 };
 
 const pools = getNetworkPools();
+const stakePools = getNetworkStakePools();
 
 const CACHE_TIMEOUT_MS = 1 * 60 * 1000; // 1 minute(s)
 const priceCache = {
@@ -101,7 +101,7 @@ export async function initializePriceCache() {
     oracleToIds.get(pool.oracle).push(pool.oracleId);
   });
 
-  staking.forEach(pool => {
+  stakePools.forEach(pool => {
     if (!oracleToIds.has(pool.earnedOracle)) {
       oracleToIds.set(pool.earnedOracle, []);
     }

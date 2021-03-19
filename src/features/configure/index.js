@@ -6,7 +6,9 @@ export {
   multicallBnbShimABI,
   govPoolABI,
 } from './abi';
-export { staking } from './stake';
-export { bscPools } from './bsc_pools';
-export { hecoPools } from './heco_pools';
-export { avalanchePools } from './avalanche_pools';
+export { bscStakePools } from './stake/bsc_stake';
+export { hecoStakePools } from './stake/heco_stake';
+export { avalancheStakePools } from './stake/avalanche_stake';
+export { bscPools } from './vault/bsc_pools';
+export { hecoPools } from './vault/heco_pools';
+export { avalanchePools } from './vault/avalanche_pools';

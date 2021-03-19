@@ -47,7 +47,11 @@ const NetworksModal = () => {
       <h1 className={classes.title}>Select Network</h1>
       <div className={classes.networks}>
         {networks.map(network => (
-          <div onClick={() => handleNetworkClick(network)} className={classes.networkContainer}>
+          <div
+            onClick={() => handleNetworkClick(network)}
+            className={classes.networkContainer}
+            key={network.id}
+          >
             <img
               className={classes.logo}
               src={require(`images/single-assets/${network.asset}.png`)}

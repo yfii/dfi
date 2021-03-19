@@ -1,5 +1,6 @@
-import { staking as pools } from '../../configure';
+import { getNetworkStakePools } from '../../helpers/getNetworkData';
 
+const pools = getNetworkStakePools();
 let poolsInfo = [];
 const poolData = [];
 const initPoolsInfo = () => {
@@ -12,7 +13,7 @@ const initPoolsInfo = () => {
       apy: 0,
     });
   }
-  poolsInfo = poolData
+  poolsInfo = poolData;
 };
 
 initPoolsInfo();

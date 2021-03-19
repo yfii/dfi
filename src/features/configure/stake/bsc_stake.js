@@ -1,6 +1,6 @@
-import { govPoolABI } from './abi';
+import { govPoolABI } from '../abi';
 
-export const staking = [
+export const bscStakePools = [
   {
     id: 'bifi-bnb',
     name: 'BIFI',
@@ -54,7 +54,8 @@ export const staking = [
     partner: {
       logo: 'stake/squirrel/logo.png',
       background: 'stake/squirrel/background.png',
-      text: 'In recent months the TVL (total value locked) inside BSC DeFi has skyrocketed due to an endless variety of token-incentivized adoption boosters known as Yield Farming. The problem introduced is some of these are experimental or unaudited projects, which can leave unsavvy farmers exposed if something were to go wrong. Because of the crazy APR % some of these can offer in the first few days, many users completely neglect to account for the possible risks introduced (Yolo-farming). Squirrel aims to resolve this problem by developing a trusted ecosystem to empower, secure & simplify DeFi for end users.',
+      text:
+        'In recent months the TVL (total value locked) inside BSC DeFi has skyrocketed due to an endless variety of token-incentivized adoption boosters known as Yield Farming. The problem introduced is some of these are experimental or unaudited projects, which can leave unsavvy farmers exposed if something were to go wrong. Because of the crazy APR % some of these can offer in the first few days, many users completely neglect to account for the possible risks introduced (Yolo-farming). Squirrel aims to resolve this problem by developing a trusted ecosystem to empower, secure & simplify DeFi for end users.',
       website: 'https://squirrel.finance/',
       social: {
         telegram: 'https://t.me/SquirrelDeFi',
