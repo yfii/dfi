@@ -10,13 +10,13 @@ import {
   Accordion,
   AccordionDetails,
 } from '@material-ui/core';
-import Disclaimer from '../../../components/Disclaimer/Disclaimer';
-import Button from '../../../components/CustomButtons/Button';
+import Disclaimer from 'components/Disclaimer/Disclaimer';
+import Button from 'components/CustomButtons/Button';
 import styles from './styles/list';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { useConnectWallet } from '../../home/redux/hooks';
-import { formatCountdown } from '../../helpers/format';
+import { useConnectWallet } from 'features/home/redux/hooks';
+import { formatCountdown } from 'features/helpers/format';
 
 const useStyles = makeStyles(styles);
 
@@ -94,7 +94,7 @@ export default function StakePools(props) {
     <Grid container>
       <Grid item xs={12}>
         <div className={classes.launchpool}>
-          <img alt="Launchpool" src={require('../../../images/stake/launchpool.png')} />
+          <img alt="Launchpool" src={require('images/stake/launchpool.png')} />
         </div>
       </Grid>
       <Grid container spacing={4} justify={'center'}>
@@ -119,7 +119,7 @@ export default function StakePools(props) {
                 Earn {pool.earnedToken}
               </Typography>
               <Avatar
-                src={require('../../../images/' + pool.logo)}
+                src={require('images/' + pool.logo)}
                 alt={pool.earnedToken}
                 variant="square"
                 imgProps={{ style: { objectFit: 'contain' } }}
@@ -164,7 +164,7 @@ export default function StakePools(props) {
               <Typography>
                 <img
                   alt="launchpool how to"
-                  src={require('../../../images/stake/f1.png')}
+                  src={require('images/stake/f1.png')}
                   style={{ width: '100%', marginBottom: '20px' }}
                 />
                 Look for a boosted partner Vault in our main app and stake the tokens that are asked

@@ -126,10 +126,7 @@ const Filters = ({
             label={
               <Box className={classes.boost}>
                 Boost
-                <Avatar
-                  className={classes.fire}
-                  src={require('../../../../images/stake/fire.png')}
-                />
+                <Avatar className={classes.fire} src={require('images/stake/fire.png')} />
               </Box>
             }
           />

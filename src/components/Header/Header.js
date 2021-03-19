@@ -126,7 +126,7 @@ const renderLink = (name, label, icon, classes) => {
 const renderBoost = classes => {
   return (
     <a className={classes.btnBoost} href="/stake">
-      <img alt="Boost" src={require('../../images/stake/boost.svg')} />
+      <img alt="Boost" src={require('images/stake/boost.svg')} />
     </a>
   );
 };

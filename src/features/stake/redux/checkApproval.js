@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
-import BigNumber from "bignumber.js";
-import { erc20ABI } from "../../configure";
+import BigNumber from 'bignumber.js';
+import { erc20ABI } from 'features/configure';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   STAKE_CHECK_APPROVAL_BEGIN,
@@ -13,7 +13,7 @@ export function checkApproval(index) {
     // optionally you can have getState as the second argument
     dispatch({
       type: STAKE_CHECK_APPROVAL_BEGIN,
-      index
+      index,
     });
     // Return a promise so that you could control UI flow without states in the store.
     // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
@@ -28,53 +28,49 @@ export function checkApproval(index) {
       const { pools } = stake;
       const { tokenAddress, earnContractAddress } = pools[index];
       const contract = new web3.eth.Contract(erc20ABI, tokenAddress);
-      contract.methods.allowance(address, earnContractAddress).call({ from: address }).then(
-        data => {
-          const balance = web3.utils.fromWei(data, "ether");
+      contract.methods
+        .allowance(address, earnContractAddress)
+        .call({ from: address })
+        .then(data => {
+          const balance = web3.utils.fromWei(data, 'ether');
           dispatch({
             type: STAKE_CHECK_APPROVAL_SUCCESS,
             data: new BigNumber(balance).toNumber(),
-            index
+            index,
           });
           resolve(data);
-        },
-      ).catch(
-        // Use rejectHandler as the second argument so that render errors won't be caught.
-        error => {
-          dispatch({
-            type: STAKE_CHECK_APPROVAL_FAILURE,
-            index
-          });
-          reject(error.message || error);
-        }
-      )
+        })
+        .catch(
+          // Use rejectHandler as the second argument so that render errors won't be caught.
+          error => {
+            dispatch({
+              type: STAKE_CHECK_APPROVAL_FAILURE,
+              index,
+            });
+            reject(error.message || error);
+          }
+        );
     });
     return promise;
-  }
+  };
 }
-
 
 export function useCheckApproval() {
   // args: false value or array
   // if array, means args passed to the action creator
   const dispatch = useDispatch();
 
-  const { allowance, checkApprovalPending } = useSelector(
-    state => ({
-      allowance: state.stake.allowance,
-      checkApprovalPending: state.stake.checkApprovalPending,
-    })
-  );
+  const { allowance, checkApprovalPending } = useSelector(state => ({
+    allowance: state.stake.allowance,
+    checkApprovalPending: state.stake.checkApprovalPending,
+  }));
 
-  const boundAction = useCallback(
-    data => dispatch(checkApproval(data)),
-    [dispatch],
-  );
+  const boundAction = useCallback(data => dispatch(checkApproval(data)), [dispatch]);
 
   return {
     allowance,
     checkApproval: boundAction,
-    checkApprovalPending
+    checkApprovalPending,
   };
 }
 

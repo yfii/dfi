@@ -12,8 +12,8 @@ import { useTranslation } from 'react-i18next';
 import { SnackbarProvider } from 'notistack';
 import { Notifier } from 'features/common';
 
-import Footer from '../../components/Footer/Footer';
-import Pastures from '../../components/Pastures/Pastures';
+import Footer from 'components/Footer/Footer';
+import Pastures from 'components/Pastures/Pastures';
 import appStyle from './jss/appStyle.js';
 
 import { createWeb3Modal } from '../web3';
@@ -59,10 +59,10 @@ export default function App({ children }) {
       networkId &&
       Boolean(networkId !== Number(process.env.REACT_APP_NETWORK_ID))
     ) {
-      networkSetup(process.env.REACT_APP_NETWORK_ID).catch((e) => {
-        console.error(e)
+      networkSetup(process.env.REACT_APP_NETWORK_ID).catch(e => {
+        console.error(e);
         alert(t('Network-Error'));
-      })
+      });
     }
   }, [web3, address, networkId, connectWalletPending, t]);
 

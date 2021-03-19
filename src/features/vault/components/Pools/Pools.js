@@ -6,14 +6,14 @@ import BigNumber from 'bignumber.js';
 
 import TVLLoader from './TVLLoader/TVLLoader';
 import NetworksToggle from 'components/NetworksToggle/NetworksToggle';
-import { useConnectWallet } from '../../../home/redux/hooks';
+import { useConnectWallet } from 'features/home/redux/hooks';
 import { useFetchBalances, useFetchVaultsData, useFetchApys } from '../../redux/hooks';
 import VisiblePools from '../VisiblePools/VisiblePools';
 import styles from './styles';
 import usePoolsTvl from '../../hooks/usePoolsTvl';
 import { formatGlobalTvl } from 'features/helpers/format';
-import { useFetchPoolsInfo } from '../../../stake/redux/fetchPoolsInfo';
-import { byDecimals } from '../../../helpers/bignumber';
+import { useFetchPoolsInfo } from 'features/stake/redux/fetchPoolsInfo';
+import { byDecimals } from 'features/helpers/bignumber';
 
 const FETCH_INTERVAL_MS = 30 * 1000;
 
@@ -33,7 +33,10 @@ export default function Pools() {
   pools.forEach(pool => {
     const sharesBalance = new BigNumber(tokens[pool.earnedToken].tokenBalance);
     if (sharesBalance > 0) {
-      const deposited = byDecimals(sharesBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)), pool.tokenDecimals);
+      const deposited = byDecimals(
+        sharesBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)),
+        pool.tokenDecimals
+      );
       myTvl += deposited * pool.oraclePrice;
     }
   });
@@ -77,12 +80,16 @@ export default function Pools() {
           </span>
 
           <span className={classes.text}>
-            {t('Vault-Deposited')} {' '}
-            {fetchVaultsDataDone ? formatGlobalTvl(myTvl) : (
+            {t('Vault-Deposited')}{' '}
+            {fetchVaultsDataDone ? (
+              formatGlobalTvl(myTvl)
+            ) : (
               <TVLLoader className={classes.titleLoader} />
             )}
           </span>
-          <h3 className={classes.subtitle} style={{ marginTop: '24px' }}>{t('Vault-WithdrawFee')}</h3>
+          <h3 className={classes.subtitle} style={{ marginTop: '24px' }}>
+            {t('Vault-WithdrawFee')}
+          </h3>
         </div>
       </Grid>
 

@@ -34,7 +34,7 @@ import TelegramIcon from '@material-ui/icons/Telegram';
 import Button from '../../../components/CustomButtons/Button';
 import { styles } from './styles/view';
 import Divider from '@material-ui/core/Divider';
-import {formatApy, formatCountdown} from '../../helpers/format';
+import { formatApy, formatCountdown } from '../../helpers/format';
 
 const useStyles = makeStyles(styles);
 
@@ -52,7 +52,7 @@ export default function StakePool(props) {
   const { fetchWithdraw, fetchWithdrawPending } = useFetchWithdraw();
   const { fetchClaim, fetchClaimPending } = useFetchClaim();
   const { fetchExit, fetchExitPending } = useFetchExit();
-  const { pools, poolData, fetchPoolData} = useFetchPoolData();
+  const { pools, poolData, fetchPoolData } = useFetchPoolData();
   const [index, setIndex] = useState(Number(props.match.params.index) - 1);
   const [showInput, setShowInput] = useState(false);
   const [isNeedApproval, setIsNeedApproval] = useState(true);
@@ -174,7 +174,7 @@ export default function StakePool(props) {
       const deadline = halfTime[index] * 1000;
       const time = deadline - new Date().getTime();
       if (time <= 0) {
-        pools[index].status = 'closed'
+        pools[index].status = 'closed';
         return fetchHalfTime(index);
       }
       setMyHalfTime(formatCountdown(deadline));
@@ -222,7 +222,7 @@ export default function StakePool(props) {
   const customBgImg = img => {
     return img
       ? {
-          backgroundImage: 'url(' + require('../../../images/' + img) + ')',
+          backgroundImage: 'url(' + require('images/' + img) + ')',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
         }
@@ -238,21 +238,26 @@ export default function StakePool(props) {
       </Grid>
       <Grid item xs={6} className={classes.mb}>
         <Typography className={classes.countdown}>
-          {pools[index].hideCountdown ? '' : (
-            pools[index].status === 'closed' ? t('Finished') :
-              (pools[index].status === 'soon' ? t('Coming-Soon') : t('End') + ': ' + myHalfTime)
-          )}
+          {pools[index].hideCountdown
+            ? ''
+            : pools[index].status === 'closed'
+            ? t('Finished')
+            : pools[index].status === 'soon'
+            ? t('Coming-Soon')
+            : t('End') + ': ' + myHalfTime}
         </Typography>
       </Grid>
 
       <Grid
         container
-        className={[classes.row, pools[index].status === 'closed' || pools[index].status ===  'soon' ?
-          classes.retired : ''].join(' ')}
+        className={[
+          classes.row,
+          pools[index].status === 'closed' || pools[index].status === 'soon' ? classes.retired : '',
+        ].join(' ')}
       >
         <Grid item xs={6} sm={6} md={3}>
           <Avatar
-            src={require('../../../images/' + pools[index].logo)}
+            src={require('images/' + pools[index].logo)}
             alt={pools.earnedToken}
             variant="square"
             imgProps={{ style: { objectFit: 'contain' } }}
@@ -275,7 +280,7 @@ export default function StakePool(props) {
             <Typography className={classes.title}>{`${
               Math.floor(myRewardsAvailable.toNumber() * 10000) / 10000
             } ${pools[index].earnedToken}`}</Typography>
-            <Avatar className={classes.fire} src={require('../../../images/stake/fire.png')} />
+            <Avatar className={classes.fire} src={require('images/stake/fire.png')} />
           </Box>
           <Typography className={classes.subtitle}>
             {t('Stake-Balancer-Rewards-Available')}
@@ -285,8 +290,10 @@ export default function StakePool(props) {
 
       <Grid
         container
-        className={[classes.row, pools[index].status === 'closed' || pools[index].status ===  'soon' ?
-          classes.retired : ''].join(' ')}
+        className={[
+          classes.row,
+          pools[index].status === 'closed' || pools[index].status === 'soon' ? classes.retired : '',
+        ].join(' ')}
       >
         <Grid item xs={12} sm={4}>
           <Typography className={classes.title}>{poolData[index].staked}</Typography>
@@ -301,10 +308,15 @@ export default function StakePool(props) {
           <Typography className={classes.subtitle}>{t('Vault-APY')}</Typography>
         </Grid>
 
-        {pools[index].status === 'closed' || pools[index].status ===  'soon' ? (
+        {pools[index].status === 'closed' || pools[index].status === 'soon' ? (
           <Box className={classes.ribbon}>
-            <span className={pools[index].status}>{pools[index].status === 'closed' ?
-              t('Finished') : (pools[index].status === 'soon' ? t('Coming-Soon') : '')}</span>
+            <span className={pools[index].status}>
+              {pools[index].status === 'closed'
+                ? t('Finished')
+                : pools[index].status === 'soon'
+                ? t('Coming-Soon')
+                : ''}
+            </span>
           </Box>
         ) : (
           ''
@@ -340,17 +352,14 @@ export default function StakePool(props) {
                 <Box className={classes.boost}>
                   <Box>
                     <Avatar
-                      src={require('../../../images/' + pools[index].logo)}
+                      src={require('images/' + pools[index].logo)}
                       alt={pools.earnedToken}
                       variant="square"
                       imgProps={{ style: { objectFit: 'contain' } }}
                     />
                   </Box>
                   <Box>
-                    <img
-                      className={classes.boostImg}
-                      src={require('../../../images/stake/boost.svg')}
-                    />
+                    <img className={classes.boostImg} src={require('images/stake/boost.svg')} />
                   </Box>
                 </Box>
               ) : (
@@ -386,7 +395,7 @@ export default function StakePool(props) {
           {pools[index].partner.logo ? (
             <img
               alt={pools[index].name}
-              src={require('../../../images/' + pools[index].partner.logo)}
+              src={require('images/' + pools[index].partner.logo)}
               height="60"
             />
           ) : (
@@ -475,17 +484,14 @@ export default function StakePool(props) {
                   <Box className={classes.boost}>
                     <Box>
                       <Avatar
-                        src={require('../../../images/' + pools[index].logo)}
+                        src={require('images/' + pools[index].logo)}
                         alt={pools.earnedToken}
                         variant="square"
                         imgProps={{ style: { objectFit: 'contain' } }}
                       />
                     </Box>
                     <Box>
-                      <img
-                        className={classes.boostImg}
-                        src={require('../../../images/stake/boost.svg')}
-                      />
+                      <img className={classes.boostImg} src={require('images/stake/boost.svg')} />
                     </Box>
                   </Box>
                 ) : (
