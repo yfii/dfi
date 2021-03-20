@@ -37,7 +37,7 @@
   "Vault-DepositsRetiredMsg": "Vault retired, withdraw your funds ASAP",
   "Vault-Staked": "Staked",
   "Vault-Description": "Uses: {{vault}}",
-  "Vault-Network": "Network",
+  "Vault-Network": "Select Network",
   "Hide-Zero-Balances": "Hide Zero Balances",
   "Hide-Zero-Vault-Balances": "Deposited Vaults",
   "Retired-Vaults": "Retired Vaults",
