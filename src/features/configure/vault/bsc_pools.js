@@ -124,7 +124,6 @@ export const bscPools = [
     platform: 'Venus',
     assets: ['ETH'],
     callFee: 1,
-    launchpool: 'moo_venus_eth-ape',
   },
 
   {
@@ -149,7 +148,8 @@ export const bscPools = [
     platform: 'Complus',
     assets: ['COM', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl: 'https://bscdex.complus.exchange/#/add/BNB/0x7fa892544D49598460B821De4D99E8c28b1Decaa',
+    addLiquidityUrl:
+      'https://bscdex.complus.exchange/#/add/BNB/0x7fa892544D49598460B821De4D99E8c28b1Decaa',
   },
 
   {
