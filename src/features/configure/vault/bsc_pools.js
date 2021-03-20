@@ -52,7 +52,7 @@ export const bscPools = [
 
   {
     id: 'blizzard-blzd-bnb',
-    logo: 'bnb-pairs/BLZD-BNB.png',
+    logo: 'degens/BLZD-BNB.png',
     name: 'BLZD-BNB LP',
     token: 'BLZD-BNB LP',
     tokenDescription: 'Pancake',
@@ -78,7 +78,7 @@ export const bscPools = [
 
   {
     id: 'blizzard-blzd-busd',
-    logo: 'bnb-pairs/BLZD-BUSD.png',
+    logo: 'degens/BLZD-BUSD.png',
     name: 'BLZD-BUSD LP',
     token: 'BLZD-BUSD LP',
     tokenDescription: 'Pancake',
