@@ -52,9 +52,9 @@ const fetchCoingecko = async ids => {
   }
 };
 
-const fetchPancake = async () => {
+const fetchTokens = async () => {
   try {
-    const response = await axios.get(`https://api.beefy.finance/pancake/price?_=1616165177`);
+    const response = await axios.get(`https://api.beefy.finance/prices?_=1616366251`);
     return response.data;
   } catch (err) {
     console.error(err);
@@ -62,9 +62,9 @@ const fetchPancake = async () => {
   }
 };
 
-const fetchLP = async () => {
+const fetchLPs = async () => {
   try {
-    const response = await axios.get(`https://api.beefy.finance/lps?_=1616165177`);
+    const response = await axios.get(`https://api.beefy.finance/lps?_=1616366251`);
     return response.data;
   } catch (err) {
     console.error(err);
@@ -74,7 +74,7 @@ const fetchLP = async () => {
 
 const fetchBakery = async () => {
   try {
-    const response = await axios.get(`https://api.beefy.finance/bakery/price?_=1616165177`);
+    const response = await axios.get(`https://api.beefy.finance/bakery/price?_=1616366251`);
     return response.data;
   } catch (err) {
     console.error(err);
@@ -85,8 +85,8 @@ const fetchBakery = async () => {
 const oracleEndpoints = {
   bakery: () => fetchBakery(),
   coingecko: ids => fetchCoingecko(ids),
-  pancake: () => fetchPancake(),
-  lps: () => fetchLP(),
+  tokens: () => fetchTokens(),
+  lps: () => fetchLPs(),
 };
 
 export async function initializePriceCache() {
