@@ -149,6 +149,7 @@ const PoolSummary = ({
               value={formatDecimals(deposited)}
               subvalue={depositedUsd}
               label={t('Vault-Deposited')}
+              isLoading={!fetchBalancesDone}
               xs={6}
               align="start"
             />
