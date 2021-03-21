@@ -3628,31 +3628,6 @@ export const bscPools = [
     callFee: 1,
   },
 
-  // {
-  //   id: 'jetfuel-jets',
-  //   logo: 'single-assets/JETS.png',
-  //   name: 'JETS',
-  //   token: 'JETS',
-  //   tokenDescription: 'Jetfuel',
-  //   tokenAddress: '0xf6488205957f0b4497053d6422F49e27944eE3Dd',
-  //   tokenDecimals: 18,
-  //   tokenDescriptionUrl: '#',
-  //   earnedToken: 'mooJfJETS',
-  //   earnedTokenAddress: '0x0000000000000000000000000000000000000000',
-  //   earnContractAddress: '0x0000000000000000000000000000000000000000',
-  //
-  //   pricePerFullShare: 1,
-  //   tvl: 0,
-  //   oracle: 'pancake',
-  //   oracleId: 'Fuel',
-  //   oraclePrice: 0,
-  //   // depositsPaused: false,
-  //   status: 'active',
-  //   platform: 'JetFuel',
-  //   assets: ['JETS'],
-  //   callFee: 1,
-  // },
-
   {
     id: 'jetfuel-bhc-bnb',
     logo: 'bnb-pairs/BHC-BNB.png',
