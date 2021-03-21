@@ -103,6 +103,30 @@ export const bscPools = [
   },
 
   {
+    id: 'blizzard-blzd',
+    logo: 'degens/BLZD.png',
+    name: 'BLZD',
+    token: 'BLZD',
+    tokenDescription: 'Blizzard',
+    tokenAddress: '0x57067A6BD75c0E95a6A5f158455926e43E79BeB0',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooBlizzardBLZD',
+    earnedTokenAddress: '0x580b899D8d856DFe3da7895466F779F1A509D2Fd',
+    earnContractAddress: '0x580b899D8d856DFe3da7895466F779F1A509D2Fd',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'pancake',
+    oracleId: 'BLZD',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Blizzard',
+    assets: ['BLZD'],
+    callFee: 0.5
+  },
+
+  {
     id: 'venus-eth',
     logo: 'single-assets/ETH.png',
     name: 'ETH',
