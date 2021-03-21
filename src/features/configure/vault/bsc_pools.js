@@ -137,7 +137,7 @@ export const bscPools = [
     tokenAddress: '0x50b68945a990684aedbfa46391988b4609923d48',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
-    earnedToken: 'mooJulBTCB-BNB',
+    earnedToken: 'mooJulVIDT-BNB',
     earnedTokenAddress: '0x621Ab9A2EF4256A43dEFeB37F0a1eACb276BbF97',
     earnContractAddress: '0x621Ab9A2EF4256A43dEFeB37F0a1eACb276BbF97',
     pricePerFullShare: 1,
