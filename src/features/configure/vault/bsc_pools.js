@@ -13,7 +13,7 @@ export const bscPools = [
     earnContractAddress: '0xf7069e41C57EcC5F122093811d8c75bdB5f7c14e',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'BIFI',
     oraclePrice: 0,
     depositsPaused: false,
@@ -123,8 +123,32 @@ export const bscPools = [
     status: 'active',
     platform: 'JulSwap',
     assets: ['TWT', 'BNB'],
+    callFee: 0.5,
     addLiquidityUrl:
       'https://julswap.com/#/add/BNB/0x4B0F1812e5Df2A09796481Ff14017e6005508003',
+  },
+
+  {
+    id: 'blizzard-blzd',
+    logo: 'degens/BLZD.png',
+    name: 'BLZD',
+    token: 'BLZD',
+    tokenDescription: 'Blizzard',
+    tokenAddress: '0x57067A6BD75c0E95a6A5f158455926e43E79BeB0',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooBlizzardBLZD',
+    earnedTokenAddress: '0x580b899D8d856DFe3da7895466F779F1A509D2Fd',
+    earnContractAddress: '0x580b899D8d856DFe3da7895466F779F1A509D2Fd',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'tokens',
+    oracleId: 'BLZD',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Blizzard',
+    assets: ['BLZD'],
     callFee: 0.5,
   },
 
@@ -168,7 +192,7 @@ export const bscPools = [
     earnContractAddress: '0xA9936272065e6DDAc9D2453C9a2712B581e9aE1B',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'ETH',
     oraclePrice: 0,
     depositsPaused: false,
@@ -176,7 +200,6 @@ export const bscPools = [
     platform: 'Venus',
     assets: ['ETH'],
     callFee: 1,
-    launchpool: 'moo_venus_eth-ape',
   },
 
   {
@@ -201,7 +224,8 @@ export const bscPools = [
     platform: 'Complus',
     assets: ['COM', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl: 'https://bscdex.complus.exchange/#/add/BNB/0x7fa892544D49598460B821De4D99E8c28b1Decaa',
+    addLiquidityUrl:
+      'https://bscdex.complus.exchange/#/add/BNB/0x7fa892544D49598460B821De4D99E8c28b1Decaa',
   },
 
   {
@@ -234,7 +258,7 @@ export const bscPools = [
     logo: 'bnb-pairs/DUSK-BNB.svg',
     name: 'DUSK-BNB LP',
     token: 'DUSK-BNB LP',
-    tokenDescription: 'Uses: Pancake',
+    tokenDescription: 'Pancake',
     tokenAddress: '0xB7918560273FD56e50E9c215CC0DFE8D764C36C5',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
@@ -260,7 +284,7 @@ export const bscPools = [
     logo: 'bnb-pairs/COS-BNB.svg',
     name: 'COS-BNB LP',
     token: 'COS-BNB LP',
-    tokenDescription: 'Uses: Pancake',
+    tokenDescription: 'Pancake',
     tokenAddress: '0x7b1e440240B220244761C9D9A3B07fbA1995BD84',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
@@ -286,7 +310,7 @@ export const bscPools = [
     logo: 'busd-pairs/TXL-BUSD.svg',
     name: 'TXL-BUSD LP',
     token: 'TXL-BUSD LP',
-    tokenDescription: 'Uses: Pancake',
+    tokenDescription: 'Pancake',
     tokenAddress: '0xD20E0BcCa8B29409bf5726CB24DD779Fe337020e',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
@@ -347,7 +371,7 @@ export const bscPools = [
     earnContractAddress: '0x2D40beB0122aBcAD0E6b49934d47adac6Dddd97B',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'NUTS',
     oraclePrice: 0,
     depositsPaused: false,
@@ -551,7 +575,7 @@ export const bscPools = [
     earnContractAddress: '0x5B06aA1ebd2e15bC6001076355E5B4C39Cbc83F3',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'WBNB',
     oraclePrice: 0,
     depositsPaused: false,
@@ -627,7 +651,7 @@ export const bscPools = [
     earnContractAddress: '0xD307e7CC6a302046b7D91D83aa4B8324cFB7a786',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'BANANA',
     oraclePrice: 0,
     depositsPaused: false,
@@ -803,6 +827,8 @@ export const bscPools = [
     platform: 'Autofarm',
     assets: ['AUTO', 'BNB'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0xa184088a740c695E156F91f5cC086a06bb78b827',
   },
 
   {
@@ -819,7 +845,7 @@ export const bscPools = [
     earnContractAddress: '0xe0B473c0dD6D7Fea5B395c3Ce7ffd4FEF0ab4373',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'Cake',
     oraclePrice: 0,
     depositsPaused: false,
@@ -851,6 +877,8 @@ export const bscPools = [
     platform: 'Autofarm',
     assets: ['COMP', 'ETH'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0x52CE071Bd9b1C4B00A0b92D298c512478CaD67e8/0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
   },
 
   {
@@ -875,6 +903,8 @@ export const bscPools = [
     platform: 'Autofarm',
     assets: ['HGET', 'BNB'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0xC7d8D35EBA58a0935ff2D5a33Df105DD9f071731/BNB',
   },
 
   {
@@ -899,6 +929,8 @@ export const bscPools = [
     platform: 'Autofarm',
     assets: ['CTK', 'BNB'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0xA8c2B8eec3d368C0253ad3dae65a5F2BBB89c929/BNB',
   },
 
   {
@@ -923,6 +955,8 @@ export const bscPools = [
     platform: 'Autofarm',
     assets: ['UST', 'BUSD'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0x23396cF899Ca06c4472205fC903bDB4de249D6fC/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
   },
 
   {
@@ -947,6 +981,8 @@ export const bscPools = [
     platform: 'Autofarm',
     assets: ['BUSD', 'BNB'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
   },
 
   {
@@ -971,6 +1007,8 @@ export const bscPools = [
     platform: 'Autofarm',
     assets: ['BTC', 'BNB'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c/BNB',
   },
 
   {
@@ -995,6 +1033,8 @@ export const bscPools = [
     platform: 'Autofarm',
     assets: ['CAKE', 'BNB'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
   },
 
   {
@@ -1011,7 +1051,7 @@ export const bscPools = [
     earnContractAddress: '0x7255Ae13BA4484eD33fB48c4b833000dC12888B4',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'BTCB',
     oraclePrice: 0,
     depositsPaused: false,
@@ -1067,6 +1107,7 @@ export const bscPools = [
     platform: 'JulSwap',
     assets: ['BIFI', 'BNB'],
     callFee: 0.5,
+    addLiquidityUrl: 'https://julswap.com/#/add/BNB/0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
   },
 
   {
@@ -1107,7 +1148,7 @@ export const bscPools = [
     earnContractAddress: '0x53c0CE2EBdA0c2A39327bE0B58a3c28A8Dcde420',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'ADA',
     oraclePrice: 0,
     depositsPaused: false,
@@ -1187,6 +1228,8 @@ export const bscPools = [
     platform: 'Pancake',
     assets: ['WATCH', 'BNB'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0x7A9f28EB62C791422Aa23CeAE1dA9C847cBeC9b0',
   },
 
   {
@@ -1235,6 +1278,8 @@ export const bscPools = [
     platform: 'SoupFinance',
     assets: ['SOUP', 'BNB'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0x94F559aE621F1c810F31a6a620Ad7376776fe09E',
   },
   {
     id: 'soup-soups-bnb',
@@ -1282,6 +1327,8 @@ export const bscPools = [
     platform: 'ApeSwap',
     assets: ['BANANA', 'BNB'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://dex.apeswap.finance/#/add/ETH/0x603c7f932ED1fc6575303D8Fb018fDCBb0f39a95',
   },
 
   {
@@ -1306,6 +1353,8 @@ export const bscPools = [
     platform: 'ApeSwap',
     assets: ['BANANA', 'BUSD'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://dex.apeswap.finance/#/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0x603c7f932ED1fc6575303D8Fb018fDCBb0f39a95',
   },
 
   {
@@ -1664,6 +1713,8 @@ export const bscPools = [
     platform: 'RamenSwap',
     assets: ['RAMEN', 'BNB'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.ramenswap.finance/#/add/ETH/0x4F47A0d15c1E53F3d94c069C7D16977c29F9CB6B',
   },
 
   {
@@ -1688,6 +1739,8 @@ export const bscPools = [
     platform: 'RamenSwap',
     assets: ['RAMEN', 'BUSD'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.ramenswap.finance/#/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0x4F47A0d15c1E53F3d94c069C7D16977c29F9CB6B',
   },
 
   {
@@ -1712,6 +1765,8 @@ export const bscPools = [
     platform: 'CafeSwap',
     assets: ['BREW', 'BUSD'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.cafeswap.finance/#/add/0x790Be81C3cA0e53974bE2688cDb954732C9862e1/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
   },
 
   {
@@ -1736,6 +1791,8 @@ export const bscPools = [
     platform: 'CafeSwap',
     assets: ['BREW', 'BNB'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.cafeswap.finance/#/add/0x790Be81C3cA0e53974bE2688cDb954732C9862e1/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
   },
 
   {
@@ -1760,6 +1817,8 @@ export const bscPools = [
     platform: 'CafeSwap',
     assets: ['BIFI', 'BNB'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.cafeswap.finance/#/add/0xCa3F508B8e4Dd382eE878A314789373D80A5190A/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
   },
 
   {
@@ -1976,6 +2035,8 @@ export const bscPools = [
     platform: 'MonsterSlayer',
     assets: ['MSC', 'BUSD'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0x8C784C49097Dcc637b93232e15810D53871992BF',
   },
 
   {
@@ -2047,6 +2108,8 @@ export const bscPools = [
     platform: 'BoltDollar',
     assets: ['BTD', 'BUSD'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0xD1102332a213E21faF78B69C03572031F3552c33/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
   },
 
   {
@@ -2063,7 +2126,7 @@ export const bscPools = [
     earnContractAddress: '0xFf750EE63F1E428De1D6C8D9d92676b5FC8376A8',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'BTCB',
     oraclePrice: 0,
     depositsPaused: true,
@@ -2087,7 +2150,7 @@ export const bscPools = [
     earnContractAddress: '0x0a406FCBEA86aC57ACcc812E8F1B509acE5E054c',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'ETH',
     oraclePrice: 0,
     depositsPaused: true,
@@ -2111,7 +2174,7 @@ export const bscPools = [
     earnContractAddress: '0x559C88946e1958812dCfD8edd4f89B0C7d811F74',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'BUSD',
     oraclePrice: 0,
     depositsPaused: true,
@@ -2135,7 +2198,7 @@ export const bscPools = [
     earnContractAddress: '0x58327471A57EE89Aa4b91753fF9E09f7291236C7',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'USDT',
     oraclePrice: 0,
     depositsPaused: true,
@@ -2159,7 +2222,7 @@ export const bscPools = [
     earnContractAddress: '0x7E45e8E3404a2C142d7E8eAE94EaEB8641607857',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'USDC',
     oraclePrice: 0,
     depositsPaused: true,
@@ -2288,6 +2351,8 @@ export const bscPools = [
     platform: 'Pancake',
     assets: ['LIT', 'BNB'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0xb59490aB09A0f526Cc7305822aC65f2Ab12f9723',
   },
 
   {
@@ -2336,6 +2401,8 @@ export const bscPools = [
     platform: 'Kebab',
     assets: ['BIFI', 'BUSD'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://swap.kebabfinance.com/#/add/0xCa3F508B8e4Dd382eE878A314789373D80A5190A/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
   },
 
   {
@@ -2376,7 +2443,7 @@ export const bscPools = [
     earnContractAddress: '0x895CF1E805cBd86355caC101aE9B252c806Dc59b',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'Cake',
     oraclePrice: 0,
     depositsPaused: true,
@@ -2400,7 +2467,7 @@ export const bscPools = [
     earnContractAddress: '0x8136C5EE816fD80b80C9679e785F37EBdf2199eE',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'WBNB',
     oraclePrice: 0,
     depositsPaused: true,
@@ -2424,7 +2491,7 @@ export const bscPools = [
     earnContractAddress: '0xBd198f5132631e597518529268000A0199f07492',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'BUSD',
     oraclePrice: 0,
     depositsPaused: true,
@@ -2641,7 +2708,7 @@ export const bscPools = [
     earnContractAddress: '0xE2231D4ca4921Cb35680bac714C9d40C8d217494',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'KEBAB',
     oraclePrice: 0,
     depositsPaused: false,
@@ -2929,7 +2996,7 @@ export const bscPools = [
     earnContractAddress: '0x56E899E56F6B8635B4A01b724db23674a64A7231',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'BHC',
     oraclePrice: 0,
     depositsPaused: false,
@@ -2952,61 +3019,13 @@ export const bscPools = [
     earnContractAddress: '0xFAE4a35305a1dcED8303029ac05e51386f667ED8',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'DRUGS',
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
     platform: 'Thugs',
     assets: ['DRUGS'],
-    callFee: 0.5,
-  },
-
-  {
-    id: 'street-btri-bnb',
-    logo: 'bnb-pairs/bTRI-BNB.png',
-    name: 'bTRI-BNB TLP',
-    token: 'bTRI-BNB TLP',
-    tokenDescription: 'Traphouse',
-    tokenAddress: '0x982eE1343c73688314990483dea924808231dE4D',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooStreetBTRI-BNB',
-    earnedTokenAddress: '0x589bf2811CC824C328B5FC38288f141cB0053fAd',
-    earnContractAddress: '0x589bf2811CC824C328B5FC38288f141cB0053fAd',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'street-btri-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Thugs',
-    assets: ['bTRI', 'BNB'],
-    callFee: 0.5,
-  },
-
-  {
-    id: 'street-btri-cred',
-    logo: 'uncategorized/bTRI-CRED.png',
-    name: 'bTRI-CRED TLP',
-    token: 'bTRI-CRED TLP',
-    tokenDescription: 'Traphouse',
-    tokenAddress: '0xF271F9Cc3E3626394978A9C0C9582931fa3caDD1',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooStreetBTRI-CRED',
-    earnedTokenAddress: '0x370533CB4f8b3f018caE837a83960AEfCeB36f39',
-    earnContractAddress: '0x370533CB4f8b3f018caE837a83960AEfCeB36f39',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'street-btri-cred',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Thugs',
-    assets: ['bTRI', 'CRED'],
     callFee: 0.5,
   },
 
@@ -3103,6 +3122,8 @@ export const bscPools = [
     status: 'active',
     platform: 'Bakery',
     assets: ['BAKE', 'BUSD'],
+    addLiquidityUrl:
+      'https://www.bakeryswap.org/#/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
   },
 
   {
@@ -3223,6 +3244,8 @@ export const bscPools = [
     platform: 'bDollar',
     assets: ['BDO', 'BUSD'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0x190b589cf9Fb8DDEabBFeae36a813FFb2A702454/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
   },
 
   {
@@ -3239,7 +3262,7 @@ export const bscPools = [
     earnContractAddress: '0xB38D32336538559Ce6680952B0Be4917ed015c39',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'bakery',
+    oracle: 'tokens',
     oracleId: 'BETH',
     oraclePrice: 0,
     depositsPaused: false,
@@ -3263,7 +3286,7 @@ export const bscPools = [
     earnContractAddress: '0x813aDbc7b9a9822FA37510F52aD14bDBc45aA306',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'DAI',
     oraclePrice: 0,
     depositsPaused: false,
@@ -3287,7 +3310,7 @@ export const bscPools = [
     earnContractAddress: '0x8B80E58328aEF3796D70D29F65d516d29ACD944d',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'FIL',
     oraclePrice: 0,
     depositsPaused: false,
@@ -3391,6 +3414,8 @@ export const bscPools = [
     platform: 'Bakery',
     assets: ['BTC', 'BNB'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://www.bakeryswap.org/#/add/ETH/0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c',
   },
 
   {
@@ -3506,8 +3531,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cake-stax-cake',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Pancake',
     assets: ['STAX', 'CAKE'],
     callFee: 1,
@@ -3530,8 +3555,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cake-nar-cake',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Pancake',
     assets: ['NAR', 'CAKE'],
     callFee: 1,
@@ -3553,8 +3578,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cake-nya-cake',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Pancake',
     assets: ['NYA', 'CAKE'],
     callFee: 1,
@@ -3574,7 +3599,7 @@ export const bscPools = [
     earnContractAddress: '0x8AE31751A226B0C5357a377E53B6DB12bDF5e64d',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'DRUGS',
     oraclePrice: 0,
     depositsPaused: true,
@@ -3598,7 +3623,7 @@ export const bscPools = [
     earnContractAddress: '0xE7408598DB157Cd4A24Bc26B579910AF36a72fad',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'DRUGS',
     oraclePrice: 0,
     depositsPaused: true,
@@ -3622,7 +3647,7 @@ export const bscPools = [
     earnContractAddress: '0x40e39743dBcb30c7Fc4152F57F29Cd22D9fc7932',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'DRUGS',
     oraclePrice: 0,
     depositsPaused: true,
@@ -3678,32 +3703,9 @@ export const bscPools = [
     platform: 'JetFuel',
     assets: ['FUEL', 'BNB'],
     callFee: 1,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0x2090c8295769791ab7A3CF1CC6e0AA19F35e441A',
   },
-
-  // {
-  //   id: 'jetfuel-jets',
-  //   logo: 'single-assets/JETS.png',
-  //   name: 'JETS',
-  //   token: 'JETS',
-  //   tokenDescription: 'Jetfuel',
-  //   tokenAddress: '0xf6488205957f0b4497053d6422F49e27944eE3Dd',
-  //   tokenDecimals: 18,
-  //   tokenDescriptionUrl: '#',
-  //   earnedToken: 'mooJfJETS',
-  //   earnedTokenAddress: '0x0000000000000000000000000000000000000000',
-  //   earnContractAddress: '0x0000000000000000000000000000000000000000',
-  //
-  //   pricePerFullShare: 1,
-  //   tvl: 0,
-  //   oracle: 'pancake',
-  //   oracleId: 'Fuel',
-  //   oraclePrice: 0,
-  //   // depositsPaused: false,
-  //   status: 'active',
-  //   platform: 'JetFuel',
-  //   assets: ['JETS'],
-  //   callFee: 1,
-  // },
 
   {
     id: 'jetfuel-bhc-bnb',
@@ -3775,6 +3777,8 @@ export const bscPools = [
     platform: 'JetFuel',
     assets: ['CAKE', 'BNB'],
     callFee: 1,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
   },
 
   {
@@ -3847,6 +3851,8 @@ export const bscPools = [
     platform: 'JetFuel',
     assets: ['BUSD', 'BNB'],
     callFee: 1,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
   },
 
   {
@@ -3887,7 +3893,7 @@ export const bscPools = [
     earnContractAddress: '0xB0BDBB9E507dBF55f4aC1ef6ADa3E216202e06FD',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'Cake',
     oraclePrice: 0,
     depositsPaused: false,
@@ -3911,7 +3917,7 @@ export const bscPools = [
     earnContractAddress: '0xf19878DE084C3c9753bB0DAD8aC5b9070fb7813c',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'BCH',
     oraclePrice: 0,
     depositsPaused: false,
@@ -3935,7 +3941,7 @@ export const bscPools = [
     earnContractAddress: '0x2211191ff72505ED54Aa6aD3F6Fcc72c87CAb338',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'DOT',
     oraclePrice: 0,
     depositsPaused: false,
@@ -3959,7 +3965,7 @@ export const bscPools = [
     earnContractAddress: '0x8da7167860EDfc2bFfd790f217AB5e398803Bbc8',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'LINK',
     oraclePrice: 0,
     depositsPaused: false,
@@ -4038,78 +4044,6 @@ export const bscPools = [
     status: 'eol',
     platform: 'Thugs',
     assets: ['XVS', 'BNB'],
-    callFee: 1,
-  },
-
-  {
-    id: 'street-inj-bnb',
-    logo: 'bnb-pairs/INJ-BNB.svg',
-    name: 'INJ-BNB TLP',
-    token: 'INJ-BNB TLP',
-    tokenDescription: 'Traphouse',
-    tokenAddress: '0x45ac15fb9650a790A0cD0f2b10c5EC4a6BbFCc2c',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooStreetINJ-BNB',
-    earnedTokenAddress: '0xFfEf22C020486a4118d4274a6D0573a80276d4b4',
-    earnContractAddress: '0xFfEf22C020486a4118d4274a6D0573a80276d4b4',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'street-inj-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Thugs',
-    assets: ['INJ', 'BNB'],
-    callFee: 1,
-  },
-
-  {
-    id: 'street-unfi-bnb',
-    logo: 'bnb-pairs/UNFI-BNB.svg',
-    name: 'UNFI-BNB TLP',
-    token: 'UNFI-BNB TLP',
-    tokenDescription: 'Traphouse',
-    tokenAddress: '0x0fF2D8B1A11195526f42905892bCb29e7b9F338D',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooStreetUNFI-BNB',
-    earnedTokenAddress: '0x8F61350871B986B098A6757e3953CEF697D46025',
-    earnContractAddress: '0x8F61350871B986B098A6757e3953CEF697D46025',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'street-unfi-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Thugs',
-    assets: ['UNFI', 'BNB'],
-    callFee: 1,
-  },
-
-  {
-    id: 'street-ltc-bnb',
-    logo: 'bnb-pairs/LTC-BNB.svg',
-    name: 'LTC-BNB TLP',
-    token: 'LTC-BNB TLP',
-    tokenDescription: 'Traphouse',
-    tokenAddress: '0x8Ea481FE8e35c74355DaF9B5f6b3b69F3c864aFc',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooStreetLTC-BNB',
-    earnedTokenAddress: '0x40BBdaD2e12A3E9900F2e6e6A5B605c36182BEa0',
-    earnContractAddress: '0x40BBdaD2e12A3E9900F2e6e6A5B605c36182BEa0',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'street-ltc-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Thugs',
-    assets: ['LTC', 'BNB'],
     callFee: 1,
   },
 
@@ -4318,7 +4252,7 @@ export const bscPools = [
     earnContractAddress: '0x6BE4741AB0aD233e4315a10bc783a7B923386b71',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'WBNB',
     oraclePrice: 0,
     depositsPaused: false,
@@ -4342,7 +4276,7 @@ export const bscPools = [
     earnContractAddress: '0x6BE4741AB0aD233e4315a10bc783a7B923386b71',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'WBNB',
     oraclePrice: 0,
     depositsPaused: false,
@@ -4366,7 +4300,7 @@ export const bscPools = [
     earnContractAddress: '0x9aaD247bAc2AFc3027256aD0Cc09A27551069bd6',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'SXP',
     oraclePrice: 0,
     depositsPaused: false,
@@ -4390,7 +4324,7 @@ export const bscPools = [
     earnContractAddress: '0x07D478b679C6c7F4222388856f53F8dca7E7b378',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'USDC',
     oraclePrice: 0,
     depositsPaused: false,
@@ -4414,7 +4348,7 @@ export const bscPools = [
     earnContractAddress: '0x1997D7cF0A63A374A853ca9d5b1dAcCFeCa5cEb8',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'USDT',
     oraclePrice: 0,
     depositsPaused: false,
@@ -4438,7 +4372,7 @@ export const bscPools = [
     earnContractAddress: '0x2d3d152b3b94c0E0B217AC5bc1115E3D8b8018F9',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'BUSD',
     oraclePrice: 0,
     depositsPaused: false,
@@ -4462,7 +4396,7 @@ export const bscPools = [
     earnContractAddress: '0xd61420f20e945d0B617fEdA5971f692A3DCE711c',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'LTC',
     oraclePrice: 0,
     depositsPaused: false,
@@ -4542,6 +4476,8 @@ export const bscPools = [
     platform: 'Pancake',
     assets: ['INJ', 'BNB'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0xa2B726B1145A4773F68593CF171187d8EBe4d495',
   },
 
   {
@@ -4658,7 +4594,7 @@ export const bscPools = [
     earnContractAddress: '0xaC112E7744C129ae54E65F5D2cb4eA472E08eA0B',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'BAKE',
     oraclePrice: 0,
     depositsPaused: false,
@@ -4690,6 +4626,8 @@ export const bscPools = [
     platform: 'Bakery',
     assets: ['BAKE', 'BNB'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://www.bakeryswap.org/#/add/ETH/0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
   },
 
   {
@@ -4716,29 +4654,6 @@ export const bscPools = [
     callFee: 0.5,
   },
 
-  {
-    id: 'street-link-bnb',
-    logo: 'bnb-pairs/LINK-BNB.svg',
-    name: 'LINK-BNB TLP',
-    token: 'LINK-BNB TLP',
-    tokenDescription: 'Traphouse',
-    tokenAddress: '0x2c92d0390f95477c70cb7B4B92050B0Db5D04a1E',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooStreetLINK-BNB',
-    earnedTokenAddress: '0x3DbBDFA0A412Fd15ef9fc4CEb3Fcc19Ff329980b',
-    earnContractAddress: '0x3DbBDFA0A412Fd15ef9fc4CEb3Fcc19Ff329980b',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'street-link-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Thugs',
-    assets: ['LINK', 'BNB'],
-    callFee: 0.5,
-  },
   {
     id: 'street-nar-bnb',
     logo: 'bnb-pairs/NAR-BNB.png',
@@ -4904,56 +4819,6 @@ export const bscPools = [
     status: 'eol',
     platform: 'Thugs',
     assets: ['BUSD', 'BNB'],
-    callFee: 0.5,
-  },
-
-  {
-    id: 'street-btc-bnb',
-    logo: 'bnb-pairs/BTC-BNB.png',
-    name: 'BTC-BNB LP v2',
-    token: 'BTC-BNB TLP',
-    tokenDescription: 'Traphouse',
-    tokenAddress: '0xdFb193940E1317f38e91568fdb05EFE18ee4A3c7',
-    tokenDecimals: 18,
-    tokenDescriptionUrl:
-      'https://docs.beefy.finance/beefyfinance/products/thugs#farming-drugs-with-btc-bnb-lp',
-    earnedToken: 'mooStreetBTC-BNBV2',
-    earnedTokenAddress: '0x498515AB07d72d24A85343322834a66e79e146f8',
-    earnContractAddress: '0x498515AB07d72d24A85343322834a66e79e146f8',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'street-btc-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Thugs',
-    assets: ['BTC', 'BNB'],
-    callFee: 0.5,
-  },
-
-  {
-    id: 'street-eth-bnb',
-    logo: 'bnb-pairs/ETH-BNB.svg',
-    name: 'ETH-BNB LP v2',
-    token: 'ETH-BNB TLP',
-    tokenDescription: 'Traphouse',
-    tokenAddress: '0x75115C644F9661A761A333Ba0A38e42B1649f143',
-    tokenDecimals: 18,
-    tokenDescriptionUrl:
-      'https://docs.beefy.finance/beefyfinance/products/thugs#farming-drugs-with-eth-bnb-lp',
-    earnedToken: 'mooStreetETH-BNBV2',
-    earnedTokenAddress: '0x5EA6fE190f9F7B814fDc438A6CC448d094740588',
-    earnContractAddress: '0x5EA6fE190f9F7B814fDc438A6CC448d094740588',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'street-eth-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Thugs',
-    assets: ['ETH', 'BNB'],
     callFee: 0.5,
   },
 
@@ -5145,7 +5010,7 @@ export const bscPools = [
     earnContractAddress: '0xc713ca7cb8edfE238ea652D772d41dde47A9a62d',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'Cake',
     oraclePrice: 0,
     depositsPaused: true,
@@ -5170,7 +5035,7 @@ export const bscPools = [
     earnContractAddress: '0x260879777DB293541DbC9a27c3C2fAD9c9bb48D3',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'Cake',
     oraclePrice: 0,
     depositsPaused: true,
@@ -5195,7 +5060,7 @@ export const bscPools = [
     earnContractAddress: '0x4B4e5F2CeEdfF00D2DD13874714C1Ef6Ea1Cd8a7',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'Cake',
     oraclePrice: 0,
     depositsPaused: true,
@@ -5228,6 +5093,8 @@ export const bscPools = [
     platform: 'Pancake',
     assets: ['CAKE', 'BNB'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
   },
 
   {
@@ -5303,6 +5170,8 @@ export const bscPools = [
     platform: 'Pancake',
     assets: ['BUSD', 'BNB'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
   },
 
   {
@@ -5418,7 +5287,7 @@ export const bscPools = [
     earnContractAddress: '0xD6fca61Edb1cD0259320A6E0899E8aD1044BBCda',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'BUSD',
     oraclePrice: 0,
     depositsPaused: true,
@@ -5442,7 +5311,7 @@ export const bscPools = [
     earnContractAddress: '0x7bF55acDe006C398Bb605Ae564A8F832F80000ee',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'LINK',
     oraclePrice: 0,
     depositsPaused: true,
@@ -5466,7 +5335,7 @@ export const bscPools = [
     earnContractAddress: '0x63a2CEF28904956552714ddb226ceE96c3F0C9EF',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'DOT',
     oraclePrice: 0,
     depositsPaused: true,
@@ -5490,7 +5359,7 @@ export const bscPools = [
     earnContractAddress: '0xc16187F3eb15aEE949e7d784906d53fd7E364B26',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'USDT',
     oraclePrice: 0,
     depositsPaused: true,
@@ -5514,7 +5383,7 @@ export const bscPools = [
     earnContractAddress: '0x6F0Df0858542fC4A1c7f82c14fAA490d7763592F',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'pancake',
+    oracle: 'tokens',
     oracleId: 'BTCB',
     oraclePrice: 0,
     depositsPaused: true,
