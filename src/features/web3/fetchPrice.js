@@ -72,18 +72,7 @@ const fetchLPs = async () => {
   }
 };
 
-const fetchBakery = async () => {
-  try {
-    const response = await axios.get(`https://api.beefy.finance/bakery/price?_=1616366251`);
-    return response.data;
-  } catch (err) {
-    console.error(err);
-    return {};
-  }
-};
-
 const oracleEndpoints = {
-  bakery: () => fetchBakery(),
   coingecko: ids => fetchCoingecko(ids),
   tokens: () => fetchTokens(),
   lps: () => fetchLPs(),

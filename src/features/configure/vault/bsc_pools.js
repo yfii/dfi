@@ -3210,7 +3210,7 @@ export const bscPools = [
     earnContractAddress: '0xB38D32336538559Ce6680952B0Be4917ed015c39',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'bakery',
+    oracle: 'tokens',
     oracleId: 'BETH',
     oraclePrice: 0,
     depositsPaused: false,
