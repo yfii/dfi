@@ -24,6 +24,32 @@ export const bscPools = [
   },
 
   {
+    id: 'pumpy-pmp-bnb',
+    logo: 'single-assets/PMP.svg',
+    name: 'PMP-BNB LP',
+    token: 'PMP-BNB LP',
+    tokenDescription: 'Pancake (Pumpy)',
+    tokenAddress: '0x18CCA70DDa1699148cB37941d75ccF4847BEa188',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooPumpyPMP-BNB',
+    earnedTokenAddress: '0xE929d65cBf543cC3cA6b18Fe7872fccC6abBf480',
+    earnContractAddress: '0xE929d65cBf543cC3cA6b18Fe7872fccC6abBf480',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'pumpy-pmp-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pumpy',
+    assets: ['PMP', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0x8d4FBB3AC63bf33851dCE80D63613Df1A515BC00',
+  },
+
+  {
     id: 'cake-bifi-bnb',
     logo: 'bnb-pairs/BIFI-BNB.svg',
     name: 'BIFI-BNB LP',
