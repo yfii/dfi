@@ -123,8 +123,7 @@ export const bscPools = [
     platform: 'JulSwap',
     assets: ['TWT', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://julswap.com/#/add/BNB/0x4B0F1812e5Df2A09796481Ff14017e6005508003',
+    addLiquidityUrl: 'https://julswap.com/#/add/BNB/0x4B0F1812e5Df2A09796481Ff14017e6005508003',
   },
 
   {
@@ -149,8 +148,7 @@ export const bscPools = [
     platform: 'JulSwap',
     assets: ['VIDT', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://julswap.com/#/add/BNB/0x3f515f0a8e93F2E2f891ceeB3Db4e62e202d7110',
+    addLiquidityUrl: 'https://julswap.com/#/add/BNB/0x3f515f0a8e93F2E2f891ceeB3Db4e62e202d7110',
   },
 
   {
@@ -2559,7 +2557,7 @@ export const bscPools = [
     token: 'SPG-BNB LP',
     tokenDescription: 'Sponge',
     tokenAddress: '0xBB74572F3C00B4d18fAbeADb7d5984D7b3AE05d1',
-    tokenDecimals: 9,
+    tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooSpongeSPG-BNB',
     earnedTokenAddress: '0x1B3564F698988804b5D05a2C10B1d71bE051662F',
