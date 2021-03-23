@@ -24,6 +24,32 @@ export const bscPools = [
   },
 
   {
+    id: 'cake-bdigg-btcb',
+    logo: 'uncategorized/BDIGG-BTCB.svg',
+    name: 'bDIGG-BTCB LP',
+    token: 'bDIGG-BTCB LP',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0xE1E33459505bB3763843a426F7Fd9933418184ae',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooPancakeBDIGG-BNB',
+    earnedTokenAddress: '0x2c1a0950aC426f920f260C9647BCD3AFD0482f4e',
+    earnContractAddress: '0x2c1a0950aC426f920f260C9647BCD3AFD0482f4e',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cake-bdigg-btcb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['bDIGG', 'BTC'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0x5986D5c77c65e5801a5cAa4fAE80089f870A71dA/0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c',
+  },
+
+  {
     id: 'pumpy-pmp-bnb',
     logo: 'single-assets/PMP.svg',
     name: 'PMP-BNB LP',
