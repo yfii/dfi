@@ -35,7 +35,6 @@ const styles = theme => ({
     flexFlow: 'row nowrap',
     justifyContent: 'flex-start',
     position: 'relative',
-    zIndex: 0,
   },
   absolute: {
     position: 'absolute',
