@@ -24,6 +24,32 @@ export const bscPools = [
   },
 
   {
+    id: 'cake-bbadger-btcb',
+    logo: 'uncategorized/BADGER-BTCB.svg',
+    name: 'bBADGER-BTCB LP',
+    token: 'bBADGER-BTCB LP',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0x10F461CEAC7A17F59e249954Db0784d42EfF5DB5',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooPancakeBADGER-BNB',
+    earnedTokenAddress: '0x9fBa2fc7505CE6801ADCF23146310187CecfcE47',
+    earnContractAddress: '0x9fBa2fc7505CE6801ADCF23146310187CecfcE47',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cake-bbadger-btcb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['bBADGER', 'BTC'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c/0x1f7216fdb338247512ec99715587bb97bbf96eae',
+  },
+
+  {
     id: 'cake-bdigg-btcb',
     logo: 'uncategorized/BDIGG-BTCB.svg',
     name: 'bDIGG-BTCB LP',
