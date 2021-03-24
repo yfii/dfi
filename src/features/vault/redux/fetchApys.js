@@ -16,7 +16,7 @@ export function fetchApys() {
     const promise = new Promise((resolve, reject) => {
       // FIXME: restore this once CF is the only enabled client
       const t = Math.trunc(Date.now() / (5 * 60 * 1000));
-      const doRequest = axios.get(`https://api.beefy.finance/apy?_=1616816949`);
+      const doRequest = axios.get(`https://api.beefy.finance/apy?_=1616916949`);
 
       doRequest.then(
         res => {
