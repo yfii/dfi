@@ -1161,6 +1161,7 @@ export const bscPools = [
     callFee: 0.5,
     addLiquidityUrl:
       'https://exchange.pancakeswap.finance/#/add/BNB/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
+    launchpool: 'moo_cake_bnb-space',
   },
 
   {
