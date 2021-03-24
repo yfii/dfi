@@ -24,6 +24,33 @@ export const bscPools = [
   },
 
   {
+    id: 'auto-cake-bnb',
+    logo: 'bnb-pairs/CAKE-BNB.svg',
+    name: 'CAKE-BNB LP',
+    token: 'CAKE-BNB LP',
+    tokenDescription: 'Pancake (Auto)',
+    tokenAddress: '0xA527a61703D82139F8a06Bc30097cC9CAA2df5A6',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooAutoCAKE-BNB',
+    earnedTokenAddress: '0x5DA77c7DBF6dBa1155CF343db06a7D79aaaad9Ee',
+    earnContractAddress: '0x5DA77c7DBF6dBa1155CF343db06a7D79aaaad9Ee',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'auto-cake-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Autofarm',
+    assets: ['CAKE', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
+    launchpool: 'moo_cake_bnb-space',
+  },
+
+  {
     id: 'space-space-bnb',
     logo: 'degens/SPACE-BNB.png',
     name: 'SPACE-BNB LP',
@@ -1135,33 +1162,6 @@ export const bscPools = [
     callFee: 0.5,
     addLiquidityUrl:
       'https://exchange.pancakeswap.finance/#/add/0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c/BNB',
-  },
-
-  {
-    id: 'auto-cake-bnb',
-    logo: 'bnb-pairs/CAKE-BNB.svg',
-    name: 'CAKE-BNB LP',
-    token: 'CAKE-BNB LP',
-    tokenDescription: 'Pancake (Auto)',
-    tokenAddress: '0xA527a61703D82139F8a06Bc30097cC9CAA2df5A6',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooAutoCAKE-BNB',
-    earnedTokenAddress: '0x5DA77c7DBF6dBa1155CF343db06a7D79aaaad9Ee',
-    earnContractAddress: '0x5DA77c7DBF6dBa1155CF343db06a7D79aaaad9Ee',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'auto-cake-bnb',
-    oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
-    platform: 'Autofarm',
-    assets: ['CAKE', 'BNB'],
-    callFee: 0.5,
-    addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#/add/BNB/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
-    launchpool: 'moo_cake_bnb-space',
   },
 
   {
