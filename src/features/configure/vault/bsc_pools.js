@@ -33,8 +33,8 @@ export const bscPools = [
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooAlpacaALPACA-BNB',
-    earnedTokenAddress: '0x23b5b9e47061B54350CE2a61b4D922c5E554e6B6',
-    earnContractAddress: '0x23b5b9e47061B54350CE2a61b4D922c5E554e6B6',
+    earnedTokenAddress: '0xB4CF4b0d79AF3A5627D5595483e0df9620B7d236',
+    earnContractAddress: '0xB4CF4b0d79AF3A5627D5595483e0df9620B7d236',
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
@@ -45,6 +45,7 @@ export const bscPools = [
     platform: 'Alpaca',
     assets: ['ALPACA', 'BNB'],
     callFee: 0.5,
+    addLiquidityUrl: "https://exchange.pancakeswap.finance/#/add/BNB/0x8F0528cE5eF7B51152A59745bEfDD91D97091d2F"
   },
 
   {
