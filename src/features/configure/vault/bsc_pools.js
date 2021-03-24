@@ -45,7 +45,10 @@ export const bscPools = [
     platform: 'Alpaca',
     assets: ['ALPACA', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl: "https://exchange.pancakeswap.finance/#/add/BNB/0x8F0528cE5eF7B51152A59745bEfDD91D97091d2F"
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0x8F0528cE5eF7B51152A59745bEfDD91D97091d2F',
+  },
+  {
     id: 'auto-cake-bnb',
     logo: 'bnb-pairs/CAKE-BNB.svg',
     name: 'CAKE-BNB LP',
