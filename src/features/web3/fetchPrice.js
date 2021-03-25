@@ -78,7 +78,12 @@ const oracleEndpoints = {
   lps: () => fetchLPs(),
 };
 
-export async function initializePriceCache() {
+let pricesLoadedPromise;
+export function whenPricesLoaded() {
+  return pricesLoadedPromise;
+}
+
+export function initializePriceCache() {
   const currentTimestamp = new Date();
   priceCache.lastUpdated = currentTimestamp;
 
@@ -98,24 +103,19 @@ export async function initializePriceCache() {
   });
 
   const promises = [...oracleToIds.keys()].map(key => oracleEndpoints[key](oracleToIds.get(key)));
-  const results = await Promise.all(promises);
-  const allPrices = results.reduce((accPrices, curPrices) => ({ ...accPrices, ...curPrices }), {});
-  [...oracleToIds.values()].flat().forEach(id => priceCache.cache.set(id, allPrices[id]));
+  pricesLoadedPromise = Promise.all(promises).then(results => {
+    const allPrices = results.reduce((accPrices, curPrices) => ({ ...accPrices, ...curPrices }), {});
+    [...oracleToIds.values()].flat().forEach(id => priceCache.cache.set(id, allPrices[id]));
+  });
 }
 
-export const fetchPrice = async ({ id }) => {
+export const fetchPrice = ({ id }) => {
   if (id === undefined) {
     console.error('Undefined pair');
     return 0;
   }
 
-  let counter = 0; // safe guard, though it shouldn't happen
-  while (!isCached(id) && counter < 10) {
-    // console.trace(id, 'price not cached');
-    counter++;
-  }
-
   maybeUpdateCache();
 
-  return getCachedPrice(id) ? getCachedPrice(id) : 0;
+  return getCachedPrice(id) || 0;
 };

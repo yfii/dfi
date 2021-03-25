@@ -46,17 +46,25 @@ export default function Pools() {
   }, [fetchPoolsInfo]);
 
   useEffect(() => {
-    if (address && web3) {
-      const fetch = () => {
-        fetchBalances({ address, web3, tokens });
-        fetchVaultsData({ address, web3, pools });
-        fetchApys();
-      };
-      fetch();
+    const fetch = () => {
+      fetchApys();
+    };
+    fetch();
+    const id = setInterval(fetch, FETCH_INTERVAL_MS);
+    return () => clearInterval(id);
+  }, [fetchApys]);
 
-      const id = setInterval(fetch, FETCH_INTERVAL_MS);
-      return () => clearInterval(id);
-    }
+  useEffect(() => {
+    const fetch = () => {
+      if (address && web3) {
+        fetchBalances({ address, web3, tokens });
+      }
+      fetchVaultsData({ address, web3, pools });
+    };
+    fetch();
+
+    const id = setInterval(fetch, FETCH_INTERVAL_MS);
+    return () => clearInterval(id);
 
     // Adding tokens and pools to this dep list, causes an endless loop, DDoSing the api
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -81,7 +89,7 @@ export default function Pools() {
 
           <span className={classes.text}>
             {t('Vault-Deposited')}{' '}
-            {fetchVaultsDataDone ? (
+            {fetchVaultsDataDone && fetchBalancesDone ? (
               formatGlobalTvl(myTvl)
             ) : (
               <TVLLoader className={classes.titleLoader} />
