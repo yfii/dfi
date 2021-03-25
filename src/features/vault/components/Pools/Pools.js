@@ -46,11 +46,8 @@ export default function Pools() {
   }, [fetchPoolsInfo]);
 
   useEffect(() => {
-    const fetch = () => {
-      fetchApys();
-    };
-    fetch();
-    const id = setInterval(fetch, FETCH_INTERVAL_MS);
+    fetchApys();
+    const id = setInterval(fetchApys, FETCH_INTERVAL_MS);
     return () => clearInterval(id);
   }, [fetchApys]);
 
