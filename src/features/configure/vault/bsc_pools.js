@@ -51,6 +51,32 @@ export const bscPools = [
   },
 
   {
+    id: 'alpaca-alpaca-bnb',
+    logo: 'bnb-pairs/ALPACA-BNB.png',
+    name: 'ALPACA-BNB LP',
+    token: 'ALPACA-BNB LP',
+    tokenDescription: 'Alpaca',
+    tokenAddress: '0xF3CE6Aac24980E6B657926dfC79502Ae414d3083',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooAlpacaALPACA-BNB',
+    earnedTokenAddress: '0xB4CF4b0d79AF3A5627D5595483e0df9620B7d236',
+    earnContractAddress: '0xB4CF4b0d79AF3A5627D5595483e0df9620B7d236',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'alpaca-alpaca-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Alpaca',
+    assets: ['ALPACA', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0x8F0528cE5eF7B51152A59745bEfDD91D97091d2F',
+  },
+
+  {
     id: 'space-space-bnb',
     logo: 'degens/SPACE-BNB.png',
     name: 'SPACE-BNB LP',
