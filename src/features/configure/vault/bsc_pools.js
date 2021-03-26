@@ -49,6 +49,32 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/add/BNB/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
     launchpool: 'moo_cake_bnb-space',
   },
+
+  {
+    id: 'naut-naut-bnb',
+    logo: 'degens/NAUT.png',
+    name: 'NAUT-BNB LP',
+    token: 'NAUT-BNB LP',
+    tokenDescription: 'ApeSwap',
+    tokenAddress: '0x288EA5437c7aaD045a393cee2F41E548df24d1C8',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooNautNAUT-BNB',
+    earnedTokenAddress: '0x693402b80b073b872589433e6fa1b08665E12025',
+    earnContractAddress: '0x693402b80b073b872589433e6fa1b08665E12025',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'naut-naut-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'ApeSwap',
+    assets: ['NAUT', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://dex.apeswap.finance/#/add/ETH/0x05B339B0A346bF01f851ddE47a5d485c34FE220c',
+  },
   
   {
     id: 'cake-zil-bnb',
