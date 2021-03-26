@@ -54,7 +54,7 @@ const fetchCoingecko = async ids => {
 
 const fetchTokens = async () => {
   try {
-    const response = await axios.get(`https://api.beefy.finance/prices?_=1616711173`);
+    const response = await axios.get(`https://api.beefy.finance/prices?_=1611711173`);
     return response.data;
   } catch (err) {
     console.error(err);
@@ -64,7 +64,7 @@ const fetchTokens = async () => {
 
 const fetchLPs = async () => {
   try {
-    const response = await axios.get(`https://api.beefy.finance/lps?_=1616711173`);
+    const response = await axios.get(`https://api.beefy.finance/lps?_=1611711173`);
     return response.data;
   } catch (err) {
     console.error(err);
@@ -104,7 +104,10 @@ export function initializePriceCache() {
 
   const promises = [...oracleToIds.keys()].map(key => oracleEndpoints[key](oracleToIds.get(key)));
   pricesLoadedPromise = Promise.all(promises).then(results => {
-    const allPrices = results.reduce((accPrices, curPrices) => ({ ...accPrices, ...curPrices }), {});
+    const allPrices = results.reduce(
+      (accPrices, curPrices) => ({ ...accPrices, ...curPrices }),
+      {}
+    );
     [...oracleToIds.values()].flat().forEach(id => priceCache.cache.set(id, allPrices[id]));
   });
 }

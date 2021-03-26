@@ -32,6 +32,39 @@ export const bscStakePools = [
       },
     },
   },
+
+  {
+    id: 'moo_auto_wbnb-naut',
+    name: 'Astronaut',
+    logo: 'single-assets/BNB.png',
+    token: 'mooAutoWbnbFixed',
+    tokenDecimals: 18,
+    tokenAddress: '0x5B06aA1ebd2e15bC6001076355E5B4C39Cbc83F3',
+    tokenOracle: 'tokens',
+    tokenOracleId: 'WBNB',
+    earnedToken: 'NAUT',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x05B339B0A346bF01f851ddE47a5d485c34FE220c',
+    earnContractAddress: '0x47F7CbE34aD6f857662759CDAECC48152237d135',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'NAUT',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    partner: {
+      logo: 'stake/astronaut/logo.png',
+      background: 'stake/astronaut/background.png',
+      text:
+        'Astronaut is a protocol built for decentralizing the way in which new projects and ideas coming to the BSC ecosystem raise capital. With Astronaut, decentralized projects will be able to raise and exchange capital cheap and fast. Users will be able to participate in a secure and interoperable environment on the Binance Smart Chain. The deployment of the protocol will take place in III phases. During Phase I Astronaut is a deflationary token that burns and redistributes %s to its holders. During Phase II Astronaut will release its evolved platform and launchpad to provide secure, fair, and affordable launches to both projects and investors alike. Phase III will be the real game-changer with a bridge and a full DeFi ecosystem. Astronaut takes their initiative from the bottom up slowly increasing value to the project and holders of the native NAUT token.',
+      website: 'https://astronaut.to/',
+      social: {
+        telegram: 'https://t.me/joinchat/pJTzEu-mhnAzMjMx',
+        twitter: 'https://twitter.com/astronauttoken',
+      },
+    },
+  },
+
   {
     id: 'moo_cake_bnb-space',
     name: 'Farm.Space',
@@ -54,7 +87,8 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/space/logo.png',
       background: 'stake/space/background.png',
-      text: 'Farm your way into DeFi space! Bringing dual farming rewards through margin trading and lending, to yield farming, on the Binance Smart Chain.',
+      text:
+        'Farm your way into DeFi space! Bringing dual farming rewards through margin trading and lending, to yield farming, on the Binance Smart Chain.',
       website: 'https://farm.space/',
       social: {
         telegram: 'https://t.me/farmdotspace',

@@ -130,7 +130,7 @@ export default function StakePools(props) {
               </Typography>
 
               <Typography className={classes.subtitle} variant="body2">
-                {pool.token}
+                {pool.token === 'mooAutoWbnbFixed' ? 'mooAutoWBNB' : pool.token}
               </Typography>
               <Button
                 disabled={pools[index].status === 'soon'}

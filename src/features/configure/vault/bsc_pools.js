@@ -24,6 +24,31 @@ export const bscPools = [
   },
 
   {
+    id: 'auto-wbnb',
+    logo: 'single-assets/WBNB.svg',
+    name: 'WBNB',
+    token: 'WBNB',
+    tokenDescription: 'Venus (Auto)',
+    tokenAddress: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooAutoWbnbFixed',
+    earnedTokenAddress: '0x5B06aA1ebd2e15bC6001076355E5B4C39Cbc83F3',
+    earnContractAddress: '0x5B06aA1ebd2e15bC6001076355E5B4C39Cbc83F3',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'tokens',
+    oracleId: 'WBNB',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Autofarm',
+    assets: ['BNB'],
+    callFee: 0.5,
+    launchpool: 'moo_auto_wbnb-naut',
+  },
+
+  {
     id: 'auto-cake-bnb',
     logo: 'bnb-pairs/CAKE-BNB.svg',
     name: 'CAKE-BNB LP',
@@ -75,7 +100,7 @@ export const bscPools = [
     addLiquidityUrl:
       'https://dex.apeswap.finance/#/add/ETH/0x05B339B0A346bF01f851ddE47a5d485c34FE220c',
   },
-  
+
   {
     id: 'cake-zil-bnb',
     logo: 'bnb-pairs/ZIL-BNB.svg',
@@ -868,30 +893,6 @@ export const bscPools = [
     callFee: 0.5,
     addLiquidityUrl:
       'https://exchange.pancakeswap.finance/#/add/0x2170Ed0880ac9A755fd29B2688956BD959F933F8/0x250632378E573c6Be1AC2f97Fcdf00515d0Aa91B',
-  },
-
-  {
-    id: 'auto-wbnb',
-    logo: 'single-assets/WBNB.svg',
-    name: 'WBNB',
-    token: 'WBNB',
-    tokenDescription: 'Venus (Auto)',
-    tokenAddress: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooAutoWbnbFixed',
-    earnedTokenAddress: '0x5B06aA1ebd2e15bC6001076355E5B4C39Cbc83F3',
-    earnContractAddress: '0x5B06aA1ebd2e15bC6001076355E5B4C39Cbc83F3',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'tokens',
-    oracleId: 'WBNB',
-    oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
-    platform: 'Autofarm',
-    assets: ['BNB'],
-    callFee: 0.5,
   },
 
   {
