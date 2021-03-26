@@ -43,7 +43,7 @@ export const bscStakePools = [
     tokenOracle: 'tokens',
     tokenOracleId: 'WBNB',
     earnedToken: 'NAUT',
-    earnedTokenDecimals: 18,
+    earnedTokenDecimals: 8,
     earnedTokenAddress: '0x05B339B0A346bF01f851ddE47a5d485c34FE220c',
     earnContractAddress: '0x47F7CbE34aD6f857662759CDAECC48152237d135',
     earnContractAbi: govPoolABI,
