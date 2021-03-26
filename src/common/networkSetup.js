@@ -51,3 +51,8 @@ export const networkSetup = (chainId) => {
       }
     })
   }
+
+export const getRpcUrl = () => {
+  const settings = networkSettings[process.env.REACT_APP_NETWORK_ID];
+  return settings.rpcUrls[0];
+};

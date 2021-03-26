@@ -12,6 +12,7 @@ import { erc20ABI, vaultABI } from '../../configure';
 import { byDecimals } from 'features/helpers/bignumber';
 import { getNetworkMulticall } from 'features/helpers/getNetworkData';
 import Web3 from 'web3';
+import { getRpcUrl } from 'common/networkSetup';
 
 export function fetchVaultsData({ address, web3, pools }) {
   return dispatch => {
@@ -21,7 +22,7 @@ export function fetchVaultsData({ address, web3, pools }) {
 
     if (!web3) {
       // setup default provider to get vault data
-      web3 = new Web3(new Web3.providers.HttpProvider('https://bsc-dataseed.binance.org'));
+      web3 = new Web3(new Web3.providers.HttpProvider(getRpcUrl()));
     }
 
     const promise = new Promise((resolve, reject) => {
