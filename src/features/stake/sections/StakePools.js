@@ -195,7 +195,7 @@ export default function StakePools(props) {
             <AccordionDetails>
               <Typography>
                 Since we introduced multiple partner vaults at different times, there is a timer
-                shown on each partner vault. This is nothing you really need to keep track of, since
+                shown on each partner vault. This is nothing you really need to keep track of since
                 you can always come back after a vault is finished and withdraw then.
               </Typography>
             </AccordionDetails>
@@ -248,14 +248,26 @@ export default function StakePools(props) {
               <Typography>
                 Once you stake in any of Beefy Finance vaults, you get in return something called
                 mooTokens. These are different depending on the vault you participate in, this can
-                be called ‘mooBIFI’ or ‘mooAutoCake’. Basically these are receipts for the funds you
-                deposited. They have no value, they’re just a way to show that you have a certain
-                amount of tokens deposited in that vault. When you want to withdraw, your mooTokens
-                are exchanged back into the tokens you deposited + compound.
+                be called ‘mooBIFI’ or ‘mooAutoCake’. Basically, these are receipts for the funds
+                you deposited. They have no value, they’re just a way to show that you have a
+                certain amount of tokens deposited in that vault. When you want to withdraw, your
+                mooTokens are exchanged back into the tokens you deposited + compound.
               </Typography>
             </AccordionDetails>
           </Accordion>
           <Accordion square expanded={expanded === 'faq-8'} onChange={handleChange('faq-8')}>
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <Typography>Are these partner vaults safe to use?</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                Yes! These partner vaults are hosted by Beefy and are completely safe. Beefy has
+                gotten tokens from our partners and uses our own vaults for the reward. Those
+                mooTokens your stake doesn’t leave Beefy.
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion square expanded={expanded === 'faq-9'} onChange={handleChange('faq-9')}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Typography>
                 If I enter a partner vault with my mooTokens, will I still earn the ordinary vault
@@ -272,14 +284,14 @@ export default function StakePools(props) {
               </Typography>
             </AccordionDetails>
           </Accordion>
-          <Accordion square expanded={expanded === 'faq-9'} onChange={handleChange('faq-9')}>
+          <Accordion square expanded={expanded === 'faq-10'} onChange={handleChange('faq-10')}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Typography>Why is APY and Daily rates not matching?</Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                That’s because APR and APY show two different things. APR means “Annual percentage
-                rate” and is a fixed rate. Beefy shows APR by dividing the annual yield into 365
+                That’s because APR and APY show two different things. APR means “Annual Percentage
+                Rate” and is a fixed rate. Beefy shows APR by dividing the annual yield into 365
                 days and presents that to you as “Daily”. APY on the other hand means “Annual
                 percentage yield” which is when you take the daily yield and compound it. Beefy
                 compounds your rewards automatically most of the time multiple times a day, this
@@ -287,7 +299,7 @@ export default function StakePools(props) {
               </Typography>
             </AccordionDetails>
           </Accordion>
-          <Accordion square expanded={expanded === 'faq-10'} onChange={handleChange('faq-10')}>
+          <Accordion square expanded={expanded === 'faq-11'} onChange={handleChange('faq-11')}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Typography>How come the APY shown when deposited is not the same now?</Typography>
             </AccordionSummary>
@@ -297,21 +309,35 @@ export default function StakePools(props) {
                 yield in turn is based on factors such as the yield rate and the total amount
                 deposited that share this yield. When more people and in turn tokens enter the pool,
                 the fixed yield is shared by more people (tokens) hence the daily yield will become
-                lower and in turn lower the APY. In the same way if people (tokens) exit the vault,
-                there are less people (tokens) sharing the fixed reward and the daily yield will
-                increase and in turn APY will increase.
+                lower and in turn, lower the APY. In the same way, if people (tokens) exit the
+                vault, there are fewer people (tokens) sharing the fixed reward and the daily yield
+                will increase and in turn, APY will increase.
               </Typography>
             </AccordionDetails>
           </Accordion>
-          <Accordion square expanded={expanded === 'faq-11'} onChange={handleChange('faq-11')}>
+          <Accordion square expanded={expanded === 'faq-12'} onChange={handleChange('faq-12')}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography>Are these partner vaults safe to use?</Typography>
+              <Typography>Are the promoted project and its tokens safe?</Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                Yes! These partner vaults are hosted by Beefy and are completely safe. Beefy have
-                gotten tokens from our partners and use our own vaults for the reward. Those
-                mooTokens you stake doesn’t leave Beefy.
+                When partnering with a certain project, Beefy always tries to make an overall check
+                of the project to get a sense of its sincerity and safety. Before adding vaults that
+                are hosted by the partnering project, we also try to look for vulnerabilities in the
+                code. Despite all this, we can never be 100% sure about a partner, hence it’s up to
+                you to make sure that the partnering project is a project that you want to support.
+                Beefy cannot, and will not take any responsibility for your personal actions.
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion square expanded={expanded === 'faq-13'} onChange={handleChange('faq-13')}>
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <Typography>How to earn free BNB indefinitely?</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                Buy our own token $BIFI, and stake it here in the BIFI Gov vault and you will earn
+                part of every harvest done on all our over 200 vaults, every day.
               </Typography>
             </AccordionDetails>
           </Accordion>
