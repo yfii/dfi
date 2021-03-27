@@ -39,7 +39,7 @@ export const getNetworkStakePools = () => {
 export const getNetworkStables = () => {
   switch (process.env.REACT_APP_NETWORK_ID) {
     case '56':
-      return ['BUSD', 'USDT', 'USDC', 'DAI', 'VAI', 'QUSD', 'UST'];
+      return ['BUSD', 'USDT', 'USDC', 'DAI', 'VAI', 'QUSD', 'UST', 'VENUS BLP', '3EPS'];
     case '128':
       return ['USDT', 'HUSD'];
     case '43114':
