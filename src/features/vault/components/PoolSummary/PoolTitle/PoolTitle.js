@@ -36,7 +36,7 @@ const PoolTitle = ({ name, logo, description, launchpool, addLiquidityUrl }) => 
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span>{t('Add-Liquidity')}</span>
+              <span>{name === 'WBNB' ? t('Wrap BNB') : t('Add-Liquidity')}</span>
             </a>
           </div>
         ) : (

@@ -45,6 +45,7 @@ export const bscPools = [
     platform: 'Autofarm',
     assets: ['BNB'],
     callFee: 0.5,
+    addLiquidityUrl: 'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
     launchpool: 'moo_auto_wbnb-naut',
   },
 
