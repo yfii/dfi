@@ -141,7 +141,7 @@ const renderLinkSidebar = (name, label, icon, classes) => {
 
 const getLinkUrl = name => {
   return name === 'buy'
-    ? 'https://1inch.exchange/#/r/0xF4cb25a1FF50E319c267b3E51CBeC2699FB2A43B/WBNB/BIFI'
+    ? 'https://1inch.exchange/#/r/0xF4cb25a1FF50E319c267b3E51CBeC2699FB2A43B/BNB/BIFI/?network=56'
     : `https://${name}.beefy.finance`;
 };
 
