@@ -34,6 +34,37 @@ export const bscStakePools = [
   },
 
   {
+    id: 'moo_1inch-hps',
+    name: 'Billionhappiness',
+    logo: 'single-assets/INCH.png',
+    token: 'moo1INCH1INCH',
+    tokenDecimals: 18,
+    tokenAddress: '0xBa53AF4C2f1649F82e8070FB306DDBF2771A1950',
+    tokenOracle: 'tokens',
+    tokenOracleId: '1INCH',
+    earnedToken: 'HPS',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xeDa21B525Ac789EaB1a08ef2404dd8505FfB973D',
+    earnContractAddress: '0x9ae4496b063f5715561Cbe8f1d389a3FE4720258',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'HPS',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    partner: {
+      logo: 'stake/billionhappiness/logo.png',
+      background: 'stake/billionhappiness/background.png',
+      text: 'BillionHappiness is a blockchain technology-based apparel company dedicated to providing happiness through a transparent record of information on its quality products. Our goal is to provide authenticity using blockchain technology to eliminate counterfeit items on the market. Billion Happiness has a token called BHC.',
+      website: 'https://billionhappiness.finance',
+      social: {
+        telegram: 'https://t.me/BillionHappinessOfficial',
+        twitter: 'https://twitter.com/BHC_Happiness',
+      },
+    },
+  },
+
+  {
     id: 'moo_auto_wbnb-naut',
     name: 'Astronaut',
     logo: 'single-assets/BNB.png',

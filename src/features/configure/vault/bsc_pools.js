@@ -146,6 +146,7 @@ export const bscPools = [
     platform: '1Inch',
     assets: ['1INCH'],
     callFee: 0.5,
+    launchpool: 'moo_1inch-hps',
   },
 
   {
