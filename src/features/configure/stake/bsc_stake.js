@@ -177,7 +177,7 @@ export const bscStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'NUTS',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     partner: {
       logo: 'stake/squirrel/logo.png',
@@ -208,7 +208,7 @@ export const bscStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'APE',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     partner: {
       logo: 'stake/memefarm/logo.png',
@@ -239,7 +239,7 @@ export const bscStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'SLIME',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     partner: {
       logo: 'stake/slimefinance/logo.png',
