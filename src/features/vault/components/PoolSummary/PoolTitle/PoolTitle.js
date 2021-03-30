@@ -9,7 +9,7 @@ import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-const PoolTitle = ({ name, logo, description, launchpool, addLiquidityUrl }) => {
+const PoolTitle = ({ name, logo, description, launchpool, buyTokenUrl, addLiquidityUrl }) => {
   const classes = useStyles();
   const { t } = useTranslation();
 
@@ -17,37 +17,48 @@ const PoolTitle = ({ name, logo, description, launchpool, addLiquidityUrl }) => 
     <Grid item xs={3} className={classes.container}>
       <Avatar
         alt={name}
-        variant="square"
+        variant='square'
         imgProps={{ style: { objectFit: 'contain' } }}
         src={require(`images/${logo}`)}
       />
       <div className={classes.texts}>
-        <Typography className={classes.title} variant="body2" gutterBottom>
+        <Typography className={classes.title} variant='body2' gutterBottom>
           {name}
         </Typography>
-        <Typography className={classes.subtitle} variant="body2">
+        <Typography className={classes.subtitle} variant='body2'>
           {description}
         </Typography>
-        {addLiquidityUrl ? (
-          <div style={{ marginTop: '4px' }}>
+        <div style={{ display: 'flex', marginTop: '6px' }}>
+          {buyTokenUrl ? (
+            <a className={classes.url}
+               href={buyTokenUrl}
+               target='_blank'
+               rel='noopener noreferrer'
+            >
+              <span>{name === 'WBNB' ? t('Wrap-BNB') : t('Buy-Token')}</span>
+              {'\u00A0\u00A0'}
+            </a>
+          ) : (
+            ''
+          )}
+          {addLiquidityUrl ? (
             <a
               className={classes.url}
               href={addLiquidityUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              target='_blank'
+              rel='noopener noreferrer'
             >
-              <span>{name === 'WBNB' ? t('Wrap BNB') : t('Add-Liquidity')}</span>
+              <span>{t('Add-Liquidity')}</span>
             </a>
-          </div>
-        ) : (
-          ''
-        )}
-
+          ) : (
+            ''
+          )}
+        </div>
         {launchpool ? (
           <a className={classes.btnBoost} href={'/stake/pool/' + launchpool.poolIndex}>
-            <img alt="Boost" src={require('images/stake/boost.svg')} height={15} />
+            <img alt='Boost' src={require('images/stake/boost.svg')} height={15} />
             <span>
-              <img alt="Fire" src={require('images/stake/fire.png')} height={30} />
+              <img alt='Fire' src={require('images/stake/fire.png')} height={30} />
             </span>
           </a>
         ) : (

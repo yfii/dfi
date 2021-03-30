@@ -82,6 +82,7 @@ const PoolSummary = ({
           description={t('Vault-Description', { vault: pool.tokenDescription })}
           launchpool={launchpool}
           addLiquidityUrl={pool.addLiquidityUrl}
+          buyTokenUrl={pool.buyTokenUrl}
         />
         <Grid item md={8} xs={7}>
           <Grid item container justify="space-between">
