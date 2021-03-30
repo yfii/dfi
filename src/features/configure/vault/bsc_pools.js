@@ -105,6 +105,57 @@ export const bscPools = [
   },
 
   {
+    id: 'zefi-zefi-bnb',
+    logo: 'degens/ZEFI-BNB.svg',
+    name: 'ZEFI-BNB LP',
+    token: 'ZEFI-BNB LP',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0x0E6027880A04677BAE5E4225000078eE92904bf6',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooZefiZEFI-BNB',
+    earnedTokenAddress: '0xc9f7337E2c638C48dd7dcF506535e8fEb0c3c786',
+    earnContractAddress: '0xc9f7337E2c638C48dd7dcF506535e8fEb0c3c786',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'zefi-zefi-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['ZEFI', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl: 'https://swap.zcore.network/#/add/BNB/0x0288D3E353fE2299F11eA2c2e1696b4A648eCC07',
+    buyTokenUrl: 'https://swap.zcore.network/#/swap?outputCurrency=0x0288D3E353fE2299F11eA2c2e1696b4A648eCC07',
+  },
+  {
+    id: 'zefi-zefi-busd',
+    logo: 'degens/ZEFI-BUSD.svg',
+    name: 'ZEFI-BUSD LP',
+    token: 'ZEFI-BUSD LP',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0x24B87c29e907D6329ED8fD6d7B2ecb074089093E',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooZefiZEFI-BUSD',
+    earnedTokenAddress: '0x8152cd7b2EA135022a5E0baF625CB655302F2E7b',
+    earnContractAddress: '0x8152cd7b2EA135022a5E0baF625CB655302F2E7b',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'zefi-zefi-busd',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['ZEFI', 'BUSD'],
+    callFee: 0.5,
+    addLiquidityUrl: 'https://swap.zcore.network/#/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0x0288D3E353fE2299F11eA2c2e1696b4A648eCC07',
+    buyTokenUrl: 'https://swap.zcore.network/#/swap?outputCurrency=0x0288D3E353fE2299F11eA2c2e1696b4A648eCC07',
+  },
+
+  {
     id: 'hps-hps',
     logo: 'single-assets/HPS.png',
     name: 'HPS',
@@ -251,7 +302,7 @@ export const bscPools = [
     platform: 'ApeSwap',
     assets: ['NAUT', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl:'https://dex.apeswap.finance/#/add/ETH/0x05B339B0A346bF01f851ddE47a5d485c34FE220c',
+    addLiquidityUrl: 'https://dex.apeswap.finance/#/add/ETH/0x05B339B0A346bF01f851ddE47a5d485c34FE220c',
     buyTokenUrl: 'https://dex.apeswap.finance/#/swap?inputCurrency=0x05b339b0a346bf01f851dde47a5d485c34fe220c&outputCurrency=0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
   },
 
@@ -277,7 +328,7 @@ export const bscPools = [
     platform: 'Pancake',
     assets: ['ZIL', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl: 
+    addLiquidityUrl:
       'https://exchange.pancakeswap.finance/#/add/BNB/0xb86abcb37c3a4b64f74f59301aff131a1becc787',
     buyTokenUrl: 'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0xb86abcb37c3a4b64f74f59301aff131a1becc787',
   },
@@ -1156,7 +1207,7 @@ export const bscPools = [
     platform: 'ApeSwap',
     assets: ['BANANA'],
     callFee: 0.5,
-    buyTokenUrl: 'https://dex.apeswap.finance/#/swap?inputCurrency=0x603c7f932ED1fc6575303D8Fb018fDCBb0f39a95&outputCurrency=0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c'
+    buyTokenUrl: 'https://dex.apeswap.finance/#/swap?inputCurrency=0x603c7f932ED1fc6575303D8Fb018fDCBb0f39a95&outputCurrency=0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
   },
 
   {
@@ -1838,7 +1889,7 @@ export const bscPools = [
     callFee: 0.5,
     addLiquidityUrl:
       'https://dex.apeswap.finance/#/add/ETH/0x603c7f932ED1fc6575303D8Fb018fDCBb0f39a95',
-    buyTokenUrl: 'https://dex.apeswap.finance/#/swap?inputCurrency=0x603c7f932ED1fc6575303D8Fb018fDCBb0f39a95&outputCurrency=0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c'
+    buyTokenUrl: 'https://dex.apeswap.finance/#/swap?inputCurrency=0x603c7f932ED1fc6575303D8Fb018fDCBb0f39a95&outputCurrency=0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
   },
 
   {
@@ -3791,7 +3842,7 @@ export const bscPools = [
     addLiquidityUrl:
       'https://exchange.pancakeswap.finance/#/add/0x190b589cf9Fb8DDEabBFeae36a813FFb2A702454/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
     buyTokenUrl: 'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x190b589cf9Fb8DDEabBFeae36a813FFb2A702454&outputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
-    },
+  },
 
   {
     id: 'venus-beth',
