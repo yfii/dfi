@@ -34,6 +34,37 @@ export const bscStakePools = [
   },
 
   {
+    id: 'moo_ellipsis_3pool-zefi',
+    name: 'ZCORE Reward Pool',
+    logo: 'uncategorized/EPS3.png',
+    token: 'MooEllipsis3Pool',
+    tokenDecimals: 18,
+    tokenAddress: '0xE563c046147b4dF98bfCD3d00Dc54511F0c3b752',
+    tokenOracle: 'lps',
+    tokenOracleId: 'ellipsis-3eps',
+    earnedToken: 'ZEFI',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x0288D3E353fE2299F11eA2c2e1696b4A648eCC07',
+    earnContractAddress: '0xc7ccd3520bEa91a87ecf39Ed39d9BD59946ED2b5',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'ZEFI',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    partner: {
+      logo: 'stake/zcore/logo.png',
+      background: 'stake/zcore/background.png',
+      text: 'ZCore Finance is a decentralized exchange running on Binance Smart Chain and Pancake swap exchange, with features that let you earn and win tokens. What we are trying to do is create a perpetual deflation token, the ZEFI, that allows a constant price pump with a sufficient burn mechanism. We are not trying to replace the swap & exchange but to add value into the system and create a suitable and sustainable environment for people to yield farm with high APR.',
+      website: 'https://finance.zcore.network/',
+      social: {
+        telegram: 'https://t.me/ZCoreMiners',
+        twitter: 'https://twitter.com/ZCoreCrypto',
+      },
+    },
+  },
+
+  {
     id: 'moo_1inch-hps',
     name: 'Billionhappiness',
     logo: 'single-assets/INCH.png',
