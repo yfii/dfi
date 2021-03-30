@@ -17,6 +17,7 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { useConnectWallet } from 'features/home/redux/hooks';
 import { formatCountdown } from 'features/helpers/format';
+import { ToggleButton, ToggleButtonGroup } from '@material-ui/lab';
 
 const useStyles = makeStyles(styles);
 
@@ -55,40 +56,44 @@ export default function StakePools(props) {
 
   useEffect(() => {
     const fetchCountdown = () => {
-      setTime(new Date());
+      if(address) {
+        setTime(new Date());
+        let obj = {};
+        for (const key in pools) {
+          if (halfTime[key] === undefined) {
+            pools[key].countdown = pools[key].status === 'closed' ? t('Finished') : '';
+            continue;
+          }
 
-      let obj = {};
+          if (halfTime[key] === '0') {
+            obj = { status: 'soon', countdown: t('Coming-Soon') };
+          } else {
+            const deadline = halfTime[key] * 1000;
+            const diff = deadline - time;
 
-      for (const key in pools) {
-        if (halfTime[key] === undefined) {
-          pools[key].countdown = pools[key].status === 'closed' ? t('Finished') : '';
-          continue;
+            obj =
+              diff > 0
+                ? { status: 'active', countdown: formatCountdown(deadline) }
+                : { status: 'closed', countdown: t('Finished') };
+          }
+
+          pools[key].status = obj.status;
+          pools[key].countdown = obj.countdown;
         }
-
-        if (halfTime[key] === '0') {
-          obj = { status: 'soon', countdown: t('Coming-Soon') };
-        } else {
-          const deadline = halfTime[key] * 1000;
-          const diff = deadline - time;
-
-          obj =
-            diff > 0
-              ? { status: 'active', countdown: formatCountdown(deadline) }
-              : { status: 'closed', countdown: t('Finished') };
-        }
-
-        pools[key].status = obj.status;
-        pools[key].countdown = obj.countdown;
       }
     };
-
-    fetchCountdown();
 
     const id = setInterval(() => {
       fetchCountdown();
     }, 1000);
     return () => clearInterval(id);
-  }, [halfTime, pools, t, time]);
+  }, [halfTime, pools, t, time, address]);
+
+  const [showPools, setShowActive] = React.useState('active');
+
+  const handleShowPools = (event, value) => {
+    setShowActive(value);
+  };
 
   return (
     <Grid container>
@@ -97,61 +102,72 @@ export default function StakePools(props) {
           <img alt="Launchpool" src={require('images/stake/launchpool.png')} />
         </div>
       </Grid>
+      <Grid item xs={12} style={{paddingBottom: '20px', textAlign: 'right'}}>
+        <ToggleButtonGroup value={showPools} exclusive onChange={handleShowPools}>
+          <ToggleButton value="all">All</ToggleButton>
+          <ToggleButton value="active">Live</ToggleButton>
+          <ToggleButton value="closed">Finished</ToggleButton>
+        </ToggleButtonGroup>
+      </Grid>
       <Grid container spacing={4} justify={'center'}>
         {pools.map((pool, index) => (
-          <Grid xs={12} sm={6} md={6} lg={3} key={index} item>
-            <Grid
-              className={[
-                classes.item,
-                pools[index].status === 'closed'
-                  ? classes.itemRetired
-                  : pools[index].status === 'soon'
-                  ? classes.itemSoon
-                  : '',
-              ].join(' ')}
-            >
-              {pool.partnership ? (
-                <Box className={classes.boosted}>{t('Stake-BoostedBy', { name: pool.name })}</Box>
-              ) : (
-                ''
-              )}
-              <Typography className={classes.title} variant="body2" gutterBottom>
-                Earn {pool.earnedToken}
-              </Typography>
-              <Avatar
-                src={require('images/' + pool.logo)}
-                alt={pool.earnedToken}
-                variant="square"
-                imgProps={{ style: { objectFit: 'contain' } }}
-              />
+          <React.Fragment key={index}>
+            {(showPools === 'all' || showPools === 'active' && pools[index].status === showPools || showPools === 'closed' && pools[index].status === showPools) ? (
+              <Grid xs={12} sm={6} md={6} lg={3} key={index} item>
+                <Grid
+                  className={[
+                    classes.item,
+                    pools[index].status === 'closed'
+                      ? classes.itemRetired
+                      : pools[index].status === 'soon'
+                      ? classes.itemSoon
+                      : '',
+                  ].join(' ')}
+                >
+                  {pool.partnership ? (
+                    <Box className={classes.boosted}>{t('Stake-BoostedBy', { name: pool.name })}</Box>
+                  ) : (
+                    ''
+                  )}
+                  <Typography className={classes.title} variant="body2" gutterBottom>
+                    Earn {pool.earnedToken}
+                  </Typography>
+                  <Avatar
+                    src={require('images/' + pool.logo)}
+                    alt={pool.earnedToken}
+                    variant="square"
+                    imgProps={{ style: { objectFit: 'contain' } }}
+                  />
 
-              <Typography className={classes.countdown}>
-                {pools[index].hideCountdown ? '' : pools[index].countdown}
-              </Typography>
+                  <Typography className={classes.countdown}>
+                    {pools[index].hideCountdown ? '' : pools[index].countdown}
+                  </Typography>
 
-              <Typography className={classes.subtitle} variant="body2">
-                {pool.token === 'mooAutoWbnbFixed' ? 'mooAutoWBNB' : pool.token}
-              </Typography>
-              <Button
-                disabled={pools[index].status === 'soon'}
-                xs={5}
-                md={2}
-                className={classes.stakeBtn}
-                href={`/stake/pool/${index + 1}`}
-              >
-                {pools[index].status === 'closed'
-                  ? t('Stake-Button-Claim')
-                  : t('Stake-Button-Stake')}
-              </Button>
-              {pools[index].status === 'closed' || pools[index].status === 'soon' ? (
-                <Box className={classes.ribbon}>
-                  <span className={pools[index].status}>{pools[index].countdown}</span>
-                </Box>
-              ) : (
-                ''
-              )}
-            </Grid>
-          </Grid>
+                  <Typography className={classes.subtitle} variant="body2">
+                    {pool.token === 'mooAutoWbnbFixed' ? 'mooAutoWBNB' : pool.token}
+                  </Typography>
+                  <Button
+                    disabled={pools[index].status === 'soon'}
+                    xs={5}
+                    md={2}
+                    className={classes.stakeBtn}
+                    href={`/stake/pool/${index + 1}`}
+                  >
+                    {pools[index].status === 'closed'
+                      ? t('Stake-Button-Claim')
+                      : t('Stake-Button-Stake')}
+                  </Button>
+                  {pools[index].status === 'closed' || pools[index].status === 'soon' ? (
+                    <Box className={classes.ribbon}>
+                      <span className={pools[index].status}>{pools[index].countdown}</span>
+                    </Box>
+                  ) : (
+                    ''
+                  )}
+                </Grid>
+              </Grid>
+            ) : ''}
+          </React.Fragment>
         ))}
       </Grid>
       <Grid container spacing={4} justify={'center'}>
