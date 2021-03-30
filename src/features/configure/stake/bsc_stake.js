@@ -35,7 +35,7 @@ export const bscStakePools = [
 
   {
     id: 'moo_ellipsis_3pool-zefi',
-    name: 'ZCORE Reward Pool',
+    name: 'ZCore Finance',
     logo: 'uncategorized/EPS3.png',
     token: 'MooEllipsis3Pool',
     tokenDecimals: 18,
@@ -55,7 +55,8 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/zcore/logo.png',
       background: 'stake/zcore/background.png',
-      text: 'ZCore Finance is a decentralized exchange running on Binance Smart Chain and Pancake swap exchange, with features that let you earn and win tokens. What we are trying to do is create a perpetual deflation token, the ZEFI, that allows a constant price pump with a sufficient burn mechanism. We are not trying to replace the swap & exchange but to add value into the system and create a suitable and sustainable environment for people to yield farm with high APR.',
+      text:
+        'ZCore Finance is a decentralized exchange running on Binance Smart Chain and Pancake swap exchange, with features that let you earn and win tokens. What we are trying to do is create a perpetual deflation token, the ZEFI, that allows a constant price pump with a sufficient burn mechanism. We are not trying to replace the swap & exchange but to add value into the system and create a suitable and sustainable environment for people to yield farm with high APR.',
       website: 'https://finance.zcore.network/',
       social: {
         telegram: 'https://t.me/ZCoreMiners',
@@ -86,7 +87,8 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/billionhappiness/logo.png',
       background: 'stake/billionhappiness/background.png',
-      text: 'BillionHappiness is a blockchain technology-based apparel company dedicated to providing happiness through a transparent record of information on its quality products. Our goal is to provide authenticity using blockchain technology to eliminate counterfeit items on the market. Billion Happiness has a token called BHC.',
+      text:
+        'BillionHappiness is a blockchain technology-based apparel company dedicated to providing happiness through a transparent record of information on its quality products. Our goal is to provide authenticity using blockchain technology to eliminate counterfeit items on the market. Billion Happiness has a token called BHC.',
       website: 'https://billionhappiness.finance',
       social: {
         telegram: 'https://t.me/BillionHappinessOfficial',
