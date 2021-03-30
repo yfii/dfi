@@ -19,7 +19,7 @@ const useStyles = makeStyles(styles);
 
 const VisiblePools = ({
   pools,
-  poolsInfo,
+  stake,
   tokens,
   apys,
   fetchBalancesDone,
@@ -55,7 +55,7 @@ const VisiblePools = ({
           {visiblePools.map((pool, index) => (
             <Pool
               pool={pool}
-              poolsInfo={poolsInfo}
+              stake={stake}
               index={index}
               tokens={tokens}
               apy={apys[pool.id] || 0}
