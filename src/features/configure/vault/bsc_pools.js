@@ -154,7 +154,6 @@ export const bscPools = [
     addLiquidityUrl:
       'https://exchange.pancakeswap.finance/#/add/BNB/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
     buyTokenUrl: 'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
-    launchpool: 'moo_cake_bnb-space',
   },
 
   {
