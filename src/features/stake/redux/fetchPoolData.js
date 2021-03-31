@@ -8,6 +8,8 @@ import {
 } from './constants';
 import { MooToken } from '../../configure/abi';
 import { fetchPrice } from '../../web3';
+import Web3 from 'web3';
+import { getRpcUrl } from '../../../common/networkSetup';
 
 export function fetchPoolData(index) {
   return (dispatch, getState) => {
@@ -16,13 +18,17 @@ export function fetchPoolData(index) {
       index,
     });
 
-    return new Promise((resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
       const { home, stake } = getState();
-      const { web3 } = home;
+      let { web3 } = home;
       const { pools } = stake;
 
+      if (!web3) {
+        web3 = new Web3(new Web3.providers.HttpProvider(getRpcUrl()));
+      }
+
       const getTotalStaked = async pool => {
-        const tokenPrice = await fetchPrice({ id: pools[index].tokenOracleId });
+        const tokenPrice = await fetchPrice({ id: pool.tokenOracleId });
         const tokenContract = new web3.eth.Contract(pool.earnContractAbi, pool.earnContractAddress);
         let totalStaked = new BigNumber(await tokenContract.methods.totalSupply().call());
         if (pool.isMooStaked) {
@@ -51,7 +57,7 @@ export function fetchPoolData(index) {
           .dividedBy(new BigNumber(10).exponentiatedBy(pool.earnedTokenDecimals));
       };
 
-      const getPoolData = async pool => {
+      const getPoolData = async (pool, index) => {
         const [yearlyRewardsInUsd, [totalStaked, totalStakedInUsd]] = await Promise.all([
           getYearlyRewardsInUsd(pool),
           getTotalStaked(pool),
@@ -71,7 +77,14 @@ export function fetchPoolData(index) {
         resolve(data);
       };
 
-      return getPoolData(pools[index]);
+      if(index < 0) {
+        for(let key in pools) {
+          await getPoolData(pools[key], key);
+        }
+        return pools;
+      } else {
+        return getPoolData(pools[index], index);
+      }
     }).catch(() => {
       dispatch({ type: STAKE_FETCH_POOL_DATA_FAILURE });
     });
@@ -97,7 +110,7 @@ export function useFetchPoolData() {
 }
 
 export function reducer(state, action) {
-  const { poolData, fetchPoolDataPending } = state;
+  const { pools, poolData, fetchPoolDataPending } = state;
   switch (action.type) {
     case STAKE_FETCH_POOL_DATA_BEGIN:
       // Just after a request is sent
@@ -109,6 +122,7 @@ export function reducer(state, action) {
 
     case STAKE_FETCH_POOL_DATA_SUCCESS:
       // The request is success
+      pools[action.index] = {...pools[action.index], ...action.data}
       poolData[action.index] = action.data;
       fetchPoolDataPending[action.index] = false;
       return {

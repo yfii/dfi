@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useFetchHalfTime, useFetchPoolsInfo } from '../redux/hooks';
+import { useFetchHalfTime, useFetchPoolData } from '../redux/hooks';
 import {
   Grid,
   Typography,
@@ -24,13 +24,12 @@ const useStyles = makeStyles(styles);
 export default function StakePools(props) {
   const classes = useStyles();
   const { t } = useTranslation();
-  const { pools } = useFetchPoolsInfo();
+  const { pools } = useFetchPoolData();
   const { address } = useConnectWallet();
   const { halfTime, fetchHalfTime } = useFetchHalfTime();
   const [time, setTime] = React.useState(new Date());
 
   useEffect(() => {
-    if (address) {
       const fetchEndPeriod = () => {
         for (const key in pools) {
           if (halfTime[key] === undefined || halfTime[key] === 0) {
@@ -45,7 +44,6 @@ export default function StakePools(props) {
         fetchEndPeriod();
       }, 10000);
       return () => clearInterval(id);
-    }
   }, [address, halfTime, fetchHalfTime, pools]);
 
   const [expanded, setExpanded] = React.useState('faq-1');
@@ -56,7 +54,6 @@ export default function StakePools(props) {
 
   useEffect(() => {
     const fetchCountdown = () => {
-      if(address) {
         setTime(new Date());
         let obj = {};
         for (const key in pools) {
@@ -80,7 +77,6 @@ export default function StakePools(props) {
           pools[key].status = obj.status;
           pools[key].countdown = obj.countdown;
         }
-      }
     };
 
     const id = setInterval(() => {

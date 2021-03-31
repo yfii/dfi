@@ -5,6 +5,8 @@ import {
   STAKE_FETCH_HALF_TIME_SUCCESS,
   STAKE_FETCH_HALF_TIME_FAILURE,
 } from './constants';
+import Web3 from 'web3';
+import { getRpcUrl } from '../../../common/networkSetup';
 
 export function fetchHalfTime(index) {
   return (dispatch, getState) => {
@@ -22,9 +24,14 @@ export function fetchHalfTime(index) {
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
       const { home, stake } = getState();
-      const { address, web3 } = home;
+      let { address, web3 } = home;
       const { pools } = stake;
       const { earnContractAbi, earnContractAddress } = pools[index];
+
+      if (!web3) {
+        web3 = new Web3(new Web3.providers.HttpProvider(getRpcUrl()));
+      }
+
       const contract = new web3.eth.Contract(earnContractAbi, earnContractAddress);
       contract.methods.periodFinish().call({ from: address }).then(
         data => {

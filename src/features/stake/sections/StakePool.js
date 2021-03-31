@@ -35,7 +35,6 @@ import Button from '../../../components/CustomButtons/Button';
 import { styles } from './styles/view';
 import Divider from '@material-ui/core/Divider';
 import { formatApy, formatCountdown } from '../../helpers/format';
-import { LensTwoTone } from '@material-ui/icons';
 
 const useStyles = makeStyles(styles);
 
@@ -194,18 +193,20 @@ export default function StakePool(props) {
       fetchBalance(index);
       fetchCurrentlyStaked(index);
       fetchRewardsAvailable(index);
-      fetchHalfTime(index);
-      fetchPoolData(index);
-      const id = setInterval(() => {
+    }
+    fetchHalfTime(index);
+    fetchPoolData(index);
+    const id = setInterval(() => {
+      if (address) {
         checkApproval(index);
         fetchBalance(index);
         fetchCurrentlyStaked(index);
         fetchRewardsAvailable(index);
-        fetchHalfTime(index);
-        fetchPoolData(index);
-      }, 10000);
-      return () => clearInterval(id);
-    }
+      }
+      fetchHalfTime(index);
+      fetchPoolData(index);
+    }, 10000);
+    return () => clearInterval(id);
   }, [address, index]);
 
   const handleModal = (state, action = false) => {

@@ -14,7 +14,7 @@ const useStyles = makeStyles(styles);
 
 const Pool = ({
   pool,
-  poolsInfo,
+  stake,
   index,
   tokens,
   apy,
@@ -31,10 +31,10 @@ const Pool = ({
   let sharesBalance = new BigNumber(tokens[pool.earnedToken].tokenBalance);
 
   const checkLaunchpool = () => {
-    for (let index in poolsInfo) {
-      if(pool.launchpool && poolsInfo[index].id === pool.launchpool) {
-        poolsInfo[index].poolIndex = Number(index) + 1;
-        return poolsInfo[index];
+    for (let index in stake) {
+      if(pool.launchpool && stake[index].id === pool.launchpool) {
+        stake[index].poolIndex = Number(index) + 1;
+        return stake[index];
       }
     }
   }
