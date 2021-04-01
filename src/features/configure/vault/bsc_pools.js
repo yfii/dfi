@@ -21,7 +21,7 @@ export const bscPools = [
     platform: 'Beefy',
     assets: ['BIFI'],
     callFee: 0.5,
-    buyTokenUrl: 'https://1inch.exchange/#/r/0xF4cb25a1FF50E319c267b3E51CBeC2699FB2A43B/WBNB/BIFI',
+    buyTokenUrl: 'https://1inch.exchange/#/r/0xF4cb25a1FF50E319c267b3E51CBeC2699FB2A43B/BNB/BIFI/?network=56',
   },
 
   {
@@ -99,7 +99,7 @@ export const bscPools = [
     platform: '1Inch',
     assets: ['1INCH'],
     callFee: 0.5,
-    buyTokenUrl: 'https://1inch.exchange/#/r/0xF4cb25a1FF50E319c267b3E51CBeC2699FB2A43B/WBNB/1INCH',
+    buyTokenUrl: 'https://1inch.exchange/#/r/0xF4cb25a1FF50E319c267b3E51CBeC2699FB2A43B/BNB/1INCH/?network=56',
     launchpool: 'moo_1inch-hps',
   },
 
@@ -2182,7 +2182,7 @@ export const bscPools = [
     assets: ['1INCH', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl: 'https://1inch.exchange/#/dao/pools?network=56&token0=0x0000000000000000000000000000000000000000&token1=0x111111111117dc0aa78b770fa6a738034120c302',
-    buyTokenUrl: 'https://1inch.exchange/#/r/0xF4cb25a1FF50E319c267b3E51CBeC2699FB2A43B/WBNB/1INCH',
+    buyTokenUrl: 'https://1inch.exchange/#/r/0xF4cb25a1FF50E319c267b3E51CBeC2699FB2A43B/BNB/1INCH/?network=56',
   },
 
   {
