@@ -32,8 +32,9 @@ const Pool = ({
   let sharesBalance = new BigNumber(tokens[pool.earnedToken].tokenBalance);
 
   const checkLaunchpool = () => {
+    const timestamp = Math.floor(Date.now() / 1000);
     for (let index in stake) {
-      if(pool.launchpool && stake[index].id === pool.launchpool) {
+      if(stake[index].token === pool.earnedToken && stake[index].periodFinish >= timestamp) {
         stake[index].poolIndex = Number(index) + 1;
         return stake[index];
       }

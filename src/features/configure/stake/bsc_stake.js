@@ -68,7 +68,7 @@ export const bscStakePools = [
     id: 'moo_ellipsis_3pool-zefi',
     name: 'ZCore Finance',
     logo: 'uncategorized/EPS3.png',
-    token: 'MooEllipsis3Pool',
+    token: 'mooEllipsis3Pool',
     tokenDecimals: 18,
     tokenAddress: '0xE563c046147b4dF98bfCD3d00Dc54511F0c3b752',
     tokenOracle: 'lps',
@@ -83,6 +83,7 @@ export const bscStakePools = [
     partnership: true,
     status: 'active',
     isMooStaked: true,
+    periodFinish: 1617555581,
     partner: {
       logo: 'stake/zcore/logo.png',
       background: 'stake/zcore/background.png',
@@ -115,6 +116,7 @@ export const bscStakePools = [
     partnership: true,
     status: 'active',
     isMooStaked: true,
+    periodFinish: 1617643560,
     partner: {
       logo: 'stake/billionhappiness/logo.png',
       background: 'stake/billionhappiness/background.png',
@@ -147,6 +149,7 @@ export const bscStakePools = [
     partnership: true,
     status: 'active',
     isMooStaked: true,
+    periodFinish: 1617388318,
     partner: {
       logo: 'stake/astronaut/logo.png',
       background: 'stake/astronaut/background.png',
@@ -179,6 +182,7 @@ export const bscStakePools = [
     partnership: true,
     status: 'closed',
     isMooStaked: true,
+    periodFinish: 1617214423,
     partner: {
       logo: 'stake/space/logo.png',
       background: 'stake/space/background.png',
@@ -210,6 +214,7 @@ export const bscStakePools = [
     partnership: true,
     status: 'closed',
     isMooStaked: true,
+    periodFinish: 1616434156,
     partner: {
       logo: 'stake/squirrel/logo.png',
       background: 'stake/squirrel/background.png',
@@ -241,6 +246,7 @@ export const bscStakePools = [
     partnership: true,
     status: 'closed',
     isMooStaked: true,
+    periodFinish: 1616260324,
     partner: {
       logo: 'stake/memefarm/logo.png',
       background: 'stake/memefarm/background.png',
@@ -272,6 +278,7 @@ export const bscStakePools = [
     partnership: true,
     status: 'closed',
     isMooStaked: true,
+    periodFinish: 1616087152,
     partner: {
       logo: 'stake/slimefinance/logo.png',
       background: 'stake/slimefinance/background.png',
@@ -303,6 +310,7 @@ export const bscStakePools = [
     partnership: true,
     status: 'closed',
     isMooStaked: true,
+    periodFinish: 1615228996,
     partner: {
       logo: 'stake/cafeswap/cafeswap.png',
       background: 'stake/cafeswap/background.png',
@@ -334,6 +342,7 @@ export const bscStakePools = [
     partnership: true,
     status: 'closed',
     isMooStaked: true,
+    periodFinish: 1615229062,
     partner: {
       logo: 'stake/ramenswap/ramenswap.png',
       background: 'stake/ramenswap/background.png',
@@ -365,6 +374,7 @@ export const bscStakePools = [
     partnership: true,
     status: 'closed',
     isMooStaked: true,
+    periodFinish: 1615229128,
     partner: {
       logo: 'stake/saltswap/saltswap.png',
       background: 'stake/saltswap/background.png',
@@ -396,6 +406,7 @@ export const bscStakePools = [
     partnership: true,
     status: 'closed',
     isMooStaked: true,
+    periodFinish: 1615165746,
     partner: {
       logo: 'stake/crowfinance/crowfinance.png',
       background: 'stake/crowfinance/background.png',
@@ -427,6 +438,7 @@ export const bscStakePools = [
     partnership: true,
     status: 'closed',
     isMooStaked: true,
+    periodFinish: 1615489938,
     partner: {
       logo: 'stake/apeswap/logo.png',
       background: 'stake/apeswap/background.png',
@@ -458,6 +470,7 @@ export const bscStakePools = [
     partnership: true,
     status: 'closed',
     isMooStaked: true,
+    periodFinish: 1615489989,
     partner: {
       logo: 'stake/soup/logo.png',
       background: 'stake/soup/background.png',
