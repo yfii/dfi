@@ -48,7 +48,6 @@ export const bscPools = [
     callFee: 0.5,
     addLiquidityUrl: 'https://ellipsis.finance/3pool/deposit',
     buyTokenUrl: 'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56',
-    launchpool: 'moo_ellipsis_3pool-zefi',
   },
 
   {
@@ -74,7 +73,6 @@ export const bscPools = [
     assets: ['1INCH'],
     callFee: 0.5,
     buyTokenUrl: 'https://1inch.exchange/#/r/0xF4cb25a1FF50E319c267b3E51CBeC2699FB2A43B/BNB/1INCH/?network=56',
-    launchpool: 'moo_1inch-hps',
   },
 
   {
@@ -100,7 +98,6 @@ export const bscPools = [
     assets: ['BNB'],
     callFee: 0.5,
     buyTokenUrl: 'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
-    launchpool: 'moo_auto_wbnb-naut',
   },
 
   {
