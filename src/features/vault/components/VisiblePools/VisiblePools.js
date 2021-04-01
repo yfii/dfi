@@ -44,6 +44,7 @@ const VisiblePools = ({
         for(let key in pools) {
           if(stake[index].token === pools[index].earnedToken) {
             pools[index].launchpool = stake[index].id;
+            continue;
           }
         }
       }
