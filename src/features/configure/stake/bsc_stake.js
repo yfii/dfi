@@ -177,7 +177,7 @@ export const bscStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'SPACE',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     partner: {
       logo: 'stake/space/logo.png',
