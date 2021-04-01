@@ -28,7 +28,6 @@ export default function Pools() {
   const { apys, fetchApys, fetchApysDone } = useFetchApys();
   const { poolsTvl } = usePoolsTvl(pools);
   const classes = useStyles();
-  const { pools: stake, fetchPoolData } = useFetchPoolData();
 
   let myTvl = 0;
   pools.forEach(pool => {
@@ -41,14 +40,6 @@ export default function Pools() {
       myTvl += deposited * pool.oraclePrice;
     }
   });
-
-  useEffect(() => {
-    fetchPoolData(-1);
-    const id = setInterval(() => {
-      fetchPoolData(-1);
-    }, 10000);
-    return () => clearInterval(id);
-  }, [web3]);
 
   useEffect(() => {
     fetchApys();
@@ -105,7 +96,6 @@ export default function Pools() {
 
       <VisiblePools
         pools={pools}
-        stake={stake}
         apys={apys}
         tokens={tokens}
         fetchBalancesDone={fetchBalancesDone}

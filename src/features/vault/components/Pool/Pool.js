@@ -1,4 +1,4 @@
-import React, { useState, useCallback, memo } from 'react';
+import React, { useState, useCallback, memo, useEffect } from 'react';
 import Accordion from '@material-ui/core/Accordion';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
@@ -9,12 +9,12 @@ import { byDecimals } from 'features/helpers/bignumber';
 import PoolSummary from '../PoolSummary/PoolSummary';
 import PoolDetails from '../PoolDetails/PoolDetails';
 import styles from './styles';
+import { useFetchPoolData } from '../../../stake/redux/fetchPoolData';
 
 const useStyles = makeStyles(styles);
 
 const Pool = ({
   pool,
-  stake,
   index,
   tokens,
   apy,
@@ -26,6 +26,7 @@ const Pool = ({
 
   const [isOpen, setIsOpen] = useState(false);
   const toggleCard = useCallback(() => setIsOpen(!isOpen), [isOpen]);
+  const { pools: stake, fetchPoolData } = useFetchPoolData();
 
   let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
   let sharesBalance = new BigNumber(tokens[pool.earnedToken].tokenBalance);
@@ -38,6 +39,14 @@ const Pool = ({
       }
     }
   }
+
+  useEffect(() => {
+    fetchPoolData(-1);
+    const id = setInterval(() => {
+      fetchPoolData(-1);
+    }, 10000);
+    return () => clearInterval(id);
+  }, [fetchPoolData]);
 
   return (
     <Grid item xs={12} container key={index} className={classes.container} spacing={0}>
