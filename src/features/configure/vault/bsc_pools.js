@@ -26,6 +26,34 @@ export const bscPools = [
   },
 
   {
+    id: 'auto-auto-bnb',
+    logo: 'bnb-pairs/AUTO-BNB.png',
+    name: 'AUTO-BNB LP',
+    token: 'AUTO-BNB LP',
+    tokenDescription: 'Pancake (Auto)',
+    tokenAddress: '0x4d0228EBEB39f6d2f29bA528e2d15Fc9121Ead56',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooAutoAUTO-BNB',
+    earnedTokenAddress: '0x6Cb6D451e7E7ca5d5F73715D6B5dfc55EfbC1f82',
+    earnContractAddress: '0x6Cb6D451e7E7ca5d5F73715D6B5dfc55EfbC1f82',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'auto-auto-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Autofarm',
+    assets: ['AUTO', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0xa184088a740c695E156F91f5cC086a06bb78b827',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xa184088a740c695E156F91f5cC086a06bb78b827',
+  },
+
+  {
     id: 'auto-cake',
     logo: 'single-assets/SMART.png',
     name: 'CAKE',
@@ -1724,34 +1752,6 @@ export const bscPools = [
     addLiquidityUrl: 'https://julswap.com/#/add/0xcf6bb5389c92bdda8a3747ddb454cb7a64626c63/BNB',
     buyTokenUrl:
       'https://julswap.com/#/swap?inputCurrency=BNB&outputCurrency=0xcf6bb5389c92bdda8a3747ddb454cb7a64626c63',
-  },
-
-  {
-    id: 'auto-auto-bnb',
-    logo: 'bnb-pairs/AUTO-BNB.png',
-    name: 'AUTO-BNB LP',
-    token: 'AUTO-BNB LP',
-    tokenDescription: 'Pancake (Auto)',
-    tokenAddress: '0x4d0228EBEB39f6d2f29bA528e2d15Fc9121Ead56',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooAutoAUTO-BNB',
-    earnedTokenAddress: '0x6Cb6D451e7E7ca5d5F73715D6B5dfc55EfbC1f82',
-    earnContractAddress: '0x6Cb6D451e7E7ca5d5F73715D6B5dfc55EfbC1f82',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'auto-auto-bnb',
-    oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
-    platform: 'Autofarm',
-    assets: ['AUTO', 'BNB'],
-    callFee: 0.5,
-    addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#/add/BNB/0xa184088a740c695E156F91f5cC086a06bb78b827',
-    buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xa184088a740c695E156F91f5cC086a06bb78b827',
   },
 
   {

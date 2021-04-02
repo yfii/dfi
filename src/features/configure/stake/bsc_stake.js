@@ -34,6 +34,38 @@ export const bscStakePools = [
   },
 
   {
+    id: 'moo_auto_wbnb-thunder',
+    name: 'ThunderSwap',
+    logo: 'bnb-pairs/AUTO-BNB.png',
+    token: 'mooAutoAUTO-BNB',
+    tokenDecimals: 18,
+    tokenAddress: '0x6Cb6D451e7E7ca5d5F73715D6B5dfc55EfbC1f82',
+    tokenOracle: 'lps',
+    tokenOracleId: 'auto-auto-bnb',
+    earnedToken: 'TNDR',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x7Cc46141AB1057b1928de5Ad5Ee78Bb37eFC4868',
+    earnContractAddress: '0x04715103e1d8A6D7a2B06737380DBd28a30Ca4Bc',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'TNDR',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1617725489,
+    partner: {
+      logo: 'stake/thunder/logo.png',
+      background: 'stake/thunder/background.png',
+      text: 'ThunderSwap.Finance — The new thundering Yield Farm on BSC Network (Binance Smart Chain). We, at ThunderSwap are a professional software team with lots of love towards crypto. We always wanted to contribute to the crypto community space and show our love for crypto. What else would be a better start than using our skills to build something new and exciting in the hot new DeFi space. Our goal is to contribute to crypto awareness and worldwide crypto acceptance. ThunderSwap is going to be our starting point for this journey. We are going to start small just with Thunder yield farms and pools, but we have a lot of exciting additions that are going to come live soon. ThunderSwap is going to use Thunder Token (TNDR) as the main fuel for the platform and we have a lot of plans to take it to the top charts with our roadmap.',
+      website: 'https://thunderswap.finance/',
+      social: {
+        telegram: 'https://t.me/thunder_swap',
+        twitter: 'https://twitter.com/thunder_swap',
+      },
+    },
+  },
+
+  {
     id: 'moo_auto_cake-swirl',
     name: 'Swirl Cash',
     logo: 'single-assets/CAKE.png',
