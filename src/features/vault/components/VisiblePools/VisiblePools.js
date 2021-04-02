@@ -15,6 +15,7 @@ import useVisiblePools from '../../hooks/useVisiblePools';
 import Pool from '../Pool/Pool';
 import Filters from '../Filters/Filters';
 import { useFetchPoolData } from '../../../stake/redux/fetchPoolData';
+import { useSelector } from 'react-redux';
 
 const useStyles = makeStyles(styles);
 
@@ -35,9 +36,9 @@ const VisiblePools = ({
   const { poolsByAsset, asset, setAsset } = usePoolsByAsset(poolsByVaultType);
   const { sortedPools, order, setOrder } = useSortedPools(poolsByAsset, apys);
   const { visiblePools, fetchVisiblePools } = useVisiblePools(sortedPools, 10);
-  const { pools: stake } = useFetchPoolData();
+  const stake = useSelector((state) => state.stake.pools);
 
-  const setLaunchpool = () => {
+  useEffect(() => {
     const timestamp = Math.floor(Date.now() / 1000);
     for (let index in stake) {
       if(stake[index].periodFinish >= timestamp) {
@@ -49,10 +50,6 @@ const VisiblePools = ({
         }
       }
     }
-  }
-
-  useEffect(() => {
-    setLaunchpool()
   }, []);
 
   return (
