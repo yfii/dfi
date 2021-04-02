@@ -131,6 +131,34 @@ export const bscPools = [
   },
 
   {
+    id: 'cake-dego-bnb',
+    logo: 'bnb-pairs/DEGO-BNB.svg',
+    name: 'DEGO-BNB LP',
+    token: 'DEGO-BNB LP',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0x17F0b998B81cE75074a7CDAdAe6D63Da3cb23572',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooCakeDEGO-BNB',
+    earnedTokenAddress: '0x669bDA1beB430D7a29fDE2dB847E071344266748',
+    earnContractAddress: '0x669bDA1beB430D7a29fDE2dB847E071344266748',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cake-dego-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['DEGO', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0x3FdA9383A84C05eC8f7630Fe10AdF1fAC13241CC',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x3FdA9383A84C05eC8f7630Fe10AdF1fAC13241CC',
+  },
+
+  {
     id: 'cake-gum-bnb',
     logo: 'bnb-pairs/GUM-BNB.svg',
     name: 'GUM-BNB LP',
