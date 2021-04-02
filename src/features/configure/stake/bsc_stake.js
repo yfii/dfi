@@ -52,11 +52,12 @@ export const bscStakePools = [
     partnership: true,
     status: 'active',
     isMooStaked: true,
-    periodFinish: 1617725489,
+    periodFinish: 1617984993,
     partner: {
       logo: 'stake/thunder/logo.png',
       background: 'stake/thunder/background.png',
-      text: 'ThunderSwap.Finance — The new thundering Yield Farm on BSC Network (Binance Smart Chain). We, at ThunderSwap are a professional software team with lots of love towards crypto. We always wanted to contribute to the crypto community space and show our love for crypto. What else would be a better start than using our skills to build something new and exciting in the hot new DeFi space. Our goal is to contribute to crypto awareness and worldwide crypto acceptance. ThunderSwap is going to be our starting point for this journey. We are going to start small just with Thunder yield farms and pools, but we have a lot of exciting additions that are going to come live soon. ThunderSwap is going to use Thunder Token (TNDR) as the main fuel for the platform and we have a lot of plans to take it to the top charts with our roadmap.',
+      text:
+        'ThunderSwap.Finance — The new thundering Yield Farm on BSC Network (Binance Smart Chain). We, at ThunderSwap are a professional software team with lots of love towards crypto. We always wanted to contribute to the crypto community space and show our love for crypto. What else would be a better start than using our skills to build something new and exciting in the hot new DeFi space. Our goal is to contribute to crypto awareness and worldwide crypto acceptance. ThunderSwap is going to be our starting point for this journey. We are going to start small just with Thunder yield farms and pools, but we have a lot of exciting additions that are going to come live soon. ThunderSwap is going to use Thunder Token (TNDR) as the main fuel for the platform and we have a lot of plans to take it to the top charts with our roadmap.',
       website: 'https://thunderswap.finance/',
       social: {
         telegram: 'https://t.me/thunder_swap',
