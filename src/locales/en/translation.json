@@ -38,6 +38,7 @@
   "Vault-Staked": "Staked",
   "Vault-Description": "Uses: {{vault}}",
   "Vault-Network": "Select Network",
+  "Vault-Experimental": "Experimental",
   "Hide-Zero-Balances": "Hide Zero Balances",
   "Hide-Zero-Vault-Balances": "Deposited Vaults",
   "Retired-Vaults": "Retired Vaults",
@@ -90,5 +91,7 @@
   "Stake-Current-Daily": "Current Daily Rate",
   "Add-Liquidity": "Add Liquidity",
   "Buy-Token": "Buy Token",
-  "Wrap-BNB": "Wrap BNB"
+  "Wrap-BNB": "Wrap BNB",
+  "Boost": "Boost",
+  "Experimental": "Experimental"
 }
