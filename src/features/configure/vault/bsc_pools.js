@@ -214,6 +214,63 @@ export const bscPools = [
   },
 
   {
+    id: 'swamp-swamp-bnb',
+    logo: 'bnb-pairs/SWAMP-BNB.svg',
+    name: 'SWAMP-BNB LP',
+    token: 'SWAMP-BNB LP',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0xa823C74dE2343E922ab24520f29D08390B4e894D',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooSwampySWAMP-BNB',
+    earnedTokenAddress: '0xb500cd497dD53e8ee889c2553B9Ea82326f21bA9',
+    earnContractAddress: '0xb500cd497dD53e8ee889c2553B9Ea82326f21bA9',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'swamp-swamp-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Swamp',
+    assets: ['SWAMP', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0xc5A49b4CBe004b6FD55B30Ba1dE6AC360FF9765d',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xc5A49b4CBe004b6FD55B30Ba1dE6AC360FF9765d',
+  },
+
+  {
+    id: 'swamp-swamp-busd',
+    logo: 'busd-pairs/SWAMP-BUSD.svg',
+    name: 'SWAMP-BUSD LP',
+    token: 'SWAMP-BUSD LP',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0x9B06C33807a9Dee35DC676C401E6B8D93aB2a2F4',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooSwampySWAMP-BUSD',
+    earnedTokenAddress: '0x4a759386cacb60A714275F97AbA9b555d91001c9',
+    earnContractAddress: '0x4a759386cacb60A714275F97AbA9b555d91001c9',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'swamp-swamp-busd',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Swamp',
+    assets: ['SWAMP', 'BUSD'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xc5A49b4CBe004b6FD55B30Ba1dE6AC360FF9765d/0xe9e7cea3dedca5984780bafc599bd69add087d56',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xc5A49b4CBe004b6FD55B30Ba1dE6AC360FF9765d',
+  },
+
+
+  {
     id: 'cake-dego-bnb',
     logo: 'bnb-pairs/DEGO-BNB.svg',
     name: 'DEGO-BNB LP',
