@@ -6,12 +6,16 @@ import Close from '@material-ui/icons/Close';
 
 import styles from './styles';
 import { useNetworks } from 'components/NetworksProvider/NetworksProvider';
+import { useTranslation } from 'react-i18next';
+import { useTheme } from '@material-ui/core';
 
 const useStyles = makeStyles(styles);
 
 const NetworksModal = () => {
   const classes = useStyles();
   const { isModalOpen, closeModal, networks, currentNetwork } = useNetworks();
+  const { t } = useTranslation();
+  const theme = useTheme();
 
   useEffect(() => {
     Modal.setAppElement('#root');
@@ -31,7 +35,7 @@ const NetworksModal = () => {
       onRequestClose={closeModal}
       style={{
         content: {
-          backgroundColor: 'rgb(251, 249, 246)',
+          backgroundColor: theme.palette.background.primary,
           top: '50%',
           left: '50%',
           right: 'auto',
@@ -44,7 +48,7 @@ const NetworksModal = () => {
       <IconButton className={classes.close} onClick={closeModal}>
         <Close />
       </IconButton>
-      <h1 className={classes.title}>Select Network</h1>
+      <h1 className={classes.title}>{t('Select-Network')}</h1>
       <div className={classes.networks}>
         {networks.map(network => (
           <div
