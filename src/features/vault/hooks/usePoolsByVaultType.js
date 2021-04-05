@@ -15,7 +15,7 @@ const usePoolsByVaultType = pools => {
     setStorage(KEY, vaultType);
   }, [setStorage, vaultType]);
 
-  let newPools;
+  let newPools = [];
 
   if (vaultType === 'Singles') {
     newPools = pools.filter(pool => pool.assets.length === 1);
@@ -29,11 +29,7 @@ const usePoolsByVaultType = pools => {
   }
 
   let poolsByVaultType;
-  if (newPools && newPools.length) {
-    poolsByVaultType = newPools;
-  } else {
-    poolsByVaultType = pools;
-  }
+  poolsByVaultType = vaultType ===  'All' ? pools : newPools;
 
   return { poolsByVaultType, vaultType, setVaultType };
 };
