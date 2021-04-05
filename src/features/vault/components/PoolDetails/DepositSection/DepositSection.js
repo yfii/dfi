@@ -198,7 +198,8 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
         )}
       </div>
       )}
-      {pool.platform === 'Autofarm' || 'Swamp' ? <h3 className={classes.subtitle}>{t('Vault-DepositFee')}</h3> : ''}
+      {pool.platform === 'Autofarm' ? <h3 className={classes.subtitle}>{t('Vault-DepositFee')}</h3> : ''}
+      {pool.platform === 'Swamp' ? <h3 className={classes.subtitle}>{t('Vault-DepositFee')}</h3> : ''}
     </Grid>
   );
 };
