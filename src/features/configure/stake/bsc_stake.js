@@ -34,6 +34,38 @@ export const bscStakePools = [
   },
 
   {
+    id: 'moo_cake_bnb-bingo',
+    name: 'BingoCash',
+    logo: 'bnb-pairs/CAKE-BNB.svg',
+    token: 'mooAutoCAKE-BNB',
+    tokenDecimals: 18,
+    tokenAddress: '0x5DA77c7DBF6dBa1155CF343db06a7D79aaaad9Ee',
+    tokenOracle: 'lps',
+    tokenOracleId: 'auto-cake-bnb',
+    earnedToken: 'sBGO',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x53F39324Fbb209693332B87aA94D5519A1a49aB0',
+    earnContractAddress: '0x253aABcC693aEE2180178174241857cBB08BEDD8',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'sBGO',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1617725489,
+    partner: {
+      logo: 'stake/bingo/logo.png',
+      background: 'stake/bingo/background.png',
+      text: 'Bingo Cash Finance is the AlgoStable coin protocol built on the Binance Smart Chain ("BSC")  for casino gaming. We are a fair launch project with no pre-sale, no investor, and no pre-mine. Ensuring that everyone is equal from the start. All AlgoStable currently available on BSC has almost no use case. Some have “games” yes but those don’t quite live up to help people release their stress. Many of them are just simple lottery or something very repetitive. On that premise, we took it upon ourselves to serve the good people of BSC with a whole lot of Casino games to quenches your thirst for entertainment.',
+      website: 'https://bingocash.fi/',
+      social: {
+        telegram: 'https://t.me/bingocash_official',
+        twitter: 'https://twitter.com/Bingocashfi',
+      },
+    },
+  },
+
+  {
     id: 'moo_auto_wbnb-thunder',
     name: 'ThunderSwap',
     logo: 'bnb-pairs/AUTO-BNB.png',

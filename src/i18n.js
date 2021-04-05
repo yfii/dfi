@@ -11,6 +11,7 @@ import translationHI from './locales/hi/translation.json';
 import translationID from './locales/id/translation.json';
 import translationIT from './locales/it/translation.json';
 import translationKO from './locales/ko/translation.json';
+import translationNL from './locales/nl/translation.json';
 import translationPT from './locales/pt/translation.json';
 import translationRU from './locales/ru/translation.json';
 import translationSE from './locales/se/translation.json';
@@ -28,6 +29,7 @@ const resources = {
   id: { translation: translationID },
   it: { translation: translationIT },
   ko: { translation: translationKO },
+  nl: { translation: translationNL },
   pt: { translation: translationPT },
   ru: { translation: translationRU },
   se: { translation: translationSE },

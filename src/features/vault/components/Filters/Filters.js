@@ -58,7 +58,7 @@ const Filters = ({
 
   return (
     <Grid container spacing={2} className={classes.container}>
-      <Grid item xs={6} md={3}>
+      <Grid item xs={4} md={2}>
         <Button className={classes.reset} onClick={resetFilter}>
           {t('Filters-Reset')}
         </Button>
@@ -78,7 +78,7 @@ const Filters = ({
         </FormControl>
       </Grid>
 
-      <Grid item xs={6} md={3}>
+      <Grid item xs={4} md={2}>
         <FormControl>
           <FormControlLabel
             className={classes.label}
@@ -95,7 +95,7 @@ const Filters = ({
         </FormControl>
       </Grid>
 
-      <Grid item xs={6} md={3}>
+      <Grid item xs={4} md={2}>
         <FormControl>
           <FormControlLabel
             className={classes.label}
@@ -112,7 +112,7 @@ const Filters = ({
         </FormControl>
       </Grid>
 
-      <Grid item xs={6} md={3}>
+      <Grid item xs={4} md={2}>
         <FormControl>
           <FormControlLabel
             className={classes.label}
@@ -125,7 +125,7 @@ const Filters = ({
             }
             label={
               <Box className={classes.boost}>
-                Boost
+                {t('Boost')}
                 <Avatar className={classes.fire} src={require('images/stake/fire.png')} />
               </Box>
             }
@@ -133,7 +133,23 @@ const Filters = ({
         </FormControl>
       </Grid>
 
-      <Grid item xs={6} md={3}>
+      <Grid item xs={4} md={2}>
+        <FormControl>
+          <FormControlLabel
+            className={classes.label}
+            control={
+              <Checkbox
+                checked={filters.showExperimental}
+                onChange={() => toggleFilter('showExperimental')}
+                color="primary"
+              />
+            }
+            label={t('Experimental')}
+          />
+        </FormControl>
+      </Grid>
+
+      <Grid item xs={4} md={3}>
         <FormControl className={classes.selectorContainer}>
           <InputLabel id="select-platform-label" className={classes.selectorLabel}>
             {t('Filters-Platform')}
@@ -157,7 +173,7 @@ const Filters = ({
         </FormControl>
       </Grid>
 
-      <Grid item xs={6} md={3}>
+      <Grid item xs={4} md={3}>
         <FormControl className={classes.selectorContainer}>
           <InputLabel id="select-vault-type-label" className={classes.selectorLabel}>
             {t('Filters-Vault-Type')}
@@ -185,7 +201,7 @@ const Filters = ({
         </FormControl>
       </Grid>
 
-      <Grid item xs={6} md={3}>
+      <Grid item xs={4} md={3}>
         <FormControl className={classes.selectorContainer}>
           <Autocomplete
             value={options.find(option => option.value === asset)}
@@ -208,7 +224,7 @@ const Filters = ({
         </FormControl>
       </Grid>
 
-      <Grid item xs={6} md={3}>
+      <Grid item xs={4} md={3}>
         <FormControl className={classes.selectorContainer}>
           <InputLabel id="select-order-label" className={classes.selectorLabel}>
             {t('Filters-Sort')}

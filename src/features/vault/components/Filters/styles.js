@@ -24,6 +24,9 @@ const styles = theme => ({
 
   label: {
     color: theme.palette.text.primary,
+    '& .MuiTypography-root': {
+      fontSize: '14px',
+    }
   },
   boost: {
     color: '#5a8f69',
