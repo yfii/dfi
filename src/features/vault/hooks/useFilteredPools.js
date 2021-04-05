@@ -6,6 +6,7 @@ const DEFAULT = {
   hideZeroBalances: false,
   hideZeroVaultBalances: false,
   showBoosted: false,
+  showExperimental: false,
 };
 
 const KEY = 'filteredPools';
@@ -54,8 +55,16 @@ const useFilteredPools = (pools, tokens) => {
     filteredPools = showBoosted(filteredPools);
   }
 
+  filteredPools = Experimental(filteredPools, filters.showExperimental);
+
   return { filteredPools, toggleFilter, filters };
 };
+
+function Experimental(pools, show) {
+  return pools.filter(pool => {
+    return show ? pool.experimental : !pool.experimental;
+  });
+}
 
 function showBoosted(pools) {
   return pools.filter(pool => {

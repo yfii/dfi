@@ -14,6 +14,10 @@ const styles = (theme) => ({
     color: '#ffffff',
     backgroundColor: theme.palette.type === 'dark' ? '#3e754e' : '#5a8f69',
   },
+  experimental: {
+    color: '#ffffff',
+    backgroundColor: theme.palette.type === 'dark' ? '#205686' : '#3285CF',
+  }
 });
 
 export default styles;

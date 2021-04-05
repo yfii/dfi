@@ -29,7 +29,7 @@ const PoolSummary = ({
 }) => {
   const { t } = useTranslation();
   const classes = useStyles();
-  const vaultStateTitle = (status, paused) => {
+  const vaultStateTitle = (status, paused, experimental) => {
     let state =
       status === 'eol'
         ? t('Vault-DepositsRetiredTitle')
@@ -41,7 +41,11 @@ const PoolSummary = ({
       state = t('Stake-BoostedBy', { name: launchpool.name }) ;
     }
 
-    return state === null ? '' : <PoolPaused message={t(state)} isBoosted={!!launchpool} />;
+    if (experimental) {
+      state = t('Vault-Experimental') ;
+    }
+
+    return state === null ? '' : <PoolPaused message={t(state)} isBoosted={!!launchpool} isExperimental={!!experimental} />;
   };
 
   const balanceUsd =
@@ -75,7 +79,7 @@ const PoolSummary = ({
         justify="space-around"
         style={{ paddingTop: '20px', paddingBottom: '20px' }}
       >
-        {vaultStateTitle(pool.status, pool.depositsPaused)}
+        {vaultStateTitle(pool.status, pool.depositsPaused, pool.experimental)}
         <PoolTitle
           name={pool.name}
           logo={pool.logo}
