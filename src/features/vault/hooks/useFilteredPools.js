@@ -41,11 +41,6 @@ const useFilteredPools = (pools, tokens) => {
     filteredPools = hideZeroVaultBalances(filteredPools, tokens);
   }
 
-  // Show all vaults to new users
-  if (filteredPools.length === 0) {
-    filteredPools = [...pools];
-  }
-
   if (filters.hideDecomissioned) {
     filteredPools = hideDecomissioned(filteredPools);
   }
