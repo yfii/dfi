@@ -26,6 +26,34 @@ export const bscPools = [
   },
 
   {
+    id: 'auto-cake-bnb',
+    logo: 'bnb-pairs/CAKE-BNB.svg',
+    name: 'CAKE-BNB LP',
+    token: 'CAKE-BNB LP',
+    tokenDescription: 'Pancake (Auto)',
+    tokenAddress: '0xA527a61703D82139F8a06Bc30097cC9CAA2df5A6',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooAutoCAKE-BNB',
+    earnedTokenAddress: '0x5DA77c7DBF6dBa1155CF343db06a7D79aaaad9Ee',
+    earnContractAddress: '0x5DA77c7DBF6dBa1155CF343db06a7D79aaaad9Ee',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'auto-cake-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Autofarm',
+    assets: ['CAKE', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
+  },
+
+  {
     id: 'auto-auto-bnb',
     logo: 'bnb-pairs/AUTO-BNB.png',
     name: 'AUTO-BNB LP',
@@ -379,34 +407,6 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/add/BNB/0xc53708664b99DF348dd27C3Ac0759d2DA9c40462',
     buyTokenUrl:
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xc53708664b99DF348dd27C3Ac0759d2DA9c40462',
-  },
-
-  {
-    id: 'auto-cake-bnb',
-    logo: 'bnb-pairs/CAKE-BNB.svg',
-    name: 'CAKE-BNB LP',
-    token: 'CAKE-BNB LP',
-    tokenDescription: 'Pancake (Auto)',
-    tokenAddress: '0xA527a61703D82139F8a06Bc30097cC9CAA2df5A6',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooAutoCAKE-BNB',
-    earnedTokenAddress: '0x5DA77c7DBF6dBa1155CF343db06a7D79aaaad9Ee',
-    earnContractAddress: '0x5DA77c7DBF6dBa1155CF343db06a7D79aaaad9Ee',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'auto-cake-bnb',
-    oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
-    platform: 'Autofarm',
-    assets: ['CAKE', 'BNB'],
-    callFee: 0.5,
-    addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#/add/BNB/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
-    buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
   },
 
   {
