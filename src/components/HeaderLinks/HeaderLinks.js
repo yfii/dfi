@@ -76,6 +76,8 @@ const HeaderLinks = ({
         return i18n.changeLanguage('it').then(() => setLanguage(event));
       case '한글':
         return i18n.changeLanguage('ko').then(() => setLanguage(event));
+      case 'Nederlands':
+        return i18n.changeLanguage('nl').then(() => setLanguage(event));
       case 'Português':
         return i18n.changeLanguage('pt').then(() => setLanguage(event));
       case 'Pусский':
@@ -122,6 +124,7 @@ const HeaderLinks = ({
             'Bahasa Indonesia',
             'Italiano',
             '한글',
+            'Nederlands',
             'Português',
             'Pусский',
             'Svenska',
