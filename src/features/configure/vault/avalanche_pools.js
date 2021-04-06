@@ -1,6 +1,31 @@
 export const avalanchePools = [
 
   {
+    id: 'snob-3pool',
+    logo: 'avax-pairs/SNOB3P.png',
+    name: 'USDT/BUSD/DAI',
+    token: 'Snob 3Pool',
+    tokenDescription: 'Snowball',
+    tokenAddress: '0xdE1A11C331a0E45B9BA8FeE04D4B51A745f1e4A4',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooSnob3Pool',
+    earnedTokenAddress: '0x0a350c62f4b8C7dA93fBca469e53a182b5BBD044',
+    earnContractAddress: '0x0a350c62f4b8C7dA93fBca469e53a182b5BBD044',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'snob-3pool',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Snowball',
+    assets: ['USDT', 'BUSD', 'DAI'],
+    callFee: 0.25,
+    addLiquidityUrl: 'https://snowball.network/stablevault/',
+  },
+
+  {
     id: 'com-usdt-avax',
     logo: 'avax-pairs/USDT-AVAX.png',
     name: 'USDT-AVAX LP',
@@ -292,7 +317,7 @@ export const avalanchePools = [
     callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/0x60781C2586D68229fde47564546784ab3fACA982/0xde3A24028580884448a5397872046a019649b084',
-      buyTokenUrl: 'https://app.pangolin.exchange/#/swap?inputCurrency=0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7&outputCurrency=0xde3A24028580884448a5397872046a019649b084',
+    buyTokenUrl: 'https://app.pangolin.exchange/#/swap?inputCurrency=0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7&outputCurrency=0xde3A24028580884448a5397872046a019649b084',
   },
 
   {
@@ -319,7 +344,7 @@ export const avalanchePools = [
     callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0xf20d962a6c8f70c731bd838a3a388D7d48fA6e15',
-      buyTokenUrl: 'https://app.pangolin.exchange/#/swap?inputCurrency=0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7&outputCurrency=0xf20d962a6c8f70c731bd838a3a388D7d48fA6e15',
+    buyTokenUrl: 'https://app.pangolin.exchange/#/swap?inputCurrency=0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7&outputCurrency=0xf20d962a6c8f70c731bd838a3a388D7d48fA6e15',
   },
 
   {
@@ -346,7 +371,7 @@ export const avalanchePools = [
     callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0xde3A24028580884448a5397872046a019649b084',
-      buyTokenUrl: 'https://app.pangolin.exchange/#/swap?inputCurrency=0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7&outputCurrency=0xde3A24028580884448a5397872046a019649b084',
+    buyTokenUrl: 'https://app.pangolin.exchange/#/swap?inputCurrency=0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7&outputCurrency=0xde3A24028580884448a5397872046a019649b084',
   },
 
   {
