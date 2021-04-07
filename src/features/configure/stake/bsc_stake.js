@@ -34,6 +34,38 @@ export const bscStakePools = [
   },
 
   {
+    id: 'moo_belt_venus-palm',
+    name: 'YieldBay',
+    logo: 'uncategorized/BELT-VENUSBLP.png',
+    token: 'mooBeltVenusBLP',
+    tokenDecimals: 18,
+    tokenAddress: '0xb35Dc0b5eFd7c75590a9da55BE46d968c5804e24',
+    tokenOracle: 'lps',
+    tokenOracleId: 'belt-venus-blp',
+    earnedToken: 'PALM',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x9768E5b2d8e761905BC81Dfc554f9437A46CdCC6',
+    earnContractAddress: '0xC1B4ed2861639ebFaFAeDb7eD2381052454bab43',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'PALM',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1618069191,
+    partner: {
+      logo: 'stake/yieldbay/logo.png',
+      background: 'stake/yieldbay/background.png',
+      text: 'Our mission is to create the most Economically Sustainable and Accessible yield farming community on BSC by providing a simple user interface, facilitating access to DeFi, and creating a perpetual deflation token, the PALM token. YieldBay has the goal of fostering AMM and DeFi market by facilitating the participation of traditional investors in the Crypto Ecosystem. Expanding the potential market reach requires simple and smooth interfaces as well as easier connections between Fiat and Crypto markets. To increase protocol economical sustainability, we aim at increasing burning fees and defining additional deflationary strategies benefitting holders.',
+      website: 'https://yieldbay.finance/',
+      social: {
+        telegram: 'https://t.me/yieldbay',
+        twitter: 'https://twitter.com/yieldbay',
+      },
+    },
+  },
+
+  {
     id: 'moo_cake_bnb-bingo',
     name: 'BingoCash',
     logo: 'bnb-pairs/CAKE-BNB.svg',
