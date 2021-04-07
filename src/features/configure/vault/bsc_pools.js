@@ -135,6 +135,32 @@ export const bscPools = [
   },
 
   {
+    id: 'swamp-cake',
+    logo: 'single-assets/SMART.png',
+    name: 'CAKE',
+    token: 'CAKE',
+    tokenDescription: 'Pancake (Swamp)',
+    tokenAddress: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooSwampyCAKE',
+    earnedTokenAddress: '0x4d1A2b3119895d887b87509693338b86730bCE06',
+    earnContractAddress: '0x4d1A2b3119895d887b87509693338b86730bCE06',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'tokens',
+    oracleId: 'Cake',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Swamp',
+    assets: ['CAKE'],
+    callFee: 0.5,
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
+  },
+
+  {
     id: 'auto-cake',
     logo: 'single-assets/SMART.png',
     name: 'CAKE',
