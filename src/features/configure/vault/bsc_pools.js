@@ -28,7 +28,7 @@ export const bscPools = [
   {
     id: 'belt-venus-blp',
     logo: 'uncategorized/BELT-VENUSBLP.png',
-    name: 'BELT VENUS BLP',
+    name: 'BUSD/USDT/USDC/DAI',
     token: 'VENUS BLP',
     tokenDescription: 'Belt',
     tokenAddress: '0x86aFa7ff694Ab8C985b79733745662760e454169',
