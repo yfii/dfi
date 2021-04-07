@@ -134,6 +134,59 @@ export const bscPools = [
   },
 
   {
+    id: 'palm-palm-busd',
+    logo: 'degens/palm-busd.png',
+    name: 'PALM-BUSD LP',
+    token: 'PALM-BUSD LP',
+    tokenDescription: 'YieldBay',
+    tokenAddress: '0x02600c49c53147ad6F090Ee3805D5705074c289d',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooPalmPALM-BUSD',
+    earnedTokenAddress: '0x017443Dfc7A70A9d4D5cbCb966E95222955A6a7d',
+    earnContractAddress: '0x017443Dfc7A70A9d4D5cbCb966E95222955A6a7d',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'palm-palm-busd',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    assets: ['PALM', 'BUSD'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.yieldbay.finance/#/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0x9768E5b2d8e761905BC81Dfc554f9437A46CdCC6',
+    buyTokenUrl:
+      'https://exchange.yieldbay.finance/#/swap?outputCurrency=0x9768e5b2d8e761905bc81dfc554f9437a46cdcc6',
+  },
+  {
+    id: 'palm-palm-bnb',
+    logo: 'degens/palm-bnb.png',
+    name: 'PALM-BNB LP',
+    token: 'PALM-BNB LP',
+    tokenDescription: 'YieldBay',
+    tokenAddress: '0x6Fc4c985559233D0b69410316911E5C6e096cCB6',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooPalmPALM-BNB',
+    earnedTokenAddress: '0xA85D1879E78C1875479635fda2daD25C9743dc39',
+    earnContractAddress: '0xA85D1879E78C1875479635fda2daD25C9743dc39',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'palm-palm-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    assets: ['PALM', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.yieldbay.finance/#/add/ETH/0x9768E5b2d8e761905BC81Dfc554f9437A46CdCC6',
+    buyTokenUrl:
+      'https://exchange.yieldbay.finance/#/swap?outputCurrency=0x9768e5b2d8e761905bc81dfc554f9437a46cdcc6',
+  },
+
+  {
     id: 'swamp-bifi-bnb',
     logo: 'bnb-pairs/BIFI-BNB.svg',
     name: 'BIFI-BNB LP',
@@ -156,9 +209,9 @@ export const bscPools = [
     assets: ['BIFI', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
-    'https://exchange.pancakeswap.finance/#/add/BNB/0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
+      'https://exchange.pancakeswap.finance/#/add/BNB/0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
     buyTokenUrl:
-    'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
   },
 
   {
@@ -184,9 +237,9 @@ export const bscPools = [
     assets: ['CAKE', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
-    'https://exchange.pancakeswap.finance/#/add/BNB/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
+      'https://exchange.pancakeswap.finance/#/add/BNB/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
     buyTokenUrl:
-    'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
   },
 
   {
