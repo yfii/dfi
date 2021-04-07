@@ -26,6 +26,33 @@ export const bscPools = [
   },
 
   {
+    id: 'belt-venus-blp',
+    logo: 'uncategorized/BELT-VENUSBLP.png',
+    name: 'BELT VENUS BLP',
+    token: 'VENUS BLP',
+    tokenDescription: 'Belt',
+    tokenAddress: '0x86aFa7ff694Ab8C985b79733745662760e454169',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooBeltVenusBLP',
+    earnedTokenAddress: '0xb35Dc0b5eFd7c75590a9da55BE46d968c5804e24',
+    earnContractAddress: '0xb35Dc0b5eFd7c75590a9da55BE46d968c5804e24',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'belt-venus-blp',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Belt',
+    assets: ['USDT', 'BUSD', 'USDC', 'DAI', 'VENUS BLP'],
+    callFee: 0.5,
+    addLiquidityUrl: 'https://belt.fi/',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56',
+  },
+
+  {
     id: 'auto-cake-bnb',
     logo: 'bnb-pairs/CAKE-BNB.svg',
     name: 'CAKE-BNB LP',
@@ -1368,33 +1395,6 @@ export const bscPools = [
       'https://bscdex.complus.exchange/#/add/BNB/0x7fa892544D49598460B821De4D99E8c28b1Decaa',
     buyTokenUrl:
       'https://bscdex.complus.exchange/#/swap?outputCurrency=0x7fa892544d49598460b821de4d99e8c28b1decaa&outputCurrency=BNB',
-  },
-
-  {
-    id: 'belt-venus-blp',
-    logo: 'uncategorized/BELT-VENUSBLP.png',
-    name: 'BELT VENUS BLP',
-    token: 'VENUS BLP',
-    tokenDescription: 'Belt',
-    tokenAddress: '0x86aFa7ff694Ab8C985b79733745662760e454169',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooBeltVenusBLP',
-    earnedTokenAddress: '0xb35Dc0b5eFd7c75590a9da55BE46d968c5804e24',
-    earnContractAddress: '0xb35Dc0b5eFd7c75590a9da55BE46d968c5804e24',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'belt-venus-blp',
-    oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
-    platform: 'Belt',
-    assets: ['USDT', 'BUSD', 'USDC', 'DAI', 'VENUS BLP'],
-    callFee: 0.5,
-    addLiquidityUrl: 'https://belt.fi/',
-    buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56',
   },
 
   {
