@@ -182,7 +182,7 @@ export const bscStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'SWIRL',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     periodFinish: 1617725489,
     partner: {
@@ -215,7 +215,7 @@ export const bscStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'ZEFI',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     periodFinish: 1617555581,
     partner: {
@@ -248,7 +248,7 @@ export const bscStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'HPS',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     periodFinish: 1617643560,
     partner: {
@@ -281,7 +281,7 @@ export const bscStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'NAUT',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     periodFinish: 1617388318,
     partner: {
