@@ -10,6 +10,7 @@ import PoolSummary from '../PoolSummary/PoolSummary';
 import PoolDetails from '../PoolDetails/PoolDetails';
 import styles from './styles';
 import { useFetchPoolData } from '../../../stake/redux/fetchPoolData';
+import { useSelector } from 'react-redux';
 
 const useStyles = makeStyles(styles);
 
@@ -26,7 +27,7 @@ const Pool = ({
 
   const [isOpen, setIsOpen] = useState(false);
   const toggleCard = useCallback(() => setIsOpen(!isOpen), [isOpen]);
-  const { pools: stake, fetchPoolData } = useFetchPoolData();
+  const stake = useSelector((state) => state.stake.pools);
 
   let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
   let sharesBalance = new BigNumber(tokens[pool.earnedToken].tokenBalance);
@@ -40,14 +41,6 @@ const Pool = ({
       }
     }
   }
-
-  useEffect(() => {
-    fetchPoolData(-1);
-    const id = setInterval(() => {
-      fetchPoolData(-1);
-    }, 10000);
-    return () => clearInterval(id);
-  }, [fetchPoolData]);
 
   return (
     <Grid item xs={12} container key={index} className={classes.container} spacing={0}>
