@@ -205,7 +205,7 @@ export const bscPools = [
     oracle: 'tokens',
     oracleId: 'Cake',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Swamp',
     assets: ['CAKE'],
@@ -231,7 +231,7 @@ export const bscPools = [
     oracle: 'tokens',
     oracleId: 'SWAMP',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Swamp',
     assets: ['SWAMP'],
@@ -566,7 +566,6 @@ export const bscPools = [
     buyTokenUrl:
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xc5A49b4CBe004b6FD55B30Ba1dE6AC360FF9765d',
   },
-
 
   {
     id: 'cake-dego-bnb',
