@@ -52,11 +52,12 @@ export const bscStakePools = [
     partnership: true,
     status: 'active',
     isMooStaked: true,
-    periodFinish: 1618243760,
+    periodFinish: 1618327543,
     partner: {
       logo: 'stake/biticity/logo.png',
       background: 'stake/biticity/background.png',
-      text: 'Biti City is a NFT yield farm that combines the fun of gacha and leveling your NFT Bitibots to earn BITI token rewards. With the understanding that two is better than one, Bitibots are able to combine and breed newer generation Bitibots with the ability to earn BITI token (BITI) rewards via mining, sacrificing their parts in the process for the greater good. Each Bitibot’s unique set of DNA attributes determines their mining hashrate, and the overall success of Biti City. As a Bitibot master, the fate of the world now rests in your hands…',
+      text:
+        'Biti City is a NFT yield farm that combines the fun of gacha and leveling your NFT Bitibots to earn BITI token rewards. With the understanding that two is better than one, Bitibots are able to combine and breed newer generation Bitibots with the ability to earn BITI token (BITI) rewards via mining, sacrificing their parts in the process for the greater good. Each Bitibot’s unique set of DNA attributes determines their mining hashrate, and the overall success of Biti City. As a Bitibot master, the fate of the world now rests in your hands…',
       website: 'https://www.biti.city',
       social: {
         telegram: 'https://t.me/biti_city',
