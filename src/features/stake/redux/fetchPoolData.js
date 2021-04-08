@@ -7,16 +7,24 @@ import {
   STAKE_FETCH_POOL_DATA_SUCCESS,
 } from './constants';
 import { MooToken } from '../../configure/abi';
-import { fetchPrice } from '../../web3';
+import { fetchPrice, whenPricesLoaded } from '../../web3';
 import Web3 from 'web3';
 import { getRpcUrl } from '../../../common/networkSetup';
 
 export function fetchPoolData(index) {
   return (dispatch, getState) => {
-    dispatch({
-      type: STAKE_FETCH_POOL_DATA_BEGIN,
-      index,
-    });
+    if(Array.isArray(index)) {
+      index.forEach((id) => {
+        dispatch(fetchByIndex(id))
+      });
+    } else {
+      dispatch(fetchByIndex(index))
+    }
+  }
+}
+
+export function fetchByIndex(index) {
+  return async (dispatch, getState) => {
 
     return new Promise(async (resolve, reject) => {
       const { home, stake } = getState();
@@ -47,7 +55,7 @@ export function fetchPoolData(index) {
       };
 
       const getYearlyRewardsInUsd = async pool => {
-        const tokenPrice = await fetchPrice({ id: pool.earnedOracleId });
+        const tokenPrice = fetchPrice({ id: pool.earnedOracleId });
         const rewardPool = new web3.eth.Contract(pool.earnContractAbi, pool.earnContractAddress);
         const rewardRate = new BigNumber(await rewardPool.methods.rewardRate().call());
         const yearlyRewards = rewardRate.times(3).times(28800).times(365);
@@ -69,22 +77,24 @@ export function fetchPoolData(index) {
           tvl: totalStakedInUsd.toFixed(2),
         };
 
-        dispatch({
-          type: STAKE_FETCH_POOL_DATA_SUCCESS,
-          data: data,
-          index,
-        });
-        resolve(data);
+        return data;
       };
 
-      if(index < 0) {
-        for(let key in pools) {
-          await getPoolData(pools[key], key);
-        }
-        return pools;
-      } else {
-        return getPoolData(pools[index], index);
-      }
+      dispatch({
+        type: STAKE_FETCH_POOL_DATA_BEGIN,
+        index,
+      });
+
+      await whenPricesLoaded();
+      const data = await getPoolData(pools[index], index);
+
+      dispatch({
+        type: STAKE_FETCH_POOL_DATA_SUCCESS,
+        data: data,
+        index,
+      });
+
+      resolve()
     }).catch(() => {
       dispatch({ type: STAKE_FETCH_POOL_DATA_FAILURE });
     });
