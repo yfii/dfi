@@ -74,7 +74,9 @@ export default function StakePools(props) {
                 : { status: 'closed', countdown: t('Finished') };
           }
 
-          pools[key].status = obj.status;
+          if(!pools[key].hideCountdown === true) {
+            pools[key].status = obj.status;
+          }
           pools[key].countdown = obj.countdown;
         }
     };
