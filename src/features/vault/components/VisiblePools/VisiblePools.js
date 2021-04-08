@@ -35,7 +35,7 @@ const VisiblePools = ({
   const { poolsByAsset, asset, setAsset } = usePoolsByAsset(poolsByVaultType);
   const { sortedPools, order, setOrder } = useSortedPools(poolsByAsset, apys);
   const { visiblePools, fetchVisiblePools } = useVisiblePools(sortedPools, 10);
-  const { pools: stake, poolData, fetchPoolData, fetchPoolDataPending } = useFetchPoolData();
+  const { pools: stake, fetchPoolData } = useFetchPoolData();
   const indexes = [];
 
   useEffect(() => {
@@ -43,8 +43,8 @@ const VisiblePools = ({
     for (let index in stake) {
       if(stake[index].periodFinish >= timestamp) {
         for(let key in pools) {
-          if(stake[index].token === pools[index].earnedToken) {
-            pools[index].launchpool = stake[index].id;
+          if(stake[index].token === pools[key].earnedToken) {
+            pools[key].launchpool = stake[index].id;
             if(!indexes.includes(index)) {
               indexes.push(index);
             }
