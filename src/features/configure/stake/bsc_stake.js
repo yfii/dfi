@@ -34,6 +34,38 @@ export const bscStakePools = [
   },
 
   {
+    id: 'moo_bifi-biti',
+    name: 'BitiCity',
+    logo: 'single-assets/BIFI.png',
+    token: 'mooBIFI',
+    tokenDecimals: 18,
+    tokenAddress: '0xf7069e41C57EcC5F122093811d8c75bdB5f7c14e',
+    tokenOracle: 'tokens',
+    tokenOracleId: 'BIFI',
+    earnedToken: 'BITI',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xA25Dab5B75aC0E0738E58E49734295baD43d73F1',
+    earnContractAddress: '0xa8b86b9AF7e844DA90A2e72840Ad01CCBD11EdC3',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'BITI',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1618243760,
+    partner: {
+      logo: 'stake/biticity/logo.png',
+      background: 'stake/biticity/background.png',
+      text: 'Biti City is a NFT yield farm that combines the fun of gacha and leveling your NFT Bitibots to earn BITI token rewards. With the understanding that two is better than one, Bitibots are able to combine and breed newer generation Bitibots with the ability to earn BITI token (BITI) rewards via mining, sacrificing their parts in the process for the greater good. Each Bitibot’s unique set of DNA attributes determines their mining hashrate, and the overall success of Biti City. As a Bitibot master, the fate of the world now rests in your hands…',
+      website: 'https://www.biti.city',
+      social: {
+        telegram: 'https://t.me/biti_city',
+        twitter: 'https://twitter.com/bitibots',
+      },
+    },
+  },
+
+  {
     id: 'moo_belt_venus-palm',
     name: 'YieldBay',
     logo: 'uncategorized/BELT-VENUSBLP.png',
