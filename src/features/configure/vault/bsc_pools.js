@@ -181,10 +181,10 @@ export const bscPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Swamp',
-    assets: ['SWAMP'],
+    assets: ['CAKE'],
     callFee: 0.5,
     buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xc5A49b4CBe004b6FD55B30Ba1dE6AC360FF9765d',
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
   },
 
   {
@@ -207,10 +207,10 @@ export const bscPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Swamp',
-    assets: ['CAKE'],
+    assets: ['SWAMP'],
     callFee: 0.5,
     buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xc5A49b4CBe004b6FD55B30Ba1dE6AC360FF9765d',
   },
 
   {
