@@ -109,6 +109,33 @@ export const bscPools = [
   },
 
   {
+    id: 'biti-biti-bnb',
+    logo: 'degens/BITI.png',
+    name: 'BITI-BNB LP',
+    token: 'BITI-BNB LP',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0xBE105c43Fe09E0BF1697f079ed09E1A2d956e602',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooBitiBITI-BNB',
+    earnedTokenAddress: '0x554a710F4b5A354C991da0F19CC4D14E94493da1',
+    earnContractAddress: '0x554a710F4b5A354C991da0F19CC4D14E94493da1',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'biti-biti-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    assets: ['BITI', 'BNB'],
+    callFee: 0.25,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0xA25Dab5B75aC0E0738E58E49734295baD43d73F1',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xA25Dab5B75aC0E0738E58E49734295baD43d73F1',
+  },
+
+  {
     id: 'palm-palm-busd',
     logo: 'degens/palm-busd.png',
     name: 'PALM-BUSD LP',
