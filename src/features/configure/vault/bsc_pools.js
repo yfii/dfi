@@ -454,7 +454,7 @@ export const bscPools = [
     callFee: 0.5,
     addLiquidityUrl: 'https://ellipsis.finance/3pool/deposit',
     buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56',
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56',
   },
 
   {
