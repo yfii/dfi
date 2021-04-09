@@ -109,6 +109,33 @@ export const bscPools = [
   },
 
   {
+    id: 'typh-typh-bnb',
+    logo: 'single-assets/TYPH.png',
+    name: 'TYPH-BNB LP',
+    token: 'TYPH-BNB LP',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0xc9299FE3656d2d1BE9F5f05D046c33b88BB762cA',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooTyphTYPH-BNB',
+    earnedTokenAddress: '0xFC5C3411d4415E4fDff8f842F1Ae109350e61249',
+    earnContractAddress: '0xFC5C3411d4415E4fDff8f842F1Ae109350e61249',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'typh-typh-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    assets: ['TYPH', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0x4090e535f2e251f5f88518998b18b54d26b3b07c',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x4090e535f2e251f5f88518998b18b54d26b3b07c',
+  },
+
+  {
     id: 'biti-biti-bnb',
     logo: 'degens/BITI.png',
     name: 'BITI-BNB LP',
