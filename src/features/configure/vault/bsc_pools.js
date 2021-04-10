@@ -81,6 +81,57 @@ export const bscPools = [
   },
 
   {
+    id: 'mdex-bsc-eth-usdt',
+    logo: 'uncategorized/ETH-USDT.png',
+    name: 'ETH-USDT LP',
+    token: 'ETH-USDT LP',
+    tokenDescription: 'MDex',
+    tokenAddress: '0x0FB881c078434b1C0E4d0B64d8c64d12078b7Ce2',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooMdexETH-USDT',
+    earnedTokenAddress: '0x2C74A61556AfF02Be19B3d7a746ba75A38210fd3',
+    earnContractAddress: '0x2C74A61556AfF02Be19B3d7a746ba75A38210fd3',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'mdex-bsc-eth-usdt',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    assets: ['ETH', 'USDT'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://bsc.mdex.com/#/add/0x2170Ed0880ac9A755fd29B2688956BD959F933F8/0x55d398326f99059fF775485246999027B3197955',
+  },
+  {
+    id: 'mdex-bsc-mdx-bnb',
+    logo: 'bnb-pairs/MDX-BNB.png',
+    name: 'MDX-BNB LP',
+    token: 'MDX-BNB LP',
+    tokenDescription: 'MDex',
+    tokenAddress: '0xAf9Aa53146C5752BF6068A84B970E9fBB22a87bc',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooMdexMDX-BNB',
+    earnedTokenAddress: '0x31e2d52A04FEb223109506E4c6f195C0cF16b98A',
+    earnContractAddress: '0x31e2d52A04FEb223109506E4c6f195C0cF16b98A',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'mdex-bsc-mdx-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    assets: ['MDX', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://bsc.mdex.com/#/add/BNB/0x9C65AB58d8d978DB963e63f2bfB7121627e3a739',
+    buyTokenUrl:
+      'https://bsc.mdex.com/#/swap?outputCurrency=0x9c65ab58d8d978db963e63f2bfb7121627e3a739',
+  },
+
+  {
     id: 'auto-auto-bnb',
     logo: 'bnb-pairs/AUTO-BNB.png',
     name: 'AUTO-BNB LP',
@@ -454,7 +505,7 @@ export const bscPools = [
     callFee: 0.5,
     addLiquidityUrl: 'https://ellipsis.finance/3pool/deposit',
     buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56',
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56',
   },
 
   {
