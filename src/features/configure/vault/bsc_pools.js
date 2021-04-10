@@ -53,6 +53,30 @@ export const bscPools = [
   },
 
   {
+    id: 'auto-busd-v2',
+    logo: 'single-assets/BUSD.svg',
+    name: 'BUSD',
+    token: 'BUSD',
+    tokenDescription: 'Venus (Auto)',
+    tokenAddress: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'MooAutoBUSDv2',
+    earnedTokenAddress: '0x51eD5228f810dFae268EbC11535F0d6DAeea5968',
+    earnContractAddress: '0x51eD5228f810dFae268EbC11535F0d6DAeea5968',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'tokens',
+    oracleId: 'BUSD',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Autofarm',
+    assets: ['BUSD'],
+    callFee: 0.5,
+  },
+
+  {
     id: 'auto-cake-bnb',
     logo: 'bnb-pairs/CAKE-BNB.svg',
     name: 'CAKE-BNB LP',
@@ -132,30 +156,6 @@ export const bscPools = [
   },
 
   {
-    id: 'auto-busd-v2',
-    logo: 'single-assets/BUSD.svg',
-    name: 'BUSD',
-    token: 'BUSD',
-    tokenDescription: 'Venus (Auto)',
-    tokenAddress: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'MooAutoBUSDv2',
-    earnedTokenAddress: '0x51eD5228f810dFae268EbC11535F0d6DAeea5968',
-    earnContractAddress: '0x51eD5228f810dFae268EbC11535F0d6DAeea5968',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'tokens',
-    oracleId: 'BUSD',
-    oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
-    platform: 'Autofarm',
-    assets: ['BUSD'],
-    callFee: 0.5,
-  },
-
-  {
     id: 'auto-auto-bnb',
     logo: 'bnb-pairs/AUTO-BNB.png',
     name: 'AUTO-BNB LP',
@@ -185,7 +185,7 @@ export const bscPools = [
 
   {
     id: 'typh-typh-bnb',
-    logo: 'single-assets/TYPH.png',
+    logo: 'bnb-pairs/TYPH-BNB.png',
     name: 'TYPH-BNB LP',
     token: 'TYPH-BNB LP',
     tokenDescription: 'Pancake',
@@ -212,7 +212,7 @@ export const bscPools = [
 
   {
     id: 'biti-biti-bnb',
-    logo: 'degens/BITI.png',
+    logo: 'bnb-pairs/BITI-BNB.png',
     name: 'BITI-BNB LP',
     token: 'BITI-BNB LP',
     tokenDescription: 'Pancake',
