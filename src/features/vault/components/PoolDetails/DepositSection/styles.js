@@ -79,6 +79,11 @@ const styles = theme => ({
     fontWeight: '550',
     color: theme.palette.text.secondary,
   },
+  note: {
+    textAlign: 'center',
+    fontSize: '12px',
+    color: theme.palette.text.secondary,
+  },
 });
 
 export default styles;
