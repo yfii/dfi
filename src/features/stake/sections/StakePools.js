@@ -110,7 +110,7 @@ export default function StakePools(props) {
       <Grid container spacing={4} justify={'center'}>
         {pools.map((pool, index) => (
           <React.Fragment key={index}>
-            {(showPools === 'all' || showPools === 'active' && pools[index].status === showPools || showPools === 'closed' && pools[index].status === showPools) ? (
+            {(showPools === 'all' || (showPools === 'active' && pools[index].status === showPools || showPools === 'active' && pools[index].status === 'soon') || showPools === 'closed' && pools[index].status === showPools) ? (
               <Grid xs={12} sm={6} md={6} lg={3} key={index} item>
                 <Grid
                   className={[
