@@ -7,7 +7,7 @@ export const approval = ({ web3, address, tokenAddress, contractAddress, dispatc
     const contract = new web3.eth.Contract(erc20ABI, tokenAddress);
 
     contract.methods
-      .approve(contractAddress, web3.utils.toWei('80000000000', 'ether'))
+      .approve(contractAddress, web3.utils.toWei('8000000000', 'ether'))
       .send({ from: address })
       .on('transactionHash', function (hash) {
         dispatch(
@@ -22,7 +22,7 @@ export const approval = ({ web3, address, tokenAddress, contractAddress, dispatc
         );
       })
       .on('receipt', function (receipt) {
-        resolve(new BigNumber(80000000000).toNumber());
+        resolve(new BigNumber(8000000000).toNumber());
       })
       .on('error', function (error) {
         reject(error);
