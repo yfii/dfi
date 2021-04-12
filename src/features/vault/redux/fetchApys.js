@@ -17,7 +17,6 @@ export function fetchApys() {
       // FIXME: restore this once CF is the only enabled client
       const t = Math.trunc(Date.now() / (10 * 60 * 1000));
       const doRequest = axios.get(`https://api.beefy.finance/apy?_=1617973101`);
-
       doRequest.then(
         res => {
           dispatch({
