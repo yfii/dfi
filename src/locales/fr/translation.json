@@ -12,6 +12,7 @@
   "Vault-ApprovalError": "Erreur approbation: {{error}}",											  												 
   "Vault-DepositButton": "Déposer",
   "Vault-DepositButtonAll": "Tout déposer",
+  "Vault-DepositTokensNote": "Vous recevrez des {{mooToken}} comme preuve de dépots pour vos {{assetToken}}. Ce jeton est nécessaire pour retirer vos {{assetToken}} du coffre, vos {{mooToken}} ne doivent EN AUCUN CAS être vendu ou transferés vers un portefeuille que vous ne controlez pas!",																																																											 
   "Vault-DepositFee": "Frais de dépot <0.1%, pas de frais de retrait",																		
   "Vault-Deposited": "Déposé",
   "Vault-DepositSuccess": "Dépot réussi",

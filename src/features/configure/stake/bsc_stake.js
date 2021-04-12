@@ -34,6 +34,39 @@ export const bscStakePools = [
   },
 
   {
+    id: 'moo_auto_btc-typh',
+    name: 'Typhoon',
+    logo: 'single-assets/BTCB.svg',
+    token: 'mooAutoBTCBv2',
+    tokenDecimals: 18,
+    tokenAddress: '0x0845813938515FE56730c124Ab8CA2DF58B01463',
+    tokenOracle: 'tokens',
+    tokenOracleId: 'BTCB',
+    earnedToken: 'TYPH',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x4090e535F2e251F5F88518998B18b54d26B3b07c',
+    earnContractAddress: '0x1643BC20913fA2D62C521E7cE8fFeD9e1Dd87964',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'TYPH',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1618327543,
+    partner: {
+      logo: 'stake/thypoon/logo.png',
+      background: 'stake/thypoon/background.png',
+      text:
+        'Typhoon is a decentralized, fully on-chain implemented project to enable private transactions between 2 wallets. It does this cleverly by somewhat taking on the role of proxy, but on cryptography steroids. Typhoon utilizes zkSNARK, a novel form of zero-knowledge cryptography. zkSNARK makes it possible for users to prove possession of information, without actually revealing that information. When depositing money into Typhoon, the user generates a random secret and submits a part of it (a hash) along with the assets into the smart contract. In order to then withdraw that deposit again, the user has to provide cryptographic proof that he is indeed the owner of a secret to an unspent deposit. All without revealing the secret he holds to the public blockchain, thanks to zkSNARK!',
+      website: 'https://app.typhoon.network/',
+      social: {
+        telegram: 'https://t.me/typhoonnetwork',
+        twitter: 'https://twitter.com/TyphoonCrypto',
+      },
+    },
+  },
+
+  {
     id: 'moo_bifi-biti',
     name: 'BitiCity',
     logo: 'single-assets/BIFI.png',
