@@ -12,6 +12,7 @@
   "Vault-ApprovalError": "Approval error: {{error}}",
   "Vault-DepositButton": "Deposit",
   "Vault-DepositButtonAll": "Deposit All",
+  "Vault-DepositTokensNote": "You will receive {{mooToken}} token as a receipt for your deposited {{assetToken}} assets. The receipt is needed for withdrawing your {{assetToken}}, do not trade or transfer the {{mooToken}} to strangers!",
   "Vault-DepositFee": "There is a <0.1% deposit fee, no withdrawal fee",
   "Vault-Deposited": "Deposited",
   "Vault-DepositSuccess": "Deposit success",

@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import BigNumber from 'bignumber.js';
 
 import TVLLoader from './TVLLoader/TVLLoader';
 import NetworksToggle from 'components/NetworksToggle/NetworksToggle';
@@ -10,11 +9,8 @@ import { useConnectWallet } from 'features/home/redux/hooks';
 import { useFetchBalances, useFetchVaultsData, useFetchApys } from '../../redux/hooks';
 import VisiblePools from '../VisiblePools/VisiblePools';
 import styles from './styles';
-import usePoolsTvl from '../../hooks/usePoolsTvl';
+import { usePoolsTvl, useUserTvl } from '../../hooks/usePoolsTvl';
 import { formatGlobalTvl } from 'features/helpers/format';
-import { useFetchPoolsInfo } from 'features/stake/redux/fetchPoolsInfo';
-import { byDecimals } from 'features/helpers/bignumber';
-import { useFetchPoolData } from '../../../stake/redux/fetchPoolData';
 
 const FETCH_INTERVAL_MS = 30 * 1000;
 
@@ -27,19 +23,8 @@ export default function Pools() {
   const { tokens, fetchBalances, fetchBalancesDone } = useFetchBalances();
   const { apys, fetchApys, fetchApysDone } = useFetchApys();
   const { poolsTvl } = usePoolsTvl(pools);
+  const { userTvl } = useUserTvl(pools, tokens);
   const classes = useStyles();
-
-  let myTvl = 0;
-  pools.forEach(pool => {
-    const sharesBalance = new BigNumber(tokens[pool.earnedToken].tokenBalance);
-    if (sharesBalance > 0) {
-      const deposited = byDecimals(
-        sharesBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)),
-        pool.tokenDecimals
-      );
-      myTvl += deposited * pool.oraclePrice;
-    }
-  });
 
   useEffect(() => {
     fetchApys();
@@ -83,7 +68,7 @@ export default function Pools() {
           <span className={classes.text}>
             {t('Vault-Deposited')}{' '}
             {fetchVaultsDataDone && fetchBalancesDone ? (
-              formatGlobalTvl(myTvl)
+              formatGlobalTvl(userTvl)
             ) : (
               <TVLLoader className={classes.titleLoader} />
             )}
