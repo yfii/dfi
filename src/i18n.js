@@ -28,7 +28,6 @@ const resources = {
   en: { translation: translationEN },
   es: { translation: translationES },
   fr: { translation: translationFR },
-  gr: { translation: translationGR },
   hi: { translation: translationHI },
   id: { translation: translationID },
   it: { translation: translationIT },
