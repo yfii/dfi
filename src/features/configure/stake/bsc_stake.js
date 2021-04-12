@@ -35,7 +35,7 @@ export const bscStakePools = [
 
   {
     id: 'moo_auto_btc-typh',
-    name: 'Thypoon',
+    name: 'Typhoon',
     logo: 'single-assets/BTCB.svg',
     token: 'mooAutoBTCBv2',
     tokenDecimals: 18,
@@ -56,7 +56,8 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/thypoon/logo.png',
       background: 'stake/thypoon/background.png',
-      text: 'Typhoon is a decentralized, fully on-chain implemented project to enable private transactions between 2 wallets. It does this cleverly by somewhat taking on the role of proxy, but on cryptography steroids. Typhoon utilizes zkSNARK, a novel form of zero-knowledge cryptography. zkSNARK makes it possible for users to prove possession of information, without actually revealing that information. When depositing money into Typhoon, the user generates a random secret and submits a part of it (a hash) along with the assets into the smart contract. In order to then withdraw that deposit again, the user has to provide cryptographic proof that he is indeed the owner of a secret to an unspent deposit. All without revealing the secret he holds to the public blockchain, thanks to zkSNARK!',
+      text:
+        'Typhoon is a decentralized, fully on-chain implemented project to enable private transactions between 2 wallets. It does this cleverly by somewhat taking on the role of proxy, but on cryptography steroids. Typhoon utilizes zkSNARK, a novel form of zero-knowledge cryptography. zkSNARK makes it possible for users to prove possession of information, without actually revealing that information. When depositing money into Typhoon, the user generates a random secret and submits a part of it (a hash) along with the assets into the smart contract. In order to then withdraw that deposit again, the user has to provide cryptographic proof that he is indeed the owner of a secret to an unspent deposit. All without revealing the secret he holds to the public blockchain, thanks to zkSNARK!',
       website: 'https://app.typhoon.network/',
       social: {
         telegram: 'https://t.me/typhoonnetwork',
