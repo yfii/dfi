@@ -62,10 +62,10 @@ const HeaderLinks = ({
     switch (event) {
       case 'Deutsch':
         return i18n.changeLanguage('de').then(() => setLanguage(event));
-      case 'English':
-        return i18n.changeLanguage('en').then(() => setLanguage(event));
       case 'Ελληνικά':
         return i18n.changeLanguage('el').then(() => setLanguage(event));
+      case 'English':
+        return i18n.changeLanguage('en').then(() => setLanguage(event));
       case 'Español':
         return i18n.changeLanguage('es').then(() => setLanguage(event));
       case 'Français':
