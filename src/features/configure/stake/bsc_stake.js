@@ -52,7 +52,7 @@ export const bscStakePools = [
     partnership: true,
     status: 'active',
     isMooStaked: true,
-    periodFinish: 1618853419,
+    periodFinish: 1618683181,
     partner: {
       logo: 'stake/yieldbay/logo.png',
       background: 'stake/yieldbay/background.png',
