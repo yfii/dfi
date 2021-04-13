@@ -47,6 +47,32 @@ export const bscPools = [
     assets: ['BTC'],
     callFee: 0.5,
   },
+
+  {
+    id: 'banana-bifi-bnb',
+    logo: 'degens/BIFI-BNB-banana.svg',
+    name: 'BIFI-BNB LP',
+    token: 'BIFI-BNB BLP',
+    tokenDescription: 'ApeSwap',
+    tokenAddress: '0xDDd3f9d5Bd347c55D18752c0C2075698EC657750',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooApeBIFI-BNB',
+    earnedTokenAddress: '0x6ebA4A31c46937B42E66f44a0A1165a08495a38F',
+    earnContractAddress: '0x6ebA4A31c46937B42E66f44a0A1165a08495a38F',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'banana-bifi-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'ApeSwap',
+    assets: ['BIFI', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl: 'https://dex.apeswap.finance/#/add/ETH/0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
+  },
+
   {
     id: 'belt-venus-blp',
     logo: 'uncategorized/BELT-VENUSBLP.png',
@@ -99,7 +125,7 @@ export const bscPools = [
     addLiquidityUrl:
       'https://exchange.pancakeswap.finance/#/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0xE1d1F66215998786110Ba0102ef558b22224C016',
     buyTokenUrl:
-    'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56&outputCurrency=0xE1d1F66215998786110Ba0102ef558b22224C016',
+      'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56&outputCurrency=0xE1d1F66215998786110Ba0102ef558b22224C016',
   },
 
   {
