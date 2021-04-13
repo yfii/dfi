@@ -34,7 +34,7 @@ export const bscStakePools = [
   },
 
   {
-    id: 'moo_belt_venus-palm',
+    id: 'moo_mdx_bnb-palm',
     name: 'YieldBay',
     logo: 'bnb-pairs/MDX-BNB.png',
     token: 'mooMdexMDX-BNB',
