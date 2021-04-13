@@ -34,6 +34,39 @@ export const bscStakePools = [
   },
 
   {
+    id: 'moo_mdx_bnb-palm',
+    name: 'YieldBay',
+    logo: 'bnb-pairs/MDX-BNB.png',
+    token: 'mooMdexMDX-BNB',
+    tokenDecimals: 18,
+    tokenAddress: '0x31e2d52A04FEb223109506E4c6f195C0cF16b98A',
+    tokenOracle: 'lps',
+    tokenOracleId: 'mdex-bsc-mdx-bnb',
+    earnedToken: 'PALM',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x9768E5b2d8e761905BC81Dfc554f9437A46CdCC6',
+    earnContractAddress: '0x4B86435B0749b27008060Cb5696fceB606386835',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'PALM',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1618853419,
+    partner: {
+      logo: 'stake/yieldbay/logo.png',
+      background: 'stake/yieldbay/background.png',
+      text:
+        'Our mission is to create the most Economically Sustainable and Accessible yield farming community on BSC by providing a simple user interface, facilitating access to DeFi, and creating a perpetual deflation token, the PALM token. YieldBay has the goal of fostering AMM and DeFi market by facilitating the participation of traditional investors in the Crypto Ecosystem. Expanding the potential market reach requires simple and smooth interfaces as well as easier connections between Fiat and Crypto markets. To increase protocol economical sustainability, we aim at increasing burning fees and defining additional deflationary strategies benefitting holders.',
+      website: 'https://yieldbay.finance/',
+      social: {
+        telegram: 'https://t.me/yieldbay',
+        twitter: 'https://twitter.com/yieldbay',
+      },
+    },
+  },
+
+  {
     id: 'moo_auto_btc-typh',
     name: 'Typhoon',
     logo: 'single-assets/BTCB.svg',
@@ -116,7 +149,7 @@ export const bscStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'PALM',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     periodFinish: 1618243760,
     partner: {
@@ -149,7 +182,7 @@ export const bscStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'sBGO',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     periodFinish: 1618069191,
     partner: {
@@ -182,7 +215,7 @@ export const bscStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'TNDR',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     periodFinish: 1617984993,
     partner: {
