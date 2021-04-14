@@ -4,6 +4,8 @@ import BigNumber from 'bignumber.js';
 import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
 import { useSnackbar } from 'notistack';
 
 import CustomOutlinedInput from 'components/CustomOutlinedInput/CustomOutlinedInput';
@@ -25,9 +27,16 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
   const { fetchApproval, fetchApprovalPending } = useFetchApproval();
   const { fetchDeposit, fetchDepositBnb, fetchDepositPending } = useFetchDeposit();
   const [depositBalance, setDepositBalance] = useState({
+    token: pool.tokenAddress || '0x',
     amount: 0,
     slider: 0,
   });
+
+  const assetTokens = {
+    [pool.tokenAddress || '0x']: pool.token,
+  }
+  pool.assets.forEach((asset) => assetTokens[asset] = asset);
+  const [depositTokens, setDepositTokens] = useState(assetTokens);
 
   const handleDepositedBalance = (_, sliderNum) => {
     const total = balanceSingle.toNumber();
@@ -145,7 +154,19 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
         {t('Vault-Balance')}: {balanceSingle.toFormat(8)} {pool.token}
       </div>
       <FormControl fullWidth variant="outlined" className={classes.numericInput}>
-        <CustomOutlinedInput value={depositBalance.amount} onChange={changeDetailInputValue} />
+        <CustomOutlinedInput
+          value={depositBalance.amount}
+          onChange={changeDetailInputValue}
+          endAdornment={
+            <FormControl fullWidth>
+              <Select variant="outlined" value={Object.keys(depositTokens)[0]}>
+                {Object.entries(depositTokens).map(([tokenAddress, tokenName], i) =>
+                  <MenuItem value={tokenAddress}>{tokenName}</MenuItem>
+                )}
+              </Select>
+            </FormControl>
+          }
+        />
       </FormControl>
       <CustomSlider
         aria-labelledby="continuous-slider"
