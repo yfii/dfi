@@ -34,6 +34,38 @@ export const bscStakePools = [
   },
 
   {
+    id: 'moo_belt_venus-mash',
+    name: 'MarshmallowDeFi',
+    logo: 'uncategorized/BELT-VENUSBLP.png',
+    token: 'mooBeltVenusBLP',
+    tokenDecimals: 18,
+    tokenAddress: '0xb35Dc0b5eFd7c75590a9da55BE46d968c5804e24',
+    tokenOracle: 'lps',
+    tokenOracleId: 'belt-venus-blp',
+    earnedToken: 'MASH',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x787732f27D18495494cea3792ed7946BbCFF8db2',
+    earnContractAddress: '0x2Ad5e76e09ef581a8fb7B66901D80C75Db571824',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'MASH',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1618683181,
+    partner: {
+      logo: 'stake/mash/logo.png',
+      background: 'stake/mash/background.png',
+      text: 'MarshmallowDeFi (MASH) is the next generation of Automated Market Making (AMM) decentralized exchange with a deflationary governance token model. We are your go-to yield farm running on Binance Smart Chain and Pancakeswap exchange, with lots of other features that let you earn tokens. As with the current wave of second-generation yield farms, the aim is to create a perpetual deflation token, the MASH, with a continual burn mechanism in order to field an environment that can sustain long-term gains with consistently high APR for greater earnings.',
+      website: 'https://marshmallowdefi.com/',
+      social: {
+        telegram: 'https://t.me/MarshmallowDeFi',
+        twitter: 'https://twitter.com/SwapMarshmallow',
+      },
+    },
+  },
+
+  {
     id: 'moo_mdx_bnb-palm',
     name: 'YieldBay',
     logo: 'bnb-pairs/MDX-BNB.png',
@@ -116,7 +148,7 @@ export const bscStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'BITI',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     periodFinish: 1618327543,
     partner: {
