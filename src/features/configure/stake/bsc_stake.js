@@ -52,11 +52,12 @@ export const bscStakePools = [
     partnership: true,
     status: 'active',
     isMooStaked: true,
-    periodFinish: 1618683181,
+    periodFinish: 1619104315,
     partner: {
       logo: 'stake/mash/logo.png',
       background: 'stake/mash/background.png',
-      text: 'MarshmallowDeFi (MASH) is the next generation of Automated Market Making (AMM) decentralized exchange with a deflationary governance token model. We are your go-to yield farm running on Binance Smart Chain and Pancakeswap exchange, with lots of other features that let you earn tokens. As with the current wave of second-generation yield farms, the aim is to create a perpetual deflation token, the MASH, with a continual burn mechanism in order to field an environment that can sustain long-term gains with consistently high APR for greater earnings.',
+      text:
+        'MarshmallowDeFi (MASH) is the next generation of Automated Market Making (AMM) decentralized exchange with a deflationary governance token model. We are your go-to yield farm running on Binance Smart Chain and Pancakeswap exchange, with lots of other features that let you earn tokens. As with the current wave of second-generation yield farms, the aim is to create a perpetual deflation token, the MASH, with a continual burn mechanism in order to field an environment that can sustain long-term gains with consistently high APR for greater earnings.',
       website: 'https://marshmallowdefi.com/',
       social: {
         telegram: 'https://t.me/MarshmallowDeFi',
