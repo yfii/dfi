@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Grid from '@material-ui/core/Grid';
 import BigNumber from 'bignumber.js';
 import { useTranslation } from 'react-i18next';
@@ -9,13 +9,14 @@ import MenuItem from '@material-ui/core/MenuItem';
 import { useSnackbar } from 'notistack';
 
 import CustomOutlinedInput from 'components/CustomOutlinedInput/CustomOutlinedInput';
-import { useFetchDeposit, useFetchApproval } from 'features/vault/redux/hooks';
+import { useFetchBalances, useFetchDeposit, useFetchApproval } from 'features/vault/redux/hooks';
 import CustomSlider from 'components/CustomSlider/CustomSlider';
 import { useConnectWallet } from 'features/home/redux/hooks';
 import { inputLimitPass, inputFinalVal, shouldHideFromHarvest } from 'features/helpers/utils';
 import { byDecimals, calculateReallyNum, format } from 'features/helpers/bignumber';
 import Button from 'components/CustomButtons/Button.js';
 import styles from './styles';
+import { getEligibleZap } from 'features/zap/zapUniswapV2';
 
 const useStyles = makeStyles(styles);
 
@@ -26,17 +27,40 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
   const { enqueueSnackbar } = useSnackbar();
   const { fetchApproval, fetchApprovalPending } = useFetchApproval();
   const { fetchDeposit, fetchDepositBnb, fetchDepositPending } = useFetchDeposit();
+  const { tokens, fetchBalances, fetchBalancesDone } = useFetchBalances();
+
+  useEffect(() => {
+      if (address && web3) {
+        fetchBalances({ address, web3, tokens });
+      }
+  }, [address, web3, fetchBalances]);
+
+  const zap = getEligibleZap(pool);
+  const eligibleTokens = [
+    {
+      name: pool.name,
+      symbol: pool.token,
+      address: pool.tokenAddress,
+      decimals: pool.tokenDecimals,
+      logoURI: pool.logo,
+    },
+    ...(zap ? zap.tokens : [])
+  ];
+
   const [depositBalance, setDepositBalance] = useState({
-    token: pool.tokenAddress || '0x',
+    tokenIndex: 0,
+    balance: balanceSingle,
     amount: 0,
     slider: 0,
   });
 
-  const assetTokens = {
-    [pool.tokenAddress || '0x']: pool.token,
+  const handleTokenChange = (event) => {
+    setDepositBalance({
+      tokenIndex: event.target.value,
+      amount: 0,
+      slider: 0,
+    })
   }
-  pool.assets.forEach((asset) => assetTokens[asset] = asset);
-  const [depositTokens, setDepositTokens] = useState(assetTokens);
 
   const handleDepositedBalance = (_, sliderNum) => {
     const total = balanceSingle.toNumber();
@@ -151,17 +175,17 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
   return (
     <Grid item xs={12} md={shouldHideFromHarvest(pool.id) ? 6 : 5} className={classes.sliderDetailContainer}>
       <div className={classes.showDetailLeft}>
-        {t('Vault-Balance')}: {balanceSingle.toFormat(8)} {pool.token}
+        {t('Vault-Balance')}: {byDecimals(tokens[eligibleTokens[depositBalance.tokenIndex].symbol].tokenBalance, eligibleTokens[depositBalance.tokenIndex].decimals).toFormat(8)} {eligibleTokens[depositBalance.tokenIndex].name}
       </div>
       <FormControl fullWidth variant="outlined" className={classes.numericInput}>
         <CustomOutlinedInput
           value={depositBalance.amount}
           onChange={changeDetailInputValue}
           endAdornment={
-            <FormControl fullWidth>
-              <Select variant="outlined" value={Object.keys(depositTokens)[0]}>
-                {Object.entries(depositTokens).map(([tokenAddress, tokenName], i) =>
-                  <MenuItem value={tokenAddress}>{tokenName}</MenuItem>
+            <FormControl>
+              <Select variant="outlined" value={depositBalance.tokenIndex} onChange={handleTokenChange}>
+                {eligibleTokens.map((token, index) =>
+                  <MenuItem key={index} value={index}>{token.symbol}</MenuItem>
                 )}
               </Select>
             </FormControl>

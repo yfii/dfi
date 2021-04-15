@@ -1,5 +1,6 @@
 export const bscPools = [
   {
+    chainId: 56,
     id: 'bifi-maxi',
     logo: 'single-assets/BIFI.png',
     name: 'BIFI Maxi',
@@ -25,6 +26,7 @@ export const bscPools = [
       'https://1inch.exchange/#/r/0xF4cb25a1FF50E319c267b3E51CBeC2699FB2A43B/BNB/BIFI/?network=56',
   },
   {
+    chainId: 56,
     id: 'mdex-bsc-mdx-bnb',
     logo: 'bnb-pairs/MDX-BNB.png',
     name: 'MDX-BNB LP',
@@ -51,6 +53,7 @@ export const bscPools = [
       'https://bsc.mdex.com/#/swap?outputCurrency=0x9c65ab58d8d978db963e63f2bfb7121627e3a739',
   },
   {
+    chainId: 56,
     id: 'auto-btc-v2',
     logo: 'single-assets/BTCB.svg',
     name: 'BTCB',
@@ -75,6 +78,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'mdex-bsc-mdx-busd',
     logo: 'busd-pairs/MDX-BUSD.png',
     name: 'MDX-BUSD LP',
@@ -103,6 +107,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'palm-palm',
     logo: 'degens/PALM.png',
     name: 'PALM',
@@ -128,6 +133,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'banana-bifi-bnb',
     logo: 'degens/BIFI-BNB-banana.svg',
     name: 'BIFI-BNB LP',
@@ -153,6 +159,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'belt-venus-blp',
     logo: 'uncategorized/BELT-VENUSBLP.png',
     name: 'BUSD/USDT/USDC/DAI',
@@ -180,6 +187,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-hoo-busd',
     logo: 'busd-pairs/HOO-BUSD.svg',
     name: 'HOO-BUSD LP',
@@ -208,6 +216,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-easy-bnb',
     logo: 'bnb-pairs/EASY-BNB.svg',
     name: 'EASY-BNB LP',
@@ -236,6 +245,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-oddz-bnb',
     logo: 'bnb-pairs/ODDZ-BNB.svg',
     name: 'ODDZ-BNB LP',
@@ -293,6 +303,7 @@ export const bscPools = [
   // },
 
   {
+    chainId: 56,
     id: 'cake-bondly-bnb',
     logo: 'bnb-pairs/BONDLY-BNB.svg',
     name: 'BONDLY-BNB LP',
@@ -321,6 +332,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-itam-bnb',
     logo: 'bnb-pairs/ITAM-BNB.svg',
     name: 'ITAM-BNB LP',
@@ -349,6 +361,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-arpa-bnb',
     logo: 'bnb-pairs/ARPA-BNB.svg',
     name: 'ARPA-BNB LP',
@@ -377,6 +390,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'mdex-xvs',
     logo: 'single-assets/XVS.png',
     name: 'XVS',
@@ -400,6 +414,7 @@ export const bscPools = [
     callFee: 0.5,
   },
   {
+    chainId: 56,
     id: 'mdex-uni',
     logo: 'single-assets/UNI.png',
     name: 'UNI',
@@ -424,6 +439,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'auto-sxp-v2',
     logo: 'single-assets/SXP.svg',
     name: 'SXP',
@@ -447,6 +463,7 @@ export const bscPools = [
     callFee: 0.5,
   },
   {
+    chainId: 56,
     id: 'auto-ada-v2',
     logo: 'single-assets/ADA.svg',
     name: 'ADA',
@@ -470,6 +487,7 @@ export const bscPools = [
     callFee: 0.5,
   },
   {
+    chainId: 56,
     id: 'auto-wbnb-v2',
     logo: 'single-assets/WBNB.svg',
     name: 'WBNB',
@@ -495,6 +513,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
   },
   {
+    chainId: 56,
     id: 'auto-busd-v2',
     logo: 'single-assets/BUSD.svg',
     name: 'BUSD',
@@ -518,6 +537,7 @@ export const bscPools = [
     callFee: 0.5,
   },
   {
+    chainId: 56,
     id: 'auto-usdt-v2',
     logo: 'single-assets/USDT.svg',
     name: 'USDT',
@@ -541,6 +561,7 @@ export const bscPools = [
     callFee: 0.5,
   },
   {
+    chainId: 56,
     id: 'auto-usdc-v2',
     logo: 'single-assets/USDC.svg',
     name: 'USDC',
@@ -564,6 +585,7 @@ export const bscPools = [
     callFee: 0.5,
   },
   {
+    chainId: 56,
     id: 'auto-eth-v2',
     logo: 'single-assets/ETH.png',
     name: 'ETH',
@@ -588,6 +610,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'mdex-inj',
     logo: 'single-assets/INJ.png',
     name: 'INJ',
@@ -611,6 +634,7 @@ export const bscPools = [
     callFee: 0.5,
   },
   {
+    chainId: 56,
     id: 'mdex-sushi',
     logo: 'single-assets/SUSHI.png',
     name: 'SUSHI',
@@ -635,6 +659,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'blizzard-xblzd-bnb',
     logo: 'degens/BLZD-BNB.png',
     name: 'xBLZD-BNB LP',
@@ -663,6 +688,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'blizzard-xblzd-busd',
     logo: 'degens/BLZD-BUSD.png',
     name: 'xBLZD-BUSD LP',
@@ -691,6 +717,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'blizzard-xblzd',
     logo: 'degens/BLZD.png',
     name: 'xBLZD',
@@ -717,6 +744,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'blizzard-blzd-bnb',
     logo: 'degens/BLZD-BNB.png',
     name: 'BLZD-BNB LP',
@@ -745,6 +773,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'blizzard-blzd-busd',
     logo: 'degens/BLZD-BUSD.png',
     name: 'BLZD-BUSD LP',
@@ -770,9 +799,11 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0x57067A6BD75c0E95a6A5f158455926e43E79BeB0',
     buyTokenUrl:
       'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x57067A6BD75c0E95a6A5f158455926e43E79BeB0&outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56',
+    zap: 'pancake',
   },
 
   {
+    chainId: 56,
     id: 'blizzard-blzd',
     logo: 'degens/BLZD.png',
     name: 'BLZD',
@@ -799,6 +830,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'auto-cake-bnb',
     logo: 'bnb-pairs/CAKE-BNB.svg',
     name: 'CAKE-BNB LP',
@@ -827,6 +859,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'mdex-bsc-eth-usdt',
     logo: 'uncategorized/ETH-USDT.png',
     name: 'ETH-USDT LP',
@@ -853,6 +886,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'auto-auto-bnb',
     logo: 'bnb-pairs/AUTO-BNB.png',
     name: 'AUTO-BNB LP',
@@ -881,6 +915,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'typh-typh-bnb',
     logo: 'bnb-pairs/TYPH-BNB.png',
     name: 'TYPH-BNB LP',
@@ -908,6 +943,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'biti-biti-bnb',
     logo: 'bnb-pairs/BITI-BNB.png',
     name: 'BITI-BNB LP',
@@ -935,6 +971,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'palm-palm-busd',
     logo: 'degens/palm-busd.png',
     name: 'PALM-BUSD LP',
@@ -961,6 +998,7 @@ export const bscPools = [
       'https://exchange.yieldbay.finance/#/swap?outputCurrency=0x9768e5b2d8e761905bc81dfc554f9437a46cdcc6',
   },
   {
+    chainId: 56,
     id: 'palm-palm-bnb',
     logo: 'degens/palm-bnb.png',
     name: 'PALM-BNB LP',
@@ -988,6 +1026,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'swamp-cake',
     logo: 'single-assets/SMART.png',
     name: 'CAKE',
@@ -1014,6 +1053,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'swamp-swamp',
     logo: 'single-assets/SWAMP.svg',
     name: 'SWAMP',
@@ -1040,6 +1080,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'auto-cake',
     logo: 'single-assets/SMART.png',
     name: 'CAKE',
@@ -1066,6 +1107,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: '1inch-1inch',
     logo: 'single-assets/INCH.png',
     name: '1INCH',
@@ -1092,6 +1134,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'swamp-bifi-bnb',
     logo: 'bnb-pairs/BIFI-BNB.svg',
     name: 'BIFI-BNB LP',
@@ -1120,6 +1163,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'swamp-cake-bnb',
     logo: 'bnb-pairs/CAKE-BNB.svg',
     name: 'CAKE-BNB LP',
@@ -1148,6 +1192,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'bingo-bgo-busd',
     logo: 'degens/BGO.png',
     name: 'BGO-BUSD LP',
@@ -1174,6 +1219,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x579a6277a6c2c63a5b25006f63bce5dc8d9c25e7',
   },
   {
+    chainId: 56,
     id: 'bingo-sbgo-busd',
     logo: 'degens/SBGO.png',
     name: 'sBGO-BUSD LP',
@@ -1201,6 +1247,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'ellipsis-3eps',
     logo: 'uncategorized/EPS3.png',
     name: 'BUSD/USDT/USDC',
@@ -1228,6 +1275,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'tndr-tndr-busd',
     logo: 'degens/tndr-busd.png',
     name: 'TNDR-BUSD LP',
@@ -1255,6 +1303,7 @@ export const bscPools = [
       'https://exchange.thunderswap.finance/#/swap?outputCurrency=0x7Cc46141AB1057b1928de5Ad5Ee78Bb37eFC4868',
   },
   {
+    chainId: 56,
     id: 'tndr-tndr-bnb',
     logo: 'degens/tndr-bnb.png',
     name: 'TNDR-BNB LP',
@@ -1283,6 +1332,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'swamp-swamp-bnb',
     logo: 'bnb-pairs/SWAMP-BNB.svg',
     name: 'SWAMP-BNB LP',
@@ -1311,6 +1361,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'swamp-swamp-busd',
     logo: 'busd-pairs/SWAMP-BUSD.svg',
     name: 'SWAMP-BUSD LP',
@@ -1339,6 +1390,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-dego-bnb',
     logo: 'bnb-pairs/DEGO-BNB.svg',
     name: 'DEGO-BNB LP',
@@ -1367,6 +1419,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-gum-bnb',
     logo: 'bnb-pairs/GUM-BNB.svg',
     name: 'GUM-BNB LP',
@@ -1395,6 +1448,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'swirl-swirl-bnb',
     logo: 'bnb-pairs/SWIRL-BNB.png',
     name: 'SWIRL-BNB LP',
@@ -1423,6 +1477,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-pbtc-bnb',
     logo: 'bnb-pairs/PBTC-BNB.svg',
     name: 'pBTC-BNB LP',
@@ -1450,6 +1505,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xeD28A457A5A76596ac48d87C0f577020F6Ea1c4C',
   },
   {
+    chainId: 56,
     id: 'cake-mir-ust',
     logo: 'ust-pairs/MIR-UST.svg',
     name: 'MIR-UST LP',
@@ -1477,6 +1533,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x5B6DcF557E2aBE2323c48445E8CC948910d8c2c9',
   },
   {
+    chainId: 56,
     id: 'cake-dft-bnb',
     logo: 'bnb-pairs/DFT-BNB.svg',
     name: 'DFT-BNB LP',
@@ -1505,6 +1562,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-swth-bnb',
     logo: 'bnb-pairs/SWTH-BNB.svg',
     name: 'SWTH-BNB LP',
@@ -1533,6 +1591,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-lien-bnb',
     logo: 'bnb-pairs/LIEN-BNB.svg',
     name: 'LIEN-BNB LP',
@@ -1561,6 +1620,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'zefi-zefi-bnb',
     logo: 'degens/ZEFI-BNB.svg',
     name: 'ZEFI-BNB LP',
@@ -1588,6 +1648,7 @@ export const bscPools = [
       'https://swap.zcore.network/#/swap?outputCurrency=0x0288D3E353fE2299F11eA2c2e1696b4A648eCC07',
   },
   {
+    chainId: 56,
     id: 'zefi-zefi-busd',
     logo: 'degens/ZEFI-BUSD.svg',
     name: 'ZEFI-BUSD LP',
@@ -1616,6 +1677,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'hps-hps',
     logo: 'single-assets/HPS.png',
     name: 'HPS',
@@ -1640,6 +1702,7 @@ export const bscPools = [
       'https://julswap.com/#/swap?inputCurrency=BNB&outputCurrency=0xeDa21B525Ac789EaB1a08ef2404dd8505FfB973D',
   },
   {
+    chainId: 56,
     id: 'hps-hps-bnb',
     logo: 'single-assets/HPS.png',
     name: 'HPS-BNB LP',
@@ -1666,6 +1729,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'ellipsis-eps-bnb',
     logo: 'uncategorized/EPS.png',
     name: 'EPS-BNB LP',
@@ -1694,6 +1758,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'alpaca-salpaca',
     logo: 'single-assets/sALPACA.svg',
     name: 'sALPACA',
@@ -1720,6 +1785,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'naut-naut-bnb',
     logo: 'degens/NAUT.png',
     name: 'NAUT-BNB LP',
@@ -1748,6 +1814,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-zil-bnb',
     logo: 'bnb-pairs/ZIL-BNB.svg',
     name: 'ZIL-BNB LP',
@@ -1776,6 +1843,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-lto-bnb',
     logo: 'bnb-pairs/LTO-BNB.svg',
     name: 'LTO-BNB LP',
@@ -1804,6 +1872,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-pcws-bnb',
     logo: 'bnb-pairs/pCWS-BNB.svg',
     name: 'pCWS-BNB LP',
@@ -1832,6 +1901,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-trade-bnb',
     logo: 'bnb-pairs/TRADE-BNB.svg',
     name: 'TRADE-BNB LP',
@@ -1860,6 +1930,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'alpaca-alpaca-bnb',
     logo: 'bnb-pairs/ALPACA-BNB.png',
     name: 'ALPACA-BNB LP',
@@ -1888,6 +1959,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'space-space-bnb',
     logo: 'degens/SPACE-BNB.png',
     name: 'SPACE-BNB LP',
@@ -1915,6 +1987,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x0abd3E3502c15ec252f90F64341cbA74a24fba06',
   },
   {
+    chainId: 56,
     id: 'space-space-busd',
     logo: 'degens/SPACE-BUSD.png',
     name: 'SPACE-BUSD LP',
@@ -1943,6 +2016,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-bbadger-btcb',
     logo: 'uncategorized/BADGER-BTCB.svg',
     name: 'bBADGER-BTCB LP',
@@ -1971,6 +2045,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-bdigg-btcb',
     logo: 'uncategorized/BDIGG-BTCB.svg',
     name: 'bDIGG-BTCB LP',
@@ -1999,6 +2074,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'pumpy-pmp-bnb',
     logo: 'single-assets/PMP.svg',
     name: 'PMP-BNB LP',
@@ -2026,6 +2102,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-bifi-bnb',
     logo: 'bnb-pairs/BIFI-BNB.svg',
     name: 'BIFI-BNB LP',
@@ -2054,6 +2131,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'jul-twt-bnb',
     logo: 'bnb-pairs/JTWT-BNB.svg',
     name: 'TWT-BNB LP',
@@ -2081,6 +2159,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'jul-vidt-bnb',
     logo: 'bnb-pairs/VIDT-BNB.svg',
     name: 'VIDT-BNB LP',
@@ -2108,6 +2187,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'venus-eth',
     logo: 'single-assets/ETH.png',
     name: 'ETH',
@@ -2134,6 +2214,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'com-com-bnb',
     logo: 'bnb-pairs/COM-BNB.png',
     name: 'COM-BNB LP',
@@ -2161,6 +2242,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-dusk-bnb',
     logo: 'bnb-pairs/DUSK-BNB.svg',
     name: 'DUSK-BNB LP',
@@ -2189,6 +2271,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-cos-bnb',
     logo: 'bnb-pairs/COS-BNB.svg',
     name: 'COS-BNB LP',
@@ -2217,6 +2300,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-txl-busd',
     logo: 'busd-pairs/TXL-BUSD.svg',
     name: 'TXL-BUSD LP',
@@ -2245,6 +2329,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'squirrel-nuts-bnb',
     logo: 'single-assets/NUTS.png',
     name: 'NUTS-BNB LP',
@@ -2272,6 +2357,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'squirrel-nuts',
     logo: 'single-assets/NUTS.png',
     name: 'NUTS',
@@ -2297,6 +2383,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'bakery-bat-bake',
     logo: 'uncategorized/BAT-BAKE.svg',
     name: 'BAT-BAKE LP',
@@ -2325,6 +2412,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'memefarm-ape-bnb',
     logo: 'degens/ape-bnb.png',
     name: 'APE-BNB LP',
@@ -2351,6 +2439,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xa9eA4b786ee5b7A733c035564Bfd9341A4c9FC1e',
   },
   {
+    chainId: 56,
     id: 'memefarm-mfrm-bnb',
     logo: 'degens/mfrm-bnb.png',
     name: 'MFRM-BNB LP',
@@ -2378,6 +2467,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'slime-slime-busd',
     logo: 'degens/slime-busd.png',
     name: 'SLME-BUSD LP',
@@ -2404,6 +2494,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x4fCfA6cC8914ab455B5b33Df916d90BFe70b6AB1&outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56',
   },
   {
+    chainId: 56,
     id: 'slime-slime-bnb',
     logo: 'degens/slime-bnb.png',
     name: 'SLME-BNB LP',
@@ -2431,6 +2522,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-alice-bnb',
     logo: 'bnb-pairs/ALICE-BNB.svg',
     name: 'ALICE-BNB LP',
@@ -2459,6 +2551,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'auto-beth-eth',
     logo: 'uncategorized/BETH-ETH.svg',
     name: 'BETH-ETH LP',
@@ -2487,6 +2580,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'belt-belt-bnb',
     logo: 'bnb-pairs/BELT-BNB-BELT.png',
     name: 'BELT-BNB LP',
@@ -2515,6 +2609,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-nuls-busd',
     logo: 'busd-pairs/NULS-BUSD.svg',
     name: 'NULS-BUSD LP',
@@ -2543,6 +2638,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'banana-banana',
     logo: 'degens/BANANA.svg',
     name: 'BANANA',
@@ -2569,6 +2665,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-belt-bnb',
     logo: 'bnb-pairs/BELT-BNB.svg',
     name: 'BELT-BNB LP',
@@ -2597,6 +2694,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-ramp-busd',
     logo: 'busd-pairs/RAMP-BUSD.svg',
     name: 'RAMP-BUSD LP',
@@ -2625,6 +2723,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'jul-btcb-bnb',
     logo: 'bnb-pairs/JBTCB-BNB.svg',
     name: 'BTCB-BNB LP',
@@ -2652,6 +2751,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'jul-uni-bnb',
     logo: 'bnb-pairs/JUNI-BNB.svg',
     name: 'UNI-BNB LP',
@@ -2679,6 +2779,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'jul-dot-bnb',
     logo: 'bnb-pairs/JDOT-BNB.svg',
     name: 'DOT-BNB LP',
@@ -2706,6 +2807,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'jul-xvs-bnb',
     logo: 'bnb-pairs/JXVS-BNB.svg',
     name: 'XVS-BNB LP',
@@ -2733,6 +2835,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'auto-comp-eth',
     logo: 'uncategorized/COMP-ETH.svg',
     name: 'COMP-ETH LP',
@@ -2761,6 +2864,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'auto-hget-bnb',
     logo: 'bnb-pairs/HGET-BNB.svg',
     name: 'HGET-BNB LP',
@@ -2789,6 +2893,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'auto-ctk-bnb',
     logo: 'bnb-pairs/CTK-BNB.svg',
     name: 'CTK-BNB LP',
@@ -2817,6 +2922,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'auto-ust-busd',
     logo: 'busd-pairs/UST-BUSD.svg',
     name: 'UST-BUSD LP',
@@ -2845,6 +2951,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'auto-busd-bnb',
     logo: 'bnb-pairs/BUSD-BNB.svg',
     name: 'BUSD-BNB LP',
@@ -2873,6 +2980,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'auto-btc-bnb',
     logo: 'bnb-pairs/BTCB-BNB.svg',
     name: 'BTC-BNB LP',
@@ -2901,6 +3009,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'venus-btcb',
     logo: 'single-assets/BTCB.svg',
     name: 'BTCB',
@@ -2927,6 +3036,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-dexe-busd',
     logo: 'busd-pairs/DEXE-BUSD.svg',
     name: 'DEXE-BUSD LP',
@@ -2955,6 +3065,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'jul-bifi-bnb',
     logo: 'bnb-pairs/BIFI-BNB.png',
     name: 'BIFI-BNB LP',
@@ -2982,6 +3093,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'jul-juld-bnb',
     logo: 'bnb-pairs/JULD-BNB.svg',
     name: 'JulD-BNB LP',
@@ -3009,6 +3121,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'venus-ada',
     logo: 'single-assets/ADA.svg',
     name: 'ADA',
@@ -3035,6 +3148,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-bel-bnb',
     logo: 'bnb-pairs/BEL-BNB.svg',
     name: 'BEL-BNB LP',
@@ -3063,6 +3177,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-tpt-busd',
     logo: 'busd-pairs/TPT-BUSD.svg',
     name: 'TPT-BUSD LP',
@@ -3091,6 +3206,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-watch-bnb',
     logo: 'bnb-pairs/WATCH-BNB.svg',
     name: 'WATCH-BNB LP',
@@ -3119,6 +3235,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-xmark-busd',
     logo: 'busd-pairs/XMARK-BUSD.svg',
     name: 'XMARK-BUSD LP',
@@ -3147,6 +3264,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'soup-soup-bnb',
     logo: 'degens/SOUP-BNB.svg',
     name: 'SOUP-BNB LP',
@@ -3173,6 +3291,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x94F559aE621F1c810F31a6a620Ad7376776fe09E',
   },
   {
+    chainId: 56,
     id: 'soup-soups-bnb',
     logo: 'degens/SOUPS-BNB.svg',
     name: 'SOUPS-BNB LP',
@@ -3200,6 +3319,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'banana-banana-bnb',
     logo: 'degens/banana-bnb.svg',
     name: 'BANANA-BNB LP',
@@ -3228,6 +3348,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'banana-banana-busd',
     logo: 'degens/banana-busd.svg',
     name: 'BANANA-BUSD LP',
@@ -3256,6 +3377,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-bmxx-bnb',
     logo: 'bnb-pairs/BMXX-BNB.svg',
     name: 'BMXX-BNB LP',
@@ -3284,6 +3406,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-bor-bnb',
     logo: 'bnb-pairs/BOR-BNB.svg',
     name: 'BOR-BNB LP',
@@ -3311,6 +3434,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-bopen-bnb',
     logo: 'bnb-pairs/BOPEN-BNB.svg',
     name: 'BOPEN-BNB LP',
@@ -3339,6 +3463,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: '1inch-1inch-bnb',
     logo: 'single-assets/INCH.png',
     name: '1INCH-BNB LP',
@@ -3367,6 +3492,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-iotx-busd',
     logo: 'busd-pairs/IOTX-BUSD.svg',
     name: 'IOTX-BUSD LP',
@@ -3395,6 +3521,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-lina-busd',
     logo: 'busd-pairs/LINA-BUSD.svg',
     name: 'LINA-BUSD LP',
@@ -3423,6 +3550,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-usdc-busd',
     logo: 'busd-pairs/USDC-BUSD.svg',
     name: 'USDC-BUSD LP',
@@ -3451,6 +3579,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-dai-busd',
     logo: 'busd-pairs/DAI-BUSD.svg',
     name: 'DAI-BUSD LP',
@@ -3479,6 +3608,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'sponge-steam-bnb',
     logo: 'bnb-pairs/STEAM-BNB.svg',
     name: 'STEAM-BNB LP',
@@ -3506,6 +3636,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'salt-salt-busd',
     logo: 'degens/salt-busd.png',
     name: 'SALT-BUSD LP',
@@ -3532,6 +3663,7 @@ export const bscPools = [
       'https://exchange.saltswap.finance/#/swap?inputCurrency=0xcc2E12a9b5b75360c6FBf23B584c275D52cDdb0&outputCurrency=0x2849b1ae7e04a3d9bc288673a92477cf63f28af4',
   },
   {
+    chainId: 56,
     id: 'salt-salt-bnb',
     logo: 'degens/salt-bnb.png',
     name: 'SALT-BNB LP',
@@ -3559,6 +3691,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-sushi-eth',
     logo: 'uncategorized/SUSHI-ETH.svg',
     name: 'SUSHI-ETH LP',
@@ -3587,6 +3720,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'crow-crow-busd',
     logo: 'crow/crow.png',
     name: 'CROW-BUSD LP',
@@ -3614,6 +3748,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'crow-crow-bnb',
     logo: 'crow/crow.png',
     name: 'CROW-BNB LP',
@@ -3641,6 +3776,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'ramen-ramen-bnb',
     logo: 'degens/ramen-bnb.svg',
     name: 'RAMEN-BNB LP',
@@ -3668,6 +3804,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'ramen-ramen-busd',
     logo: 'degens/ramen-busd.svg',
     name: 'RAMEN-BUSD LP',
@@ -3695,6 +3832,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cafe-brew-busd',
     logo: 'degens/brew-busd.svg',
     name: 'BREW-BUSD LP',
@@ -3722,6 +3860,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cafe-brew-bnb',
     logo: 'degens/brew-bnb.svg',
     name: 'BREW-BNB LP',
@@ -3749,6 +3888,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cafe-bifi-bnb',
     logo: 'degens/BIFI-BNB.svg',
     name: 'BIFI-BNB LP',
@@ -3776,6 +3916,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-bry-bnb',
     logo: 'bnb-pairs/BRY-BNB.svg',
     name: 'BRY-BNB LP',
@@ -3804,6 +3945,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-zee-bnb',
     logo: 'bnb-pairs/ZEE-BNB.svg',
     name: 'ZEE-BNB LP',
@@ -3832,6 +3974,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-xtz-bnb',
     logo: 'bnb-pairs/XTZ-BNB.svg',
     name: 'XTZ-BNB LP',
@@ -3860,6 +4003,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-bch-bnb',
     logo: 'bnb-pairs/BCH-BNB.svg',
     name: 'BCH-BNB LP',
@@ -3888,6 +4032,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-dodo-bnb',
     logo: 'bnb-pairs/DODO-BNB.svg',
     name: 'DODO-BNB LP',
@@ -3916,6 +4061,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-swingby-bnb',
     logo: 'bnb-pairs/SWINGBY-BNB.svg',
     name: 'SWINGBY-BNB LP',
@@ -3944,6 +4090,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'kebab-usdt-busd',
     logo: 'kebab/USDT-BUSD.png',
     name: 'USDT-BUSD LP',
@@ -3972,6 +4119,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'kebab-eth-btcb',
     logo: 'kebab/ETH-BTCB.png',
     name: 'ETH-BTCB LP',
@@ -4000,6 +4148,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'monster-msc-busd',
     logo: 'single-assets/MSC.png',
     name: 'MSC-BUSD LP',
@@ -4027,6 +4176,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'monster-msc-bnb',
     logo: 'single-assets/MSC.png',
     name: 'MSC-BNB LP',
@@ -4054,6 +4204,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-bts-busd',
     logo: 'single-assets/BTS.png',
     name: 'BTS-BUSD LP',
@@ -4080,6 +4231,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0xc2e1acef50ae55661855e8dcb72adb182a3cc259&outputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
   },
   {
+    chainId: 56,
     id: 'cake-btd-busd',
     logo: 'single-assets/BTD.png',
     name: 'BTD-BUSD LP',
@@ -4107,6 +4259,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'auto-btc',
     logo: 'single-assets/BTCB.svg',
     name: 'BTCB',
@@ -4133,6 +4286,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'auto-eth',
     logo: 'single-assets/ETH.png',
     name: 'ETH',
@@ -4159,6 +4313,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'auto-busd',
     logo: 'single-assets/BUSD.svg',
     name: 'BUSD',
@@ -4185,6 +4340,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'auto-usdt',
     logo: 'single-assets/USDT.svg',
     name: 'USDT',
@@ -4211,6 +4367,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'auto-usdc',
     logo: 'single-assets/USDC.svg',
     name: 'USDC',
@@ -4237,6 +4394,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'kebab-kebab-btc',
     logo: 'kebab/KEBAB-BTCB.png',
     name: 'KEBAB-BTCB LP',
@@ -4265,6 +4423,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-swgb-bnb',
     logo: 'bnb-pairs/SWGB-BNB.svg',
     name: 'SWGB-BNB LP',
@@ -4293,6 +4452,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-lit-bnb',
     logo: 'bnb-pairs/LIT-BNB.svg',
     name: 'LIT-BNB LP',
@@ -4321,6 +4481,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-hard-bnb',
     logo: 'bnb-pairs/HARD-BNB.svg',
     name: 'HARD-BNB LP',
@@ -4349,6 +4510,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'kebab-bifi-busd',
     logo: 'busd-pairs/BIFI-BUSD.png',
     name: 'BIFI-BUSD LP',
@@ -4377,6 +4539,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-ditto-bnb',
     logo: 'bnb-pairs/DITTO-BNB.svg',
     name: 'DITTO-BNB LP',
@@ -4405,6 +4568,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'auto-cake-old',
     logo: 'single-assets/SMART.png',
     name: 'CAKE',
@@ -4431,6 +4595,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'auto-wbnb-old',
     logo: 'single-assets/WBNB.svg',
     name: 'WBNB',
@@ -4455,6 +4620,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'auto-busd-old',
     logo: 'single-assets/BUSD.svg',
     name: 'BUSD',
@@ -4481,6 +4647,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'sponge-sponge-bnb',
     logo: 'bnb-pairs/SPG-BNB.svg',
     name: 'SPG-BNB LP',
@@ -4508,6 +4675,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'sponge-soak-bnb',
     logo: 'bnb-pairs/SOAK-BNB.svg',
     name: 'SOAK-BNB LP',
@@ -4535,6 +4703,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-sfp-bnb',
     logo: 'bnb-pairs/SFP-BNB.svg',
     name: 'SFP-BNB LP',
@@ -4563,6 +4732,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'nyacash-nyas-usdt',
     logo: 'single-assets/NYAS.png',
     name: 'NYAS-USDT NYAN-LP',
@@ -4586,6 +4756,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'monster-mss-busd',
     logo: 'single-assets/MSS.png',
     name: 'MSS-BUSD LP',
@@ -4613,6 +4784,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'jul-juld',
     logo: 'single-assets/JULD.png',
     name: 'JULD',
@@ -4639,6 +4811,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-bdo-bnb',
     logo: 'single-assets/BDO.png',
     name: 'BDO-BNB LP',
@@ -4667,6 +4840,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'kebab-kebab',
     logo: 'single-assets/KEBAB.png',
     name: 'KEBAB',
@@ -4693,6 +4867,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'kebab-kebab-busd',
     logo: 'busd-pairs/KEBAB-BUSD.png',
     name: 'KEBAB-BUSD LP',
@@ -4721,6 +4896,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'kebab-kebab-bnb',
     logo: 'bnb-pairs/KEBAB-BNB.png',
     name: 'KEBAB-BNB LP',
@@ -4749,6 +4925,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-egld-bnb',
     logo: 'bnb-pairs/EGLD-BNB.svg',
     name: 'EGLD-BNB LP',
@@ -4777,6 +4954,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-mamzn-ust',
     logo: 'ust-pairs/MAMZN-UST.svg',
     name: 'MAMZN-UST LP',
@@ -4805,6 +4983,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-mgoogl-ust',
     logo: 'ust-pairs/MGOOGL-UST.svg',
     name: 'MGOOGL-UST LP',
@@ -4833,6 +5012,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-mnflx-ust',
     logo: 'ust-pairs/MNFLX-UST.svg',
     name: 'MNFLX-UST LP',
@@ -4861,6 +5041,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-mtsla-ust',
     logo: 'ust-pairs/MTSLA-UST.svg',
     name: 'MTSLA-UST LP',
@@ -4889,6 +5070,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-wsote-bnb',
     logo: 'bnb-pairs/WSOTE-BNB.svg',
     name: 'WSOTE-BNB LP',
@@ -4917,6 +5099,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-front-bnb',
     logo: 'bnb-pairs/FRONT-BNB.svg',
     name: 'FRONT-BNB LP',
@@ -4969,6 +5152,7 @@ export const bscPools = [
   // },
 
   {
+    chainId: 56,
     id: 'cake-btcst-bnb',
     logo: 'bnb-pairs/BTCST-BNB.svg',
     name: 'BTCST-BNB LP',
@@ -4997,6 +5181,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'bhc-bhc',
     logo: 'single-assets/BHC.png',
     name: 'BHC',
@@ -5022,6 +5207,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'thugs-drugs-btri',
     logo: 'single-assets/DRUGS.png',
     name: 'DRUGS BTRI',
@@ -5045,6 +5231,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-ltc-bnb',
     logo: 'bnb-pairs/LTC-BNB.svg',
     name: 'LTC-BNB LP',
@@ -5073,6 +5260,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-ada-bnb',
     logo: 'bnb-pairs/ADA-BNB.svg',
     name: 'ADA-BNB LP',
@@ -5101,6 +5289,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-dot-bnb',
     logo: 'bnb-pairs/DOT-BNB.svg',
     name: 'DOT-BNB LP',
@@ -5129,6 +5318,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'bakery-bake-busd',
     logo: 'busd-pairs/BAKE-BUSD.png',
     name: 'BAKE-BUSD BLP',
@@ -5156,6 +5346,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'jetfuel-vapor-bnb',
     logo: 'bnb-pairs/VAPOR-BNB.png',
     name: 'VAPOR-BNB LP',
@@ -5184,6 +5375,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-bdo-bnb-sbdo',
     logo: 'single-assets/SBDO.png',
     name: 'BDO-BNB LP (SBDO)',
@@ -5212,6 +5404,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-bdo-bnb-old',
     logo: 'single-assets/BDO.png',
     name: 'BDO-BNB LP',
@@ -5240,6 +5433,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-sbdo-busd',
     logo: 'single-assets/SBDO.png',
     name: 'SBDO-BUSD LP',
@@ -5268,6 +5462,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-bdo-busd',
     logo: 'single-assets/SBDO.png',
     name: 'BDO-BUSD LP',
@@ -5296,6 +5491,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'venus-beth',
     logo: 'single-assets/BETH.png',
     name: 'BETH',
@@ -5322,6 +5518,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'venus-dai',
     logo: 'single-assets/DAI.svg',
     name: 'DAI',
@@ -5348,6 +5545,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'venus-fil',
     logo: 'single-assets/FIL.svg',
     name: 'FIL',
@@ -5374,6 +5572,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-ten-bnb',
     logo: 'bnb-pairs/TEN-BNB.svg',
     name: 'TEN-BNB LP',
@@ -5402,6 +5601,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-balbt-bnb',
     logo: 'bnb-pairs/BALBT-BNB.svg',
     name: 'bALBT-BNB LP',
@@ -5430,6 +5630,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-bscx-bnb',
     logo: 'bnb-pairs/BSCX-BNB.svg',
     name: 'BSCX-BNB LP',
@@ -5458,6 +5659,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'bakery-btc-bnb',
     logo: 'bnb-pairs/BTC-BNB.png',
     name: 'BTC-BNB BLP',
@@ -5486,6 +5688,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'street-bhc-bnb',
     logo: 'bnb-pairs/BHC-BNB.png',
     name: 'BHC-BNB TLP',
@@ -5509,6 +5712,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'street-jgn-bnb',
     logo: 'bnb-pairs/JGN-BNB.png',
     name: 'JGN-BNB TLP',
@@ -5532,6 +5736,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-unfi-bnb',
     logo: 'bnb-pairs/UNFI-BNB.svg',
     name: 'UNFI-BNB LP',
@@ -5560,6 +5765,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-reef-bnb',
     logo: 'bnb-pairs/REEF-BNB.svg',
     name: 'REEF-BNB LP',
@@ -5588,6 +5794,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-stax-cake',
     logo: 'cake-pairs/STAX-CAKE.svg',
     name: 'STAX-CAKE LP',
@@ -5612,6 +5819,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-nar-cake',
     logo: 'cake-pairs/NAR-CAKE.svg',
     name: 'NAR-CAKE LP',
@@ -5635,6 +5843,7 @@ export const bscPools = [
     callFee: 1,
   },
   {
+    chainId: 56,
     id: 'cake-nya-cake',
     logo: 'cake-pairs/NYA-CAKE.svg',
     name: 'NYA-CAKE LP',
@@ -5659,6 +5868,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'thugs-drugs-drugs',
     logo: 'single-assets/DRUGS.png',
     name: 'DRUGS v2',
@@ -5682,6 +5892,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'thugs-drugs-bhc',
     logo: 'single-assets/DRUGS.png',
     name: 'DRUGS BHC',
@@ -5705,6 +5916,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'thugs-drugs-jgn',
     logo: 'single-assets/DRUGS.png',
     name: 'DRUGS JGN',
@@ -5728,6 +5940,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'jetfuel-fuel-bnb-ss',
     logo: 'bnb-pairs/FUEL-BNB.png',
     name: 'FUEL-BNB TLP',
@@ -5756,6 +5969,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'jetfuel-fuel-bnb-pcs',
     logo: 'bnb-pairs/FUEL-BNB.png',
     name: 'FUEL-BNB LP',
@@ -5784,6 +5998,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'jetfuel-bhc-bnb',
     logo: 'bnb-pairs/BHC-BNB.png',
     name: 'BHC-BNB LP',
@@ -5812,6 +6027,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'jetfuel-eth-bnb',
     logo: 'bnb-pairs/ETH-BNB.svg',
     name: 'ETH-BNB LP',
@@ -5840,6 +6056,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'jetfuel-cake-bnb',
     logo: 'bnb-pairs/CAKE-BNB.svg',
     name: 'CAKE-BNB LP',
@@ -5868,6 +6085,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'jetfuel-uni-bnb',
     logo: 'bnb-pairs/UNI-BNB.svg',
     name: 'UNI-BNB LP',
@@ -5896,6 +6114,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'jetfuel-link-bnb',
     logo: 'bnb-pairs/LINK-BNB.svg',
     name: 'LINK-BNB LP',
@@ -5924,6 +6143,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'jetfuel-busd-bnb',
     logo: 'bnb-pairs/BUSD-BNB.svg',
     name: 'BUSD-BNB LP',
@@ -5952,6 +6172,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'jetfuel-usdt-bnb',
     logo: 'bnb-pairs/USDT-BNB.svg',
     name: 'USDT-BNB LP',
@@ -5980,6 +6201,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-smart',
     logo: 'single-assets/SMART.png',
     name: 'CAKE SMART',
@@ -6006,6 +6228,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'venus-bch',
     logo: 'single-assets/BCH.svg',
     name: 'BCH',
@@ -6032,6 +6255,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'venus-dot',
     logo: 'single-assets/DOT.png',
     name: 'DOT',
@@ -6058,6 +6282,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'venus-link',
     logo: 'single-assets/LINK.png',
     name: 'LINK',
@@ -6084,6 +6309,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'street-twt-bnb',
     logo: 'bnb-pairs/TWT-BNB.svg',
     name: 'TWT-BNB TLP',
@@ -6107,6 +6333,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'street-sxp-bnb',
     logo: 'bnb-pairs/SXP-BNB.svg',
     name: 'SXP-BNB TLP',
@@ -6130,6 +6357,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'street-xvs-bnb',
     logo: 'bnb-pairs/XVS-BNB.svg',
     name: 'XVS-BNB TLP',
@@ -6153,6 +6381,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'street-alpha-bnb',
     logo: 'bnb-pairs/ALPHA-BNB.svg',
     name: 'ALPHA-BNB TLP',
@@ -6176,6 +6405,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-yfii-bnb',
     logo: 'bnb-pairs/YFII-BNB.svg',
     name: 'YFII-BNB LP',
@@ -6204,6 +6434,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-yfi-bnb',
     logo: 'bnb-pairs/YFI-BNB.svg',
     name: 'YFI-BNB LP',
@@ -6232,6 +6463,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-fil-bnb',
     logo: 'bnb-pairs/FIL-BNB.svg',
     name: 'FIL-BNB LP',
@@ -6260,6 +6492,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-band-bnb',
     logo: 'bnb-pairs/BAND-BNB.svg',
     name: 'BAND-BNB LP',
@@ -6288,6 +6521,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-atom-bnb',
     logo: 'bnb-pairs/ATOM-BNB.svg',
     name: 'ATOM-BNB LP',
@@ -6316,6 +6550,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-vai-busd',
     logo: 'busd-pairs/VAI-BUSD.svg',
     name: 'VAI-BUSD LP',
@@ -6344,6 +6579,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-broobee-cake',
     logo: 'cake-pairs/BROOBEE-CAKE.svg',
     name: 'BROOBEE-CAKE LP',
@@ -6368,6 +6604,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'venus-bnb',
     logo: 'single-assets/BNB.png',
     name: 'BNB',
@@ -6391,6 +6628,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'venus-wbnb',
     logo: 'single-assets/WBNB.svg',
     name: 'WBNB',
@@ -6417,6 +6655,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'venus-sxp',
     logo: 'single-assets/SXP.svg',
     name: 'SXP',
@@ -6443,6 +6682,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'venus-usdc',
     logo: 'single-assets/USDC.svg',
     name: 'USDC',
@@ -6469,6 +6709,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'venus-usdt',
     logo: 'single-assets/USDT.svg',
     name: 'USDT',
@@ -6495,6 +6736,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'venus-busd',
     logo: 'single-assets/BUSD.svg',
     name: 'BUSD',
@@ -6521,6 +6763,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'venus-ltc',
     logo: 'single-assets/LTC.svg',
     name: 'LTC',
@@ -6547,6 +6790,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'venus-xrp',
     logo: 'single-assets/XRP.svg',
     name: 'XRP',
@@ -6573,6 +6817,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-alpha-bnb',
     logo: 'bnb-pairs/ALPHA-BNB.svg',
     name: 'ALPHA-BNB LP',
@@ -6601,6 +6846,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-inj-bnb',
     logo: 'bnb-pairs/INJ-BNB.svg',
     name: 'INJ-BNB LP',
@@ -6629,6 +6875,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-twt-bnb',
     logo: 'bnb-pairs/TWT-BNB.svg',
     name: 'TWT-BNB LP',
@@ -6657,6 +6904,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-xvs-bnb',
     logo: 'bnb-pairs/XVS-BNB.svg',
     name: 'XVS-BNB LP',
@@ -6687,6 +6935,7 @@ export const bscPools = [
   // Narwhal
 
   {
+    chainId: 56,
     id: 'narwhal-gold-bnb',
     logo: 'bnb-pairs/GOLD-BNB.png',
     name: 'GOLD-BNB NLP',
@@ -6714,6 +6963,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'narwhal-thugs-nar',
     logo: 'uncategorized/THUGS-NAR.png',
     name: 'THUGS-NAR NLP',
@@ -6739,6 +6989,7 @@ export const bscPools = [
   // Bakery
 
   {
+    chainId: 56,
     id: 'bakery-bake',
     logo: 'single-assets/BAKE.png',
     name: 'BAKE',
@@ -6765,6 +7016,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'bakery-bake-bnb',
     logo: 'bnb-pairs/BAKE-BNB.png',
     name: 'BAKE-BNB BLP',
@@ -6793,6 +7045,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'street-bch-bnb',
     logo: 'bnb-pairs/BCH-BNB.svg',
     name: 'BCH-BNB TLP',
@@ -6816,6 +7069,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'street-nar-bnb',
     logo: 'bnb-pairs/NAR-BNB.png',
     name: 'NAR-BNB TLP',
@@ -6838,6 +7092,7 @@ export const bscPools = [
     callFee: 0.5,
   },
   {
+    chainId: 56,
     id: 'street-bifi-bnb',
     logo: 'bnb-pairs/BIFI-BNB.png',
     name: 'BIFI-BNB TLP',
@@ -6861,6 +7116,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'street-drugs-bnb',
     logo: 'bnb-pairs/DRUGS-BNB.png',
     name: 'DRUGS-BNB LP v2',
@@ -6884,6 +7140,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'street-thugs-bnb',
     logo: 'bnb-pairs/THUGS-BNB.png',
     name: 'THUGS-BNB LP v2',
@@ -6907,6 +7164,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'street-cred-bnb',
     logo: 'bnb-pairs/CRED-BNB.png',
     name: 'CRED-BNB LP',
@@ -6930,6 +7188,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'street-guns-bnb',
     logo: 'bnb-pairs/GUNS-BNB.png',
     name: 'GUNS-BNB LP v2',
@@ -6954,6 +7213,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'street-busd-bnb',
     logo: 'bnb-pairs/BUSD-BNB.svg',
     name: 'BUSD-BNB LP v2',
@@ -6977,6 +7237,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'street-panacakelp-thugs-bnb',
     logo: 'bnb-pairs/THUGS-BNB.png',
     name: 'THUGS-BNB Pancake LP v2',
@@ -7000,6 +7261,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'street-dai-bnb',
     logo: 'bnb-pairs/DAI-BNB.svg',
     name: 'DAI-BNB LP',
@@ -7023,6 +7285,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'street-usdt-bnb',
     logo: 'bnb-pairs/USDT-BNB.svg',
     name: 'USDT-BNB TLP',
@@ -7046,6 +7309,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'street-bliq-bnb',
     logo: 'bnb-pairs/BLIQ-BNB.png',
     name: 'BLIQ-BNB LP',
@@ -7069,6 +7333,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'street-eos-bnb',
     logo: 'bnb-pairs/EOS-BNB.svg',
     name: 'EOS-BNB LP',
@@ -7092,6 +7357,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'street-drugs-bnb-v1',
     logo: 'bnb-pairs/DRUGS-BNB.png',
     name: 'DRUGS-BNB LP v1',
@@ -7116,6 +7382,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'street-guns-bnb-v1',
     logo: 'bnb-pairs/GUNS-BNB.png',
     name: 'GUNS-BNB LP v1',
@@ -7143,6 +7410,7 @@ export const bscPools = [
   // < ---- > PANCAKE < ---- >
   //
   {
+    chainId: 56,
     id: 'cake-cake',
     logo: 'single-assets/CAKE.png',
     name: 'CAKE',
@@ -7168,6 +7436,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-twt',
     logo: 'single-assets/cakeTWT.png',
     name: 'CAKE TWT v2',
@@ -7193,6 +7462,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-hard',
     logo: 'single-assets/cakeHARD.png',
     name: 'CAKE HARD',
@@ -7218,6 +7488,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-cake-bnb',
     logo: 'bnb-pairs/CAKE-BNB.svg',
     name: 'CAKE-BNB LP',
@@ -7247,6 +7518,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-link-bnb',
     logo: 'bnb-pairs/LINK-BNB.svg',
     name: 'LINK-BNB LP',
@@ -7276,6 +7548,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-usdt-bnb',
     logo: 'bnb-pairs/USDT-BNB.svg',
     name: 'USDT-BNB LP',
@@ -7305,6 +7578,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-busd-bnb',
     logo: 'bnb-pairs/BUSD-BNB.svg',
     name: 'BUSD-BNB LP',
@@ -7334,6 +7608,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-usdt-busd',
     logo: 'busd-pairs/USDT-BUSD.svg',
     name: 'USDT-BUSD LP',
@@ -7363,6 +7638,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-eth-bnb',
     logo: 'bnb-pairs/ETH-BNB.svg',
     name: 'ETH-BNB LP',
@@ -7392,6 +7668,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-btcb-bnb',
     logo: 'bnb-pairs/BTCB-BNB.svg',
     name: 'BTCB-BNB LP',
@@ -7421,6 +7698,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'fortube-fil',
     logo: 'single-assets/FIL.svg',
     name: 'FIL',
@@ -7444,6 +7722,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'fortube-busd',
     logo: 'single-assets/BUSD.svg',
     name: 'BUSD',
@@ -7467,6 +7746,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'fortube-link',
     logo: 'single-assets/LINK.png',
     name: 'ChainLink',
@@ -7490,6 +7770,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'fortube-dot',
     logo: 'single-assets/DOT.png',
     name: 'DOT',
@@ -7513,6 +7794,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'fortube-usdt',
     logo: 'single-assets/USDT.svg',
     name: 'USDT',
@@ -7536,6 +7818,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'fortube-btcb',
     logo: 'single-assets/BTCB.svg',
     name: 'BTCB',
@@ -7559,6 +7842,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'fry-burger-v2',
     logo: 'single-assets/BURGER.png',
     name: 'BURGER v2',
@@ -7583,6 +7867,7 @@ export const bscPools = [
   },
 
   {
+    chainId: 56,
     id: 'cake-syrup-twt',
     logo: 'single-assets/cakeTWT.png',
     name: 'CAKE TWT v1',
@@ -7608,6 +7893,7 @@ export const bscPools = [
     callFee: 0.5,
   },
   {
+    chainId: 56,
     id: 'fry-burger-v1',
     logo: 'single-assets/BURGER.png',
     name: 'BURGER v1',
