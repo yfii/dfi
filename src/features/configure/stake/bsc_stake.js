@@ -44,11 +44,11 @@ export const bscStakePools = [
     tokenOracleId: 'ETH',
     earnedToken: 'APYS',
     earnedTokenDecimals: 18,
-    earnedTokenAddress: '0x37dfACfaeDA801437Ff648A1559d73f4C40aAcb7',
-    earnContractAddress: '0x1388735B636e66E575a1Bf4bCd5fB3195391CB78',
+    earnedTokenAddress: '0xE5783Cc9dFb3E7e474B81B07369a008e80F1cEdb',
+    earnContractAddress: '0x9A7DB018897B99F47661EcFFb143A7BF80724a7d',
     earnContractAbi: govPoolABI,
-    earnedOracle: 'tokens',
-    earnedOracleId: 'APYS',
+    earnedOracle: 'lps',
+    earnedOracleId: 'cake-apys-bnb',
     partnership: true,
     status: 'active',
     isMooStaked: true,
@@ -56,7 +56,8 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/apyswap/logo.png',
       background: 'stake/apyswap/background.png',
-      text: 'Start Winning Today With APYSwap Staking Staking is the process of holding tokens in a cryptocurrency wallet to support the operations of a network. Participants are rewarded for depositing and holding coins, with constant guaranteed time-based returns. Rewards are calculated based on staking time: the longer you stake, the more you earn.',
+      text:
+        'Start Winning Today With APYSwap Staking. Staking is the process of holding tokens in a cryptocurrency wallet to support the operations of a network. Participants are rewarded for depositing and holding coins, with constant guaranteed time-based returns. Rewards are calculated based on staking time: the longer you stake, the more you earn.',
       website: 'https://apyswap.com/',
       social: {
         telegram: 'https://t.me/apyswapcom',
