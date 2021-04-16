@@ -34,6 +34,38 @@ export const bscStakePools = [
   },
 
   {
+    id: 'moo_auto_eth-apys',
+    name: 'APYSwap',
+    logo: 'single-assets/ETH.png',
+    token: 'mooAutoETHv2',
+    tokenDecimals: 18,
+    tokenAddress: '0x0F47eaae1EC5fD11067455210c494a7828024524',
+    tokenOracle: 'tokens',
+    tokenOracleId: 'ETH',
+    earnedToken: 'APYS',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x37dfACfaeDA801437Ff648A1559d73f4C40aAcb7',
+    earnContractAddress: '0x1388735B636e66E575a1Bf4bCd5fB3195391CB78',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'APYS',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1619104315,
+    partner: {
+      logo: 'stake/apyswap/logo.png',
+      background: 'stake/apyswap/background.png',
+      text: 'Start Winning Today With APYSwap Staking Staking is the process of holding tokens in a cryptocurrency wallet to support the operations of a network. Participants are rewarded for depositing and holding coins, with constant guaranteed time-based returns. Rewards are calculated based on staking time: the longer you stake, the more you earn.',
+      website: 'https://apyswap.com/',
+      social: {
+        telegram: 'https://t.me/apyswapcom',
+        twitter: 'https://twitter.com/apyswap',
+      },
+    },
+  },
+
+  {
     id: 'moo_belt_venus-mash',
     name: 'MarshmallowDeFi',
     logo: 'uncategorized/BELT-VENUSBLP.png',
