@@ -50,7 +50,8 @@ const Header = ({ links, isNightMode, setNightMode }) => {
 
         <span>
           <Hidden mdDown>
-            {renderLink('barn', 'barn', 'warehouse', classes)}
+            {Number(process.env.REACT_APP_NETWORK_ID) === 56 &&
+              renderLink('barn', 'barn', 'warehouse', classes)}
             {renderLink('vote', 'vote', 'vote-yea', classes)}
             {renderLink('dashboard', t('stats'), 'chart-bar', classes)}
             {renderLink('docs', 'docs', 'book', classes)}
@@ -93,11 +94,13 @@ const Header = ({ links, isNightMode, setNightMode }) => {
           </IconButton>
           <div className={classes.appResponsive}>{links}</div>
           <div style={{ textAlign: 'center' }}>
-            {renderLinkSidebar('barn', 'barn', 'warehouse', classes)}
-            {renderLinkSidebar('vote', 'vote', 'vote-yea', classes)}
-            {renderLinkSidebar('dashboard', t('stats'), 'chart-bar', classes)}
-            {renderLinkSidebar('docs', 'docs', 'book', classes)}
-            {renderLinkSidebar('buy', t('buy'), 'dollar-sign', classes)}
+            {Number(process.env.REACT_APP_NETWORK_ID) === 56 && (
+              <LinkSidebar name="barn" label="barn" icon="warehouse" classes={classes} />
+            )}
+            <LinkSidebar name="vote" label="vote" icon="vote-yea" classes={classes} />
+            <LinkSidebar name="dashboard" label={t('stats')} icon="chart-bar" classes={classes} />
+            <LinkSidebar name="docs" label="docs" icon="book" classes={classes} />
+            <LinkSidebar name="buy" label={t('buy')} icon="dollar-sign" classes={classes} />
             <IconButton onClick={setNightMode} className={classes.icon}>
               {isNightMode ? <WbSunny /> : <NightsStay />}
             </IconButton>
@@ -131,13 +134,9 @@ const renderBoost = classes => {
   );
 };
 
-const renderLinkSidebar = (name, label, icon, classes) => {
-  return (
-    <div style={{ width: '100%', paddingTop: '10px' }}>
-      {renderLink(name, label, icon, classes)}
-    </div>
-  );
-};
+const LinkSidebar = ({ name, label, icon, classes }) => (
+  <div style={{ width: '100%', paddingTop: '10px' }}>{renderLink(name, label, icon, classes)}</div>
+);
 
 const getLinkUrl = name => {
   return name === 'buy'
