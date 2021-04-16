@@ -148,7 +148,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'autofarm',
+    platform: 'Autofarm',
     assets: ['BETH', 'ETH'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -176,7 +176,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'autofarm',
+    platform: 'Autofarm',
     assets: ['ETH', 'USDT'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -204,7 +204,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'autofarm',
+    platform: 'Autofarm',
     assets: ['BTCB', 'USDT'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -232,7 +232,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'autofarm',
+    platform: 'Autofarm',
     assets: ['BTCB', 'ETH'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -260,7 +260,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'autofarm',
+    platform: 'Autofarm',
     assets: ['USDT', 'BUSD'],
     callFee: 0.5,
     addLiquidityUrl:
