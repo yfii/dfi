@@ -36,7 +36,7 @@ export function fetchDeposit({ address, web3, isAll, amount, contractAddress, in
   };
 }
 
-export function fetchDepositBnb({ address, web3, amount, contractAddress, index }) {
+export function fetchDepositBnb({ address, web3, isAll, amount, contractAddress, index }) {
   return dispatch => {
     dispatch({
       type: VAULT_FETCH_DEPOSIT_BEGIN,

@@ -13,7 +13,7 @@ import { useFetchBalances, useFetchDeposit, useFetchApproval } from 'features/va
 import CustomSlider from 'components/CustomSlider/CustomSlider';
 import { useConnectWallet } from 'features/home/redux/hooks';
 import { shouldHideFromHarvest } from 'features/helpers/utils';
-import { byDecimals, format } from 'features/helpers/bignumber';
+import { byDecimals, integrify } from 'features/helpers/bignumber';
 import Button from 'components/CustomButtons/Button.js';
 import styles from './styles';
 import { getEligibleZap } from 'features/zap/zapUniswapV2';
@@ -36,7 +36,7 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
   }, [address, web3, fetchBalances]);
 
   const tokenBalance = token => {
-    return byDecimals(tokens[token.symbol].tokenBalance, token.decimals)
+    return byDecimals(tokens[token.symbol].tokenBalance, token.decimals);
   }
 
   const zap = getEligibleZap(pool);
@@ -71,19 +71,25 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
 
   const handleSliderChange = (_, sliderNum) => {
     const total = tokenBalance(depositSettings.token);
-    const amount = sliderNum > 0 ? total.times(sliderNum).div(100).decimalPlaces(depositSettings.token.decimals) : new BigNumber(0);
+    let amount = new BigNumber(0);
+    if (sliderNum > 0 && sliderNum < 100){
+      amount = total.times(sliderNum).div(100).decimalPlaces(8).decimalPlaces(depositSettings.token.decimals);
+    }
+    if (sliderNum == 100) {
+      amount = total;
+    }
 
     setDepositSettings({
       tokenIndex: depositSettings.tokenIndex,
       token: depositSettings.token,
       amount: amount,
       slider: sliderNum,
-      input: amount.toString(),
+      input: amount.toFormat(),
     });
   };
 
   const handleInputAmountChange = event => {
-    const input = event.target.value.replace(/[,]+/, '\.').replace(/[^0-9\.]+/, '');
+    const input = event.target.value.replace(/[,]+/, '').replace(/[^0-9\.]+/, '');
     let amount = new BigNumber(input);
     const total = tokenBalance(depositSettings.token);
     if (amount.isNaN()) amount = new BigNumber(0);
@@ -96,7 +102,7 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
       token: depositSettings.token,
       amount: amount,
       slider: total.isZero() ? 0 : amount.div(total).times(100).toFixed(0),
-      input: amount.isEqualTo(input) ? input : amount.toString(),
+      input: amount.isEqualTo(input) ? input : amount.toFormat(),
     });
   };
 
@@ -119,41 +125,34 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
     }
 
     if (isAll) {
-      setDepositSettings({
-        amount: format(balanceSingle),
+      setDepositSettings(prevState => ({
+        ...prevState,
+        amount: tokenBalance(depositSettings.token),
         slider: 100,
-      });
+        input: tokenBalance(depositSettings.token).toFormat(),
+      }));
     }
 
-    let amountValue = depositSettings.amount
-      ? depositSettings.amount.replace(',', '')
-      : depositSettings.amount;
-
-    if (pool.tokenAddress) {
-      fetchDeposit({
+    if (pool.tokenAddress == depositSettings.token.address) { // Direct deposit
+      const depositArgs = {
         address,
         web3,
         isAll,
-        amount: new BigNumber(amountValue)
-          .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
-          .toString(10),
+        amount: integrify(depositSettings.amount),
         contractAddress: pool.earnContractAddress,
         index,
-      })
-        .then(() => enqueueSnackbar(t('Vault-DepositSuccess'), { variant: 'success' }))
-        .catch(error => enqueueSnackbar(t('Vault-DepositError', { error }), { variant: 'error' }));
-    } else {
-      fetchDepositBnb({
-        address,
-        web3,
-        amount: new BigNumber(amountValue)
-          .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
-          .toString(10),
-        contractAddress: pool.earnContractAddress,
-        index,
-      })
-        .then(() => enqueueSnackbar(t('Vault-DepositSuccess'), { variant: 'success' }))
-        .catch(error => enqueueSnackbar(t('Vault-DepositError', { error }), { variant: 'error' }));
+      }
+      if (pool.tokenAddress) {
+        fetchDeposit(depositArgs)
+          .then(() => enqueueSnackbar(t('Vault-DepositSuccess'), { variant: 'success' }))
+          .catch(error => enqueueSnackbar(t('Vault-DepositError', { error }), { variant: 'error' }));
+      } else {
+        fetchDepositBnb(depositArgs)
+          .then(() => enqueueSnackbar(t('Vault-DepositSuccess'), { variant: 'success' }))
+          .catch(error => enqueueSnackbar(t('Vault-DepositError', { error }), { variant: 'error' }));
+      }
+    } else { // Zap deposit
+      alert('Not implemented')
     }
   };
 
