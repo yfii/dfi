@@ -17,34 +17,38 @@ const nativeCoins = [
     chainId: 1,
     name: 'Ethereum',
     symbol: 'ETH',
+    decimals: 18,
     wrappedSymbol: 'WETH',
   },
   {
     chainId: 56,
     name: 'Binance Coin',
     symbol: 'BNB',
+    decimals: 18,
     wrappedSymbol: 'WBNB',
   },
   {
     chainId: 128,
     name: 'Heco Token',
     symbol: 'HT',
+    decimals: 18,
     wrappedSymbol: 'WHT',
   },
   {
     chainId: 43114,
     name: 'Avalance Coin',
     symbol: 'AVAX',
+    decimals: 18,
     wrappedSymbol: 'WAVAX',
   },
 ]
 
 export const getEligibleZap = (pool) => {
-  if (pool.assets.length != 2) return undefined;
+  if (pool.assets.length !== 2) return undefined;
 
   let nativeCoin = [];
   const tokenSymbols = pool.assets.map(symbol => {
-    const coin = nativeCoins.find(c => c.symbol == symbol && c.chainId == pool.chainId)
+    const coin = nativeCoins.find(c => c.symbol === symbol && c.chainId === pool.chainId)
     if (coin) {
       nativeCoin.push(coin)
       return coin.wrappedSymbol;
@@ -53,11 +57,11 @@ export const getEligibleZap = (pool) => {
   });
 
   let tokenA, tokenB;
-  const zap = availableZaps.filter(zap => zap.chainId == pool.chainId).find(zap => {
-    tokenA = availableTokens.find(token => token.symbol == tokenSymbols[0] && token.chainId == zap.chainId);
-    tokenB = availableTokens.find(token => token.symbol == tokenSymbols[1] && token.chainId == zap.chainId);
+  const zap = availableZaps.filter(zap => Number(zap.chainId) === Number(pool.chainId)).find(zap => {
+    tokenA = availableTokens.find(token => token.symbol === tokenSymbols[0] && Number(token.chainId) === Number(zap.chainId));
+    tokenB = availableTokens.find(token => token.symbol === tokenSymbols[1] && Number(token.chainId) === Number(zap.chainId));
     if (tokenA && tokenB) {
-      return pool.tokenAddress == computePairAddress(zap.ammFactory, zap.ammPairInitHash, tokenA.address, tokenB.address);
+      return pool.tokenAddress === computePairAddress(zap.ammFactory, zap.ammPairInitHash, tokenA.address, tokenB.address);
     } else {
       console.error('Beefy: tokens missing in the tokenlist:', tokenSymbols[0], tokenSymbols[1]);
     }
@@ -81,6 +85,6 @@ export const computePairAddress = (factoryAddress, pairInitHash, tokenA, tokenB)
 }
 
 export const sortTokens = (tokenA, tokenB) => {
-  if (tokenA == tokenB) throw new RangeError(`tokenA should not be equal to tokenB: ${tokenB}`);
+  if (tokenA === tokenB) throw new RangeError(`tokenA should not be equal to tokenB: ${tokenB}`);
   return tokenA.toLowerCase() < tokenB.toLowerCase() ? [tokenA, tokenB] : [tokenB, tokenA]
 }

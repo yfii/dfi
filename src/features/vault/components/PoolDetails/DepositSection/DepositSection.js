@@ -12,8 +12,8 @@ import CustomOutlinedInput from 'components/CustomOutlinedInput/CustomOutlinedIn
 import { useFetchBalances, useFetchDeposit, useFetchApproval } from 'features/vault/redux/hooks';
 import CustomSlider from 'components/CustomSlider/CustomSlider';
 import { useConnectWallet } from 'features/home/redux/hooks';
-import { inputLimitPass, inputFinalVal, shouldHideFromHarvest } from 'features/helpers/utils';
-import { byDecimals, calculateReallyNum, format } from 'features/helpers/bignumber';
+import { shouldHideFromHarvest } from 'features/helpers/utils';
+import { byDecimals, format } from 'features/helpers/bignumber';
 import Button from 'components/CustomButtons/Button.js';
 import styles from './styles';
 import { getEligibleZap } from 'features/zap/zapUniswapV2';
@@ -35,6 +35,10 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
       }
   }, [address, web3, fetchBalances]);
 
+  const tokenBalance = token => {
+    return byDecimals(tokens[token.symbol].tokenBalance, token.decimals)
+  }
+
   const zap = getEligibleZap(pool);
   const eligibleTokens = [
     {
@@ -47,27 +51,52 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
     ...(zap ? zap.tokens : [])
   ];
 
-  const [depositBalance, setDepositBalance] = useState({
+  const [depositSettings, setDepositSettings] = useState({
     tokenIndex: 0,
-    balance: balanceSingle,
-    amount: 0,
+    token: eligibleTokens[0],
+    amount: new BigNumber(0),
     slider: 0,
+    input: "0.0",
   });
 
-  const handleTokenChange = (event) => {
-    setDepositBalance({
+  const handleTokenChange = event => {
+    setDepositSettings({
       tokenIndex: event.target.value,
-      amount: 0,
+      token: eligibleTokens[event.target.value],
+      amount: new BigNumber(0),
       slider: 0,
+      input: "0.0",
     })
   }
 
-  const handleDepositedBalance = (_, sliderNum) => {
-    const total = balanceSingle.toNumber();
+  const handleSliderChange = (_, sliderNum) => {
+    const total = tokenBalance(depositSettings.token);
+    const amount = sliderNum > 0 ? total.times(sliderNum).div(100).decimalPlaces(depositSettings.token.decimals) : new BigNumber(0);
 
-    setDepositBalance({
-      amount: sliderNum === 0 ? 0 : calculateReallyNum(total, sliderNum),
+    setDepositSettings({
+      tokenIndex: depositSettings.tokenIndex,
+      token: depositSettings.token,
+      amount: amount,
       slider: sliderNum,
+      input: amount.toString(),
+    });
+  };
+
+  const handleInputAmountChange = event => {
+    const input = event.target.value.replace(/[,]+/, '\.').replace(/[^0-9\.]+/, '');
+    let amount = new BigNumber(input);
+    const total = tokenBalance(depositSettings.token);
+    if (amount.isNaN()) amount = new BigNumber(0);
+
+    amount = amount.decimalPlaces(depositSettings.token.decimals);
+    if (amount.isGreaterThan(total)) amount = total;
+
+    setDepositSettings({
+      tokenIndex: depositSettings.tokenIndex,
+      token: depositSettings.token,
+      amount: amount,
+      slider: total.isZero() ? 0 : amount.div(total).times(100).toFixed(0),
+      input: amount.isEqualTo(input) ? input : amount.toString(),
     });
   };
 
@@ -90,15 +119,15 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
     }
 
     if (isAll) {
-      setDepositBalance({
+      setDepositSettings({
         amount: format(balanceSingle),
         slider: 100,
       });
     }
 
-    let amountValue = depositBalance.amount
-      ? depositBalance.amount.replace(',', '')
-      : depositBalance.amount;
+    let amountValue = depositSettings.amount
+      ? depositSettings.amount.replace(',', '')
+      : depositSettings.amount;
 
     if (pool.tokenAddress) {
       fetchDeposit({
@@ -128,27 +157,6 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
     }
   };
 
-  const changeDetailInputValue = event => {
-    let value = event.target.value;
-    const total = balanceSingle.toNumber();
-
-    if (!inputLimitPass(value, pool.tokenDecimals)) {
-      return;
-    }
-
-    let sliderNum = 0;
-    let inputVal = 0;
-    if (value) {
-      inputVal = Number(value.replace(',', ''));
-      sliderNum = byDecimals(inputVal / total, 0).toFormat(2) * 100;
-    }
-
-    setDepositBalance({
-      amount: inputFinalVal(value, total, pool.tokenDecimals),
-      slider: sliderNum,
-    });
-  };
-
   const getVaultState = (status, paused) => {
     let display = false
     let cont = null
@@ -175,15 +183,15 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
   return (
     <Grid item xs={12} md={shouldHideFromHarvest(pool.id) ? 6 : 5} className={classes.sliderDetailContainer}>
       <div className={classes.showDetailLeft}>
-        {t('Vault-Balance')}: {byDecimals(tokens[eligibleTokens[depositBalance.tokenIndex].symbol].tokenBalance, eligibleTokens[depositBalance.tokenIndex].decimals).toFormat(8)} {eligibleTokens[depositBalance.tokenIndex].name}
+        {t('Vault-Balance')}: {tokenBalance(depositSettings.token).toFormat(8)} {depositSettings.token.name}
       </div>
       <FormControl fullWidth variant="outlined" className={classes.numericInput}>
         <CustomOutlinedInput
-          value={depositBalance.amount}
-          onChange={changeDetailInputValue}
+          value={depositSettings.input}
+          onChange={handleInputAmountChange}
           endAdornment={
             <FormControl>
-              <Select variant="outlined" value={depositBalance.tokenIndex} onChange={handleTokenChange}>
+              <Select variant="outlined" value={depositSettings.tokenIndex} onChange={handleTokenChange}>
                 {eligibleTokens.map((token, index) =>
                   <MenuItem key={index} value={index}>{token.symbol}</MenuItem>
                 )}
@@ -194,8 +202,8 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
       </FormControl>
       <CustomSlider
         aria-labelledby="continuous-slider"
-        value={depositBalance.slider}
-        onChange={handleDepositedBalance}
+        value={depositSettings.slider}
+        onChange={handleSliderChange}
       />
       {vaultState.display === true ? vaultState.content : (
       <div>
@@ -218,9 +226,9 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
               color="primary"
               disabled={
                 pool.depositsPaused ||
-                !Boolean(depositBalance.amount) ||
+                !Boolean(depositSettings.amount) ||
                 fetchDepositPending[index] ||
-                new BigNumber(depositBalance.amount).toNumber() > balanceSingle.toNumber()
+                depositSettings.amount.toNumber() > balanceSingle.toNumber()
               }
               onClick={() => onDeposit(false)}
             >
@@ -232,7 +240,7 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
                 disabled={
                   pool.depositsPaused ||
                   fetchDepositPending[index] ||
-                  new BigNumber(depositBalance.amount).toNumber() > balanceSingle.toNumber()
+                  depositSettings.amount.toNumber() > balanceSingle.toNumber()
                 }
                 onClick={() => onDeposit(true)}
               >
