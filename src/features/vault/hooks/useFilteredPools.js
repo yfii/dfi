@@ -42,7 +42,7 @@ const useFilteredPools = (pools, tokens) => {
   }
 
   if (filters.hideDecomissioned) {
-    filteredPools = hideDecomissioned(filteredPools);
+    filteredPools = hideDecomissioned(filteredPools, tokens);
   }
 
 
@@ -67,9 +67,9 @@ function showBoosted(pools) {
   });
 }
 
-function hideDecomissioned(pools) {
+function hideDecomissioned(pools, tokens) {
   return pools.filter(pool => {
-    return pool.status !== 'eol' && pool.status !== 'refund';
+    return (pool.status !== 'eol' && pool.status !== 'refund') || (tokens[pool.earnedToken] && tokens[pool.earnedToken].tokenBalance > 0);
   });
 }
 
