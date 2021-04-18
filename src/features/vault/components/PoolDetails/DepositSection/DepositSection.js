@@ -249,7 +249,7 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
             <ol>
               <li>Swap {convertAmountFromRawNumber(pool.zapEstimate.swapAmountIn, depositSettings.token.decimals)} {depositSettings.token.symbol} for {convertAmountFromRawNumber(pool.zapEstimate.swapAmountOut, depositSettings.token.decimals)} {swapTokenOut.symbol} (&plusmn;1%)</li>
               <li>Add {pool.assets.join(' and ')} as liqudity to {pool.token} pool</li>
-              <li>Deposit recieved {pool.token.name} on Beefy Vault</li>
+              <li>Deposit recieved {pool.token} on Beefy Vault</li>
               <li>Unused assets will be returned to your wallet</li>
             </ol>
           </div>
