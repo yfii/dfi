@@ -42,7 +42,7 @@ export const bscStakePools = [
     tokenAddress: '0x0F47eaae1EC5fD11067455210c494a7828024524',
     tokenOracle: 'tokens',
     tokenOracleId: 'ETH',
-    earnedToken: 'APYS',
+    earnedToken: 'APYS-BNB LP',
     earnedTokenDecimals: 18,
     earnedTokenAddress: '0xE5783Cc9dFb3E7e474B81B07369a008e80F1cEdb',
     earnContractAddress: '0x9A7DB018897B99F47661EcFFb143A7BF80724a7d',
