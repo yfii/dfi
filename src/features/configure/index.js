@@ -5,6 +5,7 @@ export {
   strategyABI,
   multicallBnbShimABI,
   govPoolABI,
+  BeefyUniV2ZapABI,
 } from './abi';
 export { bscStakePools } from './stake/bsc_stake';
 export { hecoStakePools } from './stake/heco_stake';

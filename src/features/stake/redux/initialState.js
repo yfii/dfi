@@ -48,6 +48,7 @@ const initialState = {
   fetchWithdrawPending: [false, false, false, false, false],
   fetchClaimPending: [false, false, false, false, false],
   fetchExitPending: [false, false, false, false, false],
+  fetchZapEstimatePending: [false, false, false, false, false],
 };
 
 export default initialState;

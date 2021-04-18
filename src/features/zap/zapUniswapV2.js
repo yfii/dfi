@@ -19,6 +19,7 @@ const nativeCoins = [
     symbol: 'ETH',
     decimals: 18,
     wrappedSymbol: 'WETH',
+    allowance: Infinity,
   },
   {
     chainId: 56,
@@ -26,6 +27,7 @@ const nativeCoins = [
     symbol: 'BNB',
     decimals: 18,
     wrappedSymbol: 'WBNB',
+    allowance: Infinity,
   },
   {
     chainId: 128,
@@ -33,6 +35,7 @@ const nativeCoins = [
     symbol: 'HT',
     decimals: 18,
     wrappedSymbol: 'WHT',
+    allowance: Infinity,
   },
   {
     chainId: 43114,
@@ -40,6 +43,7 @@ const nativeCoins = [
     symbol: 'AVAX',
     decimals: 18,
     wrappedSymbol: 'WAVAX',
+    allowance: Infinity,
   },
 ]
 
@@ -50,8 +54,10 @@ export const getEligibleZap = (pool) => {
   const tokenSymbols = pool.assets.map(symbol => {
     const coin = nativeCoins.find(c => c.symbol === symbol && c.chainId === pool.chainId)
     if (coin) {
+      const wrappedToken = availableTokens.find(t => t.symbol === coin.wrappedSymbol && Number(t.chainId) === Number(coin.chainId))
+      coin.address = wrappedToken.address
       nativeCoin.push(coin)
-      return coin.wrappedSymbol;
+      return coin.wrappedSymbol
     }
     return symbol;
   });
@@ -68,6 +74,9 @@ export const getEligibleZap = (pool) => {
   });
 
   if (!zap) return undefined;
+
+  tokenA.allowance = 0;
+  tokenB.allowance = 0;
 
   return {
     zapAddress: zap.zapAddress,

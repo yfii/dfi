@@ -84,6 +84,11 @@ const styles = theme => ({
     fontSize: '12px',
     color: theme.palette.text.secondary,
   },
+  zapNote: {
+    textAlign: 'left',
+    fontSize: '14px',
+    color: theme.palette.text.secondary,
+  },
 });
 
 export default styles;
