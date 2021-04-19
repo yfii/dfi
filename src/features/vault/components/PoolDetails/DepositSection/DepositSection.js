@@ -64,7 +64,7 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
     }
 
     let amountValue = depositBalance.amount
-      ? depositBalance.amount.replace(',', '')
+      ? depositBalance.amount.toString().replace(',', '')
       : depositBalance.amount;
 
     if (pool.tokenAddress) {
