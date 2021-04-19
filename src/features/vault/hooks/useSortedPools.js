@@ -4,7 +4,7 @@ import useFilterStorage from '../../home/hooks/useFiltersStorage';
 const DEFAULT = 'default';
 const KEY = 'sortedPools';
 
-const useSortedPools = (pools, apys) => {
+const useSortedPools = (pools, apys, tokens) => {
   const { getStorage, setStorage } = useFilterStorage();
   const data = getStorage(KEY);
 
@@ -26,6 +26,8 @@ const useSortedPools = (pools, apys) => {
       break;
   }
 
+  sortedPools = showDecommissionedFirst(sortedPools, tokens);
+
   return { sortedPools, order, setOrder };
 };
 
@@ -44,5 +46,16 @@ const handleTvl = pools => {
     return b.tvl * bPrice - a.tvl * aPrice;
   });
 };
+
+function showDecommissionedFirst(pools, tokens) {
+  for (let i = 0; i < pools.length; i++) {
+    // if ( EOL or REFUND ) AND (Deposited Balance > 0)
+    if ((pools[i].status == 'eol' || pools[i].status == 'refund') && (tokens[pools[i].earnedToken] && tokens[pools[i].earnedToken].tokenBalance > 0)) {
+      // Remove Vault from pools, insert it at the top.
+      pools.splice(0, 0, pools.splice(i, 1)[0]);
+    }
+  }
+  return pools;
+}
 
 export default useSortedPools;
