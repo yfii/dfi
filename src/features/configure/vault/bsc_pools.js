@@ -21,8 +21,32 @@ export const bscPools = [
     platform: 'Beefy',
     assets: ['BIFI'],
     callFee: 0.5,
-    buyTokenUrl:
-      'https://1inch.exchange/#/r/0xF4cb25a1FF50E319c267b3E51CBeC2699FB2A43B/BNB/BIFI/?network=56',
+    buyTokenUrl: 'https://app.1inch.io/#/56/swap/BNB/BIFI',
+  },
+
+  {
+    id: 'bunny-bunny',
+    logo: 'single-assets/BUNNY.png',
+    name: 'BUNNY',
+    token: 'BUNNY',
+    tokenDescription: 'Pancakebunny',
+    tokenAddress: '0xC9849E6fdB743d08fAeE3E34dd2D1bc69EA11a51',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooBUNNY',
+    earnedTokenAddress: '0x7f56672fCB5D1d1760511803A0a54c4d1e911dFD',
+    earnContractAddress: '0x7f56672fCB5D1d1760511803A0a54c4d1e911dFD',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'coingecko',
+    oracleId: 'pancake-bunny',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancakebunny',
+    assets: ['BUNNY'],
+    callFee: 0.5,
+    buyTokenUrl: 'https://app.1inch.io/#/56/swap/BNB/BUNNY',
   },
 
   {
@@ -494,7 +518,8 @@ export const bscPools = [
     platform: 'ApeSwap',
     assets: ['BIFI', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl: 'https://dex.apeswap.finance/#/add/ETH/0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
+    addLiquidityUrl:
+      'https://dex.apeswap.finance/#/add/ETH/0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
   },
 
   {
