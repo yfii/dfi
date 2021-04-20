@@ -494,7 +494,8 @@ export const bscPools = [
     platform: 'ApeSwap',
     assets: ['BIFI', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl: 'https://dex.apeswap.finance/#/add/ETH/0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
+    addLiquidityUrl:
+      'https://dex.apeswap.finance/#/add/ETH/0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
   },
 
   {
@@ -823,7 +824,7 @@ export const bscPools = [
     oracle: 'tokens',
     oracleId: 'USDT',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Autofarm',
     assets: ['USDT'],
@@ -846,7 +847,7 @@ export const bscPools = [
     oracle: 'tokens',
     oracleId: 'USDC',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Autofarm',
     assets: ['USDC'],
