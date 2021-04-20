@@ -121,7 +121,7 @@ export const bscPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Autofarm',
-    assets: ['BTC'],
+    assets: ['BTCB'],
     callFee: 0.5,
   },
 
@@ -145,7 +145,7 @@ export const bscPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Ellipsis',
-    assets: ['renBTC', 'BTC'],
+    assets: ['renBTC', 'BTCB'],
     callFee: 0.5,
     addLiquidityUrl: 'https://ellipsis.finance/ren/deposit',
   },
@@ -278,7 +278,7 @@ export const bscPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Autofarm',
-    assets: ['BTC', 'USDT'],
+    assets: ['BTCB', 'USDT'],
     callFee: 0.5,
     addLiquidityUrl:
       'https://bsc.mdex.com/#/add/0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c/0x55d398326f99059fF775485246999027B3197955',
@@ -306,7 +306,7 @@ export const bscPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Autofarm',
-    assets: ['BTC', 'ETH'],
+    assets: ['BTCB', 'ETH'],
     callFee: 0.5,
     addLiquidityUrl:
       'https://bsc.mdex.com/#/add/0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c/0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
@@ -2228,7 +2228,7 @@ export const bscPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Pancake',
-    assets: ['bBADGER', 'BTC'],
+    assets: ['bBADGER', 'BTCB'],
     callFee: 0.5,
     addLiquidityUrl:
       'https://exchange.pancakeswap.finance/#/add/0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c/0x1f7216fdb338247512ec99715587bb97bbf96eae',
@@ -2256,7 +2256,7 @@ export const bscPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Pancake',
-    assets: ['bDIGG', 'BTC'],
+    assets: ['bDIGG', 'BTCB'],
     callFee: 0.5,
     addLiquidityUrl:
       'https://exchange.pancakeswap.finance/#/add/0x5986D5c77c65e5801a5cAa4fAE80089f870A71dA/0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c',
@@ -2910,7 +2910,7 @@ export const bscPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'JulSwap',
-    assets: ['BTC', 'BNB'],
+    assets: ['BTCB', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl: 'https://julswap.com/#/add/0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c/BNB',
     buyTokenUrl:
@@ -3158,7 +3158,7 @@ export const bscPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Autofarm',
-    assets: ['BTC', 'BNB'],
+    assets: ['BTCB', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
       'https://exchange.pancakeswap.finance/#/add/0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c/BNB',
@@ -3186,7 +3186,7 @@ export const bscPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Venus',
-    assets: ['BTC'],
+    assets: ['BTCB'],
     callFee: 1,
     buyTokenUrl:
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c',
@@ -4257,7 +4257,7 @@ export const bscPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Kebab',
-    assets: ['ETH', 'BTC'],
+    assets: ['ETH', 'BTCB'],
     callFee: 0.5,
     addLiquidityUrl:
       'https://swap.kebabfinance.com/#/add/0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c/0x2170ed0880ac9a755fd29b2688956bd959f933f8',
@@ -4392,7 +4392,7 @@ export const bscPools = [
     depositsPaused: true,
     status: 'active',
     platform: 'Autofarm',
-    assets: ['BTC'],
+    assets: ['BTCB'],
     callFee: 0.5,
     buyTokenUrl:
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c',
@@ -4522,7 +4522,7 @@ export const bscPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Kebab',
-    assets: ['KEBAB', 'BTC'],
+    assets: ['KEBAB', 'BTCB'],
     callFee: 0.5,
     addLiquidityUrl:
       'https://swap.kebabfinance.com/#/add/0x7979f6c54eba05e18ded44c4f986f49a5de551c2/0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c',
@@ -5743,7 +5743,7 @@ export const bscPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Bakery',
-    assets: ['BTC', 'BNB'],
+    assets: ['BTCB', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
       'https://www.bakeryswap.org/#/add/ETH/0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c',
@@ -7678,7 +7678,7 @@ export const bscPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Pancake',
-    assets: ['BTC', 'BNB'],
+    assets: ['BTCB', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
       'https://exchange.pancakeswap.finance/#/add/BNB/0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c',
@@ -7820,7 +7820,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'active',
-    assets: ['BTC'],
+    assets: ['BTCB'],
     callFee: 1,
   },
 
