@@ -90,7 +90,7 @@ export function convertAmountToRawNumber(value, decimals = 18) {
 }
 
 export function convertAmountFromRawNumber(value, decimals = 18) {
-  return new BigNumber(`${value}`).dividedBy(new BigNumber('10').pow(decimals)).toString();
+  return new BigNumber(`${value}`).dividedBy(new BigNumber('10').pow(decimals));
 }
 
 export function handleSignificantDecimals(value, decimals, buffer) {

@@ -219,7 +219,7 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
   return (
     <Grid item xs={12} md={shouldHideFromHarvest(pool.id) ? 6 : 5} className={classes.sliderDetailContainer}>
       <div className={classes.showDetailLeft}>
-        {t('Vault-Balance')}: {tokenBalance(depositSettings.token).toFormat(8)} {depositSettings.token.name}
+        {t('Vault-Balance')}: {tokenBalance(depositSettings.token).precision(8).toString()} {depositSettings.token.name}
       </div>
       <FormControl fullWidth variant="outlined" className={classes.numericInput}>
         <CustomOutlinedInput
@@ -247,7 +247,7 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
           <div className={classes.zapNote}>
             <p>Depositing single token will:</p>
             <ol>
-              <li>Swap {convertAmountFromRawNumber(pool.zapEstimate.swapAmountIn, depositSettings.token.decimals)} {depositSettings.token.symbol} for {convertAmountFromRawNumber(pool.zapEstimate.swapAmountOut, depositSettings.token.decimals)} {swapTokenOut.symbol} (&plusmn;1%)</li>
+              <li>Swap ~{convertAmountFromRawNumber(pool.zapEstimate.swapAmountIn, depositSettings.token.decimals).precision(8).toString()} {depositSettings.token.symbol} for {convertAmountFromRawNumber(pool.zapEstimate.swapAmountOut, depositSettings.token.decimals).precision(8).toString()} {swapTokenOut.symbol} (&plusmn;1%)</li>
               <li>Add {pool.assets.join(' and ')} as liqudity to {pool.token} pool</li>
               <li>Deposit recieved {pool.token} on Beefy Vault</li>
               <li>Unused assets will be returned to your wallet</li>
