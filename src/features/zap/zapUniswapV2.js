@@ -1,71 +1,27 @@
 import { pack, keccak256 } from '@ethersproject/solidity';
 import { getCreate2Address } from '@ethersproject/address';
+import { getNetworkTokens, getNetworkZaps, getNetworkCoin } from 'features/helpers/getNetworkData';
 
-import { bscZaps } from 'features/configure/zap/bsc_zaps';
-import bscTokenList from 'assets/tokenlists/beefy-bsc-tokenlist.json';
-
-const availableZaps = [
-  ...bscZaps,
-]
-
-const availableTokens = [
-  ...bscTokenList.tokens,
-]
-
-const nativeCoins = [
-  {
-    chainId: 1,
-    name: 'Ethereum',
-    symbol: 'ETH',
-    decimals: 18,
-    wrappedSymbol: 'WETH',
-    allowance: Infinity,
-  },
-  {
-    chainId: 56,
-    name: 'Binance Coin',
-    symbol: 'BNB',
-    decimals: 18,
-    wrappedSymbol: 'WBNB',
-    allowance: Infinity,
-  },
-  {
-    chainId: 128,
-    name: 'Heco Token',
-    symbol: 'HT',
-    decimals: 18,
-    wrappedSymbol: 'WHT',
-    allowance: Infinity,
-  },
-  {
-    chainId: 43114,
-    name: 'Avalance Coin',
-    symbol: 'AVAX',
-    decimals: 18,
-    wrappedSymbol: 'WAVAX',
-    allowance: Infinity,
-  },
-]
+const availableZaps = getNetworkZaps();
+const availableTokens = getNetworkTokens();
+const nativeCoin = getNetworkCoin();
 
 export const getEligibleZap = (pool) => {
   if (pool.assets.length !== 2) return undefined;
 
-  let nativeCoin = [];
   const tokenSymbols = pool.assets.map(symbol => {
-    const coin = nativeCoins.find(c => c.symbol === symbol && c.chainId === pool.chainId)
-    if (coin) {
-      const wrappedToken = availableTokens.find(t => t.symbol === coin.wrappedSymbol && Number(t.chainId) === Number(coin.chainId))
-      coin.address = wrappedToken.address
-      nativeCoin.push(coin)
-      return coin.wrappedSymbol
+    if (nativeCoin.symbol === symbol) {
+      const wrappedToken = availableTokens.find(t => t.symbol === nativeCoin.wrappedSymbol)
+      nativeCoin.address = wrappedToken.address;
+      return nativeCoin.wrappedSymbol;
     }
     return symbol;
   });
 
   let tokenA, tokenB;
-  const zap = availableZaps.filter(zap => Number(zap.chainId) === Number(pool.chainId)).find(zap => {
-    tokenA = availableTokens.find(token => token.symbol === tokenSymbols[0] && Number(token.chainId) === Number(zap.chainId));
-    tokenB = availableTokens.find(token => token.symbol === tokenSymbols[1] && Number(token.chainId) === Number(zap.chainId));
+  const zap = availableZaps.find(zap => {
+    tokenA = availableTokens.find(token => token.symbol === tokenSymbols[0]);
+    tokenB = availableTokens.find(token => token.symbol === tokenSymbols[1]);
     if (tokenA && tokenB) {
       return pool.tokenAddress === computePairAddress(zap.ammFactory, zap.ammPairInitHash, tokenA.address, tokenB.address);
     } else {
@@ -80,7 +36,7 @@ export const getEligibleZap = (pool) => {
 
   return {
     zapAddress: zap.zapAddress,
-    tokens: [tokenA, tokenB, ...nativeCoin],
+    tokens: [tokenA, tokenB, nativeCoin],
   }
 }
 

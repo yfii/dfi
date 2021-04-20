@@ -1,0 +1,14 @@
+{
+  "name": "Beefy.Finance Avalance Tokens List",
+  "timestamp": "2021-03-17T09:56:23Z",
+  "version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "tags": {},
+  "logoURI": "https://beefy.finance/img/beefy.svg",
+  "keywords": ["beefy", "bsc"],
+  "tokens": [
+  ]
+}
