@@ -32,9 +32,11 @@ export default function Pools() {
     return () => clearInterval(id);
   }, [fetchApys]);
 
+  console.log('pools', tokens['CAKE'].allowance)
   useEffect(() => {
     const fetch = () => {
       if (address && web3) {
+        console.log('useEffect', tokens['CAKE'].allowance)
         fetchBalances({ address, web3, tokens });
       }
       fetchVaultsData({ address, web3, pools });

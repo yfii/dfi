@@ -8,13 +8,13 @@ import { reducer as fetchApysReducer } from './fetchApys';
 import { reducer as fetchZapEstimateReducer } from './fetchZapEstimate';
 
 const reducers = [
-  fetchBalancesReducer,
   fetchVaultsData,
   fetchApprovalReducer,
   fetchDepositReducer,
   fetchWithdrawReducer,
   fetchApysReducer,
   fetchZapEstimateReducer,
+  fetchBalancesReducer,
 ];
 
 export default function reducer(state = initialState, action) {

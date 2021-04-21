@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Grid from '@material-ui/core/Grid';
 import BigNumber from 'bignumber.js';
 import { useTranslation } from 'react-i18next';
@@ -35,28 +35,23 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
   const { tokens, fetchBalances, fetchBalancesDone } = useFetchBalances();
   const { fetchZapEstimate, fetchZapEstimatePending } = useFetchZapEstimate();
 
-  useEffect(() => {
-      if (address && web3) {
-        fetchBalances({ address, web3, tokens });
-      }
-  }, [address, web3, fetchBalances]);
-
-  const tokenBalance = token => {
-    return byDecimals(tokens[token.symbol]?.tokenBalance || 0, token.decimals);
-  }
-
-  const zap = getEligibleZap(pool);
-  const eligibleTokens = [
-    {
-      name: pool.name,
-      symbol: pool.token,
-      address: pool.tokenAddress,
-      decimals: pool.tokenDecimals,
-      logoURI: pool.logo,
-      allowance: pool.allowance,
-    },
-    ...(zap ? zap.tokens : [])
-  ];
+  const { zap, eligibleTokens } = useMemo(() => {
+    const zap = getEligibleZap(pool);
+    return {
+      zap,
+      eligibleTokens: [
+        {
+          name: pool.name,
+          symbol: pool.token,
+          address: pool.tokenAddress,
+          decimals: pool.tokenDecimals,
+          logoURI: pool.logo,
+          allowance: pool.allowance,
+        },
+        ...(zap ? zap.tokens : [])
+      ]
+    }
+  }, [pool.tokenAddress])
 
   const [depositSettings, setDepositSettings] = useState({
     tokenIndex: 0,
@@ -65,6 +60,7 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
     amount: new BigNumber(0),
     slider: 0,
     input: "0.0",
+    contract: pool.earnContractAddress,
   });
 
   useEffect(() => {
@@ -82,16 +78,27 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
     }
   }, [web3, depositSettings, fetchZapEstimate, pool]);
 
+  useEffect(() => {
+      if (address && web3) {
+        const spender = depositSettings.contract;
+        fetchBalances({ address, web3, tokens, spender});
+      }
+  }, [address, web3, fetchBalances, depositSettings.contract, tokens]);
+
+  const tokenBalance = token => {
+    return byDecimals(tokens[token.symbol]?.tokenBalance || 0, token.decimals);
+  }
 
   const handleTokenChange = event => {
-
+    const isZap = (event.target.value > 0);
     setDepositSettings({
       tokenIndex: event.target.value,
-      isZap: (event.target.value > 0),
+      isZap: isZap,
       token: eligibleTokens[event.target.value],
       amount: new BigNumber(0),
       slider: 0,
       input: "0.0",
+      contract: isZap ? zap.zapAddress : pool.earnContractAddress,
     })
   }
 
@@ -290,7 +297,7 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
           <div className={classes.zapNote}>
             <p>Depositing single token will:</p>
             <ol>
-              <li>Swap ~{convertAmountFromRawNumber(pool.zapEstimate.swapAmountIn, depositSettings.token.decimals).precision(8).toString()} {depositSettings.token.symbol} for {convertAmountFromRawNumber(pool.zapEstimate.swapAmountOut, depositSettings.token.decimals).precision(8).toString()} {swapTokenOut.symbol} (&plusmn;1%)</li>
+              <li>Swap ~{convertAmountFromRawNumber(pool.zapEstimate.swapAmountIn, depositSettings.token.decimals).precision(8).toString()} {depositSettings.token.symbol} for {convertAmountFromRawNumber(pool.zapEstimate.swapAmountOut, swapTokenOut.decimals).precision(8).toString()} {swapTokenOut.symbol} (&plusmn;1%)</li>
               <li>Add {pool.assets.join(' and ')} as liqudity to {pool.token} pool</li>
               <li>Deposit recieved {pool.token} on Beefy Vault</li>
               <li>Unused assets will be returned to your wallet</li>

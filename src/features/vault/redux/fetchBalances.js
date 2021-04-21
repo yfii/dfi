@@ -10,35 +10,31 @@ import { erc20ABI, multicallBnbShimABI } from 'features/configure';
 import BigNumber from 'bignumber.js';
 import { getNetworkMulticall } from 'features/helpers/getNetworkData';
 
-export function fetchBalances({ address, web3, tokens }) {
+export function fetchBalances({ address, web3, tokens, spender }) {
   return dispatch => {
     dispatch({
       type: VAULT_FETCH_BALANCES_BEGIN,
     });
 
     const promise = new Promise((resolve, reject) => {
-      const tokensList = [];
-      for (let key in tokens) {
-        tokensList.push({
-          token: key,
-          tokenAddress: tokens[key].tokenAddress,
-          tokenBalance: tokens[key].tokenBalance,
-        });
-      }
 
       const multicall = new MultiCall(web3, getNetworkMulticall());
 
-      const calls = tokensList.map(token => {
+      const calls = Object.entries(tokens).map(([symbol, token]) => {
         if (!token.tokenAddress) {
           const shimAddress = '0xC72E5edaE5D7bA628A2Acb39C8Aa0dbbD06daacF';
           const shimContract = new web3.eth.Contract(multicallBnbShimABI, shimAddress);
           return {
-            tokenBalance: shimContract.methods.balanceOf(address),
+            balance: shimContract.methods.balanceOf(address),
+            allowance: shimContract.methods.allowance(address, address),
+            symbol: symbol,
           };
         } else {
           const tokenContract = new web3.eth.Contract(erc20ABI, token.tokenAddress);
           return {
-            tokenBalance: tokenContract.methods.balanceOf(address),
+            balance: tokenContract.methods.balanceOf(address),
+            allowance: spender ? tokenContract.methods.allowance(address, spender) : '0',
+            symbol: symbol,
           };
         }
       });
@@ -47,12 +43,17 @@ export function fetchBalances({ address, web3, tokens }) {
         .all([calls])
         .then(([results]) => {
           const newTokens = {};
-          for (let i = 0; i < tokensList.length; i++) {
-            newTokens[tokensList[i].token] = {
-              tokenAddress: tokensList[i].tokenAddress,
-              tokenBalance: new BigNumber(results[i].tokenBalance).toNumber() || 0,
+          results.forEach(result => {
+            newTokens[result.symbol] = {
+              ...tokens[result.symbol],
+              tokenBalance: new BigNumber(result.balance).toNumber() || 0,
+              allowance: {
+                ...tokens[result.symbol].allowance,
+                ...(spender ? {[spender]: result.allowance} : tokens[result.symbol].allowance),
+              },
             };
-          }
+          })
+          console.log(newTokens['CAKE']);
 
           dispatch({
             type: VAULT_FETCH_BALANCES_SUCCESS,
