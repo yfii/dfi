@@ -90,7 +90,7 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'belt-venus-blp',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Belt',
     assets: ['USDT', 'BUSD', 'USDC', 'DAI', 'VENUS BLP'],
