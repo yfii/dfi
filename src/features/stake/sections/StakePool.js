@@ -170,14 +170,18 @@ export default function StakePool(props) {
 
   useEffect(() => {
     if (halfTime[index] === 0) {
-      pools[index].status = 'soon';
+      if(!pools[index].hideCountdown === true) {
+        pools[index].status = 'soon';
+      }
       return;
     }
     const formatTime = () => {
       const deadline = halfTime[index] * 1000;
       const time = deadline - new Date().getTime();
       if (time <= 0) {
-        pools[index].status = 'closed';
+        if(!pools[index].hideCountdown === true) {
+          pools[index].status = 'closed';
+        }
         return fetchHalfTime(index);
       }
       setMyHalfTime(formatCountdown(deadline));
