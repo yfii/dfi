@@ -1080,7 +1080,7 @@ export const bscPools = [
     oracle: 'tokens',
     oracleId: 'WBNB',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Autofarm',
     assets: ['BNB'],
