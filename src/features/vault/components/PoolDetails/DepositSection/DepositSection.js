@@ -42,7 +42,7 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
   }, [address, web3, fetchBalances]);
 
   const tokenBalance = token => {
-    return byDecimals(tokens[token.symbol].tokenBalance, token.decimals);
+    return byDecimals(tokens[token.symbol]?.tokenBalance || 0, token.decimals);
   }
 
   const zap = getEligibleZap(pool);
@@ -214,7 +214,8 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
   const vaultState = getVaultState(pool.status, pool.depositsPaused);
   const isNeedApproval = depositSettings.token.allowance == 0
     || depositSettings.amount.isGreaterThan(depositSettings.token.allowance);
-  const swapTokenOut = eligibleTokens.find(t => t.address.toLowerCase() == pool.zapEstimate?.swapTokenOut.toLowerCase())
+  const swapTokenOut = depositSettings.isZap ?
+    eligibleTokens.find(t => t.address.toLowerCase() == pool.zapEstimate?.swapTokenOut.toLowerCase()) : undefined;
 
   return (
     <Grid item xs={12} md={shouldHideFromHarvest(pool.id) ? 6 : 5} className={classes.sliderDetailContainer}>
