@@ -2833,7 +2833,7 @@ export const bscPools = [
     oracleId: 'squirrel-nuts-bnb',
     oraclePrice: 0,
     depositsPaused: false,
-    status: 'active',
+    status: 'eol',
     assets: ['NUTS', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
