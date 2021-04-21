@@ -244,17 +244,6 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
       />
       {vaultState.display === true ? vaultState.content : (
       <div>
-        {depositSettings.isZap && !depositSettings.amount.isZero() && pool.zapEstimate ? (
-          <div className={classes.zapNote}>
-            <p>Depositing single token will:</p>
-            <ol>
-              <li>Swap ~{convertAmountFromRawNumber(pool.zapEstimate.swapAmountIn, depositSettings.token.decimals).precision(8).toString()} {depositSettings.token.symbol} for {convertAmountFromRawNumber(pool.zapEstimate.swapAmountOut, depositSettings.token.decimals).precision(8).toString()} {swapTokenOut.symbol} (&plusmn;1%)</li>
-              <li>Add {pool.assets.join(' and ')} as liqudity to {pool.token} pool</li>
-              <li>Deposit recieved {pool.token} on Beefy Vault</li>
-              <li>Unused assets will be returned to your wallet</li>
-            </ol>
-          </div>
-        ) : ''}
         {isNeedApproval ? (
           <div className={classes.showDetailButtonCon}>
             <Button
@@ -297,8 +286,20 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
             )}
           </div>
         )}
+        {depositSettings.isZap && !depositSettings.amount.isZero() && pool.zapEstimate && (
+          <div className={classes.zapNote}>
+            <p>Depositing single token will:</p>
+            <ol>
+              <li>Swap ~{convertAmountFromRawNumber(pool.zapEstimate.swapAmountIn, depositSettings.token.decimals).precision(8).toString()} {depositSettings.token.symbol} for {convertAmountFromRawNumber(pool.zapEstimate.swapAmountOut, depositSettings.token.decimals).precision(8).toString()} {swapTokenOut.symbol} (&plusmn;1%)</li>
+              <li>Add {pool.assets.join(' and ')} as liqudity to {pool.token} pool</li>
+              <li>Deposit recieved {pool.token} on Beefy Vault</li>
+              <li>Unused assets will be returned to your wallet</li>
+            </ol>
+          </div>
+        )}
       </div>
       )}
+
       {['Autofarm', 'Swamp'].includes(pool.platform) ? <h3 className={classes.subtitle}>{t('Vault-DepositFee')}</h3> : ''}
       <p className={classes.note}>{t('Vault-DepositTokensNote', { mooToken: pool.earnedToken, assetToken: pool.token })}</p>
     </Grid>
