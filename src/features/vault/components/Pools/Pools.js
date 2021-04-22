@@ -19,8 +19,8 @@ const useStyles = makeStyles(styles);
 export default function Pools() {
   const { t } = useTranslation();
   const { web3, address } = useConnectWallet();
-  const { pools, fetchVaultsData, fetchVaultsDataDone } = useFetchVaultsData();
-  const { tokens, fetchBalances, fetchBalancesDone } = useFetchBalances();
+  const { pools, fetchVaultsData, fetchVaultsDataPending, fetchVaultsDataDone } = useFetchVaultsData();
+  const { tokens, fetchBalances, fetchBalancesPending, fetchBalancesDone } = useFetchBalances();
   const { apys, fetchApys, fetchApysDone } = useFetchApys();
   const { poolsTvl } = usePoolsTvl(pools);
   const { userTvl } = useUserTvl(pools, tokens);
@@ -32,14 +32,14 @@ export default function Pools() {
     return () => clearInterval(id);
   }, [fetchApys]);
 
-  console.log('pools', tokens['CAKE'].allowance)
   useEffect(() => {
     const fetch = () => {
-      if (address && web3) {
-        console.log('useEffect', tokens['CAKE'].allowance)
+      if (address && web3 && !fetchBalancesPending) {
         fetchBalances({ address, web3, tokens });
       }
-      fetchVaultsData({ address, web3, pools });
+      if (!fetchVaultsDataPending) {
+        fetchVaultsData({ address, web3, pools });
+      }
     };
     fetch();
 

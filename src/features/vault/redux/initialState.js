@@ -7,10 +7,12 @@ pools.forEach(({ token, tokenAddress, earnedToken, earnedTokenAddress }) => {
   tokens[token] = {
     tokenAddress: tokenAddress,
     tokenBalance: 0,
+    allowance: {},
   };
   tokens[earnedToken] = {
     tokenAddress: earnedTokenAddress,
     tokenBalance: 0,
+    allowance: {},
   };
 });
 

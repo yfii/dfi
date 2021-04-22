@@ -26,7 +26,7 @@ export function fetchBalances({ address, web3, tokens, spender }) {
           const shimContract = new web3.eth.Contract(multicallBnbShimABI, shimAddress);
           return {
             balance: shimContract.methods.balanceOf(address),
-            allowance: shimContract.methods.allowance(address, address),
+            allowance: shimContract.methods.allowance(address, spender ? spender : address),
             symbol: symbol,
           };
         } else {
@@ -49,11 +49,10 @@ export function fetchBalances({ address, web3, tokens, spender }) {
               tokenBalance: new BigNumber(result.balance).toNumber() || 0,
               allowance: {
                 ...tokens[result.symbol].allowance,
-                ...(spender ? {[spender]: result.allowance} : tokens[result.symbol].allowance),
+                ...(spender ? {[spender]: result.allowance} : undefined),
               },
             };
           })
-          console.log(newTokens['CAKE']);
 
           dispatch({
             type: VAULT_FETCH_BALANCES_SUCCESS,
@@ -109,9 +108,23 @@ export function reducer(state, action) {
       };
 
     case VAULT_FETCH_BALANCES_SUCCESS:
+      const newAndUpdatedTokens = {};
+      Object.entries(action.data).forEach(([symbol, token]) => {
+        newAndUpdatedTokens[symbol] = {
+          ...token,
+          allowance: {
+            ...state.tokens[symbol]?.allowance,
+            ...token.allowance,
+          },
+        }
+      });
+
       return {
         ...state,
-        tokens: action.data,
+        tokens: {
+          ...state.tokens,
+          ...newAndUpdatedTokens,
+        },
         fetchBalancesDone: true,
         fetchBalancesPending: false,
       };

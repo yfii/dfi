@@ -7,11 +7,11 @@ import {
 } from './constants';
 import { approval } from '../../web3';
 
-export function fetchApproval({ address, web3, tokenAddress, contractAddress, index }) {
+export function fetchApproval({ address, web3, tokenAddress, contractAddress, tokenSymbol }) {
   return dispatch => {
     dispatch({
       type: VAULT_FETCH_APPROVAL_BEGIN,
-      index,
+      tokenSymbol,
     });
 
     const promise = new Promise((resolve, reject) => {
@@ -25,15 +25,16 @@ export function fetchApproval({ address, web3, tokenAddress, contractAddress, in
         .then(data => {
           dispatch({
             type: VAULT_FETCH_APPROVAL_SUCCESS,
-            data: { index, allowance: data },
-            index,
+            data: { allowance: data },
+            spender: contractAddress,
+            tokenSymbol,
           });
           resolve();
         })
         .catch(error => {
           dispatch({
             type: VAULT_FETCH_APPROVAL_FAILURE,
-            index,
+            tokenSymbol,
           });
           reject(error.message || error);
         });
@@ -65,20 +66,19 @@ export function reducer(state, action) {
         ...state,
         fetchApprovalPending: {
           ...state.fetchApprovalPending,
-          [action.index]: true,
+          [action.tokenSymbol]: true,
         },
       };
 
     case VAULT_FETCH_APPROVAL_SUCCESS:
-      const { pools } = state;
-      pools[action.index].allowance = action.data.allowance;
-      console.log('Set allowance:', action.index, pools[action.index])
+      const { tokens } = state;
+      tokens[action.tokenSymbol].allowance[action.spender] = action.data.allowance;
       return {
         ...state,
-        pools,
+        tokens,
         fetchApprovalPending: {
           ...state.fetchApprovalPending,
-          [action.index]: false,
+          [action.tokenSymbol]: false,
         },
       };
 
@@ -87,7 +87,7 @@ export function reducer(state, action) {
         ...state,
         fetchApprovalPending: {
           ...state.fetchApprovalPending,
-          [action.index]: false,
+          [action.tokenSymbol]: false,
         },
       };
 

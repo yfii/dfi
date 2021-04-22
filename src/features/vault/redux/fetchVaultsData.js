@@ -115,9 +115,15 @@ export function reducer(state, action) {
       };
 
     case VAULT_FETCH_VAULTS_DATA_SUCCESS:
+      const { tokens } = state;
+      const pools = action.data;
+      pools.forEach(pool => {
+        tokens[pool.token].allowance[pool.earnContractAddress] = pool.allowance;
+      })
       return {
         ...state,
-        pools: action.data,
+        pools,
+        tokens,
         fetchVaultsDataPending: false,
         fetchVaultsDataDone: true,
       };

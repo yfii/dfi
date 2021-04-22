@@ -32,7 +32,7 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
   const { enqueueSnackbar } = useSnackbar();
   const { fetchApproval, fetchApprovalPending } = useFetchApproval();
   const { fetchDeposit, fetchDepositBnb, fetchDepositPending } = useFetchDeposit();
-  const { tokens, fetchBalances, fetchBalancesDone } = useFetchBalances();
+  const { tokens, fetchBalances } = useFetchBalances();
   const { fetchZapEstimate, fetchZapEstimatePending } = useFetchZapEstimate();
 
   const { zap, eligibleTokens } = useMemo(() => {
@@ -61,6 +61,7 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
     slider: 0,
     input: "0.0",
     contract: pool.earnContractAddress,
+    isNeedApproval: (tokens[eligibleTokens[0].symbol].allowance[pool.earnContractAddress] == 0),
   });
 
   useEffect(() => {
@@ -79,11 +80,18 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
   }, [web3, depositSettings, fetchZapEstimate, pool]);
 
   useEffect(() => {
+    setDepositSettings(prevState => ({
+      ...prevState,
+      isNeedApproval: prevState.amount.isLessThan(tokens[prevState.token.symbol].allowance[prevState.contract]),
+    }));
+  }, [tokens]);
+
+  useEffect(() => {
       if (address && web3) {
         const spender = depositSettings.contract;
         fetchBalances({ address, web3, tokens, spender});
       }
-  }, [address, web3, fetchBalances, depositSettings.contract, tokens]);
+  }, [address, web3, fetchBalances, depositSettings.contract]);
 
   const tokenBalance = token => {
     return byDecimals(tokens[token.symbol]?.tokenBalance || 0, token.decimals);
@@ -91,14 +99,18 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
 
   const handleTokenChange = event => {
     const isZap = (event.target.value > 0);
+    const spender = isZap ? zap.zapAddress : pool.earnContractAddress;
+    const token = eligibleTokens[event.target.value];
+
     setDepositSettings({
       tokenIndex: event.target.value,
       isZap: isZap,
-      token: eligibleTokens[event.target.value],
+      token: token,
       amount: new BigNumber(0),
       slider: 0,
       input: "0.0",
-      contract: isZap ? zap.zapAddress : pool.earnContractAddress,
+      contract: spender,
+      isNeedApproval: (tokens[token.symbol].allowance[spender] == 0),
     })
   }
 
@@ -117,6 +129,7 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
       amount: amount,
       slider: sliderNum,
       input: amount.toFormat(),
+      isNeedApproval: amount.isLessThan(tokens[depositSettings.token.symbol].allowance[depositSettings.contract]),
     }));
   };
 
@@ -134,24 +147,20 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
       amount: amount,
       slider: total.isZero() ? 0 : amount.div(total).times(100).toFixed(0),
       input: amount.isEqualTo(input) ? input : amount.toFormat(),
+      isNeedApproval: amount.isLessThan(tokens[depositSettings.token.symbol].allowance[depositSettings.contract]),
     }));
   };
 
   const handleApproval = () => {
-    if (pool.tokenAddress == depositSettings.token.address) { // Vault approval
-      fetchApproval({
-        address,
-        web3,
-        tokenAddress: pool.tokenAddress,
-        contractAddress: pool.earnContractAddress,
-        index,
-      })
-        .then(() => enqueueSnackbar(t('Vault-ApprovalSuccess'), { variant: 'success' }))
-        .catch(error => enqueueSnackbar(t('Vault-ApprovalError', { error }), { variant: 'error' }));
-
-    } else { // Zap approval
-      alert('Not implemented')
-    }
+    fetchApproval({
+      address,
+      web3,
+      tokenAddress: depositSettings.token.address,
+      contractAddress: depositSettings.contract,
+      tokenSymbol: depositSettings.token.symbol,
+    })
+      .then(() => enqueueSnackbar(t('Vault-ApprovalSuccess'), { variant: 'success' }))
+      .catch(error => enqueueSnackbar(t('Vault-ApprovalError', { error }), { variant: 'error' }));
   };
 
   const handleDepositAll = () => {
@@ -219,8 +228,6 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
   }
 
   const vaultState = getVaultState(pool.status, pool.depositsPaused);
-  const isNeedApproval = depositSettings.token.allowance == 0
-    || depositSettings.amount.isGreaterThan(depositSettings.token.allowance);
   const swapTokenOut = depositSettings.isZap ?
     eligibleTokens.find(t => t.address.toLowerCase() == pool.zapEstimate?.swapTokenOut.toLowerCase()) : undefined;
 
@@ -251,14 +258,14 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
       />
       {vaultState.display === true ? vaultState.content : (
       <div>
-        {isNeedApproval ? (
+        {depositSettings.isNeedApproval ? (
           <div className={classes.showDetailButtonCon}>
             <Button
               className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`}
               onClick={handleApproval}
-              disabled={pool.depositsPaused || fetchApprovalPending[index]}
+              disabled={pool.depositsPaused || fetchApprovalPending[depositSettings.token.symbol]}
             >
-              {fetchApprovalPending[index]
+              {fetchApprovalPending[depositSettings.token.symbol]
                 ? `${t('Vault-Approving')}`
                 : `${t('Vault-ApproveButton')}`}
             </Button>
