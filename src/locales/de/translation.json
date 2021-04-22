@@ -2,7 +2,6 @@
   "Disclaimer": "Smart Contracts, Tokens und Crypto allgemein beinhaltet immer ein Risiko. DYOR vor dem Invest.",
   "Network-Error": "Bitte mit dem richtigen Netzwerk verbinden.",
   "Vault-Wallet": "Wallet",
-  
   "Vault-Balance": "Guthaben",
   "Vault-APY": "APY",
   "Vault-APYDaily": "Tageskurs",
@@ -96,5 +95,5 @@
   "Wrap-BNB": "Wrap BNB",
   "Boost": "Boost",
   "Experimental": "Testweise",
-  "Select-Network": "Netzwerk auswählen",
+  "Select-Network": "Netzwerk auswählen"
 }
