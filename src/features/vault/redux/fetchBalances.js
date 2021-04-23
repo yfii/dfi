@@ -20,38 +20,64 @@ export function fetchBalances({ address, web3, tokens, spender }) {
 
       const multicall = new MultiCall(web3, getNetworkMulticall());
 
-      const calls = Object.entries(tokens).map(([symbol, token]) => {
+      const balanceCalls = [];
+      const allowanceCalls = [];
+
+      Object.entries(tokens).forEach(([symbol, token]) => {
         if (!token.tokenAddress) {
           const shimAddress = '0xC72E5edaE5D7bA628A2Acb39C8Aa0dbbD06daacF';
           const shimContract = new web3.eth.Contract(multicallBnbShimABI, shimAddress);
-          return {
+          balanceCalls.push({
             balance: shimContract.methods.balanceOf(address),
-            allowance: shimContract.methods.allowance(address, spender ? spender : address),
             symbol: symbol,
-          };
+          });
         } else {
           const tokenContract = new web3.eth.Contract(erc20ABI, token.tokenAddress);
-          return {
+          balanceCalls.push({
             balance: tokenContract.methods.balanceOf(address),
-            allowance: spender ? tokenContract.methods.allowance(address, spender) : '0',
             symbol: symbol,
-          };
+          });
+
+          if (spender) {
+            allowanceCalls.push({
+              allowance: tokenContract.methods.allowance(address, spender),
+              spender: spender,
+              symbol: symbol,
+            });
+          } else {
+            Object.entries(token.allowance).forEach(([_spender]) => {
+              allowanceCalls.push({
+                allowance: tokenContract.methods.allowance(address, _spender),
+                spender: _spender,
+                symbol: symbol,
+              });
+            })
+          }
+
         }
       });
 
       multicall
-        .all([calls])
-        .then(([results]) => {
+        .all([balanceCalls, allowanceCalls])
+        .then(([balanceResults, allowanceResults]) => {
+
           const newTokens = {};
-          results.forEach(result => {
-            newTokens[result.symbol] = {
-              ...tokens[result.symbol],
-              tokenBalance: new BigNumber(result.balance).toNumber() || 0,
+
+          balanceResults.forEach(balanceResult => {
+            newTokens[balanceResult.symbol] = {
+              ...tokens[balanceResult.symbol],
+              tokenBalance: new BigNumber(balanceResult.balance).toNumber() || 0,
+            }
+          })
+
+          allowanceResults.forEach(allowanceResult => {
+            newTokens[allowanceResult.symbol] = {
+              ...newTokens[allowanceResult.symbol],
               allowance: {
-                ...tokens[result.symbol].allowance,
-                ...(spender ? {[spender]: result.allowance} : undefined),
+                ...newTokens[allowanceResult.symbol].allowance,
+                [allowanceResult.spender]: allowanceResult.allowance,
               },
-            };
+            }
           })
 
           dispatch({

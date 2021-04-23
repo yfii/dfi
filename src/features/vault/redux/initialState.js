@@ -3,16 +3,21 @@ import { getNetworkPools } from '../../helpers/getNetworkData';
 const tokens = {};
 const pools = getNetworkPools();
 
-pools.forEach(({ token, tokenAddress, earnedToken, earnedTokenAddress }) => {
+pools.forEach(({ token, tokenAddress, earnedToken, earnContractAddress, earnedTokenAddress }) => {
   tokens[token] = {
     tokenAddress: tokenAddress,
     tokenBalance: 0,
-    allowance: {},
+    allowance: {
+      ...tokens[token]?.allowance,
+      [earnContractAddress]: tokenAddress ? 0 : Infinity,
+    },
   };
   tokens[earnedToken] = {
     tokenAddress: earnedTokenAddress,
     tokenBalance: 0,
-    allowance: {},
+    allowance: {
+      [earnContractAddress]: 0,
+    },
   };
 });
 

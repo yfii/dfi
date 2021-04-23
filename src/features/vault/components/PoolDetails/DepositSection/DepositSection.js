@@ -46,7 +46,7 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
           address: pool.tokenAddress,
           decimals: pool.tokenDecimals,
           logoURI: pool.logo,
-          allowance: pool.allowance,
+          allowance: tokens[pool.token].allowance[pool.earnContractAddress],
         },
         ...(zap ? zap.tokens : [])
       ]
@@ -61,7 +61,7 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
     slider: 0,
     input: "0.0",
     contract: pool.earnContractAddress,
-    isNeedApproval: (tokens[eligibleTokens[0].symbol].allowance[pool.earnContractAddress] == 0),
+    isNeedApproval: (new BigNumber(tokens[eligibleTokens[0].symbol].allowance[pool.earnContractAddress])).isZero(),
   });
 
   useEffect(() => {
@@ -80,18 +80,19 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
   }, [web3, depositSettings, fetchZapEstimate, pool]);
 
   useEffect(() => {
+    const allowance = new BigNumber(tokens[depositSettings.token.symbol].allowance[depositSettings.contract]);
     setDepositSettings(prevState => ({
       ...prevState,
-      isNeedApproval: prevState.amount.isLessThan(tokens[prevState.token.symbol].allowance[prevState.contract]),
+      isNeedApproval: allowance.isZero() || prevState.amount.isGreaterThan(allowance),
     }));
-  }, [tokens]);
+  }, [tokens[depositSettings.token.symbol].allowance[depositSettings.contract]]);
 
   useEffect(() => {
       if (address && web3) {
-        const spender = depositSettings.contract;
+        const spender = zap.zapAddress;
         fetchBalances({ address, web3, tokens, spender});
       }
-  }, [address, web3, fetchBalances, depositSettings.contract]);
+  }, [address, web3, fetchBalances, zap.zapAddress]);
 
   const tokenBalance = token => {
     return byDecimals(tokens[token.symbol]?.tokenBalance || 0, token.decimals);
@@ -101,6 +102,7 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
     const isZap = (event.target.value > 0);
     const spender = isZap ? zap.zapAddress : pool.earnContractAddress;
     const token = eligibleTokens[event.target.value];
+    const allowance = new BigNumber(tokens[token.symbol].allowance[spender]);
 
     setDepositSettings({
       tokenIndex: event.target.value,
@@ -110,7 +112,7 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
       slider: 0,
       input: "0.0",
       contract: spender,
-      isNeedApproval: (tokens[token.symbol].allowance[spender] == 0),
+      isNeedApproval: allowance.isZero(),
     })
   }
 
