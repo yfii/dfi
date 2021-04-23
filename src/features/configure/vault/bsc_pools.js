@@ -1,3 +1,5 @@
+import { FormatListNumbered } from '@material-ui/icons';
+
 export const bscPools = [
   {
     id: 'bifi-maxi',
@@ -1687,7 +1689,7 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cake-bifi-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Swamp',
     assets: ['BIFI', 'BNB'],
@@ -1715,7 +1717,7 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cake-cake-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Swamp',
     assets: ['CAKE', 'BNB'],
@@ -4674,7 +4676,7 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cake-bts-busd',
     oraclePrice: 0,
-    depositsPaused: true,
+    depositsPaused: false,
     status: 'active',
     platform: 'Pancake',
     assets: ['BTS', 'BUSD'],
@@ -4701,7 +4703,7 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cake-btd-busd',
     oraclePrice: 0,
-    depositsPaused: true,
+    depositsPaused: false,
     status: 'active',
     platform: 'Pancake',
     assets: ['BTD', 'BUSD'],
