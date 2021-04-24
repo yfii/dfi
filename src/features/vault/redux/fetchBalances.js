@@ -10,7 +10,7 @@ import { erc20ABI, multicallBnbShimABI } from 'features/configure';
 import BigNumber from 'bignumber.js';
 import { getNetworkMulticall } from 'features/helpers/getNetworkData';
 
-export function fetchBalances({ address, web3, tokens, spender }) {
+export function fetchBalances({ address, web3, tokens }) {
   return dispatch => {
     dispatch({
       type: VAULT_FETCH_BALANCES_BEGIN,
@@ -37,23 +37,13 @@ export function fetchBalances({ address, web3, tokens, spender }) {
             balance: tokenContract.methods.balanceOf(address),
             symbol: symbol,
           });
-
-          if (spender) {
+          Object.entries(token.allowance).forEach(([spender]) => {
             allowanceCalls.push({
               allowance: tokenContract.methods.allowance(address, spender),
               spender: spender,
               symbol: symbol,
             });
-          } else {
-            Object.entries(token.allowance).forEach(([_spender]) => {
-              allowanceCalls.push({
-                allowance: tokenContract.methods.allowance(address, _spender),
-                spender: _spender,
-                symbol: symbol,
-              });
-            })
-          }
-
+          })
         }
       });
 

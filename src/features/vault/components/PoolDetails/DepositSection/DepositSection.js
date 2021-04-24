@@ -88,11 +88,21 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
   }, [tokens[depositSettings.token.symbol].allowance[depositSettings.contract]]);
 
   useEffect(() => {
-      if (address && web3) {
-        const spender = zap.zapAddress;
-        fetchBalances({ address, web3, tokens, spender});
+      if (address && web3 && zap) {
+        const tokens = {}
+        eligibleTokens.forEach(token => {
+          if (token.wrappedSymbol) return;
+          tokens[token.symbol] = {
+            tokenAddress: token.address,
+            tokenBalance: 0,
+            allowance: {
+              [zap.zapAddress]: 0,
+            },
+          }
+        })
+        fetchBalances({ address, web3, tokens });
       }
-  }, [address, web3, fetchBalances, zap.zapAddress]);
+  }, [address, web3, fetchBalances]);
 
   const tokenBalance = token => {
     return byDecimals(tokens[token.symbol]?.tokenBalance || 0, token.decimals);
