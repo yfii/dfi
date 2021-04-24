@@ -1753,7 +1753,7 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'auto-auto-bnb',
     oraclePrice: 0,
-    depositsPaused: true,
+    depositsPaused: false,
     status: 'active',
     platform: 'Autofarm',
     assets: ['AUTO', 'BNB'],
