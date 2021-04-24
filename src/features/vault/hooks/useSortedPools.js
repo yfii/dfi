@@ -34,7 +34,17 @@ const useSortedPools = (pools, apys, tokens) => {
 const handleApy = (pools, apys) => {
   const newPools = [...pools];
   return newPools.sort((a, b) => {
-    return apys[b.id] - apys[a.id];
+    if (apys[a.id] === apys[b.id]) {
+      return 0;
+    }
+    else if (apys[a.id] === null || apys[a.id] === undefined) {
+      return 1;
+    }
+    else if (apys[b.id] === null || apys[b.id] === undefined) {
+      return -1;
+    }
+
+    return apys[a.id] < apys[b.id] ? 1 : -1;
   });
 };
 
@@ -50,7 +60,7 @@ const handleTvl = pools => {
 function showDecommissionedFirst(pools, tokens) {
   for (let i = 0; i < pools.length; i++) {
     // if ( EOL or REFUND ) AND (Deposited Balance > 0)
-    if ((pools[i].status == 'eol' || pools[i].status == 'refund') && (tokens[pools[i].earnedToken] && tokens[pools[i].earnedToken].tokenBalance > 0)) {
+    if ((pools[i].status === 'eol' || pools[i].status === 'refund') && (tokens[pools[i].earnedToken] && tokens[pools[i].earnedToken].tokenBalance > 0)) {
       // Remove Vault from pools, insert it at the top.
       pools.splice(0, 0, pools.splice(i, 1)[0]);
     }
