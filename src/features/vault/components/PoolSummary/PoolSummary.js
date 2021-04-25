@@ -86,6 +86,7 @@ const PoolSummary = ({
           description={t('Vault-Description', { vault: pool.tokenDescription })}
           launchpool={launchpool}
           addLiquidityUrl={pool.addLiquidityUrl}
+          removeLiquidityUrl={pool.removeLiquidityUrl}
           buyTokenUrl={pool.buyTokenUrl}
         />
         <Grid item md={8} xs={7}>

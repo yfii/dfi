@@ -3580,6 +3580,33 @@ export const bscPools = [
   },
 
   {
+    id: 'cakev2-alice-bnb',
+    logo: 'bnb-pairs/ALICE-BNB.svg',
+    name: 'ALICE-BNB LP',
+    token: 'ALICE-BNB LP2',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0xcAD7019D6d84a3294b0494aEF02e73BD0f2572Eb',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooCakeV2ALICE-BNB',
+    earnedTokenAddress: '0x0c65883778f16770F4d43f5524708e18BC62881b',
+    earnContractAddress: '0x0c65883778f16770F4d43f5524708e18BC62881b',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cakev2-alice-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['ALICE', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0xAC51066d7bEC65Dc4589368da368b212745d63E8',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xAC51066d7bEC65Dc4589368da368b212745d63E8',
+  },
+  {
     id: 'cake-alice-bnb',
     logo: 'bnb-pairs/ALICE-BNB.svg',
     name: 'ALICE-BNB LP',
@@ -3597,14 +3624,12 @@ export const bscPools = [
     oracleId: 'cake-alice-bnb',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Pancake',
     assets: ['ALICE', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#/add/ETH/0xAC51066d7bEC65Dc4589368da368b212745d63E8',
-    buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xAC51066d7bEC65Dc4589368da368b212745d63E8',
+    removeLiquidityUrl:
+      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0xAC51066d7bEC65Dc4589368da368b212745d63E8',
   },
 
   {
