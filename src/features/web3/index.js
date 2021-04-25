@@ -3,6 +3,7 @@ export { fetchAllowance } from './fetchAllowance';
 export { fetchBalance } from './fetchBalance';
 export { deposit } from './deposit';
 export { depositBnb } from './depositBnb';
+export { zapDeposit } from './zapDeposit';
 export { withdraw } from './withdraw';
 export { withdrawBnb } from './withdrawBnb';
 export { fetchPrice, whenPricesLoaded } from './fetchPrice';

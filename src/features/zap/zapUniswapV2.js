@@ -9,10 +9,12 @@ const nativeCoin = getNetworkCoin();
 export const getEligibleZap = (pool) => {
   if (pool.assets.length !== 2) return undefined;
 
+  const eligibleNativeCoin = []
   const tokenSymbols = pool.assets.map(symbol => {
     if (nativeCoin.symbol === symbol) {
       const wrappedToken = availableTokens.find(t => t.symbol === nativeCoin.wrappedSymbol)
       nativeCoin.address = wrappedToken.address;
+      eligibleNativeCoin.push(nativeCoin)
       return nativeCoin.wrappedSymbol;
     }
     return symbol;
@@ -36,7 +38,7 @@ export const getEligibleZap = (pool) => {
 
   return {
     zapAddress: zap.zapAddress,
-    tokens: [tokenA, tokenB, nativeCoin],
+    tokens: [tokenA, tokenB, ...eligibleNativeCoin],
   }
 }
 

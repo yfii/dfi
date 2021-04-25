@@ -5,15 +5,13 @@ import {
   VAULT_FETCH_ZAP_ESTIMATE_SUCCESS,
   VAULT_FETCH_ZAP_ESTIMATE_FAILURE,
 } from './constants';
-import BigNumber from 'bignumber.js';
 import { zapEstimate } from '../../web3';
 
-export function fetchZapEstimate({ web3, zapAddress, vaultAddress, tokenAddress, tokenAmount, index }) {
+export function fetchZapEstimate({ web3, zapAddress, vaultAddress, tokenAddress, tokenAmount }) {
   return dispatch => {
     dispatch({
       type: VAULT_FETCH_ZAP_ESTIMATE_BEGIN,
       vaultAddress,
-      index,
     });
 
     const promise = new Promise((resolve, reject) => {
@@ -21,9 +19,8 @@ export function fetchZapEstimate({ web3, zapAddress, vaultAddress, tokenAddress,
         .then(data => {
           dispatch({
             type: VAULT_FETCH_ZAP_ESTIMATE_SUCCESS,
-            data: { index, zapEstimate: data },
+            data: { zapEstimate: data },
             vaultAddress,
-            index,
           });
           resolve();
         })
@@ -31,7 +28,6 @@ export function fetchZapEstimate({ web3, zapAddress, vaultAddress, tokenAddress,
           dispatch({
             type: VAULT_FETCH_ZAP_ESTIMATE_FAILURE,
             vaultAddress,
-            index,
           });
           reject(error.message || error);
         });
@@ -63,20 +59,20 @@ export function reducer(state, action) {
         ...state,
         fetchZapEstimatePending: {
           ...state.fetchZapEstimatePending,
-          [action.index]: true,
+          [action.vaultAddress]: true,
         },
       };
 
     case VAULT_FETCH_ZAP_ESTIMATE_SUCCESS:
       const { pools } = state;
-      const poolId = pools.findIndex(pool => pool.earnContractAddress == action.vaultAddress)
-      pools[poolId].zapEstimate = action.data.zapEstimate;
+      const poolIndex = pools.findIndex(pool => pool.earnContractAddress == action.vaultAddress)
+      pools[poolIndex].zapEstimate = action.data.zapEstimate;
       return {
         ...state,
         pools,
         fetchZapEstimatePending: {
           ...state.fetchZapEstimatePending,
-          [action.index]: false,
+          [action.vaultAddress]: false,
         },
       };
 
@@ -85,7 +81,7 @@ export function reducer(state, action) {
         ...state,
         fetchZapEstimatePending: {
           ...state.fetchZapEstimatePending,
-          [action.index]: false,
+          [action.vaultAddress]: false,
         },
       };
 

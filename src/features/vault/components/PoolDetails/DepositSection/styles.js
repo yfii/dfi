@@ -89,6 +89,9 @@ const styles = theme => ({
     fontSize: '14px',
     color: theme.palette.text.secondary,
   },
+  zapFormControl: {
+    minWidth: "auto",
+  },
   zapSelect: {
     border: "none",
     borderLeft: `1px solid ${theme.palette.text.secondary}`,

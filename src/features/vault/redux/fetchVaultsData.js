@@ -42,7 +42,6 @@ export function fetchVaultsData({ web3, pools }) {
         const newPools = pools.map((pool, i) => {
           const pricePerFullShare = byDecimals(data[0][i].pricePerFullShare, 18).toNumber();
           return {
-            ...pool,
             pricePerFullShare: new BigNumber(pricePerFullShare).toNumber() || 1,
             tvl: byDecimals(data[0][i].tvl, 18).toNumber(),
             oraclePrice: fetchPrice({ id: pool.oracleId }) || 0,
@@ -100,9 +99,14 @@ export function reducer(state, action) {
       };
 
     case VAULT_FETCH_VAULTS_DATA_SUCCESS:
+      const pools = state.pools.map((pool, i) => ({
+        ...pool,
+        ...action.data[i],
+      }));
+
       return {
         ...state,
-        pools: action.data,
+        pools,
         fetchVaultsDataPending: false,
         fetchVaultsDataDone: true,
       };

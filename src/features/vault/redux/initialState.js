@@ -33,6 +33,7 @@ const initialState = {
   fetchBalancesPending: false,
   fetchApprovalPending: {},
   fetchDepositPending: {},
+  fetchZapDepositPending: {},
   fetchWithdrawPending: {},
   fetchHarvestPending: {},
   fetchZapEstimatePending: {},

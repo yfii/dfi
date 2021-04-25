@@ -7,7 +7,9 @@ import {
 } from './constants';
 import { deposit, depositBnb } from '../../web3';
 
-export function fetchDeposit({ address, web3, isAll, amount, contractAddress, index }) {
+export function fetchDeposit({ address, web3, isAll, amount, contractAddress }) {
+  const index = contractAddress;
+
   return dispatch => {
     dispatch({
       type: VAULT_FETCH_DEPOSIT_BEGIN,
@@ -36,7 +38,7 @@ export function fetchDeposit({ address, web3, isAll, amount, contractAddress, in
   };
 }
 
-export function fetchDepositBnb({ address, web3, isAll, amount, contractAddress, index }) {
+export function fetchDepositBnb({ address, web3, amount, contractAddress, index }) {
   return dispatch => {
     dispatch({
       type: VAULT_FETCH_DEPOSIT_BEGIN,
