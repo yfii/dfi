@@ -7,6 +7,7 @@ const DEFAULT = {
   hideZeroVaultBalances: false,
   showBoosted: false,
   showExperimental: false,
+  showPancakeSwapV2Only: false,
 };
 
 const KEY = 'filteredPools';
@@ -45,15 +46,25 @@ const useFilteredPools = (pools, tokens) => {
     filteredPools = hideDecomissioned(filteredPools, tokens);
   }
 
-
   if(filters.showBoosted) {
     filteredPools = showBoosted(filteredPools);
   }
 
   filteredPools = Experimental(filteredPools, filters.showExperimental);
 
+  if (filters.showPancakeSwapV2Only) {
+    filteredPools = hideNonPancakeSwapV2(filteredPools);
+  }
+
   return { filteredPools, toggleFilter, filters };
 };
+
+function hideNonPancakeSwapV2(pools) {
+  return pools.filter(pool => {
+    // quick hack to avoid adding another flag to bsc_pools.js
+    return pool.id.substr(0, 7) === 'cakev2-';
+  });
+}
 
 function Experimental(pools, show) {
   return pools.filter(pool => {
