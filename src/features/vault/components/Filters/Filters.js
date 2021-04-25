@@ -139,12 +139,12 @@ const Filters = ({
             className={classes.label}
             control={
               <Checkbox
-                checked={filters.showExperimental}
-                onChange={() => toggleFilter('showExperimental')}
+                checked={filters.showPancakeSwapV2Only}
+                onChange={() => toggleFilter('showPancakeSwapV2Only')}
                 color="primary"
               />
             }
-            label={t('Experimental')}
+            label={t('PancakeSwap V2')}
           />
         </FormControl>
       </Grid>
