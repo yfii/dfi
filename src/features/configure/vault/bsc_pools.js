@@ -1772,6 +1772,62 @@ export const bscPools = [
     id: 'blizzard-xblzd-bnb',
     logo: 'degens/BLZD-BNB.png',
     name: 'xBLZD-BNB LP',
+    token: 'xBLZD-BNB LP2',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0xD9002B7E7d63A71F04a16840DA028e1cd534889D',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooBlizzardxBLZD-BNBV2',
+    earnedTokenAddress: '0x415b51780f4B056C5b1b3CB5fab9366e00859175',
+    earnContractAddress: '0x415b51780f4B056C5b1b3CB5fab9366e00859175',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'blizzard-xblzd-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Blizzard',
+    assets: ['xBLZD', 'BNB'],
+    callFee: 1,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0x9a946c3Cb16c08334b69aE249690C236Ebd5583E',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x9a946c3Cb16c08334b69aE249690C236Ebd5583E',
+  },
+
+  {
+    id: 'blizzard-xblzd-busd',
+    logo: 'degens/BLZD-BUSD.png',
+    name: 'xBLZD-BUSD LP',
+    token: 'xBLZD-BUSD LP2',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0xeDCd99aD43C6911D37780158370ec1913Ee9e7D3',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooBlizzardxBLZD-BUSDV2',
+    earnedTokenAddress: '0x17436A6D0ACb7f31D62C7484E5C77eC9A6122837',
+    earnContractAddress: '0x17436A6D0ACb7f31D62C7484E5C77eC9A6122837',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'blizzard-xblzd-busd',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Blizzard',
+    assets: ['xBLZD', 'BUSD'],
+    callFee: 1,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0x9a946c3Cb16c08334b69aE249690C236Ebd5583E',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56&outputCurrency=0x9a946c3Cb16c08334b69aE249690C236Ebd5583E',
+  },
+
+  {
+    id: 'blizzard-xblzd-bnb',
+    logo: 'degens/BLZD-BNB.png',
+    name: 'xBLZD-BNB LP',
     token: 'xBLZD-BNB LP',
     tokenDescription: 'Pancake',
     tokenAddress: '0xfC207DB720851f52545229E406068b205E02B952',
@@ -1786,14 +1842,12 @@ export const bscPools = [
     oracleId: 'blizzard-xblzd-bnb',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Blizzard',
     assets: ['xBLZD', 'BNB'],
     callFee: 1,
-    addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#/add/BNB/0x9a946c3Cb16c08334b69aE249690C236Ebd5583E',
-    buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x9a946c3Cb16c08334b69aE249690C236Ebd5583E',
+    removeLiquidityUrl:
+      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x9a946c3Cb16c08334b69aE249690C236Ebd5583E',
   },
 
   {
@@ -1814,14 +1868,12 @@ export const bscPools = [
     oracleId: 'blizzard-xblzd-busd',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Blizzard',
     assets: ['xBLZD', 'BUSD'],
     callFee: 1,
-    addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0x9a946c3Cb16c08334b69aE249690C236Ebd5583E',
-    buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56&outputCurrency=0x9a946c3Cb16c08334b69aE249690C236Ebd5583E',
+    removeLiquidityUrl:
+      'https://v1exchange.pancakeswap.finance/#/remove/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0x9a946c3Cb16c08334b69aE249690C236Ebd5583E',
   },
 
   {
@@ -1872,10 +1924,8 @@ export const bscPools = [
     platform: 'Blizzard',
     assets: ['BLZD', 'BNB'],
     callFee: 1,
-    addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#/add/BNB/0x57067A6BD75c0E95a6A5f158455926e43E79BeB0',
-    buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x57067A6BD75c0E95a6A5f158455926e43E79BeB0',
+    removeLiquidityUrl:
+      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x57067A6BD75c0E95a6A5f158455926e43E79BeB0',
   },
 
   {
@@ -1900,10 +1950,8 @@ export const bscPools = [
     platform: 'Blizzard',
     assets: ['BLZD', 'BUSD'],
     callFee: 1,
-    addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0x57067A6BD75c0E95a6A5f158455926e43E79BeB0',
-    buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x57067A6BD75c0E95a6A5f158455926e43E79BeB0&outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56',
+    removeLiquidityUrl:
+      'https://v1exchange.pancakeswap.finance/#/remove/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0x57067A6BD75c0E95a6A5f158455926e43E79BeB0',
   },
 
   {
