@@ -1,7 +1,8 @@
 {
   "Disclaimer": "Usar smart contracts, tokens, e crypto é sempre um risco. Faça sua própria pesquisa(DYOR) antes de investir.",
-  "Network-Error": "Erro de conexão",
+  "Network-Error": "Conecte-se a rede correta, por favor.",
   "Vault-Wallet": "Carteira",
+  "Vault-ConnectWallet": "Conectar Carteira",
   "Vault-Balance": "Saldo",
   "Vault-APY": "APY",
   "Vault-APYDaily": "Lucro diário",
@@ -12,6 +13,7 @@
   "Vault-ApprovalError": "Erro ao aprovar: {{error}}",
   "Vault-DepositButton": "Depósito",
   "Vault-DepositButtonAll": "Depositar tudo",
+  "Vault-DepositTokensNote": "Você irá receber {{mooToken}} token como recibo dos seus ativos {{assetToken}}. Este recibo é necessário para resgatar seu {{assetToken}}, não negocie ou transfira seus {{mooToken}} para estranhos!",
   "Vault-DepositFee": "Há uma taxa de déposito <0.1%, não há taxa de saque",
   "Vault-Deposited": "Depositado",
   "Vault-DepositSuccess": "Depositado com sucesso",
@@ -89,5 +91,10 @@
   "Stake-Your-Pool": "Seu Pool",
   "Stake-Current-Daily": "Taxa de Juros Diária",
   "Add-Liquidity": "Adicionar Liquidez",
-  "Remove-Liquidity": "Remover Liquidez"
+  "Remove-Liquidity": "Remover Liquidez",
+  "Buy-Token": "Comprar Token",
+  "Wrap-BNB": "Wrap BNB",
+  "Boost": "Turbinar",
+  "Experimental": "Experimental",
+  "Select-Network": "Selecione a Rede"  
 }
