@@ -25,6 +25,33 @@ export const bscPools = [
   },
 
   {
+    id: 'cakev2-mir-ust',
+    logo: 'ust-pairs/MIR-UST.svg',
+    name: 'MIR-UST LP',
+    token: 'MIR-UST LP2',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0x89666d026696660e93Bf6edf57B71A68615768B7',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooCakeV2MIR-UST',
+    earnedTokenAddress: '0x268e83D800c22ED8F00C4a8eFb9c3d44Ad61CB2e',
+    earnContractAddress: '0x268e83D800c22ED8F00C4a8eFb9c3d44Ad61CB2e',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cakev2-mir-ust',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['MIR', 'UST'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0x23396cF899Ca06c4472205fC903bDB4de249D6fC/0x5B6DcF557E2aBE2323c48445E8CC948910d8c2c9',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x5B6DcF557E2aBE2323c48445E8CC948910d8c2c9',
+  },
+  {
     id: 'cakev2-tbtc-btcb',
     logo: 'uncategorized/TBTC-BTCB.svg',
     name: 'tBTC-BTCB LP',
