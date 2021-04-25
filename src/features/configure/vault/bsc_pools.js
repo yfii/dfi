@@ -1,5 +1,3 @@
-import { TrafficOutlined } from '@material-ui/icons';
-
 export const bscPools = [
   {
     id: 'bifi-maxi',
