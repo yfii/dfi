@@ -89,6 +89,20 @@ const styles = theme => ({
     fontSize: '14px',
     color: theme.palette.text.secondary,
   },
+  zapSelect: {
+    border: "none",
+    borderLeft: `1px solid ${theme.palette.text.secondary}`,
+    paddingLeft: "10px",
+    "& > div": {
+      padding: "6px 0"
+    },
+    "&::before": {
+      content: "none",
+    },
+    "&::after": {
+      content: "none",
+    },
+  }
 });
 
 export default styles;

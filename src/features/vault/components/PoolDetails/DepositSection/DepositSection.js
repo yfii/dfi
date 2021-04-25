@@ -88,20 +88,20 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
   }, [tokens[depositSettings.token.symbol].allowance[depositSettings.contract]]);
 
   useEffect(() => {
-      if (address && web3 && zap) {
-        const tokens = {}
-        eligibleTokens.forEach(token => {
-          if (token.wrappedSymbol) return;
-          tokens[token.symbol] = {
-            tokenAddress: token.address,
-            tokenBalance: 0,
-            allowance: {
-              [zap.zapAddress]: 0,
-            },
-          }
-        })
-        fetchBalances({ address, web3, tokens });
-      }
+    if (address && web3 && zap) {
+      const tokens = {}
+      eligibleTokens.forEach(token => {
+        if (token.wrappedSymbol) return;
+        tokens[token.symbol] = {
+          tokenAddress: token.address,
+          tokenBalance: 0,
+          allowance: {
+            [zap.zapAddress]: 0,
+          },
+        }
+      })
+      fetchBalances({ address, web3, tokens });
+    }
   }, [address, web3, fetchBalances]);
 
   const tokenBalance = token => {
@@ -129,7 +129,7 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
   const handleSliderChange = (_, sliderNum) => {
     const total = tokenBalance(depositSettings.token);
     let amount = new BigNumber(0);
-    if (sliderNum > 0 && sliderNum < 100){
+    if (sliderNum > 0 && sliderNum < 100) {
       amount = total.times(sliderNum).div(100).decimalPlaces(8);
     }
     if (sliderNum == 100) {
@@ -222,13 +222,13 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
     let display = false
     let cont = null
 
-    if(status === 'eol') {
+    if (status === 'eol') {
       display = true;
       cont = <div className={classes.showDetailButtonCon}>
         <div className={classes.showRetiredMsg}>{t('Vault-DepositsRetiredMsg')}</div>
       </div>
     } else {
-      if(paused) {
+      if (paused) {
         display = true;
         cont = <div className={classes.showDetailButtonCon}>
           <div className={classes.showPausedMsg}>{t('Vault-DepositsPausedMsg')}</div>
@@ -236,7 +236,7 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
       }
     }
 
-    return {display:display, content: cont}
+    return { display: display, content: cont }
   }
 
   const vaultState = getVaultState(pool.status, pool.depositsPaused);
@@ -252,14 +252,13 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
         <CustomOutlinedInput
           value={depositSettings.input}
           onChange={handleInputAmountChange}
+          fullWidth
           endAdornment={
-            <FormControl>
-              <Select variant="outlined" value={depositSettings.tokenIndex} onChange={handleTokenChange}>
-                {eligibleTokens.map((token, i) =>
-                  <MenuItem key={i} value={i}>{token.symbol}</MenuItem>
-                )}
-              </Select>
-            </FormControl>
+            <Select variant="standard" className={classes.zapSelect} value={depositSettings.tokenIndex} onChange={handleTokenChange}>
+              {eligibleTokens.map((token, i) =>
+                <MenuItem key={i} value={i}>{token.symbol}</MenuItem>
+              )}
+            </Select>
           }
         />
       </FormControl>
@@ -269,61 +268,61 @@ const DepositSection = ({ pool, index, balanceSingle }) => {
         onChange={handleSliderChange}
       />
       {vaultState.display === true ? vaultState.content : (
-      <div>
-        {depositSettings.isNeedApproval ? (
-          <div className={classes.showDetailButtonCon}>
-            <Button
-              className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`}
-              onClick={handleApproval}
-              disabled={pool.depositsPaused || fetchApprovalPending[depositSettings.token.symbol]}
-            >
-              {fetchApprovalPending[depositSettings.token.symbol]
-                ? `${t('Vault-Approving')}`
-                : `${t('Vault-ApproveButton')}`}
-            </Button>
-          </div>
-        ) : (
-          <div className={classes.showDetailButtonCon}>
-            <Button
-              className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
-              color="primary"
-              disabled={
-                pool.depositsPaused ||
-                fetchDepositPending[index] ||
-                depositSettings.amount.isZero() ||
-                tokenBalance(depositSettings.token).isZero()
-              }
-              onClick={handleDepositAmount}
-            >
-              {t('Vault-DepositButton')}
-            </Button>
-            {Boolean(pool.tokenAddress) && (
+        <div>
+          {depositSettings.isNeedApproval ? (
+            <div className={classes.showDetailButtonCon}>
               <Button
                 className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`}
+                onClick={handleApproval}
+                disabled={pool.depositsPaused || fetchApprovalPending[depositSettings.token.symbol]}
+              >
+                {fetchApprovalPending[depositSettings.token.symbol]
+                  ? `${t('Vault-Approving')}`
+                  : `${t('Vault-ApproveButton')}`}
+              </Button>
+            </div>
+          ) : (
+            <div className={classes.showDetailButtonCon}>
+              <Button
+                className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
+                color="primary"
                 disabled={
                   pool.depositsPaused ||
                   fetchDepositPending[index] ||
+                  depositSettings.amount.isZero() ||
                   tokenBalance(depositSettings.token).isZero()
                 }
-                onClick={handleDepositAll}
+                onClick={handleDepositAmount}
               >
-                {t('Vault-DepositButtonAll')}
+                {t('Vault-DepositButton')}
               </Button>
-            )}
-          </div>
-        )}
-        {depositSettings.isZap && !depositSettings.amount.isZero() && pool.zapEstimate && (
-          <div className={classes.zapNote}>
-            <p>Depositing single token will:</p>
-            <ol>
-              <li>Swap ~{convertAmountFromRawNumber(pool.zapEstimate.swapAmountIn, depositSettings.token.decimals).precision(8).toString()} {depositSettings.token.symbol} for {convertAmountFromRawNumber(pool.zapEstimate.swapAmountOut, swapTokenOut.decimals).precision(8).toString()} {swapTokenOut.symbol} (&plusmn;1%)</li>
-              <li>Add {pool.assets.join(' and ')} as liqudity to {pool.token} pool</li>
-              <li>Deposit recieved {pool.token} on Beefy Vault</li>
-              <li>Unused assets will be returned to your wallet</li>
-            </ol>
-          </div>
-        )}
-      </div>
+              {Boolean(pool.tokenAddress) && (
+                <Button
+                  className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`}
+                  disabled={
+                    pool.depositsPaused ||
+                    fetchDepositPending[index] ||
+                    tokenBalance(depositSettings.token).isZero()
+                  }
+                  onClick={handleDepositAll}
+                >
+                  {t('Vault-DepositButtonAll')}
+                </Button>
+              )}
+            </div>
+          )}
+          {depositSettings.isZap && !depositSettings.amount.isZero() && pool.zapEstimate && (
+            <div className={classes.zapNote}>
+              <p>Depositing single token will:</p>
+              <ol>
+                <li>Swap ~{convertAmountFromRawNumber(pool.zapEstimate.swapAmountIn, depositSettings.token.decimals).precision(8).toString()} {depositSettings.token.symbol} for {convertAmountFromRawNumber(pool.zapEstimate.swapAmountOut, swapTokenOut.decimals).precision(8).toString()} {swapTokenOut.symbol} (&plusmn;1%)</li>
+                <li>Add {pool.assets.join(' and ')} as liqudity to {pool.token} pool</li>
+                <li>Deposit recieved {pool.token} on Beefy Vault</li>
+                <li>Unused assets will be returned to your wallet</li>
+              </ol>
+            </div>
+          )}
+        </div>
       )}
 
       {['Autofarm', 'Swamp'].includes(pool.platform) ? <h3 className={classes.subtitle}>{t('Vault-DepositFee')}</h3> : ''}
