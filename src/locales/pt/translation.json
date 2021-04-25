@@ -88,5 +88,6 @@
   "Stake-Total-Value-Locked": "Valor Total Bloqueado",
   "Stake-Your-Pool": "Seu Pool",
   "Stake-Current-Daily": "Taxa de Juros Diária",
-  "Add-Liquidity": "Adicionar Liquidez"
+  "Add-Liquidity": "Adicionar Liquidez",
+  "Remove-Liquidity": "Remover Liquidez"
 }

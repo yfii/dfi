@@ -9,7 +9,7 @@ import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-const PoolTitle = ({ name, logo, description, launchpool, buyTokenUrl, addLiquidityUrl }) => {
+const PoolTitle = ({ name, logo, description, launchpool, buyTokenUrl, addLiquidityUrl, removeLiquidityUrl }) => {
   const classes = useStyles();
   const { t } = useTranslation();
 
@@ -49,6 +49,18 @@ const PoolTitle = ({ name, logo, description, launchpool, buyTokenUrl, addLiquid
               rel='noopener noreferrer'
             >
               <span>{t('Add-Liquidity')}</span>
+            </a>
+          ) : (
+            ''
+          )}
+          {removeLiquidityUrl ? (
+            <a
+              className={classes.url}
+              href={removeLiquidityUrl}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <span>{t('Remove-Liquidity')}</span>
             </a>
           ) : (
             ''
