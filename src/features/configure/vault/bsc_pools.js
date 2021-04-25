@@ -3540,8 +3540,10 @@ export const bscPools = [
     platform: 'Swamp',
     assets: ['BIFI', 'BNB'],
     callFee: 0.5,
-    removeLiquidityUrl: 
-      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
+    addLiquidityUrl:
+    'https://exchange.pancakeswap.finance/#/add/BNB/0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
+    buyTokenUrl:
+    'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
   },
 
   {
@@ -7461,7 +7463,7 @@ export const bscPools = [
     assets: ['ADA', 'BNB'],
     callFee: 0.5,
     removeLiquidityUrl: 
-      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x4338665cbb7b2485a8855a139b75d5e34ab0db94',
+      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x3ee2200efb3400fabb9aacf31297cbdd1d435d47',
   },
 
   {
