@@ -2971,7 +2971,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Marshmallow',
     assets: ['MASH', 'BUSD'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -2998,7 +2997,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Marshmallow',
     assets: ['MASH', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -3025,7 +3023,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Marshmallow',
     assets: ['MASH'],
     callFee: 0.5,
     buyTokenUrl:
@@ -3079,7 +3076,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'YieldBay',
     assets: ['PALM'],
     callFee: 0.5,
     buyTokenUrl:
@@ -3818,7 +3814,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'active',
-    platform: 'Pancake',
     assets: ['TYPH', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -3846,7 +3841,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Pancake',
     assets: ['BITI', 'BNB'],
     callFee: 0.25,
     addLiquidityUrl:
@@ -3874,7 +3868,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'YieldBay',
     assets: ['PALM', 'BUSD'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -3901,7 +3894,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'YieldBay',
     assets: ['PALM', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -4089,7 +4081,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Pancake',
     assets: ['BGO', 'BUSD'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -4116,7 +4107,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Pancake',
     assets: ['sBGO', 'BUSD'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -4545,7 +4535,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'BillionHappiness',
     assets: ['HPS'],
     callFee: 0.5,
     buyTokenUrl:
@@ -4570,7 +4559,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'JulSwap',
     assets: ['HPS', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl: 'https://julswap.com/#/add/BNB/0xeDa21B525Ac789EaB1a08ef2404dd8505FfB973D',
@@ -4918,7 +4906,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Pumpy',
     assets: ['PMP', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -5052,7 +5039,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Complus',
     assets: ['COM', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -5187,7 +5173,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Squirrel',
     assets: ['NUTS'],
     callFee: 0.5,
     buyTokenUrl:
@@ -5241,7 +5226,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Pancake',
     assets: ['APE', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -5268,7 +5252,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Pancake',
     assets: ['MFRM', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -5296,7 +5279,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'SlimeFinance',
     assets: ['SLME', 'BUSD'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -5323,7 +5305,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'SlimeFinance',
     assets: ['SLME', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -6049,7 +6030,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Pancake',
     assets: ['SOUP', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -6076,7 +6056,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Pancake',
     assets: ['SOUPS', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -6369,7 +6348,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sponge',
     assets: ['STEAM', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -6397,7 +6375,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'SaltSwap',
     assets: ['SALT', 'BUSD'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -6424,7 +6401,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'SaltSwap',
     assets: ['SALT', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -6478,7 +6454,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Pancake',
     assets: ['CROW', 'BUSD'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -6506,7 +6481,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Pancake',
     assets: ['CROW', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -6534,7 +6508,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'RamenSwap',
     assets: ['RAMEN', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -6562,7 +6535,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'RamenSwap',
     assets: ['RAMEN', 'BUSD'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -6590,7 +6562,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'CafeSwap',
     assets: ['BREW', 'BUSD'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -6618,7 +6589,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'CafeSwap',
     assets: ['BREW', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -6646,7 +6616,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'CafeSwap',
     assets: ['BIFI', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -6862,7 +6831,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'active',
-    platform: 'Pancake',
     assets: ['MSC', 'BUSD'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -6890,7 +6858,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'active',
-    platform: 'Pancake',
     assets: ['MSC', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -6918,7 +6885,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Pancake',
     assets: ['BTS', 'BUSD'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -6945,7 +6911,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Pancake',
     assets: ['BTD', 'BUSD'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -7339,7 +7304,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sponge',
     assets: ['SPG', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -7367,7 +7331,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sponge',
     assets: ['SOAK', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -7421,7 +7384,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'active',
-    platform: 'Nyanswop',
     assets: ['NYAS', 'USDT'],
     callFee: 0.5,
   },
@@ -7445,7 +7407,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'active',
-    platform: 'Pancake',
     assets: ['MSS', 'BUSD'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -7825,7 +7786,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'BillionHappiness',
     assets: ['BHC'],
     callFee: 0.5,
     buyTokenUrl:
@@ -9412,7 +9372,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Narwhal',
     assets: ['GOLD', 'BNB'],
     callFee: 1,
     addLiquidityUrl:
@@ -10099,7 +10058,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'active',
-    platform: 'ForTube',
     assets: ['FIL'],
     callFee: 1,
   },
@@ -10123,7 +10081,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'active',
-    platform: 'ForTube',
     assets: ['BUSD'],
     callFee: 1,
   },
@@ -10147,7 +10104,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'active',
-    platform: 'ForTube',
     assets: ['LINK'],
     callFee: 1,
   },
@@ -10171,7 +10127,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'active',
-    platform: 'ForTube',
     assets: ['DOT'],
     callFee: 1,
   },
@@ -10195,7 +10150,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'active',
-    platform: 'ForTube',
     assets: ['USDT'],
     callFee: 1,
   },
@@ -10219,7 +10173,6 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'active',
-    platform: 'ForTube',
     assets: ['BTCB'],
     callFee: 1,
   },
