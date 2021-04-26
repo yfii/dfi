@@ -25,6 +25,33 @@ export const bscPools = [
   },
 
   {
+    id: 'cakev2-bunny-bnb',
+    logo: 'bnb-pairs/BUNNY-BNB.svg',
+    name: 'BUNNY-BNB LP',
+    token: 'BUNNY-BNB LP2',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0x5aFEf8567414F29f0f927A0F2787b188624c10E2',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooCakeV2BUNNY-BNB',
+    earnedTokenAddress: '0x5b1c50a1B0FfFB762b0431D6b0E1309a48Ac95a9',
+    earnContractAddress: '0x5b1c50a1B0FfFB762b0431D6b0E1309a48Ac95a9',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cakev2-bunny-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['BUNNY', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0xc9849e6fdb743d08faee3e34dd2d1bc69ea11a51',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xc9849e6fdb743d08faee3e34dd2d1bc69ea11a51',
+  },
+  {
     id: 'cakev2-eos-bnb',
     logo: 'bnb-pairs/EOS-BNB.svg',
     name: 'EOS-BNB LP',
