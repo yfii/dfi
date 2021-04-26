@@ -493,6 +493,34 @@ export const bscPools = [
   },
 
   {
+    id: 'cakev2-cake-bnb',
+    logo: 'bnb-pairs/CAKE-BNB.svg',
+    name: 'CAKE-BNB LP',
+    token: 'CAKE-BNB LP2',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0x0eD7e52944161450477ee417DE9Cd3a859b14fD0',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooCakeV2CAKE-BNB',
+    earnedTokenAddress: '0xb26642B6690E4c4c9A6dAd6115ac149c700C7dfE',
+    earnContractAddress: '0xb26642B6690E4c4c9A6dAd6115ac149c700C7dfE',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cakev2-cake-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['CAKE', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82/BNB',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x5B6DcF557E2aBE2323c48445E8CC948910d8c2c9',
+  },
+
+  {
     id: 'cakev2-mir-ust',
     logo: 'ust-pairs/MIR-UST.svg',
     name: 'MIR-UST LP',
