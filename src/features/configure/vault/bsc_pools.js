@@ -5663,9 +5663,8 @@ export const bscPools = [
     platform: 'JulSwap',
     assets: ['TWT', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl: 'https://julswap.com/#/add/BNB/0x4B0F1812e5Df2A09796481Ff14017e6005508003',
-    buyTokenUrl:
-      'https://julswap.com/#/swap?inputCurrency=BNB&outputCurrency=0x4B0F1812e5Df2A09796481Ff14017e6005508003',
+    removeLiquidityUrl:
+      'https://julswap.com/#/remove/BNB/0x4B0F1812e5Df2A09796481Ff14017e6005508003',
   },
 
   {
@@ -5690,9 +5689,8 @@ export const bscPools = [
     platform: 'JulSwap',
     assets: ['VIDT', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl: 'https://julswap.com/#/add/BNB/0x3f515f0a8e93F2E2f891ceeB3Db4e62e202d7110',
-    buyTokenUrl:
-      'https://julswap.com/#/swap?inputCurrency=BNB&outputCurrency=0x3f515f0a8e93F2E2f891ceeB3Db4e62e202d7110',
+    removeLiquidityUrl:
+      'https://julswap.com/#/remove/BNB/0x3f515f0a8e93F2E2f891ceeB3Db4e62e202d7110',
   },
 
   {
@@ -5847,10 +5845,8 @@ export const bscPools = [
     status: 'eol',
     assets: ['NUTS', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#/add/BNB/0x8893D5fA71389673C5c4b9b3cb4EE1ba71207556',
-    buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x8893D5fA71389673C5c4b9b3cb4EE1ba71207556',
+    removeLiquidityUrl:
+      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x8893D5fA71389673C5c4b9b3cb4EE1ba71207556',
   },
 
   {
@@ -6087,10 +6083,8 @@ export const bscPools = [
     platform: 'Autofarm',
     assets: ['BETH', 'ETH'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#/add/0x2170Ed0880ac9A755fd29B2688956BD959F933F8/0x250632378E573c6Be1AC2f97Fcdf00515d0Aa91B',
-    buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x250632378E573c6Be1AC2f97Fcdf00515d0Aa91B&outputCurrency=0x2170ed0880ac9a755fd29b2688956bd959f933f8',
+    removeLiquidityUrl:
+      'https://v1exchange.pancakeswap.finance/#/remove/0x2170Ed0880ac9A755fd29B2688956BD959F933F8/0x250632378E573c6Be1AC2f97Fcdf00515d0Aa91B',
   },
 
   {
@@ -6195,10 +6189,8 @@ export const bscPools = [
     platform: 'Pancake',
     assets: ['BELT', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#/add/ETH/0xE0e514c71282b6f4e823703a39374Cf58dc3eA4f',
-    buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xE0e514c71282b6f4e823703a39374Cf58dc3eA4f',
+    removeLiquidityUrl:
+      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0xE0e514c71282b6f4e823703a39374Cf58dc3eA4f',
   },
 
   {
@@ -6276,9 +6268,8 @@ export const bscPools = [
     platform: 'JulSwap',
     assets: ['UNI', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl: 'https://julswap.com/#/add/0xbf5140a22578168fd562dccf235e5d43a02ce9b1/BNB',
-    buyTokenUrl:
-      'https://julswap.com/#/swap?inputCurrency=BNB&outputCurrency=0xbf5140a22578168fd562dccf235e5d43a02ce9b1',
+    removeLiquidityUrl:
+      'https://julswap.com/#/remove/0xbf5140a22578168fd562dccf235e5d43a02ce9b1/BNB',
   },
 
   {
@@ -6303,9 +6294,8 @@ export const bscPools = [
     platform: 'JulSwap',
     assets: ['DOT', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl: 'https://julswap.com/#/add/0x7083609fce4d1d8dc0c979aab8c869ea2c873402/BNB',
-    buyTokenUrl:
-      'https://julswap.com/#/swap?inputCurrency=BNB&outputCurrency=0x7083609fce4d1d8dc0c979aab8c869ea2c873402',
+    removeLiquidityUrl:
+      'https://julswap.com/#/remove/0x7083609fce4d1d8dc0c979aab8c869ea2c873402/BNB',
   },
 
   {
@@ -7387,10 +7377,8 @@ export const bscPools = [
     platform: 'Pancake',
     assets: ['BCH', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#/add/BNB/0x8ff795a6f4d97e7887c79bea79aba5cc76444adf',
-    buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x8ff795a6f4d97e7887c79bea79aba5cc76444adf',
+    removeLiquidityUrl:
+      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x8ff795a6f4d97e7887c79bea79aba5cc76444adf',
   },
 
   {
@@ -8621,10 +8609,8 @@ export const bscPools = [
     platform: 'JetFuel',
     assets: ['VAPOR', 'BNB'],
     callFee: 1,
-    addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#/add/BNB/0x86ac8a05cc4eed2bea32d271de50e2a3d129b6b6',
-    buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x86ac8a05cc4eed2bea32d271de50e2a3d129b6b6',
+    removeLiquidityUrl:
+      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x86ac8a05cc4eed2bea32d271de50e2a3d129b6b6',
   },
 
   {
@@ -9014,6 +9000,9 @@ export const bscPools = [
     platform: 'Pancake',
     assets: ['STAX', 'CAKE'],
     callFee: 1,
+    removeLiquidityUrl:
+      'https://v1exchange.pancakeswap.finance/#/remove/0x0da6ed8b13214ff28e9ca979dd37439e8a88f6c4/0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
+    
   },
 
   {
@@ -9038,6 +9027,8 @@ export const bscPools = [
     platform: 'Pancake',
     assets: ['NAR', 'CAKE'],
     callFee: 1,
+    removeLiquidityUrl:
+      'https://v1exchange.pancakeswap.finance/#/remove/https://v1exchange.pancakeswap.finance/#/remove/0xa1303e6199b319a891b79685f0537d289af1fc83/0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
   },
   {
     id: 'cake-nya-cake',
@@ -9509,6 +9500,9 @@ export const bscPools = [
     status: 'eol',
     assets: ['TWT', 'BNB'],
     callFee: 1,
+    removeLiquidityUrl:
+      'https://v1exchange.pancakeswap.finance/#/remove/0x4b0f1812e5df2a09796481ff14017e6005508003/BNB',
+    
   },
 
   {
@@ -9533,10 +9527,8 @@ export const bscPools = [
     platform: 'Pancake',
     assets: ['YFII', 'BNB'],
     callFee: 1,
-    addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#/add/BNB/0x7f70642d88cf1c4a3a7abb072b53b929b653eda5',
-    buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x7f70642d88cf1c4a3a7abb072b53b929b653eda5',
+    removeLiquidityUrl:
+      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x7f70642d88cf1c4a3a7abb072b53b929b653eda5',
   },
 
   {
@@ -9691,6 +9683,9 @@ export const bscPools = [
     platform: 'Pancake',
     assets: ['BROOBEE', 'CAKE'],
     callFee: 1,
+    removeLiquidityUrl:
+      'https://v1exchange.pancakeswap.finance/#/remove/0xe64f5cb844946c1f102bd25bbd87a5ab4ae89fbe/0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
+    
   },
 
   {
@@ -10106,6 +10101,8 @@ export const bscPools = [
     status: 'eol',
     assets: ['NAR', 'BNB'],
     callFee: 0.5,
+    removeLiquidityUrl:
+      'https://v1exchange.pancakeswap.finance/#/remove/0xa1303e6199b319a891b79685f0537d289af1fc83/BNB',
   },
   {
     id: 'street-bifi-bnb',
@@ -10128,6 +10125,8 @@ export const bscPools = [
     status: 'eol',
     assets: ['BIFI', 'BNB'],
     callFee: 0.5,
+    removeLiquidityUrl:
+      'https://v1exchange.pancakeswap.finance/#/remove/0xCa3F508B8e4Dd382eE878A314789373D80A5190A/BNB',
   },
 
   {
