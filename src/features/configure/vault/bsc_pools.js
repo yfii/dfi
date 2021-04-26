@@ -404,6 +404,33 @@ export const bscPools = [
   },
 
   {
+    id: 'cakev2-usdt-busd',
+    logo: 'busd-pairs/USDT-BUSD.svg',
+    name: 'USDT-BUSD LP',
+    token: 'USDT-BUSD LP2',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0x7EFaEf62fDdCCa950418312c6C91Aef321375A00',
+    tokenDecimals: 18,
+    earnedToken: 'mooCakeV2USDT-BUSD',
+    earnedTokenAddress: '0x4c66ef364F54FCdD540ad29E075bc23cFe9F9FF6',
+    earnContractAddress: '0x4c66ef364F54FCdD540ad29E075bc23cFe9F9FF6',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cakev2-usdt-busd',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['USDT', 'BUSD'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0x55d398326f99059ff775485246999027b3197955',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x55d398326f99059ff775485246999027b3197955',
+  },
+
+  {
     id: 'cakev2-alpha-bnb',
     logo: 'bnb-pairs/ALPHA-BNB.svg',
     name: 'ALPHA-BNB LP',
