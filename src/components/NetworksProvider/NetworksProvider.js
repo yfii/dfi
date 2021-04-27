@@ -28,9 +28,9 @@ const NetworksProvider = ({ children }) => {
     },
     {
       name: 'POLYGON',
-      asset: 'MATIC',
+      asset: 'POLYGON',
       id: '137',
-      url: 'https://matic.beefy.finance',
+      url: 'https://polygon.beefy.finance',
     },
   ];
 
