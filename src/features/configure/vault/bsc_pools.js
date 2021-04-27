@@ -25,6 +25,33 @@ export const bscPools = [
   },
 
   {
+    id: 'cakev2-alpaca-busd',
+    logo: 'busd-pairs/ALPACA-BUSD.svg',
+    name: 'ALPACA-BUSD LP',
+    token: 'ALPACA-BUSD LP2',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0x7752e1FA9F3a2e860856458517008558DEb989e3',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooCakeV2ALPACA-BUSD',
+    earnedTokenAddress: '0x8d89BF6A2CbEAD5577399EAc9e76222b4c41eD69',
+    earnContractAddress: '0x8d89BF6A2CbEAD5577399EAc9e76222b4c41eD69',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cakev2-alpaca-busd',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['ALPACA', 'BUSD'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0x8f0528ce5ef7b51152a59745befdd91d97091d2f',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x8f0528ce5ef7b51152a59745befdd91d97091d2f',
+  },
+  {
     id: 'swampv2-swamp-bnb',
     logo: 'bnb-pairs/SWAMP-BNB.svg',
     name: 'SWAMP-BNB LP',
@@ -9058,7 +9085,7 @@ export const bscPools = [
     callFee: 1,
     removeLiquidityUrl:
       'https://v1exchange.pancakeswap.finance/#/remove/0x0da6ed8b13214ff28e9ca979dd37439e8a88f6c4/0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
-    
+
   },
 
   {
@@ -9558,7 +9585,7 @@ export const bscPools = [
     callFee: 1,
     removeLiquidityUrl:
       'https://v1exchange.pancakeswap.finance/#/remove/0x4b0f1812e5df2a09796481ff14017e6005508003/BNB',
-    
+
   },
 
   {
@@ -9741,7 +9768,7 @@ export const bscPools = [
     callFee: 1,
     removeLiquidityUrl:
       'https://v1exchange.pancakeswap.finance/#/remove/0xe64f5cb844946c1f102bd25bbd87a5ab4ae89fbe/0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
-    
+
   },
 
   {
