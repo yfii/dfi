@@ -25,6 +25,33 @@ export const bscPools = [
   },
 
   {
+    id: 'beltv2-belt-bnb',
+    logo: 'bnb-pairs/BELT-BNB-BELT.png',
+    name: 'BELT-BNB LP',
+    token: 'BELT-BNB LP2',
+    tokenDescription: 'Pancake (Belt)',
+    tokenAddress: '0xF3Bc6FC080ffCC30d93dF48BFA2aA14b869554bb',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooBeltV2BeltBNB',
+    earnedTokenAddress: '0x190DD361Ee7EDB1801d66e9E957C5CDF1e7Be75b',
+    earnContractAddress: '0x190DD361Ee7EDB1801d66e9E957C5CDF1e7Be75b',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cakev2-belt-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Belt',
+    assets: ['BELT', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0xE0e514c71282b6f4e823703a39374Cf58dc3eA4f',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xE0e514c71282b6f4e823703a39374Cf58dc3eA4f',
+  },
+  {
     id: 'cakev2-alpaca-busd',
     logo: 'busd-pairs/ALPACA-BUSD.svg',
     name: 'ALPACA-BUSD LP',
