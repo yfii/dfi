@@ -25,6 +25,34 @@ export const bscPools = [
   },
 
   {
+    id: 'swampv2-cake-bnb',
+    logo: 'bnb-pairs/CAKE-BNB.svg',
+    name: 'CAKE-BNB LP',
+    token: 'CAKE-BNB LP2',
+    tokenDescription: 'Pancake (Swamp)',
+    tokenAddress: '0x0eD7e52944161450477ee417DE9Cd3a859b14fD0',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooSwampV2CAKE-BNB',
+    earnedTokenAddress: '0xe503B4c52a9220E20fe5Cf499D551977A6A12796',
+    earnContractAddress: '0xe503B4c52a9220E20fe5Cf499D551977A6A12796',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cakev2-cake-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Swamp',
+    assets: ['CAKE', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
+  },
+
+  {
     id: 'beltv2-belt-bnb',
     logo: 'bnb-pairs/BELT-BNB-BELT.png',
     name: 'BELT-BNB LP',
