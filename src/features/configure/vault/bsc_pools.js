@@ -51,6 +51,34 @@ export const bscPools = [
     buyTokenUrl:
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xE0e514c71282b6f4e823703a39374Cf58dc3eA4f',
   },
+
+  {
+    id: 'cakev2-dfd-busd',
+    logo: 'busd-pairs/DFD-BUSD.svg',
+    name: 'DFD-BUSD LP',
+    token: 'DFD-BUSD LP2',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0x029D66f9C0469450B7b4834B8dDC6a1118CeC3e1',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooCakeV2DFD-BUSD',
+    earnedTokenAddress: '0xd80d646A28d60494A22Df83AA6b629df4F52DAeb',
+    earnContractAddress: '0xd80d646A28d60494A22Df83AA6b629df4F52DAeb',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cakev2-dfd-busd',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['DFD', 'BUSD'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0x9899a98b222fcb2f3dbee7df45d943093a4ff9ff',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x9899a98b222fcb2f3dbee7df45d943093a4ff9ff',
+  },
   {
     id: 'cakev2-alpaca-busd',
     logo: 'busd-pairs/ALPACA-BUSD.svg',
