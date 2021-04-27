@@ -31,6 +31,17 @@ const networkSettings = {
     },
     rpcUrls: ['https://api.avax.network/ext/bc/C/rpc'],
     blockExplorerUrls: ['https://cchain.explorer.avax.network/'],
+  },
+  '137': {
+    chainId: '137',
+    chainName: 'Matic Mainnet',
+    nativeCurrency: {
+      name: 'MATIC',
+      symbol: 'MATIC',
+      decimals: 18,
+    },
+    rpcUrls: ['https://rpc-mainnet.maticvigil.com/'],
+    blockExplorerUrls: ['https://explorer.matic.network/'],
   }
 }
 

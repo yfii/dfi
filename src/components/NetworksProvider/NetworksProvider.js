@@ -26,6 +26,12 @@ const NetworksProvider = ({ children }) => {
       id: '43114',
       url: 'https://avax.beefy.finance',
     },
+    {
+      name: 'POLYGON',
+      asset: 'MATIC',
+      id: '137',
+      url: 'https://matic.beefy.finance',
+    },
   ];
 
   const currentNetwork = useMemo(
