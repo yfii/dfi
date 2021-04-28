@@ -1,6 +1,6 @@
 const networkSettings = {
   '56': {
-    chainId: '0x38',
+    chainId: `0x${parseInt(56, 10).toString(16)}`,
     chainName: 'BSC Mainnet',
     nativeCurrency: {
       name: 'Binance Coin',
@@ -11,7 +11,7 @@ const networkSettings = {
     blockExplorerUrls: ['https://bscscan.com/'],
   },
   '128': {
-    chainId: '0x80',
+    chainId: `0x${parseInt(128, 10).toString(16)}`,
     chainName: 'HECO Mainnet',
     nativeCurrency: {
       name: 'Huobi Token',
@@ -19,10 +19,10 @@ const networkSettings = {
       decimals: 18,
     },
     rpcUrls: ['https://http-mainnet.hecochain.com'],
-    blockExplorerUrls: ['https://scan.hecochain.com/'],
+    blockExplorerUrls: ['https://hecoinfo.com/'],
   },
   '43114': {
-    chainId: '0xa86a',
+    chainId: `0x${parseInt(43114, 10).toString(16)}`,
     chainName: 'Avalanche C-Chain',
     nativeCurrency: {
       name: 'AVAX',
@@ -33,8 +33,8 @@ const networkSettings = {
     blockExplorerUrls: ['https://cchain.explorer.avax.network/'],
   },
   '137': {
-    chainId: '137',
-    chainName: 'Matic Mainnet',
+    chainId: `0x${parseInt(137, 10).toString(16)}`,
+    chainName: 'Polygon Mainnet',
     nativeCurrency: {
       name: 'MATIC',
       symbol: 'MATIC',
