@@ -85,6 +85,7 @@ const styles = theme => ({
     color: theme.palette.text.secondary,
   },
   zapNote: {
+    width: '100%',
     textAlign: 'left',
     fontSize: '14px',
     color: theme.palette.text.secondary,

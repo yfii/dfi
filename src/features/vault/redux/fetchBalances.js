@@ -8,6 +8,7 @@ import {
 import { MultiCall } from 'eth-multicall';
 import { erc20ABI, multicallBnbShimABI } from 'features/configure';
 import BigNumber from 'bignumber.js';
+import { byDecimals } from 'features/helpers/bignumber';
 import { getNetworkMulticall } from 'features/helpers/getNetworkData';
 
 export function fetchBalances({ address, web3, tokens }) {
@@ -107,8 +108,13 @@ export function useFetchBalances() {
     [dispatch]
   );
 
+  const tokenBalance = tokenSymbol => {
+    return byDecimals(tokens[tokenSymbol]?.tokenBalance || 0, tokens[tokenSymbol].decimals);
+  }
+
   return {
     tokens,
+    tokenBalance: tokenBalance,
     fetchBalances: boundAction,
     fetchBalancesDone,
     fetchBalancesPending,

@@ -1,9 +1,10 @@
 import { getNetworkPools } from '../../helpers/getNetworkData';
+import { getEligibleZap } from 'features/zap/zapUniswapV2';
 
 const tokens = {};
 const pools = getNetworkPools();
 
-pools.forEach(({ token, tokenAddress, earnedToken, earnContractAddress, earnedTokenAddress }) => {
+pools.forEach(({ token, tokenAddress, earnedToken, earnContractAddress, earnedTokenAddress }, i) => {
   tokens[token] = {
     tokenAddress: tokenAddress,
     tokenBalance: 0,
@@ -19,6 +20,13 @@ pools.forEach(({ token, tokenAddress, earnedToken, earnContractAddress, earnedTo
       [earnContractAddress]: 0,
     },
   };
+
+  const zap = getEligibleZap(pools[i]);
+  if (zap) {
+    tokens[token].allowance[zap.zapAddress] = tokenAddress ? 0 : Infinity;
+    tokens[earnedToken].allowance[zap.zapAddress] = 0;
+    pools[i]['zap'] = getEligibleZap(pools[i]);
+  }
 });
 
 const initialState = {

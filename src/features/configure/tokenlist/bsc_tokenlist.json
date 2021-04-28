@@ -10,6 +10,15 @@
   "logoURI": "https://beefy.finance/img/beefy.svg",
   "keywords": ["beefy", "bsc"],
   "tokens": [
+
+    {
+      "name": "MDEX Token",
+      "symbol": "MDX",
+      "address": "0x9c65ab58d8d978db963e63f2bfb7121627e3a739",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": ""
+    },
     {
       "name": "xBLZD Token",
       "symbol": "xBLZD",

@@ -1,7 +1,12 @@
 export const bscZaps = [
   {
-    zapAddress: '0x1Dc36C2a07f218612853c5bEb3aB6b280510707D',
-    ammFactory: '0xBCfCcbde45cE874adCB698cC183deBcF17952812', // PancakeSwap before April 23 2021 migration
-    ammPairInitHash: '0xd0d4c4cd0848c93cb4fd1f498d7013ee6bfb25783ea21593d5834f5d250ece66',
+    zapAddress: '0x03c509fd85d51dc7E75fa2De06276cFA147486EA',
+    ammFactory: '0xca143ce32fe78f1f7019d7d551a6402fc5350c73', // PancakeSwap V2
+    ammPairInitHash: '0x00fb7f630766e6a796048ea87d01acd3068e8ff67d078148a3fa3f4a84f69bd5',
   },
+  // {
+  //   zapAddress: '0x9f6C521F1f9C8C5909D2B6f490be5E9648D7F82c', // TODO: adjust zap contract for mdex
+  //   ammFactory: '0x3cd1c46068daea5ebb0d3f55f6915b10648062b8', // MDEX
+  //   ammPairInitHash: '0x0d994d996174b05cfc7bed897dc1b20b4c458fc8d64fe98bc78b3c64a6b4d093',
+  // },
 ]

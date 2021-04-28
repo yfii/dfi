@@ -20,10 +20,9 @@ import {
   useFetchZapEstimate,
 } from 'features/vault/redux/hooks';
 import { shouldHideFromHarvest } from 'features/helpers/utils';
-import { byDecimals, convertAmountToRawNumber, convertAmountFromRawNumber } from 'features/helpers/bignumber';
+import { convertAmountToRawNumber, convertAmountFromRawNumber } from 'features/helpers/bignumber';
 import Button from 'components/CustomButtons/Button.js';
 import styles from './styles';
-import { getEligibleZap } from 'features/zap/zapUniswapV2';
 
 const useStyles = makeStyles(styles);
 
@@ -35,11 +34,11 @@ const DepositSection = ({ pool }) => {
   const { fetchApproval, fetchApprovalPending } = useFetchApproval();
   const { fetchDeposit, fetchDepositBnb, fetchDepositPending } = useFetchDeposit();
   const { fetchZapDeposit } = useFetchZapDeposit();
-  const { tokens, fetchBalances } = useFetchBalances();
+  const { tokens, tokenBalance, fetchBalances } = useFetchBalances();
   const { fetchZapEstimate, fetchZapEstimatePending } = useFetchZapEstimate();
 
   const { zap, eligibleTokens } = useMemo(() => {
-    const zap = getEligibleZap(pool);
+    const zap = pool.zap;
     return {
       zap,
       eligibleTokens: [
@@ -49,7 +48,6 @@ const DepositSection = ({ pool }) => {
           address: pool.tokenAddress,
           decimals: pool.tokenDecimals,
           logoURI: pool.logo,
-          allowance: tokens[pool.token].allowance[pool.earnContractAddress],
         },
         ...(zap ? zap.tokens : [])
       ]
@@ -108,10 +106,6 @@ const DepositSection = ({ pool }) => {
     }
   }, [address, web3, fetchBalances]);
 
-  const tokenBalance = token => {
-    return byDecimals(tokens[token.symbol]?.tokenBalance || 0, token.decimals);
-  }
-
   const handleTokenChange = event => {
     const isZap = (event.target.value > 0);
     const spender = isZap ? zap.zapAddress : pool.earnContractAddress;
@@ -139,7 +133,7 @@ const DepositSection = ({ pool }) => {
   };
 
   const handleSliderChangeCommitted = (_, sliderInt) => {
-    const total = tokenBalance(depositSettings.token);
+    const total = tokenBalance(depositSettings.token.symbol);
     let amount = new BigNumber(0);
     if (sliderInt > 0 && sliderInt < 100) {
       amount = total.times(sliderInt).div(100).decimalPlaces(8);
@@ -161,7 +155,7 @@ const DepositSection = ({ pool }) => {
   const handleInputAmountChange = event => {
     const input = event.target.value.replace(/[,]+/, '').replace(/[^0-9\.]+/, '');
     let amount = new BigNumber(input);
-    const total = tokenBalance(depositSettings.token);
+    const total = tokenBalance(depositSettings.token.symbol);
     if (amount.isNaN()) amount = new BigNumber(0);
 
     amount = amount.decimalPlaces(depositSettings.token.decimals);
@@ -194,9 +188,9 @@ const DepositSection = ({ pool }) => {
   const handleDepositAll = () => {
     const newDepositSettings = {
       ...depositSettings,
-      amount: tokenBalance(depositSettings.token),
+      amount: tokenBalance(depositSettings.token.symbol),
       slider: 100,
-      input: tokenBalance(depositSettings.token).toFormat(),
+      input: tokenBalance(depositSettings.token.symbol).toFormat(),
     }
     setDepositSettings(newDepositSettings)
     depositAssets({
@@ -279,14 +273,14 @@ const DepositSection = ({ pool }) => {
   return (
     <Grid item xs={12} md={shouldHideFromHarvest(pool.id) ? 6 : 5} className={classes.sliderDetailContainer}>
       <div className={classes.showDetailLeft}>
-        {t('Vault-Balance')}: {tokenBalance(depositSettings.token).precision(8).toString()} {depositSettings.token.name}
+        {t('Vault-Balance')}: {tokenBalance(depositSettings.token.symbol).decimalPlaces(8, BigNumber.ROUND_DOWN).toFormat()} {depositSettings.token.name}
       </div>
       <FormControl fullWidth variant="outlined" className={classes.numericInput}>
         <CustomOutlinedInput
           value={depositSettings.input}
           onChange={handleInputAmountChange}
           fullWidth
-          endAdornment={
+          endAdornment={pool.zap && (
             <FormControl className={classes.zapFormControl}>
               <Select variant="standard" className={classes.zapSelect} value={depositSettings.tokenIndex} onChange={handleTokenChange}>
                 {eligibleTokens.map((token, i) =>
@@ -294,7 +288,7 @@ const DepositSection = ({ pool }) => {
                 )}
               </Select>
             </FormControl>
-          }
+          )}
         />
       </FormControl>
       <CustomSlider
@@ -327,7 +321,7 @@ const DepositSection = ({ pool }) => {
                   fetchZapEstimatePending[pool.earnContractAddress] ||
                   fetchDepositPending[pool.earnContractAddress] ||
                   depositSettings.amount.isZero() ||
-                  tokenBalance(depositSettings.token).isZero()
+                  tokenBalance(depositSettings.token.symbol).isZero()
                 }
                 onClick={handleDepositAmount}
               >
@@ -339,7 +333,7 @@ const DepositSection = ({ pool }) => {
                   disabled={
                     pool.depositsPaused ||
                     fetchDepositPending[pool.earnContractAddress] ||
-                    tokenBalance(depositSettings.token).isZero()
+                    tokenBalance(depositSettings.token.symbol).isZero()
                   }
                   onClick={handleDepositAll}
                 >
@@ -350,10 +344,10 @@ const DepositSection = ({ pool }) => {
           )}
           {depositSettings.isZap && !depositSettings.amount.isZero() && pool.zapEstimate && (
             <div className={classes.zapNote}>
-              <span>Depositing single token will:&nbsp;</span>
+              <span>Deposit scenario:&nbsp;</span>
               {fetchZapEstimatePending[pool.earnContractAddress] && <CircularProgress size={12} />}
               <ol>
-                <li>Swap ~{convertAmountFromRawNumber(pool.zapEstimate.swapAmountIn, depositSettings.token.decimals).precision(8).toString()} {depositSettings.token.symbol} for {convertAmountFromRawNumber(pool.zapEstimate.swapAmountOut, swapTokenOut.decimals).precision(8).toString()} {swapTokenOut.symbol} (&plusmn;1%)</li>
+                <li>Swap ~{convertAmountFromRawNumber(pool.zapEstimate.swapAmountIn, depositSettings.token.decimals).decimalPlaces(8, BigNumber.ROUND_DOWN).toFormat()} {depositSettings.token.symbol} for {convertAmountFromRawNumber(pool.zapEstimate.swapAmountOut, swapTokenOut.decimals).decimalPlaces(8, BigNumber.ROUND_DOWN).toFormat()} {swapTokenOut.symbol} (&plusmn;1%)</li>
                 <li>Add {pool.assets.join(' and ')} as liqudity to {pool.token} pool</li>
                 <li>Deposit recieved {pool.token} on Beefy Vault</li>
                 <li>Unused assets will be returned to your wallet</li>
