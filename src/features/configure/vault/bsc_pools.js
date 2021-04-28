@@ -25,6 +25,32 @@ export const bscPools = [
   },
 
   {
+    id: 'typhv2-typh-bnb',
+    logo: 'bnb-pairs/TYPH-BNB.png',
+    name: 'TYPH-BNB LP',
+    token: 'TYPH-BNB LP2',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0x687efea126216159b628Fd3F5B7dE996C6cd42D6',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooTyphV2TYPH-BNB',
+    earnedTokenAddress: '0xC598B22552a981d565eB85e5E953928Ee0a26E42',
+    earnContractAddress: '0xC598B22552a981d565eB85e5E953928Ee0a26E42',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'typhv2-typh-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    assets: ['TYPH', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0x4090e535f2e251f5f88518998b18b54d26b3b07c',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x4090e535f2e251f5f88518998b18b54d26b3b07c',
+  },
+  {
     id: 'belt-beltbtc',
     logo: 'single-assets/BTCB.svg',
     name: 'beltBTC',
@@ -4731,7 +4757,7 @@ export const bscPools = [
     oracleId: 'typh-typh-bnb',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     assets: ['TYPH', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
