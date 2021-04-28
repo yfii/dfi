@@ -64,7 +64,7 @@ const fetchTokens = async () => {
 
 const fetchLPs = async () => {
   try {
-    const response = await axios.get(`https://api.beefy.finance/lps?_=1619584195`);    
+    const response = await axios.get(`https://api.beefy.finance/lps?_=1619584195`);  
     return response.data;
   } catch (err) {
     console.error(err);
