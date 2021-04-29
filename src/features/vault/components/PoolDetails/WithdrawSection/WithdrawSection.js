@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import Grid from '@material-ui/core/Grid';
 import BigNumber from 'bignumber.js';
 import { makeStyles } from '@material-ui/core/styles';
@@ -14,7 +14,7 @@ import CustomSlider from 'components/CustomSlider/CustomSlider';
 import RefundButtons from '../RefundButtons/RefundButtons';
 import { byDecimals, convertAmountToRawNumber } from 'features/helpers/bignumber';
 import { inputLimitPass, inputFinalVal, shouldHideFromHarvest } from 'features/helpers/utils';
-import { useFetchWithdraw, useFetchBalances } from 'features/vault/redux/hooks';
+import { useFetchWithdraw, useFetchBalances, useFetchApproval } from 'features/vault/redux/hooks';
 import { useConnectWallet } from 'features/home/redux/hooks';
 import { getNetworkCoin } from 'features/helpers/getNetworkData';
 import styles from './styles';
@@ -27,13 +27,15 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
   const classes = useStyles();
   const { web3, address } = useConnectWallet();
   const { enqueueSnackbar } = useSnackbar();
+  const { fetchApproval, fetchApprovalPending } = useFetchApproval();
   const {
     fetchWithdraw,
     fetchWithdrawBnb,
     fetchZapWithdrawAndRemoveLiqudity,
     fetchWithdrawPending,
   } = useFetchWithdraw();
-  const { tokens, tokenBalance } = useFetchBalances();
+  const { tokens, fetchBalances } = useFetchBalances();
+
   const { withdrawOutputs } = useMemo(() => {
     const pairTokens = pool.zap ? pool.zap.tokens.filter(t => t.symbol !== nativeCoin.wrappedSymbol) : [];
     if (pairTokens.length) {
@@ -54,9 +56,6 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
       ]
     }
   }, [pool.tokenAddress])
-
-
-  console.log(withdrawOutputs);
 
   const [withdrawSettings, setWithdrawSettings] = useState({
     isZap: false,
@@ -90,7 +89,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
       swapInput,
       swapOutput,
       withdrawAddress: spender,
-      isNeedApproval: allowance.isZero(),
+      isNeedApproval: isZap && allowance.isZero(),
     }))
   }
 
@@ -141,6 +140,26 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
     }));
   };
 
+  useEffect(() => {
+    const allowance = new BigNumber(tokens[pool.earnedToken].allowance[pool.zap.zapAddress]);
+    setWithdrawSettings(prevState => ({
+      ...prevState,
+      isNeedApproval: prevState.isZap && allowance.isZero(),
+    }));
+  }, [tokens[pool.earnedToken].allowance[pool.zap.zapAddress]]);
+
+  const handleApproval = () => {
+    fetchApproval({
+      address,
+      web3,
+      tokenAddress: pool.earnedTokenAddress,
+      contractAddress: pool.zap.zapAddress,
+      tokenSymbol: pool.earnedToken,
+    })
+      .then(() => enqueueSnackbar(t('Vault-ApprovalSuccess'), { variant: 'success' }))
+      .catch(error => enqueueSnackbar(t('Vault-ApprovalError', { error }), { variant: 'error' }));
+  };
+
   const onWithdraw = isAll => {
     let sharesAmount;
     const sharesDecimals = 18;
@@ -175,7 +194,10 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
           zapAddress: pool.zap.zapAddress,
         }
         fetchZapWithdrawAndRemoveLiqudity(zapWithdrawArgs)
-          .then(() => enqueueSnackbar(t('Vault-WithdrawSuccess'), { variant: 'success' }))
+          .then(() => {
+            enqueueSnackbar(t('Vault-WithdrawSuccess'), { variant: 'success' })
+            fetchBalances({ address, web3, tokens });
+          })
           .catch(error => enqueueSnackbar(t('Vault-WithdrawError', { error }), { variant: 'error' }));
       }
     } else {
@@ -189,11 +211,17 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
       }
       if (pool.tokenAddress) {
         fetchWithdraw(vaultWithdrawArgs)
-          .then(() => enqueueSnackbar(t('Vault-WithdrawSuccess'), { variant: 'success' }))
+          .then(() => {
+            enqueueSnackbar(t('Vault-WithdrawSuccess'), { variant: 'success' })
+            fetchBalances({ address, web3, tokens });
+          })
           .catch(error => enqueueSnackbar(t('Vault-WithdrawError', { error }), { variant: 'error' }));
       } else {
         fetchWithdrawBnb(vaultWithdrawArgs)
-          .then(() => enqueueSnackbar(t('Vault-WithdrawSuccess'), { variant: 'success' }))
+          .then(() => {
+            enqueueSnackbar(t('Vault-WithdrawSuccess'), { variant: 'success' })
+            fetchBalances({ address, web3, tokens });
+          })
           .catch(error => enqueueSnackbar(t('Vault-WithdrawError', { error }), { variant: 'error' }));
       }
     }
@@ -241,30 +269,44 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
           />
         ) : (
           <div>
-            <div className={classes.showDetailButtonCon}>
-              <Button
-                className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
-                type="button"
-                color="primary"
-                onClick={() => onWithdraw(false)}
-              >
-                {fetchWithdrawPending[index]
-                  ? `${t('Vault-Withdrawing')}`
-                  : `${t('Vault-WithdrawButton')}`}
-              </Button>
-              {!withdrawSettings.isSwap && (
+            {withdrawSettings.isNeedApproval ? (
+              <div className={classes.showDetailButtonCon}>
+                <Button
+                  className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`}
+                  onClick={handleApproval}
+                  disabled={fetchApprovalPending[pool.earnedToken]}
+                >
+                  {fetchApprovalPending[pool.earnedToken]
+                    ? `${t('Vault-Approving')}`
+                    : `${t('Vault-ApproveButton')}`}
+                </Button>
+              </div>
+            ) : (
+              <div className={classes.showDetailButtonCon}>
                 <Button
                   className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
                   type="button"
                   color="primary"
-                  onClick={() => onWithdraw(true)}
+                  onClick={() => onWithdraw(false)}
                 >
                   {fetchWithdrawPending[index]
                     ? `${t('Vault-Withdrawing')}`
-                    : `${t('Vault-WithdrawButtonAll')}`}
+                    : `${t('Vault-WithdrawButton')}`}
                 </Button>
-              )}
-            </div>
+                {!withdrawSettings.isSwap && (
+                  <Button
+                    className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
+                    type="button"
+                    color="primary"
+                    onClick={() => onWithdraw(true)}
+                  >
+                    {fetchWithdrawPending[index]
+                      ? `${t('Vault-Withdrawing')}`
+                      : `${t('Vault-WithdrawButtonAll')}`}
+                  </Button>
+                )}
+              </div>
+            )}
             <div className={classes.zapNote}>
               <span>Withdraw scenario:&nbsp;</span>
               {/* {fetchZapEstimatePending[pool.earnContractAddress] && <CircularProgress size={12} />} */}
@@ -281,7 +323,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
           </div>
         )}
       </div>
-    </Grid>
+    </Grid >
   );
 };
 

@@ -13,6 +13,8 @@ import { getNetworkMulticall } from 'features/helpers/getNetworkData';
 
 export function fetchBalances({ address, web3, tokens }) {
   return dispatch => {
+    if (!(address && web3)) return;
+
     dispatch({
       type: VAULT_FETCH_BALANCES_BEGIN,
     });
