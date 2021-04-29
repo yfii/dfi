@@ -27,7 +27,12 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
   const classes = useStyles();
   const { web3, address } = useConnectWallet();
   const { enqueueSnackbar } = useSnackbar();
-  const { fetchWithdraw, fetchWithdrawBnb, fetchWithdrawPending } = useFetchWithdraw();
+  const {
+    fetchWithdraw,
+    fetchWithdrawBnb,
+    fetchZapWithdrawAndRemoveLiqudity,
+    fetchWithdrawPending,
+  } = useFetchWithdraw();
   const { tokens, tokenBalance } = useFetchBalances();
   const { withdrawOutputs } = useMemo(() => {
     const pairTokens = pool.zap ? pool.zap.tokens.filter(t => t.symbol !== nativeCoin.wrappedSymbol) : [];
@@ -145,14 +150,14 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
     }
 
     if (isAll) {
-      const amount = sharesBalance.multipliedBy(pool.pricePerFullShare).dividedBy('1e18').decimalPlaces(8);
+      sharesAmount = sharesBalance.dividedBy('1e18');
+      const amount = sharesAmount.multipliedBy(pool.pricePerFullShare).decimalPlaces(8);
       setWithdrawSettings(prevState => ({
         ...prevState,
         amount: amount,
         input: amount.toFormat(),
         slider: 100,
       }));
-      sharesAmount = sharesBalance;
     } else {
       sharesAmount = withdrawSettings.amount
         .dividedBy(pool.pricePerFullShare);
@@ -165,12 +170,13 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
         const zapWithdrawArgs = {
           address,
           web3,
+          vaultAddress: pool.earnContractAddress,
           amount: convertAmountToRawNumber(sharesAmount, sharesDecimals),
-          contractAddress: pool.zap.zapAddress,
-          index,
+          zapAddress: pool.zap.zapAddress,
         }
-        console.log(zapWithdrawArgs);
-        return alert('not implemented');
+        fetchZapWithdrawAndRemoveLiqudity(zapWithdrawArgs)
+          .then(() => enqueueSnackbar(t('Vault-WithdrawSuccess'), { variant: 'success' }))
+          .catch(error => enqueueSnackbar(t('Vault-WithdrawError', { error }), { variant: 'error' }));
       }
     } else {
       const vaultWithdrawArgs = {
