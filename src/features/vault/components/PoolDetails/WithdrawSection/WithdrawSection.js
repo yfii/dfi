@@ -12,7 +12,7 @@ import Button from 'components/CustomButtons/Button.js';
 import CustomOutlinedInput from 'components/CustomOutlinedInput/CustomOutlinedInput';
 import CustomSlider from 'components/CustomSlider/CustomSlider';
 import RefundButtons from '../RefundButtons/RefundButtons';
-import { byDecimals, calculateReallyNum } from 'features/helpers/bignumber';
+import { byDecimals, convertAmountToRawNumber } from 'features/helpers/bignumber';
 import { inputLimitPass, inputFinalVal, shouldHideFromHarvest } from 'features/helpers/utils';
 import { useFetchWithdraw, useFetchBalances } from 'features/vault/redux/hooks';
 import { useConnectWallet } from 'features/home/redux/hooks';
@@ -137,12 +137,13 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
   };
 
   const onWithdraw = isAll => {
+    let sharesAmount;
+    const sharesDecimals = 18;
 
     if (withdrawSettings.slider >= 99) {
       isAll = true;
     }
 
-    let sharesAmount;
     if (isAll) {
       const amount = sharesBalance.multipliedBy(pool.pricePerFullShare).dividedBy('1e18').decimalPlaces(8);
       setWithdrawSettings(prevState => ({
@@ -151,11 +152,10 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
         input: amount.toFormat(),
         slider: 100,
       }));
-      sharesAmount = sharesBalance.toString(10);
+      sharesAmount = sharesBalance;
     } else {
       sharesAmount = withdrawSettings.amount
-        .multipliedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals))
-        .dividedBy(pool.pricePerFullShare).toString(10);
+        .dividedBy(pool.pricePerFullShare);
     }
 
     if (withdrawSettings.isZap) {
@@ -165,7 +165,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
         const zapWithdrawArgs = {
           address,
           web3,
-          amount: sharesAmount,
+          amount: convertAmountToRawNumber(sharesAmount, sharesDecimals),
           contractAddress: pool.zap.zapAddress,
           index,
         }
@@ -177,7 +177,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
         address,
         web3,
         isAll,
-        amount: sharesAmount,
+        amount: convertAmountToRawNumber(sharesAmount, sharesDecimals),
         contractAddress: pool.earnContractAddress,
         index,
       }

@@ -9,6 +9,7 @@ import { withdraw, withdrawBnb } from '../../web3';
 
 export function fetchWithdraw({ address, web3, isAll, amount, contractAddress, index }) {
   return dispatch => {
+
     dispatch({
       type: VAULT_FETCH_WITHDRAW_BEGIN,
       index,

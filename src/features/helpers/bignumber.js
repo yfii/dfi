@@ -86,7 +86,10 @@ export function subtract(numberOne, numberTwo) {
 }
 
 export function convertAmountToRawNumber(value, decimals = 18) {
-  return new BigNumber(`${value}`).times(new BigNumber('10').pow(decimals)).toString();
+  return new BigNumber(`${value}`)
+    .times(new BigNumber('10').pow(decimals))
+    .dividedToIntegerBy(1)
+    .toString();
 }
 
 export function convertAmountFromRawNumber(value, decimals = 18) {
