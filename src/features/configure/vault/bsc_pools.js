@@ -5499,8 +5499,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'zefi-zefi-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     assets: ['ZEFI', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -5525,8 +5525,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'zefi-zefi-busd',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     assets: ['ZEFI', 'BUSD'],
     callFee: 0.5,
     addLiquidityUrl:
