@@ -141,12 +141,12 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
   };
 
   useEffect(() => {
-    const allowance = new BigNumber(tokens[pool.earnedToken].allowance[pool.zap.zapAddress]);
+    const allowance = new BigNumber(tokens[pool.earnedToken].allowance[withdrawSettings.withdrawAddress]);
     setWithdrawSettings(prevState => ({
       ...prevState,
       isNeedApproval: prevState.isZap && allowance.isZero(),
     }));
-  }, [tokens[pool.earnedToken].allowance[pool.zap.zapAddress]]);
+  }, [tokens[pool.earnedToken].allowance[withdrawSettings.withdrawAddress]]);
 
   const handleApproval = () => {
     fetchApproval({
