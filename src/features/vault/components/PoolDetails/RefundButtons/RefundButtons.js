@@ -21,7 +21,7 @@ const RefundButtons = ({ tokenAddress, refundAddress, index }) => {
       address,
       web3,
       tokenAddress,
-      refundAddress,
+      contractAddress: refundAddress,
       index,
     })
       .then(() => enqueueSnackbar(`Approval success`, { variant: 'success' }))
