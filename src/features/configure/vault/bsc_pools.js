@@ -25,6 +25,33 @@ export const bscPools = [
   },
 
   {
+    id: 'banana-doge-bnb',
+    logo: 'bnb-pairs/DOGE-BNB.svg',
+    name: 'DOGE-BNB LP',
+    token: 'DOGE-BNB LP',
+    tokenDescription: 'ApeSwap',
+    tokenAddress: '0xfd1ef328A17A8e8Eeaf7e4Ea1ed8a108E1F2d096',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooApeDOGE-BNB',
+    earnedTokenAddress: '0x6c978fe7E78c52a4c40107f081bA92b5d3daEfBF',
+    earnContractAddress: '0x6c978fe7E78c52a4c40107f081bA92b5d3daEfBF',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'banana-doge-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'ApeSwap',
+    assets: ['DOGE', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://dex.apeswap.finance/#/add/ETH/0xbA2aE424d960c26247Dd6c32edC70B295c744C43',
+    buyTokenUrl:
+      'https://dex.apeswap.finance/#/swap?outputCurrency=0xbA2aE424d960c26247Dd6c32edC70B295c744C43',
+  },
+  {
     id: 'cakev2-btcb-busd',
     logo: 'busd-pairs/BTCB-BUSD.svg',
     name: 'BTCB-BUSD LP',
