@@ -22,9 +22,9 @@ export const polygonPools = [
     assets: ['maUSDC', 'USDC'],
     callFee: 0.5,
     addLiquidityUrl:
-      'https://quickswap.exchange/#/add/ETH/0xc2132d05d31c914a87c6611c10748aeb04b58e8f',
+      'https://quickswap.exchange/#/add/0x9719d867A500Ef117cC201206B8ab51e794d3F82/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
     buyTokenUrl:
-      'https://quickswap.exchange/#/swap?inputCurrency=ETH&outputCurrency=0xc2132d05d31c914a87c6611c10748aeb04b58e8f',
+      'https://quickswap.exchange/#/swap?inputCurrency=0x2791bca1f2de4661ed88a30c99a7a9449aa84174&outputCurrency=0x9719d867a500ef117cc201206b8ab51e794d3f82',
   }, 
   {
     id: 'quick-aave-eth',
@@ -49,9 +49,9 @@ export const polygonPools = [
     assets: ['AAVE', 'ETH'],
     callFee: 0.5,
     addLiquidityUrl:
-      'https://quickswap.exchange/#/add/ETH/0xc2132d05d31c914a87c6611c10748aeb04b58e8f',
+      'https://quickswap.exchange/#/add/0xD6DF932A45C0f255f85145f286eA0b292B21C90B/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
     buyTokenUrl:
-      'https://quickswap.exchange/#/swap?inputCurrency=ETH&outputCurrency=0xc2132d05d31c914a87c6611c10748aeb04b58e8f',
+      'https://quickswap.exchange/#/swap?inputCurrency=0x53e0bca35ec356bd5dddfebbd1fc0fd03fabad39&outputCurrency=ETH',
   }, 
   {
     id: 'quick-link-eth',
@@ -76,9 +76,9 @@ export const polygonPools = [
     assets: ['LINK', 'ETH'],
     callFee: 0.5,
     addLiquidityUrl:
-      'https://quickswap.exchange/#/add/ETH/0xc2132d05d31c914a87c6611c10748aeb04b58e8f',
+      'https://quickswap.exchange/#/add/0x53e0bca35ec356bd5dddfebbd1fc0fd03fabad39/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
     buyTokenUrl:
-      'https://quickswap.exchange/#/swap?inputCurrency=ETH&outputCurrency=0xc2132d05d31c914a87c6611c10748aeb04b58e8f',
+      'https://quickswap.exchange/#/swap?inputCurrency=0x53e0bca35ec356bd5dddfebbd1fc0fd03fabad39&outputCurrency=ETH',
   },  
   {
     id: 'quick-eth-usdt',
