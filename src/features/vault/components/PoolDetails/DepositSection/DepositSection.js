@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import useDeepCompareEffect from 'use-deep-compare-effect';
 import Grid from '@material-ui/core/Grid';
 import BigNumber from 'bignumber.js';
 import { useTranslation } from 'react-i18next';
@@ -35,7 +36,7 @@ const DepositSection = ({ pool }) => {
   const { fetchDeposit, fetchDepositBnb, fetchDepositPending } = useFetchDeposit();
   const { fetchZapDeposit } = useFetchZapDeposit();
   const { tokens, tokenBalance, fetchBalances } = useFetchBalances();
-  const { fetchZapEstimate, fetchZapEstimatePending } = useFetchZapEstimate();
+  const { fetchZapDepositEstimate, fetchZapEstimatePending } = useFetchZapEstimate();
 
   const { zap, eligibleTokens } = useMemo(() => {
     const zap = pool.zap;
@@ -68,10 +69,10 @@ const DepositSection = ({ pool }) => {
     swapAmountOut: pool.zapEstimate?.swapAmountOut,
   });
 
-  useEffect(() => {
+  useDeepCompareEffect(() => {
     if (depositSettings.amount.isZero()) return;
     if (depositSettings.isZap) {
-      fetchZapEstimate({
+      fetchZapDepositEstimate({
         web3,
         zapAddress: zap.zapAddress,
         vaultAddress: pool.earnContractAddress,
@@ -79,7 +80,7 @@ const DepositSection = ({ pool }) => {
         tokenAmount: convertAmountToRawNumber(depositSettings.amount, depositSettings.token.decimals),
       })
     }
-  }, [web3, depositSettings.amount, fetchZapEstimate, pool]);
+  }, [depositSettings.amount, pool, (new Date()).getMinutes()]);
 
   useEffect(() => {
     const allowance = new BigNumber(tokens[depositSettings.token.symbol].allowance[depositSettings.depositAddress]);

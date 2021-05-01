@@ -1,8 +1,8 @@
-import { BeefyUniV2ZapABI } from '../configure';
+import { beefyUniV2ZapABI } from '../configure';
 import { enqueueSnackbar } from '../common/redux/actions';
 
 export const zapWithdraw = async ({ web3, address, vaultAddress, amount, zapAddress, dispatch }) => {
-  const contract = new web3.eth.Contract(BeefyUniV2ZapABI, zapAddress);
+  const contract = new web3.eth.Contract(beefyUniV2ZapABI, zapAddress);
   const data = await _zapWithdraw({ contract, address, vaultAddress, amount, zapAddress, dispatch });
   return data;
 };

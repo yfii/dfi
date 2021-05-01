@@ -4,8 +4,10 @@ import { getEligibleZap } from 'features/zap/zapUniswapV2';
 const tokens = {};
 const pools = getNetworkPools();
 
-pools.forEach(({ token, tokenAddress, earnedToken, earnContractAddress, earnedTokenAddress }, i) => {
+pools.forEach(({ token, tokenDecimals, tokenAddress, earnedToken, earnContractAddress, earnedTokenAddress }, i) => {
   tokens[token] = {
+    symbol: token,
+    decimals: tokenDecimals,
     tokenAddress: tokenAddress,
     tokenBalance: 0,
     allowance: {
@@ -14,6 +16,8 @@ pools.forEach(({ token, tokenAddress, earnedToken, earnContractAddress, earnedTo
     },
   };
   tokens[earnedToken] = {
+    symbol: earnedToken,
+    decimals: 18,
     tokenAddress: earnedTokenAddress,
     tokenBalance: 0,
     allowance: {

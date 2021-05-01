@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
+import useDeepCompareEffect from 'use-deep-compare-effect';
 import Grid from '@material-ui/core/Grid';
 import BigNumber from 'bignumber.js';
 import { makeStyles } from '@material-ui/core/styles';
@@ -7,14 +8,15 @@ import { useSnackbar } from 'notistack';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 import Button from 'components/CustomButtons/Button.js';
 import CustomOutlinedInput from 'components/CustomOutlinedInput/CustomOutlinedInput';
 import CustomSlider from 'components/CustomSlider/CustomSlider';
 import RefundButtons from '../RefundButtons/RefundButtons';
-import { byDecimals, convertAmountToRawNumber } from 'features/helpers/bignumber';
+import { byDecimals, convertAmountToRawNumber, convertAmountFromRawNumber } from 'features/helpers/bignumber';
 import { inputLimitPass, inputFinalVal, shouldHideFromHarvest } from 'features/helpers/utils';
-import { useFetchWithdraw, useFetchBalances, useFetchApproval } from 'features/vault/redux/hooks';
+import { useFetchWithdraw, useFetchBalances, useFetchApproval, useFetchZapEstimate } from 'features/vault/redux/hooks';
 import { useConnectWallet } from 'features/home/redux/hooks';
 import { getNetworkCoin } from 'features/helpers/getNetworkData';
 import styles from './styles';
@@ -34,33 +36,37 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
     fetchZapWithdrawAndRemoveLiqudity,
     fetchWithdrawPending,
   } = useFetchWithdraw();
-  const { tokens, fetchBalances } = useFetchBalances();
+  const { fetchZapWithdrawEstimate, fetchZapEstimatePending } = useFetchZapEstimate();
+  const { tokens, fetchBalances, fetchPairReverves } = useFetchBalances();
 
-  const { withdrawOutputs } = useMemo(() => {
-    const pairTokens = pool.zap ? pool.zap.tokens.filter(t => t.symbol !== nativeCoin.wrappedSymbol) : [];
-    if (pairTokens.length) {
-      const removeLiquidityName = pool.assets.join('+');
-      pairTokens.unshift({
-        symbol: removeLiquidityName,
-      })
+  const withdrawOutputs = useMemo(() => {
+    const outputs = [
+      {
+        name: pool.name,
+        symbol: pool.token,
+        address: pool.tokenAddress,
+        decimals: pool.tokenDecimals,
+      },
+    ]
+
+    if (pool.zap) {
+      const pairTokens = pool.zap.tokens.filter(t => t.symbol !== nativeCoin.wrappedSymbol);
+      if (pairTokens.length) {
+        outputs.push({
+          symbol: pool.assets.join('+'),
+        }, ...pairTokens)
+      }
     }
-    return {
-      withdrawOutputs: [
-        {
-          name: pool.name,
-          symbol: pool.token,
-          address: pool.tokenAddress,
-          decimals: pool.tokenDecimals,
-        },
-        ...pairTokens,
-      ]
-    }
+
+    return outputs;
+
   }, [pool.tokenAddress])
 
   const [withdrawSettings, setWithdrawSettings] = useState({
     isZap: false,
     isSwap: false,
-    swapOutput: withdrawOutputs[0],
+    swapInput: undefined,
+    swapOutput: undefined,
     outputIndex: 0,
     amount: new BigNumber(0),
     slider: 0,
@@ -71,6 +77,28 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
     slippageTolerance: 0.01,
     swapAmountOut: pool.zapWithdrawEstimate?.swapAmountOut,
   });
+
+  useDeepCompareEffect(() => {
+    if (fetchZapEstimatePending[pool.tokenAddress]) return;
+    if (pool.zap) {
+      fetchPairReverves({ web3, pairToken: tokens[pool.token] })
+    }
+  }, [pool, (new Date()).getMinutes()])
+
+  useDeepCompareEffect(() => {
+    if (fetchZapEstimatePending[pool.tokenAddress]) return;
+    if (pool.zap) {
+      fetchZapWithdrawEstimate({
+        web3,
+        vaultAddress: pool.earnContractAddress,
+        routerAddress: pool.zap.ammRouter,
+        swapInput: withdrawSettings.swapInput,
+        swapOutput: withdrawSettings.swapOutput,
+        pairToken: tokens[pool.token],
+        pairTokenAmount: convertAmountToRawNumber(withdrawSettings.amount, tokens[pool.token].decimals),
+      })
+    }
+  }, [tokens[pool.token].reserves, withdrawSettings.amount])
 
   const handleOutputChange = event => {
     const outputIndex = event.target.value;
@@ -287,6 +315,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
                   className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
                   type="button"
                   color="primary"
+                  disabled={withdrawSettings.amount.isZero()}
                   onClick={() => onWithdraw(false)}
                 >
                   {fetchWithdrawPending[index]
@@ -309,14 +338,21 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
             )}
             <div className={classes.zapNote}>
               <span>Withdraw scenario:&nbsp;</span>
-              {/* {fetchZapEstimatePending[pool.earnContractAddress] && <CircularProgress size={12} />} */}
+              {fetchZapEstimatePending[pool.tokenAddress] && <CircularProgress size={12} />}
               <ol>
                 <li>Redeem {pool.earnedToken} receipts for {pool.token}</li>
                 {withdrawSettings.isZap && (
                   <li>Remove liqudity from {pool.token} to receive {pool.assets.join(' and ')}</li>
                 )}
                 {withdrawSettings.isSwap && (
-                  <li>Swap received {withdrawSettings.swapInput.symbol} for {withdrawSettings.swapOutput.symbol} (&plusmn;1%)</li>
+                  <li>Swap received {' '}
+                    {convertAmountFromRawNumber(pool.swapEstimate.amountIn, withdrawSettings.swapInput.decimals).decimalPlaces(8, BigNumber.ROUND_DOWN).toFormat()} {' '}
+                    {withdrawSettings.swapInput.symbol} {' '}
+                    for {' '}
+                    {convertAmountFromRawNumber(pool.swapEstimate.amountOut, withdrawSettings.swapOutput.decimals).decimalPlaces(8, BigNumber.ROUND_DOWN).toFormat()} {' '}
+                    {withdrawSettings.swapOutput.symbol} {' '}
+                    (&plusmn;1%) {' '}
+                  </li>
                 )}
               </ol>
             </div>

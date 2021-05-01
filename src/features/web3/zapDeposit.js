@@ -1,8 +1,8 @@
-import { BeefyUniV2ZapABI } from '../configure';
+import { beefyUniV2ZapABI } from '../configure';
 import { enqueueSnackbar } from '../common/redux/actions';
 
 export const zapDeposit = async ({ web3, address, vaultAddress, isETH, tokenAddress, tokenAmount, zapAddress, swapAmountOutMin, dispatch }) => {
-  const contract = new web3.eth.Contract(BeefyUniV2ZapABI, zapAddress);
+  const contract = new web3.eth.Contract(beefyUniV2ZapABI, zapAddress);
   const data = await _zapDeposit({ contract, address, vaultAddress, isETH, tokenAddress, tokenAmount, swapAmountOutMin, dispatch });
   return data;
 };

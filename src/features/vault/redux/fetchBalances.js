@@ -6,7 +6,7 @@ import {
   VAULT_FETCH_BALANCES_FAILURE,
 } from './constants';
 import { MultiCall } from 'eth-multicall';
-import { erc20ABI, multicallBnbShimABI } from 'features/configure';
+import { erc20ABI, multicallBnbShimABI, uniswapV2PairABI } from 'features/configure';
 import BigNumber from 'bignumber.js';
 import { byDecimals } from 'features/helpers/bignumber';
 import { getNetworkMulticall } from 'features/helpers/getNetworkData';
@@ -91,6 +91,53 @@ export function fetchBalances({ address, web3, tokens }) {
   };
 }
 
+export function fetchPairReverves({ web3, pairToken }) {
+  return dispatch => {
+    if (!web3) return;
+
+    dispatch({
+      type: VAULT_FETCH_BALANCES_BEGIN,
+    });
+
+    console.log('fetchPairReverves');
+
+    const promise = new Promise((resolve, reject) => {
+      const multicall = new MultiCall(web3, getNetworkMulticall());
+      const tokenContract = new web3.eth.Contract(uniswapV2PairABI, pairToken.tokenAddress);
+      multicall
+        .all([[{
+          totalSupply: tokenContract.methods.totalSupply(),
+          token0: tokenContract.methods.token0(),
+          token1: tokenContract.methods.token1(),
+          reserves: tokenContract.methods.getReserves(),
+        }]])
+        .then(([[result]]) => {
+
+          const newPairToken = {
+            [pairToken.symbol]: {
+              ...pairToken,
+              ...result,
+            }
+          };
+
+          dispatch({
+            type: VAULT_FETCH_BALANCES_SUCCESS,
+            data: newPairToken,
+          });
+          resolve();
+        })
+        .catch(error => {
+          dispatch({
+            type: VAULT_FETCH_BALANCES_FAILURE,
+          });
+          return reject(error.message || error);
+        });
+    });
+
+    return promise;
+  };
+}
+
 export function useFetchBalances() {
   const dispatch = useDispatch();
 
@@ -114,10 +161,18 @@ export function useFetchBalances() {
     return byDecimals(tokens[tokenSymbol]?.tokenBalance || 0, tokens[tokenSymbol].decimals);
   }
 
+  const boundPairReverves = useCallback(
+    data => {
+      return dispatch(fetchPairReverves(data));
+    },
+    [dispatch]
+  );
+
   return {
     tokens,
     tokenBalance: tokenBalance,
     fetchBalances: boundAction,
+    fetchPairReverves: boundPairReverves,
     fetchBalancesDone,
     fetchBalancesPending,
   };
@@ -135,6 +190,7 @@ export function reducer(state, action) {
       const newAndUpdatedTokens = {};
       Object.entries(action.data).forEach(([symbol, token]) => {
         newAndUpdatedTokens[symbol] = {
+          ...state.tokens[symbol],
           ...token,
           allowance: {
             ...state.tokens[symbol]?.allowance,

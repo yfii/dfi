@@ -37,7 +37,7 @@ export const getEligibleZap = (pool) => {
   tokenB.allowance = 0;
 
   return {
-    zapAddress: zap.zapAddress,
+    ...zap,
     tokens: [tokenA, tokenB, ...eligibleNativeCoin],
   }
 }

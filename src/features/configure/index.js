@@ -9,7 +9,9 @@ export {
   strategyABI,
   multicallBnbShimABI,
   govPoolABI,
-  BeefyUniV2ZapABI,
+  beefyUniV2ZapABI,
+  uniswapV2PairABI,
+  uniswapV2RouterABI,
 } from './abi';
 export { bscStakePools } from './stake/bsc_stake';
 export { hecoStakePools } from './stake/heco_stake';

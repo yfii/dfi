@@ -9,5 +9,5 @@ export { withdrawBnb } from './withdrawBnb';
 export { zapWithdraw } from './zapWithdraw';
 export { fetchPrice, whenPricesLoaded } from './fetchPrice';
 export { harvest } from './harvest';
-export { zapEstimate } from './zapEstimate';
+export { zapDepositEstimate, zapWithdrawEstimate } from './zapEstimate';
 export { createWeb3Modal } from './createWeb3Modal';
