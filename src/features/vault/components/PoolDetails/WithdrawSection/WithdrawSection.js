@@ -80,14 +80,14 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
 
   useDeepCompareEffect(() => {
     if (fetchZapEstimatePending[pool.tokenAddress]) return;
-    if (pool.zap) {
+    if (pool.zap && withdrawSettings.isSwap) {
       fetchPairReverves({ web3, pairToken: tokens[pool.token] })
     }
   }, [pool, (new Date()).getMinutes()])
 
   useDeepCompareEffect(() => {
     if (fetchZapEstimatePending[pool.tokenAddress]) return;
-    if (pool.zap) {
+    if (pool.zap && withdrawSettings.isSwap) {
       fetchZapWithdrawEstimate({
         web3,
         vaultAddress: pool.earnContractAddress,
@@ -98,7 +98,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
         pairTokenAmount: convertAmountToRawNumber(withdrawSettings.amount, tokens[pool.token].decimals),
       })
     }
-  }, [tokens[pool.token].reserves, withdrawSettings.amount])
+  }, [tokens[pool.token].reserves, withdrawSettings.amount, withdrawSettings.outputIndex])
 
   const handleOutputChange = event => {
     const outputIndex = event.target.value;
@@ -315,7 +315,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
                   className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
                   type="button"
                   color="primary"
-                  disabled={withdrawSettings.amount.isZero()}
+                  disabled={withdrawSettings.amount.isZero() || fetchZapEstimatePending[pool.tokenAddress]}
                   onClick={() => onWithdraw(false)}
                 >
                   {fetchWithdrawPending[index]
@@ -346,10 +346,10 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
                 )}
                 {withdrawSettings.isSwap && (
                   <li>Swap received {' '}
-                    {convertAmountFromRawNumber(pool.swapEstimate.amountIn, withdrawSettings.swapInput.decimals).decimalPlaces(8, BigNumber.ROUND_DOWN).toFormat()} {' '}
+                    {convertAmountFromRawNumber(pool.swapEstimate?.amountIn || 0, withdrawSettings.swapInput.decimals).decimalPlaces(8, BigNumber.ROUND_DOWN).toFormat()} {' '}
                     {withdrawSettings.swapInput.symbol} {' '}
                     for {' '}
-                    {convertAmountFromRawNumber(pool.swapEstimate.amountOut, withdrawSettings.swapOutput.decimals).decimalPlaces(8, BigNumber.ROUND_DOWN).toFormat()} {' '}
+                    {convertAmountFromRawNumber(pool.swapEstimate?.amountOut || 0, withdrawSettings.swapOutput.decimals).decimalPlaces(8, BigNumber.ROUND_DOWN).toFormat()} {' '}
                     {withdrawSettings.swapOutput.symbol} {' '}
                     (&plusmn;1%) {' '}
                   </li>
