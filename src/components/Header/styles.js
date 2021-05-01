@@ -1,17 +1,17 @@
 import {
-  container,
-  primaryColor,
-  infoColor,
-  successColor,
-  warningColor,
-  dangerColor,
-  roseColor,
-  transition,
-  boxShadow,
   blackColor,
-  whiteColor,
+  boxShadow,
+  containerFluid,
+  dangerColor,
   grayColor,
   hexToRgb,
+  infoColor,
+  primaryColor,
+  roseColor,
+  successColor,
+  transition,
+  warningColor,
+  whiteColor,
 } from 'assets/jss/material-kit-pro-react.js';
 
 const styles = theme => ({
@@ -44,19 +44,15 @@ const styles = theme => ({
     position: 'fixed',
   },
   container: {
-    ...container,
+    ...containerFluid,
     minHeight: '50px',
     alignItems: 'center',
     justifyContent: 'space-between',
     display: 'flex',
     flexWrap: 'nowrap',
-    '@media (min-width: 992px)': {
-      width: '100%',
-      maxWidth: '960px',
-    },
     '@media (min-width: 1230px)': {
-      width: '100%',
-      maxWidth: '1230px',
+      width: '1230px',
+      maxWidth: '100%',
     },
   },
   title: {
@@ -221,7 +217,13 @@ const styles = theme => ({
   logo: {
     marginRight: '12px',
   },
+  middleNav: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   link: {
+    display: 'inline-flex',
     margin: '0 1rem',
     fontSize: '1rem',
     fontWeight: 400,
@@ -233,12 +235,18 @@ const styles = theme => ({
     '& span': {
       color: theme.palette.text.primary,
     },
+    '@media (min-width: 960px) and (max-width: 1110px)': {
+      '& $icon': {
+        display: 'none',
+      }
+    },
   },
   icon: {
     color: theme.palette.text.primary,
     marginRight: '0.5rem',
     minWidth: '24px',
     textAlign: 'end',
+    display: 'none',
   },
   iconButton: {
     color: theme.palette.text.primary,
