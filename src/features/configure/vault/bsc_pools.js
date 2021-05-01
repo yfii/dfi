@@ -4055,6 +4055,8 @@ export const bscPools = [
     status: 'active',
     assets: ['MASH', 'BUSD'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.marshmallowdefi.com/#/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0x787732f27D18495494cea3792ed7946BbCFF8db2',
     buyTokenUrl:
       'https://exchange.marshmallowdefi.com/#/swap?outputCurrency=0x787732f27D18495494cea3792ed7946BbCFF8db2',
   },
@@ -4079,6 +4081,8 @@ export const bscPools = [
     status: 'active',
     assets: ['MASH', 'BNB'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.marshmallowdefi.com/#/add/ETH/0x787732f27D18495494cea3792ed7946BbCFF8db2',
     buyTokenUrl:
       'https://exchange.marshmallowdefi.com/#/swap?outputCurrency=0x787732f27D18495494cea3792ed7946BbCFF8db2',
   },
