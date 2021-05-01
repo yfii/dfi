@@ -14,7 +14,7 @@ export function fetchZapDepositEstimate({ web3, zapAddress, vaultAddress, tokenA
       type: VAULT_FETCH_ZAP_ESTIMATE_BEGIN,
       index: vaultAddress,
     });
-    console.log('fetchZapDepositEstimate');
+
     const promise = new Promise((resolve, reject) => {
       zapDepositEstimate({ web3, zapAddress, vaultAddress, tokenAddress, tokenAmount })
         .then(data => {
@@ -46,7 +46,6 @@ export function fetchZapWithdrawEstimate({ web3, vaultAddress, routerAddress, sw
       index: pairToken.tokenAddress,
     });
 
-    console.log('fetchZapWithdrawEstimate');
     const totalSupply = new BigNumber(pairToken.totalSupply);
     const shares = new BigNumber(pairTokenAmount);
     if (shares.isZero()) {
@@ -81,7 +80,6 @@ export function fetchZapWithdrawEstimate({ web3, vaultAddress, routerAddress, sw
       reserveOut = pairToken.reserves[0];
     }
 
-    // console.log({routerAddress, amountIn, reserveIn, reserveOut });
     const promise = new Promise((resolve, reject) => {
       zapWithdrawEstimate({ web3, routerAddress, amountIn, reserveIn, reserveOut, dispatch })
         .then(amountOut => {

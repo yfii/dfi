@@ -6,7 +6,7 @@ export { depositBnb } from './depositBnb';
 export { zapDeposit } from './zapDeposit';
 export { withdraw } from './withdraw';
 export { withdrawBnb } from './withdrawBnb';
-export { zapWithdraw } from './zapWithdraw';
+export { zapWithdraw, zapWithdrawAndSwap } from './zapWithdraw';
 export { fetchPrice, whenPricesLoaded } from './fetchPrice';
 export { harvest } from './harvest';
 export { zapDepositEstimate, zapWithdrawEstimate } from './zapEstimate';

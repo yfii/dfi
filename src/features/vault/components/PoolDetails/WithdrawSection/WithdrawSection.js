@@ -34,6 +34,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
     fetchWithdraw,
     fetchWithdrawBnb,
     fetchZapWithdrawAndRemoveLiqudity,
+    fetchZapWithdrawAndSwap,
     fetchWithdrawPending,
   } = useFetchWithdraw();
   const { fetchZapWithdrawEstimate, fetchZapEstimatePending } = useFetchZapEstimate();
@@ -79,6 +80,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
   });
 
   useDeepCompareEffect(() => {
+    if (fetchWithdrawPending[index]) return;
     if (fetchZapEstimatePending[pool.tokenAddress]) return;
     if (pool.zap && withdrawSettings.isSwap) {
       fetchPairReverves({ web3, pairToken: tokens[pool.token] })
@@ -86,6 +88,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
   }, [pool, (new Date()).getMinutes()])
 
   useDeepCompareEffect(() => {
+    if (fetchWithdrawPending[index]) return;
     if (fetchZapEstimatePending[pool.tokenAddress]) return;
     if (pool.zap && withdrawSettings.isSwap) {
       fetchZapWithdrawEstimate({
@@ -212,7 +215,23 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
 
     if (withdrawSettings.isZap) {
       if (withdrawSettings.isSwap) {
-        return alert('not implemented');
+        const swapAmountOut = pool.swapEstimate.amountOut;
+        const swapAmountOutMin = new BigNumber(swapAmountOut - (swapAmountOut * withdrawSettings.slippageTolerance));
+        const zapWithdrawArgs = {
+          address,
+          web3,
+          vaultAddress: pool.earnContractAddress,
+          amount: convertAmountToRawNumber(sharesAmount, sharesDecimals),
+          zapAddress: pool.zap.zapAddress,
+          tokenOut: withdrawSettings.swapOutput.address,
+          amountOutMin: swapAmountOutMin.toFixed(0),
+        }
+        fetchZapWithdrawAndSwap(zapWithdrawArgs)
+          .then(() => {
+            enqueueSnackbar(t('Vault-WithdrawSuccess'), { variant: 'success' })
+            fetchBalances({ address, web3, tokens });
+          })
+          .catch(error => enqueueSnackbar(t('Vault-WithdrawError', { error }), { variant: 'error' }));
       } else {
         const zapWithdrawArgs = {
           address,
