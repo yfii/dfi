@@ -25,6 +25,31 @@ export const bscPools = [
   },
 
   {
+    id: 'bhc-bhc',
+    logo: 'single-assets/BHC.png',
+    name: 'BHC',
+    token: 'BHC',
+    tokenDescription: 'BillionHappiness',
+    tokenAddress: '0x6fd7c98458a943f469E1Cf4eA85B173f5Cd342F4',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooBHC',
+    earnedTokenAddress: '0x56E899E56F6B8635B4A01b724db23674a64A7231',
+    earnContractAddress: '0x56E899E56F6B8635B4A01b724db23674a64A7231',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'tokens',
+    oracleId: 'BHC',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    assets: ['BHC'],
+    callFee: 0.5,
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x6fd7c98458a943f469E1Cf4eA85B173f5Cd342F4',
+  },
+
+  {
     id: 'banana-doge-bnb',
     logo: 'bnb-pairs/DOGE-BNB.svg',
     name: 'DOGE-BNB LP',
@@ -8768,31 +8793,6 @@ export const bscPools = [
     callFee: 0.5,
     removeLiquidityUrl:
       'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x78650b139471520656b9e7aa7a5e9276814a38e9',
-  },
-
-  {
-    id: 'bhc-bhc',
-    logo: 'single-assets/BHC.png',
-    name: 'BHC',
-    token: 'BHC',
-    tokenDescription: 'BillionHappiness',
-    tokenAddress: '0x6fd7c98458a943f469E1Cf4eA85B173f5Cd342F4',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooBHC',
-    earnedTokenAddress: '0x56E899E56F6B8635B4A01b724db23674a64A7231',
-    earnContractAddress: '0x56E899E56F6B8635B4A01b724db23674a64A7231',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'tokens',
-    oracleId: 'BHC',
-    oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
-    assets: ['BHC'],
-    callFee: 0.5,
-    buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x6fd7c98458a943f469E1Cf4eA85B173f5Cd342F4',
   },
 
   {
