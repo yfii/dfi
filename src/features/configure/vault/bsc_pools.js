@@ -7834,7 +7834,7 @@ export const bscPools = [
     oracleId: 'monster-msc-busd',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     assets: ['MSC', 'BUSD'],
     callFee: 0.5,
     buyTokenUrl:
@@ -7859,7 +7859,7 @@ export const bscPools = [
     oracleId: 'monster-msc-bnb',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     assets: ['MSC', 'BNB'],
     callFee: 0.5,
     buyTokenUrl:
@@ -8402,7 +8402,7 @@ export const bscPools = [
     oracleId: 'monster-mss-busd',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     assets: ['MSS', 'BUSD'],
     callFee: 0.5,
     buyTokenUrl:
@@ -9290,7 +9290,6 @@ export const bscPools = [
     callFee: 1,
     removeLiquidityUrl:
       'https://v1exchange.pancakeswap.finance/#/remove/0x0da6ed8b13214ff28e9ca979dd37439e8a88f6c4/0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
-
   },
 
   {
@@ -9772,7 +9771,6 @@ export const bscPools = [
     callFee: 1,
     removeLiquidityUrl:
       'https://v1exchange.pancakeswap.finance/#/remove/0x4b0f1812e5df2a09796481ff14017e6005508003/BNB',
-
   },
 
   {
@@ -9955,7 +9953,6 @@ export const bscPools = [
     callFee: 1,
     removeLiquidityUrl:
       'https://v1exchange.pancakeswap.finance/#/remove/0xe64f5cb844946c1f102bd25bbd87a5ab4ae89fbe/0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
-
   },
 
   {
@@ -10963,7 +10960,7 @@ export const bscPools = [
     oracleId: 'filecoin',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     assets: ['FIL'],
     callFee: 1,
   },
@@ -10986,31 +10983,8 @@ export const bscPools = [
     oracleId: 'BUSD',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     assets: ['BUSD'],
-    callFee: 1,
-  },
-
-  {
-    id: 'fortube-link',
-    logo: 'single-assets/LINK.png',
-    name: 'ChainLink',
-    token: 'LINK',
-    tokenDescription: 'ForTube',
-    tokenAddress: '0xF8A0BF9cF54Bb92F17374d9e9A321E6a111a51bD',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: 'https://chain.link/',
-    earnedToken: 'mooLINK',
-    earnedTokenAddress: '0x7bF55acDe006C398Bb605Ae564A8F832F80000ee',
-    earnContractAddress: '0x7bF55acDe006C398Bb605Ae564A8F832F80000ee',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'tokens',
-    oracleId: 'LINK',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'active',
-    assets: ['LINK'],
     callFee: 1,
   },
 
@@ -11032,7 +11006,7 @@ export const bscPools = [
     oracleId: 'DOT',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     assets: ['DOT'],
     callFee: 1,
   },
@@ -11055,7 +11029,7 @@ export const bscPools = [
     oracleId: 'USDT',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     assets: ['USDT'],
     callFee: 1,
   },
@@ -11078,7 +11052,7 @@ export const bscPools = [
     oracleId: 'BTCB',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     assets: ['BTCB'],
     callFee: 1,
   },
