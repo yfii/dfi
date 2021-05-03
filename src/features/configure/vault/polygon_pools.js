@@ -1,5 +1,32 @@
  export const polygonPools = [
-    {
+  {
+    id: 'cometh-must-eth',
+    logo: 'polygon/MUST-ETH.png',
+    name: 'MUST-ETH LP',
+    token: 'MUST-ETH LP',
+    tokenDescription: 'Cometh',
+    tokenAddress: '0x8826C072657983939c26E684edcfb0e4133f0B3d',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooComethMUST-ETH',
+    earnedTokenAddress: '0x7CE2332fAF6328986C75e3A8fCc1CB79621aeB1F',
+    earnContractAddress: '0x7CE2332fAF6328986C75e3A8fCc1CB79621aeB1F',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cometh-must-eth',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Cometh',
+    assets: ['MUST', 'ETH'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://swap.cometh.io/#/add/0x9C78EE466D6Cb57A4d01Fd887D2b5dFb2D46288f/0x7ceb23fd6bc0add59e62ac25578270cff1b9f619',
+    buyTokenUrl:
+      'https://swap.cometh.io/#/swap?inputCurrency=0x7ceb23fd6bc0add59e62ac25578270cff1b9f619&outputCurrency=0x9c78ee466d6cb57a4d01fd887d2b5dfb2d46288f',
+  },  
+  {
     id: 'quick-mausdc-usdc',
     logo: 'polygon/maUSDC-USDC.png',
     name: 'maUSDC-USDC LP',
