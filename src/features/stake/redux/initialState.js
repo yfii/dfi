@@ -35,7 +35,6 @@ const initialState = {
   balance,
   poolsInfo,
   poolData,
-  fetchPoolsInfoPending: false,
   fetchPoolDataPending: [false],
   checkApprovalPending: [false, false, false, false, false],
   fetchBalancePending: [false, false, false, false, false],
