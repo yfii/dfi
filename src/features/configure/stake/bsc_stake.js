@@ -32,6 +32,38 @@ export const bscStakePools = [
       },
     },
   },
+  {
+    id: 'moo_bhc-hps',
+    name: 'Billionhappiness',
+    logo: 'single-assets/BHC.png',
+    token: 'mooBHC',
+    tokenDecimals: 18,
+    tokenAddress: '0x56E899E56F6B8635B4A01b724db23674a64A7231',
+    tokenOracle: 'tokens',
+    tokenOracleId: 'BHC',
+    earnedToken: 'BIFI',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
+    earnContractAddress: '0x79d9dd12f5c070eFbD9721F06dd8811825c9d9FC',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'BIFI',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1620495415,
+    partner: {
+      logo: 'stake/billionhappiness/logo.png',
+      background: 'stake/billionhappiness/background.png',
+      text:
+        'BillionHappiness is a blockchain technology-based apparel company dedicated to providing happiness through a transparent record of information on its quality products. Our goal is to provide authenticity using blockchain technology to eliminate counterfeit items on the market. Billion Happiness has a token called BHC.',
+      website: 'https://billionhappiness.finance',
+      social: {
+        telegram: 'https://t.me/BillionHappinessOfficial',
+        twitter: 'https://twitter.com/BHC_Happiness',
+      },
+    },
+  },
 
   {
     id: 'moo_auto_eth-apys',
@@ -50,7 +82,7 @@ export const bscStakePools = [
     earnedOracle: 'lps',
     earnedOracleId: 'cake-apys-bnb',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     periodFinish: 1619024404,
     partner: {
@@ -83,7 +115,7 @@ export const bscStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'MASH',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     periodFinish: 1619104315,
     partner: {
@@ -116,7 +148,7 @@ export const bscStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'PALM',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     periodFinish: 1618683181,
     partner: {
@@ -149,7 +181,7 @@ export const bscStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'TYPH',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     periodFinish: 1618853419,
     partner: {
