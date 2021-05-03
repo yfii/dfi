@@ -49,13 +49,15 @@ export const bscStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'SAT',
     partnership: true,
-    status: 'active',
+    status: 'closed',
+    hideCountdown: true,
     isMooStaked: true,
-    periodFinish: 1620495415,
+    periodFinish: 1520495415,
     partner: {
       logo: 'stake/satis/logo.png',
       background: 'stake/satis/background.png',
-      text: '*Satis is an Automatic Deflationary Token, which means that there is a 2% burn on transactions, please keep this in mind when transferring and trading this token. (slippage 2,5%)* SatisFinance is a brand new DeFi project designed by an experienced development team as the 4th generation deflationary yield farm on Binance Smart Chain. Besides the buyback burning mechanism introduced by Goose Finance and Fullsail Finance, SatisFinance has implemented unique innovative features to fight against the inflation problem faced by most traditional yield farms.\n',
+      text:
+        '*Satis is an Automatic Deflationary Token, which means that there is a 2% burn on transactions, please keep this in mind when transferring and trading this token. (slippage 2,5%)* SatisFinance is a brand new DeFi project designed by an experienced development team as the 4th generation deflationary yield farm on Binance Smart Chain. Besides the buyback burning mechanism introduced by Goose Finance and Fullsail Finance, SatisFinance has implemented unique innovative features to fight against the inflation problem faced by most traditional yield farms.\n',
       website: 'https://satis.finance/',
       social: {
         telegram: 'https://t.me/satisfiChat',
