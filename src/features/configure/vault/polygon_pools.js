@@ -51,7 +51,7 @@
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0xD6DF932A45C0f255f85145f286eA0b292B21C90B/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
     buyTokenUrl:
-      'https://quickswap.exchange/#/swap?inputCurrency=0x53e0bca35ec356bd5dddfebbd1fc0fd03fabad39&outputCurrency=ETH',
+      'https://quickswap.exchange/#/swap?inputCurrency=0xD6DF932A45C0f255f85145f286eA0b292B21C90B&outputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
   }, 
   {
     id: 'quick-link-eth',
@@ -78,7 +78,7 @@
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x53e0bca35ec356bd5dddfebbd1fc0fd03fabad39/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
     buyTokenUrl:
-      'https://quickswap.exchange/#/swap?inputCurrency=0x53e0bca35ec356bd5dddfebbd1fc0fd03fabad39&outputCurrency=ETH',
+      'https://quickswap.exchange/#/swap?inputCurrency=0x53e0bca35ec356bd5dddfebbd1fc0fd03fabad39&outputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
   },  
   {
     id: 'krill-krill-usdc',
