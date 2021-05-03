@@ -31,4 +31,12 @@ export const nativeCoins = [
     wrappedSymbol: 'WAVAX',
     allowance: Infinity,
   },
+  {
+    chainId: 137,
+    name: 'Polygon',
+    symbol: 'MATIC',
+    decimals: 18,
+    wrappedSymbol: 'WMATIC',
+    allowance: Infinity,
+  },
 ];

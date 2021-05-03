@@ -1,6 +1,7 @@
 import bscTokenList from './tokenlist/bsc_tokenlist.json';
 import hecoTokenList from './tokenlist/heco_tokenlist.json';
 import avalancheTokenList from './tokenlist/avalanche_tokenlist.json';
+import polygonTokenList from './tokenlist/polygon_tokenlist.json';
 
 export {
   vaultABI,
@@ -23,6 +24,7 @@ export { avalanchePools } from './vault/avalanche_pools';
 export { bscZaps } from './zap/bsc_zaps';
 export { hecoZaps } from './zap/heco_zaps';
 export { avalancheZaps } from './zap/avalanche_zaps';
-export { bscTokenList, hecoTokenList, avalancheTokenList };
+export { polygonZaps } from './zap/polygon_zaps';
+export { bscTokenList, hecoTokenList, avalancheTokenList, polygonTokenList };
 export { nativeCoins } from './native_coins';
 export { polygonPools } from './vault/polygon_pools';

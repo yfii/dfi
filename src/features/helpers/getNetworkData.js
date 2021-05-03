@@ -17,6 +17,8 @@ import {
   hecoZaps,
   polygonPools,
   polygonStakePools,
+  polygonTokenList,
+  polygonZaps,
 } from '../configure';
 
 export const getNetworkCoin = () => {
@@ -46,8 +48,10 @@ export const getNetworkTokens = () => {
       return hecoTokenList.tokens;
     case '43114':
       return avalancheTokenList.tokens;
+    case '137':
+      return polygonTokenList.tokens;
     default:
-      return [];
+      throw new Error(`Create Tokenlist for this chainId first. See src/features/configure/tokenlist/*_tokenlist.json`);
   }
 };
 
@@ -59,6 +63,8 @@ export const getNetworkZaps = () => {
       return hecoZaps;
     case '43114':
       return avalancheZaps;
+    case '137':
+      return polygonZaps;
     default:
       return [];
   }

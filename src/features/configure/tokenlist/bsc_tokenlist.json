@@ -10,7 +10,6 @@
   "logoURI": "https://beefy.finance/img/beefy.svg",
   "keywords": ["beefy", "bsc"],
   "tokens": [
-
     {
       "name": "MDEX Token",
       "symbol": "MDX",
