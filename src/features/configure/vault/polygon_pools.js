@@ -1,5 +1,5 @@
-export const polygonPools = [
-  {
+ export const polygonPools = [
+    {
     id: 'quick-mausdc-usdc',
     logo: 'polygon/maUSDC-USDC.png',
     name: 'maUSDC-USDC LP',
@@ -81,6 +81,33 @@ export const polygonPools = [
       'https://quickswap.exchange/#/swap?inputCurrency=0x53e0bca35ec356bd5dddfebbd1fc0fd03fabad39&outputCurrency=ETH',
   },  
   {
+    id: 'krill-krill-usdc',
+    logo: 'polygon/KRILL-USDC.png',
+    name: 'KRILL-USDC LP',
+    token: 'KRILL-USDC LP',
+    tokenDescription: 'Polywhale',
+    tokenAddress: '0x6405Ebc22cB0899FC21f414085Ac4044B4721a0d',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooPolywhaleKRILL-USDC',
+    earnedTokenAddress: '0x74907ad4E79b1Ce415caB26FEf526ae017598cEe',
+    earnContractAddress: '0x74907ad4E79b1Ce415caB26FEf526ae017598cEe',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'krill-krill-usdc',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Polywhale',
+    assets: ['KRILL', 'USDC'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://quickswap.exchange/#/add/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174/0x05089C9EBFFa4F0AcA269e32056b1b36B37ED71b',
+    buyTokenUrl:
+      'https://quickswap.exchange/#/swap?inputCurrency=0x05089c9ebffa4f0aca269e32056b1b36b37ed71b&outputCurrency=0x2791bca1f2de4661ed88a30c99a7a9449aa84174',
+    },
+    {
     id: 'quick-eth-usdt',
     logo: 'polygon/ETH-USDT.png',
     name: 'ETH-USDT LP',
