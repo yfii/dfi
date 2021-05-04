@@ -177,6 +177,35 @@ export const bscPools = [
     buyTokenUrl:
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xA1928c0D8F83C0bFB7ebE51B412b1FD29A277893',
   },
+
+  {
+    id: 'banana-busd-usdc',
+    logo: 'busd-pairs/BUSD-USDC.svg',
+    name: 'BUSD-USDC LP',
+    token: 'BUSD-USDC LP',
+    tokenDescription: 'ApeSwap',
+    tokenAddress: '0xC087C78AbaC4A0E900a327444193dBF9BA69058E',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooApeBUSD-USDC',
+    earnedTokenAddress: '0xc6631af32c5Bd444626274C9FD1dc8A759534222',
+    earnContractAddress: '0xc6631af32c5Bd444626274C9FD1dc8A759534222',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'banana-busd-usdc',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'ApeSwap',
+    assets: ['BUSD', 'USDC'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://dex.apeswap.finance/#/add/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d/0xe9e7cea3dedca5984780bafc599bd69add087d56',
+    buyTokenUrl:
+      'https://dex.apeswap.finance/#/swap?inputCurrency=0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d&outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56',
+  },
+  
   {
     id: 'banana-doge-bnb',
     logo: 'bnb-pairs/DOGE-BNB.svg',
