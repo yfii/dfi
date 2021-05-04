@@ -7616,8 +7616,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cafe-brew-busd',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     assets: ['BREW', 'BUSD'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -7643,8 +7643,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cafe-brew-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     assets: ['BREW', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
