@@ -1,4 +1,4 @@
- export const polygonPools = [
+export const polygonPools = [
     {
     id: 'quick-mausdc-usdc',
     logo: 'polygon/maUSDC-USDC.png',
@@ -187,6 +187,33 @@
       'https://quickswap.exchange/#/add/0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270/0x831753dd7087cac61ab5644b308642cc1c33dc13',
     buyTokenUrl:
       'https://quickswap.exchange/#/swap?inputCurrency=0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270&outputCurrency=0x831753dd7087cac61ab5644b308642cc1c33dc13',
+  },
+  {
+    id: 'quick-usdc-usdt',
+    logo: 'polygon/USDC-USDT.png',
+    name: 'USDC-USDT LP',
+    token: 'USDC-USDT QLP',
+    tokenDescription: 'QuickSwap',
+    tokenAddress: '0x2cf7252e74036d1da831d11089d326296e64a728',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooQuickUSDC-USDT',
+    earnedTokenAddress: '0x4462817b53E76b722c2D174D0148ddb81452f1dE',
+    earnContractAddress: '0x4462817b53E76b722c2D174D0148ddb81452f1dE',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'quick-usdc-usdt',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'QuickSwap',
+    assets: ['USDC', 'USDT'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://quickswap.exchange/#/add/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174/0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
+    buyTokenUrl:
+      'https://quickswap.exchange/#/swap?inputCurrency=0x2791bca1f2de4661ed88a30c99a7a9449aa84174&outputCurrency=0xc2132d05d31c914a87c6611c10748aeb04b58e8f',
   },
   {
       id: 'cometh-eth-matic',
