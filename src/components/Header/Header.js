@@ -48,8 +48,8 @@ const Header = ({ links, isNightMode, setNightMode }) => {
           </Hidden>
         </Button>
 
-        <span>
-          <Hidden mdDown>
+        <div className={classes.middleNav}>
+          <Hidden smDown>
             {Number(process.env.REACT_APP_NETWORK_ID) === 56 &&
               renderLink('barn', 'barn', 'warehouse', classes)}
             {renderLink('vote', 'vote', 'vote-yea', classes)}
@@ -58,7 +58,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
           </Hidden>
           {renderLink('buy', t('buy'), 'dollar-sign', classes)}
           {renderBoost(classes)}
-        </span>
+        </div>
 
         <Hidden smDown implementation="css">
           <div className={classes.collapse}>{links}</div>
