@@ -1,8 +1,8 @@
-import React, {useEffect, useMemo} from 'react';
+import React, { useEffect, useMemo } from 'react';
 
 import InfiniteScroll from 'react-infinite-scroll-component';
-import {useTranslation} from 'react-i18next';
-import {makeStyles} from '@material-ui/core/styles';
+import { useTranslation } from 'react-i18next';
+import { makeStyles } from '@material-ui/core/styles';
 import styles from './styles';
 
 import useFilteredPools from '../../hooks/useFilteredPools';
@@ -14,7 +14,7 @@ import useVisiblePools from '../../hooks/useVisiblePools';
 
 import Pool from '../Pool/Pool';
 import Filters from '../Filters/Filters';
-import {useFetchPoolData} from '../../../stake/redux/fetchPoolData';
+import { useFetchPoolData } from '../../../stake/redux/fetchPoolData';
 
 const useStyles = makeStyles(styles);
 
