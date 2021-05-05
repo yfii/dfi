@@ -274,7 +274,7 @@ const DepositSection = ({ pool }) => {
   return (
     <Grid item xs={12} md={shouldHideFromHarvest(pool.id) ? 6 : 5} className={classes.sliderDetailContainer}>
       <div className={classes.showDetailLeft}>
-        {t('Vault-Balance')}: {tokenBalance(depositSettings.token.symbol).decimalPlaces(8, BigNumber.ROUND_DOWN).toFormat()} {depositSettings.token.name}
+        {t('Vault-Balance')}: {tokenBalance(depositSettings.token.symbol).decimalPlaces(8, BigNumber.ROUND_DOWN).toFormat()} {depositSettings.token.symbol}
       </div>
       <FormControl fullWidth variant="outlined" className={classes.numericInput}>
         <CustomOutlinedInput
