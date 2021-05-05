@@ -53,12 +53,12 @@ const Filters = ({
     setPlatform('All');
     setVaultType('All');
     setAsset('All');
-    setOrder('All');
+    setOrder('default');
   };
 
   return (
     <Grid container spacing={2} className={classes.container}>
-      <Grid item xs={4} md={2}>
+      <Grid item xs={6} sm={4} md={3}>
         <Button className={classes.reset} onClick={resetFilter}>
           {t('Filters-Reset')}
         </Button>
@@ -78,7 +78,7 @@ const Filters = ({
         </FormControl>
       </Grid>
 
-      <Grid item xs={4} md={2}>
+      <Grid item xs={6} sm={4} md={3}>
         <FormControl>
           <FormControlLabel
             className={classes.label}
@@ -95,7 +95,7 @@ const Filters = ({
         </FormControl>
       </Grid>
 
-      <Grid item xs={4} md={2}>
+      <Grid item xs={6} sm={4} md={3}>
         <FormControl>
           <FormControlLabel
             className={classes.label}
@@ -112,7 +112,7 @@ const Filters = ({
         </FormControl>
       </Grid>
 
-      <Grid item xs={4} md={2}>
+      <Grid item xs={6} sm={4} md={3}>
         <FormControl>
           <FormControlLabel
             className={classes.label}
@@ -133,23 +133,7 @@ const Filters = ({
         </FormControl>
       </Grid>
 
-      <Grid item xs={4} md={2}>
-        <FormControl>
-          <FormControlLabel
-            className={classes.label}
-            control={
-              <Checkbox
-                checked={filters.showPancakeSwapV2Only}
-                onChange={() => toggleFilter('showPancakeSwapV2Only')}
-                color="primary"
-              />
-            }
-            label={t('PancakeSwap V2')}
-          />
-        </FormControl>
-      </Grid>
-
-      <Grid item xs={4} md={3}>
+      <Grid item xs={6} sm={4} md={3}>
         <FormControl className={classes.selectorContainer}>
           <InputLabel id="select-platform-label" className={classes.selectorLabel}>
             {t('Filters-Platform')}
@@ -173,7 +157,7 @@ const Filters = ({
         </FormControl>
       </Grid>
 
-      <Grid item xs={4} md={3}>
+      <Grid item xs={6} sm={4} md={3}>
         <FormControl className={classes.selectorContainer}>
           <InputLabel id="select-vault-type-label" className={classes.selectorLabel}>
             {t('Filters-Vault-Type')}
@@ -201,7 +185,7 @@ const Filters = ({
         </FormControl>
       </Grid>
 
-      <Grid item xs={4} md={3}>
+      <Grid item xs={6} sm={4} md={3}>
         <FormControl className={classes.selectorContainer}>
           <Autocomplete
             value={options.find(option => option.value === asset)}
@@ -224,7 +208,7 @@ const Filters = ({
         </FormControl>
       </Grid>
 
-      <Grid item xs={4} md={3}>
+      <Grid item xs={6} sm={4} md={3}>
         <FormControl className={classes.selectorContainer}>
           <InputLabel id="select-order-label" className={classes.selectorLabel}>
             {t('Filters-Sort')}
