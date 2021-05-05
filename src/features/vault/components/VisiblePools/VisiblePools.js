@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { useTranslation } from 'react-i18next';
@@ -36,28 +36,31 @@ const VisiblePools = ({
   const { sortedPools, order, setOrder } = useSortedPools(poolsByAsset, apys, tokens);
   const { visiblePools, fetchVisiblePools } = useVisiblePools(sortedPools, 10);
   const { pools: stake, fetchPoolData } = useFetchPoolData();
-  const indexes = [];
 
-  useEffect(() => {
-    const timestamp = Math.floor(Date.now() / 1000);
-    for (let index in stake) {
-      if(stake[index].periodFinish >= timestamp) {
-        for(let key in pools) {
-          if(stake[index].token === pools[key].earnedToken) {
+  const activeLaunchPoolIndexes = useMemo(() => {
+    const indexes = [];
+    const now = Math.floor(Date.now() / 1000);
+
+    for (let index = 0; index < stake.length; ++index) {
+      if (stake[index].periodFinish >= now) {
+        for (let key = 0; key < pools.length; ++key) {
+          if (stake[index].token === pools[key].earnedToken) {
             pools[key].launchpool = stake[index].id;
-            if(!indexes.includes(index)) {
-              indexes.push(index);
-            }
-            continue;
+            indexes.push(index);
+
+            // each vault can only have one launch pool reference
+            break;
           }
         }
       }
     }
-  }, []);
+
+    return indexes;
+  }, [pools, stake]);
 
   useEffect(() => {
-    fetchPoolData(indexes);
-  }, [fetchPoolData]);
+    fetchPoolData(activeLaunchPoolIndexes);
+  }, [fetchPoolData, activeLaunchPoolIndexes]);
 
   return (
     <>
