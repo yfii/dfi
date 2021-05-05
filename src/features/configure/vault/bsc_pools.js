@@ -4401,32 +4401,6 @@ export const bscPools = [
   },
 
   {
-    id: 'cake-easy-bnb',
-    logo: 'bnb-pairs/EASY-BNB.svg',
-    name: 'EASY-BNB LP',
-    token: 'EASY-BNB LP',
-    tokenDescription: 'Pancake',
-    tokenAddress: '0xBD1eC00B0d1CCA9D5B28fbE0bB7d664238af2fFa',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooPancakeEASY-BNB',
-    earnedTokenAddress: '0xF107C61f6c49e8650f080454807279D1672f9a5A',
-    earnContractAddress: '0xF107C61f6c49e8650f080454807279D1672f9a5A',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'cake-easy-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Pancake',
-    assets: ['EASY', 'BNB'],
-    callFee: 0.5,
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x7C17c8bED8d14bAccE824D020f994F4880D6Ab3B',
-  },
-
-  {
     id: 'cake-bondly-bnb',
     logo: 'bnb-pairs/BONDLY-BNB.svg',
     name: 'BONDLY-BNB LP',
