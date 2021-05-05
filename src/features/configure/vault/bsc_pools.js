@@ -73,6 +73,58 @@ export const bscPools = [
   },
 
   {
+    id: 'ica-ica-btcb',
+    logo: 'single-assets/ICA.svg',
+    name: 'ICA-BTCB LP',
+    token: 'ICA-BTCB LP',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0xA2e5A7Bf668ECb74186e0E4BFBA8a0C58BCc760d',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooIcarusICA-BTCB',
+    earnedTokenAddress: '0xbf29b8AdaE718A3A372ba90040A9acBD8A5794f4',
+    earnContractAddress: '0xbf29b8AdaE718A3A372ba90040A9acBD8A5794f4',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'ica-ica-btcb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    assets: ['ICA', 'BTCB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c/0x95111f630aC215Eb74599ED42C67E2c2790d69e2',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x95111f630ac215eb74599ed42c67e2c2790d69e2',
+  },
+  {
+    id: 'ica-ica-eth',
+    logo: 'single-assets/ICA.svg',
+    name: 'ICA-ETH LP',
+    token: 'ICA-ETH LP',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0x2cb2C54795b6714dA829FfA580B9692A261F8Bdd',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooIcarusICA-ETH',
+    earnedTokenAddress: '0x389e5F8e23e88cA2D971a69b2AAADE264A9DE5Fb',
+    earnContractAddress: '0x389e5F8e23e88cA2D971a69b2AAADE264A9DE5Fb',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'ica-ica-eth',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    assets: ['ICA', 'ETH'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0x2170Ed0880ac9A755fd29B2688956BD959F933F8/0x95111f630aC215Eb74599ED42C67E2c2790d69e2',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x95111f630ac215eb74599ed42c67e2c2790d69e2',
+  },
+  {
     id: 'zefiv2-zefi-bnb',
     logo: 'degens/ZEFI-BNB.svg',
     name: 'ZEFI-BNB LP',
@@ -205,7 +257,7 @@ export const bscPools = [
     buyTokenUrl:
       'https://dex.apeswap.finance/#/swap?inputCurrency=0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d&outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56',
   },
-  
+
   {
     id: 'banana-doge-bnb',
     logo: 'bnb-pairs/DOGE-BNB.svg',
