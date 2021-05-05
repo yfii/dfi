@@ -2,6 +2,8 @@ import axios from 'axios';
 
 import { getNetworkPools, getNetworkStakePools } from '../helpers/getNetworkData';
 
+const t = () => Math.trunc(Date.now() / (5 * 60 * 1000));
+
 const endpoints = {
   coingecko: 'https://api.coingecko.com/api/v3/simple/price',
 };
@@ -14,6 +16,10 @@ const priceCache = {
   cache: new Map(),
   lastUpdated: undefined,
 };
+
+function isCached(id) {
+  return priceCache.cache.has(id);
+}
 
 function getCachedPrice(id) {
   return priceCache.cache.get(id);

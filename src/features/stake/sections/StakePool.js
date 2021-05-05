@@ -40,7 +40,7 @@ const useStyles = makeStyles(styles);
 
 export default function StakePool(props) {
   const classes = useStyles();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { address } = useConnectWallet();
   const { allowance, checkApproval } = useCheckApproval();
   const { balance, fetchBalance } = useFetchBalance();
@@ -90,18 +90,17 @@ export default function StakePool(props) {
     }
   };
 
-  const urlIndex = props.match.params.index;
   useEffect(() => {
-    setIndex(Number(urlIndex) - 1);
-  }, [urlIndex]);
+    setIndex(Number(props.match.params.index) - 1);
+  }, [Number(props.match.params.index)]);
 
   useEffect(() => {
     setIsNeedApproval(Boolean(allowance[index] === 0));
-  }, [allowance, index]);
+  }, [allowance[index], index]);
 
   useEffect(() => {
     setApprovalAble(!Boolean(fetchApprovalPending[index]));
-  }, [fetchApprovalPending, index]);
+  }, [fetchApprovalPending[index], index]);
 
   const onApproval = () => {
     fetchApproval(index);
@@ -109,7 +108,7 @@ export default function StakePool(props) {
 
   useEffect(() => {
     setStakeAble(!Boolean(fetchStakePending[index]));
-  }, [fetchStakePending, index]);
+  }, [fetchStakePending[index], index]);
 
   const onStake = () => {
     const amount = new BigNumber(inputVal)
@@ -122,7 +121,7 @@ export default function StakePool(props) {
   useEffect(() => {
     const isPending = Boolean(fetchWithdrawPending[index]);
     setWithdrawAble(!isPending);
-  }, [fetchWithdrawPending, index]);
+  }, [fetchWithdrawPending[index], index]);
 
   const onWithdraw = () => {
     const amount = new BigNumber(inputVal)
@@ -136,7 +135,7 @@ export default function StakePool(props) {
     const isPending = Boolean(fetchClaimPending[index]);
     const rewardsAvailableIs0 = rewardsAvailable[index] === 0;
     setClaimAble(!Boolean(isPending || rewardsAvailableIs0));
-  }, [rewardsAvailable, fetchClaimPending, index]);
+  }, [rewardsAvailable[index], fetchClaimPending[index], index]);
 
   const onClaim = () => {
     fetchClaim(index);
@@ -145,7 +144,7 @@ export default function StakePool(props) {
   useEffect(() => {
     const isPending = Boolean(fetchExitPending[index]);
     setExitAble(!Boolean(isPending));
-  }, [fetchExitPending, index]);
+  }, [fetchExitPending[index], index]);
 
   const onExit = () => {
     fetchExit(index);
@@ -154,12 +153,12 @@ export default function StakePool(props) {
   useEffect(() => {
     const amount = byDecimals(balance[index], pools[index].tokenDecimals);
     setMyBalance(amount);
-  }, [balance, pools, index]);
+  }, [balance[index], index]);
 
   useEffect(() => {
     const amount = byDecimals(currentlyStaked[index], pools[index].tokenDecimals);
     setMyCurrentlyStaked(amount);
-  }, [currentlyStaked, pools, index]);
+  }, [currentlyStaked[index], index]);
 
   useEffect(() => {
     let amount = byDecimals(rewardsAvailable[index], pools[index].earnedTokenDecimals);
@@ -167,7 +166,7 @@ export default function StakePool(props) {
       amount = amount.multipliedBy(96).dividedBy(100);
     }
     setMyRewardsAvailable(amount);
-  }, [rewardsAvailable, pools, index]);
+  }, [rewardsAvailable[index], index]);
 
   useEffect(() => {
     if (halfTime[index] === 0) {
@@ -190,7 +189,7 @@ export default function StakePool(props) {
     formatTime();
     const id = setInterval(formatTime, 1000);
     return () => clearInterval(id);
-  }, [halfTime, pools, index, fetchHalfTime]);
+  }, [halfTime[index], pools, index]);
 
   useEffect(() => {
     if (address) {
@@ -212,7 +211,7 @@ export default function StakePool(props) {
       fetchPoolData(index);
     }, 10000);
     return () => clearInterval(id);
-  }, [address, index, checkApproval, fetchBalance, fetchCurrentlyStaked, fetchRewardsAvailable, fetchHalfTime, fetchPoolData]);
+  }, [address, index]);
 
   const handleModal = (state, action = false) => {
     setOpen(state);
@@ -373,7 +372,7 @@ export default function StakePool(props) {
                     />
                   </Box>
                   <Box>
-                    <img className={classes.boostImg} src={require('images/stake/boost.svg')} alt={t('Boost')}/>
+                    <img className={classes.boostImg} src={require('images/stake/boost.svg')} />
                   </Box>
                 </Box>
               ) : (
@@ -505,7 +504,7 @@ export default function StakePool(props) {
                       />
                     </Box>
                     <Box>
-                      <img className={classes.boostImg} src={require('images/stake/boost.svg')} alt={t('Boost')} />
+                      <img className={classes.boostImg} src={require('images/stake/boost.svg')} />
                     </Box>
                   </Box>
                 ) : (
