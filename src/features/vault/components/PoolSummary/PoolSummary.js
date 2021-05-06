@@ -68,10 +68,7 @@ const PoolSummary = ({
           : classes.details
       }
       style={{ justifyContent: 'space-between' }}
-      onClick={event => {
-        event.stopPropagation();
-        toggleCard();
-      }}
+      onClick={toggleCard}
     >
       <Grid
         container
@@ -83,6 +80,7 @@ const PoolSummary = ({
         <PoolTitle
           name={pool.name}
           logo={pool.logo}
+          poolId={pool.id}
           description={t('Vault-Description', { vault: pool.tokenDescription })}
           launchpool={launchpool}
           addLiquidityUrl={pool.addLiquidityUrl}

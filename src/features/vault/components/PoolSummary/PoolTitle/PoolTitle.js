@@ -9,7 +9,7 @@ import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-const PoolTitle = ({ name, logo, description, launchpool, buyTokenUrl, addLiquidityUrl, removeLiquidityUrl }) => {
+const PoolTitle = ({ name, logo, poolId, description, launchpool, buyTokenUrl, addLiquidityUrl, removeLiquidityUrl }) => {
   const classes = useStyles();
   const { t } = useTranslation();
 
@@ -23,7 +23,7 @@ const PoolTitle = ({ name, logo, description, launchpool, buyTokenUrl, addLiquid
       />
       <div className={classes.texts}>
         <Typography className={classes.title} variant='body2' gutterBottom>
-          {name}
+          <a href={`/vault/${poolId}`} className={classes.url}>{name}</a>
         </Typography>
         <Typography className={classes.subtitle} variant='body2'>
           {description}
