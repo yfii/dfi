@@ -90,7 +90,7 @@ const PoolDetails = ({ vaultId }) => {
     <>
       <HomeLink />
       <div className={classes.container}>
-        <h1>Vault Details</h1>
+        <h1 className={classes.heading}>Vault Details</h1>
         {vaultState}
         <Grid className={classes.summary} container justify="space-around" xs={12} spacing={0}>
           <PoolTitle
