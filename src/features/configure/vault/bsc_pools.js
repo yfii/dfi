@@ -73,6 +73,33 @@ export const bscPools = [
   },
 
   {
+    id: 'cakev2-pnt-pbtc',
+    logo: 'uncategorized/PNT-PBTC.svg',
+    name: 'PNT-pBTC LP',
+    token: 'PNT-pBTC LP',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0xDAA89d335926628367b47852989bb22EE62CA5DE',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooCakeV2PNT-PBTC',
+    earnedTokenAddress: '0xd6d2e8c9f9a276811A8994Bf7610807f4116115f',
+    earnContractAddress: '0xd6d2e8c9f9a276811A8994Bf7610807f4116115f',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cakev2-pnt-pbtc',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['PNT', 'pBTC'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0xeD28A457A5A76596ac48d87C0f577020F6Ea1c4C/0xdaacB0Ab6Fb34d24E8a67BfA14BF4D95D4C7aF92',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xeD28A457A5A76596ac48d87C0f577020F6Ea1c4C',
+  },
+  {
     id: 'ica-ica-btcb',
     logo: 'single-assets/ICA.svg',
     name: 'ICA-BTCB LP',
