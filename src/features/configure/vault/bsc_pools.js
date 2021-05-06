@@ -5797,9 +5797,9 @@ export const bscPools = [
     assets: ['EPS', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#/add/BNB/0xA7f552078dcC247C2684336020c03648500C6d9F',
+      'https://pancake.ellipsis.finance/#/add/BNB/0xA7f552078dcC247C2684336020c03648500C6d9F',
     buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xA7f552078dcC247C2684336020c03648500C6d9F',
+      'https://pancake.ellipsis.finance/#/swap?outputCurrency=0xA7f552078dcC247C2684336020c03648500C6d9F',
   },
 
   {
