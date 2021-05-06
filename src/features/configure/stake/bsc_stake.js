@@ -52,7 +52,7 @@ export const bscStakePools = [
     status: 'active',
     hideCountdown: false,
     isMooStaked: true,
-    periodFinish: 1520495415,
+    periodFinish: 1620836553,
     partner: {
       logo: 'stake/icarus/logo.png',
       background: 'stake/icarus/background.png',
