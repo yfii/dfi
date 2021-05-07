@@ -73,6 +73,34 @@ export const bscPools = [
   },
 
   {
+    id: 'banana-bxbtc-bnb',
+    logo: 'bnb-pairs/BXBTC-BNB.svg',
+    name: 'BXBTC-BNB LP',
+    token: 'BXBTC-BNB LP',
+    tokenDescription: 'ApeSwap',
+    tokenAddress: '0xc2feF4BEC915315beF9f6E8a06b2516E64D29D06',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooApeBXBTC-BNB',
+    earnedTokenAddress: '0x8D112FcdF377A2C4cb41b60AAe32199F939a866C',
+    earnContractAddress: '0x8D112FcdF377A2C4cb41b60AAe32199F939a866C',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'banana-bxbtc-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'ApeSwap',
+    assets: ['BXBTC', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://dex.apeswap.finance/#/add/ETH/0xab111D5948470Ba73d98D66BBdf2798FBE093546',
+    buyTokenUrl:
+      'https://dex.apeswap.finance/#/swap?outputCurrency=0xab111D5948470Ba73d98D66BBdf2798FBE093546',
+  },
+
+  {
     id: 'cakev2-btt-bnb',
     logo: 'bnb-pairs/BTT-BNB.svg',
     name: 'BTT-BNB LP',
