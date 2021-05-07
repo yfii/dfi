@@ -32,6 +32,12 @@ const NetworksProvider = ({ children }) => {
       id: '137',
       url: 'https://polygon.beefy.finance',
     },
+    {
+      name: 'FANTOM',
+      asset: 'FTM',
+      id: '250',
+      url: 'https://fantom.beefy.finance',
+    },
   ];
 
   const currentNetwork = useMemo(
