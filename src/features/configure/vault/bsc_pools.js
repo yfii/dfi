@@ -73,6 +73,33 @@ export const bscPools = [
   },
 
   {
+    id: 'banana-naut-bnb',
+    logo: 'bnb-pairs/NAUT-BNB.svg',
+    name: 'NAUT-BNB LP',
+    token: 'NAUT-BNB LP',
+    tokenDescription: 'ApeSwap',
+    tokenAddress: '0x288EA5437c7aaD045a393cee2F41E548df24d1C8',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooApeNAUT-BNB',
+    earnedTokenAddress: '0x9f670c6CdB8A6133016eC7C8552Dd42624FaC53F',
+    earnContractAddress: '0x9f670c6CdB8A6133016eC7C8552Dd42624FaC53F',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'banana-naut-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'ApeSwap',
+    assets: ['NAUT', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://dex.apeswap.finance/#/add/ETH/0x05B339B0A346bF01f851ddE47a5d485c34FE220c',
+    buyTokenUrl:
+      'https://dex.apeswap.finance/#/swap?outputCurrency=0x05b339b0a346bf01f851dde47a5d485c34fe220c',
+  },
+  {
     id: 'cakev2-pnt-pbtc',
     logo: 'uncategorized/PNT-PBTC.svg',
     name: 'PNT-pBTC LP',
