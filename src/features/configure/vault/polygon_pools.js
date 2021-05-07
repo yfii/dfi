@@ -1,3 +1,33 @@
+const sushiPools = [
+  {
+    id: 'sushi-aave-eth',
+    logo: 'polygon/AAVE-ETH.png',
+    name: 'AAVE-ETH LP',
+    token: 'AAVE-ETH SLP',
+    tokenDescription: 'SushiSwap',
+    tokenAddress: '0x2813d43463c374a680f235c428fb1d7f08de0b69',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooSushiAAVE-ETH',
+    earnedTokenAddress: '0x866a910F3375d0dEBDdD904A36B3940aFcD29900',
+    earnContractAddress: '0x866a910F3375d0dEBDdD904A36B3940aFcD29900',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'sushi-aave-eth',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'SushiSwap',
+    assets: ['AAVE', 'ETH'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://app.sushi.com/#/add/0xD6DF932A45C0f255f85145f286eA0b292B21C90B/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
+    buyTokenUrl:
+      'https://app.sushi.com/#/swap?inputCurrency=0xD6DF932A45C0f255f85145f286eA0b292B21C90B&outputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
+  },
+]
+
 export const polygonPools = [
   {
     id: 'quick-usdc-usdt',
@@ -485,4 +515,5 @@ export const polygonPools = [
     buyTokenUrl:
       'https://swap.cometh.io/#/swap?inputCurrency=0x2791bca1f2de4661ed88a30c99a7a9449aa84174&outputCurrency=0x9c78ee466d6cb57a4d01fd887d2b5dfb2d46288f',
   },
+  ...sushiPools
 ];
