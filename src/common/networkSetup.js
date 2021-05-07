@@ -46,6 +46,18 @@ const networkSettings = {
     rpcUrls: ['https://rpc-mainnet.maticvigil.com/'],
     blockExplorerUrls: ['https://explorer.matic.network/'],
     txUrl: (hash) => `https://explorer-mainnet.maticvigil.com/tx/${hash}/token-transfers`,
+  },
+  '250': {
+    chainId: `0x${parseInt(250, 10).toString(16)}`,
+    chainName: 'Fantom Opera',
+    nativeCurrency: {
+      name: 'FTM',
+      symbol: 'FTM',
+      decimals: 18,
+    },
+    rpcUrls: ['https://rpcapi.fantom.network'],
+    blockExplorerUrls: ['https://ftmscan.com/'],
+    txUrl: (hash) => `https://ftmscan.com/tx/${hash}/token-transfers`,
   }
 }
 
