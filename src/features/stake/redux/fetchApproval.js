@@ -48,6 +48,7 @@ export function fetchApproval(index) {
             options: {
               variant: 'success',
             },
+            hash: receipt.transactionHash
           }));
           dispatch({ type: STAKE_FETCH_APPROVAL_SUCCESS, index });
           dispatch(checkApproval(index))

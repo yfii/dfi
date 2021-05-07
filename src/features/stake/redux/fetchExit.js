@@ -46,6 +46,7 @@ export function fetchExit(index) {
             options: {
               variant: 'success',
             },
+            hash: receipt.transactionHash
           }));
           dispatch({ type: STAKE_FETCH_EXIT_SUCCESS, index });
           resolve();
