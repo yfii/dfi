@@ -46,6 +46,7 @@ export function fetchWithdraw(index, amount) {
             options: {
               variant: 'success',
             },
+            hash: receipt.transactionHash
           }));
           dispatch({ type: STAKE_FETCH_WITHDRAW_SUCCESS, index });
           resolve();
