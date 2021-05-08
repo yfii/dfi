@@ -1,12 +1,17 @@
 import React from 'react';
-import Disclaimer from 'components/Disclaimer/Disclaimer';
-import PoolList from './components/Pools/Pools';
+import { useParams } from 'react-router';
 
-export default function VaultPage() {
+import Disclaimer from 'components/Disclaimer/Disclaimer';
+import PoolDetails from './components/PoolDetails/PoolDetails';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+
+export default function VaultDetailsPage() {
+  const { vaultId } = useParams();
   return (
     <>
+      <ScrollToTop />
       <Disclaimer />
-      <PoolList />
+      <PoolDetails vaultId={vaultId} />
     </>
   );
 }

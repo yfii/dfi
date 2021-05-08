@@ -46,6 +46,7 @@ export function fetchStake(index, amount) {
             options: {
               variant: 'success',
             },
+            hash: receipt.transactionHash
           }));
           dispatch({ type: STAKE_FETCH_STAKE_SUCCESS, index });
           resolve();

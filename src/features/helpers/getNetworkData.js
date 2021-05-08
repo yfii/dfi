@@ -11,6 +11,8 @@ import {
   bscStakePools,
   bscTokenList,
   bscZaps,
+  fantomPools,
+  fantomStakePools,
   hecoPools,
   hecoStakePools,
   hecoTokenList,
@@ -35,6 +37,8 @@ export const getNetworkPools = () => {
       return avalanchePools;
     case '137':
       return polygonPools;
+    case '250':
+      return fantomPools;
     default:
       return [];
   }
@@ -80,6 +84,8 @@ export const getNetworkStakePools = () => {
       return avalancheStakePools;
     case '137':
       return polygonStakePools;
+    case '250':
+      return fantomStakePools;
     default:
       return [];
   }
@@ -95,6 +101,8 @@ export const getNetworkStables = () => {
       return ['USDT', 'DAI', 'BUSD'];
     case '137':
       return ['USDC', 'USDT', 'maUSDC'];
+    case '250':
+      return ['USDC', 'USDT'];
     default:
       return [];
   }
@@ -110,6 +118,8 @@ export const getNetworkMulticall = () => {
       return '0x6FfF95AC47b586bDDEea244b3c2fe9c4B07b9F76';
     case '137':
       return '0xC3821F0b56FA4F4794d5d760f94B812DE261361B';
+    case '250':
+      return '0xC9F6b1B53E056fd04bE5a197ce4B2423d456B982';
     default:
       return '';
   }
@@ -249,6 +259,28 @@ export const getNetworkConnectors = t => {
                 rpc: {
                   1: 'https://rpc-mainnet.maticvigil.com/',
                   137: 'https://rpc-mainnet.maticvigil.com/',
+                },
+              },
+            },
+          },
+        };
+        case '250':
+        return {
+          network: 'fantom',
+          cacheProvider: true,
+          providerOptions: {
+            injected: {
+              display: {
+                name: 'Injected',
+                description: t('Home-BrowserWallet'),
+              },
+            },
+            walletconnect: {
+              package: WalletConnectProvider,
+              options: {
+                rpc: {
+                  1: 'https://rpcapi.fantom.network',
+                  250: 'https://rpcapi.fantom.network',
                 },
               },
             },

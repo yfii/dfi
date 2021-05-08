@@ -7,7 +7,7 @@ import BigNumber from 'bignumber.js';
 
 import { byDecimals } from 'features/helpers/bignumber';
 import PoolSummary from '../PoolSummary/PoolSummary';
-import PoolDetails from '../PoolDetails/PoolDetails';
+import PoolAccordion from '../PoolDetails/PoolAccordion';
 import styles from './styles';
 import { useSelector } from 'react-redux';
 
@@ -62,7 +62,7 @@ const Pool = ({
           fetchVaultsDataDone={fetchVaultsDataDone}
         />
         <Divider variant="middle" className={classes.divider} />
-        <PoolDetails
+        <PoolAccordion
           pool={pool}
           balanceSingle={balanceSingle}
           sharesBalance={sharesBalance}
