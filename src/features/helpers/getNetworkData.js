@@ -13,6 +13,8 @@ import {
   bscZaps,
   fantomPools,
   fantomStakePools,
+  fantomTokenList,
+  fantomZaps,
   hecoPools,
   hecoStakePools,
   hecoTokenList,
@@ -54,6 +56,8 @@ export const getNetworkTokens = () => {
       return avalancheTokenList.tokens;
     case '137':
       return polygonTokenList.tokens;
+    case '250':
+      return fantomTokenList.tokens;
     default:
       throw new Error(`Create Tokenlist for this chainId first. See src/features/configure/tokenlist/*_tokenlist.json`);
   }
@@ -69,6 +73,8 @@ export const getNetworkZaps = () => {
       return avalancheZaps;
     case '137':
       return polygonZaps;
+    case '250':
+      return fantomZaps;
     default:
       return [];
   }

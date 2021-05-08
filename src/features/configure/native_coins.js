@@ -39,4 +39,12 @@ export const nativeCoins = [
     wrappedSymbol: 'WMATIC',
     allowance: Infinity,
   },
+  {
+    chainId: 250,
+    name: 'Fantom',
+    symbol: 'FTM',
+    decimals: 18,
+    wrappedSymbol: 'WFTM',
+    allowance: Infinity,
+  },
 ];
