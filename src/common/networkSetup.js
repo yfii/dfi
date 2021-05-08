@@ -56,7 +56,7 @@ const networkSettings = {
   }
 }
 
-const txUrls = {
+const networkTxUrls = {
   '56': (hash) => `https://bscscan.com/tx/${hash}`,
   '128': (hash) => `https://hecoinfo.com/tx/${hash}`,
   '43114': (hash) => `https://cchain.explorer.avax.network/tx/${hash}/token-transfers`,
@@ -87,4 +87,4 @@ export const getRpcUrl = () => {
   return settings.rpcUrls[0];
 };
 
-export const getTxUrl = txUrls[process.env.REACT_APP_NETWORK_ID];
+export const getTxUrl = networkTxUrls[process.env.REACT_APP_NETWORK_ID];
