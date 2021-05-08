@@ -61,7 +61,7 @@ const networkTxUrls = {
   '128': (hash) => `https://hecoinfo.com/tx/${hash}`,
   '43114': (hash) => `https://cchain.explorer.avax.network/tx/${hash}/token-transfers`,
   '137': (hash) => `https://explorer-mainnet.maticvigil.com/tx/${hash}/token-transfers`,
-  '250':  (hash) => `https://ftmscan.com/tx/${hash}/token-transfers`,
+  '250': (hash) => `https://ftmscan.com/tx/${hash}`,
 }
 
 export const networkSetup = (chainId) => {
