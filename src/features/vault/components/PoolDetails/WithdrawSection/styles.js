@@ -48,6 +48,11 @@ const styles = theme => ({
   numericInput: {
     color: primaryColor[0],
   },
+  balanceMax: {
+    cursor: 'pointer',
+    color: theme.palette.text.secondary,
+    borderBottom: '1px dashed',
+  },
   zapNote: {
     width: '100%',
     textAlign: 'left',

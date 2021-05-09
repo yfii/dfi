@@ -153,6 +153,10 @@ const DepositSection = ({ pool }) => {
     }));
   };
 
+  const handleMax = (_) => {
+    handleSliderChangeCommitted(_, 100);
+  }
+
   const handleInputAmountChange = event => {
     const input = event.target.value.replace(/[,]+/, '').replace(/[^0-9\.]+/, '');
     let amount = new BigNumber(input);
@@ -283,7 +287,11 @@ const DepositSection = ({ pool }) => {
   return (
     <Grid item xs={12} md={shouldHideFromHarvest(pool.id) ? 6 : 5} className={classes.sliderDetailContainer}>
       <div className={classes.showDetailLeft}>
-        {t('Vault-Balance')}: {tokenBalance(depositSettings.token.symbol).decimalPlaces(8, BigNumber.ROUND_DOWN).toFormat()} {depositSettings.token.symbol}
+        {t('Vault-Balance')}:{' '}
+        <a onClick={handleMax} className={classes.balanceMax}>
+          {tokenBalance(depositSettings.token.symbol).decimalPlaces(8, BigNumber.ROUND_DOWN).toFormat()}{' '}
+          {depositSettings.token.symbol}
+        </a>
       </div>
       <FormControl fullWidth variant="outlined" className={classes.numericInput}>
         <CustomOutlinedInput

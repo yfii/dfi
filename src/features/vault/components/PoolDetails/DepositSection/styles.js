@@ -84,6 +84,11 @@ const styles = theme => ({
     fontSize: '12px',
     color: theme.palette.text.secondary,
   },
+  balanceMax: {
+    cursor: 'pointer',
+    color: theme.palette.text.secondary,
+    borderBottom: '1px dashed',
+  },
   zapNote: {
     width: '100%',
     textAlign: 'left',
