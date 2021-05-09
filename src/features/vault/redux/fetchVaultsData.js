@@ -59,7 +59,7 @@ export function fetchVaultsData({ address, web3, pools }) {
             ...pool,
             allowance: new BigNumber(allowance).toNumber() || 0,
             pricePerFullShare: new BigNumber(pricePerFullShare).toNumber() || 1,
-            tvl: byDecimals(data[1][i].tvl, 18).toNumber(),
+            tvl: byDecimals(data[1][i].tvl, pool.tokenDecimals).toNumber(),
             oraclePrice: fetchPrice({ id: pool.oracleId }) || 0,
           };
         });
