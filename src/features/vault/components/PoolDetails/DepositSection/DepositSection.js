@@ -224,7 +224,10 @@ const DepositSection = ({ pool }) => {
         web3
       }
       fetchZapDeposit(zapDepositArgs)
-        .then(() => enqueueSnackbar(t('Vault-DepositSuccess'), { variant: 'success' }))
+        .then(() => {
+          enqueueSnackbar(t('Vault-DepositSuccess'), { variant: 'success' });
+          fetchBalances({ address, web3, tokens });
+        })
         .catch(error => enqueueSnackbar(t('Vault-DepositError', { error }), { variant: 'error' }));
     } else { // Vault deposit
       const depositArgs = {
@@ -236,11 +239,17 @@ const DepositSection = ({ pool }) => {
       }
       if (pool.tokenAddress) {
         fetchDeposit(depositArgs)
-          .then(() => enqueueSnackbar(t('Vault-DepositSuccess'), { variant: 'success' }))
+          .then(() => {
+            enqueueSnackbar(t('Vault-DepositSuccess'), { variant: 'success' });
+            fetchBalances({ address, web3, tokens });
+          })
           .catch(error => enqueueSnackbar(t('Vault-DepositError', { error }), { variant: 'error' }));
       } else {
         fetchDepositBnb(depositArgs)
-          .then(() => enqueueSnackbar(t('Vault-DepositSuccess'), { variant: 'success' }))
+          .then(() => {
+            enqueueSnackbar(t('Vault-DepositSuccess'), { variant: 'success' });
+            fetchBalances({ address, web3, tokens });
+          })
           .catch(error => enqueueSnackbar(t('Vault-DepositError', { error }), { variant: 'error' }));
       }
     }
