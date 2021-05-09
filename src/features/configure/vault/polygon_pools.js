@@ -30,6 +30,31 @@ const sushiPools = [
 
 export const polygonPools = [
   {
+    id: 'aave-eth',
+    logo: 'single-assets/ETH.png',
+    name: 'ETH',
+    token: 'ETH',
+    tokenDescription: 'Aave',
+    tokenAddress: '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooAaveETH',
+    earnedTokenAddress: '0x77276a7c9Ff3a6cbD334524d6F1f6219D039ac0E',
+    earnContractAddress: '0x77276a7c9Ff3a6cbD334524d6F1f6219D039ac0E',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'tokens',
+    oracleId: 'ETH',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Aave',
+    assets: ['ETH'],
+    callFee: 0.5,
+    buyTokenUrl:
+      'https://quickswap.exchange/#/swap?outputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
+  },
+  {
     id: 'quick-usdc-usdt',
     logo: 'polygon/USDC-USDT.png',
     name: 'USDC-USDT LP',

@@ -9,7 +9,6 @@ const networkSettings = {
     },
     rpcUrls: ['https://bsc-dataseed.binance.org'],
     blockExplorerUrls: ['https://bscscan.com/'],
-    txUrl: (hash) => `https://bscscan.com/tx/${hash}`,
   },
   '128': {
     chainId: `0x${parseInt(128, 10).toString(16)}`,
@@ -21,7 +20,6 @@ const networkSettings = {
     },
     rpcUrls: ['https://http-mainnet.hecochain.com'],
     blockExplorerUrls: ['https://hecoinfo.com/'],
-    txUrl: (hash) => `https://hecoinfo.com/tx/${hash}`,
   },
   '43114': {
     chainId: `0x${parseInt(43114, 10).toString(16)}`,
@@ -33,7 +31,6 @@ const networkSettings = {
     },
     rpcUrls: ['https://api.avax.network/ext/bc/C/rpc'],
     blockExplorerUrls: ['https://cchain.explorer.avax.network/'],
-    txUrl: (hash) => `https://cchain.explorer.avax.network/tx/${hash}/token-transfers`,
   },
   '137': {
     chainId: `0x${parseInt(137, 10).toString(16)}`,
@@ -45,7 +42,6 @@ const networkSettings = {
     },
     rpcUrls: ['https://rpc-mainnet.maticvigil.com/'],
     blockExplorerUrls: ['https://explorer.matic.network/'],
-    txUrl: (hash) => `https://explorer-mainnet.maticvigil.com/tx/${hash}/token-transfers`,
   },
   '250': {
     chainId: `0x${parseInt(250, 10).toString(16)}`,
@@ -57,8 +53,15 @@ const networkSettings = {
     },
     rpcUrls: ['https://rpcapi.fantom.network'],
     blockExplorerUrls: ['https://ftmscan.com/'],
-    txUrl: (hash) => `https://ftmscan.com/tx/${hash}/token-transfers`,
   }
+}
+
+const networkTxUrls = {
+  '56': (hash) => `https://bscscan.com/tx/${hash}`,
+  '128': (hash) => `https://hecoinfo.com/tx/${hash}`,
+  '43114': (hash) => `https://cchain.explorer.avax.network/tx/${hash}/token-transfers`,
+  '137': (hash) => `https://explorer-mainnet.maticvigil.com/tx/${hash}/token-transfers`,
+  '250': (hash) => `https://ftmscan.com/tx/${hash}`,
 }
 
 export const networkSetup = (chainId) => {
@@ -84,4 +87,4 @@ export const getRpcUrl = () => {
   return settings.rpcUrls[0];
 };
 
-export const getTxUrl = networkSettings[process.env.REACT_APP_NETWORK_ID].txUrl;
+export const getTxUrl = networkTxUrls[process.env.REACT_APP_NETWORK_ID];

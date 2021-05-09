@@ -43,7 +43,7 @@ export function fetchVaultsData({ web3, pools }) {
           const pricePerFullShare = byDecimals(data[0][i].pricePerFullShare, 18).toNumber();
           return {
             pricePerFullShare: new BigNumber(pricePerFullShare).toNumber() || 1,
-            tvl: byDecimals(data[0][i].tvl, 18).toNumber(),
+            tvl: byDecimals(data[0][i].tvl, pool.tokenDecimals).toNumber(),
             oraclePrice: fetchPrice({ id: pool.oracleId }) || 0,
           };
         });
