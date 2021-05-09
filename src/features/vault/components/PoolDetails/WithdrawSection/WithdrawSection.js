@@ -82,7 +82,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
   useDeepCompareEffect(() => {
     if (fetchWithdrawPending[index]) return;
     if (fetchZapEstimatePending[pool.tokenAddress]) return;
-    if (pool.zap && withdrawSettings.isSwap) {
+    if (pool.zap) {
       fetchPairReverves({ web3, pairToken: tokens[pool.token] })
     }
   }, [pool, (new Date()).getMinutes()])
@@ -141,13 +141,12 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
       amount = total;
       sliderInt = 100;
     }
-    amount = amount.decimalPlaces(8);
 
     setWithdrawSettings(prevState => ({
       ...prevState,
       amount: amount,
       slider: sliderInt,
-      input: amount.toFormat(),
+      input: amount.decimalPlaces(8, BigNumber.ROUND_DOWN).toFormat(),
     }));
   };
 
@@ -191,28 +190,30 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
       .catch(error => enqueueSnackbar(t('Vault-ApprovalError', { error }), { variant: 'error' }));
   };
 
-  const onWithdraw = isAll => {
-    let sharesAmount;
-    const sharesDecimals = 18;
+  const sharesDecimals = 18;
+  const sharesByDecimals = sharesBalance.dividedBy(`1e${sharesDecimals}`);
 
-    if (withdrawSettings.slider >= 99) {
-      isAll = true;
+  const handleWithdraw = () => {
+    const sharesAmount = withdrawSettings.amount.dividedBy(pool.pricePerFullShare);
+    if (withdrawSettings.slider >= 99 || sharesAmount.isGreaterThan(sharesByDecimals)) {
+      return handleWithdrawAll();
     }
+    withdraw(convertAmountToRawNumber(sharesAmount, sharesDecimals));
+  }
 
-    if (isAll) {
-      sharesAmount = sharesBalance.dividedBy('1e18');
-      const amount = sharesAmount.multipliedBy(pool.pricePerFullShare).decimalPlaces(8);
-      setWithdrawSettings(prevState => ({
-        ...prevState,
-        amount: amount,
-        input: amount.toFormat(),
-        slider: 100,
-      }));
-    } else {
-      sharesAmount = withdrawSettings.amount
-        .dividedBy(pool.pricePerFullShare);
-    }
+  const handleWithdrawAll = () => {
+    const isAll = true;
+    const amount = sharesByDecimals.multipliedBy(pool.pricePerFullShare);
+    setWithdrawSettings(prevState => ({
+      ...prevState,
+      amount: amount,
+      input: amount.decimalPlaces(8).toFormat(),
+      slider: 100,
+    }));
+    withdraw(sharesBalance.toString(), isAll);
+  }
 
+  const withdraw = (sharesAmount, isAll = false) => {
     if (withdrawSettings.isZap) {
       if (withdrawSettings.isSwap) {
         const swapAmountOut = pool.swapEstimate.amountOut;
@@ -221,7 +222,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
           address,
           web3,
           vaultAddress: pool.earnContractAddress,
-          amount: convertAmountToRawNumber(sharesAmount, sharesDecimals),
+          amount: sharesAmount,
           zapAddress: pool.zap.zapAddress,
           tokenOut: withdrawSettings.swapOutput.address,
           amountOutMin: swapAmountOutMin.toFixed(0),
@@ -237,7 +238,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
           address,
           web3,
           vaultAddress: pool.earnContractAddress,
-          amount: convertAmountToRawNumber(sharesAmount, sharesDecimals),
+          amount: sharesAmount,
           zapAddress: pool.zap.zapAddress,
         }
         fetchZapWithdrawAndRemoveLiqudity(zapWithdrawArgs)
@@ -252,7 +253,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
         address,
         web3,
         isAll,
-        amount: convertAmountToRawNumber(sharesAmount, sharesDecimals),
+        amount: sharesAmount,
         contractAddress: pool.earnContractAddress,
         index,
       }
@@ -335,7 +336,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
                   type="button"
                   color="primary"
                   disabled={withdrawSettings.amount.isZero() || fetchZapEstimatePending[pool.tokenAddress]}
-                  onClick={() => onWithdraw(false)}
+                  onClick={handleWithdraw}
                 >
                   {fetchWithdrawPending[index]
                     ? `${t('Vault-Withdrawing')}`
@@ -346,7 +347,8 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
                     className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
                     type="button"
                     color="primary"
-                    onClick={() => onWithdraw(true)}
+                    disabled={sharesBalance.isZero()}
+                    onClick={handleWithdrawAll}
                   >
                     {fetchWithdrawPending[index]
                       ? `${t('Vault-Withdrawing')}`
