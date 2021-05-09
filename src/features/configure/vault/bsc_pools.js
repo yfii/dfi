@@ -97,6 +97,33 @@ export const bscPools = [
   },
 
   {
+    id: 'banana-watch-bnb',
+    logo: 'bnb-pairs/WATCH-BNB-APE.svg',
+    name: 'WATCH-BNB LP',
+    token: 'WATCH-BNB ALP',
+    tokenDescription: 'ApeSwap',
+    tokenAddress: '0xa00A91fBB39051e2a6368424A93895c3f1F2290b',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooApeWATCH-BNB',
+    earnedTokenAddress: '0xc795E63738d6207dFE4450D280013aCFdb1Cc526',
+    earnContractAddress: '0xc795E63738d6207dFE4450D280013aCFdb1Cc526',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'banana-watch-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['WATCH', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://dex.apeswap.finance/#/add/ETH/0x7A9f28EB62C791422Aa23CeAE1dA9C847cBeC9b0',
+    buyTokenUrl:
+      'https://dex.apeswap.finance/#/swap?outputCurrency=0x7A9f28EB62C791422Aa23CeAE1dA9C847cBeC9b0',
+  },
+  {
     id: 'jetfuel-fts-bnb',
     logo: 'bnb-pairs/FTS-BNB.svg',
     name: 'FTS-BNB LP',
