@@ -1,4 +1,4 @@
-const sushiPools = [
+export const polygonPools = [
   {
     id: 'sushi-aave-eth',
     logo: 'polygon/AAVE-ETH.png',
@@ -161,10 +161,6 @@ const sushiPools = [
     buyTokenUrl:
       'https://app.sushi.com/#/swap?inputCurrency=0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270&outputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
   },
-]
-
-export const polygonPools = [
-  ...sushiPools,
   {
     id: 'aave-eth',
     logo: 'single-assets/ETH.png',
