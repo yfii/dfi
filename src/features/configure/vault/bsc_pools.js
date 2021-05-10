@@ -97,6 +97,33 @@ export const bscPools = [
   },
 
   {
+    id: 'cakev2-mcoin-ust',
+    logo: 'ust-pairs/MCOIN-UST.svg',
+    name: 'mCOIN-UST LP',
+    token: 'mCOIN-UST LP2',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0xBCf01a42f6BC42F3Cfe81B05519565044d65D22a',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooCakeV2MCOIN-UST',
+    earnedTokenAddress: '0xF803F277D5aAe38ac5CBfe8BA7B2e265983cc2a6',
+    earnContractAddress: '0xF803F277D5aAe38ac5CBfe8BA7B2e265983cc2a6',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cakev2-mcoin-ust',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['mCOIN', 'UST'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0x49022089e78a8D46Ec87A3AF86a1Db6c189aFA6f/0x23396cF899Ca06c4472205fC903bDB4de249D6fC',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x49022089e78a8D46Ec87A3AF86a1Db6c189aFA6f',
+  },
+  {
     id: 'banana-watch-bnb',
     logo: 'bnb-pairs/WATCH-BNB-APE.svg',
     name: 'WATCH-BNB LP',
@@ -115,7 +142,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Pancake',
+    platform: 'ApeSwap',
     assets: ['WATCH', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -5292,7 +5319,7 @@ export const bscPools = [
     oracleId: 'biti-biti-bnb',
     oraclePrice: 0,
     depositsPaused: false,
-    status: 'active',
+    status: 'eol',
     assets: ['BITI', 'BNB'],
     callFee: 0.25,
     buyTokenUrl:
@@ -5526,7 +5553,7 @@ export const bscPools = [
     oracleId: 'bingo-bgo-busd',
     oraclePrice: 0,
     depositsPaused: false,
-    status: 'active',
+    status: 'eol',
     assets: ['BGO', 'BUSD'],
     callFee: 0.5,
     buyTokenUrl:
@@ -5550,7 +5577,7 @@ export const bscPools = [
     oracleId: 'bingo-sbgo-busd',
     oraclePrice: 0,
     depositsPaused: false,
-    status: 'active',
+    status: 'eol',
     assets: ['sBGO', 'BUSD'],
     callFee: 0.5,
     buyTokenUrl:
@@ -5759,7 +5786,7 @@ export const bscPools = [
     oracleId: 'swirl-swirl-bnb',
     oraclePrice: 0,
     depositsPaused: false,
-    status: 'active',
+    status: 'eol',
     assets: ['SWIRL', 'BNB'],
     callFee: 0.5,
     buyTokenUrl:
@@ -6616,7 +6643,7 @@ export const bscPools = [
     oracleId: 'memefarm-ape-bnb',
     oraclePrice: 0,
     depositsPaused: false,
-    status: 'active',
+    status: 'eol',
     assets: ['APE', 'BNB'],
     callFee: 0.5,
     buyTokenUrl:
@@ -6640,7 +6667,7 @@ export const bscPools = [
     oracleId: 'memefarm-mfrm-bnb',
     oraclePrice: 0,
     depositsPaused: false,
-    status: 'active',
+    status: 'eol',
     assets: ['MFRM', 'BNB'],
     callFee: 0.5,
     buyTokenUrl:
@@ -6665,7 +6692,7 @@ export const bscPools = [
     oracleId: 'slime-slime-busd',
     oraclePrice: 0,
     depositsPaused: false,
-    status: 'active',
+    status: 'eol',
     assets: ['SLME', 'BUSD'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -6691,7 +6718,7 @@ export const bscPools = [
     oracleId: 'slime-slime-bnb',
     oraclePrice: 0,
     depositsPaused: false,
-    status: 'active',
+    status: 'eol',
     assets: ['SLME', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -7790,7 +7817,7 @@ export const bscPools = [
     oracleId: 'crow-crow-busd',
     oraclePrice: 0,
     depositsPaused: false,
-    status: 'active',
+    status: 'eol',
     assets: ['CROW', 'BUSD'],
     callFee: 0.5,
     buyTokenUrl:
@@ -7815,7 +7842,7 @@ export const bscPools = [
     oracleId: 'crow-crow-bnb',
     oraclePrice: 0,
     depositsPaused: false,
-    status: 'active',
+    status: 'eol',
     assets: ['CROW', 'BNB'],
     callFee: 0.5,
     buyTokenUrl:
@@ -7947,8 +7974,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cafe-bifi-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     assets: ['BIFI', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -8086,7 +8113,7 @@ export const bscPools = [
     addLiquidityUrl:
       'https://swap.kebabfinance.com/#/add/0x55d398326f99059ff775485246999027b3197955/0xe9e7cea3dedca5984780bafc599bd69add087d56',
     buyTokenUrl:
-      'https://dex.cafeswap.finance/#/swap?inputCurrency=0x55d398326f99059ff775485246999027b3197955&outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56',
+      'https://swap.kebabfinance.com/#/swap?inputCurrency=0x55d398326f99059ff775485246999027b3197955&outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56',
   },
 
   {
@@ -8114,7 +8141,7 @@ export const bscPools = [
     addLiquidityUrl:
       'https://swap.kebabfinance.com/#/add/0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c/0x2170ed0880ac9a755fd29b2688956bd959f933f8',
     buyTokenUrl:
-      'https://dex.cafeswap.finance/#/swap?inputCurrency=0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c&outputCurrency=0x2170ed0880ac9a755fd29b2688956bd959f933f8',
+      'https://swap.kebabfinance.com/#/swap?inputCurrency=0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c&outputCurrency=0x2170ed0880ac9a755fd29b2688956bd959f933f8',
   },
 
   {
