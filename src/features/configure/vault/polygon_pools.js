@@ -164,6 +164,7 @@ const sushiPools = [
 ]
 
 export const polygonPools = [
+  ...sushiPools,
   {
     id: 'aave-eth',
     logo: 'single-assets/ETH.png',
@@ -674,6 +675,5 @@ export const polygonPools = [
       'https://swap.cometh.io/#/add/0x2791bca1f2de4661ed88a30c99a7a9449aa84174/0x9c78ee466d6cb57a4d01fd887d2b5dfb2d46288f',
     buyTokenUrl:
       'https://swap.cometh.io/#/swap?inputCurrency=0x2791bca1f2de4661ed88a30c99a7a9449aa84174&outputCurrency=0x9c78ee466d6cb57a4d01fd887d2b5dfb2d46288f',
-  },
-  ...sushiPools
+  }
 ];
