@@ -1,5 +1,56 @@
 export const fantomPools = [
   {
+    id: 'froyo-3pool',
+    logo: 'fantom/FROYO-3Pool.png',
+    name: 'USDT/DAI/USDC',
+    token: 'FROYO 3Pool',
+    tokenDescription: 'Froyo',
+    tokenAddress: '0x4f85Bbf3B0265DCEd4Ec72ebD0358ccCf190F1B3',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooFroyo3Pool',
+    earnedTokenAddress: '0xb18398ad9735fea37C97dcba50C0Bb947Dc0eeBD',
+    earnContractAddress: '0xb18398ad9735fea37C97dcba50C0Bb947Dc0eeBD',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'froyo-3pool',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Froyo',
+    assets: ['USDT', 'DAI', 'USDC'],
+    callFee: 0.5,
+    addLiquidityUrl: 'https://frozenyogurt.finance/pool',
+  },
+  {
+    id: 'froyo-froyo-ftm',
+    logo: 'fantom/FROYO.png',
+    name: 'FROYO-FTM LP',
+    token: 'FROYO-FTM LP',
+    tokenDescription: 'SushiSwap',
+    tokenAddress: '0xBE0AF661BC9794E05fAb18C08C2C99811A0F45D2',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooFroyoFROYO-FTM',
+    earnedTokenAddress: '0xeD4ea30c755676C07d3e0e0f74Ff84C0193B4551',
+    earnContractAddress: '0xeD4ea30c755676C07d3e0e0f74Ff84C0193B4551',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'froyo-froyo-ftm',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Froyo',
+    assets: ['FROYO', 'FTM'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://app.sushi.com/add/ETH/0xA92d41Ab8eFeE617d80a829CD9F5683c5F793ADA',
+    buyTokenUrl:
+      'https://app.sushi.com/swap?outputCurrency=0xA92d41Ab8eFeE617d80a829CD9F5683c5F793ADA',
+  },
+  {
     id: 'boo-link-ftm',
     logo: 'fantom/LINK-FTM.png',
     name: 'LINK-FTM LP',
@@ -215,7 +266,7 @@ export const fantomPools = [
     buyTokenUrl:
       'https://spookyswap.finance/swap',
   },
-{
+  {
     id: 'boo-aave-ftm',
     logo: 'fantom/AAVE-FTM.png',
     name: 'AAVE-FTM LP',
@@ -242,7 +293,7 @@ export const fantomPools = [
     buyTokenUrl:
       'https://spookyswap.finance/swap',
   },
-{
+  {
     id: 'boo-crv-ftm',
     logo: 'fantom/CRV-FTM.png',
     name: 'CRV-FTM LP',
@@ -269,7 +320,7 @@ export const fantomPools = [
     buyTokenUrl:
       'https://spookyswap.finance/swap',
   },
-{
+  {
     id: 'boo-boo-ftm',
     logo: 'fantom/BOO-FTM.png',
     name: 'BOO-FTM LP',
@@ -296,7 +347,7 @@ export const fantomPools = [
     buyTokenUrl:
       'https://spookyswap.finance/swap',
   },
-{
+  {
     id: 'boo-ftm-usdc',
     logo: 'fantom/USDC-FTM.png',
     name: 'FTM-USDC LP',
@@ -322,5 +373,5 @@ export const fantomPools = [
       'https://spookyswap.finance/add',
     buyTokenUrl:
       'https://spookyswap.finance/swap',
-  }
+  },
 ];
