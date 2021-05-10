@@ -97,6 +97,33 @@ export const bscPools = [
   },
 
   {
+    id: 'cakev2-mcoin-ust',
+    logo: 'ust-pairs/MCOIN-UST.svg',
+    name: 'mCOIN-UST LP',
+    token: 'mCOIN-UST LP2',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0xBCf01a42f6BC42F3Cfe81B05519565044d65D22a',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooCakeV2MCOIN-UST',
+    earnedTokenAddress: '0xF803F277D5aAe38ac5CBfe8BA7B2e265983cc2a6',
+    earnContractAddress: '0xF803F277D5aAe38ac5CBfe8BA7B2e265983cc2a6',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cakev2-mcoin-ust',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['mCOIN', 'UST'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0x49022089e78a8D46Ec87A3AF86a1Db6c189aFA6f/0x23396cF899Ca06c4472205fC903bDB4de249D6fC',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x49022089e78a8D46Ec87A3AF86a1Db6c189aFA6f',
+  },
+  {
     id: 'banana-watch-bnb',
     logo: 'bnb-pairs/WATCH-BNB-APE.svg',
     name: 'WATCH-BNB LP',
@@ -115,7 +142,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Pancake',
+    platform: 'ApeSwap',
     assets: ['WATCH', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -7947,8 +7974,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cafe-bifi-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     assets: ['BIFI', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
