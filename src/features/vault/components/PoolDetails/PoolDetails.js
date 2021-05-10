@@ -52,14 +52,14 @@ const PoolDetails = ({ vaultId }) => {
     return (
       <div className={classes.container}>
         <HomeLink />
-        <h1>Loading Vault...</h1>
+        <h1>{t('Vault-Loading')}</h1>
       </div>
     );
   } else if (!pool) {
     return (
       <div className={classes.container}>
         <HomeLink />
-        <h1>Vault {vaultId} not found</h1>
+        <h1>{t('Vault-NotFound', { vaultId })}</h1>
       </div>
     );
   }
@@ -90,7 +90,7 @@ const PoolDetails = ({ vaultId }) => {
     <>
       <HomeLink />
       <div className={classes.container}>
-        <h1 className={classes.heading}>Vault Details</h1>
+        <h1 className={classes.heading}>{t('Vault-Details')}</h1>
         {vaultState}
         <Grid className={classes.summary} container justify="space-around" xs={12} spacing={0}>
           <PoolTitle
