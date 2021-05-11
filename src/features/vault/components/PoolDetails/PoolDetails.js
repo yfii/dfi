@@ -121,7 +121,6 @@ const PoolDetails = ({ vaultId }) => {
     deposited > 0 && fetchVaultsDataDone ? formatTvl(deposited, pool.oraclePrice) : '';
   const mobilePadding = balanceSingle > 0 || deposited > 0 ? '24px' : '10px';
 
-  const classes = useStyles(pool);
   if (!fetchVaultsDataDone) {
     return (
       <div className={classes.container}>
