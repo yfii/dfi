@@ -95,6 +95,9 @@ export function initializePriceCache() {
     oracleToIds.get(pool.oracle).push(pool.oracleId);
   });
 
+  // BIFI should always be fetched
+  oracleToIds.get('tokens').push('BIFI');
+
   stakePools.forEach(pool => {
     if (!oracleToIds.has(pool.earnedOracle)) {
       oracleToIds.set(pool.earnedOracle, []);
@@ -117,6 +120,8 @@ export const fetchPrice = ({ id }) => {
     console.error('Undefined pair');
     return 0;
   }
+
+  console.log('fetching price', id, getCachedPrice(id));
 
   maybeUpdateCache();
 
