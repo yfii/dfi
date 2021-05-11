@@ -5,9 +5,13 @@ import {
   bscPools,
   hecoPools,
   avalanchePools,
+  polygonPools,
+  fantomPools,
   bscStakePools,
   hecoStakePools,
   avalancheStakePools,
+  polygonStakePools,
+  fantomStakePools,
 } from '../configure';
 
 export const getNetworkPools = () => {
@@ -18,6 +22,10 @@ export const getNetworkPools = () => {
       return hecoPools;
     case '43114':
       return avalanchePools;
+    case '137':
+      return polygonPools;
+    case '250':
+      return fantomPools;
     default:
       return [];
   }
@@ -31,6 +39,10 @@ export const getNetworkStakePools = () => {
       return hecoStakePools;
     case '43114':
       return avalancheStakePools;
+    case '137':
+      return polygonStakePools;
+    case '250':
+      return fantomStakePools;
     default:
       return [];
   }
@@ -39,11 +51,15 @@ export const getNetworkStakePools = () => {
 export const getNetworkStables = () => {
   switch (process.env.REACT_APP_NETWORK_ID) {
     case '56':
-      return ['BUSD', 'USDT', 'USDC', 'DAI', 'VAI', 'QUSD', 'UST', 'VENUS BLP', '3EPS', 'fUSDT'];
+      return ['BUSD', 'USDT', 'USDC', 'DAI', 'VAI', 'QUSD', 'UST', 'VENUS BLP', '3EPS', 'fUSDT', '4BELT'];
     case '128':
       return ['USDT', 'HUSD'];
     case '43114':
       return ['USDT', 'DAI', 'BUSD'];
+    case '137':
+      return ['USDC', 'USDT', 'maUSDC'];
+    case '250':
+      return ['USDC', 'USDT', 'DAI'];
     default:
       return [];
   }
@@ -57,6 +73,10 @@ export const getNetworkMulticall = () => {
       return '0x2776CF9B6E2Fa7B33A37139C3CB1ee362Ff0356e';
     case '43114':
       return '0x6FfF95AC47b586bDDEea244b3c2fe9c4B07b9F76';
+    case '137':
+      return '0xC3821F0b56FA4F4794d5d760f94B812DE261361B';
+    case '250':
+      return '0xC9F6b1B53E056fd04bE5a197ce4B2423d456B982';
     default:
       return '';
   }
@@ -179,6 +199,50 @@ export const getNetworkConnectors = t => {
           },
         },
       };
+      case '137':
+        return {
+          network: 'polygon',
+          cacheProvider: true,
+          providerOptions: {
+            injected: {
+              display: {
+                name: 'Injected',
+                description: t('Home-BrowserWallet'),
+              },
+            },
+            walletconnect: {
+              package: WalletConnectProvider,
+              options: {
+                rpc: {
+                  1: 'https://rpc-mainnet.maticvigil.com/',
+                  137: 'https://rpc-mainnet.maticvigil.com/',
+                },
+              },
+            },
+          },
+        };
+        case '250':
+        return {
+          network: 'fantom',
+          cacheProvider: true,
+          providerOptions: {
+            injected: {
+              display: {
+                name: 'Injected',
+                description: t('Home-BrowserWallet'),
+              },
+            },
+            walletconnect: {
+              package: WalletConnectProvider,
+              options: {
+                rpc: {
+                  1: 'https://rpcapi.fantom.network',
+                  250: 'https://rpcapi.fantom.network',
+                },
+              },
+            },
+          },
+        };
     default:
       return {};
   }

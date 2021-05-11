@@ -78,6 +78,7 @@ const PoolDetails = ({ vaultId }) => {
       state = t('Vault-Experimental') ;
     }
 
+
     return state === null ? '' : <Paper variant="outlined" elevation={5} className={classes.status}>{state}</Paper>;
   }, [pool, launchpool]);
 
@@ -135,7 +136,7 @@ const PoolDetails = ({ vaultId }) => {
     <>
       <HomeLink />
       <div className={classes.container}>
-        <h1 className={classes.heading}>Vault Details</h1>
+        <h1 className={classes.heading}>{t('Vault-Details')}</h1>
         {vaultStateTitle}
         <Grid className={classes.summary} container justify="space-around" xs={12} spacing={0}>
           <PoolTitle
