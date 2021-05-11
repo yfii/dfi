@@ -13,19 +13,18 @@ import { getRpcUrl } from '../../../common/networkSetup';
 
 export function fetchPoolData(index) {
   return (dispatch, getState) => {
-    if(Array.isArray(index)) {
-      index.forEach((id) => {
-        dispatch(fetchByIndex(id))
+    if (Array.isArray(index)) {
+      index.forEach(id => {
+        dispatch(fetchByIndex(id));
       });
     } else {
-      dispatch(fetchByIndex(index))
+      dispatch(fetchByIndex(index));
     }
-  }
+  };
 }
 
 export function fetchByIndex(index) {
   return async (dispatch, getState) => {
-
     return new Promise(async (resolve, reject) => {
       const { home, stake } = getState();
       let { web3 } = home;
@@ -58,7 +57,7 @@ export function fetchByIndex(index) {
         const tokenPrice = fetchPrice({ id: pool.earnedOracleId });
         const rewardPool = new web3.eth.Contract(pool.earnContractAbi, pool.earnContractAddress);
         const rewardRate = new BigNumber(await rewardPool.methods.rewardRate().call());
-        const yearlyRewards = rewardRate.times(3).times(28800).times(365);
+        const yearlyRewards = rewardRate.times(3600).times(24).times(365);
 
         return yearlyRewards
           .times(tokenPrice)
@@ -94,7 +93,7 @@ export function fetchByIndex(index) {
         index,
       });
 
-      resolve()
+      resolve();
     }).catch(() => {
       dispatch({ type: STAKE_FETCH_POOL_DATA_FAILURE });
     });
@@ -132,7 +131,7 @@ export function reducer(state, action) {
 
     case STAKE_FETCH_POOL_DATA_SUCCESS:
       // The request is success
-      pools[action.index] = {...pools[action.index], ...action.data}
+      pools[action.index] = { ...pools[action.index], ...action.data };
       poolData[action.index] = action.data;
       fetchPoolDataPending[action.index] = false;
       return {
