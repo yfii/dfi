@@ -96,7 +96,8 @@ export function initializePriceCache() {
   });
 
   // BIFI should always be fetched
-  oracleToIds.get('tokens').push('BIFI');
+  // FIXME: restore when FTM pair is up
+  // oracleToIds.get('tokens').push('BIFI');
 
   stakePools.forEach(pool => {
     if (!oracleToIds.has(pool.earnedOracle)) {
