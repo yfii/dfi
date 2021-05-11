@@ -27,18 +27,19 @@ const formatDecimals = number => {
 };
 
 const PoolDetails = ({ vaultId }) => {
+  const classes = useStyles();
   const { t } = useTranslation();
   const { web3, address } = useConnectWallet();
   const { pools, fetchVaultsData, fetchVaultsDataDone } = useFetchVaultsData();
   const { tokens, fetchBalances, fetchBalancesDone } = useFetchBalances();
   const { apys, fetchApys, fetchApysDone } = useFetchApys();
   const pool = pools.find(p => p.id === vaultId);
-  const stake = useSelector((state) => state.stake.pools);
+  const stake = useSelector(state => state.stake.pools);
 
   const launchpool = useMemo(() => {
     const timestamp = Math.floor(Date.now() / 1000);
     for (let index in stake) {
-      if(stake[index].token === pool.earnedToken && stake[index].periodFinish >= timestamp) {
+      if (stake[index].token === pool.earnedToken && stake[index].periodFinish >= timestamp) {
         stake[index].poolIndex = Number(index) + 1;
         return stake[index];
       }
@@ -71,15 +72,20 @@ const PoolDetails = ({ vaultId }) => {
         : null;
 
     if (launchpool) {
-      state = t('Stake-BoostedBy', { name: launchpool.name }) ;
+      state = t('Stake-BoostedBy', { name: launchpool.name });
     }
 
     if (pool.experimental) {
-      state = t('Vault-Experimental') ;
+      state = t('Vault-Experimental');
     }
 
-
-    return state === null ? '' : <Paper variant="outlined" elevation={5} className={classes.status}>{state}</Paper>;
+    return state === null ? (
+      ''
+    ) : (
+      <Paper variant="outlined" elevation={5} className={classes.status}>
+        {state}
+      </Paper>
+    );
   }, [pool, launchpool]);
 
   /*
