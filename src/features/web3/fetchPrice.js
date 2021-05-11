@@ -121,8 +121,6 @@ export const fetchPrice = ({ id }) => {
     return 0;
   }
 
-  console.log('fetching price', id, getCachedPrice(id));
-
   maybeUpdateCache();
 
   return getCachedPrice(id) || 0;
