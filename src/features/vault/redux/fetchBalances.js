@@ -7,7 +7,6 @@ import {
 } from './constants';
 import { MultiCall } from 'eth-multicall';
 import { erc20ABI, multicallBnbShimABI, uniswapV2PairABI } from 'features/configure';
-import BigNumber from 'bignumber.js';
 import { byDecimals } from 'features/helpers/bignumber';
 import { getNetworkMulticall } from 'features/helpers/getNetworkData';
 
@@ -59,7 +58,7 @@ export function fetchBalances({ address, web3, tokens }) {
           balanceResults.forEach(balanceResult => {
             newTokens[balanceResult.symbol] = {
               ...tokens[balanceResult.symbol],
-              tokenBalance: new BigNumber(balanceResult.balance).toNumber() || 0,
+              tokenBalance: balanceResult.balance,
             }
           })
 
@@ -98,8 +97,6 @@ export function fetchPairReverves({ web3, pairToken }) {
     dispatch({
       type: VAULT_FETCH_BALANCES_BEGIN,
     });
-
-    console.log('fetchPairReverves');
 
     const promise = new Promise((resolve, reject) => {
       const multicall = new MultiCall(web3, getNetworkMulticall());

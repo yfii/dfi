@@ -15,7 +15,7 @@ import CustomOutlinedInput from 'components/CustomOutlinedInput/CustomOutlinedIn
 import CustomSlider from 'components/CustomSlider/CustomSlider';
 import RefundButtons from '../RefundButtons/RefundButtons';
 import { byDecimals, convertAmountToRawNumber, convertAmountFromRawNumber } from 'features/helpers/bignumber';
-import { inputLimitPass, inputFinalVal, shouldHideFromHarvest } from 'features/helpers/utils';
+import { shouldHideFromHarvest } from 'features/helpers/utils';
 import { useFetchWithdraw, useFetchBalances, useFetchApproval, useFetchZapEstimate } from 'features/vault/redux/hooks';
 import { useConnectWallet } from 'features/home/redux/hooks';
 import { getNetworkCoin } from 'features/helpers/getNetworkData';
@@ -39,6 +39,12 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
   } = useFetchWithdraw();
   const { fetchZapWithdrawEstimate, fetchZapEstimatePending } = useFetchZapEstimate();
   const { tokens, fetchBalances, fetchPairReverves } = useFetchBalances();
+
+  const sharesDecimals = 18;
+  const sharesByDecimals = byDecimals(sharesBalance, sharesDecimals);
+  const underliyngBalance = sharesByDecimals
+    .multipliedBy(pool.pricePerFullShare)
+    .decimalPlaces(pool.tokenDecimals, BigNumber.ROUND_DOWN);
 
   const withdrawOutputs = useMemo(() => {
     const outputs = [
@@ -132,16 +138,14 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
   };
 
   const handleSliderChangeCommitted = (_, sliderInt) => {
-    const total = sharesBalance.multipliedBy(pool.pricePerFullShare).dividedBy('1e18')
-      .decimalPlaces(pool.tokenDecimals, BigNumber.ROUND_DOWN);
     let amount = new BigNumber(0);
     let input = new BigNumber(0);
-    if (sliderInt > 0 && sliderInt <= 99) {
-      amount = total.times(sliderInt).div(100);
+    if (sliderInt > 0 && sliderInt < 99) {
+      amount = underliyngBalance.times(sliderInt).div(100).decimalPlaces(pool.tokenDecimals, BigNumber.ROUND_DOWN);
       input = amount.decimalPlaces(8, BigNumber.ROUND_DOWN).toFormat();
     }
-    if (sliderInt > 99) {
-      amount = total;
+    if (sliderInt >= 99) {
+      amount = underliyngBalance;
       sliderInt = 100;
       input = amount.toFormat();
     }
@@ -160,14 +164,12 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
 
   const handleInputAmountChange = event => {
     const input = event.target.value.replace(/[,]+/, '').replace(/[^0-9\.]+/, '');
-    const total = sharesBalance.multipliedBy(pool.pricePerFullShare).dividedBy('1e18')
-      .decimalPlaces(pool.tokenDecimals, BigNumber.ROUND_DOWN);
     let amount = new BigNumber(input);
 
     if (amount.isNaN()) amount = new BigNumber(0);
-    if (amount.isGreaterThan(total)) amount = total;
+    if (amount.isGreaterThan(underliyngBalance)) amount = underliyngBalance;
 
-    const sliderInt = total.isZero() ? 0 : amount.times(100).dividedToIntegerBy(total).toNumber();
+    const sliderInt = underliyngBalance.isZero() ? 0 : amount.times(100).dividedToIntegerBy(underliyngBalance).toNumber();
 
     setWithdrawSettings(prevState => ({
       ...prevState,
@@ -197,12 +199,10 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
       .catch(error => enqueueSnackbar(t('Vault-ApprovalError', { error }), { variant: 'error' }));
   };
 
-  const sharesDecimals = 18;
-  const sharesByDecimals = sharesBalance.dividedBy(`1e${sharesDecimals}`);
-
   const handleWithdraw = () => {
-    const sharesAmount = withdrawSettings.amount.dividedBy(pool.pricePerFullShare);
-    if (withdrawSettings.slider == 100 || sharesAmount.isGreaterThan(sharesByDecimals)) {
+    const sharesAmount = withdrawSettings.amount.dividedBy(pool.pricePerFullShare)
+      .decimalPlaces(sharesDecimals, BigNumber.ROUND_UP);
+    if (sharesAmount.times(100).dividedBy(sharesByDecimals).isGreaterThan(99)) {
       return handleWithdrawAll();
     }
     withdraw(convertAmountToRawNumber(sharesAmount, sharesDecimals));
@@ -210,13 +210,10 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
 
   const handleWithdrawAll = () => {
     const isAll = true;
-    const amount = sharesByDecimals
-      .multipliedBy(pool.pricePerFullShare)
-      .decimalPlaces(pool.tokenDecimals, BigNumber.ROUND_DOWN);
     setWithdrawSettings(prevState => ({
       ...prevState,
-      amount: amount,
-      input: amount.toFormat(),
+      amount: underliyngBalance,
+      input: underliyngBalance.toFormat(),
       slider: 100,
     }));
     withdraw(sharesBalance.toString(), isAll);
