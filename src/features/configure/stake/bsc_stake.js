@@ -23,12 +23,43 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/beefy/beefyfinance.png',
       background: 'stake/beefy/background.png',
-      text:
-        "You probably already knew that Beefy is the most trusted Yield optimizer for the Binance Smart Chain. But did you know that Beefy has its own token? $BIFI has a maximum supply of 80000 tokens and there is no way to mint more. Everyone who holds our own $BIFI token can not only do cool stuff like create and vote on proposals, they also get a share of all harvests done, every hour, every day on all our +120 vaults. That's a lot of BNB that goes straight to our $BIFI holders. All you have to do is stake your $BIFI in this vault, it’s that simple, come back and harvest your BNB whenever you need it! (You can still vote on proposals even though you have staked your $BIFI here).",
+      text: "You probably already knew that Beefy is the most trusted Yield optimizer for the Binance Smart Chain. But did you know that Beefy has its own token? $BIFI has a maximum supply of 80000 tokens and there is no way to mint more. Everyone who holds our own $BIFI token can not only do cool stuff like create and vote on proposals, they also get a share of all harvests done, every hour, every day on all our +120 vaults. That's a lot of BNB that goes straight to our $BIFI holders. All you have to do is stake your $BIFI in this vault, it’s that simple, come back and harvest your BNB whenever you need it! (You can still vote on proposals even though you have staked your $BIFI here).",
       website: 'https://app.beefy.finance',
       social: {
         telegram: 'http://t.me/beefyfinance',
         twitter: 'https://twitter.com/beefyfinance',
+      },
+    },
+  },
+  {
+    id: 'moo_belt_4belt-tofy',
+    name: 'MarshmallowDefi',
+    logo: 'uncategorized/BELT-VENUSBLP.png',
+    token: 'mooBelt4Belt',
+    tokenDecimals: 18,
+    tokenAddress: '0xc1fcf50ccaCd1583BD9d3b41657056878C94e592',
+    tokenOracle: 'lps',
+    tokenOracleId: 'belt-4belt',
+    earnedToken: 'TOFY',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xE1F2d89a6c79b4242F300f880e490A70083E9A1c',
+    earnContractAddress: '0x42b9939020c2CeD30eA54B0A05D3aeD45DA74F54',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'TOFY',
+    partnership: true,
+    status: 'active',
+    hideCountdown: false,
+    isMooStaked: true,
+    periodFinish: 1621440003,
+    partner: {
+      logo: 'stake/safefarm/logo.png',
+      background: 'stake/safefarm/background.png',
+      text: 'Toffie is the reference token for SAFEFARM within the MarshMallow ecosystem, it is the currency you receive in exchange when you pool / farm your Reflection Tokens.  Toffie is a Mintable token and will serve for multiple functions including the remuneration, purchase and exchange of NFTs on the platform within the Marshmallow Market-palce.  The basic idea will be to create real NFTs made and developed by professionals in the sector, so as to bring to the community real valuables that can be exchanged and appreciated over time. All this mechanism can be managed by Toffie.',
+      website: 'https://safefarms.marshmallowdefi.com/info',
+      social: {
+        telegram: 'https://t.me/MarshmallowDeFi',
+        twitter: 'https://twitter.com/SwapMarshmallow',
       },
     },
   },
@@ -56,8 +87,7 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/xbtc/logo.png',
       background: 'stake/xbtc/background.png',
-      text:
-        'xBTC gives users one token access to every single digital asset on earth, pegged against Bitcoin dominance. We call this a “Dominance Hedge.” As the inferior and sluggish Bitcoin loses its dominance, xBTC holders will benefit. DeFi, Social Networks, Gaming, Smart Contracts – all blockchains and use cases are represented by xBTC. With a few clicks of the mouse, users benefit from access to the price action of hundreds of digital assets. This is a brand new type of hedge and asset – this is xBTC.\n',
+      text: 'xBTC gives users one token access to every single digital asset on earth, pegged against Bitcoin dominance. We call this a “Dominance Hedge.” As the inferior and sluggish Bitcoin loses its dominance, xBTC holders will benefit. DeFi, Social Networks, Gaming, Smart Contracts – all blockchains and use cases are represented by xBTC. With a few clicks of the mouse, users benefit from access to the price action of hundreds of digital assets. This is a brand new type of hedge and asset – this is xBTC.\n',
       website: 'https://xbtc.fi/',
       social: {
         telegram: 'https://t.me/xBTC_Official',
@@ -89,8 +119,7 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/icarus/logo.png',
       background: 'stake/icarus/background.png',
-      text:
-        'icarus.finance is a first of its kind decentralized mining protocol that brings Bitcoin and Ethereum hashrate to the Binance Smart Chain, combining it with further DeFi applications Do you want to mine, or farm crypto assets? Perhaps both? No problem! At icarus.finance, you choose"\n',
+      text: 'icarus.finance is a first of its kind decentralized mining protocol that brings Bitcoin and Ethereum hashrate to the Binance Smart Chain, combining it with further DeFi applications Do you want to mine, or farm crypto assets? Perhaps both? No problem! At icarus.finance, you choose"\n',
       website: 'http://icarus.finance',
       social: {
         telegram: 'https://t.me/icarus_finance',
@@ -122,8 +151,7 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/satis/logo.png',
       background: 'stake/satis/background.png',
-      text:
-        '*Satis is an Automatic Deflationary Token, which means that there is a 2% burn on transactions, please keep this in mind when transferring and trading this token. (slippage 2,5%)* SatisFinance is a brand new DeFi project designed by an experienced development team as the 4th generation deflationary yield farm on Binance Smart Chain. Besides the buyback burning mechanism introduced by Goose Finance and Fullsail Finance, SatisFinance has implemented unique innovative features to fight against the inflation problem faced by most traditional yield farms.\n',
+      text: '*Satis is an Automatic Deflationary Token, which means that there is a 2% burn on transactions, please keep this in mind when transferring and trading this token. (slippage 2,5%)* SatisFinance is a brand new DeFi project designed by an experienced development team as the 4th generation deflationary yield farm on Binance Smart Chain. Besides the buyback burning mechanism introduced by Goose Finance and Fullsail Finance, SatisFinance has implemented unique innovative features to fight against the inflation problem faced by most traditional yield farms.\n',
       website: 'https://satis.finance/',
       social: {
         telegram: 'https://t.me/satisfiChat',
@@ -148,14 +176,13 @@ export const bscStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'BIFI',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     periodFinish: 1620495415,
     partner: {
       logo: 'stake/billionhappiness/logo.png',
       background: 'stake/billionhappiness/background.png',
-      text:
-        'BillionHappiness is a blockchain technology-based apparel company dedicated to providing happiness through a transparent record of information on its quality products. Our goal is to provide authenticity using blockchain technology to eliminate counterfeit items on the market. Billion Happiness has a token called BHC.',
+      text: 'BillionHappiness is a blockchain technology-based apparel company dedicated to providing happiness through a transparent record of information on its quality products. Our goal is to provide authenticity using blockchain technology to eliminate counterfeit items on the market. Billion Happiness has a token called BHC.',
       website: 'https://billionhappiness.finance',
       social: {
         telegram: 'https://t.me/BillionHappinessOfficial',
@@ -187,8 +214,7 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/apyswap/logo.png',
       background: 'stake/apyswap/background.png',
-      text:
-        'Start Winning Today With APYSwap Staking. Staking is the process of holding tokens in a cryptocurrency wallet to support the operations of a network. Participants are rewarded for depositing and holding coins, with constant guaranteed time-based returns. Rewards are calculated based on staking time: the longer you stake, the more you earn.',
+      text: 'Start Winning Today With APYSwap Staking. Staking is the process of holding tokens in a cryptocurrency wallet to support the operations of a network. Participants are rewarded for depositing and holding coins, with constant guaranteed time-based returns. Rewards are calculated based on staking time: the longer you stake, the more you earn.',
       website: 'https://apyswap.com/',
       social: {
         telegram: 'https://t.me/apyswapcom',
@@ -220,8 +246,7 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/mash/logo.png',
       background: 'stake/mash/background.png',
-      text:
-        'MarshmallowDeFi (MASH) is the next generation of Automated Market Making (AMM) decentralized exchange with a deflationary governance token model. We are your go-to yield farm running on Binance Smart Chain and Pancakeswap exchange, with lots of other features that let you earn tokens. As with the current wave of second-generation yield farms, the aim is to create a perpetual deflation token, the MASH, with a continual burn mechanism in order to field an environment that can sustain long-term gains with consistently high APR for greater earnings.',
+      text: 'MarshmallowDeFi (MASH) is the next generation of Automated Market Making (AMM) decentralized exchange with a deflationary governance token model. We are your go-to yield farm running on Binance Smart Chain and Pancakeswap exchange, with lots of other features that let you earn tokens. As with the current wave of second-generation yield farms, the aim is to create a perpetual deflation token, the MASH, with a continual burn mechanism in order to field an environment that can sustain long-term gains with consistently high APR for greater earnings.',
       website: 'https://marshmallowdefi.com/',
       social: {
         telegram: 'https://t.me/MarshmallowDeFi',
@@ -253,8 +278,7 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/yieldbay/logo.png',
       background: 'stake/yieldbay/background.png',
-      text:
-        'Our mission is to create the most Economically Sustainable and Accessible yield farming community on BSC by providing a simple user interface, facilitating access to DeFi, and creating a perpetual deflation token, the PALM token. YieldBay has the goal of fostering AMM and DeFi market by facilitating the participation of traditional investors in the Crypto Ecosystem. Expanding the potential market reach requires simple and smooth interfaces as well as easier connections between Fiat and Crypto markets. To increase protocol economical sustainability, we aim at increasing burning fees and defining additional deflationary strategies benefitting holders.',
+      text: 'Our mission is to create the most Economically Sustainable and Accessible yield farming community on BSC by providing a simple user interface, facilitating access to DeFi, and creating a perpetual deflation token, the PALM token. YieldBay has the goal of fostering AMM and DeFi market by facilitating the participation of traditional investors in the Crypto Ecosystem. Expanding the potential market reach requires simple and smooth interfaces as well as easier connections between Fiat and Crypto markets. To increase protocol economical sustainability, we aim at increasing burning fees and defining additional deflationary strategies benefitting holders.',
       website: 'https://yieldbay.finance/',
       social: {
         telegram: 'https://t.me/yieldbay',
@@ -286,8 +310,7 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/thypoon/logo.png',
       background: 'stake/thypoon/background.png',
-      text:
-        'Typhoon is a decentralized, fully on-chain implemented project to enable private transactions between 2 wallets. It does this cleverly by somewhat taking on the role of proxy, but on cryptography steroids. Typhoon utilizes zkSNARK, a novel form of zero-knowledge cryptography. zkSNARK makes it possible for users to prove possession of information, without actually revealing that information. When depositing money into Typhoon, the user generates a random secret and submits a part of it (a hash) along with the assets into the smart contract. In order to then withdraw that deposit again, the user has to provide cryptographic proof that he is indeed the owner of a secret to an unspent deposit. All without revealing the secret he holds to the public blockchain, thanks to zkSNARK!',
+      text: 'Typhoon is a decentralized, fully on-chain implemented project to enable private transactions between 2 wallets. It does this cleverly by somewhat taking on the role of proxy, but on cryptography steroids. Typhoon utilizes zkSNARK, a novel form of zero-knowledge cryptography. zkSNARK makes it possible for users to prove possession of information, without actually revealing that information. When depositing money into Typhoon, the user generates a random secret and submits a part of it (a hash) along with the assets into the smart contract. In order to then withdraw that deposit again, the user has to provide cryptographic proof that he is indeed the owner of a secret to an unspent deposit. All without revealing the secret he holds to the public blockchain, thanks to zkSNARK!',
       website: 'https://app.typhoon.network/',
       social: {
         telegram: 'https://t.me/typhoonnetwork',
@@ -319,8 +342,7 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/biticity/logo.png',
       background: 'stake/biticity/background.png',
-      text:
-        'Biti City is a NFT yield farm that combines the fun of gacha and leveling your NFT Bitibots to earn BITI token rewards. With the understanding that two is better than one, Bitibots are able to combine and breed newer generation Bitibots with the ability to earn BITI token (BITI) rewards via mining, sacrificing their parts in the process for the greater good. Each Bitibot’s unique set of DNA attributes determines their mining hashrate, and the overall success of Biti City. As a Bitibot master, the fate of the world now rests in your hands…',
+      text: 'Biti City is a NFT yield farm that combines the fun of gacha and leveling your NFT Bitibots to earn BITI token rewards. With the understanding that two is better than one, Bitibots are able to combine and breed newer generation Bitibots with the ability to earn BITI token (BITI) rewards via mining, sacrificing their parts in the process for the greater good. Each Bitibot’s unique set of DNA attributes determines their mining hashrate, and the overall success of Biti City. As a Bitibot master, the fate of the world now rests in your hands…',
       website: 'https://www.biti.city',
       social: {
         telegram: 'https://t.me/biti_city',
@@ -352,8 +374,7 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/yieldbay/logo.png',
       background: 'stake/yieldbay/background.png',
-      text:
-        'Our mission is to create the most Economically Sustainable and Accessible yield farming community on BSC by providing a simple user interface, facilitating access to DeFi, and creating a perpetual deflation token, the PALM token. YieldBay has the goal of fostering AMM and DeFi market by facilitating the participation of traditional investors in the Crypto Ecosystem. Expanding the potential market reach requires simple and smooth interfaces as well as easier connections between Fiat and Crypto markets. To increase protocol economical sustainability, we aim at increasing burning fees and defining additional deflationary strategies benefitting holders.',
+      text: 'Our mission is to create the most Economically Sustainable and Accessible yield farming community on BSC by providing a simple user interface, facilitating access to DeFi, and creating a perpetual deflation token, the PALM token. YieldBay has the goal of fostering AMM and DeFi market by facilitating the participation of traditional investors in the Crypto Ecosystem. Expanding the potential market reach requires simple and smooth interfaces as well as easier connections between Fiat and Crypto markets. To increase protocol economical sustainability, we aim at increasing burning fees and defining additional deflationary strategies benefitting holders.',
       website: 'https://yieldbay.finance/',
       social: {
         telegram: 'https://t.me/yieldbay',
@@ -385,8 +406,7 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/bingo/logo.png',
       background: 'stake/bingo/background.png',
-      text:
-        'Bingo Cash Finance is the AlgoStable coin protocol built on the Binance Smart Chain ("BSC")  for casino gaming. We are a fair launch project with no pre-sale, no investor, and no pre-mine. Ensuring that everyone is equal from the start. All AlgoStable currently available on BSC has almost no use case. Some have “games” yes but those don’t quite live up to help people release their stress. Many of them are just simple lottery or something very repetitive. On that premise, we took it upon ourselves to serve the good people of BSC with a whole lot of Casino games to quenches your thirst for entertainment.',
+      text: 'Bingo Cash Finance is the AlgoStable coin protocol built on the Binance Smart Chain ("BSC")  for casino gaming. We are a fair launch project with no pre-sale, no investor, and no pre-mine. Ensuring that everyone is equal from the start. All AlgoStable currently available on BSC has almost no use case. Some have “games” yes but those don’t quite live up to help people release their stress. Many of them are just simple lottery or something very repetitive. On that premise, we took it upon ourselves to serve the good people of BSC with a whole lot of Casino games to quenches your thirst for entertainment.',
       website: 'https://bingocash.fi/',
       social: {
         telegram: 'https://t.me/bingocash_official',
@@ -418,8 +438,7 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/thunder/logo.png',
       background: 'stake/thunder/background.png',
-      text:
-        'ThunderSwap.Finance — The new thundering Yield Farm on BSC Network (Binance Smart Chain). We, at ThunderSwap are a professional software team with lots of love towards crypto. We always wanted to contribute to the crypto community space and show our love for crypto. What else would be a better start than using our skills to build something new and exciting in the hot new DeFi space. Our goal is to contribute to crypto awareness and worldwide crypto acceptance. ThunderSwap is going to be our starting point for this journey. We are going to start small just with Thunder yield farms and pools, but we have a lot of exciting additions that are going to come live soon. ThunderSwap is going to use Thunder Token (TNDR) as the main fuel for the platform and we have a lot of plans to take it to the top charts with our roadmap.',
+      text: 'ThunderSwap.Finance — The new thundering Yield Farm on BSC Network (Binance Smart Chain). We, at ThunderSwap are a professional software team with lots of love towards crypto. We always wanted to contribute to the crypto community space and show our love for crypto. What else would be a better start than using our skills to build something new and exciting in the hot new DeFi space. Our goal is to contribute to crypto awareness and worldwide crypto acceptance. ThunderSwap is going to be our starting point for this journey. We are going to start small just with Thunder yield farms and pools, but we have a lot of exciting additions that are going to come live soon. ThunderSwap is going to use Thunder Token (TNDR) as the main fuel for the platform and we have a lot of plans to take it to the top charts with our roadmap.',
       website: 'https://thunderswap.finance/',
       social: {
         telegram: 'https://t.me/thunder_swap',
@@ -451,8 +470,7 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/swirl/logo.png',
       background: 'stake/swirl/background.png',
-      text:
-        'Swirl is a BSC-deployed fork of Tornado.cash, the strongest privacy protocol on the Ethereum network. It uses various cryptographic methods, including implementations of zero-knowledge(zkSnarks) proofs to achieve privacy functionality. So we’ve taken something that works, which allows 100M USD worth of tokens per day to regain their right to anonymity, customized it in Swirl for the current DeFi landscape, and brought it to Binance Smart Chain. Now, Swirl will allow you to send BSC cryptocurrency with 100% anonymity! *Swirl is a declinatory Token, which means that there is a 2% burn on transactions that get redistributed, please keep this in mind when transferring and trading this token.*',
+      text: 'Swirl is a BSC-deployed fork of Tornado.cash, the strongest privacy protocol on the Ethereum network. It uses various cryptographic methods, including implementations of zero-knowledge(zkSnarks) proofs to achieve privacy functionality. So we’ve taken something that works, which allows 100M USD worth of tokens per day to regain their right to anonymity, customized it in Swirl for the current DeFi landscape, and brought it to Binance Smart Chain. Now, Swirl will allow you to send BSC cryptocurrency with 100% anonymity! *Swirl is a declinatory Token, which means that there is a 2% burn on transactions that get redistributed, please keep this in mind when transferring and trading this token.*',
       website: 'https://swirl.cash/',
       social: {
         telegram: 'https://t.me/Swirl_Cash',
@@ -484,8 +502,7 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/zcore/logo.png',
       background: 'stake/zcore/background.png',
-      text:
-        'ZCore Finance is a decentralized exchange running on Binance Smart Chain and Pancake swap exchange, with features that let you earn and win tokens. What we are trying to do is create a perpetual deflation token, the ZEFI, that allows a constant price pump with a sufficient burn mechanism. We are not trying to replace the swap & exchange but to add value into the system and create a suitable and sustainable environment for people to yield farm with high APR.',
+      text: 'ZCore Finance is a decentralized exchange running on Binance Smart Chain and Pancake swap exchange, with features that let you earn and win tokens. What we are trying to do is create a perpetual deflation token, the ZEFI, that allows a constant price pump with a sufficient burn mechanism. We are not trying to replace the swap & exchange but to add value into the system and create a suitable and sustainable environment for people to yield farm with high APR.',
       website: 'https://finance.zcore.network/',
       social: {
         telegram: 'https://t.me/ZCoreMiners',
@@ -517,8 +534,7 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/billionhappiness/logo.png',
       background: 'stake/billionhappiness/background.png',
-      text:
-        'BillionHappiness is a blockchain technology-based apparel company dedicated to providing happiness through a transparent record of information on its quality products. Our goal is to provide authenticity using blockchain technology to eliminate counterfeit items on the market. Billion Happiness has a token called BHC.',
+      text: 'BillionHappiness is a blockchain technology-based apparel company dedicated to providing happiness through a transparent record of information on its quality products. Our goal is to provide authenticity using blockchain technology to eliminate counterfeit items on the market. Billion Happiness has a token called BHC.',
       website: 'https://billionhappiness.finance',
       social: {
         telegram: 'https://t.me/BillionHappinessOfficial',
@@ -550,8 +566,7 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/astronaut/logo.png',
       background: 'stake/astronaut/background.png',
-      text:
-        'Astronaut is a protocol built for decentralizing the way in which new projects and ideas coming to the BSC ecosystem raise capital. With Astronaut, decentralized projects will be able to raise and exchange capital cheap and fast. Users will be able to participate in a secure and interoperable environment on the Binance Smart Chain. The deployment of the protocol will take place in III phases. During Phase I Astronaut is a deflationary token that burns and redistributes %s to its holders. During Phase II Astronaut will release its evolved platform and launchpad to provide secure, fair, and affordable launches to both projects and investors alike. Phase III will be the real game-changer with a bridge and a full DeFi ecosystem. Astronaut takes their initiative from the bottom up slowly increasing value to the project and holders of the native NAUT token. *Astronaut is an Automatic Yield Token, which means that there is a 4% burn on transactions that get redistributed, please keep this in mind when transferring and trading this token.*',
+      text: 'Astronaut is a protocol built for decentralizing the way in which new projects and ideas coming to the BSC ecosystem raise capital. With Astronaut, decentralized projects will be able to raise and exchange capital cheap and fast. Users will be able to participate in a secure and interoperable environment on the Binance Smart Chain. The deployment of the protocol will take place in III phases. During Phase I Astronaut is a deflationary token that burns and redistributes %s to its holders. During Phase II Astronaut will release its evolved platform and launchpad to provide secure, fair, and affordable launches to both projects and investors alike. Phase III will be the real game-changer with a bridge and a full DeFi ecosystem. Astronaut takes their initiative from the bottom up slowly increasing value to the project and holders of the native NAUT token. *Astronaut is an Automatic Yield Token, which means that there is a 4% burn on transactions that get redistributed, please keep this in mind when transferring and trading this token.*',
       website: 'https://astronaut.to/',
       social: {
         telegram: 'https://t.me/joinchat/pJTzEu-mhnAzMjMx',
@@ -583,8 +598,7 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/space/logo.png',
       background: 'stake/space/background.png',
-      text:
-        'Farm your way into DeFi space! Bringing dual farming rewards through margin trading and lending, to yield farming, on the Binance Smart Chain.',
+      text: 'Farm your way into DeFi space! Bringing dual farming rewards through margin trading and lending, to yield farming, on the Binance Smart Chain.',
       website: 'https://farm.space/',
       social: {
         telegram: 'https://t.me/farmdotspace',
@@ -615,8 +629,7 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/squirrel/logo.png',
       background: 'stake/squirrel/background.png',
-      text:
-        'In recent months the TVL (total value locked) inside BSC DeFi has skyrocketed due to an endless variety of token-incentivized adoption boosters known as Yield Farming. The problem introduced is some of these are experimental or unaudited projects, which can leave unsavvy farmers exposed if something were to go wrong. Because of the crazy APR % some of these can offer in the first few days, many users completely neglect to account for the possible risks introduced (Yolo-farming). Squirrel aims to resolve this problem by developing a trusted ecosystem to empower, secure & simplify DeFi for end users.',
+      text: 'In recent months the TVL (total value locked) inside BSC DeFi has skyrocketed due to an endless variety of token-incentivized adoption boosters known as Yield Farming. The problem introduced is some of these are experimental or unaudited projects, which can leave unsavvy farmers exposed if something were to go wrong. Because of the crazy APR % some of these can offer in the first few days, many users completely neglect to account for the possible risks introduced (Yolo-farming). Squirrel aims to resolve this problem by developing a trusted ecosystem to empower, secure & simplify DeFi for end users.',
       website: 'https://squirrel.finance/',
       social: {
         telegram: 'https://t.me/SquirrelDeFi',
@@ -647,8 +660,7 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/memefarm/logo.png',
       background: 'stake/memefarm/background.png',
-      text:
-        'Meme Farm is an exciting protocol that combines DeFi yield-farming and rare non-fungible tokens (NFTs). You’re probably familiar with various food farming coin clones, most of which have a lifespan of 48 hours or less. While these tokens can make a small fortune for early adopters, most of them die out quickly because they lack actual utility. Most are simply governance tokens that get dumped by big farmers because they aren’t interested in participating in creating and voting on proposals. So what’s our solution for creating a high-yield farming token that can last in the long term? It’s to give the tokens actual utility and value (and thus, buy pressure) by combining them with one of the hottest cryptocurrency industries: NFTs.\n',
+      text: 'Meme Farm is an exciting protocol that combines DeFi yield-farming and rare non-fungible tokens (NFTs). You’re probably familiar with various food farming coin clones, most of which have a lifespan of 48 hours or less. While these tokens can make a small fortune for early adopters, most of them die out quickly because they lack actual utility. Most are simply governance tokens that get dumped by big farmers because they aren’t interested in participating in creating and voting on proposals. So what’s our solution for creating a high-yield farming token that can last in the long term? It’s to give the tokens actual utility and value (and thus, buy pressure) by combining them with one of the hottest cryptocurrency industries: NFTs.\n',
       website: 'https://memefarm.io/',
       social: {
         telegram: 'https://t.me/APEcoin_Chat',
@@ -679,8 +691,7 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/slimefinance/logo.png',
       background: 'stake/slimefinance/background.png',
-      text:
-        'Slime Finance is a new yield farming project on the Binance Smart Chain. We yearn to offer competitive yield rates for our investors by delivering innovative updates in a timely manner. What differentiates us from other yield services is how we interact with our community. We strive to listen to all suggestions given on our social media and let the community vote for features. We are a team of software developers with bold ideas, working rigorously, passionately, and tirelessly on the Slime Finance project. We promise to deliver on the mid to long term a true utility to our Slime Token and fight against traditional yield farm inflation.',
+      text: 'Slime Finance is a new yield farming project on the Binance Smart Chain. We yearn to offer competitive yield rates for our investors by delivering innovative updates in a timely manner. What differentiates us from other yield services is how we interact with our community. We strive to listen to all suggestions given on our social media and let the community vote for features. We are a team of software developers with bold ideas, working rigorously, passionately, and tirelessly on the Slime Finance project. We promise to deliver on the mid to long term a true utility to our Slime Token and fight against traditional yield farm inflation.',
       website: 'https://slime.finance/',
       social: {
         telegram: 'https://t.me/slimefinance',
@@ -711,8 +722,7 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/cafeswap/cafeswap.png',
       background: 'stake/cafeswap/background.png',
-      text:
-        'CafeSwap is a yield farming and staking platform on BSC Chain, We have chosen BSC because of its low tnx fees and faster speed. We have built this project to provide the best experience with farming while regulating the supply, we believe in partnerships hence we aim to bring all BSC DeFi ecosystems in one place to have a friendly ecosystem for all of us.',
+      text: 'CafeSwap is a yield farming and staking platform on BSC Chain, We have chosen BSC because of its low tnx fees and faster speed. We have built this project to provide the best experience with farming while regulating the supply, we believe in partnerships hence we aim to bring all BSC DeFi ecosystems in one place to have a friendly ecosystem for all of us.',
       website: 'https://cafeswap.finance',
       social: {
         telegram: 'https://t.me/CafeSwap',
@@ -743,8 +753,7 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/ramenswap/ramenswap.png',
       background: 'stake/ramenswap/background.png',
-      text:
-        'The Most Delicious Yield Farm AMM on Binance Smart Chain. RamenSwap Finance is a community driven Yield Farming, DeFi Aggregator and DEX Aggregator on Binance Smart Chain. You can earn RAMEN by staking it on the pool and farming it by providing the liquidity to earn more delicious RAMEN. You can also maximize your return by compounding your token in the vault and connecting several DEX to find the most efficient swapping routes across all platforms that will be released in Q2 to support BSC space.\n',
+      text: 'The Most Delicious Yield Farm AMM on Binance Smart Chain. RamenSwap Finance is a community driven Yield Farming, DeFi Aggregator and DEX Aggregator on Binance Smart Chain. You can earn RAMEN by staking it on the pool and farming it by providing the liquidity to earn more delicious RAMEN. You can also maximize your return by compounding your token in the vault and connecting several DEX to find the most efficient swapping routes across all platforms that will be released in Q2 to support BSC space.\n',
       website: 'https://ramenswap.finance/',
       social: {
         telegram: 'https://t.me/ramenswap',
@@ -775,8 +784,7 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/saltswap/saltswap.png',
       background: 'stake/saltswap/background.png',
-      text:
-        'We are a team of experienced software developers and product managers from top tier tech companies (aka the salts) that want to contribute to the BSC DeFi yield farm movement and take it to the next level. Even though we are starting off with a salty yield farm, we will quickly move on to bigger and greater things. We have big plans for the SALT token.\n',
+      text: 'We are a team of experienced software developers and product managers from top tier tech companies (aka the salts) that want to contribute to the BSC DeFi yield farm movement and take it to the next level. Even though we are starting off with a salty yield farm, we will quickly move on to bigger and greater things. We have big plans for the SALT token.\n',
       website: 'https://saltswap.finance/',
       social: {
         telegram: 'https://t.me/saltswap',
@@ -807,8 +815,7 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/crowfinance/crowfinance.png',
       background: 'stake/crowfinance/background.png',
-      text:
-        'CrowFinance an Evolution Yield Farming on Binance Smart Chain with daytime and nighttime burn mechanism system fork from fry and add some function from thug + jetfuel',
+      text: 'CrowFinance an Evolution Yield Farming on Binance Smart Chain with daytime and nighttime burn mechanism system fork from fry and add some function from thug + jetfuel',
       website: 'https://www.crowfinance.net/',
       social: {
         telegram: 'https://t.me/CrowFinance',
@@ -839,8 +846,7 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/apeswap/logo.png',
       background: 'stake/apeswap/background.png',
-      text:
-        'ApeSwap is an Automated Market Maker, Yield Farming, and Staking platform on Binance Smart Chain (forked from PancakeSwap). ApeSwap was built by DeFi Apes, for DeFi Apes. We have a dedicated team of experienced monkeys, who have been in the crypto space for years. $BANANA is the native currency of our platform. Stake, pool, and earn $BANANA all on ApeSwap.',
+      text: 'ApeSwap is an Automated Market Maker, Yield Farming, and Staking platform on Binance Smart Chain (forked from PancakeSwap). ApeSwap was built by DeFi Apes, for DeFi Apes. We have a dedicated team of experienced monkeys, who have been in the crypto space for years. $BANANA is the native currency of our platform. Stake, pool, and earn $BANANA all on ApeSwap.',
       website: 'https://apeswap.finance/',
       social: {
         telegram: 'https://t.me/ape_swap',
@@ -871,8 +877,7 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/soup/logo.png',
       background: 'stake/soup/background.png',
-      text:
-        "Soup Protocol is an experimental project that enables the generation of SOUP tokens that runs on Binance Smart Chain. Inspired by the likes of Basis Cash & bDollar, SOUP is an algorithmic token that is designed to pegged its value to the Binance (BNB) token instead of a stablecoin. The protocol is designed to expand and contract the supply of SOUP tokens similar to the way central banks trade fiscal debt to stabilise purchasing power, without any rebases or collateral risk. The SOUP token can be used to buy and sell tokens on Pancake Swap and also can be used to interact with Soup Protocol's upcoming games such as Soup3D.",
+      text: "Soup Protocol is an experimental project that enables the generation of SOUP tokens that runs on Binance Smart Chain. Inspired by the likes of Basis Cash & bDollar, SOUP is an algorithmic token that is designed to pegged its value to the Binance (BNB) token instead of a stablecoin. The protocol is designed to expand and contract the supply of SOUP tokens similar to the way central banks trade fiscal debt to stabilise purchasing power, without any rebases or collateral risk. The SOUP token can be used to buy and sell tokens on Pancake Swap and also can be used to interact with Soup Protocol's upcoming games such as Soup3D.",
       website: 'https://soups.finance/',
       social: {
         telegram: 'https://t.me/soup_community',

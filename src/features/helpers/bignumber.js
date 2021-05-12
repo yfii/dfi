@@ -86,11 +86,14 @@ export function subtract(numberOne, numberTwo) {
 }
 
 export function convertAmountToRawNumber(value, decimals = 18) {
-  return new BigNumber(`${value}`).times(new BigNumber('10').pow(decimals)).toString();
+  return new BigNumber(`${value}`)
+    .times(new BigNumber('10').pow(decimals))
+    .decimalPlaces(0, BigNumber.ROUND_DOWN)
+    .toString();
 }
 
 export function convertAmountFromRawNumber(value, decimals = 18) {
-  return new BigNumber(`${value}`).dividedBy(new BigNumber('10').pow(decimals)).toString();
+  return new BigNumber(`${value}`).dividedBy(new BigNumber('10').pow(decimals));
 }
 
 export function handleSignificantDecimals(value, decimals, buffer) {
@@ -142,7 +145,7 @@ export function format(number) {
 
 export function byDecimals(number, tokenDecimals = 18) {
   const decimals = new BigNumber(10).exponentiatedBy(tokenDecimals);
-  return new BigNumber(number).dividedBy(decimals);
+  return new BigNumber(number).dividedBy(decimals).decimalPlaces(tokenDecimals);
 }
 
 export function calculateReallyNum(total, sliderNum) {

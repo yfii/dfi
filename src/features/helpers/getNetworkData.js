@@ -2,17 +2,32 @@ import { connectors } from 'web3modal';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 
 import {
-  bscPools,
-  hecoPools,
+  nativeCoins,
   avalanchePools,
-  polygonPools,
-  fantomPools,
-  bscStakePools,
-  hecoStakePools,
   avalancheStakePools,
-  polygonStakePools,
+  avalancheTokenList,
+  avalancheZaps,
+  bscPools,
+  bscStakePools,
+  bscTokenList,
+  bscZaps,
+  fantomPools,
   fantomStakePools,
+  fantomTokenList,
+  fantomZaps,
+  hecoPools,
+  hecoStakePools,
+  hecoTokenList,
+  hecoZaps,
+  polygonPools,
+  polygonStakePools,
+  polygonTokenList,
+  polygonZaps,
 } from '../configure';
+
+export const getNetworkCoin = () => {
+  return nativeCoins.find(coin => coin.chainId == process.env.REACT_APP_NETWORK_ID);
+};
 
 export const getNetworkPools = () => {
   switch (process.env.REACT_APP_NETWORK_ID) {
@@ -26,6 +41,40 @@ export const getNetworkPools = () => {
       return polygonPools;
     case '250':
       return fantomPools;
+    default:
+      return [];
+  }
+};
+
+export const getNetworkTokens = () => {
+  switch (process.env.REACT_APP_NETWORK_ID) {
+    case '56':
+      return bscTokenList.tokens;
+    case '128':
+      return hecoTokenList.tokens;
+    case '43114':
+      return avalancheTokenList.tokens;
+    case '137':
+      return polygonTokenList.tokens;
+    case '250':
+      return fantomTokenList.tokens;
+    default:
+      throw new Error(`Create Tokenlist for this chainId first. See src/features/configure/tokenlist/*_tokenlist.json`);
+  }
+};
+
+export const getNetworkZaps = () => {
+  switch (process.env.REACT_APP_NETWORK_ID) {
+    case '56':
+      return bscZaps;
+    case '128':
+      return hecoZaps;
+    case '43114':
+      return avalancheZaps;
+    case '137':
+      return polygonZaps;
+    case '250':
+      return fantomZaps;
     default:
       return [];
   }

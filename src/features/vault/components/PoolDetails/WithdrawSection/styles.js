@@ -48,6 +48,34 @@ const styles = theme => ({
   numericInput: {
     color: primaryColor[0],
   },
+  balanceMax: {
+    cursor: 'pointer',
+    color: theme.palette.text.secondary,
+    borderBottom: '1px dashed',
+  },
+  zapNote: {
+    width: '100%',
+    textAlign: 'left',
+    fontSize: '14px',
+    color: theme.palette.text.secondary,
+  },
+  zapFormControl: {
+    minWidth: "auto",
+  },
+  zapSelect: {
+    border: "none",
+    borderLeft: `1px solid ${theme.palette.text.secondary}`,
+    paddingLeft: "10px",
+    "& > div": {
+      padding: "6px 0"
+    },
+    "&::before": {
+      content: "none",
+    },
+    "&::after": {
+      content: "none",
+    },
+  }
 });
 
 export default styles;
