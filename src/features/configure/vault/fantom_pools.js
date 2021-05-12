@@ -188,8 +188,8 @@ export const fantomPools = [
   {
     id: 'boo-usdt-ftm',
     logo: 'fantom/USDT-FTM.png',
-    name: 'USDT-FTM LP',
-    token: 'USDT-FTM LP',
+    name: 'fUSDT-FTM LP',
+    token: 'fUSDT-FTM LP',
     tokenDescription: 'SpookySwap',
     tokenAddress: '0x5965E53aa80a0bcF1CD6dbDd72e6A9b2AA047410',
     tokenDecimals: 18,
@@ -205,7 +205,7 @@ export const fantomPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'SpookySwap',
-    assets: ['USDT', 'FTM'],
+    assets: ['fUSDT', 'FTM'],
     callFee: 0.5,
     addLiquidityUrl:
       'https://spookyswap.finance/add',
