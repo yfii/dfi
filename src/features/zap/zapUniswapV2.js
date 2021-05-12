@@ -6,15 +6,15 @@ const availableZaps = getNetworkZaps();
 const availableTokens = getNetworkTokens();
 const nativeCoin = getNetworkCoin();
 
-export const getEligibleZap = (pool) => {
+export const getEligibleZap = pool => {
   if (pool.assets.length !== 2) return undefined;
 
-  const eligibleNativeCoin = []
+  const eligibleNativeCoin = [];
   const tokenSymbols = pool.assets.map(symbol => {
     if (nativeCoin.symbol === symbol) {
-      const wrappedToken = availableTokens.find(t => t.symbol === nativeCoin.wrappedSymbol)
+      const wrappedToken = availableTokens.find(t => t.symbol === nativeCoin.wrappedSymbol);
       nativeCoin.address = wrappedToken.address;
-      eligibleNativeCoin.push(nativeCoin)
+      eligibleNativeCoin.push(nativeCoin);
       return nativeCoin.wrappedSymbol;
     }
     return symbol;
@@ -25,7 +25,10 @@ export const getEligibleZap = (pool) => {
     tokenA = availableTokens.find(token => token.symbol === tokenSymbols[0]);
     tokenB = availableTokens.find(token => token.symbol === tokenSymbols[1]);
     if (tokenA && tokenB) {
-      return pool.tokenAddress === computePairAddress(zap.ammFactory, zap.ammPairInitHash, tokenA.address, tokenB.address);
+      return (
+        pool.tokenAddress ===
+        computePairAddress(zap.ammFactory, zap.ammPairInitHash, tokenA.address, tokenB.address)
+      );
     } else {
       console.error('Beefy: tokens missing in the tokenlist:', tokenSymbols[0], tokenSymbols[1]);
     }
@@ -39,8 +42,8 @@ export const getEligibleZap = (pool) => {
   return {
     ...zap,
     tokens: [tokenA, tokenB, ...eligibleNativeCoin],
-  }
-}
+  };
+};
 
 export const computePairAddress = (factoryAddress, pairInitHash, tokenA, tokenB) => {
   const [token0, token1] = sortTokens(tokenA, tokenB);
@@ -48,10 +51,10 @@ export const computePairAddress = (factoryAddress, pairInitHash, tokenA, tokenB)
     factoryAddress,
     keccak256(['bytes'], [pack(['address', 'address'], [token0, token1])]),
     pairInitHash
-  )
-}
+  );
+};
 
 export const sortTokens = (tokenA, tokenB) => {
   if (tokenA === tokenB) throw new RangeError(`tokenA should not be equal to tokenB: ${tokenB}`);
-  return tokenA.toLowerCase() < tokenB.toLowerCase() ? [tokenA, tokenB] : [tokenB, tokenA]
-}
+  return tokenA.toLowerCase() < tokenB.toLowerCase() ? [tokenA, tokenB] : [tokenB, tokenA];
+};
