@@ -1,0 +1,22 @@
+{
+  "name": "Beefy.Finance Fantom Opera Tokens List",
+  "timestamp": "2021-03-17T09:56:23Z",
+  "version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "tags": {},
+  "logoURI": "https://beefy.finance/img/beefy.svg",
+  "keywords": ["beefy", "fantom", "opera", "FTM"],
+  "tokens": [
+    {
+      "name": "Wrapped FTM",
+      "symbol": "WFTM",
+      "address": "0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83",
+      "chainId": 250,
+      "decimals": 18,
+      "logoURI": ""
+    }
+  ]
+}

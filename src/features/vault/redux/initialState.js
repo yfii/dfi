@@ -1,17 +1,36 @@
 import { getNetworkPools } from '../../helpers/getNetworkData';
+import { getEligibleZap } from 'features/zap/zapUniswapV2';
 
 const tokens = {};
 const pools = getNetworkPools();
 
-pools.forEach(({ token, tokenAddress, earnedToken, earnedTokenAddress }) => {
+pools.forEach(({ token, tokenDecimals, tokenAddress, earnedToken, earnContractAddress, earnedTokenAddress }, i) => {
   tokens[token] = {
+    symbol: token,
+    decimals: tokenDecimals,
     tokenAddress: tokenAddress,
     tokenBalance: 0,
+    allowance: {
+      ...tokens[token]?.allowance,
+      [earnContractAddress]: tokenAddress ? 0 : Infinity,
+    },
   };
   tokens[earnedToken] = {
+    symbol: earnedToken,
+    decimals: 18,
     tokenAddress: earnedTokenAddress,
     tokenBalance: 0,
+    allowance: {
+      [earnContractAddress]: 0,
+    },
   };
+
+  const zap = getEligibleZap(pools[i]);
+  if (zap) {
+    tokens[token].allowance[zap.zapAddress] = tokenAddress ? 0 : Infinity;
+    tokens[earnedToken].allowance[zap.zapAddress] = 0;
+    pools[i]['zap'] = getEligibleZap(pools[i]);
+  }
 });
 
 const initialState = {
@@ -26,8 +45,10 @@ const initialState = {
   fetchBalancesPending: false,
   fetchApprovalPending: {},
   fetchDepositPending: {},
+  fetchZapDepositPending: {},
   fetchWithdrawPending: {},
   fetchHarvestPending: {},
+  fetchZapEstimatePending: {},
 };
 
 export default initialState;

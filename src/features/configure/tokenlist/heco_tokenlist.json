@@ -1,0 +1,22 @@
+{
+  "name": "Beefy.Finance HECO Tokens List",
+  "timestamp": "2021-03-17T09:56:23Z",
+  "version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "tags": {},
+  "logoURI": "https://beefy.finance/img/beefy.svg",
+  "keywords": ["beefy", "heco"],
+  "tokens": [
+    {
+      "name": "Wrapped HT",
+      "symbol": "WHT",
+      "address": "0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F",
+      "chainId": 128,
+      "decimals": 18,
+      "logoURI": ""
+    }
+  ]
+}

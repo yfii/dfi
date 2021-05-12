@@ -48,6 +48,8 @@ export default function CustomSlider(props) {
         active: classes.active,
       }}
       defaultValue={0}
+      min={0}
+      max={100}
       valueLabelDisplay="auto"
       marks={[
         { value: 0, label: '0%' },

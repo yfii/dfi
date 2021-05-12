@@ -23,13 +23,16 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function CustomOutlinedInput(props) {
+  const { classes } = props;
+
   const commonStyle = useStyles();
   const commonClasses = {
     root: commonStyle.showDetail,
     focused: commonStyle.focused,
+    classes
   };
-  const { classes } = props;
-  return <OutlinedInput {...props} classes={Object.assign({}, commonClasses, classes)} />;
+
+  return <OutlinedInput {...props} classes={commonClasses} />;
 }
 
 CustomOutlinedInput.defaultProps = {

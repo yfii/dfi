@@ -9,7 +9,6 @@ import { byDecimals } from 'features/helpers/bignumber';
 import PoolSummary from '../PoolSummary/PoolSummary';
 import PoolAccordion from '../PoolDetails/PoolAccordion';
 import styles from './styles';
-import { useFetchPoolData } from '../../../stake/redux/fetchPoolData';
 import { useSelector } from 'react-redux';
 
 const useStyles = makeStyles(styles);

@@ -6,57 +6,120 @@ import {
   VAULT_FETCH_BALANCES_FAILURE,
 } from './constants';
 import { MultiCall } from 'eth-multicall';
-import { erc20ABI, multicallBnbShimABI } from 'features/configure';
-import BigNumber from 'bignumber.js';
+import { erc20ABI, multicallBnbShimABI, uniswapV2PairABI } from 'features/configure';
+import { byDecimals } from 'features/helpers/bignumber';
 import { getNetworkMulticall } from 'features/helpers/getNetworkData';
 
 export function fetchBalances({ address, web3, tokens }) {
   return dispatch => {
+    if (!(address && web3)) return;
+
     dispatch({
       type: VAULT_FETCH_BALANCES_BEGIN,
     });
 
     const promise = new Promise((resolve, reject) => {
-      const tokensList = [];
-      for (let key in tokens) {
-        tokensList.push({
-          token: key,
-          tokenAddress: tokens[key].tokenAddress,
-          tokenBalance: tokens[key].tokenBalance,
-        });
-      }
 
       const multicall = new MultiCall(web3, getNetworkMulticall());
 
-      const calls = tokensList.map(token => {
+      const balanceCalls = [];
+      const allowanceCalls = [];
+
+      Object.entries(tokens).forEach(([symbol, token]) => {
         if (!token.tokenAddress) {
           const shimAddress = '0xC72E5edaE5D7bA628A2Acb39C8Aa0dbbD06daacF';
           const shimContract = new web3.eth.Contract(multicallBnbShimABI, shimAddress);
-          return {
-            tokenBalance: shimContract.methods.balanceOf(address),
-          };
+          balanceCalls.push({
+            balance: shimContract.methods.balanceOf(address),
+            symbol: symbol,
+          });
         } else {
           const tokenContract = new web3.eth.Contract(erc20ABI, token.tokenAddress);
-          return {
-            tokenBalance: tokenContract.methods.balanceOf(address),
-          };
+          balanceCalls.push({
+            balance: tokenContract.methods.balanceOf(address),
+            symbol: symbol,
+          });
+          Object.entries(token.allowance).forEach(([spender]) => {
+            allowanceCalls.push({
+              allowance: tokenContract.methods.allowance(address, spender),
+              spender: spender,
+              symbol: symbol,
+            });
+          })
         }
       });
 
       multicall
-        .all([calls])
-        .then(([results]) => {
+        .all([balanceCalls, allowanceCalls])
+        .then(([balanceResults, allowanceResults]) => {
+
           const newTokens = {};
-          for (let i = 0; i < tokensList.length; i++) {
-            newTokens[tokensList[i].token] = {
-              tokenAddress: tokensList[i].tokenAddress,
-              tokenBalance: new BigNumber(results[i].tokenBalance).toNumber() || 0,
-            };
-          }
+
+          balanceResults.forEach(balanceResult => {
+            newTokens[balanceResult.symbol] = {
+              ...tokens[balanceResult.symbol],
+              tokenBalance: balanceResult.balance,
+            }
+          })
+
+          allowanceResults.forEach(allowanceResult => {
+            newTokens[allowanceResult.symbol] = {
+              ...newTokens[allowanceResult.symbol],
+              allowance: {
+                ...newTokens[allowanceResult.symbol].allowance,
+                [allowanceResult.spender]: allowanceResult.allowance,
+              },
+            }
+          })
 
           dispatch({
             type: VAULT_FETCH_BALANCES_SUCCESS,
             data: newTokens,
+          });
+          resolve();
+        })
+        .catch(error => {
+          dispatch({
+            type: VAULT_FETCH_BALANCES_FAILURE,
+          });
+          return reject(error.message || error);
+        });
+    });
+
+    return promise;
+  };
+}
+
+export function fetchPairReverves({ web3, pairToken }) {
+  return dispatch => {
+    if (!web3) return;
+
+    dispatch({
+      type: VAULT_FETCH_BALANCES_BEGIN,
+    });
+
+    const promise = new Promise((resolve, reject) => {
+      const multicall = new MultiCall(web3, getNetworkMulticall());
+      const tokenContract = new web3.eth.Contract(uniswapV2PairABI, pairToken.tokenAddress);
+      multicall
+        .all([[{
+          totalSupply: tokenContract.methods.totalSupply(),
+          token0: tokenContract.methods.token0(),
+          token1: tokenContract.methods.token1(),
+          reserves: tokenContract.methods.getReserves(),
+        }]])
+        .then(([[result]]) => {
+
+          const newPairToken = {
+            [pairToken.symbol]: {
+              ...pairToken,
+              ...result,
+            }
+          };
+
+          dispatch({
+            type: VAULT_FETCH_BALANCES_SUCCESS,
+            data: newPairToken,
           });
           resolve();
         })
@@ -91,9 +154,22 @@ export function useFetchBalances() {
     [dispatch]
   );
 
+  const tokenBalance = tokenSymbol => {
+    return byDecimals(tokens[tokenSymbol]?.tokenBalance || 0, tokens[tokenSymbol].decimals);
+  }
+
+  const boundPairReverves = useCallback(
+    data => {
+      return dispatch(fetchPairReverves(data));
+    },
+    [dispatch]
+  );
+
   return {
     tokens,
+    tokenBalance: tokenBalance,
     fetchBalances: boundAction,
+    fetchPairReverves: boundPairReverves,
     fetchBalancesDone,
     fetchBalancesPending,
   };
@@ -108,9 +184,24 @@ export function reducer(state, action) {
       };
 
     case VAULT_FETCH_BALANCES_SUCCESS:
+      const newAndUpdatedTokens = {};
+      Object.entries(action.data).forEach(([symbol, token]) => {
+        newAndUpdatedTokens[symbol] = {
+          ...state.tokens[symbol],
+          ...token,
+          allowance: {
+            ...state.tokens[symbol]?.allowance,
+            ...token.allowance,
+          },
+        }
+      });
+
       return {
         ...state,
-        tokens: action.data,
+        tokens: {
+          ...state.tokens,
+          ...newAndUpdatedTokens,
+        },
         fetchBalancesDone: true,
         fetchBalancesPending: false,
       };

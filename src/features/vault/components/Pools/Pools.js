@@ -12,15 +12,15 @@ import styles from './styles';
 import { usePoolsTvl, useUserTvl } from '../../hooks/usePoolsTvl';
 import { formatGlobalTvl } from 'features/helpers/format';
 
-const FETCH_INTERVAL_MS = 30 * 1000;
+const FETCH_INTERVAL_MS = 15 * 1000;
 
 const useStyles = makeStyles(styles);
 
 export default function Pools() {
   const { t } = useTranslation();
   const { web3, address } = useConnectWallet();
-  const { pools, fetchVaultsData, fetchVaultsDataDone } = useFetchVaultsData();
-  const { tokens, fetchBalances, fetchBalancesDone } = useFetchBalances();
+  const { pools, fetchVaultsData, fetchVaultsDataPending, fetchVaultsDataDone } = useFetchVaultsData();
+  const { tokens, fetchBalances, fetchBalancesPending, fetchBalancesDone } = useFetchBalances();
   const { apys, fetchApys, fetchApysDone } = useFetchApys();
   const { poolsTvl } = usePoolsTvl(pools);
   const { userTvl } = useUserTvl(pools, tokens);
@@ -34,10 +34,12 @@ export default function Pools() {
 
   useEffect(() => {
     const fetch = () => {
-      if (address && web3) {
+      if (address && web3 && !fetchBalancesPending) {
         fetchBalances({ address, web3, tokens });
       }
-      fetchVaultsData({ address, web3, pools });
+      if (!fetchVaultsDataPending) {
+        fetchVaultsData({ web3, pools });
+      }
     };
     fetch();
 
