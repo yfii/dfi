@@ -4145,7 +4145,7 @@ export const bscPools = [
   },
 
   {
-    id: 'bunny-bunny',
+    id: 'bunny-bunny-eol',
     logo: 'single-assets/BUNNY.png',
     name: 'BUNNY',
     token: 'BUNNY',
@@ -6681,7 +6681,7 @@ export const bscPools = [
   },
 
   {
-    id: 'squirrel-nuts-bnb',
+    id: 'squirrel-nuts-bnb-eol',
     logo: 'single-assets/NUTS.png',
     name: 'NUTS-BNB LP',
     token: 'NUTS-BNB LP',
@@ -6697,7 +6697,7 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'squirrel-nuts-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'eol',
     assets: ['NUTS', 'BNB'],
     callFee: 0.5,
@@ -8325,7 +8325,7 @@ export const bscPools = [
   },
 
   {
-    id: 'auto-btc',
+    id: 'auto-btc-eol',
     logo: 'single-assets/BTCB.svg',
     name: 'BTCB',
     token: 'BTCB',
@@ -8342,7 +8342,7 @@ export const bscPools = [
     oracleId: 'BTCB',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Autofarm',
     assets: ['BTCB'],
     callFee: 0.5,
@@ -8351,7 +8351,7 @@ export const bscPools = [
   },
 
   {
-    id: 'auto-eth',
+    id: 'auto-eth-eol',
     logo: 'single-assets/ETH.png',
     name: 'ETH',
     token: 'ETH',
@@ -8368,7 +8368,7 @@ export const bscPools = [
     oracleId: 'ETH',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Autofarm',
     assets: ['ETH'],
     callFee: 0.5,
@@ -8377,7 +8377,7 @@ export const bscPools = [
   },
 
   {
-    id: 'auto-busd',
+    id: 'auto-busd-eol',
     logo: 'single-assets/BUSD.svg',
     name: 'BUSD',
     token: 'BUSD',
@@ -8394,7 +8394,7 @@ export const bscPools = [
     oracleId: 'BUSD',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Autofarm',
     assets: ['BUSD'],
     callFee: 0.5,
@@ -8403,7 +8403,7 @@ export const bscPools = [
   },
 
   {
-    id: 'auto-usdt',
+    id: 'auto-usdt-eol',
     logo: 'single-assets/USDT.svg',
     name: 'USDT',
     token: 'USDT',
@@ -8420,7 +8420,7 @@ export const bscPools = [
     oracleId: 'USDT',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Autofarm',
     assets: ['USDT'],
     callFee: 0.5,
@@ -8429,7 +8429,7 @@ export const bscPools = [
   },
 
   {
-    id: 'auto-usdc',
+    id: 'auto-usdc-eol',
     logo: 'single-assets/USDC.svg',
     name: 'USDC',
     token: 'USDC',
@@ -8446,7 +8446,7 @@ export const bscPools = [
     oracleId: 'USDC',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Autofarm',
     assets: ['USDC'],
     callFee: 0.5,
