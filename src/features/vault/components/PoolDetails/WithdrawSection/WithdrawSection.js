@@ -40,7 +40,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
   const { fetchZapWithdrawEstimate, fetchZapEstimatePending } = useFetchZapEstimate();
   const { tokens, fetchBalances, fetchPairReverves } = useFetchBalances();
 
-  const sharesDecimals = 18;
+  const sharesDecimals = pool.tokenDecimals;
   const sharesByDecimals = byDecimals(sharesBalance, sharesDecimals);
   const underliyngBalance = sharesByDecimals
     .multipliedBy(pool.pricePerFullShare)
