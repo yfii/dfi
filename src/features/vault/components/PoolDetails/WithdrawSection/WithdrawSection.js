@@ -216,7 +216,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
       input: underliyngBalance.toFormat(),
       slider: 100,
     }));
-    withdraw(sharesBalance.toString(), isAll);
+    withdraw(convertAmountToRawNumber(sharesByDecimals, sharesDecimals), isAll);
   }
 
   const withdraw = (sharesAmount, isAll = false) => {
