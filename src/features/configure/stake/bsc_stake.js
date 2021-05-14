@@ -51,7 +51,7 @@ export const bscStakePools = [
     status: 'active',
     hideCountdown: false,
     isMooStaked: true,
-    periodFinish: 1621440003,
+    periodFinish: 1621620518,
     partner: {
       logo: 'stake/ironfinance/logo.png',
       background: 'stake/ironfinance/background.png',
