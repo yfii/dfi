@@ -23,11 +23,11 @@ export function isEmpty(key) {
 
 export const shouldHideFromHarvest = vaultName => {
   // FIXME: hidden until we implement an 'advanced' toggle
-   return HarvestBlacklistVaultIds.includes(vaultName);
+  // return HarvestBlacklistVaultIds.includes(vaultName);
   return true;
 };
 
- const HarvestBlacklistVaultIds = [
+// const HarvestBlacklistVaultIds = [
 //   'bifi-maxi',
 //   'fortube-fil',
 //   'fortube-atom',
@@ -39,4 +39,4 @@ export const shouldHideFromHarvest = vaultName => {
 //   'fortube-eth',
 //   'fortube-btcb',
 //   'fry-burger-v2',
- ];
+// ];
