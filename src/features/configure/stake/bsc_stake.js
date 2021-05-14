@@ -55,7 +55,7 @@ export const bscStakePools = [
     partner: {
       logo: 'stake/safefarm/logo.png',
       background: 'stake/safefarm/background.png',
-      text: 'Toffie is the reference token for SAFEFARM within the MarshMallow ecosystem, it is the currency you receive in exchange when you pool / farm your Reflection Tokens.  Toffie is a Mintable token and will serve for multiple functions including the remuneration, purchase and exchange of NFTs on the platform within the Marshmallow Market-palce.  The basic idea will be to create real NFTs made and developed by professionals in the sector, so as to bring to the community real valuables that can be exchanged and appreciated over time. All this mechanism can be managed by Toffie.',
+      text: 'Toffie is the reference token for SAFEFARM within the MarshMallow ecosystem, it is the currency you receive in exchange when you pool / farm your Reflection Tokens.  Toffie is a Mintable token and will serve for multiple functions including the remuneration, purchase and exchange of NFTs on the platform within the Marshmallow Market-place.  The basic idea will be to create real NFTs made and developed by professionals in the sector, so as to bring to the community real valuables that can be exchanged and appreciated over time. All this mechanism can be managed by Toffie.',
       website: 'https://safefarms.marshmallowdefi.com/info',
       social: {
         telegram: 'https://t.me/MarshmallowDeFi',

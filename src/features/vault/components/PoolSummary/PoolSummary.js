@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import Hidden from '@material-ui/core/Hidden';
 import Grid from '@material-ui/core/Grid';
@@ -19,7 +19,6 @@ const PoolSummary = ({
   pool,
   launchpool,
   toggleCard,
-  isOpen,
   balanceSingle,
   sharesBalance,
   apy,
@@ -29,24 +28,33 @@ const PoolSummary = ({
 }) => {
   const { t } = useTranslation();
   const classes = useStyles();
-  const vaultStateTitle = (status, paused, experimental) => {
+
+  const vaultStateTitle = useMemo(() => {
     let state =
-      status === 'eol'
+      pool.status === 'eol'
         ? t('Vault-DepositsRetiredTitle')
-        : paused
+        : pool.paused
         ? t('Vault-DepositsPausedTitle')
         : null;
 
     if (launchpool) {
-      state = t('Stake-BoostedBy', { name: launchpool.name }) ;
+      state = t('Stake-BoostedBy', { name: launchpool.name });
     }
 
-    if (experimental) {
-      state = t('Vault-Experimental') ;
+    if (pool.experimental) {
+      state = t('Vault-Experimental');
     }
 
-    return state === null ? '' : <PoolPaused message={t(state)} isBoosted={!!launchpool} isExperimental={!!experimental} />;
-  };
+    return state === null ? (
+      ''
+    ) : (
+      <PoolPaused
+        message={t(state)}
+        isBoosted={!!launchpool}
+        isExperimental={!!pool.experimental}
+      />
+    );
+  }, [pool, launchpool]);
 
   const balanceUsd =
     balanceSingle > 0 && fetchVaultsDataDone ? formatTvl(balanceSingle, pool.oraclePrice) : '';
@@ -76,7 +84,7 @@ const PoolSummary = ({
         justify="space-around"
         style={{ paddingTop: '20px', paddingBottom: '20px' }}
       >
-        {vaultStateTitle(pool.status, pool.depositsPaused, pool.experimental)}
+        {vaultStateTitle}
         <PoolTitle
           name={pool.name}
           logo={pool.logo}
