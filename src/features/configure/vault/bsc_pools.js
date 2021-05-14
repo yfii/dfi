@@ -54,7 +54,7 @@ export const bscPools = [
     name: 'IRON-BUSD LP',
     token: 'IRON-BUSD LP',
     tokenDescription: 'Pancake',
-    tokenAddress: '0x7b65b489fe53fce1f6548db886c08ad73111ddd8',
+    tokenAddress: '0x26e49b5aE7e9b6c8C7C9b8506DA6b3b321c7431c',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooIronIRON-BUSD',
