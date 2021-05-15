@@ -100,11 +100,11 @@ export const getNetworkStakePools = () => {
 export const getNetworkStables = () => {
   switch (process.env.REACT_APP_NETWORK_ID) {
     case '56':
-      return ['BUSD', 'USDT', 'USDC', 'DAI', 'VAI', 'QUSD', 'UST', 'VENUS BLP', '3EPS', 'fUSDT', '4BELT'];
+      return ['BUSD', 'USDT', 'USDC', 'DAI', 'VAI', 'QUSD', 'UST', 'VENUS BLP', '3EPS', 'fUSDT', '4BELT', 'IRON'];
     case '128':
       return ['USDT', 'HUSD'];
     case '43114':
-      return ['USDT', 'DAI', 'BUSD'];
+      return ['USDT', 'DAI', 'BUSD', 'zDAI', 'zUSDT'];
     case '137':
       return ['USDC', 'USDT', 'maUSDC'];
     case '250':
@@ -248,50 +248,50 @@ export const getNetworkConnectors = t => {
           },
         },
       };
-      case '137':
-        return {
-          network: 'polygon',
-          cacheProvider: true,
-          providerOptions: {
-            injected: {
-              display: {
-                name: 'Injected',
-                description: t('Home-BrowserWallet'),
-              },
+    case '137':
+      return {
+        network: 'polygon',
+        cacheProvider: true,
+        providerOptions: {
+          injected: {
+            display: {
+              name: 'Injected',
+              description: t('Home-BrowserWallet'),
             },
-            walletconnect: {
-              package: WalletConnectProvider,
-              options: {
-                rpc: {
-                  1: 'https://rpc-mainnet.maticvigil.com/',
-                  137: 'https://rpc-mainnet.maticvigil.com/',
-                },
+          },
+          walletconnect: {
+            package: WalletConnectProvider,
+            options: {
+              rpc: {
+                1: 'https://rpc-mainnet.maticvigil.com/',
+                137: 'https://rpc-mainnet.maticvigil.com/',
               },
             },
           },
-        };
-        case '250':
-        return {
-          network: 'fantom',
-          cacheProvider: true,
-          providerOptions: {
-            injected: {
-              display: {
-                name: 'Injected',
-                description: t('Home-BrowserWallet'),
-              },
+        },
+      };
+    case '250':
+      return {
+        network: 'fantom',
+        cacheProvider: true,
+        providerOptions: {
+          injected: {
+            display: {
+              name: 'Injected',
+              description: t('Home-BrowserWallet'),
             },
-            walletconnect: {
-              package: WalletConnectProvider,
-              options: {
-                rpc: {
-                  1: 'https://rpcapi.fantom.network',
-                  250: 'https://rpcapi.fantom.network',
-                },
+          },
+          walletconnect: {
+            package: WalletConnectProvider,
+            options: {
+              rpc: {
+                1: 'https://rpcapi.fantom.network',
+                250: 'https://rpcapi.fantom.network',
               },
             },
           },
-        };
+        },
+      };
     default:
       return {};
   }
