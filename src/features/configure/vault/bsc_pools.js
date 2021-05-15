@@ -74,7 +74,7 @@ export const bscPools = [
 
   {
     id: 'banana-ada-bnb',
-    logo: 'bnb-pairs/ADA-BNB.svg',
+    logo: 'degens/ADA-BNB.svg',
     name: 'ADA-BNB LP',
     token: 'ADA-BNB ALP',
     tokenDescription: 'ApeSwap',
