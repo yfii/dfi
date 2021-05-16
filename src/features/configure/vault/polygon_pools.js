@@ -59,6 +59,7 @@ export const polygonPools = [
     name: 'MATIC',
     token: 'MATIC',
     tokenDescription: 'Aave',
+    tokenAddress: '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooAaveMATIC',
