@@ -8,7 +8,7 @@ import {
 import { MultiCall } from 'eth-multicall';
 import { erc20ABI, multicallBnbShimABI, uniswapV2PairABI } from 'features/configure';
 import { byDecimals } from 'features/helpers/bignumber';
-import { getNetworkMulticall } from 'features/helpers/getNetworkData';
+import { getNetworkMulticall, getNetworkMulticallNativeShim } from 'features/helpers/getNetworkData';
 
 export function fetchBalances({ address, web3, tokens }) {
   return dispatch => {
@@ -27,7 +27,7 @@ export function fetchBalances({ address, web3, tokens }) {
 
       Object.entries(tokens).forEach(([symbol, token]) => {
         if (!token.tokenAddress) {
-          const shimAddress = '0xC72E5edaE5D7bA628A2Acb39C8Aa0dbbD06daacF';
+          const shimAddress = getNetworkMulticallNativeShim();
           const shimContract = new web3.eth.Contract(multicallBnbShimABI, shimAddress);
           balanceCalls.push({
             balance: shimContract.methods.balanceOf(address),
