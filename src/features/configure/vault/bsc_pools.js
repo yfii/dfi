@@ -71,6 +71,34 @@ export const bscPools = [
     callFee: 0.5,
     addLiquidityUrl: 'https://belt.fi/',
   },
+  
+  {
+    id: 'garuda-garuda-usdt',
+    logo: 'degens/garuda-usdt.png',
+    name: 'GARUDA-USDT LP',
+    token: 'GARUDA-USDT LP',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0x7F6369476756B06D2b70BD77917fbc35A7801EFD',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooGarudaGARUDA-USDT',
+    earnedTokenAddress: '0x1e8Cf92A803781b4ecB9102031fc5506A476E2A4',
+    earnContractAddress: '0x1e8Cf92A803781b4ecB9102031fc5506A476E2A4',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'garuda-garuda-usdt',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    assets: ['GARUDA', 'USDT'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0x854086dC841e1bfae50Cb615bF41f55BF432a90b/0x55d398326f99059fF775485246999027B3197955',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x854086dC841e1bfae50Cb615bF41f55BF432a90b',
+  },
+
   {
     id: 'banana-ftm-bnb',
     logo: 'bnb-pairs/FTM-BNB.svg',
