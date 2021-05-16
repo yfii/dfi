@@ -4,7 +4,7 @@ let commitHash = ""
 
 export const getLatestApiCommitHash = async () => {
     if (!commitHash) {
-        const response = await axios.get("https://api.github.com/repos/beefyfinance/beefy-api/commits/master");
+        const response = await axios.get("https://api.github.com/repos/beefyfinance/beefy-api/commits/prod");
         commitHash = response.data.sha;
     }
 
