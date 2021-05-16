@@ -362,13 +362,25 @@ const DepositSection = ({ pool }) => {
           )}
           {depositSettings.isZap && !depositSettings.amount.isZero() && pool.zapEstimate && (
             <div className={classes.zapNote}>
-              <span>Deposit scenario:&nbsp;</span>
+              <span>{t('Vault-DepositScenario')}&nbsp;</span>
               {fetchZapEstimatePending[pool.earnContractAddress] && <CircularProgress size={12} />}
               <ol>
-                <li>Swap ~{convertAmountFromRawNumber(pool.zapEstimate.swapAmountIn, depositSettings.token.decimals).decimalPlaces(8, BigNumber.ROUND_DOWN).toFormat()} {depositSettings.token.symbol} for {convertAmountFromRawNumber(pool.zapEstimate.swapAmountOut, swapTokenOut.decimals).decimalPlaces(8, BigNumber.ROUND_DOWN).toFormat()} {swapTokenOut.symbol} (&plusmn;1%)</li>
-                <li>Add {pool.assets.join(' and ')} as liqudity to {pool.token} pool</li>
-                <li>Deposit recieved {pool.token} on Beefy Vault</li>
-                <li>Unused assets will be returned to your wallet</li>
+                <li>
+                  {t('Vault-DepositScenarioSwap', {
+                    swapIn: `${convertAmountFromRawNumber(pool.zapEstimate.swapAmountIn, depositSettings.token.decimals).decimalPlaces(8, BigNumber.ROUND_DOWN).toFormat()} ${depositSettings.token.symbol}`,
+                    swapOut: `${convertAmountFromRawNumber(pool.zapEstimate.swapAmountOut, swapTokenOut.decimals).decimalPlaces(8, BigNumber.ROUND_DOWN).toFormat()} ${swapTokenOut.symbol}`,
+                    slippageTolerance: `1%`,
+                  })}
+                </li>
+                <li>
+                  {t('Vault-DepositScenarioAddLiqudity', {
+                    tokenA: pool.assets[0],
+                    tokenB: pool.assets[1],
+                    poolToken: pool.token,
+                  })}
+                </li>
+                <li>{t('Vault-DepositScenarioDepositToVault', { poolToken: pool.token })}</li>
+                <li>{t('Vault-DepositScenarioReturnDust')}</li>
               </ol>
             </div>
           )}
