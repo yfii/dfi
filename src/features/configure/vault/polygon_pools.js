@@ -367,7 +367,7 @@ export const polygonPools = [
   {
     id: 'sushi-matic-eth',
     logo: 'polygon/ETH-MATIC.png',
-    name: 'MATIC-ETH LP',
+    name: 'ETH-MATIC LP',
     token: 'MATIC-ETH SLP',
     tokenDescription: 'SushiSwap',
     tokenAddress: '0xc4e595acdd7d12fec385e5da5d43160e8a0bac0e',

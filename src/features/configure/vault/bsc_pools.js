@@ -73,6 +73,34 @@ export const bscPools = [
   },
 
   {
+    id: 'banana-ada-bnb',
+    logo: 'degens/ADA-BNB.svg',
+    name: 'ADA-BNB LP',
+    token: 'ADA-BNB ALP',
+    tokenDescription: 'ApeSwap',
+    tokenAddress: '0x40d4543887E4170A1A40Cd8dB15A6b297c812Cb1',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooApeADA-BNB',
+    earnedTokenAddress: '0xb8E6a5EDbC8ae71f74Fd02f65E95Ba0a8733c5a1',
+    earnContractAddress: '0xb8E6a5EDbC8ae71f74Fd02f65E95Ba0a8733c5a1',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'banana-ada-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'ApeSwap',
+    assets: ['ADA', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://dex.apeswap.finance/#/add/ETH/0x3EE2200Efb3400fAbB9AacF31297cBdD1d435D47',
+    buyTokenUrl:
+      'https://dex.apeswap.finance/#/swap?outputCurrency=0x3EE2200Efb3400fAbB9AacF31297cBdD1d435D47',
+  },
+
+  {
     id: 'iron-iron-busd',
     logo: 'degens/IRON.png',
     name: 'IRON-BUSD LP',
