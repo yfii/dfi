@@ -30,20 +30,20 @@ export default function StakePools(props) {
   const [time, setTime] = React.useState(new Date());
 
   useEffect(() => {
-      const fetchEndPeriod = () => {
-        for (const key in pools) {
-          if (halfTime[key] === undefined || halfTime[key] === 0) {
-            fetchHalfTime(key);
-          }
+    const fetchEndPeriod = () => {
+      for (const key in pools) {
+        if (halfTime[key] === undefined || halfTime[key] === 0) {
+          fetchHalfTime(key);
         }
-      };
+      }
+    };
 
+    fetchEndPeriod();
+
+    const id = setInterval(() => {
       fetchEndPeriod();
-
-      const id = setInterval(() => {
-        fetchEndPeriod();
-      }, 10000);
-      return () => clearInterval(id);
+    }, 10000);
+    return () => clearInterval(id);
   }, [address, halfTime, fetchHalfTime, pools]);
 
   const [expanded, setExpanded] = React.useState('faq-1');
@@ -54,31 +54,31 @@ export default function StakePools(props) {
 
   useEffect(() => {
     const fetchCountdown = () => {
-        setTime(new Date());
-        let obj = {};
-        for (const key in pools) {
-          if (halfTime[key] === undefined) {
-            pools[key].countdown = pools[key].status === 'closed' ? t('Finished') : '';
-            continue;
-          }
-
-          if (halfTime[key] === '0') {
-            obj = { status: 'soon', countdown: t('Coming-Soon') };
-          } else {
-            const deadline = halfTime[key] * 1000;
-            const diff = deadline - time;
-
-            obj =
-              diff > 0
-                ? { status: 'active', countdown: formatCountdown(deadline) }
-                : { status: 'closed', countdown: t('Finished') };
-          }
-
-          if(!pools[key].hideCountdown === true) {
-            pools[key].status = obj.status;
-          }
-          pools[key].countdown = obj.countdown;
+      setTime(new Date());
+      let obj = {};
+      for (const key in pools) {
+        if (halfTime[key] === undefined) {
+          pools[key].countdown = pools[key].status === 'closed' ? t('Finished') : '';
+          continue;
         }
+
+        if (halfTime[key] === '0') {
+          obj = { status: 'soon', countdown: t('Coming-Soon') };
+        } else {
+          const deadline = halfTime[key] * 1000;
+          const diff = deadline - time;
+
+          obj =
+            diff > 0
+              ? { status: 'active', countdown: formatCountdown(deadline) }
+              : { status: 'closed', countdown: t('Finished') };
+        }
+
+        if (!pools[key].hideCountdown === true) {
+          pools[key].status = obj.status;
+        }
+        pools[key].countdown = obj.countdown;
+      }
     };
 
     const id = setInterval(() => {
@@ -100,7 +100,7 @@ export default function StakePools(props) {
           <img alt="Launchpool" src={require('images/stake/launchpool.png')} />
         </div>
       </Grid>
-      <Grid item xs={12} style={{paddingBottom: '20px', textAlign: 'right'}}>
+      <Grid item xs={12} style={{ paddingBottom: '20px', textAlign: 'right' }}>
         <ToggleButtonGroup value={showPools} exclusive onChange={handleShowPools}>
           <ToggleButton value="all">All</ToggleButton>
           <ToggleButton value="active">Live</ToggleButton>
@@ -110,7 +110,10 @@ export default function StakePools(props) {
       <Grid container spacing={4} justify={'center'}>
         {pools.map((pool, index) => (
           <React.Fragment key={index}>
-            {(showPools === 'all' || (showPools === 'active' && pools[index].status === showPools || showPools === 'active' && pools[index].status === 'soon') || showPools === 'closed' && pools[index].status === showPools) ? (
+            {showPools === 'all' ||
+            (showPools === 'active' && pools[index].status === showPools) ||
+            (showPools === 'active' && pools[index].status === 'soon') ||
+            (showPools === 'closed' && pools[index].status === showPools) ? (
               <Grid xs={12} sm={6} md={6} lg={3} key={index} item>
                 <Grid
                   className={[
@@ -123,7 +126,9 @@ export default function StakePools(props) {
                   ].join(' ')}
                 >
                   {pool.partnership ? (
-                    <Box className={classes.boosted}>{t('Stake-BoostedBy', { name: pool.name })}</Box>
+                    <Box className={classes.boosted}>
+                      {t('Stake-BoostedBy', { name: pool.name })}
+                    </Box>
                   ) : (
                     ''
                   )}
@@ -164,7 +169,9 @@ export default function StakePools(props) {
                   )}
                 </Grid>
               </Grid>
-            ) : ''}
+            ) : (
+              ''
+            )}
           </React.Fragment>
         ))}
       </Grid>

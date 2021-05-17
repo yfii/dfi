@@ -1,4 +1,4 @@
-const styles = (theme) => ({
+const styles = theme => ({
   details: {
     display: 'flex',
     alignItems: 'center',

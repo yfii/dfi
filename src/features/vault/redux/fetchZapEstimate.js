@@ -8,7 +8,13 @@ import {
 } from './constants';
 import { zapDepositEstimate, zapWithdrawEstimate } from '../../web3';
 
-export function fetchZapDepositEstimate({ web3, zapAddress, vaultAddress, tokenAddress, tokenAmount }) {
+export function fetchZapDepositEstimate({
+  web3,
+  zapAddress,
+  vaultAddress,
+  tokenAddress,
+  tokenAmount,
+}) {
   return dispatch => {
     dispatch({
       type: VAULT_FETCH_ZAP_ESTIMATE_BEGIN,
@@ -39,7 +45,15 @@ export function fetchZapDepositEstimate({ web3, zapAddress, vaultAddress, tokenA
   };
 }
 
-export function fetchZapWithdrawEstimate({ web3, vaultAddress, routerAddress, swapInput, swapOutput, pairToken, pairTokenAmount }) {
+export function fetchZapWithdrawEstimate({
+  web3,
+  vaultAddress,
+  routerAddress,
+  swapInput,
+  swapOutput,
+  pairToken,
+  pairTokenAmount,
+}) {
   return dispatch => {
     dispatch({
       type: VAULT_FETCH_ZAP_ESTIMATE_BEGIN,
@@ -49,7 +63,7 @@ export function fetchZapWithdrawEstimate({ web3, vaultAddress, routerAddress, sw
     const totalSupply = new BigNumber(pairToken.totalSupply);
     const shares = new BigNumber(pairTokenAmount);
     if (shares.isZero()) {
-      return new Promise((resolve) => {
+      return new Promise(resolve => {
         dispatch({
           type: VAULT_FETCH_ZAP_ESTIMATE_SUCCESS,
           data: {
@@ -58,13 +72,13 @@ export function fetchZapWithdrawEstimate({ web3, vaultAddress, routerAddress, sw
               amountOut: 0,
               swapInput,
               swapOutput,
-            }
+            },
           },
           vaultAddress,
           index: pairToken.tokenAddress,
         });
         resolve();
-      })
+      });
     }
 
     const equity = shares.dividedBy(totalSupply);
@@ -91,7 +105,7 @@ export function fetchZapWithdrawEstimate({ web3, vaultAddress, routerAddress, sw
                 amountOut,
                 swapInput,
                 swapOutput,
-              }
+              },
             },
             vaultAddress,
             index: pairToken.tokenAddress,
@@ -118,8 +132,14 @@ export function useFetchZapEstimate() {
     fetchZapEstimatePending: state.vault.fetchZapEstimatePending,
   }));
 
-  const boundActionDeposit = useCallback(data => dispatch(fetchZapDepositEstimate(data)), [dispatch]);
-  const boundActionWithdraw = useCallback(data => dispatch(fetchZapWithdrawEstimate(data)), [dispatch]);
+  const boundActionDeposit = useCallback(
+    data => dispatch(fetchZapDepositEstimate(data)),
+    [dispatch]
+  );
+  const boundActionWithdraw = useCallback(
+    data => dispatch(fetchZapWithdrawEstimate(data)),
+    [dispatch]
+  );
 
   return {
     fetchZapDepositEstimate: boundActionDeposit,
@@ -141,11 +161,11 @@ export function reducer(state, action) {
 
     case VAULT_FETCH_ZAP_ESTIMATE_SUCCESS:
       const { pools } = state;
-      const poolIndex = pools.findIndex(pool => pool.earnContractAddress == action.vaultAddress)
+      const poolIndex = pools.findIndex(pool => pool.earnContractAddress == action.vaultAddress);
       pools[poolIndex] = {
         ...pools[poolIndex],
         ...action.data,
-      }
+      };
       return {
         ...state,
         pools,

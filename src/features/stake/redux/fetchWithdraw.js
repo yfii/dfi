@@ -5,14 +5,14 @@ import {
   STAKE_FETCH_WITHDRAW_SUCCESS,
   STAKE_FETCH_WITHDRAW_FAILURE,
 } from './constants';
-import { enqueueSnackbar } from '../../common/redux/actions'
+import { enqueueSnackbar } from '../../common/redux/actions';
 
 export function fetchWithdraw(index, amount) {
   return (dispatch, getState) => {
     // optionally you can have getState as the second argument
     dispatch({
       type: STAKE_FETCH_WITHDRAW_BEGIN,
-      index
+      index,
     });
     // Return a promise so that you could control UI flow without states in the store.
     // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
@@ -28,47 +28,55 @@ export function fetchWithdraw(index, amount) {
       const { earnContractAbi, earnContractAddress } = pools[index];
       const contract = new web3.eth.Contract(earnContractAbi, earnContractAddress);
 
-      contract.methods.withdraw(amount).send({ from: address }).on(
-        'transactionHash', function(hash){
-          dispatch(enqueueSnackbar({
-            message: hash,
-            options: {
-              key: new Date().getTime() + Math.random(),
-              variant: 'success'
-            },
-            hash
-          }));
+      contract.methods
+        .withdraw(amount)
+        .send({ from: address })
+        .on('transactionHash', function (hash) {
+          dispatch(
+            enqueueSnackbar({
+              message: hash,
+              options: {
+                key: new Date().getTime() + Math.random(),
+                variant: 'success',
+              },
+              hash,
+            })
+          );
         })
-        .on('receipt', function(receipt){
-          dispatch(enqueueSnackbar({
-            key: new Date().getTime() + Math.random(),
-            message: 'success',
-            options: {
-              variant: 'success',
-            },
-            hash: receipt.transactionHash
-          }));
+        .on('receipt', function (receipt) {
+          dispatch(
+            enqueueSnackbar({
+              key: new Date().getTime() + Math.random(),
+              message: 'success',
+              options: {
+                variant: 'success',
+              },
+              hash: receipt.transactionHash,
+            })
+          );
           dispatch({ type: STAKE_FETCH_WITHDRAW_SUCCESS, index });
           resolve();
         })
-        .on('error', function(error) {
-          dispatch(enqueueSnackbar({
-            message: error.message || error,
-            options: {
-              key: new Date().getTime() + Math.random(),
-              variant: 'error'
-            },
-          }));
+        .on('error', function (error) {
+          dispatch(
+            enqueueSnackbar({
+              message: error.message || error,
+              options: {
+                key: new Date().getTime() + Math.random(),
+                variant: 'error',
+              },
+            })
+          );
           dispatch({ type: STAKE_FETCH_WITHDRAW_FAILURE, index });
           resolve();
         })
-        .catch((error) => {
+        .catch(error => {
           dispatch({ type: STAKE_FETCH_WITHDRAW_FAILURE, index });
-          reject(error)
-        })
+          reject(error);
+        });
     });
     return promise;
-  }
+  };
 }
 
 export function useFetchWithdraw() {
@@ -76,20 +84,18 @@ export function useFetchWithdraw() {
   // if array, means args passed to the action creator
   const dispatch = useDispatch();
 
-  const { fetchWithdrawPending } = useSelector(
-    state => ({
-      fetchWithdrawPending: state.stake.fetchWithdrawPending,
-    })
-  );
+  const { fetchWithdrawPending } = useSelector(state => ({
+    fetchWithdrawPending: state.stake.fetchWithdrawPending,
+  }));
 
   const boundAction = useCallback(
     (data, amount) => dispatch(fetchWithdraw(data, amount)),
-    [dispatch],
+    [dispatch]
   );
 
   return {
     fetchWithdraw: boundAction,
-    fetchWithdrawPending
+    fetchWithdrawPending,
   };
 }
 

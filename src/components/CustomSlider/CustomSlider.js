@@ -3,7 +3,7 @@ import Slider from '@material-ui/core/Slider';
 import { makeStyles } from '@material-ui/core/styles';
 import { secondaryColor, successColor } from 'assets/jss/material-kit-pro-react';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   mark: {
     height: '0',
   },

@@ -3,7 +3,10 @@ import { enqueueSnackbar } from '../common/redux/actions';
 import { fetchStrategy } from './fetchStrategy';
 
 export const harvest = async ({ web3, address, vaultContractAddress, dispatch }) => {
-  const strategyContractAddress = await fetchStrategy({ web3, contractAddress: vaultContractAddress });
+  const strategyContractAddress = await fetchStrategy({
+    web3,
+    contractAddress: vaultContractAddress,
+  });
   const strategyContract = new web3.eth.Contract(strategyABI, strategyContractAddress);
   const data = await _harvest({ contract: strategyContract, address, dispatch });
   return data;

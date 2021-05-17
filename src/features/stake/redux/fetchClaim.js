@@ -5,14 +5,14 @@ import {
   STAKE_FETCH_CLAIM_SUCCESS,
   STAKE_FETCH_CLAIM_FAILURE,
 } from './constants';
-import { enqueueSnackbar } from '../../common/redux/actions'
+import { enqueueSnackbar } from '../../common/redux/actions';
 
 export function fetchClaim(index) {
   return (dispatch, getState) => {
     // optionally you can have getState as the second argument
     dispatch({
       type: STAKE_FETCH_CLAIM_BEGIN,
-      index
+      index,
     });
     // Return a promise so that you could control UI flow without states in the store.
     // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
@@ -28,68 +28,70 @@ export function fetchClaim(index) {
       const { earnContractAbi, earnContractAddress } = pools[index];
       const contract = new web3.eth.Contract(earnContractAbi, earnContractAddress);
 
-      contract.methods.getReward().send({ from: address }).on(
-        'transactionHash', function(hash){
-          dispatch(enqueueSnackbar({
-            message: hash,
-            options: {
-              key: new Date().getTime() + Math.random(),
-              variant: 'success'
-            },
-            hash
-          }));
+      contract.methods
+        .getReward()
+        .send({ from: address })
+        .on('transactionHash', function (hash) {
+          dispatch(
+            enqueueSnackbar({
+              message: hash,
+              options: {
+                key: new Date().getTime() + Math.random(),
+                variant: 'success',
+              },
+              hash,
+            })
+          );
         })
-        .on('receipt', function(receipt){
-          dispatch(enqueueSnackbar({
-            key: new Date().getTime() + Math.random(),
-            message: 'Success',
-            options: {
-              variant: 'success',
-            },
-          }));
+        .on('receipt', function (receipt) {
+          dispatch(
+            enqueueSnackbar({
+              key: new Date().getTime() + Math.random(),
+              message: 'Success',
+              options: {
+                variant: 'success',
+              },
+            })
+          );
           dispatch({ type: STAKE_FETCH_CLAIM_SUCCESS, index });
           resolve();
         })
-        .on('error', function(error) {
-          dispatch(enqueueSnackbar({
-            message: error.message || error,
-            options: {
-              key: new Date().getTime() + Math.random(),
-              variant: 'error'
-            },
-          }));
+        .on('error', function (error) {
+          dispatch(
+            enqueueSnackbar({
+              message: error.message || error,
+              options: {
+                key: new Date().getTime() + Math.random(),
+                variant: 'error',
+              },
+            })
+          );
           dispatch({ type: STAKE_FETCH_CLAIM_FAILURE, index });
           resolve();
         })
-        .catch((error) => {
-          dispatch({ type: STAKE_FETCH_CLAIM_FAILURE, index});
-          reject(error)
-        })
+        .catch(error => {
+          dispatch({ type: STAKE_FETCH_CLAIM_FAILURE, index });
+          reject(error);
+        });
     });
     return promise;
-  }
+  };
 }
-
 
 export function useFetchClaim() {
   // args: false value or array
   // if array, means args passed to the action creator
   const dispatch = useDispatch();
 
-  const { fetchClaimPending } = useSelector(
-    state => ({
-      fetchClaimPending: state.stake.fetchClaimPending,
-    })
-  );
+  const { fetchClaimPending } = useSelector(state => ({
+    fetchClaimPending: state.stake.fetchClaimPending,
+  }));
 
-  const boundAction = useCallback(
-    data => dispatch(fetchClaim(data)),
-    [dispatch],
-  );
+  const boundAction = useCallback(data => dispatch(fetchClaim(data)), [dispatch]);
 
   return {
     fetchClaim: boundAction,
-    fetchClaimPending
+    fetchClaimPending,
   };
 }
 

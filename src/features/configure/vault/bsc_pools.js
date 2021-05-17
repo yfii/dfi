@@ -95,7 +95,7 @@ export const bscPools = [
     callFee: 0.5,
     addLiquidityUrl: 'https://belt.fi/',
   },
-  
+
   {
     id: 'garuda-garuda-usdt',
     logo: 'degens/garuda-usdt.png',
@@ -461,8 +461,10 @@ export const bscPools = [
     platform: 'MDex',
     assets: ['BIFI', 'USDT'],
     callFee: 0.25,
-    buyTokenUrl: 'https://bsc.mdex.com/#/swap?inputCurrency=0x55d398326f99059fF775485246999027B3197955&outputCurrency=0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
-    addLiquidityUrl: 'https://bsc.mdex.com/#/add/0xCa3F508B8e4Dd382eE878A314789373D80A5190A/0x55d398326f99059fF775485246999027B3197955',
+    buyTokenUrl:
+      'https://bsc.mdex.com/#/swap?inputCurrency=0x55d398326f99059fF775485246999027B3197955&outputCurrency=0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
+    addLiquidityUrl:
+      'https://bsc.mdex.com/#/add/0xCa3F508B8e4Dd382eE878A314789373D80A5190A/0x55d398326f99059fF775485246999027B3197955',
   },
 
   {

@@ -20,7 +20,6 @@ import translationTR from './locales/tr/translation.json';
 import translationUK from './locales/uk/translation.json';
 import translationZH from './locales/zh/translation.json';
 
-
 const resources = {
   cn: { translation: translationCN },
   de: { translation: translationDE },

@@ -28,9 +28,13 @@ const PoolAccordion = ({ pool, balanceSingle, index, sharesBalance }) => {
       </AccordionDetails>
     );
   } else {
-    return <div className={classes.noWalletButtonCon}>
-      <Button className={classes.noWalletButton} onClick={handleConnectWallet}>{t('Vault-ConnectWallet')}</Button>
-    </div>
+    return (
+      <div className={classes.noWalletButtonCon}>
+        <Button className={classes.noWalletButton} onClick={handleConnectWallet}>
+          {t('Vault-ConnectWallet')}
+        </Button>
+      </div>
+    );
   }
 };
 

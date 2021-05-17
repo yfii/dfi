@@ -32,7 +32,7 @@ const useUserTvl = (pools, tokens) => {
       if (sharesBalance > 0) {
         const deposited = byDecimals(
           sharesBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)),
-          pool.tokenDecimals,
+          pool.tokenDecimals
         );
         userTvl += deposited * pool.oraclePrice;
       }

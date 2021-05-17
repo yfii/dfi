@@ -8,29 +8,26 @@ if (localStorage) {
     if (!data) {
       data = {};
     }
-  } catch (e) {
-  }
+  } catch (e) {}
 }
 
 const useFilterStorage = () => {
-
   const saveData = () => {
     if (localStorage) {
       try {
         localStorage.setItem(FILTER_STORAGE, JSON.stringify(data));
-      } catch (e) {
-      }
+      } catch (e) {}
     }
-  }
+  };
 
   const setStorage = (key, value) => {
     data[key] = value;
     saveData();
-  }
+  };
 
-  const getStorage = (key) => {
+  const getStorage = key => {
     return data[key];
-  }
+  };
 
   return { getStorage, setStorage };
 };

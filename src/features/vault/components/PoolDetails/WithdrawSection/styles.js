@@ -60,22 +60,22 @@ const styles = theme => ({
     color: theme.palette.text.secondary,
   },
   zapFormControl: {
-    minWidth: "auto",
+    minWidth: 'auto',
   },
   zapSelect: {
-    border: "none",
+    border: 'none',
     borderLeft: `1px solid ${theme.palette.text.secondary}`,
-    paddingLeft: "10px",
-    "& > div": {
-      padding: "6px 0"
+    paddingLeft: '10px',
+    '& > div': {
+      padding: '6px 0',
     },
-    "&::before": {
-      content: "none",
+    '&::before': {
+      content: 'none',
     },
-    "&::after": {
-      content: "none",
+    '&::after': {
+      content: 'none',
     },
-  }
+  },
 });
 
 export default styles;

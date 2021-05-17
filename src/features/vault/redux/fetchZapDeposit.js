@@ -7,7 +7,16 @@ import {
 } from './constants';
 import { zapDeposit } from '../../web3';
 
-export function fetchZapDeposit({ address, web3, vaultAddress, isETH, tokenAddress, tokenAmount, zapAddress, swapAmountOutMin }) {
+export function fetchZapDeposit({
+  address,
+  web3,
+  vaultAddress,
+  isETH,
+  tokenAddress,
+  tokenAmount,
+  zapAddress,
+  swapAmountOutMin,
+}) {
   const index = vaultAddress;
 
   return dispatch => {
@@ -17,7 +26,17 @@ export function fetchZapDeposit({ address, web3, vaultAddress, isETH, tokenAddre
     });
 
     const promise = new Promise((resolve, reject) => {
-      zapDeposit({ web3, address, vaultAddress, isETH, tokenAddress, tokenAmount, zapAddress, swapAmountOutMin, dispatch })
+      zapDeposit({
+        web3,
+        address,
+        vaultAddress,
+        isETH,
+        tokenAddress,
+        tokenAmount,
+        zapAddress,
+        swapAmountOutMin,
+        dispatch,
+      })
         .then(data => {
           dispatch({
             type: VAULT_FETCH_DEPOSIT_SUCCESS,

@@ -37,27 +37,29 @@ export function fetchVaultsData({ web3, pools }) {
 
       Promise.all([
         multicall.all([vaultCalls]).then(result => result[0]),
-        whenPricesLoaded() // need to wait until prices are loaded in cache
-      ]).then(data => {
-        const newPools = pools.map((pool, i) => {
-          const pricePerFullShare = byDecimals(data[0][i].pricePerFullShare, 18).toNumber();
-          return {
-            pricePerFullShare: new BigNumber(pricePerFullShare).toNumber() || 1,
-            tvl: byDecimals(data[0][i].tvl, pool.tokenDecimals).toNumber(),
-            oraclePrice: fetchPrice({ id: pool.oracleId }) || 0,
-          };
+        whenPricesLoaded(), // need to wait until prices are loaded in cache
+      ])
+        .then(data => {
+          const newPools = pools.map((pool, i) => {
+            const pricePerFullShare = byDecimals(data[0][i].pricePerFullShare, 18).toNumber();
+            return {
+              pricePerFullShare: new BigNumber(pricePerFullShare).toNumber() || 1,
+              tvl: byDecimals(data[0][i].tvl, pool.tokenDecimals).toNumber(),
+              oraclePrice: fetchPrice({ id: pool.oracleId }) || 0,
+            };
+          });
+          dispatch({
+            type: VAULT_FETCH_VAULTS_DATA_SUCCESS,
+            data: newPools,
+          });
+          resolve();
+        })
+        .catch(error => {
+          dispatch({
+            type: VAULT_FETCH_VAULTS_DATA_FAILURE,
+          });
+          reject(error.message || error);
         });
-        dispatch({
-          type: VAULT_FETCH_VAULTS_DATA_SUCCESS,
-          data: newPools,
-        });
-        resolve();
-      }).catch(error => {
-        dispatch({
-          type: VAULT_FETCH_VAULTS_DATA_FAILURE,
-        });
-        reject(error.message || error);
-      });
     });
 
     return promise;

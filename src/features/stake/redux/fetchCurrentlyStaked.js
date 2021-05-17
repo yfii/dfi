@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import BigNumber from "bignumber.js";
+import BigNumber from 'bignumber.js';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   STAKE_FETCH_CURRENTLY_STAKED_BEGIN,
@@ -12,7 +12,7 @@ export function fetchCurrentlyStaked(index) {
     // optionally you can have getState as the second argument
     dispatch({
       type: STAKE_FETCH_CURRENTLY_STAKED_BEGIN,
-      index
+      index,
     });
     // Return a promise so that you could control UI flow without states in the store.
     // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
@@ -27,53 +27,49 @@ export function fetchCurrentlyStaked(index) {
       const { pools } = stake;
       const { earnContractAbi, earnContractAddress } = pools[index];
       const contract = new web3.eth.Contract(earnContractAbi, earnContractAddress);
-      contract.methods.balanceOf(address).call({ from: address }).then(
-        data => {
+      contract.methods
+        .balanceOf(address)
+        .call({ from: address })
+        .then(data => {
           dispatch({
             type: STAKE_FETCH_CURRENTLY_STAKED_SUCCESS,
             data: new BigNumber(data).toString(),
-            index
+            index,
           });
           resolve(data);
-        },
-      ).catch(
-        // Use rejectHandler as the second argument so that render errors won't be caught.
-        error => {
-          console.log(error)
-          dispatch({
-            type: STAKE_FETCH_CURRENTLY_STAKED_FAILURE,
-            index
-          });
-          reject(error.message || error);
-        }
-      )
+        })
+        .catch(
+          // Use rejectHandler as the second argument so that render errors won't be caught.
+          error => {
+            console.log(error);
+            dispatch({
+              type: STAKE_FETCH_CURRENTLY_STAKED_FAILURE,
+              index,
+            });
+            reject(error.message || error);
+          }
+        );
     });
     return promise;
-  }
+  };
 }
-
 
 export function useFetchCurrentlyStaked() {
   // args: false value or array
   // if array, means args passed to the action creator
   const dispatch = useDispatch();
 
-  const { currentlyStaked, fetchCurrentlyStakedPending } = useSelector(
-    state => ({
-      currentlyStaked: state.stake.currentlyStaked,
-      fetchCurrentlyStakedPending: state.stake.fetchCurrentlyStakedPending,
-    })
-  );
+  const { currentlyStaked, fetchCurrentlyStakedPending } = useSelector(state => ({
+    currentlyStaked: state.stake.currentlyStaked,
+    fetchCurrentlyStakedPending: state.stake.fetchCurrentlyStakedPending,
+  }));
 
-  const boundAction = useCallback(
-    data => dispatch(fetchCurrentlyStaked(data)),
-    [dispatch],
-  );
+  const boundAction = useCallback(data => dispatch(fetchCurrentlyStaked(data)), [dispatch]);
 
   return {
     currentlyStaked,
     fetchCurrentlyStaked: boundAction,
-    fetchCurrentlyStakedPending
+    fetchCurrentlyStakedPending,
   };
 }
 

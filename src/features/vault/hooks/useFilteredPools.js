@@ -29,8 +29,8 @@ const useFilteredPools = (pools, tokens) => {
 
   let filteredPools = [...pools];
 
-  if(filters.resetAll) {
-    setFilters(DEFAULT)
+  if (filters.resetAll) {
+    setFilters(DEFAULT);
   }
 
   if (filters.hideZeroBalances) {
@@ -45,7 +45,7 @@ const useFilteredPools = (pools, tokens) => {
     filteredPools = hideDecomissioned(filteredPools, tokens);
   }
 
-  if(filters.showBoosted) {
+  if (filters.showBoosted) {
     filteredPools = showBoosted(filteredPools);
   }
 
@@ -68,7 +68,10 @@ function showBoosted(pools) {
 
 function hideDecomissioned(pools, tokens) {
   return pools.filter(pool => {
-    return (pool.status !== 'eol' && pool.status !== 'refund') || (tokens[pool.earnedToken] && tokens[pool.earnedToken].tokenBalance > 0);
+    return (
+      (pool.status !== 'eol' && pool.status !== 'refund') ||
+      (tokens[pool.earnedToken] && tokens[pool.earnedToken].tokenBalance > 0)
+    );
   });
 }
 
