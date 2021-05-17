@@ -11,12 +11,108 @@
   "keywords": ["beefy", "bsc"],
   "tokens": [
     {
+      "name": "Hakka Finance on xDai on BSC TOKEN",
+      "symbol": "HAKKA",
+      "address": "0x1D1eb8E8293222e1a29d2C0E4cE6C0Acfd89AaaC",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x1d1eb8e8293222e1a29d2c0e4ce6c0acfd89aaac.png"
+    },
+    {
+      "name": "Exeedme TOKEN",
+      "symbol": "XED",
+      "address": "0x5621b5A3f4a8008c4CCDd1b942B121c8B1944F1f",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x5621b5a3f4a8008c4ccdd1b942b121c8b1944f1f.png"
+    },
+    {
+      "name": "pTokens CGG TOKEN",
+      "symbol": "CGG",
+      "address": "0x1613957159E9B0ac6c80e824F7Eea748a32a0AE2",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x1613957159e9b0ac6c80e824f7eea748a32a0ae2.png"
+    },
+    {
+      "name": "DefiDollar DAO TOKEN",
+      "symbol": "DFD",
+      "address": "0x9899a98b222fCb2f3dbee7dF45d943093a4ff9ff",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x9899a98b222fcb2f3dbee7df45d943093a4ff9ff.png"
+    },
+    {
+      "name": "Lympo Market TOKEN",
+      "symbol": "LMT",
+      "address": "0x9617857E191354dbEA0b714d78Bc59e57C411087",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x9617857e191354dbea0b714d78bc59e57c411087.png"
+    },
+    {
+      "name": "Suterusu TOKEN",
+      "symbol": "SUTER",
+      "address": "0x4CfbBdfBd5BF0814472fF35C72717Bd095ADa055",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x4cfbbdfbd5bf0814472ff35c72717bd095ada055.png"
+    },
+    {
+      "name": "Goal TOKEN",
+      "symbol": "GOAL",
+      "address": "0xE5b57E6e1b945B91FEE368aC108d2ebCcA78Aa8F",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": ""
+    },
+    {
+      "name": "farm.space TOKEN",
+      "symbol": "SPACE",
+      "address": "0x0abd3E3502c15ec252f90F64341cbA74a24fba06",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": ""
+    },
+    {
+      "name": "WINk Token",
+      "symbol": "WIN",
+      "address": "0xaeF0d72a118ce24feE3cD1d43d383897D05B4e99",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0xaef0d72a118ce24fee3cd1d43d383897d05b4e99.png"
+    },
+    {
+      "name": "TRON Token",
+      "symbol": "TRX",
+      "address": "0x85EAC5Ac2F758618dFa09bDbe0cf174e7d574D5B",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x85eac5ac2f758618dfa09bdbe0cf174e7d574d5b.png"
+    },
+    {
+      "name": "BitTorrent Token",
+      "symbol": "BTT",
+      "address": "0x8595F9dA7b868b1822194fAEd312235E43007b49",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x8595f9da7b868b1822194faed312235e43007b49.png"
+    },
+    {
+      "name": "Wrapped Mirror COIN Token",
+      "symbol": "mCOIN",
+      "address": "0x49022089e78a8D46Ec87A3AF86a1Db6c189aFA6f",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x49022089e78a8d46ec87a3af86a1db6c189afa6f.png"
+    },
+    {
       "name": "MDEX Token",
       "symbol": "MDX",
       "address": "0x9c65ab58d8d978db963e63f2bfb7121627e3a739",
       "chainId": 56,
       "decimals": 18,
-      "logoURI": ""
+      "logoURI": "https://mdex.com/token-icons/bsc/0x9c65ab58d8d978db963e63f2bfb7121627e3a739.png"
     },
     {
       "name": "xBLZD Token",
@@ -612,7 +708,7 @@
     },
     {
       "name": "Soteria",
-      "symbol": "wSOTE",
+      "symbol": "WSOTE",
       "address": "0x541e619858737031a1244a5d0cd47e5ef480342c",
       "chainId": 56,
       "decimals": 18,
@@ -620,7 +716,7 @@
     },
     {
       "name": "Mirror TSLA Token",
-      "symbol": "mTSLA",
+      "symbol": "MTSLA",
       "address": "0xF215A127A196e3988C09d052e16BcFD365Cd7AA3",
       "chainId": 56,
       "decimals": 18,
@@ -628,7 +724,7 @@
     },
     {
       "name": "Mirror AMZN Token",
-      "symbol": "mAMZN",
+      "symbol": "MAMZN",
       "address": "0x3947B992DC0147D2D89dF0392213781b04B25075",
       "chainId": 56,
       "decimals": 18,
@@ -636,7 +732,7 @@
     },
     {
       "name": "Mirror NFLX Token",
-      "symbol": "mNFLX",
+      "symbol": "MNFLX",
       "address": "0xa04F060077D90Fe2647B61e4dA4aD1F97d6649dc",
       "chainId": 56,
       "decimals": 18,
@@ -644,7 +740,7 @@
     },
     {
       "name": "Mirror GOOGL Token",
-      "symbol": "mGOOGL",
+      "symbol": "MGOOGL",
       "address": "0x62D71B23bF15218C7d2D7E48DBbD9e9c650B173f",
       "chainId": 56,
       "decimals": 18,
@@ -756,7 +852,7 @@
     },
     {
       "name": "Swirge Pay",
-      "symbol": "SWGb",
+      "symbol": "SWGB",
       "address": "0xe40255c5d7fa7ceec5120408c78c787cecb4cfdb",
       "chainId": 56,
       "decimals": 18,
@@ -828,7 +924,7 @@
     },
     {
       "name": "OPEN Governance Token",
-      "symbol": "bOPEN",
+      "symbol": "BOPEN",
       "address": "0xF35262a9d427F96d2437379eF090db986eaE5d42",
       "chainId": 56,
       "decimals": 18,
@@ -852,7 +948,7 @@
     },
     {
       "name": "Multiplier",
-      "symbol": "bMXX",
+      "symbol": "BMXX",
       "address": "0x4131b87f74415190425ccd873048c708f8005823",
       "chainId": 56,
       "decimals": 18,
@@ -868,7 +964,7 @@
     },
     {
       "name": "xMARK",
-      "symbol": "xMARK",
+      "symbol": "XMARK",
       "address": "0x26a5dfab467d4f58fb266648cae769503cec9580",
       "chainId": 56,
       "decimals": 9,
@@ -1148,7 +1244,7 @@
     },
     {
       "name": "Tau Bitcoin",
-      "symbol": "𝜏BTC",
+      "symbol": "tBTC",
       "address": "0x2cD1075682b0FCCaADd0Ca629e138E64015Ba11c",
       "chainId": 56,
       "decimals": 9,

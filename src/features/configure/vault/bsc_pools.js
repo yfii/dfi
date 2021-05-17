@@ -10603,7 +10603,7 @@ export const bscPools = [
     depositsPaused: true,
     status: 'eol',
     platform: 'Pancake',
-    assets: ['BROOBEE', 'CAKE'],
+    assets: ['bROOBEE', 'CAKE'],
     callFee: 1,
     removeLiquidityUrl:
       'https://v1exchange.pancakeswap.finance/#/remove/0xe64f5cb844946c1f102bd25bbd87a5ab4ae89fbe/0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
