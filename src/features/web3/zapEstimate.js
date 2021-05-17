@@ -1,6 +1,12 @@
 import { beefyUniV2ZapABI, uniswapV2RouterABI } from 'features/configure';
 
-export const zapDepositEstimate = ({ web3, zapAddress, vaultAddress, tokenAddress, tokenAmount }) => {
+export const zapDepositEstimate = ({
+  web3,
+  zapAddress,
+  vaultAddress,
+  tokenAddress,
+  tokenAmount,
+}) => {
   const contract = new web3.eth.Contract(beefyUniV2ZapABI, zapAddress);
   return contract.methods.estimateSwap(vaultAddress, tokenAddress, tokenAmount).call();
   // { swapAmountIn uint256, swapAmountOut uint256, swapTokenOut address }

@@ -24,6 +24,30 @@ export const bscPools = [
     buyTokenUrl: 'https://app.1inch.io/#/56/swap/BNB/BIFI',
   },
   {
+    id: 'hps-hps',
+    logo: 'single-assets/HPS.png',
+    name: 'HPS',
+    token: 'HPS',
+    tokenDescription: 'BillionHappiness',
+    tokenAddress: '0xeDa21B525Ac789EaB1a08ef2404dd8505FfB973D',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooBillionHPS',
+    earnedTokenAddress: '0xAC8E64BE515fAe8c6026fb22954d4D1375938Bb5',
+    earnContractAddress: '0xAC8E64BE515fAe8c6026fb22954d4D1375938Bb5',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'tokens',
+    oracleId: 'HPS',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    assets: ['HPS'],
+    callFee: 0.5,
+    buyTokenUrl:
+      'https://julswap.com/#/swap?inputCurrency=BNB&outputCurrency=0xeDa21B525Ac789EaB1a08ef2404dd8505FfB973D',
+  },
+  {
     id: 'belt-beltbtc',
     logo: 'single-assets/BTCB.svg',
     name: 'beltBTC',
@@ -71,7 +95,7 @@ export const bscPools = [
     callFee: 0.5,
     addLiquidityUrl: 'https://belt.fi/',
   },
-  
+
   {
     id: 'garuda-garuda-usdt',
     logo: 'degens/garuda-usdt.png',
@@ -437,8 +461,10 @@ export const bscPools = [
     platform: 'MDex',
     assets: ['BIFI', 'USDT'],
     callFee: 0.25,
-    buyTokenUrl: 'https://bsc.mdex.com/#/swap?inputCurrency=0x55d398326f99059fF775485246999027B3197955&outputCurrency=0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
-    addLiquidityUrl: 'https://bsc.mdex.com/#/add/0xCa3F508B8e4Dd382eE878A314789373D80A5190A/0x55d398326f99059fF775485246999027B3197955',
+    buyTokenUrl:
+      'https://bsc.mdex.com/#/swap?inputCurrency=0x55d398326f99059fF775485246999027B3197955&outputCurrency=0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
+    addLiquidityUrl:
+      'https://bsc.mdex.com/#/add/0xCa3F508B8e4Dd382eE878A314789373D80A5190A/0x55d398326f99059fF775485246999027B3197955',
   },
 
   {
@@ -6398,31 +6424,6 @@ export const bscPools = [
     removeLiquidityUrl:
       'https://v1exchange.pancakeswap.finance/#/remove/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0x0288D3E353fE2299F11eA2c2e1696b4A648eCC07',
   },
-
-  {
-    id: 'hps-hps',
-    logo: 'single-assets/HPS.png',
-    name: 'HPS',
-    token: 'HPS',
-    tokenDescription: 'BillionHappiness',
-    tokenAddress: '0xeDa21B525Ac789EaB1a08ef2404dd8505FfB973D',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooBillionHPS',
-    earnedTokenAddress: '0xAC8E64BE515fAe8c6026fb22954d4D1375938Bb5',
-    earnContractAddress: '0xAC8E64BE515fAe8c6026fb22954d4D1375938Bb5',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'tokens',
-    oracleId: 'HPS',
-    oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
-    assets: ['HPS'],
-    callFee: 0.5,
-    buyTokenUrl:
-      'https://julswap.com/#/swap?inputCurrency=BNB&outputCurrency=0xeDa21B525Ac789EaB1a08ef2404dd8505FfB973D',
-  },
   {
     id: 'hps-hps-bnb',
     logo: 'single-assets/HPS.png',
@@ -10602,7 +10603,7 @@ export const bscPools = [
     depositsPaused: true,
     status: 'eol',
     platform: 'Pancake',
-    assets: ['BROOBEE', 'CAKE'],
+    assets: ['bROOBEE', 'CAKE'],
     callFee: 1,
     removeLiquidityUrl:
       'https://v1exchange.pancakeswap.finance/#/remove/0xe64f5cb844946c1f102bd25bbd87a5ab4ae89fbe/0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
