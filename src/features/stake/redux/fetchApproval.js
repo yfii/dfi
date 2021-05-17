@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { erc20ABI } from "../../configure";
+import { erc20ABI } from '../../configure';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   STAKE_FETCH_APPROVAL_BEGIN,
@@ -14,7 +14,7 @@ export function fetchApproval(index) {
     // optionally you can have getState as the second argument
     dispatch({
       type: STAKE_FETCH_APPROVAL_BEGIN,
-      index
+      index,
     });
     // Return a promise so that you could control UI flow without states in the store.
     // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
@@ -30,70 +30,72 @@ export function fetchApproval(index) {
       const { tokenAddress, earnContractAddress } = pools[index];
       const contract = new web3.eth.Contract(erc20ABI, tokenAddress);
 
-      contract.methods.approve(earnContractAddress, web3.utils.toWei("79228162514", "ether")).send({ from: address }).on(
-        'transactionHash', function(hash){
-          dispatch(enqueueSnackbar({
-            message: hash,
-            options: {
-              key: new Date().getTime() + Math.random(),
-              variant: 'success'
-            },
-            hash
-          }));
+      contract.methods
+        .approve(earnContractAddress, web3.utils.toWei('79228162514', 'ether'))
+        .send({ from: address })
+        .on('transactionHash', function (hash) {
+          dispatch(
+            enqueueSnackbar({
+              message: hash,
+              options: {
+                key: new Date().getTime() + Math.random(),
+                variant: 'success',
+              },
+              hash,
+            })
+          );
         })
-        .on('receipt', function(receipt){
-          dispatch(enqueueSnackbar({
-            key: new Date().getTime() + Math.random(),
-            message: 'Success',
-            options: {
-              variant: 'success',
-            },
-            hash: receipt.transactionHash
-          }));
+        .on('receipt', function (receipt) {
+          dispatch(
+            enqueueSnackbar({
+              key: new Date().getTime() + Math.random(),
+              message: 'Success',
+              options: {
+                variant: 'success',
+              },
+              hash: receipt.transactionHash,
+            })
+          );
           dispatch({ type: STAKE_FETCH_APPROVAL_SUCCESS, index });
-          dispatch(checkApproval(index))
+          dispatch(checkApproval(index));
           resolve();
         })
-        .on('error', function(error) {
-          dispatch(enqueueSnackbar({
-            message: error.message || error,
-            options: {
-              key: new Date().getTime() + Math.random(),
-              variant: 'error'
-            },
-          }));
+        .on('error', function (error) {
+          dispatch(
+            enqueueSnackbar({
+              message: error.message || error,
+              options: {
+                key: new Date().getTime() + Math.random(),
+                variant: 'error',
+              },
+            })
+          );
           dispatch({ type: STAKE_FETCH_APPROVAL_FAILURE, index });
           resolve();
         })
-        .catch((error) => {
+        .catch(error => {
           dispatch({ type: STAKE_FETCH_APPROVAL_FAILURE, index });
-          reject(error)
-        })
+          reject(error);
+        });
     });
     return promise;
-  }
+  };
 }
-
 
 export function useFetchApproval() {
   // args: false value or array
   // if array, means args passed to the action creator
   const dispatch = useDispatch();
 
-  const { fetchApprovalPending } = useSelector(
-    state => ({
-      fetchApprovalPending: state.stake.fetchApprovalPending,
-    })
-  );
+  const { fetchApprovalPending } = useSelector(state => ({
+    fetchApprovalPending: state.stake.fetchApprovalPending,
+  }));
 
-  const boundAction = useCallback(
-    data => dispatch(fetchApproval(data)),
-    [dispatch],
-  );
+  const boundAction = useCallback(data => dispatch(fetchApproval(data)), [dispatch]);
 
   return {
     fetchApproval: boundAction,
-    fetchApprovalPending
+    fetchApprovalPending,
   };
 }
 

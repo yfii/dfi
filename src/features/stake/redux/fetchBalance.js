@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
-import BigNumber from "bignumber.js";
-import { erc20ABI } from "../../configure";
+import BigNumber from 'bignumber.js';
+import { erc20ABI } from '../../configure';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   STAKE_FETCH_BALANCE_BEGIN,
@@ -13,7 +13,7 @@ export function fetchBalance(index) {
     // optionally you can have getState as the second argument
     dispatch({
       type: STAKE_FETCH_BALANCE_BEGIN,
-      index
+      index,
     });
     // Return a promise so that you could control UI flow without states in the store.
     // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
@@ -29,52 +29,48 @@ export function fetchBalance(index) {
       const { tokenAddress } = pools[index];
 
       const contract = new web3.eth.Contract(erc20ABI, tokenAddress);
-      contract.methods.balanceOf(address).call({ from: address }).then(
-        data => {
+      contract.methods
+        .balanceOf(address)
+        .call({ from: address })
+        .then(data => {
           dispatch({
             type: STAKE_FETCH_BALANCE_SUCCESS,
             data: new BigNumber(data),
-            index
+            index,
           });
           resolve(data);
-        },
-      ).catch(
-        // Use rejectHandler as the second argument so that render errors won't be caught.
-        error => {
-          dispatch({
-            type: STAKE_FETCH_BALANCE_FAILURE,
-            index
-          });
-          reject(error.message || error);
-        }
-      )
+        })
+        .catch(
+          // Use rejectHandler as the second argument so that render errors won't be caught.
+          error => {
+            dispatch({
+              type: STAKE_FETCH_BALANCE_FAILURE,
+              index,
+            });
+            reject(error.message || error);
+          }
+        );
     });
     return promise;
-  }
+  };
 }
-
 
 export function useFetchBalance() {
   // args: false value or array
   // if array, means args passed to the action creator
   const dispatch = useDispatch();
 
-  const { balance, fetchBalancePending } = useSelector(
-    state => ({
-      balance: state.stake.balance,
-      fetchBalancePending: state.stake.fetchBalancePending,
-    })
-  );
+  const { balance, fetchBalancePending } = useSelector(state => ({
+    balance: state.stake.balance,
+    fetchBalancePending: state.stake.fetchBalancePending,
+  }));
 
-  const boundAction = useCallback(
-    data => dispatch(fetchBalance(data)),
-    [dispatch],
-  );
+  const boundAction = useCallback(data => dispatch(fetchBalance(data)), [dispatch]);
 
   return {
     balance,
     fetchBalance: boundAction,
-    fetchBalancePending
+    fetchBalancePending,
   };
 }
 
@@ -91,7 +87,7 @@ export function reducer(state, action) {
 
     case STAKE_FETCH_BALANCE_SUCCESS:
       // The request is success
-      
+
       balance[action.index] = action.data;
       fetchBalancePending[action.index] = false;
       return {

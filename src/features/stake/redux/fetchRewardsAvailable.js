@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import BigNumber from "bignumber.js";
+import BigNumber from 'bignumber.js';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   STAKE_FETCH_REWARDS_AVAILABLE_BEGIN,
@@ -12,7 +12,7 @@ export function fetchRewardsAvailable(index) {
     // optionally you can have getState as the second argument
     dispatch({
       type: STAKE_FETCH_REWARDS_AVAILABLE_BEGIN,
-      index
+      index,
     });
     // Return a promise so that you could control UI flow without states in the store.
     // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
@@ -27,52 +27,48 @@ export function fetchRewardsAvailable(index) {
       const { pools } = stake;
       const { earnContractAbi, earnContractAddress } = pools[index];
       const contract = new web3.eth.Contract(earnContractAbi, earnContractAddress);
-      contract.methods.earned(address).call({ from: address }).then(
-        data => {
+      contract.methods
+        .earned(address)
+        .call({ from: address })
+        .then(data => {
           dispatch({
             type: STAKE_FETCH_REWARDS_AVAILABLE_SUCCESS,
             data: new BigNumber(data).toNumber(),
-            index
+            index,
           });
           resolve(data);
-        },
-      ).catch(
-        // Use rejectHandler as the second argument so that render errors won't be caught.
-        error => {
-          dispatch({
-            type: STAKE_FETCH_REWARDS_AVAILABLE_FAILURE,
-            index
-          });
-          reject(error.message || error);
-        }
-      )
+        })
+        .catch(
+          // Use rejectHandler as the second argument so that render errors won't be caught.
+          error => {
+            dispatch({
+              type: STAKE_FETCH_REWARDS_AVAILABLE_FAILURE,
+              index,
+            });
+            reject(error.message || error);
+          }
+        );
     });
     return promise;
-  }
+  };
 }
-
 
 export function useFetchRewardsAvailable() {
   // args: false value or array
   // if array, means args passed to the action creator
   const dispatch = useDispatch();
 
-  const { rewardsAvailable, fetchRewardsAvailablePending } = useSelector(
-    state => ({
-      rewardsAvailable: state.stake.rewardsAvailable,
-      fetchRewardsAvailablePending: state.stake.fetchRewardsAvailablePending,
-    })
-  );
+  const { rewardsAvailable, fetchRewardsAvailablePending } = useSelector(state => ({
+    rewardsAvailable: state.stake.rewardsAvailable,
+    fetchRewardsAvailablePending: state.stake.fetchRewardsAvailablePending,
+  }));
 
-  const boundAction = useCallback(
-    data => dispatch(fetchRewardsAvailable(data)),
-    [dispatch],
-  );
+  const boundAction = useCallback(data => dispatch(fetchRewardsAvailable(data)), [dispatch]);
 
   return {
     rewardsAvailable,
     fetchRewardsAvailable: boundAction,
-    fetchRewardsAvailablePending
+    fetchRewardsAvailablePending,
   };
 }
 

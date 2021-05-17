@@ -34,15 +34,12 @@ const HarvestSection = ({ pool, index }) => {
     })
       .then(() => enqueueSnackbar(t('Vault-HarvestSuccess'), { variant: 'success' }))
       .catch(error => enqueueSnackbar(t('Vault-HarvestError', { error }), { variant: 'error' }));
-    setShowHarvestModal(false)
+    setShowHarvestModal(false);
   };
 
   return (
     <>
-      <Dialog
-        open={showHarvestModal}
-        onClose={() => setShowHarvestModal(false)}
-      >
+      <Dialog open={showHarvestModal} onClose={() => setShowHarvestModal(false)}>
         <DialogTitle>
           <Typography className={classes.title} variant="body2">
             {t('Vault-HarvestConfirm')}
@@ -73,10 +70,8 @@ const HarvestSection = ({ pool, index }) => {
       </Dialog>
       <Grid item xs={12} md={2} className={classes.sliderDetailContainer}>
         <div className={classes.showDetailBottom}>
-          <div className={classes.showDetailLeft}>
-            {/* {t('Vault-LastHarvest')}: */}
-          </div>
-          <div style={{ textAlign: "center" }}>
+          <div className={classes.showDetailLeft}>{/* {t('Vault-LastHarvest')}: */}</div>
+          <div style={{ textAlign: 'center' }}>
             <Button
               className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined} ${classes.showResponsiveButtonCon}`}
               style={{ marginBottom: pool.platform === 'Autofarm' ? '48px' : '12px' }}

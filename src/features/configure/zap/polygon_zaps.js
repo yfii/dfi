@@ -1,2 +1,1 @@
-export const polygonZaps = [
-]
+export const polygonZaps = [];

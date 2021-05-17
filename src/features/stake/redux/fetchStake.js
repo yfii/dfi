@@ -5,14 +5,14 @@ import {
   STAKE_FETCH_STAKE_SUCCESS,
   STAKE_FETCH_STAKE_FAILURE,
 } from './constants';
-import { enqueueSnackbar } from '../../common/redux/actions'
+import { enqueueSnackbar } from '../../common/redux/actions';
 
 export function fetchStake(index, amount) {
   return (dispatch, getState) => {
     // optionally you can have getState as the second argument
     dispatch({
       type: STAKE_FETCH_STAKE_BEGIN,
-      index
+      index,
     });
     // Return a promise so that you could control UI flow without states in the store.
     // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
@@ -28,73 +28,75 @@ export function fetchStake(index, amount) {
       const { earnContractAbi, earnContractAddress } = pools[index];
       const contract = new web3.eth.Contract(earnContractAbi, earnContractAddress);
 
-      contract.methods.stake(amount).send({ from: address }).on(
-        'transactionHash', function(hash){
-          dispatch(enqueueSnackbar({
-            message: hash,
-            options: {
-              key: new Date().getTime() + Math.random(),
-              variant: 'success'
-            },
-            hash
-          }));
+      contract.methods
+        .stake(amount)
+        .send({ from: address })
+        .on('transactionHash', function (hash) {
+          dispatch(
+            enqueueSnackbar({
+              message: hash,
+              options: {
+                key: new Date().getTime() + Math.random(),
+                variant: 'success',
+              },
+              hash,
+            })
+          );
         })
-        .on('receipt', function(receipt){
-          dispatch(enqueueSnackbar({
-            key: new Date().getTime() + Math.random(),
-            message: 'success',
-            options: {
-              variant: 'success',
-            },
-            hash: receipt.transactionHash
-          }));
+        .on('receipt', function (receipt) {
+          dispatch(
+            enqueueSnackbar({
+              key: new Date().getTime() + Math.random(),
+              message: 'success',
+              options: {
+                variant: 'success',
+              },
+              hash: receipt.transactionHash,
+            })
+          );
           dispatch({ type: STAKE_FETCH_STAKE_SUCCESS, index });
           resolve();
         })
-        .on('error', function(error) {
-          dispatch(enqueueSnackbar({
-            message: error.message || error,
-            options: {
-              key: new Date().getTime() + Math.random(),
-              variant: 'error'
-            },
-          }));
+        .on('error', function (error) {
+          dispatch(
+            enqueueSnackbar({
+              message: error.message || error,
+              options: {
+                key: new Date().getTime() + Math.random(),
+                variant: 'error',
+              },
+            })
+          );
           dispatch({ type: STAKE_FETCH_STAKE_FAILURE, index });
           resolve();
         })
-        .catch((error) => {
+        .catch(error => {
           dispatch({ type: STAKE_FETCH_STAKE_FAILURE, index });
-          reject(error)
-        })
+          reject(error);
+        });
     });
     return promise;
-  }
+  };
 }
-
 
 export function useFetchStake() {
   // args: false value or array
   // if array, means args passed to the action creator
   const dispatch = useDispatch();
 
-  const { fetchStakePending } = useSelector(
-    state => ({
-      fetchStakePending: state.stake.fetchStakePending,
-    })
-  );
+  const { fetchStakePending } = useSelector(state => ({
+    fetchStakePending: state.stake.fetchStakePending,
+  }));
 
-  const boundAction = useCallback(
-    (data, amount) => dispatch(fetchStake(data, amount)),
-    [dispatch],
-  );
+  const boundAction = useCallback((data, amount) => dispatch(fetchStake(data, amount)), [dispatch]);
 
   return {
     fetchStake: boundAction,
-    fetchStakePending
+    fetchStakePending,
   };
 }
 
-export function   reducer(state, action) {
+export function reducer(state, action) {
   const { fetchStakePending } = state;
   switch (action.type) {
     case STAKE_FETCH_STAKE_BEGIN:
@@ -102,7 +104,7 @@ export function   reducer(state, action) {
       fetchStakePending[action.index] = true;
       return {
         ...state,
-        fetchStakePending
+        fetchStakePending,
       };
 
     case STAKE_FETCH_STAKE_SUCCESS:
@@ -110,7 +112,7 @@ export function   reducer(state, action) {
       fetchStakePending[action.index] = false;
       return {
         ...state,
-        fetchStakePending
+        fetchStakePending,
       };
 
     case STAKE_FETCH_STAKE_FAILURE:
@@ -118,7 +120,7 @@ export function   reducer(state, action) {
       fetchStakePending[action.index] = false;
       return {
         ...state,
-        fetchStakePending
+        fetchStakePending,
       };
 
     default:

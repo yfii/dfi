@@ -11,7 +11,7 @@ export function fetchCanWithdrawTime(index) {
     // optionally you can have getState as the second argument
     dispatch({
       type: STAKE_FETCH_CAN_WITHDRAW_TIME_BEGIN,
-      index
+      index,
     });
     // Return a promise so that you could control UI flow without states in the store.
     // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
@@ -26,52 +26,48 @@ export function fetchCanWithdrawTime(index) {
       const { pools } = stake;
       const { earnContractAbi, earnContractAddress } = pools[index];
       const contract = new web3.eth.Contract(earnContractAbi, earnContractAddress);
-      contract.methods.canWithdrawTime(address).call({ from: address }).then(
-        data => {
+      contract.methods
+        .canWithdrawTime(address)
+        .call({ from: address })
+        .then(data => {
           dispatch({
             type: STAKE_FETCH_CAN_WITHDRAW_TIME_SUCCESS,
             data: Number(data),
-            index
+            index,
           });
           resolve(data);
-        },
-      ).catch(
-        // Use rejectHandler as the second argument so that render errors won't be caught.
-        error => {
-          dispatch({
-            type: STAKE_FETCH_CAN_WITHDRAW_TIME_FAILURE,
-            index
-          });
-          reject(error.message || error);
-        }
-      )
+        })
+        .catch(
+          // Use rejectHandler as the second argument so that render errors won't be caught.
+          error => {
+            dispatch({
+              type: STAKE_FETCH_CAN_WITHDRAW_TIME_FAILURE,
+              index,
+            });
+            reject(error.message || error);
+          }
+        );
     });
     return promise;
-  }
+  };
 }
-
 
 export function useFetchCanWithdrawTime() {
   // args: false value or array
   // if array, means args passed to the action creator
   const dispatch = useDispatch();
 
-  const { canWithdrawTime, fetchCanWithdrawTimePending } = useSelector(
-    state => ({
-      canWithdrawTime: state.stake.canWithdrawTime,
-      fetchCanWithdrawTimePending: state.stake.fetchCanWithdrawTimePending,
-    })
-  );
+  const { canWithdrawTime, fetchCanWithdrawTimePending } = useSelector(state => ({
+    canWithdrawTime: state.stake.canWithdrawTime,
+    fetchCanWithdrawTimePending: state.stake.fetchCanWithdrawTimePending,
+  }));
 
-  const boundAction = useCallback(
-    data => dispatch(fetchCanWithdrawTime(data)),
-    [dispatch],
-  );
+  const boundAction = useCallback(data => dispatch(fetchCanWithdrawTime(data)), [dispatch]);
 
   return {
     canWithdrawTime,
     fetchCanWithdrawTime: boundAction,
-    fetchCanWithdrawTimePending
+    fetchCanWithdrawTimePending,
   };
 }
 

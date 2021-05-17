@@ -59,7 +59,9 @@ export const getNetworkTokens = () => {
     case '250':
       return fantomTokenList.tokens;
     default:
-      throw new Error(`Create Tokenlist for this chainId first. See src/features/configure/tokenlist/*_tokenlist.json`);
+      throw new Error(
+        `Create Tokenlist for this chainId first. See src/features/configure/tokenlist/*_tokenlist.json`
+      );
   }
 };
 
@@ -100,7 +102,20 @@ export const getNetworkStakePools = () => {
 export const getNetworkStables = () => {
   switch (process.env.REACT_APP_NETWORK_ID) {
     case '56':
-      return ['BUSD', 'USDT', 'USDC', 'DAI', 'VAI', 'QUSD', 'UST', 'VENUS BLP', '3EPS', 'fUSDT', '4BELT', 'IRON'];
+      return [
+        'BUSD',
+        'USDT',
+        'USDC',
+        'DAI',
+        'VAI',
+        'QUSD',
+        'UST',
+        'VENUS BLP',
+        '3EPS',
+        'fUSDT',
+        '4BELT',
+        'IRON',
+      ];
     case '128':
       return ['USDT', 'HUSD'];
     case '43114':
