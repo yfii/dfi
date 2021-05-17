@@ -35,7 +35,7 @@ export const bscStakePools = [
     id: 'moo_bhc-hps2',
     name: 'Billionhappiness',
     logo: 'single-assets/HPS.png',
-    token: 'MooBillionHPS',
+    token: 'mooBillionHPS',
     tokenDecimals: 18,
     tokenAddress: '0xAC8E64BE515fAe8c6026fb22954d4D1375938Bb5',
     tokenOracle: 'tokens',
