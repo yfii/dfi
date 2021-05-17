@@ -9,7 +9,6 @@ import { withdraw, withdrawBnb, zapWithdraw, zapWithdrawAndSwap } from '../../we
 
 export function fetchWithdraw({ address, web3, isAll, amount, contractAddress, index }) {
   return dispatch => {
-
     dispatch({
       type: VAULT_FETCH_WITHDRAW_BEGIN,
       index,
@@ -66,7 +65,13 @@ export function fetchWithdrawBnb({ address, web3, isAll, amount, contractAddress
   };
 }
 
-export function fetchZapWithdrawAndRemoveLiqudity({ address, web3, vaultAddress, amount, zapAddress }) {
+export function fetchZapWithdrawAndRemoveLiqudity({
+  address,
+  web3,
+  vaultAddress,
+  amount,
+  zapAddress,
+}) {
   const index = vaultAddress;
 
   return dispatch => {
@@ -97,7 +102,15 @@ export function fetchZapWithdrawAndRemoveLiqudity({ address, web3, vaultAddress,
   };
 }
 
-export function fetchZapWithdrawAndSwap({ address, web3, vaultAddress, amount, zapAddress, tokenOut, amountOutMin }) {
+export function fetchZapWithdrawAndSwap({
+  address,
+  web3,
+  vaultAddress,
+  amount,
+  zapAddress,
+  tokenOut,
+  amountOutMin,
+}) {
   const index = vaultAddress;
 
   return dispatch => {
@@ -107,7 +120,16 @@ export function fetchZapWithdrawAndSwap({ address, web3, vaultAddress, amount, z
     });
 
     const promise = new Promise((resolve, reject) => {
-      zapWithdrawAndSwap({ web3, address, vaultAddress, amount, zapAddress, tokenOut, amountOutMin, dispatch })
+      zapWithdrawAndSwap({
+        web3,
+        address,
+        vaultAddress,
+        amount,
+        zapAddress,
+        tokenOut,
+        amountOutMin,
+        dispatch,
+      })
         .then(data => {
           dispatch({
             type: VAULT_FETCH_WITHDRAW_SUCCESS,
@@ -128,8 +150,6 @@ export function fetchZapWithdrawAndSwap({ address, web3, vaultAddress, amount, z
   };
 }
 
-
-
 export function useFetchWithdraw() {
   const dispatch = useDispatch();
 
@@ -137,14 +157,8 @@ export function useFetchWithdraw() {
     fetchWithdrawPending: state.vault.fetchWithdrawPending,
   }));
 
-  const boundWithdraw = useCallback(
-    data => dispatch(fetchWithdraw(data)),
-    [dispatch]
-  );
-  const boundWithdrawBnb = useCallback(
-    data => dispatch(fetchWithdrawBnb(data)),
-    [dispatch]
-  );
+  const boundWithdraw = useCallback(data => dispatch(fetchWithdraw(data)), [dispatch]);
+  const boundWithdrawBnb = useCallback(data => dispatch(fetchWithdrawBnb(data)), [dispatch]);
   const boundZapWithdrawAndRemoveLiqudity = useCallback(
     data => dispatch(fetchZapWithdrawAndRemoveLiqudity(data)),
     [dispatch]

@@ -238,7 +238,7 @@ const styles = theme => ({
     '@media (min-width: 960px) and (max-width: 1110px)': {
       '& $icon': {
         display: 'none',
-      }
+      },
     },
   },
   icon: {

@@ -29,7 +29,7 @@ const usePoolsByVaultType = pools => {
   }
 
   let poolsByVaultType;
-  poolsByVaultType = vaultType ===  'All' ? pools : newPools;
+  poolsByVaultType = vaultType === 'All' ? pools : newPools;
 
   return { poolsByVaultType, vaultType, setVaultType };
 };

@@ -1,5 +1,5 @@
 export const fantomPools = [
-  {
+   {
     id: 'boo-woofy-ftm',
     logo: 'fantom/WOOFY-FTM.png',
     name: 'WOOFY-FTM LP',
@@ -48,8 +48,7 @@ export const fantomPools = [
     platform: 'SpookySwap',
     assets: ['BOO'],
     callFee: 0.5,
-    buyTokenUrl:
-      'https://spookyswap.finance/swap',
+    buyTokenUrl: 'https://spookyswap.finance/swap',
   },
   {
     id: 'boo-bnb-ftm',
@@ -73,10 +72,8 @@ export const fantomPools = [
     platform: 'SpookySwap',
     assets: ['BNB', 'FTM'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://spookyswap.finance/add',
-    buyTokenUrl:
-      'https://spookyswap.finance/swap',
+    addLiquidityUrl: 'https://spookyswap.finance/add',
+    buyTokenUrl: 'https://spookyswap.finance/swap',
   },
   {
     id: 'froyo-3pool',
@@ -124,8 +121,7 @@ export const fantomPools = [
     platform: 'Froyo',
     assets: ['FROYO', 'FTM'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://app.sushi.com/add/ETH/0xA92d41Ab8eFeE617d80a829CD9F5683c5F793ADA',
+    addLiquidityUrl: 'https://app.sushi.com/add/ETH/0xA92d41Ab8eFeE617d80a829CD9F5683c5F793ADA',
     buyTokenUrl:
       'https://app.sushi.com/swap?outputCurrency=0xA92d41Ab8eFeE617d80a829CD9F5683c5F793ADA',
   },
@@ -151,10 +147,8 @@ export const fantomPools = [
     platform: 'SpookySwap',
     assets: ['LINK', 'FTM'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://spookyswap.finance/add',
-    buyTokenUrl:
-      'https://spookyswap.finance/swap',
+    addLiquidityUrl: 'https://spookyswap.finance/add',
+    buyTokenUrl: 'https://spookyswap.finance/swap',
   },
   {
     id: 'boo-cover-ftm',
@@ -178,10 +172,8 @@ export const fantomPools = [
     platform: 'SpookySwap',
     assets: ['COVER', 'FTM'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://spookyswap.finance/add',
-    buyTokenUrl:
-      'https://spookyswap.finance/swap',
+    addLiquidityUrl: 'https://spookyswap.finance/add',
+    buyTokenUrl: 'https://spookyswap.finance/swap',
   },
   {
     id: 'boo-cream-ftm',
@@ -205,10 +197,8 @@ export const fantomPools = [
     platform: 'SpookySwap',
     assets: ['CREAM', 'FTM'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://spookyswap.finance/add',
-    buyTokenUrl:
-      'https://spookyswap.finance/swap',
+    addLiquidityUrl: 'https://spookyswap.finance/add',
+    buyTokenUrl: 'https://spookyswap.finance/swap',
   },
   {
     id: 'boo-snx-ftm',
@@ -232,10 +222,8 @@ export const fantomPools = [
     platform: 'SpookySwap',
     assets: ['SNX', 'FTM'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://spookyswap.finance/add',
-    buyTokenUrl:
-      'https://spookyswap.finance/swap',
+    addLiquidityUrl: 'https://spookyswap.finance/add',
+    buyTokenUrl: 'https://spookyswap.finance/swap',
   },
   {
     id: 'boo-yfi-ftm',
@@ -259,10 +247,8 @@ export const fantomPools = [
     platform: 'SpookySwap',
     assets: ['YFI', 'FTM'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://spookyswap.finance/add',
-    buyTokenUrl:
-      'https://spookyswap.finance/swap',
+    addLiquidityUrl: 'https://spookyswap.finance/add',
+    buyTokenUrl: 'https://spookyswap.finance/swap',
   },
   {
     id: 'boo-usdt-ftm',
@@ -286,10 +272,8 @@ export const fantomPools = [
     platform: 'SpookySwap',
     assets: ['fUSDT', 'FTM'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://spookyswap.finance/add',
-    buyTokenUrl:
-      'https://spookyswap.finance/swap',
+    addLiquidityUrl: 'https://spookyswap.finance/add',
+    buyTokenUrl: 'https://spookyswap.finance/swap',
   },
   {
     id: 'boo-btc-ftm',
@@ -313,10 +297,8 @@ export const fantomPools = [
     platform: 'SpookySwap',
     assets: ['BTC', 'FTM'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://spookyswap.finance/add',
-    buyTokenUrl:
-      'https://spookyswap.finance/swap',
+    addLiquidityUrl: 'https://spookyswap.finance/add',
+    buyTokenUrl: 'https://spookyswap.finance/swap',
   },
   {
     id: 'boo-eth-ftm',
@@ -340,10 +322,8 @@ export const fantomPools = [
     platform: 'SpookySwap',
     assets: ['ETH', 'FTM'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://spookyswap.finance/add',
-    buyTokenUrl:
-      'https://spookyswap.finance/swap',
+    addLiquidityUrl: 'https://spookyswap.finance/add',
+    buyTokenUrl: 'https://spookyswap.finance/swap',
   },
   {
     id: 'boo-aave-ftm',
@@ -367,10 +347,8 @@ export const fantomPools = [
     platform: 'SpookySwap',
     assets: ['AAVE', 'FTM'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://spookyswap.finance/add',
-    buyTokenUrl:
-      'https://spookyswap.finance/swap',
+    addLiquidityUrl: 'https://spookyswap.finance/add',
+    buyTokenUrl: 'https://spookyswap.finance/swap',
   },
   {
     id: 'boo-crv-ftm',
@@ -394,10 +372,8 @@ export const fantomPools = [
     platform: 'SpookySwap',
     assets: ['CRV', 'FTM'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://spookyswap.finance/add',
-    buyTokenUrl:
-      'https://spookyswap.finance/swap',
+    addLiquidityUrl: 'https://spookyswap.finance/add',
+    buyTokenUrl: 'https://spookyswap.finance/swap',
   },
   {
     id: 'boo-boo-ftm',
@@ -421,10 +397,8 @@ export const fantomPools = [
     platform: 'SpookySwap',
     assets: ['FTM', 'BOO'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://spookyswap.finance/add',
-    buyTokenUrl:
-      'https://spookyswap.finance/swap',
+    addLiquidityUrl: 'https://spookyswap.finance/add',
+    buyTokenUrl: 'https://spookyswap.finance/swap',
   },
   {
     id: 'boo-ftm-usdc',
@@ -448,9 +422,7 @@ export const fantomPools = [
     platform: 'SpookySwap',
     assets: ['FTM', 'USDC'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://spookyswap.finance/add',
-    buyTokenUrl:
-      'https://spookyswap.finance/swap',
+    addLiquidityUrl: 'https://spookyswap.finance/add',
+    buyTokenUrl: 'https://spookyswap.finance/swap',
   },
 ];

@@ -41,11 +41,11 @@ const VisiblePools = ({
   useEffect(() => {
     const timestamp = Math.floor(Date.now() / 1000);
     for (let index in stake) {
-      if(stake[index].periodFinish >= timestamp) {
-        for(let key in pools) {
-          if(stake[index].token === pools[key].earnedToken) {
+      if (stake[index].periodFinish >= timestamp) {
+        for (let key in pools) {
+          if (stake[index].token === pools[key].earnedToken) {
             pools[key].launchpool = stake[index].id;
-            if(!indexes.includes(index)) {
+            if (!indexes.includes(index)) {
               indexes.push(index);
             }
             continue;

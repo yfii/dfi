@@ -50,10 +50,10 @@ const DepositSection = ({ pool }) => {
           decimals: pool.tokenDecimals,
           logoURI: pool.logo,
         },
-        ...(zap ? zap.tokens : [])
-      ]
-    }
-  }, [pool.tokenAddress])
+        ...(zap ? zap.tokens : []),
+      ],
+    };
+  }, [pool.tokenAddress]);
 
   const [depositSettings, setDepositSettings] = useState({
     tokenIndex: 0,
@@ -61,10 +61,12 @@ const DepositSection = ({ pool }) => {
     token: eligibleTokens[0],
     amount: new BigNumber(0),
     slider: 0,
-    input: "0.0",
+    input: '0.0',
     vaultAddress: pool.earnContractAddress,
     depositAddress: pool.earnContractAddress,
-    isNeedApproval: (new BigNumber(tokens[eligibleTokens[0].symbol].allowance[pool.earnContractAddress])).isZero(),
+    isNeedApproval: new BigNumber(
+      tokens[eligibleTokens[0].symbol].allowance[pool.earnContractAddress]
+    ).isZero(),
     slippageTolerance: 0.01,
     swapAmountOut: pool.zapEstimate?.swapAmountOut,
   });
@@ -77,13 +79,18 @@ const DepositSection = ({ pool }) => {
         zapAddress: zap.zapAddress,
         vaultAddress: pool.earnContractAddress,
         tokenAddress: depositSettings.token.address,
-        tokenAmount: convertAmountToRawNumber(depositSettings.amount, depositSettings.token.decimals),
-      })
+        tokenAmount: convertAmountToRawNumber(
+          depositSettings.amount,
+          depositSettings.token.decimals
+        ),
+      });
     }
-  }, [depositSettings.amount, pool, (new Date()).getMinutes()]);
+  }, [depositSettings.amount, pool, new Date().getMinutes()]);
 
   useEffect(() => {
-    const allowance = new BigNumber(tokens[depositSettings.token.symbol].allowance[depositSettings.depositAddress]);
+    const allowance = new BigNumber(
+      tokens[depositSettings.token.symbol].allowance[depositSettings.depositAddress]
+    );
     setDepositSettings(prevState => ({
       ...prevState,
       isNeedApproval: allowance.isZero() || prevState.amount.isGreaterThan(allowance),
@@ -92,7 +99,7 @@ const DepositSection = ({ pool }) => {
 
   useEffect(() => {
     if (address && web3 && zap) {
-      const tokens = {}
+      const tokens = {};
       eligibleTokens.forEach(token => {
         if (token.wrappedSymbol) return;
         tokens[token.symbol] = {
@@ -101,14 +108,14 @@ const DepositSection = ({ pool }) => {
           allowance: {
             [zap.zapAddress]: 0,
           },
-        }
-      })
+        };
+      });
       fetchBalances({ address, web3, tokens });
     }
   }, [address, web3, fetchBalances]);
 
   const handleTokenChange = event => {
-    const isZap = (event.target.value > 0);
+    const isZap = event.target.value > 0;
     const spender = isZap ? zap.zapAddress : pool.earnContractAddress;
     const token = eligibleTokens[event.target.value];
     const allowance = new BigNumber(tokens[token.symbol].allowance[spender]);
@@ -120,11 +127,11 @@ const DepositSection = ({ pool }) => {
       token: token,
       amount: new BigNumber(0),
       slider: 0,
-      input: "0.0",
+      input: '0.0',
       depositAddress: spender,
       isNeedApproval: allowance.isZero(),
-    }))
-  }
+    }));
+  };
 
   const handleSliderChange = (_, sliderInt) => {
     setDepositSettings(prevState => ({
@@ -142,7 +149,9 @@ const DepositSection = ({ pool }) => {
     if (sliderInt == 100) {
       amount = total;
     }
-    const allowance = new BigNumber(tokens[depositSettings.token.symbol].allowance[depositSettings.depositAddress]);
+    const allowance = new BigNumber(
+      tokens[depositSettings.token.symbol].allowance[depositSettings.depositAddress]
+    );
 
     setDepositSettings(prevState => ({
       ...prevState,
@@ -153,9 +162,9 @@ const DepositSection = ({ pool }) => {
     }));
   };
 
-  const handleMax = (_) => {
+  const handleMax = _ => {
     handleSliderChangeCommitted(_, 100);
-  }
+  };
 
   const handleInputAmountChange = event => {
     const input = event.target.value.replace(/[,]+/, '').replace(/[^0-9\.]+/, '');
@@ -167,7 +176,9 @@ const DepositSection = ({ pool }) => {
     if (amount.isGreaterThan(total)) amount = total;
 
     const sliderInt = total.isZero() ? 0 : amount.times(100).dividedToIntegerBy(total).toNumber();
-    const allowance = new BigNumber(tokens[depositSettings.token.symbol].allowance[depositSettings.depositAddress]);
+    const allowance = new BigNumber(
+      tokens[depositSettings.token.symbol].allowance[depositSettings.depositAddress]
+    );
 
     setDepositSettings(prevState => ({
       ...prevState,
@@ -196,27 +207,30 @@ const DepositSection = ({ pool }) => {
       amount: tokenBalance(depositSettings.token.symbol),
       slider: 100,
       input: tokenBalance(depositSettings.token.symbol).toFormat(),
-    }
-    setDepositSettings(newDepositSettings)
+    };
+    setDepositSettings(newDepositSettings);
     depositAssets({
       ...newDepositSettings,
       isAll: true,
     });
-  }
+  };
 
   const handleDepositAmount = () => {
     depositAssets(depositSettings);
-  }
+  };
 
-  const depositAssets = (deposit) => {
+  const depositAssets = deposit => {
     if (pool.depositsPaused) {
       console.error('Deposits paused!');
       return;
     }
 
-    if (deposit.isZap) { // Zap deposit
+    if (deposit.isZap) {
+      // Zap deposit
       const swapAmountOut = pool.zapEstimate.swapAmountOut;
-      const swapAmountOutMin = new BigNumber(swapAmountOut - (swapAmountOut * deposit.slippageTolerance));
+      const swapAmountOutMin = new BigNumber(
+        swapAmountOut - swapAmountOut * deposit.slippageTolerance
+      );
       const zapDepositArgs = {
         vaultAddress: deposit.vaultAddress,
         isETH: !!deposit.token.wrappedSymbol,
@@ -225,71 +239,90 @@ const DepositSection = ({ pool }) => {
         zapAddress: deposit.depositAddress,
         swapAmountOutMin: swapAmountOutMin.toFixed(0),
         address,
-        web3
-      }
+        web3,
+      };
       fetchZapDeposit(zapDepositArgs)
         .then(() => {
           enqueueSnackbar(t('Vault-DepositSuccess'), { variant: 'success' });
           fetchBalances({ address, web3, tokens });
         })
         .catch(error => enqueueSnackbar(t('Vault-DepositError', { error }), { variant: 'error' }));
-    } else { // Vault deposit
+    } else {
+      // Vault deposit
       const depositArgs = {
         address,
         web3,
         isAll: !!deposit.isAll,
         amount: convertAmountToRawNumber(deposit.amount, deposit.token.decimals),
         contractAddress: deposit.vaultAddress,
-      }
+      };
       if (pool.tokenAddress) {
         fetchDeposit(depositArgs)
           .then(() => {
             enqueueSnackbar(t('Vault-DepositSuccess'), { variant: 'success' });
             fetchBalances({ address, web3, tokens });
           })
-          .catch(error => enqueueSnackbar(t('Vault-DepositError', { error }), { variant: 'error' }));
+          .catch(error =>
+            enqueueSnackbar(t('Vault-DepositError', { error }), { variant: 'error' })
+          );
       } else {
         fetchDepositBnb(depositArgs)
           .then(() => {
             enqueueSnackbar(t('Vault-DepositSuccess'), { variant: 'success' });
             fetchBalances({ address, web3, tokens });
           })
-          .catch(error => enqueueSnackbar(t('Vault-DepositError', { error }), { variant: 'error' }));
+          .catch(error =>
+            enqueueSnackbar(t('Vault-DepositError', { error }), { variant: 'error' })
+          );
       }
     }
   };
 
   const getVaultState = (status, paused) => {
-    let display = false
-    let cont = null
+    let display = false;
+    let cont = null;
 
     if (status === 'eol') {
       display = true;
-      cont = <div className={classes.showDetailButtonCon}>
-        <div className={classes.showRetiredMsg}>{t('Vault-DepositsRetiredMsg')}</div>
-      </div>
+      cont = (
+        <div className={classes.showDetailButtonCon}>
+          <div className={classes.showRetiredMsg}>{t('Vault-DepositsRetiredMsg')}</div>
+        </div>
+      );
     } else {
       if (paused) {
         display = true;
-        cont = <div className={classes.showDetailButtonCon}>
-          <div className={classes.showPausedMsg}>{t('Vault-DepositsPausedMsg')}</div>
-        </div>
+        cont = (
+          <div className={classes.showDetailButtonCon}>
+            <div className={classes.showPausedMsg}>{t('Vault-DepositsPausedMsg')}</div>
+          </div>
+        );
       }
     }
 
-    return { display: display, content: cont }
-  }
+    return { display: display, content: cont };
+  };
 
   const vaultState = getVaultState(pool.status, pool.depositsPaused);
-  const swapTokenOut = depositSettings.isZap ?
-    eligibleTokens.find(t => t.address.toLowerCase() == pool.zapEstimate?.swapTokenOut?.toLowerCase()) : undefined;
+  const swapTokenOut = depositSettings.isZap
+    ? eligibleTokens.find(
+        t => t.address.toLowerCase() == pool.zapEstimate?.swapTokenOut?.toLowerCase()
+      )
+    : undefined;
 
   return (
-    <Grid item xs={12} md={shouldHideFromHarvest(pool.id) ? 6 : 5} className={classes.sliderDetailContainer}>
+    <Grid
+      item
+      xs={12}
+      md={shouldHideFromHarvest(pool.id) ? 6 : 5}
+      className={classes.sliderDetailContainer}
+    >
       <div className={classes.showDetailLeft}>
         {t('Vault-Balance')}:{' '}
         <a onClick={handleMax} className={classes.balanceMax}>
-          {tokenBalance(depositSettings.token.symbol).decimalPlaces(8, BigNumber.ROUND_DOWN).toFormat()}{' '}
+          {tokenBalance(depositSettings.token.symbol)
+            .decimalPlaces(8, BigNumber.ROUND_DOWN)
+            .toFormat()}{' '}
           {depositSettings.token.symbol}
         </a>
       </div>
@@ -298,15 +331,24 @@ const DepositSection = ({ pool }) => {
           value={depositSettings.input}
           onChange={handleInputAmountChange}
           fullWidth
-          endAdornment={pool.zap && (
-            <FormControl className={classes.zapFormControl}>
-              <Select variant="standard" className={classes.zapSelect} value={depositSettings.tokenIndex} onChange={handleTokenChange}>
-                {eligibleTokens.map((token, i) =>
-                  <MenuItem key={i} value={i}>{token.symbol}</MenuItem>
-                )}
-              </Select>
-            </FormControl>
-          )}
+          endAdornment={
+            pool.zap && (
+              <FormControl className={classes.zapFormControl}>
+                <Select
+                  variant="standard"
+                  className={classes.zapSelect}
+                  value={depositSettings.tokenIndex}
+                  onChange={handleTokenChange}
+                >
+                  {eligibleTokens.map((token, i) => (
+                    <MenuItem key={i} value={i}>
+                      {token.symbol}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+            )
+          }
         />
       </FormControl>
       <CustomSlider
@@ -315,7 +357,9 @@ const DepositSection = ({ pool }) => {
         onChange={handleSliderChange}
         onChangeCommitted={handleSliderChangeCommitted}
       />
-      {vaultState.display === true ? vaultState.content : (
+      {vaultState.display === true ? (
+        vaultState.content
+      ) : (
         <div>
           {depositSettings.isNeedApproval ? (
             <div className={classes.showDetailButtonCon}>
@@ -367,8 +411,18 @@ const DepositSection = ({ pool }) => {
               <ol>
                 <li>
                   {t('Vault-DepositScenarioSwap', {
-                    swapIn: `${convertAmountFromRawNumber(pool.zapEstimate.swapAmountIn, depositSettings.token.decimals).decimalPlaces(8, BigNumber.ROUND_DOWN).toFormat()} ${depositSettings.token.symbol}`,
-                    swapOut: `${convertAmountFromRawNumber(pool.zapEstimate.swapAmountOut, swapTokenOut.decimals).decimalPlaces(8, BigNumber.ROUND_DOWN).toFormat()} ${swapTokenOut.symbol}`,
+                    swapIn: `${convertAmountFromRawNumber(
+                      pool.zapEstimate.swapAmountIn,
+                      depositSettings.token.decimals
+                    )
+                      .decimalPlaces(8, BigNumber.ROUND_DOWN)
+                      .toFormat()} ${depositSettings.token.symbol}`,
+                    swapOut: `${convertAmountFromRawNumber(
+                      pool.zapEstimate.swapAmountOut,
+                      swapTokenOut.decimals
+                    )
+                      .decimalPlaces(8, BigNumber.ROUND_DOWN)
+                      .toFormat()} ${swapTokenOut.symbol}`,
                     slippageTolerance: `1%`,
                   })}
                 </li>
@@ -387,8 +441,14 @@ const DepositSection = ({ pool }) => {
         </div>
       )}
 
-      {['Autofarm', 'Swamp'].includes(pool.platform) ? <h3 className={classes.subtitle}>{t('Vault-DepositFee')}</h3> : ''}
-      <p className={classes.note}>{t('Vault-DepositTokensNote', { mooToken: pool.earnedToken, assetToken: pool.token })}</p>
+      {['Autofarm', 'Swamp'].includes(pool.platform) ? (
+        <h3 className={classes.subtitle}>{t('Vault-DepositFee')}</h3>
+      ) : (
+        ''
+      )}
+      <p className={classes.note}>
+        {t('Vault-DepositTokensNote', { mooToken: pool.earnedToken, assetToken: pool.token })}
+      </p>
     </Grid>
   );
 };
