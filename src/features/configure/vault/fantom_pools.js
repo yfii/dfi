@@ -1,5 +1,32 @@
 export const fantomPools = [
   {
+    id: 'boo-woofy-ftm',
+    logo: 'fantom/WOOFY-FTM.png',
+    name: 'WOOFY-FTM LP',
+    token: 'WOOFY-FTM LP',
+    tokenDescription: 'SpookySwap',
+    tokenAddress: '0xfD0aB56B83130ce8f2b7A4f4d4532dEe495c0794',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooBooWOOFY-FTM',
+    earnedTokenAddress: '0x7CE2332fAF6328986C75e3A8fCc1CB79621aeB1F',
+    earnContractAddress: '0x7CE2332fAF6328986C75e3A8fCc1CB79621aeB1F',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'boo-woofy-ftm',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'SpookySwap',
+    assets: ['WOOFY', 'FTM'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://spookyswap.finance/add',
+    buyTokenUrl:
+      'https://spookyswap.finance/swap',
+  },
+  {
     id: 'boo-boo',
     logo: 'fantom/BOO.png',
     name: 'BOO',
