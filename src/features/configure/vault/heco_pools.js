@@ -21,8 +21,10 @@ export const hecoPools = [
     platform: 'Mdex',
     assets: ['BIFI', 'USDT'],
     callFee: 0.25,
-    buyTokenUrl: 'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0x765277EebeCA2e31912C9946eAe1021199B39C61',
-    addLiquidityUrl: 'https://ht.mdex.com/#/add/0x765277EebeCA2e31912C9946eAe1021199B39C61/0xa71EdC38d189767582C38A3145b5873052c3e47a',
+    buyTokenUrl:
+      'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0x765277EebeCA2e31912C9946eAe1021199B39C61',
+    addLiquidityUrl:
+      'https://ht.mdex.com/#/add/0x765277EebeCA2e31912C9946eAe1021199B39C61/0xa71EdC38d189767582C38A3145b5873052c3e47a',
   },
   {
     id: 'hfi-hfi-ht',
@@ -46,8 +48,10 @@ export const hecoPools = [
     platform: 'HFI',
     assets: ['HFI', 'WHT'],
     callFee: 0.25,
-    buyTokenUrl: 'https://ht.mdex.com/#/swap?inputCurrency=0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f&outputCurrency=0x98fc3b60ed4a504f588342a53746405e355f9347',
-    addLiquidityUrl: 'https://ht.mdex.com/#/add/0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f/0x98fc3b60ed4a504f588342a53746405e355f9347',
+    buyTokenUrl:
+      'https://ht.mdex.com/#/swap?inputCurrency=0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f&outputCurrency=0x98fc3b60ed4a504f588342a53746405e355f9347',
+    addLiquidityUrl:
+      'https://ht.mdex.com/#/add/0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f/0x98fc3b60ed4a504f588342a53746405e355f9347',
   },
   {
     id: 'hfi-hfi-husd',
@@ -71,8 +75,10 @@ export const hecoPools = [
     platform: 'HFI',
     assets: ['HFI', 'HUSD'],
     callFee: 0.25,
-    buyTokenUrl: 'https://ht.mdex.com/#/swap?inputCurrency=0x0298c2b32eae4da002a15f36fdf7615bea3da047&outputCurrency=0x98fc3b60ed4a504f588342a53746405e355f9347',
-    addLiquidityUrl: 'https://ht.mdex.com/#/add/0x0298c2b32eae4da002a15f36fdf7615bea3da047/0x98fc3b60ed4a504f588342a53746405e355f9347',
+    buyTokenUrl:
+      'https://ht.mdex.com/#/swap?inputCurrency=0x0298c2b32eae4da002a15f36fdf7615bea3da047&outputCurrency=0x98fc3b60ed4a504f588342a53746405e355f9347',
+    addLiquidityUrl:
+      'https://ht.mdex.com/#/add/0x0298c2b32eae4da002a15f36fdf7615bea3da047/0x98fc3b60ed4a504f588342a53746405e355f9347',
   },
   {
     id: 'lava-lava',
@@ -96,7 +102,8 @@ export const hecoPools = [
     platform: 'Lavaswap',
     assets: ['LAVA'],
     callFee: 0.25,
-    buyTokenUrl: 'https://exchange.lavaswap.com/#/swap?inputCurrency=0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f&outputCurrency=0x56f95662e71f30b333b456439248c6de589082a4',
+    buyTokenUrl:
+      'https://exchange.lavaswap.com/#/swap?inputCurrency=0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f&outputCurrency=0x56f95662e71f30b333b456439248c6de589082a4',
   },
   {
     id: 'lava-lava-usdt',
@@ -120,8 +127,10 @@ export const hecoPools = [
     platform: 'Lavaswap',
     assets: ['LAVA', 'USDT'],
     callFee: 0.25,
-    buyTokenUrl: 'https://exchange.lavaswap.com/#/swap?inputCurrency=0x56f95662e71f30b333b456439248c6de589082a4&outputCurrency=0xa71edc38d189767582c38a3145b5873052c3e47a',
-    addLiquidityUrl: 'https://exchange.lavaswap.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0x56f95662E71f30b333b456439248c6dE589082a4',
+    buyTokenUrl:
+      'https://exchange.lavaswap.com/#/swap?inputCurrency=0x56f95662e71f30b333b456439248c6de589082a4&outputCurrency=0xa71edc38d189767582c38a3145b5873052c3e47a',
+    addLiquidityUrl:
+      'https://exchange.lavaswap.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0x56f95662E71f30b333b456439248c6dE589082a4',
   },
   {
     id: 'lava-lava-wht',
@@ -145,10 +154,12 @@ export const hecoPools = [
     platform: 'Lavaswap',
     assets: ['LAVA', 'WHT'],
     callFee: 0.25,
-    buyTokenUrl: 'https://exchange.lavaswap.com/#/swap?inputCurrency=0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f&outputCurrency=0x56f95662e71f30b333b456439248c6de589082a4',
-    addLiquidityUrl: 'https://exchange.lavaswap.com/#/add/ETH/0x56f95662E71f30b333b456439248c6dE589082a4',
+    buyTokenUrl:
+      'https://exchange.lavaswap.com/#/swap?inputCurrency=0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f&outputCurrency=0x56f95662e71f30b333b456439248c6de589082a4',
+    addLiquidityUrl:
+      'https://exchange.lavaswap.com/#/add/ETH/0x56f95662E71f30b333b456439248c6dE589082a4',
   },
-  
+
   {
     id: 'mdex-hbtc-wht',
     logo: 'heco/HBTC-WHT.svg',
@@ -171,7 +182,8 @@ export const hecoPools = [
     platform: 'Mdex',
     assets: ['HBTC', 'WHT'],
     callFee: 0.25,
-    buyTokenUrl: 'https://ht.mdex.com/#/swap?inputCurrency=HT&outputCurrency=0x66a79d23e58475d2738179ca52cd0b41d73f0bea',
+    buyTokenUrl:
+      'https://ht.mdex.com/#/swap?inputCurrency=HT&outputCurrency=0x66a79d23e58475d2738179ca52cd0b41d73f0bea',
     addLiquidityUrl: 'https://ht.mdex.com/#/add/HT/0x66a79d23e58475d2738179ca52cd0b41d73f0bea',
   },
 
@@ -197,7 +209,8 @@ export const hecoPools = [
     platform: 'Mdex',
     assets: ['ETH', 'WHT'],
     callFee: 0.25,
-    buyTokenUrl: 'https://ht.mdex.com/#/swap?inputCurrency=HT&outputCurrency=0x64FF637fB478863B7468bc97D30a5bF3A428a1fD',
+    buyTokenUrl:
+      'https://ht.mdex.com/#/swap?inputCurrency=HT&outputCurrency=0x64FF637fB478863B7468bc97D30a5bF3A428a1fD',
     addLiquidityUrl: 'https://ht.mdex.com/#/add/HT/0x64FF637fB478863B7468bc97D30a5bF3A428a1fD',
   },
 
@@ -223,8 +236,10 @@ export const hecoPools = [
     platform: 'Mdex',
     assets: ['HUSD', 'USDT'],
     callFee: 0.25,
-    buyTokenUrl: 'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0x0298c2b32eaE4da002a15f36fdf7615BEa3DA047',
-    addLiquidityUrl: 'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0x0298c2b32eaE4da002a15f36fdf7615BEa3DA047',
+    buyTokenUrl:
+      'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0x0298c2b32eaE4da002a15f36fdf7615BEa3DA047',
+    addLiquidityUrl:
+      'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0x0298c2b32eaE4da002a15f36fdf7615BEa3DA047',
   },
 
   {
@@ -249,8 +264,10 @@ export const hecoPools = [
     platform: 'Mdex',
     assets: ['HLTC', 'USDT'],
     callFee: 0.25,
-    buyTokenUrl: 'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0xecb56cf772B5c9A6907FB7d32387Da2fCbfB63b4',
-    addLiquidityUrl: 'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0xecb56cf772B5c9A6907FB7d32387Da2fCbfB63b4',
+    buyTokenUrl:
+      'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0xecb56cf772B5c9A6907FB7d32387Da2fCbfB63b4',
+    addLiquidityUrl:
+      'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0xecb56cf772B5c9A6907FB7d32387Da2fCbfB63b4',
   },
 
   {
@@ -275,8 +292,10 @@ export const hecoPools = [
     platform: 'Mdex',
     assets: ['HBCH', 'USDT'],
     callFee: 0.25,
-    buyTokenUrl: 'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0xeF3CEBD77E0C52cb6f60875d9306397B5Caca375',
-    addLiquidityUrl: 'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0xeF3CEBD77E0C52cb6f60875d9306397B5Caca375',
+    buyTokenUrl:
+      'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0xeF3CEBD77E0C52cb6f60875d9306397B5Caca375',
+    addLiquidityUrl:
+      'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0xeF3CEBD77E0C52cb6f60875d9306397B5Caca375',
   },
 
   {
@@ -301,8 +320,10 @@ export const hecoPools = [
     platform: 'Mdex',
     assets: ['HDOT', 'USDT'],
     callFee: 0.25,
-    buyTokenUrl: 'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0xA2c49cEe16a5E5bDEFDe931107dc1fae9f7773E3',
-    addLiquidityUrl: 'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0xA2c49cEe16a5E5bDEFDe931107dc1fae9f7773E3',
+    buyTokenUrl:
+      'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0xA2c49cEe16a5E5bDEFDe931107dc1fae9f7773E3',
+    addLiquidityUrl:
+      'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0xA2c49cEe16a5E5bDEFDe931107dc1fae9f7773E3',
   },
 
   {
@@ -327,8 +348,10 @@ export const hecoPools = [
     platform: 'Mdex',
     assets: ['HFIL', 'USDT'],
     callFee: 0.25,
-    buyTokenUrl: 'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0xae3a768f9aB104c69A7CD6041fE16fFa235d1810',
-    addLiquidityUrl: 'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0xae3a768f9aB104c69A7CD6041fE16fFa235d1810',
+    buyTokenUrl:
+      'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0xae3a768f9aB104c69A7CD6041fE16fFa235d1810',
+    addLiquidityUrl:
+      'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0xae3a768f9aB104c69A7CD6041fE16fFa235d1810',
   },
 
   {
@@ -353,8 +376,10 @@ export const hecoPools = [
     platform: 'Mdex',
     assets: ['HPT', 'USDT'],
     callFee: 0.25,
-    buyTokenUrl: 'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0xE499Ef4616993730CEd0f31FA2703B92B50bB536',
-    addLiquidityUrl: 'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0xE499Ef4616993730CEd0f31FA2703B92B50bB536',
+    buyTokenUrl:
+      'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0xE499Ef4616993730CEd0f31FA2703B92B50bB536',
+    addLiquidityUrl:
+      'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0xE499Ef4616993730CEd0f31FA2703B92B50bB536',
   },
 
   {
@@ -379,8 +404,10 @@ export const hecoPools = [
     platform: 'Mdex',
     assets: ['LHB', 'USDT'],
     callFee: 0.25,
-    buyTokenUrl: 'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0x8F67854497218043E1f72908FFE38D0Ed7F24721',
-    addLiquidityUrl: 'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0x8F67854497218043E1f72908FFE38D0Ed7F24721',
+    buyTokenUrl:
+      'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0x8F67854497218043E1f72908FFE38D0Ed7F24721',
+    addLiquidityUrl:
+      'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0x8F67854497218043E1f72908FFE38D0Ed7F24721',
   },
 
   {
@@ -405,8 +432,10 @@ export const hecoPools = [
     platform: 'Mdex',
     assets: ['AAVE', 'USDT'],
     callFee: 0.25,
-    buyTokenUrl: 'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0x202b4936fE1a82A4965220860aE46d7d3939Bb25',
-    addLiquidityUrl: 'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0x202b4936fE1a82A4965220860aE46d7d3939Bb25',
+    buyTokenUrl:
+      'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0x202b4936fE1a82A4965220860aE46d7d3939Bb25',
+    addLiquidityUrl:
+      'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0x202b4936fE1a82A4965220860aE46d7d3939Bb25',
   },
 
   {
@@ -431,8 +460,10 @@ export const hecoPools = [
     platform: 'Mdex',
     assets: ['SNX', 'USDT'],
     callFee: 0.25,
-    buyTokenUrl: 'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0x777850281719d5a96C29812ab72f822E0e09F3Da',
-    addLiquidityUrl: 'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0x777850281719d5a96C29812ab72f822E0e09F3Da',
+    buyTokenUrl:
+      'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0x777850281719d5a96C29812ab72f822E0e09F3Da',
+    addLiquidityUrl:
+      'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0x777850281719d5a96C29812ab72f822E0e09F3Da',
   },
 
   {
@@ -457,8 +488,10 @@ export const hecoPools = [
     platform: 'Mdex',
     assets: ['LINK', 'USDT'],
     callFee: 0.25,
-    buyTokenUrl: 'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0x9e004545c59D359F6B7BFB06a26390b087717b42',
-    addLiquidityUrl: 'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0x9e004545c59D359F6B7BFB06a26390b087717b42',
+    buyTokenUrl:
+      'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0x9e004545c59D359F6B7BFB06a26390b087717b42',
+    addLiquidityUrl:
+      'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0x9e004545c59D359F6B7BFB06a26390b087717b42',
   },
 
   {
@@ -483,8 +516,10 @@ export const hecoPools = [
     platform: 'Mdex',
     assets: ['BAL', 'USDT'],
     callFee: 0.25,
-    buyTokenUrl: 'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0x045De15Ca76e76426E8Fc7cba8392A3138078D0F',
-    addLiquidityUrl: 'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0x045De15Ca76e76426E8Fc7cba8392A3138078D0F',
+    buyTokenUrl:
+      'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0x045De15Ca76e76426E8Fc7cba8392A3138078D0F',
+    addLiquidityUrl:
+      'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0x045De15Ca76e76426E8Fc7cba8392A3138078D0F',
   },
 
   {
@@ -509,8 +544,10 @@ export const hecoPools = [
     platform: 'Mdex',
     assets: ['YFI', 'USDT'],
     callFee: 0.25,
-    buyTokenUrl: 'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0xB4F019bEAc758AbBEe2F906033AAa2f0F6Dacb35',
-    addLiquidityUrl: 'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0xB4F019bEAc758AbBEe2F906033AAa2f0F6Dacb35',
+    buyTokenUrl:
+      'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0xB4F019bEAc758AbBEe2F906033AAa2f0F6Dacb35',
+    addLiquidityUrl:
+      'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0xB4F019bEAc758AbBEe2F906033AAa2f0F6Dacb35',
   },
 
   {
@@ -535,8 +572,10 @@ export const hecoPools = [
     platform: 'Mdex',
     assets: ['UNI', 'USDT'],
     callFee: 0.25,
-    buyTokenUrl: 'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0x22C54cE8321A4015740eE1109D9cBc25815C46E6',
-    addLiquidityUrl: 'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0x22C54cE8321A4015740eE1109D9cBc25815C46E6',
+    buyTokenUrl:
+      'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0x22C54cE8321A4015740eE1109D9cBc25815C46E6',
+    addLiquidityUrl:
+      'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0x22C54cE8321A4015740eE1109D9cBc25815C46E6',
   },
 
   {
@@ -561,8 +600,10 @@ export const hecoPools = [
     platform: 'Mdex',
     assets: ['MDX', 'USDT'],
     callFee: 0.25,
-    buyTokenUrl: 'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0x25D2e80cB6B86881Fd7e07dd263Fb79f4AbE033c',
-    addLiquidityUrl: 'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0x25D2e80cB6B86881Fd7e07dd263Fb79f4AbE033c',
+    buyTokenUrl:
+      'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0x25D2e80cB6B86881Fd7e07dd263Fb79f4AbE033c',
+    addLiquidityUrl:
+      'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0x25D2e80cB6B86881Fd7e07dd263Fb79f4AbE033c',
   },
 
   {
@@ -587,7 +628,8 @@ export const hecoPools = [
     platform: 'Mdex',
     assets: ['MDX', 'WHT'],
     callFee: 0.25,
-    buyTokenUrl: 'https://ht.mdex.com/#/swap?inputCurrency=HT&outputCurrency=0x25D2e80cB6B86881Fd7e07dd263Fb79f4AbE033c',
+    buyTokenUrl:
+      'https://ht.mdex.com/#/swap?inputCurrency=HT&outputCurrency=0x25D2e80cB6B86881Fd7e07dd263Fb79f4AbE033c',
     addLiquidityUrl: 'https://ht.mdex.com/#/add/HT/0x25D2e80cB6B86881Fd7e07dd263Fb79f4AbE033c',
   },
 
@@ -613,7 +655,8 @@ export const hecoPools = [
     platform: 'Mdex',
     assets: ['WHT', 'USDT'],
     callFee: 0.25,
-    buyTokenUrl: 'https://ht.mdex.com/#/swap?inputCurrency=HT&outputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a',
+    buyTokenUrl:
+      'https://ht.mdex.com/#/swap?inputCurrency=HT&outputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a',
     addLiquidityUrl: 'https://ht.mdex.com/#/add/HT/0xa71EdC38d189767582C38A3145b5873052c3e47a',
   },
 
@@ -639,7 +682,8 @@ export const hecoPools = [
     platform: 'Mdex',
     assets: ['WHT', 'HUSD'],
     callFee: 0.25,
-    buyTokenUrl: 'https://ht.mdex.com/#/swap?inputCurrency=HT&outputCurrency=0x0298c2b32eaE4da002a15f36fdf7615BEa3DA047',
+    buyTokenUrl:
+      'https://ht.mdex.com/#/swap?inputCurrency=HT&outputCurrency=0x0298c2b32eaE4da002a15f36fdf7615BEa3DA047',
     addLiquidityUrl: 'https://ht.mdex.com/#/add/HT/0x0298c2b32eaE4da002a15f36fdf7615BEa3DA047',
   },
 
@@ -665,8 +709,10 @@ export const hecoPools = [
     platform: 'Mdex',
     assets: ['HBTC', 'USDT'],
     callFee: 0.25,
-    buyTokenUrl: 'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0x66a79D23E58475D2738179Ca52cd0b41d73f0BEa',
-    addLiquidityUrl: 'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0x66a79D23E58475D2738179Ca52cd0b41d73f0BEa',
+    buyTokenUrl:
+      'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0x66a79D23E58475D2738179Ca52cd0b41d73f0BEa',
+    addLiquidityUrl:
+      'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0x66a79D23E58475D2738179Ca52cd0b41d73f0BEa',
   },
 
   {
@@ -691,7 +737,9 @@ export const hecoPools = [
     platform: 'Mdex',
     assets: ['ETH', 'USDT'],
     callFee: 0.25,
-    buyTokenUrl: 'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0x64FF637fB478863B7468bc97D30a5bF3A428a1fD',
-    addLiquidityUrl: 'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0x64FF637fB478863B7468bc97D30a5bF3A428a1fD',
+    buyTokenUrl:
+      'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0x64FF637fB478863B7468bc97D30a5bF3A428a1fD',
+    addLiquidityUrl:
+      'https://ht.mdex.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0x64FF637fB478863B7468bc97D30a5bF3A428a1fD',
   },
 ];

@@ -26,7 +26,7 @@ const styles = theme => ({
     color: theme.palette.text.primary,
     '& .MuiTypography-root': {
       fontSize: '14px',
-    }
+    },
   },
   boost: {
     color: '#5a8f69',
@@ -47,8 +47,8 @@ const styles = theme => ({
     '& .MuiButton-label': {
       fontWeight: 'bold',
       textTransform: 'capitalize',
-    }
-  }
+    },
+  },
 });
 
 export default styles;

@@ -1,4 +1,4 @@
-const styles = (theme) => ({
+const styles = theme => ({
   container: {
     position: 'absolute',
     top: '0px',
@@ -17,7 +17,7 @@ const styles = (theme) => ({
   experimental: {
     color: '#ffffff',
     backgroundColor: theme.palette.type === 'dark' ? '#205686' : '#3285CF',
-  }
+  },
 });
 
 export default styles;

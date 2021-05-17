@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useSnackbar } from 'notistack';
 import { removeSnackbar } from './redux/actions';
 import Button from '@material-ui/core/Button';
-import { getTxUrl } from "../../common/networkSetup";
+import { getTxUrl } from '../../common/networkSetup';
 
 let displayed = [];
 
@@ -46,7 +46,9 @@ const Notifier = () => {
           removeDisplayed(myKey);
         },
         autoHideDuration: 3000,
-        action: hash ? () => <Button onClick={() => window.open(getTxUrl(hash), '_blank')}>View</Button> : null,
+        action: hash
+          ? () => <Button onClick={() => window.open(getTxUrl(hash), '_blank')}>View</Button>
+          : null,
       });
 
       // keep track of snackbars that we've displayed

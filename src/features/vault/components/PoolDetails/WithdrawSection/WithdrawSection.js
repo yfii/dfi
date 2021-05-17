@@ -14,9 +14,18 @@ import Button from 'components/CustomButtons/Button.js';
 import CustomOutlinedInput from 'components/CustomOutlinedInput/CustomOutlinedInput';
 import CustomSlider from 'components/CustomSlider/CustomSlider';
 import RefundButtons from '../RefundButtons/RefundButtons';
-import { byDecimals, convertAmountToRawNumber, convertAmountFromRawNumber } from 'features/helpers/bignumber';
+import {
+  byDecimals,
+  convertAmountToRawNumber,
+  convertAmountFromRawNumber,
+} from 'features/helpers/bignumber';
 import { shouldHideFromHarvest } from 'features/helpers/utils';
-import { useFetchWithdraw, useFetchBalances, useFetchApproval, useFetchZapEstimate } from 'features/vault/redux/hooks';
+import {
+  useFetchWithdraw,
+  useFetchBalances,
+  useFetchApproval,
+  useFetchZapEstimate,
+} from 'features/vault/redux/hooks';
 import { useConnectWallet } from 'features/home/redux/hooks';
 import { getNetworkCoin } from 'features/helpers/getNetworkData';
 import styles from './styles';
@@ -54,20 +63,22 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
         address: pool.tokenAddress,
         decimals: pool.tokenDecimals,
       },
-    ]
+    ];
 
     if (pool.zap) {
       const pairTokens = pool.zap.tokens.filter(t => t.symbol !== nativeCoin.wrappedSymbol);
       if (pairTokens.length) {
-        outputs.push({
-          symbol: pool.assets.join('+'),
-        }, ...pairTokens)
+        outputs.push(
+          {
+            symbol: pool.assets.join('+'),
+          },
+          ...pairTokens
+        );
       }
     }
 
     return outputs;
-
-  }, [pool.tokenAddress])
+  }, [pool.tokenAddress]);
 
   const [withdrawSettings, setWithdrawSettings] = useState({
     isZap: false,
@@ -77,7 +88,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
     outputIndex: 0,
     amount: new BigNumber(0),
     slider: 0,
-    input: "0.0",
+    input: '0.0',
     vaultAddress: pool.earnContractAddress,
     withdrawAddress: pool.earnContractAddress,
     isNeedApproval: false,
@@ -89,9 +100,9 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
     if (fetchWithdrawPending[index]) return;
     if (fetchZapEstimatePending[pool.tokenAddress]) return;
     if (pool.zap) {
-      fetchPairReverves({ web3, pairToken: tokens[pool.token] })
+      fetchPairReverves({ web3, pairToken: tokens[pool.token] });
     }
-  }, [pool, (new Date()).getMinutes()])
+  }, [pool, new Date().getMinutes()]);
 
   useDeepCompareEffect(() => {
     if (fetchWithdrawPending[index]) return;
@@ -104,17 +115,20 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
         swapInput: withdrawSettings.swapInput,
         swapOutput: withdrawSettings.swapOutput,
         pairToken: tokens[pool.token],
-        pairTokenAmount: convertAmountToRawNumber(withdrawSettings.amount, tokens[pool.token].decimals),
-      })
+        pairTokenAmount: convertAmountToRawNumber(
+          withdrawSettings.amount,
+          tokens[pool.token].decimals
+        ),
+      });
     }
-  }, [tokens[pool.token].reserves, withdrawSettings.amount, withdrawSettings.outputIndex])
+  }, [tokens[pool.token].reserves, withdrawSettings.amount, withdrawSettings.outputIndex]);
 
   const handleOutputChange = event => {
     const outputIndex = event.target.value;
-    const isZap = (outputIndex > 0);
-    const isSwap = (outputIndex > 1);
+    const isZap = outputIndex > 0;
+    const isSwap = outputIndex > 1;
     const spender = isZap ? pool.zap.zapAddress : pool.earnContractAddress;
-    const swapInput = isSwap ? withdrawOutputs[(outputIndex === 2 ? 3 : 2)] : undefined;
+    const swapInput = isSwap ? withdrawOutputs[outputIndex === 2 ? 3 : 2] : undefined;
     const swapOutput = isSwap ? withdrawOutputs[outputIndex] : undefined;
     const allowance = new BigNumber(tokens[pool.earnedToken].allowance[spender]);
 
@@ -127,8 +141,8 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
       swapOutput,
       withdrawAddress: spender,
       isNeedApproval: isZap && allowance.isZero(),
-    }))
-  }
+    }));
+  };
 
   const handleSliderChange = (_, sliderInt) => {
     setWithdrawSettings(prevState => ({
@@ -141,7 +155,10 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
     let amount = new BigNumber(0);
     let input = new BigNumber(0);
     if (sliderInt > 0 && sliderInt < 99) {
-      amount = underliyngBalance.times(sliderInt).div(100).decimalPlaces(pool.tokenDecimals, BigNumber.ROUND_DOWN);
+      amount = underliyngBalance
+        .times(sliderInt)
+        .div(100)
+        .decimalPlaces(pool.tokenDecimals, BigNumber.ROUND_DOWN);
       input = amount.decimalPlaces(8, BigNumber.ROUND_DOWN).toFormat();
     }
     if (sliderInt >= 99) {
@@ -158,9 +175,9 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
     }));
   };
 
-  const handleMax = (_) => {
+  const handleMax = _ => {
     handleSliderChangeCommitted(_, 100);
-  }
+  };
 
   const handleInputAmountChange = event => {
     const input = event.target.value.replace(/[,]+/, '').replace(/[^0-9\.]+/, '');
@@ -169,7 +186,9 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
     if (amount.isNaN()) amount = new BigNumber(0);
     if (amount.isGreaterThan(underliyngBalance)) amount = underliyngBalance;
 
-    const sliderInt = underliyngBalance.isZero() ? 0 : amount.times(100).dividedToIntegerBy(underliyngBalance).toNumber();
+    const sliderInt = underliyngBalance.isZero()
+      ? 0
+      : amount.times(100).dividedToIntegerBy(underliyngBalance).toNumber();
 
     setWithdrawSettings(prevState => ({
       ...prevState,
@@ -180,7 +199,9 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
   };
 
   useEffect(() => {
-    const allowance = new BigNumber(tokens[pool.earnedToken].allowance[withdrawSettings.withdrawAddress]);
+    const allowance = new BigNumber(
+      tokens[pool.earnedToken].allowance[withdrawSettings.withdrawAddress]
+    );
     setWithdrawSettings(prevState => ({
       ...prevState,
       isNeedApproval: prevState.isZap && allowance.isZero(),
@@ -200,13 +221,14 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
   };
 
   const handleWithdraw = () => {
-    const sharesAmount = withdrawSettings.amount.dividedBy(pool.pricePerFullShare)
+    const sharesAmount = withdrawSettings.amount
+      .dividedBy(pool.pricePerFullShare)
       .decimalPlaces(sharesDecimals, BigNumber.ROUND_UP);
     if (sharesAmount.times(100).dividedBy(sharesByDecimals).isGreaterThan(99)) {
       return handleWithdrawAll();
     }
     withdraw(convertAmountToRawNumber(sharesAmount, sharesDecimals));
-  }
+  };
 
   const handleWithdrawAll = () => {
     const isAll = true;
@@ -217,13 +239,15 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
       slider: 100,
     }));
     withdraw(convertAmountToRawNumber(sharesByDecimals, sharesDecimals), isAll);
-  }
+  };
 
   const withdraw = (sharesAmount, isAll = false) => {
     if (withdrawSettings.isZap) {
       if (withdrawSettings.isSwap) {
         const swapAmountOut = pool.swapEstimate.amountOut;
-        const swapAmountOutMin = new BigNumber(swapAmountOut - (swapAmountOut * withdrawSettings.slippageTolerance));
+        const swapAmountOutMin = new BigNumber(
+          swapAmountOut - swapAmountOut * withdrawSettings.slippageTolerance
+        );
         const zapWithdrawArgs = {
           address,
           web3,
@@ -232,13 +256,15 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
           zapAddress: pool.zap.zapAddress,
           tokenOut: withdrawSettings.swapOutput.address,
           amountOutMin: swapAmountOutMin.toFixed(0),
-        }
+        };
         fetchZapWithdrawAndSwap(zapWithdrawArgs)
           .then(() => {
-            enqueueSnackbar(t('Vault-WithdrawSuccess'), { variant: 'success' })
+            enqueueSnackbar(t('Vault-WithdrawSuccess'), { variant: 'success' });
             fetchBalances({ address, web3, tokens });
           })
-          .catch(error => enqueueSnackbar(t('Vault-WithdrawError', { error }), { variant: 'error' }));
+          .catch(error =>
+            enqueueSnackbar(t('Vault-WithdrawError', { error }), { variant: 'error' })
+          );
       } else {
         const zapWithdrawArgs = {
           address,
@@ -246,13 +272,15 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
           vaultAddress: pool.earnContractAddress,
           amount: sharesAmount,
           zapAddress: pool.zap.zapAddress,
-        }
+        };
         fetchZapWithdrawAndRemoveLiqudity(zapWithdrawArgs)
           .then(() => {
-            enqueueSnackbar(t('Vault-WithdrawSuccess'), { variant: 'success' })
+            enqueueSnackbar(t('Vault-WithdrawSuccess'), { variant: 'success' });
             fetchBalances({ address, web3, tokens });
           })
-          .catch(error => enqueueSnackbar(t('Vault-WithdrawError', { error }), { variant: 'error' }));
+          .catch(error =>
+            enqueueSnackbar(t('Vault-WithdrawError', { error }), { variant: 'error' })
+          );
       }
     } else {
       const vaultWithdrawArgs = {
@@ -262,28 +290,36 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
         amount: sharesAmount,
         contractAddress: pool.earnContractAddress,
         index,
-      }
+      };
       if (pool.tokenAddress) {
         fetchWithdraw(vaultWithdrawArgs)
           .then(() => {
-            enqueueSnackbar(t('Vault-WithdrawSuccess'), { variant: 'success' })
+            enqueueSnackbar(t('Vault-WithdrawSuccess'), { variant: 'success' });
             fetchBalances({ address, web3, tokens });
           })
-          .catch(error => enqueueSnackbar(t('Vault-WithdrawError', { error }), { variant: 'error' }));
+          .catch(error =>
+            enqueueSnackbar(t('Vault-WithdrawError', { error }), { variant: 'error' })
+          );
       } else {
         fetchWithdrawBnb(vaultWithdrawArgs)
           .then(() => {
-            enqueueSnackbar(t('Vault-WithdrawSuccess'), { variant: 'success' })
+            enqueueSnackbar(t('Vault-WithdrawSuccess'), { variant: 'success' });
             fetchBalances({ address, web3, tokens });
           })
-          .catch(error => enqueueSnackbar(t('Vault-WithdrawError', { error }), { variant: 'error' }));
+          .catch(error =>
+            enqueueSnackbar(t('Vault-WithdrawError', { error }), { variant: 'error' })
+          );
       }
     }
-
   };
 
   return (
-    <Grid item xs={12} md={shouldHideFromHarvest(pool.name) ? 6 : 5} className={classes.sliderDetailContainer}>
+    <Grid
+      item
+      xs={12}
+      md={shouldHideFromHarvest(pool.name) ? 6 : 5}
+      className={classes.sliderDetailContainer}
+    >
       <div className={classes.showDetailLeft}>
         {t('Vault-Deposited')}:{' '}
         <a onClick={handleMax} className={classes.balanceMax}>
@@ -299,15 +335,24 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
           fullWidth
           value={withdrawSettings.input}
           onChange={handleInputAmountChange}
-          endAdornment={pool.zap && (
-            <FormControl className={classes.zapFormControl}>
-              <Select variant="standard" className={classes.zapSelect} value={withdrawSettings.outputIndex} onChange={handleOutputChange}>
-                {withdrawOutputs.map((output, i) =>
-                  <MenuItem key={i} value={i}>{output.symbol}</MenuItem>
-                )}
-              </Select>
-            </FormControl>
-          )}
+          endAdornment={
+            pool.zap && (
+              <FormControl className={classes.zapFormControl}>
+                <Select
+                  variant="standard"
+                  className={classes.zapSelect}
+                  value={withdrawSettings.outputIndex}
+                  onChange={handleOutputChange}
+                >
+                  {withdrawOutputs.map((output, i) => (
+                    <MenuItem key={i} value={i}>
+                      {output.symbol}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+            )
+          }
         />
       </FormControl>
       <CustomSlider
@@ -343,7 +388,9 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
                   className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
                   type="button"
                   color="primary"
-                  disabled={withdrawSettings.amount.isZero() || fetchZapEstimatePending[pool.tokenAddress]}
+                  disabled={
+                    withdrawSettings.amount.isZero() || fetchZapEstimatePending[pool.tokenAddress]
+                  }
                   onClick={handleWithdraw}
                 >
                   {fetchWithdrawPending[index]
@@ -369,7 +416,12 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
               <span>{t('Vault-WithdrawScenario')}&nbsp;</span>
               {fetchZapEstimatePending[pool.tokenAddress] && <CircularProgress size={12} />}
               <ol>
-                <li>{t('Vault-WithdrawScenarioRedeem', { mooToken: pool.earnedToken, poolToken: pool.token })}</li>
+                <li>
+                  {t('Vault-WithdrawScenarioRedeem', {
+                    mooToken: pool.earnedToken,
+                    poolToken: pool.token,
+                  })}
+                </li>
                 {withdrawSettings.isZap && (
                   <li>
                     {t('Vault-WithdrawScenarioRemoveLiquidity', {
@@ -382,8 +434,18 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
                 {withdrawSettings.isSwap && (
                   <li>
                     {t('Vault-WithdrawScenarioSwap', {
-                      swapIn: `${convertAmountFromRawNumber(pool.swapEstimate?.amountIn || 0, withdrawSettings.swapInput.decimals).decimalPlaces(8, BigNumber.ROUND_DOWN).toFormat()} ${withdrawSettings.swapInput.symbol}`,
-                      swapOut: `${convertAmountFromRawNumber(pool.swapEstimate?.amountOut || 0, withdrawSettings.swapOutput.decimals).decimalPlaces(8, BigNumber.ROUND_DOWN).toFormat()} ${withdrawSettings.swapOutput.symbol}`,
+                      swapIn: `${convertAmountFromRawNumber(
+                        pool.swapEstimate?.amountIn || 0,
+                        withdrawSettings.swapInput.decimals
+                      )
+                        .decimalPlaces(8, BigNumber.ROUND_DOWN)
+                        .toFormat()} ${withdrawSettings.swapInput.symbol}`,
+                      swapOut: `${convertAmountFromRawNumber(
+                        pool.swapEstimate?.amountOut || 0,
+                        withdrawSettings.swapOutput.decimals
+                      )
+                        .decimalPlaces(8, BigNumber.ROUND_DOWN)
+                        .toFormat()} ${withdrawSettings.swapOutput.symbol}`,
                       slippageTolerance: `1%`,
                     })}
                   </li>
@@ -391,7 +453,12 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
                 {withdrawSettings.isSwap && (
                   <li>
                     {t('Vault-WithdrawScenarioTotal', {
-                      totalOut: `${convertAmountFromRawNumber(pool.swapEstimate?.amountOut * 2 || 0, withdrawSettings.swapOutput.decimals).decimalPlaces(8, BigNumber.ROUND_DOWN).toFormat()} ${withdrawSettings.swapOutput.symbol}`,
+                      totalOut: `${convertAmountFromRawNumber(
+                        pool.swapEstimate?.amountOut * 2 || 0,
+                        withdrawSettings.swapOutput.decimals
+                      )
+                        .decimalPlaces(8, BigNumber.ROUND_DOWN)
+                        .toFormat()} ${withdrawSettings.swapOutput.symbol}`,
                     })}
                   </li>
                 )}
@@ -400,7 +467,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
           </div>
         )}
       </div>
-    </Grid >
+    </Grid>
   );
 };
 

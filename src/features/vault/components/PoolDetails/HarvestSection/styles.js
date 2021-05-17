@@ -28,7 +28,7 @@ const styles = theme => ({
     },
     [theme.breakpoints.up('lg')]: {
       maxWidth: '100px',
-    }
+    },
   },
   showDetailButton: {
     margin: '12px 5px',

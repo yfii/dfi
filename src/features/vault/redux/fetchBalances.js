@@ -8,7 +8,10 @@ import {
 import { MultiCall } from 'eth-multicall';
 import { erc20ABI, multicallBnbShimABI, uniswapV2PairABI } from 'features/configure';
 import { byDecimals } from 'features/helpers/bignumber';
-import { getNetworkMulticall, getNetworkMulticallNativeShim } from 'features/helpers/getNetworkData';
+import {
+  getNetworkMulticall,
+  getNetworkMulticallNativeShim,
+} from 'features/helpers/getNetworkData';
 
 export function fetchBalances({ address, web3, tokens }) {
   return dispatch => {
@@ -19,7 +22,6 @@ export function fetchBalances({ address, web3, tokens }) {
     });
 
     const promise = new Promise((resolve, reject) => {
-
       const multicall = new MultiCall(web3, getNetworkMulticall());
 
       const balanceCalls = [];
@@ -45,22 +47,21 @@ export function fetchBalances({ address, web3, tokens }) {
               spender: spender,
               symbol: symbol,
             });
-          })
+          });
         }
       });
 
       multicall
         .all([balanceCalls, allowanceCalls])
         .then(([balanceResults, allowanceResults]) => {
-
           const newTokens = {};
 
           balanceResults.forEach(balanceResult => {
             newTokens[balanceResult.symbol] = {
               ...tokens[balanceResult.symbol],
               tokenBalance: balanceResult.balance,
-            }
-          })
+            };
+          });
 
           allowanceResults.forEach(allowanceResult => {
             newTokens[allowanceResult.symbol] = {
@@ -69,8 +70,8 @@ export function fetchBalances({ address, web3, tokens }) {
                 ...newTokens[allowanceResult.symbol].allowance,
                 [allowanceResult.spender]: allowanceResult.allowance,
               },
-            }
-          })
+            };
+          });
 
           dispatch({
             type: VAULT_FETCH_BALANCES_SUCCESS,
@@ -102,19 +103,22 @@ export function fetchPairReverves({ web3, pairToken }) {
       const multicall = new MultiCall(web3, getNetworkMulticall());
       const tokenContract = new web3.eth.Contract(uniswapV2PairABI, pairToken.tokenAddress);
       multicall
-        .all([[{
-          totalSupply: tokenContract.methods.totalSupply(),
-          token0: tokenContract.methods.token0(),
-          token1: tokenContract.methods.token1(),
-          reserves: tokenContract.methods.getReserves(),
-        }]])
+        .all([
+          [
+            {
+              totalSupply: tokenContract.methods.totalSupply(),
+              token0: tokenContract.methods.token0(),
+              token1: tokenContract.methods.token1(),
+              reserves: tokenContract.methods.getReserves(),
+            },
+          ],
+        ])
         .then(([[result]]) => {
-
           const newPairToken = {
             [pairToken.symbol]: {
               ...pairToken,
               ...result,
-            }
+            },
           };
 
           dispatch({
@@ -156,7 +160,7 @@ export function useFetchBalances() {
 
   const tokenBalance = tokenSymbol => {
     return byDecimals(tokens[tokenSymbol]?.tokenBalance || 0, tokens[tokenSymbol].decimals);
-  }
+  };
 
   const boundPairReverves = useCallback(
     data => {
@@ -193,7 +197,7 @@ export function reducer(state, action) {
             ...state.tokens[symbol]?.allowance,
             ...token.allowance,
           },
-        }
+        };
       });
 
       return {

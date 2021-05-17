@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   showDetail: {
     alignItems: 'center',
     justifyContent: 'space-around',
@@ -29,7 +29,7 @@ export default function CustomOutlinedInput(props) {
   const commonClasses = {
     root: commonStyle.showDetail,
     focused: commonStyle.focused,
-    classes
+    classes,
   };
 
   return <OutlinedInput {...props} classes={commonClasses} />;

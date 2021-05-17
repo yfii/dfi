@@ -23,7 +23,7 @@ import {
   hexToRgb,
 } from 'assets/jss/material-kit-pro-react.js';
 
-const styles = (theme) => ({
+const styles = theme => ({
   button: {
     minHeight: 'auto',
     minWidth: 'auto',
