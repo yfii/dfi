@@ -11,6 +11,14 @@
   "keywords": ["beefy", "bsc"],
   "tokens": [
     {
+      "name": "Avalanche Token",
+      "symbol": "AVAX",
+      "address": "0x1ce0c2827e2ef14d5c4f29a091d735a204794041",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://dex.apeswap.finance/images/coins/avax.png"
+    },
+    {
       "name": "ApeSwapFinance Banana",
       "symbol": "BANANA",
       "address": "0x603c7f932ED1fc6575303D8Fb018fDCBb0f39a95",
