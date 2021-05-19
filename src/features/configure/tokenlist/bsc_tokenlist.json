@@ -11,6 +11,38 @@
   "keywords": ["beefy", "bsc"],
   "tokens": [
     {
+      "name": "KeyFi Token",
+      "symbol": "KEYFI",
+      "address": "0x4b6000f9163de2e3f0a01ec37e06e1469dbbce9d",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://dex.apeswap.finance/images/coins/XBTC.svg"
+    },
+    {
+      "name": "bxBTC Token",
+      "symbol": "BXBTC",
+      "address": "0xab111D5948470Ba73d98D66BBdf2798FBE093546",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://dex.apeswap.finance/images/coins/XBTC.svg"
+    },
+    {
+      "name": "Astronaut Token",
+      "symbol": "NAUT",
+      "address": "0x05b339b0a346bf01f851dde47a5d485c34fe220c",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://dex.apeswap.finance/images/coins/NAUT.png"
+    },
+    {
+      "name": "MIOTAC Token",
+      "symbol": "IOTA",
+      "address": "0xd944f1D1e9d5f9Bb90b62f9D45e447D989580782",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://dex.apeswap.finance/images/coins/IOTA.png"
+    },
+    {
       "name": "Avalanche Token",
       "symbol": "AVAX",
       "address": "0x1ce0c2827e2ef14d5c4f29a091d735a204794041",
