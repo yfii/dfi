@@ -95,7 +95,33 @@ export const bscPools = [
     callFee: 0.5,
     addLiquidityUrl: 'https://belt.fi/',
   },
-
+  {
+    id: 'banana-avax-bnb',
+    logo: 'bnb-pairs/AVAX-BNB.svg',
+    name: 'AVAX-BNB LP',
+    token: 'AVAX-BNB ALP',
+    tokenDescription: 'ApeSwap',
+    tokenAddress: '0x40aFc7CBd0Dc2bE5860F0035b717d20Afb4827b2',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooApeAVAX-BNB',
+    earnedTokenAddress: '0x97697d89e490196eE7dbF6660424B80D276ae7d9',
+    earnContractAddress: '0x97697d89e490196eE7dbF6660424B80D276ae7d9',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'banana-avax-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'ApeSwap',
+    assets: ['AVAX', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://dex.apeswap.finance/#/add/ETH/0x1ce0c2827e2ef14d5c4f29a091d735a204794041',
+    buyTokenUrl:
+      'https://dex.apeswap.finance/#/swap?outputCurrency=0x1ce0c2827e2ef14d5c4f29a091d735a204794041',
+  },
   {
     id: 'garuda-garuda-usdt',
     logo: 'degens/garuda-usdt.png',
@@ -122,7 +148,6 @@ export const bscPools = [
     buyTokenUrl:
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x854086dC841e1bfae50Cb615bF41f55BF432a90b',
   },
-
   {
     id: 'banana-ftm-bnb',
     logo: 'bnb-pairs/FTM-BNB.svg',
