@@ -11,6 +11,14 @@
   "keywords": ["beefy", "bsc"],
   "tokens": [
     {
+      "name": "Swampy Token",
+      "symbol": "SWAMP",
+      "address": "0xc5a49b4cbe004b6fd55b30ba1de6ac360ff9765d",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://bscscan.com/token/images/swampfinance_32.png"
+    },
+    {
       "name": "HYFI Token",
       "symbol": "HYFI",
       "address": "0x9a319b959e33369C5eaA494a770117eE3e585318",
