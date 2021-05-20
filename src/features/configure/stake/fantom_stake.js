@@ -2,7 +2,7 @@ import { govPoolABI } from '../abi';
 
 export const fantomStakePools = [
   {
-    id: 'moo_bhc-hps2',
+    id: 'moo_ftm_usdc-est',
     name: 'Ester Finance',
     logo: 'fantom/USDC-FTM.png',
     token: 'mooBooFTM-USDC',
