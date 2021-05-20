@@ -42,7 +42,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
   const {
     fetchWithdraw,
     fetchWithdrawBnb,
-    fetchZapWithdrawAndRemoveLiqudity,
+    fetchZapWithdrawAndRemoveLiquidity,
     fetchZapWithdrawAndSwap,
     fetchWithdrawPending,
   } = useFetchWithdraw();
@@ -273,7 +273,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
           amount: sharesAmount,
           zapAddress: pool.zap.zapAddress,
         };
-        fetchZapWithdrawAndRemoveLiqudity(zapWithdrawArgs)
+        fetchZapWithdrawAndRemoveLiquidity(zapWithdrawArgs)
           .then(() => {
             enqueueSnackbar(t('Vault-WithdrawSuccess'), { variant: 'success' });
             fetchBalances({ address, web3, tokens });
