@@ -1424,8 +1424,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'satis-sat-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     assets: ['SAT', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -1450,8 +1450,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'satis-sat-busd',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     assets: ['SAT', 'BUSD'],
     callFee: 0.5,
     addLiquidityUrl:
