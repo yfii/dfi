@@ -11,6 +11,14 @@
   "keywords": ["beefy", "bsc"],
   "tokens": [
     {
+      "name": "Swampy Token",
+      "symbol": "SWAMP",
+      "address": "0xc5a49b4cbe004b6fd55b30ba1de6ac360ff9765d",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://bscscan.com/token/images/swampfinance_32.png"
+    },
+    {
       "name": "HYFI Token",
       "symbol": "HYFI",
       "address": "0x9a319b959e33369C5eaA494a770117eE3e585318",
@@ -116,7 +124,7 @@
     },
     {
       "name": "IRON Share V2 Token",
-      "symbol": "IRON",
+      "symbol": "STEEL",
       "address": "0x9001eE054F1692feF3A48330cB543b6FEc6287eb",
       "chainId": 56,
       "decimals": 18,
@@ -1341,7 +1349,7 @@
     {
       "name": "PNT",
       "symbol": "PNT",
-      "address": "0x7a1da9f49224ef98389b071b8a3294d1cc5e3e6a",
+      "address": "0xdaacb0ab6fb34d24e8a67bfa14bf4d95d4c7af92",
       "chainId": 56,
       "decimals": 18,
       "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x7a1da9f49224ef98389b071b8a3294d1cc5e3e6a.png"
