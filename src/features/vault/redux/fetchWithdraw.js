@@ -65,7 +65,7 @@ export function fetchWithdrawBnb({ address, web3, isAll, amount, contractAddress
   };
 }
 
-export function fetchZapWithdrawAndRemoveLiqudity({
+export function fetchZapWithdrawAndRemoveLiquidity({
   address,
   web3,
   vaultAddress,
@@ -159,8 +159,8 @@ export function useFetchWithdraw() {
 
   const boundWithdraw = useCallback(data => dispatch(fetchWithdraw(data)), [dispatch]);
   const boundWithdrawBnb = useCallback(data => dispatch(fetchWithdrawBnb(data)), [dispatch]);
-  const boundZapWithdrawAndRemoveLiqudity = useCallback(
-    data => dispatch(fetchZapWithdrawAndRemoveLiqudity(data)),
+  const boundZapWithdrawAndRemoveLiquidity = useCallback(
+    data => dispatch(fetchZapWithdrawAndRemoveLiquidity(data)),
     [dispatch]
   );
   const boundZapWithdrawAndSwap = useCallback(
@@ -171,7 +171,7 @@ export function useFetchWithdraw() {
   return {
     fetchWithdraw: boundWithdraw,
     fetchWithdrawBnb: boundWithdrawBnb,
-    fetchZapWithdrawAndRemoveLiqudity: boundZapWithdrawAndRemoveLiqudity,
+    fetchZapWithdrawAndRemoveLiquidity: boundZapWithdrawAndRemoveLiquidity,
     fetchZapWithdrawAndSwap: boundZapWithdrawAndSwap,
     fetchWithdrawPending,
   };

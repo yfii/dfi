@@ -11,6 +11,174 @@
   "keywords": ["beefy", "bsc"],
   "tokens": [
     {
+      "name": "Swampy Token",
+      "symbol": "SWAMP",
+      "address": "0xc5a49b4cbe004b6fd55b30ba1de6ac360ff9765d",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://bscscan.com/token/images/swampfinance_32.png"
+    },
+    {
+      "name": "HYFI Token",
+      "symbol": "HYFI",
+      "address": "0x9a319b959e33369C5eaA494a770117eE3e585318",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x9a319b959e33369C5eaA494a770117eE3e585318.png"
+    },
+    {
+      "name": "Refinable Token",
+      "symbol": "FINE",
+      "address": "0x4e6415a5727ea08aae4580057187923aec331227",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://bscscan.com/token/images/refinable_32.png"
+    },
+    {
+      "name": "τDogecoin Token",
+      "symbol": "tDOGE",
+      "address": "0xe550a593d09FBC8DCD557b5C88Cea6946A8b404A",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0xe550a593d09fbc8dcd557b5c88cea6946a8b404a.png"
+    },
+    {
+      "name": "oinfinance Token",
+      "symbol": "OIN",
+      "address": "0x658E64FFcF40D240A43D52CA9342140316Ae44fA",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x658E64FFcF40D240A43D52CA9342140316Ae44fA.png"
+    },
+    {
+      "name": "BigONE Token",
+      "symbol": "ONE",
+      "address": "0x04BAf95Fd4C52fd09a56D840bAEe0AB8D7357bf0",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x04BAf95Fd4C52fd09a56D840bAEe0AB8D7357bf0.png"
+    },
+    {
+      "name": "Polkamon Token",
+      "symbol": "PMON",
+      "address": "0x1796ae0b0fa4862485106a0de9b654eFE301D0b2",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x1796ae0b0fa4862485106a0de9b654eFE301D0b2.png"
+    },
+    {
+      "name": "Bitrue Token",
+      "symbol": "BTR",
+      "address": "0x5a16E8cE8cA316407c6E6307095dc9540a8D62B3",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x5a16E8cE8cA316407c6E6307095dc9540a8D62B3.png"
+    },
+    {
+      "name": "UpBots Token",
+      "symbol": "UBXT",
+      "address": "0xBbEB90cFb6FAFa1F69AA130B7341089AbeEF5811",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0xbbeb90cfb6fafa1f69aa130b7341089abeef5811.png"
+    },
+    {
+      "name": "Wrapped MASS Token",
+      "symbol": "WMASS",
+      "address": "0x7e396BfC8a2f84748701167c2d622F041A1D7a17",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x7e396bfc8a2f84748701167c2d622f041a1d7a17.png"
+    },
+    {
+      "name": "Fortress Token",
+      "symbol": "FTS",
+      "address": "0x4437743ac02957068995c48e08465e0ee1769fbe",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://bscscan.com/token/images/fortress_32.png?v=4"
+    },
+    {
+      "name": "DIAMOND Token",
+      "symbol": "DND",
+      "address": "0x34EA3F7162E6f6Ed16bD171267eC180fD5c848da",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://bscscan.com/token/images/diamond_32.png"
+    },
+    {
+      "name": "ZCore Finance Token",
+      "symbol": "ZEFI",
+      "address": "0x0288D3E353fE2299F11eA2c2e1696b4A648eCC07",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://bscscan.com/token/images/zcore-zefi_32.png"
+    },
+    {
+      "name": "ICA Token",
+      "symbol": "ICA",
+      "address": "0x95111f630ac215eb74599ed42c67e2c2790d69e2",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://bscscan.com/token/images/icarus_32.png"
+    },
+    {
+      "name": "IRON Share V2 Token",
+      "symbol": "STEEL",
+      "address": "0x9001eE054F1692feF3A48330cB543b6FEc6287eb",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://bscscan.com/token/images/ironfinance-share_32.png"
+    },
+    {
+      "name": "Typhoon Token",
+      "symbol": "TYPH",
+      "address": "0x4090e535F2e251F5F88518998B18b54d26B3b07c",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://bscscan.com/token/images/typhoonnetwork_32.png"
+    },
+    {
+      "name": "IRON Stablecoin Token",
+      "symbol": "IRON",
+      "address": "0x7b65B489fE53fCE1F6548Db886C08aD73111DDd8",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://bscscan.com/token/images/ironfinance_32.png?=v1"
+    },
+    {
+      "name": "KeyFi Token",
+      "symbol": "KEYFI",
+      "address": "0x4b6000f9163de2e3f0a01ec37e06e1469dbbce9d",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://dex.apeswap.finance/images/coins/XBTC.svg"
+    },
+    {
+      "name": "bxBTC Token",
+      "symbol": "BXBTC",
+      "address": "0xab111D5948470Ba73d98D66BBdf2798FBE093546",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://dex.apeswap.finance/images/coins/XBTC.svg"
+    },
+    {
+      "name": "Astronaut Token",
+      "symbol": "NAUT",
+      "address": "0x05b339b0a346bf01f851dde47a5d485c34fe220c",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://dex.apeswap.finance/images/coins/NAUT.png"
+    },
+    {
+      "name": "MIOTAC Token",
+      "symbol": "IOTA",
+      "address": "0xd944f1D1e9d5f9Bb90b62f9D45e447D989580782",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://dex.apeswap.finance/images/coins/IOTA.png"
+    },
+    {
       "name": "Avalanche Token",
       "symbol": "AVAX",
       "address": "0x1ce0c2827e2ef14d5c4f29a091d735a204794041",
@@ -1181,7 +1349,7 @@
     {
       "name": "PNT",
       "symbol": "PNT",
-      "address": "0x7a1da9f49224ef98389b071b8a3294d1cc5e3e6a",
+      "address": "0xdaacb0ab6fb34d24e8a67bfa14bf4d95d4c7af92",
       "chainId": 56,
       "decimals": 18,
       "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x7a1da9f49224ef98389b071b8a3294d1cc5e3e6a.png"

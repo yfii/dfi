@@ -782,7 +782,7 @@ export const bscPools = [
     oracle: 'coingecko',
     oracleId: 'pancake-bunny',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Pancakebunny',
     assets: ['BUNNY'],
