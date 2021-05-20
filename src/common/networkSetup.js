@@ -51,7 +51,7 @@ const networkSettings = {
       symbol: 'FTM',
       decimals: 18,
     },
-    rpcUrls: ['https://rpcapi.fantom.network'],
+    rpcUrls: ['https://rpc.ftm.tools'],
     blockExplorerUrls: ['https://ftmscan.com/'],
   },
 };
