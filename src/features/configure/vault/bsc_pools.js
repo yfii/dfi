@@ -207,7 +207,7 @@ export const bscPools = [
     id: 'jetswap-busd-bnb',
     logo: 'degens/WINGS-BNB-BUSD.svg',
     name: 'BUSD-BNB LP',
-    token: 'BUSD-BNB LP',
+    token: 'BUSD-BNB JLP',
     tokenDescription: 'JetSwap',
     tokenAddress: '0xc53eE6446101F2128f887b8c75083E74dca3e973',
     tokenDecimals: 18,
