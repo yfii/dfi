@@ -2,7 +2,7 @@ export const polygonPools = [
   {
     id: 'polygon-bifi-maxi',
     logo: 'single-assets/BIFI.png',
-    name: 'BIFI',
+    name: 'BIFI Maxi',
     token: 'BIFI',
     tokenDescription: 'Beefy.Finance',
     tokenAddress: '0xFbdd194376de19a88118e84E279b977f165d01b8',
