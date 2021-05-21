@@ -50,7 +50,7 @@ export const bscStakePools = [
     partnership: true,
     status: 'active',
     isMooStaked: true,
-    periodFinish: 1621872008,
+    periodFinish: 1622230568,
     partner: {
       logo: 'stake/jetswap/logo.png',
       background: 'stake/jetswap/background.png',
@@ -81,7 +81,7 @@ export const bscStakePools = [
     partnership: true,
     status: 'active',
     isMooStaked: true,
-    periodFinish: 1621872008,
+    periodFinish: 1622057801,
     partner: {
       logo: 'stake/dumpling/logo.png',
       background: 'stake/dumpling/background.png',
@@ -112,7 +112,7 @@ export const bscStakePools = [
     partnership: true,
     status: 'active',
     isMooStaked: true,
-    periodFinish: 1621872008,
+    periodFinish: 1622057894,
     partner: {
       logo: 'stake/grandbanks/logo.png',
       background: 'stake/grandbanks/background.png',
