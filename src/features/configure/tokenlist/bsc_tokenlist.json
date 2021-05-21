@@ -11,6 +11,14 @@
   "keywords": ["beefy", "bsc"],
   "tokens": [
     {
+      "name": "Grand",
+      "symbol": "GRAND",
+      "address": "0xeE814F5B2bF700D2e843Dc56835D28d095161dd9",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://bscscan.com/token/images/grandtoken_32.png"
+    },
+    {
       "name": "Swampy Token",
       "symbol": "SWAMP",
       "address": "0xc5a49b4cbe004b6fd55b30ba1de6ac360ff9765d",
