@@ -18,7 +18,7 @@ export function fetchApys() {
       const getCommit = getLatestApiCommitHash();
 
       getCommit.then(commit => {
-        const doRequest = axios.get(`https://api.beefy.finance/apy?_=${commit}`);
+        const doRequest = axios.get(`https://api.beefy.finance/apy?_=1${commit}`);
 
         doRequest.then(
           res => {
