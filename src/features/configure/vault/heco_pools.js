@@ -2,7 +2,7 @@ export const hecoPools = [
   {
     id: 'heco-bifi-maxi',
     logo: 'single-assets/BIFI.png',
-    name: 'BIFI',
+    name: 'BIFI Maxi',
     token: 'BIFI',
     tokenDescription: 'Beefy.Finance',
     tokenAddress: '0x765277EebeCA2e31912C9946eAe1021199B39C61',
