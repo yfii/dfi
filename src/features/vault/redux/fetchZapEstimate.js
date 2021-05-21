@@ -7,6 +7,7 @@ import {
   VAULT_FETCH_ZAP_ESTIMATE_FAILURE,
 } from './constants';
 import { zapDepositEstimate, zapWithdrawEstimate } from '../../web3';
+import { convertAmountToRawNumber } from 'features/helpers/bignumber';
 
 export function fetchZapDepositEstimate({
   web3,
@@ -84,15 +85,17 @@ export function fetchZapWithdrawEstimate({
     const equity = shares.dividedBy(totalSupply);
     let amountIn, reserveIn, reserveOut;
     if (swapInput.address.toLowerCase() === pairToken.token0.toLowerCase()) {
-      amountIn = equity.multipliedBy(pairToken.reserves[0]).dividedToIntegerBy(1).toString();
+      amountIn = equity.multipliedBy(pairToken.reserves[0]);
       reserveIn = pairToken.reserves[0];
       reserveOut = pairToken.reserves[1];
     }
     if (swapInput.address.toLowerCase() === pairToken.token1.toLowerCase()) {
-      amountIn = equity.multipliedBy(pairToken.reserves[1]).dividedToIntegerBy(1).toString();
+      amountIn = equity.multipliedBy(pairToken.reserves[1]);
       reserveIn = pairToken.reserves[1];
       reserveOut = pairToken.reserves[0];
     }
+
+    amountIn = convertAmountToRawNumber(amountIn, 0);
 
     const promise = new Promise((resolve, reject) => {
       zapWithdrawEstimate({ web3, routerAddress, amountIn, reserveIn, reserveOut, dispatch })
