@@ -25,7 +25,7 @@ export default function StakePools(props) {
   const classes = useStyles();
   const { t } = useTranslation();
   const { pools } = useFetchPoolData();
-  const { address } = useConnectWallet();
+  const { networkId, address } = useConnectWallet();
   const { halfTime, fetchHalfTime } = useFetchHalfTime();
   const [time, setTime] = React.useState(new Date());
 
@@ -351,17 +351,19 @@ export default function StakePools(props) {
               </Typography>
             </AccordionDetails>
           </Accordion>
-          <Accordion square expanded={expanded === 'faq-13'} onChange={handleChange('faq-13')}>
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography>How to earn free BNB indefinitely?</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                Buy our own token $BIFI, and stake it here in the BIFI Gov vault and you will earn
-                part of every harvest done on all our over 200 vaults, every day.
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
+          {networkId === 56 ? (
+            <Accordion square expanded={expanded === 'faq-13'} onChange={handleChange('faq-13')}>
+              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                <Typography>How to earn free BNB indefinitely?</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography>
+                  Buy our own token $BIFI, and stake it here in the BIFI Gov vault and you will earn
+                  part of every harvest done on all our over 200 vaults, every day.
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+          ) : ''}
         </Grid>
         <Grid item xs={12}>
           <Disclaimer />

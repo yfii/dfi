@@ -1,5 +1,30 @@
 export const polygonPools = [
   {
+    id: 'adamant-addy',
+    logo: 'polygon/ADDY.png',
+    name: 'ADDY',
+    token: 'ADDY',
+    tokenDescription: 'Adamant',
+    tokenAddress: '0xc3fdbadc7c795ef1d6ba111e06ff8f16a20ea539',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooAdamantADDY',
+    earnedTokenAddress: '0x6b7c061949BE60d59F857fcc08b76c278c3B73C0',
+    earnContractAddress: '0x6b7c061949BE60d59F857fcc08b76c278c3B73C0',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'tokens',
+    oracleId: 'adamant-addy',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Adamant',
+    assets: ['ADDY'],
+    callFee: 0.5,
+    buyTokenUrl:
+      'https://quickswap.exchange/#/swap?inputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619&outputCurrency=0xc3fdbadc7c795ef1d6ba111e06ff8f16a20ea539',
+  },
+  {
     id: 'polygon-bifi-maxi',
     logo: 'single-assets/BIFI.png',
     name: 'BIFI',
@@ -72,8 +97,7 @@ export const polygonPools = [
     platform: 'Polyzap',
     assets: ['PZAP', 'MATIC'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://polyzap.app/#/add/ETH/0xeb2778f74E5ee038E67AA6c77f0F0451ABd748FD',
+    addLiquidityUrl: 'https://polyzap.app/#/add/ETH/0xeb2778f74E5ee038E67AA6c77f0F0451ABd748FD',
     buyTokenUrl:
       'https://polyzap.app/#/swap?outputCurrency=0xeb2778f74E5ee038E67AA6c77f0F0451ABd748FD',
   },
