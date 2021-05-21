@@ -71,7 +71,7 @@ export const fantomPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Ester',
-    assets: ['EST',],
+    assets: ['EST'],
     callFee: 0.05,
     buyTokenUrl:
       'https://swap.spiritswap.finance/#/swap?outputCurrency=0x181f3f22c9a751e2ce673498a03e1fdfc0ebbfb6',
@@ -98,10 +98,8 @@ export const fantomPools = [
     platform: 'SpookySwap',
     assets: ['WOOFY', 'FTM'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://spookyswap.finance/add',
-    buyTokenUrl:
-      'https://spookyswap.finance/swap',
+    addLiquidityUrl: 'https://spookyswap.finance/add',
+    buyTokenUrl: 'https://spookyswap.finance/swap',
   },
   {
     id: 'boo-boo',
