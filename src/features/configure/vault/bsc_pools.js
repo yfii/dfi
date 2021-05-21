@@ -71,6 +71,32 @@ export const bscPools = [
     callFee: 0.5,
     addLiquidityUrl: 'https://belt.fi/',
   },
+  
+  {
+    id: 'mdex-bsc-mdx',
+    logo: 'single-assets/MDX.png',
+    name: 'MDX',
+    token: 'MDX',
+    tokenDescription: 'MDex',
+    tokenAddress: '0x9C65AB58d8d978DB963e63f2bfB7121627e3a739',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooMdexMDX',
+    earnedTokenAddress: '0xc34C7923B73eB68E363AaEB2b7fbBeC11Cf90884',
+    earnContractAddress: '0xc34C7923B73eB68E363AaEB2b7fbBeC11Cf90884',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'tokens',
+    oracleId: 'MDX',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    assets: ['MDX'],
+    callFee: 0.5,
+    buyTokenUrl:
+      'https://bsc.mdex.com/#/swap?inputCurrency=WBNB&outputCurrency=0x9c65ab58d8d978db963e63f2bfb7121627e3a739',
+  },
+
   {
     id: 'belt-4belt',
     logo: 'uncategorized/BELT-VENUSBLP.png',
