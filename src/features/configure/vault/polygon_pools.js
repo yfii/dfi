@@ -38,7 +38,7 @@ export const polygonPools = [
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'tokens',
-    oracleId: 'adamant-addy',
+    oracleId: 'ADDY',
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
