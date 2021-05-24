@@ -11,6 +11,22 @@
   "keywords": ["beefy", "bsc"],
   "tokens": [
     {
+      "name": "XEND",
+      "symbol": "XEND",
+      "address": "0x4a080377f83D669D7bB83B3184a8A5E61B500608",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://bscscan.com/token/images/xendfinance_32.png"
+    },
+    {
+      "name": "Cyclone Protocol",
+      "symbol": "CYC",
+      "address": "0x810EE35443639348aDbbC467b33310d2AB43c168",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://bscscan.com/token/images/cyclone_32.png"
+    },
+    {
       "name": "Grand",
       "symbol": "GRAND",
       "address": "0xeE814F5B2bF700D2e843Dc56835D28d095161dd9",
