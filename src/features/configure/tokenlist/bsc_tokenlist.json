@@ -27,6 +27,22 @@
       "logoURI": "https://bscscan.com/token/images/swampfinance_32.png"
     },
     {
+      "name": "Hot Cross Token",
+      "address": "0x4FA7163E153419E0E1064e418dd7A99314Ed27b6",
+      "symbol": "HOTCROSS",
+      "decimals": 18,
+      "chainId": 56,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x4fa7163e153419e0e1064e418dd7a99314ed27b6.png"
+    },
+    {
+      "name": "RFOX Token",
+      "address": "0x0a3A21356793B49154Fd3BbE91CBc2A16c0457f5",
+      "symbol": "RFOX",
+      "decimals": 18,
+      "chainId": 56,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x0a3a21356793b49154fd3bbe91cbc2a16c0457f5.png"
+    },
+    {
       "name": "HYFI Token",
       "symbol": "HYFI",
       "address": "0x9a319b959e33369C5eaA494a770117eE3e585318",
