@@ -123,6 +123,34 @@ export const bscPools = [
     callFee: 0.5,
     addLiquidityUrl: 'https://belt.fi/',
   },
+
+  {
+    id: 'garuda-garuda-usdc',
+    logo: 'degens/garuda-usdc.png',
+    name: 'GARUDA-USDC LP',
+    token: 'GARUDA-USDC LP',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0xeD90DEEc60a9b03844aDE0e4b086BAdA0aCC5B8D',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooGarudaGARUDA-USDC',
+    earnedTokenAddress: '0xE783464c205Ddf7240D5A86C62AD31DdfEdFCfde',
+    earnContractAddress: '0xE783464c205Ddf7240D5A86C62AD31DdfEdFCfde',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'garuda-garuda-usdс',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    assets: ['GARUDA', 'USDC'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0x854086dC841e1bfae50Cb615bF41f55BF432a90b/0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x854086dC841e1bfae50Cb615bF41f55BF432a90b',
+  },
+
   {
     id: 'jetswap-wings-bnb',
     logo: 'degens/WINGS-BNB.svg',
