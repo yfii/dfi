@@ -169,7 +169,7 @@ export default function StakePool(props) {
   }, [rewardsAvailable[index], index]);
 
   useEffect(() => {
-    if (halfTime[index] === 0) {
+    if (halfTime[index] == 0) {
       if (!pools[index].hideCountdown === true) {
         pools[index].status = 'soon';
       }
