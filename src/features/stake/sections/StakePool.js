@@ -346,14 +346,13 @@ export default function StakePool(props) {
           {isNeedApproval ? (
             <Button
               className={classes.actionBtn}
-              disabled={!Boolean(approvalAble && pools[index].status === 'active')}
+              disabled={!Boolean(approvalAble)}
               onClick={onApproval}
             >
               {t('Stake-Button-Approval')}
             </Button>
           ) : (
             <Button
-              disabled={!Boolean(pools[index].status === 'active')}
               className={[classes.actionBtn, pools[index].partnership ? classes.btnBoost : ''].join(
                 ' '
               )}

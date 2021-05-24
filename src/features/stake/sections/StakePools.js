@@ -150,7 +150,6 @@ export default function StakePools(props) {
                     {pool.token === 'mooAutoWbnbFixed' ? 'mooAutoWBNB' : pool.token}
                   </Typography>
                   <Button
-                    disabled={pools[index].status === 'soon'}
                     xs={5}
                     md={2}
                     className={classes.stakeBtn}
