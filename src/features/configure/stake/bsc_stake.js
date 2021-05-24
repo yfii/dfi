@@ -50,7 +50,7 @@ export const bscStakePools = [
     partnership: true,
     status: 'active',
     isMooStaked: true,
-    periodFinish: 1622230568,
+    periodFinish: 1822230568,
     partner: {
       logo: 'stake/dopple/logo.png',
       background: 'stake/dopple/background.png',
