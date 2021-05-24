@@ -48,6 +48,33 @@ export const bscPools = [
     addLiquidityUrl: 'https://dopple.finance/Deposit/dop-lps',
   },
   {
+    id: 'cakev2-cake-busd',
+    logo: 'cake-pairs/CAKE-BUSD.svg',
+    name: 'CAKE-BUSD LP',
+    token: 'CAKE-BUSD LP2',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0x804678fa97d91B974ec2af3c843270886528a9E6',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooCakeV2CAKE-BUSD',
+    earnedTokenAddress: '0x1542885D6EeD4EE3AC1a110d3f159003a0774101',
+    earnContractAddress: '0x1542885D6EeD4EE3AC1a110d3f159003a0774101',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cakev2-cake-busd',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['CAKE', 'BUSD'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82&outputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+  },
+  {
     id: 'cakev2-bifi-bnb',
     logo: 'bnb-pairs/BIFI-BNB.svg',
     name: 'BIFI-BNB LP',
@@ -2955,7 +2982,6 @@ export const bscPools = [
     buyTokenUrl:
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x5B6DcF557E2aBE2323c48445E8CC948910d8c2c9',
   },
-
   {
     id: 'cakev2-hget-bnb',
     logo: 'bnb-pairs/HGET-BNB.svg',
@@ -2982,7 +3008,6 @@ export const bscPools = [
     buyTokenUrl:
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xc7d8d35eba58a0935ff2d5a33df105dd9f071731',
   },
-
   {
     id: 'cakev2-cgg-bnb',
     logo: 'bnb-pairs/CGG-BNB.svg',
