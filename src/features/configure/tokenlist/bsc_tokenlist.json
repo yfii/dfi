@@ -11,6 +11,54 @@
   "keywords": ["beefy", "bsc"],
   "tokens": [
     {
+      "name": "XEND",
+      "symbol": "XEND",
+      "address": "0x4a080377f83D669D7bB83B3184a8A5E61B500608",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://bscscan.com/token/images/xendfinance_32.png"
+    },
+    {
+      "name": "Cyclone Protocol",
+      "symbol": "CYC",
+      "address": "0x810EE35443639348aDbbC467b33310d2AB43c168",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://bscscan.com/token/images/cyclone_32.png"
+    },
+    {
+      "name": "Z-Cash",
+      "symbol": "ZEC",
+      "address": "0x1Ba42e5193dfA8B03D15dd1B86a3113bbBEF8Eeb",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://dex.apeswap.finance/images/coins/ZEC.svg"
+    },
+    {
+      "name": "Ethereum Classic",
+      "symbol": "ETC",
+      "address": "0x3d6545b08693daE087E957cb1180ee38B9e3c25E",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://dex.apeswap.finance/images/coins/ETC.svg"
+    },
+    {
+      "name": "Coti",
+      "symbol": "COTI",
+      "address": "0xAdBAF88B39D37Dc68775eD1541F1bf83A5A45feB",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://dex.apeswap.finance/images/coins/coti.svg"
+    },
+    {
+      "name": "Near",
+      "symbol": "NEAR",
+      "address": "0x1fa4a73a3f0133f0025378af00236f3abdee5d63",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://dex.apeswap.finance/images/coins/near.svg"
+    },
+    {
       "name": "Grand",
       "symbol": "GRAND",
       "address": "0xeE814F5B2bF700D2e843Dc56835D28d095161dd9",
