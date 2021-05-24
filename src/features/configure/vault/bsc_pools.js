@@ -188,7 +188,7 @@ export const bscPools = [
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
-    oracleId: 'garuda-garuda-usdс',
+    oracleId: 'garuda-garuda-usdc',
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
