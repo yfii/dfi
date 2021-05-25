@@ -130,7 +130,7 @@ export const bscPools = [
     id: 'banana-ltc-bnb',
     logo: 'degens/banana-ltc-bnb.svg',
     name: 'LTC-BNB LP',
-    token: 'LTC-BNB ALP',
+    token: 'LTC-BNB LP',
     tokenDescription: 'ApeSwap',
     tokenAddress: '0x0F12362c017Fe5101c7bBa09390f1CB729f5B318',
     tokenDecimals: 18,
