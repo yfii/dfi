@@ -50,8 +50,6 @@ const Header = ({ links, isNightMode, setNightMode }) => {
 
         <div className={classes.middleNav}>
           <Hidden smDown>
-            {Number(process.env.REACT_APP_NETWORK_ID) === 56 &&
-              renderLink('barn', 'barn', 'warehouse', classes)}
             {renderLink('vote', 'vote', 'vote-yea', classes)}
             {renderLink('dashboard', t('stats'), 'chart-bar', classes)}
             {renderLink('docs', 'docs', 'book', classes)}
@@ -94,9 +92,6 @@ const Header = ({ links, isNightMode, setNightMode }) => {
           </IconButton>
           <div className={classes.appResponsive}>{links}</div>
           <div style={{ textAlign: 'center' }}>
-            {Number(process.env.REACT_APP_NETWORK_ID) === 56 && (
-              <LinkSidebar name="barn" label="barn" icon="warehouse" classes={classes} />
-            )}
             <LinkSidebar name="vote" label="vote" icon="vote-yea" classes={classes} />
             <LinkSidebar name="dashboard" label={t('stats')} icon="chart-bar" classes={classes} />
             <LinkSidebar name="docs" label="docs" icon="book" classes={classes} />
