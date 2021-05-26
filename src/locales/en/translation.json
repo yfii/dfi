@@ -21,7 +21,7 @@
   "Vault-DepositError": "Deposit error: {{error}}",
   "Vault-DepositScenario": "Deposit will result in:",
   "Vault-DepositScenarioSwap": "To balance a liquidity pair, swap {{swapIn}} for {{swapOut}} (±{{slippageTolerance}} slippage and deposit fee, if any)",
-  "Vault-DepositScenarioAddLiquidity": "Purchase {{poolToken}}",
+  "Vault-DepositScenarioAddLiquidity": "Add liquidity to receive {{poolToken}}",
   "Vault-DepositScenarioDepositToVault": "Deposit received {{poolToken}} into Beefy vault",
   "Vault-DepositScenarioReturnDust": "Return unused trace amounts of {{tokenA}} and {{tokenB}} to your wallet",
   "Vault-Withdrawing": "Withdrawing...",
