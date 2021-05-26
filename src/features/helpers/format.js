@@ -1,9 +1,12 @@
+import BigNumber from "bignumber.js";
+
+const units = ['', 'k', 'M', 'B', 'T', 'Q', 'Q', 'S', 'S'];
+
 export const formatApy = apy => {
   if (!apy) return `???`;
 
   apy *= 100;
 
-  const units = ['', 'k', 'M', 'B', 'T', 'Q', 'Q', 'S', 'S'];
   const order = apy < 1 ? 0 : Math.floor(Math.log10(apy) / 3);
   if (order >= units.length - 1) return `🔥`;
 
@@ -12,21 +15,16 @@ export const formatApy = apy => {
 };
 
 export const formatTvl = (tvl, oraclePrice) => {
-  // TODO: bignum?
   if (oraclePrice) {
-    tvl *= oraclePrice;
+    tvl = BigNumber(tvl).times(oraclePrice).toFixed(2);
   }
 
-  const order = Math.floor(Math.log10(tvl) / 3);
-  if (order < 0) {
-    return '$0.00';
-  }
+  let order = Math.floor(Math.log10(tvl) / 3);
+  if (order < 0) { order = 0 }
 
-  const units = ['', 'k', 'M', 'B', 'T'];
   const num = tvl / 1000 ** order;
-  const prefix = '$';
 
-  return prefix + num.toFixed(2) + units[order];
+  return '$' + num.toFixed(2) + units[order];
 };
 
 export const formatGlobalTvl = tvl => formatTvl(tvl, 1);

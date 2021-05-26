@@ -8,8 +8,27 @@
   },
   "tags": {},
   "logoURI": "https://beefy.finance/img/beefy.svg",
-  "keywords": ["beefy", "bsc"],
+  "keywords": [
+    "beefy",
+    "bsc"
+  ],
   "tokens": [
+    {
+      "name": "Deri",
+      "symbol": "DERI",
+      "address": "0xe60eaf5A997DFAe83739e035b005A33AfdCc6df5",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0xe60eaf5A997DFAe83739e035b005A33AfdCc6df5.png"
+    },
+    {
+      "name": "Chromia",
+      "symbol": "CHR",
+      "address": "0xf9CeC8d50f6c8ad3Fb6dcCEC577e05aA32B224FE",
+      "chainId": 56,
+      "decimals": 6,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0xf9CeC8d50f6c8ad3Fb6dcCEC577e05aA32B224FE.png"
+    },
     {
       "name": "XEND",
       "symbol": "XEND",
