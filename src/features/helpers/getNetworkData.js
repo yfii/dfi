@@ -60,7 +60,7 @@ export const getNetworkTokens = () => {
       return fantomTokenList.tokens;
     default:
       throw new Error(
-        `Create Tokenlist for this chainId first. See src/features/configure/tokenlist/*_tokenlist.json`
+        `Create Tokenlist for this chainId first. See src/features/configure/tokenlist/*_tokenlist.json`,
       );
   }
 };
@@ -115,13 +115,14 @@ export const getNetworkStables = () => {
         'fUSDT',
         '4BELT',
         'IRON',
+        'DOLLY',
       ];
     case '128':
       return ['USDT', 'HUSD'];
     case '43114':
       return ['USDT', 'DAI', 'BUSD', 'zDAI', 'zUSDT'];
     case '137':
-      return ['USDC', 'USDT', 'maUSDC', 'DAI'];
+      return ['USDC', 'USDT', 'maUSDC', 'DAI', 'IRON'];
     case '250':
       return ['USDC', 'USDT', 'DAI', 'fUSDT'];
     default:
