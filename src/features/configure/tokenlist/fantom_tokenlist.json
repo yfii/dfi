@@ -11,6 +11,110 @@
   "keywords": ["beefy", "fantom", "opera", "FTM"],
   "tokens": [
     {
+      "name": "USDC",
+      "symbol": "USDC",
+      "address": "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75",
+      "chainId": 250,
+      "decimals": 6,
+      "logoURI": "https://ftmscan.com/token/images/USDC_32.png"
+    },
+    {
+      "name": "Woofy",
+      "symbol": "WOOFY",
+      "address": "0xD0660cD418a64a1d44E9214ad8e459324D8157f1",
+      "chainId": 250,
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/yearn/yearn-assets/master/icons/tokens/0xD0660cD418a64a1d44E9214ad8e459324D8157f1/logo-128.png"
+    },
+    {
+      "name": "Binance Chain",
+      "symbol": "BNB",
+      "address": "0xD67de0e0a0Fd7b15dC8348Bb9BE742F3c5850454",
+      "chainId": 250,
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/825/large/binance-coin-logo.png"
+    },
+    {
+      "name": "Cover Protocol",
+      "symbol": "COVER",
+      "address": "0xB01E8419d842beebf1b70A7b5f7142abbaf7159D",
+      "chainId": 250,
+      "decimals": 18,
+      "logoURI": "https://ftmscan.com/token/images/cover_32.png"
+    },
+    {
+      "name": "Chainlink",
+      "symbol": "LINK",
+      "address": "0xb3654dc3D10Ea7645f8319668E8F54d2574FBdC8",
+      "chainId": 250,
+      "decimals": 18,
+      "logoURI": "https://ftmscan.com/token/images/chainlink_32.png"
+    },
+    {
+      "name": "Cream Finance",
+      "symbol": "CREAM",
+      "address": "0x657A1861c15A3deD9AF0B6799a195a249ebdCbc6",
+      "chainId": 250,
+      "decimals": 18,
+      "logoURI": "https://ftmscan.com/token/images/CreamFinance_32.png"
+    },
+    {
+      "name": "Synthetix",
+      "symbol": "SNX",
+      "address": "0x56ee926bD8c72B2d5fa1aF4d9E4Cbb515a1E3Adc",
+      "chainId": 250,
+      "decimals": 18,
+      "logoURI": "https://ftmscan.com/token/images/Synthetix_SNX_32.png"
+    },
+    {
+      "name": "Anyswap fUSDT",
+      "symbol": "fUSDT",
+      "address": "0x049d68029688eAbF473097a2fC38ef61633A3C7A",
+      "chainId": 250,
+      "decimals": 6,
+      "logoURI": "https://assets.coingecko.com/coins/images/325/large/Tether-logo.png"
+    },
+    {
+      "name": "Wrapped Bitcoin",
+      "symbol": "BTC",
+      "address": "0x321162Cd933E2Be498Cd2267a90534A804051b11",
+      "chainId": 250,
+      "decimals": 8,
+      "logoURI": "https://ftmscan.com/token/images/wBTC_32.png"
+    },
+    {
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "address": "0x74b23882a30290451A17c44f4F05243b6b58C76d",
+      "chainId": 250,
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/279/large/ethereum.png"
+    },
+    {
+      "name": "Aave",
+      "symbol": "AAVE",
+      "address": "0x6a07A792ab2965C72a5B8088d3a069A7aC3a993B",
+      "chainId": 250,
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/12645/large/AAVE.png"
+    },
+    {
+      "name": "Curve Finance",
+      "symbol": "CRV",
+      "address": "0x1E4F97b9f9F913c46F1632781732927B9019C68b",
+      "chainId": 250,
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/12124/large/Curve.png"
+    },
+    {
+      "name": "Spooky Swap",
+      "symbol": "BOO",
+      "address": "0x841FAD6EAe12c286d1Fd18d1d525DFfA75C7EFFE",
+      "chainId": 250,
+      "decimals": 18,
+      "logoURI": ""
+    },
+    {
       "name": "Wrapped FTM",
       "symbol": "WFTM",
       "address": "0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83",
