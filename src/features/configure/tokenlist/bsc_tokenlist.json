@@ -8,11 +8,24 @@
   },
   "tags": {},
   "logoURI": "https://beefy.finance/img/beefy.svg",
-  "keywords": [
-    "beefy",
-    "bsc"
-  ],
+  "keywords": ["beefy", "bsc"],
   "tokens": [
+    {
+      "name": "pOPEN",
+      "symbol": "pOPEN",
+      "address": "0xaBaE871B7E3b67aEeC6B46AE9FE1A91660AadAC5",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0xaBaE871B7E3b67aEeC6B46AE9FE1A91660AadAC5.png"
+    },
+    {
+      "name": "BitWell",
+      "symbol": "WELL",
+      "address": "0xf07a32Eb035b786898c00bB1C64d8c6F8E7a46D5",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://bscscan.com/token/images/bitwellex_32.png"
+    },
     {
       "name": "Deri",
       "symbol": "DERI",
