@@ -14,6 +14,22 @@
   ],
   "tokens": [
     {
+      "name": "Synthetix",
+      "symbol": "SNX",
+      "address": "0x9Ac983826058b8a9C7Aa1C9171441191232E8404",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://bscscan.com/token/images/snx_32.png"
+    },
+    {
+      "name": "Bluezelle",
+      "symbol": "BLZ",
+      "address": "0x935a544Bf5816E3A7C13DB2EFe3009Ffda0aCdA2",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://dex.apeswap.finance/images/coins/blz.svg"
+    },
+    {
       "name": "Deri",
       "symbol": "DERI",
       "address": "0xe60eaf5A997DFAe83739e035b005A33AfdCc6df5",
