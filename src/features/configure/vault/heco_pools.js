@@ -154,7 +154,7 @@ export const hecoPools = [
       'https://ht.mdex.com/#/add/0x0298c2b32eae4da002a15f36fdf7615bea3da047/0x98fc3b60ed4a504f588342a53746405e355f9347',
   },
   {
-    id: 'lava-lava',
+    id: 'lava-lava-eol',
     logo: 'heco/LAVA.png',
     name: 'LAVA',
     token: 'LAVA',
@@ -179,7 +179,7 @@ export const hecoPools = [
       'https://exchange.lavaswap.com/#/swap?inputCurrency=0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f&outputCurrency=0x56f95662e71f30b333b456439248c6de589082a4',
   },
   {
-    id: 'lava-lava-usdt',
+    id: 'lava-lava-usdt-eol',
     logo: 'heco/LAVA-USDT.svg',
     name: 'LAVA-USDT LP',
     token: 'LAVA-USDT LP',
@@ -206,7 +206,7 @@ export const hecoPools = [
       'https://exchange.lavaswap.com/#/add/0xa71EdC38d189767582C38A3145b5873052c3e47a/0x56f95662E71f30b333b456439248c6dE589082a4',
   },
   {
-    id: 'lava-lava-wht',
+    id: 'lava-lava-wht-eol',
     logo: 'heco/LAVA-HT.svg',
     name: 'LAVA-WHT LP',
     token: 'LAVA-WHT LP',

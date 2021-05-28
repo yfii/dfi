@@ -1274,7 +1274,7 @@ export const polygonPools = [
       'https://quickswap.exchange/#/swap?inputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619&outputCurrency=0x831753dd7087cac61ab5644b308642cc1c33dc13',
   },
   {
-    id: 'quick-mausdc-usdc',
+    id: 'quick-mausdc-usdc-eol',
     logo: 'polygon/maUSDC-USDC.png',
     name: 'maUSDC-USDC LP',
     token: 'maUSDC-USDC QLP',
@@ -1355,7 +1355,7 @@ export const polygonPools = [
       'https://quickswap.exchange/#/swap?inputCurrency=0x53e0bca35ec356bd5dddfebbd1fc0fd03fabad39&outputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
   },
   {
-    id: 'krill-krill-usdc',
+    id: 'krill-krill-usdc-eol',
     logo: 'polygon/KRILL-USDC.png',
     name: 'KRILL-USDC LP',
     token: 'KRILL-USDC LP',

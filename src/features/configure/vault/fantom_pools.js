@@ -351,7 +351,7 @@ export const fantomPools = [
     buyTokenUrl: 'https://spookyswap.finance/swap',
   },
   {
-    id: 'boo-yfi-ftm',
+    id: 'boo-yfi-ftm-eol',
     logo: 'fantom/YFI-FTM.png',
     name: 'YFI-FTM LP',
     token: 'YFI-FTM LP',
