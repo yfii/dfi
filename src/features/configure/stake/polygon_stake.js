@@ -78,7 +78,7 @@ export const polygonStakePools = [
     {
       logo: 'stake/fanatics/logo.png',
       background: 'stake/polygon/background.png',
-      text: `fanaticsfinance is a whole new Decentralized Exchange on Binance smart chain as known as 3° Generation yield farming mechanism that allows perpetual price increase with a sustainable and profitable farming yield with a Timelock contract at launch! And numerous new Features. Fanatics Finance is under Fanatics Finance is under license from KSOC Sports OÜ Registration: 16197453 Harju County, Tallinn, Kesklinna district, Pärnu mnt 158, ESTONIA.`,
+      text: `fanatics.finance is a whole new Decentralized Exchange on Binance smart chain as known as 3° Generation yield farming mechanism that allows perpetual price increase with a sustainable and profitable farming yield with a Timelock contract at launch! And numerous new Features. Fanatics Finance is under Fanatics Finance is under license from KSOC Sports OÜ Registration: 16197453 Harju County, Tallinn, Kesklinna district, Pärnu mnt 158, ESTONIA.`,
       website: 'https://fanaticsfinance.com/',
       social: {
         telegram: 'https://t.me/fanaticsfinance_EN',
