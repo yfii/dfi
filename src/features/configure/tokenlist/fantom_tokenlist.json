@@ -11,6 +11,22 @@
   "keywords": ["beefy", "fantom", "opera", "FTM"],
   "tokens": [
     {
+      "name": "AnySwap",
+      "symbol": "ANY",
+      "address": "0xdDcb3fFD12750B45d32E084887fdf1aABAb34239",
+      "chainId": 250,
+      "decimals": 18,
+      "logoURI": "https://ftmscan.com/token/images/anyswap_32.png"
+    },
+    {
+      "name": "DAI",
+      "symbol": "DAI",
+      "address": "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E",
+      "chainId": 250,
+      "decimals": 18,
+      "logoURI": "https://ftmscan.com/token/images/MCDDai_32.png"
+    },
+    {
       "name": "USDC",
       "symbol": "USDC",
       "address": "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75",
