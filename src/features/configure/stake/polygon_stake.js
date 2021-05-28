@@ -50,7 +50,7 @@ export const polygonStakePools = [
     partnership: true,
     status: 'active',
     isMooStaked: true,
-    periodFinish: 1722138639,
+    periodFinish: 1622830150,
     partners: [
       {
         logo: 'stake/garuda/logo.png',
@@ -105,7 +105,7 @@ export const polygonStakePools = [
     partnership: true,
     status: 'active',
     isMooStaked: true,
-    periodFinish: 1722138639,
+    periodFinish: 1622830106,
     partners: [
       {
         logo: 'stake/garuda/logo.png',
