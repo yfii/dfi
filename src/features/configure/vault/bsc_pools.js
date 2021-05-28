@@ -2089,8 +2089,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'ica-ica-btcb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     assets: ['ICA', 'BTCB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -2115,8 +2115,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'ica-ica-eth',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     assets: ['ICA', 'ETH'],
     callFee: 0.5,
     addLiquidityUrl:
