@@ -78,6 +78,33 @@ export const polygonPools = [
       'https://quickswap.exchange/#/swap?inputCurrency=0x831753dd7087cac61ab5644b308642cc1c33dc13&outputCurrency=0xfbdd194376de19a88118e84e279b977f165d01b8',
   },
   {
+    id: 'sushi-usdc-dai',
+    logo: 'polygon/TITAN.png', // TODO
+    name: 'USDC-DAI SLP',
+    token: 'USDC-DAI SLP',
+    tokenDescription: 'SushiSwap',
+    tokenAddress: '0xcd578f016888b57f1b1e3f887f392f0159e26747',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooSushiUSDC-DAI',
+    earnedTokenAddress: '0x75424BE5378621AeC2eEF25965f40FeB59039B52',
+    earnContractAddress: '0x75424BE5378621AeC2eEF25965f40FeB59039B52',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'sushi-usdc-dai',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Sushiswap',
+    assets: ['USDC', 'DAI'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://app.sushi.com/add/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174/0x8f3cf7ad23cd3cadbd9735aff958023239c6a063',
+    buyTokenUrl:
+      'https://app.sushi.com/#/swap?inputCurrency=0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174&outputCurrency=0x8f3cf7ad23cd3cadbd9735aff958023239c6a063',
+  },
+  {
     id: 'iron-titan-matic',
     logo: 'polygon/TITAN.png',
     name: 'TITAN-MATIC LP',
@@ -99,8 +126,7 @@ export const polygonPools = [
     platform: 'IronFinance',
     assets: ['TITAN', 'MATIC'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://app.sushi.com/add/ETH/0xaAa5B9e6c589642f98a1cDA99B9D024B8407285A',
+    addLiquidityUrl: 'https://app.sushi.com/add/ETH/0xaAa5B9e6c589642f98a1cDA99B9D024B8407285A',
     buyTokenUrl:
       'https://app.sushi.com/#/swap?outputCurrency=0xaAa5B9e6c589642f98a1cDA99B9D024B8407285A',
   },
