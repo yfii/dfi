@@ -10,6 +10,8 @@ import { MooToken } from '../../configure/abi';
 import { fetchPrice, whenPricesLoaded } from '../../web3';
 import Web3 from 'web3';
 import { getRpcUrl } from '../../../common/networkSetup';
+import { byDecimals } from '../../helpers/bignumber';
+import { lightGreen } from '@material-ui/core/colors';
 
 export function fetchPoolData(index) {
   return (dispatch, getState) => {
@@ -45,11 +47,12 @@ export function fetchByIndex(index) {
             .times(pricePerShare)
             .dividedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals));
         }
+        const stakedDecimals = pool.isMooStaked ? 18 : pool.tokenDecimals;
         return [
-          totalStaked.dividedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals)),
+          totalStaked.dividedBy(new BigNumber(10).exponentiatedBy(stakedDecimals)),
           totalStaked
             .times(tokenPrice)
-            .dividedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals)),
+            .dividedBy(new BigNumber(10).exponentiatedBy(stakedDecimals)),
         ];
       };
 
