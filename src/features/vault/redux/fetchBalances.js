@@ -6,11 +6,10 @@ import {
   VAULT_FETCH_BALANCES_FAILURE,
 } from './constants';
 import { MultiCall } from 'eth-multicall';
-import { erc20ABI, multicallBnbShimABI, uniswapV2PairABI } from 'features/configure';
+import { erc20ABI, multicallABI, uniswapV2PairABI } from 'features/configure';
 import { byDecimals } from 'features/helpers/bignumber';
 import {
   getNetworkMulticall,
-  getNetworkMulticallNativeShim,
 } from 'features/helpers/getNetworkData';
 
 export function fetchBalances({ address, web3, tokens }) {
@@ -29,10 +28,9 @@ export function fetchBalances({ address, web3, tokens }) {
 
       Object.entries(tokens).forEach(([symbol, token]) => {
         if (!token.tokenAddress) {
-          const shimAddress = getNetworkMulticallNativeShim();
-          const shimContract = new web3.eth.Contract(multicallBnbShimABI, shimAddress);
+          const multicallContract = new web3.eth.Contract(multicallABI, multicall.contract);
           balanceCalls.push({
-            balance: shimContract.methods.balanceOf(address),
+            balance: multicallContract.methods.getEthBalance(address),
             symbol: symbol,
           });
         } else {

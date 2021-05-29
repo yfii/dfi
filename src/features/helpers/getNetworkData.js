@@ -147,17 +147,6 @@ export const getNetworkMulticall = () => {
   }
 };
 
-export const getNetworkMulticallNativeShim = () => {
-  switch (process.env.REACT_APP_NETWORK_ID) {
-    case '56':
-      return '0xC72E5edaE5D7bA628A2Acb39C8Aa0dbbD06daacF';
-    case '137':
-      return '0x4D6294D36aD4201De1D93Af18A61453B8865d008';
-    default:
-      return '';
-  }
-};
-
 export const getNetworkConnectors = t => {
   switch (process.env.REACT_APP_NETWORK_ID) {
     case '56':
