@@ -6,7 +6,7 @@ import {
   VAULT_FETCH_APYS_SUCCESS,
   VAULT_FETCH_APYS_FAILURE,
 } from './constants';
-import { getLatestApiCommitHash } from "../../web3/fetchLatestApiCommitHash"
+import { getApiCacheBuster } from '../../web3/getApiCacheBuster';
 
 export function fetchApys() {
   return dispatch => {
@@ -15,35 +15,37 @@ export function fetchApys() {
     });
 
     const promise = new Promise((resolve, reject) => {
-      const getCommit = getLatestApiCommitHash();
+      const getCacheBuster = getApiCacheBuster();
 
-      getCommit.then(commit => {
-        const doRequest = axios.get(`https://api.beefy.finance/apy?_=${commit}`);
+      getCacheBuster.then(
+        cacheBuster => {
+          const doRequest = axios.get(`https://api.beefy.finance/apy?_=${cacheBuster}`);
 
-        doRequest.then(
-          res => {
-            dispatch({
-              type: VAULT_FETCH_APYS_SUCCESS,
-              data: res.data,
-            });
-            resolve(res);
-          },
-          err => {
-            dispatch({
-              type: VAULT_FETCH_APYS_FAILURE,
-              data: { error: err },
-            });
-            reject(err);
-          }
-        );
-      },
-      err => {
-        dispatch({
-          type: VAULT_FETCH_APYS_FAILURE,
-          data: { error: err },
-        });
-        reject(err);
-      })
+          doRequest.then(
+            res => {
+              dispatch({
+                type: VAULT_FETCH_APYS_SUCCESS,
+                data: res.data,
+              });
+              resolve(res);
+            },
+            err => {
+              dispatch({
+                type: VAULT_FETCH_APYS_FAILURE,
+                data: { error: err },
+              });
+              reject(err);
+            }
+          );
+        },
+        err => {
+          dispatch({
+            type: VAULT_FETCH_APYS_FAILURE,
+            data: { error: err },
+          });
+          reject(err);
+        }
+      );
     });
 
     return promise;
