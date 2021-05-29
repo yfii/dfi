@@ -10,8 +10,6 @@ import { MooToken } from '../../configure/abi';
 import { fetchPrice, whenPricesLoaded } from '../../web3';
 import Web3 from 'web3';
 import { getRpcUrl } from '../../../common/networkSetup';
-import { byDecimals } from '../../helpers/bignumber';
-import { lightGreen } from '@material-ui/core/colors';
 
 export function fetchPoolData(index) {
   return (dispatch, getState) => {
