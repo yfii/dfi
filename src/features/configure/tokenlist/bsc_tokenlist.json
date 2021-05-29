@@ -11,6 +11,30 @@
   "keywords": ["beefy", "bsc"],
   "tokens": [
     {
+      "name": "KALM",
+      "symbol": "KALM",
+      "address": "0x4BA0057f784858a48fe351445C672FF2a3d43515",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x4BA0057f784858a48fe351445C672FF2a3d43515.png"
+    },
+    {
+      "name": "EZ",
+      "symbol": "EZ",
+      "address": "0x5512014efa6Cd57764Fa743756F7a6Ce3358cC83",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x5512014efa6Cd57764Fa743756F7a6Ce3358cC83.png"
+    },
+    {
+      "name": "VRT",
+      "symbol": "VRT",
+      "address": "0x5F84ce30DC3cF7909101C69086c50De191895883",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x5f84ce30dc3cf7909101c69086c50de191895883.png"
+    },
+    {
       "name": "pOPEN",
       "symbol": "pOPEN",
       "address": "0xaBaE871B7E3b67aEeC6B46AE9FE1A91660AadAC5",
