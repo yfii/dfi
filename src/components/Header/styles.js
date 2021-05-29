@@ -235,18 +235,12 @@ const styles = theme => ({
     '& span': {
       color: theme.palette.text.primary,
     },
-    '@media (min-width: 960px) and (max-width: 1110px)': {
-      '& $icon': {
-        display: 'none',
-      },
-    },
   },
   icon: {
     color: theme.palette.text.primary,
     marginRight: '0.5rem',
     minWidth: '24px',
     textAlign: 'end',
-    display: 'none',
   },
   iconButton: {
     color: theme.palette.text.primary,
