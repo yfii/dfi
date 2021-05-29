@@ -39,7 +39,7 @@
       "symbol": "WOOFY",
       "address": "0xD0660cD418a64a1d44E9214ad8e459324D8157f1",
       "chainId": 250,
-      "decimals": 18,
+      "decimals": 12,
       "logoURI": "https://raw.githubusercontent.com/yearn/yearn-assets/master/icons/tokens/0xD0660cD418a64a1d44E9214ad8e459324D8157f1/logo-128.png"
     },
     {
