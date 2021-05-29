@@ -7,7 +7,7 @@
   "Vault-APY": "APY",
   "Vault-APYDaily": "Daily",
   "Vault-TVL": "TVL",
-  "Vault-AutocompoundingNote": "All vaults auto-compounding at the optimal rate",
+  "Vault-AutocompoundingNote": "All vaults autocompound at an optimal rate",
   "Vault-Approving": "Approving...",
   "Vault-ApproveButton": "Approve",
   "Vault-ApprovalSuccess": "Approval success",

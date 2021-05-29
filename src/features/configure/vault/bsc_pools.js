@@ -48,6 +48,55 @@ export const bscPools = [
     addLiquidityUrl: 'https://dopple.finance/Deposit/dop-lps',
   },
   {
+    id: 'jetswap-wings',
+    logo: 'degens/WINGS.svg',
+    name: 'WINGS',
+    token: 'WINGS',
+    tokenDescription: 'JetSwap',
+    tokenAddress: '0x0487b824c8261462F88940f97053E65bDb498446',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooJetswapWINGS',
+    earnedTokenAddress: '0x5e784882E8D2ac69777713f0e71100741b8aC2F6',
+    earnContractAddress: '0x5e784882E8D2ac69777713f0e71100741b8aC2F6',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'tokens',
+    oracleId: 'WINGS',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'JetSwap',
+    assets: ['WINGS'],
+    callFee: 0.5,
+    buyTokenUrl:
+      'https://exchange.jetswap.finance/#/swap?outputCurrency=0x0487b824c8261462f88940f97053e65bdb498446',
+  },
+  {
+    id: 'dopple-ust-lp',
+    logo: 'uncategorized/DOPPLE-UST-LP.png',
+    name: 'UST/BUSD/USDT',
+    token: 'UST/BUSD/USDT',
+    tokenDescription: 'Dopple',
+    tokenAddress: '0x7Edcdc8cD062948CE9A9bc38c477E6aa244dD545',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooDoppleUstLP',
+    earnedTokenAddress: '0x4Af8ED7c9f5D0C672F71a82c827FC3A02485791F',
+    earnContractAddress: '0x4Af8ED7c9f5D0C672F71a82c827FC3A02485791F',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'dopple-ust-lp',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    assets: ['BUSD', 'USDT', 'UST'],
+    platform: 'Dopple',
+    callFee: 0.5,
+    addLiquidityUrl: 'https://dopple.finance/Deposit/ust-pools-lps',
+  },
+  {
     id: 'cakev2-bifi-bnb',
     logo: 'bnb-pairs/BIFI-BNB.svg',
     name: 'BIFI-BNB LP',
@@ -75,29 +124,139 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
   },
   {
-    id: 'jetswap-wings',
-    logo: 'degens/WINGS.svg',
-    name: 'WINGS',
-    token: 'WINGS',
-    tokenDescription: 'JetSwap',
-    tokenAddress: '0x0487b824c8261462F88940f97053E65bDb498446',
+    id: 'banana-sushi-bnb',
+    logo: 'degens/BANANA-SUSHI-BNB.svg',
+    name: 'SUSHI-BNB LP',
+    token: 'SUSHI-BNB LP',
+    tokenDescription: 'ApeSwap',
+    tokenAddress: '0x1D0C3044eBf055986c52D38b19B5369374E6Bc6A',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
-    earnedToken: 'mooJetswapWINGS',
-    earnedTokenAddress: '0x5e784882E8D2ac69777713f0e71100741b8aC2F6',
-    earnContractAddress: '0x5e784882E8D2ac69777713f0e71100741b8aC2F6',
+    earnedToken: 'mooApeSUSHI-BNB',
+    earnedTokenAddress: '0x0DC52004341103FF00C65b9c1370c2c2d125CBc5',
+    earnContractAddress: '0x0DC52004341103FF00C65b9c1370c2c2d125CBc5',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'tokens',
-    oracleId: 'WINGS',
+    oracle: 'lps',
+    oracleId: 'banana-sushi-bnb',
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'JetSwap',
-    assets: ['WINGS'],
+    platform: 'ApeSwap',
+    assets: ['SUSHI', 'BNB'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://dex.apeswap.finance/#/add/ETH/0x947950bcc74888a40ffa2593c5798f11fc9124c4',
     buyTokenUrl:
-      'https://exchange.jetswap.finance/#/swap?outputCurrency=0x0487b824c8261462f88940f97053e65bdb498446',
+      'https://dex.apeswap.finance/#/swap?outputCurrency=0x947950bcc74888a40ffa2593c5798f11fc9124c4',
+  },
+  {
+    id: 'banana-dot-bnb',
+    logo: 'degens/BANANA-DOT-BNB.svg',
+    name: 'DOT-BNB LP',
+    token: 'DOT-BNB LP',
+    tokenDescription: 'ApeSwap',
+    tokenAddress: '0x21CBb561c5d7D70e9E6Cc42136CB22F07552aEef',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooApeDOT-BNB',
+    earnedTokenAddress: '0x036D059Dbf58CB624CfdFDaAbCa6D3f80c2f8b3C',
+    earnContractAddress: '0x036D059Dbf58CB624CfdFDaAbCa6D3f80c2f8b3C',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'banana-dot-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'ApeSwap',
+    assets: ['DOT', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://dex.apeswap.finance/#/add/ETH/0x7083609fce4d1d8dc0c979aab8c869ea2c873402',
+    buyTokenUrl:
+      'https://dex.apeswap.finance/#/swap?outputCurrency=0x7083609fce4d1d8dc0c979aab8c869ea2c873402',
+  },
+  {
+    id: 'banana-xrp-bnb',
+    logo: 'degens/BANANA-XRP-BNB.svg',
+    name: 'XRP-BNB LP',
+    token: 'XRP-BNB LP',
+    tokenDescription: 'ApeSwap',
+    tokenAddress: '0x6f0f18f5fcC1466ec41c8106689e10BeFE68D1c0',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooApeXRP-BNB',
+    earnedTokenAddress: '0xb8624845cfac1b65da120bd25d0c1a921f8b178d',
+    earnContractAddress: '0xb8624845cfac1b65da120bd25d0c1a921f8b178d',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'banana-xrp-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'ApeSwap',
+    assets: ['XRP', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://dex.apeswap.finance/#/add/ETH/0x1d2f0da169ceb9fc7b3144628db156f3f6c60dbe',
+    buyTokenUrl:
+      'https://dex.apeswap.finance/#/swap?outputCurrency=0x1d2f0da169ceb9fc7b3144628db156f3f6c60dbe',
+  },
+  {
+    id: 'banana-snx-bnb',
+    logo: 'bnb-pairs/SNX-BNB.svg',
+    name: 'SNX-BNB LP',
+    token: 'SNX-BNB LP',
+    tokenDescription: 'ApeSwap',
+    tokenAddress: '0x8b1F1F28a8CcbaA8a8Bc1582921ECe97Ce99d9e1',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooApeSNX-BNB',
+    earnedTokenAddress: '0x0e4FCD49Bd0A50D31f321509C8B2e7f21Fb87D26',
+    earnContractAddress: '0x0e4FCD49Bd0A50D31f321509C8B2e7f21Fb87D26',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'banana-snx-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'ApeSwap',
+    assets: ['SNX', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://dex.apeswap.finance/#/add/0x9Ac983826058b8a9C7Aa1C9171441191232E8404/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
+    buyTokenUrl:
+      'https://dex.apeswap.finance/#/swap?outputCurrency=0x9Ac983826058b8a9C7Aa1C9171441191232E8404',
+  },
+  {
+    id: 'banana-blz-bnb',
+    logo: 'bnb-pairs/BLZ-BNB.svg',
+    name: 'BLZ-BNB LP',
+    token: 'BLZ-BNB LP',
+    tokenDescription: 'ApeSwap',
+    tokenAddress: '0x015f807d0186f7e62810D0C597A23CB19Ff57E4d',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooApeBLZ-BNB',
+    earnedTokenAddress: '0x6081601e62F51d9e956aa704B506E4c202E0E016',
+    earnContractAddress: '0x6081601e62F51d9e956aa704B506E4c202E0E016',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'banana-blz-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'ApeSwap',
+    assets: ['BLZ', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://dex.apeswap.finance/#/add/0x935a544bf5816e3a7c13db2efe3009ffda0acda2/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
+    buyTokenUrl:
+      'https://dex.apeswap.finance/#/swap?outputCurrency=0x935a544bf5816e3a7c13db2efe3009ffda0acda2',
   },
   {
     id: 'cakev2-popen-bnb',
@@ -2022,7 +2181,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xeD28A457A5A76596ac48d87C0f577020F6Ea1c4C',
   },
   {
-    id: 'ica-ica-btcb',
+    id: 'ica-ica-btcb-eol',
     logo: 'single-assets/ICA.svg',
     name: 'ICA-BTCB LP',
     token: 'ICA-BTCB LP',
@@ -2038,8 +2197,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'ica-ica-btcb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     assets: ['ICA', 'BTCB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -2048,7 +2207,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x95111f630ac215eb74599ed42c67e2c2790d69e2',
   },
   {
-    id: 'ica-ica-eth',
+    id: 'ica-ica-eth-eol',
     logo: 'single-assets/ICA.svg',
     name: 'ICA-ETH LP',
     token: 'ICA-ETH LP',
@@ -2064,8 +2223,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'ica-ica-eth',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     assets: ['ICA', 'ETH'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -2127,7 +2286,7 @@ export const bscPools = [
   },
 
   {
-    id: 'satis-sat-bnb',
+    id: 'satis-sat-bnb-eol',
     logo: 'degens/SAT-BNB.png',
     name: 'SAT-BNB LP',
     token: 'SAT-BNB LP',
@@ -2151,7 +2310,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/remove/BNB/0xA1928c0D8F83C0bFB7ebE51B412b1FD29A277893',
   },
   {
-    id: 'satis-sat-busd',
+    id: 'satis-sat-busd-eol',
     logo: 'degens/SAT-BUSD.png',
     name: 'SAT-BUSD LP',
     token: 'SAT-BUSD LP',
@@ -3098,7 +3257,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xcf6bb5389c92bdda8a3747ddb454cb7a64626c63',
   },
   {
-    id: 'cakev2-unfi-bnb',
+    id: 'cakev2-unfi-bnb-eol',
     logo: 'bnb-pairs/UNFI-BNB.svg',
     name: 'UNFI-BNB LP',
     token: 'UNFI-BNB LP2',
@@ -3151,7 +3310,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xf21768ccbc73ea5b6fd3c687208a7c2def2d966e',
   },
   {
-    id: 'cakev2-yfi-bnb',
+    id: 'cakev2-yfi-bnb-eol',
     logo: 'bnb-pairs/YFI-BNB.svg',
     name: 'YFI-BNB LP',
     token: 'YFI-BNB LP2',
@@ -3177,7 +3336,7 @@ export const bscPools = [
   },
 
   {
-    id: 'cakev2-fil-bnb',
+    id: 'cakev2-fil-bnb-eol',
     logo: 'bnb-pairs/FIL-BNB.svg',
     name: 'FIL-BNB LP',
     token: 'FIL-BNB LP2',
@@ -3640,7 +3799,7 @@ export const bscPools = [
   },
 
   {
-    id: 'cakev2-mamzn-ust',
+    id: 'cakev2-mamzn-ust-eol',
     logo: 'ust-pairs/MAMZN-UST.svg',
     name: 'MAMZN-UST LP',
     token: 'MAMZN-UST LP2',
@@ -3666,7 +3825,7 @@ export const bscPools = [
   },
 
   {
-    id: 'cakev2-mgoogl-ust',
+    id: 'cakev2-mgoogl-ust-eol',
     logo: 'ust-pairs/MGOOGL-UST.svg',
     name: 'MGOOGL-UST LP',
     token: 'MGOOGL-UST LP2',
@@ -3692,7 +3851,7 @@ export const bscPools = [
   },
 
   {
-    id: 'cakev2-mnflx-ust',
+    id: 'cakev2-mnflx-ust-eol',
     logo: 'ust-pairs/MNFLX-UST.svg',
     name: 'MNFLX-UST LP',
     token: 'MNFLX-UST LP2',
@@ -3718,7 +3877,7 @@ export const bscPools = [
   },
 
   {
-    id: 'cakev2-mtsla-ust',
+    id: 'cakev2-mtsla-ust-eol',
     logo: 'ust-pairs/MTSLA-UST.svg',
     name: 'MTSLA-UST LP',
     token: 'MTSLA-UST LP2',
@@ -4402,7 +4561,7 @@ export const bscPools = [
   },
 
   {
-    id: 'cakev2-hard-bnb',
+    id: 'cakev2-hard-bnb-eol',
     logo: 'bnb-pairs/HARD-BNB.svg',
     name: 'HARD-BNB LP',
     token: 'HARD-BNB LP2',
@@ -4481,7 +4640,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xd41fdb03ba84762dd66a0af1a6c8540ff1ba5dfb',
   },
   {
-    id: 'cakev2-egld-bnb',
+    id: 'cakev2-egld-bnb-eol',
     logo: 'bnb-pairs/EGLD-BNB.svg',
     name: 'EGLD-BNB LP',
     token: 'EGLD-BNB LP2',
@@ -5008,7 +5167,7 @@ export const bscPools = [
   },
 
   {
-    id: 'cakev2-easy-bnb',
+    id: 'cakev2-easy-bnb-eol',
     logo: 'bnb-pairs/EASY-BNB.svg',
     name: 'EASY-BNB LP',
     token: 'EASY-BNB LP2',
@@ -5663,7 +5822,7 @@ export const bscPools = [
   },
 
   {
-    id: 'cake-broobee-bnb',
+    id: 'cake-broobee-bnb-eol',
     logo: 'bnb-pairs/bROOBEE-BNB.svg',
     name: 'bROOBEE-BNB LP',
     token: 'bROOBEE-BNB LP',
@@ -5689,7 +5848,7 @@ export const bscPools = [
   },
 
   {
-    id: 'cake-tlm-bnb',
+    id: 'cake-tlm-bnb-eol',
     logo: 'bnb-pairs/TLM-BNB.svg',
     name: 'TLM-BNB LP',
     token: 'TLM-BNB LP',
@@ -5714,7 +5873,7 @@ export const bscPools = [
       'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x2222227E22102Fe3322098e4CBfE18cFebD57c95',
   },
   {
-    id: 'cake-suter-bnb',
+    id: 'cake-suter-bnb-eol',
     logo: 'bnb-pairs/SUTER-BNB.svg',
     name: 'SUTER-BNB LP',
     token: 'SUTER-BNB LP',
@@ -5873,7 +6032,7 @@ export const bscPools = [
   },
 
   {
-    id: 'cake-apys-bnb',
+    id: 'cake-apys-bnb-eol',
     logo: 'bnb-pairs/APYS-BNB.svg',
     name: 'APYS-BNB LP',
     token: 'APYS-BNB LP',
@@ -6195,7 +6354,7 @@ export const bscPools = [
   },
 
   {
-    id: 'cake-hoo-busd',
+    id: 'cake-hoo-busd-eol',
     logo: 'busd-pairs/HOO-BUSD.svg',
     name: 'HOO-BUSD LP',
     token: 'HOO-BUSD LP',
@@ -6220,7 +6379,7 @@ export const bscPools = [
       'https://v1exchange.pancakeswap.finance/#/remove/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0xE1d1F66215998786110Ba0102ef558b22224C016',
   },
   {
-    id: 'cake-itam-bnb',
+    id: 'cake-itam-bnb-eol',
     logo: 'bnb-pairs/ITAM-BNB.svg',
     name: 'ITAM-BNB LP',
     token: 'ITAM-BNB LP',
@@ -6246,7 +6405,7 @@ export const bscPools = [
   },
 
   {
-    id: 'cake-arpa-bnb',
+    id: 'cake-arpa-bnb-eol',
     logo: 'bnb-pairs/ARPA-BNB.svg',
     name: 'ARPA-BNB LP',
     token: 'ARPA-BNB LP',
@@ -6272,7 +6431,7 @@ export const bscPools = [
   },
 
   {
-    id: 'mdex-xvs',
+    id: 'mdex-xvs-eol',
     logo: 'single-assets/XVS.png',
     name: 'XVS',
     token: 'XVS',
@@ -6295,7 +6454,7 @@ export const bscPools = [
     callFee: 0.5,
   },
   {
-    id: 'mdex-uni',
+    id: 'mdex-uni-eol',
     logo: 'single-assets/UNI.png',
     name: 'UNI',
     token: 'UNI',
@@ -6460,7 +6619,7 @@ export const bscPools = [
   },
 
   {
-    id: 'mdex-inj',
+    id: 'mdex-inj-eol',
     logo: 'single-assets/INJ.png',
     name: 'INJ',
     token: 'INJ',
@@ -6540,7 +6699,7 @@ export const bscPools = [
   },
 
   {
-    id: 'blizzard-xblzd-bnb-old',
+    id: 'blizzard-xblzd-bnb-old-eol',
     logo: 'degens/BLZD-BNB.png',
     name: 'xBLZD-BNB LP',
     token: 'xBLZD-BNB LP',
@@ -6566,7 +6725,7 @@ export const bscPools = [
   },
 
   {
-    id: 'blizzard-xblzd-busd-old',
+    id: 'blizzard-xblzd-busd-old-eol',
     logo: 'degens/BLZD-BUSD.png',
     name: 'xBLZD-BUSD LP',
     token: 'xBLZD-BUSD LP',
@@ -6618,7 +6777,7 @@ export const bscPools = [
   },
 
   {
-    id: 'blizzard-blzd-bnb',
+    id: 'blizzard-blzd-bnb-eol',
     logo: 'degens/BLZD-BNB.png',
     name: 'BLZD-BNB LP',
     token: 'BLZD-BNB LP',
@@ -6644,7 +6803,7 @@ export const bscPools = [
   },
 
   {
-    id: 'blizzard-blzd-busd',
+    id: 'blizzard-blzd-busd-eol',
     logo: 'degens/BLZD-BUSD.png',
     name: 'BLZD-BUSD LP',
     token: 'BLZD-BUSD LP',
@@ -6696,7 +6855,7 @@ export const bscPools = [
   },
 
   {
-    id: 'auto-cake-bnb',
+    id: 'auto-cake-bnb-eol',
     logo: 'bnb-pairs/CAKE-BNB.svg',
     name: 'CAKE-BNB LP',
     token: 'CAKE-BNB LP',
@@ -7007,7 +7166,7 @@ export const bscPools = [
   },
 
   {
-    id: 'swamp-cake-bnb',
+    id: 'swamp-cake-bnb-eol',
     logo: 'bnb-pairs/CAKE-BNB.svg',
     name: 'CAKE-BNB LP',
     token: 'CAKE-BNB LP',
@@ -8901,7 +9060,7 @@ export const bscPools = [
   },
 
   {
-    id: '1inch-1inch-bnb',
+    id: '1inch-1inch-bnb-eol',
     logo: 'single-assets/INCH.png',
     name: '1INCH-BNB LP',
     token: '1INCH-BNB LP',
@@ -9839,7 +9998,7 @@ export const bscPools = [
   },
 
   {
-    id: 'auto-cake-old',
+    id: 'auto-cake-old-eol',
     logo: 'single-assets/SMART.png',
     name: 'CAKE',
     token: 'CAKE',
@@ -9865,7 +10024,7 @@ export const bscPools = [
   },
 
   {
-    id: 'auto-wbnb-old',
+    id: 'auto-wbnb-old-eol',
     logo: 'single-assets/WBNB.svg',
     name: 'WBNB',
     token: 'WBNB',
@@ -12199,7 +12358,7 @@ export const bscPools = [
   },
 
   {
-    id: 'cake-cake-bnb',
+    id: 'cake-cake-bnb-eol',
     logo: 'bnb-pairs/CAKE-BNB.svg',
     name: 'CAKE-BNB LP',
     token: 'CAKE-BNB LP',

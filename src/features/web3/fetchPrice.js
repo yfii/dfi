@@ -56,7 +56,7 @@ const fetchCoingecko = async ids => {
 const fetchTokens = async () => {
   const commit = await getLatestApiCommitHash();
   try {
-    const response = await axios.get(`https://api.beefy.finance/prices?_=1${commit}`);
+    const response = await axios.get(`https://api.beefy.finance/prices?_=${commit}`);
     return response.data;
   } catch (err) {
     console.error(err);
@@ -67,7 +67,7 @@ const fetchTokens = async () => {
 const fetchLPs = async () => {
   const commit = await getLatestApiCommitHash();
   try {
-    const response = await axios.get(`https://api.beefy.finance/lps?_=1${commit}`);
+    const response = await axios.get(`https://api.beefy.finance/lps?_=${commit}`);
     return response.data;
   } catch (err) {
     console.error(err);
