@@ -1,31 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import BigNumber from 'bignumber.js';
 import { byDecimals } from 'features/helpers/bignumber';
 import { useConnectWallet } from '../../home/redux/hooks';
 import {
   useCheckApproval,
-  useFetchBalance,
-  useFetchCurrentlyStaked,
-  useFetchRewardsAvailable,
-  useFetchHalfTime,
   useFetchApproval,
+  useFetchBalance,
+  useFetchClaim,
+  useFetchCurrentlyStaked,
+  useFetchExit,
+  useFetchHalfTime,
+  useFetchPoolData,
+  useFetchRewardsAvailable,
   useFetchStake,
   useFetchWithdraw,
-  useFetchClaim,
-  useFetchExit,
-  useFetchPoolData,
 } from '../redux/hooks';
 
 import {
-  Grid,
-  Box,
-  Typography,
   Avatar,
-  makeStyles,
+  Box,
   Dialog,
-  TextField,
+  Grid,
   Link,
+  makeStyles,
+  TextField,
+  Typography,
 } from '@material-ui/core';
 
 import TwitterIcon from '@material-ui/icons/Twitter';
@@ -251,6 +251,14 @@ export default function StakePool(props) {
             boostedBy: pools[index].name,
           })}
         </title>
+        <meta
+          property="og:title"
+          content={t('Stake-Meta-Title', {
+            networkName,
+            earnedToken: pools[index].earnedToken,
+            boostedBy: pools[index].name,
+          })}
+        />
       </Helmet>
       <Grid item xs={6} className={classes.mb}>
         <Button href="/stake" className={classes.roundedBtn}>

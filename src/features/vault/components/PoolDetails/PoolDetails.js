@@ -9,9 +9,9 @@ import { useTranslation } from 'react-i18next';
 import BigNumber from 'bignumber.js';
 
 import { useConnectWallet } from '../../../home/redux/hooks';
-import { useFetchBalances, useFetchVaultsData, useFetchApys } from '../../redux/hooks';
+import { useFetchApys, useFetchBalances, useFetchVaultsData } from '../../redux/hooks';
 import { byDecimals } from 'features/helpers/bignumber';
-import { formatApy, formatTvl, calcDaily } from 'features/helpers/format';
+import { calcDaily, formatApy, formatTvl } from 'features/helpers/format';
 import HomeLink from './HomeLink/HomeLink';
 import PoolActions from '../PoolActions/PoolActions';
 import PoolTitle from '../PoolSummary/PoolTitle/PoolTitle';
@@ -150,6 +150,14 @@ const PoolDetails = ({ vaultId }) => {
             vaultDescription: pool.tokenDescription,
           })}
         </title>
+        <meta
+          property="og:title"
+          content={t('Vault-Meta-Title', {
+            networkName,
+            vaultName: pool.name,
+            vaultDescription: pool.tokenDescription,
+          })}
+        />
       </Helmet>
       <HomeLink />
       <div className={classes.container}>

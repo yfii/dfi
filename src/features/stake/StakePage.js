@@ -12,6 +12,7 @@ export default function StakePage() {
     <>
       <Helmet>
         <title>{t('Stakes-Meta-Title', { networkName })}</title>
+        <meta property="og:title" content={t('Stakes-Meta-Title', { networkName })} />
       </Helmet>
       <StakePools />
     </>
