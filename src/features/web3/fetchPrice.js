@@ -54,7 +54,8 @@ const fetchCoingecko = async ids => {
 };
 
 const fetchTokens = async () => {
-  const cacheBuster = await getApiCacheBuster();
+  const cacheBuster = getApiCacheBuster();
+
   try {
     const response = await axios.get(`https://api.beefy.finance/prices?_=${cacheBuster}`);
     return response.data;
@@ -65,7 +66,8 @@ const fetchTokens = async () => {
 };
 
 const fetchLPs = async () => {
-  const cacheBuster = await getApiCacheBuster();
+  const cacheBuster = getApiCacheBuster();
+
   try {
     const response = await axios.get(`https://api.beefy.finance/lps?_=${cacheBuster}`);
     return response.data;

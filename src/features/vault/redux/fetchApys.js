@@ -1,10 +1,10 @@
 import axios from 'axios';
 import { useCallback } from 'react';
-import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import {
   VAULT_FETCH_APYS_BEGIN,
-  VAULT_FETCH_APYS_SUCCESS,
   VAULT_FETCH_APYS_FAILURE,
+  VAULT_FETCH_APYS_SUCCESS,
 } from './constants';
 import { getApiCacheBuster } from '../../web3/getApiCacheBuster';
 
@@ -14,29 +14,17 @@ export function fetchApys() {
       type: VAULT_FETCH_APYS_BEGIN,
     });
 
-    const promise = new Promise((resolve, reject) => {
-      const getCacheBuster = getApiCacheBuster();
+    return new Promise((resolve, reject) => {
+      const cacheBuster = getApiCacheBuster();
+      const doRequest = axios.get(`https://api.beefy.finance/apy?_=${cacheBuster}`);
 
-      getCacheBuster.then(
-        cacheBuster => {
-          const doRequest = axios.get(`https://api.beefy.finance/apy?_=${cacheBuster}`);
-
-          doRequest.then(
-            res => {
-              dispatch({
-                type: VAULT_FETCH_APYS_SUCCESS,
-                data: res.data,
-              });
-              resolve(res);
-            },
-            err => {
-              dispatch({
-                type: VAULT_FETCH_APYS_FAILURE,
-                data: { error: err },
-              });
-              reject(err);
-            }
-          );
+      doRequest.then(
+        res => {
+          dispatch({
+            type: VAULT_FETCH_APYS_SUCCESS,
+            data: res.data,
+          });
+          resolve(res);
         },
         err => {
           dispatch({
@@ -47,8 +35,6 @@ export function fetchApys() {
         }
       );
     });
-
-    return promise;
   };
 }
 
