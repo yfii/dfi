@@ -11,6 +11,14 @@
   "keywords": ["beefy", "bsc"],
   "tokens": [
     {
+      "name": "TrueUSD",
+      "symbol": "TUSD",
+      "address": "0x14016e85a25aeb13065688cafb43044c2ef86784",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x14016e85a25aeb13065688cafb43044c2ef86784.png"
+    },
+    {
       "name": "KALM",
       "symbol": "KALM",
       "address": "0x4BA0057f784858a48fe351445C672FF2a3d43515",
