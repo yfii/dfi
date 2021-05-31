@@ -9,7 +9,7 @@ export {
   bnbVaultABI,
   erc20ABI,
   strategyABI,
-  multicallBnbShimABI,
+  multicallABI,
   govPoolABI,
   beefyUniV2ZapABI,
   uniswapV2PairABI,

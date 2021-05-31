@@ -256,7 +256,7 @@ export const fantomPools = [
     name: 'LINK-FTM LP',
     token: 'LINK-FTM LP',
     tokenDescription: 'SpookySwap',
-    tokenAddress: '0x89d9bc2f2d091cfbfc31e333d6dc555ddbc2fd29',
+    tokenAddress: '0x89d9bC2F2d091CfBFc31e333D6Dc555dDBc2fd29',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooBooLINK-FTM',
