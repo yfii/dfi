@@ -51,8 +51,8 @@ export const fantomPools = [
   {
     id: 'boo-ftm-ice',
     logo: 'fantom/ICE-FTM.png',
-    name: 'FTM-ICE LP',
-    token: 'FTM-ICE LP',
+    name: 'ICE-FTM LP',
+    token: 'ICE-FTM LP',
     tokenDescription: 'SpookySwap',
     tokenAddress: '0x623EE4a7F290d11C11315994dB70FB148b13021d',
     tokenDecimals: 18,
@@ -76,8 +76,8 @@ export const fantomPools = [
   {
     id: 'boo-ftm-badger',
     logo: 'fantom/BADGER-FTM.png',
-    name: 'FTM-BADGER LP',
-    token: 'FTM-BADGER LP',
+    name: 'BADGER-FTM LP',
+    token: 'BADGER-FTM LP',
     tokenDescription: 'SpookySwap',
     tokenAddress: '0x1c94665FD3ecFa969Feda7Ed01e35522e6982022',
     tokenDecimals: 18,
@@ -101,8 +101,8 @@ export const fantomPools = [
   {
     id: 'boo-ftm-band',
     logo: 'fantom/BAND-FTM.png',
-    name: 'FTM-BAND LP',
-    token: 'FTM-BAND LP',
+    name: 'BAND-FTM LP',
+    token: 'BAND-FTM LP',
     tokenDescription: 'SpookySwap',
     tokenAddress: '0x91b39D5584e2A7DC829f696235742cc293F2e8cf',
     tokenDecimals: 18,
@@ -126,8 +126,8 @@ export const fantomPools = [
   {
     id: 'boo-ftm-sushi',
     logo: 'fantom/SUSHI-FTM.png',
-    name: 'FTM-SUSHI LP',
-    token: 'FTM-SUSHI LP',
+    name: 'SUSHI-FTM LP',
+    token: 'SUSHI-FTM LP',
     tokenDescription: 'SpookySwap',
     tokenAddress: '0xf84E313B36E86315af7a06ff26C8b20e9EB443C3',
     tokenDecimals: 18,
