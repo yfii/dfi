@@ -61,7 +61,7 @@ function Root() {
 
   return (
     <Provider store={store}>
-      <Helmet>
+      <Helmet titleTemplate="%s | Beefy Finance">
         <title>{t('App-Meta-Title', { networkName })}</title>
         <meta name="description" content={t('App-Meta-Description', { networkName })} />
         <meta property="og:title" content={t('App-Meta-Title', { networkName })} />
