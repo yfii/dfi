@@ -6,8 +6,10 @@ const translate = (data, key, t) => t(key, data);
 const appendTitle = str => str + APPEND_TITLE;
 const translateAppendTitle = (data, key, t) => appendTitle(translate(data, key, t));
 
+// Appended to title and og:title
 const APPEND_TITLE = ' | Beefy Finance';
 
+// Defined here to avoid adding an entry to translation.json where not needed
 const PAGE_META = {
   'App-Meta-Title': ({ networkName }) => appendTitle(`${networkName}`),
   'Vault-Meta-Title': ({ vaultName, vaultDescription, networkName }) =>
@@ -23,12 +25,12 @@ function getPageMeta(t, key, data = {}) {
   // add common data
   data = { networkName, ...data };
 
-  // handle non
+  // handle meta defined above
   if (PAGE_META.hasOwnProperty(key)) {
     return PAGE_META[key](data, key, t);
   }
 
-  // fallback
+  // fallback to translation
   return t(key, data);
 }
 
