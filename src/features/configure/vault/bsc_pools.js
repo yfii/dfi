@@ -49,31 +49,136 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xA7f552078dcC247C2684336020c03648500C6d9F',
   },
   {
-    id: 'cakev2-bifi-bnb',
-    logo: 'bnb-pairs/BIFI-BNB.svg',
-    name: 'BIFI-BNB LP',
-    token: 'BIFI-BNB LP2',
-    tokenDescription: 'Pancake',
-    tokenAddress: '0x3f1A9f3D9aaD8bD339eD4853F345d2eF89fbfE0c',
+    id: 'dopple-dop-lp',
+    logo: 'uncategorized/DOPPLE-DOP-LP.svg',
+    name: 'BUSD/USDT/USDC/DAI',
+    token: 'BUSD/USDT/USDC/DAI',
+    tokenDescription: 'Dopple',
+    tokenAddress: '0x9116F04092828390799514Bac9986529d70c3791',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
-    earnedToken: 'mooCakeV2BIFI-BNB',
-    earnedTokenAddress: '0x59960d624600aE1669584Bb504a5f4F2e90EbF46',
-    earnContractAddress: '0x59960d624600aE1669584Bb504a5f4F2e90EbF46',
+    earnedToken: 'mooDoppleDopLP',
+    earnedTokenAddress: '0x8464365600d6A1b86A7f7c80DCD63AFa861069dB',
+    earnContractAddress: '0x8464365600d6A1b86A7f7c80DCD63AFa861069dB',
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
-    oracleId: 'cakev2-bifi-bnb',
+    oracleId: 'dopple-dop-lp',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    assets: ['BUSD', 'USDT', 'USDC', 'DAI'],
+    platform: 'Dopple',
+    callFee: 0.5,
+    addLiquidityUrl: 'https://dopple.finance/Deposit/dop-lps',
+  },
+  {
+    id: 'mdex-bsc-fil-usdt',
+    logo: 'usdt-pairs/FIL-USDT.png',
+    name: 'FIL-USDT LP',
+    token: 'FIL-USDT LP',
+    tokenDescription: 'MDex',
+    tokenAddress: '0xCAABda10a3ac99Fc15f5B636Aa18E6B4Fd8db16D',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooMdexFIL-USDT',
+    earnedTokenAddress: '0xE4E5795596E153e8f39D35Ff8559ae4D7bd03622',
+    earnContractAddress: '0xE4E5795596E153e8f39D35Ff8559ae4D7bd03622',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'mdex-bsc-fil-usdt',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'MDex',
+    assets: ['FIL', 'USDT'],
+    callFee: 0.5,
+    buyTokenUrl:
+      'https://bsc.mdex.com/#/swap?inputCurrency=0x55d398326f99059ff775485246999027b3197955&outputCurrency=0x0d8ce2a99bb6e3b7db580ed848240e4a0f9ae153',
+    addLiquidityUrl:
+      'https://bsc.mdex.com/#/add/0x0d8ce2a99bb6e3b7db580ed848240e4a0f9ae153/0x55d398326f99059fF775485246999027B3197955',
+  },
+  {
+    id: 'cakev2-vrt-bnb',
+    logo: 'bnb-pairs/VRT-BNB.svg',
+    name: 'VRT-BNB LP',
+    token: 'VRT-BNB LP2',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0xEf5212aDa83EC2cc105C409DF10b8806D20E3b35',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooCakeV2VRT-BNB',
+    earnedTokenAddress: '0xA8cC688E9B387b0cBe41D0CcF55875CE2318695A',
+    earnContractAddress: '0xA8cC688E9B387b0cBe41D0CcF55875CE2318695A',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cakev2-vrt-bnb',
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
     platform: 'Pancake',
-    assets: ['BIFI', 'BNB'],
+    assets: ['VRT', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#/add/BNB/0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
+      'https://exchange.pancakeswap.finance/#/add/BNB/0x5f84ce30dc3cf7909101c69086c50de191895883',
     buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x5f84ce30dc3cf7909101c69086c50de191895883',
+  },
+  {
+    id: 'cakev2-ez-bnb',
+    logo: 'bnb-pairs/EZ-BNB.svg',
+    name: 'EZ-BNB LP',
+    token: 'EZ-BNB LP2',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0x51BF99bBae59b67E5cE2fA9c17b683384773F8b3',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooCakeV2EZ-BNB',
+    earnedTokenAddress: '0x3Ee4b86Bf6BbceBf46695C0F3703F87Ff18a776b',
+    earnContractAddress: '0x3Ee4b86Bf6BbceBf46695C0F3703F87Ff18a776b',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cakev2-ez-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['EZ', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0x5512014efa6cd57764fa743756f7a6ce3358cc83',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x5512014efa6cd57764fa743756f7a6ce3358cc83',
+  },
+  {
+    id: 'cakev2-kalm-bnb',
+    logo: 'bnb-pairs/KALM-BNB.svg',
+    name: 'KALM-BNB LP',
+    token: 'KALM-BNB LP2',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0xc74f7243766269DeC5b85b0eF4aF186e909c1b06',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooCakeV2KALM-BNB',
+    earnedTokenAddress: '0x487D8014F8803757e0542e127854DEBd213A39e5',
+    earnContractAddress: '0x487D8014F8803757e0542e127854DEBd213A39e5',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cakev2-kalm-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['KALM', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0x4ba0057f784858a48fe351445c672ff2a3d43515',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x4ba0057f784858a48fe351445c672ff2a3d43515',
   },
   {
     id: 'jetswap-wings',
@@ -101,6 +206,354 @@ export const bscPools = [
       'https://exchange.jetswap.finance/#/swap?outputCurrency=0x0487b824c8261462f88940f97053e65bdb498446',
   },
   {
+    id: 'dopple-ust-lp',
+    logo: 'uncategorized/DOPPLE-UST-LP.png',
+    name: 'UST/BUSD/USDT',
+    token: 'UST/BUSD/USDT',
+    tokenDescription: 'Dopple',
+    tokenAddress: '0x7Edcdc8cD062948CE9A9bc38c477E6aa244dD545',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooDoppleUstLP',
+    earnedTokenAddress: '0x4Af8ED7c9f5D0C672F71a82c827FC3A02485791F',
+    earnContractAddress: '0x4Af8ED7c9f5D0C672F71a82c827FC3A02485791F',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'dopple-ust-lp',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    assets: ['BUSD', 'USDT', 'UST'],
+    platform: 'Dopple',
+    callFee: 0.5,
+    addLiquidityUrl: 'https://dopple.finance/Deposit/ust-pools-lps',
+  },
+  {
+    id: 'cakev2-bifi-bnb',
+    logo: 'bnb-pairs/BIFI-BNB.svg',
+    name: 'BIFI-BNB LP',
+    token: 'BIFI-BNB LP2',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0x3f1A9f3D9aaD8bD339eD4853F345d2eF89fbfE0c',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooCakeV2BIFI-BNB',
+    earnedTokenAddress: '0x59960d624600aE1669584Bb504a5f4F2e90EbF46',
+    earnContractAddress: '0x59960d624600aE1669584Bb504a5f4F2e90EbF46',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cakev2-bifi-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['BIFI', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
+  },
+  {
+    id: 'banana-sushi-bnb',
+    logo: 'degens/BANANA-SUSHI-BNB.svg',
+    name: 'SUSHI-BNB LP',
+    token: 'SUSHI-BNB LP',
+    tokenDescription: 'ApeSwap',
+    tokenAddress: '0x1D0C3044eBf055986c52D38b19B5369374E6Bc6A',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooApeSUSHI-BNB',
+    earnedTokenAddress: '0x0DC52004341103FF00C65b9c1370c2c2d125CBc5',
+    earnContractAddress: '0x0DC52004341103FF00C65b9c1370c2c2d125CBc5',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'banana-sushi-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'ApeSwap',
+    assets: ['SUSHI', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://dex.apeswap.finance/#/add/ETH/0x947950bcc74888a40ffa2593c5798f11fc9124c4',
+    buyTokenUrl:
+      'https://dex.apeswap.finance/#/swap?outputCurrency=0x947950bcc74888a40ffa2593c5798f11fc9124c4',
+  },
+  {
+    id: 'banana-dot-bnb',
+    logo: 'degens/BANANA-DOT-BNB.svg',
+    name: 'DOT-BNB LP',
+    token: 'DOT-BNB LP',
+    tokenDescription: 'ApeSwap',
+    tokenAddress: '0x21CBb561c5d7D70e9E6Cc42136CB22F07552aEef',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooApeDOT-BNB',
+    earnedTokenAddress: '0x036D059Dbf58CB624CfdFDaAbCa6D3f80c2f8b3C',
+    earnContractAddress: '0x036D059Dbf58CB624CfdFDaAbCa6D3f80c2f8b3C',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'banana-dot-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'ApeSwap',
+    assets: ['DOT', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://dex.apeswap.finance/#/add/ETH/0x7083609fce4d1d8dc0c979aab8c869ea2c873402',
+    buyTokenUrl:
+      'https://dex.apeswap.finance/#/swap?outputCurrency=0x7083609fce4d1d8dc0c979aab8c869ea2c873402',
+  },
+  {
+    id: 'banana-xrp-bnb',
+    logo: 'degens/BANANA-XRP-BNB.svg',
+    name: 'XRP-BNB LP',
+    token: 'XRP-BNB LP',
+    tokenDescription: 'ApeSwap',
+    tokenAddress: '0x6f0f18f5fcC1466ec41c8106689e10BeFE68D1c0',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooApeXRP-BNB',
+    earnedTokenAddress: '0xb8624845cfac1b65da120bd25d0c1a921f8b178d',
+    earnContractAddress: '0xb8624845cfac1b65da120bd25d0c1a921f8b178d',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'banana-xrp-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'ApeSwap',
+    assets: ['XRP', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://dex.apeswap.finance/#/add/ETH/0x1d2f0da169ceb9fc7b3144628db156f3f6c60dbe',
+    buyTokenUrl:
+      'https://dex.apeswap.finance/#/swap?outputCurrency=0x1d2f0da169ceb9fc7b3144628db156f3f6c60dbe',
+  },
+  {
+    id: 'banana-snx-bnb',
+    logo: 'bnb-pairs/SNX-BNB.svg',
+    name: 'SNX-BNB LP',
+    token: 'SNX-BNB LP',
+    tokenDescription: 'ApeSwap',
+    tokenAddress: '0x8b1F1F28a8CcbaA8a8Bc1582921ECe97Ce99d9e1',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooApeSNX-BNB',
+    earnedTokenAddress: '0x0e4FCD49Bd0A50D31f321509C8B2e7f21Fb87D26',
+    earnContractAddress: '0x0e4FCD49Bd0A50D31f321509C8B2e7f21Fb87D26',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'banana-snx-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'ApeSwap',
+    assets: ['SNX', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://dex.apeswap.finance/#/add/0x9Ac983826058b8a9C7Aa1C9171441191232E8404/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
+    buyTokenUrl:
+      'https://dex.apeswap.finance/#/swap?outputCurrency=0x9Ac983826058b8a9C7Aa1C9171441191232E8404',
+  },
+  {
+    id: 'banana-blz-bnb',
+    logo: 'bnb-pairs/BLZ-BNB.svg',
+    name: 'BLZ-BNB LP',
+    token: 'BLZ-BNB LP',
+    tokenDescription: 'ApeSwap',
+    tokenAddress: '0x015f807d0186f7e62810D0C597A23CB19Ff57E4d',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooApeBLZ-BNB',
+    earnedTokenAddress: '0x6081601e62F51d9e956aa704B506E4c202E0E016',
+    earnContractAddress: '0x6081601e62F51d9e956aa704B506E4c202E0E016',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'banana-blz-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'ApeSwap',
+    assets: ['BLZ', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://dex.apeswap.finance/#/add/0x935a544bf5816e3a7c13db2efe3009ffda0acda2/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
+    buyTokenUrl:
+      'https://dex.apeswap.finance/#/swap?outputCurrency=0x935a544bf5816e3a7c13db2efe3009ffda0acda2',
+  },
+  {
+    id: 'cakev2-popen-bnb',
+    logo: 'bnb-pairs/POPEN-BNB.svg',
+    name: 'pOPEN-BNB LP',
+    token: 'pOPEN-BNB LP2',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0x1090c996Fd1490D15dD7906322eE676A5cC3cF82',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooCakeV2POPEN-BNB',
+    earnedTokenAddress: '0xC1D74e394ed525A780f3a02d6b3716803035e6bE',
+    earnContractAddress: '0xC1D74e394ed525A780f3a02d6b3716803035e6bE',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cakev2-popen-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['pOPEN', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0xaBaE871B7E3b67aEeC6B46AE9FE1A91660AadAC5',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?inputCurrency=BNB&outputCurrency=0xaBaE871B7E3b67aEeC6B46AE9FE1A91660AadAC5',
+  },
+  {
+    id: 'cakev2-well-busd',
+    logo: 'busd-pairs/WELL-BUSD.svg',
+    name: 'WELL-BUSD LP',
+    token: 'WELL-BUSD LP2',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0x1d94cb25895AbD6ccFeF863c53372bb462AA6b86',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooCakeV2WELL-BUSD',
+    earnedTokenAddress: '0x78B8AfFA682ef34ac92b800715C3AdfF7E2D3879',
+    earnContractAddress: '0x78B8AfFA682ef34ac92b800715C3AdfF7E2D3879',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cakev2-well-busd',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['WELL', 'BUSD'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0xf07a32eb035b786898c00bb1c64d8c6f8e7a46d5/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56&outputCurrency=0xf07a32eb035b786898c00bb1c64d8c6f8e7a46d5',
+  },
+  {
+    id: 'banana-ltc-bnb',
+    logo: 'degens/banana-ltc-bnb.svg',
+    name: 'LTC-BNB LP',
+    token: 'LTC-BNB LP',
+    tokenDescription: 'ApeSwap',
+    tokenAddress: '0x0F12362c017Fe5101c7bBa09390f1CB729f5B318',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooApeLTC-BNB',
+    earnedTokenAddress: '0xB25e82640c062365B973E9eB55EEF77C47E81296',
+    earnContractAddress: '0xB25e82640c062365B973E9eB55EEF77C47E81296',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'banana-ltc-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'ApeSwap',
+    assets: ['LTC', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://dex.apeswap.finance/#/add/ETH/0x4338665cbb7b2485a8855a139b75d5e34ab0db94',
+    buyTokenUrl:
+      'https://dex.apeswap.finance/#/swap?outputCurrency=0x4338665cbb7b2485a8855a139b75d5e34ab0db94',
+  },
+  {
+    id: 'cakev2-cake-busd',
+    logo: 'cake-pairs/CAKE-BUSD.svg',
+    name: 'CAKE-BUSD LP',
+    token: 'CAKE-BUSD LP2',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0x804678fa97d91B974ec2af3c843270886528a9E6',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooCakeV2CAKE-BUSD',
+    earnedTokenAddress: '0x1542885D6EeD4EE3AC1a110d3f159003a0774101',
+    earnContractAddress: '0x1542885D6EeD4EE3AC1a110d3f159003a0774101',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cakev2-cake-busd',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['CAKE', 'BUSD'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82&outputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+  },
+  {
+    id: 'cakev2-chr-busd',
+    logo: 'cake-pairs/chr-busd.svg',
+    name: 'CHR-BUSD LP',
+    token: 'CHR-BUSD LP2',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0x6045931E511EF7e53A4A817F971e0CA28c758809',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooCakeV2CHR-BUSD',
+    earnedTokenAddress: '0x324888479Bfe3903cB405959Bc9Cd644000e495A',
+    earnContractAddress: '0x324888479Bfe3903cB405959Bc9Cd644000e495A',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cakev2-chr-busd',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['CHR', 'BUSD'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0xf9CeC8d50f6c8ad3Fb6dcCEC577e05aA32B224FE',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56&outputCurrency=0xf9CeC8d50f6c8ad3Fb6dcCEC577e05aA32B224FE',
+  },
+  {
+    id: 'cakev2-deri-busd',
+    logo: 'cake-pairs/deri-busd.svg',
+    name: 'DERI-BUSD LP',
+    token: 'DERI-BUSD LP2',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0xDc7188AC11e124B1fA650b73BA88Bf615Ef15256',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooCakeV2DERI-BUSD',
+    earnedTokenAddress: '0x6D02b2d38902689aF2c18eafb8B8c84161c6341b',
+    earnContractAddress: '0x6D02b2d38902689aF2c18eafb8B8c84161c6341b',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cakev2-deri-busd',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['DERI', 'BUSD'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0xe60eaf5A997DFAe83739e035b005A33AfdCc6df5/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0xe60eaf5A997DFAe83739e035b005A33AfdCc6df5&outputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+  },
+  {
     id: 'hps-hps',
     logo: 'single-assets/HPS.png',
     name: 'HPS',
@@ -124,6 +577,199 @@ export const bscPools = [
     buyTokenUrl:
       'https://julswap.com/#/swap?inputCurrency=BNB&outputCurrency=0xeDa21B525Ac789EaB1a08ef2404dd8505FfB973D',
   },
+
+  {
+    id: 'dopple-dolly-lp',
+    logo: 'uncategorized/DOPPLE-DOLLY-LP.svg',
+    name: 'DOLLY/BUSD/USDT',
+    token: 'DOLLY/BUSD/USDT',
+    tokenDescription: 'Dopple',
+    tokenAddress: '0xAA5509Ce0ecEA324bff504A46Fc61EB75Cb68B0c',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooDoppleDollyLP',
+    earnedTokenAddress: '0xCcb7A9E2e4F08407065f51d32C365304fbF2FD01',
+    earnContractAddress: '0xCcb7A9E2e4F08407065f51d32C365304fbF2FD01',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'dopple-dolly-lp',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    assets: ['DOLLY', 'USDT', 'BUSD'],
+    platform: 'Dopple',
+    callFee: 0.5,
+    addLiquidityUrl: 'https://dopple.finance/Deposit/dolly-lps',
+  },
+
+  {
+    id: 'cakev2-xend-bnb',
+    logo: 'bnb-pairs/XEND-BNB.svg',
+    name: 'XEND-BNB LP',
+    token: 'XEND-BNB LP2',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0xcECfC2789af72ed151589a96a59f3A1ABC65c3b5',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooCakeV2XEND-BNB',
+    earnedTokenAddress: '0x6F3ED82fbE292055D509D0200f02d8F9fE62E5D3',
+    earnContractAddress: '0x6F3ED82fbE292055D509D0200f02d8F9fE62E5D3',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cakev2-xend-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['XEND', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0x4a080377f83D669D7bB83B3184a8A5E61B500608',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x4a080377f83D669D7bB83B3184a8A5E61B500608',
+  },
+
+  {
+    id: 'cakev2-cyc-bnb',
+    logo: 'bnb-pairs/CYC-BNB.svg',
+    name: 'CYC-BNB LP',
+    token: 'CYC-BNB LP2',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0xECf30FbecfA642012f54212a3bE92eEF1e48eDaC',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooCakeV2CYC-BNB',
+    earnedTokenAddress: '0xe4e94eAD9D926443C02c11E6453D31f8810D5186',
+    earnContractAddress: '0xe4e94eAD9D926443C02c11E6453D31f8810D5186',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cakev2-cyc-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['CYC', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0x810EE35443639348aDbbC467b33310d2AB43c168',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x810EE35443639348aDbbC467b33310d2AB43c168',
+  },
+  {
+    id: 'banana-near-bnb',
+    logo: 'bnb-pairs/NEAR-BNB.svg',
+    name: 'NEAR-BNB LP',
+    token: 'NEAR-BNB ALP',
+    tokenDescription: 'ApeSwap',
+    tokenAddress: '0xB75724635A6cDa850f08b578F23a568CeDba099D',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooApeNEAR-BNB',
+    earnedTokenAddress: '0x37E7A54830877Ec8c163aAD72A4aa7B0dA2Ad6cb',
+    earnContractAddress: '0x37E7A54830877Ec8c163aAD72A4aa7B0dA2Ad6cb',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'banana-near-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'ApeSwap',
+    assets: ['NEAR', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://dex.apeswap.finance/#/add/0x1fa4a73a3f0133f0025378af00236f3abdee5d63/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
+    buyTokenUrl:
+      'https://dex.apeswap.finance/#/swap?outputCurrency=0x1fa4a73a3f0133f0025378af00236f3abdee5d63',
+  },
+
+  {
+    id: 'banana-coti-bnb',
+    logo: 'bnb-pairs/COTI-BNB.svg',
+    name: 'COTI-BNB LP',
+    token: 'COTI-BNB ALP',
+    tokenDescription: 'ApeSwap',
+    tokenAddress: '0xaCfDCF0486ADC2421aAc3FFc0923b9c56FAEBC47',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooApeCOTI-BNB',
+    earnedTokenAddress: '0x0dd3afc66F1250eC402E703CA093EE17537478CB',
+    earnContractAddress: '0x0dd3afc66F1250eC402E703CA093EE17537478CB',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'banana-coti-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'ApeSwap',
+    assets: ['COTI', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://dex.apeswap.finance/#/add/0xAdBAF88B39D37Dc68775eD1541F1bf83A5A45feB/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
+    buyTokenUrl:
+      'https://dex.apeswap.finance/#/swap?outputCurrency=0xAdBAF88B39D37Dc68775eD1541F1bf83A5A45feB',
+  },
+
+  {
+    id: 'banana-etc-bnb',
+    logo: 'bnb-pairs/ETC-BNB.svg',
+    name: 'ETC-BNB LP',
+    token: 'ETC-BNB ALP',
+    tokenDescription: 'ApeSwap',
+    tokenAddress: '0xDd6C7A955C72B3FFD546d8dadBf7669528d8F785',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooApeETC-BNB',
+    earnedTokenAddress: '0x3D64f2950412a7eed6B59704D18B07B3C22411F5',
+    earnContractAddress: '0x3D64f2950412a7eed6B59704D18B07B3C22411F5',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'banana-etc-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'ApeSwap',
+    assets: ['ETC', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://dex.apeswap.finance/#/add/0x3d6545b08693daE087E957cb1180ee38B9e3c25E/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
+    buyTokenUrl:
+      'https://dex.apeswap.finance/#/swap?outputCurrency=0x3d6545b08693daE087E957cb1180ee38B9e3c25E',
+  },
+
+  {
+    id: 'banana-zec-bnb',
+    logo: 'bnb-pairs/ZEC-BNB.svg',
+    name: 'ZEC-BNB LP',
+    token: 'ZEC-BNB ALP',
+    tokenDescription: 'ApeSwap',
+    tokenAddress: '0x2B2C771e44aF4C6f858598308e05FB89b23f11cE',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooApeZEC-BNB',
+    earnedTokenAddress: '0xCe3870506C57bd6A891aDc8d35D51557A5B55769',
+    earnContractAddress: '0xCe3870506C57bd6A891aDc8d35D51557A5B55769',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'banana-zec-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'ApeSwap',
+    assets: ['ZEC', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://dex.apeswap.finance/#/add/0x1Ba42e5193dfA8B03D15dd1B86a3113bbBEF8Eeb/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
+    buyTokenUrl:
+      'https://dex.apeswap.finance/#/swap?outputCurrency=0x1Ba42e5193dfA8B03D15dd1B86a3113bbBEF8Eeb',
+  },
+
   {
     id: 'belt-beltbtc',
     logo: 'single-assets/BTCB.svg',
@@ -148,6 +794,33 @@ export const bscPools = [
     callFee: 0.5,
     addLiquidityUrl: 'https://belt.fi/',
   },
+  {
+    id: 'garuda-garuda-usdc',
+    logo: 'degens/garuda-usdc.png',
+    name: 'GARUDA-USDC LP',
+    token: 'GARUDA-USDC LP',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0xeD90DEEc60a9b03844aDE0e4b086BAdA0aCC5B8D',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooGarudaGARUDA-USDC',
+    earnedTokenAddress: '0xE783464c205Ddf7240D5A86C62AD31DdfEdFCfde',
+    earnContractAddress: '0xE783464c205Ddf7240D5A86C62AD31DdfEdFCfde',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'garuda-garuda-usdc',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    assets: ['GARUDA', 'USDC'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0x854086dC841e1bfae50Cb615bF41f55BF432a90b/0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x854086dC841e1bfae50Cb615bF41f55BF432a90b',
+  },
+
   {
     id: 'jetswap-wings-bnb',
     logo: 'degens/WINGS-BNB.svg',
@@ -320,7 +993,7 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'belt-4belt',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Belt',
     assets: ['USDT', 'BUSD', 'USDC', 'DAI', '4BELT'],
@@ -486,7 +1159,60 @@ export const bscPools = [
     buyTokenUrl:
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x34EA3F7162E6f6Ed16bD171267eC180fD5c848da',
   },
-
+  {
+    id: 'cakev2-hotcross-bnb',
+    logo: 'cake-pairs/hotcross-bnb.svg',
+    name: 'HOTCROSS-BNB LP',
+    token: 'HOTCROSS-BNB LP2',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0xF23BAD605E94dE0e3B60c9718a43A94A5aF43915',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooCakeV2HOTCROSS-BNB',
+    earnedTokenAddress: '0xfA4f79Cf4Eb504eD42fd77a931057815c1E41EC0',
+    earnContractAddress: '0xfA4f79Cf4Eb504eD42fd77a931057815c1E41EC0',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cakev2-hotcross-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['HOTCROSS', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0x4FA7163E153419E0E1064e418dd7A99314Ed27b6',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x4FA7163E153419E0E1064e418dd7A99314Ed27b6',
+  },
+  {
+    id: 'cakev2-rfox-bnb',
+    logo: 'cake-pairs/rfox-bnb.svg',
+    name: 'RFOX-BNB LP',
+    token: 'RFOX-BNB LP2',
+    tokenDescription: 'Pancake',
+    tokenAddress: '0x8E04b3972b5C25766c681dFD30a8A1cBf6dcc8c1',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooCakeV2RFOX-BNB',
+    earnedTokenAddress: '0x070Dcc132461571676eF5e3F64b0D730136C0898',
+    earnContractAddress: '0x070Dcc132461571676eF5e3F64b0D730136C0898',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cakev2-rfox-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pancake',
+    assets: ['RFOX', 'BNB'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/BNB/0x0a3a21356793b49154fd3bbe91cbc2a16c0457f5',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x0a3a21356793b49154fd3bbe91cbc2a16c0457f5',
+  },
   {
     id: 'cakev2-wmass-busd',
     logo: 'busd-pairs/WMASS-BUSD.svg',
@@ -1117,8 +1843,8 @@ export const bscPools = [
     earnContractAddress: '0x2288dC6e2D2FaBd94a0ab63DD558AE149Bbc9eD9',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'coingecko',
-    oracleId: 'pancake-bunny',
+    oracle: 'tokens',
+    oracleId: 'BUNNY',
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
@@ -1588,7 +2314,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xeD28A457A5A76596ac48d87C0f577020F6Ea1c4C',
   },
   {
-    id: 'ica-ica-btcb',
+    id: 'ica-ica-btcb-eol',
     logo: 'single-assets/ICA.svg',
     name: 'ICA-BTCB LP',
     token: 'ICA-BTCB LP',
@@ -1604,8 +2330,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'ica-ica-btcb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     assets: ['ICA', 'BTCB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -1614,7 +2340,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x95111f630ac215eb74599ed42c67e2c2790d69e2',
   },
   {
-    id: 'ica-ica-eth',
+    id: 'ica-ica-eth-eol',
     logo: 'single-assets/ICA.svg',
     name: 'ICA-ETH LP',
     token: 'ICA-ETH LP',
@@ -1630,8 +2356,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'ica-ica-eth',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     assets: ['ICA', 'ETH'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -1693,7 +2419,7 @@ export const bscPools = [
   },
 
   {
-    id: 'satis-sat-bnb',
+    id: 'satis-sat-bnb-eol',
     logo: 'degens/SAT-BNB.png',
     name: 'SAT-BNB LP',
     token: 'SAT-BNB LP',
@@ -1713,13 +2439,11 @@ export const bscPools = [
     status: 'eol',
     assets: ['SAT', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#/add/BNB/0xA1928c0D8F83C0bFB7ebE51B412b1FD29A277893',
-    buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xA1928c0D8F83C0bFB7ebE51B412b1FD29A277893',
+    removeLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/remove/BNB/0xA1928c0D8F83C0bFB7ebE51B412b1FD29A277893',
   },
   {
-    id: 'satis-sat-busd',
+    id: 'satis-sat-busd-eol',
     logo: 'degens/SAT-BUSD.png',
     name: 'SAT-BUSD LP',
     token: 'SAT-BUSD LP',
@@ -1739,10 +2463,8 @@ export const bscPools = [
     status: 'eol',
     assets: ['SAT', 'BUSD'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0xA1928c0D8F83C0bFB7ebE51B412b1FD29A277893',
-    buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xA1928c0D8F83C0bFB7ebE51B412b1FD29A277893',
+    removeLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/remove/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0xA1928c0D8F83C0bFB7ebE51B412b1FD29A277893',
   },
 
   {
@@ -2668,7 +3390,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xcf6bb5389c92bdda8a3747ddb454cb7a64626c63',
   },
   {
-    id: 'cakev2-unfi-bnb',
+    id: 'cakev2-unfi-bnb-eol',
     logo: 'bnb-pairs/UNFI-BNB.svg',
     name: 'UNFI-BNB LP',
     token: 'UNFI-BNB LP2',
@@ -2689,10 +3411,8 @@ export const bscPools = [
     platform: 'Pancake',
     assets: ['UNFI', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#/add/BNB/0x728c5bac3c3e370e372fc4671f9ef6916b814d8b',
-    buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x728c5bac3c3e370e372fc4671f9ef6916b814d8b',
+    removeLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/remove/BNB/0x728c5bac3c3e370e372fc4671f9ef6916b814d8b',
   },
 
   {
@@ -2723,7 +3443,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xf21768ccbc73ea5b6fd3c687208a7c2def2d966e',
   },
   {
-    id: 'cakev2-yfi-bnb',
+    id: 'cakev2-yfi-bnb-eol',
     logo: 'bnb-pairs/YFI-BNB.svg',
     name: 'YFI-BNB LP',
     token: 'YFI-BNB LP2',
@@ -2744,14 +3464,12 @@ export const bscPools = [
     platform: 'Pancake',
     assets: ['YFI', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#/add/BNB/0x88f1a5ae2a3bf98aeaf342d26b30a79438c9142e',
-    buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x88f1a5ae2a3bf98aeaf342d26b30a79438c9142e',
+    removeLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/remove/BNB/0x88f1a5ae2a3bf98aeaf342d26b30a79438c9142e',
   },
 
   {
-    id: 'cakev2-fil-bnb',
+    id: 'cakev2-fil-bnb-eol',
     logo: 'bnb-pairs/FIL-BNB.svg',
     name: 'FIL-BNB LP',
     token: 'FIL-BNB LP2',
@@ -2772,10 +3490,8 @@ export const bscPools = [
     platform: 'Pancake',
     assets: ['FIL', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#/add/BNB/0x0d8ce2a99bb6e3b7db580ed848240e4a0f9ae153',
-    buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x0d8ce2a99bb6e3b7db580ed848240e4a0f9ae153',
+    removeLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/remove/BNB/0x0d8ce2a99bb6e3b7db580ed848240e4a0f9ae153',
   },
 
   {
@@ -2860,7 +3576,6 @@ export const bscPools = [
     buyTokenUrl:
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x5B6DcF557E2aBE2323c48445E8CC948910d8c2c9',
   },
-
   {
     id: 'cakev2-hget-bnb',
     logo: 'bnb-pairs/HGET-BNB.svg',
@@ -2887,7 +3602,6 @@ export const bscPools = [
     buyTokenUrl:
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xc7d8d35eba58a0935ff2d5a33df105dd9f071731',
   },
-
   {
     id: 'cakev2-cgg-bnb',
     logo: 'bnb-pairs/CGG-BNB.svg',
@@ -3218,7 +3932,7 @@ export const bscPools = [
   },
 
   {
-    id: 'cakev2-mamzn-ust',
+    id: 'cakev2-mamzn-ust-eol',
     logo: 'ust-pairs/MAMZN-UST.svg',
     name: 'MAMZN-UST LP',
     token: 'MAMZN-UST LP2',
@@ -3239,14 +3953,12 @@ export const bscPools = [
     platform: 'Pancake',
     assets: ['MAMZN', 'UST'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#/add/0x23396cf899ca06c4472205fc903bdb4de249d6fc/0x3947B992DC0147D2D89dF0392213781b04B25075',
-    buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x23396cf899ca06c4472205fc903bdb4de249d6fc&outputCurrency=0x3947B992DC0147D2D89dF0392213781b04B25075',
+    removeLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/remove/0x23396cf899ca06c4472205fc903bdb4de249d6fc/0x3947B992DC0147D2D89dF0392213781b04B25075',
   },
 
   {
-    id: 'cakev2-mgoogl-ust',
+    id: 'cakev2-mgoogl-ust-eol',
     logo: 'ust-pairs/MGOOGL-UST.svg',
     name: 'MGOOGL-UST LP',
     token: 'MGOOGL-UST LP2',
@@ -3267,14 +3979,12 @@ export const bscPools = [
     platform: 'Pancake',
     assets: ['MGOOGL', 'UST'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#/add/0x23396cf899ca06c4472205fc903bdb4de249d6fc/0x62D71B23bF15218C7d2D7E48DBbD9e9c650B173f',
-    buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x23396cf899ca06c4472205fc903bdb4de249d6fc&outputCurrency=0x62D71B23bF15218C7d2D7E48DBbD9e9c650B173f',
+    removeLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/remove/0x23396cf899ca06c4472205fc903bdb4de249d6fc/0x62D71B23bF15218C7d2D7E48DBbD9e9c650B173f',
   },
 
   {
-    id: 'cakev2-mnflx-ust',
+    id: 'cakev2-mnflx-ust-eol',
     logo: 'ust-pairs/MNFLX-UST.svg',
     name: 'MNFLX-UST LP',
     token: 'MNFLX-UST LP2',
@@ -3295,14 +4005,12 @@ export const bscPools = [
     platform: 'Pancake',
     assets: ['MNFLX', 'UST'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#/add/0x23396cf899ca06c4472205fc903bdb4de249d6fc/0xa04F060077D90Fe2647B61e4dA4aD1F97d6649dc',
-    buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x23396cf899ca06c4472205fc903bdb4de249d6fc&outputCurrency=0xa04F060077D90Fe2647B61e4dA4aD1F97d6649dc',
+    removeLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/remove/0x23396cf899ca06c4472205fc903bdb4de249d6fc/0xa04F060077D90Fe2647B61e4dA4aD1F97d6649dc',
   },
 
   {
-    id: 'cakev2-mtsla-ust',
+    id: 'cakev2-mtsla-ust-eol',
     logo: 'ust-pairs/MTSLA-UST.svg',
     name: 'MTSLA-UST LP',
     token: 'MTSLA-UST LP2',
@@ -3323,10 +4031,8 @@ export const bscPools = [
     platform: 'Pancake',
     assets: ['MTSLA', 'UST'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#/add/0x23396cf899ca06c4472205fc903bdb4de249d6fc/0xF215A127A196e3988C09d052e16BcFD365Cd7AA3',
-    buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x23396cf899ca06c4472205fc903bdb4de249d6fc&outputCurrency=0xF215A127A196e3988C09d052e16BcFD365Cd7AA3',
+    removeLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/remove/0x23396cf899ca06c4472205fc903bdb4de249d6fc/0xF215A127A196e3988C09d052e16BcFD365Cd7AA3',
   },
 
   {
@@ -3988,7 +4694,7 @@ export const bscPools = [
   },
 
   {
-    id: 'cakev2-hard-bnb',
+    id: 'cakev2-hard-bnb-eol',
     logo: 'bnb-pairs/HARD-BNB.svg',
     name: 'HARD-BNB LP',
     token: 'HARD-BNB LP2',
@@ -4009,10 +4715,8 @@ export const bscPools = [
     platform: 'Pancake',
     assets: ['HARD', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#/add/BNB/0xf79037f6f6be66832de4e7516be52826bc3cbcc4',
-    buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xf79037f6f6be66832de4e7516be52826bc3cbcc4',
+    removeLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/remove/BNB/0xf79037f6f6be66832de4e7516be52826bc3cbcc4',
   },
   {
     id: 'cakev2-ditto-bnb',
@@ -4069,7 +4773,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xd41fdb03ba84762dd66a0af1a6c8540ff1ba5dfb',
   },
   {
-    id: 'cakev2-egld-bnb',
+    id: 'cakev2-egld-bnb-eol',
     logo: 'bnb-pairs/EGLD-BNB.svg',
     name: 'EGLD-BNB LP',
     token: 'EGLD-BNB LP2',
@@ -4090,10 +4794,8 @@ export const bscPools = [
     platform: 'Pancake',
     assets: ['EGLD', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#/add/BNB/0xbf7c81fff98bbe61b40ed186e4afd6ddd01337fe',
-    buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xbf7c81fff98bbe61b40ed186e4afd6ddd01337fe',
+    removeLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/remove/BNB/0xbf7c81fff98bbe61b40ed186e4afd6ddd01337fe',
   },
   {
     id: 'cakev2-wsote-bnb',
@@ -4598,7 +5300,7 @@ export const bscPools = [
   },
 
   {
-    id: 'cakev2-easy-bnb',
+    id: 'cakev2-easy-bnb-eol',
     logo: 'bnb-pairs/EASY-BNB.svg',
     name: 'EASY-BNB LP',
     token: 'EASY-BNB LP2',
@@ -4619,10 +5321,8 @@ export const bscPools = [
     platform: 'Pancake',
     assets: ['EASY', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#/add/BNB/0x7C17c8bED8d14bAccE824D020f994F4880D6Ab3B',
-    buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x7C17c8bED8d14bAccE824D020f994F4880D6Ab3B',
+    removeLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/remove/BNB/0x7C17c8bED8d14bAccE824D020f994F4880D6Ab3B',
   },
 
   {
@@ -5142,8 +5842,8 @@ export const bscPools = [
     earnContractAddress: '0x7f56672fCB5D1d1760511803A0a54c4d1e911dFD',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'coingecko',
-    oracleId: 'pancake-bunny',
+    oracle: 'tokens',
+    oracleId: 'BUNNY',
     oraclePrice: 0,
     depositsPaused: true,
     status: 'refund',
@@ -5255,7 +5955,7 @@ export const bscPools = [
   },
 
   {
-    id: 'cake-broobee-bnb',
+    id: 'cake-broobee-bnb-eol',
     logo: 'bnb-pairs/bROOBEE-BNB.svg',
     name: 'bROOBEE-BNB LP',
     token: 'bROOBEE-BNB LP',
@@ -5281,7 +5981,7 @@ export const bscPools = [
   },
 
   {
-    id: 'cake-tlm-bnb',
+    id: 'cake-tlm-bnb-eol',
     logo: 'bnb-pairs/TLM-BNB.svg',
     name: 'TLM-BNB LP',
     token: 'TLM-BNB LP',
@@ -5304,58 +6004,6 @@ export const bscPools = [
     callFee: 0.5,
     removeLiquidityUrl:
       'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x2222227E22102Fe3322098e4CBfE18cFebD57c95',
-  },
-
-  {
-    id: 'cake-hzn-bnb',
-    logo: 'bnb-pairs/HZN-BNB.svg',
-    name: 'HZN-BNB LP',
-    token: 'HZN-BNB LP',
-    tokenDescription: 'Pancake',
-    tokenAddress: '0xEE4ca18E91012bf87fefde3Dd6723A8834347A4D',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooPancakeHZN-BNB',
-    earnedTokenAddress: '0x5Ed95BbE1743370f42657e7D8f8E02b4055145EF',
-    earnContractAddress: '0x5Ed95BbE1743370f42657e7D8f8E02b4055145EF',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'cake-hzn-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Pancake',
-    assets: ['HZN', 'BNB'],
-    callFee: 0.5,
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0xC0eFf7749b125444953ef89682201Fb8c6A917CD',
-  },
-
-  {
-    id: 'cake-suter-bnb',
-    logo: 'bnb-pairs/SUTER-BNB.svg',
-    name: 'SUTER-BNB LP',
-    token: 'SUTER-BNB LP',
-    tokenDescription: 'Pancake',
-    tokenAddress: '0x6Ff75C20656A0E4745E7c114972D361F483AFa5f',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooPancakeSUTER-BNB',
-    earnedTokenAddress: '0x3d5e4f52fC9c4c7F787b340b7E095b81B1E4458e',
-    earnContractAddress: '0x3d5e4f52fC9c4c7F787b340b7E095b81B1E4458e',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'cake-suter-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Pancake',
-    assets: ['SUTER', 'BNB'],
-    callFee: 0.5,
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x4cfbbdfbd5bf0814472ff35c72717bd095ada055',
   },
 
   {
@@ -5492,7 +6140,7 @@ export const bscPools = [
   },
 
   {
-    id: 'cake-apys-bnb',
+    id: 'cake-apys-bnb-eol',
     logo: 'bnb-pairs/APYS-BNB.svg',
     name: 'APYS-BNB LP',
     token: 'APYS-BNB LP',
@@ -5814,7 +6462,7 @@ export const bscPools = [
   },
 
   {
-    id: 'cake-hoo-busd',
+    id: 'cake-hoo-busd-eol',
     logo: 'busd-pairs/HOO-BUSD.svg',
     name: 'HOO-BUSD LP',
     token: 'HOO-BUSD LP',
@@ -5838,35 +6486,8 @@ export const bscPools = [
     removeLiquidityUrl:
       'https://v1exchange.pancakeswap.finance/#/remove/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0xE1d1F66215998786110Ba0102ef558b22224C016',
   },
-
   {
-    id: 'cake-bondly-bnb',
-    logo: 'bnb-pairs/BONDLY-BNB.svg',
-    name: 'BONDLY-BNB LP',
-    token: 'BONDLY-BNB LP',
-    tokenDescription: 'Pancake',
-    tokenAddress: '0x67581BFB4fc13BB73C71489b504E9b5354769063',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooPancakeBONDLY-BNB',
-    earnedTokenAddress: '0x3a8fC02909CAC1a317e95d9e2717977Fc52ef36a',
-    earnContractAddress: '0x3a8fC02909CAC1a317e95d9e2717977Fc52ef36a',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'cake-bondly-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Pancake',
-    assets: ['BONDLY', 'BNB'],
-    callFee: 0.5,
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x96058f8C3e16576D9BD68766f3836d9A33158f89',
-  },
-
-  {
-    id: 'cake-itam-bnb',
+    id: 'cake-itam-bnb-eol',
     logo: 'bnb-pairs/ITAM-BNB.svg',
     name: 'ITAM-BNB LP',
     token: 'ITAM-BNB LP',
@@ -5892,7 +6513,7 @@ export const bscPools = [
   },
 
   {
-    id: 'cake-arpa-bnb',
+    id: 'cake-arpa-bnb-eol',
     logo: 'bnb-pairs/ARPA-BNB.svg',
     name: 'ARPA-BNB LP',
     token: 'ARPA-BNB LP',
@@ -5918,7 +6539,7 @@ export const bscPools = [
   },
 
   {
-    id: 'mdex-xvs',
+    id: 'mdex-xvs-eol',
     logo: 'single-assets/XVS.png',
     name: 'XVS',
     token: 'XVS',
@@ -5941,7 +6562,7 @@ export const bscPools = [
     callFee: 0.5,
   },
   {
-    id: 'mdex-uni',
+    id: 'mdex-uni-eol',
     logo: 'single-assets/UNI.png',
     name: 'UNI',
     token: 'UNI',
@@ -6106,7 +6727,7 @@ export const bscPools = [
   },
 
   {
-    id: 'mdex-inj',
+    id: 'mdex-inj-eol',
     logo: 'single-assets/INJ.png',
     name: 'INJ',
     token: 'INJ',
@@ -6186,7 +6807,7 @@ export const bscPools = [
   },
 
   {
-    id: 'blizzard-xblzd-bnb-old',
+    id: 'blizzard-xblzd-bnb-old-eol',
     logo: 'degens/BLZD-BNB.png',
     name: 'xBLZD-BNB LP',
     token: 'xBLZD-BNB LP',
@@ -6212,7 +6833,7 @@ export const bscPools = [
   },
 
   {
-    id: 'blizzard-xblzd-busd-old',
+    id: 'blizzard-xblzd-busd-old-eol',
     logo: 'degens/BLZD-BUSD.png',
     name: 'xBLZD-BUSD LP',
     token: 'xBLZD-BUSD LP',
@@ -6264,7 +6885,7 @@ export const bscPools = [
   },
 
   {
-    id: 'blizzard-blzd-bnb',
+    id: 'blizzard-blzd-bnb-eol',
     logo: 'degens/BLZD-BNB.png',
     name: 'BLZD-BNB LP',
     token: 'BLZD-BNB LP',
@@ -6290,7 +6911,7 @@ export const bscPools = [
   },
 
   {
-    id: 'blizzard-blzd-busd',
+    id: 'blizzard-blzd-busd-eol',
     logo: 'degens/BLZD-BUSD.png',
     name: 'BLZD-BUSD LP',
     token: 'BLZD-BUSD LP',
@@ -6342,7 +6963,7 @@ export const bscPools = [
   },
 
   {
-    id: 'auto-cake-bnb',
+    id: 'auto-cake-bnb-eol',
     logo: 'bnb-pairs/CAKE-BNB.svg',
     name: 'CAKE-BNB LP',
     token: 'CAKE-BNB LP',
@@ -6653,7 +7274,7 @@ export const bscPools = [
   },
 
   {
-    id: 'swamp-cake-bnb',
+    id: 'swamp-cake-bnb-eol',
     logo: 'bnb-pairs/CAKE-BNB.svg',
     name: 'CAKE-BNB LP',
     token: 'CAKE-BNB LP',
@@ -6911,56 +7532,6 @@ export const bscPools = [
   },
 
   {
-    id: 'cake-pbtc-bnb',
-    logo: 'bnb-pairs/PBTC-BNB.svg',
-    name: 'pBTC-BNB LP',
-    token: 'pBTC-BNB LP',
-    tokenDescription: 'Pancake',
-    tokenAddress: '0xb5F6f7dAD23132d40d778085D795BD0FD4B859CD',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooCakePBTC-BNB',
-    earnedTokenAddress: '0x1733Ff33036C7D785d0eACDB53138a9Aff8387De',
-    earnContractAddress: '0x1733Ff33036C7D785d0eACDB53138a9Aff8387De',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'cake-pbtc-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Pancake',
-    assets: ['pBTC', 'BNB'],
-    callFee: 0.5,
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0xeD28A457A5A76596ac48d87C0f577020F6Ea1c4C',
-  },
-  {
-    id: 'cake-mir-ust',
-    logo: 'ust-pairs/MIR-UST.svg',
-    name: 'MIR-UST LP',
-    token: 'MIR-UST LP',
-    tokenDescription: 'Pancake',
-    tokenAddress: '0xf64a269F0A06dA07D23F43c1Deb217101ee6Bee7',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooCakeMIR-UST',
-    earnedTokenAddress: '0x8B3898642BC30b0aEF072BA3E43b427a4A2015D8',
-    earnContractAddress: '0x8B3898642BC30b0aEF072BA3E43b427a4A2015D8',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'cake-mir-ust',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Pancake',
-    assets: ['MIR', 'UST'],
-    callFee: 0.5,
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/0x23396cF899Ca06c4472205fC903bDB4de249D6fC/0x5B6DcF557E2aBE2323c48445E8CC948910d8c2c9',
-  },
-  {
     id: 'cake-dft-bnb',
     logo: 'bnb-pairs/DFT-BNB.svg',
     name: 'DFT-BNB LP',
@@ -7011,33 +7582,6 @@ export const bscPools = [
     removeLiquidityUrl:
       'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x250b211EE44459dAd5Cd3bCa803dD6a7EcB5d46C',
   },
-
-  {
-    id: 'cake-lien-bnb',
-    logo: 'bnb-pairs/LIEN-BNB.svg',
-    name: 'LIEN-BNB LP',
-    token: 'LIEN-BNB LP',
-    tokenDescription: 'Pancake',
-    tokenAddress: '0xcd14855150335AAE984aa6D281E090c27035C692',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooPancakeLIEN-BNB',
-    earnedTokenAddress: '0x5157821D6FB7046e7081F6c2aa559cb379200a64',
-    earnContractAddress: '0x5157821D6FB7046e7081F6c2aa559cb379200a64',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'cake-lien-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Pancake',
-    assets: ['LIEN', 'BNB'],
-    callFee: 0.5,
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x5d684adaf3fcfe9cfb5cede3abf02f0cdd1012e3',
-  },
-
   {
     id: 'zefi-zefi-bnb',
     logo: 'degens/ZEFI-BNB.svg',
@@ -7188,10 +7732,8 @@ export const bscPools = [
     platform: 'ApeSwap',
     assets: ['NAUT', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://dex.apeswap.finance/#/add/ETH/0x05B339B0A346bF01f851ddE47a5d485c34FE220c',
-    buyTokenUrl:
-      'https://dex.apeswap.finance/#/swap?inputCurrency=0x05b339b0a346bf01f851dde47a5d485c34fe220c&outputCurrency=0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
+    removeLiquidityUrl:
+      'https://dex.apeswap.finance/#/remove/ETH/0x05B339B0A346bF01f851ddE47a5d485c34FE220c',
   },
 
   {
@@ -7320,10 +7862,8 @@ export const bscPools = [
     platform: 'Alpaca',
     assets: ['ALPACA', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#/add/BNB/0x8F0528cE5eF7B51152A59745bEfDD91D97091d2F',
-    buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x8f0528ce5ef7b51152a59745befdd91d97091d2f',
+    removeLiquidityUrl:
+      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x8F0528cE5eF7B51152A59745bEfDD91D97091d2F',
   },
 
   {
@@ -7375,32 +7915,6 @@ export const bscPools = [
     callFee: 0.5,
     buyTokenUrl:
       'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x0abd3E3502c15ec252f90F64341cbA74a24fba06&outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56',
-  },
-
-  {
-    id: 'cake-bbadger-btcb',
-    logo: 'uncategorized/BADGER-BTCB.svg',
-    name: 'bBADGER-BTCB LP',
-    token: 'bBADGER-BTCB LP',
-    tokenDescription: 'Pancake',
-    tokenAddress: '0x10F461CEAC7A17F59e249954Db0784d42EfF5DB5',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooPancakeBADGER-BNB',
-    earnedTokenAddress: '0x9fBa2fc7505CE6801ADCF23146310187CecfcE47',
-    earnContractAddress: '0x9fBa2fc7505CE6801ADCF23146310187CecfcE47',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'cake-bbadger-btcb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Pancake',
-    assets: ['bBADGER', 'BTCB'],
-    callFee: 0.5,
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c/0x1f7216fdb338247512ec99715587bb97bbf96eae',
   },
 
   {
@@ -8030,32 +8544,6 @@ export const bscPools = [
   },
 
   {
-    id: 'jul-uni-bnb',
-    logo: 'bnb-pairs/JUNI-BNB.svg',
-    name: 'UNI-BNB LP',
-    token: 'UNI-BNB SLP',
-    tokenDescription: 'JulSwap',
-    tokenAddress: '0x1a5F04e8E20dd15C219C39cc2a989F64B3307779',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooJulUNI-BNB',
-    earnedTokenAddress: '0xd9fe7Ff89C5303E439a14a5155F7F48E34F28518',
-    earnContractAddress: '0xd9fe7Ff89C5303E439a14a5155F7F48E34F28518',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'jul-uni-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'JulSwap',
-    assets: ['UNI', 'BNB'],
-    callFee: 0.5,
-    removeLiquidityUrl:
-      'https://julswap.com/#/remove/0xbf5140a22578168fd562dccf235e5d43a02ce9b1/BNB',
-  },
-
-  {
     id: 'auto-comp-eth',
     logo: 'uncategorized/COMP-ETH.svg',
     name: 'COMP-ETH LP',
@@ -8079,32 +8567,6 @@ export const bscPools = [
     callFee: 0.5,
     removeLiquidityUrl:
       'https://v1exchange.pancakeswap.finance/#/remove/0x52CE071Bd9b1C4B00A0b92D298c512478CaD67e8/0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
-  },
-
-  {
-    id: 'auto-hget-bnb',
-    logo: 'bnb-pairs/HGET-BNB.svg',
-    name: 'HGET-BNB LP',
-    token: 'HGET-BNB LP',
-    tokenDescription: 'Pancake (Auto)',
-    tokenAddress: '0x66b9E1eAc8a81F3752F7f3A5E95dE460688A17Ee',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooAutoHGET-BNB',
-    earnedTokenAddress: '0x8f210015B2BbDd39e6d62278992136aCAfd09691',
-    earnContractAddress: '0x8f210015B2BbDd39e6d62278992136aCAfd09691',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'auto-hget-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Autofarm',
-    assets: ['HGET', 'BNB'],
-    callFee: 0.5,
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/0xC7d8D35EBA58a0935ff2D5a33Df105DD9f071731/BNB',
   },
 
   {
@@ -8551,32 +9013,6 @@ export const bscPools = [
     removeLiquidityUrl:
       'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x4131b87f74415190425ccd873048c708f8005823',
   },
-
-  {
-    id: 'cake-bor-bnb',
-    logo: 'bnb-pairs/BOR-BNB.svg',
-    name: 'BOR-BNB LP',
-    token: 'BOR-BNB LP',
-    tokenDescription: 'Pancake',
-    tokenAddress: '0x86E650350C40a5178a5D014ba37FE8556232B898',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooPancakeBOR-BNB',
-    earnedTokenAddress: '0x2EA1175f7189BeAdd6D8A7687B0a311C6785a7a3',
-    earnContractAddress: '0x2EA1175f7189BeAdd6D8A7687B0a311C6785a7a3',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'cake-bor-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Pancake',
-    assets: ['BOR', 'BNB'],
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x92d7756c60dcfd4c689290e8a9f4d263b3b32241',
-  },
-
   {
     id: 'cake-bopen-bnb',
     logo: 'bnb-pairs/BOPEN-BNB.svg',
@@ -8604,7 +9040,7 @@ export const bscPools = [
   },
 
   {
-    id: '1inch-1inch-bnb',
+    id: '1inch-1inch-bnb-eol',
     logo: 'single-assets/INCH.png',
     name: '1INCH-BNB LP',
     token: '1INCH-BNB LP',
@@ -8620,8 +9056,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: '1inch-1inch-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: '1Inch',
     assets: ['1INCH', 'BNB'],
     callFee: 0.5,
@@ -8681,32 +9117,6 @@ export const bscPools = [
     callFee: 0.5,
     removeLiquidityUrl:
       'https://v1exchange.pancakeswap.finance/#/remove/0xe9e7cea3dedca5984780bafc599bd69add087d56/0x762539b45a1dcce3d36d080f74d1aed37844b878',
-  },
-
-  {
-    id: 'cake-usdc-busd',
-    logo: 'busd-pairs/USDC-BUSD.svg',
-    name: 'USDC-BUSD LP',
-    token: 'USDC-BUSD LP',
-    tokenDescription: 'Pancake',
-    tokenAddress: '0x680Dd100E4b394Bda26A59dD5c119A391e747d18',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooPancakeUSDC-BUSD',
-    earnedTokenAddress: '0x0666bDF7187307890D2ACF092493cCEA51A8CD0b',
-    earnContractAddress: '0x0666bDF7187307890D2ACF092493cCEA51A8CD0b',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'cake-usdc-busd',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Pancake',
-    assets: ['USDC', 'BUSD'],
-    callFee: 0.5,
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/0xe9e7cea3dedca5984780bafc599bd69add087d56/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d',
   },
 
   {
@@ -8964,10 +9374,8 @@ export const bscPools = [
     status: 'eol',
     assets: ['BREW', 'BUSD'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://exchange.cafeswap.finance/#/add/c/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
-    buyTokenUrl:
-      'https://dex.cafeswap.finance/#/swap?inputCurrency=0x790be81c3ca0e53974be2688cdb954732c9862e1&outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56',
+    removeLiquidityUrl:
+      'https://exchange.cafeswap.finance/#/remove/0x790Be81C3cA0e53974bE2688cDb954732C9862e1/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
   },
 
   {
@@ -8991,10 +9399,8 @@ export const bscPools = [
     status: 'eol',
     assets: ['BREW', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://exchange.cafeswap.finance/#/add/0x790Be81C3cA0e53974bE2688cDb954732C9862e1/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
-    buyTokenUrl:
-      'https://dex.cafeswap.finance/#/swap?inputCurrency=0x790be81c3ca0e53974be2688cdb954732c9862e1&outputCurrency=0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
+    removeLiquidityUrl:
+      'https://exchange.cafeswap.finance/#/remove/0x790Be81C3cA0e53974bE2688cDb954732C9862e1/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
   },
 
   {
@@ -9018,10 +9424,8 @@ export const bscPools = [
     status: 'eol',
     assets: ['BIFI', 'BNB'],
     callFee: 0.5,
-    addLiquidityUrl:
-      'https://exchange.cafeswap.finance/#/add/0xCa3F508B8e4Dd382eE878A314789373D80A5190A/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
-    buyTokenUrl:
-      'https://dex.cafeswap.finance/#/swap?inputCurrency=0xCa3F508B8e4Dd382eE878A314789373D80A5190A&outputCurrency=0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
+    removeLiquidityUrl:
+      'https://exchange.cafeswap.finance/#/remove/0xCa3F508B8e4Dd382eE878A314789373D80A5190A/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
   },
 
   {
@@ -9548,7 +9952,7 @@ export const bscPools = [
   },
 
   {
-    id: 'auto-cake-old',
+    id: 'auto-cake-old-eol',
     logo: 'single-assets/SMART.png',
     name: 'CAKE',
     token: 'CAKE',
@@ -9574,7 +9978,7 @@ export const bscPools = [
   },
 
   {
-    id: 'auto-wbnb-old',
+    id: 'auto-wbnb-old-eol',
     logo: 'single-assets/WBNB.svg',
     name: 'WBNB',
     token: 'WBNB',
@@ -9765,8 +10169,8 @@ export const bscPools = [
     earnContractAddress: '0x90d8AB2731f937f9ec98d0bbe6D4CBD4D95473db',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'coingecko',
-    oracleId: 'julswap',
+    oracle: 'tokens',
+    oracleId: 'JULD',
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
@@ -10115,33 +10519,6 @@ export const bscPools = [
     assets: ['DRUGS'],
     callFee: 0.5,
   },
-
-  {
-    id: 'cake-ltc-bnb',
-    logo: 'bnb-pairs/LTC-BNB.svg',
-    name: 'LTC-BNB LP',
-    token: 'LTC-BNB LP',
-    tokenDescription: 'Pancake',
-    tokenAddress: '0xbc765fd113c5bdb2ebc25f711191b56bb8690aec',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooPancakeLTC-BNB',
-    earnedTokenAddress: '0x4D6294D36aD4201De1D93Af18A61453B8865d008',
-    earnContractAddress: '0x4D6294D36aD4201De1D93Af18A61453B8865d008',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'cake-ltc-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Pancake',
-    assets: ['LTC', 'BNB'],
-    callFee: 0.5,
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x4338665cbb7b2485a8855a139b75d5e34ab0db94',
-  },
-
   {
     id: 'cake-ada-bnb',
     logo: 'bnb-pairs/ADA-BNB.svg',
@@ -10426,33 +10803,6 @@ export const bscPools = [
     buyTokenUrl:
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x0d8ce2a99bb6e3b7db580ed848240e4a0f9ae153',
   },
-
-  {
-    id: 'cake-ten-bnb',
-    logo: 'bnb-pairs/TEN-BNB.svg',
-    name: 'TEN-BNB LP',
-    token: 'TEN-BNB LP',
-    tokenDescription: 'Pancake',
-    tokenAddress: '0x01ecc44Ddd2D104F44D2AA1A2bD9DFbC91aE8275',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooPancakeTEN-BNB',
-    earnedTokenAddress: '0x3040387C46e21B453e4a8f648528368b9066628B',
-    earnContractAddress: '0x3040387C46e21B453e4a8f648528368b9066628B',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'cake-ten-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Pancake',
-    assets: ['TEN', 'BNB'],
-    callFee: 0.5,
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0xdff8cb622790b7f92686c722b02cab55592f152c',
-  },
-
   {
     id: 'cake-balbt-bnb',
     logo: 'bnb-pairs/BALBT-BNB.svg',
@@ -10478,33 +10828,6 @@ export const bscPools = [
     removeLiquidityUrl:
       'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x72faa679e1008ad8382959ff48e392042a8b06f7',
   },
-
-  {
-    id: 'cake-bscx-bnb',
-    logo: 'bnb-pairs/BSCX-BNB.svg',
-    name: 'BSCX-BNB LP',
-    token: 'BSCX-BNB LP',
-    tokenDescription: 'Pancake',
-    tokenAddress: '0x20781bc3701c5309ac75291f5d09bdc23d7b7fa8',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooPancakeBSCX-BNB',
-    earnedTokenAddress: '0xb5f0ff997bec850b11792ed07b2b5abdea869b84',
-    earnContractAddress: '0xb5f0ff997bec850b11792ed07b2b5abdea869b84',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'cake-bscx-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Pancake',
-    assets: ['BSCX', 'BNB'],
-    callFee: 0.5,
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x5ac52ee5b2a633895292ff6d8a89bb9190451587',
-  },
-
   {
     id: 'bakery-btc-bnb',
     logo: 'bnb-pairs/BTC-BNB.png',
@@ -11088,59 +11411,6 @@ export const bscPools = [
     removeLiquidityUrl:
       'https://v1exchange.pancakeswap.finance/#/remove/0x4b0f1812e5df2a09796481ff14017e6005508003/BNB',
   },
-
-  {
-    id: 'cake-yfii-bnb',
-    logo: 'bnb-pairs/YFII-BNB.svg',
-    name: 'YFII-BNB LP',
-    token: 'YFII-BNB LP',
-    tokenDescription: 'Pancake',
-    tokenAddress: '0x574a978c2D0d36D707a05E459466C7A1054F1210',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooPancakeYFII-BNB',
-    earnedTokenAddress: '0xcB00A85dbb29Ab9e2581660031BF56EfC819a559',
-    earnContractAddress: '0xcB00A85dbb29Ab9e2581660031BF56EfC819a559',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'cake-yfii-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Pancake',
-    assets: ['YFII', 'BNB'],
-    callFee: 1,
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x7f70642d88cf1c4a3a7abb072b53b929b653eda5',
-  },
-
-  {
-    id: 'cake-yfi-bnb',
-    logo: 'bnb-pairs/YFI-BNB.svg',
-    name: 'YFI-BNB LP',
-    token: 'YFI-BNB LP',
-    tokenDescription: 'Pancake',
-    tokenAddress: '0x68Ff2ca47D27db5Ac0b5c46587645835dD51D3C1',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooPancakeYFI-BNB',
-    earnedTokenAddress: '0xc119408BDa86C12F1c6BD276e68ab9f558292119',
-    earnContractAddress: '0xc119408BDa86C12F1c6BD276e68ab9f558292119',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'cake-yfi-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Pancake',
-    assets: ['YFI', 'BNB'],
-    callFee: 1,
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x88f1a5ae2a3bf98aeaf342d26b30a79438c9142e',
-  },
-
   {
     id: 'cake-fil-bnb',
     logo: 'bnb-pairs/FIL-BNB.svg',
@@ -11165,32 +11435,6 @@ export const bscPools = [
     callFee: 1,
     removeLiquidityUrl:
       'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x0d8ce2a99bb6e3b7db580ed848240e4a0f9ae153',
-  },
-
-  {
-    id: 'cake-band-bnb',
-    logo: 'bnb-pairs/BAND-BNB.svg',
-    name: 'BAND-BNB LP',
-    token: 'BAND-BNB LP',
-    tokenDescription: 'Pancake',
-    tokenAddress: '0xc639187ef82271D8f517de6FEAE4FaF5b517533c',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooPancakeBAND-BNB',
-    earnedTokenAddress: '0x9368165eCB0BB16d214fc63fDFcd07fbBa21AbBB',
-    earnContractAddress: '0x9368165eCB0BB16d214fc63fDFcd07fbBa21AbBB',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'cake-band-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Pancake',
-    assets: ['BAND', 'BNB'],
-    callFee: 1,
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0xad6caeb32cd2c308980a548bd0bc5aa4306c6c18',
   },
 
   {
@@ -11464,8 +11708,8 @@ export const bscPools = [
     earnContractAddress: '0x3eb560209B438d4e23833aFf6751fcf0B810F60b',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'coingecko',
-    oracleId: 'ripple',
+    oracle: 'tokens',
+    oracleId: 'XRP',
     oraclePrice: 0,
     depositsPaused: true,
     status: 'active',
@@ -11895,29 +12139,6 @@ export const bscPools = [
   },
 
   {
-    id: 'street-eos-bnb',
-    logo: 'bnb-pairs/EOS-BNB.svg',
-    name: 'EOS-BNB LP',
-    token: 'EOS-BNB LP',
-    tokenDescription: 'Traphouse',
-    tokenAddress: '0x44e89861096371246ea8e3e86d97781ea24fbb29',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooStreetEOS-BNB',
-    earnedTokenAddress: '0xd4572009c7580DEfa0251FFD811b04386Dd41570',
-    earnContractAddress: '0xd4572009c7580DEfa0251FFD811b04386Dd41570',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'street-eos-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    assets: ['EOS', 'BNB'],
-    callFee: 0.5,
-  },
-
-  {
     id: 'street-drugs-bnb-v1',
     logo: 'bnb-pairs/DRUGS-BNB.png',
     name: 'DRUGS-BNB LP v1',
@@ -11940,7 +12161,6 @@ export const bscPools = [
     assets: ['DRUGS', 'BNB'],
     callFee: 0.5,
   },
-
   {
     id: 'street-guns-bnb-v1',
     logo: 'bnb-pairs/GUNS-BNB.png',
@@ -12044,7 +12264,7 @@ export const bscPools = [
   },
 
   {
-    id: 'cake-cake-bnb',
+    id: 'cake-cake-bnb-eol',
     logo: 'bnb-pairs/CAKE-BNB.svg',
     name: 'CAKE-BNB LP',
     token: 'CAKE-BNB LP',
@@ -12095,33 +12315,6 @@ export const bscPools = [
     callFee: 0.5,
     removeLiquidityUrl:
       'https://v1exchange.pancakeswap.finance/#/remove/BNB/0xf8a0bf9cf54bb92f17374d9e9a321e6a111a51bd',
-  },
-
-  {
-    id: 'cake-usdt-bnb',
-    logo: 'bnb-pairs/USDT-BNB.svg',
-    name: 'USDT-BNB LP',
-    token: 'USDT-BNB LP',
-    tokenDescription: 'Pancake',
-    tokenAddress: '0x20bcc3b8a0091ddac2d0bc30f68e6cbb97de59cd',
-    tokenDecimals: 18,
-    tokenDescriptionUrl:
-      'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-cake-with-usdt-bnb-lp',
-    earnedToken: 'mooPancakeUSDT-BNB',
-    earnedTokenAddress: '0x72F758cb79cA71CE9010dc9c0fA0155431435B72',
-    earnContractAddress: '0x72F758cb79cA71CE9010dc9c0fA0155431435B72',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'cake-usdt-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Pancake',
-    assets: ['USDT', 'BNB'],
-    callFee: 0.5,
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x55d398326f99059ff775485246999027b3197955',
   },
 
   {
@@ -12179,60 +12372,6 @@ export const bscPools = [
   },
 
   {
-    id: 'cake-eth-bnb',
-    logo: 'bnb-pairs/ETH-BNB.svg',
-    name: 'ETH-BNB LP',
-    token: 'ETH-BNB LP',
-    tokenDescription: 'Pancake',
-    tokenAddress: '0x70d8929d04b60af4fb9b58713ebcf18765ade422',
-    tokenDecimals: 18,
-    tokenDescriptionUrl:
-      'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-cake-with-eth-bnb-lp',
-    earnedToken: 'mooPancakeETH-BNB',
-    earnedTokenAddress: '0x1CfEAef83Bb688Ac5926df1feEB8F05244054C07',
-    earnContractAddress: '0x1CfEAef83Bb688Ac5926df1feEB8F05244054C07',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'cake-eth-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Pancake',
-    assets: ['ETH', 'BNB'],
-    callFee: 0.5,
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x2170ed0880ac9a755fd29b2688956bd959f933f8',
-  },
-
-  {
-    id: 'cake-btcb-bnb',
-    logo: 'bnb-pairs/BTCB-BNB.svg',
-    name: 'BTCB-BNB LP',
-    token: 'BTCB-BNB LP',
-    tokenDescription: 'Pancake',
-    tokenAddress: '0x7561EEe90e24F3b348E1087A005F78B4c8453524',
-    tokenDecimals: 18,
-    tokenDescriptionUrl:
-      'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-cake-with-btcb-bnb-lp',
-    earnedToken: 'mooPancakeBNB-BTCB',
-    earnedTokenAddress: '0xd9542B833C6B0D9E4f882d2c4F01d5b5bd005Ac7',
-    earnContractAddress: '0xd9542B833C6B0D9E4f882d2c4F01d5b5bd005Ac7',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'cake-btcb-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Pancake',
-    assets: ['BTCB', 'BNB'],
-    callFee: 0.5,
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c',
-  },
-
-  {
     id: 'fortube-fil',
     logo: 'single-assets/FIL.svg',
     name: 'FIL',
@@ -12246,8 +12385,8 @@ export const bscPools = [
     earnContractAddress: '0x5Bea18aBa4825bbE6450c280fBE8c22B1489cDd4',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'coingecko',
-    oracleId: 'filecoin',
+    oracle: 'tokens',
+    oracleId: 'FIL',
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
@@ -12386,8 +12525,8 @@ export const bscPools = [
     earnContractAddress: '0x214e640c638fbe68Fb24e11BfBd8Cd7d6cb8E37b',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'coingecko',
-    oracleId: 'pancakeswap-token',
+    oracle: 'tokens',
+    oracleId: 'CAKE',
     oraclePrice: 0,
     depositsPaused: true,
     status: 'refund',

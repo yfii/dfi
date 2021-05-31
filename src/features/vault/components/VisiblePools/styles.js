@@ -12,6 +12,10 @@ const styles = theme => ({
     fontWeight: '550',
     color: theme.palette.text.primary,
   },
+  infinityIcon: {
+    marginBottom: '-6px',
+    paddingRight: '5px',
+  },
 });
 
 export default styles;

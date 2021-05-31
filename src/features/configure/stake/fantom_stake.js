@@ -2,6 +2,38 @@ import { govPoolABI } from '../abi';
 
 export const fantomStakePools = [
   {
+    id: 'bifi-ftm',
+    name: 'BIFI',
+    logo: 'single-assets/BIFI.png',
+    token: 'BIFI',
+    tokenDecimals: 18,
+    tokenAddress: '0xd6070ae98b8069de6B494332d1A1a81B6179D960',
+    tokenOracle: 'tokens',
+    tokenOracleId: 'BIFI',
+    earnedToken: 'FTM',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83',
+    earnContractAddress: '0x7fB900C14c9889A559C777D016a885995cE759Ee',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'FTM',
+    partnership: false,
+    status: 'active',
+    hideCountdown: true,
+    partners: [
+      {
+        logo: 'stake/beefy/beefyfinance.png',
+        background: 'stake/beefy/background.png',
+        text: "You probably already knew that Beefy is the most trusted multi-chain Yield optimizer. But did you know that Beefy has its own token? $BIFI has a maximum supply of 80000 tokens and there is no way to mint more. Everyone who holds our own $BIFI token can not only do cool stuff like create and vote on proposals, they also get a share of all harvests done, every hour, every day on all our +120 vaults. That's a lot of FTM that goes straight to our $BIFI holders. All you have to do is stake your $BIFI in this vault, it’s that simple, come back and harvest your FTM whenever you need it! (You can still vote on proposals even though you have staked your $BIFI here).",
+        website: 'https://app.beefy.finance',
+        social: {
+          telegram: 'http://t.me/beefyfinance',
+          twitter: 'https://twitter.com/beefyfinance',
+        },
+      },
+    ],
+  },
+  {
     id: 'moo_usdc-ftm-ester',
     name: 'Ester Finance',
     logo: 'fantom/USDC-FTM.png',
@@ -21,15 +53,17 @@ export const fantomStakePools = [
     status: 'active',
     isMooStaked: true,
     periodFinish: 1622138639,
-    partner: {
-      logo: 'stake/esterfinance/logo.png',
-      background: 'stake/esterfinance/background.png',
-      text: 'Ester.Finance is a Decentralized Finance (DeFi) Yield Optimizer project on the Fantom Opera Blockchain. Ester can make you earn more crypto with crypto. Through a set of smart contracts and several investment strategies, Ester.Finance automatically maximizes the user rewards from various liquidity pools (LPs), automated market-making (AMM) projects, and other yield farming opportunities in the DeFi ecosystem. This provides a huge advantage over attempting to do this manually yourself.',
-      website: 'https://app.ester.finance/',
-      social: {
-        telegram: '',
-        twitter: 'https://twitter.com/EsterFinance',
+    partners: [
+      {
+        logo: 'stake/esterfinance/logo.png',
+        background: 'stake/esterfinance/background.png',
+        text: 'Ester.Finance is a Decentralized Finance (DeFi) Yield Optimizer project on the Fantom Opera Blockchain. Ester can make you earn more crypto with crypto. Through a set of smart contracts and several investment strategies, Ester.Finance automatically maximizes the user rewards from various liquidity pools (LPs), automated market-making (AMM) projects, and other yield farming opportunities in the DeFi ecosystem. This provides a huge advantage over attempting to do this manually yourself.',
+        website: 'https://app.ester.finance/',
+        social: {
+          telegram: '',
+          twitter: 'https://twitter.com/EsterFinance',
+        },
       },
-    },
+    ],
   },
 ];

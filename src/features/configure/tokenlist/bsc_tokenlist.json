@@ -11,6 +11,126 @@
   "keywords": ["beefy", "bsc"],
   "tokens": [
     {
+      "name": "KALM",
+      "symbol": "KALM",
+      "address": "0x4BA0057f784858a48fe351445C672FF2a3d43515",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x4BA0057f784858a48fe351445C672FF2a3d43515.png"
+    },
+    {
+      "name": "EZ",
+      "symbol": "EZ",
+      "address": "0x5512014efa6Cd57764Fa743756F7a6Ce3358cC83",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x5512014efa6Cd57764Fa743756F7a6Ce3358cC83.png"
+    },
+    {
+      "name": "VRT",
+      "symbol": "VRT",
+      "address": "0x5F84ce30DC3cF7909101C69086c50De191895883",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x5f84ce30dc3cf7909101c69086c50de191895883.png"
+    },
+    {
+      "name": "pOPEN",
+      "symbol": "pOPEN",
+      "address": "0xaBaE871B7E3b67aEeC6B46AE9FE1A91660AadAC5",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0xaBaE871B7E3b67aEeC6B46AE9FE1A91660AadAC5.png"
+    },
+    {
+      "name": "BitWell",
+      "symbol": "WELL",
+      "address": "0xf07a32Eb035b786898c00bB1C64d8c6F8E7a46D5",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://bscscan.com/token/images/bitwellex_32.png"
+    },
+    {
+      "name": "Synthetix",
+      "symbol": "SNX",
+      "address": "0x9Ac983826058b8a9C7Aa1C9171441191232E8404",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://bscscan.com/token/images/snx_32.png"
+    },
+    {
+      "name": "Bluezelle",
+      "symbol": "BLZ",
+      "address": "0x935a544Bf5816E3A7C13DB2EFe3009Ffda0aCdA2",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://dex.apeswap.finance/images/coins/blz.svg"
+    },
+    {
+      "name": "Deri",
+      "symbol": "DERI",
+      "address": "0xe60eaf5A997DFAe83739e035b005A33AfdCc6df5",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0xe60eaf5A997DFAe83739e035b005A33AfdCc6df5.png"
+    },
+    {
+      "name": "Chromia",
+      "symbol": "CHR",
+      "address": "0xf9CeC8d50f6c8ad3Fb6dcCEC577e05aA32B224FE",
+      "chainId": 56,
+      "decimals": 6,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0xf9CeC8d50f6c8ad3Fb6dcCEC577e05aA32B224FE.png"
+    },
+    {
+      "name": "XEND",
+      "symbol": "XEND",
+      "address": "0x4a080377f83D669D7bB83B3184a8A5E61B500608",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://bscscan.com/token/images/xendfinance_32.png"
+    },
+    {
+      "name": "Cyclone Protocol",
+      "symbol": "CYC",
+      "address": "0x810EE35443639348aDbbC467b33310d2AB43c168",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://bscscan.com/token/images/cyclone_32.png"
+    },
+    {
+      "name": "Z-Cash",
+      "symbol": "ZEC",
+      "address": "0x1Ba42e5193dfA8B03D15dd1B86a3113bbBEF8Eeb",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://dex.apeswap.finance/images/coins/ZEC.svg"
+    },
+    {
+      "name": "Ethereum Classic",
+      "symbol": "ETC",
+      "address": "0x3d6545b08693daE087E957cb1180ee38B9e3c25E",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://dex.apeswap.finance/images/coins/ETC.svg"
+    },
+    {
+      "name": "Coti",
+      "symbol": "COTI",
+      "address": "0xAdBAF88B39D37Dc68775eD1541F1bf83A5A45feB",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://dex.apeswap.finance/images/coins/coti.svg"
+    },
+    {
+      "name": "Near",
+      "symbol": "NEAR",
+      "address": "0x1fa4a73a3f0133f0025378af00236f3abdee5d63",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://dex.apeswap.finance/images/coins/near.svg"
+    },
+    {
       "name": "Grand",
       "symbol": "GRAND",
       "address": "0xeE814F5B2bF700D2e843Dc56835D28d095161dd9",
@@ -25,6 +145,22 @@
       "chainId": 56,
       "decimals": 18,
       "logoURI": "https://bscscan.com/token/images/swampfinance_32.png"
+    },
+    {
+      "name": "Hot Cross Token",
+      "address": "0x4FA7163E153419E0E1064e418dd7A99314Ed27b6",
+      "symbol": "HOTCROSS",
+      "decimals": 18,
+      "chainId": 56,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x4fa7163e153419e0e1064e418dd7a99314ed27b6.png"
+    },
+    {
+      "name": "RFOX Token",
+      "address": "0x0a3A21356793B49154Fd3BbE91CBc2A16c0457f5",
+      "symbol": "RFOX",
+      "decimals": 18,
+      "chainId": 56,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x0a3a21356793b49154fd3bbe91cbc2a16c0457f5.png"
     },
     {
       "name": "HYFI Token",
@@ -47,7 +183,7 @@
       "symbol": "tDOGE",
       "address": "0xe550a593d09FBC8DCD557b5C88Cea6946A8b404A",
       "chainId": 56,
-      "decimals": 18,
+      "decimals": 8,
       "logoURI": "https://exchange.pancakeswap.finance/images/coins/0xe550a593d09fbc8dcd557b5c88cea6946a8b404a.png"
     },
     {
@@ -55,7 +191,7 @@
       "symbol": "OIN",
       "address": "0x658E64FFcF40D240A43D52CA9342140316Ae44fA",
       "chainId": 56,
-      "decimals": 18,
+      "decimals": 8,
       "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x658E64FFcF40D240A43D52CA9342140316Ae44fA.png"
     },
     {
@@ -95,7 +231,7 @@
       "symbol": "WMASS",
       "address": "0x7e396BfC8a2f84748701167c2d622F041A1D7a17",
       "chainId": 56,
-      "decimals": 18,
+      "decimals": 8,
       "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x7e396bfc8a2f84748701167c2d622f041a1d7a17.png"
     },
     {
@@ -167,7 +303,7 @@
       "symbol": "BXBTC",
       "address": "0xab111D5948470Ba73d98D66BBdf2798FBE093546",
       "chainId": 56,
-      "decimals": 18,
+      "decimals": 9,
       "logoURI": "https://dex.apeswap.finance/images/coins/XBTC.svg"
     },
     {
@@ -175,7 +311,7 @@
       "symbol": "NAUT",
       "address": "0x05b339b0a346bf01f851dde47a5d485c34fe220c",
       "chainId": 56,
-      "decimals": 18,
+      "decimals": 8,
       "logoURI": "https://dex.apeswap.finance/images/coins/NAUT.png"
     },
     {
@@ -183,7 +319,7 @@
       "symbol": "IOTA",
       "address": "0xd944f1D1e9d5f9Bb90b62f9D45e447D989580782",
       "chainId": 56,
-      "decimals": 18,
+      "decimals": 6,
       "logoURI": "https://dex.apeswap.finance/images/coins/IOTA.png"
     },
     {
@@ -231,7 +367,7 @@
       "symbol": "DOGE",
       "address": "0xba2ae424d960c26247dd6c32edc70b295c744c43",
       "chainId": 56,
-      "decimals": 9,
+      "decimals": 8,
       "logoURI": "https://exchange.pancakeswap.finance/images/coins/0xba2ae424d960c26247dd6c32edc70b295c744c43.png"
     },
     {

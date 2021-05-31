@@ -115,13 +115,14 @@ export const getNetworkStables = () => {
         'fUSDT',
         '4BELT',
         'IRON',
+        'DOLLY',
       ];
     case '128':
       return ['USDT', 'HUSD'];
     case '43114':
       return ['USDT', 'DAI', 'BUSD', 'zDAI', 'zUSDT'];
     case '137':
-      return ['USDC', 'USDT', 'maUSDC', 'DAI'];
+      return ['USDC', 'USDT', 'maUSDC', 'DAI', 'IRON'];
     case '250':
       return ['USDC', 'USDT', 'DAI', 'fUSDT'];
     default:
@@ -141,17 +142,6 @@ export const getNetworkMulticall = () => {
       return '0xC3821F0b56FA4F4794d5d760f94B812DE261361B';
     case '250':
       return '0xC9F6b1B53E056fd04bE5a197ce4B2423d456B982';
-    default:
-      return '';
-  }
-};
-
-export const getNetworkMulticallNativeShim = () => {
-  switch (process.env.REACT_APP_NETWORK_ID) {
-    case '56':
-      return '0xC72E5edaE5D7bA628A2Acb39C8Aa0dbbD06daacF';
-    case '137':
-      return '0x4D6294D36aD4201De1D93Af18A61453B8865d008';
     default:
       return '';
   }
