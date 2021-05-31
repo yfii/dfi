@@ -19,6 +19,7 @@ import LabeledStat from '../PoolSummary/LabeledStat/LabeledStat';
 import styles from './styles';
 import { Helmet } from 'react-helmet';
 import { getNetworkFriendlyName } from '../../../helpers/getNetworkData';
+import { getPageMeta, usePageMeta } from '../../../common/getPageMeta';
 
 const FETCH_INTERVAL_MS = 30 * 1000;
 
@@ -37,7 +38,7 @@ const PoolDetails = ({ vaultId }) => {
   const { apys, fetchApys, fetchApysDone } = useFetchApys();
   const pool = pools.find(p => p.id === vaultId);
   const stake = useSelector(state => state.stake.pools);
-  const networkName = getNetworkFriendlyName();
+  const { getPageMeta } = usePageMeta();
 
   const launchpool = useMemo(() => {
     const timestamp = Math.floor(Date.now() / 1000);
@@ -144,16 +145,14 @@ const PoolDetails = ({ vaultId }) => {
     <>
       <Helmet>
         <title>
-          {t('Vault-Meta-Title', {
-            networkName,
+          {getPageMeta('Vault-Meta-Title', {
             vaultName: pool.name,
             vaultDescription: pool.tokenDescription,
           })}
         </title>
         <meta
           property="og:title"
-          content={t('Vault-Meta-Title', {
-            networkName,
+          content={getPageMeta('Vault-Meta-Title', {
             vaultName: pool.name,
             vaultDescription: pool.tokenDescription,
           })}

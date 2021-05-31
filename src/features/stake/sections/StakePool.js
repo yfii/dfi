@@ -37,6 +37,7 @@ import Divider from '@material-ui/core/Divider';
 import { formatApy, formatCountdown } from '../../helpers/format';
 import { Helmet } from 'react-helmet';
 import { getNetworkFriendlyName } from '../../helpers/getNetworkData';
+import { getPageMeta, usePageMeta } from '../../common/getPageMeta';
 
 const useStyles = makeStyles(styles);
 
@@ -71,7 +72,7 @@ export default function StakePool(props) {
   const [myHalfTime, setMyHalfTime] = useState(`0day 00:00:00`);
   const [inputVal, setInputVal] = useState(0);
   const [open, setOpen] = React.useState(false);
-  const networkName = getNetworkFriendlyName();
+  const { getPageMeta } = usePageMeta();
 
   const changeInputVal = event => {
     let value = event.target.value;
@@ -245,16 +246,14 @@ export default function StakePool(props) {
     <Grid container>
       <Helmet>
         <title>
-          {t('Stake-Meta-Title', {
-            networkName,
+          {getPageMeta('Stake-Meta-Title', {
             earnedToken: pools[index].earnedToken,
             boostedBy: pools[index].name,
           })}
         </title>
         <meta
           property="og:title"
-          content={t('Stake-Meta-Title', {
-            networkName,
+          content={getPageMeta('Stake-Meta-Title', {
             earnedToken: pools[index].earnedToken,
             boostedBy: pools[index].name,
           })}
