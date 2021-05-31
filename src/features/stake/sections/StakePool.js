@@ -318,7 +318,7 @@ export default function StakePool(props) {
         </Grid>
         <Grid item xs={12} sm={4}>
           <Typography className={classes.title}>{formatApy(poolData[index].apy)}</Typography>
-          <Typography className={classes.subtitle}>{t('Vault-APY')}</Typography>
+          <Typography className={classes.subtitle}>{t('Vault-APR')}</Typography>
         </Grid>
 
         {pools[index].status === 'closed' || pools[index].status === 'soon' ? (
