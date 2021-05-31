@@ -1,6 +1,9 @@
 {
+  "App-Meta-Title": "{{networkName}} - Beefy Finance",
+  "App-Meta-Description": "The Multichain Yield Optimizer",
   "Disclaimer": "Using Smart Contracts, Tokens, and Crypto is always a risk. DYOR before investing.",
   "Network-Error": "Connect to the correct network please.",
+  "Vault-Meta-Title": "{{vaultName}} - {{vaultDescription}} - {{networkName}} - Beefy Finance",
   "Vault-Wallet": "Wallet",
   "Vault-ConnectWallet": "Connect Wallet",
   "Vault-Balance": "Balance",
@@ -90,6 +93,8 @@
   "Coming-Soon": "Coming Soon",
   "Finished": "Finished",
   "End": "End",
+  "Stakes-Meta-Title": "Boosts - {{networkName}} - Beefy Finance",
+  "Stake-Meta-Title": "Earn {{earnedToken}} - Boosted by {{boostedBy}} - {{networkName}} - Beefy Finance",
   "Stake-Button-Stake": "Stake",
   "Stake-Button-Claim": "Claim",
   "Stake-Button-Approval": "Approve",

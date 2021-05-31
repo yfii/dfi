@@ -35,6 +35,8 @@ import Button from '../../../components/CustomButtons/Button';
 import { styles } from './styles/view';
 import Divider from '@material-ui/core/Divider';
 import { formatApy, formatCountdown } from '../../helpers/format';
+import { Helmet } from 'react-helmet';
+import { getNetworkFriendlyName } from '../../helpers/getNetworkData';
 
 const useStyles = makeStyles(styles);
 
@@ -69,6 +71,7 @@ export default function StakePool(props) {
   const [myHalfTime, setMyHalfTime] = useState(`0day 00:00:00`);
   const [inputVal, setInputVal] = useState(0);
   const [open, setOpen] = React.useState(false);
+  const networkName = getNetworkFriendlyName();
 
   const changeInputVal = event => {
     let value = event.target.value;
@@ -240,6 +243,15 @@ export default function StakePool(props) {
 
   return (
     <Grid container>
+      <Helmet>
+        <title>
+          {t('Stake-Meta-Title', {
+            networkName,
+            earnedToken: pools[index].earnedToken,
+            boostedBy: pools[index].name,
+          })}
+        </title>
+      </Helmet>
       <Grid item xs={6} className={classes.mb}>
         <Button href="/stake" className={classes.roundedBtn}>
           {t('Stake-Button-Back')}
@@ -402,52 +414,48 @@ export default function StakePool(props) {
           </Button>
         </Grid>
       </Grid>
-      
+
       {pools[index].partners.map(partner => (
-      <Grid container className={classes.row} style={customBgImg(partner.background)}>
-      <Grid item xs={12} className={classes.partnerHeader}>
-        {partner.logo ? (
-          <img
-            alt={pools[index].name}
-            src={require('images/' + partner.logo)}
-            height="60"
-          />
-        ) : (
-          ''
-        )}
-      </Grid>
-      <Grid item xs={12} className={classes.partnerBody}>
-        {partner.text}
-      </Grid>
-      <Grid item xs={12}>
-        <Divider className={classes.divider} />
-        {partner.social.twitter ? (
-          <Link href={partner.social.twitter}>
-            <TwitterIcon />
-          </Link>
-        ) : (
-          ''
-        )}
-        {partner.social.telegram ? (
-          <Link href={partner.social.telegram}>
-            <TelegramIcon />
-          </Link>
-        ) : (
-          ''
-        )}
-        {partner.website ? (
-          <Grid item xs={12}>
-            <Link target="_blank" href={partner.website}>
-              {partner.website}
-            </Link>
+        <Grid container className={classes.row} style={customBgImg(partner.background)}>
+          <Grid item xs={12} className={classes.partnerHeader}>
+            {partner.logo ? (
+              <img alt={pools[index].name} src={require('images/' + partner.logo)} height="60" />
+            ) : (
+              ''
+            )}
           </Grid>
-        ) : (
-          ''
-        )}
-      </Grid>
-    </Grid>
-      ))}  
-          
+          <Grid item xs={12} className={classes.partnerBody}>
+            {partner.text}
+          </Grid>
+          <Grid item xs={12}>
+            <Divider className={classes.divider} />
+            {partner.social.twitter ? (
+              <Link href={partner.social.twitter}>
+                <TwitterIcon />
+              </Link>
+            ) : (
+              ''
+            )}
+            {partner.social.telegram ? (
+              <Link href={partner.social.telegram}>
+                <TelegramIcon />
+              </Link>
+            ) : (
+              ''
+            )}
+            {partner.website ? (
+              <Grid item xs={12}>
+                <Link target="_blank" href={partner.website}>
+                  {partner.website}
+                </Link>
+              </Grid>
+            ) : (
+              ''
+            )}
+          </Grid>
+        </Grid>
+      ))}
+
       <Dialog
         onClose={() => {
           handleModal(false);

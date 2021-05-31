@@ -7,6 +7,9 @@ import store from './common/store';
 import routeConfig from './common/routeConfig';
 import history from './common/history';
 import { initializePriceCache } from './features/web3/fetchPrice';
+import { Helmet } from 'react-helmet';
+import { useTranslation } from 'react-i18next';
+import { getNetworkFriendlyName } from './features/helpers/getNetworkData';
 
 setConfig({
   logLevel: 'debug',
@@ -51,9 +54,20 @@ function renderRouteConfigV3(routes, contextPath) {
 
 function Root() {
   const children = renderRouteConfigV3(routeConfig, '/');
+  const { t } = useTranslation();
+  const networkName = getNetworkFriendlyName();
+
   initializePriceCache();
+
   return (
     <Provider store={store}>
+      <Helmet>
+        <title>{t('App-Meta-Title', { networkName })}</title>
+        <meta name="description" content={t('App-Meta-Description', { networkName })} />
+        <meta property="og:title" content={t('App-Meta-Title', { networkName })} />
+        <meta property="og:description" content={t('App-Meta-Description', { networkName })} />
+        <meta property="og:url" content={process.env.PUBLIC_URL || 'https://app.beefy.finance'} />
+      </Helmet>
       <ConnectedRouter history={history}>{children}</ConnectedRouter>
     </Provider>
   );

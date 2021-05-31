@@ -17,6 +17,8 @@ import PoolActions from '../PoolActions/PoolActions';
 import PoolTitle from '../PoolSummary/PoolTitle/PoolTitle';
 import LabeledStat from '../PoolSummary/LabeledStat/LabeledStat';
 import styles from './styles';
+import { Helmet } from 'react-helmet';
+import { getNetworkFriendlyName } from '../../../helpers/getNetworkData';
 
 const FETCH_INTERVAL_MS = 30 * 1000;
 
@@ -35,6 +37,7 @@ const PoolDetails = ({ vaultId }) => {
   const { apys, fetchApys, fetchApysDone } = useFetchApys();
   const pool = pools.find(p => p.id === vaultId);
   const stake = useSelector(state => state.stake.pools);
+  const networkName = getNetworkFriendlyName();
 
   const launchpool = useMemo(() => {
     const timestamp = Math.floor(Date.now() / 1000);
@@ -139,6 +142,15 @@ const PoolDetails = ({ vaultId }) => {
 
   return (
     <>
+      <Helmet>
+        <title>
+          {t('Vault-Meta-Title', {
+            networkName,
+            vaultName: pool.name,
+            vaultDescription: pool.tokenDescription,
+          })}
+        </title>
+      </Helmet>
       <HomeLink />
       <div className={classes.container}>
         <h1 className={classes.heading}>{t('Vault-Details')}</h1>
