@@ -24,6 +24,31 @@ export const bscPools = [
     buyTokenUrl: 'https://app.1inch.io/#/56/swap/BNB/BIFI',
   },
   {
+    id: 'ellipsis-eps',
+    logo: 'uncategorized/EPS.png',
+    name: 'EPS',
+    token: 'EPS',
+    tokenDescription: 'Ellipsis',
+    tokenAddress: '0xa7f552078dcc247c2684336020c03648500c6d9f',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooEllipsisEPS',
+    earnedTokenAddress: '0x0CDAf84f90F0BBFF225A82D7165967Fff93A7bea',
+    earnContractAddress: '0x0CDAf84f90F0BBFF225A82D7165967Fff93A7bea',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'tokens',
+    oracleId: 'EPS',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Ellipsis',
+    assets: ['EPS'],
+    callFee: 0.5,
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xA7f552078dcC247C2684336020c03648500C6d9F',
+  },
+  {
     id: 'dopple-dop-lp',
     logo: 'uncategorized/DOPPLE-DOP-LP.svg',
     name: 'BUSD/USDT/USDC/DAI',
@@ -74,7 +99,7 @@ export const bscPools = [
     addLiquidityUrl:
       'https://bsc.mdex.com/#/add/0x0d8ce2a99bb6e3b7db580ed848240e4a0f9ae153/0x55d398326f99059fF775485246999027B3197955',
   },
-  { 
+  {
     id: 'cakev2-vrt-bnb',
     logo: 'bnb-pairs/VRT-BNB.svg',
     name: 'VRT-BNB LP',

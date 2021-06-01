@@ -76,7 +76,7 @@ const VisiblePools = ({
       />
       {visiblePools.length > 0 && (
         <h4>
-          <AllInclusiveIcon className={classes.infinityIcon}/>
+          <AllInclusiveIcon className={classes.infinityIcon} />
           {t('Vault-AutocompoundingNote')}
         </h4>
       )}

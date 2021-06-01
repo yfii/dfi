@@ -60,7 +60,7 @@ export const getNetworkTokens = () => {
       return fantomTokenList.tokens;
     default:
       throw new Error(
-        `Create Tokenlist for this chainId first. See src/features/configure/tokenlist/*_tokenlist.json`,
+        `Create Tokenlist for this chainId first. See src/features/configure/tokenlist/*_tokenlist.json`
       );
   }
 };

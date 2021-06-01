@@ -402,52 +402,48 @@ export default function StakePool(props) {
           </Button>
         </Grid>
       </Grid>
-      
+
       {pools[index].partners.map(partner => (
-      <Grid container className={classes.row} style={customBgImg(partner.background)}>
-      <Grid item xs={12} className={classes.partnerHeader}>
-        {partner.logo ? (
-          <img
-            alt={pools[index].name}
-            src={require('images/' + partner.logo)}
-            height="60"
-          />
-        ) : (
-          ''
-        )}
-      </Grid>
-      <Grid item xs={12} className={classes.partnerBody}>
-        {partner.text}
-      </Grid>
-      <Grid item xs={12}>
-        <Divider className={classes.divider} />
-        {partner.social.twitter ? (
-          <Link href={partner.social.twitter}>
-            <TwitterIcon />
-          </Link>
-        ) : (
-          ''
-        )}
-        {partner.social.telegram ? (
-          <Link href={partner.social.telegram}>
-            <TelegramIcon />
-          </Link>
-        ) : (
-          ''
-        )}
-        {partner.website ? (
-          <Grid item xs={12}>
-            <Link target="_blank" href={partner.website}>
-              {partner.website}
-            </Link>
+        <Grid container className={classes.row} style={customBgImg(partner.background)}>
+          <Grid item xs={12} className={classes.partnerHeader}>
+            {partner.logo ? (
+              <img alt={pools[index].name} src={require('images/' + partner.logo)} height="60" />
+            ) : (
+              ''
+            )}
           </Grid>
-        ) : (
-          ''
-        )}
-      </Grid>
-    </Grid>
-      ))}  
-          
+          <Grid item xs={12} className={classes.partnerBody}>
+            {partner.text}
+          </Grid>
+          <Grid item xs={12}>
+            <Divider className={classes.divider} />
+            {partner.social.twitter ? (
+              <Link href={partner.social.twitter}>
+                <TwitterIcon />
+              </Link>
+            ) : (
+              ''
+            )}
+            {partner.social.telegram ? (
+              <Link href={partner.social.telegram}>
+                <TelegramIcon />
+              </Link>
+            ) : (
+              ''
+            )}
+            {partner.website ? (
+              <Grid item xs={12}>
+                <Link target="_blank" href={partner.website}>
+                  {partner.website}
+                </Link>
+              </Grid>
+            ) : (
+              ''
+            )}
+          </Grid>
+        </Grid>
+      ))}
+
       <Dialog
         onClose={() => {
           handleModal(false);

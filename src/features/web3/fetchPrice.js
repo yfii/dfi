@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import { getNetworkPools, getNetworkStakePools } from '../helpers/getNetworkData';
-import { getLatestApiCommitHash } from "./fetchLatestApiCommitHash"
+import { getLatestApiCommitHash } from './fetchLatestApiCommitHash';
 
 const t = () => Math.trunc(Date.now() / (5 * 60 * 1000));
 

@@ -1,4 +1,4 @@
-import BigNumber from "bignumber.js";
+import BigNumber from 'bignumber.js';
 
 const units = ['', 'k', 'M', 'B', 'T', 'Q', 'Q', 'S', 'S'];
 
@@ -20,7 +20,9 @@ export const formatTvl = (tvl, oraclePrice) => {
   }
 
   let order = Math.floor(Math.log10(tvl) / 3);
-  if (order < 0) { order = 0 }
+  if (order < 0) {
+    order = 0;
+  }
 
   const num = tvl / 1000 ** order;
 

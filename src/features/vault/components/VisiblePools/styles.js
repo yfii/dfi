@@ -15,7 +15,7 @@ const styles = theme => ({
   infinityIcon: {
     marginBottom: '-6px',
     paddingRight: '5px',
-  }
+  },
 });
 
 export default styles;

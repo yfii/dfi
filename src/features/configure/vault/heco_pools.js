@@ -69,8 +69,10 @@ export const hecoPools = [
     platform: 'Mdex',
     assets: ['SHIB', 'USDT'],
     callFee: 0.25,
-    buyTokenUrl: 'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0xc38072aa3f8e049de541223a9c9772132bb48634',
-    addLiquidityUrl: 'https://ht.mdex.com/#/add/0xa71edc38d189767582c38a3145b5873052c3e47a/0xc38072aa3f8e049de541223a9c9772132bb48634',
+    buyTokenUrl:
+      'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0xc38072aa3f8e049de541223a9c9772132bb48634',
+    addLiquidityUrl:
+      'https://ht.mdex.com/#/add/0xa71edc38d189767582c38a3145b5873052c3e47a/0xc38072aa3f8e049de541223a9c9772132bb48634',
   },
   {
     id: 'mdex-bifi-usdt',
