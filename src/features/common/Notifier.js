@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useSnackbar } from 'notistack';
 import { removeSnackbar } from './redux/actions';
 import Button from '@material-ui/core/Button';
-import { getTxUrl } from '../../common/networkSetup';
+import { getNetworkTxUrl } from '../helpers/getNetworkData';
 
 let displayed = [];
 
@@ -47,7 +47,7 @@ const Notifier = () => {
         },
         autoHideDuration: 3000,
         action: hash
-          ? () => <Button onClick={() => window.open(getTxUrl(hash), '_blank')}>View</Button>
+          ? () => <Button onClick={() => window.open(getNetworkTxUrl(hash), '_blank')}>View</Button>
           : null,
       });
 

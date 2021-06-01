@@ -1,4 +1,5 @@
 {
+  "App-Meta-Description": "The Multichain Yield Optimizer",
   "Disclaimer": "Using Smart Contracts, Tokens, and Crypto is always a risk. DYOR before investing.",
   "Network-Error": "Connect to the correct network please.",
   "Vault-Wallet": "Wallet",
@@ -90,6 +91,8 @@
   "Coming-Soon": "Coming Soon",
   "Finished": "Finished",
   "End": "End",
+  "Stakes-Meta-Title": "Boosts - {{networkName}}",
+  "Stake-Meta-Title": "Earn {{earnedToken}} - Boosted by {{boostedBy}} - {{networkName}}",
   "Stake-Button-Stake": "Stake",
   "Stake-Button-Claim": "Claim",
   "Stake-Button-Approval": "Approve",

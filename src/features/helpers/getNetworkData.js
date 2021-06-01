@@ -2,7 +2,6 @@ import { connectors } from 'web3modal';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 
 import {
-  nativeCoins,
   avalanchePools,
   avalancheStakePools,
   avalancheTokenList,
@@ -19,11 +18,28 @@ import {
   hecoStakePools,
   hecoTokenList,
   hecoZaps,
+  nativeCoins,
   polygonPools,
   polygonStakePools,
   polygonTokenList,
   polygonZaps,
 } from '../configure';
+
+const networkTxUrls = {
+  56: hash => `https://bscscan.com/tx/${hash}`,
+  128: hash => `https://hecoinfo.com/tx/${hash}`,
+  43114: hash => `https://cchain.explorer.avax.network/tx/${hash}/token-transfers`,
+  137: hash => `https://explorer-mainnet.maticvigil.com/tx/${hash}/token-transfers`,
+  250: hash => `https://ftmscan.com/tx/${hash}`,
+};
+
+const networkFriendlyName = {
+  56: 'BSC',
+  128: 'HECO',
+  43114: 'AVAX',
+  137: 'Polygon',
+  250: 'Fantom',
+};
 
 export const getNetworkCoin = () => {
   return nativeCoins.find(coin => coin.chainId == process.env.REACT_APP_NETWORK_ID);
@@ -312,3 +328,6 @@ export const getNetworkConnectors = t => {
       return {};
   }
 };
+
+export const getNetworkTxUrl = networkTxUrls[process.env.REACT_APP_NETWORK_ID];
+export const getNetworkFriendlyName = () => networkFriendlyName[process.env.REACT_APP_NETWORK_ID];
