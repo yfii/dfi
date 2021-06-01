@@ -18,6 +18,7 @@ export const hecoPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
+    platform: 'Beefy.Finance',
     assets: ['BIFI'],
     callFee: 0.05,
     buyTokenUrl:
@@ -28,7 +29,7 @@ export const hecoPools = [
     logo: 'single-assets/MDX.png',
     name: 'MDX',
     token: 'MDX',
-    tokenDescription: 'MDex',
+    tokenDescription: 'Mdex',
     tokenAddress: '0x25D2e80cB6B86881Fd7e07dd263Fb79f4AbE033c',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
