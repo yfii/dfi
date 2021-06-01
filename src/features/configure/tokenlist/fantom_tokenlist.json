@@ -11,6 +11,14 @@
   "keywords": ["beefy", "fantom", "opera", "FTM"],
   "tokens": [
     {
+      "name": "Beefy.Finance",
+      "symbol": "BIFI",
+      "address": "0xd6070ae98b8069de6B494332d1A1a81B6179D960",
+      "chainId": 250,
+      "decimals": 18,
+      "logoURI": ""
+    },
+    {
       "name": "AnySwap",
       "symbol": "ANY",
       "address": "0xdDcb3fFD12750B45d32E084887fdf1aABAb34239",
