@@ -79,7 +79,7 @@ export const polygonPools = [
   },
   {
     id: 'sushi-grt-eth',
-    logo: 'polygon/TITAN.png', // TODO
+    logo: 'polygon/GRT-ETH.png',
     name: 'GRT-ETH SLP',
     token: 'GRT-ETH SLP',
     tokenDescription: 'SushiSwap',
@@ -106,7 +106,7 @@ export const polygonPools = [
   },
   {
     id: 'sushi-frax-fxs',
-    logo: 'polygon/TITAN.png', // TODO
+    logo: 'polygon/FRAX-FXS.png',
     name: 'FRAX-FXS SLP',
     token: 'FRAX-FXS SLP',
     tokenDescription: 'SushiSwap',
@@ -133,7 +133,7 @@ export const polygonPools = [
   },
   {
     id: 'sushi-frax-usdc',
-    logo: 'polygon/TITAN.png', // TODO
+    logo: 'polygon/FRAX-USDC.png',
     name: 'FRAX-USDC SLP',
     token: 'FRAX-USDC SLP',
     tokenDescription: 'SushiSwap',
@@ -159,8 +159,8 @@ export const polygonPools = [
       'https://app.sushi.com/#/swap?inputCurrency=0x104592a158490a9228070E0A8e5343B499e125D0&outputCurrency=0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
   },
   {
-    id: 'sushi-matic-woofy',
-    logo: 'polygon/TITAN.png', // TODO
+    id: 'sushi-wmatic-woofy',
+    logo: 'polygon/MATIC-WOOFY.png',
     name: 'MATIC-WOOFY SLP',
     token: 'MATIC-WOOFY SLP',
     tokenDescription: 'SushiSwap',
@@ -173,12 +173,12 @@ export const polygonPools = [
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
-    oracleId: 'sushi-matic-woofy',
+    oracleId: 'sushi-wmatic-woofy',
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
     platform: 'Sushiswap',
-    assets: ['MATIC', 'WOOFY'],
+    assets: ['WMATIC', 'WOOFY'],
     callFee: 0.5,
     addLiquidityUrl:
       'https://app.sushi.com/add/0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270/0xD0660cD418a64a1d44E9214ad8e459324D8157f1',
@@ -187,7 +187,7 @@ export const polygonPools = [
   },
   {
     id: 'sushi-renDOGE-eth',
-    logo: 'polygon/TITAN.png', // TODO
+    logo: 'polygon/renDOGE-ETH.png',
     name: 'renDOGE-ETH SLP',
     token: 'renDOGE-ETH SLP',
     tokenDescription: 'SushiSwap',
@@ -214,7 +214,7 @@ export const polygonPools = [
   },
   {
     id: 'sushi-usdc-dai',
-    logo: 'polygon/TITAN.png', // TODO
+    logo: 'polygon/USDC-DAI.png',
     name: 'USDC-DAI SLP',
     token: 'USDC-DAI SLP',
     tokenDescription: 'SushiSwap',
@@ -241,7 +241,7 @@ export const polygonPools = [
   },
   {
     id: 'sushi-snx-eth',
-    logo: 'polygon/TITAN.png', // TODO
+    logo: 'polygon/SNX-ETH.png',
     name: 'SNX-ETH SLP',
     token: 'SNX-ETH SLP',
     tokenDescription: 'SushiSwap',
