@@ -95,7 +95,8 @@ export const polygonPools = [
     platform: 'IronFinance',
     assets: ['TITAN'],
     callFee: 0.05,
-    buyTokenUrl: 'https://app.sushi.com/#/swap?outputCurrency=0xaAa5B9e6c589642f98a1cDA99B9D024B8407285A',
+    buyTokenUrl:
+      'https://app.sushi.com/#/swap?outputCurrency=0xaAa5B9e6c589642f98a1cDA99B9D024B8407285A',
   },
   {
     id: 'iron-titan-iron',
@@ -119,7 +120,8 @@ export const polygonPools = [
     platform: 'IronFinance',
     assets: ['TITAN', 'IRON'],
     callFee: 0.05,
-    addLiquidityUrl: 'https://app.sushi.com/add/0xaAa5B9e6c589642f98a1cDA99B9D024B8407285A/0xD86b5923F3AD7b585eD81B448170ae026c65ae9a',
+    addLiquidityUrl:
+      'https://app.sushi.com/add/0xaAa5B9e6c589642f98a1cDA99B9D024B8407285A/0xD86b5923F3AD7b585eD81B448170ae026c65ae9a',
     buyTokenUrl:
       'https://app.sushi.com/#/swap?inputCurrency=0xaAa5B9e6c589642f98a1cDA99B9D024B8407285A&outputCurrency=0xD86b5923F3AD7b585eD81B448170ae026c65ae9a',
   },

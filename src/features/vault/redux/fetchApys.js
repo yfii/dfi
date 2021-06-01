@@ -1,10 +1,10 @@
 import axios from 'axios';
 import { useCallback } from 'react';
-import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
   VAULT_FETCH_APYS_BEGIN,
-  VAULT_FETCH_APYS_FAILURE,
   VAULT_FETCH_APYS_SUCCESS,
+  VAULT_FETCH_APYS_FAILURE,
 } from './constants';
 import { getApiCacheBuster } from '../../web3/getApiCacheBuster';
 

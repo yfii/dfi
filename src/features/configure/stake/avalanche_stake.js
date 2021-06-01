@@ -30,7 +30,7 @@ export const avalancheStakePools = [
           telegram: 'http://t.me/beefyfinance',
           twitter: 'https://twitter.com/beefyfinance',
         },
-      }
+      },
     ],
   },
 ];

@@ -281,7 +281,13 @@ export default function StakePools(props) {
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                mooBifi is the token you receive from depositing $BIFI into the Beefy Maxi vault. These mooTokens do not 1:1 represent the token amount initially deposited but it does represent the value of your share in the vault. The Beefy Maxi vault gathers a performance fee from every Beefy Vault when they are harvested, and uses it to buy more $BIFI and redeposit in the vault. The more profit the Beefy generates, the more $BIFI you'll own in the vault. Do NOT sell your mooTokens, or else you lose access to your deposit.
+                mooBifi is the token you receive from depositing $BIFI into the Beefy Maxi vault.
+                These mooTokens do not 1:1 represent the token amount initially deposited but it
+                does represent the value of your share in the vault. The Beefy Maxi vault gathers a
+                performance fee from every Beefy Vault when they are harvested, and uses it to buy
+                more $BIFI and redeposit in the vault. The more profit the Beefy generates, the more
+                $BIFI you'll own in the vault. Do NOT sell your mooTokens, or else you lose access
+                to your deposit.
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -372,7 +378,9 @@ export default function StakePools(props) {
                 </Typography>
               </AccordionDetails>
             </Accordion>
-          ) : ''}
+          ) : (
+            ''
+          )}
         </Grid>
         <Grid item xs={12}>
           <Disclaimer />

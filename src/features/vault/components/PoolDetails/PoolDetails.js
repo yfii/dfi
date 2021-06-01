@@ -9,14 +9,17 @@ import { useTranslation } from 'react-i18next';
 import BigNumber from 'bignumber.js';
 
 import { useConnectWallet } from '../../../home/redux/hooks';
-import { useFetchBalances, useFetchVaultsData, useFetchApys } from '../../redux/hooks';
+import { useFetchApys, useFetchBalances, useFetchVaultsData } from '../../redux/hooks';
 import { byDecimals } from 'features/helpers/bignumber';
-import { formatApy, formatTvl, calcDaily } from 'features/helpers/format';
+import { calcDaily, formatApy, formatTvl } from 'features/helpers/format';
 import HomeLink from './HomeLink/HomeLink';
 import PoolActions from '../PoolActions/PoolActions';
 import PoolTitle from '../PoolSummary/PoolTitle/PoolTitle';
 import LabeledStat from '../PoolSummary/LabeledStat/LabeledStat';
 import styles from './styles';
+import { Helmet } from 'react-helmet';
+import { getNetworkFriendlyName } from '../../../helpers/getNetworkData';
+import { getPageMeta, usePageMeta } from '../../../common/getPageMeta';
 
 const FETCH_INTERVAL_MS = 30 * 1000;
 
@@ -35,6 +38,7 @@ const PoolDetails = ({ vaultId }) => {
   const { apys, fetchApys, fetchApysDone } = useFetchApys();
   const pool = pools.find(p => p.id === vaultId);
   const stake = useSelector(state => state.stake.pools);
+  const { getPageMeta } = usePageMeta();
 
   const launchpool = useMemo(() => {
     const timestamp = Math.floor(Date.now() / 1000);
@@ -139,6 +143,21 @@ const PoolDetails = ({ vaultId }) => {
 
   return (
     <>
+      <Helmet>
+        <title>
+          {getPageMeta('Vault-Meta-Title', {
+            vaultName: pool.name,
+            vaultDescription: pool.tokenDescription,
+          })}
+        </title>
+        <meta
+          property="og:title"
+          content={getPageMeta('Vault-Meta-Title', {
+            vaultName: pool.name,
+            vaultDescription: pool.tokenDescription,
+          })}
+        />
+      </Helmet>
       <HomeLink />
       <div className={classes.container}>
         <h1 className={classes.heading}>{t('Vault-Details')}</h1>
