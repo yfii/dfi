@@ -2,7 +2,6 @@ import { connectors } from 'web3modal';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 
 import {
-  nativeCoins,
   avalanchePools,
   avalancheStakePools,
   avalancheTokenList,
@@ -19,11 +18,28 @@ import {
   hecoStakePools,
   hecoTokenList,
   hecoZaps,
+  nativeCoins,
   polygonPools,
   polygonStakePools,
   polygonTokenList,
   polygonZaps,
 } from '../configure';
+
+const networkTxUrls = {
+  56: hash => `https://bscscan.com/tx/${hash}`,
+  128: hash => `https://hecoinfo.com/tx/${hash}`,
+  43114: hash => `https://cchain.explorer.avax.network/tx/${hash}/token-transfers`,
+  137: hash => `https://explorer-mainnet.maticvigil.com/tx/${hash}/token-transfers`,
+  250: hash => `https://ftmscan.com/tx/${hash}`,
+};
+
+const networkFriendlyName = {
+  56: 'BSC',
+  128: 'HECO',
+  43114: 'AVAX',
+  137: 'Polygon',
+  250: 'Fantom',
+};
 
 export const getNetworkCoin = () => {
   return nativeCoins.find(coin => coin.chainId == process.env.REACT_APP_NETWORK_ID);
@@ -60,7 +76,7 @@ export const getNetworkTokens = () => {
       return fantomTokenList.tokens;
     default:
       throw new Error(
-        `Create Tokenlist for this chainId first. See src/features/configure/tokenlist/*_tokenlist.json`,
+        `Create Tokenlist for this chainId first. See src/features/configure/tokenlist/*_tokenlist.json`
       );
   }
 };
@@ -142,17 +158,6 @@ export const getNetworkMulticall = () => {
       return '0xC3821F0b56FA4F4794d5d760f94B812DE261361B';
     case '250':
       return '0xC9F6b1B53E056fd04bE5a197ce4B2423d456B982';
-    default:
-      return '';
-  }
-};
-
-export const getNetworkMulticallNativeShim = () => {
-  switch (process.env.REACT_APP_NETWORK_ID) {
-    case '56':
-      return '0xC72E5edaE5D7bA628A2Acb39C8Aa0dbbD06daacF';
-    case '137':
-      return '0x4D6294D36aD4201De1D93Af18A61453B8865d008';
     default:
       return '';
   }
@@ -323,3 +328,6 @@ export const getNetworkConnectors = t => {
       return {};
   }
 };
+
+export const getNetworkTxUrl = networkTxUrls[process.env.REACT_APP_NETWORK_ID];
+export const getNetworkFriendlyName = () => networkFriendlyName[process.env.REACT_APP_NETWORK_ID];

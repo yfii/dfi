@@ -45,11 +45,12 @@ export function fetchByIndex(index) {
             .times(pricePerShare)
             .dividedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals));
         }
+        const stakedDecimals = pool.isMooStaked ? 18 : pool.tokenDecimals;
         return [
-          totalStaked.dividedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals)),
+          totalStaked.dividedBy(new BigNumber(10).exponentiatedBy(stakedDecimals)),
           totalStaked
             .times(tokenPrice)
-            .dividedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals)),
+            .dividedBy(new BigNumber(10).exponentiatedBy(stakedDecimals)),
         ];
       };
 

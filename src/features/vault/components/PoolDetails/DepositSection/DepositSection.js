@@ -101,13 +101,13 @@ const DepositSection = ({ pool }) => {
     if (address && web3 && zap) {
       const tokens = {};
       eligibleTokens.forEach(token => {
-        if (token.wrappedSymbol) return;
         tokens[token.symbol] = {
-          tokenAddress: token.address,
+          tokenAddress: token.wrappedSymbol ? null : token.address,
           tokenBalance: 0,
           allowance: {
-            [zap.zapAddress]: 0,
+            [zap.zapAddress]: token.wrappedSymbol ? Infinity : 0,
           },
+          ...tokens[token.symbol],
         };
       });
       fetchBalances({ address, web3, tokens });

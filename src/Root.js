@@ -1,12 +1,14 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { Switch, Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { ConnectedRouter } from 'connected-react-router';
 import { hot, setConfig } from 'react-hot-loader';
 import store from './common/store';
 import routeConfig from './common/routeConfig';
 import history from './common/history';
 import { initializePriceCache } from './features/web3/fetchPrice';
+import { Helmet } from 'react-helmet';
+import { usePageMeta } from './features/common/getPageMeta';
 
 setConfig({
   logLevel: 'debug',
@@ -51,9 +53,19 @@ function renderRouteConfigV3(routes, contextPath) {
 
 function Root() {
   const children = renderRouteConfigV3(routeConfig, '/');
+  const { getPageMeta } = usePageMeta();
+
   initializePriceCache();
+
   return (
     <Provider store={store}>
+      <Helmet>
+        <title>{getPageMeta('App-Meta-Title')}</title>
+        <meta name="description" content={getPageMeta('App-Meta-Description')} />
+        <meta property="og:title" content={getPageMeta('App-Meta-Title')} />
+        <meta property="og:description" content={getPageMeta('App-Meta-Description')} />
+        <meta property="og:url" content={process.env.PUBLIC_URL || 'https://app.beefy.finance'} />
+      </Helmet>
       <ConnectedRouter history={history}>{children}</ConnectedRouter>
     </Provider>
   );

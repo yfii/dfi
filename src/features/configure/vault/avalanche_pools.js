@@ -263,7 +263,7 @@ export const avalanchePools = [
       'https://avadex.complus.exchange/#/swap?inputCurrency=0xf20d962a6c8f70c731bd838a3a388D7d48fA6e15&outputCurrency=AVAX',
   },
   {
-    id: 'com-png-avax',
+    id: 'com-png-avax-eol',
     logo: 'avax-pairs/PNG-AVAX.png',
     name: 'PNG-AVAX LP',
     token: 'PNG-AVAX CLP',

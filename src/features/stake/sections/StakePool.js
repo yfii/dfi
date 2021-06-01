@@ -1,31 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import BigNumber from 'bignumber.js';
 import { byDecimals } from 'features/helpers/bignumber';
 import { useConnectWallet } from '../../home/redux/hooks';
 import {
   useCheckApproval,
-  useFetchBalance,
-  useFetchCurrentlyStaked,
-  useFetchRewardsAvailable,
-  useFetchHalfTime,
   useFetchApproval,
+  useFetchBalance,
+  useFetchClaim,
+  useFetchCurrentlyStaked,
+  useFetchExit,
+  useFetchHalfTime,
+  useFetchPoolData,
+  useFetchRewardsAvailable,
   useFetchStake,
   useFetchWithdraw,
-  useFetchClaim,
-  useFetchExit,
-  useFetchPoolData,
 } from '../redux/hooks';
 
 import {
-  Grid,
-  Box,
-  Typography,
   Avatar,
-  makeStyles,
+  Box,
   Dialog,
-  TextField,
+  Grid,
   Link,
+  makeStyles,
+  TextField,
+  Typography,
 } from '@material-ui/core';
 
 import TwitterIcon from '@material-ui/icons/Twitter';
@@ -35,6 +35,9 @@ import Button from '../../../components/CustomButtons/Button';
 import { styles } from './styles/view';
 import Divider from '@material-ui/core/Divider';
 import { formatApy, formatCountdown } from '../../helpers/format';
+import { Helmet } from 'react-helmet';
+import { getNetworkFriendlyName } from '../../helpers/getNetworkData';
+import { getPageMeta, usePageMeta } from '../../common/getPageMeta';
 
 const useStyles = makeStyles(styles);
 
@@ -69,6 +72,7 @@ export default function StakePool(props) {
   const [myHalfTime, setMyHalfTime] = useState(`0day 00:00:00`);
   const [inputVal, setInputVal] = useState(0);
   const [open, setOpen] = React.useState(false);
+  const { getPageMeta } = usePageMeta();
 
   const changeInputVal = event => {
     let value = event.target.value;
@@ -240,6 +244,21 @@ export default function StakePool(props) {
 
   return (
     <Grid container>
+      <Helmet>
+        <title>
+          {getPageMeta('Stake-Meta-Title', {
+            earnedToken: pools[index].earnedToken,
+            boostedBy: pools[index].name,
+          })}
+        </title>
+        <meta
+          property="og:title"
+          content={getPageMeta('Stake-Meta-Title', {
+            earnedToken: pools[index].earnedToken,
+            boostedBy: pools[index].name,
+          })}
+        />
+      </Helmet>
       <Grid item xs={6} className={classes.mb}>
         <Button href="/stake" className={classes.roundedBtn}>
           {t('Stake-Button-Back')}
@@ -318,7 +337,7 @@ export default function StakePool(props) {
         </Grid>
         <Grid item xs={12} sm={4}>
           <Typography className={classes.title}>{formatApy(poolData[index].apy)}</Typography>
-          <Typography className={classes.subtitle}>{t('Vault-APY')}</Typography>
+          <Typography className={classes.subtitle}>{t('Vault-APR')}</Typography>
         </Grid>
 
         {pools[index].status === 'closed' || pools[index].status === 'soon' ? (
@@ -402,48 +421,47 @@ export default function StakePool(props) {
           </Button>
         </Grid>
       </Grid>
-      <Grid container className={classes.row} style={customBgImg(pools[index].partner.background)}>
-        <Grid item xs={12} className={classes.partnerHeader}>
-          {pools[index].partner.logo ? (
-            <img
-              alt={pools[index].name}
-              src={require('images/' + pools[index].partner.logo)}
-              height="60"
-            />
-          ) : (
-            ''
-          )}
-        </Grid>
-        <Grid item xs={12} className={classes.partnerBody}>
-          {pools[index].partner.text}
-        </Grid>
-        <Grid item xs={12}>
-          <Divider className={classes.divider} />
-          {pools[index].partner.social.twitter ? (
-            <Link href={pools[index].partner.social.twitter}>
-              <TwitterIcon />
-            </Link>
-          ) : (
-            ''
-          )}
-          {pools[index].partner.social.telegram ? (
-            <Link href={pools[index].partner.social.telegram}>
-              <TelegramIcon />
-            </Link>
-          ) : (
-            ''
-          )}
-          {pools[index].partner.website ? (
-            <Grid item xs={12}>
-              <Link target="_blank" href={pools[index].partner.website}>
-                {pools[index].partner.website}
+
+      {pools[index].partners.map(partner => (
+        <Grid container className={classes.row} style={customBgImg(partner.background)}>
+          <Grid item xs={12} className={classes.partnerHeader}>
+            {partner.logo ? (
+              <img alt={pools[index].name} src={require('images/' + partner.logo)} height="60" />
+            ) : (
+              ''
+            )}
+          </Grid>
+          <Grid item xs={12} className={classes.partnerBody}>
+            {partner.text}
+          </Grid>
+          <Grid item xs={12}>
+            <Divider className={classes.divider} />
+            {partner.social.twitter ? (
+              <Link href={partner.social.twitter}>
+                <TwitterIcon />
               </Link>
-            </Grid>
-          ) : (
-            ''
-          )}
+            ) : (
+              ''
+            )}
+            {partner.social.telegram ? (
+              <Link href={partner.social.telegram}>
+                <TelegramIcon />
+              </Link>
+            ) : (
+              ''
+            )}
+            {partner.website ? (
+              <Grid item xs={12}>
+                <Link target="_blank" href={partner.website}>
+                  {partner.website}
+                </Link>
+              </Grid>
+            ) : (
+              ''
+            )}
+          </Grid>
         </Grid>
-      </Grid>
+      ))}
 
       <Dialog
         onClose={() => {
