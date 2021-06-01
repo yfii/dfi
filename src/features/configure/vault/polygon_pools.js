@@ -18,6 +18,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
+    platform: 'Beefy.Finance',
     assets: ['BIFI'],
     callFee: 0.05,
     buyTokenUrl:

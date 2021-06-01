@@ -18,7 +18,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Beefy',
+    platform: 'Beefy.Finance',
     assets: ['BIFI'],
     callFee: 0.5,
     buyTokenUrl: 'https://app.1inch.io/#/56/swap/BNB/BIFI',
