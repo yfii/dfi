@@ -367,7 +367,7 @@ export const bscPools = [
     id: 'banana-dot-bnb',
     logo: 'degens/BANANA-DOT-BNB.svg',
     name: 'DOT-BNB LP',
-    token: 'DOT-BNB LP',
+    token: 'DOT-BNB ALP',
     tokenDescription: 'ApeSwap',
     tokenAddress: '0x21CBb561c5d7D70e9E6Cc42136CB22F07552aEef',
     tokenDecimals: 18,
