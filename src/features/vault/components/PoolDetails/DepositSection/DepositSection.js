@@ -434,7 +434,12 @@ const DepositSection = ({ pool }) => {
                   })}
                 </li>
                 <li>{t('Vault-DepositScenarioDepositToVault', { poolToken: pool.token })}</li>
-                <li>{t('Vault-DepositScenarioReturnDust')}</li>
+                <li>
+                  {t('Vault-DepositScenarioReturnDust', {
+                    tokenA: pool.assets[0],
+                    tokenB: pool.assets[1],
+                  })}
+                </li>
               </ol>
             </div>
           )}
