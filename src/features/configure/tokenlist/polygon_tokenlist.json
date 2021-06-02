@@ -11,6 +11,15 @@
   "keywords": ["beefy", "polygon", "matic"],
   "tokens": [
     {
+      "name": "Polycat",
+      "symbol": "FISH",
+      "address": "0x3a3Df212b7AA91Aa0402B9035b098891d276572B",
+
+      "chainId": 137,
+      "decimals": 18,
+      "logoURI": ""
+    },
+    {
       "name": "Titan",
       "symbol": "TITAN",
       "address": "0xaAa5B9e6c589642f98a1cDA99B9D024B8407285A",
