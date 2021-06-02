@@ -329,7 +329,9 @@ export default function StakePool(props) {
       >
         <Grid item xs={12} sm={4}>
           <Typography className={classes.title}>{poolData[index].staked}</Typography>
-          <Typography className={classes.subtitle}>{t('Stake-Total-Value-Locked')}</Typography>
+          <Typography className={classes.subtitle}>
+            {t('Stake-Total-Value-Locked', { mooToken: pools[index].token })}
+          </Typography>
         </Grid>
         <Grid item xs={12} sm={4}>
           <Typography className={classes.title}>{getPoolShare()}%</Typography>

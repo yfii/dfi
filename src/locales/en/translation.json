@@ -107,7 +107,7 @@
   "Stake-BoostedBy": "Boosted by {{name}}",
   "Stake-Button-Back": "Back",
   "Stake-Pool-Retired": "The pool has finished, withdraw your funds.",
-  "Stake-Total-Value-Locked": "Total Value Locked",
+  "Stake-Total-Value-Locked": "Total {{mooToken}} Staked",
   "Stake-Your-Pool": "Your Pool",
   "Stake-Current-Daily": "Current Daily Rate",
   "Add-Liquidity": "Add Liquidity",
