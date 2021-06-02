@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import { getNetworkPools, getNetworkStakePools } from '../helpers/getNetworkData';
-import { getLatestApiCommitHash } from './fetchLatestApiCommitHash';
+import { getApiCacheBuster } from './getApiCacheBuster';
 
 const t = () => Math.trunc(Date.now() / (5 * 60 * 1000));
 
@@ -54,9 +54,10 @@ const fetchCoingecko = async ids => {
 };
 
 const fetchTokens = async () => {
-  const commit = await getLatestApiCommitHash();
+  const cacheBuster = getApiCacheBuster();
+
   try {
-    const response = await axios.get(`https://api.beefy.finance/prices?_=${commit}`);
+    const response = await axios.get(`https://api.beefy.finance/prices?_=${cacheBuster}`);
     return response.data;
   } catch (err) {
     console.error(err);
@@ -65,9 +66,10 @@ const fetchTokens = async () => {
 };
 
 const fetchLPs = async () => {
-  const commit = await getLatestApiCommitHash();
+  const cacheBuster = getApiCacheBuster();
+
   try {
-    const response = await axios.get(`https://api.beefy.finance/lps?_=${commit}`);
+    const response = await axios.get(`https://api.beefy.finance/lps?_=${cacheBuster}`);
     return response.data;
   } catch (err) {
     console.error(err);

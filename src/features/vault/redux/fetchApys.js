@@ -6,7 +6,7 @@ import {
   VAULT_FETCH_APYS_SUCCESS,
   VAULT_FETCH_APYS_FAILURE,
 } from './constants';
-import { getLatestApiCommitHash } from '../../web3/fetchLatestApiCommitHash';
+import { getApiCacheBuster } from '../../web3/getApiCacheBuster';
 
 export function fetchApys() {
   return dispatch => {
@@ -14,29 +14,17 @@ export function fetchApys() {
       type: VAULT_FETCH_APYS_BEGIN,
     });
 
-    const promise = new Promise((resolve, reject) => {
-      const getCommit = getLatestApiCommitHash();
+    return new Promise((resolve, reject) => {
+      const cacheBuster = getApiCacheBuster();
+      const doRequest = axios.get(`https://api.beefy.finance/apy?_=${cacheBuster}`);
 
-      getCommit.then(
-        commit => {
-          const doRequest = axios.get(`https://api.beefy.finance/apy?_=${commit}`);
-
-          doRequest.then(
-            res => {
-              dispatch({
-                type: VAULT_FETCH_APYS_SUCCESS,
-                data: res.data,
-              });
-              resolve(res);
-            },
-            err => {
-              dispatch({
-                type: VAULT_FETCH_APYS_FAILURE,
-                data: { error: err },
-              });
-              reject(err);
-            }
-          );
+      doRequest.then(
+        res => {
+          dispatch({
+            type: VAULT_FETCH_APYS_SUCCESS,
+            data: res.data,
+          });
+          resolve(res);
         },
         err => {
           dispatch({
@@ -47,8 +35,6 @@ export function fetchApys() {
         }
       );
     });
-
-    return promise;
   };
 }
 
