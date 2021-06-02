@@ -11,6 +11,14 @@
   "keywords": ["beefy", "bsc"],
   "tokens": [
     {
+      "name": "Kattana",
+      "symbol": "KTN",
+      "address": "0xDAe6c2A48BFAA66b43815c5548b10800919c993E",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0xDAe6c2A48BFAA66b43815c5548b10800919c993E.png"
+    },
+    {
       "name": "TrueUSD",
       "symbol": "TUSD",
       "address": "0x14016e85a25aeb13065688cafb43044c2ef86784",
