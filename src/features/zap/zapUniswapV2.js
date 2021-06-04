@@ -34,14 +34,10 @@ export const getEligibleZap = pool => {
       );
     } else {
       if (!tokenA) {
-        if (!(tokenASymbol in missingTokenSymbols)) {
-          missingTokenSymbols[tokenASymbol] = '';
-        }
+        missingTokenSymbols[tokenASymbol] = '';
       }
       if (!tokenB) {
-        if (!(tokenBSymbol in missingTokenSymbols)) {
-          missingTokenSymbols[tokenBSymbol] = '';
-        }
+        missingTokenSymbols[tokenBSymbol] = '';
       }
     }
   });
