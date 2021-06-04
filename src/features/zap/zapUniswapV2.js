@@ -12,7 +12,7 @@ export const getEligibleZap = pool => {
   const eligibleNativeCoin = [];
   const tokenSymbols = pool.assets.map(symbol => {
     if (nativeCoin.symbol === symbol) {
-      const wrappedToken = availableTokens.find(t => t.symbol === nativeCoin.wrappedSymbol);
+      const wrappedToken = availableTokens[nativeCoin.wrappedSymbol];
       nativeCoin.address = wrappedToken.address;
       eligibleNativeCoin.push(nativeCoin);
       return nativeCoin.wrappedSymbol;
@@ -22,8 +22,8 @@ export const getEligibleZap = pool => {
 
   let tokenA, tokenB;
   const zap = availableZaps.find(zap => {
-    tokenA = availableTokens.find(token => token.symbol === tokenSymbols[0]);
-    tokenB = availableTokens.find(token => token.symbol === tokenSymbols[1]);
+    tokenA = availableTokens[tokenSymbols[0]];
+    tokenB = availableTokens[tokenSymbols[1]];
     if (tokenA && tokenB) {
       return (
         pool.tokenAddress ===

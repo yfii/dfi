@@ -71,7 +71,7 @@ export const getNetworkTokens = () => {
     case '43114':
       return avalancheTokenList.tokens;
     case '137':
-      return polygonTokenList.tokens;
+      return polygonTokenList;
     case '250':
       return fantomTokenList.tokens;
     default:

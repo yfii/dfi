@@ -1,8 +1,12 @@
 import bscTokenList from './tokenlist/bsc_tokenlist.json';
 import hecoTokenList from './tokenlist/heco_tokenlist.json';
 import avalancheTokenList from './tokenlist/avalanche_tokenlist.json';
-import polygonTokenList from './tokenlist/polygon_tokenlist.json';
+import { addressBook } from 'blockchain-addressbook';
 import fantomTokenList from './tokenlist/fantom_tokenlist.json';
+
+const {
+  polygon: { tokens: polygonTokenList },
+} = addressBook;
 
 export {
   vaultABI,
