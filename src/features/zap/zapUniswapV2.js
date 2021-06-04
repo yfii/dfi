@@ -21,10 +21,12 @@ export const getEligibleZap = pool => {
   });
 
   let tokenA, tokenB;
-  let missingTokenSymbols = [];
+  let missingTokenSymbols = {};
   const zap = availableZaps.find(zap => {
-    tokenA = availableTokens[tokenSymbols[0]];
-    tokenB = availableTokens[tokenSymbols[1]];
+    const tokenASymbol = tokenSymbols[0];
+    const tokenBSymbol = tokenSymbols[1];
+    tokenA = availableTokens[tokenASymbol];
+    tokenB = availableTokens[tokenBSymbol];
     if (tokenA && tokenB) {
       return (
         pool.tokenAddress ===
@@ -32,15 +34,19 @@ export const getEligibleZap = pool => {
       );
     } else {
       if (!tokenA) {
-        missingTokenSymbols.push(tokenSymbols[0]);
+        if (!(tokenASymbol in missingTokenSymbols)) {
+          missingTokenSymbols[tokenASymbol] = '';
+        }
       }
       if (!tokenB) {
-        missingTokenSymbols.push(tokenSymbols[1]);
+        if (!(tokenBSymbol in missingTokenSymbols)) {
+          missingTokenSymbols[tokenBSymbol] = '';
+        }
       }
     }
   });
 
-  for (const symbol of missingTokenSymbols) {
+  for (const symbol in missingTokenSymbols) {
     console.error('Beefy: token missing in the tokenlist:', symbol);
   }
 
