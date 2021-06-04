@@ -29,11 +29,14 @@ pools.forEach(
       },
     };
 
-    const zap = getEligibleZap(pools[i]);
-    if (zap) {
-      tokens[token].allowance[zap.zapAddress] = tokenAddress ? 0 : Infinity;
-      tokens[earnedToken].allowance[zap.zapAddress] = 0;
-      pools[i]['zap'] = zap;
+    const pool = pools[i];
+    if (pool.status === 'active') {
+      const zap = getEligibleZap(pool);
+      if (zap) {
+        tokens[token].allowance[zap.zapAddress] = tokenAddress ? 0 : Infinity;
+        tokens[earnedToken].allowance[zap.zapAddress] = 0;
+        pool['zap'] = zap;
+      }
     }
   }
 );
