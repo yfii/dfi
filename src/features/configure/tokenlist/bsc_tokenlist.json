@@ -11,6 +11,22 @@
   "keywords": ["beefy", "bsc"],
   "tokens": [
     {
+      "name": "MX Token",
+      "symbol": "MX",
+      "address": "0x9F882567A62a5560d147d64871776EeA72Df41D3",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": ""
+    },
+    {
+      "name": "BSC Conflux",
+      "symbol": "BCFX",
+      "address": "0x045c4324039dA91c52C55DF5D785385Aab073DcF",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://bscscan.com/token/images/conflux_32.png"
+    },
+    {
       "name": "Kattana",
       "symbol": "KTN",
       "address": "0xDAe6c2A48BFAA66b43815c5548b10800919c993E",
