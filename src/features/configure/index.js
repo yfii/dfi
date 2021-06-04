@@ -7,6 +7,7 @@ const {
   bsc: bscAddressBook,
   fantom: fantomAddressBook,
 } = addressBook;
+export { bscAddressBook, hecoAddressBook, avaxAddressBook, polygonAddressBook, fantomAddressBook };
 
 export {
   vaultABI,
@@ -32,7 +33,6 @@ export { hecoZaps } from './zap/heco_zaps';
 export { avalancheZaps } from './zap/avalanche_zaps';
 export { polygonZaps } from './zap/polygon_zaps';
 export { fantomZaps } from './zap/fantom_zaps';
-export { bscAddressBook, hecoAddressBook, avaxAddressBook, polygonAddressBook, fantomAddressBook };
 export { nativeCoins } from './native_coins';
 export { polygonPools } from './vault/polygon_pools';
 export { fantomPools } from './vault/fantom_pools';
