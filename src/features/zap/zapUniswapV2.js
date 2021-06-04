@@ -30,7 +30,7 @@ export const getEligibleZap = pool => {
         computePairAddress(zap.ammFactory, zap.ammPairInitHash, tokenA.address, tokenB.address)
       );
     } else {
-      console.error('Beefy: tokens missing in the tokenlist:', tokenSymbols[0], tokenSymbols[1]);
+      console.log('Beefy: tokens missing in the tokenlist:', tokenSymbols[0], tokenSymbols[1]);
     }
   });
 
