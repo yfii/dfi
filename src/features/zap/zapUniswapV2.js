@@ -21,6 +21,7 @@ export const getEligibleZap = pool => {
   });
 
   let tokenA, tokenB;
+  let missingTokenSymbols = [];
   const zap = availableZaps.find(zap => {
     tokenA = availableTokens[tokenSymbols[0]];
     tokenB = availableTokens[tokenSymbols[1]];
@@ -30,9 +31,18 @@ export const getEligibleZap = pool => {
         computePairAddress(zap.ammFactory, zap.ammPairInitHash, tokenA.address, tokenB.address)
       );
     } else {
-      console.error('Beefy: tokens missing in the tokenlist:', tokenSymbols[0], tokenSymbols[1]);
+      if (!tokenA) {
+        missingTokenSymbols.push(tokenSymbols[0]);
+      }
+      if (!tokenB) {
+        missingTokenSymbols.push(tokenSymbols[1]);
+      }
     }
   });
+
+  for (const symbol of missingTokenSymbols) {
+    console.error('Beefy: token missing in the tokenlist:', symbol);
+  }
 
   if (!zap) return undefined;
 
