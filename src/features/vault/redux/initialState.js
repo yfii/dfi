@@ -4,6 +4,8 @@ import { getEligibleZap } from 'features/zap/zapUniswapV2';
 const tokens = {};
 const pools = getNetworkPools();
 
+const zapMap = {};
+
 pools.forEach(
   (
     { token, tokenDecimals, tokenAddress, earnedToken, earnContractAddress, earnedTokenAddress },
@@ -34,6 +36,7 @@ pools.forEach(
       tokens[token].allowance[zap.zapAddress] = tokenAddress ? 0 : Infinity;
       tokens[earnedToken].allowance[zap.zapAddress] = 0;
       pools[i]['zap'] = zap;
+      zapMap[pools[i].id] = zap;
     }
   }
 );
@@ -55,5 +58,8 @@ const initialState = {
   fetchHarvestPending: {},
   fetchZapEstimatePending: {},
 };
+
+const allZaps = Object.keys(zapMap);
+console.log('Total number of zaps: ' + allZaps.length.toString());
 
 export default initialState;
