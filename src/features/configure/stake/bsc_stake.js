@@ -52,7 +52,7 @@ export const bscStakePools = [
     partnership: true,
     status: 'active',
     isMooStaked: true,
-    periodFinish: 1622922983,
+    periodFinish: 1623442349,
     partners: [
       {
         logo: 'stake/panther/logo.png',
