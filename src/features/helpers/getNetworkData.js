@@ -81,6 +81,27 @@ export const getNetworkTokens = () => {
   }
 };
 
+export const getNetworkBurnTokens = () => {
+  switch (process.env.REACT_APP_NETWORK_ID) {
+    case '56':
+      return {
+        [bscAddressBook.tokens.GARUDA.symbol]: bscAddressBook.tokens.GARUDA,
+      };
+    case '128':
+      return {};
+    case '43114':
+      return {};
+    case '137':
+      return {};
+    case '250':
+      return {};
+    default:
+      throw new Error(
+        `Create address book for this chainId first. Check out https://github.com/beefyfinance/address-book`
+      );
+  }
+};
+
 export const getNetworkZaps = () => {
   switch (process.env.REACT_APP_NETWORK_ID) {
     case '56':

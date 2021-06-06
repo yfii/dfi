@@ -1,9 +1,15 @@
 import { pack, keccak256 } from '@ethersproject/solidity';
 import { getCreate2Address } from '@ethersproject/address';
-import { getNetworkTokens, getNetworkZaps, getNetworkCoin } from 'features/helpers/getNetworkData';
+import {
+  getNetworkTokens,
+  getNetworkBurnTokens,
+  getNetworkZaps,
+  getNetworkCoin,
+} from 'features/helpers/getNetworkData';
 
 const availableZaps = getNetworkZaps();
 const availableTokens = getNetworkTokens();
+const burnTokens = getNetworkBurnTokens();
 const nativeCoin = getNetworkCoin();
 
 export const getEligibleZap = pool => {
@@ -20,11 +26,11 @@ export const getEligibleZap = pool => {
     return symbol;
   });
 
-  let tokenA, tokenB;
+  let tokenA, tokenB, tokenASymbol, tokenBSymbol;
   let missingTokenSymbols = {};
   const zap = availableZaps.find(zap => {
-    const tokenASymbol = tokenSymbols[0];
-    const tokenBSymbol = tokenSymbols[1];
+    tokenASymbol = tokenSymbols[0];
+    tokenBSymbol = tokenSymbols[1];
     tokenA = availableTokens[tokenASymbol];
     tokenB = availableTokens[tokenBSymbol];
     if (tokenA && tokenB) {
@@ -46,7 +52,8 @@ export const getEligibleZap = pool => {
     console.error('Beefy: token missing in the tokenlist:', symbol);
   }
 
-  if (!zap) return undefined;
+  const pairHasBurnToken = tokenASymbol in burnTokens || tokenBSymbol in burnTokens;
+  if (!zap || pairHasBurnToken) return undefined;
 
   tokenA.allowance = 0;
   tokenB.allowance = 0;
