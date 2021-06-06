@@ -8,7 +8,7 @@ export const bscZaps = [
   },
   {
     // ApeSwap
-    zapAddress: '0xa4aB9539610caeC17ffEAa00Ad9480F704563d93',
+    zapAddress: '0x10ab57c5889a00c497ce6be7ce142bb9a613e362',
     ammRouter: '0xC0788A3aD43d79aa53B09c2EaCc313A787d1d607',
     ammFactory: '0x0841BD0B734E4F5853f0dD8d7Ea041c241fb0Da6',
     ammPairInitHash: '0xf4ccce374816856d11f00e4069e7cada164065686fbef53c6167a63ec2fd8c5b',
