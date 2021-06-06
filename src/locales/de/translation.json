@@ -54,7 +54,6 @@
   "Vault-Experimental": "Testweise",
   "Vault-Loading": "Vault wird geladen",
   "Vault-NotFound": "Vault {{vaultId}} nicht gefunden",
-  "Vault-Details": "Vault Details",
   "Vaults-Back": "Zurück zu Vaults",
   "Hide-Zero-Balances": "Nullsalden ausblenden",
   "Hide-Zero-Vault-Balances": "Eingezahlte Vaults",

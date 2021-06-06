@@ -54,7 +54,6 @@
   "Vault-Experimental": "Sperimentale",
   "Vault-Loading": "Caricamento cassaforte...",
   "Vault-NotFound": "Cassaforte {{vaultId}} non trovata",
-  "Vault-Details": "Dettagli cassaforte",
   "Vaults-Back": "Torna alle casseforti",
   "Hide-Zero-Balances": "Nascondi saldi nulli",
   "Hide-Zero-Vault-Balances": "Casseforti con deposito",

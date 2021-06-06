@@ -54,7 +54,6 @@
   "Vault-Experimental": "Πειραματικά",
   "Vault-Loading": "Φόρτωση χρηματοκιβώτιου",
   "Vault-NotFound": "Το χρηματοκιβώτιο {{vaultId}} δεν βρέθηκε",
-  "Vault-Details": "Πληροφορίες Χρηματοκιβώτιου",
   "Vaults-Back": "Πίσω στα Χρηματοκιβώτια",
   "Hide-Zero-Balances": "Απόκρυψη μηδενικών υπολοίπων",
   "Hide-Zero-Vault-Balances": "Χρηματοκιβώτια με καταθέσεις",
