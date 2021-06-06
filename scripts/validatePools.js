@@ -1,5 +1,5 @@
 // To run: yarn validate
-
+import { isValidChecksumAddress, maybeChecksumAddress } from './utils.js';
 import { bscPools } from '../src/features/configure/vault/bsc_pools.js';
 import { hecoPools } from '../src/features/configure/vault/heco_pools.js';
 import { avalanchePools } from '../src/features/configure/vault/avalanche_pools.js';
@@ -14,15 +14,23 @@ const chainPools = {
   fantomPools,
 };
 
+const addressFields = ['tokenAddress', 'earnedTokenAddress', 'earnContractAddress'];
+
+const allowedEarnSameToken = new Set(['venus-wbnb']);
+
+// Outputs alphabetical list of platforms per chain (useful to make sure they are consistently named)
+const outputPlatformSummary = process.argv.includes('--platform-summary');
+
 let exitCode = 0;
 
 for (const [chain, pools] of Object.entries(chainPools)) {
   console.log(`Validating ${pools.length} pools in ${chain}...`);
 
-  let uniquePoolId = new Set();
-  let uniqueEarnedToken = new Set();
-  let uniqueEarnedTokenAddress = new Set();
-  let uniqueOracleId = new Set();
+  const uniquePoolId = new Set();
+  const uniqueEarnedToken = new Set();
+  const uniqueEarnedTokenAddress = new Set();
+  const uniqueOracleId = new Set();
+  const platformCounts = {};
   let activePools = 0;
 
   pools.forEach(pool => {
@@ -32,16 +40,15 @@ for (const [chain, pools] of Object.entries(chainPools)) {
       exitCode = 1;
     }
 
-    if (uniqueEarnedToken.has(pool.earnedToken)) {
-      if (pool.id === 'venus-wbnb') return; // Special case, supposed to be same as venus-bnb
-      console.error(
-        `Error: ${pool.id} : Pool earnedToken duplicated: ${pool.earnedToken}`
-      );
+    if (uniqueEarnedToken.has(pool.earnedToken) && !allowedEarnSameToken.has(pool.id)) {
+      console.error(`Error: ${pool.id} : Pool earnedToken duplicated: ${pool.earnedToken}`);
       exitCode = 1;
     }
 
-    if (uniqueEarnedTokenAddress.has(pool.earnedTokenAddress)) {
-      if (pool.id === 'venus-wbnb') return; // Special case, supposed to be same as venus-bnb
+    if (
+      uniqueEarnedTokenAddress.has(pool.earnedTokenAddress) &&
+      !allowedEarnSameToken.has(pool.id)
+    ) {
       console.error(
         `Error: ${pool.id} : Pool earnedTokenAddress duplicated: ${pool.earnedTokenAddress}`
       );
@@ -55,6 +62,36 @@ for (const [chain, pools] of Object.entries(chainPools)) {
       exitCode = 1;
     }
 
+    if (!pool.tokenDescription) {
+      console.error(
+        `Error: ${pool.id} : Pool tokenDescription missing - required for UI: vault card`
+      );
+      exitCode = 1;
+    }
+
+    if (!pool.platform) {
+      console.error(
+        `Error: ${pool.id} : Pool platform missing - required for UI: filter (Use 'Other' if necessary)`
+      );
+      exitCode = 1;
+    } else {
+      platformCounts[pool.platform] = platformCounts.hasOwnProperty(pool.platform)
+        ? platformCounts[pool.platform] + 1
+        : 1;
+    }
+
+    addressFields.forEach(field => {
+      if (pool.hasOwnProperty(field) && !isValidChecksumAddress(pool[field])) {
+        const maybeValid = maybeChecksumAddress(pool[field]);
+        console.error(
+          `Error: ${pool.id} : ${field} requires checksum - ${
+            maybeValid ? `\n\t${field}: '${maybeValid}',` : 'it is invalid'
+          }`
+        );
+        exitCode = 1;
+      }
+    });
+
     if (pool.status === 'active') {
       activePools++;
     }
@@ -65,8 +102,18 @@ for (const [chain, pools] of Object.entries(chainPools)) {
     uniqueOracleId.add(pool.oracleId);
   });
 
-  console.log(`Active pools: ${activePools}/${pools.length}`);
+  if (outputPlatformSummary) {
+    console.log(
+      `Platforms: \n${Object.entries(platformCounts)
+        .sort(([platformA], [platformB]) =>
+          platformA.localeCompare(platformB, 'en', { sensitivity: 'base' })
+        )
+        .map(([platform, count]) => `\t${platform} (${count})`)
+        .join('\n')}`
+    );
+  }
 
-};
+  console.log(`Active pools: ${activePools}/${pools.length}\n`);
+}
 
-process.exit(exitCode)
+process.exit(exitCode);

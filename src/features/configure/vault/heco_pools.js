@@ -43,6 +43,7 @@ export const hecoPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
+    platform: 'Mdex',
     assets: ['MDX'],
     callFee: 0.5,
     buyTokenUrl:
@@ -81,7 +82,7 @@ export const hecoPools = [
     name: 'BIFI-USDT LP',
     token: 'BIFI-USDT LP',
     tokenDescription: 'Mdex',
-    tokenAddress: '0xe6f7b06ad8b93a21f78e4acd59f2dac169ea704b',
+    tokenAddress: '0xe6F7b06ad8B93A21f78E4aCD59f2dac169eA704B',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooMdexBIFI-USDT',
