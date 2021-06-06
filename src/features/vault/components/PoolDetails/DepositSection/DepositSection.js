@@ -107,6 +107,7 @@ const DepositSection = ({ pool }) => {
           allowance: {
             [zap.zapAddress]: token.wrappedSymbol ? Infinity : 0,
           },
+          decimals: token.decimals,
           ...tokens[token.symbol],
         };
       });
