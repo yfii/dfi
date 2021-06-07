@@ -86,6 +86,7 @@ export const getNetworkBurnTokens = () => {
     case '56':
       return {
         [bscAddressBook.tokens.GARUDA.symbol]: bscAddressBook.tokens.GARUDA,
+        [bscAddressBook.tokens.SDUMP.symbol]: bscAddressBook.tokens.SDUMP,
       };
     case '128':
       return {};
