@@ -52,7 +52,7 @@ export const fantomStakePools = [
     partnership: true,
     status: 'active',
     isMooStaked: true,
-    periodFinish: 1623420623,
+    periodFinish: 1623711392,
     partners: [
       {
         logo: 'stake/beefy/beefyfinance.png',
