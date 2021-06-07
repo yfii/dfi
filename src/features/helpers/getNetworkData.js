@@ -4,24 +4,24 @@ import WalletConnectProvider from '@walletconnect/web3-provider';
 import {
   avalanchePools,
   avalancheStakePools,
-  avalancheTokenList,
+  avaxAddressBook,
   avalancheZaps,
   bscPools,
   bscStakePools,
-  bscTokenList,
+  bscAddressBook,
   bscZaps,
   fantomPools,
   fantomStakePools,
-  fantomTokenList,
+  fantomAddressBook,
   fantomZaps,
   hecoPools,
   hecoStakePools,
-  hecoTokenList,
+  hecoAddressBook,
   hecoZaps,
   nativeCoins,
   polygonPools,
   polygonStakePools,
-  polygonTokenList,
+  polygonAddressBook,
   polygonZaps,
 } from '../configure';
 
@@ -65,18 +65,39 @@ export const getNetworkPools = () => {
 export const getNetworkTokens = () => {
   switch (process.env.REACT_APP_NETWORK_ID) {
     case '56':
-      return bscTokenList.tokens;
+      return bscAddressBook.tokens;
     case '128':
-      return hecoTokenList.tokens;
+      return hecoAddressBook.tokens;
     case '43114':
-      return avalancheTokenList.tokens;
+      return avaxAddressBook.tokens;
     case '137':
-      return polygonTokenList.tokens;
+      return polygonAddressBook.tokens;
     case '250':
-      return fantomTokenList.tokens;
+      return fantomAddressBook.tokens;
     default:
       throw new Error(
-        `Create Tokenlist for this chainId first. See src/features/configure/tokenlist/*_tokenlist.json`
+        `Create address book for this chainId first. Check out https://github.com/beefyfinance/address-book`
+      );
+  }
+};
+
+export const getNetworkBurnTokens = () => {
+  switch (process.env.REACT_APP_NETWORK_ID) {
+    case '56':
+      return {
+        [bscAddressBook.tokens.GARUDA.symbol]: bscAddressBook.tokens.GARUDA,
+      };
+    case '128':
+      return {};
+    case '43114':
+      return {};
+    case '137':
+      return {};
+    case '250':
+      return {};
+    default:
+      throw new Error(
+        `Create address book for this chainId first. Check out https://github.com/beefyfinance/address-book`
       );
   }
 };
