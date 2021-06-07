@@ -11,6 +11,22 @@
   "keywords": ["beefy", "bsc"],
   "tokens": [
     {
+      "name": "SHIBA INU",
+      "symbol": "SHIB",
+      "address": "0x2859e4544C4bB03966803b044A93563Bd2D0DD4D",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://bscscan.com/token/images/shibatoken_32.png"
+    },
+    {
+      "name": "CelerToken",
+      "symbol": "CELR",
+      "address": "0x1f9f6a696C6Fd109cD3956F45dC709d2b3902163",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://bscscan.com/token/images/celernetwork_32.png"
+    },
+    {
       "name": "Wrapped MTRG on BSC by Meter.io",
       "symbol": "MTRG",
       "address": "0xBd2949F67DcdC549c6Ebe98696449Fa79D988A9F",
