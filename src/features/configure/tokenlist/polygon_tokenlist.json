@@ -136,7 +136,7 @@
       "symbol": "UBT",
       "address": "0x7FBc10850caE055B27039aF31bD258430e714c62",
       "chainId": 137,
-      "decimals": 18,
+      "decimals": 8,
       "logoURI": "https://assets.coingecko.com/coins/images/2707/small/UnibrightLogo_colorful_500x500_preview.png?1547036916"
     },
     {
@@ -160,7 +160,7 @@
       "symbol": "CEL",
       "address": "0xD85d1e945766Fea5Eda9103F918Bd915FbCa63E6",
       "chainId": 137,
-      "decimals": 18,
+      "decimals": 4,
       "logoURI": "https://assets.coingecko.com/coins/images/3263/small/CEL_logo.png?1609598753"
     },
     {
