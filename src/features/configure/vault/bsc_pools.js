@@ -121,6 +121,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
+    platform: 'Other',
     assets: ['GARUDA', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
