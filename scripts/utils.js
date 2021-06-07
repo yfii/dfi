@@ -1,4 +1,5 @@
-import { getAddress } from '@ethersproject/address';
+import ethersAddress from '@ethersproject/address';
+const { getAddress } = ethersAddress;
 
 export function isValidChecksumAddress(address) {
   try {
