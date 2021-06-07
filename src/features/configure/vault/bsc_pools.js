@@ -2377,7 +2377,7 @@ export const bscPools = [
       'https://dex.apeswap.finance/#/swap?outputCurrency=0x7A9f28EB62C791422Aa23CeAE1dA9C847cBeC9b0',
   },
   {
-    id: 'jetfuel-fts-bnb',
+    id: 'jetfuel-fts-bnb-eol',
     logo: 'bnb-pairs/FTS-BNB.svg',
     name: 'FTS-BNB LP',
     token: 'FTS-BNB LP',
@@ -2393,8 +2393,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'jetfuel-fts-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'JetFuel',
     assets: ['FTS', 'BNB'],
     callFee: 0.5,
@@ -2404,7 +2404,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x4437743ac02957068995c48e08465e0ee1769fbe',
   },
   {
-    id: 'jetfuel-fuel-bnb',
+    id: 'jetfuel-fuel-bnb-eol',
     logo: 'bnb-pairs/FUEL-BNB.png',
     name: 'FUEL-BNB LP',
     token: 'FUEL-BNB LP2',
@@ -2420,8 +2420,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'jetfuel-fuel-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'JetFuel',
     assets: ['FUEL', 'BNB'],
     callFee: 0.5,
@@ -10907,7 +10907,7 @@ export const bscPools = [
   },
 
   {
-    id: 'jetfuel-vapor-bnb',
+    id: 'jetfuel-vapor-bnb-eol',
     logo: 'bnb-pairs/VAPOR-BNB.png',
     name: 'VAPOR-BNB LP',
     token: 'VAPOR-BNB LP',
@@ -11366,7 +11366,7 @@ export const bscPools = [
   },
 
   {
-    id: 'jetfuel-fuel-bnb-ss',
+    id: 'jetfuel-fuel-bnb-ss-eol',
     logo: 'bnb-pairs/FUEL-BNB.png',
     name: 'FUEL-BNB TLP',
     token: 'FUEL-BNB TLP',
@@ -11382,8 +11382,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'jetfuel-fuel-bnb-ss',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'JetFuel',
     assets: ['FUEL', 'BNB'],
     callFee: 1,
@@ -11392,7 +11392,7 @@ export const bscPools = [
   },
 
   {
-    id: 'jetfuel-fuel-bnb-pcs',
+    id: 'jetfuel-fuel-bnb-pcs-eol',
     logo: 'bnb-pairs/FUEL-BNB.png',
     name: 'FUEL-BNB LP',
     token: 'FUEL-BNB LP',
@@ -11418,7 +11418,7 @@ export const bscPools = [
   },
 
   {
-    id: 'jetfuel-bhc-bnb',
+    id: 'jetfuel-bhc-bnb-eol',
     logo: 'bnb-pairs/BHC-BNB.png',
     name: 'BHC-BNB LP',
     token: 'BHC-BNB LP',
@@ -11434,8 +11434,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'jetfuel-bhc-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'JetFuel',
     assets: ['BHC', 'BNB'],
     callFee: 1,
@@ -11444,7 +11444,7 @@ export const bscPools = [
   },
 
   {
-    id: 'jetfuel-eth-bnb',
+    id: 'jetfuel-eth-bnb-eol',
     logo: 'bnb-pairs/ETH-BNB.svg',
     name: 'ETH-BNB LP',
     token: 'ETH-BNB LP',
@@ -11460,8 +11460,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'jetfuel-eth-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'JetFuel',
     assets: ['ETH', 'BNB'],
     callFee: 1,
@@ -11470,7 +11470,7 @@ export const bscPools = [
   },
 
   {
-    id: 'jetfuel-cake-bnb',
+    id: 'jetfuel-cake-bnb-eol',
     logo: 'bnb-pairs/CAKE-BNB.svg',
     name: 'CAKE-BNB LP',
     token: 'CAKE-BNB LP',
@@ -11486,8 +11486,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'jetfuel-cake-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'JetFuel',
     assets: ['CAKE', 'BNB'],
     callFee: 1,
@@ -11496,7 +11496,7 @@ export const bscPools = [
   },
 
   {
-    id: 'jetfuel-uni-bnb',
+    id: 'jetfuel-uni-bnb-eol',
     logo: 'bnb-pairs/UNI-BNB.svg',
     name: 'UNI-BNB LP',
     token: 'UNI-BNB LP',
@@ -11512,8 +11512,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'jetfuel-uni-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'JetFuel',
     assets: ['UNI', 'BNB'],
     callFee: 1,
@@ -11522,7 +11522,7 @@ export const bscPools = [
   },
 
   {
-    id: 'jetfuel-link-bnb',
+    id: 'jetfuel-link-bnb-eol',
     logo: 'bnb-pairs/LINK-BNB.svg',
     name: 'LINK-BNB LP',
     token: 'LINK-BNB LP',
@@ -11538,8 +11538,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'jetfuel-link-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'JetFuel',
     assets: ['LINK', 'BNB'],
     callFee: 1,
@@ -11548,7 +11548,7 @@ export const bscPools = [
   },
 
   {
-    id: 'jetfuel-busd-bnb',
+    id: 'jetfuel-busd-bnb-eol',
     logo: 'bnb-pairs/BUSD-BNB.svg',
     name: 'BUSD-BNB LP',
     token: 'BUSD-BNB LP',
@@ -11564,8 +11564,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'jetfuel-busd-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'JetFuel',
     assets: ['BUSD', 'BNB'],
     callFee: 1,
@@ -11574,7 +11574,7 @@ export const bscPools = [
   },
 
   {
-    id: 'jetfuel-usdt-bnb',
+    id: 'jetfuel-usdt-bnb-eol',
     logo: 'bnb-pairs/USDT-BNB.svg',
     name: 'USDT-BNB LP',
     token: 'USDT-BNB LP',
@@ -11590,8 +11590,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'jetfuel-usdt-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'JetFuel',
     assets: ['USDT', 'BNB'],
     callFee: 1,
