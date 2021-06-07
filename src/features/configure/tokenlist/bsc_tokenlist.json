@@ -11,6 +11,14 @@
   "keywords": ["beefy", "bsc"],
   "tokens": [
     {
+      "name": "Automata",
+      "symbol": "ATA",
+      "address": "0xA2120b9e674d3fC3875f415A7DF52e382F141225",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://bscscan.com/token/images/automata_32.png"
+    },
+    {
       "name": "Wrapped MTRG on BSC by Meter.io",
       "symbol": "MTRG",
       "address": "0xBd2949F67DcdC549c6Ebe98696449Fa79D988A9F",
