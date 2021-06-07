@@ -56,7 +56,6 @@
   "Vault-Experimental": "Experimental",
   "Vault-Loading": "Loading Vault",
   "Vault-NotFound": "Vault {{vaultId}} not found",
-  "Vault-Details": "Vault Details",
   "Vaults-Back": "Back to vaults",
   "Hide-Zero-Balances": "Hide Zero Balances",
   "Hide-Zero-Vault-Balances": "Deposited Vaults",

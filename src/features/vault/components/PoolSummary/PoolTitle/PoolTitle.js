@@ -32,9 +32,11 @@ const PoolTitle = ({
       />
       <div className={classes.texts}>
         <Typography className={classes.title} variant="body2" gutterBottom>
-          <a href={`/vault/${poolId}`} className={classes.url}>
-            {name}
-          </a>
+          {poolId ? (
+            <a href={`/vault/${poolId}`} className={classes.url}>
+              {name}
+            </a>
+          ) : name}
         </Typography>
         <Typography className={classes.subtitle} variant="body2">
           {description}
