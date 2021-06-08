@@ -310,6 +310,16 @@ const DepositSection = ({ pool }) => {
       )
     : undefined;
 
+  let vaultFee = t('Vault-WithdrawFee', { withdrawalFee: pool.withdrawalFee ?? '0.1%' });
+  if (pool.depositFee && pool.withdrawalFee) {
+    vaultFee = t('Vault-DepositAndWithdrawFee', {
+      depositFee: pool.depositFee,
+      withdrawalFee: pool.withdrawalFee,
+    });
+  } else if (pool.depositFee) {
+    vaultFee = t('Vault-DepositFee', { depositFee: pool.depositFee });
+  }
+
   return (
     <Grid
       item
@@ -446,11 +456,7 @@ const DepositSection = ({ pool }) => {
         </div>
       )}
 
-      {['Autofarm', 'Swamp'].includes(pool.platform) ? (
-        <h3 className={classes.subtitle}>{t('Vault-DepositFee')}</h3>
-      ) : (
-        ''
-      )}
+      {vaultFee ? <h3 className={classes.subtitle}>{vaultFee}</h3> : ''}
       <p className={classes.note}>
         {t('Vault-DepositTokensNote', { mooToken: pool.earnedToken, assetToken: pool.token })}
       </p>

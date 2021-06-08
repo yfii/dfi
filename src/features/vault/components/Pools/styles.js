@@ -20,13 +20,11 @@ const styles = theme => ({
     marginLeft: '12px',
   },
   subtitle: {
-    fontSize: '14px',
     letterSpacing: '0',
     lineHeight: '8px',
     [theme.breakpoints.down('xs')]: {
       lineHeight: '16px',
     },
-    fontWeight: '550',
     color: theme.palette.text.secondary,
     marginTop: '0',
   },
@@ -38,6 +36,10 @@ const styles = theme => ({
     color: theme.palette.text.primary,
     display: 'flex',
     alignItems: 'center',
+  },
+  infinityIcon: {
+    marginBottom: '-6px',
+    paddingRight: '5px',
   },
 });
 

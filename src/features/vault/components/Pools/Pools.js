@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/core/styles';
+import AllInclusiveIcon from '@material-ui/icons/AllInclusive';
 import Grid from '@material-ui/core/Grid';
 
 import TVLLoader from './TVLLoader/TVLLoader';
@@ -76,9 +77,10 @@ export default function Pools() {
               <TVLLoader className={classes.titleLoader} />
             )}
           </span>
-          <h3 className={classes.subtitle} style={{ marginTop: '24px' }}>
-            {t('Vault-WithdrawFee')}
-          </h3>
+          <h4 className={classes.subtitle} style={{ marginTop: '16px' }}>
+            <AllInclusiveIcon className={classes.infinityIcon} />
+            {t('Vault-AutocompoundingNote')}
+          </h4>
         </div>
       </Grid>
 
