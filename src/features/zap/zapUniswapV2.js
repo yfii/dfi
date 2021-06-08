@@ -1,9 +1,15 @@
 import { pack, keccak256 } from '@ethersproject/solidity';
 import { getCreate2Address } from '@ethersproject/address';
-import { getNetworkTokens, getNetworkZaps, getNetworkCoin } from 'features/helpers/getNetworkData';
+import {
+  getNetworkTokens,
+  getNetworkBurnTokens,
+  getNetworkZaps,
+  getNetworkCoin,
+} from 'features/helpers/getNetworkData';
 
 const availableZaps = getNetworkZaps();
 const availableTokens = getNetworkTokens();
+const burnTokens = getNetworkBurnTokens();
 const nativeCoin = getNetworkCoin();
 
 export const getEligibleZap = pool => {
@@ -12,7 +18,7 @@ export const getEligibleZap = pool => {
   const eligibleNativeCoin = [];
   const tokenSymbols = pool.assets.map(symbol => {
     if (nativeCoin.symbol === symbol) {
-      const wrappedToken = availableTokens.find(t => t.symbol === nativeCoin.wrappedSymbol);
+      const wrappedToken = availableTokens[nativeCoin.wrappedSymbol];
       nativeCoin.address = wrappedToken.address;
       eligibleNativeCoin.push(nativeCoin);
       return nativeCoin.wrappedSymbol;
@@ -20,21 +26,34 @@ export const getEligibleZap = pool => {
     return symbol;
   });
 
-  let tokenA, tokenB;
+  let tokenA, tokenB, tokenASymbol, tokenBSymbol;
+  let missingTokenSymbols = {};
   const zap = availableZaps.find(zap => {
-    tokenA = availableTokens.find(token => token.symbol === tokenSymbols[0]);
-    tokenB = availableTokens.find(token => token.symbol === tokenSymbols[1]);
+    tokenASymbol = tokenSymbols[0];
+    tokenBSymbol = tokenSymbols[1];
+    tokenA = availableTokens[tokenASymbol];
+    tokenB = availableTokens[tokenBSymbol];
     if (tokenA && tokenB) {
       return (
         pool.tokenAddress ===
         computePairAddress(zap.ammFactory, zap.ammPairInitHash, tokenA.address, tokenB.address)
       );
     } else {
-      console.log('Beefy: tokens missing in the tokenlist:', tokenSymbols[0], tokenSymbols[1]);
+      if (!tokenA) {
+        missingTokenSymbols[tokenASymbol] = '';
+      }
+      if (!tokenB) {
+        missingTokenSymbols[tokenBSymbol] = '';
+      }
     }
   });
 
-  if (!zap) return undefined;
+  for (const symbol in missingTokenSymbols) {
+    console.error('Beefy: token missing in the tokenlist:', symbol);
+  }
+
+  const pairHasBurnToken = tokenASymbol in burnTokens || tokenBSymbol in burnTokens;
+  if (!zap || pairHasBurnToken) return undefined;
 
   tokenA.allowance = 0;
   tokenB.allowance = 0;

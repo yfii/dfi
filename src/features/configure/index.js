@@ -1,8 +1,13 @@
-import bscTokenList from './tokenlist/bsc_tokenlist.json';
-import hecoTokenList from './tokenlist/heco_tokenlist.json';
-import avalancheTokenList from './tokenlist/avalanche_tokenlist.json';
-import polygonTokenList from './tokenlist/polygon_tokenlist.json';
-import fantomTokenList from './tokenlist/fantom_tokenlist.json';
+import { addressBook } from 'blockchain-addressbook';
+
+const {
+  polygon: polygonAddressBook,
+  heco: hecoAddressBook,
+  avax: avaxAddressBook,
+  bsc: bscAddressBook,
+  fantom: fantomAddressBook,
+} = addressBook;
+export { bscAddressBook, hecoAddressBook, avaxAddressBook, polygonAddressBook, fantomAddressBook };
 
 export {
   vaultABI,
@@ -28,7 +33,6 @@ export { hecoZaps } from './zap/heco_zaps';
 export { avalancheZaps } from './zap/avalanche_zaps';
 export { polygonZaps } from './zap/polygon_zaps';
 export { fantomZaps } from './zap/fantom_zaps';
-export { bscTokenList, hecoTokenList, avalancheTokenList, polygonTokenList, fantomTokenList };
 export { nativeCoins } from './native_coins';
 export { polygonPools } from './vault/polygon_pools';
 export { fantomPools } from './vault/fantom_pools';

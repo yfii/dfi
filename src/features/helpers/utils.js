@@ -1,5 +1,3 @@
-import { byDecimals } from './bignumber';
-
 let trimReg = /(^\s*)|(\s*$)/g;
 
 export function isEmpty(key) {
