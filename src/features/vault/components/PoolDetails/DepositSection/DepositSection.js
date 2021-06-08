@@ -310,7 +310,7 @@ const DepositSection = ({ pool }) => {
       )
     : undefined;
 
-  let vaultFee;
+  let vaultFee = t('Vault-WithdrawFee', { withdrawalFee: pool.withdrawalFee ?? '0.1%' });
   if (pool.depositFee && pool.withdrawalFee) {
     vaultFee = t('Vault-DepositAndWithdrawFee', {
       depositFee: pool.depositFee,
@@ -318,8 +318,6 @@ const DepositSection = ({ pool }) => {
     });
   } else if (pool.depositFee) {
     vaultFee = t('Vault-DepositFee', { depositFee: pool.depositFee });
-  } else if (pool.withdrawalFee) {
-    vaultFee = t('Vault-WithdrawFee', { withdrawalFee: pool.withdrawalFee });
   }
 
   return (
