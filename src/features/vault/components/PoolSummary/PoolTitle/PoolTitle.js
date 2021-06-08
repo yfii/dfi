@@ -36,7 +36,9 @@ const PoolTitle = ({
             <a href={`/vault/${poolId}`} className={classes.url}>
               {name}
             </a>
-          ) : name}
+          ) : (
+            name
+          )}
         </Typography>
         <Typography className={classes.subtitle} variant="body2">
           {description}
