@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/core/styles';
-import AllInclusiveIcon from '@material-ui/icons/AllInclusive';
 import styles from './styles';
 
 import useFilteredPools from '../../hooks/useFilteredPools';
@@ -74,12 +73,6 @@ const VisiblePools = ({
         setAsset={setAsset}
         setOrder={setOrder}
       />
-      {visiblePools.length > 0 && (
-        <h4>
-          <AllInclusiveIcon className={classes.infinityIcon} />
-          {t('Vault-AutocompoundingNote')}
-        </h4>
-      )}
       <div className={classes.scroller}>
         <InfiniteScroll dataLength={visiblePools.length} hasMore={true} next={fetchVisiblePools}>
           {visiblePools.map((pool, index) => (
