@@ -21,6 +21,7 @@ export const bscPools = [
     platform: 'Beefy.Finance',
     assets: ['BIFI'],
     callFee: 0.5,
+    withdrawalFee: '0.05%',
     buyTokenUrl: 'https://app.1inch.io/#/56/swap/BNB/BIFI',
   },
   {
@@ -11953,6 +11954,7 @@ export const bscPools = [
     platform: 'Venus',
     assets: ['BNB'],
     callFee: 1,
+    withdrawalFee: '0.05%',
   },
 
   {
@@ -11977,6 +11979,7 @@ export const bscPools = [
     platform: 'Venus',
     assets: ['BNB'],
     callFee: 1,
+    withdrawalFee: '0.05%',
     buyTokenUrl:
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
   },
