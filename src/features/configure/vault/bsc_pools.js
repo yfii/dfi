@@ -108,7 +108,7 @@ export const bscPools = [
     logo: 'bnb-pairs/ATA-BNB.svg',
     name: 'ATA-BNB LP',
     token: 'ATA-BNB LP',
-    tokenDescription: 'Pancake',
+    tokenDescription: 'PancakeSwap',
     tokenAddress: '0xeF7767677867552CFA699148b96a03358A9be779',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
