@@ -121,7 +121,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Pancake',
+    platform: 'PancakeSwap',
     assets: ['ATA', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -2482,7 +2482,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'JetFuel',
+    platform: 'Other',
     assets: ['FTS', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -2509,7 +2509,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'JetFuel',
+    platform: 'Other',
     assets: ['FUEL', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -7133,7 +7133,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Blizzard',
+    platform: 'Other',
     assets: ['xBLZD', 'BNB'],
     callFee: 1,
     addLiquidityUrl:
@@ -7161,7 +7161,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Blizzard',
+    platform: 'Other',
     assets: ['xBLZD', 'BUSD'],
     callFee: 1,
     addLiquidityUrl:
@@ -7189,7 +7189,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Blizzard',
+    platform: 'Other',
     assets: ['xBLZD', 'BNB'],
     callFee: 1,
     removeLiquidityUrl:
@@ -7215,7 +7215,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Blizzard',
+    platform: 'Other',
     assets: ['xBLZD', 'BUSD'],
     callFee: 1,
     removeLiquidityUrl:
@@ -7241,7 +7241,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Blizzard',
+    platform: 'Other',
     assets: ['xBLZD'],
     callFee: 0.5,
     buyTokenUrl:
@@ -7267,7 +7267,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Blizzard',
+    platform: 'Other',
     assets: ['BLZD', 'BNB'],
     callFee: 1,
     removeLiquidityUrl:
@@ -7293,7 +7293,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Blizzard',
+    platform: 'Other',
     assets: ['BLZD', 'BUSD'],
     callFee: 1,
     removeLiquidityUrl:
@@ -7319,7 +7319,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Blizzard',
+    platform: 'Other',
     assets: ['BLZD'],
     callFee: 0.5,
     buyTokenUrl:
@@ -11025,7 +11025,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'JetFuel',
+    platform: 'Other',
     assets: ['VAPOR', 'BNB'],
     callFee: 1,
     removeLiquidityUrl:
@@ -11484,7 +11484,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'JetFuel',
+    platform: 'Other',
     assets: ['FUEL', 'BNB'],
     callFee: 1,
     buyTokenUrl:
@@ -11510,7 +11510,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'JetFuel',
+    platform: 'Other',
     assets: ['FUEL', 'BNB'],
     callFee: 1,
     buyTokenUrl:
@@ -11536,7 +11536,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'JetFuel',
+    platform: 'Other',
     assets: ['BHC', 'BNB'],
     callFee: 1,
     buyTokenUrl:
@@ -11562,7 +11562,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'JetFuel',
+    platform: 'Other',
     assets: ['ETH', 'BNB'],
     callFee: 1,
     buyTokenUrl:
@@ -11588,7 +11588,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'JetFuel',
+    platform: 'Other',
     assets: ['CAKE', 'BNB'],
     callFee: 1,
     buyTokenUrl:
@@ -11614,7 +11614,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'JetFuel',
+    platform: 'Other',
     assets: ['UNI', 'BNB'],
     callFee: 1,
     buyTokenUrl:
@@ -11640,7 +11640,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'JetFuel',
+    platform: 'Other',
     assets: ['LINK', 'BNB'],
     callFee: 1,
     buyTokenUrl:
@@ -11666,7 +11666,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'JetFuel',
+    platform: 'Other',
     assets: ['BUSD', 'BNB'],
     callFee: 1,
     buyTokenUrl:
@@ -11692,7 +11692,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'JetFuel',
+    platform: 'Other',
     assets: ['USDT', 'BNB'],
     callFee: 1,
     buyTokenUrl:
