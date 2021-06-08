@@ -77,7 +77,7 @@ export default function Pools() {
             )}
           </span>
           <h3 className={classes.subtitle} style={{ marginTop: '24px' }}>
-            {t('Vault-WithdrawFee')}
+            {t('Vault-WithdrawFeeGlobal')}
           </h3>
         </div>
       </Grid>
