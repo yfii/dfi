@@ -50,7 +50,7 @@ export const avalanchePools = [
     buyTokenUrl: 'https://app.gondola.finance/#/swap/usdt',
   },
   {
-    id: 'gondola-dai-zdai',
+    id: 'gondola-dai-zdai-eol',
     logo: 'single-assets/DAI.svg',
     name: 'zDAI-DAI LP',
     token: 'zDAI-DAI LP',
