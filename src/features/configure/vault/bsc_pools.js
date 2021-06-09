@@ -108,7 +108,7 @@ export const bscPools = [
     logo: 'bnb-pairs/MBOX-BNB.svg',
     name: 'MBOX-BNB LP',
     token: 'MBOX-BNB LP',
-    tokenDescription: 'Pancake',
+    tokenDescription: 'PancakeSwap',
     tokenAddress: '0x8FA59693458289914dB0097F5F366d771B7a7C3F',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
