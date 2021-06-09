@@ -52,7 +52,7 @@ export const bscStakePools = [
     partnership: true,
     status: 'active',
     isMooStaked: true,
-    periodFinish: 1623342324,
+    periodFinish: 1623789212,
     partners: [
       {
         logo: 'stake/tenfi/logo.png',

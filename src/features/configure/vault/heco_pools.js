@@ -817,7 +817,7 @@ export const hecoPools = [
   },
 
   {
-    id: 'mdex-wht-husd',
+    id: 'mdex-wht-husd-eol',
     logo: 'heco/WHT-HUSD.png',
     name: 'WHT-HUSD LP',
     token: 'WHT-HUSD LP',
@@ -833,8 +833,8 @@ export const hecoPools = [
     oracle: 'lps',
     oracleId: 'mdex-wht-husd',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Mdex',
     assets: ['WHT', 'HUSD'],
     callFee: 0.25,
