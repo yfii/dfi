@@ -21,6 +21,7 @@ export const hecoPools = [
     platform: 'Beefy.Finance',
     assets: ['BIFI'],
     callFee: 0.05,
+    withdrawalFee: '0.05%',
     buyTokenUrl:
       'https://ht.mdex.com/#/swap?inputCurrency=0xa71edc38d189767582c38a3145b5873052c3e47a&outputCurrency=0x765277eebeca2e31912c9946eae1021199b39c61',
   },
@@ -817,7 +818,7 @@ export const hecoPools = [
   },
 
   {
-    id: 'mdex-wht-husd',
+    id: 'mdex-wht-husd-eol',
     logo: 'heco/WHT-HUSD.png',
     name: 'WHT-HUSD LP',
     token: 'WHT-HUSD LP',
@@ -833,8 +834,8 @@ export const hecoPools = [
     oracle: 'lps',
     oracleId: 'mdex-wht-husd',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Mdex',
     assets: ['WHT', 'HUSD'],
     callFee: 0.25,
