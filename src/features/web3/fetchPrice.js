@@ -3,12 +3,6 @@ import axios from 'axios';
 import { getNetworkPools, getNetworkStakePools } from '../helpers/getNetworkData';
 import { getApiCacheBuster } from './getApiCacheBuster';
 
-const t = () => Math.trunc(Date.now() / (5 * 60 * 1000));
-
-const endpoints = {
-  coingecko: 'https://api.coingecko.com/api/v3/simple/price',
-};
-
 const pools = getNetworkPools();
 const stakePools = getNetworkStakePools();
 
@@ -37,22 +31,6 @@ function maybeUpdateCache() {
   }
 }
 
-const fetchCoingecko = async ids => {
-  try {
-    const response = await axios.get(endpoints.coingecko, {
-      params: { ids: ids.join(','), vs_currencies: 'usd' },
-    });
-    const prices = {};
-    for (let id in response.data) {
-      prices[id] = response.data[id].usd;
-    }
-    return prices;
-  } catch (err) {
-    console.error(err);
-    return {};
-  }
-};
-
 const fetchTokens = async () => {
   const cacheBuster = getApiCacheBuster();
 
@@ -78,7 +56,6 @@ const fetchLPs = async () => {
 };
 
 const oracleEndpoints = {
-  coingecko: ids => fetchCoingecko(ids),
   tokens: () => fetchTokens(),
   lps: () => fetchLPs(),
 };
