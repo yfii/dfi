@@ -21,6 +21,7 @@ export const fantomPools = [
     platform: 'Beefy.Finance',
     assets: ['BIFI'],
     callFee: 0.05,
+    withdrawalFee: '0.05%',
     buyTokenUrl: 'https://spookyswap.finance/swap',
   },
   {
