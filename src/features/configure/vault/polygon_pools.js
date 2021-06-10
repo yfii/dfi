@@ -21,6 +21,7 @@ export const polygonPools = [
     platform: 'Beefy.Finance',
     assets: ['BIFI'],
     callFee: 0.05,
+    withdrawalFee: '0.05%',
     buyTokenUrl:
       'https://quickswap.exchange/#/swap?inputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619&outputCurrency=0xfbdd194376de19a88118e84e279b977f165d01b8',
   },
