@@ -175,7 +175,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'QuickSwap',
+    platform: 'IronFinance',
     assets: ['TITAN', 'ETH'],
     callFee: 0.5,
     addLiquidityUrl:
