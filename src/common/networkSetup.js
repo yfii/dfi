@@ -41,7 +41,7 @@ const networkSettings = {
       decimals: 18,
     },
     rpcUrls: ['https://rpc-mainnet.maticvigil.com/'],
-    blockExplorerUrls: ['https://explorer.matic.network/'],
+    blockExplorerUrls: ['https://polygonscan.com/'],
   },
   250: {
     chainId: `0x${parseInt(250, 10).toString(16)}`,
