@@ -391,7 +391,7 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'SushiSwap',
-    assets: ['WMATIC', 'WOOFY'],
+    assets: ['MATIC', 'WOOFY'],
     callFee: 0.5,
     addLiquidityUrl:
       'https://app.sushi.com/add/0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270/0xD0660cD418a64a1d44E9214ad8e459324D8157f1',
@@ -722,7 +722,7 @@ export const polygonPools = [
   },
   {
     id: 'iron-titan-matic',
-    logo: 'polygon/TITAN.png',
+    logo: 'polygon/TITAN-MATIC.png',
     name: 'TITAN-MATIC LP',
     token: 'TITAN-MATIC LP',
     tokenDescription: 'SushiSwap',
