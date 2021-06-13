@@ -29,7 +29,7 @@ const networkTxUrls = {
   56: hash => `https://bscscan.com/tx/${hash}`,
   128: hash => `https://hecoinfo.com/tx/${hash}`,
   43114: hash => `https://cchain.explorer.avax.network/tx/${hash}/token-transfers`,
-  137: hash => `https://explorer-mainnet.maticvigil.com/tx/${hash}/token-transfers`,
+  137: hash => `https://polygonscan.com/tx/${hash}`,
   250: hash => `https://ftmscan.com/tx/${hash}`,
 };
 
