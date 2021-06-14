@@ -52,7 +52,7 @@ export const fantomStakePools = [
     partnership: true,
     status: 'active',
     isMooStaked: true,
-    periodFinish: 1623849473,
+    periodFinish: 1624311025,
     partners: [
       {
         logo: 'stake/tombfinance/logo.png',
