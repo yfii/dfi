@@ -44,7 +44,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'SushiSwap',
+    platform: 'IronFinance',
     assets: ['IRON', 'ETH'],
     callFee: 0.5,
     addLiquidityUrl:
