@@ -8,9 +8,21 @@ const zapMap = {};
 
 pools.forEach(
   (
-    { token, tokenDecimals, tokenAddress, earnedToken, earnContractAddress, earnedTokenAddress },
+    {
+      token,
+      tokenDecimals,
+      tokenAddress,
+      earnedToken,
+      earnContractAddress,
+      earnedTokenAddress,
+      withdrawalFee,
+      depositFee,
+    },
     i
   ) => {
+    if (!withdrawalFee) pools[i].withdrawalFee = '0.1%';
+    if (!depositFee) pools[i].depositFee = '0.0%';
+
     tokens[token] = {
       symbol: token,
       decimals: tokenDecimals,

@@ -311,16 +311,10 @@ const DepositSection = ({ pool }) => {
       )
     : undefined;
 
-  let vaultFee = t('Vault-WithdrawFee', { withdrawalFee: pool.withdrawalFee ?? '0.1%' });
-  if (pool.depositFee && pool.withdrawalFee) {
-    vaultFee = t('Vault-DepositAndWithdrawFee', {
-      depositFee: pool.depositFee,
-      withdrawalFee: pool.withdrawalFee,
-    });
-  } else if (pool.depositFee) {
-    vaultFee = t('Vault-DepositFee', { depositFee: pool.depositFee });
-  }
-
+  const vaultFee = t('Vault-DepositAndWithdrawFee', {
+    depositFee: pool.depositFee,
+    withdrawalFee: pool.withdrawalFee,
+  });
   return (
     <Grid
       item
