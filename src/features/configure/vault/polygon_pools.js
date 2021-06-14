@@ -181,7 +181,7 @@ export const polygonPools = [
     status: 'active',
     platform: 'Polycat',
     assets: ['FISH'],
-    withdrawalFee: '0%',
+    withdrawalFee: '0.0%',
     callFee: 0.5,
     buyTokenUrl:
       'https://quickswap.exchange/#/swap?outputCurrency=0x3a3Df212b7AA91Aa0402B9035b098891d276572B',

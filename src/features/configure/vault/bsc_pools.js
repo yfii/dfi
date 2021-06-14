@@ -50,6 +50,31 @@ export const bscPools = [
       'https://1inch.exchange/#/r/0xF4cb25a1FF50E319c267b3E51CBeC2699FB2A43B/BNB/1INCH/?network=56',
   },
   {
+    id: 'cake-cakev2',
+    logo: 'single-assets/CAKE.png',
+    name: 'CAKE',
+    token: 'CAKE',
+    tokenDescription: 'PancakeSwap',
+    tokenAddress: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
+    tokenDecimals: 18,
+    earnedToken: 'mooCakeV2',
+    earnedTokenAddress: '0x97e5d50Fe0632A95b9cf1853E744E02f7D816677',
+    earnContractAddress: '0x97e5d50Fe0632A95b9cf1853E744E02f7D816677',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'tokens',
+    oracleId: 'Cake',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'PancakeSwap',
+    assets: ['CAKE'],
+    callFee: 0.5,
+    withdrawalFee: '0.0%',
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
+  },
+  {
     id: 'mdex-bsc-mdx',
     logo: 'single-assets/MDX.png',
     name: 'MDX',
@@ -7943,7 +7968,7 @@ export const bscPools = [
   },
 
   {
-    id: 'swamp-cake',
+    id: 'swamp-cake-eol',
     logo: 'single-assets/SMART.png',
     name: 'CAKE',
     token: 'CAKE',
@@ -7959,7 +7984,7 @@ export const bscPools = [
     oracle: 'tokens',
     oracleId: 'Cake',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Swamp',
     assets: ['CAKE'],
@@ -7997,7 +8022,7 @@ export const bscPools = [
   },
 
   {
-    id: 'auto-cake',
+    id: 'auto-cak-eol',
     logo: 'single-assets/SMART.png',
     name: 'CAKE',
     token: 'CAKE',
@@ -8013,7 +8038,7 @@ export const bscPools = [
     oracle: 'tokens',
     oracleId: 'Cake',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Autofarm',
     assets: ['CAKE'],
@@ -12079,7 +12104,7 @@ export const bscPools = [
   },
 
   {
-    id: 'cake-smart',
+    id: 'cake-smart-eol',
     logo: 'single-assets/SMART.png',
     name: 'CAKE SMART',
     token: 'CAKE',
@@ -12095,7 +12120,7 @@ export const bscPools = [
     oracle: 'tokens',
     oracleId: 'Cake',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'PancakeSwap',
     assets: ['CAKE'],
@@ -12977,7 +13002,7 @@ export const bscPools = [
   // < ---- > PANCAKE < ---- >
   //
   {
-    id: 'cake-cake',
+    id: 'cake-cake-eol',
     logo: 'single-assets/CAKE.png',
     name: 'CAKE',
     token: 'CAKE',
