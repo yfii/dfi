@@ -11,7 +11,7 @@ import Menu from '@material-ui/icons/Menu';
 import Close from '@material-ui/icons/Close';
 import WbSunny from '@material-ui/icons/WbSunny';
 import NightsStay from '@material-ui/icons/NightsStay';
-
+import { getNetworkBuyLink } from '../../features/helpers/getNetworkData';
 import styles from './styles';
 
 const useStyles = makeStyles(styles);
@@ -134,9 +134,7 @@ const LinkSidebar = ({ name, label, icon, classes }) => (
 );
 
 const getLinkUrl = name => {
-  return name === 'buy'
-    ? 'https://1inch.exchange/#/r/0xF4cb25a1FF50E319c267b3E51CBeC2699FB2A43B/BNB/BIFI/?network=56'
-    : `https://${name}.beefy.finance`;
+  return name === 'buy' ? getNetworkBuyLink() : `https://${name}.beefy.finance`;
 };
 
 export default Header;
