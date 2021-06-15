@@ -37,6 +37,8 @@ const validatePools = async () => {
 
   let exitCode = 0;
 
+  let updates = {};
+
   for (let [chain, pools] of Object.entries(chainPools)) {
     console.log(`Validating ${pools.length} pools in ${chain}...`);
 
@@ -126,7 +128,10 @@ const validatePools = async () => {
         addressBook[chain].platforms.beefyfinance;
 
       // isKeeperImplemented(pool);
-      isKeeperCorrect(pool, keeper);
+      updates = isKeeperCorrect(pool, chain, keeper, updates);
+      updates = isStratOwnerCorrect(pool, chain, strategyOwner, updates);
+      updates = isVaultOwnerCorrect(pool, chain, vaultOwner, updates);
+      updates = isBeefyFeeRecipientCorrect(pool, chain, beefyFeeRecipient, updates);
     });
 
     if (outputPlatformSummary) {
@@ -143,20 +148,90 @@ const validatePools = async () => {
     console.log(`Active pools: ${activePools}/${pools.length}\n`);
   }
 
+  // Helpful data structures to correct addresses.
+  console.log('Required updates.', JSON.stringify(updates));
+
   return exitCode;
 };
 
-// Validation helpers
+// Validation helpers. These only log for now, could throw error if desired.
 const isKeeperImplemented = pool => {
   if (pool.keeper === undefined) {
     console.log(`Pool ${pool.id} does not implement a 'keeper'. Consider upgrading.`);
   }
 };
 
-const isKeeperCorrect = (pool, chainKeeper) => {
+const isKeeperCorrect = (pool, chain, chainKeeper, updates) => {
   if (pool.keeper !== undefined && pool.keeper !== chainKeeper) {
-    console.log(`Pool ${pool.id} should update keeper. From: ${pool.keeper} To: ${chainKeeper}`);
+    // console.log(`Pool ${pool.id} should update keeper. From: ${pool.keeper} To: ${chainKeeper}`);
+
+    if (!('keeper' in updates)) updates['keeper'] = {};
+    if (!(chain in updates.keeper)) updates.keeper[chain] = {};
+
+    if (pool.keeper in updates.keeper[chain]) {
+      updates.keeper[chain][pool.keeper].push(pool.strategy);
+    } else {
+      updates.keeper[chain][pool.keeper] = [pool.strategy];
+    }
   }
+
+  return updates;
+};
+
+const isStratOwnerCorrect = (pool, chain, owner, updates) => {
+  if (pool.stratOwner !== undefined && pool.stratOwner !== owner) {
+    // console.log(`Pool ${pool.id} should update strat owner. From: ${pool.stratOwner} To: ${owner}`);
+
+    if (!('stratOwner' in updates)) updates['stratOwner'] = {};
+    if (!(chain in updates.stratOwner)) updates.stratOwner[chain] = {};
+
+    if (pool.stratOwner in updates.stratOwner[chain]) {
+      updates.stratOwner[chain][pool.stratOwner].push(pool.strategy);
+    } else {
+      updates.stratOwner[chain][pool.stratOwner] = [pool.strategy];
+    }
+  }
+
+  return updates;
+};
+
+const isVaultOwnerCorrect = (pool, chain, owner, updates) => {
+  if (pool.vaultOwner !== undefined && pool.vaultOwner !== owner) {
+    // console.log(`Pool ${pool.id} should update vault owner. From: ${pool.vaultOwner} To: ${owner}`);
+
+    if (!('vaultOwner' in updates)) updates['vaultOwner'] = {};
+    if (!(chain in updates.vaultOwner)) updates.vaultOwner[chain] = {};
+
+    if (pool.vaultOwner in updates.vaultOwner[chain]) {
+      updates.vaultOwner[chain][pool.vaultOwner].push(pool.earnContractAddress);
+    } else {
+      updates.vaultOwner[chain][pool.vaultOwner] = [pool.earnContractAddress];
+    }
+  }
+
+  return updates;
+};
+
+const isBeefyFeeRecipientCorrect = (pool, chain, recipient, updates) => {
+  if (
+    pool.status === 'active' &&
+    pool.beefyFeeRecipient !== undefined &&
+    pool.beefyFeeRecipient !== recipient
+  ) {
+    // console.log(
+    //   `Pool ${pool.id} should update beefy fee recipient. From: ${pool.beefyFeeRecipient} To: ${recipient}`
+    // );
+    if (!('beefyFeeRecipient' in updates)) updates['beefyFeeRecipient'] = {};
+    if (!(chain in updates.beefyFeeRecipient)) updates.beefyFeeRecipient[chain] = {};
+
+    if (pool.stratOwner in updates.beefyFeeRecipient[chain]) {
+      updates.beefyFeeRecipient[chain][pool.stratOwner].push(pool.strategy);
+    } else {
+      updates.beefyFeeRecipient[chain][pool.stratOwner] = [pool.strategy];
+    }
+  }
+
+  return updates;
 };
 
 // Helpers to populate required addresses.
