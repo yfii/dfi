@@ -16,7 +16,7 @@
   "Vault-ApprovalError": "批准失败: {{error}}",
   "Vault-DepositButton": "存入",
   "Vault-DepositButtonAll": "存入全部",
-  "Vault-DepositTokensNote": "您将获得{{mooToken}}代币作为存入{{assetToken}}的凭证. 该凭证将用于日后提取您的{{assetToken}}所用. 请勿把{{mooToken}} 提转或交易给任何陌生人!",
+  "Vault-DepositTokensNote": "您将收到{{mooToken}}代币作为存入{{assetToken}}的收据. 该收据将用于日后提取您的{{assetToken}}. 请勿把{{mooToken}} 提转或交易给任何陌生人!",
   "Vault-DepositAndWithdrawFee": "存款费: {{depositFee}}, 提款费: {{withdrawalFee}}",
   "Vault-Deposited": "已存入",
   "Vault-DepositSuccess": "存入成功",
