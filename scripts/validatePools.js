@@ -47,6 +47,13 @@ const validatePools = async () => {
     const platformCounts = {};
     let activePools = 0;
 
+    // Populate some extra data.
+    const web3 = new Web3(chainRpcs[chain]);
+    pools = await populateStrategyAddrs(chain, pools, web3);
+    pools = await populateKeepers(chain, pools, web3);
+    pools = await populateBeefyFeeRecipients(chain, pools, web3);
+    pools = await populateOwners(chain, pools, web3);
+
     pools.forEach(pool => {
       // Errors, should not proceed with build
       if (uniquePoolId.has(pool.id)) {
@@ -114,6 +121,12 @@ const validatePools = async () => {
       uniqueEarnedToken.add(pool.earnedToken);
       uniqueEarnedTokenAddress.add(pool.earnedTokenAddress);
       uniqueOracleId.add(pool.oracleId);
+
+      const { keeper, strategyOwner, vaultOwner, beefyFeeRecipient } =
+        addressBook[chain].platforms.beefyfinance;
+
+      // isKeeperImplemented(pool);
+      isKeeperCorrect(pool, keeper);
     });
 
     if (outputPlatformSummary) {
@@ -127,20 +140,26 @@ const validatePools = async () => {
       );
     }
 
-    const web3 = new Web3(chainRpcs[chain]);
-
-    pools = await populateStrategyAddrs(chain, pools, web3);
-    pools = await populateKeepers(chain, pools, web3);
-    pools = await populateBeefyFeeRecipients(chain, pools, web3);
-    pools = await populateOwners(chain, pools, web3);
-
-    // Validate
-
     console.log(`Active pools: ${activePools}/${pools.length}\n`);
   }
 
   return exitCode;
 };
+
+// Validation helpers
+const isKeeperImplemented = pool => {
+  if (pool.keeper === undefined) {
+    console.log(`Pool ${pool.id} does not implement a 'keeper'. Consider upgrading.`);
+  }
+};
+
+const isKeeperCorrect = (pool, chainKeeper) => {
+  if (pool.keeper !== undefined && pool.keeper !== chainKeeper) {
+    console.log(`Pool ${pool.id} should update keeper. From: ${pool.keeper} To: ${chainKeeper}`);
+  }
+};
+
+// Helpers to populate required addresses.
 
 const populateStrategyAddrs = async (chain, pools, web3) => {
   const multicall = new MultiCall(web3, addressBook[chain].platforms.beefyfinance.multicall);
