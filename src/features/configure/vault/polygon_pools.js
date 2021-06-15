@@ -2166,7 +2166,7 @@ export const polygonPools = [
   },
   {
     id: 'quick-eth-matic',
-    logo: 'polygon/ETH-MATIC.png',
+    //logo: 'polygon/ETH-MATIC.png',
     name: 'ETH-MATIC LP',
     token: 'ETH-MATIC QLP',
     tokenDescription: 'QuickSwap',

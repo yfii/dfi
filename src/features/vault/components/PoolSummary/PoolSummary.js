@@ -94,6 +94,7 @@ const PoolSummary = ({
           addLiquidityUrl={pool.addLiquidityUrl}
           removeLiquidityUrl={pool.removeLiquidityUrl}
           buyTokenUrl={pool.buyTokenUrl}
+          assets={pool.assets}
         />
         <Grid item md={8} xs={7}>
           <Grid item container justify="space-between">

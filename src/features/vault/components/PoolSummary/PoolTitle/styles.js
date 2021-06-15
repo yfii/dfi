@@ -33,6 +33,24 @@ const styles = theme => ({
   icon: {
     color: theme.palette.text.primary,
     marginLeft: '4px',
+    'flex-shrink': 0,
+    width: '40px',
+    height: '40px',
+    '& .MuiAvatarGroup-avatar': {
+      border: 'none',
+      width: '70%',
+      height: '70%',
+      '&:first-child': {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+      },
+      '&:last-child': {
+        position: 'absolute',
+        bottom: 0,
+        right: 0,
+      },
+    },
   },
   btnBoost: {
     marginTop: '8px',
