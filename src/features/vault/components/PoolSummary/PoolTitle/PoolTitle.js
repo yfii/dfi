@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import Avatar from '@material-ui/core/Avatar';
+import AvatarGroup from '@material-ui/lab/AvatarGroup';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
@@ -18,18 +19,44 @@ const PoolTitle = ({
   buyTokenUrl,
   addLiquidityUrl,
   removeLiquidityUrl,
+  assets,
 }) => {
   const classes = useStyles();
   const { t } = useTranslation();
 
-  return (
-    <Grid item xs={3} className={classes.container}>
+  let avatar;
+  if (logo) {
+    avatar = (
       <Avatar
-        alt={name}
+        alt={logo}
         variant="square"
+        className={classes.icon}
         imgProps={{ style: { objectFit: 'contain' } }}
         src={require(`images/${logo}`)}
       />
+    );
+  } else {
+    avatar = (
+      <AvatarGroup className={`${classes.icon} MuiAvatar-root MuiAvatar-square`} spacing="small">
+        <Avatar
+          alt={assets[0]}
+          variant="square"
+          imgProps={{ style: { objectFit: 'contain' } }}
+          src={require(`images/single-assets/${assets[0]}.png`)}
+        />
+        <Avatar
+          alt={assets[1]}
+          variant="square"
+          imgProps={{ style: { objectFit: 'contain' } }}
+          src={require(`images/single-assets/${assets[1]}.png`)}
+        />
+      </AvatarGroup>
+    );
+  }
+
+  return (
+    <Grid item xs={3} className={classes.container}>
+      {avatar}
       <div className={classes.texts}>
         <Typography className={classes.title} variant="body2" gutterBottom>
           {poolId ? (
