@@ -1,4 +1,4 @@
-const networkSettings = {
+export const networkSettings = {
   56: {
     chainId: `0x${parseInt(56, 10).toString(16)}`,
     chainName: 'BSC Mainnet',
