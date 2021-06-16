@@ -20,11 +20,11 @@ const chainPools = {
 };
 
 const chainRpcs = {
-  bsc: process.env.BSC_RPC,
-  heco: process.env.HECO_RPC,
-  avax: process.env.AVAX_RPC,
-  polygon: process.env.POLYGON_RPC,
-  fantom: process.env.FANTOM_RPC,
+  bsc: process.env.BSC_RPC || 'https://bsc-dataseed.binance.org/',
+  heco: process.env.HECO_RPC || 'https://http-mainnet.hecochain.com',
+  avax: process.env.AVAX_RPC || 'https://api.avax.network/ext/bc/C/rpc',
+  polygon: process.env.POLYGON_RPC || 'https://rpc-mainnet.maticvigil.com',
+  fantom: process.env.FANTOM_RPC || 'https://rpc.neist.io/',
 };
 
 const validatePools = async () => {
