@@ -30,7 +30,7 @@ export const polygonPools = [
     //logo:
     name: 'WBTC-USDC LP',
     token: 'WBTC-USDC WLP',
-    tokenDescription: 'Wault',
+    tokenDescription: 'WaultFinance',
     tokenAddress: '0x30eEf213D4B9C809f5776Ae56cC39f02f19F742f',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
@@ -55,7 +55,7 @@ export const polygonPools = [
     //logo:
     name: 'WBTC-ETH LP',
     token: 'WBTC-ETH WLP',
-    tokenDescription: 'Wault',
+    tokenDescription: 'WaultFinance',
     tokenAddress: '0x30AdBCAb9Fbb4436109fcf3058D1Af27E6E33F3F',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
