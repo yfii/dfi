@@ -6,6 +6,7 @@ import Header from 'components/Header/Header';
 import HeaderLinks from 'components/HeaderLinks/HeaderLinks';
 import NetworksProvider from 'components/NetworksProvider/NetworksProvider';
 import NetworksModal from 'components/NetworksModal/NetworksModal';
+import NetworkError from 'components/NetworkError/NetworkError';
 
 import { useTranslation } from 'react-i18next';
 
@@ -31,6 +32,7 @@ export default function App({ children }) {
     useConnectWallet();
   const { disconnectWallet } = useDisconnectWallet();
   const [web3Modal, setModal] = useState(null);
+  const [networkError, setNetworkError] = useState(null);
 
   const { isNightMode, setNightMode } = useNightMode();
   const theme = createTheme(isNightMode);
@@ -53,10 +55,7 @@ export default function App({ children }) {
       networkId &&
       Boolean(networkId !== Number(process.env.REACT_APP_NETWORK_ID))
     ) {
-      networkSetup(process.env.REACT_APP_NETWORK_ID).catch(e => {
-        console.error(e);
-        alert(t('Network-Error'));
-      });
+      networkSetup(process.env.REACT_APP_NETWORK_ID).catch(setNetworkError);
     }
   }, [web3, address, networkId, connectWalletPending, t]);
 
@@ -86,6 +85,7 @@ export default function App({ children }) {
               />
               <div className={classes.container}>
                 <div className={classes.children}>
+                  {networkError && <NetworkError network={process.env.REACT_APP_NETWORK_ID} />}
                   {Boolean(networkId === Number(process.env.REACT_APP_NETWORK_ID)) && children}
                   <Notifier />
                 </div>

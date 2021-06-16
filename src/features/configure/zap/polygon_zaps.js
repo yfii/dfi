@@ -20,4 +20,11 @@ export const polygonZaps = [
     ammFactory: '0xc35DADB65012eC5796536bD9864eD8773aBc74C4',
     ammPairInitHash: '0xe18a34eb0e04b04f7a0ac29a6e80748dca96319b42c54d679cb821dca90c6303',
   },
+  {
+    // Wault
+    zapAddress: '0x0EA7b115D96C4dF61B3e7d6757f0050F23492929',
+    ammRouter: '0x3a1D87f206D12415f5b0A33E786967680AAb4f6d',
+    ammFactory: '0xa98ea6356A316b44Bf710D5f9b6b4eA0081409Ef',
+    ammPairInitHash: '0x1cdc2246d318ab84d8bc7ae2a3d81c235f3db4e113f4c6fdc1e2211a9291be47',
+  },
 ];

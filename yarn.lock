@@ -3411,7 +3411,7 @@ block-stream@*:
   dependencies:
     inherits "~2.0.0"
 
-blockchain-addressbook@^0.1.40:
+blockchain-addressbook@^0.1.46:
   version "0.1.46"
   resolved "https://registry.yarnpkg.com/blockchain-addressbook/-/blockchain-addressbook-0.1.46.tgz#d5a6a596d35d8c6b53483b9c4c96cec94430e547"
   integrity sha512-+eGJ0zPGUEMEXoQam7gVvBpPzTaOSOn9OqbIsg497VMGH/SRq6/4qqVgaZIUT7+XjCtOgzTHjmzrvtDZnpA6vA==
