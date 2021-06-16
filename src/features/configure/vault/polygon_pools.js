@@ -44,7 +44,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Wault',
+    platform: 'WaultFinance',
     assets: ['WBTC', 'USDC'],
     callFee: 0.05,
     addLiquidityUrl:
@@ -69,7 +69,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Wault',
+    platform: 'WaultFinance',
     assets: ['WBTC', 'ETH'],
     callFee: 0.05,
     addLiquidityUrl:
