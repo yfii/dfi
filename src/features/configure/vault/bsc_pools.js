@@ -25,29 +25,31 @@ export const bscPools = [
     buyTokenUrl: 'https://app.1inch.io/#/56/swap/BNB/BIFI',
   },
   {
-    id: '1inch-1inch',
-    logo: 'single-assets/INCH.png',
-    name: '1INCH',
-    token: '1INCH',
-    tokenDescription: '1Inch',
-    tokenAddress: '0x111111111117dC0aa78b770fA6A738034120C302',
+    id: 'iron-steel-iron',
+    logo: 'degens/IRON.png',
+    name: 'STEEL-IRON LP',
+    token: 'STEEL-IRON LP',
+    tokenDescription: 'PancakeSwap (Iron)',
+    tokenAddress: '0x453a688c33696c42a73230B0b3AC1e4676D32aA6',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
-    earnedToken: 'moo1INCH1INCH',
-    earnedTokenAddress: '0xBa53AF4C2f1649F82e8070FB306DDBF2771A1950',
-    earnContractAddress: '0xBa53AF4C2f1649F82e8070FB306DDBF2771A1950',
+    earnedToken: 'mooIronSTEEL-IRON',
+    earnedTokenAddress: '0x1384Ed18E881C0CC9027DC04ab88bFBF641c6106',
+    earnContractAddress: '0x1384Ed18E881C0CC9027DC04ab88bFBF641c6106',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'tokens',
-    oracleId: '1INCH',
+    oracle: 'lps',
+    oracleId: 'iron-steel-iron',
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: '1Inch',
-    assets: ['1INCH'],
+    platform: 'IronFinance',
+    assets: ['STEEL', 'IRON'],
     callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.pancakeswap.finance/#/add/0x7b65B489fE53fCE1F6548Db886C08aD73111DDd8/0x9001eE054F1692feF3A48330cB543b6FEc6287eb',
     buyTokenUrl:
-      'https://1inch.exchange/#/r/0xF4cb25a1FF50E319c267b3E51CBeC2699FB2A43B/BNB/1INCH/?network=56',
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x9001eE054F1692feF3A48330cB543b6FEc6287eb',
   },
   {
     id: 'cake-cakev2',
@@ -73,6 +75,82 @@ export const bscPools = [
     withdrawalFee: '0.0%',
     buyTokenUrl:
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
+  },
+  {
+    id: 'merlin-merlin',
+    logo: 'single-assets/MERL.svg',
+    name: 'MERL',
+    token: 'MERL',
+    tokenDescription: 'Merlin',
+    tokenAddress: '0xDA360309C59CB8C434b28A91b823344a96444278',
+    tokenDecimals: 18,
+    earnedToken: 'mooMerlinMERL',
+    earnedTokenAddress: '0x6261d793BdAe82842461A72B746bc18a5B7D2Bc4',
+    earnContractAddress: '0x6261d793BdAe82842461A72B746bc18a5B7D2Bc4',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'tokens',
+    oracleId: 'MERL',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Other',
+    assets: ['MERL'],
+    callFee: 0.5,
+    buyTokenUrl:
+      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xDA360309C59CB8C434b28A91b823344a96444278',
+  },
+  {
+    id: '1inch-1inch',
+    logo: 'single-assets/INCH.png',
+    name: '1INCH',
+    token: '1INCH',
+    tokenDescription: '1Inch',
+    tokenAddress: '0x111111111117dC0aa78b770fA6A738034120C302',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'moo1INCH1INCH',
+    earnedTokenAddress: '0xBa53AF4C2f1649F82e8070FB306DDBF2771A1950',
+    earnContractAddress: '0xBa53AF4C2f1649F82e8070FB306DDBF2771A1950',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'tokens',
+    oracleId: '1INCH',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: '1Inch',
+    assets: ['1INCH'],
+    callFee: 0.5,
+    buyTokenUrl:
+      'https://1inch.exchange/#/r/0xF4cb25a1FF50E319c267b3E51CBeC2699FB2A43B/BNB/1INCH/?network=56',
+  },
+  {
+    id: 'wex-eth-beth',
+    logo: 'eth-pairs/BETH-ETH.svg',
+    name: 'ETH-BETH WLP',
+    token: 'ETH-BETH WLP',
+    tokenDescription: 'WaultFinance',
+    tokenAddress: '0x11040f3c467993556B19813d4A18b684598Ba4BD',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooWaultETH-BETH',
+    earnedTokenAddress: '0x71f20694f66432f08A0D0B71a07A7CBDeA40971E',
+    earnContractAddress: '0x71f20694f66432f08A0D0B71a07A7CBDeA40971E',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'wex-eth-beth',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'WaultFinance',
+    assets: ['ETH', 'BETH'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://swap.wault.finance/bsc/#/add/0x2170Ed0880ac9A755fd29B2688956BD959F933F8/0x250632378E573c6Be1AC2f97Fcdf00515d0Aa91B',
+    buyTokenUrl:
+      'https://swap.wault.finance/bsc/#/swap?inputCurrency=0x2170Ed0880ac9A755fd29B2688956BD959F933F8&outputCurrency=0x250632378E573c6Be1AC2f97Fcdf00515d0Aa91B',
   },
   {
     id: 'iron-steel',
@@ -228,9 +306,9 @@ export const bscPools = [
     assets: ['ETH', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
-      'https://swap.wault.finance/#/add/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c/0x2170ed0880ac9a755fd29b2688956bd959f933f8',
+      'https://swap.wault.finance/bsc/#/add/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c/0x2170ed0880ac9a755fd29b2688956bd959f933f8',
     buyTokenUrl:
-      'https://swap.wault.finance/#/swap?inputCurrency=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c&outputCurrency=0x2170ed0880ac9a755fd29b2688956bd959f933f8',
+      'https://swap.wault.finance/bsc/#/swap?inputCurrency=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c&outputCurrency=0x2170ed0880ac9a755fd29b2688956bd959f933f8',
   },
   {
     id: 'wex-usdt-alpaca',
@@ -255,9 +333,9 @@ export const bscPools = [
     assets: ['USDT', 'ALPACA'],
     callFee: 0.5,
     addLiquidityUrl:
-      'https://swap.wault.finance/#/add/0x55d398326f99059ff775485246999027b3197955/0x8f0528ce5ef7b51152a59745befdd91d97091d2f',
+      'https://swap.wault.finance/bsc/#/add/0x55d398326f99059ff775485246999027b3197955/0x8f0528ce5ef7b51152a59745befdd91d97091d2f',
     buyTokenUrl:
-      'https://swap.wault.finance/#/swap?inputCurrency=0x55d398326f99059ff775485246999027b3197955&outputCurrency=0x8f0528ce5ef7b51152a59745befdd91d97091d2f',
+      'https://swap.wault.finance/bsc/#/swap?inputCurrency=0x55d398326f99059ff775485246999027b3197955&outputCurrency=0x8f0528ce5ef7b51152a59745befdd91d97091d2f',
   },
   {
     id: 'wex-usdt-matic',
@@ -282,9 +360,9 @@ export const bscPools = [
     assets: ['USDT', 'MATIC'],
     callFee: 0.5,
     addLiquidityUrl:
-      'https://swap.wault.finance/#/add/0x55d398326f99059ff775485246999027b3197955/0xcc42724c6683b7e57334c4e856f4c9965ed682bd',
+      'https://swap.wault.finance/bsc/#/add/0x55d398326f99059ff775485246999027b3197955/0xcc42724c6683b7e57334c4e856f4c9965ed682bd',
     buyTokenUrl:
-      'https://swap.wault.finance/#/swap?inputCurrency=0x55d398326f99059ff775485246999027b3197955&outputCurrency=0xcc42724c6683b7e57334c4e856f4c9965ed682bd',
+      'https://swap.wault.finance/bsc/#/swap?inputCurrency=0x55d398326f99059ff775485246999027b3197955&outputCurrency=0xcc42724c6683b7e57334c4e856f4c9965ed682bd',
   },
   {
     id: 'wex-ltc-busd',
@@ -309,9 +387,9 @@ export const bscPools = [
     assets: ['LTC', 'BUSD'],
     callFee: 0.5,
     addLiquidityUrl:
-      'https://swap.wault.finance/#/add/0xe9e7cea3dedca5984780bafc599bd69add087d56/0x4338665cbb7b2485a8855a139b75d5e34ab0db94',
+      'https://swap.wault.finance/bsc/#/add/0xe9e7cea3dedca5984780bafc599bd69add087d56/0x4338665cbb7b2485a8855a139b75d5e34ab0db94',
     buyTokenUrl:
-      'https://swap.wault.finance/#/swap?inputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56&outputCurrency=0x4338665cbb7b2485a8855a139b75d5e34ab0db94',
+      'https://swap.wault.finance/bsc/#/swap?inputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56&outputCurrency=0x4338665cbb7b2485a8855a139b75d5e34ab0db94',
   },
   {
     id: 'wex-ada-busd',
@@ -336,9 +414,9 @@ export const bscPools = [
     assets: ['ADA', 'BUSD'],
     callFee: 0.5,
     addLiquidityUrl:
-      'https://swap.wault.finance/#/add/0xe9e7cea3dedca5984780bafc599bd69add087d56/0x3ee2200efb3400fabb9aacf31297cbdd1d435d47',
+      'https://swap.wault.finance/bsc/#/add/0xe9e7cea3dedca5984780bafc599bd69add087d56/0x3ee2200efb3400fabb9aacf31297cbdd1d435d47',
     buyTokenUrl:
-      'https://swap.wault.finance/#/swap?inputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56&outputCurrency=0x3ee2200efb3400fabb9aacf31297cbdd1d435d47',
+      'https://swap.wault.finance/bsc/#/swap?inputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56&outputCurrency=0x3ee2200efb3400fabb9aacf31297cbdd1d435d47',
   },
   {
     id: 'wex-xrp-busd',
@@ -363,9 +441,9 @@ export const bscPools = [
     assets: ['XRP', 'BUSD'],
     callFee: 0.5,
     addLiquidityUrl:
-      'https://swap.wault.finance/#/add/0xe9e7cea3dedca5984780bafc599bd69add087d56/0x1d2f0da169ceb9fc7b3144628db156f3f6c60dbe',
+      'https://swap.wault.finance/bsc/#/add/0xe9e7cea3dedca5984780bafc599bd69add087d56/0x1d2f0da169ceb9fc7b3144628db156f3f6c60dbe',
     buyTokenUrl:
-      'https://swap.wault.finance/#/swap?inputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56&outputCurrency=0x1d2f0da169ceb9fc7b3144628db156f3f6c60dbe',
+      'https://swap.wault.finance/bsc/#/swap?inputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56&outputCurrency=0x1d2f0da169ceb9fc7b3144628db156f3f6c60dbe',
   },
   {
     id: 'wex-alpaca-bnb',
@@ -390,9 +468,9 @@ export const bscPools = [
     assets: ['ALPACA', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
-      'https://swap.wault.finance/#/add/BNB/0x8f0528ce5ef7b51152a59745befdd91d97091d2f',
+      'https://swap.wault.finance/bsc/#/add/BNB/0x8f0528ce5ef7b51152a59745befdd91d97091d2f',
     buyTokenUrl:
-      'https://swap.wault.finance/#/swap?outputCurrency=0x8f0528ce5ef7b51152a59745befdd91d97091d2f',
+      'https://swap.wault.finance/bsc/#/swap?outputCurrency=0x8f0528ce5ef7b51152a59745befdd91d97091d2f',
   },
   {
     id: 'wex-usdt-wex',
@@ -417,9 +495,9 @@ export const bscPools = [
     assets: ['USDT', 'WEX'],
     callFee: 0.5,
     addLiquidityUrl:
-      'https://swap.wault.finance/#/add/0x55d398326f99059ff775485246999027b3197955/0xa9c41a46a6b3531d28d5c32f6633dd2ff05dfb90',
+      'https://swap.wault.finance/bsc/#/add/0x55d398326f99059ff775485246999027b3197955/0xa9c41a46a6b3531d28d5c32f6633dd2ff05dfb90',
     buyTokenUrl:
-      'https://swap.wault.finance/#/swap?inputCurrency=0x55d398326f99059ff775485246999027b3197955&outputCurrency=0xa9c41a46a6b3531d28d5c32f6633dd2ff05dfb90',
+      'https://swap.wault.finance/bsc/#/swap?inputCurrency=0x55d398326f99059ff775485246999027b3197955&outputCurrency=0xa9c41a46a6b3531d28d5c32f6633dd2ff05dfb90',
   },
   {
     id: 'wex-wex-bnb',
@@ -444,9 +522,9 @@ export const bscPools = [
     assets: ['WEX', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
-      'https://swap.wault.finance/#/add/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c/0xa9c41a46a6b3531d28d5c32f6633dd2ff05dfb90',
+      'https://swap.wault.finance/bsc/#/add/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c/0xa9c41a46a6b3531d28d5c32f6633dd2ff05dfb90',
     buyTokenUrl:
-      'https://swap.wault.finance/#/swap?inputCurrency=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c&outputCurrency=0xa9c41a46a6b3531d28d5c32f6633dd2ff05dfb90',
+      'https://swap.wault.finance/bsc/#/swap?inputCurrency=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c&outputCurrency=0xa9c41a46a6b3531d28d5c32f6633dd2ff05dfb90',
   },
   {
     id: 'cakev2-btcb-eth',
@@ -2649,33 +2727,6 @@ export const bscPools = [
     callFee: 0.5,
     addLiquidityUrl:
       'https://exchange.pancakeswap.finance/#/add/0x9001eE054F1692feF3A48330cB543b6FEc6287eb/BNB',
-    buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x9001eE054F1692feF3A48330cB543b6FEc6287eb',
-  },
-  {
-    id: 'iron-steel-iron',
-    logo: 'degens/IRON.png',
-    name: 'STEEL-IRON LP',
-    token: 'STEEL-IRON LP',
-    tokenDescription: 'PancakeSwap (Iron)',
-    tokenAddress: '0x453a688c33696c42a73230B0b3AC1e4676D32aA6',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooIronSTEEL-IRON',
-    earnedTokenAddress: '0x1384Ed18E881C0CC9027DC04ab88bFBF641c6106',
-    earnContractAddress: '0x1384Ed18E881C0CC9027DC04ab88bFBF641c6106',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'iron-steel-iron',
-    oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
-    platform: 'IronFinance',
-    assets: ['STEEL', 'IRON'],
-    callFee: 0.5,
-    addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#/add/0x7b65B489fE53fCE1F6548Db886C08aD73111DDd8/0x9001eE054F1692feF3A48330cB543b6FEc6287eb',
     buyTokenUrl:
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x9001eE054F1692feF3A48330cB543b6FEc6287eb',
   },
