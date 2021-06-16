@@ -127,7 +127,6 @@ const validatePools = async () => {
       const { keeper, strategyOwner, vaultOwner, beefyFeeRecipient } =
         addressBook[chain].platforms.beefyfinance;
 
-      // isKeeperImplemented(pool);
       updates = isKeeperCorrect(pool, chain, keeper, updates);
       updates = isStratOwnerCorrect(pool, chain, strategyOwner, updates);
       updates = isVaultOwnerCorrect(pool, chain, vaultOwner, updates);
@@ -155,15 +154,9 @@ const validatePools = async () => {
 };
 
 // Validation helpers. These only log for now, could throw error if desired.
-const isKeeperImplemented = pool => {
-  if (pool.keeper === undefined) {
-    console.log(`Pool ${pool.id} does not implement a 'keeper'. Consider upgrading.`);
-  }
-};
-
 const isKeeperCorrect = (pool, chain, chainKeeper, updates) => {
   if (pool.keeper !== undefined && pool.keeper !== chainKeeper) {
-    // console.log(`Pool ${pool.id} should update keeper. From: ${pool.keeper} To: ${chainKeeper}`);
+    console.log(`Pool ${pool.id} should update keeper. From: ${pool.keeper} To: ${chainKeeper}`);
 
     if (!('keeper' in updates)) updates['keeper'] = {};
     if (!(chain in updates.keeper)) updates.keeper[chain] = {};
@@ -179,8 +172,8 @@ const isKeeperCorrect = (pool, chain, chainKeeper, updates) => {
 };
 
 const isStratOwnerCorrect = (pool, chain, owner, updates) => {
-  if (pool.stratOwner !== undefined && pool.stratOwner !== owner) {
-    // console.log(`Pool ${pool.id} should update strat owner. From: ${pool.stratOwner} To: ${owner}`);
+  if (pool.stratOwner !== undefined && pool.keeper !== undefined && pool.stratOwner !== owner) {
+    console.log(`Pool ${pool.id} should update strat owner. From: ${pool.stratOwner} To: ${owner}`);
 
     if (!('stratOwner' in updates)) updates['stratOwner'] = {};
     if (!(chain in updates.stratOwner)) updates.stratOwner[chain] = {};
@@ -197,7 +190,7 @@ const isStratOwnerCorrect = (pool, chain, owner, updates) => {
 
 const isVaultOwnerCorrect = (pool, chain, owner, updates) => {
   if (pool.vaultOwner !== undefined && pool.vaultOwner !== owner) {
-    // console.log(`Pool ${pool.id} should update vault owner. From: ${pool.vaultOwner} To: ${owner}`);
+    console.log(`Pool ${pool.id} should update vault owner. From: ${pool.vaultOwner} To: ${owner}`);
 
     if (!('vaultOwner' in updates)) updates['vaultOwner'] = {};
     if (!(chain in updates.vaultOwner)) updates.vaultOwner[chain] = {};
@@ -218,9 +211,10 @@ const isBeefyFeeRecipientCorrect = (pool, chain, recipient, updates) => {
     pool.beefyFeeRecipient !== undefined &&
     pool.beefyFeeRecipient !== recipient
   ) {
-    // console.log(
-    //   `Pool ${pool.id} should update beefy fee recipient. From: ${pool.beefyFeeRecipient} To: ${recipient}`
-    // );
+    console.log(
+      `Pool ${pool.id} should update beefy fee recipient. From: ${pool.beefyFeeRecipient} To: ${recipient}`
+    );
+
     if (!('beefyFeeRecipient' in updates)) updates['beefyFeeRecipient'] = {};
     if (!(chain in updates.beefyFeeRecipient)) updates.beefyFeeRecipient[chain] = {};
 
