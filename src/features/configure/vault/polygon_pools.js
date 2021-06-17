@@ -52,32 +52,6 @@ export const polygonPools = [
       'https://app.sushi.com/#/swap?inputCurrency=0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174&outputCurrency=0xFbdd194376de19a88118e84E279b977f165d01b8',
   },
   {
-    id: 'sushi-dtop-weth',
-    name: 'ETH-dTOP SLP',
-    token: 'ETH-dTOP SLP',
-    tokenDescription: 'SushiSwap',
-    tokenAddress: '0x25e8bbc103842f0dad2465f4e04cb8d44fb787bc',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooSushidTOP-ETH',
-    earnedTokenAddress: '',
-    earnContractAddress: '',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'sushi-dtop-weth',
-    oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
-    platform: 'SushiSwap',
-    assets: ['dTOP', 'ETH'],
-    callFee: 0.5,
-    addLiquidityUrl:
-      'https://app.sushi.com/add/0x0361BdEAB89DF6BBcc52c43589FABba5143d19dD/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
-    buyTokenUrl:
-      'https://app.sushi.com/#/swap?inputCurrency=0x0361BdEAB89DF6BBcc52c43589FABba5143d19dD&outputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
-  },
-  {
     id: 'wexpoly-wbtc-usdc',
     //logo:
     name: 'WBTC-USDC LP',
