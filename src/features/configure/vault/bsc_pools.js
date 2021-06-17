@@ -2151,7 +2151,7 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'iron-dnd-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'IronFinance',
     assets: ['DND', 'BNB'],
