@@ -26,6 +26,32 @@ export const polygonPools = [
       'https://quickswap.exchange/#/swap?inputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619&outputCurrency=0xfbdd194376de19a88118e84e279b977f165d01b8',
   },
   {
+    id: 'quick-dai-usdt',
+    name: 'DAI-USDT LP',
+    token: 'DAI-USDT QLP',
+    tokenDescription: 'QuickSwap',
+    tokenAddress: '0x59153f27eeFE07E5eCE4f9304EBBa1DA6F53CA88',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooQuickDAI-USDT',
+    earnedTokenAddress: '0xDd872E4552939F0aBd3D7cB2eE10CD822EB3fAeb',
+    earnContractAddress: '0xDd872E4552939F0aBd3D7cB2eE10CD822EB3fAeb',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'quick-dai-usdt',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'QuickSwap',
+    assets: ['DAI', 'USDT'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://quickswap.exchange/#/add/0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063/0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
+    buyTokenUrl:
+      'https://quickswap.exchange/#/swap?inputCurrency=0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063&outputCurrency=0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
+  },
+  {
     id: 'wexpoly-wbtc-usdc',
     //logo:
     name: 'WBTC-USDC LP',
