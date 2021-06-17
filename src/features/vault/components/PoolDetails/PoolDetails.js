@@ -168,6 +168,7 @@ const PoolDetails = ({ vaultId }) => {
             description={pool.tokenDescription}
             url={pool.tokenDescriptionUrl}
             columns={6}
+            assets={pool.assets}
           />
           <Grid item md={8} xs={7}>
             <Grid item container justify="space-between">
