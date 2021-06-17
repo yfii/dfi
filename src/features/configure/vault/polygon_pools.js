@@ -52,6 +52,32 @@ export const polygonPools = [
       'https://quickswap.exchange/#/swap?inputCurrency=0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063&outputCurrency=0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
   },
   {
+    id: 'quick-eth-fff',
+    name: 'FFF-ETH LP',
+    token: 'FFF-ETH QLP',
+    tokenDescription: 'QuickSwap',
+    tokenAddress: '0x4935270Aa19bA0B88Fe99eA9FeB10519feAfA758',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooQuickETH-FFF',
+    earnedTokenAddress: '0xa5b0E0f38BC86723a9893B828a4B9595ecb22F42',
+    earnContractAddress: '0xa5b0E0f38BC86723a9893B828a4B9595ecb22F42',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'quick-eth-fff',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'QuickSwap',
+    assets: ['FFF', 'ETH'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://quickswap.exchange/#/add/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619/0x9aceb6f749396d1930abc9e263efc449e5e82c13',
+    buyTokenUrl:
+      'https://quickswap.exchange/#/swap?outputCurrency=0x9aceb6f749396d1930abc9e263efc449e5e82c13',
+  },
+  {
     id: 'wexpoly-wbtc-usdc',
     //logo:
     name: 'WBTC-USDC LP',
