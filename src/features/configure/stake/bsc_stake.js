@@ -50,9 +50,9 @@ export const bscStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'MERL',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
-    periodFinish: 1624483878,
+    periodFinish: 1624000000,
     partners: [
       {
         logo: 'stake/merlin/logo.png',
