@@ -52,6 +52,7 @@ export const bscStakePools = [
     partnership: true,
     status: 'closed',
     isMooStaked: true,
+    hideCountdown: true,
     periodFinish: 1624000000,
     partners: [
       {
@@ -83,7 +84,7 @@ export const bscStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'TENFI',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     periodFinish: 1623789212,
     partners: [
@@ -116,7 +117,7 @@ export const bscStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'PANTHER',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     periodFinish: 1623442349,
     partners: [
