@@ -102,7 +102,7 @@ const PoolSummary = ({
               <LabeledStat
                 value={formatDecimals(balanceSingle)}
                 subvalue={balanceUsd}
-                label={t('Vault-Balance')}
+                label={t('Vault-Wallet')}
                 isLoading={!fetchBalancesDone}
                 xs={5}
                 md={3}
@@ -154,7 +154,7 @@ const PoolSummary = ({
             <LabeledStat
               value={formatDecimals(balanceSingle)}
               subvalue={balanceUsd}
-              label={t('Vault-Balance')}
+              label={t('Vault-Wallet')}
               isLoading={!fetchBalancesDone}
               xs={6}
             />
