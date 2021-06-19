@@ -10,19 +10,6 @@ import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles(styles);
 
-const translationKeyMap = {
-  vaultApr: 'Vault-Breakdown-VaultApr',
-  vaultDaily: 'Vault-Breakdown-VaultDaily',
-  tradingApr: 'Vault-Breakdown-TradingApr',
-  tradingDaily: 'Vault-Breakdown-TradingDaily',
-  totalApy: 'Vault-Breakdown-TotalApy',
-  totalDaily: 'Vault-Breakdown-TotalDaily',
-  boostApr: 'Vault-Breakdown-BoostApr',
-  boostDaily: 'Vault-Breakdown-BoostDaily',
-  boostedTotalApy: 'Vault-Breakdown-BoostedTotalApy',
-  boostedTotalDaily: 'Vault-Breakdown-BoostedTotalDaily',
-};
-
 const yearlyToDaily = apy => {
   const g = Math.pow(10, Math.log10(apy + 1) / 365) - 1;
 
@@ -52,24 +39,25 @@ const BreakdownTooltip = memo(({ rows }) => {
 
 const YearlyBreakdownTooltip = memo(({ rates }) => {
   const rows = [];
+  const { t } = useTranslation();
 
   if ('vaultApr' in rates) {
     rows.push({
-      label: 'Vault APR',
+      label: t('Vault-Breakdown-VaultApr'),
       value: rates.vaultApr,
     });
   }
 
   if ('tradingApr' in rates) {
     rows.push({
-      label: 'Trading APR',
+      label: t('Vault-Breakdown-TradingApr'),
       value: rates.tradingApr,
     });
   }
 
   if ('boostApr' in rates) {
     rows.push({
-      label: 'Boost APR',
+      label: t('Vault-Breakdown-BoostApr'),
       value: rates.boostApr,
     });
   }
@@ -79,24 +67,25 @@ const YearlyBreakdownTooltip = memo(({ rates }) => {
 
 const DailyBreakdownTooltip = memo(({ rates }) => {
   const rows = [];
+  const { t } = useTranslation();
 
   if ('vaultDaily' in rates) {
     rows.push({
-      label: 'Vault Daily',
+      label: t('Vault-Breakdown-VaultDaily'),
       value: rates.vaultDaily,
     });
   }
 
   if ('tradingDaily' in rates) {
     rows.push({
-      label: 'Trading Daily',
+      label: t('Vault-Breakdown-TradingDaily'),
       value: rates.tradingDaily,
     });
   }
 
   if ('boostDaily' in rates) {
     rows.push({
-      label: 'Boost Daily',
+      label: t('Vault-Breakdown-BoostDaily'),
       value: rates.boostDaily,
     });
   }
@@ -130,14 +119,7 @@ const LabeledStatWithTooltip = memo(({ tooltip, label, ...passthrough }) => {
   );
 });
 
-const ApyStats = ({
-  apy,
-  launchpool,
-  isLoading = false,
-  itemClasses,
-  itemInnerClasses,
-  ...passthrough
-}) => {
+const ApyStats = ({ apy, launchpool, isLoading = false, itemClasses, itemInnerClasses }) => {
   const { t } = useTranslation();
   const isBoosted = launchpool !== undefined;
   const values = {};
