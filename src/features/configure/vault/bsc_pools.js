@@ -7004,7 +7004,7 @@ export const bscPools = [
   },
 
   {
-    id: 'auto-eth-v2',
+    id: 'auto-eth-v2-eol',
     logo: 'single-assets/ETH.png',
     name: 'ETH',
     token: 'ETH',
@@ -7021,14 +7021,14 @@ export const bscPools = [
     oracleId: 'ETH',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Autofarm',
     assets: ['ETH'],
     callFee: 0.5,
   },
 
   {
-    id: 'belt-venus-blp',
+    id: 'belt-venus-blp-eol',
     logo: 'uncategorized/BELT-VENUSBLP.png',
     name: 'BUSD/USDT/USDC/DAI',
     token: 'VENUS BLP',
@@ -7045,7 +7045,7 @@ export const bscPools = [
     oracleId: 'belt-venus-blp',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Belt',
     assets: ['USDT', 'BUSD', 'USDC', 'DAI', 'VENUS BLP'],
     callFee: 0.5,
@@ -7080,7 +7080,7 @@ export const bscPools = [
       'https://bsc.mdex.com/#/swap?outputCurrency=0x9c65ab58d8d978db963e63f2bfb7121627e3a739',
   },
   {
-    id: 'auto-btc-v2',
+    id: 'auto-btc-v2-eol',
     logo: 'single-assets/BTCB.svg',
     name: 'BTCB',
     token: 'BTCB',
@@ -7097,7 +7097,7 @@ export const bscPools = [
     oracleId: 'BTCB',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Autofarm',
     assets: ['BTCB'],
     callFee: 0.5,
@@ -7718,7 +7718,7 @@ export const bscPools = [
   },
 
   {
-    id: 'auto-sxp-v2',
+    id: 'auto-sxp-v2-eol',
     logo: 'single-assets/SXP.svg',
     name: 'SXP',
     token: 'SXP',
@@ -7735,13 +7735,13 @@ export const bscPools = [
     oracleId: 'SXP',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Autofarm',
     assets: ['SXP'],
     callFee: 0.5,
   },
   {
-    id: 'auto-ada-v2',
+    id: 'auto-ada-v2-eol',
     logo: 'single-assets/ADA.svg',
     name: 'ADA',
     token: 'ADA',
@@ -7758,13 +7758,13 @@ export const bscPools = [
     oracleId: 'ADA',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Autofarm',
     assets: ['ADA'],
     callFee: 0.5,
   },
   {
-    id: 'auto-wbnb-v2',
+    id: 'auto-wbnb-v2-eol',
     logo: 'single-assets/WBNB.svg',
     name: 'WBNB',
     token: 'WBNB',
@@ -7781,7 +7781,7 @@ export const bscPools = [
     oracleId: 'WBNB',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Autofarm',
     assets: ['BNB'],
     callFee: 0.5,
@@ -7789,7 +7789,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
   },
   {
-    id: 'auto-busd-v2',
+    id: 'auto-busd-v2-eol',
     logo: 'single-assets/BUSD.svg',
     name: 'BUSD',
     token: 'BUSD',
@@ -7806,13 +7806,13 @@ export const bscPools = [
     oracleId: 'BUSD',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Autofarm',
     assets: ['BUSD'],
     callFee: 0.5,
   },
   {
-    id: 'auto-usdt-v2',
+    id: 'auto-usdt-v2-eol',
     logo: 'single-assets/USDT.svg',
     name: 'USDT',
     token: 'USDT',
@@ -7829,13 +7829,13 @@ export const bscPools = [
     oracleId: 'USDT',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Autofarm',
     assets: ['USDT'],
     callFee: 0.5,
   },
   {
-    id: 'auto-usdc-v2',
+    id: 'auto-usdc-v2-eol',
     logo: 'single-assets/USDC.svg',
     name: 'USDC',
     token: 'USDC',
@@ -7852,7 +7852,7 @@ export const bscPools = [
     oracleId: 'USDC',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Autofarm',
     assets: ['USDC'],
     callFee: 0.5,
@@ -9147,7 +9147,7 @@ export const bscPools = [
   },
 
   {
-    id: 'venus-eth',
+    id: 'venus-eth-eol',
     logo: 'single-assets/ETH.png',
     name: 'ETH',
     token: 'ETH',
@@ -9164,7 +9164,7 @@ export const bscPools = [
     oracleId: 'ETH',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Venus',
     assets: ['ETH'],
     callFee: 1,
@@ -9753,7 +9753,7 @@ export const bscPools = [
   },
 
   {
-    id: 'venus-btcb',
+    id: 'venus-btcb-eol',
     logo: 'single-assets/BTCB.svg',
     name: 'BTCB',
     token: 'BTCB',
@@ -9770,7 +9770,7 @@ export const bscPools = [
     oracleId: 'BTCB',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Venus',
     assets: ['BTCB'],
     callFee: 1,
@@ -9859,7 +9859,7 @@ export const bscPools = [
   },
 
   {
-    id: 'venus-ada',
+    id: 'venus-ada-eol',
     logo: 'single-assets/ADA.svg',
     name: 'ADA',
     token: 'ADA',
@@ -9876,7 +9876,7 @@ export const bscPools = [
     oracleId: 'ADA',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Venus',
     assets: ['ADA'],
     callFee: 1,
@@ -11123,7 +11123,7 @@ export const bscPools = [
   },
 
   {
-    id: 'auto-busd-old',
+    id: 'auto-busd-old-eol',
     logo: 'single-assets/BUSD.svg',
     name: 'BUSD',
     token: 'BUSD',
@@ -11140,7 +11140,7 @@ export const bscPools = [
     oracleId: 'BUSD',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Autofarm',
     assets: ['BUSD'],
     callFee: 0.5,
@@ -11857,7 +11857,7 @@ export const bscPools = [
   },
 
   {
-    id: 'venus-beth',
+    id: 'venus-beth-eol',
     logo: 'single-assets/BETH.png',
     name: 'BETH',
     token: 'BETH',
@@ -11874,7 +11874,7 @@ export const bscPools = [
     oracleId: 'BETH',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Venus',
     assets: ['BETH'],
     callFee: 1,
@@ -11883,7 +11883,7 @@ export const bscPools = [
   },
 
   {
-    id: 'venus-dai',
+    id: 'venus-dai-eol',
     logo: 'single-assets/DAI.svg',
     name: 'DAI',
     token: 'DAI',
@@ -11900,7 +11900,7 @@ export const bscPools = [
     oracleId: 'DAI',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Venus',
     assets: ['DAI'],
     callFee: 1,
@@ -11909,7 +11909,7 @@ export const bscPools = [
   },
 
   {
-    id: 'venus-fil',
+    id: 'venus-fil-eol',
     logo: 'single-assets/FIL.svg',
     name: 'FIL',
     token: 'FIL',
@@ -11926,7 +11926,7 @@ export const bscPools = [
     oracleId: 'FIL',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Venus',
     assets: ['FIL'],
     callFee: 1,
@@ -12444,7 +12444,7 @@ export const bscPools = [
   },
 
   {
-    id: 'venus-bch',
+    id: 'venus-bch-eol',
     logo: 'single-assets/BCH.svg',
     name: 'BCH',
     token: 'BCH',
@@ -12461,7 +12461,7 @@ export const bscPools = [
     oracleId: 'BCH',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Venus',
     assets: ['BCH'],
     callFee: 1,
@@ -12470,7 +12470,7 @@ export const bscPools = [
   },
 
   {
-    id: 'venus-dot',
+    id: 'venus-dot-eol',
     logo: 'single-assets/DOT.png',
     name: 'DOT',
     token: 'DOT',
@@ -12487,7 +12487,7 @@ export const bscPools = [
     oracleId: 'DOT',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Venus',
     assets: ['DOT'],
     callFee: 1,
@@ -12496,7 +12496,7 @@ export const bscPools = [
   },
 
   {
-    id: 'venus-link',
+    id: 'venus-link-eol',
     logo: 'single-assets/LINK.png',
     name: 'LINK',
     token: 'LINK',
@@ -12513,7 +12513,7 @@ export const bscPools = [
     oracleId: 'LINK',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Venus',
     assets: ['LINK'],
     callFee: 1,
@@ -12702,7 +12702,7 @@ export const bscPools = [
   },
 
   {
-    id: 'venus-sxp',
+    id: 'venus-sxp-eol',
     logo: 'single-assets/SXP.svg',
     name: 'SXP',
     token: 'SXP',
@@ -12719,7 +12719,7 @@ export const bscPools = [
     oracleId: 'SXP',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Venus',
     assets: ['SXP'],
     callFee: 1,
@@ -12728,7 +12728,7 @@ export const bscPools = [
   },
 
   {
-    id: 'venus-usdc',
+    id: 'venus-usdc-eol',
     logo: 'single-assets/USDC.svg',
     name: 'USDC',
     token: 'USDC',
@@ -12745,7 +12745,7 @@ export const bscPools = [
     oracleId: 'USDC',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Venus',
     assets: ['USDC'],
     callFee: 1,
@@ -12754,7 +12754,7 @@ export const bscPools = [
   },
 
   {
-    id: 'venus-usdt',
+    id: 'venus-usdt-eol',
     logo: 'single-assets/USDT.svg',
     name: 'USDT',
     token: 'USDT',
@@ -12771,7 +12771,7 @@ export const bscPools = [
     oracleId: 'USDT',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Venus',
     assets: ['USDT'],
     callFee: 1,
@@ -12780,7 +12780,7 @@ export const bscPools = [
   },
 
   {
-    id: 'venus-busd',
+    id: 'venus-busd-eol',
     logo: 'single-assets/BUSD.svg',
     name: 'BUSD',
     token: 'BUSD',
@@ -12797,7 +12797,7 @@ export const bscPools = [
     oracleId: 'BUSD',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Venus',
     assets: ['BUSD'],
     callFee: 1,
@@ -12806,7 +12806,7 @@ export const bscPools = [
   },
 
   {
-    id: 'venus-ltc',
+    id: 'venus-ltc-eol',
     logo: 'single-assets/LTC.svg',
     name: 'LTC',
     token: 'LTC',
@@ -12823,7 +12823,7 @@ export const bscPools = [
     oracleId: 'LTC',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Venus',
     assets: ['LTC'],
     callFee: 1,
@@ -12832,7 +12832,7 @@ export const bscPools = [
   },
 
   {
-    id: 'venus-xrp',
+    id: 'venus-xrp-eol',
     logo: 'single-assets/XRP.svg',
     name: 'XRP',
     token: 'XRP',
@@ -12849,7 +12849,7 @@ export const bscPools = [
     oracleId: 'XRP',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Venus',
     assets: ['XRP'],
     callFee: 1,
