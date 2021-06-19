@@ -53,7 +53,7 @@ const PoolSummary = ({
         isExperimental={!!pool.experimental}
       />
     );
-  }, [pool, launchpool]);
+  }, [pool, launchpool, t]);
 
   const balanceUsd =
     balanceSingle > 0 && fetchVaultsDataDone ? formatTvl(balanceSingle, pool.oraclePrice) : '';
@@ -66,7 +66,6 @@ const PoolSummary = ({
 
   const onSummaryClick = useCallback(
     e => {
-      console.log(e);
       if (!e.target || !e.target.classList.contains('tooltip-toggle')) {
         toggleCard();
       }

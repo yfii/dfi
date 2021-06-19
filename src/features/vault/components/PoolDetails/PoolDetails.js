@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import Divider from '@material-ui/core/Divider';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 import { useTranslation } from 'react-i18next';
 import BigNumber from 'bignumber.js';
 import { useConnectWallet } from '../../../home/redux/hooks';
@@ -91,7 +90,7 @@ const PoolDetails = ({ vaultId }) => {
         isExperimental={!!pool.experimental}
       />
     );
-  }, [pool, launchpool]);
+  }, [pool, launchpool, t]);
 
   const balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
   const sharesBalance = new BigNumber(tokens[pool.earnedToken].tokenBalance);

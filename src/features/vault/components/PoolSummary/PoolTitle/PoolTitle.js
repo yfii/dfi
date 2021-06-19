@@ -19,7 +19,7 @@ const singleAsset = symbol => {
       console.warn(error);
     }
   }
-  throw `Image required for '${symbol}' token in 'images/single-assets/'`;
+  throw new Error(`Image required for '${symbol}' token in 'images/single-assets/'`);
 };
 
 const PoolTitle = ({
