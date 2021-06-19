@@ -55,7 +55,7 @@ const PoolTitle = ({
   }
 
   return (
-    <Grid item xs={3} className={classes.container}>
+    <Grid container wrap="nowrap">
       {avatar}
       <div className={classes.texts}>
         <Typography className={classes.title} variant="body2" gutterBottom>
