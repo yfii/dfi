@@ -164,11 +164,11 @@ const ApyStats = ({
   }
 
   if (isBoosted) {
-    needsTooltip = true;
+    needsTooltip = needsTooltip || !!launchpool.apy;
     values.boostApr = launchpool.apy;
     values.boostDaily = launchpool.apy / 365;
-    values.boostedTotalApy = values.totalApy + values.boostApr;
-    values.boostedTotalDaily = values.totalDaily + values.boostDaily;
+    values.boostedTotalApy = values.boostApr ? values.totalApy + values.boostApr : 0;
+    values.boostedTotalDaily = values.boostDaily ? values.totalDaily + values.boostDaily : 0;
   }
 
   const formatted = Object.fromEntries(

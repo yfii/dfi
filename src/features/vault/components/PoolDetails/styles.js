@@ -16,6 +16,7 @@ const styles = theme => ({
     },
   },
   container: {
+    position: 'relative',
     backgroundColor: theme.palette.background.extra,
     padding: '24px',
     border: '1px solid ' + theme.palette.background.border,

@@ -18,6 +18,7 @@ import styles from './styles';
 import { Helmet } from 'react-helmet';
 import { usePageMeta } from '../../../common/getPageMeta';
 import ApyStats from '../PoolSummary/ApyStats/ApyStats';
+import PoolPaused from '../PoolSummary/PoolPaused/PoolPaused';
 
 const FETCH_INTERVAL_MS = 30 * 1000;
 
@@ -84,9 +85,11 @@ const PoolDetails = ({ vaultId }) => {
     return state === null ? (
       ''
     ) : (
-      <Paper variant="outlined" elevation={5} className={classes.status}>
-        {state}
-      </Paper>
+      <PoolPaused
+        message={t(state)}
+        isBoosted={!!launchpool}
+        isExperimental={!!pool.experimental}
+      />
     );
   }, [pool, launchpool]);
 
@@ -138,7 +141,7 @@ const PoolDetails = ({ vaultId }) => {
       </Helmet>
       <HomeLink />
       <div className={classes.container}>
-        <Grid container>
+        <Grid container alignItems="center" style={{ paddingTop: '20px' }}>
           {vaultStateTitle}
           <Grid item xs={12} className={`${classes.item} ${classes.itemTitle}`}>
             <PoolTitle
@@ -146,7 +149,6 @@ const PoolDetails = ({ vaultId }) => {
               logo={pool.logo}
               poolId={pool.id}
               description={t('Vault-Description', { vault: pool.tokenDescription })}
-              launchpool={launchpool}
               addLiquidityUrl={pool.addLiquidityUrl}
               removeLiquidityUrl={pool.removeLiquidityUrl}
               buyTokenUrl={pool.buyTokenUrl}
