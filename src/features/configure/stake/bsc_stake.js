@@ -50,9 +50,10 @@ export const bscStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'MERL',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
-    periodFinish: 1624483878,
+    hideCountdown: true,
+    periodFinish: 1624000000,
     partners: [
       {
         logo: 'stake/merlin/logo.png',
@@ -83,7 +84,7 @@ export const bscStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'TENFI',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     periodFinish: 1623789212,
     partners: [
@@ -116,7 +117,7 @@ export const bscStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'PANTHER',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     periodFinish: 1623442349,
     partners: [
