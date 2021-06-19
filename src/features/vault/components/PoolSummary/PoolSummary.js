@@ -36,8 +36,6 @@ const PoolSummary = ({
         ? t('Vault-DepositsPausedTitle')
         : null;
 
-    console.log(state, pool);
-
     if (launchpool) {
       state = t('Stake-BoostedBy', { name: launchpool.name });
     }
@@ -107,7 +105,7 @@ const PoolSummary = ({
           <LabeledStat
             value={formatDecimals(balanceSingle)}
             subvalue={balanceUsd}
-            label={t('Vault-Balance')}
+            label={t('Vault-Wallet')}
             isLoading={!fetchBalancesDone}
             className={classes.itemInner}
           />
