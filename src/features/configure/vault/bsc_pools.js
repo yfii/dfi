@@ -3034,7 +3034,7 @@ export const bscPools = [
     oracleId: 'TOFY',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'eol',
+    status: 'active',
     platform: 'Other',
     assets: ['TOFY'],
     callFee: 0.5,
