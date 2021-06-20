@@ -52,7 +52,7 @@ export const bscStakePools = [
     partnership: true,
     status: 'active',
     isMooStaked: true,
-    periodFinish: 1624210790,
+    periodFinish: 1624819685,
     partners: [
       {
         logo: 'stake/merlin/logo.png',
