@@ -103,6 +103,7 @@ const LabeledStatWithTooltip = memo(({ tooltip, label, ...passthrough }) => {
       title={tooltip}
       placement="bottom"
       enterTouchDelay={0}
+      leaveTouchDelay={3000}
       classes={{ tooltip: classes.tooltip }}
     >
       <LabeledStat
