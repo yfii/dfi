@@ -9883,7 +9883,7 @@ export const bscPools = [
   },
 
   {
-    id: 'jul-bifi-bnb',
+    id: 'jul-bifi-bnb-eol',
     logo: 'bnb-pairs/BIFI-BNB.png',
     name: 'BIFI-BNB LP',
     token: 'BIFI-BNB SLP',
@@ -9899,8 +9899,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'jul-bifi-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'JulSwap',
     assets: ['BIFI', 'BNB'],
     callFee: 0.5,
