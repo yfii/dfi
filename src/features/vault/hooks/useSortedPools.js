@@ -34,13 +34,15 @@ const useSortedPools = (pools, apys, tokens) => {
 const handleApy = (pools, apys) => {
   const newPools = [...pools];
   return newPools.sort((a, b) => {
-    if (apys[a.id] === undefined) {
+    if (apys[a.id] === apys[b.id]) {
+      return 0;
+    } else if (apys[a.id] === undefined) {
       return 1;
     } else if (apys[b.id] === undefined) {
       return -1;
     }
 
-    return apys[b.id] - apys[a.id];
+    return apys[b.id].totalApy - apys[a.id].totalApy;
   });
 };
 

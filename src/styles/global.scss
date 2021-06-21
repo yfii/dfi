@@ -19,6 +19,14 @@ body {
   padding: 0;
 }
 
+.tooltip-toggle {
+  cursor: default;
+
+  * {
+    pointer-events: none;
+  }
+}
+
 @media (max-width: 767px) {
   .hidden-xs {
     display: none !important;
