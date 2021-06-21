@@ -5811,7 +5811,7 @@ export const bscPools = [
   },
 
   {
-    id: 'cakev2-bor-bnb',
+    id: 'cakev2-bor-bnb-eol',
     logo: 'bnb-pairs/BOR-BNB.svg',
     name: 'BOR-BNB LP',
     token: 'BOR-BNB LP2',
@@ -5827,8 +5827,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cakev2-bor-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'PancakeSwap',
     assets: ['BOR', 'BNB'],
     addLiquidityUrl:
