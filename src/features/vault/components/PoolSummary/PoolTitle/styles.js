@@ -1,7 +1,4 @@
 const styles = theme => ({
-  container: {
-    display: 'flex',
-  },
   texts: {
     marginLeft: '20px',
   },
