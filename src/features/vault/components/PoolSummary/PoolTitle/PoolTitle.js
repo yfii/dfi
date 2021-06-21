@@ -19,7 +19,7 @@ const singleAsset = symbol => {
       console.warn(error);
     }
   }
-  throw `Image required for '${symbol}' token in 'images/single-assets/'`;
+  throw new Error(`Image required for '${symbol}' token in 'images/single-assets/'`);
 };
 
 const PoolTitle = ({
@@ -67,7 +67,7 @@ const PoolTitle = ({
   }
 
   return (
-    <Grid item xs={3} className={classes.container}>
+    <Grid container wrap="nowrap">
       {avatar}
       <div className={classes.texts}>
         <Typography className={classes.title} variant="body2" gutterBottom>

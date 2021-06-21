@@ -33,6 +33,8 @@ const styles = theme => ({
     color: '#2a9e46',
     position: 'absolute',
     top: '-20px',
+    left: 0,
+    right: 0,
   },
   crossed: {
     textDecoration: 'line-through',
