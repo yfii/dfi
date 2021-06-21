@@ -44,12 +44,12 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Poylyeld',
-    assets: ['WMATIC', 'YELD'],
+    assets: ['MATIC', 'YELD'],
     callFee: 0.5,
     addLiquidityUrl:
-      'https://app.sushi.com/add/0xd0f3121A190d85dE0AB6131f2bCEcdbfcfB38891/0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
+      'https://quickswap.exchange/add/0xd0f3121A190d85dE0AB6131f2bCEcdbfcfB38891/0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
     buyTokenUrl:
-      'https://app.sushi.com/#/swap?inputCurrency=0xd0f3121A190d85dE0AB6131f2bCEcdbfcfB38891&outputCurrency=0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
+      'https://quickswap.exchange/#/swap?inputCurrency=0xd0f3121A190d85dE0AB6131f2bCEcdbfcfB38891&outputCurrency=0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
   },
   {
     id: 'polyyeld-quick-usdc-yeld',
@@ -73,9 +73,9 @@ export const polygonPools = [
     assets: ['USDC', 'YELD'],
     callFee: 0.5,
     addLiquidityUrl:
-      'https://app.sushi.com/add/0xd0f3121A190d85dE0AB6131f2bCEcdbfcfB38891/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
+      'https://quickswap.exchange/add/0xd0f3121A190d85dE0AB6131f2bCEcdbfcfB38891/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
     buyTokenUrl:
-      'https://app.sushi.com/#/swap?inputCurrency=0xd0f3121A190d85dE0AB6131f2bCEcdbfcfB38891&outputCurrency=0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
+      'https://quickswap.exchange/#/swap?inputCurrency=0xd0f3121A190d85dE0AB6131f2bCEcdbfcfB38891&outputCurrency=0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
   },
   {
     id: 'sushi-usdc-bifi',
