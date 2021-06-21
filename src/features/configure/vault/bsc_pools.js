@@ -5838,7 +5838,7 @@ export const bscPools = [
   },
 
   {
-    id: 'cakev2-bopen-bnb',
+    id: 'cakev2-bopen-bnb-eol',
     logo: 'bnb-pairs/BOPEN-BNB.svg',
     name: 'BOPEN-BNB LP',
     token: 'BOPEN-BNB LP2',
@@ -5854,8 +5854,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cakev2-bopen-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'PancakeSwap',
     assets: ['BOPEN', 'BNB'],
     callFee: 0.5,
