@@ -131,8 +131,8 @@ export const polygonPools = [
   },
   {
     id: 'quick-pbnb-quick',
-    name: 'BNB-QUICK LP',
-    token: 'BNB-QUICK QLP',
+    name: 'pBNB-QUICK QLP',
+    token: 'pBNB-QUICK QLP',
     tokenDescription: 'QuickSwap',
     tokenAddress: '0x53e27DaDf6473d062717be8807C453Af212c7102',
     tokenDecimals: 18,
@@ -157,8 +157,8 @@ export const polygonPools = [
   },
   {
     id: 'quick-usdc-pbnb',
-    name: 'BNB-USDC LP',
-    token: 'BNB-USDC QLP',
+    name: 'pBNB-USDC QLP',
+    token: 'pBNB-USDC QLP',
     tokenDescription: 'QuickSwap',
     tokenAddress: '0xE55cb144E02Cffb6fBD65d9a4BD62378998Bc267',
     tokenDecimals: 18,
