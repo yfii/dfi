@@ -27,4 +27,11 @@ export const polygonZaps = [
     ammFactory: '0xa98ea6356A316b44Bf710D5f9b6b4eA0081409Ef',
     ammPairInitHash: '0x1cdc2246d318ab84d8bc7ae2a3d81c235f3db4e113f4c6fdc1e2211a9291be47',
   },
+  {
+    // ApeSwap
+    zapAddress: '0xaAa3477c6b326e2E416Af7506A30F4519bC9960F',
+    ammRouter: '0xC0788A3aD43d79aa53B09c2EaCc313A787d1d607',
+    ammFactory: '0xCf083Be4164828f00cAE704EC15a36D711491284',
+    ammPairInitHash: '0x511f0f358fe530cda0859ec20becf391718fdf5a329be02f4c95361f3d6a42d8',
+  },
 ];
