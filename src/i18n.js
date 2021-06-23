@@ -13,7 +13,8 @@ import translationID from './locales/id/translation.json';
 import translationIT from './locales/it/translation.json';
 import translationKO from './locales/ko/translation.json';
 import translationNL from './locales/nl/translation.json';
-import translationPT from './locales/pt/translation.json';
+import translationPT_br from './locales/pt-BR/translation.json';
+import translationPT_pt from './locales/pt-PT/translation.json';
 import translationRU from './locales/ru/translation.json';
 import translationSE from './locales/se/translation.json';
 import translationTR from './locales/tr/translation.json';
@@ -32,7 +33,8 @@ const resources = {
   it: { translation: translationIT },
   ko: { translation: translationKO },
   nl: { translation: translationNL },
-  pt: { translation: translationPT },
+  'pt-BR': { translation: translationPT_br },
+  'pt-PT': { translation: translationPT_pt },
   ru: { translation: translationRU },
   se: { translation: translationSE },
   tr: { translation: translationTR },

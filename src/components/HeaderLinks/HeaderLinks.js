@@ -60,6 +60,8 @@ const HeaderLinks = ({
 
   const handleClick = event => {
     switch (event) {
+      case 'العربية':
+        return i18n.changeLanguage('ar').then(() => setLanguage(event));
       case 'Deutsch':
         return i18n.changeLanguage('de').then(() => setLanguage(event));
       case 'Ελληνικά':
@@ -80,8 +82,10 @@ const HeaderLinks = ({
         return i18n.changeLanguage('ko').then(() => setLanguage(event));
       case 'Nederlands':
         return i18n.changeLanguage('nl').then(() => setLanguage(event));
-      case 'Português':
-        return i18n.changeLanguage('pt').then(() => setLanguage(event));
+      case 'Português do Brasil':
+        return i18n.changeLanguage('pt-BR').then(() => setLanguage(event));
+      case 'Português de Portugal':
+        return i18n.changeLanguage('pt-PT').then(() => setLanguage(event));
       case 'Pусский':
         return i18n.changeLanguage('ru').then(() => setLanguage(event));
       case 'Svenska':
@@ -118,6 +122,7 @@ const HeaderLinks = ({
           }}
           onClick={handleClick}
           dropdownList={[
+            'العربية',
             'Deutsch',
             'English',
             'Ελληνικά',
@@ -128,7 +133,8 @@ const HeaderLinks = ({
             'Italiano',
             '한글',
             'Nederlands',
-            'Português',
+            'Portugues do Brasil',
+            'Português europeu',
             'Pусский',
             'Svenska',
             'Türkçe',
@@ -137,7 +143,7 @@ const HeaderLinks = ({
             // TODO: more translations
             { divider: true },
             <a
-              href="https://github.com/beefyfinance/beefy-app/tree/master/src/locales"
+              href="https://discord.gg/sj3drZd7dh"
               target="_blank"
               rel="noopener noreferrer"
               className={classes.cta}
