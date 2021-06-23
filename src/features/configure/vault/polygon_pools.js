@@ -1596,6 +1596,7 @@ export const polygonPools = [
     platform: 'Curve',
     assets: ['DAI', 'USDC', 'USDT'],
     callFee: 0.5,
+    withdrawalFee: '0.0%',
     addLiquidityUrl: 'https://polygon.curve.fi/aave/deposit',
   },
   {
