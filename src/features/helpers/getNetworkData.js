@@ -162,6 +162,7 @@ export const getNetworkStables = () => {
         '4BELT',
         'IRON',
         'DOLLY',
+        'TUSD',
       ];
     case '128':
       return ['USDT', 'HUSD'];

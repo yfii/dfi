@@ -362,7 +362,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
         onChangeCommitted={handleSliderChangeCommitted}
       />
       <div className={classes.showDetailButtonCon}>
-        {pool.status === 'refund' ? (
+        {pool.refund === true ? (
           <RefundButtons
             tokenAddress={pool.earnedTokenAddress}
             refundAddress={pool.refundContractAddress}
