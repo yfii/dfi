@@ -120,9 +120,9 @@ const LabeledStatWithTooltip = memo(({ tooltip, label, ...passthrough }) => {
   );
 });
 
-const ApyStats = ({ apy, launchpool, isLoading = false, itemClasses, itemInnerClasses }) => {
+const ApyStats = ({ apy, launchpoolApr, isLoading = false, itemClasses, itemInnerClasses }) => {
   const { t } = useTranslation();
-  const isBoosted = launchpool !== undefined;
+  const isBoosted = !!launchpoolApr;
   const values = {};
   let needsApyTooltip = false;
   let needsDailyTooltip = false;
@@ -149,10 +149,10 @@ const ApyStats = ({ apy, launchpool, isLoading = false, itemClasses, itemInnerCl
   }
 
   if (isBoosted) {
-    needsApyTooltip = needsApyTooltip || !!launchpool.apy;
-    needsDailyTooltip = needsDailyTooltip || !!launchpool.apy;
-    values.boostApr = launchpool.apy;
-    values.boostDaily = launchpool.apy / 365;
+    needsApyTooltip = true;
+    needsDailyTooltip = true;
+    values.boostApr = launchpoolApr;
+    values.boostDaily = launchpoolApr / 365;
     values.boostedTotalApy = values.boostApr ? values.totalApy + values.boostApr : 0;
     values.boostedTotalDaily = values.boostDaily ? values.totalDaily + values.boostDaily : 0;
   }

@@ -56,7 +56,7 @@ export default function StakePool(props) {
   const { fetchClaim, fetchClaimPending } = useFetchClaim();
   const { fetchExit, fetchExitPending } = useFetchExit();
   const { pools, poolData, fetchPoolData } = useFetchPoolData();
-  const [index, setIndex] = useState(Number(props.match.params.index) - 1);
+  const [index, setIndex] = useState(pools.findIndex(p => p.id === props.match.params.id));
   const [showInput, setShowInput] = useState(false);
   const [isNeedApproval, setIsNeedApproval] = useState(true);
   const [approvalAble, setApprovalAble] = useState(true);
@@ -95,8 +95,8 @@ export default function StakePool(props) {
   };
 
   useEffect(() => {
-    setIndex(Number(props.match.params.index) - 1);
-  }, [Number(props.match.params.index)]);
+    setIndex(pools.findIndex(p => p.id === props.match.params.id));
+  }, [props.match.params.id, pools]);
 
   useEffect(() => {
     setIsNeedApproval(Boolean(allowance[index] === 0));

@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import BigNumber from 'bignumber.js';
 import { useConnectWallet } from '../../../home/redux/hooks';
 import { useFetchApys, useFetchBalances, useFetchVaultsData } from '../../redux/hooks';
+import { useFetchPoolData } from '../../../stake/redux/fetchPoolData';
 import { byDecimals } from 'features/helpers/bignumber';
 import { formatTvl } from 'features/helpers/format';
 import HomeLink from './HomeLink/HomeLink';
@@ -35,24 +36,23 @@ const PoolDetails = ({ vaultId }) => {
   const { tokens, fetchBalances, fetchBalancesDone } = useFetchBalances();
   const { apys, fetchApys, fetchApysDone } = useFetchApys();
   const pool = pools.find(p => p.id === vaultId);
-  const stake = useSelector(state => state.stake.pools);
+  const { fetchPoolData } = useFetchPoolData();
   const { getPageMeta } = usePageMeta();
-
-  const launchpool = useMemo(() => {
-    const timestamp = Math.floor(Date.now() / 1000);
-    for (let index in stake) {
-      if (stake[index].token === pool.earnedToken && stake[index].periodFinish >= timestamp) {
-        stake[index].poolIndex = Number(index) + 1;
-        return stake[index];
-      }
-    }
-  }, [pool, stake]);
+  const timestamp = Math.floor(Date.now() / 1000);
+  const stake = useSelector(state => state.stake.pools);
+  const launchpoolIndex = stake.findIndex(p => {
+    return p.token === pool.earnedToken && p.periodFinish >= timestamp;
+  });
+  const launchpool = launchpoolIndex ? stake[launchpoolIndex] : null;
 
   useEffect(() => {
     if (address && web3) {
       const fetch = () => {
         fetchBalances({ address, web3, tokens });
         fetchVaultsData({ address, web3, pools });
+        if (launchpoolIndex) {
+          fetchPoolData(launchpoolIndex);
+        }
         fetchApys();
       };
       fetch();
@@ -63,7 +63,7 @@ const PoolDetails = ({ vaultId }) => {
 
     // Adding tokens and pools to this dep list, causes an endless loop, DDoSing the api
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [address, web3, fetchBalances, fetchVaultsData]);
+  }, [address, web3, fetchBalances, fetchVaultsData, fetchPoolData, launchpoolIndex]);
 
   const vaultStateTitle = useMemo(() => {
     let state =
@@ -174,7 +174,7 @@ const PoolDetails = ({ vaultId }) => {
           </Grid>
           <ApyStats
             apy={apy}
-            launchpool={launchpool}
+            launchpoolApr={launchpool && launchpool.apy ? launchpool.apy : null}
             isLoading={!fetchApysDone}
             itemClasses={`${classes.item} ${classes.itemStats}`}
             itemInnerClasses={classes.itemInner}
