@@ -2,8 +2,8 @@ import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 
-import translationAR from './locales/ar/translation.json';
-import translationCN from './locales/cn/translation.json';
+import translationAR from './locales/ar/translation.json'; //PR: delete this comment, a Husky
+import translationCN from './locales/cn/translation.json'; // pre-commit linter workaround
 import translationDE from './locales/de/translation.json';
 import translationEL from './locales/el/translation.json';
 import translationEN from './locales/en/translation.json';
