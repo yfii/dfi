@@ -18,6 +18,7 @@ import { Helmet } from 'react-helmet';
 import { usePageMeta } from '../../../common/getPageMeta';
 import ApyStats from '../PoolSummary/ApyStats/ApyStats';
 import PoolPaused from '../PoolSummary/PoolPaused/PoolPaused';
+import { CakeV2Banner } from './Banners/CakeV2Banner/CakeV2Banner';
 
 const FETCH_INTERVAL_MS = 30 * 1000;
 
@@ -107,17 +108,22 @@ const PoolDetails = ({ vaultId }) => {
 
   if (!fetchVaultsDataDone) {
     return (
-      <div className={classes.container}>
+      <>
         <HomeLink />
-        <h1>Loading Vault...</h1>
-      </div>
+        {vaultId === 'cake-cakev2' ? <CakeV2Banner /> : ''}
+        <div className={classes.container}>
+          <h1>Loading Vault...</h1>
+        </div>
+      </>
     );
   } else if (!pool) {
     return (
-      <div className={classes.container}>
+      <>
         <HomeLink />
-        <h1>Vault {vaultId} not found</h1>
-      </div>
+        <div className={classes.container}>
+          <h1>Vault {vaultId} not found</h1>
+        </div>
+      </>
     );
   }
 
@@ -139,6 +145,7 @@ const PoolDetails = ({ vaultId }) => {
         />
       </Helmet>
       <HomeLink />
+      {vaultId === 'cake-cakev2' ? <CakeV2Banner /> : ''}
       <div className={classes.container}>
         <Grid container alignItems="center" style={{ paddingTop: '20px' }}>
           {vaultStateTitle}
