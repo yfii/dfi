@@ -99,6 +99,7 @@ export const bscPools = [
     buyTokenUrl:
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x4e840AADD28DA189B9906674B4Afcb77C128d9ea',
   },
+  /* wrong vault and strat owner
   {
     id: 'cakev2-wex-wbnb',
     name: 'WEX-BNB LP',
@@ -151,6 +152,7 @@ export const bscPools = [
     buyTokenUrl:
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xB64E638E60D154B43f660a6BF8fD8a3b249a6a21',
   },
+   */
   {
     id: 'cakev2-dg-bnb',
     name: 'DG-BNB LP',
