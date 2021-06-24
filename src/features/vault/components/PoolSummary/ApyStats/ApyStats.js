@@ -124,18 +124,20 @@ const ApyStats = ({ apy, launchpool, isLoading = false, itemClasses, itemInnerCl
   const { t } = useTranslation();
   const isBoosted = launchpool !== undefined;
   const values = {};
-  let needsTooltip = false;
+  let needsApyTooltip = false;
+  let needsDailyTooltip = false;
 
   values.totalApy = apy.totalApy;
 
   if ('vaultApr' in apy && apy.vaultApr) {
-    needsTooltip = true;
+    needsApyTooltip = true;
     values.vaultApr = apy.vaultApr;
     values.vaultDaily = apy.vaultApr / 365;
   }
 
   if ('tradingApr' in apy && apy.tradingApr) {
-    needsTooltip = true;
+    needsApyTooltip = true;
+    needsDailyTooltip = true;
     values.tradingApr = apy.tradingApr;
     values.tradingDaily = apy.tradingApr / 365;
   }
@@ -147,7 +149,8 @@ const ApyStats = ({ apy, launchpool, isLoading = false, itemClasses, itemInnerCl
   }
 
   if (isBoosted) {
-    needsTooltip = needsTooltip || !!launchpool.apy;
+    needsApyTooltip = needsApyTooltip || !!launchpool.apy;
+    needsDailyTooltip = needsDailyTooltip || !!launchpool.apy;
     values.boostApr = launchpool.apy;
     values.boostDaily = launchpool.apy / 365;
     values.boostedTotalApy = values.boostApr ? values.totalApy + values.boostApr : 0;
@@ -164,7 +167,9 @@ const ApyStats = ({ apy, launchpool, isLoading = false, itemClasses, itemInnerCl
         <LabeledStatWithTooltip
           value={formatted.totalApy}
           label={t('Vault-APY')}
-          tooltip={!isLoading && needsTooltip ? <YearlyBreakdownTooltip rates={formatted} /> : null}
+          tooltip={
+            !isLoading && needsApyTooltip ? <YearlyBreakdownTooltip rates={formatted} /> : null
+          }
           boosted={isBoosted ? formatted.boostedTotalApy : ''}
           isLoading={isLoading}
           className={`tooltip-toggle ${itemInnerClasses}`}
@@ -174,7 +179,9 @@ const ApyStats = ({ apy, launchpool, isLoading = false, itemClasses, itemInnerCl
         <LabeledStatWithTooltip
           value={formatted.totalDaily}
           label={t('Vault-APYDaily')}
-          tooltip={!isLoading && needsTooltip ? <DailyBreakdownTooltip rates={formatted} /> : null}
+          tooltip={
+            !isLoading && needsDailyTooltip ? <DailyBreakdownTooltip rates={formatted} /> : null
+          }
           boosted={isBoosted ? formatted.boostedTotalDaily : ''}
           isLoading={isLoading}
           className={`tooltip-toggle ${itemInnerClasses}`}
