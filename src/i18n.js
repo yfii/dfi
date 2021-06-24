@@ -2,6 +2,7 @@ import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 
+import translationAR from './locales/ar/translation.json';
 import translationCN from './locales/cn/translation.json';
 import translationDE from './locales/de/translation.json';
 import translationEL from './locales/el/translation.json';
@@ -22,6 +23,7 @@ import translationUK from './locales/uk/translation.json';
 import translationZH from './locales/zh/translation.json';
 
 const resources = {
+  ar: { translation: translationAR },
   cn: { translation: translationCN },
   de: { translation: translationDE },
   el: { translation: translationEL },
