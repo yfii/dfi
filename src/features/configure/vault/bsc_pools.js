@@ -50,7 +50,7 @@ export const bscPools = [
   },
   {
     id: 'cake-cakev2',
-    logo: 'single-assets/CAKE.png',
+    logo: 'single-assets/CAKE.svg',
     name: 'CAKE',
     token: 'CAKE',
     tokenDescription: 'PancakeSwap',
@@ -99,7 +99,6 @@ export const bscPools = [
     buyTokenUrl:
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x4e840AADD28DA189B9906674B4Afcb77C128d9ea',
   },
-  /* wrong vault and strat owner
   {
     id: 'cakev2-wex-wbnb',
     name: 'WEX-BNB LP',
@@ -109,8 +108,8 @@ export const bscPools = [
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooCakeV2WEX-WBNB',
-    earnedTokenAddress: '0xEBF5E49C0A7df8937d30fb1e8C2cc476E05C8593',
-    earnContractAddress: '0xEBF5E49C0A7df8937d30fb1e8C2cc476E05C8593',
+    earnedTokenAddress: '0xC7822D2152B2aa54FbF316C4dADFD2D899F47AD1',
+    earnContractAddress: '0xC7822D2152B2aa54FbF316C4dADFD2D899F47AD1',
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
@@ -135,8 +134,8 @@ export const bscPools = [
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooCakeV2WAULTx-WBNB',
-    earnedTokenAddress: '0x0B1dc745968df663Eab45EfbC1FC7e804ed12Ce6',
-    earnContractAddress: '0x0B1dc745968df663Eab45EfbC1FC7e804ed12Ce6',
+    earnedTokenAddress: '0x4e1B2951CC4C36D0997B7e2B67Ff957a2D53c17c',
+    earnContractAddress: '0x4e1B2951CC4C36D0997B7e2B67Ff957a2D53c17c',
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
@@ -152,7 +151,6 @@ export const bscPools = [
     buyTokenUrl:
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xB64E638E60D154B43f660a6BF8fD8a3b249a6a21',
   },
-   */
   {
     id: 'cakev2-dg-bnb',
     name: 'DG-BNB LP',
@@ -13450,7 +13448,7 @@ export const bscPools = [
   //
   {
     id: 'cake-cake-eol',
-    logo: 'single-assets/CAKE.png',
+    logo: 'single-assets/CAKE.svg',
     name: 'CAKE',
     token: 'CAKE',
     tokenDescription: 'Please use Smart Cake',

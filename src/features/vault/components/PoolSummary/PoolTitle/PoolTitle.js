@@ -117,7 +117,7 @@ const PoolTitle = ({
           )}
         </div>
         {launchpool ? (
-          <a className={classes.btnBoost} href={'/stake/pool/' + launchpool.poolIndex}>
+          <a className={classes.btnBoost} href={'/stake/pool/' + launchpool.id}>
             <img alt="Boost" src={require('images/stake/boost.svg')} height={15} />
             <span>
               <img alt="Fire" src={require('images/stake/fire.png')} height={30} />

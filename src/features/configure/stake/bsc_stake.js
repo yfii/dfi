@@ -810,7 +810,7 @@ export const bscStakePools = [
   {
     id: 'moo_auto_cake-swirl',
     name: 'Swirl Cash',
-    logo: 'single-assets/CAKE.png',
+    logo: 'single-assets/CAKE.svg',
     token: 'mooAutoCakeFixed',
     tokenDecimals: 18,
     tokenAddress: '0xe0B473c0dD6D7Fea5B395c3Ce7ffd4FEF0ab4373',
@@ -1144,7 +1144,7 @@ export const bscStakePools = [
   {
     id: 'moo_auto_cake-salt',
     name: 'SaltSwap',
-    logo: 'single-assets/CAKE.png',
+    logo: 'single-assets/CAKE.svg',
     token: 'mooAutoCAKEfixed',
     tokenDecimals: 18,
     tokenAddress: '0xe0B473c0dD6D7Fea5B395c3Ce7ffd4FEF0ab4373',

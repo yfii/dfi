@@ -26,20 +26,14 @@ const Pool = ({
 
   const [isOpen, setIsOpen] = useState(false);
   const toggleCard = useCallback(() => setIsOpen(!isOpen), [isOpen]);
+  const timestamp = Math.floor(Date.now() / 1000);
   const stake = useSelector(state => state.stake.pools);
+  const launchpool = stake.find(p => {
+    return p.token === pool.earnedToken && p.periodFinish >= timestamp;
+  });
 
   let balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
   let sharesBalance = new BigNumber(tokens[pool.earnedToken].tokenBalance);
-
-  const checkLaunchpool = () => {
-    const timestamp = Math.floor(Date.now() / 1000);
-    for (let index in stake) {
-      if (stake[index].token === pool.earnedToken && stake[index].periodFinish >= timestamp) {
-        stake[index].poolIndex = Number(index) + 1;
-        return stake[index];
-      }
-    }
-  };
 
   return (
     <Grid item xs={12} container key={index} className={classes.container} spacing={0}>
@@ -51,7 +45,7 @@ const Pool = ({
       >
         <PoolSummary
           pool={pool}
-          launchpool={checkLaunchpool()}
+          launchpool={launchpool}
           balanceSingle={balanceSingle}
           toggleCard={toggleCard}
           sharesBalance={sharesBalance}
