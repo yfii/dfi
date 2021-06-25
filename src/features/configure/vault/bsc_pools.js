@@ -50,7 +50,7 @@ export const bscPools = [
   },
   {
     id: 'cake-cakev2',
-    logo: 'single-assets/CAKE.png',
+    logo: 'single-assets/CAKE.svg',
     name: 'CAKE',
     token: 'CAKE',
     tokenDescription: 'PancakeSwap',
@@ -13450,7 +13450,7 @@ export const bscPools = [
   //
   {
     id: 'cake-cake-eol',
-    logo: 'single-assets/CAKE.png',
+    logo: 'single-assets/CAKE.svg',
     name: 'CAKE',
     token: 'CAKE',
     tokenDescription: 'Please use Smart Cake',
