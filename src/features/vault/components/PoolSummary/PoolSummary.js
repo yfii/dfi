@@ -120,7 +120,7 @@ const PoolSummary = ({
         </Grid>
         <ApyStats
           apy={apy}
-          launchpool={launchpool}
+          launchpoolApr={launchpool && launchpool.apy ? launchpool.apy : null}
           isLoading={!fetchApysDone}
           itemClasses={`${classes.item} ${classes.itemStats}`}
           itemInnerClasses={classes.itemInner}
