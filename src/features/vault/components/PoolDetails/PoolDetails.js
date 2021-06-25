@@ -51,7 +51,7 @@ const PoolDetails = ({ vaultId }) => {
       const fetch = () => {
         fetchBalances({ address, web3, tokens });
         fetchVaultsData({ address, web3, pools });
-        if (launchpoolIndex) {
+        if (launchpoolIndex >= 0) {
           fetchPoolData(launchpoolIndex);
         }
         fetchApys();
