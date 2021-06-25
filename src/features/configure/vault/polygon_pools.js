@@ -25,6 +25,31 @@ export const polygonPools = [
     buyTokenUrl:
       'https://quickswap.exchange/#/swap?inputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619&outputCurrency=0xfbdd194376de19a88118e84e279b977f165d01b8',
   },
+  // {
+  //   id: 'polypup-pup',
+  //   name: 'PUP',
+  //   token: 'PUP',
+  //   tokenDescription: 'Polypup',
+  //   tokenAddress: '0xcFe2cF35D2bDDE84967e67d00aD74237e234CE59',
+  //   tokenDecimals: 18,
+  //   tokenDescriptionUrl: '#',
+  //   earnedToken: 'mooPolypupPUP',
+  //   earnedTokenAddress: '',
+  //   earnContractAddress: '',
+  //   pricePerFullShare: 1,
+  //   tvl: 0,
+  //   oracle: 'lps',
+  //   oracleId: 'polypup-pup',
+  //   oraclePrice: 0,
+  //   depositsPaused: false,
+  //   status: 'active',
+  //   platform: 'Polypup',
+  //   assets: ['PUP'],
+  //   callFee: 0.5,
+  //   buyTokenUrl:
+  //     'https://quickswap.exchange/#/swap?outputCurrency=0xcFe2cF35D2bDDE84967e67d00aD74237e234CE59',
+  // },
+  // //
   {
     id: 'polypup-wmatic-pup',
     name: 'PUP-WMATIC QLP',
