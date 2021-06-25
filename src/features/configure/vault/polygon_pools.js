@@ -53,7 +53,7 @@ export const polygonPools = [
   },
   {
     id: 'ape-eth-matic',
-    name: 'ETH-MATIC LP',
+    name: 'ETH-MATIC ALP',
     token: 'ETH-MATIC ALP',
     tokenDescription: 'ApeSwap',
     tokenAddress: '0x6Cf8654e85AB489cA7e70189046D507ebA233613',
@@ -79,8 +79,8 @@ export const polygonPools = [
   },
   {
     id: 'ape-btc-matic',
-    name: 'BTC-MATIC LP',
-    token: 'BTC-MATIC LP',
+    name: 'BTC-MATIC ALP',
+    token: 'BTC-MATIC ALP',
     tokenDescription: 'ApeSwap',
     tokenAddress: '0xe82635a105c520fd58e597181cBf754961d51E3e',
     tokenDecimals: 18,
@@ -105,8 +105,8 @@ export const polygonPools = [
   },
   {
     id: 'ape-bnb-matic',
-    name: 'BNB-MATIC LP',
-    token: 'BNB-MATIC LP',
+    name: 'BNB-MATIC ALP',
+    token: 'BNB-MATIC ALP',
     tokenDescription: 'ApeSwap',
     tokenAddress: '0x0359001070cF696D5993E0697335157a6f7dB289',
     tokenDecimals: 18,
@@ -131,8 +131,8 @@ export const polygonPools = [
   },
   {
     id: 'ape-banana-matic',
-    name: 'BANANA-MATIC LP',
-    token: 'BANANA-MATIC LP',
+    name: 'BANANA-MATIC ALP',
+    token: 'BANANA-MATIC ALP',
     tokenDescription: 'ApeSwap',
     tokenAddress: '0x034293F21F1cCE5908BC605CE5850dF2b1059aC0',
     tokenDecimals: 18,
