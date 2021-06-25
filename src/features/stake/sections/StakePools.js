@@ -153,7 +153,7 @@ export default function StakePools(props) {
                     xs={5}
                     md={2}
                     className={classes.stakeBtn}
-                    href={`/stake/pool/${index + 1}`}
+                    href={`/stake/pool/${pool.id}`}
                   >
                     {pools[index].status === 'closed'
                       ? t('Stake-Button-Claim')
