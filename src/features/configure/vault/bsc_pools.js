@@ -74,7 +74,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
   },
   {
-    id: 'cakev2-rabbit-bnb',
+    id: 'cakev2-rabbit-wbnb',
     name: 'RABBIT-BNB LP',
     token: 'RABBIT-BNB LP',
     tokenDescription: 'PancakeSwap',
@@ -87,7 +87,7 @@ export const bscPools = [
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
-    oracleId: 'cakev2-rabbit-bnb',
+    oracleId: 'cakev2-rabbit-wbnb',
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
