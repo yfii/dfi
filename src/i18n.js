@@ -2,7 +2,8 @@ import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 
-import translationCN from './locales/cn/translation.json';
+import translationAR from './locales/ar/translation.json'; //PR: delete this comment, a Husky
+import translationCN from './locales/cn/translation.json'; // pre-commit linter workaround
 import translationDE from './locales/de/translation.json';
 import translationEL from './locales/el/translation.json';
 import translationEN from './locales/en/translation.json';
@@ -13,7 +14,8 @@ import translationID from './locales/id/translation.json';
 import translationIT from './locales/it/translation.json';
 import translationKO from './locales/ko/translation.json';
 import translationNL from './locales/nl/translation.json';
-import translationPT from './locales/pt/translation.json';
+import translationPT_br from './locales/pt-BR/translation.json';
+import translationPT_pt from './locales/pt-PT/translation.json';
 import translationRU from './locales/ru/translation.json';
 import translationSE from './locales/se/translation.json';
 import translationTR from './locales/tr/translation.json';
@@ -21,6 +23,7 @@ import translationUK from './locales/uk/translation.json';
 import translationZH from './locales/zh/translation.json';
 
 const resources = {
+  ar: { translation: translationAR },
   cn: { translation: translationCN },
   de: { translation: translationDE },
   el: { translation: translationEL },
@@ -32,7 +35,8 @@ const resources = {
   it: { translation: translationIT },
   ko: { translation: translationKO },
   nl: { translation: translationNL },
-  pt: { translation: translationPT },
+  'pt-BR': { translation: translationPT_br },
+  'pt-PT': { translation: translationPT_pt },
   ru: { translation: translationRU },
   se: { translation: translationSE },
   tr: { translation: translationTR },
