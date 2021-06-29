@@ -12,6 +12,8 @@ import VisiblePools from '../VisiblePools/VisiblePools';
 import styles from './styles';
 import { usePoolsTvl, useUserTvl } from '../../hooks/usePoolsTvl';
 import { formatGlobalTvl } from 'features/helpers/format';
+import { useFetchBifibuyback } from 'features/vault/redux/fetchBifiBuyback';
+import { getNetworkFriendlyName } from '../../../helpers/getNetworkData';
 
 const FETCH_INTERVAL_MS = 15 * 1000;
 
@@ -24,6 +26,7 @@ export default function Pools() {
     useFetchVaultsData();
   const { tokens, fetchBalances, fetchBalancesPending, fetchBalancesDone } = useFetchBalances();
   const { apys, fetchApys, fetchApysDone } = useFetchApys();
+  const { bifibuyback, fetchBifibuyback, fetchBifibuybackDone } = useFetchBifibuyback();
   const { poolsTvl } = usePoolsTvl(pools);
   const { userTvl } = useUserTvl(pools, tokens);
   const classes = useStyles();
@@ -33,6 +36,12 @@ export default function Pools() {
     const id = setInterval(fetchApys, FETCH_INTERVAL_MS);
     return () => clearInterval(id);
   }, [fetchApys]);
+
+  useEffect(() => {
+    fetchBifibuyback();
+    const id = setInterval(fetchBifibuyback, FETCH_INTERVAL_MS);
+    return () => clearInterval(id);
+  }, [fetchBifibuyback]);
 
   useEffect(() => {
     const fetch = () => {
@@ -52,6 +61,9 @@ export default function Pools() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [address, web3, fetchBalances, fetchVaultsData]);
 
+  const chainNameLowercase = getNetworkFriendlyName().toLowerCase();
+  const chainBifibuyback = fetchBifibuybackDone ? bifibuyback[chainNameLowercase] : undefined;
+
   return (
     <Grid container className={classes.container}>
       <Grid item xs={6}>
@@ -64,6 +76,15 @@ export default function Pools() {
             TVL{' '}
             {fetchVaultsDataDone && poolsTvl > 0 ? (
               formatGlobalTvl(poolsTvl)
+            ) : (
+              <TVLLoader className={classes.titleLoader} />
+            )}
+          </span>
+
+          <span className={classes.text}>
+            {t('Vault-Bifibuyback')}{' '}
+            {fetchBifibuybackDone ? (
+              formatGlobalTvl(chainBifibuyback)
             ) : (
               <TVLLoader className={classes.titleLoader} />
             )}
