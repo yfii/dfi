@@ -62,7 +62,10 @@ export default function Pools() {
   }, [address, web3, fetchBalances, fetchVaultsData]);
 
   const chainNameLowercase = getNetworkFriendlyName().toLowerCase();
-  const chainBifibuyback = fetchBifibuybackDone ? bifibuyback[chainNameLowercase] : undefined;
+  const chainBifibuyback =
+    fetchBifibuybackDone && chainNameLowercase in bifibuyback
+      ? bifibuyback[chainNameLowercase].buybackUsdAmount
+      : undefined;
 
   return (
     <Grid container className={classes.container}>
@@ -82,15 +85,6 @@ export default function Pools() {
           </span>
 
           <span className={classes.text}>
-            {t('Vault-Bifibuyback')}{' '}
-            {fetchBifibuybackDone ? (
-              formatGlobalTvl(chainBifibuyback)
-            ) : (
-              <TVLLoader className={classes.titleLoader} />
-            )}
-          </span>
-
-          <span className={classes.text}>
             {t('Vault-Deposited')}{' '}
             {fetchVaultsDataDone && fetchBalancesDone ? (
               formatGlobalTvl(userTvl)
@@ -98,6 +92,12 @@ export default function Pools() {
               <TVLLoader className={classes.titleLoader} />
             )}
           </span>
+
+          {fetchBifibuybackDone && chainBifibuyback && (
+            <span className={classes.text}>
+              {t('Vault-Bifibuyback')} {formatGlobalTvl(chainBifibuyback)}
+            </span>
+          )}
           <h4 className={classes.subtitle} style={{ marginTop: '16px' }}>
             <AllInclusiveIcon className={classes.infinityIcon} />
             {t('Vault-AutocompoundingNote')}

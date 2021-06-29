@@ -6,6 +6,7 @@ import { reducer as fetchDepositReducer } from './fetchDeposit';
 import { reducer as fetchWithdrawReducer } from './fetchWithdraw';
 import { reducer as fetchApysReducer } from './fetchApys';
 import { reducer as fetchZapEstimateReducer } from './fetchZapEstimate';
+import { reducer as fetchBifiBuybackReducer } from './fetchBifiBuyback';
 
 const reducers = [
   fetchVaultsData,
@@ -15,6 +16,7 @@ const reducers = [
   fetchApysReducer,
   fetchZapEstimateReducer,
   fetchBalancesReducer,
+  fetchBifiBuybackReducer,
 ];
 
 export default function reducer(state = initialState, action) {
