@@ -96,6 +96,8 @@ export default function Pools() {
           {fetchBifibuybackDone && chainBifibuyback && (
             <span className={classes.text}>
               {t('Vault-Bifibuyback')} {formatGlobalTvl(chainBifibuyback)}
+              {'/'}
+              {t('Vault-BifibuybackDaySuffix')}
             </span>
           )}
           <h4 className={classes.subtitle} style={{ marginTop: '16px' }}>
