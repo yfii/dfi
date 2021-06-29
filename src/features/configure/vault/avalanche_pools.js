@@ -1,5 +1,161 @@
 export const avalanchePools = [
   {
+    id: 'png-wbtc-png',
+    name: 'WBTC-PNG LP',
+    token: 'WBTC-PNG LP',
+    tokenDescription: 'Pangolin',
+    tokenAddress: '0xf372ceAE6B2F4A2C4A6c0550044A7eab914405ea',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooPangolinWBTC-PNG',
+    earnedTokenAddress: '0xAa1ACf9939e98C09f71f21DdD956Ebc704A57027',
+    earnContractAddress: '0xAa1ACf9939e98C09f71f21DdD956Ebc704A57027',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'png-wbtc-png',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pangolin',
+    assets: ['WBTC', 'PNG'],
+    callFee: 0.25,
+    addLiquidityUrl:
+      'https://app.pangolin.exchange/#/add/0x60781c2586d68229fde47564546784ab3faca982/0x408D4cD0ADb7ceBd1F1A1C33A0Ba2098E1295bAB',
+    buyTokenUrl:
+      'https://app.pangolin.exchange/#/swap?inputCurrency=0x60781c2586d68229fde47564546784ab3faca982&outputCurrency=0x408D4cD0ADb7ceBd1F1A1C33A0Ba2098E1295bAB',
+  },
+  {
+    id: 'png-eth-png',
+    name: 'ETH-PNG LP',
+    token: 'ETH-PNG LP',
+    tokenDescription: 'Pangolin',
+    tokenAddress: '0x53B37b9A6631C462d74D65d61e1c056ea9dAa637',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooPangolinETH-PNG',
+    earnedTokenAddress: '0x9A785D94DDFE903ff54b7F6EAb824029C0c4d59a',
+    earnContractAddress: '0x9A785D94DDFE903ff54b7F6EAb824029C0c4d59a',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'png-eth-png',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pangolin',
+    assets: ['ETH', 'PNG'],
+    callFee: 0.25,
+    addLiquidityUrl:
+      'https://app.pangolin.exchange/#/add/0x60781c2586d68229fde47564546784ab3faca982/0xf20d962a6c8f70c731bd838a3a388D7d48fA6e15',
+    buyTokenUrl:
+      'https://app.pangolin.exchange/#/swap?inputCurrency=0x60781c2586d68229fde47564546784ab3faca982&outputCurrency=0xf20d962a6c8f70c731bd838a3a388D7d48fA6e15',
+  },
+  {
+    id: 'png-link-png',
+    name: 'LINK-PNG LP',
+    token: 'LINK-PNG LP',
+    tokenDescription: 'Pangolin',
+    tokenAddress: '0x7313835802C6e8CA2A6327E6478747B71440F7a4',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooPangolinLINK-PNG',
+    earnedTokenAddress: '0x88b549Ba984d3C7725F4dc32abB5389D127F7a6F',
+    earnContractAddress: '0x88b549Ba984d3C7725F4dc32abB5389D127F7a6F',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'png-link-png',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pangolin',
+    assets: ['LINK', 'PNG'],
+    callFee: 0.25,
+    addLiquidityUrl:
+      'https://app.pangolin.exchange/#/add/0x60781c2586d68229fde47564546784ab3faca982/0xB3fe5374F67D7a22886A0eE082b2E2f9d2651651',
+    buyTokenUrl:
+      'https://app.pangolin.exchange/#/swap?inputCurrency=0x60781c2586d68229fde47564546784ab3faca982&outputCurrency=0xB3fe5374F67D7a22886A0eE082b2E2f9d2651651',
+  },
+  {
+    id: 'png-dai-png',
+    name: 'DAI-PNG LP',
+    token: 'DAI-PNG LP',
+    tokenDescription: 'Pangolin',
+    tokenAddress: '0xD765B31399985f411A9667330764f62153b42C76',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooPangolinDAI-PNG',
+    earnedTokenAddress: '0xC1CdB110332055BE7F4D961833D7D21E7ED3028D',
+    earnContractAddress: '0xC1CdB110332055BE7F4D961833D7D21E7ED3028D',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'png-dai-png',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pangolin',
+    assets: ['DAI', 'PNG'],
+    callFee: 0.25,
+    addLiquidityUrl:
+      'https://app.pangolin.exchange/#/add/0x60781c2586d68229fde47564546784ab3faca982/0xbA7dEebBFC5fA1100Fb055a87773e1E99Cd3507a',
+    buyTokenUrl:
+      'https://app.pangolin.exchange/#/swap?inputCurrency=0x60781c2586d68229fde47564546784ab3faca982&outputCurrency=0xbA7dEebBFC5fA1100Fb055a87773e1E99Cd3507a',
+  },
+  {
+    id: 'png-sushi-png',
+    name: 'SUSHI-PNG LP',
+    token: 'SUSHI-PNG LP',
+    tokenDescription: 'Pangolin',
+    tokenAddress: '0xF105fb50fC6DdD8a857bbEcd296c8a630E8ca857',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooPangolinSUSHI-PNG',
+    earnedTokenAddress: '0x9F0c5f6e0EB4F3eEFA56A2D557700Bb7D6A713c0',
+    earnContractAddress: '0x9F0c5f6e0EB4F3eEFA56A2D557700Bb7D6A713c0',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'png-sushi-png',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pangolin',
+    assets: ['SUSHI', 'PNG'],
+    callFee: 0.25,
+    addLiquidityUrl:
+      'https://app.pangolin.exchange/#/add/0x60781c2586d68229fde47564546784ab3faca982/0x39cf1BD5f15fb22eC3D9Ff86b0727aFc203427cc',
+    buyTokenUrl:
+      'https://app.pangolin.exchange/#/swap?inputCurrency=0x60781c2586d68229fde47564546784ab3faca982&outputCurrency=0x39cf1BD5f15fb22eC3D9Ff86b0727aFc203427cc',
+  },
+  {
+    id: 'png-uni-png',
+    name: 'UNI-PNG LP',
+    token: 'UNI-PNG LP',
+    tokenDescription: 'Pangolin',
+    tokenAddress: '0x874685bc6794c8b4bEFBD037147C2eEF990761A9',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooPangolinUNI-PNG',
+    earnedTokenAddress: '0xD853409e47fdEe6A36e4368CDD360D57e04Ae9cf',
+    earnContractAddress: '0xD853409e47fdEe6A36e4368CDD360D57e04Ae9cf',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'png-uni-png',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pangolin',
+    assets: ['UNI', 'PNG'],
+    callFee: 0.25,
+    addLiquidityUrl:
+      'https://app.pangolin.exchange/#/add/0x60781c2586d68229fde47564546784ab3faca982/0xf39f9671906d8630812f9d9863bBEf5D523c84Ab',
+    buyTokenUrl:
+      'https://app.pangolin.exchange/#/swap?inputCurrency=0x60781c2586d68229fde47564546784ab3faca982&outputCurrency=0xf39f9671906d8630812f9d9863bBEf5D523c84Ab',
+  },
+  {
     id: 'gondola-eth-zeth',
     logo: 'avax-pairs/ZETH.svg',
     name: 'zETH-ETH LP',
@@ -376,7 +532,6 @@ export const avalanchePools = [
 
   {
     id: 'png-sushi-avax',
-    logo: 'avax-pairs/SUSHI-AVAX.svg',
     name: 'SUSHI-AVAX LP',
     token: 'SUSHI-AVAX LP',
     tokenDescription: 'Pangolin',
@@ -404,7 +559,6 @@ export const avalanchePools = [
 
   {
     id: 'png-wbtc-avax',
-    logo: 'avax-pairs/WBTC-AVAX.svg',
     name: 'WBTC-AVAX LP',
     token: 'WBTC-AVAX LP',
     tokenDescription: 'Pangolin',
@@ -432,7 +586,6 @@ export const avalanchePools = [
 
   {
     id: 'png-link-avax',
-    logo: 'avax-pairs/LINK-AVAX.svg',
     name: 'LINK-AVAX LP',
     token: 'LINK-AVAX LP',
     tokenDescription: 'Pangolin',
@@ -460,7 +613,6 @@ export const avalanchePools = [
 
   {
     id: 'png-uni-avax',
-    logo: 'avax-pairs/UNI-AVAX.svg',
     name: 'UNI-AVAX LP',
     token: 'UNI-AVAX LP',
     tokenDescription: 'Pangolin',
@@ -488,7 +640,6 @@ export const avalanchePools = [
 
   {
     id: 'png-usdt-png',
-    logo: 'avax-pairs/USDT-PNG.svg',
     name: 'USDT-PNG LP',
     token: 'USDT-PNG LP',
     tokenDescription: 'Pangolin',
@@ -516,7 +667,6 @@ export const avalanchePools = [
 
   {
     id: 'png-eth-avax',
-    logo: 'avax-pairs/ETH-AVAX.svg',
     name: 'ETH-AVAX LP',
     token: 'ETH-AVAX LP',
     tokenDescription: 'Pangolin',
@@ -544,7 +694,6 @@ export const avalanchePools = [
 
   {
     id: 'png-usdt-avax',
-    logo: 'avax-pairs/USDT-AVAX.svg',
     name: 'USDT-AVAX LP',
     token: 'USDT-AVAX LP',
     tokenDescription: 'Pangolin',
@@ -572,7 +721,6 @@ export const avalanchePools = [
 
   {
     id: 'png-png-avax',
-    logo: 'avax-pairs/PNG-AVAX.svg',
     name: 'PNG-AVAX LP',
     token: 'PNG-AVAX LP',
     tokenDescription: 'Pangolin',
