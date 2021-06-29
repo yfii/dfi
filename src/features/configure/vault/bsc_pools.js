@@ -102,7 +102,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82&outputCurrency=0x55d398326f99059fF775485246999027B3197955',
   },
   {
-    id: 'merlin-merlin',
+    id: 'merlin-merlin-eol',
     logo: 'single-assets/MERL.svg',
     name: 'MERL',
     token: 'MERL',
@@ -117,7 +117,7 @@ export const bscPools = [
     oracle: 'tokens',
     oracleId: 'MERL',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Other',
     assets: ['MERL'],
