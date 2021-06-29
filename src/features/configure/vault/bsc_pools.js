@@ -25,7 +25,6 @@ export const bscPools = [
   },
   {
     id: 'wex-watch-bnb',
-    //logo: 'eth-pairs/BETH-ETH.svg',
     name: 'WATCH-BNB WLP',
     token: 'WATCH-BNB WLP',
     tokenDescription: 'WaultFinance',
