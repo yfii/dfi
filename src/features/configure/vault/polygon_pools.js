@@ -73,7 +73,7 @@ export const polygonPools = [
     platform: 'Curve',
     assets: ['DAI', 'USDC', 'USDT', 'WBTC', 'ETH'],
     callFee: 0.5,
-    withdrawalFee: '0.1%',
+    withdrawalFee: '0.05%',
     addLiquidityUrl: 'https://polygon.curve.fi/atricrypto/deposit',
   },
   {
@@ -98,7 +98,7 @@ export const polygonPools = [
     platform: 'Curve',
     assets: ['WBTC', 'renBTC'],
     callFee: 0.5,
-    withdrawalFee: '0.1%',
+    withdrawalFee: '0.05%',
     addLiquidityUrl: 'https://polygon.curve.fi/ren/deposit',
   },
   {
