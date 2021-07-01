@@ -84,6 +84,12 @@ export default function Pools() {
             )}
           </span>
 
+          {fetchBifibuybackDone && chainBifibuyback && (
+            <span className={classes.text}>
+              {t('Vault-BifiBuyback', { amount: formatGlobalTvl(chainBifibuyback) })}
+            </span>
+          )}
+
           <span className={classes.text}>
             {t('Vault-Deposited')}{' '}
             {fetchVaultsDataDone && fetchBalancesDone ? (
@@ -93,11 +99,6 @@ export default function Pools() {
             )}
           </span>
 
-          {fetchBifibuybackDone && chainBifibuyback && (
-            <span className={classes.text}>
-              {t('Vault-BifiBuyback', { amount: formatGlobalTvl(chainBifibuyback) })}
-            </span>
-          )}
           <h4 className={classes.subtitle} style={{ marginTop: '16px' }}>
             <AllInclusiveIcon className={classes.infinityIcon} />
             {t('Vault-AutocompoundingNote')}
