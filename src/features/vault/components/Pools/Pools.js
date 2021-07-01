@@ -12,6 +12,8 @@ import VisiblePools from '../VisiblePools/VisiblePools';
 import styles from './styles';
 import { usePoolsTvl, useUserTvl } from '../../hooks/usePoolsTvl';
 import { formatGlobalTvl } from 'features/helpers/format';
+import { useFetchBifibuyback } from 'features/vault/redux/fetchBifiBuyback';
+import { getNetworkFriendlyName } from '../../../helpers/getNetworkData';
 
 const FETCH_INTERVAL_MS = 15 * 1000;
 
@@ -24,6 +26,7 @@ export default function Pools() {
     useFetchVaultsData();
   const { tokens, fetchBalances, fetchBalancesPending, fetchBalancesDone } = useFetchBalances();
   const { apys, fetchApys, fetchApysDone } = useFetchApys();
+  const { bifibuyback, fetchBifibuyback, fetchBifibuybackDone } = useFetchBifibuyback();
   const { poolsTvl } = usePoolsTvl(pools);
   const { userTvl } = useUserTvl(pools, tokens);
   const classes = useStyles();
@@ -33,6 +36,12 @@ export default function Pools() {
     const id = setInterval(fetchApys, FETCH_INTERVAL_MS);
     return () => clearInterval(id);
   }, [fetchApys]);
+
+  useEffect(() => {
+    fetchBifibuyback();
+    const id = setInterval(fetchBifibuyback, FETCH_INTERVAL_MS);
+    return () => clearInterval(id);
+  }, [fetchBifibuyback]);
 
   useEffect(() => {
     const fetch = () => {
@@ -52,6 +61,12 @@ export default function Pools() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [address, web3, fetchBalances, fetchVaultsData]);
 
+  const chainNameLowercase = getNetworkFriendlyName().toLowerCase();
+  const chainBifibuyback =
+    fetchBifibuybackDone && chainNameLowercase in bifibuyback
+      ? bifibuyback[chainNameLowercase].buybackUsdAmount
+      : undefined;
+
   return (
     <Grid container className={classes.container}>
       <Grid item xs={6}>
@@ -69,6 +84,12 @@ export default function Pools() {
             )}
           </span>
 
+          {fetchBifibuybackDone && chainBifibuyback && (
+            <span className={classes.text}>
+              {t('Vault-BifiBuyback', { amount: formatGlobalTvl(chainBifibuyback) })}
+            </span>
+          )}
+
           <span className={classes.text}>
             {t('Vault-Deposited')}{' '}
             {fetchVaultsDataDone && fetchBalancesDone ? (
@@ -77,6 +98,7 @@ export default function Pools() {
               <TVLLoader className={classes.titleLoader} />
             )}
           </span>
+
           <h4 className={classes.subtitle} style={{ marginTop: '16px' }}>
             <AllInclusiveIcon className={classes.infinityIcon} />
             {t('Vault-AutocompoundingNote')}
