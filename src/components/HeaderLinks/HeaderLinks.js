@@ -70,6 +70,8 @@ const HeaderLinks = ({
         return i18n.changeLanguage('en').then(() => setLanguage(event));
       case 'Español':
         return i18n.changeLanguage('es').then(() => setLanguage(event));
+      case 'Filipino':
+        return i18n.changeLanguage('fil').then(() => setLanguage(event));
       case 'Français':
         return i18n.changeLanguage('fr').then(() => setLanguage(event));
       case 'हिन्दी':
@@ -127,6 +129,7 @@ const HeaderLinks = ({
             'English',
             'Ελληνικά',
             'Español',
+            'Filipino',
             'Français',
             'हिन्दी',
             'Bahasa Indonesia',
