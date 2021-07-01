@@ -1903,7 +1903,6 @@ export const bscPools = [
   },
   {
     id: 'cakev2-cake-busd',
-    logo: 'cake-pairs/CAKE-BUSD.svg',
     name: 'CAKE-BUSD LP',
     token: 'CAKE-BUSD LP2',
     tokenDescription: 'PancakeSwap',
@@ -4061,7 +4060,6 @@ export const bscPools = [
 
   {
     id: 'swampv2-cake-bnb',
-    logo: 'bnb-pairs/CAKE-BNB.svg',
     name: 'CAKE-BNB LP',
     token: 'CAKE-BNB LP2',
     tokenDescription: 'PancakeSwap (Swamp)',
@@ -4959,7 +4957,6 @@ export const bscPools = [
   },
   {
     id: 'cakev2-cake-bnb',
-    logo: 'bnb-pairs/CAKE-BNB.svg',
     name: 'CAKE-BNB LP',
     token: 'CAKE-BNB LP2',
     tokenDescription: 'PancakeSwap',
@@ -8356,7 +8353,6 @@ export const bscPools = [
 
   {
     id: 'auto-cake-bnb-eol',
-    logo: 'bnb-pairs/CAKE-BNB.svg',
     name: 'CAKE-BNB LP',
     token: 'CAKE-BNB LP',
     tokenDescription: 'PancakeSwap (Autofarm)',
@@ -8541,7 +8537,7 @@ export const bscPools = [
 
   {
     id: 'swamp-cake-eol',
-    logo: 'single-assets/SMART.png',
+    logo: 'single-assets/CAKE.svg',
     name: 'CAKE',
     token: 'CAKE',
     tokenDescription: 'PancakeSwap (Swamp)',
@@ -8596,7 +8592,7 @@ export const bscPools = [
 
   {
     id: 'auto-cake-eol',
-    logo: 'single-assets/SMART.png',
+    logo: 'single-assets/CAKE.svg',
     name: 'CAKE',
     token: 'CAKE',
     tokenDescription: 'PancakeSwap (Autofarm)',
@@ -8650,7 +8646,6 @@ export const bscPools = [
 
   {
     id: 'swamp-cake-bnb-eol',
-    logo: 'bnb-pairs/CAKE-BNB.svg',
     name: 'CAKE-BNB LP',
     token: 'CAKE-BNB LP',
     tokenDescription: 'PancakeSwap (Swamp)',
@@ -12679,7 +12674,7 @@ export const bscPools = [
 
   {
     id: 'cake-smart-eol',
-    logo: 'single-assets/SMART.png',
+    logo: 'single-assets/CAKE.svg',
     name: 'CAKE SMART',
     token: 'CAKE',
     tokenDescription: 'PancakeSwap',
