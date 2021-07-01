@@ -52,7 +52,7 @@ export const polygonStakePools = [
     partnership: true,
     status: 'active',
     isMooStaked: true,
-    periodFinish: 1625096889,
+    periodFinish: 1625530839,
     partners: [
       {
         logo: 'stake/polyyeld/logo.png',
