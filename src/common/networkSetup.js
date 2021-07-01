@@ -40,7 +40,12 @@ export const networkSettings = {
       symbol: 'MATIC',
       decimals: 18,
     },
-    rpcUrls: ['https://rpc-mainnet.maticvigil.com/'],
+    rpcUrls: [
+      'https://rpc-mainnet.matic.network',
+      'https://rpc-mainnet.maticvigil.com/',
+      'https://rpc-mainnet.matic.quiknode.pro',
+      'https://matic-mainnet.chainstacklabs.com',
+    ],
     blockExplorerUrls: ['https://polygonscan.com/'],
   },
   250: {
@@ -79,5 +84,5 @@ export const networkSetup = chainId => {
 
 export const getRpcUrl = () => {
   const settings = networkSettings[process.env.REACT_APP_NETWORK_ID];
-  return settings.rpcUrls[0];
+  return settings.rpcUrls[~~(settings.rpcUrls.length * Math.random())];
 };
