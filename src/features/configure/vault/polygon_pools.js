@@ -57,7 +57,7 @@ export const polygonPools = [
     name: 'aTriCrypto',
     token: 'crvUSDBTCETH',
     tokenDescription: 'Curve',
-    tokenAddress: '0x8096ac61db23291252574d49f036f0f9ed8ab390',
+    tokenAddress: '0x8096ac61db23291252574D49f036f0f9ed8ab390',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooCurveATriCrypto',
