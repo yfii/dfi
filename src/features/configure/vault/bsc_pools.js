@@ -7495,7 +7495,7 @@ export const bscPools = [
     platform: 'Ellipsis',
     assets: ['renBTC', 'BTCB'],
     callFee: 0.5,
-    addLiquidityUrl: 'https://ellipsis.finance/ren/deposit',
+    addLiquidityUrl: 'https://ellipsis.finance/pool',
   },
   {
     id: 'ellipsis-fusdt-3eps',
@@ -7519,7 +7519,7 @@ export const bscPools = [
     platform: 'Ellipsis',
     assets: ['fUSDT', 'USDT', 'BUSD', 'USDC'],
     callFee: 0.5,
-    addLiquidityUrl: 'https://ellipsis.finance/fusdt/deposit',
+    addLiquidityUrl: 'https://ellipsis.finance/pool',
   },
 
   {
@@ -8747,7 +8747,7 @@ export const bscPools = [
     platform: 'Ellipsis',
     assets: ['USDT', 'BUSD', 'USDC', '3EPS'],
     callFee: 0.5,
-    addLiquidityUrl: 'https://ellipsis.finance/3pool/deposit',
+    addLiquidityUrl: 'https://ellipsis.finance/pool',
     buyTokenUrl:
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56',
   },
