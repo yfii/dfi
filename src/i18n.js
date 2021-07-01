@@ -2,12 +2,13 @@ import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 
-import translationAR from './locales/ar/translation.json'; //PR: delete this comment, a Husky
-import translationCN from './locales/cn/translation.json'; // pre-commit linter workaround
+import translationAR from './locales/ar/translation.json';
+import translationCN from './locales/cn/translation.json';
 import translationDE from './locales/de/translation.json';
 import translationEL from './locales/el/translation.json';
 import translationEN from './locales/en/translation.json';
 import translationES from './locales/es/translation.json';
+import translationFIL from './locales/fil/translation.json';
 import translationFR from './locales/fr/translation.json';
 import translationHI from './locales/hi/translation.json';
 import translationID from './locales/id/translation.json';
@@ -29,6 +30,7 @@ const resources = {
   el: { translation: translationEL },
   en: { translation: translationEN },
   es: { translation: translationES },
+  fil: { translation: translationFIL },
   fr: { translation: translationFR },
   hi: { translation: translationHI },
   id: { translation: translationID },
