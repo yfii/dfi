@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button, Menu, MenuItem } from '@material-ui/core';
 import { supportedLanguages } from '../../i18n';
@@ -49,7 +49,7 @@ export const LanguageDropdown = function ({ navLinkClass }) {
       setAnchorEl(null);
       i18n.changeLanguage(code);
     },
-    [setAnchorEl, setLanguage, i18n]
+    [setAnchorEl, i18n]
   );
 
   useEffect(() => {
