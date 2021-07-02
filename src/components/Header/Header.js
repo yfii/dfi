@@ -26,7 +26,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
   };
 
   return (
-    <AppBar className={`${classes.appBar} ${classes.dark}`}>
+    <AppBar className={`${classes.appBar} ${classes.dark}`} position="relative">
       <Toolbar className={classes.container}>
         <Button href="/" className={classes.title}>
           <Hidden xsDown>

@@ -58,7 +58,7 @@ export default theme => ({
       flexShrink: 0,
       flexGrow: 0,
     },
-    ['@media (min-width: 1380px)']: {
+    '@media (min-width: 1380px)': {
       flexBasis: '255px',
     },
   },
