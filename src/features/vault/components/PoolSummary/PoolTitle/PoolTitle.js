@@ -10,15 +10,15 @@ import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-const singleAssetExtensions = ['svg', 'webp', 'png'];
+const singleAssetRequire = require.context('images/single-assets', false, /\.(svg|webp|png)$/);
+const singleAssets = Object.fromEntries(
+  singleAssetRequire.keys().map(path => [path.substring(2, path.lastIndexOf('.')), path])
+);
 const singleAsset = symbol => {
-  for (let ext of singleAssetExtensions) {
-    try {
-      return require(`images/single-assets/${symbol}.${ext}`);
-    } catch (error) {
-      console.warn(error);
-    }
+  if (symbol in singleAssets) {
+    return singleAssetRequire(singleAssets[symbol]);
   }
+
   throw new Error(`Image required for '${symbol}' token in 'images/single-assets/'`);
 };
 
