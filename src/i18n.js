@@ -16,6 +16,7 @@ export const supportedLanguages = {
   id: 'Bahasa Indonesia',
   it: 'Italiano',
   ko: '한글',
+  ms: 'Bahasa Melayu',
   nl: 'Nederlands',
   'pt-BR': 'Português do Brasil',
   'pt-PT': 'Português de Portugal',
