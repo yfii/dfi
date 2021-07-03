@@ -3,11 +3,12 @@ import Modal from 'react-modal';
 import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import Close from '@material-ui/icons/Close';
-
-import styles from './styles';
 import { useNetworks } from 'components/NetworksProvider/NetworksProvider';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '@material-ui/core';
+import { getSingleAssetSrc } from '../../features/helpers/getSingleAssetSrc';
+
+import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
@@ -58,7 +59,7 @@ const NetworksModal = () => {
           >
             <img
               className={classes.logo}
-              src={require(`images/single-assets/${network.asset}.png`)}
+              src={getSingleAssetSrc(network.asset)}
               alt={`${currentNetwork.asset} logo`}
             />
             <div className={classes.tag}>
