@@ -1422,7 +1422,7 @@ export const polygonPools = [
   },
   {
     id: 'aave-eth',
-    logo: 'single-assets/ETH.png',
+    logo: 'single-assets/ETH.svg',
     name: 'ETH',
     token: 'ETH',
     tokenDescription: 'Aave',

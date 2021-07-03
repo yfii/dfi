@@ -70,7 +70,7 @@ export const polygonStakePools = [
   {
     id: 'moo_aave-eth',
     name: 'Iron / Garuda / Fanatics',
-    logo: 'single-assets/ETH.png',
+    logo: 'single-assets/ETH.svg',
     token: 'mooAaveETH',
     tokenDecimals: 18,
     tokenAddress: '0x77276a7c9Ff3a6cbD334524d6F1f6219D039ac0E',
