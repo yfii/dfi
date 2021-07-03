@@ -91,7 +91,7 @@ export const LanguageDropdown = function ({ navLinkClass }) {
             rel="noopener noreferrer"
             className={classes.helpLink}
           >
-            {t('Nav-HelpTranslate')}
+            Help to translate
           </a>
         </MenuItem>
       </Menu>
