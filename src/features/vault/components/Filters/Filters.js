@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo, useCallback, useMemo } from 'react';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import { makeStyles } from '@material-ui/core/styles';
@@ -13,7 +13,7 @@ import TextField from '@material-ui/core/TextField';
 import { Avatar, Box, Button } from '@material-ui/core';
 
 import styles from './styles';
-import { platforms, assets } from './constants';
+import { assets, platforms } from './constants';
 
 const useStyles = makeStyles(styles);
 
@@ -32,29 +32,34 @@ const Filters = ({
   const { t } = useTranslation();
   const classes = useStyles();
 
-  const handlePlatformChange = event => setPlatform(event.target.value);
-  const handleVaultTypeChange = event => setVaultType(event.target.value);
-  const handleAssetChange = (_event, option) => setAsset(option.value);
-  const handleOrderChange = event => setOrder(event.target.value);
+  const handlePlatformChange = useCallback(event => setPlatform(event.target.value), [setPlatform]);
+  const handleVaultTypeChange = useCallback(
+    event => setVaultType(event.target.value),
+    [setVaultType]
+  );
+  const handleAssetChange = useCallback((_event, option) => setAsset(option.value), [setAsset]);
+  const handleOrderChange = useCallback(event => setOrder(event.target.value), [setOrder]);
 
-  const options = [
-    {
-      value: 'All',
-      label: t('Filters-All'),
-    },
-    ...assets.map(asset => ({
-      value: asset,
-      label: asset,
-    })),
-  ];
+  const allAssetOptions = useMemo(() => {
+    return [
+      {
+        value: 'All',
+        label: t('Filters-All'),
+      },
+      ...assets.map(asset => ({
+        value: asset,
+        label: asset,
+      })),
+    ];
+  }, [t]);
 
-  const resetFilter = () => {
+  const resetFilter = useCallback(() => {
     toggleFilter('resetAll');
     setPlatform('All');
     setVaultType('All');
     setAsset('All');
     setOrder('default');
-  };
+  }, [toggleFilter, setPlatform, setVaultType, setAsset, setOrder]);
 
   return (
     <Grid container spacing={2} className={classes.container}>
@@ -188,11 +193,11 @@ const Filters = ({
       <Grid item xs={6} sm={4} md={3}>
         <FormControl className={classes.selectorContainer}>
           <Autocomplete
-            value={options.find(option => option.value === asset)}
+            value={allAssetOptions.find(option => option.value === asset)}
             onChange={handleAssetChange}
             className={classes.selector}
             id="select-asset"
-            options={options}
+            options={allAssetOptions}
             getOptionLabel={option => option.label}
             renderInput={params => (
               <TextField
@@ -230,4 +235,4 @@ const Filters = ({
   );
 };
 
-export default Filters;
+export default memo(Filters);
