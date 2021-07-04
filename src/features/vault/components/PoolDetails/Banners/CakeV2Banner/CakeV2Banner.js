@@ -20,7 +20,7 @@ export const CakeV2Banner = memo(() => {
       <div className={classes.logoFeature}>
         <div className={classes.logoHolder}>
           <img
-            src={require('images/single-assets/CakeBanner.svg')}
+            src={require('images/banners/CakeBanner.svg')}
             className={classes.logo}
             alt=""
             role="presentation"

@@ -436,7 +436,7 @@ export const bscStakePools = [
   {
     id: 'moo_belt_eth-icarus',
     name: 'Icarus Finance',
-    logo: 'single-assets/ETH.png',
+    logo: 'single-assets/ETH.svg',
     token: 'mooBeltETH',
     tokenDecimals: 18,
     tokenAddress: '0xf2064C230b285AA6Cf45c6267DA86a8E3505D0AA',
@@ -470,7 +470,7 @@ export const bscStakePools = [
   {
     id: 'moo_belt_eth-satis',
     name: 'Satis Finance',
-    logo: 'single-assets/ETH.png',
+    logo: 'single-assets/ETH.svg',
     token: 'mooBeltETH',
     tokenDecimals: 18,
     tokenAddress: '0xf2064C230b285AA6Cf45c6267DA86a8E3505D0AA',
@@ -538,7 +538,7 @@ export const bscStakePools = [
   {
     id: 'moo_auto_eth-apys',
     name: 'APYSwap',
-    logo: 'single-assets/ETH.png',
+    logo: 'single-assets/ETH.svg',
     token: 'mooAutoETHv2',
     tokenDecimals: 18,
     tokenAddress: '0x0F47eaae1EC5fD11067455210c494a7828024524',
@@ -1078,7 +1078,7 @@ export const bscStakePools = [
   {
     id: 'moo_venus_eth-brew',
     name: 'CafeSwap',
-    logo: 'single-assets/ETH.png',
+    logo: 'single-assets/ETH.svg',
     token: 'mooVenusETH',
     tokenDecimals: 18,
     tokenAddress: '0xA9936272065e6DDAc9D2453C9a2712B581e9aE1B',

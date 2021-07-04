@@ -77,7 +77,7 @@ export const hecoPools = [
   },
   {
     id: 'lendhub-eth',
-    logo: 'single-assets/ETH.png',
+    logo: 'single-assets/ETH.svg',
     name: 'ETH',
     token: 'ETH',
     tokenDescription: 'Lendhub',

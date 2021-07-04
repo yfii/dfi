@@ -3170,7 +3170,7 @@ export const bscPools = [
   },
   {
     id: 'belt-belteth',
-    logo: 'single-assets/ETH.png',
+    logo: 'single-assets/ETH.svg',
     name: 'beltETH',
     token: 'beltETH',
     tokenDescription: 'Belt (Autofarm)',
@@ -7262,7 +7262,7 @@ export const bscPools = [
 
   {
     id: 'auto-eth-v2-eol',
-    logo: 'single-assets/ETH.png',
+    logo: 'single-assets/ETH.svg',
     name: 'ETH',
     token: 'ETH',
     tokenDescription: 'Venus (Autofarm)',
@@ -9403,7 +9403,7 @@ export const bscPools = [
 
   {
     id: 'venus-eth-eol',
-    logo: 'single-assets/ETH.png',
+    logo: 'single-assets/ETH.svg',
     name: 'ETH',
     token: 'ETH',
     tokenDescription: 'Venus',
@@ -11091,7 +11091,7 @@ export const bscPools = [
 
   {
     id: 'auto-eth-eol',
-    logo: 'single-assets/ETH.png',
+    logo: 'single-assets/ETH.svg',
     name: 'ETH',
     token: 'ETH',
     tokenDescription: 'Venus (Autofarm)',
