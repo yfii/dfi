@@ -104,7 +104,7 @@ const PoolDetails = ({ vaultId }) => {
     pool.tokenDecimals
   );
   const depositedUsd =
-    deposited > 0 && fetchVaultsDataDone ? formatTvl(deposited, pool.oraclePrice) : '';
+    deposited > 0 && fetchVaultsDataDone ? formatTvl(deposited, pool.oraclePrice, false) : '';
 
   if (!fetchVaultsDataDone) {
     return (
