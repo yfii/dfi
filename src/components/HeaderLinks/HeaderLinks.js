@@ -7,9 +7,9 @@ import Avatar from '@material-ui/core/Avatar';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import { WbSunny, NightsStay } from '@material-ui/icons';
-import CustomDropdown from 'components/CustomDropdown/CustomDropdown.js';
 import Button from 'components/CustomButtons/Button.js';
 import { useTranslation } from 'react-i18next';
+import { LanguageDropdown } from '../LanguageDropdown/LanguageDropdown';
 
 import styles from './styles';
 
@@ -24,21 +24,10 @@ const HeaderLinks = ({
   setNightMode,
 }) => {
   const classes = useStyles();
-  const { t, i18n } = useTranslation();
-  const [lng, setLanguage] = useState('en');
+  const { t } = useTranslation();
   const [shortAddress, setShortAddress] = useState('');
   const [dataUrl, setDataUrl] = useState(null);
   const canvasRef = useRef(null);
-
-  useEffect(() => {
-    const cachedLanguage = i18n.language;
-    if (!cachedLanguage) {
-      return;
-    }
-
-    const languageCode = cachedLanguage.split('-')[0].toLowerCase();
-    setLanguage(languageCode);
-  }, [i18n.language]);
 
   useEffect(() => {
     if (!connected) {
@@ -58,54 +47,6 @@ const HeaderLinks = ({
     }
   }, [dataUrl, address, connected]);
 
-  const handleClick = event => {
-    switch (event) {
-      case 'العربية':
-        return i18n.changeLanguage('ar').then(() => setLanguage(event));
-      case 'Deutsch':
-        return i18n.changeLanguage('de').then(() => setLanguage(event));
-      case 'Ελληνικά':
-        return i18n.changeLanguage('el').then(() => setLanguage(event));
-      case 'English':
-        return i18n.changeLanguage('en').then(() => setLanguage(event));
-      case 'Español':
-        return i18n.changeLanguage('es').then(() => setLanguage(event));
-      case 'Filipino':
-        return i18n.changeLanguage('fil').then(() => setLanguage(event));
-      case 'Français':
-        return i18n.changeLanguage('fr').then(() => setLanguage(event));
-      case 'हिन्दी':
-        return i18n.changeLanguage('hi').then(() => setLanguage(event));
-      case 'Bahasa Indonesia':
-        return i18n.changeLanguage('id').then(() => setLanguage(event));
-      case 'Italiano':
-        return i18n.changeLanguage('it').then(() => setLanguage(event));
-      case '한글':
-        return i18n.changeLanguage('ko').then(() => setLanguage(event));
-      case 'Bahasa Melayu':
-        return i18n.changeLanguage('ms').then(() => setLanguage(event));
-      case 'Nederlands':
-        return i18n.changeLanguage('nl').then(() => setLanguage(event));
-      case 'Português do Brasil':
-        return i18n.changeLanguage('pt-BR').then(() => setLanguage(event));
-      case 'Português de Portugal':
-        return i18n.changeLanguage('pt-PT').then(() => setLanguage(event));
-      case 'Pусский':
-        return i18n.changeLanguage('ru').then(() => setLanguage(event));
-      case 'Svenska':
-        return i18n.changeLanguage('se').then(() => setLanguage(event));
-      case 'Türkçe':
-        return i18n.changeLanguage('tr').then(() => setLanguage(event));
-      case '中文':
-        return i18n.changeLanguage('zh').then(() => setLanguage(event));
-      case 'Українська':
-        return i18n.changeLanguage('uk').then(() => setLanguage(event));
-      // TODO: more translations
-      default:
-        return;
-    }
-  };
-
   return (
     <List className={classes.list + ' ' + classes.mlAuto}>
       <Hidden smDown>
@@ -116,48 +57,7 @@ const HeaderLinks = ({
         </ListItem>
       </Hidden>
       <ListItem className={classes.listItem}>
-        <CustomDropdown
-          navDropdown
-          hoverColor="dark"
-          buttonText={lng}
-          buttonProps={{
-            className: classes.navLink,
-            color: 'transparent',
-          }}
-          onClick={handleClick}
-          dropdownList={[
-            'العربية',
-            'Deutsch',
-            'English',
-            'Ελληνικά',
-            'Español',
-            'Filipino',
-            'Français',
-            'हिन्दी',
-            'Bahasa Indonesia',
-            'Italiano',
-            '한글',
-            'Bahasa Melayu',
-            'Nederlands',
-            'Português do Brasil',
-            'Português de Portugal',
-            'Pусский',
-            'Svenska',
-            'Türkçe',
-            'Українська',
-            '中文',
-            // TODO: more translations
-            { divider: true },
-            <a
-              href="https://discord.gg/sj3drZd7dh"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={classes.cta}
-            >
-              Help to translate
-            </a>,
-          ]}
-        />
+        <LanguageDropdown navLinkClass={classes.navLink} />
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button
