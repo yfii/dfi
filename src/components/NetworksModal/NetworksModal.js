@@ -43,6 +43,10 @@ const NetworksModal = () => {
           bottom: 'auto',
           marginRight: '-50%',
           transform: 'translate(-50%, -50%)',
+          borderColor: theme.palette.background.border,
+        },
+        overlay: {
+          backgroundColor: theme.palette.background.overlay,
         },
       }}
     >

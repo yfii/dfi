@@ -15,6 +15,7 @@ const createTheme = isNightMode =>
         retired: isNightMode ? '#d32f2f' : '#e57373',
         hover: isNightMode ? '#2B2A3D' : '#EFE6DC',
         border: isNightMode ? '#2B2A3D' : '#DED9D5',
+        overlay: isNightMode ? 'rgba(0, 0, 0, 0.75)' : 'rgba(255, 255, 255, 0.75)',
       },
       primary: {
         main: isNightMode ? '#fff' : '#000',
