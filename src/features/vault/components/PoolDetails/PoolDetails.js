@@ -155,6 +155,7 @@ const PoolDetails = ({ vaultId }) => {
               logo={pool.logo}
               poolId={pool.id}
               description={t('Vault-Description', { vault: pool.tokenDescription })}
+              launchpool={launchpool}
               addLiquidityUrl={pool.addLiquidityUrl}
               removeLiquidityUrl={pool.removeLiquidityUrl}
               buyTokenUrl={pool.buyTokenUrl}
