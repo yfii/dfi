@@ -18,6 +18,7 @@ export const supportedLanguages = {
   ko: '한글',
   ms: 'Bahasa Melayu',
   nl: 'Nederlands',
+  pl: 'Polski',
   'pt-BR': 'Português do Brasil',
   'pt-PT': 'Português de Portugal',
   ru: 'Pусский',
