@@ -56,6 +56,7 @@ export const bscStakePools = [
     partners: [
       {
         logo: 'stake/beefy/beefyfinance.png',
+        logoNight: 'stake/beefy/beefyfinance_night.png',
         background: 'stake/beefy/background.png',
         text: 'Beefy Finance is the Multichain Yield Optimizer that allows its users to earn compound interest on their holdings. A yield optimizer is an automated service that seeks to gain the maximum possible return on crypto-investments made through DeFi platforms. This is much more efficient than attempting to maximize your returns by doing everything manually. It also means you don’t have to sit in front of a screen all day. So Beefy Finance is a platform that puts your crypto to work for maximum ROI with minimum effort. $BIFI is the governance token of the Beefy Finance platform. This means that when you own some $BIFI, you get the right to create and vote on proposals to do with the future of the platform. Third, the fun part: $BIFI tokens can be staked on Beefy to earn a share of the revenue created by the Beefy platform.',
         website: 'https://app.beefy.finance',

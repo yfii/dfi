@@ -26,6 +26,7 @@ import {
   makeStyles,
   TextField,
   Typography,
+  useTheme,
 } from '@material-ui/core';
 
 import TwitterIcon from '@material-ui/icons/Twitter';
@@ -36,7 +37,6 @@ import { styles } from './styles/view';
 import Divider from '@material-ui/core/Divider';
 import { formatApy, formatCountdown } from '../../helpers/format';
 import { Helmet } from 'react-helmet';
-import { getNetworkFriendlyName } from '../../helpers/getNetworkData';
 import { getPageMeta, usePageMeta } from '../../common/getPageMeta';
 
 const useStyles = makeStyles(styles);
@@ -73,6 +73,8 @@ export default function StakePool(props) {
   const [inputVal, setInputVal] = useState(0);
   const [open, setOpen] = React.useState(false);
   const { getPageMeta } = usePageMeta();
+  const theme = useTheme();
+  const isNightMode = theme.palette.type === 'dark';
 
   const changeInputVal = event => {
     let value = event.target.value;
@@ -427,7 +429,13 @@ export default function StakePool(props) {
       {pools[index].partners.map(partner => (
         <Grid container className={classes.row} style={customBgImg(partner.background)}>
           <Grid item xs={12} className={classes.partnerHeader}>
-            {partner.logo ? (
+            {isNightMode && partner.logoNight ? (
+              <img
+                alt={pools[index].name}
+                src={require('images/' + partner.logoNight)}
+                height="60"
+              />
+            ) : partner.logo ? (
               <img alt={pools[index].name} src={require('images/' + partner.logo)} height="60" />
             ) : (
               ''
