@@ -299,7 +299,7 @@ export default function StakePool(props) {
           } ${
             pools[index].token === 'mooAutoWbnbFixed' ? 'mooAutoWBNB' : pools[index].token
           }`}</Typography>
-          <Typography className={classes.subtitle}>{t('Stake-Balancer-Your-Balance')}</Typography>
+          <Typography className={classes.subtitle}>{t('Vault-Wallet')}</Typography>
         </Grid>
         <Grid item xs={6} sm={6} md={3}>
           <Typography className={classes.title}>{`${

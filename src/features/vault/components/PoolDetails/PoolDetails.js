@@ -166,7 +166,7 @@ const PoolDetails = ({ vaultId }) => {
             <LabeledStat
               value={formatDecimals(balanceSingle)}
               subvalue={balanceUsd}
-              label={t('Vault-Balance')}
+              label={t('Vault-Wallet')}
               isLoading={!fetchBalancesDone}
               className={classes.itemInner}
             />
