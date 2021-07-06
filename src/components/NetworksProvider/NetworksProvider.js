@@ -16,7 +16,7 @@ const NetworksProvider = ({ children }) => {
     },
     {
       name: 'HECO',
-      asset: 'HT',
+      asset: 'HECO',
       id: '128',
       url: 'https://heco.beefy.finance',
     },
@@ -34,7 +34,7 @@ const NetworksProvider = ({ children }) => {
     },
     {
       name: 'FANTOM',
-      asset: 'FTM',
+      asset: 'FANTOM',
       id: '250',
       url: 'https://fantom.beefy.finance',
     },
