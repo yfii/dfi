@@ -23,12 +23,46 @@ export const polygonStakePools = [
     partners: [
       {
         logo: 'stake/beefy/beefyfinance.png',
+        logoNight: 'stake/beefy/beefyfinance_night.png',
         background: 'stake/beefy/background.png',
         text: "You probably already knew that Beefy is the most trusted multi-chain yield optimizer. But did you know that Beefy has its own token? $BIFI has a maximum supply of 80000 tokens and there is no way to mint more. Everyone who holds our own $BIFI token can not only do cool stuff like create and vote on proposals, they also get a share of all harvests done, every hour, every day on all our Polygon vaults. That's a lot of Matic that goes straight to our $BIFI holders. All you have to do is stake your $BIFI in this vault, it’s that simple, come back and harvest your Matic whenever you need it!",
         website: 'https://app.beefy.finance',
         social: {
           telegram: 'http://t.me/beefyfinance',
           twitter: 'https://twitter.com/beefyfinance',
+        },
+      },
+    ],
+  },
+  {
+    id: 'moo_curve-poly-ren',
+    name: 'PolyPup',
+    logo: 'single-assets/renBTC.png',
+    token: 'mooCurveRen',
+    tokenDecimals: 18,
+    tokenAddress: '0x8c9d3Bc4425773BD2F00C4a2aC105c5Ad73c8141',
+    tokenOracle: 'lps',
+    tokenOracleId: 'curve-poly-ren',
+    earnedToken: 'mooPolypupBONE',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x8Fa291074B9E28055fFdBCd4C1C1Dad67B9a130A',
+    earnContractAddress: '0x54c9B796a96877dee81E1A22e9DfA2488ab2675D',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'BONE',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1625858058,
+    partners: [
+      {
+        logo: 'stake/polypup/logo.png',
+        background: 'stake/polypup/background.png',
+        text: `PolyPup Finance is a new DeFi project on Polygon featuring a deflationary token model. The main features are a low emission rate, low supply, and a layered farming approach to the platform. This model will help end-users earn maximum yields over a long time. Buyback and burns will help stabilize a price floor for long term holders.`,
+        website: 'https://bone.polypup.finance/',
+        social: {
+          telegram: 'https://t.me/PolyPupFarm',
+          twitter: 'https://twitter.com/PolyPup1',
         },
       },
     ],
@@ -50,7 +84,7 @@ export const polygonStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'YELD',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     periodFinish: 1625530839,
     partners: [
@@ -70,7 +104,7 @@ export const polygonStakePools = [
   {
     id: 'moo_aave-eth',
     name: 'Iron / Garuda / Fanatics',
-    logo: 'single-assets/ETH.png',
+    logo: 'single-assets/ETH.svg',
     token: 'mooAaveETH',
     tokenDecimals: 18,
     tokenAddress: '0x77276a7c9Ff3a6cbD334524d6F1f6219D039ac0E',
@@ -84,7 +118,7 @@ export const polygonStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'BIFI',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     periodFinish: 1622830150,
     partners: [
@@ -140,7 +174,7 @@ export const polygonStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'BIFI',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     periodFinish: 1622830106,
     partners: [

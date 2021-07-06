@@ -1,7 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-
+import { getSingleAssetSrc } from '../../features/helpers/getSingleAssetSrc';
 import { useNetworks } from '../NetworksProvider/NetworksProvider';
+
 import styles from './styles';
 
 const useStyles = makeStyles(styles);
@@ -14,7 +15,7 @@ const NetworksToggle = () => {
     <div className={classes.container} onClick={openModal}>
       <img
         className={classes.logo}
-        src={require(`images/single-assets/${currentNetwork.asset}.png`)}
+        src={getSingleAssetSrc(currentNetwork.asset)}
         alt={`${currentNetwork.asset} logo`}
       />
       <div className={classes.tag}>

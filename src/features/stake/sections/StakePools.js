@@ -31,9 +31,13 @@ export default function StakePools(props) {
 
   useEffect(() => {
     const fetchEndPeriod = () => {
-      for (const key in pools) {
-        if (halfTime[key] === undefined || halfTime[key] === 0) {
-          fetchHalfTime(key);
+      for (const index in Object.keys(pools)) {
+        if (
+          pools[index].hideCountdown !== true &&
+          pools[index].status !== 'closed' &&
+          !halfTime[index]
+        ) {
+          fetchHalfTime(index);
         }
       }
     };

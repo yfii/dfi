@@ -1,9 +1,8 @@
 {
   "App-Meta-Description": "Ang Multichain Yield Optimizer",
   "Disclaimer": "Alalahaning magingat sa pagamit ng Smart Contracts, Tokens and Crypto. DYOR bago maginvest.",
-  "Network-Error": "Magconnect sa {{network}}.",
+  "Network-ConnectWallet": "Connect Wallet",
   "Vault-Wallet": "Wallet",
-  "Vault-ConnectWallet": "Connect Wallet",
   "Vault-Balance": "Balanse",
   "Vault-APR": "APR",
   "Vault-APY": "APY",
@@ -113,7 +112,6 @@
   "Stake-Button-Unstake-Tokens": "I-unstake ang Tokens",
   "Stake-Button-Claim-Rewards": "Kunin and Rewards",
   "Stake-Button-Exit": "Claim and Unstake",
-  "Stake-Balancer-Your-Balance": "Ang iyong balanse",
   "Stake-Balancer-Current-Staked": "Kasalukuyang naka-stake",
   "Stake-Balancer-Rewards-Available": "Available rewards",
   "Stake-Balancer-Half-Time": "Half-Time",

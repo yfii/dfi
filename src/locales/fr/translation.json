@@ -1,8 +1,7 @@
 {
   "Disclaimer": "L'utilisation de Contrats Intelligents, de Jetons et de Crypto est toujours un risque. Faites vos propres recherches avant d'investir.",
-  "Network-Error": "Réseau incorrect, sélectionnez le bon réseau",
+  "Network-ConnectWallet": "Connection Portefeuille",
   "Vault-Wallet": "Portefeuille",
-  "Vault-ConnectWallet": "Connection Portefeuille",
   "Vault-Balance": "Solde",
   "Vault-APY": "RAC (Rendement Annuel Composé)",
   "Vault-APYDaily": "Journalier",
@@ -95,7 +94,6 @@
   "Stake-Button-Unstake-Tokens": "Unstake Tokens",
   "Stake-Button-Claim-Rewards": "Claim Rewards",
   "Stake-Button-Exit": "Claim and Unstake",
-  "Stake-Balancer-Your-Balance": "Montant disponible",
   "Stake-Balancer-Current-Staked": "Montant déposé",
   "Stake-Balancer-Rewards-Available": "Récompenses disponible",
   "Stake-Balancer-Half-Time": "Half-Time",

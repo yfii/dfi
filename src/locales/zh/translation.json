@@ -1,9 +1,8 @@
 {
   "App-Meta-Description": "多链收益优化器",
   "Disclaimer": "操作智能合约,代币,加密货币有一定的风险. 投资前请务必做好自己的调查和研究.",
-  "Network-Error": "请选择正确的网路.",
   "Vault-Wallet": "钱包",
-  "Vault-ConnectWallet": "连接钱包",
+  "Network-ConnectWallet": "连接钱包",
   "Vault-Balance": "余额",
   "Vault-APR": "年百分率",
   "Vault-APY": "年收益率",
@@ -99,7 +98,6 @@
   "Stake-Button-Unstake-Tokens": "取消质押代币",
   "Stake-Button-Claim-Rewards": "领取奖励",
   "Stake-Button-Exit": "领取并取消质押",
-  "Stake-Balancer-Your-Balance": "您的余额",
   "Stake-Balancer-Current-Staked": "当前质押",
   "Stake-Balancer-Rewards-Available": "可领取奖励",
   "Stake-Balancer-Half-Time": "减半期",

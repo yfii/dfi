@@ -1,8 +1,7 @@
 {
   "Disclaimer": "Usar smart contracts, tokens, e crypto é sempre um risco. Faça sua própria pesquisa(DYOR) antes de investir.",
-  "Network-Error": "Conecte-se a rede correta, por favor.",
   "Vault-Wallet": "Carteira",
-  "Vault-ConnectWallet": "Conectar Carteira",
+  "Network-ConnectWallet": "Conectar Carteira",
   "Vault-Balance": "Saldo",
   "Vault-APY": "APY",
   "Vault-APYDaily": "Lucro diário",
@@ -83,7 +82,6 @@
   "Stake-Button-Unstake-Tokens": "Resgatar Tokens",
   "Stake-Button-Claim-Rewards": "Reivindicar Recompensas",
   "Stake-Button-Exit": "Reivindicar e Resgatar",
-  "Stake-Balancer-Your-Balance": "Seu Saldo",
   "Stake-Balancer-Current-Staked": "Atualmente Investido",
   "Stake-Balancer-Rewards-Available": "Prêmios Disponíveis",
   "Stake-Balancer-Half-Time": "Meio-Tempo",

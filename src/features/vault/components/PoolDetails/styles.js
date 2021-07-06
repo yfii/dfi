@@ -92,6 +92,12 @@ const styles = theme => ({
   itemInner: {
     textAlign: 'center',
   },
+  error: {
+    color: 'red',
+  },
+  loading: {
+    color: theme.palette.primary.main,
+  },
 });
 
 export default styles;

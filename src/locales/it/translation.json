@@ -1,8 +1,7 @@
 {
   "Disclaimer": "Interagire con smart contract, token e crypto comporta sempre dei rischi. Documentati personalmente prima di investire.",
-  "Network-Error": "Collegati alla rete corretta.",
+  "Network-ConnectWallet": "Collega il portafoglio.",
   "Vault-Wallet": "Portafoglio",
-  "Vault-ConnectWallet": "Collega il portafoglio.",
   "Vault-Balance": "Saldo",
   "Vault-APY": "APY",
   "Vault-APYDaily": "Giornaliero",
@@ -95,7 +94,6 @@
   "Stake-Button-Unstake-Tokens": "Rimuovi dallo staking",
   "Stake-Button-Claim-Rewards": "Riscuoti i guadagni",
   "Stake-Button-Exit": "Riscuoti e rimuovi",
-  "Stake-Balancer-Your-Balance": "Il tuo saldo",
   "Stake-Balancer-Current-Staked": "Attualmente in staking",
   "Stake-Balancer-Rewards-Available": "Guadagni disponibili",
   "Stake-Balancer-Half-Time": "Metà tempo",

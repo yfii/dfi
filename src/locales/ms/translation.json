@@ -1,9 +1,8 @@
 {
   "App-Meta-Description": "Pengoptimum Hasil Berbilang Rangkaian",
   "Disclaimer": "Penggunaan Kontrak Pintar, Token, dan Kripto adalah berisiko. DYOR sebelum melabur.",
-  "Network-Error": "Sila sambung ke {{network}}.",
+  "Network-ConnectWallet": "Sambungkan Dompet",
   "Vault-Wallet": "Dompet",
-  "Vault-ConnectWallet": "Sambungkan Dompet",
   "Vault-Balance": "Baki",
   "Vault-APR": "APR",
   "Vault-APY": "APY",
@@ -114,7 +113,6 @@
   "Stake-Button-Unstake-Tokens": "Unstake Tokens",
   "Stake-Button-Claim-Rewards": "Tuntutan Ganjaran",
   "Stake-Button-Exit": "Tuntut dan Unstake",
-  "Stake-Balancer-Your-Balance": "Baki Anda",
   "Stake-Balancer-Current-Staked": "Staked Semasa",
   "Stake-Balancer-Rewards-Available": "Ganjaran Tersedia",
   "Stake-Balancer-Half-Time": "Separuh Masa",

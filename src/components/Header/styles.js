@@ -22,7 +22,8 @@ const styles = theme => ({
     padding: '0.625rem 0',
     marginBottom: '20px',
     color: grayColor[15],
-    width: '100%',
+    width: 'calc(100% - 20px)',
+    margin: '0 auto',
     backgroundColor: whiteColor,
     boxShadow:
       '0 4px 18px 0px rgba(' +
@@ -77,7 +78,7 @@ const styles = theme => ({
     },
   },
   appResponsive: {
-    margin: '20px 10px',
+    margin: '20px 10px 0 10px',
     marginTop: '0px',
   },
   primary: {

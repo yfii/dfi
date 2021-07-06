@@ -11,7 +11,7 @@ import Menu from '@material-ui/icons/Menu';
 import Close from '@material-ui/icons/Close';
 import WbSunny from '@material-ui/icons/WbSunny';
 import NightsStay from '@material-ui/icons/NightsStay';
-import { getNetworkBuyLink } from '../../features/helpers/getNetworkData';
+import { getNetworkBuyUrl } from '../../features/helpers/getNetworkData';
 import styles from './styles';
 
 const useStyles = makeStyles(styles);
@@ -26,7 +26,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
   };
 
   return (
-    <AppBar className={`${classes.appBar} ${classes.dark}`}>
+    <AppBar className={`${classes.appBar} ${classes.dark}`} position="relative">
       <Toolbar className={classes.container}>
         <Button href="/" className={classes.title}>
           <Hidden xsDown>
@@ -134,7 +134,7 @@ const LinkSidebar = ({ name, label, icon, classes }) => (
 );
 
 const getLinkUrl = name => {
-  return name === 'buy' ? getNetworkBuyLink() : `https://${name}.beefy.finance`;
+  return name === 'buy' ? getNetworkBuyUrl() : `https://${name}.beefy.finance`;
 };
 
 export default Header;

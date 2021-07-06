@@ -29,6 +29,7 @@ const styles = theme => ({
   networkName: {
     margin: '0 0 0 8px',
     fontWeight: 'bold',
+    color: theme.palette.primary.main,
   },
 });
 

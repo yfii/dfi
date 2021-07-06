@@ -1,8 +1,7 @@
 {
   "Disclaimer": "Het gebruiken van Smart Contracts, Tokens en Crypto is altijd een risico. Doe je eigen onderzoek voordat je investeert.",
-  "Network-Error": "Verbind met het juiste netwerk graag.",
+  "Network-ConnectWallet": "Verbind Wallet",
   "Vault-Wallet": "Wallet",
-  "Vault-ConnectWallet": "Verbind Wallet",
   "Vault-Balance": "Saldo",
   "Vault-APY": "APY",
   "Vault-APYDaily": "Dagelijks",
@@ -95,7 +94,6 @@
   "Stake-Button-Unstake-Tokens": "Unstake Tokens",
   "Stake-Button-Claim-Rewards": "Claim beloning",
   "Stake-Button-Exit": "Claim en opnemen",
-  "Stake-Balancer-Your-Balance": "Jouw saldo",
   "Stake-Balancer-Current-Staked": "Momenteel gestaked",
   "Stake-Balancer-Rewards-Available": "Beloningen beschikbaar",
   "Stake-Balancer-Half-Time": "Half-Time",

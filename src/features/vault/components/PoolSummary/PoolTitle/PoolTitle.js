@@ -5,22 +5,11 @@ import AvatarGroup from '@material-ui/lab/AvatarGroup';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import { getSingleAssetSrc } from '../../../../helpers/getSingleAssetSrc';
 
 import styles from './styles';
 
 const useStyles = makeStyles(styles);
-
-const singleAssetExtensions = ['svg', 'webp', 'png'];
-const singleAsset = symbol => {
-  for (let ext of singleAssetExtensions) {
-    try {
-      return require(`images/single-assets/${symbol}.${ext}`);
-    } catch (error) {
-      console.warn(error);
-    }
-  }
-  throw new Error(`Image required for '${symbol}' token in 'images/single-assets/'`);
-};
 
 const PoolTitle = ({
   name,
@@ -54,13 +43,13 @@ const PoolTitle = ({
           alt={assets[0]}
           variant="square"
           imgProps={{ style: { objectFit: 'contain' } }}
-          src={singleAsset(assets[0])}
+          src={getSingleAssetSrc(assets[0])}
         />
         <Avatar
           alt={assets[1]}
           variant="square"
           imgProps={{ style: { objectFit: 'contain' } }}
-          src={singleAsset(assets[1])}
+          src={getSingleAssetSrc(assets[1])}
         />
       </AvatarGroup>
     );

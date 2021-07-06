@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import useFilterStorage from '../../home/hooks/useFiltersStorage';
 
 const DEFAULT = {
@@ -17,11 +17,14 @@ const useFilteredPools = (pools, tokens) => {
 
   const [filters, setFilters] = useState(data ? data : DEFAULT);
 
-  const toggleFilter = key => {
-    const newFilters = { ...filters };
-    newFilters[key] = !filters[key];
-    setFilters(newFilters);
-  };
+  const toggleFilter = useCallback(
+    key => {
+      const newFilters = { ...filters };
+      newFilters[key] = !filters[key];
+      setFilters(newFilters);
+    },
+    [filters, setFilters]
+  );
 
   useEffect(() => {
     setStorage(KEY, filters);

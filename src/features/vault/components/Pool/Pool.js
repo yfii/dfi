@@ -7,9 +7,10 @@ import BigNumber from 'bignumber.js';
 
 import { byDecimals } from 'features/helpers/bignumber';
 import PoolSummary from '../PoolSummary/PoolSummary';
-import PoolAccordion from '../PoolDetails/PoolAccordion';
 import styles from './styles';
 import { useSelector } from 'react-redux';
+import PoolActions from '../PoolActions/PoolActions';
+import AccordionDetails from '@material-ui/core/AccordionActions';
 
 const useStyles = makeStyles(styles);
 
@@ -55,12 +56,9 @@ const Pool = ({
           fetchVaultsDataDone={fetchVaultsDataDone}
         />
         <Divider variant="middle" className={classes.divider} />
-        <PoolAccordion
-          pool={pool}
-          balanceSingle={balanceSingle}
-          sharesBalance={sharesBalance}
-          index={index}
-        />
+        <AccordionDetails style={{ justifyContent: 'space-between' }}>
+          <PoolActions pool={pool} balanceSingle={balanceSingle} sharesBalance={sharesBalance} />
+        </AccordionDetails>
       </Accordion>
     </Grid>
   );

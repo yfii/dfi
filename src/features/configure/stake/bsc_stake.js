@@ -23,8 +23,43 @@ export const bscStakePools = [
     partners: [
       {
         logo: 'stake/beefy/beefyfinance.png',
+        logoNight: 'stake/beefy/beefyfinance_night.png',
         background: 'stake/beefy/background.png',
         text: "You probably already knew that Beefy is the most trusted Yield optimizer for the Binance Smart Chain. But did you know that Beefy has its own token? $BIFI has a maximum supply of 80000 tokens and there is no way to mint more. Everyone who holds our own $BIFI token can not only do cool stuff like create and vote on proposals, they also get a share of all harvests done, every hour, every day on all our +120 vaults. That's a lot of BNB that goes straight to our $BIFI holders. All you have to do is stake your $BIFI in this vault, it’s that simple, come back and harvest your BNB whenever you need it! (You can still vote on proposals even though you have staked your $BIFI here).",
+        website: 'https://app.beefy.finance',
+        social: {
+          telegram: 'http://t.me/beefyfinance',
+          twitter: 'https://twitter.com/beefyfinance',
+        },
+      },
+    ],
+  },
+  {
+    id: 'moo_cake-cakev2',
+    name: 'Beefy',
+    logo: 'single-assets/CAKE.svg',
+    token: 'mooCakeV2',
+    tokenDecimals: 18,
+    tokenAddress: '0x97e5d50Fe0632A95b9cf1853E744E02f7D816677',
+    tokenOracle: 'tokens',
+    tokenOracleId: 'Cake',
+    earnedToken: 'mooBIFI',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xf7069e41C57EcC5F122093811d8c75bdB5f7c14e',
+    earnContractAddress: '0xA17A86e836199489801A00B50b9C09525ddC232b',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'BIFI',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1625930588,
+    partners: [
+      {
+        logo: 'stake/beefy/beefyfinance.png',
+        logoNight: 'stake/beefy/beefyfinance_night.png',
+        background: 'stake/beefy/background.png',
+        text: 'Beefy Finance is the Multichain Yield Optimizer that allows its users to earn compound interest on their holdings. A yield optimizer is an automated service that seeks to gain the maximum possible return on crypto-investments made through DeFi platforms. This is much more efficient than attempting to maximize your returns by doing everything manually. It also means you don’t have to sit in front of a screen all day. So Beefy Finance is a platform that puts your crypto to work for maximum ROI with minimum effort. $BIFI is the governance token of the Beefy Finance platform. This means that when you own some $BIFI, you get the right to create and vote on proposals to do with the future of the platform. Third, the fun part: $BIFI tokens can be staked on Beefy to earn a share of the revenue created by the Beefy platform.',
         website: 'https://app.beefy.finance',
         social: {
           telegram: 'http://t.me/beefyfinance',
@@ -50,7 +85,7 @@ export const bscStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'MERL',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     periodFinish: 1624819685,
     partners: [
@@ -436,7 +471,7 @@ export const bscStakePools = [
   {
     id: 'moo_belt_eth-icarus',
     name: 'Icarus Finance',
-    logo: 'single-assets/ETH.png',
+    logo: 'single-assets/ETH.svg',
     token: 'mooBeltETH',
     tokenDecimals: 18,
     tokenAddress: '0xf2064C230b285AA6Cf45c6267DA86a8E3505D0AA',
@@ -470,7 +505,7 @@ export const bscStakePools = [
   {
     id: 'moo_belt_eth-satis',
     name: 'Satis Finance',
-    logo: 'single-assets/ETH.png',
+    logo: 'single-assets/ETH.svg',
     token: 'mooBeltETH',
     tokenDecimals: 18,
     tokenAddress: '0xf2064C230b285AA6Cf45c6267DA86a8E3505D0AA',
@@ -538,7 +573,7 @@ export const bscStakePools = [
   {
     id: 'moo_auto_eth-apys',
     name: 'APYSwap',
-    logo: 'single-assets/ETH.png',
+    logo: 'single-assets/ETH.svg',
     token: 'mooAutoETHv2',
     tokenDecimals: 18,
     tokenAddress: '0x0F47eaae1EC5fD11067455210c494a7828024524',
@@ -1078,7 +1113,7 @@ export const bscStakePools = [
   {
     id: 'moo_venus_eth-brew',
     name: 'CafeSwap',
-    logo: 'single-assets/ETH.png',
+    logo: 'single-assets/ETH.svg',
     token: 'mooVenusETH',
     tokenDecimals: 18,
     tokenAddress: '0xA9936272065e6DDAc9D2453C9a2712B581e9aE1B',

@@ -1,8 +1,13 @@
 import { container } from 'assets/jss/material-kit-pro-react.js';
 
 const appStyle = theme => ({
+  '@global': {
+    'html,body': {
+      backgroundColor: theme.palette.background.default,
+    },
+  },
   page: {
-    backgroundColor: '#fbf9f6',
+    backgroundColor: theme.palette.background.default,
     minHeight: '100vh',
     position: 'relative',
     overflow: 'hidden',

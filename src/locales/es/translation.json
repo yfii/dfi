@@ -1,8 +1,7 @@
 {
   "Disclaimer": "Usar Smart Contracts, Tokens y Crypto es siempre un riesgo. Haz tu propia investigación antes de invertir.",
-  "Network-Error": "Por favor conéctese a la red correcta.",
+  "Network-ConnectWallet": "Conectar Billetera",
   "Vault-Wallet": "Billetera",
-  "Vault-ConnectWallet": "Conectar Billetera",
   "Vault-Balance": "Balance",
   "Vault-APY": "APY",
   "Vault-APYDaily": "Diario",
@@ -95,7 +94,6 @@
   "Stake-Button-Unstake-Tokens": "Unstake Tokens",
   "Stake-Button-Claim-Rewards": "Reclamar Recompensas",
   "Stake-Button-Exit": "Reclamar y Unstake",
-  "Stake-Balancer-Your-Balance": "Tu Balance",
   "Stake-Balancer-Current-Staked": "Actualmente en Stake",
   "Stake-Balancer-Rewards-Available": "Recompensas Disponibles",
   "Stake-Balancer-Half-Time": "Medio-Tiempo",

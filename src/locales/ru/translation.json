@@ -1,9 +1,8 @@
 {
   "App-Meta-Description": "Оптимизатор доходности с многими цепями",
   "Disclaimer": "Использование смарт-контрактов, токенов и криптовалюты всегда сопряжено с риском. Думайте своей головой перед инвестированием.",
-  "Network-Error": "Подключитесь к правильной сети.",
   "Vault-Wallet": "Кошелек",
-  "Vault-ConnectWallet": "Подключить кошелек",
+  "Network-ConnectWallet": "Подключить кошелек",
   "Vault-Balance": "Баланс",
   "Vault-APR": "APR",
   "Vault-APY": "APY",
@@ -101,7 +100,6 @@
   "Stake-Button-Unstake-Tokens": "Анстейкинг токенов",
   "Stake-Button-Claim-Rewards": "Требовать награды",
   "Stake-Button-Exit": "Требовать и анстейкать",
-  "Stake-Balancer-Your-Balance": "Ваш баланс",
   "Stake-Balancer-Current-Staked": "Сейчас стейковано",
   "Stake-Balancer-Rewards-Available": "Доступные награды",
   "Stake-Balancer-Half-Time": "Половина времени",

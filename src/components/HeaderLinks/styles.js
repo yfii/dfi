@@ -28,7 +28,6 @@ const styles = theme => ({
     padding: '0',
   },
   listItem: {
-    float: 'left',
     color: 'inherit',
     position: 'relative',
     display: 'block',
@@ -79,7 +78,7 @@ const styles = theme => ({
       fontSize: '1.25rem',
     },
     [theme.breakpoints.down('sm')]: {
-      width: 'calc(100% - 30px)',
+      width: 'calc(100% - 60px)',
       marginLeft: '15px',
       marginBottom: '8px',
       marginTop: '8px',
