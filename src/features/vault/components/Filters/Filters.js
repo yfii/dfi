@@ -178,13 +178,13 @@ const Filters = ({
               {t('Filters-All')}
             </MenuItem>
             <MenuItem key={'Singles'} value={'Singles'}>
-              {t('Single Assets')}
+              {t('Filters-Type-SingleAssets')}
             </MenuItem>
             <MenuItem key={'StableLPs'} value={'StableLPs'}>
-              {t('Stable LPs')}
+              {t('Filters-Type-StableLPs')}
             </MenuItem>
             <MenuItem key={'Stables'} value={'Stables'}>
-              {t('Stables')}
+              {t('Filters-Type-Stables')}
             </MenuItem>
           </Select>
         </FormControl>

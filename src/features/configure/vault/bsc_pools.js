@@ -44,7 +44,7 @@ export const bscPools = [
     platform: 'PancakeSwap',
     assets: ['CAKE'],
     callFee: 0.5,
-    withdrawalFee: '0.0%',
+    withdrawalFee: '0%',
     buyTokenUrl:
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
   },
@@ -8558,7 +8558,7 @@ export const bscPools = [
     assets: ['CAKE'],
     callFee: 0.5,
     depositFee: '<0.1%',
-    withdrawalFee: '0.0%',
+    withdrawalFee: '0%',
     buyTokenUrl:
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
   },
@@ -8613,7 +8613,7 @@ export const bscPools = [
     assets: ['CAKE'],
     callFee: 0.5,
     depositFee: '<0.1%',
-    withdrawalFee: '0.0%',
+    withdrawalFee: '0%',
     buyTokenUrl:
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
   },
