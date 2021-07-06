@@ -1,8 +1,7 @@
 {
   "Disclaimer": "L'utilisation de Contrats Intelligents, de Jetons et de Crypto est toujours un risque. Faites vos propres recherches avant d'investir.",
-  "Network-Error": "Réseau incorrect, sélectionnez le bon réseau",
+  "Network-ConnectWallet": "Connection Portefeuille",
   "Vault-Wallet": "Portefeuille",
-  "Vault-ConnectWallet": "Connection Portefeuille",
   "Vault-Balance": "Solde",
   "Vault-APY": "RAC (Rendement Annuel Composé)",
   "Vault-APYDaily": "Journalier",

@@ -1,9 +1,8 @@
 {
   "App-Meta-Description": "Pengoptimum Hasil Berbilang Rangkaian",
   "Disclaimer": "Penggunaan Kontrak Pintar, Token, dan Kripto adalah berisiko. DYOR sebelum melabur.",
-  "Network-Error": "Sila sambung ke {{network}}.",
+  "Network-ConnectWallet": "Sambungkan Dompet",
   "Vault-Wallet": "Dompet",
-  "Vault-ConnectWallet": "Sambungkan Dompet",
   "Vault-Balance": "Baki",
   "Vault-APR": "APR",
   "Vault-APY": "APY",

@@ -1,9 +1,8 @@
 {
   "App-Meta-Description": "Çoklu Zincir Kazanç Optimize Edici",
   "Disclaimer": "Akıllı Kontratları kullanmak, Tokenler ve Kripto her zaman risk taşır. Yatırımdan önce kendi araştırmanızı yapın.",
-  "Network-Error": "Lütfen doğru ağa bağlanın.",
   "Vault-Wallet": "Cüzdan",
-  "Vault-ConnectWallet": "Cüzdanı Bağla",
+  "Network-ConnectWallet": "Cüzdanı Bağla",
   "Vault-Balance": "Bakiye",
   "Vault-APR": "YYV",
   "Vault-APY": "YYO",

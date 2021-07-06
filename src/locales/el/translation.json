@@ -1,8 +1,7 @@
 {
   "Disclaimer": "Η χρησιμοποίηση Smart Contract, Token, και Crypto περιέχει ρίσκο. Κάντε την έρευνα σας πριν επενδύσετε.",
-  "Network-Error": "Παρακαλώ συνδεθείτε στο σωστό δίκτυο.",
+  "Network-ConnectWallet": "Σύνδεση Πορτοφολιού",
   "Vault-Wallet": "Πορτοφόλι",
-  "Vault-ConnectWallet": "Σύνδεση Πορτοφολιού",
   "Vault-Balance": "Υπόλοιπο",
   "Vault-APY": "APY",
   "Vault-APYDaily": "Ημερήσια",

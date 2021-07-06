@@ -1,8 +1,7 @@
 {
   "Disclaimer": "Interagire con smart contract, token e crypto comporta sempre dei rischi. Documentati personalmente prima di investire.",
-  "Network-Error": "Collegati alla rete corretta.",
+  "Network-ConnectWallet": "Collega il portafoglio.",
   "Vault-Wallet": "Portafoglio",
-  "Vault-ConnectWallet": "Collega il portafoglio.",
   "Vault-Balance": "Saldo",
   "Vault-APY": "APY",
   "Vault-APYDaily": "Giornaliero",

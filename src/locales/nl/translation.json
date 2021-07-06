@@ -1,8 +1,7 @@
 {
   "Disclaimer": "Het gebruiken van Smart Contracts, Tokens en Crypto is altijd een risico. Doe je eigen onderzoek voordat je investeert.",
-  "Network-Error": "Verbind met het juiste netwerk graag.",
+  "Network-ConnectWallet": "Verbind Wallet",
   "Vault-Wallet": "Wallet",
-  "Vault-ConnectWallet": "Verbind Wallet",
   "Vault-Balance": "Saldo",
   "Vault-APY": "APY",
   "Vault-APYDaily": "Dagelijks",

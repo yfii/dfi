@@ -1,9 +1,8 @@
 {
   "App-Meta-Description": "The Multichain Yield Optimizer",
   "Disclaimer": "Korzystanie z Inteligentnych Kontraktów, Tokenów oraz Kryptowalut zawsze wiąże się z ryzykiem. DYOR przed inwestycją.",
-  "Network-Error": "Połącz się z {{network}}.",
+  "Network-ConnectWallet": "Podłącz portfel",
   "Vault-Wallet": "Portfel",
-  "Vault-ConnectWallet": "Podłącz portfel",
   "Vault-Balance": "Środki",
   "Vault-APR": "APR",
   "Vault-APY": "APY",

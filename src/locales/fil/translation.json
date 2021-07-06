@@ -1,9 +1,8 @@
 {
   "App-Meta-Description": "Ang Multichain Yield Optimizer",
   "Disclaimer": "Alalahaning magingat sa pagamit ng Smart Contracts, Tokens and Crypto. DYOR bago maginvest.",
-  "Network-Error": "Magconnect sa {{network}}.",
+  "Network-ConnectWallet": "Connect Wallet",
   "Vault-Wallet": "Wallet",
-  "Vault-ConnectWallet": "Connect Wallet",
   "Vault-Balance": "Balanse",
   "Vault-APR": "APR",
   "Vault-APY": "APY",

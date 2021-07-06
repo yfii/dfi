@@ -1,9 +1,8 @@
 {
   "App-Meta-Description": "مُحسِّن العائد متعدد الشبكات",
   "Disclaimer": "يعد استخدام العقود الذكية والرموز والتشفير دائمًا مخاطرة. قم بدراسة الموضوع قبل الاستثمار.",
-  "Network-Error": "يرجى توصيل شبكه {{network}} من فضلك.",
+  "Network-ConnectWallet": "ربط المحفظة",
   "Vault-Wallet": "المحفظة",
-  "Vault-ConnectWallet": "ربط المحفظة",
   "Vault-Balance": "الرصيد",
   "Vault-APR": "م م",
   "Vault-APY": "م س",

@@ -33,6 +33,14 @@ const networkTxUrls = {
   250: hash => `https://ftmscan.com/tx/${hash}`,
 };
 
+const networkAppUrls = {
+  56: 'https://app.beefy.finance/',
+  128: 'https://heco.beefy.finance/',
+  43114: 'https://avax.beefy.finance/',
+  137: 'https://polygon.beefy.finance/',
+  250: 'https://fantom.beefy.finance/',
+};
+
 const networkFriendlyName = {
   56: 'BSC',
   128: 'HECO',
@@ -41,7 +49,7 @@ const networkFriendlyName = {
   250: 'Fantom',
 };
 
-const networkBuyLinks = {
+const networkBuyUrls = {
   56: 'https://app.1inch.io/#/r/0xF4cb25a1FF50E319c267b3E51CBeC2699FB2A43B',
   128: 'https://ht.mdex.com/#/swap?inputCurrency=0xa71edc38d189767582c38a3145b5873052c3e47a&outputCurrency=0x765277eebeca2e31912c9946eae1021199b39c61',
   137: 'https://app.1inch.io/#/r/0xF4cb25a1FF50E319c267b3E51CBeC2699FB2A43B',
@@ -50,7 +58,7 @@ const networkBuyLinks = {
 };
 
 export const getNetworkCoin = () => {
-  return nativeCoins.find(coin => coin.chainId == process.env.REACT_APP_NETWORK_ID);
+  return nativeCoins.find(coin => coin.chainId === Number(process.env.REACT_APP_NETWORK_ID));
 };
 
 export const getNetworkPools = () => {
@@ -361,5 +369,9 @@ export const getNetworkConnectors = t => {
 };
 
 export const getNetworkTxUrl = networkTxUrls[process.env.REACT_APP_NETWORK_ID];
-export const getNetworkFriendlyName = () => networkFriendlyName[process.env.REACT_APP_NETWORK_ID];
-export const getNetworkBuyLink = () => networkBuyLinks[process.env.REACT_APP_NETWORK_ID];
+export const getNetworkFriendlyName = (networkId = process.env.REACT_APP_NETWORK_ID) =>
+  networkFriendlyName[networkId];
+export const getNetworkBuyUrl = (networkId = process.env.REACT_APP_NETWORK_ID) =>
+  networkBuyUrls[networkId];
+export const getNetworkAppUrl = (networkId = process.env.REACT_APP_NETWORK_ID) =>
+  networkAppUrls[networkId];

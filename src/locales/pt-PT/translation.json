@@ -1,8 +1,7 @@
 {
   "Disclaimer": "Usar smart contracts, tokens, e crypto é sempre um risco. Faça sua própria pesquisa(DYOR) antes de investir.",
-  "Network-Error": "Conecte-se a rede correta, por favor.",
   "Vault-Wallet": "Carteira",
-  "Vault-ConnectWallet": "Conectar Carteira",
+  "Network-ConnectWallet": "Conectar Carteira",
   "Vault-Balance": "Saldo",
   "Vault-APY": "APY",
   "Vault-APYDaily": "Lucro diário",

@@ -1,22 +1,20 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { ThemeProvider, StylesProvider } from '@material-ui/core/styles';
-import { makeStyles } from '@material-ui/core/styles';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { makeStyles, ThemeProvider, StylesProvider } from '@material-ui/core/styles';
 import Header from 'components/Header/Header';
 import HeaderLinks from 'components/HeaderLinks/HeaderLinks';
 import NetworksProvider from 'components/NetworksProvider/NetworksProvider';
 import NetworksModal from 'components/NetworksModal/NetworksModal';
-import NetworkError from 'components/NetworkError/NetworkError';
 import { useTranslation } from 'react-i18next';
 import { SnackbarProvider } from 'notistack';
 import { Notifier } from 'features/common';
 import Footer from 'components/Footer/Footer';
 import Pastures from 'components/Pastures/Pastures';
+import { NetworkConnectNotice } from 'components/NetworkConnectNotice/NetworkConnectNotice';
 import appStyle from './jss/appStyle.js';
 import { createWeb3Modal } from '../web3';
 import { useConnectWallet, useDisconnectWallet } from './redux/hooks';
 import useNightMode from './hooks/useNightMode';
 import createTheme from './jss/appTheme';
-import { networkSetup } from 'common/networkSetup';
 
 const themes = { light: null, dark: null };
 const getTheme = mode => {
@@ -25,11 +23,10 @@ const getTheme = mode => {
 
 export default function App({ children }) {
   const { t } = useTranslation();
-  const { connectWallet, web3, address, networkId, connected, connectWalletPending } =
-    useConnectWallet();
+  const { connectWallet, web3, address, networkId, connected } = useConnectWallet();
   const { disconnectWallet } = useDisconnectWallet();
   const [web3Modal, setModal] = useState(null);
-  const [networkError, setNetworkError] = useState(null);
+
   const { isNightMode, setNightMode } = useNightMode();
   const theme = useMemo(() => getTheme(isNightMode ? 'dark' : 'light'), [isNightMode]);
   const useStyles = useMemo(() => {
@@ -47,17 +44,13 @@ export default function App({ children }) {
     }
   }, [web3Modal, connectWallet]);
 
-  useEffect(() => {
-    if (
-      web3 &&
-      address &&
-      !connectWalletPending &&
-      networkId &&
-      Boolean(networkId !== Number(process.env.REACT_APP_NETWORK_ID))
-    ) {
-      networkSetup(process.env.REACT_APP_NETWORK_ID).catch(setNetworkError);
-    }
-  }, [web3, address, networkId, connectWalletPending, t]);
+  const connectWalletCallback = useCallback(() => {
+    connectWallet(web3Modal);
+  }, [web3Modal, connectWallet]);
+
+  const disconnectWalletCallback = useCallback(() => {
+    disconnectWallet(web3, web3Modal);
+  }, [web3, web3Modal, disconnectWallet]);
 
   return (
     <StylesProvider injectFirst>
@@ -71,8 +64,8 @@ export default function App({ children }) {
                   <HeaderLinks
                     address={address}
                     connected={connected}
-                    connectWallet={() => connectWallet(web3Modal)}
-                    disconnectWallet={() => disconnectWallet(web3, web3Modal)}
+                    connectWallet={connectWalletCallback}
+                    disconnectWallet={disconnectWalletCallback}
                     isNightMode={isNightMode}
                     setNightMode={() => setNightMode(!isNightMode)}
                   />
@@ -82,12 +75,17 @@ export default function App({ children }) {
               />
               <div className={classes.container}>
                 <div className={classes.children}>
-                  {networkError && <NetworkError network={process.env.REACT_APP_NETWORK_ID} />}
+                  <NetworkConnectNotice
+                    web3={web3}
+                    address={address}
+                    connectWallet={connectWalletCallback}
+                    disconnectWallet={disconnectWalletCallback}
+                    networkId={networkId}
+                  />
                   {Boolean(networkId === Number(process.env.REACT_APP_NETWORK_ID)) && children}
                   <Notifier />
                 </div>
               </div>
-
               <Footer />
               <Pastures />
             </div>
