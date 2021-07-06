@@ -49,7 +49,7 @@ export const polygonStakePools = [
     earnContractAddress: '0xed5010eDF8812003B7d4c9a69E7AfCBceaB62F4f',
     earnContractAbi: govPoolABI,
     earnedOracle: 'tokens',
-    earnedOracleId: 'BONE',
+    earnedOracleId: 'BONEswap',
     partnership: true,
     status: 'active',
     isMooStaked: true,
