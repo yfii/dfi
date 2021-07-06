@@ -23,6 +23,7 @@ export const polygonStakePools = [
     partners: [
       {
         logo: 'stake/beefy/beefyfinance.png',
+        logoNight: 'stake/beefy/beefyfinance_night.png',
         background: 'stake/beefy/background.png',
         text: "You probably already knew that Beefy is the most trusted multi-chain yield optimizer. But did you know that Beefy has its own token? $BIFI has a maximum supply of 80000 tokens and there is no way to mint more. Everyone who holds our own $BIFI token can not only do cool stuff like create and vote on proposals, they also get a share of all harvests done, every hour, every day on all our Polygon vaults. That's a lot of Matic that goes straight to our $BIFI holders. All you have to do is stake your $BIFI in this vault, it’s that simple, come back and harvest your Matic whenever you need it!",
         website: 'https://app.beefy.finance',
@@ -83,7 +84,7 @@ export const polygonStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'YELD',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     periodFinish: 1625530839,
     partners: [

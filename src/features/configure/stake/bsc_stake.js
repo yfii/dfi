@@ -23,6 +23,7 @@ export const bscStakePools = [
     partners: [
       {
         logo: 'stake/beefy/beefyfinance.png',
+        logoNight: 'stake/beefy/beefyfinance_night.png',
         background: 'stake/beefy/background.png',
         text: "You probably already knew that Beefy is the most trusted Yield optimizer for the Binance Smart Chain. But did you know that Beefy has its own token? $BIFI has a maximum supply of 80000 tokens and there is no way to mint more. Everyone who holds our own $BIFI token can not only do cool stuff like create and vote on proposals, they also get a share of all harvests done, every hour, every day on all our +120 vaults. That's a lot of BNB that goes straight to our $BIFI holders. All you have to do is stake your $BIFI in this vault, it’s that simple, come back and harvest your BNB whenever you need it! (You can still vote on proposals even though you have staked your $BIFI here).",
         website: 'https://app.beefy.finance',
@@ -52,7 +53,7 @@ export const bscStakePools = [
     partnership: true,
     status: 'active',
     isMooStaked: true,
-    periodFinish: 1626000000,
+    periodFinish: 1625930588,
     partners: [
       {
         logo: 'stake/beefy/beefyfinance.png',
