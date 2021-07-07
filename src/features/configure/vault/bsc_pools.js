@@ -8352,30 +8352,6 @@ export const bscPools = [
   },
 
   {
-    id: 'mdex-inj-eol',
-    logo: 'single-assets/INJ.png',
-    name: 'INJ',
-    token: 'INJ',
-    tokenDescription: 'Mdex',
-    tokenAddress: '0xa2B726B1145A4773F68593CF171187d8EBe4d495',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooMdexINJ',
-    earnedTokenAddress: '0x5212d0e82CBAD96541454E5227f273Abff986F78',
-    earnContractAddress: '0x5212d0e82CBAD96541454E5227f273Abff986F78',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'tokens',
-    oracleId: 'INJ',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Mdex',
-    assets: ['INJ'],
-    callFee: 0.5,
-  },
-
-  {
     id: 'blizzard-xblzd-bnb',
     logo: 'degens/BLZD-BNB.png',
     name: 'xBLZD-BNB LP',
@@ -12160,32 +12136,6 @@ export const bscPools = [
     callFee: 0.5,
     removeLiquidityUrl:
       'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x3ee2200efb3400fabb9aacf31297cbdd1d435d47',
-  },
-
-  {
-    id: 'cake-dot-bnb',
-    logo: 'bnb-pairs/DOT-BNB.svg',
-    name: 'DOT-BNB LP',
-    token: 'DOT-BNB LP1',
-    tokenDescription: 'PancakeSwap',
-    tokenAddress: '0xbCD62661A6b1DEd703585d3aF7d7649Ef4dcDB5c',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooPancakeDOT-BNB',
-    earnedTokenAddress: '0xb8b7CAF72D75Ac8b71bB208b2D98a9dac9d5c90B',
-    earnContractAddress: '0xb8b7CAF72D75Ac8b71bB208b2D98a9dac9d5c90B',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'cake-dot-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'PancakeSwap',
-    assets: ['DOT', 'BNB'],
-    callFee: 0.5,
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x7083609fce4d1d8dc0c979aab8c869ea2c873402',
   },
 
   {
