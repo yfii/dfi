@@ -53,7 +53,7 @@ export const polygonStakePools = [
     partnership: true,
     status: 'active',
     isMooStaked: true,
-    periodFinish: 1625673623,
+    periodFinish: 1626212502,
     partners: [
       {
         logo: 'stake/boneswap/logo.png',
