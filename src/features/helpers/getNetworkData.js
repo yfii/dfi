@@ -177,7 +177,7 @@ export const getNetworkStables = () => {
     case '43114':
       return ['USDT', 'DAI', 'BUSD', 'zDAI', 'zUSDT'];
     case '137':
-      return ['USDC', 'USDT', 'maUSDC', 'DAI', 'IRON', 'miMATIC', 'FRAX', 'rUSD'];
+      return ['USDC', 'USDT', 'maUSDC', 'DAI', 'IRON', 'MAI', 'FRAX', 'rUSD'];
     case '250':
       return ['USDC', 'USDT', 'DAI', 'fUSDT'];
     default:
