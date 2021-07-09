@@ -41,4 +41,11 @@ export const polygonZaps = [
     ammFactory: '0xE7Fb3e833eFE5F9c441105EB65Ef8b261266423B',
     ammPairInitHash: '0xf187ed688403aa4f7acfada758d8d53698753b998a3071b06f1b777f4330eaf3',
   },
+  {
+    // Jetswap
+    zapAddress: '0x2302Fff1408eAb81B5912FD9EDA887A9Ab190727',
+    ammRouter: '0x5C6EC38fb0e2609672BDf628B1fD605A523E5923',
+    ammFactory: '0x668ad0ed2622C62E24f0d5ab6B6Ac1b9D2cD4AC7',
+    ammPairInitHash: '0x505c843b83f01afef714149e8b174427d552e1aca4834b4f9b4b525f426ff3c6',
+  },
 ];
