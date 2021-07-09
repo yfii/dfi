@@ -3051,7 +3051,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x1796ae0b0fa4862485106a0de9b654efe301d0b2',
   },
   {
-    id: 'cakev2-bigone-busd',
+    id: 'cakev2-one-busd',
     logo: 'busd-pairs/ONE-BUSD.svg',
     name: 'ONE-BUSD LP',
     token: 'ONE-BUSD LP2',
@@ -3065,7 +3065,7 @@ export const bscPools = [
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
-    oracleId: 'cakev2-bigone-busd',
+    oracleId: 'cakev2-one-busd',
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
