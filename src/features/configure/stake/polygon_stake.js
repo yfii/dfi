@@ -37,7 +37,7 @@ export const polygonStakePools = [
   {
     id: 'moo_mai_usdc_matic-qidao',
     name: 'QiDao',
-    logo: 'polygon/MATIC-USDC.png',
+    logo: 'polygon/MIMATIC-USDC.png',
     token: 'mooMaiUSDC-miMATIC',
     tokenDecimals: 18,
     tokenAddress: '0xebe0c8d842AA5A57D7BEf8e524dEabA676F91cD1',
