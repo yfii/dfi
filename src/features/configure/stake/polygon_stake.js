@@ -57,7 +57,7 @@ export const polygonStakePools = [
     partners: [
       {
         logo: 'stake/qidao/logo.png',
-        background: '',
+        background: 'stake/qidao/background.png',
         text: `QiDao is Polygon's first native stablecoin protocol and a way for you to hold on to your crypto while still being able to spend its value. It allows you to borrow stablecoins at 0% interest, without selling your crypto. MAI is a stablecoin collateralized by your MATIC holdings.`,
         website: 'https://www.mai.finance/',
         social: {
