@@ -1,3 +1,4 @@
+import BigNumber from 'bignumber.js';
 import { getNetworkStakePools } from '../../helpers/getNetworkData';
 
 const pools = getNetworkStakePools();
@@ -8,7 +9,7 @@ const initPoolsInfo = () => {
     poolData.push({
       id: pools[key].id,
       name: pools[key].name,
-      staked: 0,
+      staked: new BigNumber(0),
       tvl: 0,
       apy: 0,
     });

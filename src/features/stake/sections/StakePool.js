@@ -35,7 +35,7 @@ import TelegramIcon from '@material-ui/icons/Telegram';
 import Button from '../../../components/CustomButtons/Button';
 import { styles } from './styles/view';
 import Divider from '@material-ui/core/Divider';
-import { formatApy, formatCountdown } from '../../helpers/format';
+import { formatApy, formatCountdown, formatDecimals } from '../../helpers/format';
 import { Helmet } from 'react-helmet';
 import { getPageMeta, usePageMeta } from '../../common/getPageMeta';
 
@@ -228,7 +228,9 @@ export default function StakePool(props) {
   const getPoolShare = () => {
     return myCurrentlyStaked.toNumber() > 0
       ? (
-          (Math.floor(myCurrentlyStaked.toNumber() * 10000) / 10000 / poolData[index].staked) *
+          (Math.floor(myCurrentlyStaked.toNumber() * 1000000000) /
+            1000000000 /
+            poolData[index].staked) *
           100
         ).toFixed(4)
       : 0;
@@ -330,7 +332,9 @@ export default function StakePool(props) {
         ].join(' ')}
       >
         <Grid item xs={12} sm={4}>
-          <Typography className={classes.title}>{poolData[index].staked}</Typography>
+          <Typography className={classes.title}>
+            {formatDecimals(poolData[index].staked)}
+          </Typography>
           <Typography className={classes.subtitle}>
             {t('Stake-Total-Value-Locked', { mooToken: pools[index].token })}
           </Typography>

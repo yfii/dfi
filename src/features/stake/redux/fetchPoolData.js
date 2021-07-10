@@ -73,7 +73,7 @@ export function fetchByIndex(index) {
 
         const data = {
           apy: Number(yearlyRewardsInUsd.dividedBy(totalStakedInUsd)),
-          staked: totalStaked.toFixed(2),
+          staked: totalStaked,
           tvl: totalStakedInUsd.toFixed(2),
         };
 
