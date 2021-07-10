@@ -1931,7 +1931,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'IronFinance',
+    platform: 'Other',
     assets: ['TITAN', 'ETH'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -1958,7 +1958,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'IronFinance',
+    platform: 'Other',
     assets: ['IRON', 'USDC'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -2201,7 +2201,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'IronFinance',
+    platform: 'Other',
     assets: ['TITAN'],
     callFee: 0.05,
     buyTokenUrl:
@@ -2226,7 +2226,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'IronFinance',
+    platform: 'Other',
     assets: ['TITAN', 'IRON'],
     callFee: 0.05,
     addLiquidityUrl:
@@ -2442,7 +2442,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'IronFinance',
+    platform: 'Other',
     assets: ['TITAN', 'MATIC'],
     callFee: 0.5,
     addLiquidityUrl: 'https://app.sushi.com/add/ETH/0xaAa5B9e6c589642f98a1cDA99B9D024B8407285A',
@@ -2468,7 +2468,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'IronFinance',
+    platform: 'Other',
     assets: ['IRON', 'USDC'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -2628,7 +2628,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Adamant',
+    platform: 'Other',
     assets: ['ADDY'],
     callFee: 0.5,
     buyTokenUrl:
@@ -3538,7 +3538,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Polywhale',
+    platform: 'Other',
     assets: ['KRILL', 'USDC'],
     callFee: 0.5,
     addLiquidityUrl:
