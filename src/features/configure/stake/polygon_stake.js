@@ -86,7 +86,7 @@ export const polygonStakePools = [
     partnership: true,
     status: 'active',
     isMooStaked: true,
-    periodFinish: 1626560038,
+    periodFinish: 1626534866,
     partners: [
       {
         logo: 'stake/qidao/logo.png',
