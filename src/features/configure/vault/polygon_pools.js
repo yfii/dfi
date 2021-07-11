@@ -129,6 +129,33 @@ export const polygonPools = [
     addLiquidityUrl: 'https://polygon.curve.fi/atricrypto/deposit',
   },
   {
+    id: 'wexpoly-wbtc-wex',
+    logo: 'degens/WEXPOLY-BTC.png',
+    name: 'WBTC-WEXpoly LP',
+    token: 'WBTC-WEXpoly WLP',
+    tokenDescription: 'WaultFinance',
+    tokenAddress: '0xaE183DB956FAf760Aa29bFcfDa4BDDdB02fbdd0E',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooWexPolyWBTC-WEX ',
+    earnedTokenAddress: '0xA1B2Ef1b6D5823D832DDa2AE2B489793832Fd082',
+    earnContractAddress: '0xA1B2Ef1b6D5823D832DDa2AE2B489793832Fd082',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'wexpoly-wbtc-wex',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'WaultFinance',
+    assets: ['WBTC', 'WEXPoly'],
+    callFee: 0.05,
+    addLiquidityUrl:
+      'https://swap.wault.finance/polygon/#/add/0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6/0x4c4BF319237D98a30A929A96112EfFa8DA3510EB',
+    buyTokenUrl:
+      'https://swap.wault.finance/polygon/#/swap?inputCurrency=0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6&outputCurrency=0x4c4BF319237D98a30A929A96112EfFa8DA3510EB',
+  },
+  {
     id: 'dfyn-bifi-dfyn',
     name: 'BIFI-DFYN LP',
     token: 'BIFI-DFYN DLP',
@@ -1272,7 +1299,6 @@ export const polygonPools = [
   },
   {
     id: 'wexpoly-wbtc-usdc',
-    //logo:
     name: 'WBTC-USDC LP',
     token: 'WBTC-USDC WLP',
     tokenDescription: 'WaultFinance',
@@ -1297,7 +1323,6 @@ export const polygonPools = [
   },
   {
     id: 'wexpoly-wbtc-eth',
-    //logo:
     name: 'WBTC-ETH LP',
     token: 'WBTC-ETH WLP',
     tokenDescription: 'WaultFinance',
