@@ -130,7 +130,7 @@ export const polygonPools = [
   },
   {
     id: 'wexpoly-wbtc-wex',
-    logo: 'degens/WEXPOLY-BTC.png',
+    logo: 'polygon/WEXPOLY-BTC.png',
     name: 'WBTC-WEXpoly LP',
     token: 'WBTC-WEXpoly WLP',
     tokenDescription: 'WaultFinance',
