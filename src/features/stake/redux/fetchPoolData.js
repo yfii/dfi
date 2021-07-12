@@ -36,22 +36,21 @@ export function fetchByIndex(index) {
 
       const getTotalStaked = async pool => {
         const tokenPrice = await fetchPrice({ id: pool.tokenOracleId });
-        const tokenContract = new web3.eth.Contract(pool.earnContractAbi, pool.earnContractAddress);
-        let totalStaked = new BigNumber(await tokenContract.methods.totalSupply().call());
+        const earnContract = new web3.eth.Contract(pool.earnContractAbi, pool.earnContractAddress);
+        const totalSupply = new BigNumber(await earnContract.methods.totalSupply().call());
+        const tokenDecimals = new BigNumber(10).exponentiatedBy(pool.tokenDecimals);
+        const totalStaked = totalSupply.dividedBy(tokenDecimals);
+        let totalStakedInUsd = totalSupply.times(tokenPrice).dividedBy(tokenDecimals);
+
         if (pool.isMooStaked) {
           const mooToken = new web3.eth.Contract(MooToken, pool.tokenAddress);
+          const mooTokenDecimals = new BigNumber(10).exponentiatedBy(18);
           const pricePerShare = new BigNumber(await mooToken.methods.getPricePerFullShare().call());
-          totalStaked = totalStaked
-            .times(pricePerShare)
-            .dividedBy(new BigNumber(10).exponentiatedBy(pool.tokenDecimals));
+
+          totalStakedInUsd = totalStakedInUsd.times(pricePerShare).dividedBy(mooTokenDecimals);
         }
-        const stakedDecimals = pool.isMooStaked ? 18 : pool.tokenDecimals;
-        return [
-          totalStaked.dividedBy(new BigNumber(10).exponentiatedBy(stakedDecimals)),
-          totalStaked
-            .times(tokenPrice)
-            .dividedBy(new BigNumber(10).exponentiatedBy(stakedDecimals)),
-        ];
+
+        return [totalStaked, totalStakedInUsd];
       };
 
       const getYearlyRewardsInUsd = async pool => {
