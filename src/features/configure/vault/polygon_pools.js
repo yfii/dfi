@@ -46,6 +46,7 @@ export const polygonPools = [
     platform: 'JetSwap',
     assets: ['USDC', 'USDT'],
     callFee: 0.5,
+    withdrawalFee: '0.01%',
     addLiquidityUrl:
       'https://polygon-exchange.jetswap.finance/#/add/0xc2132D05D31c914a87C6611C10748AEb04B58e8F/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
   },
@@ -125,7 +126,7 @@ export const polygonPools = [
     platform: 'Curve',
     assets: ['DAI', 'USDC', 'USDT', 'WBTC', 'ETH'],
     callFee: 0.5,
-    withdrawalFee: '0.05%',
+    withdrawalFee: '0.01%',
     addLiquidityUrl: 'https://polygon.curve.fi/atricrypto/deposit',
   },
   {
@@ -227,7 +228,7 @@ export const polygonPools = [
     platform: 'Curve',
     assets: ['WBTC', 'renBTC'],
     callFee: 0.5,
-    withdrawalFee: '0.05%',
+    withdrawalFee: '0.01%',
     addLiquidityUrl: 'https://polygon.curve.fi/ren/deposit',
   },
   {
