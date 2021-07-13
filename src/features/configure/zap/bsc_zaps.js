@@ -13,6 +13,13 @@ export const bscZaps = [
     ammFactory: '0x0841BD0B734E4F5853f0dD8d7Ea041c241fb0Da6',
     ammPairInitHash: '0xf4ccce374816856d11f00e4069e7cada164065686fbef53c6167a63ec2fd8c5b',
   },
+  {
+    // OOE
+    zapAddress: '0xDd29211787921Fb3867b816025dedC447EffEDeF',
+    ammRouter: '0xBeB43fbb2f7AEA8AC904975816BB1b4cA9f4D9c5',
+    ammFactory: '0xd76d8C2A7CA0a1609Aea0b9b5017B3F7782891bf',
+    ammPairInitHash: '0xe7da666f616ba3bdb18c6908b22d556a41659bdd652762c246b8d1fa4f7506b4',
+  },
   // {
   //   zapAddress: '0x9f6C521F1f9C8C5909D2B6f490be5E9648D7F82c', // TODO: adjust zap contract for mdex
   //   ammRouter: '0x7dae51bd3e3376b8c7c4900e9107f12be3af1ba8',
