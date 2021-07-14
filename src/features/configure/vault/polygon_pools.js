@@ -104,6 +104,34 @@ export const polygonPools = [
     buyTokenUrl:
       'https://quickswap.exchange/#/swap?inputCurrency=0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174&outputCurrency=0x6bb45cEAC714c52342Ef73ec663479da35934bf7',
   },
+  // tel start
+  {
+    id: 'telxchange-quick-quick-tel',
+    name: 'TEL-QUICK QLP',
+    token: 'TEL-QUICK QLP',
+    tokenDescription: 'Telxchange',
+    tokenAddress: '',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooTelxchangeQuickQUICK-TEL',
+    earnedTokenAddress: '',
+    earnContractAddress: '',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'telxchange-quick-quick-tel',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Telxchange',
+    assets: ['QUICK', 'TEL'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://quickswap.exchange/#/add/0x831753DD7087CaC61aB5644b308642cc1c33Dc13/0xdF7837DE1F2Fa4631D716CF2502f8b230F1dcc32',
+    buyTokenUrl:
+      'https://quickswap.exchange/#/swap?inputCurrency=0x831753DD7087CaC61aB5644b308642cc1c33Dc13&outputCurrency=0xdF7837DE1F2Fa4631D716CF2502f8b230F1dcc32',
+  },
+  // tel end
   {
     id: 'curve-poly-atricrypto',
     logo: 'uncategorized/ATRICRYPTO.png',
