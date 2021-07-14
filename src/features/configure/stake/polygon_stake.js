@@ -150,7 +150,7 @@ export const polygonStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'BONEswap',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     periodFinish: 1626212502,
     partners: [
