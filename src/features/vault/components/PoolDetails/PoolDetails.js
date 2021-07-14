@@ -7,7 +7,6 @@ import { useTranslation } from 'react-i18next';
 import BigNumber from 'bignumber.js';
 import { useConnectWallet } from '../../../home/redux/hooks';
 import { useFetchApys, useFetchBalances, useFetchVaultsData } from '../../redux/hooks';
-import { useFetchPoolData } from '../../../stake/redux/fetchPoolData';
 import { byDecimals } from 'features/helpers/bignumber';
 import { formatTvl } from 'features/helpers/format';
 import HomeLink from './HomeLink/HomeLink';
@@ -20,6 +19,12 @@ import { usePageMeta } from '../../../common/getPageMeta';
 import ApyStats from '../PoolSummary/ApyStats/ApyStats';
 import PoolPaused from '../PoolSummary/PoolPaused/PoolPaused';
 import { CakeV2Banner } from './Banners/CakeV2Banner/CakeV2Banner';
+import { launchpools } from '../../../helpers/getNetworkData';
+import {
+  usePoolApr,
+  useLaunchpoolSubscriptions,
+  useLaunchpoolUpdates,
+} from '../../../stake/redux/hooks';
 
 const FETCH_INTERVAL_MS = 30 * 1000;
 
@@ -37,23 +42,27 @@ const PoolDetails = ({ vaultId }) => {
   const { tokens, fetchBalances, fetchBalancesDone } = useFetchBalances();
   const { apys, fetchApys, fetchApysDone } = useFetchApys();
   const pool = pools.find(p => p.id === vaultId);
-  const { fetchPoolData } = useFetchPoolData();
   const { getPageMeta } = usePageMeta();
-  const timestamp = Math.floor(Date.now() / 1000);
-  const stake = useSelector(state => state.stake.pools);
-  const launchpoolIndex = stake.findIndex(p => {
-    return p.token === pool.earnedToken && p.periodFinish >= timestamp;
-  });
-  const launchpool = launchpoolIndex ? stake[launchpoolIndex] : null;
+  const { subscribe } = useLaunchpoolSubscriptions();
+  const launchpoolId = useSelector(state => state.vault.vaultLaunchpools[pool.id]);
+  const launchpool = launchpoolId ? launchpools[launchpoolId] : null;
+  const launchpoolApr = usePoolApr(launchpoolId);
+
+  useEffect(() => {
+    if (launchpoolId) {
+      return subscribe(launchpoolId, {
+        poolApr: true,
+        poolFinish: true,
+      });
+    }
+  }, [subscribe, launchpoolId]);
+  useLaunchpoolUpdates();
 
   useEffect(() => {
     if (address && web3) {
       const fetch = () => {
         fetchBalances({ address, web3, tokens });
         fetchVaultsData({ address, web3, pools });
-        if (launchpoolIndex >= 0) {
-          fetchPoolData(launchpoolIndex);
-        }
         fetchApys();
       };
       fetch();
@@ -64,7 +73,7 @@ const PoolDetails = ({ vaultId }) => {
 
     // Adding tokens and pools to this dep list, causes an endless loop, DDoSing the api
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [address, web3, fetchBalances, fetchVaultsData, fetchPoolData, launchpoolIndex]);
+  }, [address, web3, fetchBalances, fetchVaultsData]);
 
   const vaultStateTitle = useMemo(() => {
     let state =
@@ -182,7 +191,7 @@ const PoolDetails = ({ vaultId }) => {
           </Grid>
           <ApyStats
             apy={apy}
-            launchpoolApr={launchpool && launchpool.apy ? launchpool.apy : null}
+            launchpoolApr={launchpoolApr}
             isLoading={!fetchApysDone}
             itemClasses={`${classes.item} ${classes.itemStats}`}
             itemInnerClasses={classes.itemInner}

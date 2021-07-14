@@ -19,6 +19,11 @@ export function isEmpty(key) {
   }
 }
 
+// Index an array of objects by key
+export function indexBy(array, key) {
+  return Object.fromEntries(array.map(item => [item[key], item]));
+}
+
 export const shouldHideFromHarvest = vaultName => {
   // FIXME: hidden until we implement an 'advanced' toggle
   // return HarvestBlacklistVaultIds.includes(vaultName);

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { useTranslation } from 'react-i18next';
@@ -14,7 +14,7 @@ import useVisiblePools from '../../hooks/useVisiblePools';
 
 import Pool from '../Pool/Pool';
 import Filters from '../Filters/Filters';
-import { useFetchPoolData } from '../../../stake/redux/fetchPoolData';
+import { useLaunchpoolUpdates } from '../../../stake/redux/hooks';
 
 const useStyles = makeStyles(styles);
 
@@ -35,29 +35,8 @@ const VisiblePools = ({
   const { poolsByAsset, asset, setAsset } = usePoolsByAsset(poolsByVaultType);
   const { sortedPools, order, setOrder } = useSortedPools(poolsByAsset, apys, tokens);
   const { visiblePools, fetchVisiblePools } = useVisiblePools(sortedPools, 10);
-  const { pools: stake, fetchPoolData } = useFetchPoolData();
-  const indexes = [];
 
-  useEffect(() => {
-    const timestamp = Math.floor(Date.now() / 1000);
-    for (let index in stake) {
-      if (stake[index].periodFinish >= timestamp) {
-        for (let key in pools) {
-          if (stake[index].token === pools[key].earnedToken) {
-            pools[key].launchpool = stake[index].id;
-            if (!indexes.includes(index)) {
-              indexes.push(index);
-            }
-            continue;
-          }
-        }
-      }
-    }
-  }, []);
-
-  useEffect(() => {
-    fetchPoolData(indexes);
-  }, [fetchPoolData]);
+  useLaunchpoolUpdates();
 
   return (
     <>

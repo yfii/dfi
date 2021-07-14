@@ -1,4 +1,4 @@
-import { getNetworkPools } from '../../helpers/getNetworkData';
+import { getNetworkPools, launchpools } from '../../helpers/getNetworkData';
 import { getEligibleZap } from 'features/zap/zapUniswapV2';
 
 const tokens = {};
@@ -53,6 +53,7 @@ pools.forEach(
   }
 );
 
+const now = Date.now() / 1000;
 const initialState = {
   pools,
   tokens,
@@ -72,6 +73,15 @@ const initialState = {
   fetchWithdrawPending: {},
   fetchHarvestPending: {},
   fetchZapEstimatePending: {},
+  vaultLaunchpools: Object.fromEntries(
+    pools.map(vault => {
+      const launchpool = Object.values(launchpools).find(
+        lp => lp.token === vault.earnedToken && lp.status !== 'closed' && lp.periodFinish >= now
+      );
+
+      return [vault.id, launchpool ? launchpool.id : null];
+    })
+  ),
 };
 
 const allZaps = Object.keys(zapMap);

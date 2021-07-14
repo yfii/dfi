@@ -11,6 +11,7 @@ import PoolPaused from './PoolPaused/PoolPaused';
 import PoolTitle from './PoolTitle/PoolTitle';
 import LabeledStat from './LabeledStat/LabeledStat';
 import ApyStats from './ApyStats/ApyStats';
+import { usePoolApr } from '../../../stake/redux/subscription';
 
 const useStyles = makeStyles(styles);
 
@@ -28,6 +29,7 @@ const PoolSummary = ({
   const { t } = useTranslation();
   const classes = useStyles();
 
+  const launchpoolApr = usePoolApr(launchpool ? launchpool.id : null);
   const vaultStateTitle = useMemo(() => {
     let state =
       pool.status === 'eol'
@@ -108,6 +110,7 @@ const PoolSummary = ({
             isLoading={!fetchBalancesDone}
             className={classes.itemInner}
           />
+          {launchpool ? launchpool.staked : null}
         </Grid>
         <Grid item xs={6} className={`${classes.item} ${classes.itemBalances}`}>
           <LabeledStat
@@ -120,7 +123,7 @@ const PoolSummary = ({
         </Grid>
         <ApyStats
           apy={apy}
-          launchpoolApr={launchpool && launchpool.apy ? launchpool.apy : null}
+          launchpoolApr={launchpoolApr}
           isLoading={!fetchApysDone}
           itemClasses={`${classes.item} ${classes.itemStats}`}
           itemInnerClasses={classes.itemInner}

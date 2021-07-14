@@ -42,7 +42,7 @@ export const networkSettings = {
     },
     rpcUrls: [
       'https://rpc-mainnet.matic.network',
-      'https://rpc-mainnet.maticvigil.com/',
+      // 'https://rpc-mainnet.maticvigil.com', // Origin: beefy.finance is blocked
       'https://rpc-mainnet.matic.quiknode.pro',
       'https://matic-mainnet.chainstacklabs.com',
     ],

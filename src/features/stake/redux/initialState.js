@@ -1,54 +1,38 @@
-import BigNumber from 'bignumber.js';
-import { getNetworkStakePools } from '../../helpers/getNetworkData';
+import { launchpools } from '../../helpers/getNetworkData';
 
-const pools = getNetworkStakePools();
-let poolsInfo = [];
-const poolData = [];
-const initPoolsInfo = () => {
-  for (let key in pools) {
-    poolData.push({
-      id: pools[key].id,
-      name: pools[key].name,
-      staked: new BigNumber(0),
-      tvl: 0,
-      apy: 0,
-    });
-  }
-  poolsInfo = poolData;
+export const initialFetchState = {
+  fetchApprovalPending: Object.fromEntries(
+    Object.values(launchpools).map(pool => [pool.id, false])
+  ),
+  fetchStakePending: Object.fromEntries(Object.values(launchpools).map(pool => [pool.id, false])),
+  fetchWithdrawPending: Object.fromEntries(
+    Object.values(launchpools).map(pool => [pool.id, false])
+  ),
+  fetchClaimPending: Object.fromEntries(Object.values(launchpools).map(pool => [pool.id, false])),
+  fetchExitPending: Object.fromEntries(Object.values(launchpools).map(pool => [pool.id, false])),
 };
 
-initPoolsInfo();
+export const initialUserState = {
+  userApproval: Object.fromEntries(Object.values(launchpools).map(pool => [pool.id, '0'])),
+  userBalance: Object.fromEntries(Object.values(launchpools).map(pool => [pool.id, '0'])),
+  userStaked: Object.fromEntries(Object.values(launchpools).map(pool => [pool.id, '0'])),
+  userRewardsAvailable: Object.fromEntries(Object.values(launchpools).map(pool => [pool.id, '0'])),
+};
 
-const allowance = [0, 0, 0, 0, 0];
-const balance = [0, 0, 0, 0, 0];
-const currentlyStaked = [0, 0, 0, 0, 0];
-const rewardsAvailable = [0, 0, 0, 0, 0];
-const halfTime = [];
-const canWithdrawTime = [0, 0, 0, 0, 0];
+export const initialPoolState = {
+  poolStatus: Object.fromEntries(Object.values(launchpools).map(pool => [pool.id, pool.status])),
+  poolFinish: Object.fromEntries(
+    Object.values(launchpools).map(pool => [pool.id, pool.periodFinish])
+  ),
+  poolStaked: Object.fromEntries(Object.values(launchpools).map(pool => [pool.id, '0'])),
+  poolApr: Object.fromEntries(Object.values(launchpools).map(pool => [pool.id, 0])),
+};
 
 const initialState = {
-  pools,
-  allowance,
-  currentlyStaked,
-  rewardsAvailable,
-  halfTime,
-  canWithdrawTime,
-  balance,
-  poolsInfo,
-  poolData,
-  fetchPoolDataPending: [false],
-  checkApprovalPending: [false, false, false, false, false],
-  fetchBalancePending: [false, false, false, false, false],
-  fetchCurrentlyStakedPending: [false, false, false, false, false],
-  fetchRewardsAvailablePending: [false, false, false, false, false],
-  fetchHalfTimePending: [false, false, false, false, false],
-  fetchCanWithdrawTimePending: [false, false, false, false, false],
-  fetchApprovalPending: [false, false, false, false, false],
-  fetchStakePending: [false, false, false, false, false],
-  fetchWithdrawPending: [false, false, false, false, false],
-  fetchClaimPending: [false, false, false, false, false],
-  fetchExitPending: [false, false, false, false, false],
-  fetchZapEstimatePending: [false, false, false, false, false],
+  subscriptions: Object.fromEntries(Object.values(launchpools).map(pool => [pool.id, {}])),
+  ...initialPoolState,
+  ...initialUserState,
+  ...initialFetchState,
 };
 
 export default initialState;

@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import useFilterStorage from '../../home/hooks/useFiltersStorage';
+import { useSelector } from 'react-redux';
 
 const DEFAULT = {
   hideDecomissioned: true,
@@ -13,6 +14,7 @@ const KEY = 'filteredPools';
 
 const useFilteredPools = (pools, tokens) => {
   const { getStorage, setStorage } = useFilterStorage();
+  const vaultLaunchpools = useSelector(state => state.vault.vaultLaunchpools);
   const data = getStorage(KEY);
 
   const [filters, setFilters] = useState(data ? data : DEFAULT);
@@ -49,7 +51,7 @@ const useFilteredPools = (pools, tokens) => {
   }
 
   if (filters.showBoosted) {
-    filteredPools = showBoosted(filteredPools);
+    filteredPools = showBoosted(filteredPools, vaultLaunchpools);
   }
 
   filteredPools = Experimental(filteredPools, filters.showExperimental);
@@ -63,9 +65,9 @@ function Experimental(pools, show) {
   });
 }
 
-function showBoosted(pools) {
+function showBoosted(pools, vaultLaunchpools) {
   return pools.filter(pool => {
-    return pool.launchpool;
+    return !!vaultLaunchpools[pool.id];
   });
 }
 

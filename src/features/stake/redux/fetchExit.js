@@ -2,30 +2,31 @@ import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   STAKE_FETCH_EXIT_BEGIN,
-  STAKE_FETCH_EXIT_SUCCESS,
   STAKE_FETCH_EXIT_FAILURE,
+  STAKE_FETCH_EXIT_SUCCESS,
 } from './constants';
 import { enqueueSnackbar } from '../../common/redux/actions';
+import { launchpools } from '../../helpers/getNetworkData';
+import { updatePools } from './subscription';
 
-export function fetchExit(index) {
+export function fetchExit(id) {
   return (dispatch, getState) => {
     // optionally you can have getState as the second argument
     dispatch({
       type: STAKE_FETCH_EXIT_BEGIN,
-      index,
+      id,
     });
     // Return a promise so that you could control UI flow without states in the store.
     // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
     // It's hard to use state to manage it, but returning a promise allows you to easily achieve it.
     // e.g.: handleSubmit() { this.props.actions.submitForm(data).then(()=> {}).catch(() => {}); }
-    const promise = new Promise(async (resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
       // doRequest is a placeholder Promise. You should replace it with your own logic.
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
-      const { home, stake } = getState();
+      const { home } = getState();
       const { address, web3 } = home;
-      const { pools } = stake;
-      const { earnContractAbi, earnContractAddress } = pools[index];
+      const { earnContractAbi, earnContractAddress } = launchpools[id];
       const contract = new web3.eth.Contract(earnContractAbi, earnContractAddress);
 
       contract.methods
@@ -54,7 +55,8 @@ export function fetchExit(index) {
               hash: receipt.transactionHash,
             })
           );
-          dispatch({ type: STAKE_FETCH_EXIT_SUCCESS, index });
+          dispatch({ type: STAKE_FETCH_EXIT_SUCCESS, id });
+          dispatch(updatePools);
           resolve();
         })
         .on('error', function (error) {
@@ -67,15 +69,14 @@ export function fetchExit(index) {
               },
             })
           );
-          dispatch({ type: STAKE_FETCH_EXIT_FAILURE, index });
+          dispatch({ type: STAKE_FETCH_EXIT_FAILURE, id });
           resolve();
         })
         .catch(error => {
-          dispatch({ type: STAKE_FETCH_EXIT_FAILURE, index });
+          dispatch({ type: STAKE_FETCH_EXIT_FAILURE, id });
           reject(error);
         });
     });
-    return promise;
   };
 }
 
@@ -97,30 +98,35 @@ export function useFetchExit() {
 }
 
 export function reducer(state, action) {
-  const { fetchExitPending } = state;
   switch (action.type) {
     case STAKE_FETCH_EXIT_BEGIN:
       // Just after a request is sent
-      fetchExitPending[action.index] = true;
       return {
         ...state,
-        fetchExitPending,
+        fetchExitPending: {
+          ...state.fetchExitPending,
+          [action.id]: true,
+        },
       };
 
     case STAKE_FETCH_EXIT_SUCCESS:
       // The request is success
-      fetchExitPending[action.index] = false;
       return {
         ...state,
-        fetchExitPending,
+        fetchExitPending: {
+          ...state.fetchExitPending,
+          [action.id]: false,
+        },
       };
 
     case STAKE_FETCH_EXIT_FAILURE:
       // The request is failed
-      fetchExitPending[action.index] = false;
       return {
         ...state,
-        fetchExitPending,
+        fetchExitPending: {
+          ...state.fetchExitPending,
+          [action.id]: false,
+        },
       };
 
     default:

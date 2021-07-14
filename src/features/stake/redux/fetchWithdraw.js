@@ -2,30 +2,31 @@ import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   STAKE_FETCH_WITHDRAW_BEGIN,
-  STAKE_FETCH_WITHDRAW_SUCCESS,
   STAKE_FETCH_WITHDRAW_FAILURE,
+  STAKE_FETCH_WITHDRAW_SUCCESS,
 } from './constants';
 import { enqueueSnackbar } from '../../common/redux/actions';
+import { launchpools } from '../../helpers/getNetworkData';
+import { updatePools } from './subscription';
 
-export function fetchWithdraw(index, amount) {
+export function fetchWithdraw(id, amount) {
   return (dispatch, getState) => {
     // optionally you can have getState as the second argument
     dispatch({
       type: STAKE_FETCH_WITHDRAW_BEGIN,
-      index,
+      id,
     });
     // Return a promise so that you could control UI flow without states in the store.
     // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
     // It's hard to use state to manage it, but returning a promise allows you to easily achieve it.
     // e.g.: handleSubmit() { this.props.actions.submitForm(data).then(()=> {}).catch(() => {}); }
-    const promise = new Promise(async (resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
       // doRequest is a placeholder Promise. You should replace it with your own logic.
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
-      const { home, stake } = getState();
+      const { home } = getState();
       const { address, web3 } = home;
-      const { pools } = stake;
-      const { earnContractAbi, earnContractAddress } = pools[index];
+      const { earnContractAbi, earnContractAddress } = launchpools[id];
       const contract = new web3.eth.Contract(earnContractAbi, earnContractAddress);
 
       contract.methods
@@ -54,7 +55,8 @@ export function fetchWithdraw(index, amount) {
               hash: receipt.transactionHash,
             })
           );
-          dispatch({ type: STAKE_FETCH_WITHDRAW_SUCCESS, index });
+          dispatch({ type: STAKE_FETCH_WITHDRAW_SUCCESS, id });
+          dispatch(updatePools);
           resolve();
         })
         .on('error', function (error) {
@@ -67,15 +69,14 @@ export function fetchWithdraw(index, amount) {
               },
             })
           );
-          dispatch({ type: STAKE_FETCH_WITHDRAW_FAILURE, index });
+          dispatch({ type: STAKE_FETCH_WITHDRAW_FAILURE, id });
           resolve();
         })
         .catch(error => {
-          dispatch({ type: STAKE_FETCH_WITHDRAW_FAILURE, index });
+          dispatch({ type: STAKE_FETCH_WITHDRAW_FAILURE, id });
           reject(error);
         });
     });
-    return promise;
   };
 }
 
@@ -100,30 +101,35 @@ export function useFetchWithdraw() {
 }
 
 export function reducer(state, action) {
-  const { fetchWithdrawPending } = state;
   switch (action.type) {
     case STAKE_FETCH_WITHDRAW_BEGIN:
       // Just after a request is sent
-      fetchWithdrawPending[action.index] = true;
       return {
         ...state,
-        fetchWithdrawPending,
+        fetchWithdrawPending: {
+          ...state.fetchWithdrawPending,
+          [action.id]: true,
+        },
       };
 
     case STAKE_FETCH_WITHDRAW_SUCCESS:
       // The request is success
-      fetchWithdrawPending[action.index] = false;
       return {
         ...state,
-        fetchWithdrawPending,
+        fetchWithdrawPending: {
+          ...state.fetchWithdrawPending,
+          [action.id]: false,
+        },
       };
 
     case STAKE_FETCH_WITHDRAW_FAILURE:
       // The request is failed
-      fetchWithdrawPending[action.index] = false;
       return {
         ...state,
-        fetchWithdrawPending,
+        fetchWithdrawPending: {
+          ...state.fetchWithdrawPending,
+          [action.id]: false,
+        },
       };
 
     default:

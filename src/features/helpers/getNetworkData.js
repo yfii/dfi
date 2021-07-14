@@ -1,4 +1,5 @@
 import { connectors } from 'web3modal';
+import { indexBy } from './utils';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 
 import {
@@ -24,6 +25,8 @@ import {
   polygonAddressBook,
   polygonZaps,
 } from '../configure';
+
+export const appNetworkId = Number(process.env.REACT_APP_NETWORK_ID);
 
 const networkTxUrls = {
   56: hash => `https://bscscan.com/tx/${hash}`,
@@ -58,7 +61,7 @@ const networkBuyUrls = {
 };
 
 export const getNetworkCoin = () => {
-  return nativeCoins.find(coin => coin.chainId === Number(process.env.REACT_APP_NETWORK_ID));
+  return nativeCoins.find(coin => coin.chainId === appNetworkId);
 };
 
 export const getNetworkPools = () => {
@@ -75,6 +78,40 @@ export const getNetworkPools = () => {
       return fantomPools;
     default:
       return [];
+  }
+};
+
+export const getNetworkVaults = (networkId = appNetworkId) => {
+  switch (networkId) {
+    case 56:
+      return indexBy(bscPools, 'id');
+    case 128:
+      return indexBy(hecoPools, 'id');
+    case 43114:
+      return indexBy(avalanchePools, 'id');
+    case 137:
+      return indexBy(polygonPools, 'id');
+    case 250:
+      return indexBy(fantomPools, 'id');
+    default:
+      return {};
+  }
+};
+
+export const getNetworkLaunchpools = (networkId = appNetworkId) => {
+  switch (networkId) {
+    case 56:
+      return indexBy(bscStakePools, 'id');
+    case 128:
+      return indexBy(hecoStakePools, 'id');
+    case 43114:
+      return indexBy(avalancheStakePools, 'id');
+    case 137:
+      return indexBy(polygonStakePools, 'id');
+    case 250:
+      return indexBy(fantomStakePools, 'id');
+    default:
+      return {};
   }
 };
 
@@ -131,23 +168,6 @@ export const getNetworkZaps = () => {
       return polygonZaps;
     case '250':
       return fantomZaps;
-    default:
-      return [];
-  }
-};
-
-export const getNetworkStakePools = () => {
-  switch (process.env.REACT_APP_NETWORK_ID) {
-    case '56':
-      return bscStakePools;
-    case '128':
-      return hecoStakePools;
-    case '43114':
-      return avalancheStakePools;
-    case '137':
-      return polygonStakePools;
-    case '250':
-      return fantomStakePools;
     default:
       return [];
   }
@@ -375,3 +395,6 @@ export const getNetworkBuyUrl = (networkId = process.env.REACT_APP_NETWORK_ID) =
   networkBuyUrls[networkId];
 export const getNetworkAppUrl = (networkId = process.env.REACT_APP_NETWORK_ID) =>
   networkAppUrls[networkId];
+
+export const launchpools = getNetworkLaunchpools();
+export const vaults = getNetworkVaults();

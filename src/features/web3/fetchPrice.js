@@ -1,10 +1,9 @@
 import axios from 'axios';
 
-import { getNetworkPools, getNetworkStakePools } from '../helpers/getNetworkData';
+import { getNetworkPools, launchpools } from '../helpers/getNetworkData';
 import { getApiCacheBuster } from './getApiCacheBuster';
 
 const pools = getNetworkPools();
-const stakePools = getNetworkStakePools();
 
 const CACHE_TIMEOUT_MS = 1 * 60 * 1000; // 1 minute(s)
 const priceCache = {
@@ -83,7 +82,7 @@ export function initializePriceCache() {
   }
   oracleToIds.get('tokens').push('BIFI');
 
-  stakePools.forEach(pool => {
+  Object.values(launchpools).forEach(pool => {
     if (!oracleToIds.has(pool.earnedOracle)) {
       oracleToIds.set(pool.earnedOracle, []);
     }

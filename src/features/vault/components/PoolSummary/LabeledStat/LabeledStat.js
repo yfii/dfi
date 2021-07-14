@@ -2,7 +2,7 @@ import React, { forwardRef, memo } from 'react';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
-import ValueLoader from '../ValueLoader/ValueLoader';
+import ValueLoader from '../../../../common/components/ValueLoader/ValueLoader';
 import styles from './styles';
 
 const useStyles = makeStyles(styles);

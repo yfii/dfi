@@ -29,7 +29,7 @@ const styles = theme => ({
   row: {
     position: 'relative',
     textAlign: 'center',
-    padding: '20px',
+    padding: '20px 20px 0 20px',
     marginBottom: '24px',
     border: '1px solid ' + theme.palette.background.border,
     borderRadius: '8px',
@@ -38,6 +38,9 @@ const styles = theme => ({
       width: theme.spacing(7),
       height: theme.spacing(7),
       margin: '0 auto',
+    },
+    '& > .MuiGrid-item': {
+      paddingBottom: '20px',
     },
   },
 
@@ -50,6 +53,7 @@ const styles = theme => ({
     fontSize: '16px',
     fontWeight: 'bold',
     color: theme.palette.text.primary,
+    display: 'block',
     [theme.breakpoints.up('md')]: {
       fontSize: '18px',
     },
@@ -61,11 +65,26 @@ const styles = theme => ({
     },
   },
 
+  tokenTitle: {
+    textAlign: 'center',
+    fontSize: '14px',
+    fontWeight: 'bold',
+    color: theme.palette.text.primary,
+    display: 'block',
+    [theme.breakpoints.up('md')]: {
+      fontSize: '16px',
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '20px',
+    },
+  },
+
   subtitle: {
     textAlign: 'center',
     fontSize: '16px',
     fontWeight: 'bold',
     color: theme.palette.text.secondary,
+    display: 'block',
   },
 
   fire: {
