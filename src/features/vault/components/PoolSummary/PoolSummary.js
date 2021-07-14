@@ -110,7 +110,6 @@ const PoolSummary = ({
             isLoading={!fetchBalancesDone}
             className={classes.itemInner}
           />
-          {launchpool ? launchpool.staked : null}
         </Grid>
         <Grid item xs={6} className={`${classes.item} ${classes.itemBalances}`}>
           <LabeledStat
