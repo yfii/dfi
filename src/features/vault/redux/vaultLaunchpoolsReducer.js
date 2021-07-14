@@ -1,20 +1,13 @@
-import { launchpools, vaults } from '../../helpers/getNetworkData';
-
 export function vaultLaunchpoolsReducer(state, action) {
   // Listen in on launchpool status updates
-  if (action.type === 'launchpools/subscription/poolStatus') {
+  if (
+    action.type === 'launchpools/subscription/poolStatus' &&
+    action.payload.poolStatus === 'closed'
+  ) {
     // Get all vaults that currently point to this launchpool (payload.id) and update them
     const updateEntries = Object.entries(state.vaultLaunchpools)
       .filter(([, currentPoolId]) => currentPoolId === action.payload.id)
-      .map(([vaultId, currentPoolId]) => {
-        const vault = vaults[vaultId];
-        const newPool = Object.values(launchpools).find(
-          lp => lp.token === vault.earnedToken && action.payload.poolStatus !== 'closed'
-        );
-        const newPoolId = newPool ? newPool.id : null;
-        return newPoolId !== currentPoolId ? [vault.id, newPoolId] : null;
-      })
-      .filter(entry => !!entry);
+      .map(([vaultId]) => [vaultId, null]);
 
     if (updateEntries.length) {
       const updates = Object.fromEntries(updateEntries);
