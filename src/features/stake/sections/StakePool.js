@@ -44,6 +44,7 @@ import { launchpools } from '../../helpers/getNetworkData';
 import { useSelector } from 'react-redux';
 import { StakeCountdown } from './StakeCountdown';
 import ValueLoader from '../../common/components/ValueLoader/ValueLoader';
+import { NetworkRequired } from '../../../components/NetworkRequired/NetworkRequired';
 
 const useStyles = makeStyles(styles);
 
@@ -249,17 +250,23 @@ export default function StakePool(props) {
           />
         </Grid>
         <Grid item xs={6} sm={6} md={3}>
-          <Typography className={classes.title}>{formatDecimals(userBalance)}</Typography>
+          <Typography className={classes.title}>
+            <NetworkRequired loader>{formatDecimals(userBalance)}</NetworkRequired>
+          </Typography>
           <Typography className={classes.tokenTitle}>{launchpool.token}</Typography>
           <Typography className={classes.subtitle}>{t('Vault-Wallet')}</Typography>
         </Grid>
         <Grid item xs={6} sm={6} md={3}>
-          <Typography className={classes.title}>{formatDecimals(userStaked)}</Typography>
+          <Typography className={classes.title}>
+            <NetworkRequired loader>{formatDecimals(userStaked)}</NetworkRequired>
+          </Typography>
           <Typography className={classes.tokenTitle}>{launchpool.token}</Typography>
           <Typography className={classes.subtitle}>{t('Stake-Balancer-Current-Staked')}</Typography>
         </Grid>
         <Grid item xs={6} sm={6} md={3}>
-          <Typography className={classes.title}>{formatDecimals(userRewardsAvailable)}</Typography>
+          <Typography className={classes.title}>
+            <NetworkRequired loader>{formatDecimals(userRewardsAvailable)}</NetworkRequired>
+          </Typography>
           <Typography className={classes.tokenTitle}>{launchpool.earnedToken}</Typography>
           <Typography className={classes.subtitle}>
             {t('Stake-Balancer-Rewards-Available')}
@@ -281,7 +288,9 @@ export default function StakePool(props) {
           </Typography>
         </Grid>
         <Grid item xs={12} sm={4}>
-          <Typography className={classes.title}>{formatPercent(myPoolShare, 4)}</Typography>
+          <Typography className={classes.title}>
+            <NetworkRequired loader>{formatPercent(myPoolShare, 4)}</NetworkRequired>
+          </Typography>
           <Typography className={classes.subtitle}>{t('Stake-Your-Pool')}%</Typography>
         </Grid>
         <Grid item xs={12} sm={4}>
@@ -304,85 +313,87 @@ export default function StakePool(props) {
         )}
       </Grid>
 
-      <Grid container className={classes.row}>
-        {launchpool.partnership ? (
-          <Box className={classes.boosted}>{t('Stake-BoostedBy', { name: launchpool.name })}</Box>
-        ) : (
-          ''
-        )}
-        <Grid item xs={12} md={6} lg={3}>
-          {isNeedApproval ? (
+      <NetworkRequired>
+        <Grid container className={classes.row}>
+          {launchpool.partnership ? (
+            <Box className={classes.boosted}>{t('Stake-BoostedBy', { name: launchpool.name })}</Box>
+          ) : (
+            ''
+          )}
+          <Grid item xs={12} md={6} lg={3}>
+            {isNeedApproval ? (
+              <Button
+                className={classes.actionBtn}
+                disabled={fetchApprovalPending}
+                onClick={onApproval}
+              >
+                {t('Stake-Button-Approval')}
+              </Button>
+            ) : (
+              <Button
+                className={[classes.actionBtn, launchpool.partnership ? classes.btnBoost : ''].join(
+                  ' '
+                )}
+                disabled={fetchStakePending || userBalance.isZero()}
+                onClick={() => {
+                  handleModal(true, 'stake');
+                }}
+              >
+                {launchpool.partnership ? (
+                  <Box className={classes.boost}>
+                    <Box>
+                      <Avatar
+                        src={require('images/' + launchpool.logo)}
+                        alt={launchpool.token}
+                        variant="square"
+                        imgProps={{ style: { objectFit: 'contain' } }}
+                      />
+                    </Box>
+                    <Box>
+                      <img
+                        alt={t('Boost')}
+                        className={classes.boostImg}
+                        src={require('images/stake/boost.svg')}
+                      />
+                    </Box>
+                  </Box>
+                ) : (
+                  t('Stake-Button-Stake-Tokens')
+                )}
+              </Button>
+            )}
+          </Grid>
+          <Grid item xs={12} md={6} lg={3}>
             <Button
               className={classes.actionBtn}
-              disabled={fetchApprovalPending}
-              onClick={onApproval}
-            >
-              {t('Stake-Button-Approval')}
-            </Button>
-          ) : (
-            <Button
-              className={[classes.actionBtn, launchpool.partnership ? classes.btnBoost : ''].join(
-                ' '
-              )}
-              disabled={fetchStakePending || userBalance.isZero()}
+              disabled={fetchWithdrawPending || userStaked.isZero()}
               onClick={() => {
-                handleModal(true, 'stake');
+                handleModal(true, 'unstake');
               }}
             >
-              {launchpool.partnership ? (
-                <Box className={classes.boost}>
-                  <Box>
-                    <Avatar
-                      src={require('images/' + launchpool.logo)}
-                      alt={launchpool.token}
-                      variant="square"
-                      imgProps={{ style: { objectFit: 'contain' } }}
-                    />
-                  </Box>
-                  <Box>
-                    <img
-                      alt={t('Boost')}
-                      className={classes.boostImg}
-                      src={require('images/stake/boost.svg')}
-                    />
-                  </Box>
-                </Box>
-              ) : (
-                t('Stake-Button-Stake-Tokens')
-              )}
+              {t('Stake-Button-Unstake-Tokens')}
             </Button>
-          )}
+          </Grid>
+          <Grid item xs={12} md={6} lg={3}>
+            <Button
+              className={classes.actionBtn}
+              disabled={fetchClaimPending || userRewardsAvailable.isZero()}
+              onClick={onClaim}
+            >
+              {t('Stake-Button-Claim-Rewards')}
+            </Button>
+          </Grid>
+          <Grid item xs={12} md={6} lg={3}>
+            <Button
+              className={classes.actionBtn}
+              disabled={fetchExitPending || userStaked.isZero() || userRewardsAvailable.isZero()}
+              onClick={onExit}
+            >
+              {t('Stake-Button-Exit')}
+            </Button>
+          </Grid>
         </Grid>
-        <Grid item xs={12} md={6} lg={3}>
-          <Button
-            className={classes.actionBtn}
-            disabled={fetchWithdrawPending || userStaked.isZero()}
-            onClick={() => {
-              handleModal(true, 'unstake');
-            }}
-          >
-            {t('Stake-Button-Unstake-Tokens')}
-          </Button>
-        </Grid>
-        <Grid item xs={12} md={6} lg={3}>
-          <Button
-            className={classes.actionBtn}
-            disabled={fetchClaimPending || userRewardsAvailable.isZero()}
-            onClick={onClaim}
-          >
-            {t('Stake-Button-Claim-Rewards')}
-          </Button>
-        </Grid>
-        <Grid item xs={12} md={6} lg={3}>
-          <Button
-            className={classes.actionBtn}
-            disabled={fetchExitPending || userStaked.isZero() || userRewardsAvailable.isZero()}
-            onClick={onExit}
-          >
-            {t('Stake-Button-Exit')}
-          </Button>
-        </Grid>
-      </Grid>
+      </NetworkRequired>
 
       {launchpool.partners.map(partner => (
         <Grid

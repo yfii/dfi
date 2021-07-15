@@ -21,9 +21,9 @@ import PoolPaused from '../PoolSummary/PoolPaused/PoolPaused';
 import { CakeV2Banner } from './Banners/CakeV2Banner/CakeV2Banner';
 import { launchpools } from '../../../helpers/getNetworkData';
 import {
-  usePoolApr,
   useLaunchpoolSubscriptions,
   useLaunchpoolUpdates,
+  usePoolApr,
 } from '../../../stake/redux/hooks';
 
 const FETCH_INTERVAL_MS = 30 * 1000;
@@ -59,17 +59,17 @@ const PoolDetails = ({ vaultId }) => {
   useLaunchpoolUpdates();
 
   useEffect(() => {
-    if (address && web3) {
-      const fetch = () => {
+    const fetch = () => {
+      if (address && web3) {
         fetchBalances({ address, web3, tokens });
-        fetchVaultsData({ address, web3, pools });
-        fetchApys();
-      };
-      fetch();
+      }
+      fetchVaultsData({ address, web3, pools });
+      fetchApys();
+    };
+    fetch();
 
-      const id = setInterval(fetch, FETCH_INTERVAL_MS);
-      return () => clearInterval(id);
-    }
+    const id = setInterval(fetch, FETCH_INTERVAL_MS);
+    return () => clearInterval(id);
 
     // Adding tokens and pools to this dep list, causes an endless loop, DDoSing the api
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -115,17 +115,7 @@ const PoolDetails = ({ vaultId }) => {
   const depositedUsd =
     deposited > 0 && fetchVaultsDataDone ? formatTvl(deposited, pool.oraclePrice, false) : '';
 
-  if (!fetchVaultsDataDone) {
-    return (
-      <>
-        <HomeLink />
-        {vaultId === 'cake-cakev2' ? <CakeV2Banner /> : ''}
-        <div className={classes.container}>
-          <div className={classes.loading}>{t('Vault-Loading')}</div>
-        </div>
-      </>
-    );
-  } else if (!pool) {
+  if (!pool) {
     return (
       <>
         <HomeLink />
