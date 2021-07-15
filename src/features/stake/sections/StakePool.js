@@ -250,17 +250,23 @@ export default function StakePool(props) {
           />
         </Grid>
         <Grid item xs={6} sm={6} md={3}>
-          <Typography className={classes.title}>{formatDecimals(userBalance)}</Typography>
+          <Typography className={classes.title}>
+            <NetworkRequired loader>{formatDecimals(userBalance)}</NetworkRequired>
+          </Typography>
           <Typography className={classes.tokenTitle}>{launchpool.token}</Typography>
           <Typography className={classes.subtitle}>{t('Vault-Wallet')}</Typography>
         </Grid>
         <Grid item xs={6} sm={6} md={3}>
-          <Typography className={classes.title}>{formatDecimals(userStaked)}</Typography>
+          <Typography className={classes.title}>
+            <NetworkRequired loader>{formatDecimals(userStaked)}</NetworkRequired>
+          </Typography>
           <Typography className={classes.tokenTitle}>{launchpool.token}</Typography>
           <Typography className={classes.subtitle}>{t('Stake-Balancer-Current-Staked')}</Typography>
         </Grid>
         <Grid item xs={6} sm={6} md={3}>
-          <Typography className={classes.title}>{formatDecimals(userRewardsAvailable)}</Typography>
+          <Typography className={classes.title}>
+            <NetworkRequired loader>{formatDecimals(userRewardsAvailable)}</NetworkRequired>
+          </Typography>
           <Typography className={classes.tokenTitle}>{launchpool.earnedToken}</Typography>
           <Typography className={classes.subtitle}>
             {t('Stake-Balancer-Rewards-Available')}
@@ -282,7 +288,9 @@ export default function StakePool(props) {
           </Typography>
         </Grid>
         <Grid item xs={12} sm={4}>
-          <Typography className={classes.title}>{formatPercent(myPoolShare, 4)}</Typography>
+          <Typography className={classes.title}>
+            <NetworkRequired loader>{formatPercent(myPoolShare, 4)}</NetworkRequired>
+          </Typography>
           <Typography className={classes.subtitle}>{t('Stake-Your-Pool')}%</Typography>
         </Grid>
         <Grid item xs={12} sm={4}>
