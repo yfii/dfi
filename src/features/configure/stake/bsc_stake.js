@@ -19,7 +19,7 @@ export const bscStakePools = [
     earnedOracleId: 'WBNB',
     partnership: false,
     status: 'active',
-    hideCountdown: true,
+    fixedStatus: true,
     partners: [
       {
         logo: 'stake/beefy/beefyfinance.png',
@@ -153,7 +153,7 @@ export const bscStakePools = [
     partnership: true,
     status: 'closed',
     isMooStaked: true,
-    hideCountdown: true,
+    fixedStatus: true,
     periodFinish: 1624000000,
     partners: [
       {
@@ -417,7 +417,6 @@ export const bscStakePools = [
     earnedOracleId: 'STEEL',
     partnership: true,
     status: 'closed',
-    hideCountdown: false,
     isMooStaked: true,
     periodFinish: 1621620518,
     partners: [
@@ -451,7 +450,6 @@ export const bscStakePools = [
     earnedOracleId: 'TOFY',
     partnership: true,
     status: 'closed',
-    hideCountdown: false,
     isMooStaked: true,
     periodFinish: 1621440003,
     partners: [
@@ -485,7 +483,6 @@ export const bscStakePools = [
     earnedOracleId: 'banana-bxbtc-bnb',
     partnership: true,
     status: 'closed',
-    hideCountdown: false,
     isMooStaked: true,
     periodFinish: 1620928710,
     partners: [
@@ -519,7 +516,6 @@ export const bscStakePools = [
     earnedOracleId: 'ICA',
     partnership: true,
     status: 'closed',
-    hideCountdown: false,
     isMooStaked: true,
     periodFinish: 1620836553,
     partners: [
@@ -553,7 +549,7 @@ export const bscStakePools = [
     earnedOracleId: 'SAT',
     partnership: true,
     status: 'closed',
-    hideCountdown: true,
+    fixedStatus: true,
     isMooStaked: true,
     periodFinish: 1520495415,
     partners: [

@@ -19,7 +19,7 @@ export const hecoStakePools = [
     earnedOracleId: 'WHT',
     partnership: false,
     status: 'active',
-    hideCountdown: true,
+    fixedStatus: true,
     partners: [
       {
         logo: 'stake/beefy/beefyfinance.png',

@@ -19,7 +19,7 @@ export const avalancheStakePools = [
     earnedOracleId: 'WAVAX',
     partnership: false,
     status: 'active',
-    hideCountdown: true,
+    fixedStatus: true,
     partners: [
       {
         logo: 'stake/beefy/beefyfinance.png',

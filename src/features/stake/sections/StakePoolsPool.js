@@ -7,7 +7,7 @@ import { useLaunchpoolSubscriptions, usePoolFinish, usePoolStatus } from '../red
 
 export function StakePoolsPool({ showPools, classes, pool, t }) {
   const id = pool.id;
-  const hideCountdown = pool.hideCountdown === true;
+  const hideCountdown = pool.fixedStatus === true;
   const poolFinish = usePoolFinish(pool.id);
   const status = usePoolStatus(pool.id);
   const { subscribe } = useLaunchpoolSubscriptions();
