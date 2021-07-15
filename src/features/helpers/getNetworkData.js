@@ -297,15 +297,15 @@ export const getNetworkConnectors = t => {
               description: t('Home-BrowserWallet'),
             },
           },
-          walletconnect: {
-            package: WalletConnectProvider,
-            options: {
-              rpc: {
-                1: 'https://http-mainnet.hecochain.com',
-                128: 'https://http-mainnet.hecochain.com',
-              },
-            },
-          },
+          // walletconnect: {
+          //   package: WalletConnectProvider,
+          //   options: {
+          //     rpc: {
+          //       1: 'https://http-mainnet.hecochain.com',
+          //       128: 'https://http-mainnet.hecochain.com',
+          //     },
+          //   },
+          // },
           'custom-math': {
             display: {
               name: 'Math',
@@ -328,15 +328,15 @@ export const getNetworkConnectors = t => {
               description: t('Home-BrowserWallet'),
             },
           },
-          walletconnect: {
-            package: WalletConnectProvider,
-            options: {
-              rpc: {
-                1: 'https://api.avax.network/ext/bc/C/rpc',
-                43114: 'https://api.avax.network/ext/bc/C/rpc',
-              },
-            },
-          },
+          // walletconnect: {
+          //   package: WalletConnectProvider,
+          //   options: {
+          //     rpc: {
+          //       1: 'https://api.avax.network/ext/bc/C/rpc',
+          //       43114: 'https://api.avax.network/ext/bc/C/rpc',
+          //     },
+          //   },
+          // },
         },
       };
     case '137':
@@ -353,6 +353,7 @@ export const getNetworkConnectors = t => {
           walletconnect: {
             package: WalletConnectProvider,
             options: {
+              network: 'matic',
               rpc: {
                 1: 'https://rpc-mainnet.maticvigil.com/',
                 137: 'https://rpc-mainnet.maticvigil.com/',
@@ -372,15 +373,15 @@ export const getNetworkConnectors = t => {
               description: t('Home-BrowserWallet'),
             },
           },
-          walletconnect: {
-            package: WalletConnectProvider,
-            options: {
-              rpc: {
-                1: 'https://rpcapi.fantom.network',
-                250: 'https://rpcapi.fantom.network',
-              },
-            },
-          },
+          // walletconnect: {
+          //   package: WalletConnectProvider,
+          //   options: {
+          //     rpc: {
+          //       1: 'https://rpcapi.fantom.network',
+          //       250: 'https://rpcapi.fantom.network',
+          //     },
+          //   },
+          // },
         },
       };
     default:
