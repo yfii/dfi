@@ -166,17 +166,19 @@ export default function StakePools() {
               <Typography>
                 The mooTokens represent the share of the vault the user has. As the vault generates
                 profit, the deposited token amount in the vault increases while the amount of shares
-                (mooTokens) in your wallet remain constant.
+                (mooTokens) in your wallet remain constant. If you deposit at a time when the vault
+                has been operating for a while, the ratio between deposited tokens and mooTokens 
+                will be off from the initial 1:1 ratio, and continues to diverge from it.
               </Typography>
             </AccordionDetails>
           </Accordion>
           <Accordion square expanded={expanded === 'faq-9'} onChange={handleChange('faq-9')}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography>What is mooBifi?</Typography>
+              <Typography>What is mooBIFI?</Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                mooBifi is the token you receive from depositing $BIFI into the Beefy Maxi vault.
+                mooBIFI is the token you receive from depositing $BIFI into the Beefy Maxi vault.
                 These mooTokens do not 1:1 represent the token amount initially deposited but it
                 does represent the value of your share in the vault. The Beefy Maxi vault gathers a
                 performance fee from every Beefy Vault when they are harvested, and uses it to buy
