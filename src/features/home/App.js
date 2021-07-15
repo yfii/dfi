@@ -82,7 +82,7 @@ export default function App({ children }) {
                     disconnectWallet={disconnectWalletCallback}
                     networkId={networkId}
                   />
-                  {web3 && networkId === Number(process.env.REACT_APP_NETWORK_ID) ? children : null}
+                  {networkId === Number(process.env.REACT_APP_NETWORK_ID) ? children : null}
                   <Notifier />
                 </div>
               </div>
