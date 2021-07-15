@@ -144,16 +144,33 @@ export default function StakePools() {
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                Once you stake in any of Beefy Finance vaults, you get in return something called
-                mooTokens. These are different depending on the vault you participate in, this can
-                be called ‘mooBIFI’ or ‘mooAutoCake’. Basically, these are receipts for the funds
-                you deposited. They have no value, they’re just a way to show that you have a
-                certain amount of tokens deposited in that vault. When you want to withdraw, your
-                mooTokens are exchanged back into the tokens you deposited + compound.
+                A mooToken can be seen as a receipt that you get when depositing into any Beefy vault.
+                This is a fully automatic process. For example, you receive ‘mooBIFI’ tokens from
+                depositing $BIFI into the Beefy Maxi vault. These mooTokens do not 1:1 represent the
+                token amount initially deposited but it does represent the value of your share in the
+                vault. As a vault generates profit, the amount of mooTokens in your wallet remain
+                constant while the underlying invested token amount in the vault increases. Whenever
+                you want to withdraw the tokens that are staked for you in the vault, you need your
+                receipt (mooTokens) which you hand in to redeem the deposited tokens + yield.
+                Beefy.Finance users should hold on tightly to the mooTokens i.e. deposit receipts
+                and not sell or exchange them to strangers or you will lose ownership of your staked
+                assets in the vault.
               </Typography>
             </AccordionDetails>
           </Accordion>
           <Accordion square expanded={expanded === 'faq-8'} onChange={handleChange('faq-8')}>
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <Typography>Why do I have less mooToken than the amount of tokens I deposited?</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                The mooTokens represent the share of the vault the user has. As the vault generates
+                profit, the deposited token amount in the vault increases while the amount of shares
+                (mooTokens) in your wallet remain constant.
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion square expanded={expanded === 'faq-9'} onChange={handleChange('faq-9')}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Typography>What is mooBifi?</Typography>
             </AccordionSummary>
@@ -169,7 +186,7 @@ export default function StakePools() {
               </Typography>
             </AccordionDetails>
           </Accordion>
-          <Accordion square expanded={expanded === 'faq-9'} onChange={handleChange('faq-9')}>
+          <Accordion square expanded={expanded === 'faq-10'} onChange={handleChange('faq-10')}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Typography>Are these partner vaults safe to use?</Typography>
             </AccordionSummary>
@@ -181,7 +198,7 @@ export default function StakePools() {
               </Typography>
             </AccordionDetails>
           </Accordion>
-          <Accordion square expanded={expanded === 'faq-10'} onChange={handleChange('faq-10')}>
+          <Accordion square expanded={expanded === 'faq-11'} onChange={handleChange('faq-11')}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Typography>
                 If I enter a partner vault with my mooTokens, will I still earn the ordinary vault
@@ -198,7 +215,7 @@ export default function StakePools() {
               </Typography>
             </AccordionDetails>
           </Accordion>
-          <Accordion square expanded={expanded === 'faq-11'} onChange={handleChange('faq-11')}>
+          <Accordion square expanded={expanded === 'faq-12'} onChange={handleChange('faq-12')}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Typography>Why is APY and Daily rates not matching?</Typography>
             </AccordionSummary>
@@ -213,7 +230,7 @@ export default function StakePools() {
               </Typography>
             </AccordionDetails>
           </Accordion>
-          <Accordion square expanded={expanded === 'faq-12'} onChange={handleChange('faq-12')}>
+          <Accordion square expanded={expanded === 'faq-13'} onChange={handleChange('faq-13')}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Typography>How come the APY shown when deposited is not the same now?</Typography>
             </AccordionSummary>
@@ -229,7 +246,7 @@ export default function StakePools() {
               </Typography>
             </AccordionDetails>
           </Accordion>
-          <Accordion square expanded={expanded === 'faq-13'} onChange={handleChange('faq-13')}>
+          <Accordion square expanded={expanded === 'faq-14'} onChange={handleChange('faq-14')}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Typography>Are the promoted project and its tokens safe?</Typography>
             </AccordionSummary>
@@ -245,7 +262,7 @@ export default function StakePools() {
             </AccordionDetails>
           </Accordion>
           {appNetworkId === 56 ? (
-            <Accordion square expanded={expanded === 'faq-14'} onChange={handleChange('faq-14')}>
+            <Accordion square expanded={expanded === 'faq-15'} onChange={handleChange('faq-15')}>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                 <Typography>How to earn free BNB indefinitely?</Typography>
               </AccordionSummary>
