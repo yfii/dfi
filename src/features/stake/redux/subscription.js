@@ -211,27 +211,30 @@ const subscriptionCallbacks = {
       },
     });
 
-    // Calculate pool status based on initial status
-    let poolStatus = pool.status;
-    if (pool.status === 'active') {
-      if (data.poolFinish === '0') {
-        poolStatus = 'soon';
-      } else if (data.poolFinish * 1000 < Date.now()) {
-        poolStatus = 'closed';
+    // Do not update fixed status pools
+    if (pool.fixedStatus !== true) {
+      // Calculate pool status based on initial status
+      let poolStatus = pool.status;
+      if (pool.status === 'active') {
+        if (data.poolFinish === '0') {
+          poolStatus = 'soon';
+        } else if (data.poolFinish * 1000 < Date.now()) {
+          poolStatus = 'closed';
+        }
+      } else if (pool.status === 'soon') {
+        if (data.poolFinish * 1000 >= Date.now()) {
+          poolStatus = 'active';
+        }
       }
-    } else if (pool.status === 'soon') {
-      if (data.poolFinish * 1000 >= Date.now()) {
-        poolStatus = 'active';
-      }
-    }
 
-    dispatch({
-      type: ACTION_PREFIX + 'poolStatus',
-      payload: {
-        id: pool.id,
-        poolStatus,
-      },
-    });
+      dispatch({
+        type: ACTION_PREFIX + 'poolStatus',
+        payload: {
+          id: pool.id,
+          poolStatus,
+        },
+      });
+    }
   },
 };
 

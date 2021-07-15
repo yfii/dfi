@@ -85,7 +85,7 @@ export default function StakePool(props) {
   useLaunchpoolUpdates();
 
   // Get pool state
-  const poolHideCountdown = launchpool.hideCountdown === true;
+  const poolHideCountdown = launchpool.fixedStatus === true;
   const poolFinish = usePoolFinish(launchpool.id);
   const poolStatus = usePoolStatus(launchpool.id);
   const poolStaked = usePoolStaked(launchpool.id);
