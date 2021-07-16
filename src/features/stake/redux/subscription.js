@@ -74,7 +74,6 @@ const callFunctions = {
 
 // process subscription and dispatch action to update state
 // data will include call results with keys defined in subscriptionCalls above
-// TODO clear user*** on wallet disconnect
 const subscriptionCallbacks = {
   userApproval: async (dispatch, pool, data) => {
     if (data.userApproval === undefined) {
@@ -606,15 +605,17 @@ export function useLaunchpoolSubscriptions() {
 }
 
 export function useLaunchpoolUpdates(updateInterval = DEFAULT_UPDATE_INTERVAL) {
+  const dispatch = useDispatch();
   const { update } = useLaunchpoolSubscriptions();
   const { web3, address } = useConnectWallet();
 
   // update on connect wallet
   useEffect(() => {
     if (web3 && address) {
+      clearThrottleUpdatePools(dispatch);
       update();
     }
-  }, [web3, address, update]);
+  }, [web3, address, dispatch, update]);
 
   // update on interval
   useEffect(() => {
