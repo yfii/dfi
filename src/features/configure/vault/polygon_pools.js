@@ -410,6 +410,7 @@ export const polygonPools = [
     platform: 'IronFinance',
     assets: ['USDC', 'USDT', 'DAI'],
     callFee: 0.5,
+    withdrawalFee: '0.01%',
     addLiquidityUrl: 'https://app.iron.finance/swap/pools/is3usd/deposit',
   },
   {
