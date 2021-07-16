@@ -20,10 +20,11 @@ export const bscZaps = [
     ammFactory: '0xd76d8C2A7CA0a1609Aea0b9b5017B3F7782891bf',
     ammPairInitHash: '0xe7da666f616ba3bdb18c6908b22d556a41659bdd652762c246b8d1fa4f7506b4',
   },
-  // {
-  //   zapAddress: '0x9f6C521F1f9C8C5909D2B6f490be5E9648D7F82c', // TODO: adjust zap contract for mdex
-  //   ammRouter: '0x7dae51bd3e3376b8c7c4900e9107f12be3af1ba8',
-  //   ammFactory: '0x3cd1c46068daea5ebb0d3f55f6915b10648062b8', // MDEX
-  //   ammPairInitHash: '0x0d994d996174b05cfc7bed897dc1b20b4c458fc8d64fe98bc78b3c64a6b4d093',
-  // },
+  {
+    // MDEX
+    zapAddress: '0x781BF7b6d2a4C7014AB4EEAb4Bd10af540b8e020',
+    ammRouter: '0x7dae51bd3e3376b8c7c4900e9107f12be3af1ba8',
+    ammFactory: '0x3cd1c46068daea5ebb0d3f55f6915b10648062b8',
+    ammPairInitHash: '0x0d994d996174b05cfc7bed897dc1b20b4c458fc8d64fe98bc78b3c64a6b4d093',
+  },
 ];
