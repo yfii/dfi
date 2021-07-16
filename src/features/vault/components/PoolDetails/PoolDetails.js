@@ -25,6 +25,7 @@ import {
   useLaunchpoolUpdates,
   usePoolApr,
 } from '../../../stake/redux/hooks';
+import { PoolBoosts } from '../PoolSummary/PoolBoosts/PoolBoosts';
 
 const FETCH_INTERVAL_MS = 30 * 1000;
 
@@ -148,6 +149,7 @@ const PoolDetails = ({ vaultId }) => {
       <div className={classes.container}>
         <Grid container alignItems="center" style={{ paddingTop: '20px' }}>
           {vaultStateTitle}
+          <PoolBoosts poolName={pool.name} earnedTokenAddress={pool.earnedTokenAddress} />
           <Grid item xs={12} className={`${classes.item} ${classes.itemTitle}`}>
             <PoolTitle
               name={pool.name}

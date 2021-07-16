@@ -72,6 +72,8 @@
   "Vault-Breakdown-VaultDaily": "Vault Daily",
   "Vault-Breakdown-TradingDaily": "Trading Daily",
   "Vault-Breakdown-BoostDaily": "Boost Daily",
+  "Vault-Boosts-Staked-Single": "Staked in {{name}} boost",
+  "Vault-Boosts-Staked-Count": "Staked in {{count}} boosts",
   "Vault-Banner-CakeV2-StakeLabel": "Stake your {{symbol}}",
   "Vault-Banner-CakeV2-StakeValue": "New pure {{symbol}} vault",
   "Vault-Banner-CakeV2-SaferLabel": "Safer",

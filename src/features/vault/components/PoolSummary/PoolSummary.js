@@ -12,6 +12,7 @@ import PoolTitle from './PoolTitle/PoolTitle';
 import LabeledStat from './LabeledStat/LabeledStat';
 import ApyStats from './ApyStats/ApyStats';
 import { usePoolApr } from '../../../stake/redux/subscription';
+import { PoolBoosts } from './PoolBoosts/PoolBoosts';
 
 const useStyles = makeStyles(styles);
 
@@ -89,6 +90,7 @@ const PoolSummary = ({
     >
       <Grid container alignItems="center" style={{ paddingTop: '20px' }}>
         {vaultStateTitle}
+        <PoolBoosts poolName={pool.name} earnedTokenAddress={pool.earnedTokenAddress} />
         <Grid item xs={12} className={`${classes.item} ${classes.itemTitle}`}>
           <PoolTitle
             name={pool.name}
