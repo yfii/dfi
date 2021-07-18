@@ -51,7 +51,7 @@ export const polygonStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'pWINGS',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     periodFinish: 1626566247,
     partners: [
@@ -84,7 +84,7 @@ export const polygonStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'QI',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     periodFinish: 1626534866,
     partners: [
@@ -117,7 +117,7 @@ export const polygonStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'BONE',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     periodFinish: 1626560038,
     partners: [
