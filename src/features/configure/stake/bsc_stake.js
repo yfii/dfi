@@ -908,7 +908,7 @@ export const bscStakePools = [
   {
     id: 'moo_ellipsis_3pool-zefi',
     name: 'ZCore Finance',
-    logo: 'uncategorized/EPS3.png',
+    logo: 'uncategorized/eps3.png',
     token: 'mooEllipsis3Pool',
     tokenDecimals: 18,
     tokenAddress: '0xE563c046147b4dF98bfCD3d00Dc54511F0c3b752',
