@@ -49,6 +49,30 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
   },
   {
+    id: 'ellipsis-usdn',
+    logo: 'uncategorized/epsUSDN.png',
+    name: 'BUSD/USDT/USDC/USDN',
+    token: 'usdn3EPS',
+    tokenDescription: 'Ellipsis',
+    tokenAddress: '0x8339156534e2d7354Eed097A6FB4A5820d8d0d27',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooEllipsisUSDN',
+    earnedTokenAddress: '0x1DB9162039F834F02f095395B334d514f894b696',
+    earnContractAddress: '0x1DB9162039F834F02f095395B334d514f894b696',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'ellipsis-usdn',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Ellipsis',
+    assets: ['USDN', 'USDC', 'USDT', 'BUSD'],
+    callFee: 0.5,
+    addLiquidityUrl: 'https://ellipsis.finance/pool',
+  },
+  {
     id: 'fruit-fruit-cake',
     name: 'FRUIT-CAKE LP',
     token: 'FRUIT-CAKE LP',
@@ -385,7 +409,7 @@ export const bscPools = [
   },
   {
     id: 'ellipsis-pbtc',
-    logo: 'uncategorized/pbtcEPS.png',
+    logo: 'uncategorized/epsPBTC.png',
     name: 'pBTC/renBTC/BTCB',
     token: 'pbtcEPS',
     tokenDescription: 'Ellipsis',
@@ -2024,7 +2048,7 @@ export const bscPools = [
   },
   {
     id: 'ellipsis-eps',
-    logo: 'uncategorized/EPS.png',
+    logo: 'single-assets/EPS.png',
     name: 'EPS',
     token: 'EPS',
     tokenDescription: 'Ellipsis',
@@ -8095,7 +8119,7 @@ export const bscPools = [
 
   {
     id: 'ellipsis-renbtc',
-    logo: 'uncategorized/renBTC-BTC.png',
+    logo: 'uncategorized/epsRENBTC.png',
     name: 'renBTC/BTCB',
     token: 'renBTC-BTCB EPS LP',
     tokenDescription: 'Ellipsis',
@@ -8119,7 +8143,7 @@ export const bscPools = [
   },
   {
     id: 'ellipsis-fusdt-3eps',
-    logo: 'uncategorized/EPS-FUSDT.png',
+    logo: 'uncategorized/epsFUSDT.png',
     name: 'fUSDT/BUSD/USDT/USDC',
     token: 'EPS fUSDT',
     tokenDescription: 'Ellipsis',
@@ -9321,7 +9345,7 @@ export const bscPools = [
 
   {
     id: 'ellipsis-3eps',
-    logo: 'uncategorized/EPS3.png',
+    logo: 'uncategorized/eps3.png',
     name: 'BUSD/USDT/USDC',
     token: 'EPS 3Pool',
     tokenDescription: 'Ellipsis',
@@ -9635,7 +9659,7 @@ export const bscPools = [
 
   {
     id: 'ellipsis-eps-bnb',
-    logo: 'uncategorized/EPS.png',
+    logo: 'uncategorized/epsBNB.png',
     name: 'EPS-BNB LP',
     token: 'EPS-BNB LP',
     tokenDescription: 'Ellipsis',

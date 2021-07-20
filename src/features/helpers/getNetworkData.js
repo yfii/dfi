@@ -191,6 +191,7 @@ export const getNetworkStables = () => {
         'IRON',
         'DOLLY',
         'TUSD',
+        'USDN',
       ];
     case '128':
       return ['USDT', 'HUSD'];
