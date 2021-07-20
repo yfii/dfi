@@ -51,7 +51,7 @@ export const bscStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'KRW',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     periodFinish: 1626723554,
     partners: [
