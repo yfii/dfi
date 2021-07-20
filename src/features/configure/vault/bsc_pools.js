@@ -1320,7 +1320,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0xDB021b1B247fe2F1fa57e0A87C748Cc1E321F07F&outputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
   },
   {
-    id: 'mdex-bsc-mdx',
+    id: 'mdex-bsc-mdx-pause',
     logo: 'single-assets/MDX.png',
     name: 'MDX',
     token: 'MDX',
@@ -1336,11 +1336,12 @@ export const bscPools = [
     oracle: 'tokens',
     oracleId: 'MDX',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Mdex',
     assets: ['MDX'],
     callFee: 0.5,
+    withdrawalFee: '0%',
     buyTokenUrl:
       'https://bsc.mdex.com/#/swap?inputCurrency=WBNB&outputCurrency=0x9c65ab58d8d978db963e63f2bfb7121627e3a739',
   },
