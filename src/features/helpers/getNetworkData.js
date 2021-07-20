@@ -146,13 +146,13 @@ export const getNetworkBurnTokens = () => {
     case '43114':
       return {};
     case '137':
-      return {};
+      return {
+        [polygonAddressBook.tokens.xYELD.symbol]: polygonAddressBook.tokens.xYELD,
+      };
     case '250':
       return {};
     default:
-      throw new Error(
-        `Create address book for this chainId first. Check out https://github.com/beefyfinance/address-book`
-      );
+      throw new Error(`Create address book for this chainId first.`);
   }
 };
 
