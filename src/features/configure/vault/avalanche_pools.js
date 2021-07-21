@@ -26,7 +26,7 @@ export const avalanchePools = [
       'https://app.pangolin.exchange/#/swap?inputCurrency=0x60781c2586d68229fde47564546784ab3faca982&outputCurrency=0xd6070ae98b8069de6B494332d1A1a81B6179D960',
   },
   {
-    id: 'png-bnb-avax',
+    id: 'png-bifi-avax',
     name: 'BIFI-AVAX LP',
     token: 'BIFI-AVAX LP',
     tokenDescription: 'Pangolin',
