@@ -176,6 +176,7 @@ export const hecoPools = [
     platform: 'Mdex',
     assets: ['MDX'],
     callFee: 0.5,
+    withdrawalFee: '0%',
     buyTokenUrl:
       'https://ht.mdex.com/#/swap?inputCurrency=0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f&outputCurrency=0x25d2e80cb6b86881fd7e07dd263fb79f4abe033c',
   },
