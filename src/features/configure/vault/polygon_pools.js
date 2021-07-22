@@ -175,7 +175,7 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Polypup',
-    assets: ['USDC', 'BONE'],
+    assets: ['BONE', 'USDC'],
     callFee: 0.5,
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174/0x6bb45cEAC714c52342Ef73ec663479da35934bf7',
@@ -234,8 +234,8 @@ export const polygonPools = [
   },
   {
     id: 'polyyeld-xyeld-quick-wmatic-xyeld',
-    name: 'xYELD-WMATIC QLP',
-    token: 'xYELD-WMATIC QLP',
+    name: 'xYELD-MATIC QLP',
+    token: 'xYELD-MATIC QLP',
     tokenDescription: 'Polyyeld (L2)',
     tokenAddress: '0x6Ea785d8edeA0a99c7040839d8fA0498c3c9a319',
     tokenDecimals: 18,
@@ -251,7 +251,7 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Polyyeld',
-    assets: ['MATIC', 'xYELD'],
+    assets: ['xYELD', 'MATIC'],
     callFee: 0.5,
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270/0x90AC3fa9fCD997B168f218041de26eB01399Bb55',
@@ -260,8 +260,8 @@ export const polygonPools = [
   },
   {
     id: 'polyyeld-xyeld-quick-wmatic-yeld',
-    name: 'YELD-WMATIC QLP',
-    token: 'YELD-WMATIC QLP',
+    name: 'YELD-MATIC QLP',
+    token: 'YELD-MATIC QLP',
     tokenDescription: 'Polyyeld (L2)',
     tokenAddress: '0xef71F798c15f8C9732488e109BB511144088bECe',
     tokenDecimals: 18,
@@ -277,7 +277,7 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Polyyeld',
-    assets: ['MATIC', 'YELD'],
+    assets: ['YELD', 'MATIC'],
     callFee: 0.5,
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270/0xd0f3121A190d85dE0AB6131f2bCEcdbfcfB38891',
@@ -355,7 +355,7 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Telxchange',
-    assets: ['QUICK', 'TEL'],
+    assets: ['TEL', 'QUICK'],
     callFee: 0.5,
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x831753DD7087CaC61aB5644b308642cc1c33Dc13/0xdF7837DE1F2Fa4631D716CF2502f8b230F1dcc32',
@@ -381,7 +381,7 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Telxchange',
-    assets: ['MATIC', 'TEL'],
+    assets: ['TEL', 'MATIC'],
     callFee: 0.5,
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270/0xdF7837DE1F2Fa4631D716CF2502f8b230F1dcc32',
@@ -407,7 +407,7 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Telxchange',
-    assets: ['ETH', 'TEL'],
+    assets: ['TEL', 'ETH'],
     callFee: 0.5,
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619/0xdF7837DE1F2Fa4631D716CF2502f8b230F1dcc32',
@@ -433,7 +433,7 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Telxchange',
-    assets: ['AAVE', 'TEL'],
+    assets: ['TEL', 'AAVE'],
     callFee: 0.5,
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0xD6DF932A45C0f255f85145f286eA0b292B21C90B/0xdF7837DE1F2Fa4631D716CF2502f8b230F1dcc32',
@@ -459,7 +459,7 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Telxchange',
-    assets: ['WBTC', 'TEL'],
+    assets: ['TEL', 'WBTC'],
     callFee: 0.5,
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6/0xdF7837DE1F2Fa4631D716CF2502f8b230F1dcc32',
@@ -596,8 +596,8 @@ export const polygonPools = [
   {
     id: 'wexpoly-wbtc-wex',
     logo: 'polygon/WEXPOLY-BTC.png',
-    name: 'WBTC-WEXpoly LP',
-    token: 'WBTC-WEXpoly WLP',
+    name: 'WEXpoly-WBTC LP',
+    token: 'WEXpoly-WBTC WLP',
     tokenDescription: 'WaultFinance',
     tokenAddress: '0xaE183DB956FAf760Aa29bFcfDa4BDDdB02fbdd0E',
     tokenDecimals: 18,
@@ -613,7 +613,7 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'WaultFinance',
-    assets: ['WBTC', 'WEXPoly'],
+    assets: ['WEXPoly', 'WBTC'],
     callFee: 0.05,
     addLiquidityUrl:
       'https://swap.wault.finance/polygon/#/add/0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6/0x4c4BF319237D98a30A929A96112EfFa8DA3510EB',
@@ -1028,7 +1028,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     platform: 'Polyyeld',
-    assets: ['MATIC', 'YELD'],
+    assets: ['YELD', 'MATIC'],
     callFee: 0.5,
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0xd0f3121A190d85dE0AB6131f2bCEcdbfcfB38891/0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
@@ -1235,7 +1235,7 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Polypup',
-    assets: ['MATIC', 'BONE'],
+    assets: ['BONE', 'MATIC'],
     callFee: 0.5,
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270/0x6bb45cEAC714c52342Ef73ec663479da35934bf7',
@@ -1270,8 +1270,8 @@ export const polygonPools = [
   },
   {
     id: 'polypup-wmatic-pup',
-    name: 'PUP-WMATIC QLP',
-    token: 'PUP-WMATIC QLP',
+    name: 'PUP-MATIC QLP',
+    token: 'PUP-MATIC QLP',
     tokenDescription: 'Polypup',
     tokenAddress: '0xBC68d2A5920c4ffaEa20E2BE48a0E09055481976',
     tokenDecimals: 18,
@@ -1443,7 +1443,7 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Polyyeld',
-    assets: ['MATIC', 'YELD'],
+    assets: ['YELD', 'MATIC'],
     callFee: 0.5,
     addLiquidityUrl:
       'https://app.apeswap.finance/add/0xd0f3121A190d85dE0AB6131f2bCEcdbfcfB38891/0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
@@ -1599,7 +1599,7 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Polyyeld',
-    assets: ['MATIC', 'YELD'],
+    assets: ['YELD', 'MATIC'],
     callFee: 0.5,
     addLiquidityUrl:
       'https://app.sushi.com/add/0xd0f3121A190d85dE0AB6131f2bCEcdbfcfB38891/0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
@@ -2611,7 +2611,7 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'SushiSwap',
-    assets: ['MATIC', 'WOOFY'],
+    assets: ['WOOFY', 'MATIC'],
     callFee: 0.5,
     addLiquidityUrl:
       'https://app.sushi.com/add/0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270/0xD0660cD418a64a1d44E9214ad8e459324D8157f1',
