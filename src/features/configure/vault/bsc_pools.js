@@ -9269,32 +9269,6 @@ export const bscPools = [
   },
 
   {
-    id: 'swamp-bifi-bnb',
-    logo: 'bnb-pairs/BIFI-BNB.svg',
-    name: 'BIFI-BNB LP',
-    token: 'BIFI-BNB LP',
-    tokenDescription: 'PancakeSwap (Swamp)',
-    tokenAddress: '0xd132D2C24F29EE8ABb64a66559d1b7aa627Bd7fD',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooSwampyBIFI-BNB',
-    earnedTokenAddress: '0x56Ba15eCA5FB30b13FCaD7392c82811a5Ce98e4d',
-    earnContractAddress: '0x56Ba15eCA5FB30b13FCaD7392c82811a5Ce98e4d',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'cake-bifi-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Swamp',
-    assets: ['BIFI', 'BNB'],
-    callFee: 0.5,
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
-  },
-
-  {
     id: 'swamp-cake-bnb-eol',
     name: 'CAKE-BNB LP',
     token: 'CAKE-BNB LP',
