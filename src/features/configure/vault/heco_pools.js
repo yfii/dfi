@@ -155,7 +155,7 @@ export const hecoPools = [
       'https://ht.mdex.com/#/add/0xa71edc38d189767582c38a3145b5873052c3e47a/0x8F67854497218043E1f72908FFE38D0Ed7F24721',
   },
   {
-    id: 'mdex-mdx-pause',
+    id: 'mdex-mdx',
     logo: 'single-assets/MDX.png',
     name: 'MDX',
     token: 'MDX',
@@ -171,12 +171,11 @@ export const hecoPools = [
     oracle: 'tokens',
     oracleId: 'MDX',
     oraclePrice: 0,
-    depositsPaused: true,
+    depositsPaused: false,
     status: 'active',
     platform: 'Mdex',
     assets: ['MDX'],
     callFee: 0.5,
-    withdrawalFee: '0%',
     buyTokenUrl:
       'https://ht.mdex.com/#/swap?inputCurrency=0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f&outputCurrency=0x25d2e80cb6b86881fd7e07dd263fb79f4abe033c',
   },
