@@ -10502,32 +10502,6 @@ export const bscPools = [
   },
 
   {
-    id: 'cake-ramp-busd',
-    logo: 'busd-pairs/RAMP-BUSD.svg',
-    name: 'RAMP-BUSD LP',
-    token: 'RAMP-BUSD LP',
-    tokenDescription: 'PancakeSwap',
-    tokenAddress: '0xbF36959939982D0D34B37Fb3f3425da9676C13a3',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooPancakeRAMP-BUSD',
-    earnedTokenAddress: '0x32FDaa004C1d9cFCf9B8044D6015DD7bb3a7Ec5a',
-    earnContractAddress: '0x32FDaa004C1d9cFCf9B8044D6015DD7bb3a7Ec5a',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'cake-ramp-busd',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'PancakeSwap',
-    assets: ['RAMP', 'BUSD'],
-    callFee: 0.5,
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/0xe9e7cea3dedca5984780bafc599bd69add087d56/0x8519ea49c997f50ceffa444d240fb655e89248aa',
-  },
-
-  {
     id: 'jul-btcb-bnb',
     logo: 'bnb-pairs/JBTCB-BNB.svg',
     name: 'BTCB-BNB LP',
