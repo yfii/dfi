@@ -50,6 +50,7 @@ export const bscPools = [
   },
   {
     id: 'cakev2-c98-wbnb',
+    logo: 'bnb-pairs/C98-BNB.svg',
     name: 'C98-WBNB LP',
     token: 'C98-WBNB LP2',
     tokenDescription: 'PancakeSwap',
