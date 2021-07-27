@@ -74,8 +74,8 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#//add/0xaEC945e04baF28b135Fa7c640f624f8D90F1C3a6/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
     buyTokenUrl:
       'https://exchange.pancakeswap.finance/#//swap?inputCurrency=0xaEC945e04baF28b135Fa7c640f624f8D90F1C3a6&outputCurrency=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
-},
-{
+  },
+  {
     id: 'wex-bnb-ont',
     name: 'ONT-BNB WLP',
     token: 'ONT-BNB WLP',
@@ -1426,7 +1426,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0xDB021b1B247fe2F1fa57e0A87C748Cc1E321F07F&outputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
   },
   {
-    id: 'mdex-bsc-mdx-pause',
+    id: 'mdex-bsc-mdx',
     logo: 'single-assets/MDX.png',
     name: 'MDX',
     token: 'MDX',
@@ -1442,7 +1442,7 @@ export const bscPools = [
     oracle: 'tokens',
     oracleId: 'MDX',
     oraclePrice: 0,
-    depositsPaused: true,
+    depositsPaused: false,
     status: 'active',
     platform: 'Mdex',
     assets: ['MDX'],
