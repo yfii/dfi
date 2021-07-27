@@ -120,7 +120,7 @@ export const hecoPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Lendhub',
-    assets: ['LHB', 'wht'],
+    assets: ['LHB', 'WHT'],
     callFee: 0.25,
     buyTokenUrl:
       'https://ht.mdex.com/#/swap?inputCurrency=0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F&outputCurrency=0x8F67854497218043E1f72908FFE38D0Ed7F24721',
