@@ -55,7 +55,7 @@ export const bscPools = [
     token: 'C98-WBNB LP2',
     tokenDescription: 'PancakeSwap',
     tokenAddress: '0x92247860A03F48d5c6425c7CA35CDcFCB1013AA1',
-    tokenDecimals: '1e18',
+    tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooCakeV2C98-WBNB',
     earnedTokenAddress: '0x13071d48A5FDe2735102657e15D1132F92eE8C83',
