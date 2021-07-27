@@ -2699,8 +2699,8 @@ export const bscPools = [
     oracle: 'tokens',
     oracleId: 'HPS',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['HPS'],
     callFee: 0.5,
@@ -10526,32 +10526,6 @@ export const bscPools = [
     addLiquidityUrl: 'https://julswap.com/#/add/0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c/BNB',
     buyTokenUrl:
       'https://julswap.com/#/swap?inputCurrency=BNB&outputCurrency=0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c',
-  },
-
-  {
-    id: 'auto-comp-eth',
-    logo: 'uncategorized/COMP-ETH.svg',
-    name: 'COMP-ETH LP',
-    token: 'COMP-ETH LP',
-    tokenDescription: 'PancakeSwap (Autofarm)',
-    tokenAddress: '0x0392957571F28037607C14832D16f8B653eDd472',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooAutoCOMP-ETH',
-    earnedTokenAddress: '0x907b3848593df20243eCb5D954b06a028092b0D6',
-    earnContractAddress: '0x907b3848593df20243eCb5D954b06a028092b0D6',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'auto-comp-eth',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Autofarm',
-    assets: ['COMP', 'ETH'],
-    callFee: 0.5,
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/0x52CE071Bd9b1C4B00A0b92D298c512478CaD67e8/0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
   },
 
   {
