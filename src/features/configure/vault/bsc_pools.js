@@ -9714,7 +9714,7 @@ export const bscPools = [
   },
 
   {
-    id: 'alpaca-salpaca',
+    id: 'alpaca-salpaca-eol',
     logo: 'single-assets/sALPACA.svg',
     name: 'sALPACA',
     token: 'sALPACA',
@@ -9730,8 +9730,8 @@ export const bscPools = [
     oracle: 'tokens',
     oracleId: 'ALPACA',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Alpaca',
     assets: ['sALPACA'],
     callFee: 0.5,
