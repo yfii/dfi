@@ -70,7 +70,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'other',
+    platform: 'Other',
     assets: ['LITHIUM'],
     callFee: 0.5,
     buyTokenUrl:
@@ -94,7 +94,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'other',
+    platform: 'Other',
     assets: ['LITHIUM', 'USDC'],
     callFee: 0.5,
     addLiquidityUrl:
