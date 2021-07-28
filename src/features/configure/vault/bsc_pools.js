@@ -51,8 +51,8 @@ export const bscPools = [
   {
     id: 'cakev2-c98-wbnb',
     logo: 'bnb-pairs/C98-BNB.svg',
-    name: 'C98-WBNB LP',
-    token: 'C98-WBNB LP2',
+    name: 'C98-BNB LP',
+    token: 'C98-BNB LP2',
     tokenDescription: 'PancakeSwap',
     tokenAddress: '0x92247860A03F48d5c6425c7CA35CDcFCB1013AA1',
     tokenDecimals: 18,
@@ -68,7 +68,7 @@ export const bscPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'PancakeSwap',
-    assets: ['C98', 'WBNB'],
+    assets: ['C98', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
       'https://exchange.pancakeswap.finance/#//add/0xaEC945e04baF28b135Fa7c640f624f8D90F1C3a6/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
