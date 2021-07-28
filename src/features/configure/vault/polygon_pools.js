@@ -1185,7 +1185,7 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Polycat',
-    assets: ['FISH', 'WMATIC_DFYN'],
+    assets: ['FISH', 'MATIC'],
     callFee: 0.05,
     addLiquidityUrl:
       'https://exchange.dfyn.network/#/add/0x3a3df212b7aa91aa0402b9035b098891d276572b/ETH',
