@@ -62,7 +62,7 @@ export const bscPools = [
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
-    oracleId: 'CakeV2-sps-wbnb',
+    oracleId: 'cakev2-sps-wbnb',
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
