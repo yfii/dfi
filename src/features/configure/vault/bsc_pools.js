@@ -50,8 +50,8 @@ export const bscPools = [
   },
   {
     id: 'cakev2-sps-wbnb',
-    name: 'SPS-WBNB LP',
-    token: 'SPS-WBNB LP2',
+    name: 'SPS-BNB LP',
+    token: 'SPS-BNB LP2',
     tokenDescription: 'PancakeSwap',
     tokenAddress: '0xFdFde3aF740A22648B9dD66D05698e5095940850',
     tokenDecimals: 18,
@@ -67,7 +67,7 @@ export const bscPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'PancakeSwap',
-    assets: ['SPS', 'WBNB'],
+    assets: ['SPS', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
       'https://exchange.pancakeswap.finance/#//add/0x1633b7157e7638C4d6593436111Bf125Ee74703F/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
