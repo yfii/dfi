@@ -120,7 +120,7 @@ export const hecoPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Lendhub',
-    assets: ['LHB', 'wht'],
+    assets: ['LHB', 'WHT'],
     callFee: 0.25,
     buyTokenUrl:
       'https://ht.mdex.com/#/swap?inputCurrency=0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F&outputCurrency=0x8F67854497218043E1f72908FFE38D0Ed7F24721',
@@ -865,33 +865,6 @@ export const hecoPools = [
     buyTokenUrl:
       'https://ht.mdex.com/#/swap?inputCurrency=HT&outputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a',
     addLiquidityUrl: 'https://ht.mdex.com/#/add/HT/0xa71EdC38d189767582C38A3145b5873052c3e47a',
-  },
-
-  {
-    id: 'mdex-wht-husd-eol',
-    logo: 'heco/WHT-HUSD.png',
-    name: 'WHT-HUSD LP',
-    token: 'WHT-HUSD LP',
-    tokenDescription: 'Mdex',
-    tokenAddress: '0x3375afF2CAcF683b8FC34807B9443EB32e7Afff6',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooMdexWHT-HUSD',
-    earnedTokenAddress: '0x3492eF16b2ACb5b5240436d5D2B657fDc2b0b1eB',
-    earnContractAddress: '0x3492eF16b2ACb5b5240436d5D2B657fDc2b0b1eB',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'mdex-wht-husd',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Mdex',
-    assets: ['WHT', 'HUSD'],
-    callFee: 0.25,
-    buyTokenUrl:
-      'https://ht.mdex.com/#/swap?inputCurrency=HT&outputCurrency=0x0298c2b32eaE4da002a15f36fdf7615BEa3DA047',
-    addLiquidityUrl: 'https://ht.mdex.com/#/add/HT/0x0298c2b32eaE4da002a15f36fdf7615BEa3DA047',
   },
 
   {
