@@ -1470,7 +1470,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     platform: 'Polycat',
-    assets: ['FISH', 'WMATIC_DFYN'],
+    assets: ['FISH', 'MATIC'],
     callFee: 0.05,
     addLiquidityUrl:
       'https://exchange.dfyn.network/#/add/0x3a3df212b7aa91aa0402b9035b098891d276572b/ETH',
@@ -4508,5 +4508,31 @@ export const polygonPools = [
       'https://swap.cometh.io/#/add/0x2791bca1f2de4661ed88a30c99a7a9449aa84174/0x9c78ee466d6cb57a4d01fd887d2b5dfb2d46288f',
     buyTokenUrl:
       'https://swap.cometh.io/#/swap?inputCurrency=0x2791bca1f2de4661ed88a30c99a7a9449aa84174&outputCurrency=0x9c78ee466d6cb57a4d01fd887d2b5dfb2d46288f',
+  },
+  {
+    id: 'quick-quick-polydoge',
+    name: 'QUICK-PolyDoge LP',
+    token: 'QUICK-PolyDoge LP',
+    tokenDescription: 'Quickswap',
+    tokenAddress: '0xbedEE6a7c572aa855a0c84d2f504311d482862F4',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooQuickQUICK-PolyDoge',
+    earnedTokenAddress: '0x4A2De8466873fCb21D7bDE5A754Baaf244729c72',
+    earnContractAddress: '0x4A2De8466873fCb21D7bDE5A754Baaf244729c72',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'quick-quick-polydoge',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'QuickSwap',
+    assets: ['QUICK', 'PolyDoge'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://quickswap.exchange/#/add/0x831753DD7087CaC61aB5644b308642cc1c33Dc13/0x8A953CfE442c5E8855cc6c61b1293FA648BAE472',
+    buyTokenUrl:
+      'https://quickswap.exchange/#/swap?outputCurrency=0x8A953CfE442c5E8855cc6c61b1293FA648BAE472',
   },
 ];
