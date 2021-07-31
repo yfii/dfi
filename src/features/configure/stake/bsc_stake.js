@@ -35,6 +35,39 @@ export const bscStakePools = [
     ],
   },
   {
+    id: 'moo_banana-pera',
+    name: 'Pera',
+    logo: 'degens/BANANA.svg',
+    token: 'mooApeBANANA',
+    tokenDecimals: 18,
+    tokenAddress: '0xD307e7CC6a302046b7D91D83aa4B8324cFB7a786',
+    tokenOracle: 'tokens',
+    tokenOracleId: 'BANANA',
+    earnedToken: 'PERA',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xb9D8592E16A9c1a3AE6021CDDb324EaC1Cbc70d6',
+    earnContractAddress: '0x38247fCE28480A7BEF2CB7aD134ce091Bd2E1a82',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'PERA',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1628373922,
+    partners: [
+      {
+        logo: 'stake/pera/logo.png',
+        background: 'stake/pera/bg.png',
+        text: "Pera Finance is a decentralized trading competition platform with multi-layered yield farming opportunities. Traders, liquidity providers and holders yield farm together through the DeFi's first decentralized trading competition. Every on-chain PERA transaction (transfer, trade, or liquidity addition/ removal) generates a 2 % transaction fee.",
+        website: 'https://pera.finance/',
+        social: {
+          telegram: 'https://t.me/perafinance',
+          twitter: 'https://twitter.com/perafinance',
+        },
+      },
+    ],
+  },
+  {
     id: 'moo_bifi-farmhero',
     name: 'FarmHero',
     logo: 'single-assets/BIFI.png',
@@ -53,7 +86,7 @@ export const bscStakePools = [
     partnership: true,
     status: 'active',
     isMooStaked: true,
-    periodFinish: 1628173922,
+    periodFinish: 1628158422,
     partners: [
       {
         logo: 'stake/farmhero/logo.png',
@@ -84,7 +117,7 @@ export const bscStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'FRUIT',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     periodFinish: 1627319567,
     partners: [

@@ -53,7 +53,7 @@ export const polygonStakePools = [
     partnership: true,
     status: 'active',
     isMooStaked: true,
-    periodFinish: 1627907922,
+    periodFinish: 1627849794,
     partners: [
       {
         logo: 'stake/polycracker/logo.png',
@@ -84,7 +84,7 @@ export const polygonStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'xYELD',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     periodFinish: 1627595163,
     partners: [
