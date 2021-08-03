@@ -62,5 +62,5 @@ You should go to our [Discord](https://discord.gg/yq8wfHd) and engage the commun
 The #development channel is a good place to get the attention of other beefy devs. If you can post in #citadel, that's a great place to get the atention influential members of Beefy as well.
 
 ### 3. Outcome
-If the proposal passed, you'll be contacted by a member of the team, or feel free to PM anyone with the team tag on discord to move forwards. 
+If the proposal passed, you'll be contacted by a member of the team, or feel free to PM anyone with the team tag on discord to move forwards
 
