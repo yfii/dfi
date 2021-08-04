@@ -1158,7 +1158,7 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'WaultFinance',
-    assets: ['WEXPoly', 'WBTC'],
+    assets: ['WEXpoly', 'WBTC'],
     callFee: 0.05,
     addLiquidityUrl:
       'https://swap.wault.finance/polygon/#/add/0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6/0x4c4BF319237D98a30A929A96112EfFa8DA3510EB',
