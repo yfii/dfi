@@ -11102,33 +11102,6 @@ export const bscPools = [
   },
 
   {
-    id: 'jul-btcb-bnb',
-    logo: 'bnb-pairs/JBTCB-BNB.svg',
-    name: 'BTCB-BNB LP',
-    token: 'BTCB-BNB SLP',
-    tokenDescription: 'JulSwap',
-    tokenAddress: '0x3F3d9E0803B19DD9002C8184Ae3c1C9d09720682',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooJulBTCB-BNB',
-    earnedTokenAddress: '0xFa7767Cf402a6D198cC136FED32550ABA70C3e02',
-    earnContractAddress: '0xFa7767Cf402a6D198cC136FED32550ABA70C3e02',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'jul-btcb-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'JulSwap',
-    assets: ['BTCB', 'BNB'],
-    callFee: 0.5,
-    addLiquidityUrl: 'https://julswap.com/#/add/0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c/BNB',
-    buyTokenUrl:
-      'https://julswap.com/#/swap?inputCurrency=BNB&outputCurrency=0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c',
-  },
-
-  {
     id: 'auto-ust-busd',
     logo: 'busd-pairs/UST-BUSD.svg',
     name: 'UST-BUSD LP',
@@ -13950,32 +13923,6 @@ export const bscPools = [
   },
 
   {
-    id: 'cake-fil-bnb',
-    logo: 'bnb-pairs/FIL-BNB.svg',
-    name: 'FIL-BNB LP',
-    token: 'FIL-BNB LP',
-    tokenDescription: 'PancakeSwap',
-    tokenAddress: '0x35FE9787F0eBF2a200BAc413D3030CF62D312774',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooPancakeFIL-BNB',
-    earnedTokenAddress: '0xA74b54B24106B008881e627EC57D9629C2fdA5e2',
-    earnContractAddress: '0xA74b54B24106B008881e627EC57D9629C2fdA5e2',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'cake-fil-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'PancakeSwap',
-    assets: ['FIL', 'BNB'],
-    callFee: 1,
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x0d8ce2a99bb6e3b7db580ed848240e4a0f9ae153',
-  },
-
-  {
     id: 'cake-atom-bnb',
     logo: 'bnb-pairs/ATOM-BNB.svg',
     name: 'ATOM-BNB LP',
@@ -14521,31 +14468,6 @@ export const bscPools = [
   },
 
   {
-    id: 'street-guns-bnb',
-    logo: 'bnb-pairs/GUNS-BNB.png',
-    name: 'GUNS-BNB LP v2',
-    token: 'GUNS-BNB TLP',
-    tokenDescription: 'Traphouse',
-    tokenAddress: '0xa5e5eeB6b51fa0fDc59915C81d75C83470BFA4f0',
-    tokenDecimals: 18,
-    tokenDescriptionUrl:
-      'https://docs.beefy.finance/beefyfinance/products/thugs#farming-drugs-with-guns-bnb-lp',
-    earnedToken: 'mooStreetGUNS-BNBV2',
-    earnedTokenAddress: '0x68aE2aB6448884714DDf11C8d55ea7578C65D502',
-    earnContractAddress: '0x68aE2aB6448884714DDf11C8d55ea7578C65D502',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'street-guns-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Other',
-    assets: ['GUNS', 'BNB'],
-    callFee: 0.5,
-  },
-
-  {
     id: 'street-busd-bnb',
     logo: 'bnb-pairs/BUSD-BNB.svg',
     name: 'BUSD-BNB LP v2',
@@ -14793,33 +14715,6 @@ export const bscPools = [
     callFee: 0.5,
     removeLiquidityUrl:
       'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
-  },
-
-  {
-    id: 'cake-link-bnb',
-    logo: 'bnb-pairs/LINK-BNB.svg',
-    name: 'LINK-BNB LP',
-    token: 'LINK-BNB LP',
-    tokenDescription: 'PancakeSwap',
-    tokenAddress: '0xaeBE45E3a03B734c68e5557AE04BFC76917B4686',
-    tokenDecimals: 18,
-    tokenDescriptionUrl:
-      'https://docs.beefy.finance/beefyfinance/products/pancake-swap#farming-cake-with-link-bnb-lp',
-    earnedToken: 'mooPancakeLINK-BNB',
-    earnedTokenAddress: '0xaB9C4a0fD179315b005a5f6D3793cb30Af718152',
-    earnContractAddress: '0xaB9C4a0fD179315b005a5f6D3793cb30Af718152',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'cake-link-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'PancakeSwap',
-    assets: ['LINK', 'BNB'],
-    callFee: 0.5,
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0xf8a0bf9cf54bb92f17374d9e9a321e6a111a51bd',
   },
 
   {
