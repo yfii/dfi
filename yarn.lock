@@ -3501,10 +3501,10 @@ block-stream@*:
   dependencies:
     inherits "~2.0.0"
 
-blockchain-addressbook@^0.1.133:
-  version "0.1.136"
-  resolved "https://registry.yarnpkg.com/blockchain-addressbook/-/blockchain-addressbook-0.1.136.tgz#7d654c9dc7e164fea9b1006338c34ad4816ee604"
-  integrity sha512-dNGQewN04wgEmezSWNtMI33Il0xnwjohn5SQdrX1mLm4NI/fnoqcXQSpjy41Pa6sfExtU/p/S3/M+/AE55+gPA==
+blockchain-addressbook@^0.1.141:
+  version "0.1.141"
+  resolved "https://registry.yarnpkg.com/blockchain-addressbook/-/blockchain-addressbook-0.1.141.tgz#4efc778ec74ca6708607e18bc8d0cce20f98651b"
+  integrity sha512-Db8xLoEbI9jEt2HgVIK8a9gcPdb5pUgMXxa7mGver6Pp/efBXK/Iy7PVcjlv/geUeee6dqJZNCJ9fdO5jgScbA==
 
 bluebird@^3.5.0, bluebird@^3.5.5:
   version "3.7.2"
