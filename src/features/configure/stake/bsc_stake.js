@@ -35,6 +35,39 @@ export const bscStakePools = [
     ],
   },
   {
+    id: 'moo_bifi-honeyfarm',
+    name: 'HoneyFarm',
+    logo: 'single-assets/BIFI.png',
+    token: 'mooBIFI',
+    tokenDecimals: 18,
+    tokenAddress: '0xf7069e41C57EcC5F122093811d8c75bdB5f7c14e',
+    tokenOracle: 'tokens',
+    tokenOracleId: 'BIFI',
+    earnedToken: 'HONEY',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xFa363022816aBf82f18a9C2809dCd2BB393F6AC5',
+    earnContractAddress: '0x08B5d70e9e5A5117594889Baf078f6C5a3FfeC36',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'HONEY',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1628854565,
+    partners: [
+      {
+        logo: 'stake/honey/logo.png',
+        background: 'stake/honey/bg.png',
+        text: "HoneyFarm Finance is a layered delegated yield farming project with deflationary tokenomics of a maximum supply of 24,650 HONEY tokens. There will be multiple layered projects and each layer will also has pools with previous layers' native tokens. The whole project will be finished after the final emission of a certain layered project, which will be announced in advance.",
+        website: 'https://honeyfarm.finance/',
+        social: {
+          telegram: 'https://t.me/HoneyFarmChat',
+          twitter: 'https://twitter.com/HoneyFarmFi',
+        },
+      },
+    ],
+  },
+  {
     id: 'moo_banana-pera',
     name: 'Pera',
     logo: 'degens/BANANA.svg',
@@ -53,7 +86,7 @@ export const bscStakePools = [
     partnership: true,
     status: 'active',
     isMooStaked: true,
-    periodFinish: 1628373922,
+    periodFinish: 1628453723,
     partners: [
       {
         logo: 'stake/pera/logo.png',
@@ -84,7 +117,7 @@ export const bscStakePools = [
     earnedOracle: 'tokens',
     earnedOracleId: 'HERO',
     partnership: true,
-    status: 'active',
+    status: 'closed',
     isMooStaked: true,
     periodFinish: 1628158422,
     partners: [
