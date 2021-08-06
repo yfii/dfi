@@ -26,6 +26,7 @@ import {
   usePoolApr,
 } from '../../../stake/redux/hooks';
 import { PoolBoosts } from '../PoolSummary/PoolBoosts/PoolBoosts';
+import { getRetireReason } from '../PoolSummary/RetireReason/RetireReason';
 
 const FETCH_INTERVAL_MS = 30 * 1000;
 
@@ -79,7 +80,7 @@ const PoolDetails = ({ vaultId }) => {
   const vaultStateTitle = useMemo(() => {
     let state =
       pool.status === 'eol'
-        ? t('Vault-DepositsRetiredTitle')
+        ? t(getRetireReason(pool.retireReason))
         : pool.depositsPaused
         ? t('Vault-DepositsPausedTitle')
         : null;

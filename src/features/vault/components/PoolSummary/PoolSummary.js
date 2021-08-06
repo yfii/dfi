@@ -13,6 +13,7 @@ import LabeledStat from './LabeledStat/LabeledStat';
 import ApyStats from './ApyStats/ApyStats';
 import { usePoolApr } from '../../../stake/redux/subscription';
 import { PoolBoosts } from './PoolBoosts/PoolBoosts';
+import { getRetireReason } from './RetireReason/RetireReason';
 
 const useStyles = makeStyles(styles);
 
@@ -34,7 +35,7 @@ const PoolSummary = ({
   const vaultStateTitle = useMemo(() => {
     let state =
       pool.status === 'eol'
-        ? t('Vault-DepositsRetiredTitle')
+        ? t(getRetireReason(pool.retireReason))
         : pool.depositsPaused
         ? t('Vault-DepositsPausedTitle')
         : null;
