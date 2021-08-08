@@ -149,6 +149,7 @@ export const polygonPools = [
     status: 'active',
     platform: 'DinoSwap',
     assets: ['UST', 'USDT'],
+    withdrawalFee: '0.01%',
     callFee: 0.5,
     addLiquidityUrl:
       'https://exchange.dfyn.network/#/add/0x692597b009d13C4049a947CAB2239b7d6517875F/0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
