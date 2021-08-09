@@ -52,7 +52,7 @@ export const bscPools = [
     id: 'cakev2-pots-busd',
     name: 'POTS-BUSD LP',
     token: 'POTS-BUSD LP2',
-    tokenDescription: 'Pancake',
+    tokenDescription: 'PancakeSwap',
     tokenAddress: '0xF90BAA331Cfd40F094476E752Bf272892170d399',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
@@ -66,7 +66,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Pancake',
+    platform: 'PancakeSwap',
     assets: ['POTS', 'BUSD'],
     callFee: 0.5,
     addLiquidityUrl:
