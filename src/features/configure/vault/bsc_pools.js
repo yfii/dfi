@@ -4947,33 +4947,6 @@ export const bscPools = [
     buyTokenUrl:
       'https://pancakeswap.finance/swap?outputCurrency=0x4437743ac02957068995c48e08465e0ee1769fbe',
   },
-  {
-    id: 'jetfuel-fuel-bnb-eol',
-    logo: 'bnb-pairs/FUEL-BNB.png',
-    name: 'FUEL-BNB LP',
-    token: 'FUEL-BNB LP2',
-    tokenDescription: 'PancakeSwap',
-    tokenAddress: '0x4613442C3AB1542b54C721D661F5044843099E39',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooJetfuelFUEL-BNB',
-    earnedTokenAddress: '0xE7105Aa79eD8DFAeBAa0bB0434e8A0f36534669d',
-    earnContractAddress: '0xE7105Aa79eD8DFAeBAa0bB0434e8A0f36534669d',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'jetfuel-fuel-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Other',
-    assets: ['FUEL', 'BNB'],
-    callFee: 0.5,
-    addLiquidityUrl:
-      'https://pancakeswap.finance/add/BNB/0x2090c8295769791ab7A3CF1CC6e0AA19F35e441A',
-    buyTokenUrl:
-      'https://pancakeswap.finance/swap?outputCurrency=0x2090c8295769791ab7A3CF1CC6e0AA19F35e441A',
-  },
 
   {
     id: 'banana-bxbtc-bnb-eol',
@@ -11177,32 +11150,6 @@ export const bscPools = [
     callFee: 0.5,
     removeLiquidityUrl:
       'https://v1exchange.pancakeswap.finance/#/remove/BNB/0xE0e514c71282b6f4e823703a39374Cf58dc3eA4f',
-  },
-
-  {
-    id: 'auto-ust-busd',
-    logo: 'busd-pairs/UST-BUSD.svg',
-    name: 'UST-BUSD LP',
-    token: 'UST-BUSD LP',
-    tokenDescription: 'PancakeSwap (Autofarm)',
-    tokenAddress: '0xD1F12370b2ba1C79838337648F820a87eDF5e1e6',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooAutoUST-BUSD',
-    earnedTokenAddress: '0xCa0294b89ee367ADaEDC8cdA684648dC1c5D8FEe',
-    earnContractAddress: '0xCa0294b89ee367ADaEDC8cdA684648dC1c5D8FEe',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'auto-ust-busd',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Autofarm',
-    assets: ['UST', 'BUSD'],
-    callFee: 0.5,
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/0x23396cF899Ca06c4472205fC903bDB4de249D6fC/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
   },
 
   {
