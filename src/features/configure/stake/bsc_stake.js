@@ -35,6 +35,39 @@ export const bscStakePools = [
     ],
   },
   {
+    id: 'moo_bifi-moonpot',
+    name: 'Moonpot',
+    logo: 'single-assets/BIFI.png',
+    token: 'mooBIFI',
+    tokenDecimals: 18,
+    tokenAddress: '0xf7069e41C57EcC5F122093811d8c75bdB5f7c14e',
+    tokenOracle: 'tokens',
+    tokenOracleId: 'BIFI',
+    earnedToken: 'POTS',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x3Fcca8648651E5b974DD6d3e50F61567779772A8',
+    earnContractAddress: '0xA4703D9ba09361da84d1e31c8a356889E7D628F8',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'POTS',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1629530652,
+    partners: [
+      {
+        logo: 'stake/moonpot/logo.png',
+        background: 'stake/moonpot/bg.png',
+        text: 'Moonpot is a win-win savings game on Binance Smart Chain powered by Beefy Finance. By depositing crypto into a Moonpot, users gain interest on their assets and enter into a prize draw at the same time. There’s a chance to win weekly prizes paid out in crypto from each Moonpot entered — as well as an exclusive monthly prize draw for $POTS stakers.',
+        website: 'https://moonpot.com/',
+        social: {
+          telegram: 'https://t.me/moonpotdotcom',
+          twitter: 'https://twitter.com/moonpotdotcom',
+        },
+      },
+    ],
+  },
+  {
     id: 'moo_bifi-honeyfarm',
     name: 'HoneyFarm',
     logo: 'single-assets/BIFI.png',
@@ -53,7 +86,7 @@ export const bscStakePools = [
     partnership: true,
     status: 'active',
     isMooStaked: true,
-    periodFinish: 1628854565,
+    periodFinish: 1628696716,
     partners: [
       {
         logo: 'stake/honey/logo.png',
