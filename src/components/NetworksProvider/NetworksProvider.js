@@ -10,7 +10,7 @@ const NetworksProvider = ({ children }) => {
   const networks = [
     {
       name: 'BSC',
-      asset: 'BNB',
+      asset: 'BSC',
       id: '56',
       url: 'https://app.beefy.finance',
     },
