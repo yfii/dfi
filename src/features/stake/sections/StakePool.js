@@ -403,13 +403,19 @@ export default function StakePool(props) {
           style={customBgImg(partner.background)}
         >
           <Grid item xs={12} className={classes.partnerHeader}>
-            {isNightMode && partner.logoNight ? (
-              <img alt={launchpool.name} src={require('images/' + partner.logoNight)} height="60" />
-            ) : partner.logo ? (
-              <img alt={launchpool.name} src={require('images/' + partner.logo)} height="60" />
-            ) : (
-              ''
-            )}
+            <Link target="_blank" href={partner.website}>
+              {isNightMode && partner.logoNight ? (
+                <img
+                  alt={launchpool.name}
+                  src={require('images/' + partner.logoNight)}
+                  height="60"
+                />
+              ) : partner.logo ? (
+                <img alt={launchpool.name} src={require('images/' + partner.logo)} height="60" />
+              ) : (
+                ''
+              )}
+            </Link>
           </Grid>
           <Grid item xs={12} className={classes.partnerBody}>
             {partner.text}
