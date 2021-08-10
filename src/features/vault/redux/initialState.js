@@ -73,13 +73,24 @@ const initialState = {
   fetchWithdrawPending: {},
   fetchHarvestPending: {},
   fetchZapEstimatePending: {},
-  vaultLaunchpools: Object.fromEntries(
+  vaultLaunchpool: Object.fromEntries(
     pools.map(vault => {
       const launchpool = Object.values(launchpools).find(
         lp => lp.token === vault.earnedToken && lp.status !== 'closed' && lp.periodFinish >= now
       );
 
       return [vault.id, launchpool ? launchpool.id : null];
+    })
+  ),
+  vaultLaunchpools: Object.fromEntries(
+    pools.map(vault => {
+      const activeLaunchpools = Object.values(launchpools)
+        .filter(
+          lp => lp.token === vault.earnedToken && lp.status !== 'closed' && lp.periodFinish >= now
+        )
+        .map(lp => lp.id);
+
+      return [vault.id, activeLaunchpools];
     })
   ),
 };

@@ -46,18 +46,23 @@ const PoolDetails = ({ vaultId }) => {
   const pool = pools.find(p => p.id === vaultId);
   const { getPageMeta } = usePageMeta();
   const { subscribe } = useLaunchpoolSubscriptions();
-  const launchpoolId = useSelector(state => state.vault.vaultLaunchpools[pool.id]);
+  const activeLaunchpools = useSelector(state => state.vault.vaultLaunchpools[pool.id]);
+  const launchpoolId = useSelector(state => state.vault.vaultLaunchpool[pool.id]);
   const launchpool = launchpoolId ? launchpools[launchpoolId] : null;
   const launchpoolApr = usePoolApr(launchpoolId);
+  const multipleLaunchpools = activeLaunchpools.length > 1;
 
   useEffect(() => {
-    if (launchpoolId) {
-      return subscribe(launchpoolId, {
+    const unsubscribes = activeLaunchpools.map(launchpoolId =>
+      subscribe(launchpoolId, {
         poolApr: true,
         poolFinish: true,
-      });
-    }
-  }, [subscribe, launchpoolId]);
+      })
+    );
+
+    return () => unsubscribes.forEach(unsubscribe => unsubscribe());
+  }, [subscribe, activeLaunchpools]);
+
   useLaunchpoolUpdates();
 
   useEffect(() => {
@@ -162,6 +167,7 @@ const PoolDetails = ({ vaultId }) => {
               removeLiquidityUrl={pool.removeLiquidityUrl}
               buyTokenUrl={pool.buyTokenUrl}
               assets={pool.assets}
+              multipleLaunchpools={multipleLaunchpools}
             />
           </Grid>
           <Grid item xs={6} className={`${classes.item} ${classes.itemBalances}`}>

@@ -4,3 +4,4 @@ export { fetchApproval } from './fetchApproval';
 export { fetchDeposit } from './fetchDeposit';
 export { fetchWithdraw } from './fetchWithdraw';
 export { fetchApys } from './fetchApys';
+export { updateLaunchpools } from './updateLaunchpools';

@@ -32,17 +32,21 @@ const Pool = ({
   const { subscribe } = useLaunchpoolSubscriptions();
   const balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
   const sharesBalance = new BigNumber(tokens[pool.earnedToken].tokenBalance);
-  const launchpoolId = useSelector(state => state.vault.vaultLaunchpools[pool.id]);
+  const launchpoolId = useSelector(state => state.vault.vaultLaunchpool[pool.id]);
   const launchpool = launchpoolId ? launchpools[launchpoolId] : null;
+  const activeLaunchpools = useSelector(state => state.vault.vaultLaunchpools[pool.id]);
+  const multipleLaunchpools = activeLaunchpools.length > 1;
 
   useEffect(() => {
-    if (launchpoolId) {
-      return subscribe(launchpoolId, {
+    const unsubscribes = activeLaunchpools.map(launchpoolId =>
+      subscribe(launchpoolId, {
         poolApr: true,
         poolFinish: true,
-      });
-    }
-  }, [subscribe, launchpoolId]);
+      })
+    );
+
+    return () => unsubscribes.forEach(unsubscribe => unsubscribe());
+  }, [subscribe, activeLaunchpools]);
 
   return (
     <Grid item xs={12} container key={index} className={classes.container} spacing={0}>
@@ -62,6 +66,7 @@ const Pool = ({
           fetchBalancesDone={fetchBalancesDone}
           fetchApysDone={fetchApysDone}
           fetchVaultsDataDone={fetchVaultsDataDone}
+          multipleLaunchpools={multipleLaunchpools}
         />
         <Divider variant="middle" className={classes.divider} />
         <AccordionDetails style={{ justifyContent: 'space-between' }}>

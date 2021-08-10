@@ -47,7 +47,7 @@ function getLaunchpoolsForVault(vault, launchpools) {
 
 const useFilteredPools = (pools, tokens) => {
   const { getStorage, setStorage } = useFilterStorage();
-  const vaultLaunchpools = useSelector(state => state.vault.vaultLaunchpools);
+  const vaultLaunchpools = useSelector(state => state.vault.vaultLaunchpool);
   const recentStakedLaunchpools = useRecentStakedLaunchpools();
   const data = getStorage(KEY);
   const [filters, setFilters] = useState(data ? data : DEFAULT);

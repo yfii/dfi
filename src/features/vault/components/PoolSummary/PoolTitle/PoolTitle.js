@@ -21,6 +21,7 @@ const PoolTitle = ({
   addLiquidityUrl,
   removeLiquidityUrl,
   assets,
+  multipleLaunchpools = false,
 }) => {
   const classes = useStyles();
   const { t } = useTranslation();
@@ -106,7 +107,10 @@ const PoolTitle = ({
           )}
         </div>
         {launchpool ? (
-          <a className={classes.btnBoost} href={'/stake/pool/' + launchpool.id}>
+          <a
+            className={classes.btnBoost}
+            href={multipleLaunchpools ? '/stake' : '/stake/pool/' + launchpool.id}
+          >
             <img alt="Boost" src={require('images/stake/boost.svg')} height={15} />
             <span>
               <img alt="Fire" src={require('images/stake/fire.png')} height={30} />

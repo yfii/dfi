@@ -1,5 +1,7 @@
 import { launchpools } from '../../helpers/getNetworkData';
 
+const now = Date.now() / 1000;
+
 export const initialFetchState = {
   fetchApprovalPending: Object.fromEntries(
     Object.values(launchpools).map(pool => [pool.id, false])
@@ -20,7 +22,14 @@ export const initialUserState = {
 };
 
 export const initialPoolState = {
-  poolStatus: Object.fromEntries(Object.values(launchpools).map(pool => [pool.id, pool.status])),
+  poolStatus: Object.fromEntries(
+    Object.values(launchpools).map(pool => [
+      pool.id,
+      pool.fixedStatus !== true && pool.status === 'active' && now >= pool.periodFinish
+        ? 'closed'
+        : pool.status,
+    ])
+  ),
   poolFinish: Object.fromEntries(
     Object.values(launchpools).map(pool => [pool.id, pool.periodFinish])
   ),

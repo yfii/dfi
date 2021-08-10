@@ -11,9 +11,10 @@ import { fetchPrice, whenPricesLoaded } from '../../web3';
 import BigNumber from 'bignumber.js';
 import { HOME_DISCONNECT_WALLET_BEGIN } from '../../home/redux/constants';
 import { initialUserState } from './initialState';
+import { updateLaunchpools } from '../../vault/redux/actions';
 
 const DEFAULT_UPDATE_INTERVAL = 30000; // ms
-const MIN_UPDATE_DELAY = 10000; // ms (min time between updates)
+const MIN_UPDATE_DELAY = 5000; // ms (min time between updates)
 const ACTION_PREFIX = 'launchpools/subscription/';
 const NOOP = () => {};
 
@@ -194,6 +195,8 @@ const subscriptionCallbacks = {
         poolApr: apr,
       },
     });
+
+    dispatch(updateLaunchpools);
   },
   poolFinish: async (dispatch, pool, data) => {
     if (data.poolFinish === undefined) {
@@ -233,6 +236,8 @@ const subscriptionCallbacks = {
           poolStatus,
         },
       });
+
+      dispatch(updateLaunchpools);
     }
   },
 };

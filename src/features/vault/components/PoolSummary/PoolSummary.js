@@ -27,6 +27,7 @@ const PoolSummary = ({
   fetchBalancesDone,
   fetchApysDone,
   fetchVaultsDataDone,
+  multipleLaunchpools = false,
 }) => {
   const { t } = useTranslation();
   const classes = useStyles();
@@ -103,6 +104,7 @@ const PoolSummary = ({
             removeLiquidityUrl={pool.removeLiquidityUrl}
             buyTokenUrl={pool.buyTokenUrl}
             assets={pool.assets}
+            multipleLaunchpools={multipleLaunchpools}
           />
         </Grid>
         <Grid item xs={6} className={`${classes.item} ${classes.itemBalances}`}>

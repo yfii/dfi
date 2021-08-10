@@ -28,7 +28,7 @@ const getSelectedLanguage = i18n => {
 
 export const LanguageDropdown = function ({ navLinkClass }) {
   const classes = useStyles();
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const i18nLanguage = getSelectedLanguage(i18n);
   const [selectedLanguage, setLanguage] = useState(i18nLanguage);
   const [anchorEl, setAnchorEl] = useState(null);

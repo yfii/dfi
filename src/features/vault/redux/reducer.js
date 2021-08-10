@@ -7,7 +7,7 @@ import { reducer as fetchWithdrawReducer } from './fetchWithdraw';
 import { reducer as fetchApysReducer } from './fetchApys';
 import { reducer as fetchZapEstimateReducer } from './fetchZapEstimate';
 import { reducer as fetchBifiBuybackReducer } from './fetchBifiBuyback';
-import { vaultLaunchpoolsReducer } from './vaultLaunchpoolsReducer';
+import { reducer as updateLaunchpoolsReducer } from './updateLaunchpools';
 
 const reducers = [
   fetchVaultsData,
@@ -18,7 +18,7 @@ const reducers = [
   fetchZapEstimateReducer,
   fetchBalancesReducer,
   fetchBifiBuybackReducer,
-  vaultLaunchpoolsReducer,
+  updateLaunchpoolsReducer,
 ];
 
 export default function reducer(state = initialState, action) {
