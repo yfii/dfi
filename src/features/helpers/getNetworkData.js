@@ -141,6 +141,7 @@ export const getNetworkBurnTokens = () => {
         [bscAddressBook.tokens.GARUDA.symbol]: bscAddressBook.tokens.GARUDA,
         [bscAddressBook.tokens.SDUMP.symbol]: bscAddressBook.tokens.SDUMP,
         [bscAddressBook.tokens.BABYCAKE.symbol]: bscAddressBook.tokens.BABYCAKE,
+        [bscAddressBook.tokens.PERA.symbol]: bscAddressBook.tokens.PERA,
       };
     case '128':
       return {};
@@ -149,6 +150,7 @@ export const getNetworkBurnTokens = () => {
     case '137':
       return {
         [polygonAddressBook.tokens.xYELD.symbol]: polygonAddressBook.tokens.xYELD,
+        [polygonAddressBook.tokens.PEAR.symbol]: polygonAddressBook.tokens.PEAR,
       };
     case '250':
       return {};
