@@ -14983,7 +14983,7 @@ export const bscPools = [
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'tokens',
-    oracleId: 'CAKE',
+    oracleId: 'Cake',
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
