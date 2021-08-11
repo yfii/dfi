@@ -35,6 +35,39 @@ export const polygonStakePools = [
     ],
   },
   {
+    id: 'moo_bifi-pearzap',
+    name: 'PearZap',
+    logo: 'single-assets/BIFI.png',
+    token: 'mooPolygonBIFI',
+    tokenDecimals: 18,
+    tokenAddress: '0xfEcf784F48125ccb7d8855cdda7C5ED6b5024Cb3',
+    tokenOracle: 'tokens',
+    tokenOracleId: 'BIFI',
+    earnedToken: 'PEAR',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xc8bcb58caEf1bE972C0B638B1dD8B0748Fdc8A44',
+    earnContractAddress: '0x77D205420cE5557cd8E9DEFC915Fd0D701CCaEa3',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'PEAR',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1629394811,
+    partners: [
+      {
+        logo: 'stake/pearzap/logo.png',
+        background: 'stake/pearzap/bg.png',
+        text: "PearZap Finance is a yield farming project on the Polygon Chain, born out of the idea of bringing consistency in high APR's and security to our investors through our $Pear native token. Join the PearZap family and be part of a project that prides itself in quality partnerships and delivering on the promises we make, no matter how juicy they may be. 🍐⚡️",
+        website: 'https://pearzap.com/',
+        social: {
+          telegram: 'https://t.me/pearzap',
+          twitter: 'https://twitter.com/pearzap',
+        },
+      },
+    ],
+  },
+  {
     id: 'moo_bifi-polyfarm',
     name: 'PolygonFarm',
     logo: 'single-assets/BIFI.png',
@@ -53,7 +86,7 @@ export const polygonStakePools = [
     partnership: true,
     status: 'active',
     isMooStaked: true,
-    periodFinish: 1629100883,
+    periodFinish: 1629094811,
     partners: [
       {
         logo: 'stake/polyfarm/logo.png',
