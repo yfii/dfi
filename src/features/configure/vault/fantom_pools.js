@@ -95,7 +95,7 @@ export const fantomPools = [
     platform: 'Scream',
     assets: ['WBTC'],
     callFee: 0.05,
-    withdrawalFee: '0%',
+    withdrawalFee: '0.01%',
     buyTokenUrl: 'https://spookyswap.finance/swap',
   },
   {
