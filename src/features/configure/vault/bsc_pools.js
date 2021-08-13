@@ -145,12 +145,12 @@ export const bscPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'ApeSwap',
-    assets: ['BNB', 'GUARD'],
+    assets: ['GUARD', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
-      'https://dex.apeswap.finance/#//add/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c/0xF606bd19b1E61574ED625d9ea96C841D4E247A32',
+      'https://dex.apeswap.finance/#/add/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c/0xF606bd19b1E61574ED625d9ea96C841D4E247A32',
     buyTokenUrl:
-      'https://dex.apeswap.finance/#//swap?inputCurrency=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c&outputCurrency=0xF606bd19b1E61574ED625d9ea96C841D4E247A32',
+      'https://dex.apeswap.finance/#/swap?inputCurrency=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c&outputCurrency=0xF606bd19b1E61574ED625d9ea96C841D4E247A32',
   },
   {
     id: 'banana-land-bnb',
