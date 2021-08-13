@@ -144,7 +144,7 @@ export const bscPools = [
     oracle: 'tokens',
     oracleId: 'BANANA',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'ApeSwap',
     assets: ['BANANA'],
