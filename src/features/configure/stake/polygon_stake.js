@@ -86,7 +86,7 @@ export const polygonStakePools = [
     partnership: true,
     status: 'active',
     isMooStaked: true,
-    periodFinish: 1629394811,
+    periodFinish: 1629328696,
     partners: [
       {
         logo: 'stake/pearzap/logo.png',

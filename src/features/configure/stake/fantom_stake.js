@@ -52,7 +52,7 @@ export const fantomStakePools = [
     partnership: true,
     status: 'active',
     isMooStaked: true,
-    periodFinish: 1629470421,
+    periodFinish: 1629394703,
     partners: [
       {
         logo: 'stake/scream/logo.png',

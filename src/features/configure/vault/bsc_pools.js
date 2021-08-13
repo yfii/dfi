@@ -4328,7 +4328,7 @@ export const bscPools = [
   },
 
   {
-    id: 'cakev2-tdoge-bnb',
+    id: 'cakev2-tdoge-bnb-eol',
     logo: 'bnb-pairs/TDOGE-BNB.svg',
     name: 'tDOGE-BNB LP',
     token: 'tDOGE-BNB LP2',
@@ -4345,7 +4345,7 @@ export const bscPools = [
     oracleId: 'cakev2-tdoge-bnb',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'PancakeSwap',
     assets: ['tDOGE', 'BNB'],
     callFee: 0.5,
@@ -6976,7 +6976,7 @@ export const bscPools = [
       'https://pancakeswap.finance/swap?outputCurrency=0x5B6DcF557E2aBE2323c48445E8CC948910d8c2c9',
   },
   {
-    id: 'cakev2-tbtc-btcb',
+    id: 'cakev2-tbtc-btcb-eol',
     logo: 'uncategorized/TBTC-BTCB.svg',
     name: 'tBTC-BTCB LP',
     token: 'tBTC-BTCB LP2',
@@ -6993,7 +6993,7 @@ export const bscPools = [
     oracleId: 'cakev2-tbtc-btcb',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'PancakeSwap',
     assets: ['tBTC', 'BTCB'],
     callFee: 0.5,
