@@ -206,7 +206,7 @@ export const bscPools = [
       'https://pancakeswap.finance/swap?outputCurrency=0x3Fcca8648651E5b974DD6d3e50F61567779772A8',
   },
   {
-    id: 'banana-banana',
+    id: 'banana-banana-eol',
     logo: 'degens/BANANA.svg',
     name: 'BANANA',
     token: 'BANANA',
