@@ -232,6 +232,7 @@ export const bscPools = [
   },
   {
     id: 'banana-guard-bnb',
+    logo: 'degens/BANANA-GUARD-BNB.svg',
     name: 'GUARD-BNB LP',
     token: 'GUARD-BNB LP',
     tokenDescription: 'ApeSwap',
