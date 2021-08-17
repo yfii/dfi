@@ -1685,6 +1685,7 @@ export const polygonPools = [
     platform: 'QuickSwap',
     assets: ['MAI', 'USDC'],
     callFee: 0.5,
+    withdrawalFee: '0.01%',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x2791bca1f2de4661ed88a30c99a7a9449aa84174/0xa3Fa99A148fA48D14Ed51d610c367C61876997F1',
     buyTokenUrl:
@@ -2255,6 +2256,7 @@ export const polygonPools = [
     platform: 'QuickSwap',
     assets: ['rUSD', 'USDC'],
     callFee: 0.5,
+    withdrawalFee: '0.01%',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0xfC40a4F89b410a1b855b5e205064a38fC29F5eb5/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
     buyTokenUrl:
@@ -2567,6 +2569,7 @@ export const polygonPools = [
     platform: 'QuickSwap',
     assets: ['DAI', 'USDT'],
     callFee: 0.5,
+    withdrawalFee: '0.01%',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063/0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
     buyTokenUrl:
@@ -2811,6 +2814,7 @@ export const polygonPools = [
     status: 'active',
     platform: 'WaultFinance',
     assets: ['DAI', 'USDC'],
+    withdrawalFee: '0.01%',
     callFee: 0.05,
     addLiquidityUrl:
       'https://swap.wault.finance/polygon/#/add/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174/0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063',
@@ -2862,6 +2866,7 @@ export const polygonPools = [
     platform: 'WaultFinance',
     assets: ['USDT', 'USDC'],
     callFee: 0.05,
+    withdrawalFee: '0.01%',
     addLiquidityUrl:
       'https://swap.wault.finance/polygon/#/add/0x2791bca1f2de4661ed88a30c99a7a9449aa84174/0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
   },
@@ -3020,6 +3025,7 @@ export const polygonPools = [
     platform: 'QuickSwap',
     assets: ['USDC', 'DAI'],
     callFee: 0.5,
+    withdrawalFee: '0.01%',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174/0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063',
     buyTokenUrl:
@@ -3395,6 +3401,7 @@ export const polygonPools = [
     platform: 'SushiSwap',
     assets: ['FRAX', 'FXS'],
     callFee: 0.5,
+    withdrawalFee: '0.01%',
     addLiquidityUrl:
       'https://app.sushi.com/add/0x104592a158490a9228070E0A8e5343B499e125D0/0x3e121107F6F22DA4911079845a470757aF4e1A1b',
     buyTokenUrl:
@@ -3476,6 +3483,7 @@ export const polygonPools = [
     platform: 'SushiSwap',
     assets: ['USDC', 'DAI'],
     callFee: 0.5,
+    withdrawalFee: '0.01%',
     addLiquidityUrl:
       'https://app.sushi.com/add/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174/0x8f3cf7ad23cd3cadbd9735aff958023239c6a063',
     buyTokenUrl:
@@ -4219,6 +4227,7 @@ export const polygonPools = [
     platform: 'SushiSwap',
     assets: ['USDC', 'USDT'],
     callFee: 0.5,
+    withdrawalFee: '0.01%',
     addLiquidityUrl:
       'https://app.sushi.com/#/add/0x2791bca1f2de4661ed88a30c99a7a9449aa84174/0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
     buyTokenUrl:
@@ -4570,6 +4579,7 @@ export const polygonPools = [
     platform: 'QuickSwap',
     assets: ['USDC', 'USDT'],
     callFee: 0.5,
+    withdrawalFee: '0.01%',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174/0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
     buyTokenUrl:
