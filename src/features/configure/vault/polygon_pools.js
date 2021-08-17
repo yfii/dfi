@@ -26,6 +26,32 @@ export const polygonPools = [
       'https://quickswap.exchange/#/swap?inputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619&outputCurrency=0xfbdd194376de19a88118e84e279b977f165d01b8',
   },
   {
+    id: 'dinoswap-dfyn-route-eth',
+    name: 'ROUTE-ETH LP',
+    token: 'ROUTE-ETH LP',
+    tokenDescription: 'DFyn (DinoSwap)',
+    tokenAddress: '0xeBC4f9B1cE66258AC3A48578FFEEba1330dDB68B',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooDinoSwapDfynROUTE-ETH',
+    earnedTokenAddress: '0x655AF65e1f26ccB1dD18EF1DA93E813911818c5e',
+    earnContractAddress: '0x655AF65e1f26ccB1dD18EF1DA93E813911818c5e',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'dinoswap-dfyn-route-eth',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'DinoSwap',
+    assets: ['ROUTE', 'ETH'],
+    callFee: 0.5,
+    addLiquidityUrl:
+      'https://exchange.dfyn.network/#/add/0x7ceb23fd6bc0add59e62ac25578270cff1b9f619/0xeBC4f9B1cE66258AC3A48578FFEEba1330dDB68B',
+    buyTokenUrl:
+      'https://exchange.dfyn.network/#/swap?inputCurrency=0x7ceb23fd6bc0add59e62ac25578270cff1b9f619&outputCurrency=0xeBC4f9B1cE66258AC3A48578FFEEba1330dDB68B',
+  },
+  {
     id: 'quick-usdc-quick',
     name: 'QUICK-USDC LP',
     token: 'QUICK-USDC LP',
@@ -105,6 +131,7 @@ export const polygonPools = [
       'https://quickswap.exchange/#/add/0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270/0xa731349fa468614c1698fc46ebf06da6f380239e',
     buyTokenUrl:
       'https://quickswap.exchange/#/swap?inputCurrency=0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270&outputCurrency=0xa731349fa468614c1698fc46ebf06da6f380239e',
+
   },
   {
     id: 'pearzap-pear-usdc',
