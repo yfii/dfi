@@ -152,8 +152,8 @@ export const fantomPools = [
   {
     id: 'scream-eth',
     logo: 'single-assets/ETH.svg',
-    name: 'ETH',
-    token: 'ETH',
+    name: 'wETH',
+    token: 'wETH',
     tokenDescription: 'Scream',
     tokenAddress: '0x74b23882a30290451A17c44f4F05243b6b58C76d',
     tokenDecimals: 18,
