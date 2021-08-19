@@ -5179,7 +5179,7 @@ export const bscPools = [
     oracle: 'tokens',
     oracleId: 'BUNNY',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Pancakebunny',
     assets: ['BUNNY'],
