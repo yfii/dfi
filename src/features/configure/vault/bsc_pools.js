@@ -691,7 +691,7 @@ export const bscPools = [
     oracleId: 'BANANA',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'ApeSwap',
     assets: ['BANANA'],
     callFee: 0.5,
