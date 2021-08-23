@@ -11087,32 +11087,6 @@ export const bscPools = [
   },
 
   {
-    id: 'cake-zil-bnb',
-    logo: 'bnb-pairs/ZIL-BNB.svg',
-    name: 'ZIL-BNB LP',
-    token: 'ZIL-BNB LP',
-    tokenDescription: 'PancakeSwap',
-    tokenAddress: '0xc746337b5F800a0e19eD4eB3bda03FF1401B8167',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooPancakeZIL-BNB',
-    earnedTokenAddress: '0xdFD00D26f698d036EA26900614793829D119C0Ca',
-    earnContractAddress: '0xdFD00D26f698d036EA26900614793829D119C0Ca',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'cake-zil-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'PancakeSwap',
-    assets: ['ZIL', 'BNB'],
-    callFee: 0.5,
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0xb86abcb37c3a4b64f74f59301aff131a1becc787',
-  },
-
-  {
     id: 'cake-lto-bnb',
     logo: 'bnb-pairs/LTO-BNB.svg',
     name: 'LTO-BNB LP',
