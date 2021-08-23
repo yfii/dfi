@@ -142,6 +142,7 @@ export const getNetworkBurnTokens = () => {
         [bscAddressBook.tokens.SDUMP.symbol]: bscAddressBook.tokens.SDUMP,
         [bscAddressBook.tokens.BABYCAKE.symbol]: bscAddressBook.tokens.BABYCAKE,
         [bscAddressBook.tokens.PERA.symbol]: bscAddressBook.tokens.PERA,
+        [bscAddressBook.tokens.GUARD.symbol]: bscAddressBook.tokens.GUARD,
       };
     case '128':
       return {};
@@ -153,7 +154,9 @@ export const getNetworkBurnTokens = () => {
         [polygonAddressBook.tokens.PEAR.symbol]: polygonAddressBook.tokens.PEAR,
       };
     case '250':
-      return {};
+      return {
+        [fantomAddressBook.tokens.TOMB.symbol]: fantomAddressBook.tokens.TOMB,
+      };
     default:
       throw new Error(`Create address book for this chainId first.`);
   }
