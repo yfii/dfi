@@ -1969,7 +1969,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'BoneSwap',
+    platform: 'Other',
     assets: ['BONEswap', 'MATIC'],
     callFee: 0.5,
     addLiquidityUrl:
@@ -1995,7 +1995,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'BoneSwap',
+    platform: 'Other',
     assets: ['BONEswap', 'USDC'],
     callFee: 0.5,
     addLiquidityUrl:
