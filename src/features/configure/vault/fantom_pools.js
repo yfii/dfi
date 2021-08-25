@@ -46,7 +46,7 @@ export const fantomPools = [
     callFee: 0.5,
     depositFee: '0.5%',
     withdrawalFee: '0%',
-    platform: 'other',
+    platform: 'Other',
     addLiquidityUrl: 'https://spookyswap.finance/add',
     buyTokenUrl: 'https://spookyswap.finance/swap',
   },
