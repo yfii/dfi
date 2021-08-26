@@ -88,7 +88,7 @@ export const PoolBoosts = function ({ poolName, earnedTokenAddress }) {
   if (numStakedLaunchpools === 1) {
     const launchpool = launchpools[Object.keys(recentStaked)[0]];
     return (
-      <a href={`/stake/pool/${launchpool.id}`} className={classes.boosts}>
+      <a href={`/#/stake/pool/${launchpool.id}`} className={classes.boosts}>
         {t('Vault-Boosts-Staked-Single', { name: launchpool.name })}
       </a>
     );
@@ -122,7 +122,7 @@ export const PoolBoosts = function ({ poolName, earnedTokenAddress }) {
               {Object.entries(recentStaked).map(([id, userStaked]) => (
                 <TableRow key={id}>
                   <StyledTableCell>
-                    <a href={`/stake/pool/${id}`} className={classes.link}>
+                    <a href={`/#/stake/pool/${id}`} className={classes.link}>
                       {launchpools[id].name}
                     </a>
                   </StyledTableCell>

@@ -1,6 +1,7 @@
 {
   "name": "beefy-app",
-  "version": "1.1.0",
+  "homepage": ".",
+  "version": "1.2.0",
   "repository": "beefyfinance/beefy-app",
   "license": "MIT",
   "private": true,

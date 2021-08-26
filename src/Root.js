@@ -26,6 +26,7 @@ function renderRouteConfigV3(routes, contextPath) {
       newContextPath = `${routeContextPath}/${item.path}`;
     }
     newContextPath = newContextPath.replace(/\/+/g, '/');
+
     if (item.component && item.childRoutes) {
       const childRoutes = renderRouteConfigV3(item.childRoutes, newContextPath);
       children.push(
@@ -52,7 +53,7 @@ function renderRouteConfigV3(routes, contextPath) {
 }
 
 function Root() {
-  const children = renderRouteConfigV3(routeConfig, '/');
+  const children = renderRouteConfigV3(routeConfig, '#');
   const { getPageMeta } = usePageMeta();
 
   initializePriceCache();

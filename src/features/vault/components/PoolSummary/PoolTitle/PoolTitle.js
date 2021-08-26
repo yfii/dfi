@@ -62,7 +62,7 @@ const PoolTitle = ({
       <div className={classes.texts}>
         <Typography className={classes.title} variant="body2" gutterBottom>
           {poolId ? (
-            <a href={`/vault/${poolId}`} className={classes.url}>
+            <a href={`/#/vault/${poolId}`} className={classes.url}>
               {name}
             </a>
           ) : (
@@ -109,7 +109,7 @@ const PoolTitle = ({
         {launchpool ? (
           <a
             className={classes.btnBoost}
-            href={multipleLaunchpools ? '/stake' : '/stake/pool/' + launchpool.id}
+            href={multipleLaunchpools ? '/#/stake' : '/#/stake/pool/' + launchpool.id}
           >
             <img alt="Boost" src={require('images/stake/boost.svg')} height={15} />
             <span>
