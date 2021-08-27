@@ -93,7 +93,7 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'curve-poly-atricrypto2',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Curve',
     assets: ['DAI', 'USDC', 'USDT', 'WBTC', 'ETH'],
