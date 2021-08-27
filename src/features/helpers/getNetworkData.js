@@ -147,7 +147,9 @@ export const getNetworkBurnTokens = () => {
     case '128':
       return {};
     case '43114':
-      return {};
+      return {
+        [avaxAddressBook.tokens.SHIBX.symbol]: avaxAddressBook.tokens.SHIBX,
+      };
     case '137':
       return {
         [polygonAddressBook.tokens.xYELD.symbol]: polygonAddressBook.tokens.xYELD,
