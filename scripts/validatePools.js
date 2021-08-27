@@ -3,6 +3,7 @@ import { MultiCall } from 'eth-multicall';
 import { addressBook } from 'blockchain-addressbook';
 import Web3 from 'web3';
 
+import { isEmpty } from '../src/features/helpers/utils.js';
 import { isValidChecksumAddress, maybeChecksumAddress } from './utils.js';
 import { bscPools } from '../src/features/configure/vault/bsc_pools.js';
 import { hecoPools } from '../src/features/configure/vault/heco_pools.js';
@@ -25,6 +26,13 @@ const chainRpcs = {
   avax: process.env.AVAX_RPC || 'https://api.avax.network/ext/bc/C/rpc',
   polygon: process.env.POLYGON_RPC || 'https://rpc-mainnet.maticvigil.com',
   fantom: process.env.FANTOM_RPC || 'https://rpc.ftm.tools/',
+};
+
+const overrides = {
+  'bunny-bunny-eol': { keeper: undefined, stratOwner: undefined },
+  'blizzard-xblzd-bnb-old-eol': { keeper: undefined },
+  'blizzard-xblzd-busd-old-eol': { keeper: undefined },
+  'heco-bifi-maxi': { beefyFeeRecipient: undefined },
 };
 
 const validatePools = async () => {
@@ -56,6 +64,7 @@ const validatePools = async () => {
     pools = await populateBeefyFeeRecipients(chain, pools, web3);
     pools = await populateOwners(chain, pools, web3);
 
+    pools = override(pools);
     pools.forEach(pool => {
       // Errors, should not proceed with build
       if (uniquePoolId.has(pool.id)) {
@@ -132,6 +141,9 @@ const validatePools = async () => {
       updates = isVaultOwnerCorrect(pool, chain, vaultOwner, updates);
       updates = isBeefyFeeRecipientCorrect(pool, chain, beefyFeeRecipient, updates);
     });
+    if (!isEmpty(updates)) {
+      exitCode = 1;
+    }
 
     if (outputPlatformSummary) {
       console.log(
@@ -304,6 +316,19 @@ const populateOwners = async (chain, pools, web3) => {
   return pools.map((pool, i) => {
     return { ...pool, vaultOwner: vaultResults[i].owner, stratOwner: stratResults[i].owner };
   });
+};
+
+const override = pools => {
+  Object.keys(overrides).forEach(id => {
+    const pool = pools.find(p => p.id === id);
+    if (pool) {
+      const override = overrides[id];
+      Object.keys(override).forEach(key => {
+        pool[key] = override[key];
+      });
+    }
+  });
+  return pools;
 };
 
 const exitCode = await validatePools();
