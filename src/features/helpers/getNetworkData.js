@@ -147,7 +147,9 @@ export const getNetworkBurnTokens = () => {
     case '128':
       return {};
     case '43114':
-      return {};
+      return {
+        [avaxAddressBook.tokens.SHIBX.symbol]: avaxAddressBook.tokens.SHIBX,
+      };
     case '137':
       return {
         [polygonAddressBook.tokens.xYELD.symbol]: polygonAddressBook.tokens.xYELD,
@@ -203,7 +205,7 @@ export const getNetworkStables = () => {
     case '128':
       return ['USDT', 'HUSD'];
     case '43114':
-      return ['USDT', 'DAI', 'BUSD', 'zDAI', 'zUSDT'];
+      return ['USDT', 'DAI', 'BUSD', 'zDAI', 'zUSDT', 'USDTe', 'BUSDe', 'DAIe'];
     case '137':
       return ['USDC', 'USDT', 'maUSDC', 'DAI', 'IRON', 'MAI', 'FRAX', 'rUSD', 'UST'];
     case '250':
