@@ -4399,7 +4399,7 @@ export const bscPools = [
       'https://dex.apeswap.finance/#/swap?outputCurrency=0x935a544bf5816e3a7c13db2efe3009ffda0acda2',
   },
   {
-    id: 'cakev2-popen-bnb',
+    id: 'cakev2-popen-bnb-eol',
     logo: 'bnb-pairs/POPEN-BNB.svg',
     name: 'pOPEN-BNB LP',
     token: 'pOPEN-BNB LP2',
@@ -4415,11 +4415,12 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cakev2-popen-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'PancakeSwap',
     assets: ['pOPEN', 'BNB'],
     callFee: 0.5,
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://pancakeswap.finance/add/BNB/0xaBaE871B7E3b67aEeC6B46AE9FE1A91660AadAC5',
     buyTokenUrl:
@@ -5892,7 +5893,7 @@ export const bscPools = [
       'https://pancakeswap.finance/swap?outputCurrency=0xE5b57E6e1b945B91FEE368aC108d2ebCcA78Aa8F',
   },
   {
-    id: 'cakev2-kun-busd',
+    id: 'cakev2-kun-busd-eol',
     logo: 'busd-pairs/KUN-BUSD.svg',
     name: 'KUN-BUSD LP',
     token: 'KUN-BUSD LP2',
@@ -5908,11 +5909,12 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cakev2-kun-busd',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'PancakeSwap',
     assets: ['KUN', 'BUSD'],
     callFee: 0.5,
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://pancakeswap.finance/add/0x1a2fb0af670d0234c2857fad35b789f8cb725584/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
     buyTokenUrl:
