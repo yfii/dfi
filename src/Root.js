@@ -1,11 +1,9 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { Route, Switch } from 'react-router-dom';
-import { ConnectedRouter } from 'connected-react-router';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import { hot, setConfig } from 'react-hot-loader';
 import store from './common/store';
 import routeConfig from './common/routeConfig';
-import history from './common/history';
 import { initializePriceCache } from './features/web3/fetchPrice';
 import { Helmet } from 'react-helmet';
 import { usePageMeta } from './features/common/getPageMeta';
@@ -65,7 +63,7 @@ function Root() {
         <meta property="og:description" content={getPageMeta('App-Meta-Description')} />
         <meta property="og:url" content={process.env.PUBLIC_URL || 'https://app.beefy.finance'} />
       </Helmet>
-      <ConnectedRouter history={history}>{children}</ConnectedRouter>
+      <HashRouter>{children}</HashRouter>
     </Provider>
   );
 }
