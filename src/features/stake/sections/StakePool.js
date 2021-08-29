@@ -225,7 +225,7 @@ export default function StakePool(props) {
         />
       </Helmet>
       <Grid item xs={6} className={classes.mb}>
-        <Button href="/stake" className={classes.roundedBtn}>
+        <Button href="/#/stake" className={classes.roundedBtn}>
           {t('Stake-Button-Back')}
         </Button>
       </Grid>
