@@ -201,6 +201,7 @@ export const getNetworkStables = () => {
         'TUSD',
         'USDN',
         'WUSD',
+        'USDO',
       ];
     case '128':
       return ['USDT', 'HUSD'];
