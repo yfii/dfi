@@ -103,6 +103,32 @@ export const avalanchePools = [
   },
   */
   {
+    id: 'pangolin-usdc.e-wavax',
+    name: 'USDC.e-AVAX LP',
+    token: 'USDC.e-AVAX LP',
+    tokenDescription: 'Pangolin',
+    tokenAddress: '0xbd918Ed441767fe7924e99F6a0E0B568ac1970D9',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooPangolinUSDC.e-AVAX',
+    earnedTokenAddress: '0x8eb23a3010795574eE3DD101843dC90bD63b5099',
+    earnContractAddress: '0x8eb23a3010795574eE3DD101843dC90bD63b5099',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'pangolin-usdc.e-wavax',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Pangolin',
+    assets: ['USDCe', 'AVAX'],
+    callFee: 0.25,
+    addLiquidityUrl:
+      'https://app.pangolin.exchange/#/add/AVAX/0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664',
+    buyTokenUrl:
+      'https://app.pangolin.exchange/#/swap?inputCurrency=0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7&outputCurrency=0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664',
+  },
+  {
     id: 'olive-dai.e-usdt.e',
     name: 'DAI.e-USDT.e LP',
     token: 'DAI.e-USDT.e LP',
