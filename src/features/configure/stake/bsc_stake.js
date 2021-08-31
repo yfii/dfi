@@ -1,5 +1,16 @@
 import { govPoolABI } from '../abi';
 
+const moonpot = {
+  logo: 'stake/moonpot/logo.png',
+  background: 'stake/moonpot/bg.png',
+  text: 'Moonpot is a win-win savings game on Binance Smart Chain powered by Beefy Finance. By depositing crypto into a Moonpot, users gain interest on their assets and enter into a prize draw at the same time. There’s a chance to win weekly prizes paid out in crypto from each Moonpot entered — as well as an exclusive monthly prize draw for $POTS stakers.',
+  website: 'https://moonpot.com/',
+  social: {
+    telegram: 'https://t.me/moonpotdotcom',
+    twitter: 'https://twitter.com/moonpotdotcom',
+  },
+};
+
 export const bscStakePools = [
   {
     id: 'bifi-bnb',

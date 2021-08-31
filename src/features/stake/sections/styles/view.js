@@ -209,7 +209,6 @@ const styles = theme => ({
     alignItems: 'center',
     justifyContent: 'center',
     '& .MuiAvatar-root': {
-      marginRight: '10px',
       height: '30px',
       width: '30px',
     },
@@ -218,6 +217,7 @@ const styles = theme => ({
     },
   },
   boostImg: {
+    marginLeft: '10px',
     height: '20px',
     filter:
       'invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(1000%) contrast(1000%)',
@@ -225,6 +225,29 @@ const styles = theme => ({
 
   divider: {
     margin: '10px 0',
+  },
+
+  icon: {
+    color: theme.palette.text.primary,
+    marginLeft: '4px',
+    'flex-shrink': 0,
+    width: '45px',
+    height: '45px',
+    '& .MuiAvatarGroup-avatar': {
+      border: 'none',
+      width: '65%',
+      height: '65%',
+      '&:first-child': {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+      },
+      '&:last-child': {
+        position: 'absolute',
+        bottom: 0,
+        right: 0,
+      },
+    },
   },
 });
 

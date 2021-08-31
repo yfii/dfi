@@ -19,7 +19,7 @@ const styles = theme => ({
     '& .MuiAvatar-root': {
       width: theme.spacing(7),
       height: theme.spacing(7),
-      margin: '10px auto',
+      margin: '0 auto',
     },
   },
   itemRetired: {
@@ -124,6 +124,29 @@ const styles = theme => ({
     '& .MuiAccordionDetails-root': {
       borderTop: '1px solid ' + theme.palette.background.border,
       padding: '25px 15px',
+    },
+  },
+
+  icon: {
+    color: theme.palette.text.primary,
+    marginLeft: '4px',
+    'flex-shrink': 0,
+    width: '45px',
+    height: '45px',
+    '& .MuiAvatarGroup-avatar': {
+      border: 'none',
+      width: '65%',
+      height: '65%',
+      '&:first-child': {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+      },
+      '&:last-child': {
+        position: 'absolute',
+        bottom: 0,
+        right: 0,
+      },
     },
   },
 });

@@ -4,6 +4,8 @@ import { Avatar, Box, Grid, Typography } from '@material-ui/core';
 import Button from '../../../components/CustomButtons/Button';
 import ValueLoader from '../../common/components/ValueLoader/ValueLoader';
 import { useLaunchpoolSubscriptions, usePoolFinish, usePoolStatus } from '../redux/hooks';
+import AvatarGroup from '@material-ui/lab/AvatarGroup';
+import { getSingleAssetSrc } from '../../helpers/getSingleAssetSrc';
 
 export function StakePoolsPool({ showPools, classes, pool, t }) {
   const id = pool.id;
@@ -32,6 +34,35 @@ export function StakePoolsPool({ showPools, classes, pool, t }) {
     });
   }, [subscribe, id, status]);
 
+  let avatar;
+  if (pool.logo) {
+    avatar = (
+      <Avatar
+        src={require('images/' + pool.logo)}
+        alt={pool.token}
+        variant="square"
+        imgProps={{ style: { objectFit: 'contain' } }}
+      />
+    );
+  } else {
+    avatar = (
+      <AvatarGroup className={`${classes.icon} MuiAvatar-root MuiAvatar-square`} spacing="small">
+        <Avatar
+          alt={pool.assets[0]}
+          variant="square"
+          imgProps={{ style: { objectFit: 'contain' } }}
+          src={getSingleAssetSrc(pool.assets[0])}
+        />
+        <Avatar
+          alt={pool.assets[1]}
+          variant="square"
+          imgProps={{ style: { objectFit: 'contain' } }}
+          src={getSingleAssetSrc(pool.assets[1])}
+        />
+      </AvatarGroup>
+    );
+  }
+
   if (
     showPools === 'all' ||
     (showPools === 'active' && status === showPools) ||
@@ -54,12 +85,7 @@ export function StakePoolsPool({ showPools, classes, pool, t }) {
           <Typography className={classes.title} variant="body2" gutterBottom>
             Earn {pool.earnedToken}
           </Typography>
-          <Avatar
-            src={require('images/' + pool.logo)}
-            alt={pool.earnedToken}
-            variant="square"
-            imgProps={{ style: { objectFit: 'contain' } }}
-          />
+          {avatar}
 
           <Typography className={classes.countdown}>{countdownStatus}</Typography>
 
