@@ -25,7 +25,6 @@ export const avalanchePools = [
     buyTokenUrl:
       'https://app.pangolin.exchange/#/swap?inputCurrency=0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7&outputCurrency=0xd6070ae98b8069de6B494332d1A1a81B6179D960',
   },
-  /*
   {
     id: 'joe-usdc.e-dai.e',
     name: 'USDC.e-DAI.e LP',
@@ -101,7 +100,6 @@ export const avalanchePools = [
       'https://www.traderjoexyz.com/#/pool/AVAX/0xd586e7f844cea2f87f50152665bcbc2c279d8d70',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
   },
-  */
   {
     id: 'pangolin-usdc.e-wavax',
     name: 'USDC.e-AVAX LP',
