@@ -30,7 +30,7 @@ export const polygonPools = [
     name: 'AXS-ETH SLP',
     token: 'AXS-ETH SLP',
     tokenDescription: 'SushiSwap',
-    tokenAddress: '0x61BDD9C7d4dF4Bf47A4508c0c8245505F2Af5b7b',
+    tokenAddress: '0x7BA331A8b360F4c31E6014aBdd6852F92Fb21557',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooSushiAXS-ETH',
