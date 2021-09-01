@@ -70,9 +70,9 @@ export const bscPools = [
     assets: ['USDT', 'BTCB'],
     callFee: 0.5,
     addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#//add/0x55d398326f99059fF775485246999027B3197955/0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c',
+      'https://exchange.pancakeswap.finance/#/add/0x55d398326f99059fF775485246999027B3197955/0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c',
     buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#//swap?inputCurrency=0x55d398326f99059fF775485246999027B3197955&outputCurrency=0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c',
+      'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x55d398326f99059fF775485246999027B3197955&outputCurrency=0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c',
   },
   {
     id: 'mdex-usdt-usdc',
@@ -96,9 +96,9 @@ export const bscPools = [
     assets: ['USDT', 'USDC'],
     callFee: 0.5,
     addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#//add/0x55d398326f99059fF775485246999027B3197955/0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
+      'https://exchange.pancakeswap.finance/#/add/0x55d398326f99059fF775485246999027B3197955/0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
     buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#//swap?inputCurrency=0x55d398326f99059fF775485246999027B3197955&outputCurrency=0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
+      'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x55d398326f99059fF775485246999027B3197955&outputCurrency=0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
   },
   {
     id: 'mdex-usdt-busd',
@@ -122,9 +122,9 @@ export const bscPools = [
     assets: ['USDT', 'BUSD'],
     callFee: 0.5,
     addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#//add/0x55d398326f99059fF775485246999027B3197955/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+      'https://exchange.pancakeswap.finance/#/add/0x55d398326f99059fF775485246999027B3197955/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
     buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#//swap?inputCurrency=0x55d398326f99059fF775485246999027B3197955&outputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+      'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x55d398326f99059fF775485246999027B3197955&outputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
   },
   {
     id: 'mdex-rabbit-busd',
@@ -148,9 +148,9 @@ export const bscPools = [
     assets: ['RABBIT', 'BUSD'],
     callFee: 0.5,
     addLiquidityUrl:
-      'https://exchange.pancakeswap.finance/#//add/0x95a1199EBA84ac5f19546519e287d43D2F0E1b41/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+      'https://exchange.pancakeswap.finance/#/add/0x95a1199EBA84ac5f19546519e287d43D2F0E1b41/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
     buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#//swap?inputCurrency=0x95a1199EBA84ac5f19546519e287d43D2F0E1b41&outputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+      'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x95a1199EBA84ac5f19546519e287d43D2F0E1b41&outputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
   },
   {
     id: 'banana-pots-bnb',
@@ -1847,9 +1847,9 @@ export const bscPools = [
     assets: ['SISTA', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
-      'https://dex.apeswap.finance/#//add/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c/0xCA6d25C10dad43ae8Be0bc2af4D3CD1114583C08',
+      'https://dex.apeswap.finance/#/add/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c/0xCA6d25C10dad43ae8Be0bc2af4D3CD1114583C08',
     buyTokenUrl:
-      'https://dex.apeswap.finance/#//swap?inputCurrency=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c&outputCurrency=0xCA6d25C10dad43ae8Be0bc2af4D3CD1114583C08',
+      'https://dex.apeswap.finance/#/swap?inputCurrency=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c&outputCurrency=0xCA6d25C10dad43ae8Be0bc2af4D3CD1114583C08',
   },
   {
     id: 'wex-bnb-dep',
@@ -1900,9 +1900,9 @@ export const bscPools = [
     assets: ['BTCB', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
-      'https://exchange.jetswap.finance/#//add/0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+      'https://exchange.jetswap.finance/#/add/0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
     buyTokenUrl:
-      'https://exchange.jetswap.finance/#//swap?inputCurrency=0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c&outputCurrency=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+      'https://exchange.jetswap.finance/#/swap?inputCurrency=0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c&outputCurrency=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
   },
   {
     id: 'pera-pera-bnb',
@@ -2004,9 +2004,9 @@ export const bscPools = [
     assets: ['STARS', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
-      'https://dex.apeswap.finance/#//add/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c/0xbD83010eB60F12112908774998F65761cf9f6f9a',
+      'https://dex.apeswap.finance/#/add/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c/0xbD83010eB60F12112908774998F65761cf9f6f9a',
     buyTokenUrl:
-      'https://dex.apeswap.finance/#//swap?inputCurrency=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c&outputCurrency=0xbD83010eB60F12112908774998F65761cf9f6f9a',
+      'https://dex.apeswap.finance/#/swap?inputCurrency=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c&outputCurrency=0xbD83010eB60F12112908774998F65761cf9f6f9a',
   },
   {
     id: 'cakev2-if-busd',
