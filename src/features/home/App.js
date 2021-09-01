@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import { makeStyles, ThemeProvider, StylesProvider } from '@material-ui/core/styles';
 import Header from 'components/Header/Header';
 import HeaderLinks from 'components/HeaderLinks/HeaderLinks';
@@ -15,11 +15,22 @@ import { createWeb3Modal } from '../web3';
 import { useConnectWallet, useDisconnectWallet } from './redux/hooks';
 import useNightMode from './hooks/useNightMode';
 import createTheme from './jss/appTheme';
+import { useLocation } from 'react-router';
 
 const themes = { light: null, dark: null };
 const getTheme = mode => {
   return (themes[mode] = themes[mode] || createTheme(mode === 'dark'));
 };
+
+const ScrollToTop = memo(function () {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+});
 
 export default function App({ children }) {
   const { t } = useTranslation();
@@ -57,6 +68,7 @@ export default function App({ children }) {
       <ThemeProvider theme={theme}>
         <SnackbarProvider>
           <NetworksProvider>
+            <ScrollToTop />
             <NetworksModal />
             <div className={classes.page}>
               <Header
