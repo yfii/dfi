@@ -75,7 +75,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#//swap?inputCurrency=0x55d398326f99059fF775485246999027B3197955&outputCurrency=0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c',
   },
   {
-    id: 'mdex-bsc-usdt-usdc',
+    id: 'mdex-usdt-usdc',
     name: 'USDT-USDC LP',
     token: 'USDT-USDC LP',
     tokenDescription: 'Mdex',
@@ -83,12 +83,12 @@ export const bscPools = [
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooMdexUSDT-USDC',
-    earnedTokenAddress: '0x909eFB6A634F3BB9509c333070e64bFde76CFb05',
-    earnContractAddress: '0x909eFB6A634F3BB9509c333070e64bFde76CFb05',
+    earnedTokenAddress: '0x6b115fEC98396fe153bdcA7716EB63779E9936B0',
+    earnContractAddress: '0x6b115fEC98396fe153bdcA7716EB63779E9936B0',
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
-    oracleId: 'mdex-bsc-usdt-usdc',
+    oracleId: 'mdex-usdt-usdc',
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
@@ -96,9 +96,9 @@ export const bscPools = [
     assets: ['USDT', 'USDC'],
     callFee: 0.5,
     addLiquidityUrl:
-      'https://pancakeswap.finance/add/0x55d398326f99059fF775485246999027B3197955/0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
+      'https://exchange.pancakeswap.finance/#//add/0x55d398326f99059fF775485246999027B3197955/0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
     buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x55d398326f99059fF775485246999027B3197955&outputCurrency=0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
+      'https://exchange.pancakeswap.finance/#//swap?inputCurrency=0x55d398326f99059fF775485246999027B3197955&outputCurrency=0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
   },
   {
     id: 'mdex-usdt-busd',
