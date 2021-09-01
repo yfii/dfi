@@ -11867,7 +11867,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'JulSwap',
+    platform: 'Other',
     assets: ['TWT', 'BNB'],
     callFee: 0.5,
     removeLiquidityUrl:
@@ -12421,7 +12421,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'JulSwap',
+    platform: 'Other',
     assets: ['BIFI', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl: 'https://julswap.com/#/add/BNB/0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
@@ -12430,7 +12430,7 @@ export const bscPools = [
   },
 
   {
-    id: 'jul-juld-bnb',
+    id: 'jul-juld-bnb-eol',
     logo: 'bnb-pairs/JULD-BNB.svg',
     name: 'JulD-BNB LP',
     token: 'JulD-BNB SLP',
@@ -12446,9 +12446,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'jul-juld-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
-    platform: 'JulSwap',
+    depositsPaused: true,
+    status: 'eol',
+    platform: 'Other',
     assets: ['JulD', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl: 'https://julswap.com/#/add/0x5a41f637c3f7553dba6ddc2d3ca92641096577ea/BNB',
@@ -13897,7 +13897,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'JulSwap',
+    platform: 'Other',
     assets: ['JulD'],
     callFee: 0.5,
     buyTokenUrl:
