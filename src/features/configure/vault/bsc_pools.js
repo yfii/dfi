@@ -127,7 +127,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#//swap?inputCurrency=0x55d398326f99059fF775485246999027B3197955&outputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
   },
   {
-    id: 'mdex-bsc-rabbit-busd',
+    id: 'mdex-rabbit-busd',
     name: 'RABBIT-BUSD LP',
     token: 'RABBIT-BUSD LP',
     tokenDescription: 'Mdex',
@@ -135,12 +135,12 @@ export const bscPools = [
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooMdexRABBIT-BUSD',
-    earnedTokenAddress: '0x81A51a48605bC158485040372dDAf26B83C555d8',
-    earnContractAddress: '0x81A51a48605bC158485040372dDAf26B83C555d8',
+    earnedTokenAddress: '0x9deFc3A2c49ed9Eb1Aa85b3baa68D06cE0e8e409',
+    earnContractAddress: '0x9deFc3A2c49ed9Eb1Aa85b3baa68D06cE0e8e409',
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
-    oracleId: 'mdex-bsc-rabbit-busd',
+    oracleId: 'mdex-rabbit-busd',
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
@@ -148,9 +148,9 @@ export const bscPools = [
     assets: ['RABBIT', 'BUSD'],
     callFee: 0.5,
     addLiquidityUrl:
-      'https://pancakeswap.finance/add/0x95a1199EBA84ac5f19546519e287d43D2F0E1b41/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+      'https://exchange.pancakeswap.finance/#//add/0x95a1199EBA84ac5f19546519e287d43D2F0E1b41/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
     buyTokenUrl:
-      'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x95a1199EBA84ac5f19546519e287d43D2F0E1b41&outputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+      'https://exchange.pancakeswap.finance/#//swap?inputCurrency=0x95a1199EBA84ac5f19546519e287d43D2F0E1b41&outputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
   },
   {
     id: 'banana-pots-bnb',
