@@ -25,7 +25,6 @@ export const polygonPools = [
     buyTokenUrl:
       'https://quickswap.exchange/#/swap?inputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619&outputCurrency=0xfbdd194376de19a88118e84e279b977f165d01b8',
   },
-  /* Paused until vault owner transfered
   {
     id: 'quick-quick',
     logo: 'single-assets/QUICK.png',
@@ -51,7 +50,6 @@ export const polygonPools = [
     buyTokenUrl:
       'https://quickswap.exchange/#/swap?outputCurrency=0x831753DD7087CaC61aB5644b308642cc1c33Dc13',
   },
-  */
   {
     id: 'ape-watch-matic',
     name: 'WATCH-MATIC LP',
