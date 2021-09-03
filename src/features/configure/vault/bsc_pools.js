@@ -10691,7 +10691,7 @@ export const bscPools = [
   },
 
   {
-    id: 'blizzard-xblzd-bnb',
+    id: 'blizzard-xblzd-bnb-eol',
     logo: 'degens/BLZD-BNB.png',
     name: 'xBLZD-BNB LP',
     token: 'xBLZD-BNB LP2',
@@ -10707,11 +10707,12 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'blizzard-xblzd-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['xBLZD', 'BNB'],
     callFee: 1,
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://pancakeswap.finance/add/BNB/0x9a946c3Cb16c08334b69aE249690C236Ebd5583E',
     buyTokenUrl:
