@@ -3307,7 +3307,7 @@ block-stream@*:
   dependencies:
     inherits "~2.0.0"
 
-blockchain-addressbook@^0.2.11:
+blockchain-addressbook@^0.2.14:
   version "0.2.14"
   resolved "https://registry.yarnpkg.com/blockchain-addressbook/-/blockchain-addressbook-0.2.14.tgz#972973b689ff55753390c8df2942b297cf351043"
   integrity sha512-D7TbpbH1m1nWcDi5xiVn5KIeFW9W4oZMr6Rs2npr7CG9KTai4zeuvfvuXc0ufxm5um5X0AZhOtgEp7miF8D1yA==
