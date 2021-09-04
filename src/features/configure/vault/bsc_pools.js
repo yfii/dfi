@@ -50,7 +50,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x55d398326f99059fF775485246999027B3197955&outputCurrency=0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c',
   },
   {
-    id: 'mdex-usdt-usdc',
+    id: 'mdex-bsc-usdt-usdc',
     name: 'USDT-USDC LP',
     token: 'USDT-USDC LP',
     tokenDescription: 'Mdex',
@@ -76,7 +76,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x55d398326f99059fF775485246999027B3197955&outputCurrency=0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
   },
   {
-    id: 'mdex-usdt-busd',
+    id: 'mdex-bsc-usdt-busd',
     name: 'USDT-BUSD LP',
     token: 'USDT-BUSD LP',
     tokenDescription: 'Mdex',
@@ -102,7 +102,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x55d398326f99059fF775485246999027B3197955&outputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
   },
   {
-    id: 'mdex-rabbit-busd',
+    id: 'mdex-bsc-rabbit-busd',
     name: 'RABBIT-BUSD LP',
     token: 'RABBIT-BUSD LP',
     tokenDescription: 'Mdex',
