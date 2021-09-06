@@ -63,10 +63,7 @@ function Root() {
         <meta property="og:description" content={getPageMeta('App-Meta-Description')} />
         <meta property="og:url" content={process.env.PUBLIC_URL || 'https://app.beefy.finance'} />
       </Helmet>
-      <HashRouter>
-        {children}
-        <Redirect from="/" to="/bsc" />
-      </HashRouter>
+      <HashRouter>{children}</HashRouter>
     </Provider>
   );
 }

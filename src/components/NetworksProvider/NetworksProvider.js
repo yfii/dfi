@@ -2,47 +2,47 @@ import React, { createContext, useContext, useState, useMemo } from 'react';
 
 export const NetworksContext = createContext(null);
 
+export const networks = [
+  {
+    name: 'BSC',
+    asset: 'BSC',
+    id: 56,
+    url: '/#/bsc',
+  },
+  {
+    name: 'HECO',
+    asset: 'HECO',
+    id: 128,
+    url: '/#/heco',
+  },
+  {
+    name: 'AVALANCHE',
+    asset: 'AVAX',
+    id: 43114,
+    url: '/#/avax',
+  },
+  {
+    name: 'POLYGON',
+    asset: 'POLYGON',
+    id: 137,
+    url: '/#/polygon',
+  },
+  {
+    name: 'FANTOM',
+    asset: 'FANTOM',
+    id: 250,
+    url: '/#/fantom',
+  },
+];
+
 const NetworksProvider = ({ children }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
-  const networks = [
-    {
-      name: 'BSC',
-      asset: 'BSC',
-      id: '56',
-      url: 'https://app.beefy.finance',
-    },
-    {
-      name: 'HECO',
-      asset: 'HECO',
-      id: '128',
-      url: 'https://heco.beefy.finance',
-    },
-    {
-      name: 'AVALANCHE',
-      asset: 'AVAX',
-      id: '43114',
-      url: 'https://avax.beefy.finance',
-    },
-    {
-      name: 'POLYGON',
-      asset: 'POLYGON',
-      id: '137',
-      url: 'https://polygon.beefy.finance',
-    },
-    {
-      name: 'FANTOM',
-      asset: 'FANTOM',
-      id: '250',
-      url: 'https://fantom.beefy.finance',
-    },
-  ];
-
   const currentNetwork = useMemo(
-    () => networks.find(network => network.id === process.env.REACT_APP_NETWORK_ID),
-    [networks]
+    () => networks.find(network => network.id === window.REACT_APP_NETWORK_ID),
+    []
   );
 
   return (
