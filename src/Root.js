@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { hot, setConfig } from 'react-hot-loader';
 import store from './common/store';
 import routeConfig from './common/routeConfig';
@@ -63,9 +63,11 @@ function Root() {
         <meta property="og:description" content={getPageMeta('App-Meta-Description')} />
         <meta property="og:url" content={process.env.PUBLIC_URL || 'https://app.beefy.finance'} />
       </Helmet>
-      <HashRouter>{children}</HashRouter>
+      <HashRouter>
+        {children}
+        <Redirect from="/" to="/bsc" />
+      </HashRouter>
     </Provider>
   );
 }
-
 export default hot(module)(Root);

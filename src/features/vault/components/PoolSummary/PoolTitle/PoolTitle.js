@@ -1,4 +1,6 @@
 import React, { memo } from 'react';
+import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Avatar from '@material-ui/core/Avatar';
 import AvatarGroup from '@material-ui/lab/AvatarGroup';
@@ -23,6 +25,8 @@ const PoolTitle = ({
   assets,
   multipleLaunchpools = false,
 }) => {
+  const { chain } = useParams();
+
   const classes = useStyles();
   const { t } = useTranslation();
 
@@ -62,9 +66,9 @@ const PoolTitle = ({
       <div className={classes.texts}>
         <Typography className={classes.title} variant="body2" gutterBottom>
           {poolId ? (
-            <a href={`/#/vault/${poolId}`} className={classes.url}>
+            <Link to={`/${chain}/vault/${poolId}`} className={classes.url}>
               {name}
-            </a>
+            </Link>
           ) : (
             name
           )}
@@ -107,15 +111,15 @@ const PoolTitle = ({
           )}
         </div>
         {launchpool ? (
-          <a
+          <Link
+            to={multipleLaunchpools ? `/${chain}/stake` : `/${chain}/stake/pool/${launchpool.id}`}
             className={classes.btnBoost}
-            href={multipleLaunchpools ? '/#/stake' : '/#/stake/pool/' + launchpool.id}
           >
             <img alt="Boost" src={require('images/stake/boost.svg')} height={15} />
             <span>
               <img alt="Fire" src={require('images/stake/fire.png')} height={30} />
             </span>
-          </a>
+          </Link>
         ) : (
           ''
         )}

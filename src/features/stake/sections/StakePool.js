@@ -1,5 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import BigNumber from 'bignumber.js';
 import {
   useFetchApproval,
@@ -24,7 +26,6 @@ import {
   Box,
   Dialog,
   Grid,
-  Link,
   makeStyles,
   TextField,
   Typography,
@@ -51,6 +52,8 @@ import { getSingleAssetSrc } from '../../helpers/getSingleAssetSrc';
 const useStyles = makeStyles(styles);
 
 export default function StakePool(props) {
+  const { chain } = useParams();
+
   const classes = useStyles();
   const { t } = useTranslation();
   const { fetchApproval } = useFetchApproval();
@@ -256,9 +259,9 @@ export default function StakePool(props) {
         />
       </Helmet>
       <Grid item xs={6} className={classes.mb}>
-        <Button href="/#/stake" className={classes.roundedBtn}>
-          {t('Stake-Button-Back')}
-        </Button>
+        <Link to={`/${chain}/stake`}>
+          <Button className={classes.roundedBtn}>{t('Stake-Button-Back')}</Button>
+        </Link>
       </Grid>
       <Grid item xs={6} className={classes.mb}>
         <Typography className={classes.countdown}>{countdownStatus}</Typography>
@@ -422,7 +425,7 @@ export default function StakePool(props) {
           style={customBgImg(partner.background)}
         >
           <Grid item xs={12} className={classes.partnerHeader}>
-            <Link target="_blank" href={partner.website}>
+            <a target="_blank" href={partner.website}>
               {isNightMode && partner.logoNight ? (
                 <img
                   alt={launchpool.name}
@@ -434,7 +437,7 @@ export default function StakePool(props) {
               ) : (
                 ''
               )}
-            </Link>
+            </a>
           </Grid>
           <Grid item xs={12} className={classes.partnerBody}>
             {partner.text}
@@ -442,24 +445,24 @@ export default function StakePool(props) {
           <Grid item xs={12}>
             <Divider className={classes.divider} />
             {partner.social.twitter ? (
-              <Link href={partner.social.twitter}>
+              <a href={partner.social.twitter}>
                 <TwitterIcon />
-              </Link>
+              </a>
             ) : (
               ''
             )}
             {partner.social.telegram ? (
-              <Link href={partner.social.telegram}>
+              <a href={partner.social.telegram}>
                 <TelegramIcon />
-              </Link>
+              </a>
             ) : (
               ''
             )}
             {partner.website ? (
               <Grid item xs={12}>
-                <Link target="_blank" href={partner.website}>
+                <a target="_blank" href={partner.website}>
                   {partner.website}
-                </Link>
+                </a>
               </Grid>
             ) : (
               ''

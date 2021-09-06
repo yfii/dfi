@@ -1,4 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import { launchpools } from '../../../../helpers/getNetworkData';
 import { shallowEqual, useSelector } from 'react-redux';
 import { byDecimals } from '../../../../helpers/bignumber';
@@ -33,6 +35,7 @@ const StyledTableCell = withStyles(theme => ({
 }))(TableCell);
 
 export const PoolBoosts = function ({ poolName, earnedTokenAddress }) {
+  const { chain } = useParams();
   const classes = useStyles();
   const { t } = useTranslation();
   const { subscribe } = useLaunchpoolSubscriptions();
@@ -88,9 +91,9 @@ export const PoolBoosts = function ({ poolName, earnedTokenAddress }) {
   if (numStakedLaunchpools === 1) {
     const launchpool = launchpools[Object.keys(recentStaked)[0]];
     return (
-      <a href={`/#/stake/pool/${launchpool.id}`} className={classes.boosts}>
+      <Link to={`/${chain}/stake/pool/${launchpool.id}`} className={classes.boosts}>
         {t('Vault-Boosts-Staked-Single', { name: launchpool.name })}
-      </a>
+      </Link>
     );
   }
 
@@ -122,9 +125,9 @@ export const PoolBoosts = function ({ poolName, earnedTokenAddress }) {
               {Object.entries(recentStaked).map(([id, userStaked]) => (
                 <TableRow key={id}>
                   <StyledTableCell>
-                    <a href={`/#/stake/pool/${id}`} className={classes.link}>
+                    <Link to={`/${chain}/stake/pool/${id}`} className={classes.link}>
                       {launchpools[id].name}
-                    </a>
+                    </Link>
                   </StyledTableCell>
                   <StyledTableCell align="right">
                     {formatDecimals(userStaked)} {launchpools[id].token}
