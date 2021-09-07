@@ -30,7 +30,7 @@ export const avalanchePools = [
     logo: 'single-assets/JOE.png',
     name: 'JOE',
     token: 'JOE',
-    tokenDescription: 'Trader Joe',
+    tokenDescription: 'Trader Joe (xJoe)',
     tokenAddress: '0x6e84a6216eA6dACC71eE8E6b0a5B7322EEbC0fDd',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
