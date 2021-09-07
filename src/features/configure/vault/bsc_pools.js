@@ -1197,7 +1197,7 @@ export const bscPools = [
       'https://pancakeswap.finance/swap?outputCurrency=0xc3EAE9b061Aa0e1B9BD3436080Dc57D2d63FEdc1',
   },
   {
-    id: 'honeyfarm-honey-bnb-eol',
+    id: 'honeyfarm-honey-bnb-eol2',
     name: 'HONEY-BNB LP',
     token: 'HONEY-BNB LP',
     tokenDescription: 'PancakeSwap (HoneyFarm)',
@@ -1223,7 +1223,7 @@ export const bscPools = [
       'https://pancakeswap.finance/swap?outputCurrency=0xFa363022816aBf82f18a9C2809dCd2BB393F6AC5',
   },
   {
-    id: 'honeyfarm-honey-busd-eol',
+    id: 'honeyfarm-honey-busd-eol2',
     name: 'HONEY-BUSD LP',
     token: 'HONEY-BUSD LP',
     tokenDescription: 'PancakeSwap (HoneyFarm)',
