@@ -45,6 +45,7 @@ export const fantomPools = [
     platform: 'SpookySwap',
     assets: ['STEAK', 'FTM'],
     callFee: 0.5,
+    withdrawalFee: '0%',
     addLiquidityUrl:
       'https://spookyswap.finance/add/0x05848B832E872d9eDd84AC5718D58f21fD9c9649/FTM',
     buyTokenUrl: 'https://spookyswap.finance/swap',
@@ -70,6 +71,7 @@ export const fantomPools = [
     platform: 'SpookySwap',
     assets: ['FOO', 'FTM'],
     callFee: 0.5,
+    withdrawalFee: '0%',
     addLiquidityUrl:
       'https://spookyswap.finance/add/FTM/0xFbc3c04845162F067A0B6F8934383E63899c3524',
     buyTokenUrl: 'https://spookyswap.finance/swap',

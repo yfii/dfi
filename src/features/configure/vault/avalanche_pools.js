@@ -47,6 +47,7 @@ export const avalanchePools = [
     platform: 'Trader Joe',
     assets: ['JOE'],
     callFee: 0.25,
+    withdrawalFee: '0%',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
   },
   {
