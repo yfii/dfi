@@ -25,7 +25,6 @@ export const avalanchePools = [
     buyTokenUrl:
       'https://app.pangolin.exchange/#/swap?inputCurrency=0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7&outputCurrency=0xd6070ae98b8069de6B494332d1A1a81B6179D960',
   },
-  /* Wait for Joe timelock
   {
     id: 'joe-joe',
     logo: 'single-assets/JOE.png',
@@ -51,7 +50,6 @@ export const avalanchePools = [
     withdrawalFee: '0%',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
   },
-  */
   {
     id: 'joe-mim-wavax',
     name: 'MIM-AVAX LP',
