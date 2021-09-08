@@ -108,7 +108,7 @@ export const bscStakePools = [
     partnership: true,
     status: 'active',
     isMooStaked: true,
-    periodFinish: 1630771430,
+    periodFinish: 1631043587,
     partners: [
       {
         logo: 'stake/viralata/logo.png',
