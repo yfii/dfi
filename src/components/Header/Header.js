@@ -1,5 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -17,6 +19,8 @@ import styles from './styles';
 const useStyles = makeStyles(styles);
 
 const Header = ({ links, isNightMode, setNightMode }) => {
+  const { chain } = useParams();
+
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const classes = useStyles();
   const { t } = useTranslation();
@@ -28,25 +32,27 @@ const Header = ({ links, isNightMode, setNightMode }) => {
   return (
     <AppBar className={`${classes.appBar} ${classes.dark}`} position="relative">
       <Toolbar className={classes.container}>
-        <Button href="/" className={classes.title}>
-          <Hidden xsDown>
-            <img
-              alt="BIFI"
-              src={require(`images/BIFI-logo.svg`)}
-              height={'40px'}
-              className={classes.logo}
-            />
-            beefy.finance
-          </Hidden>
-          <Hidden smUp>
-            <img
-              alt="BIFI"
-              src={require(`images/BIFI-logo.svg`)}
-              height={'35px'}
-              className={classes.logo}
-            />
-          </Hidden>
-        </Button>
+        <Link to={`/${chain}`}>
+          <Button className={classes.title}>
+            <Hidden xsDown>
+              <img
+                alt="BIFI"
+                src={require(`images/BIFI-logo.svg`)}
+                height={'40px'}
+                className={classes.logo}
+              />
+              beefy.finance
+            </Hidden>
+            <Hidden smUp>
+              <img
+                alt="BIFI"
+                src={require(`images/BIFI-logo.svg`)}
+                height={'35px'}
+                className={classes.logo}
+              />
+            </Hidden>
+          </Button>
+        </Link>
 
         <div className={classes.middleNav}>
           <Hidden smDown>
@@ -55,7 +61,9 @@ const Header = ({ links, isNightMode, setNightMode }) => {
             {renderLink('docs', 'docs', 'book', classes)}
           </Hidden>
           {renderLink('buy', t('buy'), 'dollar-sign', classes)}
-          {renderBoost(classes)}
+          <Link className={classes.btnBoost} to={`/${chain}/stake`}>
+            <img alt="Boost" src={require('images/stake/boost.svg')} />
+          </Link>
         </div>
 
         <Hidden smDown implementation="css">
@@ -117,14 +125,6 @@ const renderLink = (name, label, icon, classes) => {
     >
       <i className={`fas fa-${icon} ${classes.icon}`} />
       <span>{label}</span>
-    </a>
-  );
-};
-
-const renderBoost = classes => {
-  return (
-    <a className={classes.btnBoost} href="/#/stake">
-      <img alt="Boost" src={require('images/stake/boost.svg')} />
     </a>
   );
 };

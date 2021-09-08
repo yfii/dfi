@@ -1,4 +1,6 @@
 import React, { useEffect, useMemo } from 'react';
+import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import { StakeCountdown } from './StakeCountdown';
 import { Avatar, Box, Grid, Typography } from '@material-ui/core';
 import Button from '../../../components/CustomButtons/Button';
@@ -8,6 +10,7 @@ import AvatarGroup from '@material-ui/lab/AvatarGroup';
 import { getSingleAssetSrc } from '../../helpers/getSingleAssetSrc';
 
 export function StakePoolsPool({ showPools, classes, pool, t }) {
+  const { chain } = useParams();
   const id = pool.id;
   const hideCountdown = pool.fixedStatus === true;
   const poolFinish = usePoolFinish(pool.id);
@@ -92,9 +95,11 @@ export function StakePoolsPool({ showPools, classes, pool, t }) {
           <Typography className={classes.subtitle} variant="body2">
             {pool.token}
           </Typography>
-          <Button xs={5} md={2} className={classes.stakeBtn} href={`/#/stake/pool/${pool.id}`}>
-            {status === 'closed' ? t('Stake-Button-Claim') : t('Stake-Button-Stake')}
-          </Button>
+          <Link to={`/${chain}/stake/pool/${pool.id}`}>
+            <Button xs={5} md={2} className={classes.stakeBtn}>
+              {status === 'closed' ? t('Stake-Button-Claim') : t('Stake-Button-Stake')}
+            </Button>
+          </Link>
           {status === 'closed' || status === 'soon' ? (
             <Box className={classes.ribbon}>
               <span className={status}>

@@ -21,6 +21,19 @@
     <meta property="og:url" content="https://app.beefy.finance" />
     <meta property="og:image" content="https://beefy.finance/img/beefy.png" />
 
+    <script type="text/javascript">
+      var redirectMap = {
+        'heco.beefy.finance': 'https://app.beefy.finance/#/heco',
+        'avax.beefy.finance': 'https://app.beefy.finance/#/avax',
+        'polygon.beefy.finance': 'https://app.beefy.finance/#/polygon',
+        'fantom.beefy.finance': 'https://app.beefy.finance/#/fantom',
+      }
+      for (var host in redirectMap) {
+        if (host == window.location.host) {
+          window.location.assign(redirectMap[host]);
+        }
+      }
+    </script>
     <script src="https://kit.fontawesome.com/67b38b6e65.js" crossorigin="anonymous"></script>
   </head>
 

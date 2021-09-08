@@ -4,13 +4,13 @@ import { App, HomePage } from '../features/home';
 
 const routes = [
   {
-    path: '/',
+    path: '/:chain',
     component: App,
     childRoutes: [
-      { path: '/', component: HomePage, isIndex: true },
-      { path: '/stake', component: StakePage },
-      { path: '/stake/pool/:id', component: PoolPage },
-      { path: '/vault/:vaultId', component: VaultPage },
+      { path: '/:chain', component: HomePage, isIndex: true },
+      { path: '/:chain/stake', component: StakePage },
+      { path: '/:chain/stake/pool/:id', component: PoolPage },
+      { path: '/:chain/vault/:vaultId', component: VaultPage },
     ],
   },
 ];

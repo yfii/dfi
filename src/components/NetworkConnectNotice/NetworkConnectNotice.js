@@ -7,7 +7,7 @@ import styles from './styles';
 import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles(styles);
-const targetNetworkId = Number(process.env.REACT_APP_NETWORK_ID);
+const targetNetworkId = window.REACT_APP_NETWORK_ID;
 
 export function NetworkConnectNotice({
   web3,
@@ -44,11 +44,16 @@ export function NetworkConnectNotice({
       });
   }, [setNetworkSetupError, t]);
 
+  const networkRedirect = url => {
+    window.location.assign(url);
+    window.location.reload();
+  };
+
   const supportedNetwork = useMemo(() => {
     return isSupportedNetwork
       ? {
           id: networkId,
-          app: getNetworkAppUrl(networkId),
+          url: getNetworkAppUrl(networkId),
           name: getNetworkFriendlyName(networkId),
         }
       : null;
@@ -81,7 +86,10 @@ export function NetworkConnectNotice({
             {t('Network-SwitchToNetwork', { network: targetNetworkFriendlyName })}
           </Button>
           {isSupportedNetwork ? (
-            <Button href={supportedNetwork.app} className={classes.button}>
+            <Button
+              onClick={() => networkRedirect(supportedNetwork.url)}
+              className={classes.button}
+            >
               {t('Network-GoToApp', { network: supportedNetwork.name })}
             </Button>
           ) : null}

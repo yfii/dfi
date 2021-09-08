@@ -1,6 +1,7 @@
 import { connectors } from 'web3modal';
 import { indexBy } from './utils';
 import WalletConnectProvider from '@walletconnect/web3-provider';
+import { networks } from 'components/NetworksProvider/NetworksProvider';
 
 import {
   avalanchePools,
@@ -26,7 +27,7 @@ import {
   polygonZaps,
 } from '../configure';
 
-export const appNetworkId = Number(process.env.REACT_APP_NETWORK_ID);
+export const appNetworkId = window.REACT_APP_NETWORK_ID;
 
 const networkTxUrls = {
   56: hash => `https://bscscan.com/tx/${hash}`,
@@ -34,14 +35,6 @@ const networkTxUrls = {
   43114: hash => `https://cchain.explorer.avax.network/tx/${hash}/token-transfers`,
   137: hash => `https://polygonscan.com/tx/${hash}`,
   250: hash => `https://ftmscan.com/tx/${hash}`,
-};
-
-const networkAppUrls = {
-  56: 'https://app.beefy.finance/',
-  128: 'https://heco.beefy.finance/',
-  43114: 'https://avax.beefy.finance/',
-  137: 'https://polygon.beefy.finance/',
-  250: 'https://fantom.beefy.finance/',
 };
 
 const networkFriendlyName = {
@@ -65,16 +58,16 @@ export const getNetworkCoin = () => {
 };
 
 export const getNetworkPools = () => {
-  switch (process.env.REACT_APP_NETWORK_ID) {
-    case '56':
+  switch (window.REACT_APP_NETWORK_ID) {
+    case 56:
       return bscPools;
-    case '128':
+    case 128:
       return hecoPools;
-    case '43114':
+    case 43114:
       return avalanchePools;
-    case '137':
+    case 137:
       return polygonPools;
-    case '250':
+    case 250:
       return fantomPools;
     default:
       return [];
@@ -116,27 +109,28 @@ export const getNetworkLaunchpools = (networkId = appNetworkId) => {
 };
 
 export const getNetworkTokens = () => {
-  switch (process.env.REACT_APP_NETWORK_ID) {
-    case '56':
+  const chainId = window.REACT_APP_NETWORK_ID;
+  switch (chainId) {
+    case 56:
       return bscAddressBook.tokens;
-    case '128':
+    case 128:
       return hecoAddressBook.tokens;
-    case '43114':
+    case 43114:
       return avaxAddressBook.tokens;
-    case '137':
+    case 137:
       return polygonAddressBook.tokens;
-    case '250':
+    case 250:
       return fantomAddressBook.tokens;
     default:
       throw new Error(
-        `Create address book for this chainId first. Check out https://github.com/beefyfinance/address-book`
+        `Create address book for chainId(${chainId}) first. Check out https://github.com/beefyfinance/address-book`
       );
   }
 };
 
 export const getNetworkBurnTokens = () => {
-  switch (process.env.REACT_APP_NETWORK_ID) {
-    case '56':
+  switch (window.REACT_APP_NETWORK_ID) {
+    case 56:
       return {
         [bscAddressBook.tokens.GARUDA.symbol]: bscAddressBook.tokens.GARUDA,
         [bscAddressBook.tokens.SDUMP.symbol]: bscAddressBook.tokens.SDUMP,
@@ -144,18 +138,18 @@ export const getNetworkBurnTokens = () => {
         [bscAddressBook.tokens.PERA.symbol]: bscAddressBook.tokens.PERA,
         [bscAddressBook.tokens.GUARD.symbol]: bscAddressBook.tokens.GUARD,
       };
-    case '128':
+    case 128:
       return {};
-    case '43114':
+    case 43114:
       return {
         [avaxAddressBook.tokens.SHIBX.symbol]: avaxAddressBook.tokens.SHIBX,
       };
-    case '137':
+    case 137:
       return {
         [polygonAddressBook.tokens.xYELD.symbol]: polygonAddressBook.tokens.xYELD,
         [polygonAddressBook.tokens.PEAR.symbol]: polygonAddressBook.tokens.PEAR,
       };
-    case '250':
+    case 250:
       return {
         [fantomAddressBook.tokens.TOMB.symbol]: fantomAddressBook.tokens.TOMB,
       };
@@ -165,16 +159,16 @@ export const getNetworkBurnTokens = () => {
 };
 
 export const getNetworkZaps = () => {
-  switch (process.env.REACT_APP_NETWORK_ID) {
-    case '56':
+  switch (window.REACT_APP_NETWORK_ID) {
+    case 56:
       return bscZaps;
-    case '128':
+    case 128:
       return hecoZaps;
-    case '43114':
+    case 43114:
       return avalancheZaps;
-    case '137':
+    case 137:
       return polygonZaps;
-    case '250':
+    case 250:
       return fantomZaps;
     default:
       return [];
@@ -182,8 +176,8 @@ export const getNetworkZaps = () => {
 };
 
 export const getNetworkStables = () => {
-  switch (process.env.REACT_APP_NETWORK_ID) {
-    case '56':
+  switch (window.REACT_APP_NETWORK_ID) {
+    case 56:
       return [
         'BUSD',
         'USDT',
@@ -203,9 +197,9 @@ export const getNetworkStables = () => {
         'WUSD',
         'USDO',
       ];
-    case '128':
+    case 128:
       return ['USDT', 'HUSD'];
-    case '43114':
+    case 43114:
       return ['USDT', 'DAI', 'BUSD', 'zDAI', 'zUSDT', 'USDTe', 'BUSDe', 'DAIe', 'USDCe'];
     case '137':
       return ['USDC', 'USDT', 'maUSDC', 'DAI', 'IRON', 'MAI', 'FRAX', 'rUSD', 'UST', 'WUSD'];
@@ -217,16 +211,16 @@ export const getNetworkStables = () => {
 };
 
 export const getNetworkMulticall = () => {
-  switch (process.env.REACT_APP_NETWORK_ID) {
-    case '56':
+  switch (window.REACT_APP_NETWORK_ID) {
+    case 56:
       return '0xB94858b0bB5437498F5453A16039337e5Fdc269C';
-    case '128':
+    case 128:
       return '0x2776CF9B6E2Fa7B33A37139C3CB1ee362Ff0356e';
-    case '43114':
+    case 43114:
       return '0x6FfF95AC47b586bDDEea244b3c2fe9c4B07b9F76';
-    case '137':
+    case 137:
       return '0xC3821F0b56FA4F4794d5d760f94B812DE261361B';
-    case '250':
+    case 250:
       return '0xC9F6b1B53E056fd04bE5a197ce4B2423d456B982';
     default:
       return '';
@@ -234,8 +228,8 @@ export const getNetworkMulticall = () => {
 };
 
 export const getNetworkConnectors = t => {
-  switch (process.env.REACT_APP_NETWORK_ID) {
-    case '56':
+  switch (window.REACT_APP_NETWORK_ID) {
+    case 56:
       return {
         network: 'binance',
         cacheProvider: true,
@@ -297,7 +291,7 @@ export const getNetworkConnectors = t => {
           },
         },
       };
-    case '128':
+    case 128:
       return {
         network: 'heco',
         cacheProvider: true,
@@ -328,7 +322,7 @@ export const getNetworkConnectors = t => {
           },
         },
       };
-    case '43114':
+    case 43114:
       return {
         network: 'avalanche',
         cacheProvider: true,
@@ -350,7 +344,7 @@ export const getNetworkConnectors = t => {
           // },
         },
       };
-    case '137':
+    case 137:
       return {
         network: 'polygon',
         cacheProvider: true,
@@ -373,7 +367,7 @@ export const getNetworkConnectors = t => {
           },
         },
       };
-    case '250':
+    case 250:
       return {
         network: 'fantom',
         cacheProvider: true,
@@ -400,13 +394,13 @@ export const getNetworkConnectors = t => {
   }
 };
 
-export const getNetworkTxUrl = networkTxUrls[process.env.REACT_APP_NETWORK_ID];
-export const getNetworkFriendlyName = (networkId = process.env.REACT_APP_NETWORK_ID) =>
+export const getNetworkTxUrl = networkTxUrls[window.REACT_APP_NETWORK_ID];
+export const getNetworkFriendlyName = (networkId = window.REACT_APP_NETWORK_ID) =>
   networkFriendlyName[networkId];
-export const getNetworkBuyUrl = (networkId = process.env.REACT_APP_NETWORK_ID) =>
+export const getNetworkBuyUrl = (networkId = window.REACT_APP_NETWORK_ID) =>
   networkBuyUrls[networkId];
-export const getNetworkAppUrl = (networkId = process.env.REACT_APP_NETWORK_ID) =>
-  networkAppUrls[networkId];
+export const getNetworkAppUrl = (networkId = window.REACT_APP_NETWORK_ID) =>
+  networks.find(n => n.id === networkId)?.url;
 
 export const launchpools = getNetworkLaunchpools();
 export const vaults = getNetworkVaults();
