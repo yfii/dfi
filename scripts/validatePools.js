@@ -19,7 +19,7 @@ const chainPools = {
   avax: avalanchePools,
   polygon: polygonPools,
   fantom: fantomPools,
-  harmony: harmonyPools,
+  one: harmonyPools,
 };
 
 const chainRpcs = {
@@ -28,7 +28,7 @@ const chainRpcs = {
   avax: process.env.AVAX_RPC || 'https://api.avax.network/ext/bc/C/rpc',
   polygon: process.env.POLYGON_RPC || 'https://rpc-mainnet.maticvigil.com',
   fantom: process.env.FANTOM_RPC || 'https://rpc.ftm.tools/',
-  harmony: process.env.HARMONY_RPC || 'https://api.s0.t.hmny.io/',
+  one: process.env.HARMONY_RPC || 'https://api.s0.t.hmny.io/',
 };
 
 const overrides = {
