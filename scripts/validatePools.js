@@ -10,6 +10,7 @@ import { hecoPools } from '../src/features/configure/vault/heco_pools.js';
 import { avalanchePools } from '../src/features/configure/vault/avalanche_pools.js';
 import { polygonPools } from '../src/features/configure/vault/polygon_pools.js';
 import { fantomPools } from '../src/features/configure/vault/fantom_pools.js';
+import { harmonyPools } from '../src/features/configure/vault/harmony_pools.js';
 import { vaultABI, strategyABI } from '../src/features/configure/abi.js';
 
 const chainPools = {
@@ -18,6 +19,7 @@ const chainPools = {
   avax: avalanchePools,
   polygon: polygonPools,
   fantom: fantomPools,
+  harmony: harmonyPools,
 };
 
 const chainRpcs = {
@@ -26,6 +28,7 @@ const chainRpcs = {
   avax: process.env.AVAX_RPC || 'https://api.avax.network/ext/bc/C/rpc',
   polygon: process.env.POLYGON_RPC || 'https://rpc-mainnet.maticvigil.com',
   fantom: process.env.FANTOM_RPC || 'https://rpc.ftm.tools/',
+  harmony: process.env.HARMONY_RPC || 'https://api.s0.t.hmny.io/',
 };
 
 const overrides = {

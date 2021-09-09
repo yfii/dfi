@@ -59,6 +59,17 @@ export const networkSettings = {
     rpcUrls: ['https://rpc.ftm.tools'],
     blockExplorerUrls: ['https://ftmscan.com/'],
   },
+  1666600000: {
+    chainId: `0x${parseInt(1666600000, 10).toString(16)}`,
+    chainName: 'Harmony One',
+    nativeCurrency: {
+      name: 'ONE',
+      symbol: 'ONE',
+      decimals: 18,
+    },
+    rpcUrls: ['https://api.s0.t.hmny.io/'],
+    blockExplorerUrls: ['https://explorer.harmony.one/'],
+  },
 };
 
 export const networkSetup = chainId => {

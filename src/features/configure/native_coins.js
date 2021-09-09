@@ -47,4 +47,12 @@ export const nativeCoins = [
     wrappedSymbol: 'WFTM',
     allowance: Infinity,
   },
+  {
+    chainId: 1666600000,
+    name: 'Harmony',
+    symbol: 'ONE',
+    decimals: 18,
+    wrappedSymbol: 'WONE',
+    allowance: Infinity,
+  },
 ];

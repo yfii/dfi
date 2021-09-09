@@ -33,6 +33,12 @@ export const networks = [
     id: 250,
     url: '/#/fantom',
   },
+  {
+    name: 'HARMONY',
+    asset: 'HARMONY',
+    id: 1666600000,
+    url: '/#/harmony',
+  },
 ];
 
 const NetworksProvider = ({ children }) => {
