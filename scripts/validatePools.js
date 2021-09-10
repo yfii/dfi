@@ -36,6 +36,7 @@ const overrides = {
   'blizzard-xblzd-bnb-old-eol': { keeper: undefined },
   'blizzard-xblzd-busd-old-eol': { keeper: undefined },
   'heco-bifi-maxi': { beefyFeeRecipient: undefined },
+  'sushi-one-usdc-one': { beefyFeeRecipient: '0xaDB9DDFA24E326dC9d337561f6c7ba2a6Ecec697' },
 };
 
 const validatePools = async () => {
