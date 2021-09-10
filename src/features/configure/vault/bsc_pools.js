@@ -2577,7 +2577,7 @@ export const bscPools = [
     assets: ['OOE', 'BNB'],
     callFee: 0.5,
     addLiquidityUrl:
-      'https://pools.openocean.finance/#/add/BNB/0x9029FdFAe9A03135846381c7cE16595C3554e10A',
+      'https://openocean.finance/pools/?t=1631247635777#/add/BNB/0x9029FdFAe9A03135846381c7cE16595C3554e10A',
     buyTokenUrl: 'https://openocean.finance/classic',
   },
   {
@@ -2602,7 +2602,7 @@ export const bscPools = [
     assets: ['OOE', 'BUSD'],
     callFee: 0.5,
     addLiquidityUrl:
-      'https://pools.openocean.finance/#/add/BNB/0x9029FdFAe9A03135846381c7cE16595C3554e10A',
+      'https://openocean.finance/pools/?t=1631247635777#/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0x9029FdFAe9A03135846381c7cE16595C3554e10A',
     buyTokenUrl: 'https://openocean.finance/classic',
   },
   {
