@@ -1,11 +1,10 @@
 /* eslint-disable import/first */
 import { networks } from 'components/NetworksProvider/NetworksProvider';
 
-const location = window.location.pathname + window.location.hash;
-const network = networks.find(n => location.startsWith(n.url));
+const network = networks.find(n => window.location.hash.startsWith('#' + n.hash));
 
 if (!network) {
-  window.location.assign(networks[0].url);
+  window.location.hash = networks[0].hash;
   window.location.reload();
 } else {
   window.REACT_APP_NETWORK_ID = network.id;

@@ -436,7 +436,12 @@ export const getNetworkFriendlyName = (networkId = window.REACT_APP_NETWORK_ID) 
 export const getNetworkBuyUrl = (networkId = window.REACT_APP_NETWORK_ID) =>
   networkBuyUrls[networkId];
 export const getNetworkAppUrl = (networkId = window.REACT_APP_NETWORK_ID) =>
-  networks.find(n => n.id === networkId)?.url;
+  window.location.protocol +
+  '//' +
+  window.location.host +
+  window.location.pathname +
+  '#' +
+  networks.find(n => n.id === networkId)?.hash;
 
 export const launchpools = getNetworkLaunchpools();
 export const vaults = getNetworkVaults();

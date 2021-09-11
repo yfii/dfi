@@ -26,7 +26,7 @@ const NetworksModal = () => {
     if (network.id === currentNetwork.id) {
       closeModal();
     } else {
-      window.location.assign(network.url);
+      window.location.hash = network.hash;
       window.location.reload();
     }
   };
