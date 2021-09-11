@@ -2632,7 +2632,7 @@ export const polygonPools = [
       'https://quickswap.exchange/#/swap?inputCurrency=0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270&outputCurrency=0x6bb45cEAC714c52342Ef73ec663479da35934bf7',
   },
   {
-    id: 'polypup-usdc-pup',
+    id: 'polypup-usdc-pup-eol',
     name: 'PUP-USDC QLP',
     token: 'PUP-USDC QLP',
     tokenDescription: 'Polypup',
@@ -2647,18 +2647,19 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'polypup-usdc-pup',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Polypup',
     assets: ['PUP', 'USDC'],
     callFee: 0.5,
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174/0xcFe2cF35D2bDDE84967e67d00aD74237e234CE59',
     buyTokenUrl:
       'https://quickswap.exchange/#/swap?inputCurrency=0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174&outputCurrency=0xcFe2cF35D2bDDE84967e67d00aD74237e234CE59',
   },
   {
-    id: 'polypup-wmatic-pup',
+    id: 'polypup-wmatic-pup-eol',
     name: 'PUP-MATIC QLP',
     token: 'PUP-MATIC QLP',
     tokenDescription: 'Polypup',
@@ -2673,11 +2674,12 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'polypup-wmatic-pup',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Polypup',
     assets: ['PUP', 'MATIC'],
     callFee: 0.5,
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270/0xcFe2cF35D2bDDE84967e67d00aD74237e234CE59',
     buyTokenUrl:
