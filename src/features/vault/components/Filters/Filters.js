@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useMemo } from 'react';
+import React, { memo, useCallback, useEffect, useMemo } from 'react';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import { makeStyles } from '@material-ui/core/styles';
@@ -60,6 +60,18 @@ const Filters = ({
     setAsset('All');
     setOrder('default');
   }, [toggleFilter, setPlatform, setVaultType, setAsset, setOrder]);
+
+  useEffect(() => {
+    if ((!asset || !allAssetOptions.find(option => option.value === asset)) && asset !== 'All') {
+      setAsset('All');
+    }
+  }, [asset, setAsset]);
+
+  useEffect(() => {
+    if ((!platform || !platforms.includes(platform)) && platform !== 'All') {
+      setPlatform('All');
+    }
+  }, [platform, setPlatform]);
 
   return (
     <Grid container spacing={2} className={classes.container}>

@@ -13,7 +13,7 @@ const Disclaimer = () => {
   const classes = useStyles();
 
   return (
-    <Grid container item className={classes.root} justify="center">
+    <Grid container item className={classes.root} justifyContent="center">
       <Typography className={classes.disclaimer}>{t('Disclaimer')}</Typography>
     </Grid>
   );

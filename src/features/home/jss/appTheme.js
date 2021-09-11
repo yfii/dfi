@@ -1,7 +1,7 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createTheme } from '@material-ui/core/styles';
 
-const createTheme = isNightMode =>
-  createMuiTheme({
+const createThemeMode = isNightMode =>
+  createTheme({
     palette: {
       type: isNightMode ? 'dark' : 'light',
       background: {
@@ -51,4 +51,4 @@ const createTheme = isNightMode =>
     },
   });
 
-export default createTheme;
+export default createThemeMode;
