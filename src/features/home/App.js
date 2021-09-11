@@ -14,12 +14,12 @@ import appStyle from './jss/appStyle.js';
 import { createWeb3Modal } from '../web3';
 import { useConnectWallet, useDisconnectWallet } from './redux/hooks';
 import useNightMode from './hooks/useNightMode';
-import createTheme from './jss/appTheme';
+import createThemeMode from './jss/appTheme';
 import { useLocation } from 'react-router';
 
 const themes = { light: null, dark: null };
 const getTheme = mode => {
-  return (themes[mode] = themes[mode] || createTheme(mode === 'dark'));
+  return (themes[mode] = themes[mode] || createThemeMode(mode === 'dark'));
 };
 
 const ScrollToTop = memo(function () {
