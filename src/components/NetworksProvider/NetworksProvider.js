@@ -7,37 +7,37 @@ export const networks = [
     name: 'BSC',
     asset: 'BSC',
     id: 56,
-    url: '/#/bsc',
+    hash: '/bsc',
   },
   {
     name: 'HECO',
     asset: 'HECO',
     id: 128,
-    url: '/#/heco',
+    hash: '/heco',
   },
   {
     name: 'AVALANCHE',
     asset: 'AVAX',
     id: 43114,
-    url: '/#/avax',
+    hash: '/avax',
   },
   {
     name: 'POLYGON',
     asset: 'POLYGON',
     id: 137,
-    url: '/#/polygon',
+    hash: '/polygon',
   },
   {
     name: 'FANTOM',
     asset: 'FANTOM',
     id: 250,
-    url: '/#/fantom',
+    hash: '/fantom',
   },
   {
     name: 'HARMONY',
     asset: 'HARMONY',
     id: 1666600000,
-    url: '/#/harmony',
+    hash: '/harmony',
   },
 ];
 
