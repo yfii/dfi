@@ -2442,7 +2442,7 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'stablequant-quant-busd',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Other',
     assets: ['QUANT', 'BUSD'],
