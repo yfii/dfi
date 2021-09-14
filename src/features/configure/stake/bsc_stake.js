@@ -46,6 +46,44 @@ export const bscStakePools = [
     ],
   },
   {
+    id: 'moo_bifi-bnb-long',
+    name: 'LongDrink',
+    logo: 'degens/BIFI-BNB-banana.svg',
+    token: 'mooApeBIFI-BNB',
+    tokenDecimals: 18,
+    tokenAddress: '0x6ebA4A31c46937B42E66f44a0A1165a08495a38F',
+    tokenOracle: 'lps',
+    tokenOracleId: 'banana-bifi-bnb',
+    earnedToken: 'LONG',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x5317fa16f8603be9c461def5d5a1bf28dfe42d55',
+    earnContractAddress: '0xB0E65F0B6b202a0bb46B9C929B33A23648dDAf10',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'LONG',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1632322692,
+    partners: [
+      {
+        logo: 'stake/longdrink/logo.png',
+        background: 'stake/longdrink/bg.png',
+        text:
+          'Longdrink Finance is an index protocol for cryptocurrencies. Currently, it offers two index tokens, each containing multiple underlying assets. $BEV (Binance Ecosystem Value) captures the growth of the BSC Ecosystem by uniting ten of the biggest BSC-native projects in one token. $L1Q (Layer 1 Quality Index) gives investors exposure to the leading blockchain architecture, by combining eight of the major layer-1 solutions in one token. Thereby, Longdrink Finance offers investors easy diversification to a wide range of assets, outperforming individual project picks in the long-term (similar to how passive index funds outperform individual stock picks in TradFi). \n' +
+          '\n' +
+          'Longdrink Finance is community-governed, designed as a DAO of talented and unique individuals - of thinkers and tinkerers with a mission. \n' +
+          '\n' +
+          'Through our community governance token $LONG, holders have exclusive voting rights and say in future protocol innovation.\n',
+        website: 'https://longdrink.finance/',
+        social: {
+          telegram: 'https://t.me/longdrinkfinance',
+          twitter: 'https://twitter.com/LongdrinkDefi',
+        },
+      },
+    ],
+  },
+  {
     id: 'moo_belt_4belt-honeymoon',
     name: 'HoneyFarm',
     logo: 'uncategorized/BELT-VENUSBLP.png',
