@@ -17,7 +17,7 @@ export const networks = [
   },
   {
     name: 'AVALANCHE',
-    asset: 'AVAX',
+    asset: 'AVALANCHE',
     id: 43114,
     hash: '/avax',
   },
