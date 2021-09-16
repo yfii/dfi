@@ -39,6 +39,12 @@ export const networks = [
     id: 1666600000,
     hash: '/harmony',
   },
+  {
+    name: 'ARBITRUM',
+    asset: 'ARBITRUM',
+    id: 42161,
+    hash: '/arbitrum',
+  },
 ];
 
 const NetworksProvider = ({ children }) => {

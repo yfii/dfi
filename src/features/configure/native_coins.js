@@ -55,4 +55,12 @@ export const nativeCoins = [
     wrappedSymbol: 'WONE',
     allowance: Infinity,
   },
+  {
+    chainId: 42161,
+    name: 'Arbitrum',
+    symbol: 'ETH',
+    decimals: 18,
+    wrappedSymbol: 'WETH',
+    allowance: Infinity,
+  },
 ];
