@@ -26,7 +26,7 @@ const chainRpcs = {
   bsc: process.env.BSC_RPC || 'https://bsc-dataseed.binance.org/',
   heco: process.env.HECO_RPC || 'https://http-mainnet.hecochain.com',
   avax: process.env.AVAX_RPC || 'https://api.avax.network/ext/bc/C/rpc',
-  polygon: process.env.POLYGON_RPC || 'https://rpc-mainnet.maticvigil.com',
+  polygon: process.env.POLYGON_RPC || 'https://polygon-rpc.com',
   fantom: process.env.FANTOM_RPC || 'https://rpc.ftm.tools/',
   one: process.env.HARMONY_RPC || 'https://api.s0.t.hmny.io/',
 };
@@ -36,7 +36,6 @@ const overrides = {
   'blizzard-xblzd-bnb-old-eol': { keeper: undefined },
   'blizzard-xblzd-busd-old-eol': { keeper: undefined },
   'heco-bifi-maxi': { beefyFeeRecipient: undefined },
-  'sushi-one-usdc-one': { beefyFeeRecipient: '0xaDB9DDFA24E326dC9d337561f6c7ba2a6Ecec697' },
 };
 
 const validatePools = async () => {
