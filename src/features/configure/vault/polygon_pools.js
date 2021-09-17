@@ -27,8 +27,8 @@ export const polygonPools = [
   },
   {
     id: 'quick-usdc-rbnb',
-    name: 'USDC-BNB LP',
-    token: 'USDC-BNB LP',
+    name: 'USDC-rBNB LP',
+    token: 'USDC-rBNB LP',
     tokenDescription: 'QuickSwap',
     tokenAddress: '0x40A5Df3E37152d4DaF279e0450289Af76472b02e',
     tokenDecimals: 18,
