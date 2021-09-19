@@ -152,6 +152,7 @@ export const getNetworkBurnTokens = () => {
         [bscAddressBook.tokens.BABYCAKE.symbol]: bscAddressBook.tokens.BABYCAKE,
         [bscAddressBook.tokens.PERA.symbol]: bscAddressBook.tokens.PERA,
         [bscAddressBook.tokens.GUARD.symbol]: bscAddressBook.tokens.GUARD,
+        [bscAddressBook.tokens.PEAR.symbol]: bscAddressBook.tokens.PEAR,
       };
     case 128:
       return {};
@@ -219,7 +220,19 @@ export const getNetworkStables = () => {
     case 128:
       return ['USDT', 'HUSD'];
     case 43114:
-      return ['USDT', 'DAI', 'BUSD', 'zDAI', 'zUSDT', 'USDTe', 'BUSDe', 'DAIe', 'USDCe', 'MAI', 'FRAX'];
+      return [
+        'USDT',
+        'DAI',
+        'BUSD',
+        'zDAI',
+        'zUSDT',
+        'USDTe',
+        'BUSDe',
+        'DAIe',
+        'USDCe',
+        'MAI',
+        'FRAX',
+      ];
     case 137:
       return ['USDC', 'USDT', 'maUSDC', 'DAI', 'IRON', 'MAI', 'FRAX', 'rUSD', 'UST', 'WUSD'];
     case 250:
