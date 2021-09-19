@@ -2906,7 +2906,7 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'ellipsis-pbtc',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Ellipsis',
     assets: ['pBTC', 'renBTC', 'BTCB'],
