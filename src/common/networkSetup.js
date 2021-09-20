@@ -71,6 +71,17 @@ export const networkSettings = {
     rpcUrls: ['https://api.s0.t.hmny.io/'],
     blockExplorerUrls: ['https://explorer.harmony.one/'],
   },
+  42161: {
+    chainId: `0x${parseInt(42161, 10).toString(16)}`,
+    chainName: 'Arbitrum One',
+    nativeCurrency: {
+      name: 'ETH',
+      symbol: 'ETH',
+      decimals: 18,
+    },
+    rpcUrls: ['https://arb1.arbitrum.io/rpc'],
+    blockExplorerUrls: ['https://arbiscan.io/'],
+  },
 };
 
 export const networkSetup = chainId => {

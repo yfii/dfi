@@ -29,7 +29,12 @@ import {
   harmonyStakePools,
   harmonyAddressBook,
   harmonyZaps,
+  arbitrumPools,
+  arbitrumStakePools,
+  arbitrumAddressBook,
+  arbitrumZaps,
 } from '../configure';
+import { addressBook } from 'blockchain-addressbook';
 
 export const appNetworkId = window.REACT_APP_NETWORK_ID;
 
@@ -40,6 +45,7 @@ const networkTxUrls = {
   137: hash => `https://polygonscan.com/tx/${hash}`,
   250: hash => `https://ftmscan.com/tx/${hash}`,
   1666600000: hash => `https://explorer.harmony.one/tx/${hash}`,
+  42161: hash => `https://arbiscan.io/tx/${hash}`,
 };
 
 const networkFriendlyName = {
@@ -49,6 +55,7 @@ const networkFriendlyName = {
   137: 'Polygon',
   250: 'Fantom',
   1666600000: 'Harmony',
+  42161: 'Arbitrum',
 };
 
 const networkBuyUrls = {
@@ -58,6 +65,7 @@ const networkBuyUrls = {
   250: 'https://spookyswap.finance/swap?inputCurrency=0x04068da6c83afcfa0e13ba15a6696662335d5b75&outputCurrency=0xd6070ae98b8069de6B494332d1A1a81B6179D960',
   43114: 'https://app.1inch.io/#/r/0xF4cb25a1FF50E319c267b3E51CBeC2699FB2A43B',
   1666600000: '',
+  42161: '',
 };
 
 export const getNetworkCoin = () => {
@@ -78,6 +86,8 @@ export const getNetworkPools = () => {
       return fantomPools;
     case 1666600000:
       return harmonyPools;
+    case 42161:
+      return arbitrumPools;
     default:
       return [];
   }
@@ -97,6 +107,8 @@ export const getNetworkVaults = (networkId = appNetworkId) => {
       return indexBy(fantomPools, 'id');
     case 1666600000:
       return indexBy(harmonyPools, 'id');
+    case 42161:
+      return indexBy(arbitrumPools, 'id');
     default:
       return {};
   }
@@ -116,6 +128,8 @@ export const getNetworkLaunchpools = (networkId = appNetworkId) => {
       return indexBy(fantomStakePools, 'id');
     case 1666600000:
       return indexBy(harmonyStakePools, 'id');
+    case 42161:
+      return indexBy(arbitrumStakePools, 'id');
     default:
       return {};
   }
@@ -136,6 +150,8 @@ export const getNetworkTokens = () => {
       return fantomAddressBook.tokens;
     case 1666600000:
       return harmonyAddressBook.tokens;
+    case 42161:
+      return arbitrumAddressBook.tokens;
     default:
       throw new Error(
         `Create address book for chainId(${chainId}) first. Check out https://github.com/beefyfinance/address-book`
@@ -171,6 +187,8 @@ export const getNetworkBurnTokens = () => {
       };
     case 1666600000:
       return {};
+    case 42161:
+      return {};
     default:
       throw new Error(`Create address book for this chainId first.`);
   }
@@ -190,6 +208,8 @@ export const getNetworkZaps = () => {
       return fantomZaps;
     case 1666600000:
       return harmonyZaps;
+    case 42161:
+      return arbitrumZaps;
     default:
       return [];
   }
@@ -239,6 +259,8 @@ export const getNetworkStables = () => {
       return ['USDC', 'USDT', 'DAI', 'fUSDT'];
     case 1666600000:
       return ['BUSD', 'bscBUSD', 'USDC', 'USDT', 'UST', 'DAI', 'FRAX'];
+    case 42161:
+      return ['USDC', 'USDT', 'MIM'];
     default:
       return [];
   }
@@ -257,7 +279,9 @@ export const getNetworkMulticall = () => {
     case 250:
       return '0xC9F6b1B53E056fd04bE5a197ce4B2423d456B982';
     case 1666600000:
-      return '0x09EF0e7b555599A9F810789FfF68Db8DBF4c51a0';
+      return '0xBa5041B1c06e8c9cFb5dDB4b82BdC52E41EA5FC5';
+    case 42161:
+      return '0x13aD51a6664973EbD0749a7c84939d973F247921';
     default:
       return '';
   }
@@ -428,6 +452,19 @@ export const getNetworkConnectors = t => {
     case 1666600000:
       return {
         network: 'harmony',
+        cacheProvider: true,
+        providerOptions: {
+          injected: {
+            display: {
+              name: 'Injected',
+              description: t('Home-BrowserWallet'),
+            },
+          },
+        },
+      };
+    case 42161:
+      return {
+        network: 'arbitrum',
         cacheProvider: true,
         providerOptions: {
           injected: {
