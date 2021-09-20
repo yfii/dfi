@@ -6248,7 +6248,7 @@ export const bscPools = [
       'https://dex.apeswap.finance/#/swap?outputCurrency=0xcc42724c6683b7e57334c4e856f4c9965ed682bd',
   },
   {
-    id: 'bunny-bunny-eol',
+    id: 'bunny-bunny-v2 -eol',
     logo: 'single-assets/BUNNY.png',
     name: 'BUNNY',
     token: 'BUNNY',
