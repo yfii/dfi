@@ -6248,7 +6248,7 @@ export const bscPools = [
       'https://dex.apeswap.finance/#/swap?outputCurrency=0xcc42724c6683b7e57334c4e856f4c9965ed682bd',
   },
   {
-    id: 'bunny-bunny',
+    id: 'bunny-bunny-eol',
     logo: 'single-assets/BUNNY.png',
     name: 'BUNNY',
     token: 'BUNNY',
@@ -6265,7 +6265,8 @@ export const bscPools = [
     oracleId: 'BUNNY',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Pancakebunny',
     assets: ['BUNNY'],
     callFee: 0.5,
