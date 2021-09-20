@@ -168,6 +168,7 @@ export const getNetworkBurnTokens = () => {
         [bscAddressBook.tokens.BABYCAKE.symbol]: bscAddressBook.tokens.BABYCAKE,
         [bscAddressBook.tokens.PERA.symbol]: bscAddressBook.tokens.PERA,
         [bscAddressBook.tokens.GUARD.symbol]: bscAddressBook.tokens.GUARD,
+        [bscAddressBook.tokens.PEAR.symbol]: bscAddressBook.tokens.PEAR,
       };
     case 128:
       return {};

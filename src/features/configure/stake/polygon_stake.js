@@ -35,6 +35,42 @@ export const polygonStakePools = [
     ],
   },
   {
+    id: 'moo_curve-poly-sandman',
+    name: 'Sandman',
+    logo: 'polygon/CURVE-3Pool.png',
+    token: 'mooCurveAm3CRV',
+    tokenDecimals: 18,
+    tokenAddress: '0xAA7C2879DaF8034722A0977f13c343aF0883E92e',
+    tokenOracle: 'lps',
+    tokenOracleId: 'curve-am3crv',
+    earnedToken: 'DELIRIUM',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x238779aFfE6FFD475cB7e84582FcA7789F310Dc8',
+    earnContractAddress: '0x7ee6B34B51eAEbc887A16616AfE0855795B6ac74',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'DELIRIUM',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1633058948,
+    partners: [
+      {
+        logo: 'stake/sandman/logo.png',
+        background: 'stake/sandman/bg.png',
+        text: `The Greatest Multilayered Hybrid Yield Farming, NFTs & Vaults.
+The First Stealth Presale ever, sold out in under 30 secs. On its path to Community-Owned AMM, Gambling, and a premier DAO.
+We have several uses for your NFTs: NFTs Battles, NFTs farm boosting, NFT's Game Cards over layer.
+Sandman Finance was the first project to present the swap/utility token. Where you are rewarded just by holding the presale token. Never seen before!`,
+        website: 'https://sandman.finance/',
+        social: {
+          telegram: 'https://t.me/SandMan_Finance',
+          twitter: 'https://twitter.com/sandman_finance',
+        },
+      },
+    ],
+  },
+  {
     id: 'moo_bifi-yieldwatch',
     name: 'Yieldwatch',
     logo: 'single-assets/BIFI.png',
