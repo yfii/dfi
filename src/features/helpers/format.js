@@ -2,7 +2,7 @@ import BigNumber from 'bignumber.js';
 
 const units = ['', 'k', 'M', 'B', 'T', 'Q', 'Q', 'S', 'S'];
 
-export const formatApy = apy => {
+export const formatApy = (apy, dp = 2) => {
   if (!apy) return `???`;
 
   apy *= 100;
@@ -11,7 +11,7 @@ export const formatApy = apy => {
   if (order >= units.length - 1) return `🔥`;
 
   const num = apy / 1000 ** order;
-  return `${num.toFixed(2)}${units[order]}%`;
+  return `${num.toFixed(dp)}${units[order]}%`;
 };
 
 export const formatPercent = (per, dp = 2) => {
