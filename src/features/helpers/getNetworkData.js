@@ -1,7 +1,6 @@
 import { connectors } from 'web3modal';
 import { indexBy } from './utils';
 import WalletConnectProvider from '@walletconnect/web3-provider';
-import { networks } from 'components/NetworksProvider/NetworksProvider';
 
 import {
   avalanchePools,
@@ -35,6 +34,7 @@ import {
   arbitrumZaps,
 } from '../configure';
 import { addressBook } from 'blockchain-addressbook';
+import { allNetworks } from '../../network';
 
 export const appNetworkId = window.REACT_APP_NETWORK_ID;
 
@@ -491,7 +491,7 @@ export const getNetworkAppUrl = (networkId = window.REACT_APP_NETWORK_ID) =>
   window.location.host +
   window.location.pathname +
   '#' +
-  networks.find(n => n.id === networkId)?.hash;
+  allNetworks.find(n => n.id === networkId)?.hash;
 
 export const launchpools = getNetworkLaunchpools();
 export const vaults = getNetworkVaults();

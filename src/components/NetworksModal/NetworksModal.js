@@ -1,81 +1,74 @@
-import React, { useEffect } from 'react';
-import Modal from 'react-modal';
+import React, { memo, useCallback } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import IconButton from '@material-ui/core/IconButton';
-import Close from '@material-ui/icons/Close';
-import { useNetworks } from 'components/NetworksProvider/NetworksProvider';
+import { Dialog, IconButton, Modal, styled, withStyles } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
-import { useTheme } from '@material-ui/core';
+import { Close } from '@material-ui/icons';
 import { getSingleAssetSrc } from '../../features/helpers/getSingleAssetSrc';
+import { allNetworks } from '../../network';
 
 import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-const NetworksModal = () => {
+const StyledDialog = withStyles(theme => ({
+  paper: {
+    margin: '16px',
+    backgroundColor: theme.palette.background.primary,
+  },
+  paperScrollPaper: {
+    maxHeight: 'calc(100% - 32px)',
+  },
+}))(Dialog);
+
+const NetworksModal = memo(function NetworksModal({ isOpen, handleClose, currentNetwork }) {
   const classes = useStyles();
-  const { isModalOpen, closeModal, networks, currentNetwork } = useNetworks();
   const { t } = useTranslation();
-  const theme = useTheme();
 
-  useEffect(() => {
-    Modal.setAppElement('#root');
-  }, []);
-
-  const handleNetworkClick = network => {
-    if (network.id === currentNetwork.id) {
-      closeModal();
-    } else {
-      window.location.hash = network.hash;
-      window.location.reload();
-    }
-  };
+  const handleNetworkClick = useCallback(
+    network => {
+      if (network.id === currentNetwork.id) {
+        handleClose();
+      } else {
+        window.location.hash = network.hash;
+        window.location.reload();
+      }
+    },
+    [currentNetwork, handleClose]
+  );
 
   return (
-    <Modal
-      isOpen={isModalOpen}
-      onRequestClose={closeModal}
-      style={{
-        content: {
-          backgroundColor: theme.palette.background.primary,
-          top: '50%',
-          left: '50%',
-          right: 'auto',
-          bottom: 'auto',
-          marginRight: '-50%',
-          transform: 'translate(-50%, -50%)',
-          borderColor: theme.palette.background.border,
-        },
-        overlay: {
-          backgroundColor: theme.palette.background.overlay,
-        },
-      }}
-    >
-      <IconButton className={classes.close} onClick={closeModal}>
-        <Close />
-      </IconButton>
-      <h1 className={classes.title}>{t('Select-Network')}</h1>
-      <div className={classes.networks}>
-        {networks.map(network => (
-          <div
-            onClick={() => handleNetworkClick(network)}
-            className={classes.networkContainer}
-            key={network.id}
-          >
-            <img
-              className={classes.logo}
-              src={getSingleAssetSrc(network.asset)}
-              alt={`${currentNetwork.asset} logo`}
-            />
-            <div className={classes.tag}>
-              {network.id === currentNetwork.id && <div className={classes.connected}></div>}
-              <p className={classes.networkName}>{network.name}</p>
-            </div>
+    <StyledDialog open={isOpen} onClose={handleClose} fullWidth={true} maxWidth="lg">
+      <div className={classes.modalInner}>
+        <IconButton className={classes.close} onClick={handleClose}>
+          <Close />
+        </IconButton>
+        <h1 className={classes.title}>{t('Select-Network')}</h1>
+        <div className={classes.networks}>
+          <div className={classes.networksInner}>
+            {allNetworks.map(network => (
+              <div
+                onClick={() => handleNetworkClick(network)}
+                className={classes.network}
+                key={network.id}
+              >
+                <img
+                  className={classes.logo}
+                  src={getSingleAssetSrc(network.asset)}
+                  alt={`${currentNetwork.name}`}
+                  width={75}
+                  height={75}
+                />
+                <div className={classes.tag}>
+                  {network.id === currentNetwork.id && <div className={classes.connected} />}
+                  <p className={classes.networkName}>{network.name}</p>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
-    </Modal>
+    </StyledDialog>
   );
-};
+});
 
 export default NetworksModal;
