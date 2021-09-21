@@ -6,29 +6,46 @@ const styles = theme => ({
     right: '8px',
     top: '8px',
   },
+  modalInner: {
+    '@media (min-width:464px)': {
+      padding: '16px',
+    },
+  },
   title: {
+    padding: '16px',
     fontSize: '24px',
+    margin: '0',
     letterSpacing: '0',
-    lineHeight: '24px',
+    lineHeight: '1',
     fontWeight: '550',
     color: theme.palette.text.primary,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    '@media (min-width:464px)': {},
     [theme.breakpoints.up('md')]: {
       fontSize: '32px',
-      lineHeight: '32px',
     },
   },
   networks: {
+    overflow: 'hidden',
+    padding: '16px 0',
+  },
+  networksInner: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     flexWrap: 'wrap',
-    height: '100%',
+    marginTop: '-32px',
+    [theme.breakpoints.up('md')]: {
+      marginTop: '-32px',
+    },
   },
-  networkContainer: {
-    margin: '16px',
+  network: {
+    padding: '32px 16px 0 16px',
+    flexBasis: '130px',
+    flexGrow: '0',
+    flexShrink: '0',
     textAlign: 'center',
     transition: 'all 300ms ease 0s',
     '&:hover': {
@@ -36,13 +53,19 @@ const styles = theme => ({
       transform: `scale(1.1)`,
     },
     [theme.breakpoints.up('md')]: {
-      margin: '32px',
+      padding: '32px 32px 0 32px',
+      flexBasis: '164px',
+    },
+    [theme.breakpoints.up('lg')]: {
+      flexGrow: '1',
     },
   },
   logo: {
-    height: '75px',
+    display: 'block',
+    margin: '0 auto',
+    width: '75px',
     [theme.breakpoints.up('md')]: {
-      height: '100px',
+      width: '100px',
     },
   },
   connected: {
