@@ -39,6 +39,8 @@ const overrides = {
   'blizzard-xblzd-bnb-old-eol': { keeper: undefined },
   'blizzard-xblzd-busd-old-eol': { keeper: undefined },
   'heco-bifi-maxi': { beefyFeeRecipient: undefined },
+  // TODO kexley remove after change
+  'joe-mai-usdc.e': { beefyFeeRecipient: '0x85517F37d1e2ab145094A74C4E1DfE87E4D3f631' },
 };
 
 const validatePools = async () => {
