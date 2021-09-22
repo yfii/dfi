@@ -20,7 +20,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Beefy.Finance',
     assets: ['BIFI'],
-    callFee: 0.05,
     withdrawalFee: '0.05%',
     buyTokenUrl:
       'https://app.pangolin.exchange/#/swap?inputCurrency=0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7&outputCurrency=0xd6070ae98b8069de6B494332d1A1a81B6179D960',
@@ -95,7 +94,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['USDCe', 'USDTe'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0xa7d7079b0fead91f3e65f86e8915cb59c1a4c664/0xc7198437980c041c805a1edcba50c1ce5db95118',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -120,7 +118,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['USDTe', 'DAIe'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0xc7198437980c041c805a1edcba50c1ce5db95118/0xd586e7f844cea2f87f50152665bcbc2c279d8d70',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -145,7 +142,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['USDTe', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/AVAX/0xc7198437980c041c805a1edcba50c1ce5db95118',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -170,7 +166,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['LINKe', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0x5947bb275c521040051d82396192181b413227a3/AVAX',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -195,7 +190,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['SPELL', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7/0xCE1bFFBD5374Dac86a2893119683F4911a2F7814',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -220,7 +214,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['FRAX', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7/0xDC42728B0eA910349ed3c6e1c9Dc06b5FB591f98',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -245,7 +238,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['TIME', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7/0xb54f16fB19478766A268F172C9480f8da1a7c9C3',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -271,7 +263,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['PNG'],
-    callFee: 0.25,
     withdrawalFee: '0%',
     buyTokenUrl:
       'https://app.pangolin.exchange/#/swap?inputCurrency=0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7&outputCurrency=0x60781C2586D68229fde47564546784ab3fACA982',
@@ -296,7 +287,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['MAI', 'USDCe'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0x3b55e45fd6bd7d4724f5c47e0d1bcaedd059263e/0xa7d7079b0fead91f3e65f86e8915cb59c1a4c664',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -321,7 +311,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['JOE', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/AVAX/0x6e84a6216eA6dACC71eE8E6b0a5B7322EEbC0fDd',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -346,7 +335,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['JOE', 'USDTe'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/AVAX/0x6e84a6216eA6dACC71eE8E6b0a5B7322EEbC0fDd',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -372,7 +360,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['JOE'],
-    callFee: 0.25,
     withdrawalFee: '0%',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
   },
@@ -396,7 +383,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['MIM', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/AVAX/0x130966628846BFd36ff31a822705796e8cb8C18D',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -421,7 +407,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['aQI', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/AVAX/0x8729438EB15e2C8B576fCc6AeCdA6A148776C0F5',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -446,7 +431,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['SYN', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/AVAX/0x1f1E7c893855525b303f99bDF5c3c05Be09ca251',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -471,7 +455,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['WETHe', 'USDTe'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0xc7198437980c041c805A1EDcbA50c1Ce5db95118/0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -496,7 +479,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['WBTCe', 'USDTe'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0xc7198437980c041c805A1EDcbA50c1Ce5db95118/0x50b7545627a5162F82A992c33b87aDc75187B218',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -521,7 +503,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['WBTCe', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/AVAX/0x50b7545627a5162F82A992c33b87aDc75187B218',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -546,7 +527,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['WETHe', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/AVAX/0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -571,7 +551,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['USDCe', 'DAIe'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0xd586E7F844cEa2F87f50152665BCbc2C279D8d70/0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -596,7 +575,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['USDCe', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/AVAX/0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -621,7 +599,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['DAIe', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/AVAX/0xd586e7f844cea2f87f50152665bcbc2c279d8d70',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -646,7 +623,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['USDCe', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664',
     buyTokenUrl:
@@ -672,7 +648,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'OliveSwap',
     assets: ['DAIe', 'USDTe'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://swap.olive.cash/#/add/0xd586E7F844cEa2F87f50152665BCbc2C279D8d70/0xc7198437980c041c805A1EDcbA50c1Ce5db95118',
   },
@@ -696,7 +671,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'OliveSwap',
     assets: ['BUSDe', 'USDTe'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://swap.olive.cash/#/add/0x19860CCB0A68fd4213aB9D8266F7bBf05A8dDe98/0xc7198437980c041c805A1EDcbA50c1Ce5db95118',
   },
@@ -720,7 +694,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['aQI', 'PNG'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/0x60781C2586D68229fde47564546784ab3fACA982/0x8729438EB15e2C8B576fCc6AeCdA6A148776C0F5',
     buyTokenUrl:
@@ -746,7 +719,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['aQI', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0x8729438EB15e2C8B576fCc6AeCdA6A148776C0F5',
     buyTokenUrl:
@@ -772,7 +744,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['UNIe', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0x8eBAf22B6F053dFFeaf46f4Dd9eFA95D89ba8580',
     buyTokenUrl:
@@ -798,7 +769,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['YFIe', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0x9eAaC1B23d935365bD7b542Fe22cEEe2922f52dc',
     buyTokenUrl:
@@ -824,7 +794,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['AAVEe', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0x63a72806098Bd3D9520cC43356dD78afe5D386D9',
     buyTokenUrl:
@@ -850,7 +819,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['SUSHIe', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0x37B608519F91f70F2EeB0e5Ed9AF4061722e4F76',
     buyTokenUrl:
@@ -876,7 +844,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['XAVA', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0x5947BB275c521040051D82396192181b413227A3',
     buyTokenUrl:
@@ -902,7 +869,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['USDTe', 'PNG'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/0x60781c2586d68229fde47564546784ab3faca982/0xc7198437980c041c805a1edcba50c1ce5db95118',
     buyTokenUrl:
@@ -928,7 +894,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['WETHe', 'PNG'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0xc7198437980c041c805A1EDcbA50c1Ce5db95118',
     buyTokenUrl:
@@ -954,7 +919,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['WBTCe', 'PNG'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0x50b7545627a5162F82A992c33b87aDc75187B218',
     buyTokenUrl:
@@ -980,7 +944,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['DAIe', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0xd586E7F844cEa2F87f50152665BCbc2C279D8d70',
     buyTokenUrl:
@@ -1006,7 +969,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['LINKe', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0x5947BB275c521040051D82396192181b413227A3',
     buyTokenUrl:
@@ -1032,7 +994,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['WETHe', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0xc7198437980c041c805A1EDcbA50c1Ce5db95118',
     buyTokenUrl:
@@ -1058,7 +1019,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['USDTe', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0xc7198437980c041c805A1EDcbA50c1Ce5db95118',
     buyTokenUrl:
@@ -1084,7 +1044,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['WBTCe', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0x50b7545627a5162F82A992c33b87aDc75187B218',
     buyTokenUrl:
@@ -1110,7 +1069,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['BIFI', 'PNG'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/0x60781c2586d68229fde47564546784ab3faca982/0xd6070ae98b8069de6B494332d1A1a81B6179D960',
     buyTokenUrl:
@@ -1136,7 +1094,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['BIFI', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7/0xd6070ae98b8069de6B494332d1A1a81B6179D960',
     buyTokenUrl:
@@ -1163,7 +1120,6 @@ export const avalanchePools = [
     retireReason: 'rewards',
     platform: 'Pangolin',
     assets: ['BNB', 'PNG'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/0x60781c2586d68229fde47564546784ab3faca982/0x264c1383EA520f73dd837F915ef3a732e204a493',
     buyTokenUrl:
@@ -1189,7 +1145,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['BNB', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7/0x264c1383EA520f73dd837F915ef3a732e204a493',
     buyTokenUrl:
@@ -1216,7 +1171,6 @@ export const avalanchePools = [
     retireReason: 'rewards',
     platform: 'Pangolin',
     assets: ['WBTC', 'PNG'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/0x60781c2586d68229fde47564546784ab3faca982/0x408D4cD0ADb7ceBd1F1A1C33A0Ba2098E1295bAB',
     buyTokenUrl:
@@ -1243,7 +1197,6 @@ export const avalanchePools = [
     retireReason: 'rewards',
     platform: 'Pangolin',
     assets: ['DAI', 'PNG'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/0x60781c2586d68229fde47564546784ab3faca982/0xbA7dEebBFC5fA1100Fb055a87773e1E99Cd3507a',
     buyTokenUrl:
@@ -1271,7 +1224,6 @@ export const avalanchePools = [
     retireReason: 'rewards',
     platform: 'Gondola',
     assets: ['zUSDT', 'USDT'],
-    callFee: 0.5,
     addLiquidityUrl: 'https://app.gondola.finance/#/deposit/usdt',
     buyTokenUrl: 'https://app.gondola.finance/#/swap/usdt',
   },
@@ -1297,7 +1249,6 @@ export const avalanchePools = [
     retireReason: 'rewards',
     platform: 'Lydia',
     assets: ['LYD', 'USDT'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://www.lydia.finance/#/add/0x4c9b4e1ac6f24cde3660d5e4ef1ebf77c710c084/0xde3a24028580884448a5397872046a019649b084',
     buyTokenUrl:
@@ -1324,7 +1275,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Lydia',
     assets: ['LYD', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://www.lydia.finance/#/add/0x4c9b4e1ac6f24cde3660d5e4ef1ebf77c710c084/0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7',
     buyTokenUrl:
@@ -1351,7 +1301,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'OliveSwap',
     assets: ['OLIVE', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://swap.olive.cash/#/add/AVAX/0x617724974218A18769020A70162165A539c07E8a',
     buyTokenUrl:
@@ -1378,7 +1327,6 @@ export const avalanchePools = [
     status: 'eol',
     platform: 'OliveSwap',
     assets: ['OLIVE', 'USDT'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://swap.olive.cash/#/add/0xde3A24028580884448a5397872046a019649b084/0x617724974218A18769020A70162165A539c07E8a',
     buyTokenUrl:
@@ -1407,7 +1355,6 @@ export const avalanchePools = [
     retireReason: 'rewards',
     platform: 'Snowball',
     assets: ['USDT', 'BUSD', 'DAI'],
-    callFee: 0.25,
     addLiquidityUrl: 'https://snowball.network/stablevault/',
   },
 
@@ -1433,7 +1380,6 @@ export const avalanchePools = [
     retireReason: 'rewards',
     platform: 'Complus',
     assets: ['USDT', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://avadex.complus.exchange/#/add/AVAX/0xde3A24028580884448a5397872046a019649b084',
     buyTokenUrl:
@@ -1461,7 +1407,6 @@ export const avalanchePools = [
     retireReason: 'rewards',
     platform: 'Complus',
     assets: ['ETH', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://avadex.complus.exchange/#/add/AVAX/0xf20d962a6c8f70c731bd838a3a388D7d48fA6e15',
     buyTokenUrl:
@@ -1488,7 +1433,6 @@ export const avalanchePools = [
     status: 'eol',
     platform: 'Complus',
     assets: ['PNG', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://avadex.complus.exchange/#/add/AVAX/0x60781C2586D68229fde47564546784ab3fACA982',
     buyTokenUrl:
@@ -1517,7 +1461,6 @@ export const avalanchePools = [
     retireReason: 'rewards',
     platform: 'Snowball',
     assets: ['SNOB', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0xC38f41A296A4493Ff429F1238e030924A1542e50',
     buyTokenUrl:
@@ -1545,7 +1488,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Complus',
     assets: ['COM', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://avadex.complus.exchange/#/add/AVAX/0x3711c397B6c8F7173391361e27e67d72F252cAad',
     buyTokenUrl:
@@ -1574,7 +1516,6 @@ export const avalanchePools = [
     retireReason: 'rewards',
     platform: 'Complus',
     assets: ['DAI', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://avadex.complus.exchange/#/add/AVAX/0xbA7dEebBFC5fA1100Fb055a87773e1E99Cd3507a',
     buyTokenUrl:
@@ -1602,7 +1543,6 @@ export const avalanchePools = [
     retireReason: 'rewards',
     platform: 'Pangolin',
     assets: ['SUSHI', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0x39cf1BD5f15fb22eC3D9Ff86b0727aFc203427cc',
     buyTokenUrl:
@@ -1630,7 +1570,6 @@ export const avalanchePools = [
     retireReason: 'rewards',
     platform: 'Pangolin',
     assets: ['WBTC', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0x408D4cD0ADb7ceBd1F1A1C33A0Ba2098E1295bAB',
     buyTokenUrl:
@@ -1658,7 +1597,6 @@ export const avalanchePools = [
     retireReason: 'rewards',
     platform: 'Pangolin',
     assets: ['LINK', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0xB3fe5374F67D7a22886A0eE082b2E2f9d2651651',
     buyTokenUrl:
@@ -1686,7 +1624,6 @@ export const avalanchePools = [
     retireReason: 'rewards',
     platform: 'Pangolin',
     assets: ['UNI', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0xf39f9671906d8630812f9d9863bBEf5D523c84Ab',
     buyTokenUrl:
@@ -1714,7 +1651,6 @@ export const avalanchePools = [
     retireReason: 'rewards',
     platform: 'Pangolin',
     assets: ['USDT', 'PNG'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/0x60781C2586D68229fde47564546784ab3fACA982/0xde3A24028580884448a5397872046a019649b084',
     buyTokenUrl:
@@ -1742,7 +1678,6 @@ export const avalanchePools = [
     retireReason: 'rewards',
     platform: 'Pangolin',
     assets: ['ETH', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0xf20d962a6c8f70c731bd838a3a388D7d48fA6e15',
     buyTokenUrl:
@@ -1770,7 +1705,6 @@ export const avalanchePools = [
     retireReason: 'rewards',
     platform: 'Pangolin',
     assets: ['USDT', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0xde3A24028580884448a5397872046a019649b084',
     buyTokenUrl:
@@ -1797,7 +1731,6 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['PNG', 'AVAX'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0x60781C2586D68229fde47564546784ab3fACA982',
     buyTokenUrl:

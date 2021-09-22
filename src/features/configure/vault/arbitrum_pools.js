@@ -120,7 +120,6 @@ export const arbitrumPools = [
     status: 'active',
     platform: 'Curve',
     assets: ['USDT', 'WBTC', 'ETH'],
-    callFee: 0.5,
     withdrawalFee: '0.01%',
     addLiquidityUrl: 'https://arbitrum.curve.fi/tricrypto/deposit',
   },
@@ -145,7 +144,6 @@ export const arbitrumPools = [
     status: 'active',
     platform: 'Curve',
     assets: ['USDT', 'USDC'],
-    callFee: 0.5,
     withdrawalFee: '0.01%',
     addLiquidityUrl: 'https://arbitrum.curve.fi/2pool/deposit',
   },
@@ -170,7 +168,6 @@ export const arbitrumPools = [
     status: 'active',
     platform: 'Curve',
     assets: ['WBTC', 'renBTC'],
-    callFee: 0.5,
     withdrawalFee: '0.01%',
     addLiquidityUrl: 'https://arbitrum.curve.fi/ren/deposit',
   },
@@ -194,7 +191,6 @@ export const arbitrumPools = [
     status: 'active',
     platform: 'Sushi',
     assets: ['WBTC', 'ETH'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.sushi.com/add/0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f/0x82af49447d8a07e3bd95bd0d56f35241523fbab1',
     buyTokenUrl:
@@ -220,7 +216,6 @@ export const arbitrumPools = [
     status: 'active',
     platform: 'Sushi',
     assets: ['SUSHI', 'ETH'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.sushi.com/add/0xd4d42f0b6def4ce0383636770ef773390d85c61a/0x82af49447d8a07e3bd95bd0d56f35241523fbab1',
     buyTokenUrl:
@@ -246,7 +241,6 @@ export const arbitrumPools = [
     status: 'active',
     platform: 'Sushi',
     assets: ['USDT', 'ETH'],
-    callFee: 0.25,
     addLiquidityUrl:
       'https://app.sushi.com/add/0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9/0x82af49447d8a07e3bd95bd0d56f35241523fbab1',
     buyTokenUrl:
