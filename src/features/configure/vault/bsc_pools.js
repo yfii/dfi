@@ -2658,7 +2658,7 @@ export const bscPools = [
       'https://pancakeswap.finance/swap?outputCurrency=0x1446f3cedf4d86a9399e49f7937766e6de2a3aab',
   },
   {
-    id: 'kingdefi-krown',
+    id: 'kingdefi-krown-eol',
     logo: 'single-assets/KRW.png',
     name: 'KRW',
     token: 'KRW',
@@ -2674,8 +2674,9 @@ export const bscPools = [
     oracle: 'tokens',
     oracleId: 'KRW',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Other',
     assets: ['KRW'],
     buyTokenUrl:
