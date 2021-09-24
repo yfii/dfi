@@ -45,6 +45,41 @@ export const bscStakePools = [
       },
     ],
   },
+
+  {
+    id: 'moo_banana_bnb-pacoca',
+    name: 'Pacoca',
+    logo: 'degens/banana-bnb.svg',
+    token: 'mooApeBANANA-BNB',
+    tokenDecimals: 18,
+    tokenAddress: '0x15396D3BD9338A14AE90613Fc2b85c5F7b5621CF',
+    tokenOracle: 'lps',
+    tokenOracleId: 'banana-banana-bnb',
+    earnedToken: 'mooPacoca',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x21403739A1Dc0e3ceC70CBD5ceaE78fF25F102a4',
+    earnContractAddress: '0x3B6D305FAe833A64E56B1A4067A959D285B4F238',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'PACOCA',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1633482358,
+    partners: [
+      {
+        logo: 'stake/pacoca/logo.png',
+        background: 'stake/pacoca/bg.png',
+        text: 'Paçoca is a portfolio management that evolved into a full DeFi hub, where investors can track and invest in many projects from a single platform. The platform has 3 audits: CertiK, Inspex, and TechRate. Paçoca users can enjoy benefits such as high APY farms (CAKE APY of 150%+), daily buybacks of more than $16,000, and security upgrades such CertiK Skynet security intelligence engine.',
+        website: 'https://pacoca.io/',
+        social: {
+          telegram: 'https://t.me/pacoca_io',
+          twitter: 'https://twitter.com/pacoca_io',
+        },
+      },
+    ],
+  },
+
   {
     id: 'moo_beltbtc-annex',
     name: 'Annex',
