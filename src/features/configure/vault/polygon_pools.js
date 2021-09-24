@@ -81,8 +81,8 @@ export const polygonPools = [
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooPolywiseUSDC-WISE',
-    earnedTokenAddress: '0xa1E625D1e3b44468EB2a35d39d95f724c70ecd41', // todo
-    earnContractAddress: '0xa1E625D1e3b44468EB2a35d39d95f724c70ecd41', // todo
+    earnedTokenAddress: '0xBcBB981ED74F06259BF00AeAbE252707B2184Cb5',
+    earnContractAddress: '0xBcBB981ED74F06259BF00AeAbE252707B2184Cb5',
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
@@ -90,7 +90,7 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Other',
-    assets: ['WISE', 'USDC'],
+    assets: ['polyWISE', 'USDC'],
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x4c19DdeebAF84cA3A255730295AD9d824D4Ff51f/0x2791bca1f2de4661ed88a30c99a7a9449aa84174',
     buyTokenUrl:
@@ -101,12 +101,12 @@ export const polygonPools = [
     name: 'WISE-MATIC LP',
     token: 'WISE-MATIC LP',
     tokenDescription: 'QuickSwap (Polywise)',
-    tokenAddress: '0x944a8B12D898E878F92cfC18eee5E6f3f7e2E70d',
+    tokenAddress: '0x89d97d96fA57A83e285a5D1709Fc5345C8e92d94',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooPolywiseWMATIC-WISE',
-    earnedTokenAddress: '0xF274B7aDddC8DA615a8bACf6434816cD58B5b05D', // todo
-    earnContractAddress: '0xF274B7aDddC8DA615a8bACf6434816cD58B5b05D', // todo
+    earnedTokenAddress: '0xBcB7952d49dF18DbB9885809fb92e6ADae402a4B',
+    earnContractAddress: '0xBcB7952d49dF18DbB9885809fb92e6ADae402a4B',
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
@@ -114,7 +114,8 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Other',
-    assets: ['WISE', 'MATIC'],
+    assets: ['polyWISE', 'MATIC'],
+    withdrawalFee: '0.0%',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x4c19DdeebAF84cA3A255730295AD9d824D4Ff51f/0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
     buyTokenUrl:
