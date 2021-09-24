@@ -145,7 +145,7 @@ export const bscPools = [
     assets: ['PACOCA', 'BNB'],
     addLiquidityUrl:
       'https://app.apeswap.finance/add/0x55671114d774ee99d653d6c12460c780a67f1d18/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
-    buyTokenUrl: 'https://pacoca.io/exchange?address=0x982f264ce97365864181df65df4931c593a515ad',
+    buyTokenUrl: 'https://pacoca.io/exchange',
   },
   {
     id: 'pacoca-pacoca',
@@ -169,7 +169,7 @@ export const bscPools = [
     platform: 'Other',
     assets: ['PACOCA'],
     withdrawalFee: '0%',
-    buyTokenUrl: 'https://pacoca.io/exchange?address=0x982f264ce97365864181df65df4931c593a515ad',
+    buyTokenUrl: 'https://pacoca.io/exchange',
   },
   {
     id: 'annex-ann-busd',
