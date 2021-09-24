@@ -34,6 +34,41 @@ export const polygonStakePools = [
       },
     ],
   },
+
+  {
+    id: 'moo_banana_matic-polywise',
+    name: 'PolyWise',
+    assets: ['BANANA', 'MATIC'],
+    token: 'mooApeSwapBANANA-MATIC',
+    tokenDecimals: 18,
+    tokenAddress: '0xADA7F98fb2594E76914EB593e74B348A498Ea5Bd',
+    tokenOracle: 'lps',
+    tokenOracleId: 'ape-banana-matic',
+    earnedToken: 'WISE',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x4c19DdeebAF84cA3A255730295AD9d824D4Ff51f',
+    earnContractAddress: '0x4d20db515199B7C799Ca0da4e2Eaedc99F1367Fc',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'WISE',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1633493417,
+    partners: [
+      {
+        logo: 'stake/polywise/logo.png',
+        background: 'stake/polywise/bg.png',
+        text: `PolyWise is a high-yield on Polygon which is opening dividend pools soon. You will be able to stake $WISE and earn $USDC and $WMATIC. PolyWise is audited by Paladin, KYC'd by rugdoc and has a low risk rating on Rugdoc.`,
+        website: 'https://polywise.finance/',
+        social: {
+          telegram: 'https://t.me/polywisedefi',
+          twitter: 'https://twitter.com/polywisefinance',
+        },
+      },
+    ],
+  },
+
   {
     id: 'moo_curve-tricrypto-polyalpha',
     name: 'PolyAlpha',
