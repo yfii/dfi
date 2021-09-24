@@ -51,8 +51,8 @@ export const arbitrumPools = [
   },
   {
     id: 'sushi-arb-weth-link',
-    name: 'ETH-LINK LP',
-    token: 'ETH-LINK LP',
+    name: 'LINK-ETH LP',
+    token: 'LINK-ETH LP',
     tokenDescription: 'Sushi',
     tokenAddress: '0x7050A8908E2a60899D8788015148241f0993a3FD',
     tokenDecimals: 18,
@@ -68,7 +68,7 @@ export const arbitrumPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Sushi',
-    assets: ['ETH', 'LINK'],
+    assets: ['LINK', 'ETH'],
     addLiquidityUrl:
       'https://app.sushi.com/add/0xf97f4df75117a78c1A5a0DBb814Af92458539FB4/0x82af49447d8a07e3bd95bd0d56f35241523fbab1',
     buyTokenUrl:
@@ -76,8 +76,8 @@ export const arbitrumPools = [
   },
   {
     id: 'sushi-arb-eth-usdc',
-    name: 'ETH-USDC LP',
-    token: 'ETH-USDC LP',
+    name: 'USDC-ETH LP',
+    token: 'USDC-ETH LP',
     tokenDescription: 'Sushi',
     tokenAddress: '0x905dfCD5649217c42684f23958568e533C711Aa3',
     tokenDecimals: 18,
