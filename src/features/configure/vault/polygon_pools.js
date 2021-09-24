@@ -73,6 +73,54 @@ export const polygonPools = [
     addLiquidityUrl: 'https://polygon.curve.fi/aave/deposit',
   },
   {
+    id: 'polywise-usdc-wise',
+    name: 'WISE-USDC LP',
+    token: 'WISE-USDC LP',
+    tokenDescription: 'QuickSwap (Polywise)',
+    tokenAddress: '0x2F9209Ef6fA6C002bf6fC99124336e24F88B62D0',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooPolywiseUSDC-WISE',
+    earnedTokenAddress: '0xa1E625D1e3b44468EB2a35d39d95f724c70ecd41', // todo
+    earnContractAddress: '0xa1E625D1e3b44468EB2a35d39d95f724c70ecd41', // todo
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'polywise-usdc-wise',
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Other',
+    assets: ['WISE', 'USDC'],
+    addLiquidityUrl:
+      'https://quickswap.exchange/#/add/0x4c19DdeebAF84cA3A255730295AD9d824D4Ff51f/0x2791bca1f2de4661ed88a30c99a7a9449aa84174',
+    buyTokenUrl:
+      'https://quickswap.exchange/#/swap?inputCurrency=0x4c19DdeebAF84cA3A255730295AD9d824D4Ff51f&outputCurrency=0x2791bca1f2de4661ed88a30c99a7a9449aa84174',
+  },
+  {
+    id: 'polywise-wmatic-wise',
+    name: 'WISE-MATIC LP',
+    token: 'WISE-MATIC LP',
+    tokenDescription: 'QuickSwap (Polywise)',
+    tokenAddress: '0x944a8B12D898E878F92cfC18eee5E6f3f7e2E70d',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooPolywiseWMATIC-WISE',
+    earnedTokenAddress: '0xF274B7aDddC8DA615a8bACf6434816cD58B5b05D', // todo
+    earnContractAddress: '0xF274B7aDddC8DA615a8bACf6434816cD58B5b05D', // todo
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'polywise-wmatic-wise',
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Other',
+    assets: ['WISE', 'MATIC'],
+    addLiquidityUrl:
+      'https://quickswap.exchange/#/add/0x4c19DdeebAF84cA3A255730295AD9d824D4Ff51f/0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
+    buyTokenUrl:
+      'https://quickswap.exchange/#/swap?inputCurrency=0x4c19DdeebAF84cA3A255730295AD9d824D4Ff51f&outputCurrency=0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
+  },
+  {
     id: 'polyalpha-alpha-matic',
     name: 'ALPHA-MATIC LP',
     token: 'ALPHA-MATIC LP',
