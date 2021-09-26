@@ -16005,7 +16005,7 @@ export const bscPools = [
     oracleId: 'belt-4belt',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Belt',
     assets: ['USDT', 'BUSD', 'USDC', 'DAI', '4BELT'],
     withdrawalFee: '0%',
