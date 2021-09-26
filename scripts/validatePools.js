@@ -39,6 +39,7 @@ const overrides = {
   'blizzard-xblzd-bnb-old-eol': { keeper: undefined },
   'blizzard-xblzd-busd-old-eol': { keeper: undefined },
   'heco-bifi-maxi': { beefyFeeRecipient: undefined },
+  'beltv2-4belt': { vaultOwner: undefined }, // moonpot deployer
 };
 
 const validatePools = async () => {
