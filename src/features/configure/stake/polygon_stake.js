@@ -25,7 +25,7 @@ export const polygonStakePools = [
         logo: 'stake/beefy/beefyfinance.png',
         logoNight: 'stake/beefy/beefyfinance_night.png',
         background: 'stake/beefy/background.png',
-        text: "You probably already knew that Beefy is the most trusted multi-chain yield optimizer. But did you know that Beefy has its own token? $BIFI has a maximum supply of 80000 tokens and there is no way to mint more. Everyone who holds our own $BIFI token can not only do cool stuff like create and vote on proposals, they also get a share of all harvests done, every hour, every day on all our Polygon vaults. That's a lot of Matic that goes straight to our $BIFI holders. All you have to do is stake your $BIFI in this vault, it’s that simple, come back and harvest your Matic whenever you need it!",
+        text: "Beefy Finance is The Multi-Chain Yield Optimizer across many blockchains, enabling users to earn autocompounded yield on their crypto. Did you know also that you can own a piece of Beefy itself? Beefy runs on its governance token, BIFI. The token has a set supply of 80,000 across all chains; no more may be minted, ever! As a holder of BIFI you may create and vote on important DAO proposals, and you become dividend-eligible to earn a share of every compounding harvest on Beefy vaults, hour by hour. Here on Polygon, you just need to stake BIFI in this reward pool, or in the autocompounding BIFI Maxi vault on the main page. For this pool, MATIC dividends are gathered and sent proportionally to each staker. Stake here, return later to claim the MATIC you've earned.",
         website: 'https://app.beefy.finance',
         social: {
           telegram: 'http://t.me/beefyfinance',
