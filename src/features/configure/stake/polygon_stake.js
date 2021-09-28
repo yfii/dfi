@@ -36,6 +36,40 @@ export const polygonStakePools = [
   },
 
   {
+    id: 'moo_curve-ren-tetu',
+    name: 'Tetu',
+    logo: 'single-assets/renBTC.png',
+    token: 'mooCurveRen',
+    tokenDecimals: 18,
+    tokenAddress: '0x8c9d3bc4425773bd2f00c4a2ac105c5ad73c8141',
+    tokenOracle: 'lps',
+    tokenOracleId: 'curve-poly-ren',
+    earnedToken: 'TETU',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x255707b70bf90aa112006e1b07b9aea6de021424',
+    earnContractAddress: '0x73EA48822D7802590294a56d153b3458849A41C2',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'TETU',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1633848198,
+    partners: [
+      {
+        logo: 'stake/tetu/logo.png',
+        background: 'stake/tetu/bg.png',
+        text: `TETU is a DeFi application built on Polygon that implements automated yield farming strategies in order to provide investors with a safe and secure method of receiving a high yield on their investments. TETU tokens represent a share of the collective efforts and expertise of the team who are wholly focused on creating robust income streams for Tetu users. Audited by PeckShield, our tech speaks for itself, but more important are the people behind it forming a culture of inclusivity, transparency, and a global community who all wants high yields secured by competent technology.`,
+        website: 'https://app.tetu.io/',
+        social: {
+          telegram: 'https://t.me/tetu_io',
+          twitter: 'https://twitter.com/tetu_io',
+        },
+      },
+    ],
+  },
+
+  {
     id: 'moo_banana_matic-polywise',
     name: 'PolyWise',
     assets: ['BANANA', 'MATIC'],
