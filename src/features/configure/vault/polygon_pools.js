@@ -219,7 +219,7 @@ export const polygonPools = [
       'https://quickswap.exchange/#/swap?inputCurrency=0x4c19DdeebAF84cA3A255730295AD9d824D4Ff51f&outputCurrency=0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
   },
   {
-    id: 'polyalpha-alpha-matic',
+    id: 'polyalpha-alpha-matic-eol',
     name: 'ALPHA-MATIC LP',
     token: 'ALPHA-MATIC LP',
     tokenDescription: 'QuickSwap (PolyAlpha)',
@@ -233,8 +233,8 @@ export const polygonPools = [
     tvl: 0,
     oracle: 'lps',
     oracleId: 'polyalpha-alpha-matic',
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['ALPHA', 'MATIC'],
     addLiquidityUrl:
@@ -243,7 +243,7 @@ export const polygonPools = [
       'https://quickswap.exchange/#/swap?outputCurrency=0x0B048D6e01a6b9002C291060bF2179938fd8264c',
   },
   {
-    id: 'polyalpha-alpha-usdc',
+    id: 'polyalpha-alpha-usdc-eol',
     name: 'ALPHA-USDC LP',
     token: 'ALPHA-USDC LP',
     tokenDescription: 'QuickSwap (JetSwap)',
@@ -257,8 +257,8 @@ export const polygonPools = [
     tvl: 0,
     oracle: 'lps',
     oracleId: 'polyalpha-alpha-usdc',
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['ALPHA', 'USDC'],
     addLiquidityUrl:
