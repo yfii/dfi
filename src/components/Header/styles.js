@@ -240,7 +240,6 @@ const styles = theme => ({
   icon: {
     color: theme.palette.text.primary,
     marginRight: '0.5rem',
-    minWidth: '24px',
     textAlign: 'end',
   },
   iconButton: {
