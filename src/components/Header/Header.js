@@ -56,9 +56,10 @@ const Header = ({ links, isNightMode, setNightMode }) => {
 
         <div className={classes.middleNav}>
           <Hidden smDown>
-            {renderLink('vote', 'vote', 'vote-yea', classes)}
+            {renderLink('vote', t('vote'), 'vote-yea', classes)}
             {renderLink('dashboard', t('stats'), 'chart-bar', classes)}
-            {renderLink('docs', 'docs', 'book', classes)}
+            {renderLink('docs', t('docs'), 'book', classes)}
+            {renderLink('forum', t('forum'), 'comments', classes)}
           </Hidden>
           {renderLink('buy', t('buy'), 'dollar-sign', classes)}
           <Link className={classes.btnBoost} to={`/${chain}/stake`}>
@@ -100,9 +101,10 @@ const Header = ({ links, isNightMode, setNightMode }) => {
           </IconButton>
           <div className={classes.appResponsive}>{links}</div>
           <div style={{ textAlign: 'center' }}>
-            <LinkSidebar name="vote" label="vote" icon="vote-yea" classes={classes} />
+            <LinkSidebar name="vote" label={t('vote')} icon="vote-yea" classes={classes} />
             <LinkSidebar name="dashboard" label={t('stats')} icon="chart-bar" classes={classes} />
-            <LinkSidebar name="docs" label="docs" icon="book" classes={classes} />
+            <LinkSidebar name="docs" label={t('docs')} icon="book" classes={classes} />
+            <LinkSidebar name="forum" label={t('forum')} icon="comments" classes={classes} />
             <LinkSidebar name="buy" label={t('buy')} icon="dollar-sign" classes={classes} />
             <IconButton onClick={setNightMode} className={classes.icon}>
               {isNightMode ? <WbSunny /> : <NightsStay />}
