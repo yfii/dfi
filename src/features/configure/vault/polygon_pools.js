@@ -1612,7 +1612,7 @@ export const polygonPools = [
       'https://exchange.dfyn.network/#/swap?inputCurrency=0x172370d5Cd63279eFa6d502DAB29171933a610AF&outputCurrency=0xc168e40227e4ebd8c1cae80f7a55a4f0e6d66c97',
   },
   {
-    id: 'quick-yamp-usdc',
+    id: 'quick-yamp-usdc-eol',
     name: 'YAMP-USDC LP',
     token: 'YAMP-USDC LP',
     tokenDescription: 'Quickswap',
@@ -1627,10 +1627,11 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'quick-yamp-usdc',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'QuickSwap',
     assets: ['YAMP', 'USDC'],
+    retireReason: 'tvl',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x2791bca1f2de4661ed88a30c99a7a9449aa84174/0x87f654c4b347230c60cad8d7ea9cf0d7238bcc79',
     buyTokenUrl:
