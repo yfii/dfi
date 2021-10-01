@@ -3319,7 +3319,7 @@ export const polygonPools = [
     status: 'eol',
     platform: 'QuickSwap',
     assets: ['FFF', 'ETH'],
-    retireReason: 'rewards'
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619/0x9aceb6f749396d1930abc9e263efc449e5e82c13',
     buyTokenUrl:
