@@ -1219,7 +1219,7 @@ export const bscPools = [
       'https://pancakeswap.finance/swap?inputCurrency=0x3C70260eEe0a2bFc4b375feB810325801f289fBd&outputCurrency=0x5801D0e1C7D977D78E4890880B8E579eb4943276',
   },
   {
-    id: 'tosdisbsc-dis-wbnb',
+    id: 'tosdisbsc-dis-wbnb-eol',
     name: 'DIS-BNB LP',
     token: 'DIS-BNB LP2',
     tokenDescription: 'TosDis (PancakeSwap)',
@@ -1234,8 +1234,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'tosdisbsc-dis-wbnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Other',
     assets: ['DIS', 'BNB'],
     addLiquidityUrl:
