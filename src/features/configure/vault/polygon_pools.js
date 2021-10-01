@@ -315,7 +315,7 @@ export const polygonPools = [
       'https://quickswap.exchange/#/swap?outputCurrency=0x238779aFfE6FFD475cB7e84582FcA7789F310Dc8',
   },
   {
-    id: 'quick-usdc-rbnb',
+    id: 'quick-usdc-rbnb-eol',
     name: 'USDC-rBNB LP',
     token: 'USDC-rBNB LP',
     tokenDescription: 'QuickSwap',
@@ -329,11 +329,12 @@ export const polygonPools = [
     tvl: 0,
     oracle: 'lps',
     oracleId: 'quick-usdc-rbnb',
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'QuickSwap',
     assets: ['USDC', 'BNB'],
     withdrawalFee: '0%',
+    retireReason: 'tvl',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174/0x5c4b7CCBF908E64F32e12c6650ec0C96d717f03F',
     buyTokenUrl:
@@ -1147,7 +1148,7 @@ export const polygonPools = [
       'https://quickswap.exchange/#/swap?outputCurrency=0xb33EaAd8d922B1083446DC23f610c2567fB5180f',
   },
   {
-    id: 'quick-guard-usdc',
+    id: 'quick-guard-usdc-eol',
     name: 'GUARD-USDC LP',
     token: 'GUARD-USDC LP',
     tokenDescription: 'QuickSwap',
@@ -1162,10 +1163,11 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'quick-guard-usdc',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'QuickSwap',
     assets: ['GUARD', 'USDC'],
+    retireReason: 'tvl',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174/0x948d2a81086A075b3130BAc19e4c6DEe1D2E3fE8',
     buyTokenUrl:
@@ -1248,7 +1250,7 @@ export const polygonPools = [
       'https://exchange.dfyn.network/#/swap?inputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619&outputCurrency=0xC168E40227E4ebD8C1caE80F7a55a4F0e6D66C97',
   },
   {
-    id: 'quick-quick-yamp',
+    id: 'quick-quick-yamp-eol',
     name: 'YAMP-QUICK LP',
     token: 'YAMP-QUICK LP',
     tokenDescription: 'QuickSwap',
@@ -1263,10 +1265,11 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'quick-quick-yamp',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'QuickSwap',
     assets: ['QUICK', 'YAMP'],
+    retireReason: 'tvl',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x831753DD7087CaC61aB5644b308642cc1c33Dc13/0x87f654c4b347230C60CAD8d7ea9cF0D7238bcc79',
     buyTokenUrl:
@@ -1325,7 +1328,7 @@ export const polygonPools = [
       'https://quickswap.exchange/#/swap?outputCurrency=0x1B815d120B3eF02039Ee11dC2d33DE7aA4a8C603',
   },
   {
-    id: 'quick-woo-eth',
+    id: 'quick-woo-eth-eol',
     name: 'WOO-ETH LP',
     token: 'WOO-ETH LP',
     tokenDescription: 'QuickSwap',
@@ -1340,17 +1343,18 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'quick-woo-eth',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'QuickSwap',
     assets: ['WOO', 'ETH'],
+    retireReason: 'tvl',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x1B815d120B3eF02039Ee11dC2d33DE7aA4a8C603/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
     buyTokenUrl:
       'https://quickswap.exchange/#/swap?outputCurrency=0x1B815d120B3eF02039Ee11dC2d33DE7aA4a8C603',
   },
   {
-    id: 'quick-start-quick',
+    id: 'quick-start-quick-eol',
     name: 'START-QUICK LP',
     token: 'START-QUICK LP',
     tokenDescription: 'QuickSwap',
@@ -1365,17 +1369,18 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'quick-start-quick',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'QuickSwap',
     assets: ['QUICK', 'START'],
+    retireReason: 'tvl',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x831753DD7087CaC61aB5644b308642cc1c33Dc13/0x6Ccf12B480A99C54b23647c995f4525D544A7E72',
     buyTokenUrl:
       'https://quickswap.exchange/#/swap?outputCurrency=0x6Ccf12B480A99C54b23647c995f4525D544A7E72',
   },
   {
-    id: 'quick-quick-polydoge',
+    id: 'quick-quick-polydoge-eol',
     name: 'polyDOGE-QUICK LP',
     token: 'polyDOGE-QUICK LP',
     tokenDescription: 'Quickswap',
@@ -1390,10 +1395,11 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'quick-quick-polydoge',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'QuickSwap',
     assets: ['PolyDoge', 'QUICK'],
+    retireReason: 'tvl',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x831753DD7087CaC61aB5644b308642cc1c33Dc13/0x8A953CfE442c5E8855cc6c61b1293FA648BAE472',
     buyTokenUrl:
@@ -2409,7 +2415,7 @@ export const polygonPools = [
       'https://quickswap.exchange/#/swap?inputCurrency=0xa3fa99a148fa48d14ed51d610c367c61876997f1&outputCurrency=0x580A84C73811E1839F75d86d75d88cCa0c241fF4',
   },
   {
-    id: 'quick-qi-quick',
+    id: 'quick-qi-quick-eol',
     name: 'QI-QUICK LP',
     token: 'QI-QUICK QLP',
     tokenDescription: 'QuickSwap',
@@ -2424,10 +2430,11 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'quick-qi-quick',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'QuickSwap',
     assets: ['QI', 'QUICK'],
+    retireReason: 'tvl',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x580A84C73811E1839F75d86d75d88cCa0c241fF4/0x831753DD7087CaC61aB5644b308642cc1c33Dc13',
     buyTokenUrl:
@@ -2461,7 +2468,7 @@ export const polygonPools = [
       'https://quickswap.exchange/#/swap?inputCurrency=0x2791bca1f2de4661ed88a30c99a7a9449aa84174&outputCurrency=0xa3Fa99A148fA48D14Ed51d610c367C61876997F1',
   },
   {
-    id: 'quick-polybunny-eth',
+    id: 'quick-polybunny-eth-eol',
     name: 'polyBUNNY-ETH LP',
     token: 'polyBUNNY-ETH LP',
     tokenDescription: 'Quickswap',
@@ -2476,17 +2483,18 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'quick-polybunny-eth',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'QuickSwap',
     assets: ['polyBUNNY', 'ETH'],
+    retireReason: 'tvl',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x7ceb23fd6bc0add59e62ac25578270cff1b9f619/0x4C16f69302CcB511c5Fac682c7626B9eF0Dc126a',
     buyTokenUrl:
       'https://quickswap.exchange/#/swap?outputCurrency=0x4C16f69302CcB511c5Fac682c7626B9eF0Dc126a',
   },
   {
-    id: 'quick-polybunny-quick',
+    id: 'quick-polybunny-quick-eol',
     name: 'polyBUNNY-QUICK LP',
     token: 'polyBUNNY-QUICK LP',
     tokenDescription: 'Quickswap',
@@ -2501,10 +2509,11 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'quick-polybunny-quick',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'QuickSwap',
     assets: ['polyBUNNY', 'QUICK'],
+    retireReason: 'tvl',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x831753dd7087cac61ab5644b308642cc1c33dc13/0x4C16f69302CcB511c5Fac682c7626B9eF0Dc126a',
     buyTokenUrl:
@@ -2971,7 +2980,7 @@ export const polygonPools = [
       'https://quickswap.exchange/#/swap?inputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619&outputCurrency=0xcFe2cF35D2bDDE84967e67d00aD74237e234CE59',
   },
   {
-    id: 'quick-eth-ramp',
+    id: 'quick-eth-ramp-eol',
     name: 'RAMP-ETH LP',
     token: 'RAMP-ETH QLP',
     tokenDescription: 'QuickSwap',
@@ -2986,10 +2995,11 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'quick-eth-ramp',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'QuickSwap',
     assets: ['RAMP', 'ETH'],
+    retireReason: 'tvl',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0xaECeBfcF604AD245Eaf0D5BD68459C3a7A6399c2/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
     buyTokenUrl:
@@ -5253,7 +5263,7 @@ export const polygonPools = [
       'https://quickswap.exchange/#/swap?inputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619&outputCurrency=0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6',
   },
   {
-    id: 'quick-ubt-eth',
+    id: 'quick-ubt-eth-eol',
     logo: 'polygon/UBT-ETH.png',
     name: 'UBT-ETH LP',
     token: 'UBT-ETH QLP',
@@ -5269,10 +5279,11 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'quick-ubt-eth',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'QuickSwap',
     assets: ['UBT', 'ETH'],
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619/0x7FBc10850caE055B27039aF31bD258430e714c62',
     buyTokenUrl:
