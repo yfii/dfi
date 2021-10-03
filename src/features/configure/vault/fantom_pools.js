@@ -26,7 +26,7 @@ export const fantomPools = [
   {
     id: 'spirit-ftm-usdc',
     name: 'USDC-FTM LP',
-    token: 'USDC-FTM LP',
+    token: 'USDC-FTM SLP',
     tokenDescription: 'SpiritSwap',
     tokenAddress: '0xe7E90f5a767406efF87Fdad7EB07ef407922EC1D',
     tokenDecimals: 18,
@@ -51,7 +51,7 @@ export const fantomPools = [
   {
     id: 'spirit-fusdt-ftm',
     name: 'fUSDT-FTM LP',
-    token: 'fUSDT-FTM LP',
+    token: 'fUSDT-FTM SLP',
     tokenDescription: 'SpiritSwap',
     tokenAddress: '0xd14Dd3c56D9bc306322d4cEa0E1C49e9dDf045D4',
     tokenDecimals: 18,
@@ -76,7 +76,7 @@ export const fantomPools = [
   {
     id: 'spirit-ftm-mim',
     name: 'MIM-FTM LP',
-    token: 'MIM-FTM LP',
+    token: 'MIM-FTM SLP',
     tokenDescription: 'SpiritSwap',
     tokenAddress: '0xB32b31DfAfbD53E310390F641C7119b5B9Ea0488',
     tokenDecimals: 18,
