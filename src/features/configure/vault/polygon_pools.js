@@ -292,7 +292,7 @@ export const polygonPools = [
       'https://polygon-exchange.jetswap.finance/#/swap?outputCurrency=0x0B048D6e01a6b9002C291060bF2179938fd8264c',
   },
   {
-    id: 'sandman-delirium-matic',
+    id: 'sandman-delirium-matic-eol',
     name: 'DELIRIUM-MATIC LP',
     token: 'DELIRIUM-MATIC LP',
     tokenDescription: 'QuickSwap (Sandman)',
@@ -306,8 +306,8 @@ export const polygonPools = [
     tvl: 0,
     oracle: 'lps',
     oracleId: 'sandman-delirium-matic',
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['DELIRIUM', 'MATIC'],
     addLiquidityUrl:
@@ -316,7 +316,7 @@ export const polygonPools = [
       'https://quickswap.exchange/#/swap?outputCurrency=0x238779aFfE6FFD475cB7e84582FcA7789F310Dc8',
   },
   {
-    id: 'sandman-delirium-usdc',
+    id: 'sandman-delirium-usdc-eol',
     name: 'DELIRIUM-USDC LP',
     token: 'DELIRIUM-USDC LP',
     tokenDescription: 'QuickSwap (Sandman)',
@@ -330,8 +330,8 @@ export const polygonPools = [
     tvl: 0,
     oracle: 'lps',
     oracleId: 'sandman-delirium-usdc',
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['DELIRIUM', 'USDC'],
     addLiquidityUrl:
