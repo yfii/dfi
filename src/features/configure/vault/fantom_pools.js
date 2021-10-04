@@ -529,7 +529,7 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'boo-steak-wftm',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'SpookySwap',
     assets: ['STEAK', 'FTM'],
