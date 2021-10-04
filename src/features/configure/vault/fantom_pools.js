@@ -1,3 +1,5 @@
+import { TRUE } from 'node-sass';
+
 export const fantomPools = [
   {
     id: 'fantom-bifi-maxi',
@@ -503,7 +505,7 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'stakesteak-fusd-usdc',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'StakeSteak',
     assets: ['fUSD', 'USDC'],
@@ -651,7 +653,7 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'steakhouse-scream-ftm',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     assets: ['SCREAM', 'FTM'],
     depositFee: '0.5%',
