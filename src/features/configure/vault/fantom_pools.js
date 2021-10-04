@@ -1,5 +1,3 @@
-import { TRUE } from 'node-sass';
-
 export const fantomPools = [
   {
     id: 'fantom-bifi-maxi',
