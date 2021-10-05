@@ -13,4 +13,11 @@ export const fantomZaps = [
     ammFactory: '0xf6488205957f0b4497053d6422F49e27944eE3Dd',
     ammPairInitHash: '0xa5e6089ea250dac750e4867fc4ce7f2a864bd94446564351fe9329f378963974',
   },
+  {
+    // SpiritSwap
+    zapAddress: '0x5618c4C0A9c024e77eb9A5b4424f492f94C86F14',
+    ammRouter: '0x16327E3FbDaCA3bcF7E38F5Af2599D2DDc33aE52',
+    ammFactory: '0xEF45d134b73241eDa7703fa787148D9C9F4950b0',
+    ammPairInitHash: '0xe242e798f6cee26a9cb0bbf24653bf066e5356ffeac160907fe2cc108e238617',
+  },
 ];
