@@ -729,7 +729,7 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'steakhouse-scream-ftm',
     oraclePrice: 0,
-    depositsPaused: true,
+    depositsPaused: false,
     status: 'active',
     assets: ['SCREAM', 'FTM'],
     depositFee: '0.5%',
