@@ -225,7 +225,7 @@ export const hecoPools = [
       'https://ht.mdex.com/#/add/0x765277EebeCA2e31912C9946eAe1021199B39C61/0xa71EdC38d189767582C38A3145b5873052c3e47a',
   },
   {
-    id: 'hfi-hfi-ht',
+    id: 'hfi-hfi-ht-eol',
     logo: 'heco/HFI-HT.png',
     name: 'HFI-HT LP',
     token: 'HFI-HT LP',
@@ -241,17 +241,18 @@ export const hecoPools = [
     oracle: 'lps',
     oracleId: 'hfi-hfi-ht',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'HFI',
     assets: ['HFI', 'WHT'],
+    retireReason: 'rewards',
     buyTokenUrl:
       'https://ht.mdex.com/#/swap?inputCurrency=0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f&outputCurrency=0x98fc3b60ed4a504f588342a53746405e355f9347',
     addLiquidityUrl:
       'https://ht.mdex.com/#/add/0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f/0x98fc3b60ed4a504f588342a53746405e355f9347',
   },
   {
-    id: 'hfi-hfi-husd',
+    id: 'hfi-hfi-husd-eol',
     logo: 'heco/HFI-HUSD.png',
     name: 'HFI-HUSD LP',
     token: 'HFI-HUSD LP',
@@ -267,10 +268,11 @@ export const hecoPools = [
     oracle: 'lps',
     oracleId: 'hfi-hfi-husd',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'HFI',
     assets: ['HFI', 'HUSD'],
+    retireReason: 'rewards',
     buyTokenUrl:
       'https://ht.mdex.com/#/swap?inputCurrency=0x0298c2b32eae4da002a15f36fdf7615bea3da047&outputCurrency=0x98fc3b60ed4a504f588342a53746405e355f9347',
     addLiquidityUrl:
