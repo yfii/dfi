@@ -22,7 +22,7 @@ export const avalanchePools = [
     assets: ['BIFI'],
     withdrawalFee: '0.05%',
     buyTokenUrl:
-      'https://app.pangolin.exchange/#/swap?inputCurrency=0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7&outputCurrency=0xd6070ae98b8069de6B494332d1A1a81B6179D960',
+      'https://www.traderjoexyz.com/#/trade?outputCurrency=0xd6070ae98b8069de6b494332d1a1a81b6179d960',
   },
   {
     id: 'joe-joe',
