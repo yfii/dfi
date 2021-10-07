@@ -2050,7 +2050,7 @@ export const bscPools = [
       'https://pancakeswap.finance/swap?outputCurrency=0xaef0d72a118ce24fee3cd1d43d383897d05b4e99',
   },
   {
-    id: 'cakev2-revv-bnb',
+    id: 'cakev2-revv-bnb-eol',
     name: 'REVV-BNB LP',
     token: 'REVV-BNB LP',
     tokenDescription: 'PancakeSwap',
@@ -2065,10 +2065,11 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cakev2-revv-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'PancakeSwap',
     assets: ['REVV', 'BNB'],
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://pancakeswap.finance/add/0x833F307aC507D47309fD8CDD1F835BeF8D702a93/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
     buyTokenUrl:
@@ -2329,7 +2330,7 @@ export const bscPools = [
       'https://dex.apeswap.finance/#/swap?inputCurrency=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c&outputCurrency=0xbD83010eB60F12112908774998F65761cf9f6f9a',
   },
   {
-    id: 'cakev2-if-busd',
+    id: 'cakev2-if-busd-eol',
     name: 'IF-BUSD LP',
     token: 'IF-BUSD LP2',
     tokenDescription: 'PancakeSwap',
@@ -2344,17 +2345,18 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cakev2-if-busd',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'PancakeSwap',
     assets: ['IF', 'BUSD'],
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://pancakeswap.finance/add/0xB0e1fc65C1a741b4662B813eB787d369b8614Af1/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
     buyTokenUrl:
       'https://pancakeswap.finance/swap?inputCurrency=0xB0e1fc65C1a741b4662B813eB787d369b8614Af1&outputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
   },
   {
-    id: 'cakev2-skill-wbnb',
+    id: 'cakev2-skill-wbnb-eol',
     name: 'SKILL-BNB LP',
     token: 'SKILL-BNB LP2',
     tokenDescription: 'PancakeSwap',
@@ -2369,10 +2371,11 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cakev2-skill-wbnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'PancakeSwap',
     assets: ['SKILL', 'BNB'],
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://pancakeswap.finance/add/0x154A9F9cbd3449AD22FDaE23044319D6eF2a1Fab/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
     buyTokenUrl:
@@ -2705,7 +2708,7 @@ export const bscPools = [
       'https://bsc.mdex.me/#/swap?outputCurrency=0xA5043373edC09f3f7d87Fe35CA933e0a7B59D005',
   },
   {
-    id: 'wex-krown-bnb',
+    id: 'wex-krown-bnb-eol',
     name: 'KRW-BNB WLP',
     token: 'KRW-BNB WLP',
     tokenDescription: 'WaultFinance',
@@ -2720,10 +2723,11 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'wex-krown-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'WaultFinance',
     assets: ['KRW', 'BNB'],
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://swap.wault.finance/bsc/#/add/BNB/0x1446f3CEdf4d86a9399E49f7937766E6De2A3AAB',
     buyTokenUrl:
@@ -3055,7 +3059,7 @@ export const bscPools = [
       'https://dex.apeswap.finance/#/swap?outputCurrency=0x4090e535f2e251f5f88518998b18b54d26b3b07c',
   },
   {
-    id: 'cakev2-titan-busd',
+    id: 'cakev2-titan-busd-eol',
     name: 'TITAN-BUSD LP',
     token: 'TITAN-BUSD LP2',
     tokenDescription: 'PancakeSwap',
@@ -3070,10 +3074,11 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cakev2-titan-busd',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'PancakeSwap',
     assets: ['TITAN', 'BUSD'],
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://pancakeswap.finance/add/0xe898EDc43920F357A93083F1d4460437dE6dAeC2/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
     buyTokenUrl:
@@ -3105,7 +3110,7 @@ export const bscPools = [
       'https://pancakeswap.finance/swap?inputCurrency=0x03fF0ff224f904be3118461335064bB48Df47938&outputCurrency=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
   },
   {
-    id: 'wex-watch-bnb',
+    id: 'wex-watch-bnb-eol',
     name: 'WATCH-BNB WLP',
     token: 'WATCH-BNB WLP',
     tokenDescription: 'WaultFinance',
@@ -3120,10 +3125,11 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'wex-watch-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'WaultFinance',
     assets: ['WATCH', 'BNB'],
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://swap.wault.finance/bsc/#/add/BNB/0x7A9f28EB62C791422Aa23CeAE1dA9C847cBeC9b0',
     buyTokenUrl:
@@ -3305,7 +3311,7 @@ export const bscPools = [
       'https://pancakeswap.finance/swap?outputCurrency=0xDA360309C59CB8C434b28A91b823344a96444278',
   },
   {
-    id: 'cakev2-rabbit-wbnb',
+    id: 'cakev2-rabbit-wbnb-eol',
     name: 'RABBIT-BNB LP',
     token: 'RABBIT-BNB LP',
     tokenDescription: 'PancakeSwap',
@@ -3320,10 +3326,11 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cakev2-rabbit-wbnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'PancakeSwap',
     assets: ['RABBIT', 'BNB'],
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://pancakeswap.finance/add/BNB/0x95a1199EBA84ac5f19546519e287d43D2F0E1b41',
     buyTokenUrl:
@@ -3356,7 +3363,7 @@ export const bscPools = [
       'https://pancakeswap.finance/swap?outputCurrency=0x4e840AADD28DA189B9906674B4Afcb77C128d9ea',
   },
   {
-    id: 'cakev2-wex-wbnb',
+    id: 'cakev2-wex-wbnb-eol',
     name: 'WEX-BNB LP',
     token: 'WEX-BNB LP',
     tokenDescription: 'PancakeSwap',
@@ -3371,10 +3378,11 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cakev2-wex-wbnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'PancakeSwap',
     assets: ['WEX', 'BNB'],
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://pancakeswap.finance/add/BNB/0xa9c41A46a6B3531d28d5c32F6633dd2fF05dFB90',
     buyTokenUrl:
@@ -3867,7 +3875,7 @@ export const bscPools = [
       'https://swap.wault.finance/bsc/#/swap?inputCurrency=0x55d398326f99059ff775485246999027b3197955&outputCurrency=0xcc42724c6683b7e57334c4e856f4c9965ed682bd',
   },
   {
-    id: 'wex-ltc-busd',
+    id: 'wex-ltc-busd-eol',
     logo: 'busd-pairs/LTC-BUSD.png',
     name: 'LTC-BUSD WLP',
     token: 'LTC-BUSD WLP',
@@ -3883,10 +3891,11 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'wex-ltc-busd',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'WaultFinance',
     assets: ['LTC', 'BUSD'],
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://swap.wault.finance/bsc/#/add/0xe9e7cea3dedca5984780bafc599bd69add087d56/0x4338665cbb7b2485a8855a139b75d5e34ab0db94',
     buyTokenUrl:
@@ -3919,7 +3928,7 @@ export const bscPools = [
       'https://swap.wault.finance/bsc/#/swap?inputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56&outputCurrency=0x3ee2200efb3400fabb9aacf31297cbdd1d435d47',
   },
   {
-    id: 'wex-xrp-busd',
+    id: 'wex-xrp-busd-eol',
     logo: 'busd-pairs/XRP-BUSD.png',
     name: 'XRP-BUSD WLP',
     token: 'XRP-BUSD WLP',
@@ -3935,10 +3944,11 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'wex-xrp-busd',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'WaultFinance',
     assets: ['XRP', 'BUSD'],
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://swap.wault.finance/bsc/#/add/0xe9e7cea3dedca5984780bafc599bd69add087d56/0x1d2f0da169ceb9fc7b3144628db156f3f6c60dbe',
     buyTokenUrl:
@@ -4621,7 +4631,7 @@ export const bscPools = [
       'https://pancakeswap.finance/swap?outputCurrency=0x5512014efa6cd57764fa743756f7a6ce3358cc83',
   },
   {
-    id: 'cakev2-kalm-bnb',
+    id: 'cakev2-kalm-bnb-eol',
     logo: 'bnb-pairs/KALM-BNB.svg',
     name: 'KALM-BNB LP',
     token: 'KALM-BNB LP2',
@@ -4637,10 +4647,11 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cakev2-kalm-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'PancakeSwap',
     assets: ['KALM', 'BNB'],
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://pancakeswap.finance/add/BNB/0x4ba0057f784858a48fe351445c672ff2a3d43515',
     buyTokenUrl:
@@ -5559,7 +5570,7 @@ export const bscPools = [
       'https://pancakeswap.finance/swap?outputCurrency=0x4FA7163E153419E0E1064e418dd7A99314Ed27b6',
   },
   {
-    id: 'cakev2-rfox-bnb',
+    id: 'cakev2-rfox-bnb-eol',
     logo: 'cake-pairs/rfox-bnb.svg',
     name: 'RFOX-BNB LP',
     token: 'RFOX-BNB LP2',
@@ -5575,10 +5586,11 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cakev2-rfox-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'PancakeSwap',
     assets: ['RFOX', 'BNB'],
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://pancakeswap.finance/add/BNB/0x0a3a21356793b49154fd3bbe91cbc2a16c0457f5',
     buyTokenUrl:
@@ -5773,7 +5785,7 @@ export const bscPools = [
       'https://pancakeswap.finance/swap?outputCurrency=0xe550a593d09fbc8dcd557b5c88cea6946a8b404a',
   },
   {
-    id: 'cakev2-fine-bnb',
+    id: 'cakev2-fine-bnb-eol',
     logo: 'bnb-pairs/FINE-BNB.svg',
     name: 'FINE-BNB LP',
     token: 'FINE-BNB LP2',
@@ -5789,10 +5801,11 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cakev2-fine-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'PancakeSwap',
     assets: ['FINE', 'BNB'],
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://pancakeswap.finance/add/BNB/0x4e6415a5727ea08aae4580057187923aec331227',
     buyTokenUrl:
@@ -11428,7 +11441,7 @@ export const bscPools = [
       'https://v1exchange.pancakeswap.finance/#/remove/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0x0288D3E353fE2299F11eA2c2e1696b4A648eCC07',
   },
   {
-    id: 'hps-hps-bnb',
+    id: 'hps-hps-bnb-eol',
     logo: 'single-assets/HPS.png',
     name: 'HPS-BNB LP',
     token: 'HPS-BNB LP',
@@ -11444,10 +11457,11 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'hps-hps-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['HPS', 'BNB'],
+    retireReason: 'rewards',
     addLiquidityUrl: 'https://julswap.com/#/add/BNB/0xeDa21B525Ac789EaB1a08ef2404dd8505FfB973D',
     buyTokenUrl:
       'https://julswap.com/#/swap?inputCurrency=BNB&outputCurrency=0xeDa21B525Ac789EaB1a08ef2404dd8505FfB973D',
@@ -11884,7 +11898,7 @@ export const bscPools = [
   },
 
   {
-    id: 'squirrel-nuts',
+    id: 'squirrel-nuts-eol',
     logo: 'single-assets/NUTS.png',
     name: 'NUTS',
     token: 'NUTS',
@@ -11900,9 +11914,10 @@ export const bscPools = [
     oracle: 'tokens',
     oracleId: 'NUTS',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
+    retireReason: 'rewards',
     assets: ['NUTS'],
     buyTokenUrl:
       'https://pancakeswap.finance/swap?outputCurrency=0x8893D5fA71389673C5c4b9b3cb4EE1ba71207556',

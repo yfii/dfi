@@ -948,7 +948,7 @@ export const polygonPools = [
       'https://quickswap.exchange/#/swap?inputCurrency=0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270&outputCurrency=0x2c89bbc92bd86f8075d1decc58c7f4e0107f286b',
   },
   {
-    id: 'quick-wmatic-ht',
+    id: 'quick-wmatic-ht-eol',
     name: 'HT-MATIC LP',
     token: 'HT-MATIC LP',
     tokenDescription: 'Quickswap',
@@ -963,11 +963,12 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'quick-wmatic-ht',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'QuickSwap',
     assets: ['HT', 'MATIC'],
     withdrawalFee: '0%',
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270/0xa731349fa468614c1698fc46ebf06da6f380239e',
     buyTokenUrl:
