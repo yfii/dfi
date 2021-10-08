@@ -2167,12 +2167,13 @@ export const bscPools = [
     oracleId: 'cakev2-revv-bnb',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'PancakeSwap',
     assets: ['REVV', 'BNB'],
+    withdrawalFee: '0%',
     retireReason: 'rewards',
-    addLiquidityUrl:
-      'https://pancakeswap.finance/add/0x833F307aC507D47309fD8CDD1F835BeF8D702a93/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+    removeLiquidityUrl:
+      'https://pancakeswap.finance/remove/0x833F307aC507D47309fD8CDD1F835BeF8D702a93/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
     buyTokenUrl:
       'https://pancakeswap.finance/swap?inputCurrency=0x833F307aC507D47309fD8CDD1F835BeF8D702a93&outputCurrency=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
   },
@@ -2450,9 +2451,10 @@ export const bscPools = [
     status: 'eol',
     platform: 'PancakeSwap',
     assets: ['IF', 'BUSD'],
+    withdrawalFee: '0%',
     retireReason: 'rewards',
-    addLiquidityUrl:
-      'https://pancakeswap.finance/add/0xB0e1fc65C1a741b4662B813eB787d369b8614Af1/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+    removeLiquidityUrl:
+      'https://pancakeswap.finance/remove/0xB0e1fc65C1a741b4662B813eB787d369b8614Af1/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
     buyTokenUrl:
       'https://pancakeswap.finance/swap?inputCurrency=0xB0e1fc65C1a741b4662B813eB787d369b8614Af1&outputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
   },
@@ -2476,9 +2478,10 @@ export const bscPools = [
     status: 'eol',
     platform: 'PancakeSwap',
     assets: ['SKILL', 'BNB'],
+    withdrawalFee: '0%',
     retireReason: 'rewards',
-    addLiquidityUrl:
-      'https://pancakeswap.finance/add/0x154A9F9cbd3449AD22FDaE23044319D6eF2a1Fab/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+    removeLiquidityUrl:
+      'https://pancakeswap.finance/remove/0x154A9F9cbd3449AD22FDaE23044319D6eF2a1Fab/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
     buyTokenUrl:
       'https://pancakeswap.finance/swap?inputCurrency=0x154A9F9cbd3449AD22FDaE23044319D6eF2a1Fab&outputCurrency=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
   },
@@ -2828,9 +2831,10 @@ export const bscPools = [
     status: 'eol',
     platform: 'WaultFinance',
     assets: ['KRW', 'BNB'],
+    withdrawalFee: '0%',
     retireReason: 'rewards',
-    addLiquidityUrl:
-      'https://swap.wault.finance/bsc/#/add/BNB/0x1446f3CEdf4d86a9399E49f7937766E6De2A3AAB',
+    removeLiquidityUrl:
+      'https://swap.wault.finance/bsc/#/remove/BNB/0x1446f3CEdf4d86a9399E49f7937766E6De2A3AAB',
     buyTokenUrl:
       'https://swap.wault.finance/bsc/#/swap?&outputCurrency=0x1446f3CEdf4d86a9399E49f7937766E6De2A3AAB',
   },
@@ -3179,9 +3183,10 @@ export const bscPools = [
     status: 'eol',
     platform: 'PancakeSwap',
     assets: ['TITAN', 'BUSD'],
+    withdrawalFee: '0%',
     retireReason: 'rewards',
-    addLiquidityUrl:
-      'https://pancakeswap.finance/add/0xe898EDc43920F357A93083F1d4460437dE6dAeC2/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+    removeLiquidityUrl:
+      'https://pancakeswap.finance/remove/0xe898EDc43920F357A93083F1d4460437dE6dAeC2/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
     buyTokenUrl:
       'https://pancakeswap.finance/swap?inputCurrency=0xe898EDc43920F357A93083F1d4460437dE6dAeC2&outputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
   },
@@ -3230,9 +3235,10 @@ export const bscPools = [
     status: 'eol',
     platform: 'WaultFinance',
     assets: ['WATCH', 'BNB'],
+    withdrawalFee: '0%',
     retireReason: 'rewards',
-    addLiquidityUrl:
-      'https://swap.wault.finance/bsc/#/add/BNB/0x7A9f28EB62C791422Aa23CeAE1dA9C847cBeC9b0',
+    removeLiquidityUrl:
+      'https://swap.wault.finance/bsc/#/remove/BNB/0x7A9f28EB62C791422Aa23CeAE1dA9C847cBeC9b0',
     buyTokenUrl:
       'https://swap.wault.finance/bsc/#/swap?outputCurrency=0x7A9f28EB62C791422Aa23CeAE1dA9C847cBeC9b0',
   },
@@ -3431,9 +3437,10 @@ export const bscPools = [
     status: 'eol',
     platform: 'PancakeSwap',
     assets: ['RABBIT', 'BNB'],
+    withdrawalFee: '0%',
     retireReason: 'rewards',
-    addLiquidityUrl:
-      'https://pancakeswap.finance/add/BNB/0x95a1199EBA84ac5f19546519e287d43D2F0E1b41',
+    removeLiquidityUrl:
+      'https://pancakeswap.finance/remove/BNB/0x95a1199EBA84ac5f19546519e287d43D2F0E1b41',
     buyTokenUrl:
       'https://pancakeswap.finance/swap?outputCurrency=0x95a1199EBA84ac5f19546519e287d43D2F0E1b41',
   },
@@ -3483,9 +3490,10 @@ export const bscPools = [
     status: 'eol',
     platform: 'PancakeSwap',
     assets: ['WEX', 'BNB'],
+    withdrawalFee: '0%',
     retireReason: 'rewards',
-    addLiquidityUrl:
-      'https://pancakeswap.finance/add/BNB/0xa9c41A46a6B3531d28d5c32F6633dd2fF05dFB90',
+    removeLiquidityUrl:
+      'https://pancakeswap.finance/remove/BNB/0xa9c41A46a6B3531d28d5c32F6633dd2fF05dFB90',
     buyTokenUrl:
       'https://pancakeswap.finance/swap?outputCurrency=0xa9c41A46a6B3531d28d5c32F6633dd2fF05dFB90',
   },
@@ -3996,9 +4004,10 @@ export const bscPools = [
     status: 'eol',
     platform: 'WaultFinance',
     assets: ['LTC', 'BUSD'],
+    withdrawalFee: '0%',
     retireReason: 'rewards',
-    addLiquidityUrl:
-      'https://swap.wault.finance/bsc/#/add/0xe9e7cea3dedca5984780bafc599bd69add087d56/0x4338665cbb7b2485a8855a139b75d5e34ab0db94',
+    removeLiquidityUrl:
+      'https://swap.wault.finance/bsc/#/remove/0xe9e7cea3dedca5984780bafc599bd69add087d56/0x4338665cbb7b2485a8855a139b75d5e34ab0db94',
     buyTokenUrl:
       'https://swap.wault.finance/bsc/#/swap?inputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56&outputCurrency=0x4338665cbb7b2485a8855a139b75d5e34ab0db94',
   },
@@ -4049,9 +4058,10 @@ export const bscPools = [
     status: 'eol',
     platform: 'WaultFinance',
     assets: ['XRP', 'BUSD'],
+    withdrawalFee: '0%',
     retireReason: 'rewards',
-    addLiquidityUrl:
-      'https://swap.wault.finance/bsc/#/add/0xe9e7cea3dedca5984780bafc599bd69add087d56/0x1d2f0da169ceb9fc7b3144628db156f3f6c60dbe',
+    removeLiquidityUrl:
+      'https://swap.wault.finance/bsc/#/remove/0xe9e7cea3dedca5984780bafc599bd69add087d56/0x1d2f0da169ceb9fc7b3144628db156f3f6c60dbe',
     buyTokenUrl:
       'https://swap.wault.finance/bsc/#/swap?inputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56&outputCurrency=0x1d2f0da169ceb9fc7b3144628db156f3f6c60dbe',
   },
@@ -4752,9 +4762,10 @@ export const bscPools = [
     status: 'active',
     platform: 'PancakeSwap',
     assets: ['KALM', 'BNB'],
+    withdrawalFee: '0%',
     retireReason: 'rewards',
-    addLiquidityUrl:
-      'https://pancakeswap.finance/add/BNB/0x4ba0057f784858a48fe351445c672ff2a3d43515',
+    removeLiquidityUrl:
+      'https://pancakeswap.finance/remove/BNB/0x4ba0057f784858a48fe351445c672ff2a3d43515',
     buyTokenUrl:
       'https://pancakeswap.finance/swap?outputCurrency=0x4ba0057f784858a48fe351445c672ff2a3d43515',
   },
@@ -5691,9 +5702,10 @@ export const bscPools = [
     status: 'eol',
     platform: 'PancakeSwap',
     assets: ['RFOX', 'BNB'],
+    withdrawalFee: '0%',
     retireReason: 'rewards',
-    addLiquidityUrl:
-      'https://pancakeswap.finance/add/BNB/0x0a3a21356793b49154fd3bbe91cbc2a16c0457f5',
+    removeLiquidityUrl:
+      'https://pancakeswap.finance/remove/BNB/0x0a3a21356793b49154fd3bbe91cbc2a16c0457f5',
     buyTokenUrl:
       'https://pancakeswap.finance/swap?outputCurrency=0x0a3a21356793b49154fd3bbe91cbc2a16c0457f5',
   },
@@ -5906,9 +5918,10 @@ export const bscPools = [
     status: 'eol',
     platform: 'PancakeSwap',
     assets: ['FINE', 'BNB'],
+    withdrawalFee: '0%',
     retireReason: 'rewards',
-    addLiquidityUrl:
-      'https://pancakeswap.finance/add/BNB/0x4e6415a5727ea08aae4580057187923aec331227',
+    removeLiquidityUrl:
+      'https://pancakeswap.finance/remove/BNB/0x4e6415a5727ea08aae4580057187923aec331227',
     buyTokenUrl:
       'https://pancakeswap.finance/swap?outputCurrency=0x4e6415a5727ea08aae4580057187923aec331227',
   },
@@ -11506,8 +11519,10 @@ export const bscPools = [
     status: 'eol',
     platform: 'Other',
     assets: ['HPS', 'BNB'],
+    withdrawalFee: '0%',
     retireReason: 'rewards',
-    addLiquidityUrl: 'https://julswap.com/#/add/BNB/0xeDa21B525Ac789EaB1a08ef2404dd8505FfB973D',
+    removeLiquidityUrl:
+      'https://julswap.com/#/remove/BNB/0xeDa21B525Ac789EaB1a08ef2404dd8505FfB973D',
     buyTokenUrl:
       'https://julswap.com/#/swap?inputCurrency=BNB&outputCurrency=0xeDa21B525Ac789EaB1a08ef2404dd8505FfB973D',
   },
@@ -11964,6 +11979,7 @@ export const bscPools = [
     platform: 'Other',
     retireReason: 'rewards',
     assets: ['NUTS'],
+    withdrawalFee: '0%',
     buyTokenUrl:
       'https://pancakeswap.finance/swap?outputCurrency=0x8893D5fA71389673C5c4b9b3cb4EE1ba71207556',
   },

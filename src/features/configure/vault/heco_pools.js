@@ -245,11 +245,12 @@ export const hecoPools = [
     status: 'eol',
     platform: 'HFI',
     assets: ['HFI', 'WHT'],
+    withdrawalFee: '0%',
     retireReason: 'rewards',
     buyTokenUrl:
       'https://ht.mdex.com/#/swap?inputCurrency=0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f&outputCurrency=0x98fc3b60ed4a504f588342a53746405e355f9347',
-    addLiquidityUrl:
-      'https://ht.mdex.com/#/add/0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f/0x98fc3b60ed4a504f588342a53746405e355f9347',
+    removeLiquidityUrl:
+      'https://ht.mdex.com/#/remove/0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f/0x98fc3b60ed4a504f588342a53746405e355f9347',
   },
   {
     id: 'hfi-hfi-husd-eol',
@@ -272,11 +273,11 @@ export const hecoPools = [
     status: 'eol',
     platform: 'HFI',
     assets: ['HFI', 'HUSD'],
-    retireReason: 'rewards',
+    withdrawalFee: '0%',
     buyTokenUrl:
       'https://ht.mdex.com/#/swap?inputCurrency=0x0298c2b32eae4da002a15f36fdf7615bea3da047&outputCurrency=0x98fc3b60ed4a504f588342a53746405e355f9347',
-    addLiquidityUrl:
-      'https://ht.mdex.com/#/add/0x0298c2b32eae4da002a15f36fdf7615bea3da047/0x98fc3b60ed4a504f588342a53746405e355f9347',
+    removeLiquidityUrl:
+      'https://ht.mdex.com/#/remove/0x0298c2b32eae4da002a15f36fdf7615bea3da047/0x98fc3b60ed4a504f588342a53746405e355f9347',
   },
   {
     id: 'lava-lava-eol',
