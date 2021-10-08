@@ -36,7 +36,7 @@ export const polygonStakePools = [
   },
 
   {
-    id: 'moo_bifi-usdt-cafe',
+    id: 'moo_bifi-usdc-cafe',
     name: 'CafeSwap',
     assets: ['BIFI', 'USDC'],
     token: 'mooSushiUSDC-BIFI',
