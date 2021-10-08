@@ -43,6 +43,7 @@ export const fantomPools = [
     status: 'active',
     platform: 'Geist',
     assets: ['GEIST', 'FTM'],
+    withdrawalFee: '0%',
     addLiquidityUrl:
       'https://spookyswap.finance/add/FTM/0xd8321AA83Fb0a4ECd6348D4577431310A6E0814d',
     buyTokenUrl:
