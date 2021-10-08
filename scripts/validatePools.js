@@ -40,6 +40,7 @@ const overrides = {
   'blizzard-xblzd-busd-old-eol': { keeper: undefined },
   'heco-bifi-maxi': { beefyFeeRecipient: undefined },
   'beltv2-4belt': { vaultOwner: undefined }, // moonpot deployer
+  'quick-': { vaultOwner: undefined }, // temp for upgrade
 };
 
 const validatePools = async () => {
@@ -330,13 +331,14 @@ const populateOwners = async (chain, pools, web3) => {
 
 const override = pools => {
   Object.keys(overrides).forEach(id => {
-    const pool = pools.find(p => p.id === id);
-    if (pool) {
-      const override = overrides[id];
-      Object.keys(override).forEach(key => {
-        pool[key] = override[key];
+    pools
+      .filter(p => p.id.includes(id))
+      .forEach(pool => {
+        const override = overrides[id];
+        Object.keys(override).forEach(key => {
+          pool[key] = override[key];
+        });
       });
-    }
   });
   return pools;
 };
