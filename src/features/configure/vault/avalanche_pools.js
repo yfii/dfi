@@ -169,7 +169,7 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Aave',
     assets: ['WBTCe'],
-    withdrawalFee: '0.1%',
+    withdrawalFee: '0.01%',
     buyTokenUrl:
       'https://www.traderjoexyz.com/#/trade?outputCurrency=0x50b7545627a5162F82A992c33b87aDc75187B218',
   },
