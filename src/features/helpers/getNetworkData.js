@@ -170,17 +170,20 @@ export const getNetworkBurnTokens = () => {
         [bscAddressBook.tokens.PERA.symbol]: bscAddressBook.tokens.PERA,
         [bscAddressBook.tokens.GUARD.symbol]: bscAddressBook.tokens.GUARD,
         [bscAddressBook.tokens.PEAR.symbol]: bscAddressBook.tokens.PEAR,
+        [bscAddressBook.tokens.SING.symbol]: bscAddressBook.tokens.SING,
       };
     case 128:
       return {};
     case 43114:
       return {
         [avaxAddressBook.tokens.SHIBX.symbol]: avaxAddressBook.tokens.SHIBX,
+        [avaxAddressBook.tokens.SING.symbol]: avaxAddressBook.tokens.SING,
       };
     case 137:
       return {
         [polygonAddressBook.tokens.xYELD.symbol]: polygonAddressBook.tokens.xYELD,
         [polygonAddressBook.tokens.PEAR.symbol]: polygonAddressBook.tokens.PEAR,
+        [polygonAddressBook.tokens.SING.symbol]: polygonAddressBook.tokens.SING,
       };
     case 250:
       return {
