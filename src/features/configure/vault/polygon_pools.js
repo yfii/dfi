@@ -91,12 +91,12 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Other',
+    platform: 'CafeSwap',
     assets: ['pBREW', 'MATIC'],
     addLiquidityUrl:
-      'https://polygondex.cafeswap.finance/#/add/ETH/0xa0b20DecBc557E3f68E140eD5a0c69bc865F865A',
+      'https://polygondex.cafeswap.finance/#/add/ETH/0xb5106a3277718ecad2f20ab6b86ce0fee7a21f09',
     buyTokenUrl:
-      'https://polygondex.cafeswap.finance/#/swap?outputCurrency=0xa0b20DecBc557E3f68E140eD5a0c69bc865F865A',
+      'https://polygondex.cafeswap.finance/#/swap?outputCurrency=0xb5106a3277718ecad2f20ab6b86ce0fee7a21f09',
   },
   {
     id: 'cafe-pbrew-usdc',
@@ -116,12 +116,12 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Other',
+    platform: 'CafeSwap',
     assets: ['pBREW', 'USDC'],
     addLiquidityUrl:
-      'https://polygondex.cafeswap.finance/#/add/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174/0xa0b20DecBc557E3f68E140eD5a0c69bc865F865A',
+      'https://polygondex.cafeswap.finance/#/add/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174/0xb5106a3277718ecad2f20ab6b86ce0fee7a21f09',
     buyTokenUrl:
-      'https://polygondex.cafeswap.finance/#/swap?outputCurrency=0xa0b20DecBc557E3f68E140eD5a0c69bc865F865A',
+      'https://polygondex.cafeswap.finance/#/swap?outputCurrency=0xb5106a3277718ecad2f20ab6b86ce0fee7a21f09',
   },
   {
     id: 'sing-usdc-sing',

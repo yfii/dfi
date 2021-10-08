@@ -115,7 +115,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Other',
+    platform: 'CafeSwap',
     assets: ['BREW', 'BNB'],
     addLiquidityUrl:
       'https://dex.cafeswap.finance/#/add/ETH/0x790Be81C3cA0e53974bE2688cDb954732C9862e1',
@@ -140,7 +140,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Other',
+    platform: 'CafeSwap',
     assets: ['BREW', 'BUSD'],
     addLiquidityUrl:
       'https://dex.cafeswap.finance/#/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0x790Be81C3cA0e53974bE2688cDb954732C9862e1',
