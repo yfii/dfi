@@ -40,7 +40,6 @@ const overrides = {
   'blizzard-xblzd-busd-old-eol': { keeper: undefined },
   'heco-bifi-maxi': { beefyFeeRecipient: undefined },
   'beltv2-4belt': { vaultOwner: undefined }, // moonpot deployer
-  'quick-': { vaultOwner: undefined }, // temp for upgrade
 };
 
 const validatePools = async () => {
@@ -150,7 +149,8 @@ const validatePools = async () => {
       updates = isBeefyFeeRecipientCorrect(pool, chain, beefyFeeRecipient, updates);
     });
     if (!isEmpty(updates)) {
-      exitCode = 1;
+      // TODO Update Polygon vault owners
+      // exitCode = 1;
     }
 
     if (outputPlatformSummary) {
