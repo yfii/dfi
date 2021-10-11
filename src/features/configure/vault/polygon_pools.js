@@ -295,7 +295,7 @@ export const polygonPools = [
       'https://app.sushi.com/swap?outputCurrency=0x255707B70BF90aa112006E1b07B9AeA6De021424',
   },
   {
-    id: 'polywise-usdc-wise',
+    id: 'polywise-usdc-wise-eol',
     name: 'WISE-USDC LP',
     token: 'WISE-USDC LP',
     tokenDescription: 'QuickSwap (Polywise)',
@@ -309,17 +309,18 @@ export const polygonPools = [
     tvl: 0,
     oracle: 'lps',
     oracleId: 'polywise-usdc-wise',
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['polyWISE', 'USDC'],
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x4c19DdeebAF84cA3A255730295AD9d824D4Ff51f/0x2791bca1f2de4661ed88a30c99a7a9449aa84174',
     buyTokenUrl:
       'https://quickswap.exchange/#/swap?inputCurrency=0x4c19DdeebAF84cA3A255730295AD9d824D4Ff51f&outputCurrency=0x2791bca1f2de4661ed88a30c99a7a9449aa84174',
   },
   {
-    id: 'polywise-wmatic-wise',
+    id: 'polywise-wmatic-wise-eol',
     name: 'WISE-MATIC LP',
     token: 'WISE-MATIC LP',
     tokenDescription: 'QuickSwap (Polywise)',
@@ -333,11 +334,12 @@ export const polygonPools = [
     tvl: 0,
     oracle: 'lps',
     oracleId: 'polywise-wmatic-wise',
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['polyWISE', 'MATIC'],
     withdrawalFee: '0.0%',
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x4c19DdeebAF84cA3A255730295AD9d824D4Ff51f/0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
     buyTokenUrl:
