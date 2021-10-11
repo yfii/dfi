@@ -36,6 +36,43 @@ export const polygonStakePools = [
   },
 
   {
+    id: 'moo_QUICK-polysage',
+    name: 'PolySage',
+    logo: 'single-assets/QUICK.png',
+    token: 'mooQuick',
+    tokenDecimals: 18,
+    tokenAddress: '0x659418cc3cf755F5367a51aDb586a7F770Da6d29',
+    tokenOracle: 'tokens',
+    tokenOracleId: 'QUICK',
+    earnedToken: 'polySAGE',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x2ed945Dc703D85c80225d95ABDe41cdeE14e1992',
+    earnContractAddress: '0xC01b5D452F2a5571E8FbC2D589Ab940DB7B16EFA',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'polySAGE',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1635001080,
+    partners: [
+      {
+        logo: 'stake/polysage/logo.png',
+        background: 'stake/polysage/bg.png',
+        text:
+          'PolySage Finance is a next-generation yield farming protocol on the Polygon network with lots of unique and creative features that enable you to earn a passive income. We are trying to create a protocol like Yearn, but with a reduced token supply and high value for Polygon Network users, LP providers and stakers.\n' +
+          '\n' +
+          'PolySage is a Layered farm that is temporary.',
+        website: 'https://polysage.finance/',
+        social: {
+          telegram: 'https://t.me/polywisedefi',
+          twitter: 'https://twitter.com/polywisefinance',
+        },
+      },
+    ],
+  },
+
+  {
     id: 'moo_bifi-usdc-cafe',
     name: 'CafeSwap',
     assets: ['BIFI', 'USDC'],

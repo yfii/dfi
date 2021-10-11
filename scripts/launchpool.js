@@ -81,7 +81,7 @@ async function generateLaunchpool() {
     tokenOracle: pool.oracle,
     tokenOracleId: pool.oracleId,
     earnedToken: boost.earnedToken,
-    earnedTokenDecimals: boost.earnedTokenDecimals,
+    earnedTokenDecimals: Number(boost.earnedTokenDecimals),
     earnedTokenAddress: boost.reward,
     earnContractAddress: boostAddress,
     earnContractAbi: 'govPoolABI',
