@@ -47,6 +47,40 @@ export const bscStakePools = [
   },
 
   {
+    id: 'moo_belt-beltbnb-babyswap',
+    name: 'BabySwap',
+    logo: 'single-assets/BNB.png',
+    token: 'mooBeltBNB',
+    tokenDecimals: 18,
+    tokenAddress: '0xC34Ae91312A3c3F9420691922040a5DEe1698E52',
+    tokenOracle: 'lps',
+    tokenOracleId: 'belt-beltbnb',
+    earnedToken: 'mooBaby',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x87F9A89B51dA28CE8653A700d362CDa9b9bA7d88',
+    earnContractAddress: '0x2d75b722c43e9cf57640909bF0a79cFC9f0bf800',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'BABY',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1635413330,
+    partners: [
+      {
+        logo: 'stake/babyswap/logo.png',
+        background: 'stake/babyswap/bg.png',
+        text: 'BabySwap is an AMM+NFT decentralized exchange for newborn projects on Binance Smart Chain, providing a more friendly trading experience and better project support. Audited by Certik!',
+        website: 'https://home.babyswap.finance/',
+        social: {
+          telegram: 'https://t.me/baby_swap',
+          twitter: 'https://twitter.com/babyswap_bsc',
+        },
+      },
+    ],
+  },
+
+  {
     id: 'moo_belt-belteth-nfty',
     name: 'NFTY',
     logo: 'single-assets/ETH.svg',
