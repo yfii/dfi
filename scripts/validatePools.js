@@ -149,8 +149,7 @@ const validatePools = async () => {
       updates = isBeefyFeeRecipientCorrect(pool, chain, beefyFeeRecipient, updates);
     });
     if (!isEmpty(updates)) {
-      // TODO Update Polygon vault owners
-      // exitCode = 1;
+      exitCode = 1;
     }
 
     if (outputPlatformSummary) {
@@ -211,6 +210,11 @@ const isStratOwnerCorrect = (pool, chain, owner, updates) => {
 const isVaultOwnerCorrect = (pool, chain, owner, updates) => {
   if (pool.vaultOwner !== undefined && pool.vaultOwner !== owner) {
     console.log(`Pool ${pool.id} should update vault owner. From: ${pool.vaultOwner} To: ${owner}`);
+
+    // TODO remove after updating Polygon vaultOwner
+    if (chain === 'polygon' && pool.vaultOwner === '0x09dc95959978800E57464E962724a34Bb4Ac1253') {
+      return updates;
+    }
 
     if (!('vaultOwner' in updates)) updates['vaultOwner'] = {};
     if (!(chain in updates.vaultOwner)) updates.vaultOwner[chain] = {};

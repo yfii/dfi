@@ -8,12 +8,9 @@ const usePoolsTvl = pools => {
   useEffect(() => {
     let globalTvl = 0;
 
-    pools
-      .filter(p => p.status === 'active')
-      .filter(isUniqueEarnContract)
-      .forEach(({ tvl, oraclePrice }) => {
-        globalTvl += tvl * oraclePrice;
-      });
+    pools.filter(isUniqueEarnContract).forEach(({ tvl, oraclePrice }) => {
+      globalTvl += tvl * oraclePrice;
+    });
 
     setPoolsTvl(globalTvl);
   }, [pools]);
