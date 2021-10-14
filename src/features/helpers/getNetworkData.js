@@ -177,17 +177,18 @@ export const getNetworkBurnTokens = () => {
     case 43114:
       return {
         [avaxAddressBook.tokens.SHIBX.symbol]: avaxAddressBook.tokens.SHIBX,
-        [avaxAddressBook.tokens.SING.symbol]: avaxAddressBook.tokens.SING,
+        [avaxAddressBook.tokens.aSING.symbol]: avaxAddressBook.tokens.aSING,
       };
     case 137:
       return {
         [polygonAddressBook.tokens.xYELD.symbol]: polygonAddressBook.tokens.xYELD,
         [polygonAddressBook.tokens.PEAR.symbol]: polygonAddressBook.tokens.PEAR,
-        [polygonAddressBook.tokens.SING.symbol]: polygonAddressBook.tokens.SING,
+        [polygonAddressBook.tokens.pSING.symbol]: polygonAddressBook.tokens.pSING,
       };
     case 250:
       return {
         [fantomAddressBook.tokens.TOMB.symbol]: fantomAddressBook.tokens.TOMB,
+        [fantomAddressBook.tokens.fSING.symbol]: fantomAddressBook.tokens.fSING,
       };
     case 1666600000:
       return {};
