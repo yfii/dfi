@@ -20,6 +20,15 @@ export const fantomPools = [
     status: 'active',
     platform: 'Beefy.Finance',
     assets: ['BIFI'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_MEDIUM',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'Maxi',
     withdrawalFee: '0.05%',
     buyTokenUrl: 'https://spookyswap.finance/swap',
   },
@@ -44,6 +53,16 @@ export const fantomPools = [
     status: 'active',
     platform: 'MIM',
     assets: ['MIM', 'USDC', 'fUSDT'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_MEDIUM',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratMultiLP',
+    withdrawalFee: '0.01%',
     addLiquidityUrl: 'https://ftm.curve.fi/factory/1/deposit',
   },
   {
@@ -66,6 +85,15 @@ export const fantomPools = [
     status: 'active',
     platform: 'Geist',
     assets: ['GEIST', 'FTM'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_SMALL',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
       'https://spookyswap.finance/add/FTM/0xd8321AA83Fb0a4ECd6348D4577431310A6E0814d',
@@ -118,6 +146,15 @@ export const fantomPools = [
     platform: 'SpiritSwap',
     assets: ['LINK', 'FTM'],
     withdrawalFee: '0%',
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://swap.spiritswap.finance/#/add/0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83/0xb3654dc3d10ea7645f8319668e8f54d2574fbdc8',
     buyTokenUrl:
@@ -143,6 +180,15 @@ export const fantomPools = [
     status: 'active',
     platform: 'SpiritSwap',
     assets: ['ANY', 'FTM'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_MEDIUM',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
       'https://swap.spiritswap.finance/#/add/0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83/0xdDcb3fFD12750B45d32E084887fdf1aABAb34239',
@@ -170,6 +216,15 @@ export const fantomPools = [
     status: 'active',
     platform: 'Curve',
     assets: ['fUSDT', 'BTC', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratMultiLP',
     withdrawalFee: '0.01%',
     addLiquidityUrl: 'https://ftm.curve.fi/tricrypto/deposit',
   },
@@ -193,6 +248,15 @@ export const fantomPools = [
     status: 'active',
     platform: 'SpiritSwap',
     assets: ['USDC', 'FTM'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
       'https://swap.spiritswap.finance/#/add/0x04068DA6C83AFCFA0e13ba15A6696662335D5B75/0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83',
@@ -218,6 +282,15 @@ export const fantomPools = [
     status: 'active',
     platform: 'SpiritSwap',
     assets: ['fUSDT', 'FTM'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
       'https://swap.spiritswap.finance/#/add/0x049d68029688eAbF473097a2fC38ef61633A3C7A/0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83',
@@ -243,6 +316,15 @@ export const fantomPools = [
     status: 'active',
     platform: 'SpiritSwap',
     assets: ['MIM', 'FTM'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_MEDIUM',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
       'https://swap.spiritswap.finance/#/add/FTM/0x82f0b8b456c1a451378467398982d4834b6829c1',
@@ -268,6 +350,15 @@ export const fantomPools = [
     status: 'active',
     platform: 'SpiritSwap',
     assets: ['CRV', 'FTM'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
       'https://swap.spiritswap.finance/#/add/0x1E4F97b9f9F913c46F1632781732927B9019C68b/0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83',
@@ -294,6 +385,15 @@ export const fantomPools = [
     status: 'active',
     platform: 'SpiritSwap',
     assets: ['ZOO', 'FTM'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://swap.spiritswap.finance/#/add/0x09e145A1D53c0045F41aEEf25D8ff982ae74dD56/0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83',
     buyTokenUrl:
@@ -320,6 +420,15 @@ export const fantomPools = [
     status: 'active',
     platform: 'SpiritSwap',
     assets: ['ICE', 'FTM'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_MEDIUM',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
       'https://swap.spiritswap.finance/#/add/0xf16e81dce15B08F326220742020379B855B87DF9/0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83',
@@ -346,6 +455,15 @@ export const fantomPools = [
     status: 'active',
     platform: 'JetSwap',
     assets: ['ETH', 'BTC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://fantom-exchange.jetswap.finance/#/add/0x74b23882a30290451A17c44f4F05243b6b58C76d/0x321162Cd933E2Be498Cd2267a90534A804051b11',
   },
@@ -369,6 +487,15 @@ export const fantomPools = [
     status: 'active',
     platform: 'JetSwap',
     assets: ['ETH', 'USDC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://fantom-exchange.jetswap.finance/#/add/0x04068da6c83afcfa0e13ba15a6696662335d5b75/0x74b23882a30290451A17c44f4F05243b6b58C76d',
   },
@@ -392,6 +519,15 @@ export const fantomPools = [
     status: 'active',
     platform: 'JetSwap',
     assets: ['BTC', 'USDC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://fantom-exchange.jetswap.finance/#/add/0x049d68029688eabf473097a2fc38ef61633a3c7a/0x321162Cd933E2Be498Cd2267a90534A804051b11',
   },
@@ -415,6 +551,15 @@ export const fantomPools = [
     status: 'active',
     platform: 'JetSwap',
     assets: ['fUSDT', 'USDC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://fantom-exchange.jetswap.finance/#/add/0x04068da6c83afcfa0e13ba15a6696662335d5b75/0x049d68029688eabf473097a2fc38ef61633a3c7a',
   },
@@ -438,6 +583,15 @@ export const fantomPools = [
     status: 'active',
     platform: 'JetSwap',
     assets: ['fWINGS', 'FTM'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://fantom-exchange.jetswap.finance/#/add/0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83/0x3D8f1ACCEe8e263F837138829B6C4517473d0688',
     buyTokenUrl:
@@ -463,6 +617,15 @@ export const fantomPools = [
     status: 'active',
     platform: 'JetSwap',
     assets: ['fWINGS', 'USDC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://fantom-exchange.jetswap.finance/#/add/0x04068da6c83afcfa0e13ba15a6696662335d5b75/0x3D8f1ACCEe8e263F837138829B6C4517473d0688',
     buyTokenUrl:
@@ -489,6 +652,15 @@ export const fantomPools = [
     status: 'active',
     platform: 'JetSwap',
     assets: ['fWINGS'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_MICRO',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'SingleStake',
     withdrawalFee: '0%',
     buyTokenUrl:
       'https://fantom-exchange.jetswap.finance/#/swap?outputCurrency=0x3D8f1ACCEe8e263F837138829B6C4517473d0688',
@@ -514,6 +686,15 @@ export const fantomPools = [
     status: 'active',
     platform: 'TombFinance',
     assets: ['TSHARE', 'FTM'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://spookyswap.finance/add/FTM/0x4cdF39285D7Ca8eB3f090fDA0C069ba5F4145B37',
     buyTokenUrl:
@@ -540,6 +721,15 @@ export const fantomPools = [
     status: 'active',
     platform: 'TombFinance',
     assets: ['TOMB', 'FTM'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_MICRO',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://spookyswap.finance/add/FTM/0x6c021Ae822BEa943b2E66552bDe1D2696a53fbB7',
     buyTokenUrl:
