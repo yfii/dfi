@@ -59,6 +59,7 @@
   "Vault-DepositsPausedTitle": "Deposits paused",
   "Vault-DepositsPausedMsg": "Deposits are paused for this vault.",
   "Vault-DepositsRetiredTitle": "RETIRED",
+  "Vault-DepositsRetiredUpgradeTitle": "RETIRED - We have upgraded this vault please move to the new and improved version",
   "Vault-DepositsRetiredRewardsTitle": "RETIRED - Underlying platform stopped rewards.",
   "Vault-DepositsRetiredExploitTitle": "RETIRED - Token has been exploited, funds are SAFU in vault.",
   "Vault-DepositsRetiredTVLTitle": "RETIRED - TVL is too low.",

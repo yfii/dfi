@@ -3,6 +3,7 @@ const retireReasonMap = {
   exploit: 'Vault-DepositsRetiredExploitTitle',
   tvl: 'Vault-DepositsRetiredTVLTitle',
   noReason: 'Vault-DepositsRetiredTitle',
+  upgrade: 'Vault-DepositsRetiredUpgradeTitle',
 };
 
 export const getRetireReason = key => {
