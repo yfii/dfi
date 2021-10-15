@@ -48,7 +48,7 @@ export const bscStakePools = [
 
   {
     id: 'moo_BANANA-ceek',
-    name: 'Ceek',
+    name: 'CEEK',
     logo: 'degens/BANANA.svg',
     token: 'mooBanana',
     tokenDecimals: 18,
@@ -81,7 +81,7 @@ export const bscStakePools = [
   },
   {
     id: 'moo_banana-wbnb-ceek-ceek',
-    name: 'Ceek',
+    name: 'CEEK',
     assets: ['CEEK', 'BNB'],
     token: 'mooApeCEEK-BNB',
     tokenDecimals: 18,
