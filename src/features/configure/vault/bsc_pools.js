@@ -99,8 +99,8 @@ export const bscPools = [
   },
   {
     id: 'banana-wbnb-ceek',
-    name: 'NFTY-BNB LP',
-    token: 'NFTY-BNB BLP',
+    name: 'CEEK-BNB LP',
+    token: 'CEEK-BNB BLP',
     tokenDescription: 'ApeSwap',
     tokenAddress: '0x119D6Ebe840966c9Cf4fF6603E76208d30BA2179',
     tokenDecimals: 18,
