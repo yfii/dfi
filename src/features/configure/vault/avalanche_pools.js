@@ -86,7 +86,7 @@ export const avalanchePools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Curve',
-    assets: ['DAI', 'USDC', 'USDT'],
+    assets: ['DAIe', 'USDCe', 'USDTe'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
