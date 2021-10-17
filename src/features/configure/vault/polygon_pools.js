@@ -45,6 +45,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'QuickSwap',
     assets: ['QUICK'],
+    risks: [
+      'COMPLEXITY_HIGH',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'SingleStake',
     buyTokenUrl:
       'https://quickswap.exchange/#/swap?outputCurrency=0x831753DD7087CaC61aB5644b308642cc1c33Dc13',
   },
@@ -68,6 +78,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'SushiSwap',
     assets: ['USDC', 'BIFI'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.sushi.com/add/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174/0xFbdd194376de19a88118e84E279b977f165d01b8',
     buyTokenUrl:
@@ -172,6 +192,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'Curve',
     assets: ['WBTC', 'renBTC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     withdrawalFee: '0.01%',
     addLiquidityUrl: 'https://polygon.curve.fi/ren/deposit',
   },
@@ -342,6 +372,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'ApeSwap',
     assets: ['BANANA', 'MATIC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_SMALL',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.apeswap.finance/add/ETH/0x5d47bAbA0d66083C52009271faF3F50DCc01023C',
     buyTokenUrl:
@@ -368,6 +408,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'Curve',
     assets: ['DAI', 'USDC', 'USDT', 'WBTC', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratMultiLP',
     withdrawalFee: '0.01%',
     addLiquidityUrl: 'https://polygon.curve.fi/atricrypto3/deposit',
   },
@@ -391,6 +441,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'SushiSwap',
     assets: ['FOX', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
       'https://app.sushi.com/add/0x7ceb23fd6bc0add59e62ac25578270cff1b9f619/0x65a05db8322701724c197af82c9cae41195b0aa8',
@@ -417,6 +477,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'SushiSwap',
     assets: ['GHST', 'MATIC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.sushi.com/add/0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270/0x385eeac5cb85a38a9a07a70c73e0a3271cfb54a7',
     buyTokenUrl:
@@ -443,6 +513,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'Curve',
     assets: ['DAI', 'USDC', 'USDT'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratMultiLP',
     withdrawalFee: '0%',
     addLiquidityUrl: 'https://polygon.curve.fi/aave/deposit',
   },
@@ -713,6 +793,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'QuickSwap',
     assets: ['QI', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x580A84C73811E1839F75d86d75d88cCa0c241fF4/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
@@ -738,6 +828,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'QuickSwap',
     assets: ['MAI', 'USDT'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'ALGO_STABLE',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0xc2132D05D31c914a87C6611C10748AEb04B58e8F/0xa3Fa99A148fA48D14Ed51d610c367C61876997F1',
@@ -763,6 +863,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'QuickSwap',
     assets: ['MAI', 'DAI'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'ALGO_STABLE',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063/0xa3Fa99A148fA48D14Ed51d610c367C61876997F1',
@@ -788,6 +898,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'QuickSwap',
     assets: ['MAI', 'MATIC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'ALGO_STABLE',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270/0xa3Fa99A148fA48D14Ed51d610c367C61876997F1',
@@ -813,6 +933,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'QuickSwap',
     assets: ['USDT', 'MATIC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270/0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
@@ -839,6 +969,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'WaultFinance',
     assets: ['USDC', 'WUSD'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'ALGO_STABLE',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://swap.wault.finance/polygon/#/add/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174/0xb8ab048D6744a276b2772dC81e406a4b769A5c3D',
     buyTokenUrl:
@@ -864,6 +1004,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'ApeSwap',
     assets: ['WATCH', 'MATIC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.apeswap.finance/add/0x09211dc67f9fe98fb7bbb91be0ef05f4a12fa2b2/ETH',
     buyTokenUrl:
@@ -889,6 +1039,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'WaultFinance',
     assets: ['WEXpoly', 'USDC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://swap.wault.finance/polygon/#/add/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174/0x4c4BF319237D98a30A929A96112EfFa8DA3510EB',
     buyTokenUrl:
@@ -914,6 +1074,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'SushiSwap',
     assets: ['AXS', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.sushi.com/add/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619/0x61BDD9C7d4dF4Bf47A4508c0c8245505F2Af5b7b',
     buyTokenUrl:
@@ -965,6 +1135,16 @@ export const polygonPools = [
     platform: 'ApeSwap',
     assets: ['USDC', 'DAI'],
     withdrawalFee: '0%',
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.apeswap.finance/add/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174/0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063',
     buyTokenUrl:
@@ -990,6 +1170,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'SushiSwap',
     assets: ['AVAX', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.sushi.com/add/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619/0x2C89bbc92BD86F8075d1DEcc58C7F4E0107f286b',
     buyTokenUrl:
@@ -1063,6 +1253,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'QuickSwap',
     assets: ['ETH', 'renDOGE'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619/0xcE829A89d4A55a63418bcC43F00145adef0eDB8E',
@@ -1193,6 +1393,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'QuickSwap',
     assets: ['QUICK', 'USDC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x2791bca1f2de4661ed88a30c99a7a9449aa84174/0x831753dd7087cac61ab5644b308642cc1c33dc13',
@@ -1219,6 +1429,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'QuickSwap',
     assets: ['AVAX', 'MATIC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270/0x2c89bbc92bd86f8075d1decc58c7f4e0107f286b',
@@ -1421,6 +1641,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'QuickSwap',
     assets: ['SOL', 'MATIC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/ETH/0x7DfF46370e9eA5f0Bad3C4E29711aD50062EA7A4',
     buyTokenUrl:
@@ -1446,6 +1676,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'QuickSwap',
     assets: ['UNI', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0xb33EaAd8d922B1083446DC23f610c2567fB5180f/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
     buyTokenUrl:
@@ -2235,6 +2475,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'QuickSwap',
     assets: ['NEXO', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MEDIUM',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x7ceb23fd6bc0add59e62ac25578270cff1b9f619/0x41b3966B4FF7b427969ddf5da3627d6AEAE9a48E',
     buyTokenUrl:
@@ -2509,6 +2759,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'WaultFinance',
     assets: ['WEXpoly', 'WBTC'],
+    risks: [
+      'IL_HIGH',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://swap.wault.finance/polygon/#/add/0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6/0x4c4BF319237D98a30A929A96112EfFa8DA3510EB',
     buyTokenUrl:
@@ -3151,6 +3411,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'ApeSwap',
     assets: ['MATIC', 'USDT'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.apeswap.finance/add/ETH/0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
     buyTokenUrl:
@@ -3176,6 +3446,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'ApeSwap',
     assets: ['MATIC', 'DAI'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.apeswap.finance/add/ETH/0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063',
     buyTokenUrl:
@@ -3252,6 +3532,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'QuickSwap',
     assets: ['rUSD', 'USDC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     withdrawalFee: '0.01%',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0xfC40a4F89b410a1b855b5e205064a38fC29F5eb5/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
@@ -3303,6 +3593,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'SushiSwap',
     assets: ['ibBTC', 'WBTC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_HIGH',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.sushi.com/add/0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6/0x4EaC4c4e9050464067D673102F8E24b2FccEB350',
     buyTokenUrl:
@@ -3328,6 +3628,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'ApeSwap',
     assets: ['ETH', 'MATIC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.apeswap.finance/add/ETH/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
     buyTokenUrl:
@@ -3353,6 +3663,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'ApeSwap',
     assets: ['WBTC', 'MATIC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.apeswap.finance/add/ETH/0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6',
     buyTokenUrl:
@@ -3378,6 +3698,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'ApeSwap',
     assets: ['BNB', 'MATIC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.apeswap.finance/add/ETH/0xA649325Aa7C5093d12D6F98EB4378deAe68CE23F',
     buyTokenUrl:
@@ -3505,6 +3835,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'QuickSwap',
     assets: ['DAI', 'USDT'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     withdrawalFee: '0.01%',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063/0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
@@ -3557,6 +3897,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'WaultFinance',
     assets: ['WBTC', 'USDC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://swap.wault.finance/polygon/#/add/0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
   },
@@ -3580,6 +3930,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'WaultFinance',
     assets: ['WBTC', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://swap.wault.finance/polygon/#/add/0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
   },
@@ -3604,6 +3964,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'WaultFinance',
     assets: ['MATIC', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://swap.wault.finance/polygon/#/add/MATIC/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
   },
@@ -3651,6 +4021,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'WaultFinance',
     assets: ['SNX', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_MEDIUM',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://swap.wault.finance/polygon/#/add/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619/0x50B728D8D964fd00C2d0AAD81718b71311feF68a',
   },
@@ -3674,6 +4054,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'WaultFinance',
     assets: ['LINK', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://swap.wault.finance/polygon/#/add/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619/0x53E0bca35eC356BD5ddDFebbD1Fc0fD03FaBad39',
   },
@@ -3697,6 +4087,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'WaultFinance',
     assets: ['AAVE', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://swap.wault.finance/polygon/#/add/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619/0xD6DF932A45C0f255f85145f286eA0b292B21C90B',
   },
@@ -3720,6 +4120,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'WaultFinance',
     assets: ['DAI', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://swap.wault.finance/polygon/#/add/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619/0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063',
   },
@@ -3743,6 +4153,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'WaultFinance',
     assets: ['DAI', 'USDC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     withdrawalFee: '0.01%',
     addLiquidityUrl:
       'https://swap.wault.finance/polygon/#/add/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174/0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063',
@@ -3768,6 +4188,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'WaultFinance',
     assets: ['MATIC', 'USDC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://swap.wault.finance/polygon/#/add/MATIC/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
   },
@@ -3793,6 +4223,16 @@ export const polygonPools = [
     platform: 'WaultFinance',
     assets: ['USDT', 'USDC'],
     withdrawalFee: '0.01%',
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://swap.wault.finance/polygon/#/add/0x2791bca1f2de4661ed88a30c99a7a9449aa84174/0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
   },
@@ -3817,6 +4257,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'WaultFinance',
     assets: ['WEXpoly', 'USDC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://swap.wault.finance/polygon/#/add/0x2791bca1f2de4661ed88a30c99a7a9449aa84174/0x4c4BF319237D98a30A929A96112EfFa8DA3510EB',
     buyTokenUrl:
@@ -3842,6 +4292,16 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'WaultFinance',
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'SingleStake',
     assets: ['WEXpoly'],
     buyTokenUrl:
       'https://swap.wault.finance/polygon/#/swap?outputCurrency=0x4c4BF319237D98a30A929A96112EfFa8DA3510EB',
@@ -3867,6 +4327,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'WaultFinance',
     assets: ['WEXpoly', 'MATIC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://swap.wault.finance/polygon/#/add/0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270/0x4c4BF319237D98a30A929A96112EfFa8DA3510EB',
     buyTokenUrl:
@@ -3893,6 +4363,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'WaultFinance',
     assets: ['BIFI', 'MATIC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://swap.wault.finance/polygon/#/add/0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270/0xFbdd194376de19a88118e84E279b977f165d01b8',
     buyTokenUrl:
@@ -3919,6 +4399,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'SushiSwap',
     assets: ['ETH', 'WFIL'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.sushi.com/add/0xEde1B77C0Ccc45BFa949636757cd2cA7eF30137F/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
     buyTokenUrl:
@@ -3945,6 +4435,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'QuickSwap',
     assets: ['USDC', 'DAI'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     withdrawalFee: '0.01%',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174/0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063',
@@ -3972,6 +4472,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'QuickSwap',
     assets: ['QUICK', 'UNI'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x831753DD7087CaC61aB5644b308642cc1c33Dc13/0xb33EaAd8d922B1083446DC23f610c2567fB5180f',
     buyTokenUrl:
@@ -4050,6 +4560,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'QuickSwap',
     assets: ['USDC', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x2791bca1f2de4661ed88a30c99a7a9449aa84174/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
     buyTokenUrl:
@@ -4076,6 +4596,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'QuickSwap',
     assets: ['DAI', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619/0x8f3cf7ad23cd3cadbd9735aff958023239c6a063',
     buyTokenUrl:
@@ -4129,6 +4659,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'Aave',
     assets: ['WBTC'],
+    risks: [
+      'COMPLEXITY_MID',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'SingleStake',
     withdrawalFee: '0.01%',
     buyTokenUrl:
       'https://quickswap.exchange/#/swap?outputCurrency=0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6',
@@ -4154,6 +4694,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'Aave',
     assets: ['ETH'],
+    risks: [
+      'COMPLEXITY_MID',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'SingleStake',
     withdrawalFee: '0.01%',
     buyTokenUrl:
       'https://quickswap.exchange/#/swap?outputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
@@ -4283,6 +4833,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'SushiSwap',
     assets: ['GRT', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.sushi.com/add/0x5fe2B58c013d7601147DcdD68C143A77499f5531/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
     buyTokenUrl:
@@ -4309,6 +4869,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'SushiSwap',
     assets: ['FRAX', 'FXS'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     withdrawalFee: '0.01%',
     addLiquidityUrl:
       'https://app.sushi.com/add/0x104592a158490a9228070E0A8e5343B499e125D0/0x3e121107F6F22DA4911079845a470757aF4e1A1b',
@@ -4336,6 +4906,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'SushiSwap',
     assets: ['FRAX', 'USDC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'ALGO_STABLE',
+      'MCAP_SMALL',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.sushi.com/add/0x104592a158490a9228070E0A8e5343B499e125D0/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
     buyTokenUrl:
@@ -4362,6 +4942,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'SushiSwap',
     assets: ['WOOFY', 'MATIC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.sushi.com/add/0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270/0xD0660cD418a64a1d44E9214ad8e459324D8157f1',
     buyTokenUrl:
@@ -4388,6 +4978,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'SushiSwap',
     assets: ['USDC', 'DAI'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     withdrawalFee: '0.01%',
     addLiquidityUrl:
       'https://app.sushi.com/add/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174/0x8f3cf7ad23cd3cadbd9735aff958023239c6a063',
@@ -4415,6 +5015,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'SushiSwap',
     assets: ['SNX', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_MEDIUM',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.sushi.com/add/0x50B728D8D964fd00C2d0AAD81718b71311feF68a/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
     buyTokenUrl:
@@ -4626,6 +5236,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'QuickSwap',
     assets: ['WBTC', 'USDC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
     buyTokenUrl:
@@ -4703,6 +5323,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'QuickSwap',
     assets: ['MATIC', 'USDC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/ETH/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
     buyTokenUrl:
@@ -4912,6 +5542,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'Aave',
     assets: ['MATIC'],
+    risks: [
+      'COMPLEXITY_MID',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'SingleStake',
     withdrawalFee: '0.01%',
     buyTokenUrl:
       'https://quickswap.exchange/#/swap?outputCurrency=0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
@@ -4937,6 +5577,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'Aave',
     assets: ['AAVE'],
+    risks: [
+      'COMPLEXITY_MID',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'SingleStake',
     withdrawalFee: '0.01%',
     buyTokenUrl:
       'https://quickswap.exchange/#/swap?outputCurrency=0xD6DF932A45C0f255f85145f286eA0b292B21C90B',
@@ -4962,6 +5612,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'Aave',
     assets: ['DAI'],
+    risks: [
+      'COMPLEXITY_MID',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'SingleStake',
     withdrawalFee: '0.01%',
     buyTokenUrl:
       'https://quickswap.exchange/#/swap?outputCurrency=0x8f3cf7ad23cd3cadbd9735aff958023239c6a063',
@@ -4987,6 +5647,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'Aave',
     assets: ['USDC'],
+    risks: [
+      'COMPLEXITY_MID',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'SingleStake',
     withdrawalFee: '0.01%',
     buyTokenUrl:
       'https://quickswap.exchange/#/swap?outputCurrency=0x2791bca1f2de4661ed88a30c99a7a9449aa84174',
@@ -5012,6 +5682,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'SushiSwap',
     assets: ['CRV', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MEDIUM',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.sushi.com/#/add/0x172370d5cd63279efa6d502dab29171933a610af/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
     buyTokenUrl:
@@ -5038,6 +5718,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'SushiSwap',
     assets: ['USDC', 'USDT'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     withdrawalFee: '0.01%',
     addLiquidityUrl:
       'https://app.sushi.com/#/add/0x2791bca1f2de4661ed88a30c99a7a9449aa84174/0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
@@ -5065,6 +5755,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'SushiSwap',
     assets: ['LINK', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.sushi.com/#/add/0x53e0bca35ec356bd5dddfebbd1fc0fd03fabad39/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
     buyTokenUrl:
@@ -5171,6 +5871,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'SushiSwap',
     assets: ['AAVE', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.sushi.com/#/add/0xD6DF932A45C0f255f85145f286eA0b292B21C90B/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
     buyTokenUrl:
@@ -5197,6 +5907,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'SushiSwap',
     assets: ['ETH', 'DAI'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.sushi.com/#/add/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619/0x8f3cf7ad23cd3cadbd9735aff958023239c6a063',
     buyTokenUrl:
@@ -5223,6 +5943,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'SushiSwap',
     assets: ['WBTC', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.sushi.com/#/add/0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
     buyTokenUrl:
@@ -5249,6 +5979,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'SushiSwap',
     assets: ['ETH', 'USDT'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.sushi.com/#/add/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619/0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
     buyTokenUrl:
@@ -5275,6 +6015,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'SushiSwap',
     assets: ['USDC', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.sushi.com/#/add/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
     buyTokenUrl:
@@ -5301,6 +6051,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'SushiSwap',
     assets: ['MATIC', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.sushi.com/#/add/0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
     buyTokenUrl:
@@ -5381,6 +6141,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'QuickSwap',
     assets: ['USDC', 'USDT'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174/0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
     buyTokenUrl:
@@ -5433,6 +6203,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'QuickSwap',
     assets: ['WBTC', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
     buyTokenUrl:
@@ -5567,6 +6347,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'QuickSwap',
     assets: ['QUICK', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619/0x831753dd7087cac61ab5644b308642cc1c33dc13',
     buyTokenUrl:
@@ -5619,6 +6409,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'QuickSwap',
     assets: ['AAVE', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_HIGH',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0xD6DF932A45C0f255f85145f286eA0b292B21C90B/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
     buyTokenUrl:
@@ -5645,6 +6445,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'QuickSwap',
     assets: ['LINK', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x53e0bca35ec356bd5dddfebbd1fc0fd03fabad39/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
     buyTokenUrl:
@@ -5697,6 +6507,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'QuickSwap',
     assets: ['ETH', 'USDT'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/ETH/0xc2132d05d31c914a87c6611c10748aeb04b58e8f',
     buyTokenUrl:
@@ -5723,6 +6543,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'QuickSwap',
     assets: ['ETH', 'MATIC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/ETH/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
     buyTokenUrl:
@@ -5749,6 +6579,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'QuickSwap',
     assets: ['QUICK', 'MATIC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270/0x831753dd7087cac61ab5644b308642cc1c33dc13',
     buyTokenUrl:
