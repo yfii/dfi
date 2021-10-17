@@ -222,7 +222,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'SookySwap',
+    platform: 'SpookySwap',
     assets: ['SPELL', 'FTM'],
     risks: [
       'COMPLEXITY_LOW',
