@@ -32,7 +32,6 @@ export const fantomPools = [
     withdrawalFee: '0.05%',
     buyTokenUrl: 'https://spookyswap.finance/swap',
   },
-  /* Strat needs to be redone
   {
     id: 'scream-frax',
     logo: 'single-assets/FRAX.svg',
@@ -43,8 +42,8 @@ export const fantomPools = [
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooScreamFRAX',
-    earnedTokenAddress: '0xeA535a744ce6968ee15E628652bF8f39b95b6695',
-    earnContractAddress: '0xeA535a744ce6968ee15E628652bF8f39b95b6695',
+    earnedTokenAddress: '0xb8EddAA94BB8AbF8A5BB90c217D53960242e104D',
+    earnContractAddress: '0xb8EddAA94BB8AbF8A5BB90c217D53960242e104D',
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'tokens',
@@ -66,7 +65,6 @@ export const fantomPools = [
     withdrawalFee: '0%',
     buyTokenUrl: 'https://app.frax.finance/crosschain',
   },
-  */
   {
     id: 'scream-mim-supply',
     logo: 'single-assets/MIM.png',
