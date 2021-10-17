@@ -32,6 +32,7 @@ export const fantomPools = [
     withdrawalFee: '0.05%',
     buyTokenUrl: 'https://spookyswap.finance/swap',
   },
+  /* Strat needs to be redone
   {
     id: 'scream-frax',
     logo: 'single-assets/FRAX.svg',
@@ -65,6 +66,7 @@ export const fantomPools = [
     withdrawalFee: '0%',
     buyTokenUrl: 'https://app.frax.finance/crosschain',
   },
+  */
   {
     id: 'scream-mim-supply',
     logo: 'single-assets/MIM.png',
@@ -96,7 +98,8 @@ export const fantomPools = [
     ],
     stratType: 'SingleStake',
     withdrawalFee: '0%',
-    buyTokenUrl: 'https://spookyswap.finance/swap?inputCurrency=FTM&outputCurrency=0xd8321AA83Fb0a4ECd6348D4577431310A6E0814d',
+    buyTokenUrl:
+      'https://spookyswap.finance/swap?inputCurrency=FTM&outputCurrency=0xd8321AA83Fb0a4ECd6348D4577431310A6E0814d',
   },
   {
     id: 'spirit-wmemo-mim',
