@@ -56,7 +56,7 @@ export const fantomPools = [
     risks: [
       'COMPLEXITY_MID',
       'BATTLE_TESTED',
-      'IL_NONE',
+      'ALGO_STABLE',
       'MCAP_MEDIUM',
       'AUDIT',
       'CONTRACTS_VERIFIED',

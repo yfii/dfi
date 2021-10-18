@@ -4925,7 +4925,7 @@ export const bscPools = [
     oracleId: 'cakev2-kalm-bnb',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'PancakeSwap',
     assets: ['KALM', 'BNB'],
     withdrawalFee: '0%',
