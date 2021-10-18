@@ -47,6 +47,40 @@ export const bscStakePools = [
   },
 
   {
+    id: 'moo_banana-banana-bnb-playmining',
+    name: 'PlayMining',
+    logo: 'degens/banana-bnb.svg',
+    token: 'mooApeBANANA-BNB',
+    tokenDecimals: 18,
+    tokenAddress: '0x15396D3BD9338A14AE90613Fc2b85c5F7b5621CF',
+    tokenOracle: 'lps',
+    tokenOracleId: 'banana-banana-bnb',
+    earnedToken: 'DEP',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xcaF5191fc480F43e4DF80106c7695ECA56E48B18',
+    earnContractAddress: '0x849F856f54C7b45e574300E9B7834B96F62a5166',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'DEP',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1635934045,
+    partners: [
+      {
+        logo: 'stake/dep/logo.png',
+        background: 'stake/dep/bg.png',
+        text: 'Playmining is a new form of income that rewards you through adventure and exploration. A platform that creates a society that is free from occupation and environment by exchanging one’s passions among those who create fun and those who share the fun.',
+        website: 'https://playmining.com/?locale=en',
+        social: {
+          telegram: 'https://t.me/DEAPcoin_group',
+          twitter: 'https://twitter.com/PlayMining_SG',
+        },
+      },
+    ],
+  },
+
+  {
     id: 'moo_BANANA-ceek',
     name: 'CEEK',
     logo: 'degens/BANANA.svg',
