@@ -178,6 +178,16 @@ export const avalanchePools = [
     platform: 'Aave',
     assets: ['AVAX'],
     withdrawalFee: '0.01%',
+    risks: [
+      'COMPLEXITY_MID',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'SingleStake',
     buyTokenUrl:
       'https://www.traderjoexyz.com/#/trade?outputCurrency=0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7',
   },
@@ -202,6 +212,16 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Aave',
     assets: ['DAIe'],
+    risks: [
+      'COMPLEXITY_MID',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'SingleStake',
     withdrawalFee: '0.01%',
     buyTokenUrl:
       'https://www.traderjoexyz.com/#/trade?outputCurrency=0xd586E7F844cEa2F87f50152665BCbc2C279D8d70',
@@ -227,6 +247,16 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Aave',
     assets: ['USDCe'],
+    risks: [
+      'COMPLEXITY_MID',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'SingleStake',
     withdrawalFee: '0.01%',
     buyTokenUrl:
       'https://www.traderjoexyz.com/#/trade?outputCurrency=0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664',
@@ -252,6 +282,16 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Aave',
     assets: ['USDTe'],
+    risks: [
+      'COMPLEXITY_MID',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'SingleStake',
     withdrawalFee: '0.01%',
     buyTokenUrl:
       'https://www.traderjoexyz.com/#/trade?outputCurrency=0xc7198437980c041c805A1EDcbA50c1Ce5db95118',
@@ -277,6 +317,16 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Aave',
     assets: ['WETHe'],
+    risks: [
+      'COMPLEXITY_MID',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'SingleStake',
     withdrawalFee: '0.01%',
     buyTokenUrl:
       'https://www.traderjoexyz.com/#/trade?outputCurrency=0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB',
@@ -302,6 +352,16 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Aave',
     assets: ['WBTCe'],
+    risks: [
+      'COMPLEXITY_MID',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'SingleStake',
     withdrawalFee: '0.01%',
     buyTokenUrl:
       'https://www.traderjoexyz.com/#/trade?outputCurrency=0x50b7545627a5162F82A992c33b87aDc75187B218',
@@ -327,6 +387,16 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Aave',
     assets: ['AAVEe'],
+    risks: [
+      'COMPLEXITY_MID',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'SingleStake',
     withdrawalFee: '0.01%',
     buyTokenUrl:
       'https://www.traderjoexyz.com/#/trade?outputCurrency=0x63a72806098Bd3D9520cC43356dD78afe5D386D9',
@@ -352,6 +422,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['JOE'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'SingleStake',
     withdrawalFee: '0%',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
   },
@@ -375,6 +454,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['JOE', 'USDCe'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0x6e84a6216ea6dacc71ee8e6b0a5b7322eebc0fdd/0xa7d7079b0fead91f3e65f86e8915cb59c1a4c664',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -399,6 +487,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['AAVEe', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0x63a72806098bd3d9520cc43356dd78afe5d386d9/AVAX',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -423,6 +520,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['MAI', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0x3b55e45fd6bd7d4724f5c47e0d1bcaedd059263e/AVAX',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -447,6 +553,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['WETHe', 'USDCe'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0x49d5c2bdffac6ce2bfdb6640f4f80f226bc10bab/0xa7d7079b0fead91f3e65f86e8915cb59c1a4c664',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -471,6 +586,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['WBTCe', 'USDCe'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0x50b7545627a5162f82a992c33b87adc75187b218/0xa7d7079b0fead91f3e65f86e8915cb59c1a4c664',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -495,6 +619,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['BNB', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0x264c1383ea520f73dd837f915ef3a732e204a493/AVAX',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -519,6 +652,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['USDCe', 'USDTe'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0xa7d7079b0fead91f3e65f86e8915cb59c1a4c664/0xc7198437980c041c805a1edcba50c1ce5db95118',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -543,6 +685,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['USDTe', 'DAIe'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0xc7198437980c041c805a1edcba50c1ce5db95118/0xd586e7f844cea2f87f50152665bcbc2c279d8d70',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -567,6 +718,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['USDTe', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/AVAX/0xc7198437980c041c805a1edcba50c1ce5db95118',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -591,6 +751,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['LINKe', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0x5947bb275c521040051d82396192181b413227a3/AVAX',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -615,6 +784,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['SPELL', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7/0xCE1bFFBD5374Dac86a2893119683F4911a2F7814',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -639,6 +817,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['FRAX', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_SMALL',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7/0xDC42728B0eA910349ed3c6e1c9Dc06b5FB591f98',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -663,6 +850,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['TIME', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7/0xb54f16fB19478766A268F172C9480f8da1a7c9C3',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -688,6 +884,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['PNG'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'SingleStake',
     withdrawalFee: '0%',
     buyTokenUrl:
       'https://app.pangolin.exchange/#/swap?inputCurrency=0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7&outputCurrency=0x60781C2586D68229fde47564546784ab3fACA982',
@@ -712,6 +917,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['MAI', 'USDCe'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0x3b55e45fd6bd7d4724f5c47e0d1bcaedd059263e/0xa7d7079b0fead91f3e65f86e8915cb59c1a4c664',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -736,6 +950,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['JOE', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LARGE',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/AVAX/0x6e84a6216eA6dACC71eE8E6b0a5B7322EEbC0fDd',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -760,6 +983,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['JOE', 'USDTe'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LARGE',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/AVAX/0x6e84a6216eA6dACC71eE8E6b0a5B7322EEbC0fDd',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -784,6 +1016,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['MIM', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/AVAX/0x130966628846BFd36ff31a822705796e8cb8C18D',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -808,6 +1049,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['aQI', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LARGE',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/AVAX/0x8729438EB15e2C8B576fCc6AeCdA6A148776C0F5',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -832,6 +1082,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['SYN', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LARGE',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/AVAX/0x1f1E7c893855525b303f99bDF5c3c05Be09ca251',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -856,6 +1115,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['WETHe', 'USDTe'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0xc7198437980c041c805A1EDcbA50c1Ce5db95118/0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -880,6 +1148,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['WBTCe', 'USDTe'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0xc7198437980c041c805A1EDcbA50c1Ce5db95118/0x50b7545627a5162F82A992c33b87aDc75187B218',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -904,6 +1181,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['WBTCe', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/AVAX/0x50b7545627a5162F82A992c33b87aDc75187B218',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -928,6 +1214,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['WETHe', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/AVAX/0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -952,6 +1247,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['USDCe', 'DAIe'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0xd586E7F844cEa2F87f50152665BCbc2C279D8d70/0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -976,6 +1280,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['USDCe', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/AVAX/0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -1000,6 +1313,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Trader Joe',
     assets: ['DAIe', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/AVAX/0xd586e7f844cea2f87f50152665bcbc2c279d8d70',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -1024,6 +1346,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['USDCe', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664',
     buyTokenUrl:
@@ -1049,6 +1380,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'OliveSwap',
     assets: ['DAIe', 'USDTe'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://swap.olive.cash/#/add/0xd586E7F844cEa2F87f50152665BCbc2C279D8d70/0xc7198437980c041c805A1EDcbA50c1Ce5db95118',
   },
@@ -1072,6 +1412,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'OliveSwap',
     assets: ['BUSDe', 'USDTe'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://swap.olive.cash/#/add/0x19860CCB0A68fd4213aB9D8266F7bBf05A8dDe98/0xc7198437980c041c805A1EDcbA50c1Ce5db95118',
   },
@@ -1095,6 +1444,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['aQI', 'PNG'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/0x60781C2586D68229fde47564546784ab3fACA982/0x8729438EB15e2C8B576fCc6AeCdA6A148776C0F5',
     buyTokenUrl:
@@ -1120,6 +1478,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['aQI', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0x8729438EB15e2C8B576fCc6AeCdA6A148776C0F5',
     buyTokenUrl:
@@ -1145,6 +1512,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['UNIe', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0x8eBAf22B6F053dFFeaf46f4Dd9eFA95D89ba8580',
     buyTokenUrl:
@@ -1170,6 +1546,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['YFIe', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_MEDIUM',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0x9eAaC1B23d935365bD7b542Fe22cEEe2922f52dc',
     buyTokenUrl:
@@ -1195,6 +1580,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['AAVEe', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0x63a72806098Bd3D9520cC43356dD78afe5D386D9',
     buyTokenUrl:
@@ -1220,6 +1614,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['SUSHIe', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MEDIUM',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0x37B608519F91f70F2EeB0e5Ed9AF4061722e4F76',
     buyTokenUrl:
@@ -1245,6 +1648,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['XAVA', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0x5947BB275c521040051D82396192181b413227A3',
     buyTokenUrl:
@@ -1270,6 +1682,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['USDTe', 'PNG'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/0x60781c2586d68229fde47564546784ab3faca982/0xc7198437980c041c805a1edcba50c1ce5db95118',
     buyTokenUrl:
@@ -1295,6 +1716,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['WETHe', 'PNG'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0xc7198437980c041c805A1EDcbA50c1Ce5db95118',
     buyTokenUrl:
@@ -1320,6 +1750,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['WBTCe', 'PNG'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0x50b7545627a5162F82A992c33b87aDc75187B218',
     buyTokenUrl:
@@ -1345,6 +1784,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['DAIe', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0xd586E7F844cEa2F87f50152665BCbc2C279D8d70',
     buyTokenUrl:
@@ -1370,6 +1818,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['LINKe', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0x5947BB275c521040051D82396192181b413227A3',
     buyTokenUrl:
@@ -1395,6 +1852,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['WETHe', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0xc7198437980c041c805A1EDcbA50c1Ce5db95118',
     buyTokenUrl:
@@ -1420,6 +1886,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['USDTe', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0xc7198437980c041c805A1EDcbA50c1Ce5db95118',
     buyTokenUrl:
@@ -1445,6 +1920,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['WBTCe', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0x50b7545627a5162F82A992c33b87aDc75187B218',
     buyTokenUrl:
@@ -1470,6 +1954,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['BIFI', 'PNG'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/0x60781c2586d68229fde47564546784ab3faca982/0xd6070ae98b8069de6B494332d1A1a81B6179D960',
     buyTokenUrl:
@@ -1495,6 +1988,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['BIFI', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7/0xd6070ae98b8069de6B494332d1A1a81B6179D960',
     buyTokenUrl:
@@ -1520,6 +2022,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['BNB', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7/0x264c1383EA520f73dd837F915ef3a732e204a493',
     buyTokenUrl:
@@ -1624,6 +2135,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'OliveSwap',
     assets: ['OLIVE', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://swap.olive.cash/#/add/AVAX/0x617724974218A18769020A70162165A539c07E8a',
     buyTokenUrl:
@@ -2054,6 +2574,15 @@ export const avalanchePools = [
     status: 'active',
     platform: 'Pangolin',
     assets: ['PNG', 'AVAX'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0x60781C2586D68229fde47564546784ab3fACA982',
     buyTokenUrl:
