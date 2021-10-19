@@ -5956,8 +5956,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'satis-xsat-busd',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['SAT', 'BUSD'],
     addLiquidityUrl:
@@ -13948,7 +13948,7 @@ export const bscPools = [
   },
 
   {
-    id: 'sponge-soak-bnb',
+    id: 'sponge-soak-bnb-eol',
     logo: 'bnb-pairs/SOAK-BNB.svg',
     name: 'SOAK-BNB LP',
     token: 'SOAK-BNB LP',
@@ -13964,8 +13964,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'sponge-soak-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['SOAK', 'BNB'],
     addLiquidityUrl:
