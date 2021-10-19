@@ -1161,7 +1161,7 @@ export const bscPools = [
       'https://pancakeswap.finance/swap?outputCurrency=0xb6C53431608E626AC81a9776ac3e999c5556717c',
   },
   {
-    id: 'honeyfarm-moon-bnb',
+    id: 'honeyfarm-moon-bnb-eol',
     name: 'MOON-BNB LP',
     token: 'MOON-BNB LP',
     tokenDescription: 'PancakeSwap (HoneyFarm)',
@@ -1176,8 +1176,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'honeyfarm-moon-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'false',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['MOON', 'BNB'],
     addLiquidityUrl:
@@ -1186,7 +1186,7 @@ export const bscPools = [
       'https://pancakeswap.finance/swap?outputCurrency=0xE8c93310af068aa50bd7bF0ebFa459Df2a02ceba',
   },
   {
-    id: 'honeyfarm-moon-busd',
+    id: 'honeyfarm-moon-busd-eol',
     name: 'MOON-BUSD LP',
     token: 'MOON-BUSD LP',
     tokenDescription: 'PancakeSwap (HoneyFarm)',
@@ -1201,8 +1201,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'honeyfarm-moon-busd',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'false',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['MOON', 'BUSD'],
     addLiquidityUrl:
@@ -1236,7 +1236,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x55d398326f99059fF775485246999027B3197955&outputCurrency=0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c',
   },
   {
-    id: 'mdex-bsc-usdt-usdc',
+    id: 'mdex-bsc-usdt-usdc-eol',
     name: 'USDT-USDC LP',
     token: 'USDT-USDC LP',
     tokenDescription: 'Mdex',
@@ -1251,8 +1251,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'mdex-usdt-usdc',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Mdex',
     assets: ['USDT', 'USDC'],
     addLiquidityUrl:
@@ -1261,7 +1261,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x55d398326f99059fF775485246999027B3197955&outputCurrency=0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
   },
   {
-    id: 'mdex-bsc-usdt-busd',
+    id: 'mdex-bsc-usdt-busd-eol',
     name: 'USDT-BUSD LP',
     token: 'USDT-BUSD LP',
     tokenDescription: 'Mdex',
@@ -1276,8 +1276,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'mdex-usdt-busd',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Mdex',
     assets: ['USDT', 'BUSD'],
     addLiquidityUrl:
@@ -5940,7 +5940,7 @@ export const bscPools = [
   },
 
   {
-    id: 'satis-xsat-busd',
+    id: 'satis-xsat-busd-eol',
     logo: 'degens/SAT-BUSD.png',
     name: 'xSAT-BUSD LP',
     token: 'xSAT-BUSD LP',
@@ -5966,7 +5966,7 @@ export const bscPools = [
       'https://pancakeswap.finance/swap?outputCurrency=0x8fda94079913CB921D065Ed9c004Afb43e1f900e',
   },
   {
-    id: 'satis-xsat-bnb',
+    id: 'satis-xsat-bnb-eol',
     logo: 'degens/SAT-BNB.png',
     name: 'xSAT-BNB LP',
     token: 'xSAT-BNB LP',
@@ -5982,8 +5982,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'satis-xsat-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['SAT', 'BNB'],
     addLiquidityUrl:
@@ -13107,7 +13107,7 @@ export const bscPools = [
   },
 
   {
-    id: 'sponge-steam-bnb',
+    id: 'sponge-steam-bnb-eol',
     logo: 'bnb-pairs/STEAM-BNB.svg',
     name: 'STEAM-BNB LP',
     token: 'STEAM-BNB LP',
@@ -13123,8 +13123,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'sponge-steam-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['STEAM', 'BNB'],
     buyTokenUrl:
@@ -13946,7 +13946,7 @@ export const bscPools = [
   },
 
   {
-    id: 'sponge-sponge-bnb',
+    id: 'sponge-sponge-bnb-eol',
     logo: 'bnb-pairs/SPG-BNB.svg',
     name: 'SPG-BNB LP',
     token: 'SPG-BNB LP',
@@ -13962,8 +13962,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'sponge-sponge-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['SPG', 'BNB'],
     addLiquidityUrl:
