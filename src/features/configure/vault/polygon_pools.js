@@ -2736,7 +2736,7 @@ export const polygonPools = [
       'https://swap.wault.finance/polygon/#/swap?inputCurrency=0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6&outputCurrency=0x4c4BF319237D98a30A929A96112EfFa8DA3510EB',
   },
   {
-    id: 'dfyn-bifi-dfyn',
+    id: 'dfyn-bifi-dfyn-eol',
     name: 'BIFI-DFYN LP',
     token: 'BIFI-DFYN DLP',
     tokenDescription: 'DFyn',
@@ -2751,8 +2751,8 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'dfyn-bifi-dfyn',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'DFyn',
     assets: ['BIFI', 'DFYN'],
     addLiquidityUrl:
@@ -4413,7 +4413,7 @@ export const polygonPools = [
       'https://quickswap.exchange/#/swap?inputCurrency=0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174&outputCurrency=0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063',
   },
   {
-    id: 'quick-quick-uni',
+    id: 'quick-quick-uni-eol',
     logo: 'polygon/QUICK-UNI.png',
     name: 'QUICK-UNI LP',
     token: 'QUICK-UNI QLP',
@@ -4429,8 +4429,8 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'quick-quick-uni',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'QuickSwap',
     assets: ['QUICK', 'UNI'],
     risks: [
