@@ -13742,31 +13742,6 @@ export const bscPools = [
   },
 
   {
-    id: 'auto-usdc-eol',
-    logo: 'single-assets/USDC.svg',
-    name: 'USDC',
-    token: 'USDC',
-    tokenDescription: 'Venus (Autofarm)',
-    tokenAddress: '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooAutoUsdc',
-    earnedTokenAddress: '0x7E45e8E3404a2C142d7E8eAE94EaEB8641607857',
-    earnContractAddress: '0x7E45e8E3404a2C142d7E8eAE94EaEB8641607857',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'tokens',
-    oracleId: 'USDC',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Autofarm',
-    assets: ['USDC'],
-    buyTokenUrl:
-      'https://pancakeswap.finance/swap?outputCurrency=0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d',
-  },
-
-  {
     id: 'kebab-kebab-btc',
     logo: 'kebab/KEBAB-BTCB.png',
     name: 'KEBAB-BTCB LP',
