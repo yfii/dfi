@@ -66,7 +66,7 @@ export const fantomPools = [
     buyTokenUrl: 'https://app.frax.finance/crosschain',
   },
   {
-    id: 'scream-mim-supply',
+    id: 'scream-mim',
     logo: 'single-assets/MIM.png',
     name: 'MIM',
     token: 'MIM',
