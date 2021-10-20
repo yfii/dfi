@@ -123,7 +123,7 @@ export const fantomPools = [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
       'IL_HIGH',
-      'MCAP_MIRCRO',
+      'MCAP_MICRO',
       'AUDIT',
       'CONTRACTS_VERIFIED',
     ],

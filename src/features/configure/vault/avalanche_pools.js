@@ -953,7 +953,7 @@ export const avalanchePools = [
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
-      'IL_LARGE',
+      'IL_HIGH',
       'MCAP_MEDIUM',
       'PLATFORM_ESTABLISHED',
       'CONTRACTS_VERIFIED',
@@ -986,7 +986,7 @@ export const avalanchePools = [
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
-      'IL_LARGE',
+      'IL_HIGH',
       'MCAP_MEDIUM',
       'PLATFORM_ESTABLISHED',
       'CONTRACTS_VERIFIED',
@@ -1052,7 +1052,7 @@ export const avalanchePools = [
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
-      'IL_LARGE',
+      'IL_HIGH',
       'MCAP_SMALL',
       'PLATFORM_ESTABLISHED',
       'CONTRACTS_VERIFIED',
@@ -1085,7 +1085,7 @@ export const avalanchePools = [
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
-      'IL_LARGE',
+      'IL_HIGH',
       'MCAP_MEDIUM',
       'PLATFORM_ESTABLISHED',
       'CONTRACTS_VERIFIED',
