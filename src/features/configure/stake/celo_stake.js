@@ -1,6 +1,6 @@
 import { govPoolABI } from '../abi';
 
-export const arbitrumStakePools = [
+export const celoStakePools = [
   {
     id: 'bifi-celo',
     name: 'BIFI',

@@ -24,6 +24,14 @@ export const nativeCoins = [
     allowance: Infinity,
   },
   {
+    chainId: 42220,
+    name: 'Celo',
+    symbol: 'CELO',
+    decimals: 18,
+    wrappedSymbol: 'CELO',
+    allowance: Infinity,
+  },
+  {
     chainId: 43114,
     name: 'Avalance Coin',
     symbol: 'AVAX',
