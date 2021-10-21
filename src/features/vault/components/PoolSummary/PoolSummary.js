@@ -11,7 +11,7 @@ import PoolPaused from './PoolPaused/PoolPaused';
 import PoolTitle from './PoolTitle/PoolTitle';
 import LabeledStat from './LabeledStat/LabeledStat';
 import ApyStats from './ApyStats/ApyStats';
-import { usePoolApr, useUserStaked } from '../../../stake/redux/subscription';
+import { usePoolApr } from '../../../stake/redux/subscription';
 import { PoolBoosts } from './PoolBoosts/PoolBoosts';
 import { getRetireReason } from './RetireReason/RetireReason';
 
@@ -59,11 +59,7 @@ const PoolSummary = ({
       />
     );
   }, [pool, launchpool, t]);
-  const depositedLaunchpool = useUserStaked(launchpool ? launchpool.id : null).multipliedBy(
-    new BigNumber(10).exponentiatedBy(new BigNumber(launchpool ? launchpool.tokenDecimals : 0))
-  );
-  sharesBalance =
-    depositedLaunchpool > 0 ? new BigNumber.sum(depositedLaunchpool, sharesBalance) : sharesBalance;
+
   const balanceUsd =
     balanceSingle > 0 && fetchVaultsDataDone ? formatTvl(balanceSingle, pool.oraclePrice) : '';
   const deposited = byDecimals(
