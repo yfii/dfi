@@ -2452,7 +2452,7 @@ export const polygonPools = [
       'https://quickswap.exchange/#/swap?outputCurrency=0x41b3966B4FF7b427969ddf5da3627d6AEAE9a48E',
   },
   {
-    id: 'telxchange-quick-quick-tel',
+    id: 'telxchange-quick-quick-tel-eol',
     name: 'TEL-QUICK QLP',
     token: 'TEL-QUICK QLP',
     tokenDescription: 'Telxchange',
@@ -2467,10 +2467,12 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'telxchange-quick-quick-tel',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['TEL', 'QUICK'],
+    retireReason: 'rewards',
+    withdrawalFee: '0%',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x831753DD7087CaC61aB5644b308642cc1c33Dc13/0xdF7837DE1F2Fa4631D716CF2502f8b230F1dcc32',
     buyTokenUrl:
@@ -2502,7 +2504,7 @@ export const polygonPools = [
       'https://quickswap.exchange/#/swap?inputCurrency=0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270&outputCurrency=0xdF7837DE1F2Fa4631D716CF2502f8b230F1dcc32',
   },
   {
-    id: 'telxchange-quick-eth-tel',
+    id: 'telxchange-quick-eth-tel-eol',
     name: 'TEL-ETH QLP',
     token: 'TEL-ETH QLP',
     tokenDescription: 'Telxchange',
@@ -2517,10 +2519,12 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'telxchange-quick-eth-tel',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['TEL', 'ETH'],
+    retireReason: 'rewards',
+    withdrawalFee: '0%',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619/0xdF7837DE1F2Fa4631D716CF2502f8b230F1dcc32',
     buyTokenUrl:
