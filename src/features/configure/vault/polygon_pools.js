@@ -2472,6 +2472,7 @@ export const polygonPools = [
     platform: 'Other',
     assets: ['TEL', 'QUICK'],
     retireReason: 'rewards',
+    withdrawalFee: '0%',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x831753DD7087CaC61aB5644b308642cc1c33Dc13/0xdF7837DE1F2Fa4631D716CF2502f8b230F1dcc32',
     buyTokenUrl:
@@ -2523,6 +2524,7 @@ export const polygonPools = [
     platform: 'Other',
     assets: ['TEL', 'ETH'],
     retireReason: 'rewards',
+    withdrawalFee: '0%',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619/0xdF7837DE1F2Fa4631D716CF2502f8b230F1dcc32',
     buyTokenUrl:
