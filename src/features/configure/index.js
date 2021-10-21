@@ -52,6 +52,7 @@ export { arbitrumPools } from './vault/arbitrum_pools';
 export { bscZaps } from './zap/bsc_zaps';
 export { hecoZaps } from './zap/heco_zaps';
 export { avalancheZaps } from './zap/avalanche_zaps';
+export { celoZaps } from './zap/celo_zaps';
 export { polygonZaps } from './zap/polygon_zaps';
 export { fantomZaps } from './zap/fantom_zaps';
 export { harmonyZaps } from './zap/harmony_zaps';
