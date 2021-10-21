@@ -1,3 +1,4 @@
+import BigNumber from 'bignumber.js';
 import { useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
@@ -6,9 +7,9 @@ import {
   VAULT_FETCH_BALANCES_FAILURE,
 } from './constants';
 import { MultiCall } from 'eth-multicall';
-import { erc20ABI, multicallABI, uniswapV2PairABI } from 'features/configure';
+import { erc20ABI, multicallABI, uniswapV2PairABI, launchPoolABI } from 'features/configure';
 import { byDecimals } from 'features/helpers/bignumber';
-import { getNetworkMulticall } from 'features/helpers/getNetworkData';
+import { getNetworkMulticall, launchpools } from 'features/helpers/getNetworkData';
 
 export function fetchBalances({ address, web3, tokens }) {
   return dispatch => {
@@ -23,6 +24,7 @@ export function fetchBalances({ address, web3, tokens }) {
 
       const balanceCalls = [];
       const allowanceCalls = [];
+      const launchPoolBalanceCalls = [];
 
       Object.entries(tokens).forEach(([symbol, token]) => {
         if (!token.tokenAddress) {
@@ -47,15 +49,29 @@ export function fetchBalances({ address, web3, tokens }) {
         }
       });
 
+      Object.entries(launchpools).forEach(([lpid, launchpool]) => {
+        if (launchpool.earnContractAddress) {
+          const multicallContract = new web3.eth.Contract(
+            launchPoolABI,
+            launchpool.earnContractAddress
+          );
+          launchPoolBalanceCalls.push({
+            balance: multicallContract.methods.balanceOf(address),
+            symbol: launchpool.token,
+          });
+        }
+      });
+
       multicall
-        .all([balanceCalls, allowanceCalls])
-        .then(([balanceResults, allowanceResults]) => {
+        .all([balanceCalls, allowanceCalls, launchPoolBalanceCalls])
+        .then(([balanceResults, allowanceResults, launchpoolBalanceResults]) => {
           const newTokens = {};
 
           balanceResults.forEach(balanceResult => {
             newTokens[balanceResult.symbol] = {
               ...tokens[balanceResult.symbol],
               tokenBalance: balanceResult.balance,
+              launchpoolTokenBalance: '0',
             };
           });
 
@@ -66,6 +82,18 @@ export function fetchBalances({ address, web3, tokens }) {
                 ...newTokens[allowanceResult.symbol].allowance,
                 [allowanceResult.spender]: allowanceResult.allowance,
               },
+            };
+          });
+
+          launchpoolBalanceResults.forEach(launchPoolBalanceResult => {
+            const previousBalance =
+              newTokens[launchPoolBalanceResult.symbol]?.launchpoolTokenBalance || 0;
+            newTokens[launchPoolBalanceResult.symbol] = {
+              ...newTokens[launchPoolBalanceResult.symbol],
+              launchpoolTokenBalance: new BigNumber.sum(
+                launchPoolBalanceResult.balance,
+                previousBalance
+              ).toString(),
             };
           });
 

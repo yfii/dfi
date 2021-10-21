@@ -31,7 +31,12 @@ const Pool = ({
   const toggleCard = useCallback(() => setIsOpen(!isOpen), [isOpen]);
   const { subscribe } = useLaunchpoolSubscriptions();
   const balanceSingle = byDecimals(tokens[pool.token].tokenBalance, pool.tokenDecimals);
-  const sharesBalance = new BigNumber(tokens[pool.earnedToken].tokenBalance);
+  const sharesBalance = tokens[pool.earnedToken].launchpoolTokenBalance
+    ? new BigNumber.sum(
+        tokens[pool.earnedToken].launchpoolTokenBalance,
+        tokens[pool.earnedToken].tokenBalance
+      )
+    : new BigNumber(tokens[pool.earnedToken].tokenBalance);
   const launchpoolId = useSelector(state => state.vault.vaultLaunchpool[pool.id]);
   const launchpool = launchpoolId ? launchpools[launchpoolId] : null;
   const activeLaunchpools = useSelector(state => state.vault.vaultLaunchpools[pool.id]);

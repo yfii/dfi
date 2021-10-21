@@ -25,7 +25,12 @@ const useUserTvl = (pools, tokens) => {
     let userTvl = 0;
 
     pools.filter(isUniqueEarnContract).forEach(pool => {
-      const sharesBalance = new BigNumber(tokens[pool.earnedToken].tokenBalance);
+      const sharesBalance = tokens[pool.earnedToken].launchpoolTokenBalance
+        ? new BigNumber.sum(
+            tokens[pool.earnedToken].launchpoolTokenBalance,
+            tokens[pool.earnedToken].tokenBalance
+          )
+        : new BigNumber(tokens[pool.earnedToken].tokenBalance);
       if (sharesBalance > 0) {
         const deposited = byDecimals(
           sharesBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)),
