@@ -130,8 +130,7 @@ export const bscPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'SingleStake',
-    depositFee: '<0.1%',
-    withdrawalFee: '0.1%',
+    withdrawalFee: '0.01%',
     addLiquidityUrl: 'https://belt.fi/',
   },
   {
@@ -164,8 +163,7 @@ export const bscPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'SingleStake',
-    depositFee: '<0.1%',
-    withdrawalFee: '0.1%',
+    withdrawalFee: '0.01%',
     addLiquidityUrl: 'https://belt.fi/',
   },
   {
@@ -681,8 +679,7 @@ export const bscPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'SingleStake',
-    depositFee: '<0.1%',
-    withdrawalFee: '0.1%',
+    withdrawalFee: '0.01%',
     addLiquidityUrl: 'https://belt.fi/',
   },
   {
@@ -880,8 +877,7 @@ export const bscPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratMultiLP',
-    depositFee: '<0.1%',
-    withdrawalFee: '0.1%',
+    withdrawalFee: '0.01%',
     addLiquidityUrl: 'https://belt.fi/',
   },
   {
