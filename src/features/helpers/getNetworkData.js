@@ -189,6 +189,7 @@ export const getNetworkBurnTokens = () => {
       return {
         [fantomAddressBook.tokens.TOMB.symbol]: fantomAddressBook.tokens.TOMB,
         [fantomAddressBook.tokens.fSING.symbol]: fantomAddressBook.tokens.fSING,
+        [fantomAddressBook.tokens.PEAR.symbol]: fantomAddressBook.tokens.PEAR,
       };
     case 1666600000:
       return {};
@@ -259,7 +260,21 @@ export const getNetworkStables = () => {
         'FRAX',
       ];
     case 137:
-      return ['USDC', 'USDT', 'maUSDC', 'DAI', 'IRON', 'MAI', 'FRAX', 'rUSD', 'UST', 'WUSD', 'jEUR', 'jGBP', 'jCHF'];
+      return [
+        'USDC',
+        'USDT',
+        'maUSDC',
+        'DAI',
+        'IRON',
+        'MAI',
+        'FRAX',
+        'rUSD',
+        'UST',
+        'WUSD',
+        'jEUR',
+        'jGBP',
+        'jCHF',
+      ];
     case 250:
       return ['USDC', 'USDT', 'DAI', 'fUSDT', 'MIM', 'FRAX'];
     case 1666600000:
