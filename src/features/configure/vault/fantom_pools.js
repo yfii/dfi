@@ -34,7 +34,7 @@ export const fantomPools = [
   },
   {
     id: 'curve-ftm-geist',
-    logo: 'single-assets/GEIST.svg',
+    logo: 'uncategorized/3CRV.png',
     name: 'fUSDT/DAI/USDC',
     token: 'g3CRV',
     tokenDescription: 'Curve',

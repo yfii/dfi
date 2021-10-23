@@ -36,7 +36,7 @@ export const fantomStakePools = [
   {
     id: 'moo_curve-ftm-geist-pearzap',
     name: 'PearZap',
-    logo: 'single-assets/GEIST.svg',
+    logo: 'uncategorized/3CRV.png',
     token: 'mooCurveG3CRV',
     tokenDecimals: 18,
     tokenAddress: '0xf710D90A1Bd702dAEa619eEbbe876e7085c2A1df',
