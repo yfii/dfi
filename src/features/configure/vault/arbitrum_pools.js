@@ -29,6 +29,7 @@ export const arbitrumPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratMultiLP',
+    withdrawalFee: '0.01%',
     addLiquidityUrl: 'https://arbitrum.curve.fi/factory/0/deposit',
   },
   {
