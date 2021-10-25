@@ -47,6 +47,40 @@ export const bscStakePools = [
   },
 
   {
+    id: 'moo_belt-beltbtc-wsg',
+    name: 'WallStreetGames',
+    logo: 'single-assets/BTCB.svg',
+    token: 'mooBeltBTC',
+    tokenDecimals: 18,
+    tokenAddress: '0xD411121C948Cff739857513E1ADF25ED448623f8',
+    tokenOracle: 'lps',
+    tokenOracleId: 'belt-beltbtc',
+    earnedToken: 'MooWSG',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xf6581Be77F4933FDcf92C9E0D49e7f85e5360705',
+    earnContractAddress: '0xAD02D935D7BDAEa0ba3227Fe160856be78b782Cf',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'WSG',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1636195645,
+    partners: [
+      {
+        logo: 'stake/wsg/logo.png',
+        background: 'stake/wsg/bg.png',
+        text: 'Wall Street Games is a next-generation hybrid blockchain-based online gaming platform, where players can earn cryptocurrencies by playing fun & addictive games, collect tradable NFTs and win rewards!',
+        website: 'https://stake.wallstreetgames.net/',
+        social: {
+          telegram: 'https://t.me/WSGToken',
+          twitter: 'https://twitter.com/WSGToken',
+        },
+      },
+    ],
+  },
+
+  {
     id: 'moo_banana-banana-bnb-playmining',
     name: 'PlayMining',
     logo: 'degens/banana-bnb.svg',
