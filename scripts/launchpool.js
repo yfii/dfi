@@ -10,6 +10,7 @@ import { polygonPools } from '../src/features/configure/vault/polygon_pools.js';
 import { fantomPools } from '../src/features/configure/vault/fantom_pools.js';
 import { harmonyPools } from '../src/features/configure/vault/harmony_pools.js';
 import { arbitrumPools } from '../src/features/configure/vault/arbitrum_pools.js';
+import { celoPools } from '../src/features/configure/vault/celo_pools.js';
 import { launchPoolABI, erc20ABI } from '../src/features/configure/abi.js';
 
 const chainPools = {
@@ -20,6 +21,7 @@ const chainPools = {
   fantom: fantomPools,
   one: harmonyPools,
   arbitrum: arbitrumPools,
+  celo: celoPools,
 };
 
 const chainRpcs = {
@@ -30,6 +32,7 @@ const chainRpcs = {
   fantom: process.env.FANTOM_RPC || 'https://rpc.ftm.tools/',
   one: process.env.HARMONY_RPC || 'https://api.s0.t.hmny.io/',
   arbitrum: process.env.ARBITRUM_RPC || 'https://arb1.arbitrum.io/rpc',
+  celo: process.env.CELO_RPC || 'https://forno.celo.org',
 };
 
 async function boostParams(chain, boostAddress) {

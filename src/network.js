@@ -42,6 +42,12 @@ export const allNetworks = [
     id: 42161,
     hash: '/arbitrum',
   },
+  {
+    name: 'CELO',
+    asset: 'CELO',
+    id: 42220,
+    hash: '/celo',
+  },
 ];
 
 const network = allNetworks.find(n => window.location.hash.startsWith('#' + n.hash));

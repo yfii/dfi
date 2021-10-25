@@ -76,6 +76,17 @@ export const networkSettings = {
     rpcUrls: ['https://arb1.arbitrum.io/rpc'],
     blockExplorerUrls: ['https://arbiscan.io/'],
   },
+  42220: {
+    chainId: `0x${parseInt(42220, 10).toString(16)}`,
+    chainName: 'Celo',
+    nativeCurrency: {
+      name: 'CELO',
+      symbol: 'CELO',
+      decimals: 18,
+    },
+    rpcUrls: ['https://forno.celo.org'],
+    blockExplorerUrls: ['https://explorer.celo.org/'],
+  },
 };
 
 export const networkSetup = chainId => {

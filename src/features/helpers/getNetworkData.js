@@ -24,6 +24,10 @@ import {
   polygonStakePools,
   polygonAddressBook,
   polygonZaps,
+  celoPools,
+  celoStakePools,
+  celoAddressBook,
+  celoZaps,
   harmonyPools,
   harmonyStakePools,
   harmonyAddressBook,
@@ -46,6 +50,7 @@ const networkTxUrls = {
   250: hash => `https://ftmscan.com/tx/${hash}`,
   1666600000: hash => `https://explorer.harmony.one/tx/${hash}`,
   42161: hash => `https://arbiscan.io/tx/${hash}`,
+  42220: hash => `https://explorer.celo.org/tx/${hash}`,
 };
 
 const networkFriendlyName = {
@@ -56,6 +61,7 @@ const networkFriendlyName = {
   250: 'Fantom',
   1666600000: 'Harmony',
   42161: 'Arbitrum',
+  42220: 'Celo',
 };
 
 const networkBuyUrls = {
@@ -67,6 +73,7 @@ const networkBuyUrls = {
     'https://www.traderjoexyz.com/#/trade?outputCurrency=0xd6070ae98b8069de6b494332d1a1a81b6179d960',
   1666600000: '',
   42161: '',
+  42220: '',
 };
 
 export const getNetworkCoin = () => {
@@ -89,6 +96,8 @@ export const getNetworkPools = () => {
       return harmonyPools;
     case 42161:
       return arbitrumPools;
+    case 42220:
+      return celoPools;
     default:
       return [];
   }
@@ -110,6 +119,8 @@ export const getNetworkVaults = (networkId = appNetworkId) => {
       return indexBy(harmonyPools, 'id');
     case 42161:
       return indexBy(arbitrumPools, 'id');
+    case 42220:
+      return indexBy(celoPools, 'id');
     default:
       return {};
   }
@@ -131,6 +142,8 @@ export const getNetworkLaunchpools = (networkId = appNetworkId) => {
       return indexBy(harmonyStakePools, 'id');
     case 42161:
       return indexBy(arbitrumStakePools, 'id');
+    case 42220:
+      return indexBy(celoStakePools, 'id');
     default:
       return {};
   }
@@ -153,6 +166,8 @@ export const getNetworkTokens = () => {
       return harmonyAddressBook.tokens;
     case 42161:
       return arbitrumAddressBook.tokens;
+    case 42220:
+      return celoAddressBook.tokens;
     default:
       throw new Error(
         `Create address book for chainId(${chainId}) first. Check out https://github.com/beefyfinance/address-book`
@@ -195,6 +210,8 @@ export const getNetworkBurnTokens = () => {
       return {};
     case 42161:
       return {};
+    case 42220:
+      return {};
     default:
       throw new Error(`Create address book for this chainId first.`);
   }
@@ -216,6 +233,8 @@ export const getNetworkZaps = () => {
       return harmonyZaps;
     case 42161:
       return arbitrumZaps;
+    case 42220:
+      return celoZaps;
     default:
       return [];
   }
@@ -281,6 +300,8 @@ export const getNetworkStables = () => {
       return ['BUSD', 'bscBUSD', 'USDC', 'USDT', 'UST', 'DAI', 'FRAX'];
     case 42161:
       return ['USDC', 'USDT', 'MIM'];
+    case 42220:
+      return ['cUSD, cEUR, DAI'];
     default:
       return [];
   }
@@ -302,6 +323,8 @@ export const getNetworkMulticall = () => {
       return '0xBa5041B1c06e8c9cFb5dDB4b82BdC52E41EA5FC5';
     case 42161:
       return '0x13aD51a6664973EbD0749a7c84939d973F247921';
+    case 42220:
+      return '0xa9E6E271b27b20F65394914f8784B3B860dBd259';
     default:
       return '';
   }
@@ -485,6 +508,19 @@ export const getNetworkConnectors = t => {
     case 42161:
       return {
         network: 'arbitrum',
+        cacheProvider: true,
+        providerOptions: {
+          injected: {
+            display: {
+              name: 'Injected',
+              description: t('Home-BrowserWallet'),
+            },
+          },
+        },
+      };
+    case 42220:
+      return {
+        network: 'celo',
         cacheProvider: true,
         providerOptions: {
           injected: {
