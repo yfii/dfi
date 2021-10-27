@@ -898,7 +898,7 @@ export const avalanchePools = [
       'https://app.pangolin.exchange/#/swap?inputCurrency=0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7&outputCurrency=0x60781C2586D68229fde47564546784ab3fACA982',
   },
   {
-    id: 'joe-mai-usdc.e',
+    id: 'joe-mai-usdc.e-eol',
     name: 'MAI-USDC.e LP',
     token: 'MAI-USDC.e JLP',
     tokenDescription: 'Trader Joe',
@@ -913,8 +913,8 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'joe-mai-usdc.e',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Trader Joe',
     assets: ['MAI', 'USDCe'],
     risks: [
@@ -926,6 +926,7 @@ export const avalanchePools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0x3b55e45fd6bd7d4724f5c47e0d1bcaedd059263e/0xa7d7079b0fead91f3e65f86e8915cb59c1a4c664',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -1096,7 +1097,7 @@ export const avalanchePools = [
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
   },
   {
-    id: 'joe-weth.e-usdt.e',
+    id: 'joe-weth.e-usdt.e-eol',
     name: 'WETH.e-USDT.e LP',
     token: 'WETH.e-USDT.e JLP',
     tokenDescription: 'Trader Joe',
@@ -1111,8 +1112,8 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'joe-weth.e-usdt.e',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Trader Joe',
     assets: ['WETHe', 'USDTe'],
     risks: [
@@ -1124,12 +1125,13 @@ export const avalanchePools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0xc7198437980c041c805A1EDcbA50c1Ce5db95118/0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
   },
   {
-    id: 'joe-wbtc.e-usdt.e',
+    id: 'joe-wbtc.e-usdt.e-eol',
     name: 'WBTC.e-USDT.e LP',
     token: 'WBTC.e-USDT.e JLP',
     tokenDescription: 'Trader Joe',
@@ -1144,8 +1146,8 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'joe-wbtc.e-usdt.e',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Trader Joe',
     assets: ['WBTCe', 'USDTe'],
     risks: [
@@ -1157,6 +1159,7 @@ export const avalanchePools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0xc7198437980c041c805A1EDcbA50c1Ce5db95118/0x50b7545627a5162F82A992c33b87aDc75187B218',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
