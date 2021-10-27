@@ -16,7 +16,7 @@ import { celoPools } from '../src/features/configure/vault/celo_pools.js';
 import { vaultABI, strategyABI } from '../src/features/configure/abi.js';
 
 const chainPools = {
-  // bsc: bscPools,
+  bsc: bscPools,
   heco: hecoPools,
   avax: avalanchePools,
   polygon: polygonPools,
