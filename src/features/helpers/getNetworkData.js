@@ -532,7 +532,7 @@ export const getNetworkConnectors = t => {
           walletconnect: {
             package: WalletConnectProvider,
             options: {
-              network: 'matic',
+              network: 'celo',
               rpc: {
                 1: 'https://forno.celo.org',
                 42220: 'https://forno.celo.org',
