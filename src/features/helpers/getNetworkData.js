@@ -529,6 +529,16 @@ export const getNetworkConnectors = t => {
               description: t('Home-BrowserWallet'),
             },
           },
+          walletconnect: {
+            package: WalletConnectProvider,
+            options: {
+              network: 'matic',
+              rpc: {
+                1: 'https://forno.celo.org',
+                42220: 'https://forno.celo.org',
+              },
+            },
+          },
         },
       };
     default:
