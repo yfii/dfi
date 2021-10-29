@@ -15154,31 +15154,6 @@ export const bscPools = [
   },
 
   {
-    id: 'venus-bch-eol',
-    logo: 'single-assets/BCH.svg',
-    name: 'BCH',
-    token: 'BCH',
-    tokenDescription: 'Venus',
-    tokenAddress: '0x8fF795a6F4D97E7887C79beA79aba5cc76444aDf',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooVenusBCH',
-    earnedTokenAddress: '0xf19878DE084C3c9753bB0DAD8aC5b9070fb7813c',
-    earnContractAddress: '0xf19878DE084C3c9753bB0DAD8aC5b9070fb7813c',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'tokens',
-    oracleId: 'BCH',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'Venus',
-    assets: ['BCH'],
-    buyTokenUrl:
-      'https://pancakeswap.finance/swap?outputCurrency=0x8fF795a6F4D97E7887C79beA79aba5cc76444aDf',
-  },
-
-  {
     id: 'venus-dot-eol',
     logo: 'single-assets/DOT.png',
     name: 'DOT',
