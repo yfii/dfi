@@ -41,9 +41,20 @@ const overrides = {
   'bunny-bunny-eol': { keeper: undefined, stratOwner: undefined },
   'blizzard-xblzd-bnb-old-eol': { keeper: undefined },
   'blizzard-xblzd-busd-old-eol': { keeper: undefined },
-  'heco-bifi-maxi': { beefyFeeRecipient: undefined },
+  'heco-bifi-maxi': { beefyFeeRecipient: undefined }, // 0x0
+  'bifi-maxi': { stratOwner: undefined }, // harvester 0xDe30
   'beltv2-4belt': { vaultOwner: undefined }, // moonpot deployer
 };
+
+const oldValidOwners = [
+  addressBook.bsc.platforms.beefyfinance.oldTimelock,
+  addressBook.fantom.platforms.beefyfinance.devMultisig,
+  '0xd529b1894491a0a26B18939274ae8ede93E81dbA', // admin eoa
+  '0xC362FA359031A081D21Cb9d57c29e055FecbcB06', // admin eoa
+  '0x6d28afD25a1FBC5409B1BeFFf6AEfEEe2902D89F', // strat timelock owner
+  '0x4E2a43a0Bf6480ee8359b7eAE244A9fBe9862Cdf', // vault owner
+  '0x09dc95959978800E57464E962724a34Bb4Ac1253', // polygon dev multisig
+];
 
 const validatePools = async () => {
   const addressFields = ['tokenAddress', 'earnedTokenAddress', 'earnContractAddress'];
@@ -194,7 +205,8 @@ const isKeeperCorrect = (pool, chain, chainKeeper, updates) => {
 };
 
 const isStratOwnerCorrect = (pool, chain, owner, updates) => {
-  if (pool.stratOwner !== undefined && pool.keeper !== undefined && pool.stratOwner !== owner) {
+  const validOwners = [...oldValidOwners, owner];
+  if (pool.stratOwner !== undefined && !validOwners.includes(pool.stratOwner)) {
     console.log(`Pool ${pool.id} should update strat owner. From: ${pool.stratOwner} To: ${owner}`);
 
     if (!('stratOwner' in updates)) updates['stratOwner'] = {};
@@ -211,13 +223,9 @@ const isStratOwnerCorrect = (pool, chain, owner, updates) => {
 };
 
 const isVaultOwnerCorrect = (pool, chain, owner, updates) => {
-  if (pool.vaultOwner !== undefined && pool.vaultOwner !== owner) {
+  const validOwners = [...oldValidOwners, owner];
+  if (pool.vaultOwner !== undefined && !validOwners.includes(pool.vaultOwner)) {
     console.log(`Pool ${pool.id} should update vault owner. From: ${pool.vaultOwner} To: ${owner}`);
-
-    // TODO remove after updating Polygon vaultOwner
-    if (chain === 'polygon' && pool.vaultOwner === '0x09dc95959978800E57464E962724a34Bb4Ac1253') {
-      return updates;
-    }
 
     if (!('vaultOwner' in updates)) updates['vaultOwner'] = {};
     if (!(chain in updates.vaultOwner)) updates.vaultOwner[chain] = {};
@@ -241,9 +249,6 @@ const isBeefyFeeRecipientCorrect = (pool, chain, recipient, updates) => {
     console.log(
       `Pool ${pool.id} should update beefy fee recipient. From: ${pool.beefyFeeRecipient} To: ${recipient}`
     );
-
-    // TODO enable after updating Harmony beefyFeeRecipient
-    if (chain === 'one') return updates;
 
     if (!('beefyFeeRecipient' in updates)) updates['beefyFeeRecipient'] = {};
     if (!(chain in updates.beefyFeeRecipient)) updates.beefyFeeRecipient[chain] = {};
