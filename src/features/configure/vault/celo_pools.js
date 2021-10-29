@@ -170,8 +170,8 @@ export const celoPools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://app.sushi.com/add/0x765DE816845861e75A25fCA122bb6898B8B1282a/0xE919F65739c26a42616b7b8eedC6b5524d1e3aC4',
+      'https://app.sushi.com/add/0x765DE816845861e75A25fCA122bb6898B8B1282a/0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73',
     buyTokenUrl:
-      'https://app.sushi.com/swap?inputCurrency=0x765DE816845861e75A25fCA122bb6898B8B1282a&outputCurrency=0xE919F65739c26a42616b7b8eedC6b5524d1e3aC4',
+      'https://app.sushi.com/swap?inputCurrency=0x765DE816845861e75A25fCA122bb6898B8B1282a&outputCurrency=0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73',
   },
 ];
