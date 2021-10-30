@@ -49,6 +49,7 @@ const overrides = {
 const oldValidOwners = [
   addressBook.bsc.platforms.beefyfinance.oldTimelock,
   addressBook.fantom.platforms.beefyfinance.devMultisig,
+  addressBook.arbitrum.platforms.beefyfinance.devMultisig,
   '0xd529b1894491a0a26B18939274ae8ede93E81dbA', // admin eoa
   '0xC362FA359031A081D21Cb9d57c29e055FecbcB06', // admin eoa
   '0x6d28afD25a1FBC5409B1BeFFf6AEfEEe2902D89F', // strat timelock owner
