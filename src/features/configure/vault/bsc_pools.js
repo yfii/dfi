@@ -1970,7 +1970,7 @@ export const bscPools = [
       'https://dex.apeswap.finance/#/swap?inputCurrency=0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c&outputCurrency=0xfd7b3a77848f1c2d67e05e54d78d174a0c850335',
   },
   {
-    id: 'wex-bnb-ont',
+    id: 'wex-bnb-ont-eol',
     name: 'ONT-BNB WLP',
     token: 'ONT-BNB WLP',
     tokenDescription: 'WaultFinance',
@@ -1985,8 +1985,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'wex-bnb-ont',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    retireReason: 'rewards',
+    status: 'eol',
     platform: 'WaultFinance',
     assets: ['ONT', 'BNB'],
     addLiquidityUrl:
@@ -2828,7 +2829,7 @@ export const bscPools = [
       'https://dex.apeswap.finance/#/swap?inputCurrency=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c&outputCurrency=0xCA6d25C10dad43ae8Be0bc2af4D3CD1114583C08',
   },
   {
-    id: 'wex-bnb-dep',
+    id: 'wex-bnb-dep-eol',
     logo: 'bnb-pairs/DEP-BNB.png',
     name: 'DEP-BNB WLP',
     token: 'DEP-BNB WLP',
@@ -2844,8 +2845,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'wex-bnb-dep',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'WaultFinance',
     assets: ['DEP', 'BNB'],
     addLiquidityUrl:
@@ -3159,7 +3161,7 @@ export const bscPools = [
       'https://bsc.mdex.com/#/swap?inputCurrency=WBNB&outputCurrency=0x9c65ab58d8d978db963e63f2bfb7121627e3a739',
   },
   {
-    id: 'wex-tusd-usdt',
+    id: 'wex-tusd-usdt-eol',
     logo: 'usdt-pairs/TUSD-USDT.png',
     name: 'TUSD-USDT WLP',
     token: 'TUSD-USDT WLP',
@@ -3175,8 +3177,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'wex-tusd-usdt',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'WaultFinance',
     assets: ['TUSD', 'USDT'],
     addLiquidityUrl:
