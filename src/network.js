@@ -48,6 +48,12 @@ export const allNetworks = [
     id: 42220,
     hash: '/celo',
   },
+  {
+    name: 'MOONRIVER',
+    asset: 'MOONRIVER',
+    id: 1285,
+    hash: '/moonriver',
+  },
 ];
 
 const network = allNetworks.find(n => window.location.hash.startsWith('#' + n.hash));

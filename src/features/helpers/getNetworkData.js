@@ -28,6 +28,10 @@ import {
   celoStakePools,
   celoAddressBook,
   celoZaps,
+  moonriverPools,
+  moonriverStakePools,
+  moonriverAddressBook,
+  moonriverZaps,
   harmonyPools,
   harmonyStakePools,
   harmonyAddressBook,
@@ -51,6 +55,7 @@ const networkTxUrls = {
   1666600000: hash => `https://explorer.harmony.one/tx/${hash}`,
   42161: hash => `https://arbiscan.io/tx/${hash}`,
   42220: hash => `https://explorer.celo.org/tx/${hash}`,
+  1285: hash => `https://blockscout.moonriver.moonbeam.network//tx/${hash}/token-transfers`,
 };
 
 const networkFriendlyName = {
@@ -62,6 +67,7 @@ const networkFriendlyName = {
   1666600000: 'Harmony',
   42161: 'Arbitrum',
   42220: 'Celo',
+  1285: 'Moonriver',
 };
 
 const networkBuyUrls = {
@@ -74,6 +80,7 @@ const networkBuyUrls = {
   1666600000: '',
   42161: '',
   42220: '',
+  1285: '',
 };
 
 export const getNetworkCoin = () => {
@@ -98,6 +105,8 @@ export const getNetworkPools = () => {
       return arbitrumPools;
     case 42220:
       return celoPools;
+    case 1285:
+      return moonriverPools;
     default:
       return [];
   }
@@ -121,6 +130,8 @@ export const getNetworkVaults = (networkId = appNetworkId) => {
       return indexBy(arbitrumPools, 'id');
     case 42220:
       return indexBy(celoPools, 'id');
+    case 1285:
+      return indexBy(moonriverPools, 'id');
     default:
       return {};
   }
@@ -144,6 +155,8 @@ export const getNetworkLaunchpools = (networkId = appNetworkId) => {
       return indexBy(arbitrumStakePools, 'id');
     case 42220:
       return indexBy(celoStakePools, 'id');
+    case 1285:
+      return indexBy(moonriverStakePools, 'id');
     default:
       return {};
   }
@@ -168,6 +181,8 @@ export const getNetworkTokens = () => {
       return arbitrumAddressBook.tokens;
     case 42220:
       return celoAddressBook.tokens;
+    case 1285:
+      return moonriverAddressBook.tokens;
     default:
       throw new Error(
         `Create address book for chainId(${chainId}) first. Check out https://github.com/beefyfinance/address-book`
@@ -212,6 +227,8 @@ export const getNetworkBurnTokens = () => {
       return {};
     case 42220:
       return {};
+    case 1285:
+      return {};
     default:
       throw new Error(`Create address book for this chainId first.`);
   }
@@ -235,6 +252,8 @@ export const getNetworkZaps = () => {
       return arbitrumZaps;
     case 42220:
       return celoZaps;
+    case 1285:
+      return moonriverZaps;
     default:
       return [];
   }
@@ -302,6 +321,8 @@ export const getNetworkStables = () => {
       return ['USDC', 'USDT', 'MIM'];
     case 42220:
       return ['cUSD, cEUR, DAI'];
+    case 1285:
+      return ['USDC, USDT, DAI'];
     default:
       return [];
   }
@@ -325,6 +346,8 @@ export const getNetworkMulticall = () => {
       return '0x13aD51a6664973EbD0749a7c84939d973F247921';
     case 42220:
       return '0xa9E6E271b27b20F65394914f8784B3B860dBd259';
+    case 1285:
+      return '0x7f6fE34C51d5352A0CF375C0Fbe03bD19eCD8460';
     default:
       return '';
   }
@@ -508,6 +531,19 @@ export const getNetworkConnectors = t => {
     case 42161:
       return {
         network: 'arbitrum',
+        cacheProvider: true,
+        providerOptions: {
+          injected: {
+            display: {
+              name: 'Injected',
+              description: t('Home-BrowserWallet'),
+            },
+          },
+        },
+      };
+    case 1285:
+      return {
+        network: 'moonriver',
         cacheProvider: true,
         providerOptions: {
           injected: {

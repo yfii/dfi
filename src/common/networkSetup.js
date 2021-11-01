@@ -87,6 +87,17 @@ export const networkSettings = {
     rpcUrls: ['https://forno.celo.org'],
     blockExplorerUrls: ['https://explorer.celo.org/'],
   },
+  1285: {
+    chainId: `0x${parseInt(42220, 10).toString(16)}`,
+    chainName: 'Moonriver',
+    nativeCurrency: {
+      name: 'Moonriver',
+      symbol: 'MOVR',
+      decimals: 18,
+    },
+    rpcUrls: ['https://rpc.moonriver.moonbeam.network'],
+    blockExplorerUrls: ['https://blockscout.moonriver.moonbeam.network/'],
+  },
 };
 
 export const networkSetup = chainId => {

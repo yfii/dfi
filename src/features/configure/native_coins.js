@@ -71,4 +71,12 @@ export const nativeCoins = [
     wrappedSymbol: 'WETH',
     allowance: Infinity,
   },
+  {
+    chainId: 1285,
+    name: 'Moonriver',
+    symbol: 'MOVR',
+    decimals: 18,
+    wrappedSymbol: 'WMOVR',
+    allowance: Infinity,
+  },
 ];

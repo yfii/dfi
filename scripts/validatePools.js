@@ -13,6 +13,7 @@ import { fantomPools } from '../src/features/configure/vault/fantom_pools.js';
 import { harmonyPools } from '../src/features/configure/vault/harmony_pools.js';
 import { arbitrumPools } from '../src/features/configure/vault/arbitrum_pools.js';
 import { celoPools } from '../src/features/configure/vault/celo_pools.js';
+import { moonriverPools } from '../src/features/configure/vault/moonriver_pools.js';
 import { vaultABI, strategyABI } from '../src/features/configure/abi.js';
 
 const chainPools = {
@@ -24,6 +25,7 @@ const chainPools = {
   one: harmonyPools,
   arbitrum: arbitrumPools,
   celo: celoPools,
+  moonriver: moonriverPools,
 };
 
 const chainRpcs = {
@@ -35,6 +37,7 @@ const chainRpcs = {
   one: process.env.HARMONY_RPC || 'https://api.s0.t.hmny.io/',
   arbitrum: process.env.ARBITRUM_RPC || 'https://arb1.arbitrum.io/rpc',
   celo: process.env.CELO_RPC || 'https://forno.celo.org',
+  moonriver: process.env.MOONRIVER_RPC || 'https://rpc.moonriver.moonbeam.network',
 };
 
 const overrides = {
