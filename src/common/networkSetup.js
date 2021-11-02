@@ -88,7 +88,7 @@ export const networkSettings = {
     blockExplorerUrls: ['https://explorer.celo.org/'],
   },
   1285: {
-    chainId: `0x${parseInt(42220, 10).toString(16)}`,
+    chainId: `0x${parseInt(1285, 10).toString(16)}`,
     chainName: 'Moonriver',
     nativeCurrency: {
       name: 'Moonriver',
