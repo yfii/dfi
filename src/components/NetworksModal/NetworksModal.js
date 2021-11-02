@@ -1,6 +1,6 @@
 import React, { memo, useCallback } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Dialog, IconButton, Modal, styled, withStyles } from '@material-ui/core';
+import { Dialog, Grid, IconButton, Modal, styled, withStyles } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
 import { Close } from '@material-ui/icons';
 import { getSingleAssetSrc } from '../../features/helpers/getSingleAssetSrc';
@@ -37,7 +37,7 @@ const NetworksModal = memo(function NetworksModal({ isOpen, handleClose, current
   );
 
   return (
-    <StyledDialog open={isOpen} onClose={handleClose} fullWidth={true} maxWidth="lg">
+    <StyledDialog open={isOpen} onClose={handleClose} fullWidth={true} maxWidth="sm">
       <div className={classes.modalInner}>
         <IconButton className={classes.close} onClick={handleClose}>
           <Close />
@@ -45,25 +45,27 @@ const NetworksModal = memo(function NetworksModal({ isOpen, handleClose, current
         <h1 className={classes.title}>{t('Select-Network')}</h1>
         <div className={classes.networks}>
           <div className={classes.networksInner}>
-            {allNetworks.map(network => (
-              <div
-                onClick={() => handleNetworkClick(network)}
-                className={classes.network}
-                key={network.id}
-              >
-                <img
-                  className={classes.logo}
-                  src={getSingleAssetSrc(network.asset)}
-                  alt={`${currentNetwork.name}`}
-                  width={75}
-                  height={75}
-                />
-                <div className={classes.tag}>
-                  {network.id === currentNetwork.id && <div className={classes.connected} />}
-                  <p className={classes.networkName}>{network.name}</p>
-                </div>
-              </div>
-            ))}
+            <Grid container>
+              {allNetworks.map(network => (
+                <Grid item xs={4}>
+                  <div
+                    onClick={() => handleNetworkClick(network)}
+                    className={classes.network}
+                    key={network.id}
+                  >
+                    <img
+                      className={classes.logo}
+                      src={getSingleAssetSrc(network.asset)}
+                      alt={`${currentNetwork.name}`}
+                    />
+                    <div className={classes.tag}>
+                      {network.id === currentNetwork.id && <div className={classes.connected} />}
+                      <p className={classes.networkName}>{network.name}</p>
+                    </div>
+                  </div>
+                </Grid>
+              ))}
+            </Grid>
           </div>
         </div>
       </div>

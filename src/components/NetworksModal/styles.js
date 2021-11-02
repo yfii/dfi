@@ -64,8 +64,13 @@ const styles = theme => ({
     display: 'block',
     margin: '0 auto',
     width: '75px',
+    height: '75px',
     [theme.breakpoints.up('md')]: {
       width: '100px',
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: '60px',
+      height: '60px',
     },
   },
   connected: {
@@ -85,6 +90,9 @@ const styles = theme => ({
     margin: '0',
     fontWeight: 'bold',
     color: theme.palette.text.primary,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '14px',
+    },
   },
 });
 
