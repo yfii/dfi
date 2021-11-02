@@ -301,7 +301,9 @@ export const getNetworkStables = () => {
     case 42161:
       return ['USDC', 'USDT', 'MIM'];
     case 42220:
-      return ['cUSD, cEUR, DAI'];
+      return ['cUSD', 'cEUR', 'DAI'];
+    case 1285:
+      return ['USDC', 'USDT', 'DAI', 'BUSD', 'MAI', 'MIM'];
     default:
       return [];
   }
