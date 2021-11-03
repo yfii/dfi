@@ -831,7 +831,7 @@ export const avalanchePools = [
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
   },
   {
-    id: 'joe-time-wavax',
+    id: 'joe-time-wavax-eol',
     name: 'TIME-AVAX LP',
     token: 'TIME-AVAX JLP',
     tokenDescription: 'Trader Joe',
@@ -846,8 +846,8 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'joe-time-wavax',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Trader Joe',
     assets: ['TIME', 'AVAX'],
     risks: [
@@ -859,6 +859,7 @@ export const avalanchePools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7/0xb54f16fB19478766A268F172C9480f8da1a7c9C3',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
