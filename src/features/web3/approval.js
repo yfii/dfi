@@ -22,7 +22,7 @@ export const approval = ({ web3, address, tokenAddress, contractAddress, dispatc
         );
       })
       .on('receipt', function (receipt) {
-        resolve('infinite');
+        resolve(new BigNumber('Infinity').toNumber());
       })
       .on('error', function (error) {
         reject(error);
