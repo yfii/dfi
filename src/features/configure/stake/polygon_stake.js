@@ -36,6 +36,40 @@ export const polygonStakePools = [
   },
 
   {
+    id: 'moo_kyber-usdc-jeur-jarvis',
+    name: 'Jarvis',
+    assets: ['jEUR', 'USDC'],
+    token: 'mooKyberUSDC-jEUR',
+    tokenDecimals: 18,
+    tokenAddress: '0x4A041eD4dda1cf460D557E1bdCBf0b29c02A1b3c',
+    tokenOracle: 'lps',
+    tokenOracleId: 'kyber-usdc-jeur',
+    earnedToken: 'BIFI',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xFbdd194376de19a88118e84E279b977f165d01b8',
+    earnContractAddress: '0xE2C04ff677394872e43ee06B4a28a3cbd542A327',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'BIFI',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1637584703,
+    partners: [
+      {
+        logo: 'stake/jarvis/logo.png',
+        background: 'stake/jarvis/bg.png',
+        text: 'Jarvis Network is a set of protocols and applications to bring DeFi to everyone. Its first protocol, Synthereum, pioneers a capital efficient manner to issue and exchange synthetic fiat currencies on Ethereum and Polygon. Called jFIAT, these stablecoins are redeemable for USDC at the oracle price, making them stable and liquid.',
+        website: 'https://jarvis.network/',
+        social: {
+          telegram: 'https://t.me/jarvisnetwork',
+          twitter: 'https://twitter.com/jarvis_network',
+        },
+      },
+    ],
+  },
+
+  {
     id: 'moo_curve-am3crv-jarvis',
     name: 'Jarvis',
     logo: 'polygon/CURVE-3Pool.png',

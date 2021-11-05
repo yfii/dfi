@@ -10,6 +10,16 @@ const moonpot = {
     twitter: 'https://twitter.com/moonpotdotcom',
   },
 };
+const ceek = {
+  logo: 'stake/ceek/logo.png',
+  background: 'stake/ceek/bg.png',
+  text: 'CEEK (CEEK) is a decentralized platform featuring global superstars like Lady Gaga, Katy Perry, Ziggy Marley, Bon Jovi, UFC Champion Francis Ngannou, 3x NBA Champion Dwyane Wade and more. CEEK enables music artists, sports athletes and digital content creators to directly connect with their fans. CEEK tracks digital media assets on the blockchain, and makes fast, efficient secure payments for entertainment and education via smart contracts.',
+  website: 'https://www.ceek.io/',
+  social: {
+    telegram: 'https://t.me/ceekvrtokensale',
+    twitter: 'https://twitter.com/ceek',
+  },
+};
 
 export const bscStakePools = [
   {
@@ -44,6 +54,51 @@ export const bscStakePools = [
         },
       },
     ],
+  },
+
+  {
+    id: 'moo_banana-wbnb-ceek-ceek-2',
+    name: 'CEEK',
+    assets: ['CEEK', 'BNB'],
+    token: 'mooApeCEEK-BNB',
+    tokenDecimals: 18,
+    tokenAddress: '0xd244fD01Ca42415b5B3f9dCe164C762eB28d6eA4',
+    tokenOracle: 'lps',
+    tokenOracleId: 'banana-wbnb-ceek',
+    earnedToken: 'CEEK',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xe0F94Ac5462997D2BC57287Ac3a3aE4C31345D66',
+    earnContractAddress: '0x9ba849C8b9FD8D4f04c6b22557553195f3a02870',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'CEEK',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1638881275,
+    partners: [ceek],
+  },
+  {
+    id: 'moo_banana-banana-bnb-ceek',
+    name: 'CEEK',
+    logo: 'degens/banana-bnb.svg',
+    token: 'mooApeBANANA-BNB',
+    tokenDecimals: 18,
+    tokenAddress: '0x15396D3BD9338A14AE90613Fc2b85c5F7b5621CF',
+    tokenOracle: 'lps',
+    tokenOracleId: 'banana-banana-bnb',
+    earnedToken: 'CEEK',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xe0F94Ac5462997D2BC57287Ac3a3aE4C31345D66',
+    earnContractAddress: '0x6EA8849E656Fb6cf357681ECe6165F2c4BACB038',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'CEEK',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1637153540,
+    partners: [ceek],
   },
 
   {
