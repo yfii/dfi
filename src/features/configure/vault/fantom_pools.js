@@ -38,7 +38,6 @@ export const fantomPools = [
     name: 'FTM',
     token: 'gFTM',
     tokenDescription: 'Geist',
-    tokenAddress: '0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooGeistFTM',
