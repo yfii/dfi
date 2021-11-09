@@ -1276,7 +1276,7 @@ export const fantomPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Curve',
-    assets: ['fUSDT', 'BTC', 'ETH'],
+    assets: ['fUSDT', 'WBTC', 'ETH'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
@@ -1526,8 +1526,8 @@ export const fantomPools = [
   },
   {
     id: 'jetswap-fantom-eth-btc',
-    name: 'ETH-BTC LP',
-    token: 'ETH-BTC LP',
+    name: 'ETH-WBTC LP',
+    token: 'ETH-WBTC LP',
     tokenDescription: 'JetSwap',
     tokenAddress: '0x04C25d06eD3984AAE14CA705d3CaF97Fb7238799',
     tokenDecimals: 18,
@@ -1543,7 +1543,7 @@ export const fantomPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'JetSwap',
-    assets: ['ETH', 'BTC'],
+    assets: ['ETH', 'WBTC'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
@@ -1590,8 +1590,8 @@ export const fantomPools = [
   },
   {
     id: 'jetswap-fantom-btc-usdc',
-    name: 'BTC-USDC LP',
-    token: 'BTC-USDC LP',
+    name: 'WBTC-USDC LP',
+    token: 'WBTC-USDC LP',
     tokenDescription: 'JetSwap',
     tokenAddress: '0x6B5340dFcd7D509Ea931cC4E69462797DbBc0197',
     tokenDecimals: 18,
@@ -1607,7 +1607,7 @@ export const fantomPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'JetSwap',
-    assets: ['BTC', 'USDC'],
+    assets: ['WBTC', 'USDC'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
@@ -2441,7 +2441,7 @@ export const fantomPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Scream',
-    assets: ['BTC'],
+    assets: ['WBTC'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
@@ -2654,7 +2654,7 @@ export const fantomPools = [
   {
     id: 'curve-ftm-ren',
     logo: 'single-assets/renBTC.png',
-    name: 'BTC/renBTC',
+    name: 'WBTC/renBTC',
     token: 'btcCRV',
     tokenDescription: 'Curve',
     tokenAddress: '0x5B5CFE992AdAC0C9D48E05854B2d91C73a003858',
@@ -2671,7 +2671,7 @@ export const fantomPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Curve',
-    assets: ['BTC', 'renBTC'],
+    assets: ['WBTC', 'renBTC'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
@@ -3331,8 +3331,8 @@ export const fantomPools = [
   {
     id: 'boo-btc-ftm',
     logo: 'fantom/BTC-FTM.png',
-    name: 'BTC-FTM LP',
-    token: 'BTC-FTM LP',
+    name: 'WBTC-FTM LP',
+    token: 'WBTC-FTM LP',
     tokenDescription: 'SpookySwap',
     tokenAddress: '0xFdb9Ab8B9513Ad9E419Cf19530feE49d412C3Ee3',
     tokenDecimals: 18,
@@ -3348,7 +3348,7 @@ export const fantomPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'SpookySwap',
-    assets: ['BTC', 'FTM'],
+    assets: ['WBTC', 'FTM'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
