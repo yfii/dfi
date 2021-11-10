@@ -58,6 +58,7 @@ const oldValidOwners = [
   '0x6d28afD25a1FBC5409B1BeFFf6AEfEEe2902D89F', // strat timelock owner
   '0x4E2a43a0Bf6480ee8359b7eAE244A9fBe9862Cdf', // vault owner
   '0x09dc95959978800E57464E962724a34Bb4Ac1253', // polygon dev multisig
+  '0xBB54a8F862e2D4Cc03634a26974c5C3bEfd06836', // heco old vault owner
 ];
 
 const validatePools = async () => {

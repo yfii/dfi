@@ -20,6 +20,16 @@ const ceek = {
     twitter: 'https://twitter.com/ceek',
   },
 };
+const nfty = {
+  logo: 'stake/nfty/logo.png',
+  background: 'stake/nfty/bg.png',
+  text: 'NFTYLabs envisions a world where NFTs function as a medium of access, bringing a means of utility and privilege to NFT holders in a secure and confidential manner. NFTY will act as a cross-chain and interoperable bridge between enterprise, private content, and VIP communities; further strengthening the bond in ways never before imagined.',
+  website: 'https://nftynetwork.io/',
+  social: {
+    telegram: 'https://t.me/NFTYNetwork',
+    twitter: 'https://twitter.com/NFTYNetwork',
+  },
+};
 
 export const bscStakePools = [
   {
@@ -54,6 +64,52 @@ export const bscStakePools = [
         },
       },
     ],
+  },
+
+  {
+    id: 'moo_alpaca-ibalpaca-nfty',
+    name: 'NFTY',
+    logo: 'single-assets/ALPACA.png',
+    token: 'mooIbAlpaca',
+    tokenDecimals: 18,
+    tokenAddress: '0x6EB4F8975b15F34AdccFDE830087Fc8FdB006C36',
+    tokenOracle: 'lps',
+    tokenOracleId: 'alpaca-ibalpaca',
+    earnedToken: 'mooNfty',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x55669f1c00D55F55bA1E736A23cEE54877D922Be',
+    earnContractAddress: '0xF9353488011a4b10e31656B68684bEc6Cfadf2b7',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'mooNfty',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1638011380,
+    partners: [nfty],
+  },
+
+  {
+    id: 'moo_banana-nfty-wbnb-nfty-2',
+    name: 'NFTY',
+    assets: ['NFTY', 'BNB'],
+    token: 'mooApeNFTY-BNB',
+    tokenDecimals: 18,
+    tokenAddress: '0x69476255A2703Df58C0F6Bb60D1c5deC9a8406C1',
+    tokenOracle: 'lps',
+    tokenOracleId: 'banana-nfty-wbnb',
+    earnedToken: 'mooNfty',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x55669f1c00D55F55bA1E736A23cEE54877D922Be',
+    earnContractAddress: '0xA79CC48b4968ADF1B06eB1b6395EFb786Ab5445C',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'mooNfty',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1638007453,
+    partners: [nfty],
   },
 
   {
