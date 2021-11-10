@@ -49,7 +49,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "yarn validate && react-scripts build",
+    "build": "react-scripts build",
     "validate": "node ./scripts/validatePools.js",
     "launchpool": "node ./scripts/launchpool.js",
     "test": "react-scripts test",
