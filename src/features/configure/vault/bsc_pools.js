@@ -231,7 +231,7 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'banana-exp-wbnb',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'ApeSwap',
     assets: ['EXP', 'BNB'],
