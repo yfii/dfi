@@ -2048,7 +2048,7 @@ export const fantomPools = [
     oracle: 'tokens',
     oracleId: 'CRV',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Scream',
     assets: ['CRV'],
