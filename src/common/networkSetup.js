@@ -30,7 +30,7 @@ export const networkSettings = {
       decimals: 18,
     },
     rpcUrls: ['https://api.avax.network/ext/bc/C/rpc'],
-    blockExplorerUrls: ['https://cchain.explorer.avax.network/'],
+    blockExplorerUrls: ['https://snowtrace.io/'],
   },
   137: {
     chainId: `0x${parseInt(137, 10).toString(16)}`,
