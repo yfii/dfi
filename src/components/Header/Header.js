@@ -59,6 +59,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
             {renderLink('vote', t('vote'), 'vote-yea', classes)}
             {renderLink('dashboard', t('stats'), 'chart-bar', classes)}
             {renderLink('docs', t('docs'), 'book', classes)}
+            {renderLink('blog', t('blog'), 'file-alt', classes)}
             {renderLink('forum', t('forum'), 'comments', classes)}
           </Hidden>
           {renderLink('buy', t('buy'), 'dollar-sign', classes)}
@@ -104,6 +105,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
             <LinkSidebar name="vote" label={t('vote')} icon="vote-yea" classes={classes} />
             <LinkSidebar name="dashboard" label={t('stats')} icon="chart-bar" classes={classes} />
             <LinkSidebar name="docs" label={t('docs')} icon="book" classes={classes} />
+            <LinkSidebar name="blog" label={t('blog')} icon="file-alt" classes={classes} />
             <LinkSidebar name="forum" label={t('forum')} icon="comments" classes={classes} />
             <LinkSidebar name="buy" label={t('buy')} icon="dollar-sign" classes={classes} />
             <IconButton onClick={setNightMode} className={classes.icon}>

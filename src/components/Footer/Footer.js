@@ -25,13 +25,13 @@ const Footer = () => {
         </a>
 
         <a
-          href="https://medium.com/beefyfinance"
+          href="https://blog.beefy.finance/articles"
           target="_blank"
           rel="noopener noreferrer"
           className={classes.link}
         >
-          <i className={`fab fa-medium ${classes.linkIcon}`}></i>
-          <span>{t('news')}</span>
+          <i className={`fas fa-file-alt ${classes.linkIcon}`}></i>
+          <span>blog</span>
         </a>
 
         <a
