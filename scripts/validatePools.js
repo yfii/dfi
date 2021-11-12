@@ -58,8 +58,11 @@ const oldValidOwners = [
   '0x6d28afD25a1FBC5409B1BeFFf6AEfEEe2902D89F', // strat timelock owner
   '0x4E2a43a0Bf6480ee8359b7eAE244A9fBe9862Cdf', // vault owner
   '0x09dc95959978800E57464E962724a34Bb4Ac1253', // polygon dev multisig
-  '0xBB54a8F862e2D4Cc03634a26974c5C3bEfd06836', // heco old vault owner
 ];
+
+const oldValidFeeRecipients = {
+  fantom: ['0x4f8865A1FcE2877cCB55264600D4759d222E8fEB'],
+};
 
 const validatePools = async () => {
   const addressFields = ['tokenAddress', 'earnedTokenAddress', 'earnContractAddress'];
@@ -246,10 +249,12 @@ const isVaultOwnerCorrect = (pool, chain, owner, updates) => {
 };
 
 const isBeefyFeeRecipientCorrect = (pool, chain, recipient, updates) => {
+  const validRecipients = oldValidFeeRecipients[chain] || [];
   if (
     pool.status === 'active' &&
     pool.beefyFeeRecipient !== undefined &&
-    pool.beefyFeeRecipient !== recipient
+    pool.beefyFeeRecipient !== recipient &&
+    !validRecipients.includes(pool.beefyFeeRecipient)
   ) {
     console.log(
       `Pool ${pool.id} should update beefy fee recipient. From: ${pool.beefyFeeRecipient} To: ${recipient}`
