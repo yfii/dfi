@@ -20,8 +20,8 @@ const Footer = () => {
           rel="noopener noreferrer"
           className={classes.link}
         >
-          <i className={`fas fa-book ${classes.linkIcon}`}></i>
-          <span>docs</span>
+          <i className={`fas fa-book ${classes.linkIcon}`} />
+          <span>{t('docs')}</span>
         </a>
 
         <a
@@ -30,8 +30,18 @@ const Footer = () => {
           rel="noopener noreferrer"
           className={classes.link}
         >
-          <i className={`fas fa-file-alt ${classes.linkIcon}`}></i>
-          <span>blog</span>
+          <i className={`fas fa-file-alt ${classes.linkIcon}`} />
+          <span>{t('blog')}</span>
+        </a>
+
+        <a
+          href="https://forum.beefy.finance/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={classes.link}
+        >
+          <i className={`fas fa-comments ${classes.linkIcon}`} />
+          <span>{t('forum')}</span>
         </a>
 
         <a
@@ -40,7 +50,7 @@ const Footer = () => {
           rel="noopener noreferrer"
           className={classes.link}
         >
-          <i className={`fab fa-github ${classes.linkIcon}`}></i>
+          <i className={`fab fa-github ${classes.linkIcon}`} />
           <span>{t('source')}</span>
         </a>
       </div>
@@ -53,8 +63,8 @@ const Footer = () => {
           rel="noopener noreferrer"
           className={classes.link}
         >
-          <i className={`fas fa-landmark ${classes.linkIcon}`}></i>
-          <span>gov</span>
+          <i className={`fas fa-landmark ${classes.linkIcon}`} />
+          <span>{t('gov')}</span>
         </a>
 
         <a
@@ -63,8 +73,8 @@ const Footer = () => {
           rel="noopener noreferrer"
           className={classes.link}
         >
-          <i className={`fas fa-vote-yea ${classes.linkIcon}`}></i>
-          <span>vote</span>
+          <i className={`fas fa-vote-yea ${classes.linkIcon}`} />
+          <span>{t('vote')}</span>
         </a>
 
         <a
@@ -73,8 +83,8 @@ const Footer = () => {
           rel="noopener noreferrer"
           className={classes.link}
         >
-          <i className={`fas fa-hand-holding-usd ${classes.linkIcon}`}></i>
-          <span>app</span>
+          <i className={`fas fa-hand-holding-usd ${classes.linkIcon}`} />
+          <span>{t('app')}</span>
         </a>
       </div>
 
@@ -86,7 +96,7 @@ const Footer = () => {
           rel="noopener noreferrer"
           className={classes.link}
         >
-          <i className={`fab fa-twitter ${classes.linkIcon}`}></i>
+          <i className={`fab fa-twitter ${classes.linkIcon}`} />
 
           <span>twitter</span>
         </a>
@@ -96,7 +106,7 @@ const Footer = () => {
           rel="noopener noreferrer"
           className={classes.link}
         >
-          <i className={`fab fa-telegram ${classes.linkIcon}`}></i>
+          <i className={`fab fa-telegram ${classes.linkIcon}`} />
 
           <span>telegram</span>
         </a>
@@ -106,7 +116,7 @@ const Footer = () => {
           rel="noopener noreferrer"
           className={classes.link}
         >
-          <i className={`fab fa-discord ${classes.linkIcon}`}></i>
+          <i className={`fab fa-discord ${classes.linkIcon}`} />
           <span>discord</span>
         </a>
       </div>
