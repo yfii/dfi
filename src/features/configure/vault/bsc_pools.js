@@ -1512,6 +1512,16 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     platform: 'ApeSwap',
     assets: ['POTS', 'BNB'],
     addLiquidityUrl:
@@ -1539,6 +1549,16 @@ export const bscPools = [
     status: 'active',
     platform: 'PancakeSwap',
     assets: ['POTS', 'BUSD'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://pancakeswap.finance/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0x3Fcca8648651E5b974DD6d3e50F61567779772A8',
     buyTokenUrl:
@@ -2569,6 +2589,16 @@ export const bscPools = [
     status: 'active',
     platform: 'ApeSwap',
     assets: ['BUSD', 'BNB'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://dex.apeswap.finance/#/add/ETH/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
     buyTokenUrl:
@@ -2693,6 +2723,16 @@ export const bscPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'ApeSwap',
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     assets: ['BTCB', 'BNB'],
     addLiquidityUrl:
       'https://dex.apeswap.finance/#/add/ETH/0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c',
@@ -2871,6 +2911,16 @@ export const bscPools = [
     status: 'active',
     platform: 'PancakeSwap',
     assets: ['BTT', 'BUSD'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MEDIUM',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://pancakeswap.finance/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0x8595f9da7b868b1822194faed312235e43007b49',
     buyTokenUrl:
@@ -2896,6 +2946,16 @@ export const bscPools = [
     status: 'active',
     platform: 'PancakeSwap',
     assets: ['TRX', 'BUSD'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://pancakeswap.finance/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0x85eac5ac2f758618dfa09bdbe0cf174e7d574d5b',
     buyTokenUrl:

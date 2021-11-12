@@ -21,6 +21,15 @@ export const polygonPools = [
     platform: 'Beefy.Finance',
     assets: ['BIFI'],
     withdrawalFee: '0.05%',
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_MEDIUM',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'Maxi',
     buyTokenUrl:
       'https://quickswap.exchange/#/swap?inputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619&outputCurrency=0xfbdd194376de19a88118e84e279b977f165d01b8',
   },
@@ -45,6 +54,16 @@ export const polygonPools = [
     platform: 'Kyber',
     assets: ['jEUR', 'USDC'],
     withdrawalFee: '0%',
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://dmm.exchange/#/add/0x2791bca1f2de4661ed88a30c99a7a9449aa84174/0x4e3decbb3645551b8a19f0ea1678079fcb33fb4c/0xa1219dbe76eecbf7571fed6b020dd9154396b70e',
     buyTokenUrl:
@@ -1347,6 +1366,16 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'IronFinance',
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'ALGO_STABLE',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratMultiLP',
     assets: ['IRON', 'USDC', 'USDT', 'DAI'],
     withdrawalFee: '0.01%',
     addLiquidityUrl: 'https://app.iron.finance/swap/pools/isiron/deposit',
@@ -1881,6 +1910,16 @@ export const polygonPools = [
     platform: 'DinoSwap',
     assets: ['UST', 'USDT'],
     withdrawalFee: '0.01%',
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://exchange.dfyn.network/#/add/0x692597b009d13C4049a947CAB2239b7d6517875F/0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
     buyTokenUrl:
@@ -2341,6 +2380,16 @@ export const polygonPools = [
     assets: ['MAI', 'USDC'],
     withdrawalFee: '0.01%',
     retireReason: 'rewards',
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x2791bca1f2de4661ed88a30c99a7a9449aa84174/0xa3Fa99A148fA48D14Ed51d610c367C61876997F1',
     buyTokenUrl:
