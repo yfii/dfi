@@ -2545,33 +2545,6 @@ export const avalanchePools = [
   },
 
   {
-    id: 'com-usdt-avax-eol',
-    logo: 'avax-pairs/USDT-AVAX.png',
-    name: 'USDT-AVAX LP',
-    token: 'USDT-AVAX CLP',
-    tokenDescription: 'Complus',
-    tokenAddress: '0xe64bfAe83BA234aB85BceF5B7A92427E29b3AA11',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooComplusUSDT-AVAX',
-    earnedTokenAddress: '0x14d07853560436aEe38BE12DD66d944B07D5E59F',
-    earnContractAddress: '0x14d07853560436aEe38BE12DD66d944B07D5E59F',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'com-usdt-avax',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    retireReason: 'rewards',
-    platform: 'Complus',
-    assets: ['USDT', 'AVAX'],
-    addLiquidityUrl:
-      'https://avadex.complus.exchange/#/add/AVAX/0xde3A24028580884448a5397872046a019649b084',
-    buyTokenUrl:
-      'https://avadex.complus.exchange/#/swap?inputCurrency=0xde3A24028580884448a5397872046a019649b084&outputCurrency=AVAX',
-  },
-  {
     id: 'com-eth-avax-eol',
     logo: 'avax-pairs/ETH-AVAX.png',
     name: 'ETH-AVAX LP',

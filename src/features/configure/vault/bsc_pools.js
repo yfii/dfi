@@ -13239,30 +13239,6 @@ export const bscPools = [
     removeLiquidityUrl:
       'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x4131b87f74415190425ccd873048c708f8005823',
   },
-  {
-    id: 'cake-bopen-bnb',
-    logo: 'bnb-pairs/BOPEN-BNB.svg',
-    name: 'BOPEN-BNB LP',
-    token: 'BOPEN-BNB LP',
-    tokenDescription: 'PancakeSwap',
-    tokenAddress: '0x9d8b7e4a9D53654D82F12c83448D8f92732bC761',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooPancakeBOPEN-BNB',
-    earnedTokenAddress: '0x847c5748A280d800690F7D3A62574603b57Cd0b7',
-    earnContractAddress: '0x847c5748A280d800690F7D3A62574603b57Cd0b7',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'cake-bopen-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'PancakeSwap',
-    assets: ['BOPEN', 'BNB'],
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0xf35262a9d427f96d2437379ef090db986eae5d42',
-  },
 
   {
     id: '1inch-1inch-bnb-eol',
