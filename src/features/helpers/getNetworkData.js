@@ -55,7 +55,7 @@ const networkTxUrls = {
   1666600000: hash => `https://explorer.harmony.one/tx/${hash}`,
   42161: hash => `https://arbiscan.io/tx/${hash}`,
   42220: hash => `https://explorer.celo.org/tx/${hash}`,
-  1285: hash => `https://blockscout.moonriver.moonbeam.network//tx/${hash}/token-transfers`,
+  1285: hash => `https://moonriver.moonscan.io/tx/${hash}`,
 };
 
 const networkFriendlyName = {

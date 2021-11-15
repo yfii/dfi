@@ -96,7 +96,7 @@ export const networkSettings = {
       decimals: 18,
     },
     rpcUrls: ['https://rpc.moonriver.moonbeam.network'],
-    blockExplorerUrls: ['https://blockscout.moonriver.moonbeam.network/'],
+    blockExplorerUrls: ['https://moonriver.moonscan.io/'],
   },
 };
 
