@@ -98,6 +98,17 @@ export const networkSettings = {
     rpcUrls: ['https://rpc.moonriver.moonbeam.network'],
     blockExplorerUrls: ['https://moonriver.moonscan.io/'],
   },
+  25: {
+    chainId: `0x${parseInt(25, 10).toString(16)}`,
+    chainName: 'Cronos',
+    nativeCurrency: {
+      name: 'CRO',
+      symbol: 'CRO',
+      decimals: 18,
+    },
+    rpcUrls: ['https://evm-cronos.crypto.org'],
+    blockExplorerUrls: ['https://cronos.crypto.org/explorer/'],
+  },
 };
 
 export const networkSetup = chainId => {

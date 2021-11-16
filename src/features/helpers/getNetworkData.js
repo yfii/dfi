@@ -36,6 +36,10 @@ import {
   harmonyStakePools,
   harmonyAddressBook,
   harmonyZaps,
+  cronosPools,
+  cronosStakePools,
+  cronosAddressBook,
+  cronosZaps,
   arbitrumPools,
   arbitrumStakePools,
   arbitrumAddressBook,
@@ -56,6 +60,7 @@ const networkTxUrls = {
   42161: hash => `https://arbiscan.io/tx/${hash}`,
   42220: hash => `https://explorer.celo.org/tx/${hash}`,
   1285: hash => `https://moonriver.moonscan.io/tx/${hash}`,
+  25: hash => `https://cronos.crypto.org/explorer/tx/${hash}`,
 };
 
 const networkFriendlyName = {
@@ -68,6 +73,7 @@ const networkFriendlyName = {
   42161: 'Arbitrum',
   42220: 'Celo',
   1285: 'Moonriver',
+  25: 'Cronos',
 };
 
 const networkBuyUrls = {
@@ -81,6 +87,7 @@ const networkBuyUrls = {
   42161: '',
   42220: '',
   1285: '',
+  25: '',
 };
 
 export const getNetworkCoin = () => {
@@ -107,6 +114,8 @@ export const getNetworkPools = () => {
       return celoPools;
     case 1285:
       return moonriverPools;
+    case 25:
+      return cronosPools;
     default:
       return [];
   }
@@ -132,6 +141,8 @@ export const getNetworkVaults = (networkId = appNetworkId) => {
       return indexBy(celoPools, 'id');
     case 1285:
       return indexBy(moonriverPools, 'id');
+    case 25:
+      return indexBy(cronosPools, 'id');
     default:
       return {};
   }
@@ -157,6 +168,8 @@ export const getNetworkLaunchpools = (networkId = appNetworkId) => {
       return indexBy(celoStakePools, 'id');
     case 1285:
       return indexBy(moonriverStakePools, 'id');
+    case 25:
+      return indexBy(cronosStakePools, 'id');
     default:
       return {};
   }
@@ -183,6 +196,8 @@ export const getNetworkTokens = () => {
       return celoAddressBook.tokens;
     case 1285:
       return moonriverAddressBook.tokens;
+    case 25:
+      return cronosAddressBook.tokens;
     default:
       throw new Error(
         `Create address book for chainId(${chainId}) first. Check out https://github.com/beefyfinance/address-book`
@@ -229,6 +244,8 @@ export const getNetworkBurnTokens = () => {
       return {};
     case 1285:
       return {};
+    case 25:
+      return {};
     default:
       throw new Error(`Create address book for this chainId first.`);
   }
@@ -254,6 +271,8 @@ export const getNetworkZaps = () => {
       return celoZaps;
     case 1285:
       return moonriverZaps;
+    case 25:
+      return cronosZaps;
     default:
       return [];
   }
@@ -323,6 +342,8 @@ export const getNetworkStables = () => {
       return ['cUSD', 'cEUR', 'DAI'];
     case 1285:
       return ['USDC', 'USDT', 'DAI', 'BUSD', 'MAI', 'MIM', 'FRAX'];
+    case 25:
+      return ['USDC', 'USDT', 'DAI', 'BUSD'];
     default:
       return [];
   }
@@ -348,6 +369,8 @@ export const getNetworkMulticall = () => {
       return '0xa9E6E271b27b20F65394914f8784B3B860dBd259';
     case 1285:
       return '0x7f6fE34C51d5352A0CF375C0Fbe03bD19eCD8460';
+    case 25:
+      return '0x13aD51a6664973EbD0749a7c84939d973F247921';
     default:
       return '';
   }
@@ -573,6 +596,19 @@ export const getNetworkConnectors = t => {
                 1: 'https://forno.celo.org',
                 42220: 'https://forno.celo.org',
               },
+            },
+          },
+        },
+      };
+    case 25:
+      return {
+        network: 'cronos',
+        cacheProvider: true,
+        providerOptions: {
+          injected: {
+            display: {
+              name: 'Injected',
+              description: t('Home-BrowserWallet'),
             },
           },
         },
