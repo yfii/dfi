@@ -112,6 +112,7 @@
   "app": "app",
   "socials": "socials",
   "buy": "buy",
+  "insure": "insure",
   "products": "products",
   "Powered-By": "POWERED BY",
   "IFO-Guide": "IFO Guide",
@@ -147,5 +148,28 @@
   "Wrap-BNB": "Wrap BNB",
   "Boost": "Boost",
   "Experimental": "Experimental",
-  "Select-Network": "Select Network"
+  "Select-Network": "Select Network",
+  "InsurAce-Title": "InsurAce Vault Insurance",
+  "InsurAce-Sections": [
+    {
+      "title": "What is InsurAce?",
+      "content": [
+        "InsurAce.io is a decentralized insurance protocol operating across multiple blockchains. It provides insurance services to DeFi users to protect their investments against smart contract risks."
+      ]
+    },
+    {
+      "title": "How it works",
+      "content": [
+        "Beefy contracts deposit tokens on your behalf, to underlying platforms, for example Pancakeswap, TraderJoe, or Spookyswap. If one of Beefy’s smart contracts fails (for example our vault contract, or the strategy contract) and you were paying for coverage, InsurAce will cover your loss.",
+        "Contrarily if the smart contract that fails belongs to the underlying platform (Pancakeswap, Traderjoe, Spookyswap) your deposits won’t be covered."
+      ]
+    },
+    {
+      "title": "What is the premium?",
+      "content": [
+        "2.9% annually. Use our custom Beefy link to enjoy a 10% discount (paid in Insur Token)."
+      ]
+    }
+  ],
+  "InsurAce-Button": "Insure Vaults"
 }

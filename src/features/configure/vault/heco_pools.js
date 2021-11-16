@@ -21,6 +21,15 @@ export const hecoPools = [
     platform: 'Beefy.Finance',
     assets: ['BIFI'],
     withdrawalFee: '0.05%',
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_MEDIUM',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'Maxi',
     buyTokenUrl:
       'https://ht.mdex.com/#/swap?inputCurrency=0xa71edc38d189767582c38a3145b5873052c3e47a&outputCurrency=0x765277eebeca2e31912c9946eae1021199b39c61',
   },

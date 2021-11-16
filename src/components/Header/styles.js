@@ -226,6 +226,10 @@ const styles = theme => ({
   link: {
     display: 'inline-flex',
     margin: '0 1rem',
+    background: 'transparent',
+    border: 0,
+    padding: 0,
+    cursor: 'pointer',
     fontSize: '1rem',
     fontWeight: 400,
     color: '#000',
@@ -261,6 +265,61 @@ const styles = theme => ({
     '&:hover img': {
       filter:
         'invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(1000%) contrast(1000%)',
+    },
+  },
+  modalClose: {
+    position: 'absolute',
+    right: '8px',
+    top: '8px',
+  },
+  modalInner: {
+    padding: '24px',
+  },
+  modalTitle: {
+    padding: '0',
+    fontSize: '24px',
+    margin: '0 0 32px 0',
+    letterSpacing: '0',
+    lineHeight: '1',
+    fontWeight: '550',
+    color: theme.palette.text.primary,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    '@media (min-width:464px)': {},
+    [theme.breakpoints.up('md')]: {
+      fontSize: '32px',
+    },
+  },
+  modalSections: {},
+  modalSection: {
+    marginBottom: '32px',
+    '& $modalSectionText:first-child': {
+      marginTop: 0,
+    },
+    '& $modalSectionText:last-child': {
+      marginBottom: 0,
+    },
+  },
+  modalSectionTitle: {
+    textTransform: 'uppercase',
+    letterSpacing: '1px',
+    fontSize: '16px',
+    color: theme.palette.text.secondary,
+    margin: '0 0 8px 0',
+  },
+  modalSectionText: {},
+  modalButton: {
+    border: 0,
+    padding: '12px',
+    backgroundColor: '#000',
+    color: '#fff',
+    textTransform: 'none',
+    margin: '0',
+    width: '100%',
+    '& .MuiButton-label': {
+      color: '#fff',
+      fontSize: '14px',
     },
   },
 });

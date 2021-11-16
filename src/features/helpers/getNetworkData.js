@@ -49,13 +49,13 @@ export const appNetworkId = window.REACT_APP_NETWORK_ID;
 const networkTxUrls = {
   56: hash => `https://bscscan.com/tx/${hash}`,
   128: hash => `https://hecoinfo.com/tx/${hash}`,
-  43114: hash => `https://cchain.explorer.avax.network/tx/${hash}/token-transfers`,
+  43114: hash => `https://snowtrace.io/tx/${hash}`,
   137: hash => `https://polygonscan.com/tx/${hash}`,
   250: hash => `https://ftmscan.com/tx/${hash}`,
   1666600000: hash => `https://explorer.harmony.one/tx/${hash}`,
   42161: hash => `https://arbiscan.io/tx/${hash}`,
   42220: hash => `https://explorer.celo.org/tx/${hash}`,
-  1285: hash => `https://blockscout.moonriver.moonbeam.network//tx/${hash}/token-transfers`,
+  1285: hash => `https://moonriver.moonscan.io/tx/${hash}`,
 };
 
 const networkFriendlyName = {
@@ -322,7 +322,7 @@ export const getNetworkStables = () => {
     case 42220:
       return ['cUSD', 'cEUR', 'DAI'];
     case 1285:
-      return ['USDC', 'USDT', 'DAI', 'BUSD', 'MAI', 'MIM'];
+      return ['USDC', 'USDT', 'DAI', 'BUSD', 'MAI', 'MIM', 'FRAX'];
     default:
       return [];
   }

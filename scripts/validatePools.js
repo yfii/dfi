@@ -59,6 +59,10 @@ const oldValidOwners = [
   // '0x09dc95959978800E57464E962724a34Bb4Ac1253', // polygon dev multisig
 ];
 
+const oldValidFeeRecipients = {
+  fantom: ['0x4f8865A1FcE2877cCB55264600D4759d222E8fEB'],
+};
+
 const validatePools = async () => {
   const addressFields = ['tokenAddress', 'earnedTokenAddress', 'earnContractAddress'];
 
@@ -244,10 +248,12 @@ const isVaultOwnerCorrect = (pool, chain, owner, updates) => {
 };
 
 const isBeefyFeeRecipientCorrect = (pool, chain, recipient, updates) => {
+  const validRecipients = oldValidFeeRecipients[chain] || [];
   if (
     pool.status === 'active' &&
     pool.beefyFeeRecipient !== undefined &&
-    pool.beefyFeeRecipient !== recipient
+    pool.beefyFeeRecipient !== recipient &&
+    !validRecipients.includes(pool.beefyFeeRecipient)
   ) {
     console.log(
       `Pool ${pool.id} should update beefy fee recipient. From: ${pool.beefyFeeRecipient} To: ${recipient}`
