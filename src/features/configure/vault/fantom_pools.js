@@ -2457,7 +2457,7 @@ export const fantomPools = [
     buyTokenUrl: 'https://spookyswap.finance/swap',
   },
   {
-    id: 'scream-wbtc-supply',
+    id: 'scream-wbtc',
     logo: 'single-assets/WBTC.svg',
     name: 'WBTC',
     token: 'WBTC',
@@ -2523,7 +2523,7 @@ export const fantomPools = [
     buyTokenUrl: 'https://spookyswap.finance/swap',
   },
   {
-    id: 'scream-eth-supply',
+    id: 'scream-eth',
     logo: 'single-assets/ETH.svg',
     name: 'wETH',
     token: 'wETH',
