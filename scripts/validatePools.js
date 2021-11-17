@@ -40,7 +40,7 @@ const chainRpcs = {
   arbitrum: process.env.ARBITRUM_RPC || 'https://arb1.arbitrum.io/rpc',
   celo: process.env.CELO_RPC || 'https://forno.celo.org',
   moonriver: process.env.MOONRIVER_RPC || 'https://rpc.moonriver.moonbeam.network',
-  cronos: process.env.MOONRIVER_RPC || 'https://evm-cronos.crypto.org',
+  cronos: process.env.CRONOS_RPC || 'https://evm-cronos.crypto.org',
 };
 
 const overrides = {

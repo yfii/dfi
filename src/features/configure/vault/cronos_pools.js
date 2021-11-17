@@ -29,6 +29,7 @@ export const cronosPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'SingleStake',
+    withdrawalFee: '0%',
     buyTokenUrl:
       'https://vvs.finance/swap?outputCurrency=0x2D03bECE6747ADC00E1a131BBA1469C15fD11e03',
   },
