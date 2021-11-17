@@ -79,4 +79,12 @@ export const nativeCoins = [
     wrappedSymbol: 'WMOVR',
     allowance: Infinity,
   },
+  {
+    chainId: 25,
+    name: 'Cronos',
+    symbol: 'CRO',
+    decimals: 18,
+    wrappedSymbol: 'WCRO',
+    allowance: Infinity,
+  },
 ];
