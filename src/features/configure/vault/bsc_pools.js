@@ -23,7 +23,7 @@ export const bscPools = [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
       'IL_NONE',
-      'MCAP_SMALL',
+      'MCAP_MEDIUM',
       'AUDIT',
       'CONTRACTS_VERIFIED',
     ],
@@ -273,6 +273,15 @@ export const bscPools = [
     status: 'active',
     platform: 'Ellipsis',
     assets: ['renBTC', 'BTCB'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl: 'https://ellipsis.finance/pool/btceps',
   },
   {
@@ -2063,6 +2072,15 @@ export const bscPools = [
     status: 'active',
     platform: 'PancakeSwap',
     assets: ['CAKE', 'BNB'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://pancakeswap.finance/add/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82/BNB',
     buyTokenUrl:
@@ -4636,6 +4654,15 @@ export const bscPools = [
     status: 'active',
     platform: '1Inch',
     assets: ['1INCH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_MEDIUM',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'SingleStake',
     buyTokenUrl:
       'https://1inch.exchange/#/r/0xF4cb25a1FF50E319c267b3E51CBeC2699FB2A43B/BNB/1INCH/?network=56',
   },
@@ -5703,6 +5730,15 @@ export const bscPools = [
     status: 'active',
     platform: 'PancakeSwap',
     assets: ['BIFI', 'BNB'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_MEDIUM',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://pancakeswap.finance/add/BNB/0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
     buyTokenUrl:
@@ -6811,6 +6847,15 @@ export const bscPools = [
     status: 'active',
     platform: 'PancakeSwap',
     assets: ['DOGE', 'BNB'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://pancakeswap.finance/add/BNB/0xba2ae424d960c26247dd6c32edc70b295c744c43',
     buyTokenUrl:
@@ -7723,6 +7768,15 @@ export const bscPools = [
     status: 'active',
     platform: 'ApeSwap',
     assets: ['DOGE', 'BNB'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://dex.apeswap.finance/#/add/ETH/0xbA2aE424d960c26247Dd6c32edC70B295c744C43',
     buyTokenUrl:
@@ -9106,7 +9160,7 @@ export const bscPools = [
       'https://pancakeswap.finance/swap?inputCurrency=0x8519ea49c997f50ceffa444d240fb655e89248aa&outputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
   },
   {
-    id: 'cakev2-dexe-busd',
+    id: 'cakev2-dexe-busd-eol',
     logo: 'busd-pairs/DEXE-BUSD.svg',
     name: 'DEXE-BUSD LP',
     token: 'DEXE-BUSD LP2',
@@ -9122,10 +9176,11 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cakev2-dexe-busd',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'PancakeSwap',
     assets: ['DEXE', 'BUSD'],
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://pancakeswap.finance/add/0xe9e7cea3dedca5984780bafc599bd69add087d56/0x039cb485212f996a9dbb85a9a75d898f94d38da6',
     buyTokenUrl:
@@ -9643,7 +9698,7 @@ export const bscPools = [
   },
 
   {
-    id: 'cakev2-front-bnb',
+    id: 'cakev2-front-bnb-eol',
     logo: 'bnb-pairs/FRONT-BNB.svg',
     name: 'FRONT-BNB LP',
     token: 'FRONT-BNB LP2',
@@ -9659,10 +9714,11 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cakev2-front-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'PancakeSwap',
     assets: ['FRONT', 'BNB'],
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://pancakeswap.finance/add/BNB/0x928e55dab735aa8260af3cedada18b5f70c72f1b',
     buyTokenUrl:
@@ -14143,6 +14199,15 @@ export const bscPools = [
     status: 'active',
     platform: 'Kebab',
     assets: ['BIFI', 'BUSD'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_MEDIUM',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://swap.kebabfinance.com/#/add/0xCa3F508B8e4Dd382eE878A314789373D80A5190A/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
     buyTokenUrl:
@@ -15542,6 +15607,15 @@ export const bscPools = [
     status: 'active',
     platform: 'Venus',
     assets: ['BNB'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'SingleStake',
     withdrawalFee: '0.05%',
   },
 
@@ -15566,6 +15640,14 @@ export const bscPools = [
     status: 'active',
     platform: 'Venus',
     assets: ['BNB'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
     withdrawalFee: '0.05%',
     buyTokenUrl:
       'https://pancakeswap.finance/swap?outputCurrency=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
