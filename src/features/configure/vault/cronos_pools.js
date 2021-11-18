@@ -205,7 +205,7 @@ export const cronosPools = [
     logo: 'single-assets/CRONA.svg',
     name: 'CRONA',
     token: 'CRONA',
-    tokenDescription: 'CRONA',
+    tokenDescription: 'CronaSwap',
     tokenAddress: '0xadbd1231fb360047525BEdF962581F3eee7b49fe',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
@@ -219,7 +219,7 @@ export const cronosPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'CRONA',
+    platform: 'CronaSwap',
     assets: ['CRONA'],
     risks: [
       'COMPLEXITY_LOW',

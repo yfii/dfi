@@ -228,6 +228,15 @@ export const hecoPools = [
     status: 'active',
     platform: 'Mdex',
     assets: ['BIFI', 'USDT'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_MEDIUM',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     buyTokenUrl:
       'https://ht.mdex.com/#/swap?inputCurrency=0xa71EdC38d189767582C38A3145b5873052c3e47a&outputCurrency=0x765277EebeCA2e31912C9946eAe1021199B39C61',
     addLiquidityUrl:
