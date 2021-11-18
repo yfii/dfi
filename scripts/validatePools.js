@@ -53,17 +53,19 @@ const overrides = {
 };
 
 const oldValidOwners = [
+  // TODO delete after update owners
   addressBook.fantom.platforms.beefyfinance.devMultisig,
   addressBook.polygon.platforms.beefyfinance.devMultisig,
-  // '0xd529b1894491a0a26B18939274ae8ede93E81dbA', // admin eoa
-  // '0xC362FA359031A081D21Cb9d57c29e055FecbcB06', // admin eoa
-  // '0x6d28afD25a1FBC5409B1BeFFf6AEfEEe2902D89F', // strat timelock owner
-  // '0x4E2a43a0Bf6480ee8359b7eAE244A9fBe9862Cdf', // vault owner
-  // '0x09dc95959978800E57464E962724a34Bb4Ac1253', // polygon dev multisig
+  addressBook.arbitrum.platforms.beefyfinance.devMultisig,
+  '0x6d28afD25a1FBC5409B1BeFFf6AEfEEe2902D89F', // strat timelock owner
 ];
 
 const oldValidFeeRecipients = {
+  // TODO delete after update recipients
+  avax: ['0x85517F37d1e2ab145094A74C4E1DfE87E4D3f631'],
   fantom: ['0x4f8865A1FcE2877cCB55264600D4759d222E8fEB'],
+  heco: ['0x183D1aaEf1a86De6f16B2737c30eF94a6d2A9308'],
+  polygon: ['0xb66Ca5319eFc42FD1462693BAB51ee0C9E452745'],
 };
 
 const validatePools = async () => {
