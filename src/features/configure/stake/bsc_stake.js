@@ -67,6 +67,40 @@ export const bscStakePools = [
   },
 
   {
+    id: 'moo_belt-beltbtc-betu',
+    name: 'BETU',
+    logo: 'single-assets/BTCB.svg',
+    token: 'mooBeltBTC',
+    tokenDecimals: 18,
+    tokenAddress: '0xD411121C948Cff739857513E1ADF25ED448623f8',
+    tokenOracle: 'lps',
+    tokenOracleId: 'belt-beltbtc',
+    earnedToken: 'mooBetu',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x22b3d90BDdC3Ad5F2948bE3914255C64Ebc8c9b3',
+    earnContractAddress: '0x19b042f5c22292fd8B166477100B13Cb1c9b4A65',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'BETU',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1638790667,
+    partners: [
+      {
+        logo: 'stake/betu/logo.png',
+        background: 'stake/betu/bg.png',
+        text: 'BetU.io is here to revolutionize online betting. From traditional sports to e-sports, you can now place bets on BetU’s Fantasy league and earn up to $10,000 in crypto prizes every week! BetU.io leverages Chainlink technologies to distribute these weekly prizes.',
+        website: 'https://betu.io/',
+        social: {
+          telegram: 'https://t.me/betucommunity',
+          twitter: 'https://twitter.com/betuglobal',
+        },
+      },
+    ],
+  },
+
+  {
     id: 'moo_banana-oasis-wbnb-oasis',
     name: 'Oasis',
     assets: ['OASIS', 'BNB'],
