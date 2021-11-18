@@ -577,7 +577,7 @@ export const avalanchePools = [
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'tokens',
-    oracleId: 'WAVAX',
+    oracleId: 'AVAX',
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
@@ -1204,7 +1204,7 @@ export const avalanchePools = [
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
   },
   {
-    id: 'joe-frax-wavax',
+    id: 'joe-frax-wavax-eol',
     name: 'FRAX-AVAX LP',
     token: 'FRAX-AVAX JLP',
     tokenDescription: 'Trader Joe',
@@ -1219,8 +1219,8 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'joe-frax-wavax',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Trader Joe',
     assets: ['FRAX', 'AVAX'],
     risks: [
@@ -1232,6 +1232,7 @@ export const avalanchePools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7/0xDC42728B0eA910349ed3c6e1c9Dc06b5FB591f98',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
