@@ -63,7 +63,7 @@ const oldValidOwners = [
 ];
 
 const oldValidFeeRecipients = {
-  fantom: ['0x4f8865A1FcE2877cCB55264600D4759d222E8fEB'],
+  fantom: [],
 };
 
 const validatePools = async () => {
