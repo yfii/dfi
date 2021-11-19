@@ -425,7 +425,7 @@ export const polygonPools = [
     addLiquidityUrl: 'https://polygon.curve.fi/ren/deposit',
   },
   {
-    id: 'polysage-usdc-sage',
+    id: 'polysage-usdc-sage-eol',
     name: 'SAGE-USDC LP',
     token: 'SAGE-USDC LP',
     tokenDescription: 'Quickswap (PolySage)',
@@ -440,16 +440,17 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'polysage-usdc-sage',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'PolySage',
     assets: ['SAGE', 'USDC'],
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174/0x2ed945Dc703D85c80225d95ABDe41cdeE14e1992',
     buyTokenUrl: 'https://quickswap.exchange/#/swap',
   },
   {
-    id: 'polysage-wmatic-sage',
+    id: 'polysage-wmatic-sage-eol',
     name: 'SAGE-MATIC LP',
     token: 'SAGE-MATIC LP',
     tokenDescription: 'Quickswap (PolySage)',
@@ -464,10 +465,11 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'polysage-wmatic-sage',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'PolySage',
     assets: ['SAGE', 'MATIC'],
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270/0x2ed945Dc703D85c80225d95ABDe41cdeE14e1992',
     buyTokenUrl: 'https://quickswap.exchange/#/swap',
@@ -2464,6 +2466,16 @@ export const polygonPools = [
     status: 'active',
     platform: 'Mai',
     assets: ['MAI', 'USDC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'ALGO_STABLE',
+      'MCAP_MICRO',
+      'PLATFORM_ESTABLISHED',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     depositFee: '0.5%',
     withdrawalFee: '0.0%',
     addLiquidityUrl:
@@ -5610,6 +5622,15 @@ export const polygonPools = [
     status: 'active',
     platform: 'Cometh',
     assets: ['BIFI', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_MEDIUM',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://swap.cometh.io/#/add/0x7ceb23fd6bc0add59e62ac25578270cff1b9f619/0xfbdd194376de19a88118e84e279b977f165d01b8',
     buyTokenUrl:
@@ -5636,6 +5657,15 @@ export const polygonPools = [
     status: 'active',
     platform: 'Cometh',
     assets: ['BIFI', 'MUST'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_MICRO',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
     addLiquidityUrl:
       'https://swap.cometh.io/#/add/0x9c78ee466d6cb57a4d01fd887d2b5dfb2d46288f/0xfbdd194376de19a88118e84e279b977f165d01b8',
     buyTokenUrl:
