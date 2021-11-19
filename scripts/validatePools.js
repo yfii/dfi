@@ -53,16 +53,12 @@ const overrides = {
 };
 
 const oldValidOwners = [
-  // TODO delete after update owners
   addressBook.fantom.platforms.beefyfinance.devMultisig,
   addressBook.polygon.platforms.beefyfinance.devMultisig,
   addressBook.arbitrum.platforms.beefyfinance.devMultisig,
-  '0x6d28afD25a1FBC5409B1BeFFf6AEfEEe2902D89F', // strat timelock owner
 ];
 
-const oldValidFeeRecipients = {
-  fantom: [],
-};
+const oldValidFeeRecipients = {};
 
 const validatePools = async () => {
   const addressFields = ['tokenAddress', 'earnedTokenAddress', 'earnContractAddress'];
