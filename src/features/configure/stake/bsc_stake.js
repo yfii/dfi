@@ -90,7 +90,7 @@ export const bscStakePools = [
       {
         logo: 'stake/betu/logo.png',
         background: 'stake/betu/bg.png',
-        text: 'BetU.io is here to revolutionize online betting. From traditional sports to e-sports, you can now place bets on BetU’s Fantasy league and earn up to $10,000 in crypto prizes every week! BetU.io leverages Chainlink technologies to distribute these weekly prizes.',
+        text: 'BetU is here to revolutionize both the gambling and gaming industries. From traditional sports to e-sports, you can now place bets on BetU’s Fantasy league and earn up to $10,000 in crypto rewards every week! No risk, real rewards. Play now at play.betufantasy.com',
         website: 'https://betu.io/',
         social: {
           telegram: 'https://t.me/betucommunity',
