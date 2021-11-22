@@ -52,6 +52,8 @@ export const avalanchePools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Other',
+    depositFee: '0.5%',
+    withdrawalFee: '0.0%',
     assets: ['QI', 'AVAX'],
     risks: [
       'COMPLEXITY_LOW',
