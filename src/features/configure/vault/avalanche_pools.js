@@ -2380,7 +2380,7 @@ export const avalanchePools = [
       'https://app.pangolin.exchange/#/swap?inputCurrency=0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7&outputCurrency=0x50b7545627a5162F82A992c33b87aDc75187B218',
   },
   {
-    id: 'png-bifi-png',
+    id: 'png-bifi-png-eol',
     name: 'BIFI-PNG LP',
     token: 'BIFI-PNG LP',
     tokenDescription: 'Pangolin',
@@ -2395,8 +2395,9 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'png-bifi-png',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Pangolin',
     assets: ['BIFI', 'PNG'],
     risks: [
@@ -2414,7 +2415,7 @@ export const avalanchePools = [
       'https://app.pangolin.exchange/#/swap?inputCurrency=0x60781c2586d68229fde47564546784ab3faca982&outputCurrency=0xd6070ae98b8069de6B494332d1A1a81B6179D960',
   },
   {
-    id: 'png-bifi-avax',
+    id: 'png-bifi-avax-eol',
     name: 'BIFI-AVAX LP',
     token: 'BIFI-AVAX LP',
     tokenDescription: 'Pangolin',
@@ -2429,8 +2430,9 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'png-bifi-avax',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Pangolin',
     assets: ['BIFI', 'AVAX'],
     risks: [
