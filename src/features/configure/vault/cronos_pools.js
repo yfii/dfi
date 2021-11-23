@@ -28,6 +28,7 @@ export const cronosPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    withdrawalFee: '0%',
     buyTokenUrl:
       'https://vvs.finance/swap?outputCurrency=0xbED48612BC69fA1CaB67052b42a95FB30C1bcFee',
     addLiquidityUrl: 'https://vvs.finance/add/CRO/0xbED48612BC69fA1CaB67052b42a95FB30C1bcFee',
@@ -61,6 +62,7 @@ export const cronosPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    withdrawalFee: '0%',
     buyTokenUrl:
       'https://vvs.finance/swap?outputCurrency=0x66e428c3f67a68878562e79A0234c1F83c208770',
     addLiquidityUrl:
@@ -95,6 +97,7 @@ export const cronosPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    withdrawalFee: '0%',
     buyTokenUrl:
       'https://vvs.finance/swap?outputCurrency=0x66e428c3f67a68878562e79A0234c1F83c208770',
     addLiquidityUrl:
@@ -163,6 +166,7 @@ export const cronosPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    withdrawalFee: '0%',
     buyTokenUrl:
       'https://vvs.finance/swap?outputCurrency=0x2D03bECE6747ADC00E1a131BBA1469C15fD11e03',
     addLiquidityUrl:
@@ -197,6 +201,7 @@ export const cronosPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    withdrawalFee: '0%',
     buyTokenUrl:
       'https://vvs.finance/swap?outputCurrency=0x2D03bECE6747ADC00E1a131BBA1469C15fD11e03',
     addLiquidityUrl: 'https://vvs.finance/add/CRO/0x2D03bECE6747ADC00E1a131BBA1469C15fD11e03',
@@ -230,6 +235,7 @@ export const cronosPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    withdrawalFee: '0%',
     buyTokenUrl:
       'https://vvs.finance/swap?outputCurrency=0xe44Fd7fCb2b1581822D0c862B68222998a0c299a',
     addLiquidityUrl: 'https://vvs.finance/add/CRO/0xe44Fd7fCb2b1581822D0c862B68222998a0c299a',
@@ -263,6 +269,7 @@ export const cronosPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    withdrawalFee: '0%',
     buyTokenUrl:
       'https://vvs.finance/swap?outputCurrency=0x062E66477Faf219F25D27dCED647BF57C3107d52',
     addLiquidityUrl: 'https://vvs.finance/add/CRO/0x062E66477Faf219F25D27dCED647BF57C3107d52',
