@@ -442,7 +442,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'PolySage',
+    platform: 'Other',
     assets: ['SAGE', 'USDC'],
     retireReason: 'rewards',
     addLiquidityUrl:
@@ -467,7 +467,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'PolySage',
+    platform: 'Other',
     assets: ['SAGE', 'MATIC'],
     retireReason: 'rewards',
     addLiquidityUrl:
@@ -492,7 +492,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'CafeSwap',
+    platform: 'Other',
     assets: ['pBREW', 'MATIC'],
     addLiquidityUrl:
       'https://polygondex.cafeswap.finance/#/add/ETH/0xb5106a3277718ecad2f20ab6b86ce0fee7a21f09',
@@ -517,7 +517,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'CafeSwap',
+    platform: 'Other',
     assets: ['pBREW', 'USDC'],
     addLiquidityUrl:
       'https://polygondex.cafeswap.finance/#/add/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174/0xb5106a3277718ecad2f20ab6b86ce0fee7a21f09',
@@ -1131,7 +1131,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['USDC', 'WUSD'],
     risks: [
       'COMPLEXITY_LOW',
@@ -1202,7 +1202,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['WEXpoly', 'USDC'],
     risks: [
       'COMPLEXITY_LOW',
@@ -1439,7 +1439,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Polypup',
+    platform: 'Other',
     assets: ['BALL'],
     withdrawalFee: '0.0%',
     retireReason: 'rewards',
@@ -1464,7 +1464,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Polypup',
+    platform: 'Other',
     assets: ['BALL', 'USDC'],
     retireReason: 'rewards',
     addLiquidityUrl:
@@ -1490,7 +1490,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Polypup',
+    platform: 'Other',
     assets: ['BALL', 'MATIC'],
     withdrawalFee: '0.0%',
     retireReason: 'rewards',
@@ -1639,8 +1639,9 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'pearzap-pear-usdc',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Other',
     assets: ['PEAR', 'USDC'],
     addLiquidityUrl:
@@ -1664,8 +1665,9 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'pearzap-pear-matic',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Other',
     assets: ['PEAR', 'MATIC'],
     addLiquidityUrl:
@@ -2101,7 +2103,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'DFyn',
+    platform: 'Other',
     assets: ['WMATIC_DFYN', 'DFYN', 'WMATIC'],
     addLiquidityUrl:
       'https://exchange.dfyn.network/#/add/ETH/0xc168e40227e4ebd8c1cae80f7a55a4f0e6d66c97',
@@ -2127,7 +2129,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'DFyn',
+    platform: 'Other',
     assets: ['LUNA', 'DFYN'],
     addLiquidityUrl:
       'https://exchange.dfyn.network/#/add/0x24834bbec7e39ef42f4a75eaf8e5b6486d3f0e57/0xc168e40227e4ebd8c1cae80f7a55a4f0e6d66c97',
@@ -2153,7 +2155,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'DFyn',
+    platform: 'Other',
     assets: ['LINK', 'DFYN'],
     addLiquidityUrl:
       'https://exchange.dfyn.network/#/add/0x53E0bca35eC356BD5ddDFebbD1Fc0fD03FaBad39/0xc168e40227e4ebd8c1cae80f7a55a4f0e6d66c97',
@@ -2179,7 +2181,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'DFyn',
+    platform: 'Other',
     assets: ['UNI', 'DFYN'],
     addLiquidityUrl:
       'https://exchange.dfyn.network/#/add/0xb33EaAd8d922B1083446DC23f610c2567fB5180f/0xc168e40227e4ebd8c1cae80f7a55a4f0e6d66c97',
@@ -2205,7 +2207,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'DFyn',
+    platform: 'Other',
     assets: ['CRV', 'DFYN'],
     addLiquidityUrl:
       'https://exchange.dfyn.network/#/add/0x172370d5Cd63279eFa6d502DAB29171933a610AF/0xc168e40227e4ebd8c1cae80f7a55a4f0e6d66c97',
@@ -2503,7 +2505,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Polypup',
+    platform: 'Other',
     assets: ['BONE', 'USDC'],
     retireReason: 'rewards',
     addLiquidityUrl:
@@ -2790,7 +2792,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'DFyn',
+    platform: 'Other',
     assets: ['ICE', 'DFYN'],
     retireReason: 'rewards',
     addLiquidityUrl:
@@ -2891,7 +2893,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['WEXpoly', 'WBTC'],
     risks: [
       'IL_HIGH',
@@ -2926,7 +2928,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'DFyn',
+    platform: 'Other',
     assets: ['BIFI', 'DFYN'],
     addLiquidityUrl:
       'https://exchange.dfyn.network/#/add/0xfbdd194376de19a88118e84e279b977f165d01b8/0xC168E40227E4ebD8C1caE80F7a55a4F0e6D66C97',
@@ -3286,7 +3288,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'DFyn',
+    platform: 'Other',
     assets: ['ROUTE', 'DFYN'],
     retireReason: 'rewards',
     addLiquidityUrl:
@@ -3313,7 +3315,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'DFyn',
+    platform: 'Other',
     assets: ['SX', 'DFYN'],
     addLiquidityUrl:
       'https://exchange.dfyn.network/#/add/0x840195888Db4D6A99ED9F73FcD3B225Bb3cB1A79/0xC168E40227E4ebD8C1caE80F7a55a4F0e6D66C97',
@@ -3339,7 +3341,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'DFyn',
+    platform: 'Other',
     assets: ['EZ', 'DFYN'],
     addLiquidityUrl:
       'https://exchange.dfyn.network/#/add/0x34C1b299A74588D6Abdc1b85A53345A48428a521/0xC168E40227E4ebD8C1caE80F7a55a4F0e6D66C97',
@@ -3364,7 +3366,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'DFyn',
+    platform: 'Other',
     assets: ['UFT', 'DFYN'],
     addLiquidityUrl:
       'https://exchange.dfyn.network/#/add/0x5B4CF2C120A9702225814E18543ee658c5f8631e/0xC168E40227E4ebD8C1caE80F7a55a4F0e6D66C97',
@@ -3416,7 +3418,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Polypup',
+    platform: 'Other',
     assets: ['BONE'],
     retireReason: 'rewards',
     buyTokenUrl:
@@ -3441,7 +3443,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Polypup',
+    platform: 'Other',
     assets: ['PUP'],
     retireReason: 'rewards',
     buyTokenUrl:
@@ -3465,7 +3467,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Polypup',
+    platform: 'Other',
     assets: ['BONE', 'MATIC'],
     retireReason: 'rewards',
     addLiquidityUrl:
@@ -3491,7 +3493,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Polypup',
+    platform: 'Other',
     assets: ['PUP', 'USDC'],
     retireReason: 'rewards',
     addLiquidityUrl:
@@ -3517,7 +3519,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Polypup',
+    platform: 'Other',
     assets: ['PUP', 'MATIC'],
     retireReason: 'rewards',
     addLiquidityUrl:
@@ -3613,7 +3615,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Polypup',
+    platform: 'Other',
     assets: ['PUP', 'ETH'],
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619/0xcFe2cF35D2bDDE84967e67d00aD74237e234CE59',
@@ -4030,7 +4032,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['WBTC', 'USDC'],
     risks: [
       'COMPLEXITY_LOW',
@@ -4064,7 +4066,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['WBTC', 'ETH'],
     risks: [
       'COMPLEXITY_LOW',
@@ -4099,7 +4101,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['MATIC', 'ETH'],
     risks: [
       'COMPLEXITY_LOW',
@@ -4133,7 +4135,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['PolyDoge', 'MATIC'],
     addLiquidityUrl:
       'https://swap.wault.finance/polygon/#/add/MATIC/0x8A953CfE442c5E8855cc6c61b1293FA648BAE472',
@@ -4157,7 +4159,7 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['SNX', 'ETH'],
     risks: [
       'COMPLEXITY_LOW',
@@ -4191,7 +4193,7 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['LINK', 'ETH'],
     risks: [
       'COMPLEXITY_LOW',
@@ -4225,7 +4227,7 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['AAVE', 'ETH'],
     risks: [
       'COMPLEXITY_LOW',
@@ -4259,7 +4261,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['DAI', 'ETH'],
     risks: [
       'COMPLEXITY_LOW',
@@ -4293,7 +4295,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['DAI', 'USDC'],
     risks: [
       'COMPLEXITY_LOW',
@@ -4329,7 +4331,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['MATIC', 'USDC'],
     risks: [
       'COMPLEXITY_LOW',
@@ -4364,7 +4366,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['USDT', 'USDC'],
     withdrawalFee: '0.01%',
     risks: [
@@ -4400,7 +4402,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['WEXpoly', 'USDC'],
     risks: [
       'COMPLEXITY_LOW',
@@ -4437,7 +4439,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
@@ -4472,7 +4474,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['WEXpoly', 'MATIC'],
     risks: [
       'COMPLEXITY_LOW',
@@ -4509,7 +4511,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['BIFI', 'MATIC'],
     risks: [
       'COMPLEXITY_LOW',
