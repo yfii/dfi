@@ -36,7 +36,7 @@ export const avalanchePools = [
   {
     id: 'mai-qi-wavax',
     name: 'QI-AVAX LP',
-    token: 'QI-AVAX JLP',
+    token: 'QI-WAVAX JLP',
     tokenDescription: 'Trader Joe (Mai)',
     tokenAddress: '0x05366F13d5f655FFB2d2ABb7b2ba005b12eB8bdE',
     tokenDecimals: 18,
