@@ -33,6 +33,41 @@ export const moonriverPools = [
       'https://app.sushi.com/swap?inputCurrency=ETH&outputCurrency=0x173fd7434B8B50dF08e3298f173487ebDB35FD14',
   },
   {
+    id: 'solarbeam-frax-wmovr-2',
+    name: 'FRAX-MOVR',
+    token: 'FRAX-MOVR LP',
+    tokenDescription: 'SolarBeam',
+    tokenAddress: '0x2cc54b4A3878e36E1C754871438113C1117a3ad7',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooSolarFRAX-WMOVR',
+    earnedTokenAddress: '0xf8e9774AE3cc7aE3eE11161cC1313252A0784E18',
+    earnContractAddress: '0xf8e9774AE3cc7aE3eE11161cC1313252A0784E18',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'solarbeam-frax-wmovr-2',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'SolarBeam',
+    assets: ['FRAX', 'MOVR'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_MEDIUM',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
+    withdrawalFee: '0%',
+    buyTokenUrl:
+      'https://app.solarbeam.io/exchange/swap?inputCurrency=ETH&outputCurrency=0x1A93B23281CC1CDE4C4741353F3064709A16197d',
+    addLiquidityUrl:
+      'https://app.solarbeam.io/exchange/add/ETH/0x1A93B23281CC1CDE4C4741353F3064709A16197d',
+  },
+  {
     id: 'finn-wmovr-finn',
     name: 'FINN-MOVR',
     token: 'FINN-MOVR LP',
@@ -62,8 +97,7 @@ export const moonriverPools = [
     ],
     stratType: 'StratLP',
     withdrawalFee: '0%',
-    buyTokenUrl:
-      'https://www.huckleberry.finance/#/swap',
+    buyTokenUrl: 'https://www.huckleberry.finance/#/swap',
     addLiquidityUrl:
       'https://www.huckleberry.finance/#/add/0x98878B06940aE243284CA214f92Bb71a2b032B8A/0x9A92B5EBf1F6F6f7d93696FCD44e5Cf75035A756',
   },
@@ -97,8 +131,7 @@ export const moonriverPools = [
     ],
     stratType: 'StratLP',
     withdrawalFee: '0%',
-    buyTokenUrl:
-      'https://www.huckleberry.finance/#/swap',
+    buyTokenUrl: 'https://www.huckleberry.finance/#/swap',
     addLiquidityUrl:
       'https://www.huckleberry.finance/#/add/0x748134b5F553F2bcBD78c6826De99a70274bDEb3/0x9A92B5EBf1F6F6f7d93696FCD44e5Cf75035A756',
   },
@@ -132,8 +165,7 @@ export const moonriverPools = [
     ],
     stratType: 'StratLP',
     withdrawalFee: '0%',
-    buyTokenUrl:
-      'https://www.huckleberry.finance/#/swap',
+    buyTokenUrl: 'https://www.huckleberry.finance/#/swap',
     addLiquidityUrl:
       'https://www.huckleberry.finance/#/add/0x15B9CA9659F5dfF2b7d35a98dd0790a3CBb3D445/0x9A92B5EBf1F6F6f7d93696FCD44e5Cf75035A756',
   },
@@ -241,41 +273,6 @@ export const moonriverPools = [
       'https://app.solarbeam.io/exchange/swap?inputCurrency=ETH&outputCurrency=0x2bF9b864cdc97b08B6D79ad4663e71B8aB65c45c',
     addLiquidityUrl:
       'https://app.solarbeam.io/exchange/add/ETH/0x2bF9b864cdc97b08B6D79ad4663e71B8aB65c45c',
-  },
-  {
-    id: 'solarbeam-frax-wmovr-2',
-    name: 'FRAX-MOVR',
-    token: 'FRAX-MOVR LP',
-    tokenDescription: 'SolarBeam',
-    tokenAddress: '0x2cc54b4A3878e36E1C754871438113C1117a3ad7',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooSolarFRAX-WMOVR',
-    earnedTokenAddress: '0xf8e9774AE3cc7aE3eE11161cC1313252A0784E18',
-    earnContractAddress: '0xf8e9774AE3cc7aE3eE11161cC1313252A0784E18',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'solarbeam-frax-wmovr-2',
-    oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
-    platform: 'SolarBeam',
-    assets: ['FRAX', 'MOVR'],
-    risks: [
-      'COMPLEXITY_LOW',
-      'BATTLE_TESTED',
-      'IL_LOW',
-      'MCAP_MEDIUM',
-      'AUDIT',
-      'CONTRACTS_VERIFIED',
-    ],
-    stratType: 'StratLP',
-    withdrawalFee: '0%',
-    buyTokenUrl:
-      'https://app.solarbeam.io/exchange/swap?inputCurrency=ETH&outputCurrency=0x1A93B23281CC1CDE4C4741353F3064709A16197d',
-    addLiquidityUrl:
-      'https://app.solarbeam.io/exchange/add/ETH/0x1A93B23281CC1CDE4C4741353F3064709A16197d',
   },
   {
     id: 'solarbeam-frax-wmovr-eol',
