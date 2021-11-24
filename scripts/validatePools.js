@@ -17,6 +17,7 @@ const overrides = {
   'avax-bifi-maxi': { beefyFeeRecipient: undefined }, // 0x0
   'bifi-maxi': { stratOwner: undefined }, // harvester 0xDe30
   'beltv2-4belt': { vaultOwner: undefined }, // moonpot deployer
+  'cronos-bifi-maxi': { beefyFeeRecipient: undefined }, // 0x0
 };
 
 const oldValidOwners = [
