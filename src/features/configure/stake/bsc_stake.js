@@ -67,6 +67,40 @@ export const bscStakePools = [
   },
 
   {
+    id: 'moo_1INCH-blockmine',
+    name: 'BlockMine',
+    logo: 'single-assets/INCH.png',
+    token: 'moo1INCH1INCH',
+    tokenDecimals: 18,
+    tokenAddress: '0xBa53AF4C2f1649F82e8070FB306DDBF2771A1950',
+    tokenOracle: 'tokens',
+    tokenOracleId: '1INCH',
+    earnedToken: 'NUGGET',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xE0B58022487131eC9913C1F3AcFD8F74FC6A6C7E',
+    earnContractAddress: '0x6e3C65E24e9AF2f7C63Ab0a205aF314f3325b678',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'NUGGET',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1639221118,
+    partners: [
+      {
+        logo: 'stake/blockmine/logo.png',
+        background: 'stake/blockmine/bg.png',
+        text: "Blockmine is aiming to create the most sustainable farming ecosystem in the DeFi space by providing an unique token evolution. Stop coffee boilin' and get out of the saloon - it's time to gitty up and make some juicy GOLDNUGGETS.",
+        website: 'https://block-mine.io/',
+        social: {
+          telegram: 'https://t.me/blockmine_io',
+          twitter: 'https://twitter.com/blockmine_io',
+        },
+      },
+    ],
+  },
+
+  {
     id: 'moo_BANANA-bishares',
     name: 'BiShares',
     logo: 'degens/BANANA.svg',
