@@ -30,6 +30,16 @@ const nfty = {
     twitter: 'https://twitter.com/NFTYNetwork',
   },
 };
+const mogul = {
+  logo: 'stake/mogul/logo.png',
+  background: 'stake/mogul/bg.png',
+  text: 'Mogul is an NFT and DeFi platform for film and entertainment, bridging Hollywood and blockchain technology. The STARS token powers the Mogul platform and offers rewards from movies. The Mogul platform has an NFT auction house, marketplace, and other products in the metaverse to bring movie fans closer to the action.',
+  website: 'https://www.mogulproductions.com/',
+  social: {
+    telegram: 'https://t.me/mogulproductions',
+    twitter: 'https://twitter.com/mogulofficial_',
+  },
+};
 
 export const bscStakePools = [
   {
@@ -64,6 +74,29 @@ export const bscStakePools = [
         },
       },
     ],
+  },
+
+  {
+    id: 'moo_banana-bnb-stars-mogul2',
+    name: 'Mogul',
+    assets: ['STARS', 'BNB'],
+    token: 'mooApeBNB-STARS',
+    tokenDecimals: 18,
+    tokenAddress: '0xd6Cf54a0545675AdB0aa5175b9461Cd3d6a61f8e',
+    tokenOracle: 'lps',
+    tokenOracleId: 'banana-bnb-stars',
+    earnedToken: 'STARS',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xbD83010eB60F12112908774998F65761cf9f6f9a',
+    earnContractAddress: '0xbCcDCD99d395Ce3F1FcbC9aB40bCfcce2a1894e6',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'STARS',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1640685927,
+    partners: [mogul],
   },
 
   {
@@ -334,18 +367,7 @@ export const bscStakePools = [
     status: 'active',
     isMooStaked: true,
     periodFinish: 1637924268,
-    partners: [
-      {
-        logo: 'stake/mogul/logo.png',
-        background: 'stake/mogul/bg.png',
-        text: 'Mogul is an NFT and DeFi platform for film and entertainment, bridging Hollywood and blockchain technology. The STARS token powers the Mogul platform and offers rewards from movies. The Mogul platform has an NFT auction house, marketplace, and other products in the metaverse to bring movie fans closer to the action.',
-        website: 'https://www.mogulproductions.com/',
-        social: {
-          telegram: 'https://t.me/mogulproductions',
-          twitter: 'https://twitter.com/mogulofficial_',
-        },
-      },
-    ],
+    partners: [mogul],
   },
 
   {
