@@ -64,7 +64,8 @@ export const cronosPools = [
     stratType: 'StratLP',
     buyTokenUrl:
       'https://app.cronaswap.org/swap?outputCurrency=0xadbd1231fb360047525BEdF962581F3eee7b49fe',
-    addLiquidityUrl: 'https://app.cronaswap.org/add/0xadbd1231fb360047525BEdF962581F3eee7b49fe/0xc21223249CA28397B4B6541dfFaEcC539BfF0c59',
+    addLiquidityUrl:
+      'https://app.cronaswap.org/add/0xadbd1231fb360047525BEdF962581F3eee7b49fe/0xc21223249CA28397B4B6541dfFaEcC539BfF0c59',
   },
   {
     id: 'crona-usdt-crona',
@@ -97,7 +98,8 @@ export const cronosPools = [
     stratType: 'StratLP',
     buyTokenUrl:
       'https://app.cronaswap.org/swap?outputCurrency=0x66e428c3f67a68878562e79A0234c1F83c208770',
-    addLiquidityUrl: 'https://app.cronaswap.org/add/0xadbd1231fb360047525BEdF962581F3eee7b49fe/0x66e428c3f67a68878562e79A0234c1F83c208770',
+    addLiquidityUrl:
+      'https://app.cronaswap.org/add/0xadbd1231fb360047525BEdF962581F3eee7b49fe/0x66e428c3f67a68878562e79A0234c1F83c208770',
   },
   {
     id: 'crona-usdc-dai',
@@ -130,40 +132,8 @@ export const cronosPools = [
     stratType: 'StratLP',
     buyTokenUrl:
       'https://app.cronaswap.org/swap?outputCurrency=0xF2001B145b43032AAF5Ee2884e456CCd805F677D',
-    addLiquidityUrl: 'https://app.cronaswap.org/add/0xc21223249CA28397B4B6541dfFaEcC539BfF0c59/0xF2001B145b43032AAF5Ee2884e456CCd805F677D',
-  },
-  {
-    id: 'crona-cro-shib',
-    name: 'SHIB-CRO',
-    token: 'SHIB-CRO CLP',
-    tokenDescription: 'CronaSwap',
-    tokenAddress: '0x912e17882893F8361E87e81742C764B032dE8d76',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooCronaCRO-SHIB',
-    earnedTokenAddress: '0x9ae20E2eA5a412bF3Dd8Fa1DCd497902cC5db119',
-    earnContractAddress: '0x9ae20E2eA5a412bF3Dd8Fa1DCd497902cC5db119',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'crona-cro-shib',
-    oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
-    platform: 'CronaSwap',
-    assets: ['SHIB', 'CRO'],
-    risks: [
-      'COMPLEXITY_LOW',
-      'BATTLE_TESTED',
-      'IL_HIGH',
-      'MCAP_LARGE',
-      'AUDIT',
-      'CONTRACTS_VERIFIED',
-    ],
-    stratType: 'StratLP',
-    buyTokenUrl:
-      'https://app.cronaswap.org/swap?outputCurrency=0xbED48612BC69fA1CaB67052b42a95FB30C1bcFee',
-    addLiquidityUrl: 'https://app.cronaswap.org/add/0x5C7F8A570d578ED84E63fdFA7b1eE72dEae1AE23/0xbED48612BC69fA1CaB67052b42a95FB30C1bcFee',
+    addLiquidityUrl:
+      'https://app.cronaswap.org/add/0xc21223249CA28397B4B6541dfFaEcC539BfF0c59/0xF2001B145b43032AAF5Ee2884e456CCd805F677D',
   },
   {
     id: 'crona-busd-bnb',
@@ -196,7 +166,8 @@ export const cronosPools = [
     stratType: 'StratLP',
     buyTokenUrl:
       'https://app.cronaswap.org/swap?outputCurrency=0xfA9343C3897324496A05fC75abeD6bAC29f8A40f',
-    addLiquidityUrl: 'https://app.cronaswap.org/add/0x6aB6d61428fde76768D7b45D8BFeec19c6eF91A8/0xfA9343C3897324496A05fC75abeD6bAC29f8A40f',
+    addLiquidityUrl:
+      'https://app.cronaswap.org/add/0x6aB6d61428fde76768D7b45D8BFeec19c6eF91A8/0xfA9343C3897324496A05fC75abeD6bAC29f8A40f',
   },
   {
     id: 'vvs-cro-usdt',
