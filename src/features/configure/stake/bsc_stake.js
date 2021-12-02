@@ -101,7 +101,7 @@ export const bscStakePools = [
         logo: 'stake/charge/logo.png',
         background: 'stake/charge/bg.png',
         text: 'ChargeDeFi is a new platform launching on BSC combining a traditional Algorithmic Stablecoin (pegged to $1.0 BUSD) with rebase mechanics. Featuring an extensive ecosystem of smart reinvestment pools, bond pools that yield below peg and multiple boardroom options ChargeDeFi enters BSC with a large set of investment options. Initially launching on BSC the next step will be multichain.',
-        website: 'https://www.chargedefi.fi/',
+        website: 'https://bit.ly/32NB1tP',
         social: {
           telegram: 'https://t.me/chargedefi',
           twitter: 'https://twitter.com/ChargeDeFi',
