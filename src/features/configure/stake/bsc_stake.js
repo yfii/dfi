@@ -77,6 +77,40 @@ export const bscStakePools = [
   },
 
   {
+    id: 'moo_ellipsis-renbtc-charge',
+    name: 'ChargeDeFi',
+    logo: 'uncategorized/epsRENBTC.png',
+    token: 'MooEllipsisRenBTC',
+    tokenDecimals: 18,
+    tokenAddress: '0x24AE9e5424575690aCab61a384B6A76d69F4f89c',
+    tokenOracle: 'lps',
+    tokenOracleId: 'ellipsis-renbtc',
+    earnedToken: 'Charge',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x1C6bc8e962427dEb4106aE06A7fA2d715687395c',
+    earnContractAddress: '0xC80764dE9c59E764fFF1e5bDad47dD1a1B774543',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'CHARGE',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1639912445,
+    partners: [
+      {
+        logo: 'stake/charge/logo.png',
+        background: 'stake/charge/bg.png',
+        text: 'ChargeDeFi is a new platform launching on BSC combining a traditional Algorithmic Stablecoin (pegged to $1.0 BUSD) with rebase mechanics. Featuring an extensive ecosystem of smart reinvestment pools, bond pools that yield below peg and multiple boardroom options ChargeDeFi enters BSC with a large set of investment options. Initially launching on BSC the next step will be multichain.',
+        website: 'https://www.chargedefi.fi/',
+        social: {
+          telegram: 'https://t.me/chargedefi',
+          twitter: 'https://twitter.com/ChargeDeFi',
+        },
+      },
+    ],
+  },
+
+  {
     id: 'moo_banana-bnb-stars-mogul2',
     name: 'Mogul',
     assets: ['STARS', 'BNB'],
