@@ -4102,8 +4102,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'rabbit-carrot-busd',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Other',
     assets: ['CARROT', 'BUSD'],
     addLiquidityUrl:
