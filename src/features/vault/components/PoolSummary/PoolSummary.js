@@ -14,6 +14,7 @@ import ApyStats from './ApyStats/ApyStats';
 import { usePoolApr } from '../../../stake/redux/subscription';
 import { PoolBoosts } from './PoolBoosts/PoolBoosts';
 import { getRetireReason } from './RetireReason/RetireReason';
+import { getPoolWarning } from './PoolWarning/PoolWarning';
 
 const useStyles = makeStyles(styles);
 
@@ -39,6 +40,8 @@ const PoolSummary = ({
         ? t(getRetireReason(pool.retireReason))
         : pool.depositsPaused
         ? t('Vault-DepositsPausedTitle')
+        : pool.showWarning
+        ? t(getPoolWarning(pool.warning), { name: pool.name, platform: pool.platform })
         : null;
 
     if (launchpool) {

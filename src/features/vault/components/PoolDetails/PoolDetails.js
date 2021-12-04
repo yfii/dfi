@@ -27,6 +27,7 @@ import {
 } from '../../../stake/redux/hooks';
 import { PoolBoosts } from '../PoolSummary/PoolBoosts/PoolBoosts';
 import { getRetireReason } from '../PoolSummary/RetireReason/RetireReason';
+import { getPoolWarning } from '../PoolSummary/PoolWarning/PoolWarning';
 
 const FETCH_INTERVAL_MS = 30 * 1000;
 
@@ -88,6 +89,8 @@ const PoolDetails = ({ vaultId }) => {
         ? t(getRetireReason(pool.retireReason))
         : pool.depositsPaused
         ? t('Vault-DepositsPausedTitle')
+        : pool.showWarning
+        ? t(getPoolWarning(pool.warning), { name: pool.name, platform: pool.platform })
         : null;
 
     if (launchpool) {
