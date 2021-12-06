@@ -119,7 +119,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
             <LinkSidebar name="docs" label={t('docs')} icon="book" classes={classes} />
             <LinkSidebar name="blog" label={t('blog')} icon="file-alt" classes={classes} />
             <LinkSidebar name="forum" label={t('forum')} icon="comments" classes={classes} />
-            <InsureLinkSidebar t={t} classes={classes} />
+            <InsureLinkSidebar key="insure" t={t} classes={classes} />
             <LinkSidebar name="buy" label={t('buy')} icon="dollar-sign" classes={classes} />
             <IconButton onClick={setNightMode} className={classes.icon}>
               {isNightMode ? <WbSunny /> : <NightsStay />}
@@ -152,15 +152,14 @@ const InsureLink = memo(function InsureLink({ t, classes }) {
 
   return (
     <>
-      <Link
-        component="button"
+      <Button
         className={classes.link}
         style={{ marginLeft: '5px', marginRight: '5px' }}
         onClick={handleOpen}
       >
         <i className={`fas fa-shield-alt ${classes.icon}`} />
         <span>{t('insure')}</span>
-      </Link>
+      </Button>
       <StyledDialog open={isOpen} onClose={handleClose} fullWidth={true} maxWidth="sm">
         <div className={classes.modalInner}>
           <IconButton className={classes.modalClose} onClick={handleClose}>
@@ -169,7 +168,7 @@ const InsureLink = memo(function InsureLink({ t, classes }) {
           <h1 className={classes.modalTitle}>{t('InsurAce-Title')}</h1>
           <div className={classes.modalSections}>
             {t('InsurAce-Sections', { returnObjects: true }).map(section => (
-              <div className={classes.modalSection}>
+              <div key={section.title} className={classes.modalSection}>
                 <h2 className={classes.modalSectionTitle}>{section.title}</h2>
                 {section.content.map(paragraph => (
                   <p key={paragraph} className={classes.modalSectionText}>

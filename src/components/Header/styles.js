@@ -234,6 +234,7 @@ const styles = theme => ({
     fontWeight: 400,
     color: '#000',
     textDecoration: 'none',
+    textTransform: 'lowercase',
     '&:hover': {
       textDecoration: 'underline',
     },
