@@ -45,7 +45,6 @@ import {
   arbitrumAddressBook,
   arbitrumZaps,
 } from '../configure';
-import { addressBook } from 'blockchain-addressbook';
 import { allNetworks } from '../../network';
 
 export const appNetworkId = window.REACT_APP_NETWORK_ID;

@@ -1,6 +1,6 @@
 import React, { memo, useCallback } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Dialog, Grid, IconButton, Modal, styled, withStyles } from '@material-ui/core';
+import { Dialog, Grid, IconButton, withStyles } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
 import { Close } from '@material-ui/icons';
 import { getSingleAssetSrc } from '../../features/helpers/getSingleAssetSrc';

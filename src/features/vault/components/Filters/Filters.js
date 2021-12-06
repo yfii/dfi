@@ -65,7 +65,7 @@ const Filters = ({
     if ((!asset || !allAssetOptions.find(option => option.value === asset)) && asset !== 'All') {
       setAsset('All');
     }
-  }, [asset, setAsset]);
+  }, [allAssetOptions, asset, setAsset]);
 
   useEffect(() => {
     if ((!platform || !platforms.includes(platform)) && platform !== 'All') {

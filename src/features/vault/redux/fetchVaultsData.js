@@ -8,7 +8,7 @@ import {
   VAULT_FETCH_VAULTS_DATA_FAILURE,
 } from './constants';
 import { fetchPrice, whenPricesLoaded } from '../../web3';
-import { erc20ABI, vaultABI } from '../../configure';
+import { vaultABI } from '../../configure';
 import { byDecimals } from 'features/helpers/bignumber';
 import { getNetworkMulticall } from 'features/helpers/getNetworkData';
 import Web3 from 'web3';

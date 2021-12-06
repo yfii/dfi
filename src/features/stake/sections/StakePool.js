@@ -425,7 +425,7 @@ export default function StakePool(props) {
           style={customBgImg(partner.background)}
         >
           <Grid item xs={12} className={classes.partnerHeader}>
-            <a target="_blank" href={partner.website}>
+            <a target="_blank" rel="noopener noreferrer" href={partner.website}>
               {isNightMode && partner.logoNight ? (
                 <img
                   alt={launchpool.name}
@@ -460,7 +460,7 @@ export default function StakePool(props) {
             )}
             {partner.website ? (
               <Grid item xs={12}>
-                <a target="_blank" href={partner.website}>
+                <a target="_blank" rel="noopener noreferrer" href={partner.website}>
                   {partner.website}
                 </a>
               </Grid>

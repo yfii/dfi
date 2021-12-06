@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect, useMemo } from 'react';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 import Grid from '@material-ui/core/Grid';
@@ -53,7 +54,7 @@ const DepositSection = ({ pool }) => {
         ...(zap ? zap.tokens : []),
       ],
     };
-  }, [pool.tokenAddress]);
+  }, [pool.logo, pool.name, pool.token, pool.tokenAddress, pool.tokenDecimals, pool.zap]);
 
   const [depositSettings, setDepositSettings] = useState({
     tokenIndex: 0,
@@ -95,7 +96,7 @@ const DepositSection = ({ pool }) => {
       ...prevState,
       isNeedApproval: allowance.isZero() || prevState.amount.isGreaterThan(allowance),
     }));
-  }, [tokens[depositSettings.token.symbol].allowance[depositSettings.depositAddress]]);
+  }, [depositSettings.depositAddress, depositSettings.token.symbol, tokens]);
 
   useEffect(() => {
     if (address && web3 && zap) {
@@ -113,7 +114,7 @@ const DepositSection = ({ pool }) => {
       });
       fetchBalances({ address, web3, tokens });
     }
-  }, [address, web3, fetchBalances]);
+  }, [address, web3, fetchBalances, zap, eligibleTokens]);
 
   const handleTokenChange = event => {
     const isZap = event.target.value > 0;
@@ -147,7 +148,7 @@ const DepositSection = ({ pool }) => {
     if (sliderInt > 0 && sliderInt < 100) {
       amount = total.times(sliderInt).div(100).decimalPlaces(8);
     }
-    if (sliderInt == 100) {
+    if (sliderInt === 100) {
       amount = total;
     }
     const allowance = new BigNumber(
@@ -168,7 +169,7 @@ const DepositSection = ({ pool }) => {
   };
 
   const handleInputAmountChange = event => {
-    const input = event.target.value.replace(/[,]+/, '').replace(/[^0-9\.]+/, '');
+    const input = event.target.value.replace(/[,]+/, '').replace(/[^0-9.]+/, '');
     let amount = new BigNumber(input);
     const total = tokenBalance(depositSettings.token.symbol);
     if (amount.isNaN()) amount = new BigNumber(0);
@@ -307,7 +308,7 @@ const DepositSection = ({ pool }) => {
   const vaultState = getVaultState(pool.status, pool.depositsPaused);
   const swapTokenOut = depositSettings.isZap
     ? eligibleTokens.find(
-        t => t.address.toLowerCase() == pool.zapEstimate?.swapTokenOut?.toLowerCase()
+        t => t.address.toLowerCase() === pool.zapEstimate?.swapTokenOut?.toLowerCase()
       )
     : undefined;
 

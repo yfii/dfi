@@ -164,7 +164,7 @@ export function reducer(state, action) {
 
     case VAULT_FETCH_ZAP_ESTIMATE_SUCCESS:
       const { pools } = state;
-      const poolIndex = pools.findIndex(pool => pool.earnContractAddress == action.vaultAddress);
+      const poolIndex = pools.findIndex(pool => pool.earnContractAddress === action.vaultAddress);
       pools[poolIndex] = {
         ...pools[poolIndex],
         ...action.data,
