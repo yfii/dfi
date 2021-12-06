@@ -144,7 +144,7 @@ export const fantomPools = [
     ],
     stratType: 'SingleStake',
     withdrawalFee: '0%',
-    showWarning: true,
+    showWarning: false,
     warning: 'liquidity',
     buyTokenUrl:
       'https://spookyswap.finance/swap?outputCurrency=0x9879aBDea01a879644185341F7aF7d8343556B7a',
