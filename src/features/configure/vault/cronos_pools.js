@@ -29,7 +29,7 @@ export const cronosPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'SingleStake',
-    withdrawalFee: '0.05%',
+    withdrawalFee: '0%',
     buyTokenUrl:
       'https://vvs.finance/swap?inputCurrency=0x5c7f8a570d578ed84e63fdfa7b1ee72deae1ae23&outputCurrency=0xe6801928061cdbe32ac5ad0634427e140efd05f9',
   },
@@ -65,8 +65,7 @@ export const cronosPools = [
     withdrawalFee: '0%',
     buyTokenUrl:
       'https://vvs.finance/swap?outputCurrency=0xF2001B145b43032AAF5Ee2884e456CCd805F677D',
-    addLiquidityUrl:
-      'https://vvs.finance/add/CRO/0xF2001B145b43032AAF5Ee2884e456CCd805F677D',
+    addLiquidityUrl: 'https://vvs.finance/add/CRO/0xF2001B145b43032AAF5Ee2884e456CCd805F677D',
   },
   {
     id: 'crona-crona-usdc',
