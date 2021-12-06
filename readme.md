@@ -27,4 +27,4 @@ Beefy.Finance exists thanks to its contributors. There are many ways you can par
 
 ## License
 
-[MIT](LICENSE).
+[MIT](LICENSE)
