@@ -611,7 +611,7 @@ export const moonriverPools = [
       'https://www.huckleberry.finance/#/add/0xb668Cd490a4421F993f93be2819A922DBbB32804/0x9A92B5EBf1F6F6f7d93696FCD44e5Cf75035A756',
   },
   {
-    id: 'solarbeam-frax-arome',
+    id: 'solarbeam-frax-arome-eol',
     name: 'FRAX-aROME',
     token: 'FRAX-aROME LP',
     tokenDescription: 'SolarBeam',
@@ -626,8 +626,9 @@ export const moonriverPools = [
     oracle: 'lps',
     oracleId: 'solarbeam-frax-arome',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'SolarBeam',
     assets: ['FRAX', 'aROME'],
     risks: [
