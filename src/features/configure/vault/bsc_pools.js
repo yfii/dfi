@@ -288,6 +288,7 @@ export const bscPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    withdrawalFee: '0%',
     addLiquidityUrl:
       'https://pancakeswap.finance/add/0x7dEb9906BD1d77B410a56E5C23c36340Bd60C983/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
     buyTokenUrl:
@@ -322,6 +323,7 @@ export const bscPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    withdrawalFee: '0%',
     addLiquidityUrl:
       'https://pancakeswap.finance/add/0x1C6bc8e962427dEb4106aE06A7fA2d715687395c/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
     buyTokenUrl:
