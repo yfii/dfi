@@ -873,7 +873,7 @@ export const fantomPools = [
       'https://app.beethovenx.io/#/pool/0x2975035545008935152fdf48ca13406cc5d4e47500010000000000000000002a',
   },
   {
-    id: 'pearzap-fpear-ftm',
+    id: 'pearzap-fpear-ftm-eol',
     name: 'PEAR-FTM LP',
     token: 'PEAR-FTM LP',
     tokenDescription: 'SpiritSwap (PearZap)',
@@ -888,8 +888,8 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'pearzap-fpear-ftm',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['PEAR', 'FTM'],
     risks: [
@@ -901,13 +901,14 @@ export const fantomPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://swap.spiritswap.finance/#/add/FTM/0x7C10108d4B7f4bd659ee57A53b30dF928244b354',
     buyTokenUrl:
       'https://swap.spiritswap.finance/#/swap/0x7c10108d4b7f4bd659ee57a53b30df928244b354',
   },
   {
-    id: 'pearzap-fpear-usdc',
+    id: 'pearzap-fpear-usdc-eol',
     name: 'PEAR-USDC LP',
     token: 'PEAR-USDC LP',
     tokenDescription: 'SpiritSwap (PearZap)',
@@ -922,8 +923,8 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'pearzap-fpear-usdc',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['PEAR', 'USDC'],
     risks: [
@@ -935,6 +936,7 @@ export const fantomPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://swap.spiritswap.finance/#/add/0x04068DA6C83AFCFA0e13ba15A6696662335D5B75/0x7C10108d4B7f4bd659ee57A53b30dF928244b354',
     buyTokenUrl:
@@ -2247,7 +2249,7 @@ export const fantomPools = [
     buyTokenUrl: 'https://spookyswap.finance/swap',
   },
   {
-    id: 'boo-wftm-shade',
+    id: 'boo-wftm-shade-eol',
     name: 'SHADE-FTM LP',
     token: 'SHADE-FTM LP',
     tokenDescription: 'SpookySwap',
@@ -2262,8 +2264,8 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'boo-wftm-shade',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'SpookySwap',
     assets: ['SHADE', 'FTM'],
     risks: [
@@ -2276,6 +2278,7 @@ export const fantomPools = [
     ],
     stratType: 'StratLP',
     withdrawalFee: '0%',
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://spookyswap.finance/add/0x3A3841f5fa9f2c283EA567d5Aeea3Af022dD2262/FTM',
     buyTokenUrl: 'https://spookyswap.finance/swap',
@@ -2413,7 +2416,7 @@ export const fantomPools = [
     buyTokenUrl: 'https://spookyswap.finance/swap',
   },
   {
-    id: 'stakesteak-fusd-usdc',
+    id: 'stakesteak-fusd-usdc-eol',
     name: 'fUSD-USDC sAMM LP',
     token: 'fUSD-USDC sAMM LP',
     tokenDescription: 'StakeSteak',
@@ -2429,7 +2432,7 @@ export const fantomPools = [
     oracleId: 'stakesteak-fusd-usdc',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'StakeSteak',
     assets: ['fUSD', 'USDC'],
     risks: [
@@ -2444,11 +2447,12 @@ export const fantomPools = [
     depositFee: '0.5%',
     withdrawalFee: '0%',
     addLiquidityUrl: 'https://stakesteak.app/',
+    retireReason: 'tvl',
     buyTokenUrl:
       'https://spookyswap.finance/swap?inputCurrency=0x04068DA6C83AFCFA0e13ba15A6696662335D5B75&outputCurrency=0xAd84341756Bf337f5a0164515b1f6F993D194E1f',
   },
   {
-    id: 'boo-steak-wftm',
+    id: 'boo-steak-wftm-eol',
     name: 'STEAK-FTM LP',
     token: 'STEAK-FTM LP',
     tokenDescription: 'SpookySwap',
@@ -2464,7 +2468,7 @@ export const fantomPools = [
     oracleId: 'boo-steak-wftm',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'SpookySwap',
     assets: ['STEAK', 'FTM'],
     risks: [
@@ -2477,6 +2481,7 @@ export const fantomPools = [
     ],
     stratType: 'StratLP',
     withdrawalFee: '0%',
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://spookyswap.finance/add/0x05848B832E872d9eDd84AC5718D58f21fD9c9649/FTM',
     buyTokenUrl: 'https://spookyswap.finance/swap',
@@ -2902,7 +2907,7 @@ export const fantomPools = [
     addLiquidityUrl: 'https://ftm.curve.fi/2pool/deposit',
   },
   {
-    id: 'curve-ftm-fusdt',
+    id: 'curve-ftm-fusdt-eol',
     logo: 'single-assets/USDT.svg',
     name: 'fUSDT/DAI/USDC',
     token: 'fusdtCRV',
@@ -2918,8 +2923,8 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'curve-ftm-fusdt',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Curve',
     assets: ['fUSDT', 'USDC', 'DAI'],
     risks: [
@@ -2932,6 +2937,7 @@ export const fantomPools = [
     ],
     stratType: 'StratMultiLP',
     withdrawalFee: '0.01%',
+    retireReason: 'rewards',
     addLiquidityUrl: 'https://ftm.curve.fi/fusdt/deposit',
   },
   {
@@ -3298,7 +3304,7 @@ export const fantomPools = [
       'https://swap.spiritswap.finance/#/swap?outputCurrency=0x181f3f22c9a751e2ce673498a03e1fdfc0ebbfb6',
   },
   {
-    id: 'boo-woofy-ftm',
+    id: 'boo-woofy-ftm-eol',
     logo: 'fantom/WOOFY-FTM.png',
     name: 'WOOFY-FTM LP',
     token: 'WOOFY-FTM LP',
@@ -3314,8 +3320,8 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'boo-woofy-ftm',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'SpookySwap',
     assets: ['WOOFY', 'FTM'],
     risks: [
@@ -3327,6 +3333,7 @@ export const fantomPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    retireReason: 'rewards',
     addLiquidityUrl: 'https://spookyswap.finance/add',
     buyTokenUrl: 'https://spookyswap.finance/swap',
   },
@@ -3488,7 +3495,7 @@ export const fantomPools = [
     buyTokenUrl: 'https://spookyswap.finance/swap',
   },
   {
-    id: 'boo-cream-ftm',
+    id: 'boo-cream-ftm-eol',
     logo: 'fantom/CREAM-FTM.png',
     name: 'CREAM-FTM LP',
     token: 'CREAM-FTM LP',
@@ -3504,8 +3511,8 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'boo-cream-ftm',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'SpookySwap',
     assets: ['CREAM', 'FTM'],
     risks: [
@@ -3517,6 +3524,7 @@ export const fantomPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    retireReason: 'rewards',
     addLiquidityUrl: 'https://spookyswap.finance/add',
     buyTokenUrl: 'https://spookyswap.finance/swap',
   },

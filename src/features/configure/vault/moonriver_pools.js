@@ -1205,7 +1205,7 @@ export const moonriverPools = [
       'https://app.solarbeam.io/exchange/add/0xB44a9B6905aF7c801311e8F4E76932ee959c663C/0xE3F5a90F9cb311505cd691a46596599aA1A0AD7D',
   },
   {
-    id: 'solarbeam-mimatic-usdc',
+    id: 'solarbeam-mimatic-usdc-eol',
     name: 'MAI-USDC',
     token: 'MAI-USDC LP',
     tokenDescription: 'SolarBeam',
@@ -1220,8 +1220,8 @@ export const moonriverPools = [
     oracle: 'lps',
     oracleId: 'solarbeam-mimatic-usdc',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'SolarBeam',
     assets: ['MAI', 'USDC'],
     risks: [
@@ -1234,6 +1234,7 @@ export const moonriverPools = [
     ],
     stratType: 'StratLP',
     withdrawalFee: '0%',
+    retireReason: 'rewards',
     buyTokenUrl:
       'https://app.solarbeam.io/exchange/swap?inputCurrency=0x7f5a79576620C046a293F54FFCdbd8f2468174F1&outputCurrency=0xE3F5a90F9cb311505cd691a46596599aA1A0AD7D',
     addLiquidityUrl:
@@ -1485,7 +1486,7 @@ export const moonriverPools = [
       'https://app.solarbeam.io/exchange/add/ETH/0x1e0F2A75Be02c025Bd84177765F89200c04337Da',
   },
   {
-    id: 'solarbeam-solar-rib',
+    id: 'solarbeam-solar-rib-eol',
     name: 'RIB-SOLAR',
     token: 'RIB-SOLAR LP',
     tokenDescription: 'SolarBeam',
@@ -1500,8 +1501,8 @@ export const moonriverPools = [
     oracle: 'lps',
     oracleId: 'solarbeam-solar-rib',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'SolarBeam',
     assets: ['RIB', 'SOLAR'],
     risks: [
@@ -1514,6 +1515,7 @@ export const moonriverPools = [
     ],
     stratType: 'StratLP',
     withdrawalFee: '0%',
+    retireReason: 'rewards',
     buyTokenUrl:
       'https://app.solarbeam.io/exchange/swap?inputCurrency=0x6bD193Ee6D2104F14F94E2cA6efefae561A4334B&outputCurrency=0xbD90A6125a84E5C512129D622a75CDDE176aDE5E',
     addLiquidityUrl:

@@ -243,7 +243,7 @@ export const polygonPools = [
       'https://quickswap.exchange/#/swap?outputCurrency=0x6f8a06447Ff6FcF75d803135a7de15CE88C1d4ec&inputCurrency=0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270',
   },
   {
-    id: 'quick-dpi-eth',
+    id: 'quick-dpi-eth-eol',
     name: 'DPI-ETH LP',
     token: 'DPI-ETH LP',
     tokenDescription: 'QuickSwap',
@@ -257,8 +257,8 @@ export const polygonPools = [
     tvl: 0,
     oracle: 'lps',
     oracleId: 'quick-dpi-eth',
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'QuickSwap',
     assets: ['DPI', 'ETH'],
     risks: [
@@ -272,6 +272,7 @@ export const polygonPools = [
     ],
     stratType: 'StratLP',
     withdrawalFee: '0%',
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x7ceb23fd6bc0add59e62ac25578270cff1b9f619/0x85955046DF4668e1DD369D2DE9f3AEB98DD2A369',
     buyTokenUrl:
@@ -1888,7 +1889,7 @@ export const polygonPools = [
       'https://quickswap.exchange/#/swap?outputCurrency=0x7DfF46370e9eA5f0Bad3C4E29711aD50062EA7A4',
   },
   {
-    id: 'quick-uni-eth',
+    id: 'quick-uni-eth-eol',
     name: 'UNI-ETH LP',
     token: 'UNI-ETH LP',
     tokenDescription: 'QuickSwap',
@@ -1903,8 +1904,8 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'quick-uni-eth',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'QuickSwap',
     assets: ['UNI', 'ETH'],
     risks: [
@@ -1917,6 +1918,7 @@ export const polygonPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0xb33EaAd8d922B1083446DC23f610c2567fB5180f/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
     buyTokenUrl:
@@ -2665,7 +2667,7 @@ export const polygonPools = [
       'https://quickswap.exchange/#/swap?inputCurrency=0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270&outputCurrency=0xd0f3121A190d85dE0AB6131f2bCEcdbfcfB38891',
   },
   {
-    id: 'quick-nexo-eth',
+    id: 'quick-nexo-eth-eol',
     name: 'NEXO-ETH LP',
     token: 'NEXO-ETH LP',
     tokenDescription: 'Quickswap',
@@ -2680,8 +2682,8 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'quick-nexo-eth',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'QuickSwap',
     assets: ['NEXO', 'ETH'],
     risks: [
@@ -2694,6 +2696,7 @@ export const polygonPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x7ceb23fd6bc0add59e62ac25578270cff1b9f619/0x41b3966B4FF7b427969ddf5da3627d6AEAE9a48E',
     buyTokenUrl:
@@ -5077,7 +5080,7 @@ export const polygonPools = [
       'https://app.sushi.com/#/swap?inputCurrency=0x5fe2B58c013d7601147DcdD68C143A77499f5531&outputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
   },
   {
-    id: 'sushi-frax-fxs',
+    id: 'sushi-frax-fxs-eol',
     logo: 'polygon/FRAX-FXS.png',
     name: 'FRAX-FXS SLP',
     token: 'FRAX-FXS SLP',
@@ -5093,8 +5096,8 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'sushi-frax-fxs',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'SushiSwap',
     assets: ['FRAX', 'FXS'],
     risks: [
@@ -5108,13 +5111,14 @@ export const polygonPools = [
     ],
     stratType: 'StratLP',
     withdrawalFee: '0.01%',
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://app.sushi.com/add/0x104592a158490a9228070E0A8e5343B499e125D0/0x3e121107F6F22DA4911079845a470757aF4e1A1b',
     buyTokenUrl:
       'https://app.sushi.com/#/swap?inputCurrency=0x104592a158490a9228070E0A8e5343B499e125D0&outputCurrency=0x3e121107F6F22DA4911079845a470757aF4e1A1b',
   },
   {
-    id: 'sushi-frax-usdc',
+    id: 'sushi-frax-usdc-eol',
     logo: 'polygon/FRAX-USDC.png',
     name: 'FRAX-USDC SLP',
     token: 'FRAX-USDC SLP',
@@ -5130,8 +5134,8 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'sushi-frax-usdc',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'SushiSwap',
     assets: ['FRAX', 'USDC'],
     risks: [
@@ -5144,6 +5148,7 @@ export const polygonPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://app.sushi.com/add/0x104592a158490a9228070E0A8e5343B499e125D0/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
     buyTokenUrl:
