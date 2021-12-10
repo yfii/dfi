@@ -529,7 +529,7 @@ export const bscPools = [
       'https://pancakeswap.finance/swap?outputCurrency=0x8F0528cE5eF7B51152A59745bEfDD91D97091d2F',
   },
   {
-    id: '1inch-1inch',
+    id: '1inch-1inch-eol',
     logo: 'single-assets/INCH.png',
     name: '1INCH',
     token: '1INCH',
@@ -545,8 +545,8 @@ export const bscPools = [
     oracle: 'tokens',
     oracleId: '1INCH',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: '1Inch',
     assets: ['1INCH'],
     risks: [
@@ -558,6 +558,7 @@ export const bscPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'SingleStake',
+    retireReason: 'rewards',
     buyTokenUrl:
       'https://1inch.exchange/#/r/0xF4cb25a1FF50E319c267b3E51CBeC2699FB2A43B/BNB/1INCH/?network=56',
   },
@@ -1003,7 +1004,7 @@ export const bscPools = [
       'https://dex.apeswap.finance/#/swap?outputCurrency=0x5774B2fc3e91aF89f89141EacF76545e74265982',
   },
   {
-    id: 'banana-exp-wbnb',
+    id: 'banana-exp-wbnb-eol',
     name: 'EXP-BNB LP',
     token: 'EXP-BNB BLP',
     tokenDescription: 'ApeSwap',
@@ -1019,7 +1020,7 @@ export const bscPools = [
     oracleId: 'banana-exp-wbnb',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'ApeSwap',
     assets: ['EXP', 'BNB'],
     risks: [
@@ -1031,6 +1032,7 @@ export const bscPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://dex.apeswap.finance/#/add/ETH/0x639d4C62F58a4048AD0F69B8CE675dB1A3e8e00e',
     buyTokenUrl:
@@ -1989,7 +1991,7 @@ export const bscPools = [
     addLiquidityUrl: 'https://belt.fi/',
   },
   {
-    id: 'pearzap-pear-bnb',
+    id: 'pearzap-pear-bnb-eol',
     name: 'PEAR-BNB LP',
     token: 'PEAR-BNB LP',
     tokenDescription: 'ApeSwap (PearZap)',
@@ -2004,17 +2006,18 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'pearzap-pear-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['PEAR', 'BNB'],
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://app.apeswap.finance/add/ETH/0xdf7C18ED59EA738070E665Ac3F5c258dcc2FBad8',
     buyTokenUrl:
       'https://app.apeswap.finance/swap?outputCurrency=0xdf7C18ED59EA738070E665Ac3F5c258dcc2FBad8',
   },
   {
-    id: 'pearzap-pear-busd',
+    id: 'pearzap-pear-busd-eol',
     name: 'PEAR-BUSD LP',
     token: 'PEAR-BUSD LP',
     tokenDescription: 'ApeSwap (PearZap)',
@@ -2029,10 +2032,11 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'pearzap-pear-busd',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['PEAR', 'BUSD'],
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://app.apeswap.finance/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0xdf7C18ED59EA738070E665Ac3F5c258dcc2FBad8',
     buyTokenUrl:
@@ -2360,7 +2364,7 @@ export const bscPools = [
       'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x55d398326f99059fF775485246999027B3197955&outputCurrency=0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c',
   },
   {
-    id: 'mdex-bsc-rabbit-busd',
+    id: 'mdex-bsc-rabbit-busd-eol',
     name: 'RABBIT-BUSD LP',
     token: 'RABBIT-BUSD LP',
     tokenDescription: 'Mdex',
@@ -2375,10 +2379,11 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'mdex-rabbit-busd',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Mdex',
     assets: ['RABBIT', 'BUSD'],
+    retireReason: 'tvl',
     addLiquidityUrl:
       'https://exchange.pancakeswap.finance/#/add/0x95a1199EBA84ac5f19546519e287d43D2F0E1b41/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
     buyTokenUrl:
@@ -4129,7 +4134,7 @@ export const bscPools = [
     addLiquidityUrl: 'https://ellipsis.finance/pool',
   },
   {
-    id: 'fruit-fruit-cake',
+    id: 'fruit-fruit-cake-eol',
     name: 'FRUIT-CAKE LP',
     token: 'FRUIT-CAKE LP',
     tokenDescription: 'ApeSwap (Fruit)',
@@ -4144,17 +4149,18 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'fruit-fruit-cake',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['FRUIT', 'CAKE'],
+    retireReason: 'tvl',
     addLiquidityUrl:
       'https://dex.apeswap.finance/#/add/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82/0x4ECfb95896660aa7F54003e967E7b283441a2b0A',
     buyTokenUrl:
       'https://dex.apeswap.finance/#/swap?outputCurrency=0x4ECfb95896660aa7F54003e967E7b283441a2b0A',
   },
   {
-    id: 'fruit-fruit-xvs',
+    id: 'fruit-fruit-xvs-eol',
     name: 'FRUIT-XVS LP',
     token: 'FRUIT-XVS LP',
     tokenDescription: 'ApeSwap (Fruit)',
@@ -4169,17 +4175,18 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'fruit-fruit-xvs',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['FRUIT', 'XVS'],
+    retireReason: 'tvl',
     addLiquidityUrl:
       'https://dex.apeswap.finance/#/add/0xcf6bb5389c92bdda8a3747ddb454cb7a64626c63/0x4ECfb95896660aa7F54003e967E7b283441a2b0A',
     buyTokenUrl:
       'https://dex.apeswap.finance/#/swap?outputCurrency=0x4ECfb95896660aa7F54003e967E7b283441a2b0A',
   },
   {
-    id: 'banana-fruit-bnb',
+    id: 'banana-fruit-bnb-eol',
     name: 'FRUIT-BNB LP',
     token: 'FRUIT-BNB LP',
     tokenDescription: 'ApeSwap',
@@ -4194,17 +4201,18 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'banana-fruit-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'ApeSwap',
     assets: ['FRUIT', 'BNB'],
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://dex.apeswap.finance/#/add/ETH/0x4ECfb95896660aa7F54003e967E7b283441a2b0A',
     buyTokenUrl:
       'https://dex.apeswap.finance/#/swap?outputCurrency=0x4ECfb95896660aa7F54003e967E7b283441a2b0A',
   },
   {
-    id: 'stablequant-quant-busd',
+    id: 'stablequant-quant-busd-eol',
     logo: 'degens/quant-busd.png',
     name: 'QUANT-BUSD LP',
     token: 'QUANT-BUSD LP',
@@ -4221,9 +4229,10 @@ export const bscPools = [
     oracleId: 'stablequant-quant-busd',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Other',
     assets: ['QUANT', 'BUSD'],
+    retireReason: 'tvl',
     addLiquidityUrl:
       'https://pancakeswap.finance/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0xBCA627FEd3b6E8F414C745E12B2b89371497779D',
     buyTokenUrl:
@@ -4482,7 +4491,7 @@ export const bscPools = [
       'https://pancakeswap.finance/swap?inputCurrency=0x2eD9a5C8C13b93955103B9a7C167B67Ef4d568a3&outputCurrency=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
   },
   {
-    id: 'ellipsis-pbtc',
+    id: 'ellipsis-pbtc-eol',
     logo: 'uncategorized/epsPBTC.png',
     name: 'pBTC/renBTC/BTCB',
     token: 'pbtcEPS',
@@ -4499,9 +4508,10 @@ export const bscPools = [
     oracleId: 'ellipsis-pbtc',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Ellipsis',
     assets: ['pBTC', 'renBTC', 'BTCB'],
+    retireReason: 'exploit',
     addLiquidityUrl: 'https://ellipsis.finance/pool',
   },
   {
@@ -7700,9 +7710,10 @@ export const bscPools = [
     oracleId: 'TOFY',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Other',
     assets: ['TOFY'],
+    retireReason: 'rewards',
     buyTokenUrl:
       'https://exchange.marshmallowdefi.com/#/swap?outputCurrency=0xE1F2d89a6c79b4242F300f880e490A70083E9A1c',
   },
@@ -13061,7 +13072,7 @@ export const bscPools = [
   },
 
   {
-    id: 'com-com-bnb',
+    id: 'com-com-bnb-eol',
     logo: 'bnb-pairs/COM-BNB.png',
     name: 'COM-BNB LP',
     token: 'COM-BNB LP',
@@ -13077,10 +13088,11 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'com-com-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['COM', 'BNB'],
+    retireReason: 'tvl',
     addLiquidityUrl:
       'https://bscdex.complus.exchange/#/add/BNB/0x7fa892544D49598460B821De4D99E8c28b1Decaa',
     buyTokenUrl:
@@ -14435,7 +14447,7 @@ export const bscPools = [
       'https://pancakeswap.finance/swap?inputCurrency=0xc2e1acef50ae55661855e8dcb72adb182a3cc259&outputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
   },
   {
-    id: 'cake-btd-busd',
+    id: 'cake-btd-busd-eol',
     logo: 'single-assets/BTD.png',
     name: 'BTD-BUSD LP',
     token: 'BTD-BUSD LP',
@@ -14451,10 +14463,11 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cake-btd-busd',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['BTD', 'BUSD'],
+    retireReason: 'tvl',
     buyTokenUrl:
       'https://pancakeswap.finance/swap?inputCurrency=0xD1102332a213E21faF78B69C03572031F3552c33&outputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
   },
