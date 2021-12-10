@@ -109,6 +109,17 @@ export const networkSettings = {
     rpcUrls: ['https://evm-cronos.crypto.org'],
     blockExplorerUrls: ['https://cronos.crypto.org/explorer/'],
   },
+  1313161554: {
+    chainId: `0x${parseInt(1313161554, 10).toString(16)}`,
+    chainName: 'Aurora Mainnet',
+    nativeCurrency: {
+      name: 'ETH',
+      symbol: 'ETH',
+      decimals: 18,
+    },
+    rpcUrls: ['https://mainnet.aurora.dev/'],
+    blockExplorerUrls: ['https://explorer.mainnet.aurora.dev/'],
+  },
 };
 
 export const networkSetup = chainId => {

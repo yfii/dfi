@@ -87,4 +87,12 @@ export const nativeCoins = [
     wrappedSymbol: 'WCRO',
     allowance: Infinity,
   },
+  {
+    chainId: 1313161554,
+    name: 'Aurora',
+    symbol: 'ETH',
+    decimals: 18,
+    wrappedSymbol: 'WETH',
+    allowance: Infinity,
+  },
 ];

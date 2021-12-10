@@ -60,6 +60,12 @@ export const allNetworks = [
     id: 25,
     hash: '/cronos',
   },
+  {
+    name: 'AURORA',
+    asset: 'AURORA',
+    id: 1313161554,
+    hash: '/aurora',
+  },
 ];
 
 const network = allNetworks.find(n => window.location.hash.startsWith('#' + n.hash));
