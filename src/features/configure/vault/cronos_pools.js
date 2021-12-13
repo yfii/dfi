@@ -915,7 +915,7 @@ export const cronosPools = [
       'https://app.cronaswap.org/add/0x66e428c3f67a68878562e79A0234c1F83c208770/0x6aB6d61428fde76768D7b45D8BFeec19c6eF91A8',
   },
   {
-    id: 'crona-usdt-matic',
+    id: 'crona-usdt-matic-eol',
     name: 'MATIC-USDT',
     token: 'MATIC-USDT LP',
     tokenDescription: 'CronaSwap',
@@ -930,8 +930,9 @@ export const cronosPools = [
     oracle: 'lps',
     oracleId: 'crona-usdt-matic',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'CronaSwap',
     assets: ['MATIC', 'USDT'],
     risks: [
@@ -949,7 +950,7 @@ export const cronosPools = [
       'https://app.cronaswap.org/add/0x66e428c3f67a68878562e79A0234c1F83c208770/0xc9BAA8cfdDe8E328787E29b4B078abf2DaDc2055',
   },
   {
-    id: 'crona-usdt-avax',
+    id: 'crona-usdt-avax-eol',
     name: 'AVAX-USDT',
     token: 'AVAX-USDT LP',
     tokenDescription: 'CronaSwap',
@@ -964,8 +965,9 @@ export const cronosPools = [
     oracle: 'lps',
     oracleId: 'crona-usdt-avax',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'CronaSwap',
     assets: ['AVAX', 'USDT'],
     risks: [
