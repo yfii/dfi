@@ -337,6 +337,8 @@ export const getNetworkStables = () => {
         'jGBP',
         'jCHF',
         'EURt',
+        'PAR',
+        'EURS',
       ];
     case 250:
       return ['USDC', 'USDT', 'DAI', 'fUSDT', 'MIM', 'FRAX', 'MAI', 'DOLA', 'TUSD', 'UST'];
