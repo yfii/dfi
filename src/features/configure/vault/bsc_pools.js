@@ -11697,31 +11697,6 @@ export const bscPools = [
   },
 
   {
-    id: 'cake-arpa-bnb-eol',
-    logo: 'bnb-pairs/ARPA-BNB.svg',
-    name: 'ARPA-BNB LP',
-    token: 'ARPA-BNB LP',
-    tokenDescription: 'PancakeSwap',
-    tokenAddress: '0xFB29fCa952b478dDCb8A43f57176161e498225b1',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooPancakeARPA-BNB',
-    earnedTokenAddress: '0x6E1D34Bac5d49E9b488D8eadFCB632953263F2eA',
-    earnContractAddress: '0x6E1D34Bac5d49E9b488D8eadFCB632953263F2eA',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'cake-arpa-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'PancakeSwap',
-    assets: ['ARPA', 'BNB'],
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x6F769E65c14Ebd1f68817F5f1DcDb61Cfa2D6f7e',
-  },
-
-  {
     id: 'mdex-xvs-eol',
     logo: 'single-assets/XVS.png',
     name: 'XVS',
