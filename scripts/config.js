@@ -28,7 +28,7 @@ export const chainRpcs = {
   avax: process.env.AVAX_RPC || 'https://api.avax.network/ext/bc/C/rpc',
   polygon: process.env.POLYGON_RPC || 'https://polygon-rpc.com',
   fantom: process.env.FANTOM_RPC || 'https://rpc.ftm.tools/',
-  one: process.env.HARMONY_RPC || 'https://api.s0.t.hmny.io/',
+  one: process.env.HARMONY_RPC || 'https://api.harmony.one/',
   arbitrum: process.env.ARBITRUM_RPC || 'https://arb1.arbitrum.io/rpc',
   celo: process.env.CELO_RPC || 'https://forno.celo.org',
   moonriver: process.env.MOONRIVER_RPC || 'https://rpc.moonriver.moonbeam.network',
