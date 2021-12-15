@@ -497,6 +497,14 @@ export const polygonPools = [
     status: 'active',
     platform: 'Kyber',
     assets: ['jGBP', 'USDC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_MICRO',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
     withdrawalFee: '0%',
     addLiquidityUrl:
       'https://dmm.exchange/#/add/0x2791bca1f2de4661ed88a30c99a7a9449aa84174/0x767058f11800fba6a682e73a6e79ec5eb74fac8c/0xbb2d00675b775e0f8acd590e08da081b2a36d3a6',
@@ -523,6 +531,14 @@ export const polygonPools = [
     status: 'active',
     platform: 'Kyber',
     assets: ['jCHF', 'USDC'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_MICRO',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
     withdrawalFee: '0%',
     addLiquidityUrl:
       'https://dmm.exchange/#/add/0x2791bca1f2de4661ed88a30c99a7a9449aa84174/0xbd1463f02f61676d53fd183c2b19282bff93d099/0x439e6a13a5ce7fdca2cc03bf31fb631b3f5ef157',
