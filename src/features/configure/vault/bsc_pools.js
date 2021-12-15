@@ -2518,7 +2518,7 @@ export const bscPools = [
       'https://app.viralata.finance/exchange/swap?inputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56&outputCurrency=0x8d9A79314c4e09A7c53C124195cAeB8B89F4879D',
   },
   {
-    id: 'elk-elk-bnb',
+    id: 'elk-elk-bnb-eol',
     name: 'ELK-BNB ELP',
     token: 'ELK-BNB ELP',
     tokenDescription: 'ElkFinance',
@@ -2534,15 +2534,16 @@ export const bscPools = [
     oracleId: 'elk-elk-bnb',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Other',
     assets: ['ELK', 'BNB'],
+    retireReason: 'rewards',
     addLiquidityUrl: 'https://app.elk.finance/#/add/BNB/0xE1C110E1B1b4A1deD0cAf3E42BfBdbB7b5d7cE1C',
     buyTokenUrl:
       'https://app.elk.finance/#/swap?outputCurrency=0xE1C110E1B1b4A1deD0cAf3E42BfBdbB7b5d7cE1C',
   },
   {
-    id: 'elk-elk-dai',
+    id: 'elk-elk-dai-eol',
     name: 'ELK-DAI ELP',
     token: 'ELK-DAI ELP',
     tokenDescription: 'ElkFinance',
@@ -2558,9 +2559,10 @@ export const bscPools = [
     oracleId: 'elk-elk-dai',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Other',
     assets: ['ELK', 'DAI'],
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://app.elk.finance/#/add/0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3/0xE1C110E1B1b4A1deD0cAf3E42BfBdbB7b5d7cE1C',
     buyTokenUrl:
@@ -2975,6 +2977,14 @@ export const bscPools = [
     platform: 'PancakeSwap',
     assets: ['CAKE'],
     withdrawalFee: '0%',
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
     buyTokenUrl:
       'https://pancakeswap.finance/swap?outputCurrency=0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
   },
@@ -7535,6 +7545,14 @@ export const bscPools = [
     status: 'active',
     platform: 'ApeSwap',
     assets: ['LINK', 'BNB'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
     addLiquidityUrl:
       'https://dex.apeswap.finance/#/add/ETH/0xf8a0bf9cf54bb92f17374d9e9a321e6a111a51bd',
     buyTokenUrl:
@@ -9466,6 +9484,14 @@ export const bscPools = [
     status: 'active',
     platform: 'PancakeSwap',
     assets: ['UST', 'BUSD'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
     addLiquidityUrl:
       'https://pancakeswap.finance/add/0x23396cF899Ca06c4472205fC903bDB4de249D6fC/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
     buyTokenUrl:
@@ -9810,6 +9836,14 @@ export const bscPools = [
     status: 'active',
     platform: 'PancakeSwap',
     assets: ['USDC', 'BUSD'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
     addLiquidityUrl:
       'https://pancakeswap.finance/add/0xe9e7cea3dedca5984780bafc599bd69add087d56/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d',
     buyTokenUrl:
@@ -11270,6 +11304,14 @@ export const bscPools = [
     status: 'active',
     platform: 'ApeSwap',
     assets: ['ADA', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
     addLiquidityUrl:
       'https://dex.apeswap.finance/#/add/0x3EE2200Efb3400fAbB9AacF31297cBdD1d435D47/0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
     buyTokenUrl:
@@ -11484,6 +11526,14 @@ export const bscPools = [
     status: 'active',
     platform: 'Mdex',
     assets: ['BTCB', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
     depositFee: '<0.1%',
     addLiquidityUrl:
       'https://bsc.mdex.com/#/add/0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c/0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
