@@ -274,7 +274,7 @@ export const avalanchePools = [
       'https://www.traderjoexyz.com/#/trade?outputCurrency=0xA56F9A54880afBc30CF29bB66d2D9ADCdcaEaDD6',
   },
   {
-    id: 'blizz-avax',
+    id: 'blizz-avax-pause',
     logo: 'single-assets/AVAX.svg',
     name: 'AVAX',
     token: 'AVAX',
@@ -289,7 +289,7 @@ export const avalanchePools = [
     oracle: 'tokens',
     oracleId: 'AVAX',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Blizz',
     assets: ['AVAX'],
@@ -307,7 +307,7 @@ export const avalanchePools = [
       'https://www.traderjoexyz.com/#/trade?outputCurrency=0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7',
   },
   {
-    id: 'blizz-eth',
+    id: 'blizz-eth-pause',
     logo: 'single-assets/ETH.svg',
     name: 'WETH.e',
     token: 'WETH.e',
@@ -323,7 +323,7 @@ export const avalanchePools = [
     oracle: 'tokens',
     oracleId: 'WETH.e',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Blizz',
     assets: ['WETHe'],
@@ -341,7 +341,7 @@ export const avalanchePools = [
       'https://www.traderjoexyz.com/#/trade?outputCurrency=0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB',
   },
   {
-    id: 'blizz-wbtc',
+    id: 'blizz-wbtc-pause',
     logo: 'single-assets/WBTC.svg',
     name: 'WBTC.e',
     token: 'WBTC.e',
@@ -357,7 +357,7 @@ export const avalanchePools = [
     oracle: 'tokens',
     oracleId: 'WBTC.e',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Blizz',
     assets: ['WBTCe'],
@@ -1448,7 +1448,7 @@ export const avalanchePools = [
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
   },
   {
-    id: 'joe-usdc.e-usdt.e',
+    id: 'joe-usdc.e-usdt.e-eol',
     name: 'USDC.e-USDT.e LP',
     token: 'USDC.e-USDT.e JLP',
     tokenDescription: 'Trader Joe',
@@ -1463,8 +1463,8 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'joe-usdc.e-usdt.e',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Trader Joe',
     assets: ['USDCe', 'USDTe'],
     risks: [
@@ -1476,6 +1476,7 @@ export const avalanchePools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0xa7d7079b0fead91f3e65f86e8915cb59c1a4c664/0xc7198437980c041c805a1edcba50c1ce5db95118',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -2015,7 +2016,7 @@ export const avalanchePools = [
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
   },
   {
-    id: 'joe-usdc.e-dai.e',
+    id: 'joe-usdc.e-dai.e-eol',
     name: 'USDC.e-DAI.e LP',
     token: 'USDC.e-DAI.e JLP',
     tokenDescription: 'Trader Joe',
@@ -2030,8 +2031,8 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'joe-usdc.e-dai.e',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Trader Joe',
     assets: ['USDCe', 'DAIe'],
     risks: [
@@ -2043,6 +2044,7 @@ export const avalanchePools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/0xd586E7F844cEa2F87f50152665BCbc2C279D8d70/0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
@@ -2081,7 +2083,7 @@ export const avalanchePools = [
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
   },
   {
-    id: 'joe-wavax-dai.e',
+    id: 'joe-wavax-dai.e-eol',
     name: 'DAI.e-AVAX LP',
     token: 'DAI.e-AVAX JLP',
     tokenDescription: 'Trader Joe',
@@ -2096,8 +2098,8 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'joe-wavax-dai.e',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Trader Joe',
     assets: ['DAIe', 'AVAX'],
     risks: [
@@ -2109,6 +2111,7 @@ export const avalanchePools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/#/pool/AVAX/0xd586e7f844cea2f87f50152665bcbc2c279d8d70',
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
