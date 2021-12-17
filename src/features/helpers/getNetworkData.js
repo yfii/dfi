@@ -225,6 +225,7 @@ export const getNetworkBurnTokens = () => {
       return {
         [avaxAddressBook.tokens.SHIBX.symbol]: avaxAddressBook.tokens.SHIBX,
         [avaxAddressBook.tokens.aSING.symbol]: avaxAddressBook.tokens.aSING,
+        [avaxAddressBook.tokens.MEAD.symbol]: avaxAddressBook.tokens.MEAD,
       };
     case 137:
       return {
@@ -337,6 +338,8 @@ export const getNetworkStables = () => {
         'jCHF',
         'EURt',
         'TUSD',
+        'PAR',
+        'EURS',
       ];
     case 250:
       return ['USDC', 'USDT', 'DAI', 'fUSDT', 'MIM', 'FRAX', 'MAI', 'DOLA', 'TUSD', 'UST'];

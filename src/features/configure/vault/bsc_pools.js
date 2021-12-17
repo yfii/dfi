@@ -32,6 +32,32 @@ export const bscPools = [
     buyTokenUrl: 'https://app.1inch.io/#/56/swap/BNB/BIFI',
   },
   {
+    id: 'banana-banana-busd',
+    logo: 'degens/banana-busd.svg',
+    name: 'BANANA-BUSD LP',
+    token: 'BANANA-BUSD LP',
+    tokenDescription: 'ApeSwap',
+    tokenAddress: '0x7Bd46f6Da97312AC2DBD1749f82E202764C0B914',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooApeBANANA-BUSD',
+    earnedTokenAddress: '0x651b496bCe2C184282a2B9AeF3f8BaDBAC36Dd7f',
+    earnContractAddress: '0x651b496bCe2C184282a2B9AeF3f8BaDBAC36Dd7f',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'banana-banana-busd',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'ApeSwap',
+    assets: ['BANANA', 'BUSD'],
+    addLiquidityUrl:
+      'https://dex.apeswap.finance/#/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0x603c7f932ED1fc6575303D8Fb018fDCBb0f39a95',
+    buyTokenUrl:
+      'https://dex.apeswap.finance/#/swap?inputCurrency=0x603c7f932ed1fc6575303d8fb018fdcbb0f39a95&outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56',
+  },
+  {
     id: 'ellipsis-renbtc',
     logo: 'uncategorized/epsRENBTC.png',
     name: 'renBTC/BTCB',
@@ -62,6 +88,40 @@ export const bscPools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl: 'https://ellipsis.finance/pool/btceps',
+  },
+  {
+    id: 'banana-crush-wbnb',
+    name: 'CRUSH-BNB LP',
+    token: 'CRUSH-BNB BLP',
+    tokenDescription: 'ApeSwap',
+    tokenAddress: '0x8A10489f1255fb63217Be4cc96B8F4CD4D42a469',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooApeCRUSH-BNB',
+    earnedTokenAddress: '0x566b68521968569aC04873c4CCFfa45C8d653463',
+    earnContractAddress: '0x566b68521968569aC04873c4CCFfa45C8d653463',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'banana-crush-wbnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'ApeSwap',
+    assets: ['CRUSH', 'BNB'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
+    addLiquidityUrl:
+      'https://dex.apeswap.finance/#/add/ETH/0x0Ef0626736c2d484A792508e99949736D0AF807e',
+    buyTokenUrl:
+      'https://dex.apeswap.finance/#/swap?outputCurrency=0x0Ef0626736c2d484A792508e99949736D0AF807e',
   },
   {
     id: 'banana-nfty-wbnb',
@@ -2518,7 +2578,7 @@ export const bscPools = [
       'https://app.viralata.finance/exchange/swap?inputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56&outputCurrency=0x8d9A79314c4e09A7c53C124195cAeB8B89F4879D',
   },
   {
-    id: 'elk-elk-bnb',
+    id: 'elk-elk-bnb-eol',
     name: 'ELK-BNB ELP',
     token: 'ELK-BNB ELP',
     tokenDescription: 'ElkFinance',
@@ -2534,15 +2594,16 @@ export const bscPools = [
     oracleId: 'elk-elk-bnb',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Other',
     assets: ['ELK', 'BNB'],
+    retireReason: 'rewards',
     addLiquidityUrl: 'https://app.elk.finance/#/add/BNB/0xE1C110E1B1b4A1deD0cAf3E42BfBdbB7b5d7cE1C',
     buyTokenUrl:
       'https://app.elk.finance/#/swap?outputCurrency=0xE1C110E1B1b4A1deD0cAf3E42BfBdbB7b5d7cE1C',
   },
   {
-    id: 'elk-elk-dai',
+    id: 'elk-elk-dai-eol',
     name: 'ELK-DAI ELP',
     token: 'ELK-DAI ELP',
     tokenDescription: 'ElkFinance',
@@ -2558,9 +2619,10 @@ export const bscPools = [
     oracleId: 'elk-elk-dai',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
     platform: 'Other',
     assets: ['ELK', 'DAI'],
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://app.elk.finance/#/add/0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3/0xE1C110E1B1b4A1deD0cAf3E42BfBdbB7b5d7cE1C',
     buyTokenUrl:
@@ -2975,6 +3037,14 @@ export const bscPools = [
     platform: 'PancakeSwap',
     assets: ['CAKE'],
     withdrawalFee: '0%',
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
     buyTokenUrl:
       'https://pancakeswap.finance/swap?outputCurrency=0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
   },
@@ -7535,6 +7605,14 @@ export const bscPools = [
     status: 'active',
     platform: 'ApeSwap',
     assets: ['LINK', 'BNB'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
     addLiquidityUrl:
       'https://dex.apeswap.finance/#/add/ETH/0xf8a0bf9cf54bb92f17374d9e9a321e6a111a51bd',
     buyTokenUrl:
@@ -9466,6 +9544,14 @@ export const bscPools = [
     status: 'active',
     platform: 'PancakeSwap',
     assets: ['UST', 'BUSD'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
     addLiquidityUrl:
       'https://pancakeswap.finance/add/0x23396cF899Ca06c4472205fC903bDB4de249D6fC/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
     buyTokenUrl:
@@ -9810,6 +9896,14 @@ export const bscPools = [
     status: 'active',
     platform: 'PancakeSwap',
     assets: ['USDC', 'BUSD'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
     addLiquidityUrl:
       'https://pancakeswap.finance/add/0xe9e7cea3dedca5984780bafc599bd69add087d56/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d',
     buyTokenUrl:
@@ -11270,6 +11364,14 @@ export const bscPools = [
     status: 'active',
     platform: 'ApeSwap',
     assets: ['ADA', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
     addLiquidityUrl:
       'https://dex.apeswap.finance/#/add/0x3EE2200Efb3400fAbB9AacF31297cBdD1d435D47/0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
     buyTokenUrl:
@@ -11484,6 +11586,14 @@ export const bscPools = [
     status: 'active',
     platform: 'Mdex',
     assets: ['BTCB', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
     depositFee: '<0.1%',
     addLiquidityUrl:
       'https://bsc.mdex.com/#/add/0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c/0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
@@ -11694,31 +11804,6 @@ export const bscPools = [
     assets: ['ITAM', 'BNB'],
     removeLiquidityUrl:
       'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x04C747b40Be4D535fC83D09939fb0f626F32800B',
-  },
-
-  {
-    id: 'cake-arpa-bnb-eol',
-    logo: 'bnb-pairs/ARPA-BNB.svg',
-    name: 'ARPA-BNB LP',
-    token: 'ARPA-BNB LP',
-    tokenDescription: 'PancakeSwap',
-    tokenAddress: '0xFB29fCa952b478dDCb8A43f57176161e498225b1',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooPancakeARPA-BNB',
-    earnedTokenAddress: '0x6E1D34Bac5d49E9b488D8eadFCB632953263F2eA',
-    earnContractAddress: '0x6E1D34Bac5d49E9b488D8eadFCB632953263F2eA',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'cake-arpa-bnb',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'PancakeSwap',
-    assets: ['ARPA', 'BNB'],
-    removeLiquidityUrl:
-      'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x6F769E65c14Ebd1f68817F5f1DcDb61Cfa2D6f7e',
   },
 
   {
@@ -13781,32 +13866,6 @@ export const bscPools = [
     assets: ['SOUPS', 'BNB'],
     buyTokenUrl:
       'https://pancakeswap.finance/swap?outputCurrency=0x69f27e70e820197a6e495219d9ac34c8c6da7eee',
-  },
-  {
-    id: 'banana-banana-busd',
-    logo: 'degens/banana-busd.svg',
-    name: 'BANANA-BUSD LP',
-    token: 'BANANA-BUSD LP',
-    tokenDescription: 'ApeSwap',
-    tokenAddress: '0x7Bd46f6Da97312AC2DBD1749f82E202764C0B914',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooApeBANANA-BUSD',
-    earnedTokenAddress: '0x651b496bCe2C184282a2B9AeF3f8BaDBAC36Dd7f',
-    earnContractAddress: '0x651b496bCe2C184282a2B9AeF3f8BaDBAC36Dd7f',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'banana-banana-busd',
-    oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
-    platform: 'ApeSwap',
-    assets: ['BANANA', 'BUSD'],
-    addLiquidityUrl:
-      'https://dex.apeswap.finance/#/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0x603c7f932ED1fc6575303D8Fb018fDCBb0f39a95',
-    buyTokenUrl:
-      'https://dex.apeswap.finance/#/swap?inputCurrency=0x603c7f932ed1fc6575303d8fb018fdcbb0f39a95&outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56',
   },
 
   {
