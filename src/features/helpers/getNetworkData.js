@@ -337,6 +337,7 @@ export const getNetworkStables = () => {
         'jGBP',
         'jCHF',
         'EURt',
+        'TUSD',
         'PAR',
         'EURS',
       ];
