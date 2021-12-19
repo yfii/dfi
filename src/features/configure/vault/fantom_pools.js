@@ -2419,7 +2419,7 @@ export const fantomPools = [
       'https://swap.spiritswap.finance/#/swap/0x468003B688943977e6130F4F68F23aad939a1040',
   },
   {
-    id: 'boo-usdc-woo',
+    id: 'boo-usdc-woo-eol',
     name: 'WOO-USDC LP',
     token: 'WOO-USDC LP',
     tokenDescription: 'SpookySwap',
@@ -2434,8 +2434,9 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'boo-usdc-woo',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'SpookySwap',
     assets: ['WOO', 'USDC'],
     risks: [
