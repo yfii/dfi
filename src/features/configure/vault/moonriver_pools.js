@@ -200,7 +200,7 @@ export const moonriverPools = [
       'https://www.huckleberry.finance/#/add/0x98878B06940aE243284CA214f92Bb71a2b032B8A/0x9A92B5EBf1F6F6f7d93696FCD44e5Cf75035A756',
   },
   {
-    id: 'finn-finn',
+    id: 'finn-finn-eol',
     logo: 'single-assets/FINN.png',
     name: 'FINN',
     token: 'FINN',
@@ -216,8 +216,9 @@ export const moonriverPools = [
     oracle: 'tokens',
     oracleId: 'FINN',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'noReason',
     platform: 'Huckleberry',
     assets: ['FINN'],
     risks: [
