@@ -211,9 +211,6 @@ export const getNetworkBurnTokens = () => {
   switch (window.REACT_APP_NETWORK_ID) {
     case 56:
       return {
-        [bscAddressBook.tokens.GARUDA.symbol]: bscAddressBook.tokens.GARUDA,
-        [bscAddressBook.tokens.SDUMP.symbol]: bscAddressBook.tokens.SDUMP,
-        [bscAddressBook.tokens.BABYCAKE.symbol]: bscAddressBook.tokens.BABYCAKE,
         [bscAddressBook.tokens.PERA.symbol]: bscAddressBook.tokens.PERA,
         [bscAddressBook.tokens.GUARD.symbol]: bscAddressBook.tokens.GUARD,
         [bscAddressBook.tokens.PEAR.symbol]: bscAddressBook.tokens.PEAR,
