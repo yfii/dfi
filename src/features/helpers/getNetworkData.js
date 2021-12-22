@@ -1,6 +1,7 @@
 import { connectors } from 'web3modal';
 import { indexBy } from './utils';
 import WalletConnectProvider from '@walletconnect/web3-provider';
+import { DeFiWeb3Connector } from 'deficonnect';
 
 import {
   avalanchePools,
@@ -48,6 +49,14 @@ import {
 import { allNetworks } from '../../network';
 
 export const appNetworkId = window.REACT_APP_NETWORK_ID;
+
+const defiWalletConnect = new DeFiWeb3Connector({
+  supportedChainIds: [25],
+  rpc: {
+    25: 'https://evm-cronos.crypto.org/', // cronos mainet
+  },
+  pollingInterval: 15000,
+});
 
 const networkTxUrls = {
   56: hash => `https://bscscan.com/tx/${hash}`,
@@ -617,6 +626,7 @@ export const getNetworkConnectors = t => {
               description: t('Home-BrowserWallet'),
             },
           },
+          defiWalletConnect,
         },
       };
     default:
