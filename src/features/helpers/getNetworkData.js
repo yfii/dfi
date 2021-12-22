@@ -1,8 +1,8 @@
 import { connectors } from 'web3modal';
 import { indexBy } from './utils';
 import WalletConnectProvider from '@walletconnect/web3-provider';
-import { DeFiWeb3Connector } from 'deficonnect';
-
+import { DeFiConnector } from 'deficonnect';
+import { allNetworks } from '../../network';
 import {
   avalanchePools,
   avalancheStakePools,
@@ -46,7 +46,6 @@ import {
   arbitrumAddressBook,
   arbitrumZaps,
 } from '../configure';
-import { allNetworks } from '../../network';
 
 export const appNetworkId = window.REACT_APP_NETWORK_ID;
 
@@ -625,20 +624,28 @@ export const getNetworkConnectors = t => {
               description: t('Crypto.com Wallet'),
             },
             options: {
-              supportedChainIds: [1, 25],
+              supportedChainIds: [25],
               rpc: {
-                1: 'https://evm-cronos.crypto.org/',
                 25: 'https://evm-cronos.crypto.org/', // cronos mainet
               },
               pollingInterval: 15000,
             },
-            package: DeFiWeb3Connector,
-            connector: async (DeFiWeb3Connector, options) => {
-              const provider = new DeFiWeb3Connector(options);
+            package: DeFiConnector,
+            connector: async (packageConnector, options) => {
+              try {
+                const connector = new packageConnector({
+                  name: 'Cronos',
+                  supprtedChainTypes: ['eth'],
+                  supportedChainTypes: ['eth'],
+                  eth: options,
+                  cosmos: null,
+                });
+                await connector.activate();
 
-              await provider.enable();
-
-              return provider;
+                return connector.getProvider();
+              } catch (error) {
+                console.error(error);
+              }
             },
           },
         },
