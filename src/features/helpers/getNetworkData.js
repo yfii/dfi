@@ -632,20 +632,16 @@ export const getNetworkConnectors = t => {
             },
             package: DeFiConnector,
             connector: async (packageConnector, options) => {
-              try {
-                const connector = new packageConnector({
-                  name: 'Cronos',
-                  supprtedChainTypes: ['eth'],
-                  supportedChainTypes: ['eth'],
-                  eth: options,
-                  cosmos: null,
-                });
-                await connector.activate();
+              const connector = new packageConnector({
+                name: 'Cronos',
+                supprtedChainTypes: ['eth'],
+                supportedChainTypes: ['eth'],
+                eth: options,
+                cosmos: null,
+              });
+              await connector.activate();
 
-                return connector.getProvider();
-              } catch (error) {
-                console.error(error);
-              }
+              return connector.getProvider();
             },
           },
         },
