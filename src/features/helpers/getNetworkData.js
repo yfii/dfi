@@ -620,8 +620,8 @@ export const getNetworkConnectors = t => {
           'custom-cdc': {
             display: {
               logo: require(`images/wallets/crypto.png`),
-              name: 'Crypto.com Wallet',
-              description: t('Crypto.com Wallet'),
+              name: 'Crypto.com',
+              description: t('Crypto.com | Wallet Extension'),
             },
             options: {
               supportedChainIds: [25],
