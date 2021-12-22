@@ -1,7 +1,8 @@
 import { connectors } from 'web3modal';
 import { indexBy } from './utils';
 import WalletConnectProvider from '@walletconnect/web3-provider';
-
+import { DeFiConnector } from 'deficonnect';
+import { allNetworks } from '../../network';
 import {
   avalanchePools,
   avalancheStakePools,
@@ -45,7 +46,6 @@ import {
   arbitrumAddressBook,
   arbitrumZaps,
 } from '../configure';
-import { allNetworks } from '../../network';
 
 export const appNetworkId = window.REACT_APP_NETWORK_ID;
 
@@ -211,9 +211,6 @@ export const getNetworkBurnTokens = () => {
   switch (window.REACT_APP_NETWORK_ID) {
     case 56:
       return {
-        [bscAddressBook.tokens.GARUDA.symbol]: bscAddressBook.tokens.GARUDA,
-        [bscAddressBook.tokens.SDUMP.symbol]: bscAddressBook.tokens.SDUMP,
-        [bscAddressBook.tokens.BABYCAKE.symbol]: bscAddressBook.tokens.BABYCAKE,
         [bscAddressBook.tokens.PERA.symbol]: bscAddressBook.tokens.PERA,
         [bscAddressBook.tokens.GUARD.symbol]: bscAddressBook.tokens.GUARD,
         [bscAddressBook.tokens.PEAR.symbol]: bscAddressBook.tokens.PEAR,
@@ -618,6 +615,33 @@ export const getNetworkConnectors = t => {
             display: {
               name: 'Injected',
               description: t('Home-BrowserWallet'),
+            },
+          },
+          'custom-cdc': {
+            display: {
+              logo: require(`images/wallets/crypto.png`),
+              name: 'Crypto.com',
+              description: t('Crypto.com | Wallet Extension'),
+            },
+            options: {
+              supportedChainIds: [25],
+              rpc: {
+                25: 'https://evm-cronos.crypto.org/', // cronos mainet
+              },
+              pollingInterval: 15000,
+            },
+            package: DeFiConnector,
+            connector: async (packageConnector, options) => {
+              const connector = new packageConnector({
+                name: 'Cronos',
+                supprtedChainTypes: ['eth'],
+                supportedChainTypes: ['eth'],
+                eth: options,
+                cosmos: null,
+              });
+              await connector.activate();
+
+              return connector.getProvider();
             },
           },
         },
