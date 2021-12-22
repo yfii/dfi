@@ -1,6 +1,7 @@
 import { connectors } from 'web3modal';
 import { indexBy } from './utils';
 import WalletConnectProvider from '@walletconnect/web3-provider';
+import { DeFiWeb3Connector } from 'deficonnect';
 
 import {
   avalanchePools,
@@ -623,8 +624,22 @@ export const getNetworkConnectors = t => {
               name: 'Crypto.com Wallet',
               description: t('Crypto.com Wallet'),
             },
-            package: 'cdc',
-            connector: connectors.injected,
+            options: {
+              supportedChainIds: [1, 25],
+              rpc: {
+                1: 'https://evm-cronos.crypto.org/',
+                25: 'https://evm-cronos.crypto.org/', // cronos mainet
+              },
+              pollingInterval: 15000,
+            },
+            package: DeFiWeb3Connector,
+            connector: async (DeFiWeb3Connector, options) => {
+              const provider = new DeFiWeb3Connector(options);
+
+              await provider.enable();
+
+              return provider;
+            },
           },
         },
       };
