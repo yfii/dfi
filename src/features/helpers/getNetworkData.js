@@ -1,7 +1,9 @@
 import { connectors } from 'web3modal';
 import { indexBy } from './utils';
 import WalletConnectProvider from '@walletconnect/web3-provider';
-
+import { DeFiConnector } from 'deficonnect';
+import WalletLink from 'walletlink';
+import { allNetworks } from '../../network';
 import {
   avalanchePools,
   avalancheStakePools,
@@ -45,7 +47,6 @@ import {
   arbitrumAddressBook,
   arbitrumZaps,
 } from '../configure';
-import { allNetworks } from '../../network';
 
 export const appNetworkId = window.REACT_APP_NETWORK_ID;
 
@@ -211,9 +212,6 @@ export const getNetworkBurnTokens = () => {
   switch (window.REACT_APP_NETWORK_ID) {
     case 56:
       return {
-        [bscAddressBook.tokens.GARUDA.symbol]: bscAddressBook.tokens.GARUDA,
-        [bscAddressBook.tokens.SDUMP.symbol]: bscAddressBook.tokens.SDUMP,
-        [bscAddressBook.tokens.BABYCAKE.symbol]: bscAddressBook.tokens.BABYCAKE,
         [bscAddressBook.tokens.PERA.symbol]: bscAddressBook.tokens.PERA,
         [bscAddressBook.tokens.GUARD.symbol]: bscAddressBook.tokens.GUARD,
         [bscAddressBook.tokens.PEAR.symbol]: bscAddressBook.tokens.PEAR,
@@ -447,6 +445,28 @@ export const getNetworkConnectors = t => {
             package: 'safepal',
             connector: connectors.injected,
           },
+          'custom-cb-bsc': {
+            display: {
+              logo: require(`images/wallets/coinbase.png`),
+              name: 'Coinbase Wallet',
+              description: t('Connect your Coinbase Wallet'),
+            },
+            options: {
+              appName: 'Beefy Finance',
+              appLogoUrl: 'https://app.beefy.finance/static/media/BIFI.e797b2e4.png',
+              darkMode: false,
+            },
+            package: WalletLink,
+            connector: async (ProviderPackage, options) => {
+              const walletLink = new ProviderPackage(options);
+
+              const provider = walletLink.makeWeb3Provider('https://bsc-dataseed.binance.org/', 56);
+
+              await provider.enable();
+
+              return provider;
+            },
+          },
         },
       };
     case 128:
@@ -491,15 +511,52 @@ export const getNetworkConnectors = t => {
               description: t('Home-BrowserWallet'),
             },
           },
-          // walletconnect: {
-          //   package: WalletConnectProvider,
-          //   options: {
-          //     rpc: {
-          //       1: 'https://api.avax.network/ext/bc/C/rpc',
-          //       43114: 'https://api.avax.network/ext/bc/C/rpc',
-          //     },
-          //   },
-          // },
+          'custom-wc-avax': {
+            display: {
+              logo: require(`images/wallets/wallet-connect.svg`),
+              name: 'Wallet Connect',
+              description: t('Scan you WalletConnect to Connect'),
+            },
+            package: WalletConnectProvider,
+            options: {
+              rpc: {
+                1: 'https://api.avax.network/ext/bc/C/rpc',
+                43114: 'https://api.avax.network/ext/bc/C/rpc',
+              },
+            },
+            connector: async (ProviderPackage, options) => {
+              const provider = new ProviderPackage(options);
+
+              await provider.enable();
+
+              return provider;
+            },
+          },
+          'custom-cb-avalanche': {
+            display: {
+              logo: require(`images/wallets/coinbase.png`),
+              name: 'Coinbase Wallet',
+              description: t('Connect your Coinbase Wallet'),
+            },
+            options: {
+              appName: 'Beefy Finance',
+              appLogoUrl: 'https://app.beefy.finance/static/media/BIFI.e797b2e4.png',
+              darkMode: false,
+            },
+            package: WalletLink,
+            connector: async (ProviderPackage, options) => {
+              const walletLink = new ProviderPackage(options);
+
+              const provider = walletLink.makeWeb3Provider(
+                'https://api.avax.network/ext/bc/C/rpc',
+                43114
+              );
+
+              await provider.enable();
+
+              return provider;
+            },
+          },
         },
       };
     case 137:
@@ -522,6 +579,28 @@ export const getNetworkConnectors = t => {
                 137: 'https://polygon-rpc.com/',
               },
             },
+            'custom-cb-polygon': {
+              display: {
+                logo: require(`images/wallets/coinbase.png`),
+                name: 'Coinbase Wallet',
+                description: t('Connect your Coinbase Wallet'),
+              },
+              options: {
+                appName: 'Beefy Finance',
+                appLogoUrl: 'https://app.beefy.finance/static/media/BIFI.e797b2e4.png',
+                darkMode: false,
+              },
+              package: WalletLink,
+              connector: async (ProviderPackage, options) => {
+                const walletLink = new ProviderPackage(options);
+
+                const provider = walletLink.makeWeb3Provider('https://polygon-rpc.com/', 137);
+
+                await provider.enable();
+
+                return provider;
+              },
+            },
           },
         },
       };
@@ -536,15 +615,49 @@ export const getNetworkConnectors = t => {
               description: t('Home-BrowserWallet'),
             },
           },
-          // walletconnect: {
-          //   package: WalletConnectProvider,
-          //   options: {
-          //     rpc: {
-          //       1: 'https://rpcapi.fantom.network',
-          //       250: 'https://rpcapi.fantom.network',
-          //     },
-          //   },
-          // },
+          'custom-wc-ftm': {
+            display: {
+              logo: require(`images/wallets/wallet-connect.svg`),
+              name: 'Wallet Connect',
+              description: t('Scan you WalletConnect to Connect'),
+            },
+            package: WalletConnectProvider,
+            options: {
+              rpc: {
+                1: 'https://rpc.ftm.tools/',
+                250: 'https://rpc.ftm.tools/',
+              },
+            },
+            connector: async (ProviderPackage, options) => {
+              const provider = new ProviderPackage(options);
+
+              await provider.enable();
+
+              return provider;
+            },
+          },
+          'custom-cb-ftm': {
+            display: {
+              logo: require(`images/wallets/coinbase.png`),
+              name: 'Coinbase Wallet',
+              description: t('Connect your Coinbase Wallet'),
+            },
+            options: {
+              appName: 'Beefy Finance',
+              appLogoUrl: 'https://app.beefy.finance/static/media/BIFI.e797b2e4.png',
+              darkMode: false,
+            },
+            package: WalletLink,
+            connector: async (ProviderPackage, options) => {
+              const walletLink = new ProviderPackage(options);
+
+              const provider = walletLink.makeWeb3Provider('https://rpc.ftm.tools/', 250);
+
+              await provider.enable();
+
+              return provider;
+            },
+          },
         },
       };
     case 1666600000:
@@ -556,6 +669,27 @@ export const getNetworkConnectors = t => {
             display: {
               name: 'Injected',
               description: t('Home-BrowserWallet'),
+            },
+          },
+          'custom-wc-one': {
+            display: {
+              logo: require(`images/wallets/wallet-connect.svg`),
+              name: 'Wallet Connect',
+              description: t('Scan you WalletConnect to Connect'),
+            },
+            package: WalletConnectProvider,
+            options: {
+              rpc: {
+                1: 'https://api.harmony.one/',
+                1666600000: 'https://api.harmony.one/',
+              },
+            },
+            connector: async (ProviderPackage, options) => {
+              const provider = new ProviderPackage(options);
+
+              await provider.enable();
+
+              return provider;
             },
           },
         },
@@ -571,6 +705,49 @@ export const getNetworkConnectors = t => {
               description: t('Home-BrowserWallet'),
             },
           },
+          'custom-wc-arb': {
+            display: {
+              logo: require(`images/wallets/wallet-connect.svg`),
+              name: 'Wallet Connect',
+              description: t('Scan you WalletConnect to Connect'),
+            },
+            package: WalletConnectProvider,
+            options: {
+              rpc: {
+                1: 'https://arb1.arbitrum.io/rpc',
+                42161: 'https://arb1.arbitrum.io/rpc',
+              },
+            },
+            connector: async (ProviderPackage, options) => {
+              const provider = new ProviderPackage(options);
+
+              await provider.enable();
+
+              return provider;
+            },
+          },
+          'custom-cb-arb': {
+            display: {
+              logo: require(`images/wallets/coinbase.png`),
+              name: 'Coinbase Wallet',
+              description: t('Connect your Coinbase Wallet'),
+            },
+            options: {
+              appName: 'Beefy Finance',
+              appLogoUrl: 'https://app.beefy.finance/static/media/BIFI.e797b2e4.png',
+              darkMode: false,
+            },
+            package: WalletLink,
+            connector: async (ProviderPackage, options) => {
+              const walletLink = new ProviderPackage(options);
+
+              const provider = walletLink.makeWeb3Provider('https://arb1.arbitrum.io/rpc', 42161);
+
+              await provider.enable();
+
+              return provider;
+            },
+          },
         },
       };
     case 1285:
@@ -584,12 +761,33 @@ export const getNetworkConnectors = t => {
               description: t('Home-BrowserWallet'),
             },
           },
+          'custom-wc-mr': {
+            display: {
+              logo: require(`images/wallets/wallet-connect.svg`),
+              name: 'Wallet Connect',
+              description: t('Scan you WalletConnect to Connect'),
+            },
+            package: WalletConnectProvider,
+            options: {
+              rpc: {
+                1: 'https://rpc.moonriver.moonbeam.network',
+                1285: 'https://rpc.moonriver.moonbeam.network',
+              },
+            },
+            connector: async (ProviderPackage, options) => {
+              const provider = new ProviderPackage(options);
+
+              await provider.enable();
+
+              return provider;
+            },
+          },
         },
       };
     case 42220:
       return {
         network: 'celo',
-        cacheProvider: true,
+        cacheProvider: false,
         providerOptions: {
           injected: {
             display: {
@@ -597,14 +795,25 @@ export const getNetworkConnectors = t => {
               description: t('Home-BrowserWallet'),
             },
           },
-          walletconnect: {
+          'custom-wc-celo': {
+            display: {
+              logo: require(`images/wallets/wallet-connect.svg`),
+              name: 'Wallet Connect',
+              description: t('Scan you WalletConnect to Connect'),
+            },
             package: WalletConnectProvider,
             options: {
-              network: 'celo',
               rpc: {
                 1: 'https://forno.celo.org',
                 42220: 'https://forno.celo.org',
               },
+            },
+            connector: async (ProviderPackage, options) => {
+              const provider = new ProviderPackage(options);
+
+              await provider.enable();
+
+              return provider;
             },
           },
         },
@@ -618,6 +827,54 @@ export const getNetworkConnectors = t => {
             display: {
               name: 'Injected',
               description: t('Home-BrowserWallet'),
+            },
+          },
+          'custom-cdc': {
+            display: {
+              logo: require(`images/wallets/crypto.png`),
+              name: 'Crypto.com',
+              description: t('Crypto.com | Wallet Extension'),
+            },
+            options: {
+              supportedChainIds: [25],
+              rpc: {
+                25: 'https://evm-cronos.crypto.org/', // cronos mainet
+              },
+              pollingInterval: 15000,
+            },
+            package: DeFiConnector,
+            connector: async (packageConnector, options) => {
+              const connector = new packageConnector({
+                name: 'Cronos',
+                supprtedChainTypes: ['eth'],
+                supportedChainTypes: ['eth'],
+                eth: options,
+                cosmos: null,
+              });
+              await connector.activate();
+
+              return connector.getProvider();
+            },
+          },
+          'custom-wc-cronos': {
+            display: {
+              logo: require(`images/wallets/wallet-connect.svg`),
+              name: 'Wallet Connect',
+              description: t('Scan you WalletConnect to Connect'),
+            },
+            package: WalletConnectProvider,
+            options: {
+              rpc: {
+                1: 'https://evm-cronos.crypto.org/',
+                25: 'https://evm-cronos.crypto.org/',
+              },
+            },
+            connector: async (ProviderPackage, options) => {
+              const provider = new ProviderPackage(options);
+
+              await provider.enable();
+
+              return provider;
             },
           },
         },
