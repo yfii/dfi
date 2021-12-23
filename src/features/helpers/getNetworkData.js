@@ -227,9 +227,9 @@ export const getNetworkBurnTokens = () => {
       };
     case 137:
       return {
-        [polygonAddressBook.tokens.xYELD.symbol]: polygonAddressBook.tokens.xYELD,
+        //  [polygonAddressBook.tokens.xYELD.symbol]: polygonAddressBook.tokens.xYELD,
         [polygonAddressBook.tokens.PEAR.symbol]: polygonAddressBook.tokens.PEAR,
-        [polygonAddressBook.tokens.pSING.symbol]: polygonAddressBook.tokens.pSING,
+        //  [polygonAddressBook.tokens.pSING.symbol]: polygonAddressBook.tokens.pSING,
       };
     case 250:
       return {
@@ -619,7 +619,7 @@ export const getNetworkConnectors = t => {
             display: {
               logo: require(`images/wallets/wallet-connect.svg`),
               name: 'Wallet Connect',
-              description: t('Scan you WalletConnect to Connect'),
+              description: t('Scan your WalletConnect to Connect'),
             },
             package: WalletConnectProvider,
             options: {
@@ -675,7 +675,7 @@ export const getNetworkConnectors = t => {
             display: {
               logo: require(`images/wallets/wallet-connect.svg`),
               name: 'Wallet Connect',
-              description: t('Scan you WalletConnect to Connect'),
+              description: t('Scan your WalletConnect to Connect'),
             },
             package: WalletConnectProvider,
             options: {
@@ -709,7 +709,7 @@ export const getNetworkConnectors = t => {
             display: {
               logo: require(`images/wallets/wallet-connect.svg`),
               name: 'Wallet Connect',
-              description: t('Scan you WalletConnect to Connect'),
+              description: t('Scan your WalletConnect to Connect'),
             },
             package: WalletConnectProvider,
             options: {
@@ -765,7 +765,7 @@ export const getNetworkConnectors = t => {
             display: {
               logo: require(`images/wallets/wallet-connect.svg`),
               name: 'Wallet Connect',
-              description: t('Scan you WalletConnect to Connect'),
+              description: t('Scan your WalletConnect to Connect'),
             },
             package: WalletConnectProvider,
             options: {
@@ -787,7 +787,7 @@ export const getNetworkConnectors = t => {
     case 42220:
       return {
         network: 'celo',
-        cacheProvider: false,
+        cacheProvider: true,
         providerOptions: {
           injected: {
             display: {
@@ -799,7 +799,7 @@ export const getNetworkConnectors = t => {
             display: {
               logo: require(`images/wallets/wallet-connect.svg`),
               name: 'Wallet Connect',
-              description: t('Scan you WalletConnect to Connect'),
+              description: t('Scan your WalletConnect to Connect'),
             },
             package: WalletConnectProvider,
             options: {
@@ -860,7 +860,7 @@ export const getNetworkConnectors = t => {
             display: {
               logo: require(`images/wallets/wallet-connect.svg`),
               name: 'Wallet Connect',
-              description: t('Scan you WalletConnect to Connect'),
+              description: t('Scan your WalletConnect to Connect'),
             },
             package: WalletConnectProvider,
             options: {
