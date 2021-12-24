@@ -77,6 +77,40 @@ export const bscStakePools = [
   },
 
   {
+    id: 'moo_baby-usdt-milk-babyswap',
+    name: 'BabySwap',
+    assets: ['MILK', 'USDT'],
+    token: 'mooBabyUSDT-MILK',
+    tokenDecimals: 18,
+    tokenAddress: '0xBBEfaf1f7585EDc59180fDdc5bAf46b8A5D7A206',
+    tokenOracle: 'lps',
+    tokenOracleId: 'baby-usdt-milk',
+    earnedToken: 'MILK',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xBf37f781473f3b50E82C668352984865eac9853f',
+    earnContractAddress: '0x5ff90a4C704E65dc4aF232DE936583EeC738AB2f',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'MILK',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1641723900,
+    partners: [
+      {
+        logo: 'stake/babyswap/logo.png',
+        background: 'stake/babyswap/bg.png',
+        text: 'The Crypto You is the first Baby Metaverse blockchain game on Binance Smart Chain (BSC). Players can summon characters, complete daily mining missions, conquer the Dark Force, loot rare items to play and earn.',
+        website: 'https://home.babyswap.finance/',
+        social: {
+          telegram: 'https://t.me/baby_swap',
+          twitter: 'https://twitter.com/babyswap_bsc',
+        },
+      },
+    ],
+  },
+
+  {
     id: 'moo_banana-banana-busd-bitcrush',
     name: 'Bitcrush',
     logo: 'degens/banana-busd.svg',
