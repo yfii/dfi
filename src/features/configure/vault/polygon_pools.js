@@ -1493,7 +1493,7 @@ export const polygonPools = [
       'https://quickswap.exchange/#/swap?outputCurrency=0xa3Fa99A148fA48D14Ed51d610c367C61876997F1',
   },
   {
-    id: 'quick-mai-matic',
+    id: 'quick-mai-matic-eol',
     name: 'MAI-MATIC LP',
     token: 'MAI-MATIC LP',
     tokenDescription: 'QuickSwap',
@@ -1507,8 +1507,9 @@ export const polygonPools = [
     tvl: 0,
     oracle: 'lps',
     oracleId: 'quick-mai-matic',
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'QuickSwap',
     assets: ['MAI', 'MATIC'],
     risks: [
