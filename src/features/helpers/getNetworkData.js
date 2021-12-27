@@ -795,6 +795,27 @@ export const getNetworkConnectors = t => {
               description: t('Home-BrowserWallet'),
             },
           },
+          'custom-wc-valora': {
+            display: {
+              logo: require(`images/wallets/valora.png`),
+              name: 'Valora',
+              description: t('Connects to Valora, a mobile payments app that works worldwide'),
+            },
+            package: WalletConnectProvider,
+            options: {
+              rpc: {
+                1: 'https://forno.celo.org',
+                42220: 'https://forno.celo.org',
+              },
+            },
+            connector: async (ProviderPackage, options) => {
+              const provider = new ProviderPackage(options);
+
+              await provider.enable();
+
+              return provider;
+            },
+          },
           'custom-wc-celo': {
             display: {
               logo: require(`images/wallets/wallet-connect.svg`),
