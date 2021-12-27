@@ -5687,7 +5687,7 @@ export const bscPools = [
       'https://pancakeswap.finance/swap?inputCurrency=0x2170Ed0880ac9A755fd29B2688956BD959F933F8&outputCurrency=0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
   },
   {
-    id: 'banana-typh-bnb',
+    id: 'banana-typh-bnb-eol',
     logo: 'bnb-pairs/typh-bnb.svg',
     name: 'TYPH-BNB LP',
     token: 'TYPH-BNB ApeLP',
@@ -5703,8 +5703,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'banana-typh-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'ApeSwap',
     assets: ['TYPH', 'BNB'],
     addLiquidityUrl:
@@ -14489,7 +14490,7 @@ export const bscPools = [
   },
 
   {
-    id: 'cake-bts-busd',
+    id: 'cake-bts-busd-eol',
     logo: 'single-assets/BTS.png',
     name: 'BTS-BUSD LP',
     token: 'BTS-BUSD LP',
@@ -14505,8 +14506,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cake-bts-busd',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    retireReason: 'rewards',
+    status: 'eol',
     platform: 'Other',
     assets: ['BTS', 'BUSD'],
     buyTokenUrl:

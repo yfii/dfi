@@ -1019,7 +1019,7 @@ export const cronosPools = [
     addLiquidityUrl: 'https://app.cronaswap.org/add/CRO/0x062E66477Faf219F25D27dCED647BF57C3107d52',
   },
   {
-    id: 'crona-cro-dai',
+    id: 'crona-cro-dai-eol',
     name: 'DAI-CRO',
     token: 'DAI-CRO LP',
     tokenDescription: 'CronaSwap',
@@ -1034,8 +1034,9 @@ export const cronosPools = [
     oracle: 'lps',
     oracleId: 'crona-cro-dai',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'CronaSwap',
     assets: ['DAI', 'CRO'],
     risks: [

@@ -2163,8 +2163,9 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'spirit-ftm-ice',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'SpiritSwap',
     assets: ['ICE', 'FTM'],
     risks: [
@@ -3807,8 +3808,7 @@ export const fantomPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
-    addLiquidityUrl:
-      'https://app.sushi.com/add/ETH/0xA92d41Ab8eFeE617d80a829CD9F5683c5F793ADA',
+    addLiquidityUrl: 'https://app.sushi.com/add/ETH/0xA92d41Ab8eFeE617d80a829CD9F5683c5F793ADA',
     buyTokenUrl:
       'https://app.sushi.com/swap?outputCurrency=0xA92d41Ab8eFeE617d80a829CD9F5683c5F793ADA',
   },

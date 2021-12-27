@@ -404,7 +404,7 @@ export const moonriverPools = [
       'https://www.huckleberry.finance/#/add/MOVR/0x41562ae242d194247389152aCAa7a9397136b09F',
   },
   {
-    id: 'finn-eth-finn',
+    id: 'finn-eth-finn-eol',
     name: 'ETH-FINN',
     token: 'ETH-FINN FLP',
     tokenDescription: 'Huckleberry',
@@ -419,8 +419,9 @@ export const moonriverPools = [
     oracle: 'lps',
     oracleId: 'finn-eth-finn',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Huckleberry',
     assets: ['ETH', 'FINN'],
     risks: [
@@ -438,7 +439,7 @@ export const moonriverPools = [
       'https://www.huckleberry.finance/#/add/0x576fDe3f61B7c97e381c94e7A03DBc2e08Af1111/0x9A92B5EBf1F6F6f7d93696FCD44e5Cf75035A756',
   },
   {
-    id: 'finn-wbtc-finn',
+    id: 'finn-wbtc-finn-eol',
     name: 'WBTC-FINN',
     token: 'WBTC-FINN FLP',
     tokenDescription: 'Huckleberry',
@@ -453,8 +454,9 @@ export const moonriverPools = [
     oracle: 'lps',
     oracleId: 'finn-wbtc-finn',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Huckleberry',
     assets: ['WBTC', 'FINN'],
     risks: [
@@ -642,7 +644,7 @@ export const moonriverPools = [
       'https://www.huckleberry.finance/#/add/0x9D5bc9B873AeD984e2B6A64d4792249D68BbA2Fe/0x9A92B5EBf1F6F6f7d93696FCD44e5Cf75035A756',
   },
   {
-    id: 'finn-wan-finn',
+    id: 'finn-wan-finn-eol',
     name: 'WAN-FINN',
     token: 'WAN-FINN FLP',
     tokenDescription: 'Huckleberry',
@@ -657,8 +659,9 @@ export const moonriverPools = [
     oracle: 'lps',
     oracleId: 'finn-wan-finn',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Huckleberry',
     assets: ['WAN', 'FINN'],
     risks: [

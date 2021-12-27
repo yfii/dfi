@@ -918,7 +918,7 @@ export const avalanchePools = [
       'https://www.traderjoexyz.com/#/trade?outputCurrency=0x130966628846BFd36ff31a822705796e8cb8C18D',
   },
   {
-    id: 'joe-wavax-bifi',
+    id: 'joe-wavax-bifi-eol',
     name: 'BIFI-AVAX LP',
     token: 'BIFI-AVAX JLP',
     tokenDescription: 'Trader Joe',
@@ -933,8 +933,9 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'joe-wavax-bifi',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Trader Joe',
     assets: ['BIFI', 'AVAX'],
     risks: [
@@ -2018,7 +2019,7 @@ export const avalanchePools = [
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
   },
   {
-    id: 'joe-syn-wavax',
+    id: 'joe-syn-wavax-eol',
     name: 'SYN-AVAX LP',
     token: 'SYN-AVAX JLP',
     tokenDescription: 'Trader Joe',
@@ -2033,8 +2034,9 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'joe-syn-wavax',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Trader Joe',
     assets: ['SYN', 'AVAX'],
     risks: [
