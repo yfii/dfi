@@ -65,7 +65,7 @@ export const moonriverPools = [
     buyTokenUrl:
       'https://app.solarbeam.io/exchange/swap?inputCurrency=0x98878B06940aE243284CA214f92Bb71a2b032B8A&outputCurrency=0x0caE51e1032e8461f4806e26332c030E34De3aDb',
     addLiquidityUrl:
-      'https://app.solarbeam.io/exchange/add/0x98878B06940aE243284CA214f92Bb71a2b032B8A/0x0caE51e1032e8461f4806e26332c030E34De3aDb',
+      'https://app.solarbeam.io/exchange/add/ETH/0x0caE51e1032e8461f4806e26332c030E34De3aDb',
   },
   {
     id: 'solarbeam-frax-rome',
@@ -128,7 +128,7 @@ export const moonriverPools = [
     buyTokenUrl:
       'https://app.solarbeam.io/exchange/swap?inputCurrency=0x98878B06940aE243284CA214f92Bb71a2b032B8A&outputCurrency=0xFb2019DfD635a03cfFF624D210AEe6AF2B00fC2C',
     addLiquidityUrl:
-      'https://app.solarbeam.io/exchange/add/0x98878B06940aE243284CA214f92Bb71a2b032B8A/0xFb2019DfD635a03cfFF624D210AEe6AF2B00fC2C',
+      'https://app.solarbeam.io/exchange/add/ETH/0xFb2019DfD635a03cfFF624D210AEe6AF2B00fC2C',
   },
   {
     id: 'solarbeam-frax-wmovr-2',
@@ -197,7 +197,7 @@ export const moonriverPools = [
     withdrawalFee: '0%',
     buyTokenUrl: 'https://www.huckleberry.finance/#/swap',
     addLiquidityUrl:
-      'https://www.huckleberry.finance/#/add/0x98878B06940aE243284CA214f92Bb71a2b032B8A/0x9A92B5EBf1F6F6f7d93696FCD44e5Cf75035A756',
+      'https://www.huckleberry.finance/#/add/MOVR/0x9A92B5EBf1F6F6f7d93696FCD44e5Cf75035A756',
   },
   {
     id: 'finn-finn-eol',
@@ -265,7 +265,7 @@ export const moonriverPools = [
     withdrawalFee: '0%',
     buyTokenUrl: 'https://www.huckleberry.finance/#/swap',
     addLiquidityUrl:
-      'https://www.huckleberry.finance/#/add/0x98878B06940aE243284CA214f92Bb71a2b032B8A/0xE936CAA7f6d9F5C9e907111FCAf7c351c184CDA7',
+      'https://www.huckleberry.finance/#/add/MOVR/0xE936CAA7f6d9F5C9e907111FCAf7c351c184CDA7',
   },
   {
     id: 'finn-eth-wmovr',
@@ -299,7 +299,7 @@ export const moonriverPools = [
     withdrawalFee: '0%',
     buyTokenUrl: 'https://www.huckleberry.finance/#/swap',
     addLiquidityUrl:
-      'https://www.huckleberry.finance/#/add/0x98878B06940aE243284CA214f92Bb71a2b032B8A/0x576fDe3f61B7c97e381c94e7A03DBc2e08Af1111',
+      'https://www.huckleberry.finance/#/add/MOVR/0x576fDe3f61B7c97e381c94e7A03DBc2e08Af1111',
   },
   {
     id: 'finn-wbtc-wmovr',
@@ -333,7 +333,7 @@ export const moonriverPools = [
     withdrawalFee: '0%',
     buyTokenUrl: 'https://www.huckleberry.finance/#/swap',
     addLiquidityUrl:
-      'https://www.huckleberry.finance/#/add/0x98878B06940aE243284CA214f92Bb71a2b032B8A/0x78F811A431D248c1EDcF6d95ec8551879B2897C3',
+      'https://www.huckleberry.finance/#/add/MOVR/0x78F811A431D248c1EDcF6d95ec8551879B2897C3',
   },
   {
     id: 'finn-usdc-usdt',
@@ -401,7 +401,7 @@ export const moonriverPools = [
     withdrawalFee: '0%',
     buyTokenUrl: 'https://www.huckleberry.finance/#/swap',
     addLiquidityUrl:
-      'https://www.huckleberry.finance/#/add/0x98878B06940aE243284CA214f92Bb71a2b032B8A/0x41562ae242d194247389152aCAa7a9397136b09F',
+      'https://www.huckleberry.finance/#/add/MOVR/0x41562ae242d194247389152aCAa7a9397136b09F',
   },
   {
     id: 'finn-eth-finn',
