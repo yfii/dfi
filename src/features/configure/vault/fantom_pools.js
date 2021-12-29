@@ -2247,7 +2247,7 @@ export const fantomPools = [
     id: 'spirit-ftm-ice',
     logo: 'fantom/ICE-FTM.png',
     name: 'ICE-FTM LP',
-    token: 'ICE-FTM SLP',
+    token: 'ICE-FTM STLP',
     tokenDescription: 'SpiritSwap',
     tokenAddress: '0x936D23C83c2469f6a14B9f5bEaec13879598A5aC',
     tokenDecimals: 18,
