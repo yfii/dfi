@@ -17083,4 +17083,38 @@ export const bscPools = [
     buyTokenUrl:
       'https://pancakeswap.finance/swap?outputCurrency=0x0b15Ddf19D47E6a86A56148fb4aFFFc6929BcB89',
   },
+  {
+    id: 'cakev2-xcv-busd',
+    name: 'XCV-BUSD LP',
+    token: 'XCV-BUSD LP2',
+    tokenDescription: 'PancakeSwap',
+    tokenAddress: '0xD39F05AB936Aa201235005c47B83268f2d9833f8',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooCakeV2XCV-BUSD',
+    earnedTokenAddress: '0x4E9aAC9a233b7E15F2730274D9fFAaD264b45190',
+    earnContractAddress: '0x4E9aAC9a233b7E15F2730274D9fFAaD264b45190',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cakev2-xcv-busd',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'PancakeSwap',
+    assets: ['XCV', 'BUSD'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
+    addLiquidityUrl:
+      'https://pancakeswap.finance/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0x4be63a9b26EE89b9a3a13fd0aA1D0b2427C135f8',
+    buyTokenUrl:
+      'https://pancakeswap.finance/swap?outputCurrency=0x4be63a9b26EE89b9a3a13fd0aA1D0b2427C135f8',
+  },
 ];
