@@ -642,7 +642,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: '1Inch',
+    platform: 'Other',
     assets: ['1INCH'],
     risks: [
       'COMPLEXITY_LOW',
@@ -1592,7 +1592,7 @@ export const bscPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['DEP', 'WUSD'],
     risks: [
       'COMPLEXITY_LOW',
@@ -2682,7 +2682,7 @@ export const bscPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['WUSD', 'WEX'],
     addLiquidityUrl:
       'https://swap.wault.finance/bsc/#/add/0x3fF997eAeA488A082fb7Efc8e6B9951990D0c3aB/0xa9c41A46a6B3531d28d5c32F6633dd2fF05dFB90',
@@ -3044,7 +3044,7 @@ export const bscPools = [
     depositsPaused: true,
     retireReason: 'rewards',
     status: 'eol',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['ONT', 'BNB'],
     addLiquidityUrl:
       'https://swap.wault.finance/bsc/#/add/BNB/0xFd7B3A77848f1C2D67E05E54d78d174a0C850335',
@@ -3438,7 +3438,7 @@ export const bscPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['WUSD', 'BUSD'],
     addLiquidityUrl:
       'https://swap.wault.finance/bsc/#/add/0xe9e7cea3dedca5984780bafc599bd69add087d56/0x3fF997eAeA488A082fb7Efc8e6B9951990D0c3aB',
@@ -3876,7 +3876,7 @@ export const bscPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['DEP', 'BNB'],
     addLiquidityUrl:
       'https://swap.wault.finance/bsc/#/add/BNB/0xcaF5191fc480F43e4DF80106c7695ECA56E48B18',
@@ -4183,7 +4183,7 @@ export const bscPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['TUSD', 'USDT'],
     addLiquidityUrl:
       'https://swap.wault.finance/bsc/#/add/0x55d398326f99059fF775485246999027B3197955/0x14016E85a25aeb13065688cAFB43044C2ef86784',
@@ -4387,7 +4387,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['KRW', 'BNB'],
     withdrawalFee: '0%',
     retireReason: 'rewards',
@@ -4538,7 +4538,7 @@ export const bscPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['WEX', 'BTCB'],
     addLiquidityUrl:
       'https://swap.wault.finance/bsc/#/add/0xa9c41a46a6b3531d28d5c32f6633dd2ff05dfb90/0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c',
@@ -4793,7 +4793,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['WATCH', 'BNB'],
     withdrawalFee: '0%',
     retireReason: 'rewards',
@@ -5306,7 +5306,7 @@ export const bscPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['ETH', 'BETH'],
     addLiquidityUrl:
       'https://swap.wault.finance/bsc/#/add/0x2170Ed0880ac9A755fd29B2688956BD959F933F8/0x250632378E573c6Be1AC2f97Fcdf00515d0Aa91B',
@@ -5437,7 +5437,7 @@ export const bscPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['ETH', 'BNB'],
     addLiquidityUrl:
       'https://swap.wault.finance/bsc/#/add/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c/0x2170ed0880ac9a755fd29b2688956bd959f933f8',
@@ -5464,7 +5464,7 @@ export const bscPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['USDT', 'ALPACA'],
     addLiquidityUrl:
       'https://swap.wault.finance/bsc/#/add/0x55d398326f99059ff775485246999027b3197955/0x8f0528ce5ef7b51152a59745befdd91d97091d2f',
@@ -5491,7 +5491,7 @@ export const bscPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['USDT', 'MATIC'],
     addLiquidityUrl:
       'https://swap.wault.finance/bsc/#/add/0x55d398326f99059ff775485246999027b3197955/0xcc42724c6683b7e57334c4e856f4c9965ed682bd',
@@ -5518,7 +5518,7 @@ export const bscPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['ADA', 'BUSD'],
     addLiquidityUrl:
       'https://swap.wault.finance/bsc/#/add/0xe9e7cea3dedca5984780bafc599bd69add087d56/0x3ee2200efb3400fabb9aacf31297cbdd1d435d47',
@@ -5544,7 +5544,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['XRP', 'BUSD'],
     withdrawalFee: '0%',
     retireReason: 'rewards',
@@ -5573,7 +5573,7 @@ export const bscPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['ALPACA', 'BNB'],
     addLiquidityUrl:
       'https://swap.wault.finance/bsc/#/add/BNB/0x8f0528ce5ef7b51152a59745befdd91d97091d2f',
@@ -5600,7 +5600,7 @@ export const bscPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['USDT', 'WEX'],
     addLiquidityUrl:
       'https://swap.wault.finance/bsc/#/add/0x55d398326f99059ff775485246999027b3197955/0xa9c41a46a6b3531d28d5c32f6633dd2ff05dfb90',
@@ -5627,7 +5627,7 @@ export const bscPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'WaultFinance',
+    platform: 'Other',
     assets: ['WEX', 'BNB'],
     addLiquidityUrl:
       'https://swap.wault.finance/bsc/#/add/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c/0xa9c41a46a6b3531d28d5c32f6633dd2ff05dfb90',
@@ -11249,7 +11249,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Autofarm',
+    platform: 'Other',
     assets: ['ETH'],
   },
 
@@ -11322,7 +11322,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Autofarm',
+    platform: 'Other',
     assets: ['BTCB'],
   },
 
@@ -11878,7 +11878,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Autofarm',
+    platform: 'Other',
     assets: ['SXP'],
   },
   {
@@ -11900,7 +11900,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Autofarm',
+    platform: 'Other',
     assets: ['ADA'],
   },
   {
@@ -11922,7 +11922,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Autofarm',
+    platform: 'Other',
     assets: ['BNB'],
     buyTokenUrl:
       'https://pancakeswap.finance/swap?outputCurrency=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
@@ -11946,7 +11946,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Autofarm',
+    platform: 'Other',
     assets: ['BUSD'],
   },
   {
@@ -11968,7 +11968,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Autofarm',
+    platform: 'Other',
     assets: ['USDT'],
   },
   {
@@ -11990,7 +11990,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Autofarm',
+    platform: 'Other',
     assets: ['USDC'],
   },
 
@@ -12243,7 +12243,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Autofarm',
+    platform: 'Other',
     assets: ['CAKE', 'BNB'],
     removeLiquidityUrl:
       'https://v1exchange.pancakeswap.finance/#/remove/BNB/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
@@ -12293,7 +12293,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Autofarm',
+    platform: 'Other',
     assets: ['AUTO', 'BNB'],
     retireReason: 'rewards',
     buyTokenUrl:
@@ -12475,7 +12475,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Autofarm',
+    platform: 'Other',
     assets: ['CAKE'],
     depositFee: '<0.1%',
     withdrawalFee: '0%',
@@ -13494,7 +13494,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Autofarm',
+    platform: 'Other',
     assets: ['BETH', 'ETH'],
     removeLiquidityUrl:
       'https://v1exchange.pancakeswap.finance/#/remove/0x2170Ed0880ac9A755fd29B2688956BD959F933F8/0x250632378E573c6Be1AC2f97Fcdf00515d0Aa91B',
@@ -13569,7 +13569,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Autofarm',
+    platform: 'Other',
     assets: ['BUSD', 'BNB'],
     removeLiquidityUrl:
       'https://v1exchange.pancakeswap.finance/#/remove/BNB/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
@@ -13594,7 +13594,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Autofarm',
+    platform: 'Other',
     assets: ['BTCB', 'BNB'],
     removeLiquidityUrl:
       'https://v1exchange.pancakeswap.finance/#/remove/0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c/BNB',
@@ -13920,7 +13920,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: '1Inch',
+    platform: 'Other',
     assets: ['1INCH', 'BNB'],
     addLiquidityUrl:
       'https://1inch.exchange/#/dao/pools?network=56&token0=0x0000000000000000000000000000000000000000&token1=0x111111111117dc0aa78b770fa6a738034120c302',
@@ -14559,7 +14559,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Autofarm',
+    platform: 'Other',
     assets: ['BTCB'],
     buyTokenUrl:
       'https://pancakeswap.finance/swap?outputCurrency=0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c',
@@ -14584,7 +14584,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Autofarm',
+    platform: 'Other',
     assets: ['ETH'],
     buyTokenUrl:
       'https://pancakeswap.finance/swap?outputCurrency=0x2170ed0880ac9a755fd29b2688956bd959f933f8',
@@ -14609,7 +14609,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Autofarm',
+    platform: 'Other',
     assets: ['BUSD'],
     buyTokenUrl:
       'https://pancakeswap.finance/swap?outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56',
@@ -14634,7 +14634,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Autofarm',
+    platform: 'Other',
     assets: ['USDT'],
     buyTokenUrl:
       'https://pancakeswap.finance/swap?outputCurrency=0x55d398326f99059ff775485246999027b3197955',
@@ -14797,7 +14797,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Autofarm',
+    platform: 'Other',
     assets: ['CAKE'],
     buyTokenUrl:
       'https://pancakeswap.finance/swap?outputCurrency=0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
@@ -14822,7 +14822,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Autofarm',
+    platform: 'Other',
     assets: ['BUSD'],
     buyTokenUrl:
       'https://pancakeswap.finance/swap?outputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56',

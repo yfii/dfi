@@ -2916,7 +2916,7 @@ export const avalanchePools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'Gondola',
+    platform: 'Other',
     assets: ['zUSDT', 'USDT'],
     addLiquidityUrl: 'https://app.gondola.finance/#/deposit/usdt',
     buyTokenUrl: 'https://app.gondola.finance/#/swap/usdt',
@@ -3056,7 +3056,7 @@ export const avalanchePools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'Snowball',
+    platform: 'Other',
     assets: ['USDT', 'BUSD', 'DAI'],
     addLiquidityUrl: 'https://snowball.network/stablevault/',
   },
@@ -3081,7 +3081,7 @@ export const avalanchePools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'Complus',
+    platform: 'Other',
     assets: ['ETH', 'AVAX'],
     addLiquidityUrl:
       'https://avadex.complus.exchange/#/add/AVAX/0xf20d962a6c8f70c731bd838a3a388D7d48fA6e15',
@@ -3107,7 +3107,7 @@ export const avalanchePools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Complus',
+    platform: 'Other',
     assets: ['PNG', 'AVAX'],
     addLiquidityUrl:
       'https://avadex.complus.exchange/#/add/AVAX/0x60781C2586D68229fde47564546784ab3fACA982',
@@ -3135,7 +3135,7 @@ export const avalanchePools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'Snowball',
+    platform: 'Other',
     assets: ['SNOB', 'AVAX'],
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0xC38f41A296A4493Ff429F1238e030924A1542e50',
@@ -3162,7 +3162,7 @@ export const avalanchePools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Complus',
+    platform: 'Other',
     assets: ['COM', 'AVAX'],
     retireReason: 'tvl',
     addLiquidityUrl:
@@ -3191,7 +3191,7 @@ export const avalanchePools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'Complus',
+    platform: 'Other',
     assets: ['DAI', 'AVAX'],
     addLiquidityUrl:
       'https://avadex.complus.exchange/#/add/AVAX/0xbA7dEebBFC5fA1100Fb055a87773e1E99Cd3507a',
