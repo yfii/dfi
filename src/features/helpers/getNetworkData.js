@@ -340,7 +340,19 @@ export const getNetworkStables = () => {
         'EURS',
       ];
     case 250:
-      return ['USDC', 'USDT', 'DAI', 'fUSDT', 'MIM', 'FRAX', 'MAI', 'DOLA', 'TUSD', 'UST', 'asUSDC'];
+      return [
+        'USDC',
+        'USDT',
+        'DAI',
+        'fUSDT',
+        'MIM',
+        'FRAX',
+        'MAI',
+        'DOLA',
+        'TUSD',
+        'UST',
+        'asUSDC',
+      ];
     case 1666600000:
       return ['BUSD', 'bscBUSD', 'USDC', 'USDT', 'UST', 'DAI', 'FRAX'];
     case 42161:
@@ -392,8 +404,7 @@ export const getNetworkConnectors = t => {
         providerOptions: {
           injected: {
             display: {
-              name: 'Injected',
-              description: t('Home-BrowserWallet'),
+              name: 'MetaMask',
             },
           },
           walletconnect: {
@@ -449,7 +460,7 @@ export const getNetworkConnectors = t => {
             display: {
               logo: require(`images/wallets/coinbase.png`),
               name: 'Coinbase Wallet',
-              description: t('Connect your Coinbase Wallet'),
+              description: t('Connect to your Coinbase Wallet'),
             },
             options: {
               appName: 'Beefy Finance',
@@ -476,8 +487,7 @@ export const getNetworkConnectors = t => {
         providerOptions: {
           injected: {
             display: {
-              name: 'Injected',
-              description: t('Home-BrowserWallet'),
+              name: 'MetaMask',
             },
           },
           // walletconnect: {
@@ -507,15 +517,14 @@ export const getNetworkConnectors = t => {
         providerOptions: {
           injected: {
             display: {
-              name: 'Injected',
-              description: t('Home-BrowserWallet'),
+              name: 'MetaMask',
             },
           },
           'custom-wc-avax': {
             display: {
               logo: require(`images/wallets/wallet-connect.svg`),
               name: 'Wallet Connect',
-              description: t('Scan you WalletConnect to Connect'),
+              description: t('Scan your WalletConnect to Connect'),
             },
             package: WalletConnectProvider,
             options: {
@@ -536,7 +545,7 @@ export const getNetworkConnectors = t => {
             display: {
               logo: require(`images/wallets/coinbase.png`),
               name: 'Coinbase Wallet',
-              description: t('Connect your Coinbase Wallet'),
+              description: t('Connect to your Coinbase Wallet'),
             },
             options: {
               appName: 'Beefy Finance',
@@ -566,8 +575,7 @@ export const getNetworkConnectors = t => {
         providerOptions: {
           injected: {
             display: {
-              name: 'Injected',
-              description: t('Home-BrowserWallet'),
+              name: 'MetaMask',
             },
           },
           walletconnect: {
@@ -579,27 +587,27 @@ export const getNetworkConnectors = t => {
                 137: 'https://polygon-rpc.com/',
               },
             },
-            'custom-cb-polygon': {
-              display: {
-                logo: require(`images/wallets/coinbase.png`),
-                name: 'Coinbase Wallet',
-                description: t('Connect your Coinbase Wallet'),
-              },
-              options: {
-                appName: 'Beefy Finance',
-                appLogoUrl: 'https://app.beefy.finance/static/media/BIFI.e797b2e4.png',
-                darkMode: false,
-              },
-              package: WalletLink,
-              connector: async (ProviderPackage, options) => {
-                const walletLink = new ProviderPackage(options);
+          },
+          'custom-cb-polygon': {
+            display: {
+              logo: require(`images/wallets/coinbase.png`),
+              name: 'Coinbase Wallet',
+              description: t('Connect to your Coinbase Wallet'),
+            },
+            options: {
+              appName: 'Beefy Finance',
+              appLogoUrl: 'https://app.beefy.finance/static/media/BIFI.e797b2e4.png',
+              darkMode: false,
+            },
+            package: WalletLink,
+            connector: async (ProviderPackage, options) => {
+              const walletLink = new ProviderPackage(options);
 
-                const provider = walletLink.makeWeb3Provider('https://polygon-rpc.com/', 137);
+              const provider = walletLink.makeWeb3Provider('https://polygon-rpc.com/', 137);
 
-                await provider.enable();
+              await provider.enable();
 
-                return provider;
-              },
+              return provider;
             },
           },
         },
@@ -611,8 +619,7 @@ export const getNetworkConnectors = t => {
         providerOptions: {
           injected: {
             display: {
-              name: 'Injected',
-              description: t('Home-BrowserWallet'),
+              name: 'MetaMask',
             },
           },
           'custom-wc-ftm': {
@@ -640,7 +647,7 @@ export const getNetworkConnectors = t => {
             display: {
               logo: require(`images/wallets/coinbase.png`),
               name: 'Coinbase Wallet',
-              description: t('Connect your Coinbase Wallet'),
+              description: t('Connect to your Coinbase Wallet'),
             },
             options: {
               appName: 'Beefy Finance',
@@ -667,8 +674,7 @@ export const getNetworkConnectors = t => {
         providerOptions: {
           injected: {
             display: {
-              name: 'Injected',
-              description: t('Home-BrowserWallet'),
+              name: 'MetaMask',
             },
           },
           'custom-wc-one': {
@@ -701,8 +707,7 @@ export const getNetworkConnectors = t => {
         providerOptions: {
           injected: {
             display: {
-              name: 'Injected',
-              description: t('Home-BrowserWallet'),
+              name: 'MetaMask',
             },
           },
           'custom-wc-arb': {
@@ -730,7 +735,7 @@ export const getNetworkConnectors = t => {
             display: {
               logo: require(`images/wallets/coinbase.png`),
               name: 'Coinbase Wallet',
-              description: t('Connect your Coinbase Wallet'),
+              description: t('Connect to your Coinbase Wallet'),
             },
             options: {
               appName: 'Beefy Finance',
@@ -757,8 +762,7 @@ export const getNetworkConnectors = t => {
         providerOptions: {
           injected: {
             display: {
-              name: 'Injected',
-              description: t('Home-BrowserWallet'),
+              name: 'MetaMask',
             },
           },
           'custom-wc-mr': {
@@ -791,8 +795,7 @@ export const getNetworkConnectors = t => {
         providerOptions: {
           injected: {
             display: {
-              name: 'Injected',
-              description: t('Home-BrowserWallet'),
+              name: 'MetaMask',
             },
           },
           'custom-wc-valora': {
@@ -846,8 +849,7 @@ export const getNetworkConnectors = t => {
         providerOptions: {
           injected: {
             display: {
-              name: 'Injected',
-              description: t('Home-BrowserWallet'),
+              name: 'MetaMask',
             },
           },
           'custom-cdc': {
