@@ -1195,7 +1195,7 @@ export const fantomPools = [
       'https://spookyswap.finance/add/0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83/0x3129662808bEC728a27Ab6a6b9AFd3cBacA8A43c',
   },
   {
-    id: 'boo-dola-inv',
+    id: 'boo-dola-inv-eol',
     name: 'DOLA-INV',
     token: 'DOLA-INV LP',
     tokenDescription: 'SpookySwap',
@@ -1210,8 +1210,8 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'boo-dola-inv',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'SpookySwap',
     assets: ['DOLA', 'INV'],
     risks: [
@@ -1224,6 +1224,7 @@ export const fantomPools = [
     ],
     stratType: 'StratLP',
     withdrawalFee: '0%',
+    retireReason: 'rewards',
     buyTokenUrl:
       'https://spookyswap.finance/swap?outputCurrency=0xb84527D59b6Ecb96F433029ECc890D4492C5dCe1',
     addLiquidityUrl:
