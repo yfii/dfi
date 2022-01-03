@@ -85,7 +85,7 @@ export const bscStakePools = [
     tokenAddress: '0xC9215F674876da17A671f22C2083E200eD78D0C8',
     tokenOracle: 'lps',
     tokenOracleId: 'baby-aot-usdt',
-    earnedToken: 'A.O.T',
+    earnedToken: 'AOT',
     earnedTokenDecimals: 6,
     earnedTokenAddress: '0x9589014F7a8547B89A6331eEEe32b7fBd5852af9',
     earnContractAddress: '0xDd94124a02Be4fb6d1a12141E107eEA524C111FF',
