@@ -124,8 +124,8 @@ const validatePools = async () => {
         if (pool.status !== 'eol') {
           console.error(`Error: ${pool.id} : Pool is empty`);
           exitCode = 1;
-          if (!('emptyVault' in updates)) updates['emptyVault'] = [];
-          updates.emptyVault.push(pool.earnContractAddress);
+          if (!('emptyVault' in updates)) updates['emptyVault'] = {};
+          updates.emptyVault[pool.id] = pool.earnContractAddress;
         } else {
           console.warn(`${pool.id} : eol pool is empty`);
         }

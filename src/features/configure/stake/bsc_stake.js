@@ -77,6 +77,52 @@ export const bscStakePools = [
   },
 
   {
+    id: 'moo_baby-aot-usdt-ageoftanks',
+    name: 'AgeOfTanks',
+    assets: ['AOT', 'USDT'],
+    token: 'mooBabyAOT-USDT',
+    tokenDecimals: 18,
+    tokenAddress: '0xC9215F674876da17A671f22C2083E200eD78D0C8',
+    tokenOracle: 'lps',
+    tokenOracleId: 'baby-aot-usdt',
+    earnedToken: 'A.O.T',
+    earnedTokenDecimals: 6,
+    earnedTokenAddress: '0x9589014F7a8547B89A6331eEEe32b7fBd5852af9',
+    earnContractAddress: '0xDd94124a02Be4fb6d1a12141E107eEA524C111FF',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'A.O.T',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1642601238,
+    partners: [
+      {
+        logo: 'stake/tanks/logo.png',
+        background: 'stake/tanks/bg.png',
+        text:
+          'If you’re tired of NFT games that are only based on the technology but are not good games.\n' +
+          'If you’re tired of spending thousands of hours and not getting anything out of it. Look no further…\n' +
+          '\n' +
+          'WELCOME TO EARTH ZERO METAVERSE YEAR 23100\n' +
+          'The ozone layer that protectively embraced the planet no longer exists. Exposed to harsh solar storms the skies\n' +
+          'rage with turbulent winds. This is an age without oceans. This is an age without flight. This is an age where the\n' +
+          'fight for supremacy hinges on having the Ultimate Armoured Vehicle.\n' +
+          '\n' +
+          'For who controls the tanks control A.O.T. And who controls the A.O.T, controls the Metaverse!\n' +
+          '\n' +
+          'Mine resources, build your NFT tanks, and defend your territory against thousands of other players that will try to\n' +
+          'outsmart you! Are you ready to Assemble.Outwit.Triumph?\n',
+        website: 'https://ageoftanks.io/',
+        social: {
+          telegram: 'https://t.me/ageoftanksdiscussion',
+          twitter: 'https://twitter.com/AgeOfTanksNFT?s=09',
+        },
+      },
+    ],
+  },
+
+  {
     id: 'moo_baby-usdt-milk-babyswap',
     name: 'BabySwap',
     assets: ['MILK', 'USDT'],
