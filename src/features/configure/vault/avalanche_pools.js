@@ -2832,41 +2832,6 @@ export const avalanchePools = [
       'https://app.pangolin.exchange/#/swap?inputCurrency=0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7&outputCurrency=0x50b7545627a5162F82A992c33b87aDc75187B218',
   },
   {
-    id: 'png-bifi-png-eol',
-    name: 'BIFI-PNG LP',
-    token: 'BIFI-PNG LP',
-    tokenDescription: 'Pangolin',
-    tokenAddress: '0x7D1F298D41A03eda3AD9CbB06CA061Ba60b4BdAe',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooPangolinBIFI-PNG',
-    earnedTokenAddress: '0x51E73582751A633630abcB13CD77d25958C178f5',
-    earnContractAddress: '0x51E73582751A633630abcB13CD77d25958C178f5',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'png-bifi-png',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    retireReason: 'rewards',
-    platform: 'Pangolin',
-    assets: ['BIFI', 'PNG'],
-    risks: [
-      'COMPLEXITY_LOW',
-      'BATTLE_TESTED',
-      'IL_HIGH',
-      'MCAP_MICRO',
-      'PLATFORM_ESTABLISHED',
-      'CONTRACTS_VERIFIED',
-    ],
-    stratType: 'StratLP',
-    addLiquidityUrl:
-      'https://app.pangolin.exchange/#/add/0x60781c2586d68229fde47564546784ab3faca982/0xd6070ae98b8069de6B494332d1A1a81B6179D960',
-    buyTokenUrl:
-      'https://app.pangolin.exchange/#/swap?inputCurrency=0x60781c2586d68229fde47564546784ab3faca982&outputCurrency=0xd6070ae98b8069de6B494332d1A1a81B6179D960',
-  },
-  {
     id: 'png-bnb-avax-pause',
     name: 'BNB-AVAX LP',
     token: 'BNB-AVAX LP',
@@ -3008,8 +2973,7 @@ export const avalanchePools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
-    addLiquidityUrl:
-      'https://avax.olive.cash/add/AVAX/0x617724974218A18769020A70162165A539c07E8a',
+    addLiquidityUrl: 'https://avax.olive.cash/add/AVAX/0x617724974218A18769020A70162165A539c07E8a',
     buyTokenUrl:
       'https://avax.olive.cash/swap?inputCurrency=AVAX&outputCurrency=0x617724974218A18769020A70162165A539c07E8a',
   },
@@ -3173,34 +3137,6 @@ export const avalanchePools = [
       'https://avadex.complus.exchange/#/add/AVAX/0x3711c397B6c8F7173391361e27e67d72F252cAad',
     buyTokenUrl:
       'https://avadex.complus.exchange/#/swap?inputCurrency=0x3711c397B6c8F7173391361e27e67d72F252cAad&outputCurrency=AVAX',
-  },
-
-  {
-    id: 'com-dai-avax-eol',
-    logo: 'avax-pairs/DAI-AVAX.png',
-    name: 'DAI-AVAX LP',
-    token: 'DAI-AVAX LP',
-    tokenDescription: 'Complus',
-    tokenAddress: '0x7583a59a50d761E491d0c9393cA5214dbB613806',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooComplusDAI-AVAX',
-    earnedTokenAddress: '0xB5F0fF997BEc850b11792ed07b2B5AbDEa869B84',
-    earnContractAddress: '0xB5F0fF997BEc850b11792ed07b2B5AbDEa869B84',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'com-dai-avax',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    retireReason: 'rewards',
-    platform: 'Other',
-    assets: ['DAI', 'AVAX'],
-    addLiquidityUrl:
-      'https://avadex.complus.exchange/#/add/AVAX/0xbA7dEebBFC5fA1100Fb055a87773e1E99Cd3507a',
-    buyTokenUrl:
-      'https://avadex.complus.exchange/#/swap?inputCurrency=0xbA7dEebBFC5fA1100Fb055a87773e1E99Cd3507a&outputCurrency=AVAX',
   },
 
   {
