@@ -2317,7 +2317,9 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://swap.olive.cash/#/add/0xd586E7F844cEa2F87f50152665BCbc2C279D8d70/0xc7198437980c041c805A1EDcbA50c1Ce5db95118',
+      'https://avax.olive.cash/add/0xd586E7F844cEa2F87f50152665BCbc2C279D8d70/0xc7198437980c041c805A1EDcbA50c1Ce5db95118',
+    buyTokenUrl:
+      'https://avax.olive.cash/swap?inputCurrency=0xd586E7F844cEa2F87f50152665BCbc2C279D8d70&outputCurrency=0xc7198437980c041c805A1EDcbA50c1Ce5db95118',
   },
   {
     id: 'olive-busd.e-usdt.e',
@@ -2349,7 +2351,9 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://swap.olive.cash/#/add/0x19860CCB0A68fd4213aB9D8266F7bBf05A8dDe98/0xc7198437980c041c805A1EDcbA50c1Ce5db95118',
+      'https://avax.olive.cash/add/0x19860CCB0A68fd4213aB9D8266F7bBf05A8dDe98/0xc7198437980c041c805A1EDcbA50c1Ce5db95118',
+    buyTokenUrl:
+      'https://avax.olive.cash/swap?inputCurrency=0x19860CCB0A68fd4213aB9D8266F7bBf05A8dDe98&outputCurrency=0xc7198437980c041c805A1EDcbA50c1Ce5db95118',
   },
   {
     id: 'pangolin-png-qi-pause',
@@ -3005,9 +3009,9 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://swap.olive.cash/#/add/AVAX/0x617724974218A18769020A70162165A539c07E8a',
+      'https://avax.olive.cash/add/AVAX/0x617724974218A18769020A70162165A539c07E8a',
     buyTokenUrl:
-      'https://swap.olive.cash/#/swap?outputCurrency=0x617724974218A18769020A70162165A539c07E8a',
+      'https://avax.olive.cash/swap?inputCurrency=AVAX&outputCurrency=0x617724974218A18769020A70162165A539c07E8a',
   },
   {
     id: 'olive-olive-usdt-eol',
