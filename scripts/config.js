@@ -8,6 +8,7 @@ import { arbitrumPools } from '../src/features/configure/vault/arbitrum_pools.js
 import { celoPools } from '../src/features/configure/vault/celo_pools.js';
 import { moonriverPools } from '../src/features/configure/vault/moonriver_pools.js';
 import { cronosPools } from '../src/features/configure/vault/cronos_pools.js';
+import { fusePools } from '../src/features/configure/vault/fuse_pools.js';
 
 export const chainPools = {
   bsc: bscPools,
@@ -20,6 +21,7 @@ export const chainPools = {
   celo: celoPools,
   moonriver: moonriverPools,
   cronos: cronosPools,
+  fuse: fusePools,
 };
 
 export const chainRpcs = {
@@ -33,4 +35,5 @@ export const chainRpcs = {
   celo: process.env.CELO_RPC || 'https://forno.celo.org',
   moonriver: process.env.MOONRIVER_RPC || 'https://rpc.moonriver.moonbeam.network',
   cronos: process.env.CRONOS_RPC || 'https://evm-cronos.crypto.org',
+  fuse: process.env.FUSE_RPC || 'https://rpc.fuse.io',
 };

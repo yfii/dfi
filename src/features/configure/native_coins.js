@@ -87,4 +87,12 @@ export const nativeCoins = [
     wrappedSymbol: 'WCRO',
     allowance: Infinity,
   },
+  {
+    chainId: 122,
+    name: 'Fuse',
+    symbol: 'FUSE',
+    decimals: 18,
+    wrappedSymbol: 'WFUSE',
+    allowance: Infinity,
+  },
 ];

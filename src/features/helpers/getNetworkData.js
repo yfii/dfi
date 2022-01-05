@@ -46,6 +46,10 @@ import {
   arbitrumStakePools,
   arbitrumAddressBook,
   arbitrumZaps,
+  fusePools,
+  fuseStakePools,
+  fuseAddressBook,
+  fuseZaps,
 } from '../configure';
 
 export const appNetworkId = window.REACT_APP_NETWORK_ID;
@@ -61,6 +65,7 @@ const networkTxUrls = {
   42220: hash => `https://explorer.celo.org/tx/${hash}`,
   1285: hash => `https://moonriver.moonscan.io/tx/${hash}`,
   25: hash => `https://cronos.crypto.org/explorer/tx/${hash}`,
+  122: hash => `https://explorer.fuse.io/tx/${hash}`,
 };
 
 const networkFriendlyName = {
@@ -74,6 +79,7 @@ const networkFriendlyName = {
   42220: 'Celo',
   1285: 'Moonriver',
   25: 'Cronos',
+  122: 'Fuse',
 };
 
 const networkBuyUrls = {
@@ -91,6 +97,7 @@ const networkBuyUrls = {
     'https://app.sushi.com/swap?inputCurrency=0x471ece3750da237f93b8e339c536989b8978a438&outputCurrency=0x639a647fbe20b6c8ac19e48e2de44ea792c62c5c',
   1285: 'https://app.sushi.com/swap?inputCurrency=0x173fd7434b8b50df08e3298f173487ebdb35fd14&outputCurrency=0xf50225a84382c74cbdea10b0c176f71fc3de0c4d',
   25: 'https://vvs.finance/swap?inputCurrency=0x5c7f8a570d578ed84e63fdfa7b1ee72deae1ae23&outputCurrency=0xe6801928061cdbe32ac5ad0634427e140efd05f9',
+  122: '',
 };
 
 export const getNetworkCoin = () => {
@@ -119,6 +126,8 @@ export const getNetworkPools = () => {
       return moonriverPools;
     case 25:
       return cronosPools;
+    case 122:
+      return fusePools;
     default:
       return [];
   }
@@ -146,6 +155,8 @@ export const getNetworkVaults = (networkId = appNetworkId) => {
       return indexBy(moonriverPools, 'id');
     case 25:
       return indexBy(cronosPools, 'id');
+    case 122:
+      return indexBy(fusePools, 'id');
     default:
       return {};
   }
@@ -173,6 +184,8 @@ export const getNetworkLaunchpools = (networkId = appNetworkId) => {
       return indexBy(moonriverStakePools, 'id');
     case 25:
       return indexBy(cronosStakePools, 'id');
+    case 122:
+      return indexBy(fuseStakePools, 'id');
     default:
       return {};
   }
@@ -201,6 +214,8 @@ export const getNetworkTokens = () => {
       return moonriverAddressBook.tokens;
     case 25:
       return cronosAddressBook.tokens;
+    case 122:
+      return fuseAddressBook.tokens;
     default:
       throw new Error(
         `Create address book for chainId(${chainId}) first. Check out https://github.com/beefyfinance/address-book`
@@ -247,6 +262,8 @@ export const getNetworkBurnTokens = () => {
       return {};
     case 25:
       return {};
+    case 122:
+      return {};
     default:
       throw new Error(`Create address book for this chainId first.`);
   }
@@ -274,6 +291,8 @@ export const getNetworkZaps = () => {
       return moonriverZaps;
     case 25:
       return cronosZaps;
+    case 122:
+      return fuseZaps;
     default:
       return [];
   }
@@ -367,6 +386,8 @@ export const getNetworkStables = () => {
       return ['USDC', 'USDT', 'DAI', 'BUSD', 'MAI', 'MIM', 'FRAX'];
     case 25:
       return ['USDC', 'USDT', 'DAI', 'BUSD'];
+    case 122:
+      return ['fUSD', 'BUSD', 'USDC'];
     default:
       return [];
   }
@@ -394,6 +415,8 @@ export const getNetworkMulticall = () => {
       return '0x7f6fE34C51d5352A0CF375C0Fbe03bD19eCD8460';
     case 25:
       return '0x13aD51a6664973EbD0749a7c84939d973F247921';
+    case 122:
+      return '0x4f22BD7CE44b0e0B2681A28e300A7285319de3a0';
     default:
       return '';
   }
@@ -894,6 +917,39 @@ export const getNetworkConnectors = t => {
               rpc: {
                 1: 'https://evm-cronos.crypto.org/',
                 25: 'https://evm-cronos.crypto.org/',
+              },
+            },
+            connector: async (ProviderPackage, options) => {
+              const provider = new ProviderPackage(options);
+
+              await provider.enable();
+
+              return provider;
+            },
+          },
+        },
+      };
+    case 122:
+      return {
+        network: 'fuse',
+        cacheProvider: true,
+        providerOptions: {
+          injected: {
+            display: {
+              name: 'MetaMask',
+            },
+          },
+          'custom-wc-fuse': {
+            display: {
+              logo: require(`images/wallets/wallet-connect.svg`),
+              name: 'Wallet Connect',
+              description: t('Scan your WalletConnect to Connect'),
+            },
+            package: WalletConnectProvider,
+            options: {
+              rpc: {
+                1: 'https://rpc.fuse.io',
+                122: 'https://rpc.fuse.io',
               },
             },
             connector: async (ProviderPackage, options) => {

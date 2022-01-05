@@ -109,6 +109,17 @@ export const networkSettings = {
     rpcUrls: ['https://evm-cronos.crypto.org'],
     blockExplorerUrls: ['https://cronos.crypto.org/explorer/'],
   },
+  122: {
+    chainId: `0x${parseInt(122, 10).toString(16)}`,
+    chainName: 'Fuse',
+    nativeCurrency: {
+      name: 'FUSE',
+      symbol: 'FUSE',
+      decimals: 18,
+    },
+    rpcUrls: ['https://rpc.fuse.io'],
+    blockExplorerUrls: ['https://explorer.fuse.io/'],
+  },
 };
 
 export const networkSetup = chainId => {
