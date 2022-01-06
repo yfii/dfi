@@ -632,7 +632,7 @@ export const bscPools = [
       'https://dex.apeswap.finance/#/swap?inputCurrency=0x603c7f932ED1fc6575303D8Fb018fDCBb0f39a95&outputCurrency=0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
   },
   {
-    id: 'alpaca-ibalpaca',
+    id: 'alpaca-ibalpaca-eol',
     logo: 'single-assets/ALPACA.png',
     name: 'ibALPACA',
     token: 'ibALPACA',
@@ -648,8 +648,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'alpaca-ibalpaca',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Other',
     assets: ['ALPACA'],
     withdrawalFee: '0%',
@@ -3169,7 +3170,7 @@ export const bscPools = [
       'https://dex.apeswap.finance/#/swap?outputCurrency=0x6fd7c98458a943f469E1Cf4eA85B173f5Cd342F4',
   },
   {
-    id: 'banana-caps-bnb',
+    id: 'banana-caps-bnb-eol',
     name: 'CAPS-BNB LP',
     token: 'CAPS-BNB ALP',
     tokenDescription: 'ApeSwap',
@@ -3184,8 +3185,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'banana-caps-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'ApeSwap',
     assets: ['CAPS', 'BNB'],
     addLiquidityUrl:
@@ -6776,7 +6778,7 @@ export const bscPools = [
   },
 
   {
-    id: 'banana-etc-bnb',
+    id: 'banana-etc-bnb-eol',
     logo: 'bnb-pairs/ETC-BNB.svg',
     name: 'ETC-BNB LP',
     token: 'ETC-BNB ALP',
@@ -6792,8 +6794,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'banana-etc-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'ApeSwap',
     assets: ['ETC', 'BNB'],
     addLiquidityUrl:
