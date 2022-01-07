@@ -375,6 +375,7 @@ export const getNetworkStables = () => {
         'TUSD',
         'UST',
         'asUSDC',
+        'LAMBDA',
       ];
     case 1666600000:
       return ['BUSD', 'bscBUSD', 'USDC', 'USDT', 'UST', 'DAI', 'FRAX'];
@@ -937,6 +938,27 @@ export const getNetworkConnectors = t => {
           injected: {
             display: {
               name: 'MetaMask',
+            },
+          },
+          'custom-wc-fuseCash': {
+            display: {
+              logo: require(`images/wallets/fusecash.png`),
+              name: 'Fuse.Cash',
+              description: t('Connect to your Fuse.Cash Wallet'),
+            },
+            package: WalletConnectProvider,
+            options: {
+              rpc: {
+                1: 'https://rpc.fuse.io',
+                122: 'https://rpc.fuse.io',
+              },
+            },
+            connector: async (ProviderPackage, options) => {
+              const provider = new ProviderPackage(options);
+
+              await provider.enable();
+
+              return provider;
             },
           },
           'custom-wc-fuse': {
