@@ -2175,7 +2175,7 @@ export const fantomPools = [
       'https://swap.spiritswap.finance/#/exchange/swap/0x049d68029688eAbF473097a2fC38ef61633A3C7A',
   },
   {
-    id: 'spirit-ftm-mim',
+    id: 'spirit-ftm-mim-eol',
     name: 'MIM-FTM LP',
     token: 'MIM-FTM SLP',
     tokenDescription: 'SpiritSwap',
@@ -2190,8 +2190,8 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'spirit-ftm-mim',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'SpiritSwap',
     assets: ['MIM', 'FTM'],
     risks: [
@@ -2279,7 +2279,7 @@ export const fantomPools = [
       'https://swap.spiritswap.finance/#/exchange/swap/0x09e145A1D53c0045F41aEEf25D8ff982ae74dD56',
   },
   {
-    id: 'spirit-ftm-ice',
+    id: 'spirit-ftm-ice-eol',
     logo: 'fantom/ICE-FTM.png',
     name: 'ICE-FTM LP',
     token: 'ICE-FTM STLP',
