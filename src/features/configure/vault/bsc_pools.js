@@ -1744,7 +1744,7 @@ export const bscPools = [
       'https://bsc.mdex.com/#/add/0xCa3F508B8e4Dd382eE878A314789373D80A5190A/0x55d398326f99059fF775485246999027B3197955',
   },
   {
-    id: 'banana-tusd-busd',
+    id: 'banana-tusd-busd-eol',
     name: 'TUSD-BUSD LP',
     token: 'TUSD-BUSD BLP',
     tokenDescription: 'ApeSwap',
@@ -1759,8 +1759,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'banana-tusd-busd',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'ApeSwap',
     assets: ['TUSD', 'BUSD'],
     risks: [
@@ -3382,7 +3383,7 @@ export const bscPools = [
   },
 
   {
-    id: 'banana-bhc-bnb',
+    id: 'banana-bhc-bnb-eol',
     name: 'BHC-BNB LP',
     token: 'BHC-BNB ALP',
     tokenDescription: 'ApeSwap',
@@ -3397,8 +3398,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'banana-bhc-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'ApeSwap',
     assets: ['BHC', 'BNB'],
     addLiquidityUrl:
