@@ -21,7 +21,7 @@ export const chainPools = {
   celo: celoPools,
   moonriver: moonriverPools,
   cronos: cronosPools,
-  fuse: fusePools,
+  // fuse: fusePools,
 };
 
 export const chainRpcs = {
