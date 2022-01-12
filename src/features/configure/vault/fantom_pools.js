@@ -815,8 +815,8 @@ export const fantomPools = [
   },
   {
     id: 'boo-wftm-joe',
-    name: 'JOE-WFTM LP',
-    token: 'JOE-WFTM LP',
+    name: 'JOE-FTM LP',
+    token: 'JOE-FTM LP',
     tokenDescription: 'SpookySwap',
     tokenAddress: '0xd518737Ff601c2A7C67F55EbbEb0a4e3fF5C0C35',
     tokenDecimals: 18,
@@ -2043,8 +2043,8 @@ export const fantomPools = [
   },
   {
     id: 'boo-wftm-spell',
-    name: 'SPELL-WFTM LP',
-    token: 'SPELL-WFTM LP',
+    name: 'SPELL-FTM LP',
+    token: 'SPELL-FTM LP',
     tokenDescription: 'SpookySwap',
     tokenAddress: '0x78f82c16992932EfDd18d93f889141CcF326DBc2',
     tokenDecimals: 18,
@@ -2382,7 +2382,6 @@ export const fantomPools = [
   },
   {
     id: 'spirit-ftm-ice-eol',
-    logo: 'fantom/ICE-FTM.png',
     name: 'ICE-FTM LP',
     token: 'ICE-FTM STLP',
     tokenDescription: 'SpiritSwap',
@@ -2994,7 +2993,7 @@ export const fantomPools = [
   },
   {
     id: 'boo-boo',
-    logo: 'fantom/BOO.png',
+    logo: 'single-assets/BOO.png',
     name: 'BOO',
     token: 'BOO',
     tokenDescription: 'SpookySwap',
@@ -3097,8 +3096,8 @@ export const fantomPools = [
   },
   {
     id: 'boo-wftm-foo',
-    name: 'FTM-FOO LP',
-    token: 'FTM-FOO LP',
+    name: 'FOO-FTM LP',
+    token: 'FOO-FTM LP',
     tokenDescription: 'SpookySwap',
     tokenAddress: '0x157f913Ed0961a8D0d06a258019840919111D9B9',
     tokenDecimals: 18,
@@ -3387,8 +3386,8 @@ export const fantomPools = [
   {
     id: 'scream-eth',
     logo: 'single-assets/ETH.svg',
-    name: 'wETH',
-    token: 'wETH',
+    name: 'ETH',
+    token: 'ETH',
     tokenDescription: 'Scream',
     tokenAddress: '0x74b23882a30290451A17c44f4F05243b6b58C76d',
     tokenDecimals: 18,
@@ -3601,7 +3600,7 @@ export const fantomPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'SpookySwap',
-    assets: ['FTM', 'MIM'],
+    assets: ['MIM', 'FTM'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
@@ -3633,7 +3632,7 @@ export const fantomPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'SpookySwap',
-    assets: ['FTM', 'BOO'],
+    assets: ['BOO', 'FTM'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
@@ -3648,7 +3647,6 @@ export const fantomPools = [
   },
   {
     id: 'boo-bifi-ftm',
-    logo: 'fantom/BIFI-FTM.png',
     name: 'BIFI-FTM LP',
     token: 'BIFI-FTM LP',
     tokenDescription: 'SpookySwap',
@@ -3681,7 +3679,6 @@ export const fantomPools = [
   },
   {
     id: 'boo-ftm-ice',
-    logo: 'fantom/ICE-FTM.png',
     name: 'ICE-FTM LP',
     token: 'ICE-FTM LP',
     tokenDescription: 'SpookySwap',
@@ -3699,7 +3696,7 @@ export const fantomPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'SpookySwap',
-    assets: ['FTM', 'ICE'],
+    assets: ['ICE', 'FTM'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
@@ -3714,7 +3711,6 @@ export const fantomPools = [
   },
   {
     id: 'boo-ftm-sushi',
-    logo: 'fantom/SUSHI-FTM.png',
     name: 'SUSHI-FTM LP',
     token: 'SUSHI-FTM LP',
     tokenDescription: 'SpookySwap',
@@ -3732,7 +3728,7 @@ export const fantomPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'SpookySwap',
-    assets: ['FTM', 'SUSHI'],
+    assets: ['SUSHI', 'FTM'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
@@ -3747,9 +3743,8 @@ export const fantomPools = [
   },
   {
     id: 'boo-ftm-usdc',
-    logo: 'fantom/USDC-FTM.png',
-    name: 'FTM-USDC LP',
-    token: 'FTM-USDC LP',
+    name: 'USDC-FTM LP',
+    token: 'USDC-FTM LP',
     tokenDescription: 'SpookySwap',
     tokenAddress: '0x2b4C76d0dc16BE1C31D4C1DC53bF9B45987Fc75c',
     tokenDecimals: 18,
@@ -3765,7 +3760,7 @@ export const fantomPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'SpookySwap',
-    assets: ['FTM', 'USDC'],
+    assets: ['USDC', 'FTM'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
@@ -3780,7 +3775,6 @@ export const fantomPools = [
   },
   {
     id: 'boo-any-ftm',
-    logo: 'fantom/ANY-FTM.png',
     name: 'ANY-FTM LP',
     token: 'ANY-FTM LP',
     tokenDescription: 'SpookySwap',
@@ -3813,7 +3807,6 @@ export const fantomPools = [
   },
   {
     id: 'boo-dai-ftm',
-    logo: 'fantom/DAI-FTM.png',
     name: 'DAI-FTM LP',
     token: 'DAI-FTM LP',
     tokenDescription: 'SpookySwap',
@@ -3846,7 +3839,6 @@ export const fantomPools = [
   },
   {
     id: 'ester-est-ftm',
-    logo: 'fantom/EST-FTM.png',
     name: 'EST-FTM LP',
     token: 'EST-FTM LP',
     tokenDescription: 'SpiritSwap',
@@ -3881,7 +3873,7 @@ export const fantomPools = [
   },
   {
     id: 'ester-est',
-    logo: 'fantom/EST.png',
+    logo: 'single-assets/EST.png',
     name: 'EST',
     token: 'EST',
     tokenDescription: 'Ester',
@@ -3914,7 +3906,6 @@ export const fantomPools = [
   },
   {
     id: 'boo-woofy-ftm-eol',
-    logo: 'fantom/WOOFY-FTM.png',
     name: 'WOOFY-FTM LP',
     token: 'WOOFY-FTM LP',
     tokenDescription: 'SpookySwap',
@@ -3948,7 +3939,6 @@ export const fantomPools = [
   },
   {
     id: 'boo-bnb-ftm',
-    logo: 'fantom/BNB-FTM.png',
     name: 'BNB-FTM LP',
     token: 'BNB-FTM LP',
     tokenDescription: 'SpookySwap',
@@ -4013,7 +4003,6 @@ export const fantomPools = [
   },
   {
     id: 'froyo-froyo-ftm',
-    logo: 'fantom/FROYO.png',
     name: 'FROYO-FTM LP',
     token: 'FROYO-FTM LP',
     tokenDescription: 'SushiSwap',
@@ -4047,7 +4036,6 @@ export const fantomPools = [
   },
   {
     id: 'boo-link-ftm',
-    logo: 'fantom/LINK-FTM.png',
     name: 'LINK-FTM LP',
     token: 'LINK-FTM LP',
     tokenDescription: 'SpookySwap',
@@ -4080,7 +4068,6 @@ export const fantomPools = [
   },
   {
     id: 'boo-cover-ftm-eol',
-    logo: 'fantom/COVER-FTM.png',
     name: 'COVER-FTM LP',
     token: 'COVER-FTM LP',
     tokenDescription: 'SpookySwap',
@@ -4105,7 +4092,6 @@ export const fantomPools = [
   },
   {
     id: 'boo-cream-ftm-eol',
-    logo: 'fantom/CREAM-FTM.png',
     name: 'CREAM-FTM LP',
     token: 'CREAM-FTM LP',
     tokenDescription: 'SpookySwap',
@@ -4139,7 +4125,6 @@ export const fantomPools = [
   },
   {
     id: 'boo-snx-ftm-eol',
-    logo: 'fantom/SNX-FTM.png',
     name: 'SNX-FTM LP',
     token: 'SNX-FTM LP',
     tokenDescription: 'SpookySwap',
@@ -4173,7 +4158,6 @@ export const fantomPools = [
   },
   {
     id: 'boo-usdt-ftm',
-    logo: 'fantom/USDT-FTM.png',
     name: 'fUSDT-FTM LP',
     token: 'fUSDT-FTM LP',
     tokenDescription: 'SpookySwap',
@@ -4206,7 +4190,6 @@ export const fantomPools = [
   },
   {
     id: 'boo-btc-ftm',
-    logo: 'fantom/BTC-FTM.png',
     name: 'WBTC-FTM LP',
     token: 'WBTC-FTM LP',
     tokenDescription: 'SpookySwap',
@@ -4239,7 +4222,6 @@ export const fantomPools = [
   },
   {
     id: 'boo-eth-ftm',
-    logo: 'fantom/ETH-FTM.png',
     name: 'ETH-FTM LP',
     token: 'ETH-FTM LP',
     tokenDescription: 'SpookySwap',
@@ -4272,7 +4254,6 @@ export const fantomPools = [
   },
   {
     id: 'boo-aave-ftm',
-    logo: 'fantom/AAVE-FTM.png',
     name: 'AAVE-FTM LP',
     token: 'AAVE-FTM LP',
     tokenDescription: 'SpookySwap',
@@ -4305,7 +4286,6 @@ export const fantomPools = [
   },
   {
     id: 'boo-crv-ftm',
-    logo: 'fantom/CRV-FTM.png',
     name: 'CRV-FTM LP',
     token: 'CRV-FTM LP',
     tokenDescription: 'SpookySwap',
