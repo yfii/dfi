@@ -248,7 +248,6 @@ export const getNetworkBurnTokens = () => {
       };
     case 250:
       return {
-        [fantomAddressBook.tokens.TOMB.symbol]: fantomAddressBook.tokens.TOMB,
         [fantomAddressBook.tokens.fSING.symbol]: fantomAddressBook.tokens.fSING,
         [fantomAddressBook.tokens.PEAR.symbol]: fantomAddressBook.tokens.PEAR,
       };
