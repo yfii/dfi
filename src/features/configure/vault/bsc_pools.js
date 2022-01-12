@@ -3120,7 +3120,7 @@ export const bscPools = [
     buyTokenUrl: 'https://omnitrade.ocp.finance/#/',
   },
   {
-    id: 'omnifarm-usdo-busd',
+    id: 'omnifarm-usdo-busd-eol',
     name: 'USDO-BUSD LP',
     token: 'USDO-BUSD LP2',
     tokenDescription: 'Omnifarm (PancakeSwap)',
@@ -3135,8 +3135,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'omnifarm-usdo-busd',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Omnifarms',
     assets: ['USDO', 'BUSD'],
     addLiquidityUrl:
