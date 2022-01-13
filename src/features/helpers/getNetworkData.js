@@ -446,7 +446,7 @@ export const getNetworkConnectors = t => {
           },
           'custom-clover-bsc': {
             display: {
-              logo: require(`images/wallets/clover.png`),
+              logo: require(`images/wallets/clover.svg`),
               name: 'Clover Wallet',
               description: t('Connect with your Clover wallet and earn CLV'),
             },
@@ -545,7 +545,7 @@ export const getNetworkConnectors = t => {
           // },
           'custom-clover-heco': {
             display: {
-              logo: require(`images/wallets/clover.png`),
+              logo: require(`images/wallets/clover.svg`),
               name: 'Clover Wallet',
               description: t('Connect with your Clover wallet and earn CLV'),
             },
@@ -601,22 +601,6 @@ export const getNetworkConnectors = t => {
               return provider;
             },
           },
-          'custom-clover-avalanche': {
-            display: {
-              logo: require(`images/wallets/clover.png`),
-              name: 'Clover Wallet',
-              description: t('Connect with your Clover wallet and earn CLV'),
-            },
-            options: {
-              supportedChainIds: [43114],
-            },
-            package: CloverConnector,
-            connector: async (ProviderPackage, options) => {
-              const provider = new ProviderPackage(options);
-              await provider.activate();
-              return provider.getProvider();
-            },
-          },
           'custom-cb-avalanche': {
             display: {
               logo: require(`images/wallets/coinbase.png`),
@@ -666,7 +650,7 @@ export const getNetworkConnectors = t => {
           },
           'custom-clover-polygon': {
             display: {
-              logo: require(`images/wallets/clover.png`),
+              logo: require(`images/wallets/clover.svg`),
               name: 'Clover Wallet',
               description: t('Connect with your Clover wallet and earn CLV'),
             },
@@ -737,7 +721,7 @@ export const getNetworkConnectors = t => {
           },
           'custom-clover-fantom': {
             display: {
-              logo: require(`images/wallets/clover.png`),
+              logo: require(`images/wallets/clover.svg`),
               name: 'Clover Wallet',
               description: t('Connect with your Clover wallet and earn CLV'),
             },
