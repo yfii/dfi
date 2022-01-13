@@ -7,6 +7,7 @@
   "private": true,
   "type": "module",
   "dependencies": {
+    "@clover-network/clover-connector": "^1.0.0",
     "@davatar/react": "^1.8.1",
     "@ethersproject/providers": "^5.5.2",
     "@ethersproject/solidity": "^5.1.0",
