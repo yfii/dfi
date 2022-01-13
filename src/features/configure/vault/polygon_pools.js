@@ -1489,7 +1489,7 @@ export const polygonPools = [
       'https://quickswap.exchange/#/swap?inputCurrency=0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270&outputCurrency=0x580A84C73811E1839F75d86d75d88cCa0c241fF4',
   },
   {
-    id: 'quick-qi-eth',
+    id: 'quick-qi-eth-eol',
     name: 'QI-ETH LP',
     token: 'QI-ETH LP',
     tokenDescription: 'QuickSwap',
@@ -1503,8 +1503,9 @@ export const polygonPools = [
     tvl: 0,
     oracle: 'lps',
     oracleId: 'quick-qi-eth',
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'QuickSwap',
     assets: ['QI', 'ETH'],
     risks: [
