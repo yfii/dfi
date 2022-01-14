@@ -35,6 +35,40 @@ export const fantomStakePools = [
   },
 
   {
+    id: 'moo_WFTM-2omb',
+    name: '2omb',
+    logo: 'single-assets/FTM.png',
+    token: 'mooScreamFTM',
+    tokenDecimals: 18,
+    tokenAddress: '0x49c68eDb7aeBd968F197121453e41b8704AcdE0C',
+    tokenOracle: 'tokens',
+    tokenOracleId: 'WFTM',
+    earnedToken: '2SHARES',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xc54A1684fD1bef1f077a336E6be4Bd9a3096a6Ca',
+    earnContractAddress: '0xd7784f23A04D0ea3647bd6Ce15fD2d0D1FcD30Fe',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: '2SHARES',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1643365643,
+    partners: [
+      {
+        logo: 'stake/2omb/logo.png',
+        background: 'stake/2omb/bg.png',
+        text: '2omb Finance is a proud fork of Tomb Finance, with 4x faster TSHARE (2SHARE) emissions. People are always looking for the next fork of successful projects. 2omb Finance simplifies this process into a trusted team that delivers an ecosystem of symbiotic forks that thrive on the success of one another. Native tokens of previous forks are utilized for participation in genesis pools of new forks.',
+        website: 'https://2omb.finance/',
+        social: {
+          telegram: 'https://discord.gg/sTXFJ82HcP',
+          twitter: 'https://twitter.com/2ombfinance',
+        },
+      },
+    ],
+  },
+
+  {
     id: 'moo_beets-guqin-qi-2-qidao',
     name: 'Beefy',
     logo: 'fantom/Guqin Qi 2.png',
