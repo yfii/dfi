@@ -172,7 +172,7 @@ export const fantomStakePools = [
   {
     id: 'moo_boo_ftm-tomb',
     name: 'TOMB.Finance',
-    logo: 'fantom/BOO-FTM.png',
+    assets: ['BOO', 'FTM'],
     token: 'mooBooBoo-FTM',
     tokenDecimals: 18,
     tokenAddress: '0xEe3a7c885Fd3cc5358FF583F2DAB3b8bC473316f',
@@ -205,7 +205,7 @@ export const fantomStakePools = [
   {
     id: 'boo-bifi-ftm-bifi',
     name: 'Beefy.Finance',
-    logo: 'fantom/BIFI-FTM.png',
+    assets: ['BIFI', 'FTM'],
     token: 'mooBooBIFI-FTM',
     tokenDecimals: 18,
     tokenAddress: '0xe8188B9701E6DB1Fe24c75783474D22e5957BBEF',
@@ -238,7 +238,7 @@ export const fantomStakePools = [
   {
     id: 'moo_usdc-ftm-ester',
     name: 'Ester Finance',
-    logo: 'fantom/USDC-FTM.png',
+    assets: ['USDC', 'FTM'],
     token: 'mooBooFTM-USDC',
     tokenDecimals: 18,
     tokenAddress: '0x41D44B276904561Ac51855159516FD4cB2c90968',
