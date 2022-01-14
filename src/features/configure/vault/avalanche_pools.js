@@ -63,6 +63,7 @@ export const avalanchePools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratMultiLP',
+    depositFee: '0.5%',
     withdrawalFee: '0%',
     addLiquidityUrl: 'https://avax.curve.fi/factory/7/deposit',
   },
@@ -169,7 +170,7 @@ export const avalanchePools = [
       'https://www.traderjoexyz.com/#/trade?outputCurrency=0x22d4002028f537599bE9f666d1c4Fa138522f9c8',
   },
   {
-    id: 'joe-awool-wavax',
+    id: 'joe-awool-wavax-eol',
     name: 'aWOOL-AVAX LP',
     token: 'aWOOL-AVAX JLP',
     tokenDescription: 'Trader Joe',
@@ -184,8 +185,8 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'joe-awool-wavax',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Trader Joe',
     assets: ['aWOOL', 'AVAX'],
     risks: [
@@ -197,6 +198,7 @@ export const avalanchePools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://traderjoexyz.com/#/pool/AVAX/0x5eDE350E84223fb50775fD91a723F2ca71034cf7',
     buyTokenUrl:
