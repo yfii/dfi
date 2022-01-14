@@ -2991,7 +2991,7 @@ export const fantomPools = [
       'https://spookyswap.finance/swap?outputCurrency=0x6c021Ae822BEa943b2E66552bDe1D2696a53fbB7',
   },
   {
-    id: 'spirit-ftm-just',
+    id: 'spirit-ftm-just-eol',
     name: 'JUST-FTM LP',
     token: 'JUST-FTM SLP',
     tokenDescription: 'SpiritSwap',
@@ -3006,8 +3006,9 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'spirit-ftm-just',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'tvl',
     platform: 'SpiritSwap',
     assets: ['JUST', 'FTM'],
     risks: [
