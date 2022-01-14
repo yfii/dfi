@@ -3062,7 +3062,7 @@ export const fantomPools = [
       'https://swap.spiritswap.finance/#/exchange/swap/0xae75A438b2E0cB8Bb01Ec1E1e376De11D44477CC',
   },
   {
-    id: 'spirit-fusdt-spell',
+    id: 'spirit-fusdt-spell-eol',
     name: 'SPELL-fUSDT LP',
     token: 'SPELL-fUSDT SLP',
     tokenDescription: 'SpiritSwap',
@@ -3077,8 +3077,9 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'spirit-fusdt-spell',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'SpiritSwap',
     assets: ['SPELL', 'fUSDT'],
     risks: [
