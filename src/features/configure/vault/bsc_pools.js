@@ -102,6 +102,41 @@ export const bscPools = [
   },
 
   {
+    id: 'mdex-lac-busd',
+    name: 'LAC-BUSD LP',
+    token: 'LAC-BUSD LP',
+    tokenDescription: 'Mdex',
+    tokenAddress: '0xa269E050DD2262E7BdC8A481D76880A562dD1d5E',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooMdexLAC-BUSD',
+    earnedTokenAddress: '0xa0a2609800F5FfA4b9FaF8286fD44070BeD6931C',
+    earnContractAddress: '0xa0a2609800F5FfA4b9FaF8286fD44070BeD6931C',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'mdex-lac-busd',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Mdex',
+    assets: ['LAC', 'BUSD'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
+    buyTokenUrl:
+      'https://bsc.mdex.me/#/swap?inputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56&outputCurrency=0xe6f079E74000a0AFc517c1EFf9624d866d163B75',
+    addLiquidityUrl:
+      'https://bsc.mdex.me/#/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0xe6f079E74000a0AFc517c1EFf9624d866d163B75',
+  },
+
+  {
     id: 'dibs-dibs-bnb',
     name: 'DIBS-BNB',
     token: 'DIBS-BNB LP',
