@@ -51,6 +51,10 @@ import {
   fuseStakePools,
   fuseAddressBook,
   fuseZaps,
+  metisPools,
+  metisStakePools,
+  metisAddressBook,
+  metisZaps,
 } from '../configure';
 
 export const appNetworkId = window.REACT_APP_NETWORK_ID;
@@ -67,6 +71,7 @@ const networkTxUrls = {
   1285: hash => `https://moonriver.moonscan.io/tx/${hash}`,
   25: hash => `https://cronos.crypto.org/explorer/tx/${hash}`,
   122: hash => `https://explorer.fuse.io/tx/${hash}`,
+  1088: hash => `https://andromeda-explorer.metis.io/tx/${hash}`,
 };
 
 const networkFriendlyName = {
@@ -81,6 +86,7 @@ const networkFriendlyName = {
   1285: 'Moonriver',
   25: 'Cronos',
   122: 'Fuse',
+  1088: 'Metis',
 };
 
 const networkBuyUrls = {
@@ -99,6 +105,7 @@ const networkBuyUrls = {
   1285: 'https://app.sushi.com/swap?inputCurrency=0x173fd7434b8b50df08e3298f173487ebdb35fd14&outputCurrency=0xf50225a84382c74cbdea10b0c176f71fc3de0c4d',
   25: 'https://vvs.finance/swap?inputCurrency=0x5c7f8a570d578ed84e63fdfa7b1ee72deae1ae23&outputCurrency=0xe6801928061cdbe32ac5ad0634427e140efd05f9',
   122: '',
+  1088: '',
 };
 
 export const getNetworkCoin = () => {
@@ -129,6 +136,8 @@ export const getNetworkPools = () => {
       return cronosPools;
     case 122:
       return fusePools;
+    case 1088:
+      return metisPools;
     default:
       return [];
   }
@@ -158,6 +167,8 @@ export const getNetworkVaults = (networkId = appNetworkId) => {
       return indexBy(cronosPools, 'id');
     case 122:
       return indexBy(fusePools, 'id');
+    case 1088:
+      return indexBy(metisPools, 'id');
     default:
       return {};
   }
@@ -187,6 +198,8 @@ export const getNetworkLaunchpools = (networkId = appNetworkId) => {
       return indexBy(cronosStakePools, 'id');
     case 122:
       return indexBy(fuseStakePools, 'id');
+    case 1088:
+      return indexBy(metisStakePools, 'id');
     default:
       return {};
   }
@@ -217,6 +230,8 @@ export const getNetworkTokens = () => {
       return cronosAddressBook.tokens;
     case 122:
       return fuseAddressBook.tokens;
+    case 1088:
+      return metisAddressBook.tokens;
     default:
       throw new Error(
         `Create address book for chainId(${chainId}) first. Check out https://github.com/beefyfinance/address-book`
@@ -264,6 +279,8 @@ export const getNetworkBurnTokens = () => {
       return {};
     case 122:
       return {};
+    case 1088:
+      return {};
     default:
       throw new Error(`Create address book for this chainId first.`);
   }
@@ -293,6 +310,8 @@ export const getNetworkZaps = () => {
       return cronosZaps;
     case 122:
       return fuseZaps;
+    case 1088:
+      return metisZaps;
     default:
       return [];
   }
@@ -389,6 +408,8 @@ export const getNetworkStables = () => {
       return ['USDC', 'USDT', 'DAI', 'BUSD'];
     case 122:
       return ['fUSD', 'BUSD', 'USDC'];
+    case 1088:
+      return ['mUSDT', 'mUSDC'];
     default:
       return [];
   }
@@ -418,6 +439,8 @@ export const getNetworkMulticall = () => {
       return '0x13aD51a6664973EbD0749a7c84939d973F247921';
     case 122:
       return '0x4f22BD7CE44b0e0B2681A28e300A7285319de3a0';
+    case 1088:
+      return '0x4fd2e1c2395dc088F36cab06DCe47F88A912fC85';
     default:
       return '';
   }
@@ -1036,6 +1059,39 @@ export const getNetworkConnectors = t => {
               rpc: {
                 1: 'https://rpc.fuse.io',
                 122: 'https://rpc.fuse.io',
+              },
+            },
+            connector: async (ProviderPackage, options) => {
+              const provider = new ProviderPackage(options);
+
+              await provider.enable();
+
+              return provider;
+            },
+          },
+        },
+      };
+    case 1088:
+      return {
+        network: 'metis',
+        cacheProvider: true,
+        providerOptions: {
+          injected: {
+            display: {
+              name: 'MetaMask',
+            },
+          },
+          'custom-wc-metis': {
+            display: {
+              logo: require(`images/wallets/wallet-connect.svg`),
+              name: 'Wallet Connect',
+              description: t('Scan your WalletConnect to Connect'),
+            },
+            package: WalletConnectProvider,
+            options: {
+              rpc: {
+                1: 'https://andromeda.metis.io/?owner=1088',
+                1088: 'https://andromeda.metis.io/?owner=1088',
               },
             },
             connector: async (ProviderPackage, options) => {
