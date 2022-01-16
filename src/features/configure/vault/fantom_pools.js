@@ -2621,7 +2621,7 @@ export const fantomPools = [
       'https://swap.spiritswap.finance/#/exchange/swap/0x1E4F97b9f9F913c46F1632781732927B9019C68b',
   },
   {
-    id: 'spirit-zoo-ftm',
+    id: 'spirit-zoo-ftm-eol',
     name: 'ZOO-FTM LP',
     token: 'ZOO-FTM SLP',
     tokenDescription: 'SpiritSwap',
@@ -2636,8 +2636,9 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'spirit-zoo-ftm',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'tvl',
     platform: 'SpiritSwap',
     assets: ['ZOO', 'FTM'],
     risks: [
@@ -3061,7 +3062,7 @@ export const fantomPools = [
       'https://swap.spiritswap.finance/#/exchange/swap/0xae75A438b2E0cB8Bb01Ec1E1e376De11D44477CC',
   },
   {
-    id: 'spirit-fusdt-spell',
+    id: 'spirit-fusdt-spell-eol',
     name: 'SPELL-fUSDT LP',
     token: 'SPELL-fUSDT SLP',
     tokenDescription: 'SpiritSwap',
@@ -3076,8 +3077,9 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'spirit-fusdt-spell',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'SpiritSwap',
     assets: ['SPELL', 'fUSDT'],
     risks: [
