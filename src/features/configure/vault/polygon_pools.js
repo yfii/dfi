@@ -86,7 +86,7 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'QuickSwap',
-    assets: ['UST', 'MATIC'],
+    assets: ['USTw', 'MATIC'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
