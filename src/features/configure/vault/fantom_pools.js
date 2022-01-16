@@ -171,6 +171,41 @@ export const fantomPools = [
     buyTokenUrl: 'https://spookyswap.finance/swap',
   },
   {
+    id: 'boo-inv-wftm',
+    name: 'INV-FTM LP',
+    token: 'INV-FTM LP',
+    tokenDescription: 'SpookySwap',
+    tokenAddress: '0x9380485d65Fb628Ccd87Ddec4854F5306554d9d9',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooBooINV-FTM',
+    earnedTokenAddress: '0xFE0FC1710d9d723eA0876315437bD140fc952a2c',
+    earnContractAddress: '0xFE0FC1710d9d723eA0876315437bD140fc952a2c',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'boo-inv-wftm',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'SpookySwap',
+    assets: ['INV', 'FTM'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
+    withdrawalFee: '0%',
+    addLiquidityUrl:
+      'https://spookyswap.finance/add/0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83/0xb84527D59b6Ecb96F433029ECc890D4492C5dCe1',
+    buyTokenUrl:
+      'https://spookyswap.finance/swap?outputCurrency=0xb84527D59b6Ecb96F433029ECc890D4492C5dCe1',
+  },
+  {
     id: 'beets-steady-beets-2',
     logo: 'fantom/Steady Beets.png',
     name: 'Steady Beets 2',
@@ -337,7 +372,8 @@ export const fantomPools = [
     withdrawalFee: '0%',
     addLiquidityUrl:
       'https://spookyswap.finance/add/0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83/0x10010078a54396F62c96dF8532dc2B4847d47ED3',
-    buyTokenUrl: 'https://spookyswap.finance/swap',
+    buyTokenUrl:
+      'https://spookyswap.finance/swap?outputCurrency=0x10010078a54396F62c96dF8532dc2B4847d47ED3',
   },
   {
     id: 'spartacadabra-lambda-crv',
