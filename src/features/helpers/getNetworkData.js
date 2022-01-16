@@ -446,7 +446,7 @@ export const getNetworkConnectors = t => {
           },
           'custom-clover-bsc': {
             display: {
-              logo: require(`images/wallets/clover.svg`),
+              logo: require(`images/wallets/clover.png`),
               name: 'Clover Wallet',
               description: t('Connect with your Clover wallet and earn CLV'),
             },
@@ -545,7 +545,7 @@ export const getNetworkConnectors = t => {
           // },
           'custom-clover-heco': {
             display: {
-              logo: require(`images/wallets/clover.svg`),
+              logo: require(`images/wallets/clover.png`),
               name: 'Clover Wallet',
               description: t('Connect with your Clover wallet and earn CLV'),
             },
@@ -650,7 +650,7 @@ export const getNetworkConnectors = t => {
           },
           'custom-clover-polygon': {
             display: {
-              logo: require(`images/wallets/clover.svg`),
+              logo: require(`images/wallets/clover.png`),
               name: 'Clover Wallet',
               description: t('Connect with your Clover wallet and earn CLV'),
             },
@@ -721,7 +721,7 @@ export const getNetworkConnectors = t => {
           },
           'custom-clover-fantom': {
             display: {
-              logo: require(`images/wallets/clover.svg`),
+              logo: require(`images/wallets/clover.png`),
               name: 'Clover Wallet',
               description: t('Connect with your Clover wallet and earn CLV'),
             },

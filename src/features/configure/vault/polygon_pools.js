@@ -70,8 +70,8 @@ export const polygonPools = [
   },
   {
     id: 'quick-ustw-matic',
-    name: 'UST-MATIC LP',
-    token: 'UST-MATIC LP',
+    name: 'USTw-MATIC LP',
+    token: 'USTw-MATIC LP',
     tokenDescription: 'QuickSwap',
     tokenAddress: '0x9b7e966fe005d616b5560E4BaA7cFA8747d6cBb9',
     tokenDecimals: 18,
