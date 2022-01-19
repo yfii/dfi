@@ -399,7 +399,7 @@ export const fantomPools = [
     stratType: 'StratMultiLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
-      'https://app.beets.fi/#/pool/0x2c580c6f08044d6dfaca8976a66c8fadddbd9901000000000000000000000038',
+      'https://app.beets.fi/#/pool/https://beets.fi/#/pool/0xd57cda2caebb9b64bb88905c4de0f0da217a77d7000100000000000000000073',
   },
   {
     id: 'beets-dante-symphony',
