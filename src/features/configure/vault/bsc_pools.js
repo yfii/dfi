@@ -3757,7 +3757,7 @@ export const bscPools = [
       'https://dex.apeswap.finance/#/swap?outputCurrency=0x47BEAd2563dCBf3bF2c9407fEa4dC236fAbA485A',
   },
   {
-    id: 'banana-bake-bnb',
+    id: 'banana-bake-bnb-eol',
     name: 'BAKE-BNB LP',
     token: 'BAKE-BNB ALP',
     tokenDescription: 'ApeSwap',
@@ -3772,8 +3772,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'banana-bake-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'ApeSwap',
     assets: ['BAKE', 'BNB'],
     addLiquidityUrl:
@@ -4270,7 +4271,7 @@ export const bscPools = [
       'https://pancakeswap.finance/swap?outputCurrency=0xb9D8592E16A9c1a3AE6021CDDb324EaC1Cbc70d6',
   },
   {
-    id: 'banana-tape-bnb',
+    id: 'banana-tape-bnb-eol',
     name: 'TAPE-BNB LP',
     token: 'TAPE-BNB LP',
     tokenDescription: 'ApeSwap',
@@ -4285,8 +4286,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'banana-tape-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'ApeSwap',
     assets: ['TAPE', 'BNB'],
     addLiquidityUrl:
@@ -6786,7 +6788,7 @@ export const bscPools = [
       'https://dex.apeswap.finance/#/swap?outputCurrency=0x9Ac983826058b8a9C7Aa1C9171441191232E8404',
   },
   {
-    id: 'banana-blz-bnb',
+    id: 'banana-blz-bnb-eol',
     logo: 'bnb-pairs/BLZ-BNB.svg',
     name: 'BLZ-BNB LP',
     token: 'BLZ-BNB LP',
@@ -6802,8 +6804,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'banana-blz-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'ApeSwap',
     assets: ['BLZ', 'BNB'],
     addLiquidityUrl:
