@@ -380,6 +380,8 @@ export const getNetworkStables = () => {
         'agEUR',
         'jJPY',
         'JPYC',
+        'jCAD',
+        'CADC',
       ];
     case 250:
       return [
