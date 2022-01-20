@@ -66,6 +66,41 @@ export const fantomPools = [
     buyTokenUrl: 'https://spookyswap.finance/swap?outputCurrency=FTM',
   },
   {
+    id: 'boo-wftm-beets',
+    name: 'BEETS-FTM LP',
+    token: 'BEETS-FTM LP',
+    tokenDescription: 'SpookySwap',
+    tokenAddress: '0x648a7452DA25B4fB4BDB79bADf374a8f8a5ea2b5',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooBooFTM-BEETS',
+    earnedTokenAddress: '0xBdd229d2bcf8f31Fa90FD04c314078dAF4e2A0A4',
+    earnContractAddress: '0xBdd229d2bcf8f31Fa90FD04c314078dAF4e2A0A4',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'boo-wftm-beets',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'SpookySwap',
+    assets: ['BEETS', 'FTM'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
+    withdrawalFee: '0%',
+    addLiquidityUrl:
+      'https://spookyswap.finance/add/FTM/0xF24Bcf4d1e507740041C9cFd2DddB29585aDCe1e',
+    buyTokenUrl:
+      'https://spookyswap.finance/swap?outputCurrency=0xF24Bcf4d1e507740041C9cFd2DddB29585aDCe1e',
+  },
+  {
     id: 'spirit-fusdt-usdc',
     name: 'fUSDT-USDC LP',
     token: 'fUSDT-USDC SLP',
@@ -171,7 +206,6 @@ export const fantomPools = [
     buyTokenUrl:
       'https://swap.spiritswap.finance/#/exchange/swap/0x82f0B8B456c1A451378467398982d4834b6829c1',
   },
-
   {
     id: '2omb-2omb-ftm',
     name: '2OMB-FTM LP',
@@ -399,7 +433,7 @@ export const fantomPools = [
     stratType: 'StratMultiLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
-      'https://app.beets.fi/#/pool/https://beets.fi/#/pool/0xd57cda2caebb9b64bb88905c4de0f0da217a77d7000100000000000000000073',
+      'https://beets.fi/#/pool/0xd57cda2caebb9b64bb88905c4de0f0da217a77d7000100000000000000000073',
   },
   {
     id: 'beets-dante-symphony',
