@@ -22,7 +22,7 @@ export const chainPools = {
   celo: celoPools,
   moonriver: moonriverPools,
   cronos: cronosPools,
-  // fuse: fusePools,
+  fuse: fusePools,
   metis: metisPools,
 };
 
