@@ -31,7 +31,6 @@ export const bscPools = [
     withdrawalFee: '0.05%',
     buyTokenUrl: 'https://app.1inch.io/#/56/swap/BNB/BIFI',
   },
-
   {
     id: 'cakev2-cake-bnb',
     name: 'CAKE-BNB LP',
@@ -65,6 +64,40 @@ export const bscPools = [
       'https://pancakeswap.finance/add/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82/BNB',
     buyTokenUrl:
       'https://pancakeswap.finance/swap?outputCurrency=0x5B6DcF557E2aBE2323c48445E8CC948910d8c2c9',
+  },
+  {
+    id: 'cakev2-fuse-bnb',
+    name: 'FUSE-BNB LP',
+    token: 'FUSE-BNB LP',
+    tokenDescription: 'PancakeSwap',
+    tokenAddress: '0x6483F166b9E4310A165a55FEa04F867499aded06',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooCakeV2FUSE-BNB',
+    earnedTokenAddress: '0x834DdeE66c381811ce0233B4669ddC3b97fd08cd',
+    earnContractAddress: '0x834DdeE66c381811ce0233B4669ddC3b97fd08cd',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'cakev2-fuse-bnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'PancakeSwap',
+    assets: ['FUSE', 'BNB'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
+    addLiquidityUrl:
+      'https://pancakeswap.finance/add/0x5857c96DaE9cF8511B08Cb07f85753C472D36Ea3/BNB',
+    buyTokenUrl:
+      'https://pancakeswap.finance/swap?outputCurrency=0x5857c96DaE9cF8511B08Cb07f85753C472D36Ea3',
   },
   {
     id: 'baby-aot-usdt',
