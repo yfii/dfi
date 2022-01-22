@@ -163,7 +163,7 @@ export const fantomPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'SingleStake',
-    withdrawalFee: '0%',
+    withdrawalFee: '0.01%',
     buyTokenUrl:
       'https://spookyswap.finance/swap?outputCurrency=0x321162Cd933E2Be498Cd2267a90534A804051b11',
   },
