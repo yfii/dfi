@@ -66,7 +66,7 @@ export const bscPools = [
       'https://pancakeswap.finance/swap?outputCurrency=0x5B6DcF557E2aBE2323c48445E8CC948910d8c2c9',
   },
   {
-    id: 'cakev2-fuse-bnb',
+    id: 'cakev2-fuse-wbnb',
     name: 'FUSE-BNB LP',
     token: 'FUSE-BNB LP',
     tokenDescription: 'PancakeSwap',
@@ -79,7 +79,7 @@ export const bscPools = [
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
-    oracleId: 'cakev2-fuse-bnb',
+    oracleId: 'cakev2-fuse-wbnb',
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
