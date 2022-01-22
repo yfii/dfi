@@ -66,7 +66,7 @@ export const fantomPools = [
     buyTokenUrl: 'https://spookyswap.finance/swap?outputCurrency=FTM',
   },
   {
-    id: 'oxd-tomb',
+    id: '0xdao-tomb',
     logo: 'single-assets/TOMB.png',
     name: 'TOMB',
     token: 'TOMB',
@@ -84,7 +84,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: '0xDAO',
+    platform: 'Others',
     assets: ['TOMB'],
     risks: [
       'COMPLEXITY_LOW',
@@ -100,7 +100,7 @@ export const fantomPools = [
       'https://spookyswap.finance/swap?outputCurrency=0x6c021Ae822BEa943b2E66552bDe1D2696a53fbB7',
   },
   {
-    id: 'oxd-eth',
+    id: '0xdao-weth',
     logo: 'single-assets/ETH.svg',
     name: 'WETH',
     token: 'WETH',
@@ -118,8 +118,8 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: '0xDAO',
-    assets: ['ETH'],
+    platform: 'Others',
+    assets: ['WETH'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
@@ -151,7 +151,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'SpookySwap',
+    platform: 'Others',
     assets: ['OXD', 'USDC'],
     risks: [
       'COMPLEXITY_LOW',
