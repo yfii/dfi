@@ -35,9 +35,9 @@ export const polygonPools = [
   },
   {
     id: 'popsicle-ice-eth',
-    name: 'ICE-WETH LP',
-    token: 'ICE-WETH LP',
-    tokenDescription: 'Popsicle',
+    name: 'ICE-ETH LP',
+    token: 'ICE-ETH SLP',
+    tokenDescription: 'SushiSwap (Popsicle)',
     tokenAddress: '0x941eb28e750C441AEF465a89E43DDfec2561830b',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
@@ -51,7 +51,7 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Popsicle',
-    assets: ['ICE', 'WETH'],
+    assets: ['ICE', 'ETH'],
     risks: [
       'COMPLEXITY_LOW',
       'MCAP_MICRO',
@@ -63,7 +63,7 @@ export const polygonPools = [
     stratType: 'StratLP',
     withdrawalFee: '0%',
     buyTokenUrl:
-      'https://app.sushi.com/en/swap#/swap?inputCurrency=0x4e1581f01046efdd7a1a2cdb0f82cdd7f71f2e59&outputCurrency=0x7ceb23fd6bc0add59e62ac25578270cff1b9f619',
+      'https://app.sushi.com/swap?outputCurrency=0x4e1581f01046eFDd7a1a2CDB0F82cdd7F71F2E59',
     addLiquidityUrl:
       'https://app.sushi.com/add/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619/0x4e1581f01046eFDd7a1a2CDB0F82cdd7F71F2E59',
   },
