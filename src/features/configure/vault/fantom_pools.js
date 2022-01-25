@@ -90,7 +90,7 @@ export const fantomPools = [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
       'IL_NONE',
-      'MCAP_LARGE',
+      'MCAP_MICRO',
       'NO_AUDIT',
       'CONTRACTS_VERIFIED',
     ],
