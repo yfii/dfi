@@ -51,7 +51,7 @@ export const arbitrumPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['MAGIC', 'ETH'],
     risks: [
       'COMPLEXITY_LOW',
@@ -85,7 +85,7 @@ export const arbitrumPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['gOHM', 'ETH'],
     risks: [
       'COMPLEXITY_LOW',
@@ -152,7 +152,7 @@ export const arbitrumPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['SPELL', 'ETH'],
     risks: [
       'COMPLEXITY_LOW',
@@ -186,7 +186,7 @@ export const arbitrumPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['MIM', 'ETH'],
     risks: [
       'COMPLEXITY_LOW',
@@ -220,7 +220,7 @@ export const arbitrumPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['LINK', 'ETH'],
     risks: [
       'COMPLEXITY_LOW',
@@ -254,7 +254,7 @@ export const arbitrumPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['USDC', 'ETH'],
     risks: [
       'COMPLEXITY_LOW',
@@ -387,7 +387,7 @@ export const arbitrumPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['WBTC', 'ETH'],
     risks: [
       'COMPLEXITY_LOW',
@@ -421,7 +421,7 @@ export const arbitrumPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['SUSHI', 'ETH'],
     risks: [
       'COMPLEXITY_LOW',
@@ -455,7 +455,7 @@ export const arbitrumPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['USDT', 'ETH'],
     risks: [
       'COMPLEXITY_LOW',

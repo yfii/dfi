@@ -50,7 +50,7 @@ export const moonriverPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['ETH', 'USDT'],
     risks: [
       'COMPLEXITY_LOW',
@@ -83,7 +83,7 @@ export const moonriverPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['MIM', 'WMOVR_SUSHI'],
     risks: [
       'COMPLEXITY_LOW',
@@ -116,7 +116,7 @@ export const moonriverPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['FRAX', 'USDC'],
     risks: [
       'COMPLEXITY_LOW',
@@ -149,7 +149,7 @@ export const moonriverPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['ETH', 'WMOVR_SUSHI'],
     risks: [
       'COMPLEXITY_LOW',
@@ -182,7 +182,7 @@ export const moonriverPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['USDT', 'USDC'],
     risks: [
       'COMPLEXITY_LOW',
@@ -215,7 +215,7 @@ export const moonriverPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['ETH', 'BNBbsc'],
     risks: [
       'COMPLEXITY_LOW',
@@ -248,7 +248,7 @@ export const moonriverPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['ETH', 'WBTCeth'],
     risks: [
       'COMPLEXITY_LOW',
@@ -281,7 +281,7 @@ export const moonriverPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['ETH', 'DAI'],
     risks: [
       'COMPLEXITY_LOW',

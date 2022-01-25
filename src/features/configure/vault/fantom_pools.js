@@ -83,7 +83,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     withdrawalFee: '0%',
     assets: ['USDC', 'FTM'],
     risks: [
@@ -118,7 +118,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     withdrawalFee: '0%',
     assets: ['ETH', 'FTM'],
     risks: [
@@ -153,7 +153,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     withdrawalFee: '0%',
     assets: ['fUSDT', 'FTM'],
     risks: [
@@ -188,7 +188,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     withdrawalFee: '0%',
     assets: ['ETH', 'DAI'],
     risks: [
@@ -223,7 +223,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     withdrawalFee: '0%',
     assets: ['MIM', 'USDC'],
     risks: [
@@ -258,7 +258,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     withdrawalFee: '0.01%',
     assets: ['ETH', 'BTC'],
     risks: [
@@ -293,7 +293,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     withdrawalFee: '0%',
     assets: ['SUSHI', 'FTM'],
     risks: [
@@ -328,7 +328,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Others',
+    platform: 'Other',
     assets: ['FTM'],
     risks: [
       'COMPLEXITY_LOW',
@@ -361,7 +361,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Others',
+    platform: 'Other',
     assets: ['USDC'],
     risks: [
       'COMPLEXITY_LOW',
@@ -395,7 +395,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Others',
+    platform: 'Other',
     assets: ['DAI'],
     risks: [
       'COMPLEXITY_LOW',
@@ -429,7 +429,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Others',
+    platform: 'Other',
     assets: ['MIM'],
     risks: [
       'COMPLEXITY_LOW',
@@ -463,7 +463,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Others',
+    platform: 'Other',
     assets: ['TOMB'],
     risks: [
       'COMPLEXITY_LOW',
@@ -497,7 +497,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Others',
+    platform: 'Other',
     assets: ['WBTC'],
     risks: [
       'COMPLEXITY_LOW',
@@ -531,7 +531,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Others',
+    platform: 'Other',
     assets: ['ETH'],
     risks: [
       'COMPLEXITY_LOW',
@@ -564,7 +564,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Others',
+    platform: 'Other',
     assets: ['OXD', 'USDC'],
     risks: [
       'COMPLEXITY_LOW',
@@ -4112,7 +4112,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'StakeSteak',
+    platform: 'Other',
     assets: ['fUSD', 'USDC'],
     risks: [
       'COMPLEXITY_LOW',

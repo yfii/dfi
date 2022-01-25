@@ -50,7 +50,7 @@ export const harmonyPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['BIFI', 'ONE'],
     callFee: 0.25,
     risks: [
@@ -85,7 +85,7 @@ export const harmonyPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['BTC', 'ONE'],
     callFee: 0.25,
     risks: [
@@ -188,7 +188,7 @@ export const harmonyPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['YGG', 'ETH'],
     callFee: 0.25,
     risks: [
@@ -224,7 +224,7 @@ export const harmonyPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['AAVE', 'ETH'],
     callFee: 0.25,
     risks: [
@@ -260,7 +260,7 @@ export const harmonyPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['AXS', 'ETH'],
     callFee: 0.25,
     risks: [
@@ -296,7 +296,7 @@ export const harmonyPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['DAI', 'ETH'],
     callFee: 0.25,
     risks: [
@@ -332,7 +332,7 @@ export const harmonyPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['USDT', 'ETH'],
     callFee: 0.25,
     risks: [
@@ -368,7 +368,7 @@ export const harmonyPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['FRAX', 'ETH'],
     callFee: 0.25,
     risks: [
@@ -404,7 +404,7 @@ export const harmonyPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['UST', 'ETH'],
     callFee: 0.25,
     risks: [
@@ -440,7 +440,7 @@ export const harmonyPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['WBTC', 'ETH'],
     callFee: 0.25,
     risks: [
@@ -476,7 +476,7 @@ export const harmonyPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['USDT', 'USDC'],
     callFee: 0.25,
     risks: [
@@ -512,7 +512,7 @@ export const harmonyPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['USDT', 'ONE'],
     callFee: 0.25,
     risks: [
@@ -547,7 +547,7 @@ export const harmonyPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['SUSHI', 'ONE'],
     callFee: 0.25,
     risks: [
@@ -582,7 +582,7 @@ export const harmonyPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['BUSD', 'ONE'],
     withdrawalFee: '0%',
     callFee: 0.25,
@@ -617,7 +617,7 @@ export const harmonyPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['BUSD', 'bscBUSD'],
     callFee: 0.25,
     risks: [
@@ -653,7 +653,7 @@ export const harmonyPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['ETH', 'ONE'],
     callFee: 0.25,
     risks: [
@@ -688,7 +688,7 @@ export const harmonyPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     assets: ['WBTC', 'ONE'],
     callFee: 0.25,
     risks: [
@@ -723,7 +723,7 @@ export const harmonyPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',

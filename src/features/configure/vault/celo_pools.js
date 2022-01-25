@@ -51,7 +51,7 @@ export const celoPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     withdrawalFee: '0%',
     assets: ['CELO', 'MOBI'],
     risks: [
@@ -86,7 +86,7 @@ export const celoPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     withdrawalFee: '0%',
     assets: ['USDT', 'WETH'],
     risks: [
@@ -121,7 +121,7 @@ export const celoPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     withdrawalFee: '0%',
     assets: ['DAI', 'WETH'],
     risks: [
@@ -156,7 +156,7 @@ export const celoPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     withdrawalFee: '0%',
     assets: ['cUSD', 'USDC'],
     risks: [
@@ -191,7 +191,7 @@ export const celoPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     withdrawalFee: '0%',
     assets: ['CELO', 'WETH'],
     risks: [
@@ -226,7 +226,7 @@ export const celoPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     withdrawalFee: '0%',
     assets: ['cUSD', 'WETH'],
     risks: [
@@ -261,7 +261,7 @@ export const celoPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     withdrawalFee: '0%',
     assets: ['cUSD', 'cEUR'],
     risks: [
@@ -297,7 +297,7 @@ export const celoPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     withdrawalFee: '0%',
     assets: ['CELO', 'WETH'],
     risks: [
@@ -333,7 +333,7 @@ export const celoPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     withdrawalFee: '0%',
     assets: ['cUSD', 'DAI'],
     risks: [
@@ -369,7 +369,7 @@ export const celoPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     withdrawalFee: '0%',
     assets: ['cEUR', 'WETH'],
     risks: [
@@ -405,7 +405,7 @@ export const celoPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     withdrawalFee: '0%',
     assets: ['cUSD', 'cEUR'],
     risks: [
