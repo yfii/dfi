@@ -34,6 +34,40 @@ export const polygonPools = [
       'https://quickswap.exchange/#/swap?inputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619&outputCurrency=0xfbdd194376de19a88118e84e279b977f165d01b8',
   },
   {
+    id: 'popsicle-ice-eth',
+    name: 'ICE-WETH LP',
+    token: 'ICE-WETH LP',
+    tokenDescription: 'Popsicle',
+    tokenAddress: '0x941eb28e750C441AEF465a89E43DDfec2561830b',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooPopsicleICE-WETH',
+    earnedTokenAddress: '0x2109361Ed6759296A70A3f025fBce9744E5BC406',
+    earnContractAddress: '0x2109361Ed6759296A70A3f025fBce9744E5BC406',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'popsicle-ice-eth',
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Popsicle',
+    assets: ['ICE', 'WETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'MCAP_MICRO',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'PLATFORM_ESTABLISHED',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
+    withdrawalFee: '0%',
+    buyTokenUrl:
+      'https://app.sushi.com/en/swap#/swap?inputCurrency=0x4e1581f01046efdd7a1a2cdb0f82cdd7f71f2e59&outputCurrency=0x7ceb23fd6bc0add59e62ac25578270cff1b9f619',
+    addLiquidityUrl:
+      'https://app.sushi.com/add/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619/0x4e1581f01046eFDd7a1a2CDB0F82cdd7F71F2E59',
+  },
+  {
     id: 'jarvis-2cad',
     logo: 'single-assets/2CAD.svg',
     name: 'jCAD-CADC',
@@ -1966,7 +2000,7 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'IronFinance',
-    assets: ['ICE', 'IRON'],
+    assets: ['ironICE', 'IRON'],
     addLiquidityUrl:
       'https://exchange.dfyn.network/#/add/0x4A81f8796e0c6Ad4877A51C86693B0dE8093F2ef/0xD86b5923F3AD7b585eD81B448170ae026c65ae9a',
     buyTokenUrl:
@@ -3440,7 +3474,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     platform: 'Other',
-    assets: ['ICE', 'DFYN'],
+    assets: ['ironICE', 'DFYN'],
     retireReason: 'rewards',
     addLiquidityUrl:
       'https://exchange.dfyn.network/#/add/0x4A81f8796e0c6Ad4877A51C86693B0dE8093F2ef/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
@@ -3466,7 +3500,7 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'IronFinance',
-    assets: ['ICE', 'ETH'],
+    assets: ['ironICE', 'ETH'],
     addLiquidityUrl: 'https://app.firebird.finance/add/0xf1ee78544a1118f2efb87f7eacd9f1e6e80e1ea5',
     buyTokenUrl:
       'https://app.firebird.finance/swap?outputCurrency=0x4A81f8796e0c6Ad4877A51C86693B0dE8093F2ef',
@@ -3490,7 +3524,7 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'IronFinance',
-    assets: ['ICE', 'USDC'],
+    assets: ['ironICE', 'USDC'],
     addLiquidityUrl:
       'https://exchange.dfyn.network/#/add/0x4A81f8796e0c6Ad4877A51C86693B0dE8093F2ef/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
     buyTokenUrl:
