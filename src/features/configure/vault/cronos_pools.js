@@ -987,7 +987,7 @@ export const cronosPools = [
     addLiquidityUrl: 'https://app.cronaswap.org/add/CRO/0xc21223249CA28397B4B6541dfFaEcC539BfF0c59',
   },
   {
-    id: 'crona-cro-eth',
+    id: 'crona-cro-eth-eol',
     name: 'ETH-CRO',
     token: 'ETH-CRO LP',
     tokenDescription: 'CronaSwap',
@@ -1002,8 +1002,9 @@ export const cronosPools = [
     oracle: 'lps',
     oracleId: 'crona-cro-eth',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'CronaSwap',
     assets: ['ETH', 'CRO'],
     risks: [

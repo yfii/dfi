@@ -2392,7 +2392,7 @@ export const avalanchePools = [
     buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
   },
   {
-    id: 'pangolin-usdc.e-wavax-pause',
+    id: 'pangolin-usdc.e-wavax-eol',
     name: 'USDC.e-AVAX LP',
     token: 'USDC.e-AVAX LP',
     tokenDescription: 'Pangolin',
@@ -2408,7 +2408,8 @@ export const avalanchePools = [
     oracleId: 'pangolin-usdc.e-wavax',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Pangolin',
     assets: ['USDCe', 'AVAX'],
     risks: [
@@ -2494,7 +2495,7 @@ export const avalanchePools = [
       'https://avax.olive.cash/swap?inputCurrency=0x19860CCB0A68fd4213aB9D8266F7bBf05A8dDe98&outputCurrency=0xc7198437980c041c805A1EDcbA50c1Ce5db95118',
   },
   {
-    id: 'pangolin-png-qi-pause',
+    id: 'pangolin-png-qi-eol',
     name: 'QI-PNG LP',
     token: 'QI-PNG LP',
     tokenDescription: 'Pangolin',
@@ -2510,7 +2511,8 @@ export const avalanchePools = [
     oracleId: 'pangolin-png-qi',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Pangolin',
     assets: ['aQI', 'PNG'],
     risks: [
@@ -2528,7 +2530,7 @@ export const avalanchePools = [
       'https://app.pangolin.exchange/#/swap?inputCurrency=0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7&outputCurrency=0x8729438EB15e2C8B576fCc6AeCdA6A148776C0F5',
   },
   {
-    id: 'pangolin-qi-wavax-pause',
+    id: 'pangolin-qi-wavax-eol',
     name: 'QI-AVAX LP',
     token: 'QI-AVAX LP',
     tokenDescription: 'Pangolin',
@@ -2544,7 +2546,8 @@ export const avalanchePools = [
     oracleId: 'pangolin-qi-wavax',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Pangolin',
     assets: ['aQI', 'AVAX'],
     risks: [
@@ -2562,7 +2565,7 @@ export const avalanchePools = [
       'https://app.pangolin.exchange/#/swap?inputCurrency=0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7&outputCurrency=0x8729438EB15e2C8B576fCc6AeCdA6A148776C0F5',
   },
   {
-    id: 'pangolin-uni.e-wavax-pause',
+    id: 'pangolin-uni.e-wavax-eol',
     name: 'UNI.e-AVAX LP',
     token: 'UNI.e-AVAX LP',
     tokenDescription: 'Pangolin',
@@ -2578,7 +2581,8 @@ export const avalanchePools = [
     oracleId: 'pangolin-uni.e-wavax',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Pangolin',
     assets: ['UNIe', 'AVAX'],
     risks: [
@@ -2596,7 +2600,7 @@ export const avalanchePools = [
       'https://app.pangolin.exchange/#/swap?inputCurrency=0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7&outputCurrency=0x8eBAf22B6F053dFFeaf46f4Dd9eFA95D89ba8580',
   },
   {
-    id: 'pangolin-aave.e-wavax-pause',
+    id: 'pangolin-aave.e-wavax-eol',
     name: 'AAVE.e-AVAX LP',
     token: 'AAVE.e-AVAXLP',
     tokenDescription: 'Pangolin',
@@ -2612,7 +2616,8 @@ export const avalanchePools = [
     oracleId: 'pangolin-aave.e-wavax',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Pangolin',
     assets: ['AAVEe', 'AVAX'],
     risks: [
@@ -2630,7 +2635,7 @@ export const avalanchePools = [
       'https://app.pangolin.exchange/#/swap?inputCurrency=0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7&outputCurrency=0x63a72806098Bd3D9520cC43356dD78afe5D386D9',
   },
   {
-    id: 'pangolin-wavax-xava-pause',
+    id: 'pangolin-wavax-xava-eol',
     name: 'XAVA-AVAX LP',
     token: 'XAVA-AVAX LP',
     tokenDescription: 'Pangolin',
@@ -2646,7 +2651,8 @@ export const avalanchePools = [
     oracleId: 'pangolin-wavax-xava',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Pangolin',
     assets: ['XAVA', 'AVAX'],
     risks: [
@@ -2664,7 +2670,7 @@ export const avalanchePools = [
       'https://app.pangolin.exchange/#/swap?inputCurrency=0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7&outputCurrency=0x5947BB275c521040051D82396192181b413227A3',
   },
   {
-    id: 'pangolin-png-usdt.e-pause',
+    id: 'pangolin-png-usdt.e-eol',
     name: 'USDT.e-PNG LP',
     token: 'USDT.e-PNG LP',
     tokenDescription: 'Pangolin',
@@ -2680,7 +2686,8 @@ export const avalanchePools = [
     oracleId: 'pangolin-png-usdt.e',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Pangolin',
     assets: ['USDTe', 'PNG'],
     risks: [
@@ -2698,7 +2705,7 @@ export const avalanchePools = [
       'https://app.pangolin.exchange/#/swap?inputCurrency=0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7&outputCurrency=0xc7198437980c041c805A1EDcbA50c1Ce5db95118',
   },
   {
-    id: 'pangolin-weth.e-png-pause',
+    id: 'pangolin-weth.e-png-eol',
     name: 'WETH.e-PNG LP',
     token: 'WETH.e-PNG LP',
     tokenDescription: 'Pangolin',
@@ -2714,7 +2721,8 @@ export const avalanchePools = [
     oracleId: 'pangolin-weth.e-png',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Pangolin',
     assets: ['WETHe', 'PNG'],
     risks: [
@@ -2732,7 +2740,7 @@ export const avalanchePools = [
       'https://app.pangolin.exchange/#/swap?inputCurrency=0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7&outputCurrency=0xc7198437980c041c805A1EDcbA50c1Ce5db95118',
   },
   {
-    id: 'pangolin-wavax-dai.e-pause',
+    id: 'pangolin-wavax-dai.e-eol',
     name: 'DAI.e-AVAX LP',
     token: 'DAI.e-AVAX LP',
     tokenDescription: 'Pangolin',
@@ -2748,7 +2756,8 @@ export const avalanchePools = [
     oracleId: 'pangolin-wavax-dai.e',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Pangolin',
     assets: ['DAIe', 'AVAX'],
     risks: [
@@ -2766,7 +2775,7 @@ export const avalanchePools = [
       'https://app.pangolin.exchange/#/swap?inputCurrency=0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7&outputCurrency=0xd586E7F844cEa2F87f50152665BCbc2C279D8d70',
   },
   {
-    id: 'pangolin-link.e-wavax-pause',
+    id: 'pangolin-link.e-wavax-eol',
     name: 'LINK.e-AVAX LP',
     token: 'LINK.e-AVAX LP',
     tokenDescription: 'Pangolin',
@@ -2782,7 +2791,8 @@ export const avalanchePools = [
     oracleId: 'pangolin-link.e-wavax',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Pangolin',
     assets: ['LINKe', 'AVAX'],
     risks: [
@@ -2800,7 +2810,7 @@ export const avalanchePools = [
       'https://app.pangolin.exchange/#/swap?inputCurrency=0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7&outputCurrency=0x5947BB275c521040051D82396192181b413227A3',
   },
   {
-    id: 'pangolin-weth.e-wavax-pause',
+    id: 'pangolin-weth.e-wavax-eol',
     name: 'WETH.e-AVAX LP',
     token: 'WETH.e-AVAX LP',
     tokenDescription: 'Pangolin',
@@ -2816,7 +2826,8 @@ export const avalanchePools = [
     oracleId: 'pangolin-weth.e-wavax',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Pangolin',
     assets: ['WETHe', 'AVAX'],
     risks: [
@@ -2834,7 +2845,7 @@ export const avalanchePools = [
       'https://app.pangolin.exchange/#/swap?inputCurrency=0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7&outputCurrency=0xc7198437980c041c805A1EDcbA50c1Ce5db95118',
   },
   {
-    id: 'pangolin-wavax-usdt.e-pause',
+    id: 'pangolin-wavax-usdt.e-eol',
     name: 'USDT.e-AVAX LP',
     token: 'USDT.e-AVAX LP',
     tokenDescription: 'Pangolin',
@@ -2850,7 +2861,8 @@ export const avalanchePools = [
     oracleId: 'pangolin-wavax-usdt.e',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Pangolin',
     assets: ['USDTe', 'AVAX'],
     risks: [
@@ -2868,7 +2880,7 @@ export const avalanchePools = [
       'https://app.pangolin.exchange/#/swap?inputCurrency=0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7&outputCurrency=0xc7198437980c041c805A1EDcbA50c1Ce5db95118',
   },
   {
-    id: 'pangolin-wbtc.e-wavax-pause',
+    id: 'pangolin-wbtc.e-wavax-eol',
     name: 'WBTC.e-AVAX LP',
     token: 'WBTC.e-AVAX LP',
     tokenDescription: 'Pangolin',
@@ -2884,7 +2896,8 @@ export const avalanchePools = [
     oracleId: 'pangolin-wbtc.e-wavax',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Pangolin',
     assets: ['WBTCe', 'AVAX'],
     risks: [
