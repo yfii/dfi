@@ -61,7 +61,7 @@ export const fantomPools = [
       'AUDIT',
       'CONTRACTS_VERIFIED',
     ],
-    stratType: 'SingleStake',
+    stratType: 'Lending',
     withdrawalFee: '0%',
     buyTokenUrl: 'https://spookyswap.finance/swap?outputCurrency=FTM',
   },
@@ -1417,7 +1417,7 @@ export const fantomPools = [
       'AUDIT',
       'CONTRACTS_VERIFIED',
     ],
-    stratType: 'SingleStake',
+    stratType: 'Lending',
     withdrawalFee: '0%',
     showWarning: false,
     warning: 'liquidity',
@@ -1523,7 +1523,7 @@ export const fantomPools = [
       'NO_AUDIT',
       'CONTRACTS_VERIFIED',
     ],
-    stratType: 'SingleStake',
+    stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl:
       'https://spookyswap.finance/swap?outputCurrency=0x82f0B8B456c1A451378467398982d4834b6829c1',
@@ -1584,7 +1584,7 @@ export const fantomPools = [
       'NO_AUDIT',
       'CONTRACTS_VERIFIED',
     ],
-    stratType: 'SingleStake',
+    stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl:
       'https://spookyswap.finance/swap?outputCurrency=0x1E4F97b9f9F913c46F1632781732927B9019C68b',
@@ -1882,7 +1882,7 @@ export const fantomPools = [
       'AUDIT',
       'CONTRACTS_VERIFIED',
     ],
-    stratType: 'SingleStake',
+    stratType: 'Lending',
     withdrawalFee: '0%',
     showWarning: false,
     warning: 'liquidity',
@@ -2112,7 +2112,7 @@ export const fantomPools = [
       'NO_AUDIT',
       'CONTRACTS_VERIFIED',
     ],
-    stratType: 'SingleStake',
+    stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl: 'https://spookyswap.finance/swap?outputCurrency=FTM',
   },
@@ -2145,7 +2145,7 @@ export const fantomPools = [
       'NO_AUDIT',
       'CONTRACTS_VERIFIED',
     ],
-    stratType: 'SingleStake',
+    stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl:
       'https://spookyswap.finance/swap?outputCurrency=0x321162Cd933E2Be498Cd2267a90534A804051b11',
@@ -2179,7 +2179,7 @@ export const fantomPools = [
       'NO_AUDIT',
       'CONTRACTS_VERIFIED',
     ],
-    stratType: 'SingleStake',
+    stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl:
       'https://spookyswap.finance/swap?outputCurrency=0x74b23882a30290451A17c44f4F05243b6b58C76d',
@@ -2213,7 +2213,7 @@ export const fantomPools = [
       'NO_AUDIT',
       'CONTRACTS_VERIFIED',
     ],
-    stratType: 'SingleStake',
+    stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl:
       'https://spookyswap.finance/swap?outputCurrency=0x049d68029688eAbF473097a2fC38ef61633A3C7A',
@@ -2247,7 +2247,7 @@ export const fantomPools = [
       'NO_AUDIT',
       'CONTRACTS_VERIFIED',
     ],
-    stratType: 'SingleStake',
+    stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl:
       'https://spookyswap.finance/swap?outputCurrency=0x04068DA6C83AFCFA0e13ba15A6696662335D5B75',
@@ -2281,7 +2281,7 @@ export const fantomPools = [
       'NO_AUDIT',
       'CONTRACTS_VERIFIED',
     ],
-    stratType: 'SingleStake',
+    stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl:
       'https://spookyswap.finance/swap?outputCurrency=0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E',
@@ -2500,7 +2500,7 @@ export const fantomPools = [
       'AUDIT',
       'CONTRACTS_VERIFIED',
     ],
-    stratType: 'SingleStake',
+    stratType: 'Lending',
     withdrawalFee: '0%',
     buyTokenUrl:
       'https://spookyswap.finance/swap?outputCurrency=0x3129662808bEC728a27Ab6a6b9AFd3cBacA8A43c',
@@ -3040,7 +3040,7 @@ export const fantomPools = [
       'AUDIT',
       'CONTRACTS_VERIFIED',
     ],
-    stratType: 'SingleStake',
+    stratType: 'Lending',
     withdrawalFee: '0%',
     buyTokenUrl: 'https://app.frax.finance/crosschain',
   },
@@ -3073,7 +3073,7 @@ export const fantomPools = [
       'NO_AUDIT',
       'CONTRACTS_VERIFIED',
     ],
-    stratType: 'SingleStake',
+    stratType: 'Lending',
     withdrawalFee: '0%',
     buyTokenUrl:
       'https://spookyswap.finance/swap?outputCurrency=0x82f0B8B456c1A451378467398982d4834b6829c1',
@@ -4064,7 +4064,7 @@ export const fantomPools = [
       'AUDIT',
       'CONTRACTS_VERIFIED',
     ],
-    stratType: 'SingleStake',
+    stratType: 'Lending',
     withdrawalFee: '0%',
     buyTokenUrl:
       'https://spookyswap.finance/swap?outputCurrency=0x1E4F97b9f9F913c46F1632781732927B9019C68b',
@@ -4098,7 +4098,7 @@ export const fantomPools = [
       'AUDIT',
       'CONTRACTS_VERIFIED',
     ],
-    stratType: 'SingleStake',
+    stratType: 'Lending',
     withdrawalFee: '0%',
     buyTokenUrl:
       'https://spookyswap.finance/swap?outputCurrency=0xb3654dc3D10Ea7645f8319668E8F54d2574FBdC8',
@@ -4403,7 +4403,7 @@ export const fantomPools = [
       'AUDIT',
       'CONTRACTS_VERIFIED',
     ],
-    stratType: 'SingleStake',
+    stratType: 'Lending',
     withdrawalFee: '0%',
     buyTokenUrl:
       'https://spookyswap.finance/swap?outputCurrency=0x04068DA6C83AFCFA0e13ba15A6696662335D5B75',
@@ -4437,7 +4437,7 @@ export const fantomPools = [
       'AUDIT',
       'CONTRACTS_VERIFIED',
     ],
-    stratType: 'SingleStake',
+    stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl:
       'https://spookyswap.finance/swap?outputCurrency=0x321162Cd933E2Be498Cd2267a90534A804051b11',
@@ -4471,7 +4471,7 @@ export const fantomPools = [
       'AUDIT',
       'CONTRACTS_VERIFIED',
     ],
-    stratType: 'SingleStake',
+    stratType: 'Lending',
     withdrawalFee: '0%',
     buyTokenUrl:
       'https://spookyswap.finance/swap?outputCurrency=0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E',
@@ -4505,7 +4505,7 @@ export const fantomPools = [
       'AUDIT',
       'CONTRACTS_VERIFIED',
     ],
-    stratType: 'SingleStake',
+    stratType: 'Lending',
     withdrawalFee: '0%',
     buyTokenUrl:
       'https://spookyswap.finance/swap?outputCurrency=0x74b23882a30290451A17c44f4F05243b6b58C76d',
@@ -4539,7 +4539,7 @@ export const fantomPools = [
       'AUDIT',
       'CONTRACTS_VERIFIED',
     ],
-    stratType: 'SingleStake',
+    stratType: 'Lending',
     withdrawalFee: '0%',
     buyTokenUrl:
       'https://spookyswap.finance/swap?outputCurrency=0x049d68029688eAbF473097a2fC38ef61633A3C7A',

@@ -5536,7 +5536,7 @@ export const polygonPools = [
       'AUDIT',
       'CONTRACTS_VERIFIED',
     ],
-    stratType: 'SingleStake',
+    stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl:
       'https://quickswap.exchange/#/swap?outputCurrency=0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6',
@@ -5571,7 +5571,7 @@ export const polygonPools = [
       'AUDIT',
       'CONTRACTS_VERIFIED',
     ],
-    stratType: 'SingleStake',
+    stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl:
       'https://quickswap.exchange/#/swap?outputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
@@ -6441,7 +6441,7 @@ export const polygonPools = [
       'AUDIT',
       'CONTRACTS_VERIFIED',
     ],
-    stratType: 'SingleStake',
+    stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl:
       'https://quickswap.exchange/#/swap?outputCurrency=0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
@@ -6476,7 +6476,7 @@ export const polygonPools = [
       'AUDIT',
       'CONTRACTS_VERIFIED',
     ],
-    stratType: 'SingleStake',
+    stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl:
       'https://quickswap.exchange/#/swap?outputCurrency=0xD6DF932A45C0f255f85145f286eA0b292B21C90B',
@@ -6511,7 +6511,7 @@ export const polygonPools = [
       'AUDIT',
       'CONTRACTS_VERIFIED',
     ],
-    stratType: 'SingleStake',
+    stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl:
       'https://quickswap.exchange/#/swap?outputCurrency=0x8f3cf7ad23cd3cadbd9735aff958023239c6a063',
@@ -6546,7 +6546,7 @@ export const polygonPools = [
       'AUDIT',
       'CONTRACTS_VERIFIED',
     ],
-    stratType: 'SingleStake',
+    stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl:
       'https://quickswap.exchange/#/swap?outputCurrency=0x2791bca1f2de4661ed88a30c99a7a9449aa84174',
