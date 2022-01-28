@@ -2915,7 +2915,7 @@ export const avalanchePools = [
       'https://app.pangolin.exchange/#/swap?inputCurrency=0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7&outputCurrency=0x50b7545627a5162F82A992c33b87aDc75187B218',
   },
   {
-    id: 'png-bnb-avax-pause',
+    id: 'png-bnb-avax-eol',
     name: 'BNB-AVAX LP',
     token: 'BNB-AVAX LP',
     tokenDescription: 'Pangolin',
@@ -2931,7 +2931,8 @@ export const avalanchePools = [
     oracleId: 'png-bnb-avax',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Pangolin',
     assets: ['BNB', 'AVAX'],
     risks: [
@@ -3412,7 +3413,7 @@ export const avalanchePools = [
   },
 
   {
-    id: 'png-png-avax-pause',
+    id: 'png-png-avax-eol',
     name: 'PNG-AVAX LP',
     token: 'PNG-AVAX LP',
     tokenDescription: 'Pangolin',
@@ -3428,7 +3429,8 @@ export const avalanchePools = [
     oracleId: 'png-png-avax',
     oraclePrice: 0,
     depositsPaused: true,
-    status: 'active',
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Pangolin',
     assets: ['PNG', 'AVAX'],
     risks: [
