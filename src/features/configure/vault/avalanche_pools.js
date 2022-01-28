@@ -750,7 +750,7 @@ export const avalanchePools = [
       'https://www.traderjoexyz.com/#/trade?outputCurrency=0xbD83010eB60F12112908774998F65761cf9f6f9a',
   },
   {
-    id: 'spell-avax-mim-crv',
+    id: 'spell-avax-mim-crv-eol',
     logo: 'uncategorized/MIM2CRV.svg',
     name: 'MIM/USDC/USDT',
     token: 'MIM-3PoolV2',
@@ -766,8 +766,9 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'curve-avax-mim',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'MIM',
     assets: ['MIM', 'USDCe', 'USDTe'],
     risks: [
