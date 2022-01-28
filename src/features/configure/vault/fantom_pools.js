@@ -1987,7 +1987,7 @@ export const fantomPools = [
       'https://spookyswap.finance/swap?outputCurrency=0x9F47F313ACFd4bdC52F4373b493EaE7d5aC5b765',
   },
   {
-    id: 'spirit-spell-sspell',
+    id: 'spirit-spell-sspell-eol',
     name: 'sSPELL-SPELL',
     token: 'sSPELL-SPELL LP',
     tokenDescription: 'SpiritSwap',
@@ -2002,8 +2002,9 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'spirit-spell-sspell',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'SpiritSwap',
     assets: ['sSPELL', 'SPELL'],
     risks: [
