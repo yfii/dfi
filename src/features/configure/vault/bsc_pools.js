@@ -16485,7 +16485,7 @@ export const bscPools = [
       'AUDIT',
       'CONTRACTS_VERIFIED',
     ],
-    stratType: 'SingleStake',
+    stratType: 'Lending',
     withdrawalFee: '0.05%',
   },
 
@@ -16519,6 +16519,7 @@ export const bscPools = [
       'CONTRACTS_VERIFIED',
     ],
     withdrawalFee: '0.05%',
+    stratType: 'Lending',
     buyTokenUrl:
       'https://pancakeswap.finance/swap?outputCurrency=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
   },
