@@ -31,7 +31,7 @@ export const avalanchePools = [
     stratType: 'SingleStake',
     withdrawalFee: '0.05%',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0xd6070ae98b8069de6b494332d1a1a81b6179d960',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0xd6070ae98b8069de6b494332d1a1a81b6179d960',
   },
   {
     id: 'joe-ust-wavax',
@@ -63,9 +63,9 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://traderjoexyz.com/#/pool/0x260Bbf5698121EB85e7a74f2E45E16Ce762EbE11/AVAX',
+      'https://traderjoexyz.com/pool/0x260Bbf5698121EB85e7a74f2E45E16Ce762EbE11/AVAX',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0x260Bbf5698121EB85e7a74f2E45E16Ce762EbE11',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0x260Bbf5698121EB85e7a74f2E45E16Ce762EbE11',
   },
   {
     id: 'joe-wavax-more',
@@ -97,9 +97,9 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://traderjoexyz.com/#/pool/0xd9D90f882CDdD6063959A9d837B05Cb748718A05/AVAX',
+      'https://traderjoexyz.com/pool/0xd9D90f882CDdD6063959A9d837B05Cb748718A05/AVAX',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0xd9D90f882CDdD6063959A9d837B05Cb748718A05',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0xd9D90f882CDdD6063959A9d837B05Cb748718A05',
   },
   {
     id: 'joe-gmx-wavax',
@@ -131,9 +131,9 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://traderjoexyz.com/#/pool/0x62edc0692BD897D2295872a9FFCac5425011c661/AVAX',
+      'https://traderjoexyz.com/pool/0x62edc0692BD897D2295872a9FFCac5425011c661/AVAX',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0x62edc0692BD897D2295872a9FFCac5425011c661',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0x62edc0692BD897D2295872a9FFCac5425011c661',
   },
   {
     id: 'png-png',
@@ -232,9 +232,9 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://traderjoexyz.com/#/pool/0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664/0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E',
+      'https://traderjoexyz.com/pool/0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664/0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E',
   },
   {
     id: 'joe-usdt-usdt.e',
@@ -334,9 +334,9 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://traderjoexyz.com/#/pool/AVAX/0xec3492a2508DDf4FDc0cD76F31f340b30d1793e6',
+      'https://traderjoexyz.com/pool/AVAX/0xec3492a2508DDf4FDc0cD76F31f340b30d1793e6',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0xec3492a2508DDf4FDc0cD76F31f340b30d1793e6',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0xec3492a2508DDf4FDc0cD76F31f340b30d1793e6',
   },
   {
     id: 'joe-ptp-wavax',
@@ -368,9 +368,9 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://traderjoexyz.com/#/pool/AVAX/0x22d4002028f537599bE9f666d1c4Fa138522f9c8',
+      'https://traderjoexyz.com/pool/AVAX/0x22d4002028f537599bE9f666d1c4Fa138522f9c8',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0x22d4002028f537599bE9f666d1c4Fa138522f9c8',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0x22d4002028f537599bE9f666d1c4Fa138522f9c8',
   },
   {
     id: 'joe-awool-wavax-eol',
@@ -403,9 +403,9 @@ export const avalanchePools = [
     stratType: 'StratLP',
     retireReason: 'rewards',
     addLiquidityUrl:
-      'https://traderjoexyz.com/#/pool/AVAX/0x5eDE350E84223fb50775fD91a723F2ca71034cf7',
+      'https://traderjoexyz.com/pool/AVAX/0x5eDE350E84223fb50775fD91a723F2ca71034cf7',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0x5eDE350E84223fb50775fD91a723F2ca71034cf7',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0x5eDE350E84223fb50775fD91a723F2ca71034cf7',
   },
   {
     id: 'joe-klo-wavax',
@@ -437,9 +437,9 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://traderjoexyz.com/#/pool/AVAX/0xb27c8941a7Df8958A1778c0259f76D1F8B711C35',
+      'https://traderjoexyz.com/pool/AVAX/0xb27c8941a7Df8958A1778c0259f76D1F8B711C35',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0xb27c8941a7Df8958A1778c0259f76D1F8B711C35',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0xb27c8941a7Df8958A1778c0259f76D1F8B711C35',
   },
   {
     id: 'joe-craft-wavax',
@@ -471,9 +471,9 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://traderjoexyz.com/#/pool/AVAX/0x8aE8be25C23833e0A01Aa200403e826F611f9CD2',
+      'https://traderjoexyz.com/pool/AVAX/0x8aE8be25C23833e0A01Aa200403e826F611f9CD2',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0x8aE8be25C23833e0A01Aa200403e826F611f9CD2',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0x8aE8be25C23833e0A01Aa200403e826F611f9CD2',
   },
   {
     id: 'joe-melt-wavax',
@@ -505,9 +505,9 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://traderjoexyz.com/#/pool/AVAX/0x47EB6F7525C1aA999FBC9ee92715F5231eB1241D',
+      'https://traderjoexyz.com/pool/AVAX/0x47EB6F7525C1aA999FBC9ee92715F5231eB1241D',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0x47EB6F7525C1aA999FBC9ee92715F5231eB1241D',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0x47EB6F7525C1aA999FBC9ee92715F5231eB1241D',
   },
   {
     id: 'joe-gohm-wavax',
@@ -539,9 +539,9 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://traderjoexyz.com/#/pool/AVAX/0x321E7092a180BB43555132ec53AaA65a5bF84251',
+      'https://traderjoexyz.com/pool/AVAX/0x321E7092a180BB43555132ec53AaA65a5bF84251',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0x321E7092a180BB43555132ec53AaA65a5bF84251',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0x321E7092a180BB43555132ec53AaA65a5bF84251',
   },
   {
     id: 'synapse-nusdlp',
@@ -609,9 +609,9 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://traderjoexyz.com/#/pool/AVAX/0xA56F9A54880afBc30CF29bB66d2D9ADCdcaEaDD6',
+      'https://traderjoexyz.com/pool/AVAX/0xA56F9A54880afBc30CF29bB66d2D9ADCdcaEaDD6',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0xA56F9A54880afBc30CF29bB66d2D9ADCdcaEaDD6',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0xA56F9A54880afBc30CF29bB66d2D9ADCdcaEaDD6',
   },
   {
     id: 'blizz-avax',
@@ -644,7 +644,7 @@ export const avalanchePools = [
     stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7',
   },
   {
     id: 'blizz-eth',
@@ -678,7 +678,7 @@ export const avalanchePools = [
     stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB',
   },
   {
     id: 'blizz-wbtc',
@@ -712,7 +712,7 @@ export const avalanchePools = [
     stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0x50b7545627a5162F82A992c33b87aDc75187B218',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0x50b7545627a5162F82A992c33b87aDc75187B218',
   },
   {
     id: 'blizz-blzz-avax',
@@ -745,9 +745,9 @@ export const avalanchePools = [
     stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
-      'https://www.traderjoexyz.com/#/pool/AVAX/0x0f34919404a290e71fc6A510cB4a6aCb8D764b24',
+      'https://www.traderjoexyz.com/pool/AVAX/0x0f34919404a290e71fc6A510cB4a6aCb8D764b24',
     buyTokenUrl:
-      'https://traderjoexyz.com/#/trade?outputCurrency=0x0f34919404a290e71fc6A510cB4a6aCb8D764b24',
+      'https://traderjoexyz.com/trade?outputCurrency=0x0f34919404a290e71fc6A510cB4a6aCb8D764b24',
   },
   {
     id: 'joe-cra-wavax',
@@ -779,9 +779,9 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://traderjoexyz.com/#/pool/AVAX/0xA32608e873F9DdEF944B24798db69d80Bbb4d1ed',
+      'https://traderjoexyz.com/pool/AVAX/0xA32608e873F9DdEF944B24798db69d80Bbb4d1ed',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0xA32608e873F9DdEF944B24798db69d80Bbb4d1ed',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0xA32608e873F9DdEF944B24798db69d80Bbb4d1ed',
   },
   {
     id: 'joe-wavax-boo',
@@ -813,9 +813,9 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://traderjoexyz.com/#/pool/AVAX/0xbD83010eB60F12112908774998F65761cf9f6f9a',
+      'https://traderjoexyz.com/pool/AVAX/0xbD83010eB60F12112908774998F65761cf9f6f9a',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0xbD83010eB60F12112908774998F65761cf9f6f9a',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0xbD83010eB60F12112908774998F65761cf9f6f9a',
   },
   {
     id: 'spell-avax-mim-crv-eol',
@@ -882,7 +882,7 @@ export const avalanchePools = [
     stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7',
   },
   {
     id: 'bankerjoe-weth.e',
@@ -916,7 +916,7 @@ export const avalanchePools = [
     stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB',
   },
   {
     id: 'bankerjoe-wbtc.e',
@@ -950,7 +950,7 @@ export const avalanchePools = [
     stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0x50b7545627a5162F82A992c33b87aDc75187B218',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0x50b7545627a5162F82A992c33b87aDc75187B218',
   },
   {
     id: 'bankerjoe-usdc.e',
@@ -984,7 +984,7 @@ export const avalanchePools = [
     stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664',
   },
   {
     id: 'bankerjoe-usdt.e',
@@ -1018,7 +1018,7 @@ export const avalanchePools = [
     stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0xc7198437980c041c805A1EDcbA50c1Ce5db95118',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0xc7198437980c041c805A1EDcbA50c1Ce5db95118',
   },
   {
     id: 'bankerjoe-dai.e-eol',
@@ -1053,7 +1053,7 @@ export const avalanchePools = [
     retireReason: 'rewards',
     withdrawalFee: '0%',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0xd586E7F844cEa2F87f50152665BCbc2C279D8d70',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0xd586E7F844cEa2F87f50152665BCbc2C279D8d70',
   },
   {
     id: 'bankerjoe-link.e',
@@ -1087,7 +1087,7 @@ export const avalanchePools = [
     stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0x5947BB275c521040051D82396192181b413227A3',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0x5947BB275c521040051D82396192181b413227A3',
   },
   {
     id: 'bankerjoe-mim',
@@ -1121,7 +1121,7 @@ export const avalanchePools = [
     stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0x130966628846BFd36ff31a822705796e8cb8C18D',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0x130966628846BFd36ff31a822705796e8cb8C18D',
   },
   {
     id: 'joe-wavax-bifi-eol',
@@ -1154,8 +1154,8 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://www.traderjoexyz.com/#/pool/AVAX/0xd6070ae98b8069de6b494332d1a1a81b6179d960',
-    buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
+      'https://www.traderjoexyz.com/pool/AVAX/0xd6070ae98b8069de6b494332d1a1a81b6179d960',
+    buyTokenUrl: 'https://www.traderjoexyz.com/trade',
   },
   {
     id: 'curve-avax-av3crv',
@@ -1253,8 +1253,8 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://traderjoexyz.com/#/pool/AVAX/0x5c49b268c9841AFF1Cc3B0a418ff5c3442eE3F3b',
-    buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
+      'https://traderjoexyz.com/pool/AVAX/0x5c49b268c9841AFF1Cc3B0a418ff5c3442eE3F3b',
+    buyTokenUrl: 'https://www.traderjoexyz.com/trade',
   },
   {
     id: 'joe-ampl-wavax',
@@ -1286,8 +1286,8 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://traderjoexyz.com/#/pool/AVAX/0x027dbcA046ca156De9622cD1e2D907d375e53aa7',
-    buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
+      'https://traderjoexyz.com/pool/AVAX/0x027dbcA046ca156De9622cD1e2D907d375e53aa7',
+    buyTokenUrl: 'https://www.traderjoexyz.com/trade',
   },
   {
     id: 'sing-usdt.e-sing',
@@ -1310,9 +1310,9 @@ export const avalanchePools = [
     platform: 'Other',
     assets: ['SING', 'USDTe'],
     addLiquidityUrl:
-      'https://www.traderjoexyz.com/#/pool/0xc7198437980c041c805a1edcba50c1ce5db95118/0xf9a075c9647e91410bf6c402bdf166e1540f67f0',
+      'https://www.traderjoexyz.com/pool/0xc7198437980c041c805a1edcba50c1ce5db95118/0xf9a075c9647e91410bf6c402bdf166e1540f67f0',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0xf9a075c9647e91410bf6c402bdf166e1540f67f0',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0xf9a075c9647e91410bf6c402bdf166e1540f67f0',
   },
   {
     id: 'aave-wavax',
@@ -1346,7 +1346,7 @@ export const avalanchePools = [
     ],
     stratType: 'Lending',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7',
   },
   {
     id: 'aave-dai.e',
@@ -1381,7 +1381,7 @@ export const avalanchePools = [
     stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0xd586E7F844cEa2F87f50152665BCbc2C279D8d70',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0xd586E7F844cEa2F87f50152665BCbc2C279D8d70',
   },
   {
     id: 'aave-usdc.e',
@@ -1416,7 +1416,7 @@ export const avalanchePools = [
     stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664',
   },
   {
     id: 'aave-usdt.e',
@@ -1451,7 +1451,7 @@ export const avalanchePools = [
     stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0xc7198437980c041c805A1EDcbA50c1Ce5db95118',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0xc7198437980c041c805A1EDcbA50c1Ce5db95118',
   },
   {
     id: 'aave-weth.e',
@@ -1486,7 +1486,7 @@ export const avalanchePools = [
     stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB',
   },
   {
     id: 'aave-wbtc.e',
@@ -1521,7 +1521,7 @@ export const avalanchePools = [
     stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0x50b7545627a5162F82A992c33b87aDc75187B218',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0x50b7545627a5162F82A992c33b87aDc75187B218',
   },
   {
     id: 'aave-aave.e',
@@ -1556,7 +1556,7 @@ export const avalanchePools = [
     stratType: 'Lending',
     withdrawalFee: '0.01%',
     buyTokenUrl:
-      'https://www.traderjoexyz.com/#/trade?outputCurrency=0x63a72806098Bd3D9520cC43356dD78afe5D386D9',
+      'https://www.traderjoexyz.com/trade?outputCurrency=0x63a72806098Bd3D9520cC43356dD78afe5D386D9',
   },
   {
     id: 'joe-joe',
@@ -1589,7 +1589,7 @@ export const avalanchePools = [
     ],
     stratType: 'SingleStake',
     withdrawalFee: '0%',
-    buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
+    buyTokenUrl: 'https://www.traderjoexyz.com/trade',
   },
   {
     id: 'joe-joe-usdc.e',
@@ -1621,8 +1621,8 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://www.traderjoexyz.com/#/pool/0x6e84a6216ea6dacc71ee8e6b0a5b7322eebc0fdd/0xa7d7079b0fead91f3e65f86e8915cb59c1a4c664',
-    buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
+      'https://www.traderjoexyz.com/pool/0x6e84a6216ea6dacc71ee8e6b0a5b7322eebc0fdd/0xa7d7079b0fead91f3e65f86e8915cb59c1a4c664',
+    buyTokenUrl: 'https://www.traderjoexyz.com/trade',
   },
   {
     id: 'joe-wavax-aave.e',
@@ -1654,8 +1654,8 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://www.traderjoexyz.com/#/pool/0x63a72806098bd3d9520cc43356dd78afe5d386d9/AVAX',
-    buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
+      'https://www.traderjoexyz.com/pool/0x63a72806098bd3d9520cc43356dd78afe5d386d9/AVAX',
+    buyTokenUrl: 'https://www.traderjoexyz.com/trade',
   },
   {
     id: 'joe-mai-wavax-eol',
@@ -1687,8 +1687,8 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://www.traderjoexyz.com/#/pool/0x3b55e45fd6bd7d4724f5c47e0d1bcaedd059263e/AVAX',
-    buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
+      'https://www.traderjoexyz.com/pool/0x3b55e45fd6bd7d4724f5c47e0d1bcaedd059263e/AVAX',
+    buyTokenUrl: 'https://www.traderjoexyz.com/trade',
   },
   {
     id: 'joe-weth.e-usdc.e',
@@ -1720,8 +1720,8 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://www.traderjoexyz.com/#/pool/0x49d5c2bdffac6ce2bfdb6640f4f80f226bc10bab/0xa7d7079b0fead91f3e65f86e8915cb59c1a4c664',
-    buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
+      'https://www.traderjoexyz.com/pool/0x49d5c2bdffac6ce2bfdb6640f4f80f226bc10bab/0xa7d7079b0fead91f3e65f86e8915cb59c1a4c664',
+    buyTokenUrl: 'https://www.traderjoexyz.com/trade',
   },
   {
     id: 'joe-wbtc.e-usdc.e',
@@ -1753,8 +1753,8 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://www.traderjoexyz.com/#/pool/0x50b7545627a5162f82a992c33b87adc75187b218/0xa7d7079b0fead91f3e65f86e8915cb59c1a4c664',
-    buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
+      'https://www.traderjoexyz.com/pool/0x50b7545627a5162f82a992c33b87adc75187b218/0xa7d7079b0fead91f3e65f86e8915cb59c1a4c664',
+    buyTokenUrl: 'https://www.traderjoexyz.com/trade',
   },
   {
     id: 'joe-bnb-wavax',
@@ -1786,8 +1786,8 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://www.traderjoexyz.com/#/pool/0x264c1383ea520f73dd837f915ef3a732e204a493/AVAX',
-    buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
+      'https://www.traderjoexyz.com/pool/0x264c1383ea520f73dd837f915ef3a732e204a493/AVAX',
+    buyTokenUrl: 'https://www.traderjoexyz.com/trade',
   },
   {
     id: 'joe-usdc.e-usdt.e-eol',
@@ -1820,8 +1820,8 @@ export const avalanchePools = [
     stratType: 'StratLP',
     retireReason: 'rewards',
     addLiquidityUrl:
-      'https://www.traderjoexyz.com/#/pool/0xa7d7079b0fead91f3e65f86e8915cb59c1a4c664/0xc7198437980c041c805a1edcba50c1ce5db95118',
-    buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
+      'https://www.traderjoexyz.com/pool/0xa7d7079b0fead91f3e65f86e8915cb59c1a4c664/0xc7198437980c041c805a1edcba50c1ce5db95118',
+    buyTokenUrl: 'https://www.traderjoexyz.com/trade',
   },
   {
     id: 'joe-usdt.e-dai.e-eol',
@@ -1854,8 +1854,8 @@ export const avalanchePools = [
     stratType: 'StratLP',
     retireReason: 'rewards',
     addLiquidityUrl:
-      'https://www.traderjoexyz.com/#/pool/0xc7198437980c041c805a1edcba50c1ce5db95118/0xd586e7f844cea2f87f50152665bcbc2c279d8d70',
-    buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
+      'https://www.traderjoexyz.com/pool/0xc7198437980c041c805a1edcba50c1ce5db95118/0xd586e7f844cea2f87f50152665bcbc2c279d8d70',
+    buyTokenUrl: 'https://www.traderjoexyz.com/trade',
   },
   {
     id: 'joe-wavax-usdt.e',
@@ -1887,8 +1887,8 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://www.traderjoexyz.com/#/pool/AVAX/0xc7198437980c041c805a1edcba50c1ce5db95118',
-    buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
+      'https://www.traderjoexyz.com/pool/AVAX/0xc7198437980c041c805a1edcba50c1ce5db95118',
+    buyTokenUrl: 'https://www.traderjoexyz.com/trade',
   },
   {
     id: 'joe-link.e-wavax',
@@ -1920,8 +1920,8 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://www.traderjoexyz.com/#/pool/0x5947bb275c521040051d82396192181b413227a3/AVAX',
-    buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
+      'https://www.traderjoexyz.com/pool/0x5947bb275c521040051d82396192181b413227a3/AVAX',
+    buyTokenUrl: 'https://www.traderjoexyz.com/trade',
   },
   {
     id: 'joe-wavax-spell',
@@ -1953,8 +1953,8 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://www.traderjoexyz.com/#/pool/0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7/0xCE1bFFBD5374Dac86a2893119683F4911a2F7814',
-    buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
+      'https://www.traderjoexyz.com/pool/0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7/0xCE1bFFBD5374Dac86a2893119683F4911a2F7814',
+    buyTokenUrl: 'https://www.traderjoexyz.com/trade',
   },
   {
     id: 'joe-frax-wavax-eol',
@@ -1987,8 +1987,8 @@ export const avalanchePools = [
     stratType: 'StratLP',
     retireReason: 'rewards',
     addLiquidityUrl:
-      'https://www.traderjoexyz.com/#/pool/0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7/0xDC42728B0eA910349ed3c6e1c9Dc06b5FB591f98',
-    buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
+      'https://www.traderjoexyz.com/pool/0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7/0xDC42728B0eA910349ed3c6e1c9Dc06b5FB591f98',
+    buyTokenUrl: 'https://www.traderjoexyz.com/trade',
   },
   {
     id: 'joe-time-wavax-eol',
@@ -2021,8 +2021,8 @@ export const avalanchePools = [
     stratType: 'StratLP',
     retireReason: 'rewards',
     addLiquidityUrl:
-      'https://www.traderjoexyz.com/#/pool/0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7/0xb54f16fB19478766A268F172C9480f8da1a7c9C3',
-    buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
+      'https://www.traderjoexyz.com/pool/0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7/0xb54f16fB19478766A268F172C9480f8da1a7c9C3',
+    buyTokenUrl: 'https://www.traderjoexyz.com/trade',
   },
   {
     id: 'pangolin-png-pause-eol',
@@ -2090,8 +2090,8 @@ export const avalanchePools = [
     stratType: 'StratLP',
     retireReason: 'rewards',
     addLiquidityUrl:
-      'https://www.traderjoexyz.com/#/pool/0x3b55e45fd6bd7d4724f5c47e0d1bcaedd059263e/0xa7d7079b0fead91f3e65f86e8915cb59c1a4c664',
-    buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
+      'https://www.traderjoexyz.com/pool/0x3b55e45fd6bd7d4724f5c47e0d1bcaedd059263e/0xa7d7079b0fead91f3e65f86e8915cb59c1a4c664',
+    buyTokenUrl: 'https://www.traderjoexyz.com/trade',
   },
   {
     id: 'joe-joe-wavax',
@@ -2123,8 +2123,8 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://www.traderjoexyz.com/#/pool/AVAX/0x6e84a6216eA6dACC71eE8E6b0a5B7322EEbC0fDd',
-    buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
+      'https://www.traderjoexyz.com/pool/AVAX/0x6e84a6216eA6dACC71eE8E6b0a5B7322EEbC0fDd',
+    buyTokenUrl: 'https://www.traderjoexyz.com/trade',
   },
   {
     id: 'joe-joe-usdt.e',
@@ -2156,8 +2156,8 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://www.traderjoexyz.com/#/pool/AVAX/0x6e84a6216eA6dACC71eE8E6b0a5B7322EEbC0fDd',
-    buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
+      'https://www.traderjoexyz.com/pool/AVAX/0x6e84a6216eA6dACC71eE8E6b0a5B7322EEbC0fDd',
+    buyTokenUrl: 'https://www.traderjoexyz.com/trade',
   },
   {
     id: 'joe-mim-wavax',
@@ -2189,8 +2189,8 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://www.traderjoexyz.com/#/pool/AVAX/0x130966628846BFd36ff31a822705796e8cb8C18D',
-    buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
+      'https://www.traderjoexyz.com/pool/AVAX/0x130966628846BFd36ff31a822705796e8cb8C18D',
+    buyTokenUrl: 'https://www.traderjoexyz.com/trade',
   },
   {
     id: 'joe-qi-wavax',
@@ -2222,8 +2222,8 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://www.traderjoexyz.com/#/pool/AVAX/0x8729438EB15e2C8B576fCc6AeCdA6A148776C0F5',
-    buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
+      'https://www.traderjoexyz.com/pool/AVAX/0x8729438EB15e2C8B576fCc6AeCdA6A148776C0F5',
+    buyTokenUrl: 'https://www.traderjoexyz.com/trade',
   },
   {
     id: 'joe-syn-wavax-eol',
@@ -2256,8 +2256,8 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://www.traderjoexyz.com/#/pool/AVAX/0x1f1E7c893855525b303f99bDF5c3c05Be09ca251',
-    buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
+      'https://www.traderjoexyz.com/pool/AVAX/0x1f1E7c893855525b303f99bDF5c3c05Be09ca251',
+    buyTokenUrl: 'https://www.traderjoexyz.com/trade',
   },
   {
     id: 'joe-wbtc.e-usdt.e-eol',
@@ -2290,8 +2290,8 @@ export const avalanchePools = [
     stratType: 'StratLP',
     retireReason: 'rewards',
     addLiquidityUrl:
-      'https://www.traderjoexyz.com/#/pool/0xc7198437980c041c805A1EDcbA50c1Ce5db95118/0x50b7545627a5162F82A992c33b87aDc75187B218',
-    buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
+      'https://www.traderjoexyz.com/pool/0xc7198437980c041c805A1EDcbA50c1Ce5db95118/0x50b7545627a5162F82A992c33b87aDc75187B218',
+    buyTokenUrl: 'https://www.traderjoexyz.com/trade',
   },
   {
     id: 'joe-wbtc.e-wavax',
@@ -2323,8 +2323,8 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://www.traderjoexyz.com/#/pool/AVAX/0x50b7545627a5162F82A992c33b87aDc75187B218',
-    buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
+      'https://www.traderjoexyz.com/pool/AVAX/0x50b7545627a5162F82A992c33b87aDc75187B218',
+    buyTokenUrl: 'https://www.traderjoexyz.com/trade',
   },
   {
     id: 'joe-weth.e-wavax',
@@ -2356,8 +2356,8 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://www.traderjoexyz.com/#/pool/AVAX/0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB',
-    buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
+      'https://www.traderjoexyz.com/pool/AVAX/0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB',
+    buyTokenUrl: 'https://www.traderjoexyz.com/trade',
   },
   {
     id: 'joe-usdc.e-dai.e-eol',
@@ -2390,8 +2390,8 @@ export const avalanchePools = [
     stratType: 'StratLP',
     retireReason: 'rewards',
     addLiquidityUrl:
-      'https://www.traderjoexyz.com/#/pool/0xd586E7F844cEa2F87f50152665BCbc2C279D8d70/0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664',
-    buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
+      'https://www.traderjoexyz.com/pool/0xd586E7F844cEa2F87f50152665BCbc2C279D8d70/0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664',
+    buyTokenUrl: 'https://www.traderjoexyz.com/trade',
   },
   {
     id: 'joe-usdc.e-wavax',
@@ -2423,8 +2423,8 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://www.traderjoexyz.com/#/pool/AVAX/0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664',
-    buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
+      'https://www.traderjoexyz.com/pool/AVAX/0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664',
+    buyTokenUrl: 'https://www.traderjoexyz.com/trade',
   },
   {
     id: 'joe-wavax-dai.e-eol',
@@ -2457,8 +2457,8 @@ export const avalanchePools = [
     stratType: 'StratLP',
     retireReason: 'rewards',
     addLiquidityUrl:
-      'https://www.traderjoexyz.com/#/pool/AVAX/0xd586e7f844cea2f87f50152665bcbc2c279d8d70',
-    buyTokenUrl: 'https://www.traderjoexyz.com/#/trade',
+      'https://www.traderjoexyz.com/pool/AVAX/0xd586e7f844cea2f87f50152665bcbc2c279d8d70',
+    buyTokenUrl: 'https://www.traderjoexyz.com/trade',
   },
   {
     id: 'pangolin-usdc.e-wavax-eol',
