@@ -276,7 +276,7 @@ export const bscPools = [
   {
     id: 'banana-sushi-eth',
     name: 'SUSHI-ETH LP',
-    token: 'SUSHI-ETH LP3',
+    token: 'SUSHI-ETH ALP',
     tokenDescription: 'ApeSwap',
     tokenAddress: '0x044F2b275A344D4edfc3d98e1cb7c02B30e6484e',
     tokenDecimals: 18,
