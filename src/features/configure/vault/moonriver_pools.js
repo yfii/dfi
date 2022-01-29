@@ -1045,7 +1045,7 @@ export const moonriverPools = [
       'https://www.huckleberry.finance/#/add/0x41562ae242d194247389152aCAa7a9397136b09F/0x9A92B5EBf1F6F6f7d93696FCD44e5Cf75035A756',
   },
   {
-    id: 'finn-finn-doge',
+    id: 'finn-finn-doge-eol',
     name: 'DOGE-FINN',
     token: 'DOGE-FINN FLP',
     tokenDescription: 'Huckleberry',
@@ -1060,8 +1060,9 @@ export const moonriverPools = [
     oracle: 'lps',
     oracleId: 'finn-finn-doge',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Huckleberry',
     assets: ['DOGE', 'FINN'],
     risks: [
@@ -1252,7 +1253,7 @@ export const moonriverPools = [
       'https://app.solarbeam.io/exchange/add/ETH/0x2bF9b864cdc97b08B6D79ad4663e71B8aB65c45c',
   },
   {
-    id: 'solarbeam-solar',
+    id: 'solarbeam-solar-eol',
     logo: 'single-assets/SOLAR.png',
     name: 'SOLAR',
     token: 'SOLAR',
@@ -1268,8 +1269,9 @@ export const moonriverPools = [
     oracle: 'tokens',
     oracleId: 'SOLAR',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'SolarBeam',
     assets: ['SOLAR'],
     risks: [
