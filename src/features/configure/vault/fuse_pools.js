@@ -1,8 +1,8 @@
 export const fusePools = [
   {
     id: 'sushi-wfuse-weth',
-    name: 'FUSE-WETH LP',
-    token: 'FUSE-WETH LP',
+    name: 'WETH-FUSE LP',
+    token: 'WETH-FUSE SLP',
     tokenDescription: 'SushiSwap',
     tokenAddress: '0x90c3bA00d2F7F15Cd9FDE087538be3A2865E7E2F',
     tokenDecimals: 18,
@@ -19,7 +19,7 @@ export const fusePools = [
     depositsPaused: false,
     status: 'active',
     platform: 'SushiSwap',
-    assets: ['FUSE', 'WETH'],
+    assets: ['WETH', 'FUSE'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
@@ -29,8 +29,10 @@ export const fusePools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
-    addLiquidityUrl:'https://app.sushi.com/add/0x0BE9e53fd7EDaC9F859882AfdDa116645287C629/0xa722c13135930332Eb3d749B2F0906559D2C5b99',
-    buyTokenUrl:'https://app.sushi.com/swap?inputCurrency=0x0BE9e53fd7EDaC9F859882AfdDa116645287C629&outputCurrency=0xa722c13135930332Eb3d749B2F0906559D2C5b99',
+    addLiquidityUrl:
+      'https://app.sushi.com/add/0x0BE9e53fd7EDaC9F859882AfdDa116645287C629/0xa722c13135930332Eb3d749B2F0906559D2C5b99',
+    buyTokenUrl:
+      'https://app.sushi.com/swap?inputCurrency=0x0BE9e53fd7EDaC9F859882AfdDa116645287C629&outputCurrency=0xa722c13135930332Eb3d749B2F0906559D2C5b99',
   },
   {
     id: 'fusefi-wfuse-usdc',
