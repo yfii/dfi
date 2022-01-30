@@ -770,7 +770,7 @@ export const bscPools = [
   },
 
   {
-    id: 'bison-bison-bnb',
+    id: 'bison-bison-bnb-eol',
     name: 'BISON-BNB LP',
     token: 'BISON-BNB ALP',
     tokenDescription: 'ApeSwap (BiShares)',
@@ -785,8 +785,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'bison-bison-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Other',
     assets: ['BISON', 'BNB'],
     risks: [
@@ -1173,7 +1174,7 @@ export const bscPools = [
       'https://dex.apeswap.finance/#/swap?outputCurrency=0xb19289b436b2F7A92891ac391D8f52580d3087e4',
   },
   {
-    id: 'bison-bison',
+    id: 'bison-bison-eol',
     logo: 'single-assets/BISON.png',
     name: 'BISON',
     token: 'BISON',
@@ -1189,8 +1190,9 @@ export const bscPools = [
     oracle: 'tokens',
     oracleId: 'BISON',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Other',
     assets: ['BISON'],
     risks: [
