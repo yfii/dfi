@@ -273,7 +273,40 @@ export const bscPools = [
     buyTokenUrl:
       'https://pancakeswap.finance/swap?outputCurrency=0x26d3163b165BE95137CEe97241E716b2791a7572',
   },
-
+  {
+    id: 'banana-sushi-eth',
+    name: 'SUSHI-ETH LP',
+    token: 'SUSHI-ETH ALP',
+    tokenDescription: 'ApeSwap',
+    tokenAddress: '0x044F2b275A344D4edfc3d98e1cb7c02B30e6484e',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooApeSUSHI-ETH',
+    earnedTokenAddress: '0x42376cd79F916Fdae6225Dd647f154D055165d83',
+    earnContractAddress: '0x42376cd79F916Fdae6225Dd647f154D055165d83',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'banana-sushi-eth',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'ApeSwap',
+    assets: ['SUSHI', 'ETH'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MEDIUM',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
+    addLiquidityUrl:
+      'https://dex.apeswap.finance/#/add/0x947950bcc74888a40ffa2593c5798f11fc9124c4/0x2170ed0880ac9a755fd29b2688956bd959f933f8',
+    buyTokenUrl:
+      'https://dex.apeswap.finance/#/swap?inputCurrency=0x2170ed0880ac9a755fd29b2688956bd959f933f8&outputCurrency=0x947950bcc74888a40ffa2593c5798f11fc9124c4',
+  },
   {
     id: 'banana-nfty-wbnb',
     name: 'NFTY-BNB LP',
