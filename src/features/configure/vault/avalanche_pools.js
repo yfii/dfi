@@ -35,8 +35,8 @@ export const avalanchePools = [
   },
   {
     id: 'joe-wavax-xava',
-    name: 'AVAX-XAVA LP',
-    token: 'AVAX-XAVA JLP',
+    name: 'XAVA-AVAX LP',
+    token: 'XAVA-AVAX JLP',
     tokenDescription: 'Trader Joe',
     tokenAddress: '0x72c3438cf1c915EcF5D9F17A6eD346B273d5bF71',
     tokenDecimals: 18,
@@ -52,7 +52,7 @@ export const avalanchePools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Trader Joe',
-    assets: ['AVAX', 'XAVA'],
+    assets: ['XAVA', 'AVAX'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
@@ -69,8 +69,8 @@ export const avalanchePools = [
   },
   {
     id: 'joe-wavax-cook',
-    name: 'AVAX-COOK LP',
-    token: 'AVAX-COOK JLP',
+    name: 'COOK-AVAX LP',
+    token: 'COOK-AVAX JLP',
     tokenDescription: 'Trader Joe',
     tokenAddress: '0x3fcD1d5450e63FA6af495A601E6EA1230f01c4E3',
     tokenDecimals: 18,
@@ -86,7 +86,7 @@ export const avalanchePools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Trader Joe',
-    assets: ['AVAX', 'COOK'],
+    assets: ['COOK', 'AVAX'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
@@ -103,8 +103,8 @@ export const avalanchePools = [
   },
   {
     id: 'joe-wavax-dcau',
-    name: 'AVAX-DCAU LP',
-    token: 'AVAX-DCAU JLP',
+    name: 'DCAU-AVAX LP',
+    token: 'DCAU-AVAX JLP',
     tokenDescription: 'Trader Joe',
     tokenAddress: '0x81034A38a124A3290DC226798f34c6645B153a02',
     tokenDecimals: 18,
@@ -120,7 +120,7 @@ export const avalanchePools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Trader Joe',
-    assets: ['AVAX', 'DCAU'],
+    assets: ['DCAU', 'AVAX'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
@@ -137,8 +137,8 @@ export const avalanchePools = [
   },
   {
     id: 'joe-wavax-hec',
-    name: 'AVAX-HEC LP',
-    token: 'AVAX-HEC JLP',
+    name: 'HEC-AVAX LP',
+    token: 'HEC-AVAX JLP',
     tokenDescription: 'Trader Joe',
     tokenAddress: '0x4dC5291cdc7Ad03342994E35D0Ccc76De065A566',
     tokenDecimals: 18,
@@ -154,7 +154,7 @@ export const avalanchePools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Trader Joe',
-    assets: ['AVAX', 'HEC'],
+    assets: ['HEC', 'AVAX'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
