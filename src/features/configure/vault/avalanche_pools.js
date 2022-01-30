@@ -199,9 +199,9 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://app.pangolin.exchange/add/0xD24C2Ad096400B6FBcd2ad8B24E7acBc21A1da64/AVAX',
+      'https://app.pangolin.exchange/#/add/0xD24C2Ad096400B6FBcd2ad8B24E7acBc21A1da64/AVAX',
     buyTokenUrl:
-      'https://app.pangolin.exchange/swap?outputCurrency=0xD24C2Ad096400B6FBcd2ad8B24E7acBc21A1da64',
+      'https://app.pangolin.exchange/#/swap?outputCurrency=0xD24C2Ad096400B6FBcd2ad8B24E7acBc21A1da64',
   },
   {
     id: 'png-link.e-wavax',
@@ -233,9 +233,9 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://app.pangolin.exchange/add/0x5947BB275c521040051D82396192181b413227A3/AVAX',
+      'https://app.pangolin.exchange/#/add/0x5947BB275c521040051D82396192181b413227A3/AVAX',
     buyTokenUrl:
-      'https://app.pangolin.exchange/swap?outputCurrency=0x5947BB275c521040051D82396192181b413227A3',
+      'https://app.pangolin.exchange/#/swap?outputCurrency=0x5947BB275c521040051D82396192181b413227A3',
   },
   {
     id: 'png-jewel-wavax',
@@ -267,9 +267,9 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://app.pangolin.exchange/add/0x4f60a160D8C2DDdaAfe16FCC57566dB84D674BD6/AVAX',
+      'https://app.pangolin.exchange/#/add/0x4f60a160D8C2DDdaAfe16FCC57566dB84D674BD6/AVAX',
     buyTokenUrl:
-      'https://app.pangolin.exchange/swap?outputCurrency=0x4f60a160D8C2DDdaAfe16FCC57566dB84D674BD6',
+      'https://app.pangolin.exchange/#/swap?outputCurrency=0x4f60a160D8C2DDdaAfe16FCC57566dB84D674BD6',
   },
   {
     id: 'joe-ust-wavax',
