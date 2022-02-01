@@ -8,8 +8,8 @@ export const auroraPools = [
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooTriNEAR-TRI',
-    earnedTokenAddress: '0xBa5041B1c06e8c9cFb5dDB4b82BdC52E41EA5FC5',
-    earnContractAddress: '0xBa5041B1c06e8c9cFb5dDB4b82BdC52E41EA5FC5',
+    earnedTokenAddress: '0x43F6De3D9fB0D5EED93d7E7E14A8A526B98f8A58',
+    earnContractAddress: '0x43F6De3D9fB0D5EED93d7E7E14A8A526B98f8A58',
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
@@ -22,13 +22,12 @@ export const auroraPools = [
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
-      'IL_LOW',
+      'IL_HIGH',
       'MCAP_MEDIUM',
       'AUDIT',
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
-    withdrawalFee: '0%',
     buyTokenUrl:
       'https://www.trisolaris.io/swap?outputCurrency=0xFa94348467f64D5A457F75F8bc40495D33c65aBB',
     addLiquidityUrl:
@@ -43,8 +42,8 @@ export const auroraPools = [
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooTriNEAR-WBTC',
-    earnedTokenAddress: '0xC9F6b1B53E056fd04bE5a197ce4B2423d456B982',
-    earnContractAddress: '0xC9F6b1B53E056fd04bE5a197ce4B2423d456B982',
+    earnedTokenAddress: '0x9E2dE72D197d446a149FA6fA8220a7d5fCc9B265',
+    earnContractAddress: '0x9E2dE72D197d446a149FA6fA8220a7d5fCc9B265',
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
@@ -63,7 +62,6 @@ export const auroraPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
-    withdrawalFee: '0%',
     buyTokenUrl:
       'https://www.trisolaris.io/swap?outputCurrency=0xF4eB217Ba2454613b15dBdea6e5f22276410e89e',
     addLiquidityUrl:
@@ -78,8 +76,8 @@ export const auroraPools = [
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooTriUSDT-USDC',
-    earnedTokenAddress: '0x41D44B276904561Ac51855159516FD4cB2c90968',
-    earnContractAddress: '0x41D44B276904561Ac51855159516FD4cB2c90968',
+    earnedTokenAddress: '0x1c9270ac5C42E51611d7b97b1004313D52c80293',
+    earnContractAddress: '0x1c9270ac5C42E51611d7b97b1004313D52c80293',
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
@@ -98,7 +96,6 @@ export const auroraPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
-    withdrawalFee: '0%',
     buyTokenUrl:
       'https://www.trisolaris.io/swap?outputCurrency=0xB12BFcA5A55806AaF64E99521918A4bf0fC40802',
     addLiquidityUrl:
@@ -113,8 +110,8 @@ export const auroraPools = [
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooTriNEAR-USDT',
-    earnedTokenAddress: '0x2a30C5e0d577108F694d2A96179cd73611Ee069b',
-    earnContractAddress: '0x2a30C5e0d577108F694d2A96179cd73611Ee069b',
+    earnedTokenAddress: '0x9E6Dcce0Fe2dcf0C961e71Cd480215754d6C2490',
+    earnContractAddress: '0x9E6Dcce0Fe2dcf0C961e71Cd480215754d6C2490',
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
@@ -133,7 +130,6 @@ export const auroraPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
-    withdrawalFee: '0%',
     buyTokenUrl:
       'https://www.trisolaris.io/swap?outputCurrency=0x4988a896b1227218e4A686fdE5EabdcAbd91571f',
     addLiquidityUrl:
@@ -148,8 +144,8 @@ export const auroraPools = [
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooTriNEAR-USDC',
-    earnedTokenAddress: '0x28A12F017d0D843d43C71235F4F58535B8BE8563',
-    earnContractAddress: '0x28A12F017d0D843d43C71235F4F58535B8BE8563',
+    earnedTokenAddress: '0x240233b447D841C84BDFAe17bDe759e8c227a753',
+    earnContractAddress: '0x240233b447D841C84BDFAe17bDe759e8c227a753',
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
@@ -168,7 +164,6 @@ export const auroraPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
-    withdrawalFee: '0%',
     buyTokenUrl:
       'https://www.trisolaris.io/swap?outputCurrency=0xB12BFcA5A55806AaF64E99521918A4bf0fC40802',
     addLiquidityUrl:
@@ -183,8 +178,8 @@ export const auroraPools = [
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooTriNEAR-ETH',
-    earnedTokenAddress: '0x8d81807F19b97FA86EecaB32F1376645FBB4d2F9',
-    earnContractAddress: '0x8d81807F19b97FA86EecaB32F1376645FBB4d2F9',
+    earnedTokenAddress: '0x939c13c8055fEAac5aDB70Bad2e8b465019bbC08',
+    earnContractAddress: '0x939c13c8055fEAac5aDB70Bad2e8b465019bbC08',
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
@@ -203,7 +198,6 @@ export const auroraPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
-    withdrawalFee: '0%',
     buyTokenUrl:
       'https://www.trisolaris.io/swap?outputCurrency=0xC42C30aC6Cc15faC9bD938618BcaA1a1FaE8501d',
     addLiquidityUrl:
