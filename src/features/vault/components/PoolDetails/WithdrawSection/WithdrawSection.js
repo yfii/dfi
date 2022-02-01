@@ -35,7 +35,7 @@ const useStyles = makeStyles(styles);
 const nativeCoin = getNetworkCoin();
 
 const WithdrawSection = ({ pool, index, sharesBalance }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const classes = useStyles();
   const { web3, address } = useConnectWallet();
   const { enqueueSnackbar } = useSnackbar();
@@ -314,6 +314,9 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
     }
   };
 
+  const withrawalNoticeKey = `Vault-Withdrawal-Platform-Notice-${pool.platform}`;
+  const withdrawalNotice = !sharesBalance.isZero() && i18n.exists(withrawalNoticeKey);
+
   return (
     <Grid
       item
@@ -412,6 +415,15 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
                   </Button>
                 )}
               </div>
+            )}
+            {/* Display a platform-specific withdrawal notice */}
+            {/* NOTE: Temporary hack until better solution is found */}
+            {withdrawalNotice ? (
+              <div className={classes.withdrawalNoticeContainer}>
+                <div className={classes.withdrawalNotice}>{t(withrawalNoticeKey)}</div>
+              </div>
+            ) : (
+              ''
             )}
             <div className={classes.zapNote}>
               <span>{t('Vault-WithdrawScenario')}&nbsp;</span>

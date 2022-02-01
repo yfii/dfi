@@ -61,6 +61,18 @@ export const allNetworks = [
     hash: '/cronos',
   },
   {
+    name: 'FUSE',
+    asset: 'FUSE Network',
+    id: 122,
+    hash: '/fuse',
+  },
+  {
+    name: 'METIS',
+    asset: 'Andromeda',
+    id: 1088,
+    hash: '/metis',
+  },
+  {
     name: 'AURORA',
     asset: 'AURORA',
     id: 1313161554,

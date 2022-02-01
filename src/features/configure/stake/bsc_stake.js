@@ -77,6 +77,191 @@ export const bscStakePools = [
   },
 
   {
+    id: 'moo_cakev2-cake-bnb-dibs',
+    name: 'DibsMoney',
+    assets: ['CAKE', 'BNB'],
+    token: 'mooCakeV2CAKE-BNB',
+    tokenDecimals: 18,
+    tokenAddress: '0xb26642B6690E4c4c9A6dAd6115ac149c700C7dfE',
+    tokenOracle: 'lps',
+    tokenOracleId: 'cakev2-cake-bnb',
+    earnedToken: 'DSHARE',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x26d3163b165BE95137CEe97241E716b2791a7572',
+    earnContractAddress: '0x5e0D12A2AD1E74afB435F8EF2750Ed5885a08FEB',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'DSHARE',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1643188921,
+    partners: [
+      {
+        logo: 'stake/dibs/logo.png',
+        background: 'stake/dibs/bg.png',
+        text:
+          'DibsMoney - not just another Tomb fork! dibs.money is a multi-token DeFi protocol pegged to the price of BNB, and with multiple use cases that will drive demand in the short term pipeline, as an example a launch partnership with one of the largest NFT-platforms on the Binance smart chain. \n' +
+          '\n' +
+          "$DIBS is a unique token in that it tracks the price of BNB, all while earning super high APY's. $DSHARE on the other hand is your ticket to earn the freshly minted $DIBS from the dibs.money Piggybank. Whether you're bullish on BNB or on Dshare - dibs.money has an option for you.\n",
+        website: 'https://www.dibs.money/farm',
+        social: {
+          telegram: 'https://t.me/dibsmoney',
+          twitter: 'https://twitter.com/DibsMoney',
+        },
+      },
+    ],
+  },
+
+  {
+    id: 'moo_baby-aot-usdt-ageoftanks',
+    name: 'AgeOfTanks',
+    assets: ['AOT', 'USDT'],
+    token: 'mooBabyAOT-USDT',
+    tokenDecimals: 18,
+    tokenAddress: '0xC9215F674876da17A671f22C2083E200eD78D0C8',
+    tokenOracle: 'lps',
+    tokenOracleId: 'baby-aot-usdt',
+    earnedToken: 'A.O.T',
+    earnedTokenDecimals: 6,
+    earnedTokenAddress: '0x9589014F7a8547B89A6331eEEe32b7fBd5852af9',
+    earnContractAddress: '0xDd94124a02Be4fb6d1a12141E107eEA524C111FF',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'AOT',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1642601238,
+    partners: [
+      {
+        logo: 'stake/tanks/logo.png',
+        background: 'stake/tanks/bg.png',
+        text:
+          'If you’re tired of NFT games that are only based on the technology but are not good games.\n' +
+          'If you’re tired of spending thousands of hours and not getting anything out of it. Look no further…\n' +
+          '\n' +
+          'WELCOME TO EARTH ZERO METAVERSE YEAR 23100\n' +
+          'The ozone layer that protectively embraced the planet no longer exists. Exposed to harsh solar storms the skies\n' +
+          'rage with turbulent winds. This is an age without oceans. This is an age without flight. This is an age where the\n' +
+          'fight for supremacy hinges on having the Ultimate Armoured Vehicle.\n' +
+          '\n' +
+          'For who controls the tanks control A.O.T. And who controls the A.O.T, controls the Metaverse!\n' +
+          '\n' +
+          'Mine resources, build your NFT tanks, and defend your territory against thousands of other players that will try to\n' +
+          'outsmart you! Are you ready to Assemble.Outwit.Triumph?\n',
+        website: 'https://ageoftanks.io/',
+        social: {
+          telegram: 'https://t.me/ageoftanksdiscussion',
+          twitter: 'https://twitter.com/AgeOfTanksNFT?s=09',
+        },
+      },
+    ],
+  },
+
+  {
+    id: 'moo_baby-usdt-milk-babyswap',
+    name: 'BabySwap',
+    assets: ['MILK', 'USDT'],
+    token: 'mooBabyUSDT-MILK',
+    tokenDecimals: 18,
+    tokenAddress: '0xBBEfaf1f7585EDc59180fDdc5bAf46b8A5D7A206',
+    tokenOracle: 'lps',
+    tokenOracleId: 'baby-usdt-milk',
+    earnedToken: 'MILK',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xBf37f781473f3b50E82C668352984865eac9853f',
+    earnContractAddress: '0x5ff90a4C704E65dc4aF232DE936583EeC738AB2f',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'MILK',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1641723900,
+    partners: [
+      {
+        logo: 'stake/babyswap/logo.png',
+        background: 'stake/babyswap/bg.png',
+        text: 'The Crypto You is the first Baby Metaverse blockchain game on Binance Smart Chain (BSC). Players can summon characters, complete daily mining missions, conquer the Dark Force, loot rare items to play and earn.',
+        website: 'https://home.babyswap.finance/',
+        social: {
+          telegram: 'https://t.me/baby_swap',
+          twitter: 'https://twitter.com/babyswap_bsc',
+        },
+      },
+    ],
+  },
+
+  {
+    id: 'moo_banana-banana-busd-bitcrush',
+    name: 'Bitcrush',
+    logo: 'degens/banana-busd.svg',
+    token: 'mooApeBANANA-BUSD',
+    tokenDecimals: 18,
+    tokenAddress: '0x651b496bCe2C184282a2B9AeF3f8BaDBAC36Dd7f',
+    tokenOracle: 'lps',
+    tokenOracleId: 'banana-banana-busd',
+    earnedToken: 'CRUSH',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x0Ef0626736c2d484A792508e99949736D0AF807e',
+    earnContractAddress: '0xe6bC48Ce41af28238E726AeeCDAFeB4337b02216',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'CRUSH',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1641118552,
+    partners: [
+      {
+        logo: 'stake/bitcrush/logo.png',
+        background: 'stake/bitcrush/bg.png',
+        text: "Bitcrush uses a hybrid approach that allows centralized gameplay utilizing a non-custodial live wallet. When you add funds to the live wallet to play, those are still your funds. It's a delicate back and forth dance between the super-quick server and the slow blockchain. It’s a Win/Win/Win platform where we have a single asset staking pool that rewards in both APY + Casino profits and its auto-compounding.",
+        website: 'https://www.bitcrush.com/',
+        social: {
+          telegram: 'https://t.me/Bcarcadechat',
+          twitter: 'https://twitter.com/bitcrusharcade',
+        },
+      },
+    ],
+  },
+
+  {
+    id: 'moo_banana-crush-wbnb-bitcrush',
+    name: 'Bitcrush',
+    assets: ['CRUSH', 'BNB'],
+    token: 'mooApeCRUSH-BNB',
+    tokenDecimals: 18,
+    tokenAddress: '0x566b68521968569aC04873c4CCFfa45C8d653463',
+    tokenOracle: 'lps',
+    tokenOracleId: 'banana-crush-wbnb',
+    earnedToken: 'CRUSH',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x0Ef0626736c2d484A792508e99949736D0AF807e',
+    earnContractAddress: '0xB726d9a71Ee0538b68102c782C667b1b6dE48789',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'CRUSH',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1641118446,
+    partners: [
+      {
+        logo: 'stake/bitcrush/logo.png',
+        background: 'stake/bitcrush/bg.png',
+        text: "Bitcrush uses a hybrid approach that allows centralized gameplay utilizing a non-custodial live wallet. When you add funds to the live wallet to play, those are still your funds. It's a delicate back and forth dance between the super-quick server and the slow blockchain. It’s a Win/Win/Win platform where we have a single asset staking pool that rewards in both APY + Casino profits and its auto-compounding.",
+        website: 'https://www.bitcrush.com/',
+        social: {
+          telegram: 'https://t.me/Bcarcadechat',
+          twitter: 'https://twitter.com/bitcrusharcade',
+        },
+      },
+    ],
+  },
+
+  {
     id: 'moo_banana-nfty-wbnb-nfty-3',
     name: 'NFTY',
     assets: ['NFTY', 'BNB'],

@@ -109,6 +109,28 @@ export const networkSettings = {
     rpcUrls: ['https://evm-cronos.crypto.org'],
     blockExplorerUrls: ['https://cronos.crypto.org/explorer/'],
   },
+  122: {
+    chainId: `0x${parseInt(122, 10).toString(16)}`,
+    chainName: 'Fuse',
+    nativeCurrency: {
+      name: 'FUSE',
+      symbol: 'FUSE',
+      decimals: 18,
+    },
+    rpcUrls: ['https://rpc.fuse.io'],
+    blockExplorerUrls: ['https://explorer.fuse.io/'],
+  },
+  1088: {
+    chainId: `0x${parseInt(1088, 10).toString(16)}`,
+    chainName: 'Metis',
+    nativeCurrency: {
+      name: 'METIS',
+      symbol: 'METIS',
+      decimals: 18,
+    },
+    rpcUrls: ['https://andromeda.metis.io/?owner=1088'],
+    blockExplorerUrls: ['https://andromeda-explorer.metis.io/'],
+  },
   1313161554: {
     chainId: `0x${parseInt(1313161554, 10).toString(16)}`,
     chainName: 'Aurora Mainnet',

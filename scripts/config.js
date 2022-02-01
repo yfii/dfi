@@ -9,6 +9,8 @@ import { celoPools } from '../src/features/configure/vault/celo_pools.js';
 import { moonriverPools } from '../src/features/configure/vault/moonriver_pools.js';
 import { cronosPools } from '../src/features/configure/vault/cronos_pools.js';
 import { auroraPools } from '../src/features/configure/vault/aurora_pools.js';
+import { fusePools } from '../src/features/configure/vault/fuse_pools.js';
+import { metisPools } from '../src/features/configure/vault/metis_pools.js';
 
 export const chainPools = {
   bsc: bscPools,
@@ -22,6 +24,8 @@ export const chainPools = {
   moonriver: moonriverPools,
   cronos: cronosPools,
   aurora: auroraPools,
+  fuse: fusePools,
+  metis: metisPools,
 };
 
 export const chainRpcs = {
@@ -30,10 +34,12 @@ export const chainRpcs = {
   avax: process.env.AVAX_RPC || 'https://api.avax.network/ext/bc/C/rpc',
   polygon: process.env.POLYGON_RPC || 'https://polygon-rpc.com',
   fantom: process.env.FANTOM_RPC || 'https://rpc.ftm.tools/',
-  one: process.env.HARMONY_RPC || 'https://api.s0.t.hmny.io/',
+  one: process.env.HARMONY_RPC || 'https://api.harmony.one/',
   arbitrum: process.env.ARBITRUM_RPC || 'https://arb1.arbitrum.io/rpc',
   celo: process.env.CELO_RPC || 'https://forno.celo.org',
   moonriver: process.env.MOONRIVER_RPC || 'https://rpc.moonriver.moonbeam.network',
   cronos: process.env.CRONOS_RPC || 'https://evm-cronos.crypto.org',
   aurora: process.env.AURORA_RPC || 'https://mainnet.aurora.dev/',
+  fuse: process.env.FUSE_RPC || 'https://rpc.fuse.io',
+  metis: process.env.METIS_RPC || 'https://andromeda.metis.io/?owner=1088',
 };
