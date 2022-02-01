@@ -139,7 +139,7 @@ export const networkSettings = {
       symbol: 'ETH',
       decimals: 18,
     },
-    rpcUrls: ['https://mainnet.aurora.dev/'],
+    rpcUrls: ['https://mainnet.aurora.dev'],
     blockExplorerUrls: ['https://explorer.mainnet.aurora.dev/'],
   },
 };
