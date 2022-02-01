@@ -41,7 +41,7 @@ export const polygonPools = [
     tokenAddress: '0xc48ae82ca34c63887b975f20aba91a38f2a900b8',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
-    earnedToken: 'mooSushiETH-MANA,
+    earnedToken: 'mooSushiETH-MANA',
     earnedTokenAddress: '0x18a20abeba0086ac0c564B2bA3a7BaF18568667D',
     earnContractAddress: '0x18a20abeba0086ac0c564B2bA3a7BaF18568667D',
     pricePerFullShare: 1,
