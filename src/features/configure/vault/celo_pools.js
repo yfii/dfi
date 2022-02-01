@@ -51,7 +51,7 @@ export const celoPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     withdrawalFee: '0%',
     assets: ['CELO', 'MOBI'],
     risks: [
@@ -86,7 +86,7 @@ export const celoPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     withdrawalFee: '0%',
     assets: ['USDT', 'WETH'],
     risks: [
@@ -121,7 +121,7 @@ export const celoPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     withdrawalFee: '0%',
     assets: ['DAI', 'WETH'],
     risks: [
@@ -156,7 +156,7 @@ export const celoPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     withdrawalFee: '0%',
     assets: ['cUSD', 'USDC'],
     risks: [
@@ -191,7 +191,7 @@ export const celoPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     withdrawalFee: '0%',
     assets: ['CELO', 'WETH'],
     risks: [
@@ -226,7 +226,7 @@ export const celoPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     withdrawalFee: '0%',
     assets: ['cUSD', 'WETH'],
     risks: [
@@ -261,7 +261,7 @@ export const celoPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     withdrawalFee: '0%',
     assets: ['cUSD', 'cEUR'],
     risks: [
@@ -297,7 +297,7 @@ export const celoPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     withdrawalFee: '0%',
     assets: ['CELO', 'WETH'],
     risks: [
@@ -333,7 +333,7 @@ export const celoPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     withdrawalFee: '0%',
     assets: ['cUSD', 'DAI'],
     risks: [
@@ -369,7 +369,7 @@ export const celoPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     withdrawalFee: '0%',
     assets: ['cEUR', 'WETH'],
     risks: [
@@ -385,42 +385,6 @@ export const celoPools = [
       'https://app.sushi.com/add/0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73/0xE919F65739c26a42616b7b8eedC6b5524d1e3aC4',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73&outputCurrency=0xE919F65739c26a42616b7b8eedC6b5524d1e3aC4',
-  },
-  {
-    id: 'sushi-celo-cusd-weth-eol',
-    name: 'cUSD-WETH LP',
-    token: 'cUSD-WETH LP',
-    tokenDescription: 'Sushi',
-    tokenAddress: '0xD7cb7686Ed438c55149ded0D4762c70AF3D9923a',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooSushicUSD-WETH',
-    earnedTokenAddress: '0xf6fD90FE8f057a63F0368B0B551D5e52C7Ae821F',
-    earnContractAddress: '0xf6fD90FE8f057a63F0368B0B551D5e52C7Ae821F',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'sushi-celo-cusd-weth',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    retireReason: 'rewards',
-    platform: 'Sushi',
-    withdrawalFee: '0%',
-    assets: ['cUSD', 'WETH'],
-    risks: [
-      'COMPLEXITY_LOW',
-      'BATTLE_TESTED',
-      'IL_LOW',
-      'MCAP_MEDIUM',
-      'AUDIT',
-      'CONTRACTS_VERIFIED',
-    ],
-    stratType: 'StratLP',
-    addLiquidityUrl:
-      'https://app.sushi.com/add/0x765DE816845861e75A25fCA122bb6898B8B1282a/0xE919F65739c26a42616b7b8eedC6b5524d1e3aC4',
-    buyTokenUrl:
-      'https://app.sushi.com/swap?inputCurrency=0x765DE816845861e75A25fCA122bb6898B8B1282a&outputCurrency=0xE919F65739c26a42616b7b8eedC6b5524d1e3aC4',
   },
   {
     id: 'sushi-celo-cusd-ceur-eol',
@@ -441,7 +405,7 @@ export const celoPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'Sushi',
+    platform: 'SushiSwap',
     withdrawalFee: '0%',
     assets: ['cUSD', 'cEUR'],
     risks: [

@@ -7,19 +7,18 @@ Official frontend repo of [beefy.finance](https://app.beefy.finance). Multichain
 ## Env
 
 Required env vars:
-
 ```
 REACT_APP_NETWORK_ID = 56 // Network ID of BSC
 ```
 
-## To Run
-
+## To Run to test against a local development server
 ```
 yarn
+yan validate
 yarn start
 ```
+If any error is noted during validation, fix before starting the server, which will serve the app at http://localhost:3000/
 
-The app will be running at http://localhost:3000/
 
 ## Contribute
 

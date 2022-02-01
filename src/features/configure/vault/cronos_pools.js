@@ -987,7 +987,7 @@ export const cronosPools = [
     addLiquidityUrl: 'https://app.cronaswap.org/add/CRO/0xc21223249CA28397B4B6541dfFaEcC539BfF0c59',
   },
   {
-    id: 'crona-cro-eth',
+    id: 'crona-cro-eth-eol',
     name: 'ETH-CRO',
     token: 'ETH-CRO LP',
     tokenDescription: 'CronaSwap',
@@ -1002,8 +1002,9 @@ export const cronosPools = [
     oracle: 'lps',
     oracleId: 'crona-cro-eth',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'CronaSwap',
     assets: ['ETH', 'CRO'],
     risks: [
@@ -1156,7 +1157,7 @@ export const cronosPools = [
       'https://app.cronaswap.org/add/0x66e428c3f67a68878562e79A0234c1F83c208770/0xc9BAA8cfdDe8E328787E29b4B078abf2DaDc2055',
   },
   {
-    id: 'crona-usdt-ftm',
+    id: 'crona-usdt-ftm-eol',
     name: 'FTM-USDT',
     token: 'FTM-USDT LP',
     tokenDescription: 'CronaSwap',
@@ -1171,8 +1172,9 @@ export const cronosPools = [
     oracle: 'lps',
     oracleId: 'crona-usdt-ftm',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'CronaSwap',
     assets: ['FTM', 'USDT'],
     risks: [

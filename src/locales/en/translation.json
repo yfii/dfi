@@ -89,6 +89,7 @@
   "Vault-Banner-CakeV2-SmarterValue": "{{count}}+ annual compounds",
   "Vault-Banner-CakeV2-FairerLabel": "Fairer",
   "Vault-Banner-CakeV2-FairerValue": "{{percent}}% less fees",
+  "Vault-Withdrawal-Platform-Notice-Geist": "Please set your gas limit to 9.9M when trying to withdraw. Anything 10M or over will fail.",
   "Vaults-Back": "Back to vaults",
   "Hide-Zero-Balances": "Hide Zero Balances",
   "Hide-Zero-Vault-Balances": "Deposited Vaults",

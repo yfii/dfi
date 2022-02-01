@@ -95,4 +95,20 @@ export const nativeCoins = [
     wrappedSymbol: 'WFUSE',
     allowance: Infinity,
   },
+  {
+    chainId: 1088,
+    name: 'Metis',
+    symbol: 'METIS',
+    decimals: 18,
+    wrappedSymbol: 'WMETIS',
+    allowance: Infinity,
+  },
+  {
+    chainId: 1313161554,
+    name: 'Aurora',
+    symbol: 'ETH',
+    decimals: 18,
+    wrappedSymbol: 'WETH',
+    allowance: Infinity,
+  },
 ];

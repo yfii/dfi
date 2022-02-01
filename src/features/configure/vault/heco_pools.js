@@ -261,7 +261,7 @@ export const hecoPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'HFI',
+    platform: 'Other',
     assets: ['HFI', 'WHT'],
     withdrawalFee: '0%',
     retireReason: 'rewards',
@@ -289,7 +289,7 @@ export const hecoPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'HFI',
+    platform: 'Other',
     assets: ['HFI', 'HUSD'],
     withdrawalFee: '0%',
     buyTokenUrl:
@@ -316,7 +316,7 @@ export const hecoPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Lavaswap',
+    platform: 'Other',
     assets: ['LAVA'],
     buyTokenUrl:
       'https://exchange.lavaswap.com/#/swap?inputCurrency=0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f&outputCurrency=0x56f95662e71f30b333b456439248c6de589082a4',
@@ -340,7 +340,7 @@ export const hecoPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Lavaswap',
+    platform: 'Other',
     assets: ['LAVA', 'USDT'],
     buyTokenUrl:
       'https://exchange.lavaswap.com/#/swap?inputCurrency=0x56f95662e71f30b333b456439248c6de589082a4&outputCurrency=0xa71edc38d189767582c38a3145b5873052c3e47a',
@@ -366,7 +366,7 @@ export const hecoPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Lavaswap',
+    platform: 'Other',
     assets: ['LAVA', 'WHT'],
     buyTokenUrl:
       'https://exchange.lavaswap.com/#/swap?inputCurrency=0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f&outputCurrency=0x56f95662e71f30b333b456439248c6de589082a4',

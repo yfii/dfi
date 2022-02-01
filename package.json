@@ -7,6 +7,7 @@
   "private": true,
   "type": "module",
   "dependencies": {
+    "@clover-network/clover-connector": "^1.0.0",
     "@davatar/react": "^1.8.1",
     "@ethersproject/providers": "^5.5.2",
     "@ethersproject/solidity": "^5.1.0",
@@ -16,7 +17,7 @@
     "@walletconnect/web3-provider": "^1.6.5",
     "axios": "^0.21.1",
     "bignumber.js": "^9.0.1",
-    "blockchain-addressbook": "^0.5.26",
+    "blockchain-addressbook": "^0.10.7",
     "classnames": "^2.2.6",
     "connected-react-router": "^6.8.0",
     "deficonnect": "^1.1.5",

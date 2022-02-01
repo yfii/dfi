@@ -66,6 +66,18 @@ export const allNetworks = [
     id: 122,
     hash: '/fuse',
   },
+  {
+    name: 'METIS',
+    asset: 'Andromeda',
+    id: 1088,
+    hash: '/metis',
+  },
+  {
+    name: 'AURORA',
+    asset: 'AURORA',
+    id: 1313161554,
+    hash: '/aurora',
+  },
 ];
 
 const network = allNetworks.find(n => window.location.hash.startsWith('#' + n.hash));

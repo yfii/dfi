@@ -120,6 +120,28 @@ export const networkSettings = {
     rpcUrls: ['https://rpc.fuse.io'],
     blockExplorerUrls: ['https://explorer.fuse.io/'],
   },
+  1088: {
+    chainId: `0x${parseInt(1088, 10).toString(16)}`,
+    chainName: 'Metis',
+    nativeCurrency: {
+      name: 'METIS',
+      symbol: 'METIS',
+      decimals: 18,
+    },
+    rpcUrls: ['https://andromeda.metis.io/?owner=1088'],
+    blockExplorerUrls: ['https://andromeda-explorer.metis.io/'],
+  },
+  1313161554: {
+    chainId: `0x${parseInt(1313161554, 10).toString(16)}`,
+    chainName: 'Aurora Mainnet',
+    nativeCurrency: {
+      name: 'ETH',
+      symbol: 'ETH',
+      decimals: 18,
+    },
+    rpcUrls: ['https://mainnet.aurora.dev'],
+    blockExplorerUrls: ['https://explorer.mainnet.aurora.dev/'],
+  },
 };
 
 export const networkSetup = chainId => {

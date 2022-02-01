@@ -3,6 +3,7 @@ import { indexBy } from './utils';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 import { DeFiConnector } from 'deficonnect';
 import WalletLink from 'walletlink';
+import { CloverConnector } from '@clover-network/clover-connector';
 import { allNetworks } from '../../network';
 import {
   avalanchePools,
@@ -42,6 +43,10 @@ import {
   cronosStakePools,
   cronosAddressBook,
   cronosZaps,
+  auroraPools,
+  auroraStakePools,
+  auroraAddressBook,
+  auroraZaps,
   arbitrumPools,
   arbitrumStakePools,
   arbitrumAddressBook,
@@ -50,6 +55,10 @@ import {
   fuseStakePools,
   fuseAddressBook,
   fuseZaps,
+  metisPools,
+  metisStakePools,
+  metisAddressBook,
+  metisZaps,
 } from '../configure';
 
 export const appNetworkId = window.REACT_APP_NETWORK_ID;
@@ -65,7 +74,9 @@ const networkTxUrls = {
   42220: hash => `https://explorer.celo.org/tx/${hash}`,
   1285: hash => `https://moonriver.moonscan.io/tx/${hash}`,
   25: hash => `https://cronos.crypto.org/explorer/tx/${hash}`,
+  1313161554: hash => `https://explorer.mainnet.aurora.dev/tx/${hash}`,
   122: hash => `https://explorer.fuse.io/tx/${hash}`,
+  1088: hash => `https://andromeda-explorer.metis.io/tx/${hash}`,
 };
 
 const networkFriendlyName = {
@@ -79,7 +90,9 @@ const networkFriendlyName = {
   42220: 'Celo',
   1285: 'Moonriver',
   25: 'Cronos',
+  1313161554: 'Aurora',
   122: 'Fuse',
+  1088: 'Metis',
 };
 
 const networkBuyUrls = {
@@ -88,7 +101,7 @@ const networkBuyUrls = {
   137: 'https://app.1inch.io/#/r/0xF4cb25a1FF50E319c267b3E51CBeC2699FB2A43B',
   250: 'https://spookyswap.finance/swap?inputCurrency=0x04068da6c83afcfa0e13ba15a6696662335d5b75&outputCurrency=0xd6070ae98b8069de6B494332d1A1a81B6179D960',
   43114:
-    'https://www.traderjoexyz.com/#/trade?outputCurrency=0xd6070ae98b8069de6b494332d1a1a81b6179d960',
+    'https://www.traderjoexyz.com/trade?outputCurrency=0xd6070ae98b8069de6b494332d1a1a81b6179d960',
   1666600000:
     'https://app.sushi.com/swap?inputCurrency=0x6ab6d61428fde76768d7b45d8bfeec19c6ef91a8&outputCurrency=0xcf664087a5bb0237a0bad6742852ec6c8d69a27a',
   42161:
@@ -97,7 +110,9 @@ const networkBuyUrls = {
     'https://app.sushi.com/swap?inputCurrency=0x471ece3750da237f93b8e339c536989b8978a438&outputCurrency=0x639a647fbe20b6c8ac19e48e2de44ea792c62c5c',
   1285: 'https://app.sushi.com/swap?inputCurrency=0x173fd7434b8b50df08e3298f173487ebdb35fd14&outputCurrency=0xf50225a84382c74cbdea10b0c176f71fc3de0c4d',
   25: 'https://vvs.finance/swap?inputCurrency=0x5c7f8a570d578ed84e63fdfa7b1ee72deae1ae23&outputCurrency=0xe6801928061cdbe32ac5ad0634427e140efd05f9',
+  1313161554: '',
   122: '',
+  1088: 'https://netswap.io/#/swap?outputCurrency=0xe6801928061cdbe32ac5ad0634427e140efd05f9',
 };
 
 export const getNetworkCoin = () => {
@@ -126,8 +141,12 @@ export const getNetworkPools = () => {
       return moonriverPools;
     case 25:
       return cronosPools;
+    case 1313161554:
+      return auroraPools;
     case 122:
       return fusePools;
+    case 1088:
+      return metisPools;
     default:
       return [];
   }
@@ -155,8 +174,12 @@ export const getNetworkVaults = (networkId = appNetworkId) => {
       return indexBy(moonriverPools, 'id');
     case 25:
       return indexBy(cronosPools, 'id');
+    case 1313161554:
+      return indexBy(auroraPools, 'id');
     case 122:
       return indexBy(fusePools, 'id');
+    case 1088:
+      return indexBy(metisPools, 'id');
     default:
       return {};
   }
@@ -184,8 +207,12 @@ export const getNetworkLaunchpools = (networkId = appNetworkId) => {
       return indexBy(moonriverStakePools, 'id');
     case 25:
       return indexBy(cronosStakePools, 'id');
+    case 1313161554:
+      return indexBy(auroraStakePools, 'id');
     case 122:
       return indexBy(fuseStakePools, 'id');
+    case 1088:
+      return indexBy(metisStakePools, 'id');
     default:
       return {};
   }
@@ -214,8 +241,12 @@ export const getNetworkTokens = () => {
       return moonriverAddressBook.tokens;
     case 25:
       return cronosAddressBook.tokens;
+    case 1313161554:
+      return auroraAddressBook.tokens;
     case 122:
       return fuseAddressBook.tokens;
+    case 1088:
+      return metisAddressBook.tokens;
     default:
       throw new Error(
         `Create address book for chainId(${chainId}) first. Check out https://github.com/beefyfinance/address-book`
@@ -248,7 +279,6 @@ export const getNetworkBurnTokens = () => {
       };
     case 250:
       return {
-        [fantomAddressBook.tokens.TOMB.symbol]: fantomAddressBook.tokens.TOMB,
         [fantomAddressBook.tokens.fSING.symbol]: fantomAddressBook.tokens.fSING,
         [fantomAddressBook.tokens.PEAR.symbol]: fantomAddressBook.tokens.PEAR,
       };
@@ -262,7 +292,11 @@ export const getNetworkBurnTokens = () => {
       return {};
     case 25:
       return {};
+    case 1313161554:
+      return {};
     case 122:
+      return {};
+    case 1088:
       return {};
     default:
       throw new Error(`Create address book for this chainId first.`);
@@ -291,8 +325,12 @@ export const getNetworkZaps = () => {
       return moonriverZaps;
     case 25:
       return cronosZaps;
+    case 1313161554:
+      return auroraZaps;
     case 122:
       return fuseZaps;
+    case 1088:
+      return metisZaps;
     default:
       return [];
   }
@@ -361,6 +399,8 @@ export const getNetworkStables = () => {
         'agEUR',
         'jJPY',
         'JPYC',
+        'jCAD',
+        'CADC',
       ];
     case 250:
       return [
@@ -387,8 +427,12 @@ export const getNetworkStables = () => {
       return ['USDC', 'USDT', 'DAI', 'BUSD', 'MAI', 'MIM', 'FRAX'];
     case 25:
       return ['USDC', 'USDT', 'DAI', 'BUSD'];
+    case 1313161554:
+      return ['USDC', 'USDT'];
     case 122:
       return ['fUSD', 'BUSD', 'USDC'];
+    case 1088:
+      return ['mUSDT', 'mUSDC'];
     default:
       return [];
   }
@@ -416,8 +460,12 @@ export const getNetworkMulticall = () => {
       return '0x7f6fE34C51d5352A0CF375C0Fbe03bD19eCD8460';
     case 25:
       return '0x13aD51a6664973EbD0749a7c84939d973F247921';
+    case 1313161554:
+      return '0x55f46144bC62e9Af4bAdB71842B62162e2194E90';
     case 122:
       return '0x4f22BD7CE44b0e0B2681A28e300A7285319de3a0';
+    case 1088:
+      return '0x4fd2e1c2395dc088F36cab06DCe47F88A912fC85';
     default:
       return '';
   }
@@ -442,6 +490,22 @@ export const getNetworkConnectors = t => {
                 1: 'https://bsc-dataseed.binance.org/',
                 56: 'https://bsc-dataseed.binance.org/',
               },
+            },
+          },
+          'custom-clover-bsc': {
+            display: {
+              logo: require(`images/wallets/clover.png`),
+              name: 'Clover Wallet',
+              description: t('Connect with your Clover wallet and earn CLV'),
+            },
+            options: {
+              supportedChainIds: [56],
+            },
+            package: CloverConnector,
+            connector: async (ProviderPackage, options) => {
+              const provider = new ProviderPackage(options);
+              await provider.activate();
+              return provider.getProvider();
             },
           },
           'custom-binance': {
@@ -527,6 +591,22 @@ export const getNetworkConnectors = t => {
           //     },
           //   },
           // },
+          'custom-clover-heco': {
+            display: {
+              logo: require(`images/wallets/clover.png`),
+              name: 'Clover Wallet',
+              description: t('Connect with your Clover wallet and earn CLV'),
+            },
+            options: {
+              supportedChainIds: [128],
+            },
+            package: CloverConnector,
+            connector: async (ProviderPackage, options) => {
+              const provider = new ProviderPackage(options);
+              await provider.activate();
+              return provider.getProvider();
+            },
+          },
           'custom-math': {
             display: {
               name: 'Math',
@@ -616,6 +696,22 @@ export const getNetworkConnectors = t => {
               },
             },
           },
+          'custom-clover-polygon': {
+            display: {
+              logo: require(`images/wallets/clover.png`),
+              name: 'Clover Wallet',
+              description: t('Connect with your Clover wallet and earn CLV'),
+            },
+            options: {
+              supportedChainIds: [137],
+            },
+            package: CloverConnector,
+            connector: async (ProviderPackage, options) => {
+              const provider = new ProviderPackage(options);
+              await provider.activate();
+              return provider.getProvider();
+            },
+          },
           'custom-cb-polygon': {
             display: {
               logo: require(`images/wallets/coinbase.png`),
@@ -669,6 +765,22 @@ export const getNetworkConnectors = t => {
               await provider.enable();
 
               return provider;
+            },
+          },
+          'custom-clover-fantom': {
+            display: {
+              logo: require(`images/wallets/clover.png`),
+              name: 'Clover Wallet',
+              description: t('Connect with your Clover wallet and earn CLV'),
+            },
+            options: {
+              supportedChainIds: [250],
+            },
+            package: CloverConnector,
+            connector: async (ProviderPackage, options) => {
+              const provider = new ProviderPackage(options);
+              await provider.activate();
+              return provider.getProvider();
             },
           },
           'custom-cb-ftm': {
@@ -981,6 +1093,66 @@ export const getNetworkConnectors = t => {
 
               return provider;
             },
+          },
+        },
+      };
+    case 1088:
+      return {
+        network: 'metis',
+        cacheProvider: true,
+        providerOptions: {
+          injected: {
+            display: {
+              name: 'MetaMask',
+            },
+          },
+          'custom-wc-metis': {
+            display: {
+              logo: require(`images/wallets/wallet-connect.svg`),
+              name: 'Wallet Connect',
+              description: t('Scan your WalletConnect to Connect'),
+            },
+            package: WalletConnectProvider,
+            options: {
+              rpc: {
+                1: 'https://andromeda.metis.io/?owner=1088',
+                1088: 'https://andromeda.metis.io/?owner=1088',
+              },
+            },
+            connector: async (ProviderPackage, options) => {
+              const provider = new ProviderPackage(options);
+
+              await provider.enable();
+
+              return provider;
+            },
+          },
+        },
+      };
+    case 1313161554:
+      return {
+        network: 'aurora',
+        cacheProvider: true,
+        providerOptions: {
+          injected: {
+            display: {
+              name: 'Injected',
+              description: t('Home-BrowserWallet'),
+            },
+          },
+          package: WalletConnectProvider,
+          options: {
+            rpc: {
+              1: 'https://mainnet.aurora.dev',
+              1313161554: 'https://mainnet.aurora.dev',
+            },
+          },
+          connector: async (ProviderPackage, options) => {
+            const provider = new ProviderPackage(options);
+
+            await provider.enable();
+
+            return provider;
           },
         },
       };
