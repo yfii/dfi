@@ -38,7 +38,7 @@ export const polygonPools = [
     name: 'ETH-MANA LP',
     token: 'ETH-MANA LP',
     tokenDescription: 'SushiSwap',
-    tokenAddress: '0xc48ae82ca34c63887b975f20aba91a38f2a900b8',
+    tokenAddress: '0xc48AE82ca34C63887b975F20ABA91a38f2a900B8',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooSushiETH-MANA',
