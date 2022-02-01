@@ -1,5 +1,5 @@
 export const fusePools = [
-   {
+  {
     id: 'fusefi-wfuse-usdc',
     name: 'USDC-FUSE LP',
     token: 'USDC-FUSE LP',
@@ -50,7 +50,7 @@ export const fusePools = [
     oracleId: 'sushi-sushi-weth',
     oraclePrice: 0,
     withdrawalFee: '0%',
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'SushiSwap',
     assets: ['SUSHI', 'WETH'],
