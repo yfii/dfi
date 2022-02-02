@@ -169,6 +169,7 @@ const PoolDetails = ({ vaultId }) => {
               addLiquidityUrl={pool.addLiquidityUrl}
               removeLiquidityUrl={pool.removeLiquidityUrl}
               buyTokenUrl={pool.buyTokenUrl}
+              mintTokenUrl={pool.mintTokenUrl}
               assets={pool.assets}
               multipleLaunchpools={multipleLaunchpools}
             />
