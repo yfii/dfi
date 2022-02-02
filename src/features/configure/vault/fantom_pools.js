@@ -34,7 +34,7 @@ export const fantomPools = [
       'https://spookyswap.finance/swap?outputCurrency=0xd6070ae98b8069de6B494332d1A1a81B6179D960',
   },
   {
-    id: 'beefy-binSPIRIT',
+    id: 'beefy-binspirit',
     logo: 'single-assets/binSPIRIT.svg',
     name: 'binSPIRIT',
     token: 'binSPIRIT',
