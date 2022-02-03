@@ -35,6 +35,44 @@ export const fantomStakePools = [
   },
 
   {
+    id: 'moo_binSPIRIT-beefy',
+    name: 'Beefy',
+    logo: 'single-assets/binSPIRIT.svg',
+    token: 'mooBinSPIRIT',
+    tokenDecimals: 18,
+    tokenAddress: '0x7345a537A975d9Ca588eE631BEFdDfEF34fD5e8f',
+    tokenOracle: 'tokens',
+    tokenOracleId: 'binSPIRIT',
+    earnedToken: 'mooFantomBIFI',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xbF07093ccd6adFC3dEB259C557b61E94c1F66945',
+    earnContractAddress: '0xB883FE481d4442EEe83BA4eCF358D7F9f624fB40',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'mooFantomBIFI',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1645276643,
+    partners: [
+      {
+        logo: 'stake/beefy/beefyfinance.png',
+        logoNight: 'stake/beefy/beefyfinance_night.png',
+        background: 'stake/beefy/background.png',
+        text:
+          'The SpiritSwap protocol provides a platform for trading, staking, and farming. SpiritSwap incentivizes Fantom network participation through revenue sharing by locking SPIRIT in return for inSPIRIT. inSPIRIT vests at the end of the lock and is non-transferrable. \n' +
+          'Lock your SPIRIT on Beefy to mint binSPIRIT, Beefy’s liquid version of inSPIRIT. Staking it directly on Beefy gives you compounded interest on your SPIRIT and also allows you to exchange it at any time. \n' +
+          'Deposit your mooBinSPIRIT (receipt for binSPIRIT deposited in our vaults) into the boost to earn mooBIFI.',
+        website: 'https://app.beefy.finance/',
+        social: {
+          telegram: 'https://discord.gg/beefyfinance',
+          twitter: 'https://twitter.com/beefyfinance',
+        },
+      },
+    ],
+  },
+
+  {
     id: 'moo_WFTM-2omb',
     name: '2omb',
     logo: 'single-assets/FTM.png',
