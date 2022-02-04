@@ -12423,7 +12423,7 @@ export const bscPools = [
   },
 
   {
-    id: 'blizzard-xblzd-eol',
+    id: 'blizzard-xblzd-eol2',
     logo: 'degens/BLZD.png',
     name: 'xBLZDv2',
     token: 'xBLZDv2',
