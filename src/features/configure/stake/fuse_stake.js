@@ -43,7 +43,7 @@ export const fuseStakePools = [
     tokenDecimals: 18,
     tokenAddress: '0x98d3913474fccEDeB63077237914be00202fB007',
     tokenOracle: 'lps',
-    tokenOracleId: 'fusefi-wfuse-usdc',
+    tokenOracleId: 'voltage-wfuse-usdc',
     earnedToken: 'mooFuse',
     earnedTokenDecimals: 18,
     earnedTokenAddress: '0x2C43DBef81ABa6b95799FD2aEc738Cd721ba77f3',

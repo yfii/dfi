@@ -22,6 +22,7 @@ const PoolTitle = ({
   buyTokenUrl,
   addLiquidityUrl,
   removeLiquidityUrl,
+  mintTokenUrl,
   assets,
   multipleLaunchpools = false,
 }) => {
@@ -105,6 +106,18 @@ const PoolTitle = ({
               rel="noopener noreferrer"
             >
               <span>{t('Remove-Liquidity')}</span>
+            </a>
+          ): (
+            ''
+          )}
+          {mintTokenUrl ? (
+            <a
+              className={classes.url}
+              href={mintTokenUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>{t('Mint-Token')}</span>
             </a>
           ) : (
             ''

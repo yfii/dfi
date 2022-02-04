@@ -34,6 +34,41 @@ export const avalancheStakePools = [
     fixedStatus: true,
     partners: [beefy],
   },
+
+  {
+    id: 'moo_AVAX-grape',
+    name: 'Grape Finance',
+    logo: 'single-assets/AVAX.svg',
+    token: 'mooAaveAVAX',
+    tokenDecimals: 18,
+    tokenAddress: '0x1B156C5c75E9dF4CAAb2a5cc5999aC58ff4F9090',
+    tokenOracle: 'tokens',
+    tokenOracleId: 'AVAX',
+    earnedToken: 'WINE',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xC55036B5348CfB45a932481744645985010d3A44',
+    earnContractAddress: '0xE1BBde90EB564c5f26dfcDeB9918BDA183BF4e2b',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'WINE',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1645707476,
+    partners: [
+      {
+        logo: 'stake/grape/logo.png',
+        background: 'stake/grape/bg.png',
+        text: 'Supporting the only pegged algorithmic stable currency currently on AVAX, $GRAPE which is pegged to $MIM. The goal is to create a DAO run by the community offering a high yield for investors and utilize two tokens $GRAPE and $WINE to bootstrap liquidity and provide funding for the extensive roadmap. An extensive roadmap including Launchpad, great partnerships, and upcoming lending protocol/new stable reserve currency. Future goals to support multiple chains and create a total defi ecosystem under the GrapeFi umbrella.',
+        website: 'https://grapefinance.app/',
+        social: {
+          telegram: 'https://discord.gg/mZ4QrZwH5M',
+          twitter: 'https://twitter.com/grape_finance',
+        },
+      },
+    ],
+  },
+
   {
     id: 'moo_bifi_avax-singular',
     name: 'Singular',
