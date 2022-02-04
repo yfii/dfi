@@ -12345,7 +12345,7 @@ export const bscPools = [
   },
 
   {
-    id: 'blizzard-xblzd-busd',
+    id: 'blizzard-xblzd-busd-eol',
     logo: 'degens/BLZD-BUSD.png',
     name: 'xBLZD-BUSD LP',
     token: 'xBLZD-BUSD LP2',
@@ -12361,8 +12361,8 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'blizzard-xblzd-busd',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['xBLZD', 'BUSD'],
     addLiquidityUrl:
@@ -12390,6 +12390,7 @@ export const bscPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
+    retireReason: 'rewards',
     platform: 'Other',
     assets: ['xBLZD', 'BNB'],
     removeLiquidityUrl:
@@ -12422,7 +12423,7 @@ export const bscPools = [
   },
 
   {
-    id: 'blizzard-xblzd',
+    id: 'blizzard-xblzd-eol',
     logo: 'degens/BLZD.png',
     name: 'xBLZDv2',
     token: 'xBLZDv2',
@@ -12438,8 +12439,9 @@ export const bscPools = [
     oracle: 'tokens',
     oracleId: 'xBLZD',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Other',
     assets: ['xBLZD'],
     buyTokenUrl:
