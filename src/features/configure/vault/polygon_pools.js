@@ -1441,7 +1441,7 @@ export const polygonPools = [
       'https://app.sushi.com/swap?inputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619&outputCurrency=0x385eeac5cb85a38a9a07a70c73e0a3271cfb54a7',
   },
   {
-    id: 'tetu-tetu-usdc',
+    id: 'tetu-tetu-usdc-eol',
     name: 'TETU-USDC LP',
     token: 'TETU-USDC LP',
     tokenDescription: 'QuickSwap (TETU)',
@@ -1455,8 +1455,9 @@ export const polygonPools = [
     tvl: 0,
     oracle: 'lps',
     oracleId: 'tetu-tetu-usdc',
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Other',
     assets: ['TETU', 'USDC'],
     addLiquidityUrl:
@@ -1465,7 +1466,7 @@ export const polygonPools = [
       'https://quickswap.exchange/#/swap?outputCurrency=0x255707B70BF90aa112006E1b07B9AeA6De021424',
   },
   {
-    id: 'tetu-matic-tetu',
+    id: 'tetu-matic-tetu-eol',
     name: 'TETU-MATIC LP',
     token: 'TETU-MATIC LP',
     tokenDescription: 'SushiSwap (TETU)',
@@ -1479,8 +1480,9 @@ export const polygonPools = [
     tvl: 0,
     oracle: 'lps',
     oracleId: 'tetu-matic-tetu',
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Other',
     assets: ['TETU', 'MATIC'],
     addLiquidityUrl:
