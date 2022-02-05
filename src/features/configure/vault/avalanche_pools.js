@@ -1600,7 +1600,7 @@ export const avalanchePools = [
       'https://www.traderjoexyz.com/trade?outputCurrency=0x5947BB275c521040051D82396192181b413227A3',
   },
   {
-    id: 'bankerjoe-mim',
+    id: 'bankerjoe-mim-eol',
     logo: 'single-assets/MIM.png',
     name: 'MIM',
     token: 'MIM',
@@ -1616,8 +1616,9 @@ export const avalanchePools = [
     oracle: 'tokens',
     oracleId: 'MIM',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Banker Joe',
     assets: ['MIM'],
     risks: [
