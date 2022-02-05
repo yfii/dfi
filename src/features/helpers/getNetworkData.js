@@ -375,6 +375,8 @@ export const getNetworkStables = () => {
         'FRAX',
         'nUSD',
         'MIM',
+        'USDC',
+        'UST',
       ];
     case 137:
       return [
