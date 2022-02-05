@@ -11,6 +11,7 @@ const {
   arbitrum: arbitrumAddressBook,
   moonriver: moonriverAddressBook,
   cronos: cronosAddressBook,
+  aurora: auroraAddressBook,
   fuse: fuseAddressBook,
   metis: metisAddressBook,
 } = addressBook;
@@ -25,6 +26,7 @@ export {
   arbitrumAddressBook,
   moonriverAddressBook,
   cronosAddressBook,
+  auroraAddressBook,
   fuseAddressBook,
   metisAddressBook,
 };
@@ -51,6 +53,7 @@ export { fantomStakePools } from './stake/fantom_stake';
 export { harmonyStakePools } from './stake/harmony_stake';
 export { arbitrumStakePools } from './stake/arbitrum_stake';
 export { cronosStakePools } from './stake/cronos_stake';
+export { auroraStakePools } from './stake/aurora_stake';
 export { fuseStakePools } from './stake/fuse_stake';
 export { metisStakePools } from './stake/metis_stake';
 export { bscPools } from './vault/bsc_pools';
@@ -63,6 +66,7 @@ export { fantomPools } from './vault/fantom_pools';
 export { harmonyPools } from './vault/harmony_pools';
 export { arbitrumPools } from './vault/arbitrum_pools';
 export { cronosPools } from './vault/cronos_pools';
+export { auroraPools } from './vault/aurora_pools';
 export { fusePools } from './vault/fuse_pools';
 export { metisPools } from './vault/metis_pools';
 export { bscZaps } from './zap/bsc_zaps';
@@ -75,6 +79,7 @@ export { fantomZaps } from './zap/fantom_zaps';
 export { harmonyZaps } from './zap/harmony_zaps';
 export { arbitrumZaps } from './zap/arbitrum_zaps';
 export { cronosZaps } from './zap/cronos_zaps';
+export { auroraZaps } from './zap/aurora_zaps';
 export { fuseZaps } from './zap/fuse_zaps';
 export { metisZaps } from './zap/metis_zaps';
 export { nativeCoins } from './native_coins';
