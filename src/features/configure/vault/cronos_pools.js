@@ -341,7 +341,7 @@ export const cronosPools = [
       'https://app.cronaswap.org/add/0x062E66477Faf219F25D27dCED647BF57C3107d52/0xc21223249CA28397B4B6541dfFaEcC539BfF0c59',
   },
   {
-    id: 'vvs-cro-bifi',
+    id: 'vvs-cro-bifi-eol',
     name: 'BIFI-CRO',
     token: 'BIFI-CRO LP',
     tokenDescription: 'VVS',
@@ -356,8 +356,9 @@ export const cronosPools = [
     oracle: 'lps',
     oracleId: 'vvs-cro-bifi',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'VVS',
     assets: ['BIFI', 'CRO'],
     risks: [

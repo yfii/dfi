@@ -2549,7 +2549,7 @@ export const polygonPools = [
       'https://swap.cometh.io/#/swap?inputCurrency=0x7ceb23fd6bc0add59e62ac25578270cff1b9f619&outputCurrency=0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
   },
   {
-    id: 'quick-sol-matic',
+    id: 'quick-sol-matic-eol',
     name: 'SOL-MATIC LP',
     token: 'SOL-MATIC LP',
     tokenDescription: 'QuickSwap',
@@ -2564,8 +2564,9 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'quick-sol-matic',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'QuickSwap',
     assets: ['SOL', 'MATIC'],
     risks: [
