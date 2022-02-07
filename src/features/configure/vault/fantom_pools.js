@@ -341,7 +341,8 @@ export const fantomPools = [
     withdrawalFee: '0%',
     addLiquidityUrl:
       'https://swap.spiritswap.finance/#/add/FTM/0x91fa20244Fb509e8289CA630E5db3E9166233FDc',
-    buyTokenUrl: 'https://swap.spiritswap.finance/#/exchange/swap/FTM/0x91fa20244Fb509e8289CA630E5db3E9166233FDc',
+    buyTokenUrl:
+      'https://swap.spiritswap.finance/#/exchange/swap/FTM/0x91fa20244Fb509e8289CA630E5db3E9166233FDc',
   },
   {
     id: '2omb-2omb-2share',
