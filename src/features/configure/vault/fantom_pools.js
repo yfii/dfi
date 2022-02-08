@@ -101,6 +101,43 @@ export const fantomPools = [
     mintTokenUrl: 'https://beta.beefy.finance/#/fantom/vault/beefy-binspirit',
     buyTokenUrl: 'https://swap.spiritswap.finance/#/exchange/swap/SPIRIT/binSPIRIT',
   },
+
+  {
+    id: 'sushi-wftm-link',
+    name: 'WFTM-LINK LP',
+    token: 'WFTM-LINK SuLP',
+    tokenDescription: 'Sushi',
+    tokenAddress: '0x1Ca86e57103564F47fFCea7259a6ce8Cc1301549',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooSushiWFTM-LINK',
+    earnedTokenAddress: '0x912d3e6c4d3CE89Ac85e3FbB22631D5E85D5158a',
+    earnContractAddress: '0x912d3e6c4d3CE89Ac85e3FbB22631D5E85D5158a',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'sushi-wftm-link',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'SushiSwap',
+    withdrawalFee: '0%',
+    assets: ['WFTM', 'LINK'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_MEDIUM',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
+    addLiquidityUrl:
+      'https://app.sushi.com/add/0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83/0xb3654dc3D10Ea7645f8319668E8F54d2574FBdC8',
+    buyTokenUrl:
+      'https://app.sushi.com/swap?inputCurrency=0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83&outputCurrency=0xb3654dc3d10ea7645f8319668e8f54d2574fbdc8',
+  },
+
   {
     id: 'spirit-ftm-spell',
     name: 'SPELL-FTM LP',
@@ -273,7 +310,8 @@ export const fantomPools = [
     withdrawalFee: '0%',
     addLiquidityUrl:
       'https://swap.spiritswap.finance/#/add/FTM/0xdc301622e621166BD8E82f2cA0A26c13Ad0BE355',
-    buyTokenUrl: 'https://swap.spiritswap.finance/#/exchange/swap/FTM/0xdc301622e621166BD8E82f2cA0A26c13Ad0BE355',
+    buyTokenUrl:
+      'https://swap.spiritswap.finance/#/exchange/swap/FTM/0xdc301622e621166BD8E82f2cA0A26c13Ad0BE355',
   },
   {
     id: 'spirit-ftm-mai',
@@ -307,7 +345,8 @@ export const fantomPools = [
     withdrawalFee: '0%',
     addLiquidityUrl:
       'https://swap.spiritswap.finance/#/add/FTM/0xfB98B335551a418cD0737375a2ea0ded62Ea213b',
-    buyTokenUrl: 'https://swap.spiritswap.finance/#/exchange/swap/FTM/0xfB98B335551a418cD0737375a2ea0ded62Ea213b',
+    buyTokenUrl:
+      'https://swap.spiritswap.finance/#/exchange/swap/FTM/0xfB98B335551a418cD0737375a2ea0ded62Ea213b',
   },
   {
     id: 'spirit-ftm-gohm',
@@ -5931,40 +5970,5 @@ export const fantomPools = [
       'https://spookyswap.finance/add/FTM/0x1E4F97b9f9F913c46F1632781732927B9019C68b',
     buyTokenUrl:
       'https://spookyswap.finance/swap?outputCurrency=0x1E4F97b9f9F913c46F1632781732927B9019C68b',
-  },
-  {
-    id: 'sushi-wftm-link',
-    name: 'WFTM-LINK LP',
-    token: 'WFTM-LINK SuLP',
-    tokenDescription: 'Sushi',
-    tokenAddress: '0x1Ca86e57103564F47fFCea7259a6ce8Cc1301549',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooSushiWFTM-LINK',
-    earnedTokenAddress: '0x912d3e6c4d3CE89Ac85e3FbB22631D5E85D5158a',
-    earnContractAddress: '0x912d3e6c4d3CE89Ac85e3FbB22631D5E85D5158a',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'sushi-wftm-link',
-    oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
-    platform: 'SushiSwap',
-    withdrawalFee: '0%',
-    assets: ['WFTM', 'LINK'],
-    risks: [
-      'COMPLEXITY_LOW',
-      'BATTLE_TESTED',
-      'IL_LOW',
-      'MCAP_MEDIUM',
-      'AUDIT',
-      'CONTRACTS_VERIFIED',
-    ],
-    stratType: 'StratLP',
-    addLiquidityUrl:
-      'https://app.sushi.com/add/0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83/0xb3654dc3D10Ea7645f8319668E8F54d2574FBdC8',
-    buyTokenUrl:
-      'https://app.sushi.com/swap?inputCurrency=0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83&outputCurrency=0xb3654dc3d10ea7645f8319668e8f54d2574fbdc8',
   },
 ];
