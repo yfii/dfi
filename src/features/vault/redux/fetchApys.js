@@ -6,7 +6,7 @@ import {
   VAULT_FETCH_APYS_SUCCESS,
   VAULT_FETCH_APYS_FAILURE,
 } from './constants';
-import { getApiCacheBuster } from '../../web3/getApiCacheBuster';
+import { apiUrl, getApiCacheBuster } from '../../helpers/getApiInfo';
 
 export function fetchApys() {
   return dispatch => {
@@ -16,7 +16,7 @@ export function fetchApys() {
 
     return new Promise((resolve, reject) => {
       const cacheBuster = getApiCacheBuster();
-      const doRequest = axios.get(`https://api.beefy.finance/apy/breakdown?_=${cacheBuster}`);
+      const doRequest = axios.get(`${apiUrl}/apy/breakdown?_=${cacheBuster}`);
 
       doRequest.then(
         res => {
