@@ -104,8 +104,8 @@ export const fantomPools = [
 
   {
     id: 'sushi-wftm-link',
-    name: 'FTM-LINK LP',
-    token: 'FTM-LINK SuLP',
+    name: 'LINK-FTM LP',
+    token: 'LINK-FTM SuLP',
     tokenDescription: 'Sushi',
     tokenAddress: '0x1Ca86e57103564F47fFCea7259a6ce8Cc1301549',
     tokenDecimals: 18,
