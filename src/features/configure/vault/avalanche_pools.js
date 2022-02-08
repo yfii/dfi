@@ -56,8 +56,8 @@ export const avalanchePools = [
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
-      'IL_NONE',
-      'MCAP_LARGE',
+      'IL_HIGH',
+      'MCAP_SMALL',
       'PLATFORM_ESTABLISHED',
       'CONTRACTS_VERIFIED',
     ],
@@ -65,7 +65,7 @@ export const avalanchePools = [
     addLiquidityUrl:
       'https://traderjoexyz.com/pool/AVAX/0xf891214fdcf9cdaa5fdc42369ee4f27f226adad6',
     buyTokenUrl:
-    'https://traderjoexyz.com/trade?outputCurrency=0xF891214fdcF9cDaa5fdC42369eE4F27F226AdaD6#/',
+      'https://traderjoexyz.com/trade?outputCurrency=0xF891214fdcF9cDaa5fdC42369eE4F27F226AdaD6#/',
   },
   {
     id: 'joe-wavax-pefi2',
@@ -90,8 +90,8 @@ export const avalanchePools = [
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
-      'IL_NONE',
-      'MCAP_LARGE',
+      'IL_HIGH',
+      'MCAP_SMALL',
       'PLATFORM_ESTABLISHED',
       'CONTRACTS_VERIFIED',
     ],
@@ -99,7 +99,7 @@ export const avalanchePools = [
     addLiquidityUrl:
       'https://traderjoexyz.com/pool/AVAX/0xe896cdeaac9615145c0ca09c8cd5c25bced6384c',
     buyTokenUrl:
-    'https://traderjoexyz.com/trade?outputCurrency=0xe896CDeaAC9615145c0cA09C8Cd5C25bced6384c',
+      'https://traderjoexyz.com/trade?outputCurrency=0xe896CDeaAC9615145c0cA09C8Cd5C25bced6384c',
   },
   {
     id: 'joe-link.e-usdc.e',
@@ -124,7 +124,7 @@ export const avalanchePools = [
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
-      'IL_NONE',
+      'IL_LOW',
       'MCAP_LARGE',
       'PLATFORM_ESTABLISHED',
       'CONTRACTS_VERIFIED',
@@ -133,7 +133,7 @@ export const avalanchePools = [
     addLiquidityUrl:
       'https://traderjoexyz.com/pool/0x5947bb275c521040051d82396192181b413227a3/0xa7d7079b0fead91f3e65f86e8915cb59c1a4c664',
     buyTokenUrl:
-    'https://traderjoexyz.com/trade?outputCurrency=0x5947BB275c521040051D82396192181b413227A3',
+      'https://traderjoexyz.com/trade?outputCurrency=0x5947BB275c521040051D82396192181b413227A3',
   },
   {
     id: 'aave-wavax',
@@ -192,7 +192,7 @@ export const avalanchePools = [
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
-      'IL_HIGH',
+      'IL_NONE',
       'MCAP_LARGE',
       'PLATFORM_ESTABLISHED',
       'CONTRACTS_VERIFIED',
