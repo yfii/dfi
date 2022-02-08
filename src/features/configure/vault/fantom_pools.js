@@ -1074,7 +1074,7 @@ export const fantomPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
-    withdrawalFee: '0%',
+    withdrawalFee: '0.01%',
     addLiquidityUrl:
       'https://spookyswap.finance/add/0x74b23882a30290451A17c44f4F05243b6b58C76d/0x321162Cd933E2Be498Cd2267a90534A804051b11',
     buyTokenUrl:
@@ -1830,7 +1830,7 @@ export const fantomPools = [
       'https://swap.spiritswap.finance/#/exchange/swap/0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E',
   },
   {
-    id: 'spirit-yfi-ftm',
+    id: 'spirit-yfi-ftm-eol',
     name: 'YFI-FTM LP',
     token: 'YFI-FTM SLP',
     tokenDescription: 'SpiritSwap',
@@ -1845,8 +1845,8 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'spirit-yfi-ftm',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'SpiritSwap',
     assets: ['YFI', 'FTM'],
     risks: [
@@ -1859,6 +1859,7 @@ export const fantomPools = [
     ],
     stratType: 'StratLP',
     withdrawalFee: '0%',
+    retireReason: 'tvl',
     addLiquidityUrl:
       'https://swap.spiritswap.finance/#/add/FTM/0x29b0Da86e484E1C0029B56e817912d778aC0EC69',
     buyTokenUrl:
@@ -3622,7 +3623,7 @@ export const fantomPools = [
       'https://swap.spiritswap.finance/#/exchange/swap/0xb3654dc3D10Ea7645f8319668E8F54d2574FBdC8',
   },
   {
-    id: 'spirit-any-ftm',
+    id: 'spirit-any-ftm-eol',
     name: 'ANY-FTM LP',
     token: 'ANY-FTM SLP',
     tokenDescription: 'SpiritSwap',
@@ -3637,8 +3638,8 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'spirit-any-ftm',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'SpiritSwap',
     assets: ['ANY', 'FTM'],
     risks: [
@@ -3651,6 +3652,7 @@ export const fantomPools = [
     ],
     stratType: 'StratLP',
     withdrawalFee: '0%',
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://swap.spiritswap.finance/#/add/FTM/0xdDcb3fFD12750B45d32E084887fdf1aABAb34239',
     buyTokenUrl:
@@ -4229,7 +4231,7 @@ export const fantomPools = [
       'https://spookyswap.finance/swap?outputCurrency=0x6c021Ae822BEa943b2E66552bDe1D2696a53fbB7',
   },
   {
-    id: 'spirit-ftm-just',
+    id: 'spirit-ftm-just-eol',
     name: 'JUST-FTM LP',
     token: 'JUST-FTM SLP',
     tokenDescription: 'SpiritSwap',
@@ -4244,8 +4246,8 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'spirit-ftm-just',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'SpiritSwap',
     assets: ['JUST', 'FTM'],
     risks: [
@@ -4258,6 +4260,7 @@ export const fantomPools = [
     ],
     stratType: 'StratLP',
     withdrawalFee: '0%',
+    retireReason: 'tvl',
     addLiquidityUrl:
       'https://swap.spiritswap.finance/#/add/FTM/0x37C045bE4641328DFEB625f1Dde610D061613497',
     buyTokenUrl:
@@ -4503,6 +4506,7 @@ export const fantomPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'SingleStake',
+    withdrawalFee: '0%',
     buyTokenUrl:
       'https://spookyswap.finance/swap?outputCurrency=0x841FAD6EAe12c286d1Fd18d1d525DFfA75C7EFFE',
   },
