@@ -86,7 +86,7 @@ export const avalanchePools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Trader Joe',
-    assets: ['DOMI', 'AVAX'],
+    assets: ['AVAX', 'DOMI'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
