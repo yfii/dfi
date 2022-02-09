@@ -104,8 +104,8 @@ export const fantomPools = [
 
   {
     id: 'sushi-wftm-link',
-    name: 'WFTM-LINK LP',
-    token: 'WFTM-LINK SuLP',
+    name: 'LINK-FTM LP',
+    token: 'LINK-FTM SuLP',
     tokenDescription: 'Sushi',
     tokenAddress: '0x1Ca86e57103564F47fFCea7259a6ce8Cc1301549',
     tokenDecimals: 18,
@@ -122,7 +122,7 @@ export const fantomPools = [
     status: 'active',
     platform: 'SushiSwap',
     withdrawalFee: '0%',
-    assets: ['WFTM', 'LINK'],
+    assets: ['FTM', 'LINK'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
