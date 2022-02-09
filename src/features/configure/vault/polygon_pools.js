@@ -312,7 +312,7 @@ export const polygonPools = [
     addLiquidityUrl: 'https://polygon.curve.fi/factory/23/deposit',
   },
   {
-    id: 'quick-kiro-matic',
+    id: 'quick-kiro-matic-eol',
     name: 'KIRO-MATIC LP',
     token: 'KIRO-MATIC LP',
     tokenDescription: 'QuickSwap',
@@ -326,8 +326,9 @@ export const polygonPools = [
     tvl: 0,
     oracle: 'lps',
     oracleId: 'quick-kiro-matic',
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'QuickSwap',
     assets: ['KIRO', 'MATIC'],
     risks: [
@@ -1048,7 +1049,7 @@ export const polygonPools = [
       'https://quickswap.exchange/#/swap?outputCurrency=0xA1c57f48F0Deb89f569dFbE6E2B7f46D33606fD4&inputCurrency=0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270',
   },
   {
-    id: 'quick-shib-matic',
+    id: 'quick-shib-matic-eol',
     name: 'SHIB-MATIC LP',
     token: 'SHIB-MATIC LP',
     tokenDescription: 'QuickSwap',
@@ -1062,8 +1063,9 @@ export const polygonPools = [
     tvl: 0,
     oracle: 'lps',
     oracleId: 'quick-shib-matic',
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'QuickSwap',
     assets: ['SHIB', 'MATIC'],
     risks: [
