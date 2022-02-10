@@ -136,7 +136,7 @@ export const fantomPools = [
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=0x74b23882a30290451A17c44f4F05243b6b58C76d&outputCurrency=0x29b0Da86e484E1C0029B56e817912d778aC0EC69',
   },
-  {   
+  {
     id: 'spirit-ftm-dai',
     name: 'DAI-FTM LP',
     token: 'DAI-FTM SLP',
@@ -1338,7 +1338,7 @@ export const fantomPools = [
       'https://beets.fi/#/pool/0xfa901cadcaf38cd533e8b1f693d090fc7005658e000100000000000000000165',
   },
   {
-    id: 'beets-paint-it-black',
+    id: 'beets-paint-it-black-eol',
     logo: 'fantom/Paint It Black.png',
     name: 'Paint It Black',
     token: 'Paint It Black',
@@ -1354,8 +1354,9 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'beets-paint-it-black',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Beethoven X',
     assets: ['BEETS', 'BRUSH', 'FTM'],
     risks: ['COMPLEXITY_LOW', 'NEW_STRAT', 'IL_HIGH', 'MCAP_LOW', 'AUDIT', 'CONTRACTS_VERIFIED'],
