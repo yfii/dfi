@@ -35,6 +35,43 @@ export const fantomStakePools = [
   },
 
   {
+    id: 'moo_curve-ftm-geist-ripae',
+    name: 'Ripae.Finance',
+    logo: 'uncategorized/3CRV.png',
+    token: 'mooCurveG3CRV',
+    tokenDecimals: 18,
+    tokenAddress: '0xf710D90A1Bd702dAEa619eEbbe876e7085c2A1df',
+    tokenOracle: 'lps',
+    tokenOracleId: 'curve-ftm-geist',
+    earnedToken: 'PAE',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x8a41f13a4FaE75ca88B1ee726ee9D52B148b0498',
+    earnContractAddress: '0x7a9797082ca4D661f8B79a4B5b82b1C7DB372E0c',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'PAE',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1646473953,
+    partners: [
+      {
+        logo: 'stake/ripae/logo.png',
+        background: 'stake/ripae/bg.png',
+        text:
+          'Ripae Finance’s full focus is to build a true cross-chain algorithmic stable coin protocol that is stabilized with true use-cases all around the DeFi Ecosystem.\n' +
+          '\n' +
+          'Ripae Finance, an algorithmic stable coin currently pegged to the value of 1 $FTM. An Algorithmic Stable Coin (ASC) is a non-collateralized stablecoin tailored for improving price stability. The beauty of algorithmic stable coins is that they are much more capital efficient than their collateralized cousins. Ripae finance will with its experienced teamwork towards expanding this idea of capital-efficient algorithmic stable coin and build on previous iterations to expand the basis of the ecosystem.',
+        website: 'https://ripae.finance/',
+        social: {
+          telegram: 'https://discord.gg/6zq53FB4TS',
+          twitter: 'https://twitter.com/ripaefinance',
+        },
+      },
+    ],
+  },
+
+  {
     id: 'moo_spirit-binspirit-spirit-spirit',
     name: 'SpiritSwap',
     assets: ['binSPIRIT', 'SPIRIT'],
