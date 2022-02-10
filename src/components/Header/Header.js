@@ -16,6 +16,7 @@ import NightsStay from '@material-ui/icons/NightsStay';
 import { getNetworkBuyUrl } from '../../features/helpers/getNetworkData';
 import { Dialog, withStyles } from '@material-ui/core';
 import CustomButton from '../../components/CustomButtons/Button';
+import Transak from '../Transak/Transak';
 import styles from './styles';
 
 const useStyles = makeStyles(styles);
@@ -74,7 +75,10 @@ const Header = ({ links, isNightMode, setNightMode }) => {
             {renderLink('blog', t('blog'), 'file-alt', classes)}
             <InsureLink t={t} classes={classes} />
           </Hidden>
-          {renderLink('buy', t('buy'), 'dollar-sign', classes)}
+          <Transak style={{ marginLeft: '5px', marginRight: '5px' }} className={classes.link}>
+            <i className={`fas fa-credit-card ${classes.icon}`} />
+            {t('buy')}
+          </Transak>
           <Link className={classes.btnBoost} to={`/${chain}/stake`}>
             <img alt="Boost" src={require('images/stake/boost.svg')} />
           </Link>
@@ -120,7 +124,10 @@ const Header = ({ links, isNightMode, setNightMode }) => {
             <LinkSidebar name="blog" label={t('blog')} icon="file-alt" classes={classes} />
             <LinkSidebar name="forum" label={t('forum')} icon="comments" classes={classes} />
             <InsureLinkSidebar key="insure" t={t} classes={classes} />
-            <LinkSidebar name="buy" label={t('buy')} icon="dollar-sign" classes={classes} />
+            <Transak style={{ width: '100%', paddingTop: '10px' }} className={classes.link}>
+              <i className={`fas fa-credit-car ${classes.icon}`} />
+              {t('buy')}
+            </Transak>
             <IconButton onClick={setNightMode} className={classes.icon}>
               {isNightMode ? <WbSunny /> : <NightsStay />}
             </IconButton>
