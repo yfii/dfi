@@ -18,7 +18,7 @@ export const auroraPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Others',
+    platform: 'Other',
     assets: ['SOLACE'],
     risks: [
       'COMPLEXITY_LOW',
