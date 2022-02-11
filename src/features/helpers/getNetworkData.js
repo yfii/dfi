@@ -455,7 +455,7 @@ export const getNetworkStables = () => {
       return ['fUSD', 'BUSD', 'USDC'];
     case 1088:
       return ['mUSDT', 'mUSDC'];
-    case 1088:
+    case 1284:
       return ['USDC', 'USDT', 'DAI', 'BUSD'];
     default:
       return [];
