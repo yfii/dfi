@@ -142,6 +142,17 @@ export const networkSettings = {
     rpcUrls: ['https://mainnet.aurora.dev'],
     blockExplorerUrls: ['https://explorer.mainnet.aurora.dev/'],
   },
+  1284: {
+    chainId: `0x${parseInt(1284, 10).toString(16)}`,
+    chainName: 'Moonbeam',
+    nativeCurrency: {
+      name: 'GLMR',
+      symbol: 'GLMR',
+      decimals: 18,
+    },
+    rpcUrls: ['https://rpc.api.moonbeam.network'],
+    blockExplorerUrls: ['https://moonscan.io/'],
+  },
 };
 
 export const networkSetup = chainId => {
