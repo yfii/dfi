@@ -20,6 +20,9 @@ const overrides = {
   'beltv2-4belt': { vaultOwner: undefined }, // moonpot deployer
   'cronos-bifi-maxi': { beefyFeeRecipient: undefined }, // 0x0
   'metis-bifi-maxi': { beefyFeeRecipient: undefined }, // 0x0
+  'aurora-bifi-maxi': { beefyFeeRecipient: undefined }, // 0x0
+  'fuse-bifi-maxi': { beefyFeeRecipient: undefined }, // 0x0
+  'moonbeam-bifi-maxi': { beefyFeeRecipient: undefined }, // 0x0
 };
 
 const oldValidOwners = [
