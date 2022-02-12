@@ -1,4 +1,5 @@
 export const fusePools = [
+  /* Waiting for boost
   {
     id: 'voltage-wfuse-elon',
     name: 'ELON-FUSE LP',
@@ -33,6 +34,7 @@ export const fusePools = [
     buyTokenUrl:
       'https://app.fuse.fi/#/swap?inputCurrency=FUSE&outputCurrency=0x5DD8015cec49F4dB01fd228F688BF30337d3e0A9',
   },
+  */
   {
     id: 'voltage-wfuse-usdc',
     name: 'USDC-FUSE LP',
