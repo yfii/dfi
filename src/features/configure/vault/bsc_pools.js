@@ -37,7 +37,7 @@ export const bscPools = [
     name: 'AVAX-USDT LP',
     token: 'AVAX-USDT LP',
     tokenDescription: 'BabySwap',
-    tokenAddress: '0x74c4da0daca1a9e52faec732d96bc7dea9fb3ac1',
+    tokenAddress: '0x74c4DA0DAca1A9e52Faec732d96BC7dEA9FB3ac1',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooBabyAVAX-USDT',
