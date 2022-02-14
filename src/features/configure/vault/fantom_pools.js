@@ -164,6 +164,7 @@ export const fantomPools = [
     withdrawalFee: '0%',
     addLiquidityUrl:
       'https://beets.fi/#/pool/0xf5c690b7af4fdc551ec89acbad91c6d646762a93000100000000000000000116',
+    createdAt: 1644853476,
   },
   {
     id: 'beets-treeb-me-bro',
@@ -191,6 +192,7 @@ export const fantomPools = [
     withdrawalFee: '0%',
     addLiquidityUrl:
       'https://beets.fi/#/pool/0xa1c5698a042638b6220e336ed9cfafb499560c200002000000000000000001b6',
+    createdAt: 1644853476,
   },
   {
     id: 'beets-beardhemian-brushsody',
@@ -218,6 +220,7 @@ export const fantomPools = [
     withdrawalFee: '0%',
     addLiquidityUrl:
       'https://beets.fi/#/pool/0x8fdd16a23aebe95b928f1863760618e9ec29e72d000100000000000000000166',
+    createdAt: 1644853476,
   },
   {
     id: 'ripae-pftm-ftm',
