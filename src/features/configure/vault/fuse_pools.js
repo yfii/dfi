@@ -32,7 +32,7 @@ export const fusePools = [
     withdrawalFee: '0%',
     buyTokenUrl:
       'https://app.fuse.fi/#/swap?inputCurrency=FUSE&outputCurrency=0x2bF9b864cdc97b08B6D79ad4663e71B8aB65c45c',
-    createdAt: 1644702296,
+    createdAt: 1644690600,
   },
   {
     id: 'voltage-wfuse-elon',
@@ -68,6 +68,7 @@ export const fusePools = [
       'https://app.voltage.finance/#/add/FUSE/0x5DD8015cec49F4dB01fd228F688BF30337d3e0A9',
     buyTokenUrl:
       'https://app.fuse.fi/#/swap?inputCurrency=FUSE&outputCurrency=0x5DD8015cec49F4dB01fd228F688BF30337d3e0A9',
+    createdAt: 1644603605,
   },
   {
     id: 'voltage-wfuse-usdc',
@@ -102,6 +103,7 @@ export const fusePools = [
     addLiquidityUrl: 'https://app.fuse.fi/#/add/FUSE/0x620fd5fa44be6af63715ef4e65ddfa0387ad13f5',
     buyTokenUrl:
       'https://app.fuse.fi/#/swap?inputCurrency=FUSE&outputCurrency=0x620fd5fa44be6af63715ef4e65ddfa0387ad13f5',
+    createdAt: 1641409265,
   },
   {
     id: 'voltage-wfuse-ust',
@@ -136,6 +138,7 @@ export const fusePools = [
     addLiquidityUrl: 'https://app.fuse.fi/#/add/FUSE/0x0D58a44be3dCA0aB449965dcc2c46932547Fea2f',
     buyTokenUrl:
       'https://app.fuse.fi/#/swap?inputCurrency=FUSE&outputCurrency=0x0D58a44be3dCA0aB449965dcc2c46932547Fea2f',
+    createdAt: 1643810650,
   },
   {
     id: 'voltage-luna-ust',
@@ -171,42 +174,8 @@ export const fusePools = [
       'https://app.fuse.fi/#/add/0x588e24DEd8f850b14BB2e62E9c50A7Cd5Ee13Da9/0x0D58a44be3dCA0aB449965dcc2c46932547Fea2f',
     buyTokenUrl:
       'https://app.fuse.fi/#/swap?inputCurrency=0x0D58a44be3dCA0aB449965dcc2c46932547Fea2f&outputCurrency=0x588e24DEd8f850b14BB2e62E9c50A7Cd5Ee13Da9',
+    createdAt: 1643819850,
   },
-  // {
-  //   id: 'sushi-sushi-weth',
-  //   name: 'SUSHI-WETH LP',
-  //   token: 'SUSHI-WETH LP',
-  //   tokenDescription: 'SushiSwap',
-  //   tokenAddress: '0xF9C63E6e21d65ba3Cb6B95790F559E8Da1B38764',
-  //   tokenDecimals: 18,
-  //   tokenDescriptionUrl: '#',
-  //   earnedToken: 'mooSushiSUSHI-WETH',
-  //   earnedTokenAddress: '0x202D9EA0AeAC4B30f9f4aABd084Fb8C1DE316840',
-  //   earnContractAddress: '0x202D9EA0AeAC4B30f9f4aABd084Fb8C1DE316840',
-  //   pricePerFullShare: 1,
-  //   tvl: 0,
-  //   oracle: 'lps',
-  //   oracleId: 'sushi-sushi-weth',
-  //   oraclePrice: 0,
-  //   withdrawalFee: '0%',
-  //   depositsPaused: true,
-  //   status: 'active',
-  //   platform: 'SushiSwap',
-  //   assets: ['SUSHI', 'WETH'],
-  //   risks: [
-  //     'COMPLEXITY_LOW',
-  //     'BATTLE_TESTED',
-  //     'IL_LOW',
-  //     'MCAP_MEDIUM',
-  //     'AUDIT',
-  //     'CONTRACTS_VERIFIED',
-  //   ],
-  //   stratType: 'StratLP',
-  //   addLiquidityUrl:
-  //     'https://app.sushi.com/add/0x90708b20ccc1eb95a4fa7c8b18fd2c22a0ff9e78/0xa722c13135930332Eb3d749B2F0906559D2C5b99',
-  //   buyTokenUrl:
-  //     'https://app.sushi.com/swap?inputCurrency=0x90708b20ccc1eb95a4fa7c8b18fd2c22a0ff9e78&outputCurrency=0xa722c13135930332Eb3d749B2F0906559D2C5b99',
-  // },
   {
     id: 'sushi-wfuse-usdc',
     name: 'FUSE-USDC LP',
@@ -241,6 +210,7 @@ export const fusePools = [
       'https://app.sushi.com/add/0x0BE9e53fd7EDaC9F859882AfdDa116645287C629/0x620fd5fa44BE6af63715Ef4E65DDFA0387aD13F5',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=0x0BE9e53fd7EDaC9F859882AfdDa116645287C629&outputCurrency=0x620fd5fa44BE6af63715Ef4E65DDFA0387aD13F5',
+    createdAt: 1643485320,
   },
   {
     id: 'sushi-wfuse-weth',
@@ -276,6 +246,7 @@ export const fusePools = [
       'https://app.sushi.com/add/0x0BE9e53fd7EDaC9F859882AfdDa116645287C629/0xa722c13135930332Eb3d749B2F0906559D2C5b99',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=0x0BE9e53fd7EDaC9F859882AfdDa116645287C629&outputCurrency=0xa722c13135930332Eb3d749B2F0906559D2C5b99',
+    createdAt: 1643414500,
   },
   {
     id: 'fuse-fuse',
@@ -309,6 +280,7 @@ export const fusePools = [
     withdrawalFee: '0%',
     buyTokenUrl:
       'https://app.fuse.fi/#/swap?inputCurrency=FUSE&outputCurrency=0xa722c13135930332Eb3d749B2F0906559D2C5b99',
+    createdAt: 1641908745,
   },
   {
     id: 'voltage-wfuse-weth',
@@ -343,6 +315,7 @@ export const fusePools = [
     addLiquidityUrl: 'https://app.fuse.fi/#/add/FUSE/0xa722c13135930332Eb3d749B2F0906559D2C5b99',
     buyTokenUrl:
       'https://app.fuse.fi/#/swap?inputCurrency=FUSE&outputCurrency=0xa722c13135930332Eb3d749B2F0906559D2C5b99',
+    createdAt: 1641410065,
   },
   {
     id: 'voltage-wfuse-g$',
@@ -377,6 +350,7 @@ export const fusePools = [
     addLiquidityUrl: 'https://app.fuse.fi/#/add/FUSE/0x495d133B938596C9984d462F007B676bDc57eCEC',
     buyTokenUrl:
       'https://app.fuse.fi/#/swap?inputCurrency=FUSE&outputCurrency=0x495d133B938596C9984d462F007B676bDc57eCEC',
+    createdAt: 1641411120,
   },
   {
     id: 'voltage-fusd-bnb',
@@ -412,6 +386,7 @@ export const fusePools = [
       'https://app.fuse.fi/#/add/0x6acb34b1Df86E254b544189Ec32Cf737e2482058/0x249BE57637D8B013Ad64785404b24aeBaE9B098B',
     buyTokenUrl:
       'https://app.fuse.fi/#/swap?inputCurrency=0x6acb34b1Df86E254b544189Ec32Cf737e2482058&outputCurrency=0x249BE57637D8B013Ad64785404b24aeBaE9B098B',
+    createdAt: 1641410790,
   },
   {
     id: 'voltage-wfuse-busd',
@@ -446,6 +421,7 @@ export const fusePools = [
     addLiquidityUrl: 'https://app.fuse.fi/#/add/FUSE/0x6a5F6A8121592BeCd6747a38d67451B310F7f156',
     buyTokenUrl:
       'https://app.fuse.fi/#/swap?inputCurrency=FUSE&outputCurrency=0x6a5F6A8121592BeCd6747a38d67451B310F7f156',
+    createdAt: 1641410975,
   },
   {
     id: 'voltage-wfuse-fusd',
@@ -480,6 +456,7 @@ export const fusePools = [
     addLiquidityUrl: 'https://app.fuse.fi/#/add/FUSE/0x249BE57637D8B013Ad64785404b24aeBaE9B098B',
     buyTokenUrl:
       'https://app.fuse.fi/#/swap?inputCurrency=FUSE&outputCurrency=0x249BE57637D8B013Ad64785404b24aeBaE9B098B',
+    createdAt: 1641410460,
   },
   {
     id: 'voltage-wbtc-weth',
@@ -515,5 +492,6 @@ export const fusePools = [
       'https://app.fuse.fi/#/add/0x33284f95ccb7B948d9D352e1439561CF83d8d00d/0xa722c13135930332Eb3d749B2F0906559D2C5b99',
     buyTokenUrl:
       'https://app.fuse.fi/#/swap?inputCurrency=0x33284f95ccb7B948d9D352e1439561CF83d8d00d&outputCurrency=0xa722c13135930332Eb3d749B2F0906559D2C5b99',
+    createdAt: 1641410240,
   },
 ];

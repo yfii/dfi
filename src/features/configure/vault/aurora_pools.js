@@ -32,7 +32,7 @@ export const auroraPools = [
     withdrawalFee: '0.05%',
     buyTokenUrl:
       'https://www.trisolaris.io/#/swap?outputCurrency=0x218c3c3D49d0E7B37aff0D8bB079de36Ae61A4c0',
-    createdAt: 1644702296,
+    createdAt: 1644698869,
   },
   {
     id: 'tri-mecha-near',
@@ -67,6 +67,7 @@ export const auroraPools = [
       'https://www.trisolaris.io/#/swap?outputCurrency=0xa33C3B53694419824722C10D99ad7cB16Ea62754',
     addLiquidityUrl:
       'https://www.trisolaris.io/#/add/0xC42C30aC6Cc15faC9bD938618BcaA1a1FaE8501d/0xa33C3B53694419824722C10D99ad7cB16Ea62754',
+    createdAt: 1644674242,
   },
   {
     id: 'tri-near-flx',
@@ -101,6 +102,7 @@ export const auroraPools = [
       'https://www.trisolaris.io/#/swap?outputCurrency=0xea62791aa682d455614eaA2A12Ba3d9A2fD197af',
     addLiquidityUrl:
       'https://www.trisolaris.io/#/add/0xC42C30aC6Cc15faC9bD938618BcaA1a1FaE8501d/0xea62791aa682d455614eaA2A12Ba3d9A2fD197af',
+    createdAt: 1644674036,
   },
   {
     id: 'tri-avax-near',
@@ -135,6 +137,7 @@ export const auroraPools = [
       'https://www.trisolaris.io/#/swap?outputCurrency=0x80A16016cC4A2E6a2CACA8a4a498b1699fF0f844',
     addLiquidityUrl:
       'https://www.trisolaris.io/#/add/0xC42C30aC6Cc15faC9bD938618BcaA1a1FaE8501d/0x80A16016cC4A2E6a2CACA8a4a498b1699fF0f844',
+    createdAt: 1644673733,
   },
   {
     id: 'tri-matic-near',
@@ -169,6 +172,7 @@ export const auroraPools = [
       'https://www.trisolaris.io/#/swap?outputCurrency=0x6aB6d61428fde76768D7b45D8BFeec19c6eF91A8',
     addLiquidityUrl:
       'https://www.trisolaris.io/#/add/0xC42C30aC6Cc15faC9bD938618BcaA1a1FaE8501d/0x6aB6d61428fde76768D7b45D8BFeec19c6eF91A8',
+    createdAt: 1644673492,
   },
   {
     id: 'tri-bnb-near',
@@ -203,6 +207,7 @@ export const auroraPools = [
       'https://www.trisolaris.io/#/swap?outputCurrency=0x2bF9b864cdc97b08B6D79ad4663e71B8aB65c45c',
     addLiquidityUrl:
       'https://www.trisolaris.io/#/add/0xC42C30aC6Cc15faC9bD938618BcaA1a1FaE8501d/0x2bF9b864cdc97b08B6D79ad4663e71B8aB65c45c',
+    createdAt: 1644673228,
   },
   {
     id: 'solace-solace',
@@ -236,6 +241,7 @@ export const auroraPools = [
     stratType: 'SingleStake',
     buyTokenUrl:
       'https://www.trisolaris.io/#/swap?outputCurrency=0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40',
+    createdAt: 1644436457,
   },
   {
     id: 'tri-solace-near',
@@ -270,6 +276,7 @@ export const auroraPools = [
       'https://www.trisolaris.io/#/swap?outputCurrency=0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40',
     addLiquidityUrl:
       'https://www.trisolaris.io/#/add/0xC42C30aC6Cc15faC9bD938618BcaA1a1FaE8501d/0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40',
+    createdAt: 1644438518,
   },
   {
     id: 'tri-atust-near',
@@ -304,6 +311,7 @@ export const auroraPools = [
       'https://www.trisolaris.io/#/swap?outputCurrency=0x5ce9F0B6AFb36135b5ddBF11705cEB65E634A9dC',
     addLiquidityUrl:
       'https://www.trisolaris.io/#/add/0xC42C30aC6Cc15faC9bD938618BcaA1a1FaE8501d/0x5ce9F0B6AFb36135b5ddBF11705cEB65E634A9dC',
+    createdAt: 1644000794,
   },
   {
     id: 'tri-near-atluna',
@@ -338,6 +346,7 @@ export const auroraPools = [
       'https://www.trisolaris.io/#/swap?outputCurrency=0xC4bdd27c33ec7daa6fcfd8532ddB524Bf4038096',
     addLiquidityUrl:
       'https://www.trisolaris.io/#/add/0xC42C30aC6Cc15faC9bD938618BcaA1a1FaE8501d/0xC4bdd27c33ec7daa6fcfd8532ddB524Bf4038096',
+    createdAt: 1643993283,
   },
   {
     id: 'tri-aurora-tri',
@@ -372,6 +381,7 @@ export const auroraPools = [
       'https://www.trisolaris.io/#/swap?outputCurrency=0xFa94348467f64D5A457F75F8bc40495D33c65aBB',
     addLiquidityUrl:
       'https://www.trisolaris.io/#/add/0x8BEc47865aDe3B172A928df8f990Bc7f2A3b9f79/0xFa94348467f64D5A457F75F8bc40495D33c65aBB',
+    createdAt: 1643901440,
   },
   {
     id: 'tri-aurora-weth',
@@ -406,6 +416,7 @@ export const auroraPools = [
       'https://www.trisolaris.io/#/swap?outputCurrency=0x8BEc47865aDe3B172A928df8f990Bc7f2A3b9f79',
     addLiquidityUrl:
       'https://www.trisolaris.io/#/add/0x8BEc47865aDe3B172A928df8f990Bc7f2A3b9f79/0xC9BdeEd33CD01541e1eeD10f90519d2C06Fe3feB',
+    createdAt: 1643890949,
   },
   {
     id: 'trisolaris-near-tri',
@@ -440,6 +451,7 @@ export const auroraPools = [
       'https://www.trisolaris.io/#/swap?outputCurrency=0xFa94348467f64D5A457F75F8bc40495D33c65aBB',
     addLiquidityUrl:
       'https://www.trisolaris.io/#/add/0xC42C30aC6Cc15faC9bD938618BcaA1a1FaE8501d/0xFa94348467f64D5A457F75F8bc40495D33c65aBB',
+    createdAt: 1643742934,
   },
   {
     id: 'trisolaris-near-wbtc',
@@ -474,6 +486,7 @@ export const auroraPools = [
       'https://www.trisolaris.io/#/swap?outputCurrency=0xF4eB217Ba2454613b15dBdea6e5f22276410e89e',
     addLiquidityUrl:
       'https://www.trisolaris.io/#/add/0xC42C30aC6Cc15faC9bD938618BcaA1a1FaE8501d/0xF4eB217Ba2454613b15dBdea6e5f22276410e89e',
+    createdAt: 1643739785,
   },
   {
     id: 'trisolaris-usdt-usdc',
@@ -508,6 +521,7 @@ export const auroraPools = [
       'https://www.trisolaris.io/#/swap?outputCurrency=0xB12BFcA5A55806AaF64E99521918A4bf0fC40802',
     addLiquidityUrl:
       'https://www.trisolaris.io/#/add/0x4988a896b1227218e4A686fdE5EabdcAbd91571f/0xB12BFcA5A55806AaF64E99521918A4bf0fC40802',
+    createdAt: 1643737307,
   },
   {
     id: 'trisolaris-usdt-near',
@@ -542,6 +556,7 @@ export const auroraPools = [
       'https://www.trisolaris.io/#/swap?outputCurrency=0x4988a896b1227218e4A686fdE5EabdcAbd91571f',
     addLiquidityUrl:
       'https://www.trisolaris.io/#/add/0xC42C30aC6Cc15faC9bD938618BcaA1a1FaE8501d/0x4988a896b1227218e4A686fdE5EabdcAbd91571f',
+    createdAt: 1643740691,
   },
   {
     id: 'trisolaris-usdc-near',
@@ -576,6 +591,7 @@ export const auroraPools = [
       'https://www.trisolaris.io/#/swap?outputCurrency=0xB12BFcA5A55806AaF64E99521918A4bf0fC40802',
     addLiquidityUrl:
       'https://www.trisolaris.io/#/add/0xC42C30aC6Cc15faC9bD938618BcaA1a1FaE8501d/0xB12BFcA5A55806AaF64E99521918A4bf0fC40802',
+    createdAt: 1643740953,
   },
   {
     id: 'trisolaris-near-weth',
@@ -610,5 +626,6 @@ export const auroraPools = [
       'https://www.trisolaris.io/#/swap?outputCurrency=0xC42C30aC6Cc15faC9bD938618BcaA1a1FaE8501d',
     addLiquidityUrl:
       'https://www.trisolaris.io/#/add/0xC42C30aC6Cc15faC9bD938618BcaA1a1FaE8501d/0xC9BdeEd33CD01541e1eeD10f90519d2C06Fe3feB',
+    createdAt: 1643741153,
   },
 ];
