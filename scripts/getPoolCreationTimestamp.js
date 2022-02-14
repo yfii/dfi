@@ -9,18 +9,18 @@ const explorerApiUrls = {
   fantom: 'https://api.ftmscan.com/api',
   heco: 'https://api.hecoinfo.com/api',
   avax: 'https://api.snowtrace.io//api',
-  heco: 'https://api.hecoinfo.com/api',
   moonbeam: 'https://api-moonbeam.moonscan.io/api',
   celo: 'https://explorer.celo.org/',
   moonriver: 'https://api-moonriver.moonscan.io/api',
   arbitrum: 'https://api.arbiscan.io/api',
   aurora: 'https://explorer.mainnet.aurora.dev/',
   metis: 'https://andromeda-explorer.metis.io/',
-  // one: "https://explorer.harmony.one/",
+  one: 'https://explorer.harmony.one/',
   fuse: 'https://explorer.fuse.io/',
 };
 
 const blockScoutChainsTimeout = new Set(['fuse', 'aurora', 'metis', 'celo']);
+const harmonyRpcChains = new Set(['one']);
 
 const getCreationTimestamp = async (vaultAddress, explorerUrl) => {
   var url =
@@ -54,6 +54,39 @@ const getCreationTimestampBlockScoutScraping = async (vaultAddress, explorerUrl,
   return timestamp;
 };
 
+const getCreationTimestampHarmonyRpc = async (vaultAddress, chain) => {
+  const url = chainRpcs[chain];
+  const resp = await axios.post(url, {
+    jsonrpc: '2.0',
+    method: 'hmyv2_getTransactionsHistory',
+    params: [
+      {
+        address: vaultAddress,
+        pageIndex: 0,
+        pageSize: 1,
+        fullTx: true,
+        txType: 'ALL',
+        order: 'ASC',
+      },
+    ],
+    id: 1,
+  });
+
+  if (
+    !resp.data ||
+    resp.data.id !== 1 ||
+    !resp.data.result ||
+    !resp.data.result.transactions ||
+    resp.data.result.transactions.length !== 1
+  ) {
+    console.dir(resp.data, { depth: null });
+    throw new Error('Malformed response');
+  }
+
+  const tx0 = resp.data.result.transactions[0];
+  return tx0.timestamp;
+};
+
 const getTimestamp = async (vaultAddress, chain) => {
   if (blockScoutChainsTimeout.has(chain)) {
     console.log('BlockScout explorer detected for this chain, proceeding to scrape');
@@ -62,6 +95,9 @@ const getTimestamp = async (vaultAddress, chain) => {
       explorerApiUrls[chain],
       chain
     );
+  } else if (harmonyRpcChains.has(chain)) {
+    console.log('Using Harmony RPC method for this chain');
+    return await getCreationTimestampHarmonyRpc(vaultAddress, chain);
   } else {
     return await getCreationTimestamp(vaultAddress, explorerApiUrls[chain]);
   }
@@ -69,7 +105,7 @@ const getTimestamp = async (vaultAddress, chain) => {
 
 const getPoolDate = async () => {
   const poolId = process.argv[2];
-  var chain = process.argv[3];
+  const chain = process.argv[3];
 
   let pool;
   try {
@@ -77,13 +113,19 @@ const getPoolDate = async () => {
   } catch (err) {
     return console.log(`${poolId} not found in pools for chain ${chain}`);
   }
-  let address = pool.earnContractAddress;
+  const address = pool.earnContractAddress;
 
-  let explorer = explorerApiUrls[chain];
+  const explorer = explorerApiUrls[chain];
   if (!explorer) return console.log(`No explorer api url found for chain ${chain}`);
 
-  let ts = await getTimestamp(address, chain);
+  const ts = await getTimestamp(address, chain);
   console.log(ts);
 };
 
-getPoolDate();
+if (process.argv.length === 4) {
+  getPoolDate().catch(console.error);
+} else {
+  console.error(
+    'Usage: yarn creationdate <vaultId> <chain>\ne.g. yarn creationdate one-bifi-maxi one'
+  );
+}
