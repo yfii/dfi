@@ -57,7 +57,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prepare": "husky install",
-    "analyze": "source-map-explorer 'build/static/js/*.js'"
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "creationdate": "node ./scripts/getPoolCreationTimestamp.js"
   },
   "eslintConfig": {
     "extends": "react-app"
