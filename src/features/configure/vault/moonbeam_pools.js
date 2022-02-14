@@ -27,14 +27,14 @@ export const moonbeamPools = [
       'MCAP_MEDIUM',
       'AUDIT',
       'CONTRACTS_VERIFIED',
-      ],
+    ],
     stratType: 'Maxi',
     withdrawalFee: '0%',
     buyTokenUrl:
       'https://app.beamswap.io/exchange/swap?inputCurrency=0xacc15dc74880c9944775448304b263d191c6077f&outputCurrency=0x595c8481c48894771CE8FaDE54ac6Bf59093F9E8',
-    createdAt: 1644702296,
-   },
-   {
+    createdAt: 1644700692,
+  },
+  {
     id: 'beamswap-bifi-wglmr',
     name: 'BIFI-GLMR LP',
     token: 'BIFI-GLMR TLP',
@@ -67,6 +67,7 @@ export const moonbeamPools = [
       'https://app.beamswap.io/exchange/add/0x595c8481c48894771CE8FaDE54ac6Bf59093F9E8/0xacc15dc74880c9944775448304b263d191c6077f3',
     buyTokenUrl:
       'https://app.beamswap.io/exchange/swap?inputCurrency=0x595c8481c48894771CE8FaDE54ac6Bf59093F9E8&outputCurrency=0xacc15dc74880c9944775448304b263d191c6077f',
+    createdAt: 1644704004,
   },
   {
     id: 'beamswap-usdc-ftm',
@@ -101,6 +102,7 @@ export const moonbeamPools = [
       'https://app.beamswap.io/exchange/add/0x818ec0a7fe18ff94269904fced6ae3dae6d6dc0b/0xC19281F22A075E0F10351cd5D6Ea9f0AC63d4327',
     buyTokenUrl:
       'https://app.beamswap.io/exchange/swap?inputCurrency=0x818ec0a7fe18ff94269904fced6ae3dae6d6dc0b&outputCurrency=0xC19281F22A075E0F10351cd5D6Ea9f0AC63d4327',
+    createdAt: 1644703824,
   },
   {
     id: 'beamswap-usdc-wglmr',
@@ -135,6 +137,7 @@ export const moonbeamPools = [
       'https://app.beamswap.io/exchange/add/0x818ec0a7fe18ff94269904fced6ae3dae6d6dc0b/0xacc15dc74880c9944775448304b263d191c6077f3',
     buyTokenUrl:
       'https://app.beamswap.io/exchange/swap?inputCurrency=0x818ec0a7fe18ff94269904fced6ae3dae6d6dc0b&outputCurrency=0xacc15dc74880c9944775448304b263d191c6077f',
+    createdAt: 1644598122,
   },
   {
     id: 'beamswap-dai-usdc',
@@ -169,6 +172,7 @@ export const moonbeamPools = [
       'https://app.beamswap.io/exchange/add/0x818ec0a7fe18ff94269904fced6ae3dae6d6dc0b/0x765277EebeCA2e31912C9946eAe1021199B39C61',
     buyTokenUrl:
       'https://app.beamswap.io/exchange/swap?inputCurrency=0x818ec0a7fe18ff94269904fced6ae3dae6d6dc0b&outputCurrency=0x765277EebeCA2e31912C9946eAe1021199B39C61',
+    createdAt: 1644598824,
   },
   {
     id: 'beamswap-wglmr-glint',
@@ -203,6 +207,7 @@ export const moonbeamPools = [
       'https://app.beamswap.io/exchange/add/0x818ec0a7fe18ff94269904fced6ae3dae6d6dc0b/0x765277EebeCA2e31912C9946eAe1021199B39C61',
     buyTokenUrl:
       'https://app.beamswap.io/exchange/swap?inputCurrency=0x818ec0a7fe18ff94269904fced6ae3dae6d6dc0b&outputCurrency=0x765277EebeCA2e31912C9946eAe1021199B39C61',
+    createdAt: 1644599100,
   },
   {
     id: 'beamswap-busd-bnb',
@@ -237,6 +242,7 @@ export const moonbeamPools = [
       'https://app.beamswap.io/exchange/add/0xc9BAA8cfdDe8E328787E29b4B078abf2DaDc2055/0xA649325Aa7C5093d12D6F98EB4378deAe68CE23F',
     buyTokenUrl:
       'https://app.beamswap.io/exchange/swap?inputCurrency=0xc9BAA8cfdDe8E328787E29b4B078abf2DaDc2055&outputCurrency=0xA649325Aa7C5093d12D6F98EB4378deAe68CE23F',
+    createdAt: 1644599646,
   },
   {
     id: 'beamswap-usdc-busd',
@@ -271,6 +277,7 @@ export const moonbeamPools = [
       'https://app.beamswap.io/exchange/add/0xA649325Aa7C5093d12D6F98EB4378deAe68CE23F/0x818ec0A7Fe18Ff94269904fCED6AE3DaE6d6dC0b',
     buyTokenUrl:
       'https://app.beamswap.io/exchange/swap?inputCurrency=0xA649325Aa7C5093d12D6F98EB4378deAe68CE23F&outputCurrency=0x818ec0A7Fe18Ff94269904fCED6AE3DaE6d6dC0b',
+    createdAt: 1644599298,
   },
   {
     id: 'beamswap-usdc-eth',
@@ -305,6 +312,7 @@ export const moonbeamPools = [
       'https://app.beamswap.io/exchange/add/0xfA9343C3897324496A05fC75abeD6bAC29f8A40f/0x818ec0A7Fe18Ff94269904fCED6AE3DaE6d6dC0b',
     buyTokenUrl:
       'https://app.beamswap.io/exchange/swap?inputCurrency=0xfA9343C3897324496A05fC75abeD6bAC29f8A40f&outputCurrency=0x818ec0A7Fe18Ff94269904fCED6AE3DaE6d6dC0b',
+    createdAt: 1644599832,
   },
   {
     id: 'beamswap-usdc-usdt',
@@ -339,5 +347,6 @@ export const moonbeamPools = [
       'https://app.beamswap.io/exchange/add/0xeFAeeE334F0Fd1712f9a8cc375f427D9Cdd40d73/0x818ec0A7Fe18Ff94269904fCED6AE3DaE6d6dC0b',
     buyTokenUrl:
       'https://app.beamswap.io/exchange/swap?inputCurrency=0xeFAeeE334F0Fd1712f9a8cc375f427D9Cdd40d73&outputCurrency=0x818ec0A7Fe18Ff94269904fCED6AE3DaE6d6dC0b',
+    createdAt: 1644600000,
   },
 ];

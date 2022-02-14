@@ -108,6 +108,18 @@ const validatePools = async () => {
           : 1;
       }
 
+      if (!pool.createdAt) {
+        console.error(
+          `Error: ${pool.id} : Pool createdAt timestamp missing - required for UI: vault sorting`
+        );
+        exitCode = 1;
+      } else if (isNaN(pool.createdAt)) {
+        console.error(
+          `Error: ${pool.id} : Pool createdAt timestamp wrong type, should be a number`
+        );
+        exitCode = 1;
+      }
+
       addressFields.forEach(field => {
         if (pool.hasOwnProperty(field) && !isValidChecksumAddress(pool[field])) {
           const maybeValid = maybeChecksumAddress(pool[field]);

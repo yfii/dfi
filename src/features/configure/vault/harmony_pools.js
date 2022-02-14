@@ -31,6 +31,7 @@ export const harmonyPools = [
     withdrawalFee: '0%',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=ETH&outputCurrency=0x6ab6d61428fde76768d7b45d8bfeec19c6ef91a8',
+    createdAt: 1636644198,
   },
   {
     id: 'sushi-one-bifi-wone',
@@ -66,6 +67,7 @@ export const harmonyPools = [
     addLiquidityUrl: 'https://app.sushi.com/add/ETH/0x6aB6d61428fde76768D7b45D8BFeec19c6eF91A8',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=&outputCurrency=0x6aB6d61428fde76768D7b45D8BFeec19c6eF91A8',
+    createdAt: 1641218645,
   },
   {
     id: 'sushi-one-wone-1btc',
@@ -101,6 +103,7 @@ export const harmonyPools = [
     addLiquidityUrl: 'https://app.sushi.com/add/ETH/0xdc54046c0451f9269FEe1840aeC808D36015697d',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=&outputCurrency=0xdc54046c0451f9269FEe1840aeC808D36015697d',
+    createdAt: 1641218490,
   },
   {
     id: 'curve-harmony-tricrypto',
@@ -135,6 +138,7 @@ export const harmonyPools = [
     stratType: 'StratMultiLP',
     withdrawalFee: '0.01%',
     addLiquidityUrl: 'https://harmony.curve.fi/tricrypto/deposit',
+    createdAt: 1638254407,
   },
   {
     id: 'curve-harmony-3pool',
@@ -169,6 +173,7 @@ export const harmonyPools = [
     stratType: 'StratMultiLP',
     withdrawalFee: '0.01%',
     addLiquidityUrl: 'https://harmony.curve.fi/3pool/deposit',
+    createdAt: 1638252423,
   },
   {
     id: 'sushi-one-1ygg-1eth',
@@ -205,6 +210,7 @@ export const harmonyPools = [
       'https://app.sushi.com/add/0x6983D1E6DEf3690C4d616b13597A09e6193EA013/0x63cf309500d8be0B9fDB8F1fb66C821236c0438c',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=0x6983D1E6DEf3690C4d616b13597A09e6193EA013&outputCurrency=0x63cf309500d8be0B9fDB8F1fb66C821236c0438c',
+    createdAt: 1631279238,
   },
   {
     id: 'sushi-one-1eth-1aave',
@@ -241,6 +247,7 @@ export const harmonyPools = [
       'https://app.sushi.com/add/0x6983D1E6DEf3690C4d616b13597A09e6193EA013/0xcF323Aad9E522B93F11c352CaA519Ad0E14eB40F',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=0x6983D1E6DEf3690C4d616b13597A09e6193EA013&outputCurrency=0x63cf309500d8be0B9fDB8F1fb66C821236c0438c',
+    createdAt: 1631279357,
   },
   {
     id: 'sushi-one-1axs-1eth',
@@ -277,6 +284,7 @@ export const harmonyPools = [
       'https://app.sushi.com/add/0x6983D1E6DEf3690C4d616b13597A09e6193EA013/0x14A7B318fED66FfDcc80C1517C172c13852865De',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=0x6983D1E6DEf3690C4d616b13597A09e6193EA013&outputCurrency=0x14A7B318fED66FfDcc80C1517C172c13852865De',
+    createdAt: 1631279474,
   },
   {
     id: 'sushi-one-1eth-1dai',
@@ -313,6 +321,7 @@ export const harmonyPools = [
       'https://app.sushi.com/add/0x6983D1E6DEf3690C4d616b13597A09e6193EA013/0xEf977d2f931C1978Db5F6747666fa1eACB0d0339',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=0x6983D1E6DEf3690C4d616b13597A09e6193EA013&outputCurrency=0xEf977d2f931C1978Db5F6747666fa1eACB0d0339',
+    createdAt: 1631282246,
   },
   {
     id: 'sushi-one-1usdt-1eth',
@@ -349,6 +358,7 @@ export const harmonyPools = [
       'https://app.sushi.com/add/0x6983D1E6DEf3690C4d616b13597A09e6193EA013/0x3C2B8Be99c50593081EAA2A724F0B8285F5aba8f',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=0x6983D1E6DEf3690C4d616b13597A09e6193EA013&outputCurrency=0x3C2B8Be99c50593081EAA2A724F0B8285F5aba8f',
+    createdAt: 1631282425,
   },
   {
     id: 'sushi-one-1eth-1frax',
@@ -385,6 +395,7 @@ export const harmonyPools = [
       'https://app.sushi.com/add/0x6983D1E6DEf3690C4d616b13597A09e6193EA013/0xeB6C08ccB4421b6088e581ce04fcFBed15893aC3',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=0x6983D1E6DEf3690C4d616b13597A09e6193EA013&outputCurrency=0xeB6C08ccB4421b6088e581ce04fcFBed15893aC3',
+    createdAt: 1631282533,
   },
   {
     id: 'sushi-one-ust-1eth',
@@ -421,6 +432,7 @@ export const harmonyPools = [
       'https://app.sushi.com/add/0x6983D1E6DEf3690C4d616b13597A09e6193EA013/0x224e64ec1BDce3870a6a6c777eDd450454068FEC',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=0x6983D1E6DEf3690C4d616b13597A09e6193EA013&outputCurrency=0x224e64ec1BDce3870a6a6c777eDd450454068FEC',
+    createdAt: 1631282733,
   },
   {
     id: 'sushi-one-1wbtc-1eth',
@@ -457,6 +469,7 @@ export const harmonyPools = [
       'https://app.sushi.com/add/0x6983D1E6DEf3690C4d616b13597A09e6193EA013/0x3095c7557bCb296ccc6e363DE01b760bA031F2d9',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=0x6983D1E6DEf3690C4d616b13597A09e6193EA013&outputCurrency=0x3095c7557bCb296ccc6e363DE01b760bA031F2d9',
+    createdAt: 1631283021,
   },
   {
     id: 'sushi-one-1usdt-1usdc',
@@ -493,6 +506,7 @@ export const harmonyPools = [
       'https://app.sushi.com/add/0x985458E523dB3d53125813eD68c274899e9DfAb4/0x3C2B8Be99c50593081EAA2A724F0B8285F5aba8f',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=0x985458E523dB3d53125813eD68c274899e9DfAb4&outputCurrency=0x3C2B8Be99c50593081EAA2A724F0B8285F5aba8f',
+    createdAt: 1631283436,
   },
   {
     id: 'sushi-one-1usdt-wone',
@@ -528,6 +542,7 @@ export const harmonyPools = [
     addLiquidityUrl: 'https://app.sushi.com/add/ETH/0x3C2B8Be99c50593081EAA2A724F0B8285F5aba8f',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=&outputCurrency=0x3C2B8Be99c50593081EAA2A724F0B8285F5aba8f',
+    createdAt: 1631283673,
   },
   {
     id: 'sushi-one-sushi-one',
@@ -563,6 +578,7 @@ export const harmonyPools = [
     addLiquidityUrl: 'https://app.sushi.com/add/ETH/0xBEC775Cb42AbFa4288dE81F387a9b1A3c4Bc552A',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=&outputCurrency=0xBEC775Cb42AbFa4288dE81F387a9b1A3c4Bc552A',
+    createdAt: 1631197145,
   },
   {
     id: 'sushi-one-busd-one',
@@ -598,6 +614,7 @@ export const harmonyPools = [
     addLiquidityUrl: 'https://app.sushi.com/add/ETH/0xe176ebe47d621b984a73036b9da5d834411ef734',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=&outputCurrency=0xe176ebe47d621b984a73036b9da5d834411ef734',
+    createdAt: 1631201665,
   },
   {
     id: 'sushi-one-bscbusd-busd',
@@ -634,6 +651,7 @@ export const harmonyPools = [
       'https://app.sushi.com/add/0xe176ebe47d621b984a73036b9da5d834411ef734/0x0ab43550a6915f9f67d0c454c2e90385e6497eaa',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=0xe176ebe47d621b984a73036b9da5d834411ef734&outputCurrency=0x0ab43550a6915f9f67d0c454c2e90385e6497eaa',
+    createdAt: 1631204933,
   },
   {
     id: 'sushi-one-eth-one',
@@ -669,6 +687,7 @@ export const harmonyPools = [
     addLiquidityUrl: 'https://app.sushi.com/add/ETH/0x6983d1e6def3690c4d616b13597a09e6193ea013',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=&outputCurrency=0x6983d1e6def3690c4d616b13597a09e6193ea013',
+    createdAt: 1631205117,
   },
   {
     id: 'sushi-one-btc-one',
@@ -704,6 +723,7 @@ export const harmonyPools = [
     addLiquidityUrl: 'https://app.sushi.com/add/ETH/0x3095c7557bcb296ccc6e363de01b760ba031f2d9',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=&outputCurrency=0x3095c7557bcb296ccc6e363de01b760ba031f2d9',
+    createdAt: 1631205541,
   },
   {
     id: 'sushi-one-usdc-one',
@@ -739,5 +759,6 @@ export const harmonyPools = [
     addLiquidityUrl: 'https://app.sushi.com/add/ETH/0x985458e523db3d53125813ed68c274899e9dfab4',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=&outputCurrency=0x985458e523db3d53125813ed68c274899e9dfab4',
+    createdAt: 1631205683,
   },
 ];
