@@ -5287,7 +5287,7 @@ export const bscPools = [
     createdAt: 1625587277,
   },
   {
-    id: 'banana-eps-bnb',
+    id: 'banana-eps-bnb-eol',
     logo: 'degens/BANANA-EPS-BNB.svg',
     name: 'EPS-BNB LP',
     token: 'EPS-BNB ApeLP',
@@ -5303,8 +5303,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'banana-eps-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'ApeSwap',
     assets: ['EPS', 'BNB'],
     addLiquidityUrl:
