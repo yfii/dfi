@@ -36,6 +36,43 @@ export const fuseStakePools = [
   },
 
   {
+    id: 'moo_voltage-wfuse-elon-elon',
+    name: 'Dogelon Mars x Fuse',
+    assets: ['ELON', 'FUSE'],
+    token: 'mooVoltageFUSE-ELON',
+    tokenDecimals: 18,
+    tokenAddress: '0xa7224e31367069637A8C2cc0aa10B7A90D9343C1',
+    tokenOracle: 'lps',
+    tokenOracleId: 'voltage-wfuse-elon',
+    earnedToken: 'ELON-FUSE LP',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xe418c323fA450e7e18c4dB304bEFC7ffF92D2Cc1',
+    earnContractAddress: '0xc3a4fdcba79DB04b4C3e352b1C467B3Ba909D84A',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'lps',
+    earnedOracleId: 'voltage-wfuse-elon',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1652625028,
+    partners: [
+      {
+        logo: 'stake/elon/logo.png',
+        background: 'stake/elon/bg.png',
+        text:
+          'We are thrilled to announce that the Dogelon Mars (ELON) token has now been ported to the Fuse Network blockchain. Fuse Network becomes only the third blockchain on which the token has officially been enabled (in addition to Ethereum and Polygon). \n' +
+          'A FUSE/ELON trading pool has been created on the Voltage Finance (formerly, FuseFi) decentralized exchange (DEX).\n' +
+          'We are boosting this pool with more tokens of the same kind you deposited. Claim the rewards and you will see them already staked in the vault.',
+        website: 'https://dogelonmars.com/',
+        social: {
+          telegram: 'https://t.me/dogelonmars',
+          twitter: 'https://twitter.com/DogelonMars',
+        },
+      },
+    ],
+  },
+
+  {
     id: 'moo_fusefi-wfuse-usdc-fuse',
     name: 'Fuse',
     assets: ['USDC', 'FUSE'],

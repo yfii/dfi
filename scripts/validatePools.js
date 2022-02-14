@@ -20,6 +20,9 @@ const overrides = {
   'beltv2-4belt': { vaultOwner: undefined }, // moonpot deployer
   'cronos-bifi-maxi': { beefyFeeRecipient: undefined }, // 0x0
   'metis-bifi-maxi': { beefyFeeRecipient: undefined }, // 0x0
+  'aurora-bifi-maxi': { beefyFeeRecipient: undefined }, // 0x0
+  'fuse-bifi-maxi': { beefyFeeRecipient: undefined }, // 0x0
+  'moonbeam-bifi-maxi': { beefyFeeRecipient: undefined }, // 0x0
 };
 
 const oldValidOwners = [
@@ -103,6 +106,18 @@ const validatePools = async () => {
         platformCounts[pool.platform] = platformCounts.hasOwnProperty(pool.platform)
           ? platformCounts[pool.platform] + 1
           : 1;
+      }
+
+      if (!pool.createdAt) {
+        console.error(
+          `Error: ${pool.id} : Pool createdAt timestamp missing - required for UI: vault sorting`
+        );
+        exitCode = 1;
+      } else if (isNaN(pool.createdAt)) {
+        console.error(
+          `Error: ${pool.id} : Pool createdAt timestamp wrong type, should be a number`
+        );
+        exitCode = 1;
       }
 
       addressFields.forEach(field => {

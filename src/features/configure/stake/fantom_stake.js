@@ -59,9 +59,9 @@ export const fantomStakePools = [
         logo: 'stake/ripae/logo.png',
         background: 'stake/ripae/bg.png',
         text:
-          'Ripae Finance’s full focus is to build a true cross-chain algorithmic stable coin protocol that is stabilized with true use-cases all around the DeFi Ecosystem.\n' +
+          'Ripae’s mission is to construct a cross-chain algorithmic stablecoin (ASC) economy and connect DeFi networks to make open finance capital efficient and accessible to everyone.\n' +
           '\n' +
-          'Ripae Finance, an algorithmic stable coin currently pegged to the value of 1 $FTM. An Algorithmic Stable Coin (ASC) is a non-collateralized stablecoin tailored for improving price stability. The beauty of algorithmic stable coins is that they are much more capital efficient than their collateralized cousins. Ripae finance will with its experienced teamwork towards expanding this idea of capital-efficient algorithmic stable coin and build on previous iterations to expand the basis of the ecosystem.',
+          'With its experienced team, Ripae Finance will strive to build DeFi’s most convenient, secure, fair, and cost-effective ASC solution in order to help the industry thrive by enabling all participants to work together effortlessly.',
         website: 'https://ripae.finance/',
         social: {
           telegram: 'https://discord.gg/6zq53FB4TS',
