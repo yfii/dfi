@@ -2850,7 +2850,7 @@ export const polygonPools = [
     createdAt: 1628007315,
   },
   {
-    id: 'dinoswap-dino-eth',
+    id: 'dinoswap-dino-eth-eol',
     name: 'DINO-ETH LP',
     token: 'DINO-ETH LP',
     tokenDescription: 'Quickswap (DinoSwap)',
@@ -2865,8 +2865,9 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'dinoswap-dino-eth',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'DinoSwap',
     assets: ['DINO', 'ETH'],
     addLiquidityUrl:
@@ -3313,7 +3314,7 @@ export const polygonPools = [
     createdAt: 1627204805,
   },
   {
-    id: 'dinoswap-dino-usdc',
+    id: 'dinoswap-dino-usdc-eol',
     name: 'DINO-USDC LP',
     token: 'DINO-USDC LP',
     tokenDescription: 'SushiSwap (DinoSwap)',
@@ -3328,8 +3329,9 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'dinoswap-dino-usdc',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'DinoSwap',
     assets: ['DINO', 'USDC'],
     addLiquidityUrl:

@@ -3445,7 +3445,7 @@ export const bscPools = [
     createdAt: 1629960094,
   },
   {
-    id: 'omnifarm-usdo-bdp',
+    id: 'omnifarm-usdo-bdp-eol',
     name: 'USDO-BDP LP',
     token: 'USDO-BDP LP2',
     tokenDescription: 'Omnifarm (PancakeSwap)',
@@ -3460,8 +3460,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'omnifarm-usdo-bdp',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Omnifarms',
     assets: ['BDP', 'USDO'],
     addLiquidityUrl:
