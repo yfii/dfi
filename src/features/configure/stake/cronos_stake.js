@@ -36,6 +36,40 @@ export const cronosStakePools = [
   },
 
   {
+    id: 'moo_vvs-vvs-cro-darkcrypto',
+    name: 'DarkCrypto',
+    assets: ['VVS', 'CRO'],
+    token: 'mooVvsVVS-CRO',
+    tokenDecimals: 18,
+    tokenAddress: '0x2fbB1caF6271A14b13F3432f3aB2D6aF102560fA',
+    tokenOracle: 'lps',
+    tokenOracleId: 'vvs-vvs-cro',
+    earnedToken: 'SKY',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x9D3BBb0e988D9Fb2d55d07Fe471Be2266AD9c81c',
+    earnContractAddress: '0xE06575Cfd4a631e8C0Cd9FBDd8d77AB04CFfA52C',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'SKY',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1646305117,
+    partners: [
+      {
+        logo: 'stake/dark/logo.png',
+        background: 'stake/dark/bg.png',
+        text: 'DarkCrypto - Algorithms Token Pegged With CRO on CRONOS chain. $DARK will be an on-demand token for DarkVerse - Universe of GameFi and metaverse.',
+        website: 'https://www.darkcrypto.finance/',
+        social: {
+          telegram: 'https://t.me/darkcryptofi',
+          twitter: 'https://twitter.com/DarkCryptoFi',
+        },
+      },
+    ],
+  },
+
+  {
     id: 'moo_vvs-cro-btc-liquidus',
     name: 'Liquidus',
     assets: ['CRO', 'WBTC'],
