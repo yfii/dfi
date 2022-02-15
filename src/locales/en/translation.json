@@ -63,7 +63,7 @@
   "Vault-DepositsRetiredRewardsTitle": "RETIRED - Underlying platform stopped rewards.",
   "Vault-DepositsRetiredExploitTitle": "RETIRED - Token has been exploited, funds are SAFU in vault.",
   "Vault-DepositsRetiredTVLTitle": "RETIRED - TVL is too low.",
-  "Vault-DepositsRetiredMsg": "Vault retired, withdraw your funds ASAP",
+  "Vault-DepositsRetiredMsg": "Vault retired, please withdraw your funds",
   "Vault-LiquidityWarningTitle": "{{name}} overborrowed, please check {{platform}} for when you can withdraw.",
   "Vault-LendingWarningTitle": "Uses leverage, please read the docs before depositing.",
   "Vault-GeneralWarningTitle": "Please DYOR before depositing.",

@@ -46,7 +46,7 @@
   "Vault-DepositsPausedTitle": "Depositos pausados",
   "Vault-DepositsPausedMsg": "Los depositos están detenidos para esta bóveda",
   "Vault-DepositsRetiredTitle": "RETIRADO",
-  "Vault-DepositsRetiredMsg": "Bóveda retirada, retire sus fondos lo mas rápido posible.",
+  "Vault-DepositsRetiredMsg": "Bóveda retirada, por favor retire sus fondos",
   "Vault-Staked": "Staked",
   "Vault-Description": "Utiliza: {{vault}}",
   "Vault-Network": "Seleccionar red",
