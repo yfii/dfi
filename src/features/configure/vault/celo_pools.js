@@ -32,6 +32,7 @@ export const celoPools = [
     withdrawalFee: '0.05%',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=ETH&outputCurrency=0x639A647fbe20b6c8ac19E48E2de44ea792c62c5C',
+    createdAt: 1636753207,
   },
   {
     id: 'sushi-celo-celo-mobi',
@@ -67,6 +68,7 @@ export const celoPools = [
       'https://app.sushi.com/add/0x471EcE3750Da237f93B8E339c536989b8978a438/0x73a210637f6F6B7005512677Ba6B3C96bb4AA44B',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=0x471EcE3750Da237f93B8E339c536989b8978a438&outputCurrency=0x73a210637f6F6B7005512677Ba6B3C96bb4AA44B',
+    createdAt: 1641132389,
   },
   {
     id: 'sushi-celo-weth-usdt',
@@ -102,6 +104,7 @@ export const celoPools = [
       'https://app.sushi.com/add/0x122013fd7dF1C6F636a5bb8f03108E876548b455/0x88eeC49252c8cbc039DCdB394c0c2BA2f1637EA0',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=0x122013fd7dF1C6F636a5bb8f03108E876548b455a&outputCurrency=0x88eeC49252c8cbc039DCdB394c0c2BA2f1637EA0',
+    createdAt: 1641132354,
   },
   {
     id: 'sushi-celo-weth-daiv2',
@@ -137,6 +140,7 @@ export const celoPools = [
       'https://app.sushi.com/add/0x122013fd7dF1C6F636a5bb8f03108E876548b455/0xE4fE50cdD716522A56204352f00AA110F731932d',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=0x122013fd7dF1C6F636a5bb8f03108E876548b455a&outputCurrency=0xE4fE50cdD716522A56204352f00AA110F731932d',
+    createdAt: 1641132429,
   },
   {
     id: 'sushi-celo-cusd-usdc',
@@ -172,6 +176,7 @@ export const celoPools = [
       'https://app.sushi.com/add/0x765DE816845861e75A25fCA122bb6898B8B1282a/0xef4229c8c3250C675F21BCefa42f58EfbfF6002a',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=0x765DE816845861e75A25fCA122bb6898B8B1282a&outputCurrency=0xef4229c8c3250C675F21BCefa42f58EfbfF6002a',
+    createdAt: 1641129424,
   },
   {
     id: 'sushi-celo-wethv2-celo',
@@ -207,6 +212,7 @@ export const celoPools = [
       'https://app.sushi.com/add/0x471EcE3750Da237f93B8E339c536989b8978a438/0x122013fd7dF1C6F636a5bb8f03108E876548b455',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=0x471EcE3750Da237f93B8E339c536989b8978a438&outputCurrency=0x122013fd7dF1C6F636a5bb8f03108E876548b455',
+    createdAt: 1641132564,
   },
   {
     id: 'sushi-celo-wethv2-cusd',
@@ -242,6 +248,7 @@ export const celoPools = [
       'https://app.sushi.com/add/0x765DE816845861e75A25fCA122bb6898B8B1282a/0x122013fd7dF1C6F636a5bb8f03108E876548b455',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=0x765DE816845861e75A25fCA122bb6898B8B1282a&outputCurrency=0x122013fd7dF1C6F636a5bb8f03108E876548b455',
+    createdAt: 1641132539,
   },
   {
     id: 'sushi-celo-cusd-ceurv2',
@@ -277,6 +284,7 @@ export const celoPools = [
       'https://app.sushi.com/add/0x765DE816845861e75A25fCA122bb6898B8B1282a/0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=0x765DE816845861e75A25fCA122bb6898B8B1282a&outputCurrency=0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73',
+    createdAt: 1641132464,
   },
   {
     id: 'sushi-celo-celo-weth-eol',
@@ -313,6 +321,7 @@ export const celoPools = [
       'https://app.sushi.com/add/0x471EcE3750Da237f93B8E339c536989b8978a438/0xE919F65739c26a42616b7b8eedC6b5524d1e3aC4',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=0x471EcE3750Da237f93B8E339c536989b8978a438&outputCurrency=0xE919F65739c26a42616b7b8eedC6b5524d1e3aC4',
+    createdAt: 1635168273,
   },
   {
     id: 'sushi-celo-cusd-dai-eol',
@@ -349,6 +358,7 @@ export const celoPools = [
       'https://app.sushi.com/add/0x765DE816845861e75A25fCA122bb6898B8B1282a/0xE4fE50cdD716522A56204352f00AA110F731932d',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=0x471EcE3750Da237f93B8E339c536989b8978a438&outputCurrency=0xE4fE50cdD716522A56204352f00AA110F731932d',
+    createdAt: 1635168343,
   },
   {
     id: 'sushi-celo-ceur-weth-eol',
@@ -385,6 +395,7 @@ export const celoPools = [
       'https://app.sushi.com/add/0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73/0xE919F65739c26a42616b7b8eedC6b5524d1e3aC4',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73&outputCurrency=0xE919F65739c26a42616b7b8eedC6b5524d1e3aC4',
+    createdAt: 1635168398,
   },
   {
     id: 'sushi-celo-cusd-ceur-eol',
@@ -421,5 +432,6 @@ export const celoPools = [
       'https://app.sushi.com/add/0x765DE816845861e75A25fCA122bb6898B8B1282a/0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73',
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=0x765DE816845861e75A25fCA122bb6898B8B1282a&outputCurrency=0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73',
+    createdAt: 1635168488,
   },
 ];
