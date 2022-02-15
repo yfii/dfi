@@ -244,6 +244,7 @@ export const fantomPools = [
       'https://spookyswap.finance/swap?outputCurrency=0x152888854378201e173490956085c711f1DeD565',
     addLiquidityUrl:
       'https://spookyswap.finance/add/FTM/0x152888854378201e173490956085c711f1DeD565',
+    createdAt: 1644813183,
   },
   {
     id: 'sushi-yfi-eth',
