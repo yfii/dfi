@@ -129,7 +129,7 @@ export const cronosPools = [
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
-      'IL_LOW',
+      'IL_HIGH',
       'MCAP_MICRO',
       'AUDIT',
       'CONTRACTS_VERIFIED',

@@ -57,7 +57,7 @@ export const metisPools = [
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
-      'IL_HIGH',
+      'IL_NONE',
       'MCAP_LOW',
       'AUDIT',
       'CONTRACTS_VERIFIED',
