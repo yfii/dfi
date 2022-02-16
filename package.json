@@ -18,7 +18,7 @@
     "@walletconnect/web3-provider": "^1.6.5",
     "axios": "^0.21.1",
     "bignumber.js": "^9.0.1",
-    "blockchain-addressbook": "^0.14.7",
+    "blockchain-addressbook": "^0.15.0",
     "classnames": "^2.2.6",
     "connected-react-router": "^6.8.0",
     "deficonnect": "^1.1.5",
