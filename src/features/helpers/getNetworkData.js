@@ -438,6 +438,7 @@ export const getNetworkStables = () => {
         'UST',
         'asUSDC',
         'LAMBDA',
+        'DEI',
       ];
     case 1666600000:
       return ['BUSD', 'bscBUSD', 'USDC', 'USDT', 'UST', 'DAI', 'FRAX'];
