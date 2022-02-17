@@ -4315,7 +4315,7 @@ export const fantomPools = [
     createdAt: 1633180384,
   },
   {
-    id: 'spirit-fusdt-ftm',
+    id: 'spirit-fusdt-ftm-eol',
     name: 'fUSDT-FTM LP',
     token: 'fUSDT-FTM SLP',
     tokenDescription: 'SpiritSwap',
@@ -4331,7 +4331,7 @@ export const fantomPools = [
     oracleId: 'spirit-fusdt-ftm',
     oraclePrice: 0,
     depositsPaused: false,
-    status: 'active',
+    status: 'eol',
     platform: 'SpiritSwap',
     assets: ['fUSDT', 'FTM'],
     risks: [
@@ -4344,6 +4344,7 @@ export const fantomPools = [
     ],
     stratType: 'StratLP',
     withdrawalFee: '0%',
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://swap.spiritswap.finance/#/add/FTM/0x049d68029688eAbF473097a2fC38ef61633A3C7A',
     buyTokenUrl:
