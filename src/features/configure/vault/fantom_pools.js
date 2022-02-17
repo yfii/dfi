@@ -4842,7 +4842,7 @@ export const fantomPools = [
     createdAt: 1633342210,
   },
   {
-    id: 'spirit-ftm-sushi',
+    id: 'spirit-ftm-sushi-eol',
     name: 'SUSHI-FTM LP',
     token: 'SUSHI-FTM SLP',
     tokenDescription: 'SpiritSwap',
@@ -4858,7 +4858,7 @@ export const fantomPools = [
     oracleId: 'spirit-ftm-sushi',
     oraclePrice: 0,
     depositsPaused: false,
-    status: 'active',
+    status: 'eol',
     platform: 'SpiritSwap',
     assets: ['SUSHI', 'FTM'],
     risks: [
@@ -4871,6 +4871,7 @@ export const fantomPools = [
     ],
     stratType: 'StratLP',
     withdrawalFee: '0%',
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://swap.spiritswap.finance/#/add/FTM/0xae75A438b2E0cB8Bb01Ec1E1e376De11D44477CC',
     buyTokenUrl:
