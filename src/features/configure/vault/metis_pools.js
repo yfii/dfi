@@ -295,7 +295,7 @@ export const metisPools = [
     oracle: 'lps',
     oracleId: 'netswap-nett-m.usdc',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Netswap',
     assets: ['mUSDC', 'NETT'],
