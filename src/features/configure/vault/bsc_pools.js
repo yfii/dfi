@@ -2670,7 +2670,7 @@ export const bscPools = [
     createdAt: 1632479930,
   },
   {
-    id: 'annex-ann-busd',
+    id: 'annex-ann-busd-eol',
     name: 'ANN-BUSD LP',
     token: 'ANN-BUSD LP',
     tokenDescription: 'Annex',
@@ -2689,6 +2689,7 @@ export const bscPools = [
     status: 'active',
     platform: 'Other',
     assets: ['ANN', 'BUSD'],
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://app.annex.finance/trade/liquidity/add/0x98936Bde1CF1BFf1e7a8012Cee5e2583851f2067/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
     buyTokenUrl:
@@ -2696,7 +2697,7 @@ export const bscPools = [
     createdAt: 1632300410,
   },
   {
-    id: 'annex-ann',
+    id: 'annex-ann-eol',
     logo: 'single-assets/ANN.png',
     name: 'ANN',
     token: 'ANN',
@@ -2716,6 +2717,7 @@ export const bscPools = [
     status: 'active',
     platform: 'Other',
     assets: ['ANN'],
+    retireReason: 'rewards',
     buyTokenUrl:
       'https://app.annex.finance/trade/swap?inputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56&outputCurrency=0x98936Bde1CF1BFf1e7a8012Cee5e2583851f2067&exactAmount=1000',
     createdAt: 1632300632,
