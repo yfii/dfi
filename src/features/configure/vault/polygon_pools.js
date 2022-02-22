@@ -2717,7 +2717,7 @@ export const polygonPools = [
     createdAt: 1628607888,
   },
   {
-    id: 'polygonfarm-spade-matic',
+    id: 'polygonfarm-spade-matic-eol',
     name: 'SPADE-MATIC LP',
     token: 'SPADE-MATIC LP',
     tokenDescription: 'SushiSwap (PolygonFarm)',
@@ -2732,9 +2732,10 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'polygonfarm-spade-matic',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
+    retireReason: 'rewards',
     assets: ['SPADE', 'MATIC'],
     addLiquidityUrl: 'https://app.sushi.com/add/ETH/0xf5EA626334037a2cf0155D49eA6462fDdC6Eff19',
     buyTokenUrl:
@@ -2742,7 +2743,7 @@ export const polygonPools = [
     createdAt: 1628592682,
   },
   {
-    id: 'polygonfarm-spade-usdc',
+    id: 'polygonfarm-spade-usdc-eol',
     name: 'SPADE-USDC LP',
     token: 'SPADE-USDC LP',
     tokenDescription: 'SushiSwap (PolygonFarm)',
@@ -2757,10 +2758,11 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'polygonfarm-spade-usdc',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['SPADE', 'USDC'],
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://app.sushi.com/add/0x2791bca1f2de4661ed88a30c99a7a9449aa84174/0xf5EA626334037a2cf0155D49eA6462fDdC6Eff19',
     buyTokenUrl:
