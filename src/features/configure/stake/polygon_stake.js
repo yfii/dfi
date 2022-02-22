@@ -50,7 +50,7 @@ export const polygonStakePools = [
     earnContractAddress: '0x87346455bC3216fFa5c3C8Df21d7B70183B07399',
     earnContractAbi: govPoolABI,
     earnedOracle: 'tokens',
-    earnedOracleId: 'JRT',
+    earnedOracleId: 'JRT-ETH-KPI',
     partnership: true,
     status: 'active',
     isMooStaked: true,
