@@ -360,7 +360,7 @@ export const polygonPools = [
     createdAt: 1643755752,
   },
   {
-    id: 'quick-sand-matic',
+    id: 'quick-sand-matic-eol',
     name: 'SAND-MATIC LP',
     token: 'SAND-MATIC LP',
     tokenDescription: 'QuickSwap',
@@ -374,9 +374,10 @@ export const polygonPools = [
     tvl: 0,
     oracle: 'lps',
     oracleId: 'quick-sand-matic',
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'QuickSwap',
+    retireReason: 'rewards',
     assets: ['SAND', 'MATIC'],
     risks: [
       'COMPLEXITY_LOW',
