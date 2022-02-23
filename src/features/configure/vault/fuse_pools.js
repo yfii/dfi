@@ -353,7 +353,7 @@ export const fusePools = [
     createdAt: 1641410065,
   },
   {
-    id: 'voltage-wfuse-g$',
+    id: 'voltage-wfuse-g$-eol',
     name: 'G$-FUSE LP',
     token: 'G$-FUSE LP',
     tokenDescription: 'Voltage',
@@ -369,9 +369,10 @@ export const fusePools = [
     oracleId: 'voltage-wfuse-g$',
     oraclePrice: 0,
     withdrawalFee: '0%',
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Voltage',
+    retireReason: 'rewards',
     assets: ['G', 'FUSE'],
     risks: [
       'COMPLEXITY_LOW',
