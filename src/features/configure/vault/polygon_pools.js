@@ -644,7 +644,7 @@ export const polygonPools = [
     createdAt: 1640691348,
   },
   {
-    id: 'quick-tomb-mimatic',
+    id: 'quick-tomb-mimatic-eol',
     name: 'TOMB-MAI LP',
     token: 'TOMB-MAI LP',
     tokenDescription: 'QuickSwap',
@@ -658,8 +658,9 @@ export const polygonPools = [
     tvl: 0,
     oracle: 'lps',
     oracleId: 'quick-tomb-mimatic',
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'QuickSwap',
     assets: ['TOMB', 'MAI'],
     risks: [
@@ -716,7 +717,7 @@ export const polygonPools = [
     createdAt: 1640281632,
   },
   {
-    id: 'quick-mimatic-clam',
+    id: 'quick-mimatic-clam-eol',
     name: 'CLAM-MAI LP',
     token: 'CLAM-MAI LP',
     tokenDescription: 'QuickSwap',
@@ -730,8 +731,9 @@ export const polygonPools = [
     tvl: 0,
     oracle: 'lps',
     oracleId: 'quick-mimatic-clam',
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'QuickSwap',
     assets: ['CLAM', 'MAI'],
     risks: [
