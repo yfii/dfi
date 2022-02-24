@@ -842,7 +842,6 @@ export const fantomPools = [
       'https://spookyswap.finance/swap?outputCurrency=0xbbc4A8d076F4B1888fec42581B6fc58d242CF2D5',
     createdAt: 1644614666,
   },
-
   {
     id: 'spirit-ftm-frax',
     name: 'FRAX-FTM LP',
@@ -3387,7 +3386,7 @@ export const fantomPools = [
     createdAt: 1636126692,
   },
   {
-    id: 'geist-dai',
+    id: 'geist-dai-eol',
     logo: 'single-assets/DAI.svg',
     name: 'DAI',
     token: 'DAI',
@@ -3403,8 +3402,8 @@ export const fantomPools = [
     oracle: 'tokens',
     oracleId: 'DAI',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Geist',
     assets: ['DAI'],
     risks: [
@@ -3420,6 +3419,7 @@ export const fantomPools = [
     buyTokenUrl:
       'https://spookyswap.finance/swap?outputCurrency=0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E',
     createdAt: 1636100990,
+    retiredReason: 'tvl',
   },
   {
     id: 'beets-song-ice-fire',
@@ -4458,7 +4458,7 @@ export const fantomPools = [
     createdAt: 1633341420,
   },
   {
-    id: 'sing-ftm-usdc-sing',
+    id: 'sing-ftm-usdc-sing-eol',
     name: 'SING-USDC LP',
     token: 'SING-USDC',
     tokenDescription: 'SpookySwap (Singular)',
@@ -4473,8 +4473,8 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'sing-ftm-usdc-sing',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['SING', 'USDC'],
     risks: ['COMPLEXITY_LOW', 'NEW_STRAT', 'IL_HIGH', 'MCAP_MICRO', 'AUDIT', 'CONTRACTS_VERIFIED'],
@@ -4485,6 +4485,7 @@ export const fantomPools = [
     buyTokenUrl:
       'https://spookyswap.finance/swap?outputCurrency=0x53D831e1db0947c74e8a52618f662209ec5dE0cE',
     createdAt: 1634116608,
+    retiredReason: 'tvl',
   },
   {
     id: 'spirit-ftm-usdc',
@@ -4705,7 +4706,7 @@ export const fantomPools = [
     createdAt: 1633205561,
   },
   {
-    id: 'jetswap-fantom-eth-btc',
+    id: 'jetswap-fantom-eth-btc-eol',
     name: 'ETH-WBTC LP',
     token: 'ETH-WBTC LP',
     tokenDescription: 'JetSwap',
@@ -4720,8 +4721,8 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'jetswap-fantom-eth-btc',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'JetSwap',
     assets: ['ETH', 'WBTC'],
     risks: [
@@ -4736,6 +4737,7 @@ export const fantomPools = [
     addLiquidityUrl:
       'https://fantom-exchange.jetswap.finance/#/add/0x74b23882a30290451A17c44f4F05243b6b58C76d/0x321162Cd933E2Be498Cd2267a90534A804051b11',
     createdAt: 1632980637,
+    retiredReason: 'tvl',
   },
   {
     id: 'jetswap-fantom-eth-usdc',
@@ -4837,7 +4839,7 @@ export const fantomPools = [
     createdAt: 1632981007,
   },
   {
-    id: 'jetswap-fantom-fwings-ftm',
+    id: 'jetswap-fantom-fwings-ftm-eol',
     name: 'fWINGS-FTM LP',
     token: 'fWINGS-FTM LP',
     tokenDescription: 'JetSwap',
@@ -4852,8 +4854,8 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'jetswap-fantom-fwings-ftm',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'JetSwap',
     assets: ['fWINGS', 'FTM'],
     risks: [
@@ -4870,9 +4872,10 @@ export const fantomPools = [
     buyTokenUrl:
       'https://fantom-exchange.jetswap.finance/#/swap?outputCurrency=0x3D8f1ACCEe8e263F837138829B6C4517473d0688',
     createdAt: 1632906330,
+    retiredReason: 'tvl',
   },
   {
-    id: 'jetswap-fantom-fwings-usdc',
+    id: 'jetswap-fantom-fwings-usdc-eol',
     name: 'fWINGS-USDC LP',
     token: 'fWINGS-USDC LP',
     tokenDescription: 'JetSwap',
@@ -4887,8 +4890,8 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'jetswap-fantom-fwings-usdc',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'JetSwap',
     assets: ['fWINGS', 'USDC'],
     risks: [
@@ -4905,9 +4908,10 @@ export const fantomPools = [
     buyTokenUrl:
       'https://fantom-exchange.jetswap.finance/#/swap?outputCurrency=0x3D8f1ACCEe8e263F837138829B6C4517473d0688',
     createdAt: 1632906651,
+    retiredReason: 'tvl',
   },
   {
-    id: 'jetswap-fantom-fwings',
+    id: 'jetswap-fantom-fwings-eol',
     logo: 'single-assets/fWINGS.svg',
     name: 'fWINGS',
     token: 'fWINGS',
@@ -4923,8 +4927,8 @@ export const fantomPools = [
     oracle: 'tokens',
     oracleId: 'fWINGS',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'JetSwap',
     assets: ['fWINGS'],
     risks: [
@@ -4940,6 +4944,7 @@ export const fantomPools = [
     buyTokenUrl:
       'https://fantom-exchange.jetswap.finance/#/swap?outputCurrency=0x3D8f1ACCEe8e263F837138829B6C4517473d0688',
     createdAt: 1632911389,
+    retiredReason: 'tvl',
   },
   {
     id: 'tomb-tshare-ftm',
@@ -5413,7 +5418,7 @@ export const fantomPools = [
     createdAt: 1631054248,
   },
   {
-    id: 'boo-ftm-scream',
+    id: 'boo-ftm-scream-eol',
     name: 'SCREAM-FTM LP',
     token: 'SCREAM-FTM LP',
     tokenDescription: 'SpookySwap',
@@ -5428,8 +5433,8 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'boo-ftm-scream',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'SpookySwap',
     assets: ['SCREAM', 'FTM'],
     risks: [
@@ -5446,6 +5451,7 @@ export const fantomPools = [
     buyTokenUrl:
       'https://spookyswap.finance/swap?outputCurrency=0xe0654C8e6fd4D733349ac7E09f6f23DA256bF475',
     createdAt: 1630352068,
+    retiredReason: 'tvl',
   },
   {
     id: 'boo-zoo-ftm-eol',
@@ -6114,7 +6120,7 @@ export const fantomPools = [
     createdAt: 1622123567,
   },
   {
-    id: 'ester-est-ftm',
+    id: 'ester-est-ftm-eol',
     name: 'EST-FTM LP',
     token: 'EST-FTM LP',
     tokenDescription: 'SpiritSwap',
@@ -6129,8 +6135,8 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'ester-est-ftm',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Ester',
     assets: ['EST', 'FTM'],
     risks: [
@@ -6147,9 +6153,10 @@ export const fantomPools = [
     buyTokenUrl:
       'https://swap.spiritswap.finance/#/exchange/swap/0x181F3F22C9a751E2ce673498A03E1FDFC0ebBFB6',
     createdAt: 1621505384,
+    retiredReason: 'tvl',
   },
   {
-    id: 'ester-est',
+    id: 'ester-est-eol',
     logo: 'single-assets/EST.png',
     name: 'EST',
     token: 'EST',
@@ -6165,8 +6172,8 @@ export const fantomPools = [
     oracle: 'tokens',
     oracleId: 'EST',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Ester',
     assets: ['EST'],
     risks: [
@@ -6181,6 +6188,7 @@ export const fantomPools = [
     buyTokenUrl:
       'https://swap.spiritswap.finance/#/exchange/swap/0x181F3F22C9a751E2ce673498A03E1FDFC0ebBFB6',
     createdAt: 1621508945,
+    retiredReason: 'tvl',
   },
   {
     id: 'boo-woofy-ftm-eol',
@@ -6254,7 +6262,7 @@ export const fantomPools = [
     createdAt: 1620919260,
   },
   {
-    id: 'froyo-3pool',
+    id: 'froyo-3pool-eol',
     logo: 'fantom/FROYO-3Pool.png',
     name: 'USDT/DAI/USDC',
     token: 'FROYO 3Pool',
@@ -6270,8 +6278,8 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'froyo-3pool',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Froyo',
     assets: ['USDT', 'DAI', 'USDC'],
     risks: [
@@ -6285,9 +6293,10 @@ export const fantomPools = [
     stratType: 'StratMultiLP',
     addLiquidityUrl: 'https://frozenyogurt.finance/pool',
     createdAt: 1620633860,
+    retiredReason: 'tvl',
   },
   {
-    id: 'froyo-froyo-ftm',
+    id: 'froyo-froyo-ftm-eol',
     name: 'FROYO-FTM LP',
     token: 'FROYO-FTM LP',
     tokenDescription: 'SushiSwap',
@@ -6302,8 +6311,8 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'froyo-froyo-ftm',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Froyo',
     assets: ['FROYO', 'FTM'],
     risks: [
@@ -6319,6 +6328,7 @@ export const fantomPools = [
     buyTokenUrl:
       'https://app.sushi.com/swap?outputCurrency=0xA92d41Ab8eFeE617d80a829CD9F5683c5F793ADA',
     createdAt: 1620626525,
+    retiredReason: 'tvl',
   },
   {
     id: 'boo-link-ftm',
