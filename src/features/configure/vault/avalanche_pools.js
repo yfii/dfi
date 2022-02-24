@@ -105,7 +105,7 @@ export const avalanchePools = [
     createdAt: 1645197575,
   },
   {
-    id: 'curve-avax-ren',
+    id: 'curve-avax-ren-eol',
     logo: 'single-assets/renBTC.png',
     name: 'WBTC/renBTC',
     token: 'btcCRV',
@@ -121,8 +121,8 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'curve-avax-ren',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Curve',
     assets: ['WBTC', 'renBTC'],
     risks: [
@@ -137,6 +137,7 @@ export const avalanchePools = [
     withdrawalFee: '0.01%',
     addLiquidityUrl: 'https://avax.curve.fi/ren/deposit',
     createdAt: 1626964654,
+    retiredReason: 'tvl',
   },
   {
     id: 'joe-wavax-savax',
@@ -2134,7 +2135,7 @@ export const avalanchePools = [
     createdAt: 1636310053,
   },
   {
-    id: 'joe-ampl-wavax',
+    id: 'joe-ampl-wavax-eol',
     name: 'AMPL-AVAX LP',
     token: 'AMPL-AVAX JLP',
     tokenDescription: 'Trader Joe',
@@ -2149,8 +2150,8 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'joe-ampl-wavax',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Trader Joe',
     assets: ['AMPL', 'AVAX'],
     risks: [
@@ -2166,9 +2167,10 @@ export const avalanchePools = [
       'https://traderjoexyz.com/pool/AVAX/0x027dbcA046ca156De9622cD1e2D907d375e53aa7',
     buyTokenUrl: 'https://www.traderjoexyz.com/trade',
     createdAt: 1636308849,
+    retiredReason: 'tvl',
   },
   {
-    id: 'sing-usdt.e-sing',
+    id: 'sing-usdt.e-sing-eol',
     name: 'SING-USDT.e LP',
     token: 'SING-USDT.e LP',
     tokenDescription: 'TraderJoe (Singular)',
@@ -2183,8 +2185,8 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'sing-usdt.e-sing',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['SING', 'USDTe'],
     addLiquidityUrl:
@@ -2192,6 +2194,7 @@ export const avalanchePools = [
     buyTokenUrl:
       'https://www.traderjoexyz.com/trade?outputCurrency=0xf9a075c9647e91410bf6c402bdf166e1540f67f0',
     createdAt: 1633701180,
+    retiredReason: 'tvl',
   },
   {
     id: 'aave-dai.e',
@@ -2266,7 +2269,7 @@ export const avalanchePools = [
     createdAt: 1633512435,
   },
   {
-    id: 'aave-usdt.e',
+    id: 'aave-usdt.e-eol',
     logo: 'single-assets/USDT.svg',
     name: 'USDT.e',
     token: 'USDT.e',
@@ -2282,8 +2285,8 @@ export const avalanchePools = [
     oracle: 'tokens',
     oracleId: 'USDT.e',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Aave',
     assets: ['USDTe'],
     risks: [
@@ -2300,6 +2303,7 @@ export const avalanchePools = [
     buyTokenUrl:
       'https://www.traderjoexyz.com/trade?outputCurrency=0xc7198437980c041c805A1EDcbA50c1Ce5db95118',
     createdAt: 1633529509,
+    retiredReason: 'tvl',
   },
   {
     id: 'aave-weth.e',
@@ -3994,7 +3998,7 @@ export const avalanchePools = [
     createdAt: 1619706922,
   },
   {
-    id: 'olive-olive-avax',
+    id: 'olive-olive-avax-eol',
     logo: 'avax-pairs/OLIVE-AVAX.png',
     name: 'OLIVE-AVAX LP',
     token: 'OLIVE-AVAX LP',
@@ -4010,8 +4014,8 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'olive-olive-avax',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'OliveSwap',
     assets: ['OLIVE', 'AVAX'],
     risks: [
@@ -4027,6 +4031,7 @@ export const avalanchePools = [
     buyTokenUrl:
       'https://avax.olive.cash/swap?inputCurrency=AVAX&outputCurrency=0x617724974218A18769020A70162165A539c07E8a',
     createdAt: 1617865515,
+    retiredReason: 'tvl',
   },
   {
     id: 'olive-olive-usdt-eol',
