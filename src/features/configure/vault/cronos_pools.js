@@ -34,7 +34,6 @@ export const cronosPools = [
       'https://vvs.finance/swap?inputCurrency=0x5c7f8a570d578ed84e63fdfa7b1ee72deae1ae23&outputCurrency=0xe6801928061cdbe32ac5ad0634427e140efd05f9',
     createdAt: 1637778656,
   },
-
   {
     id: 'vvs-vvs-cro',
     name: 'VVS-CRO',
@@ -70,7 +69,6 @@ export const cronosPools = [
     addLiquidityUrl: 'https://vvs.finance/add/CRO/0x2D03bECE6747ADC00E1a131BBA1469C15fD11e03',
     createdAt: 1637045228,
   },
-
   {
     id: 'dark-dark-cro',
     name: 'DARK-CRO',
@@ -634,7 +632,7 @@ export const cronosPools = [
     createdAt: 1638064120,
   },
   {
-    id: 'crona-busd-bnb',
+    id: 'crona-busd-bnb-eol',
     name: 'BNB-BUSD',
     token: 'BNB-BUSD CLP',
     tokenDescription: 'CronaSwap',
@@ -649,8 +647,9 @@ export const cronosPools = [
     oracle: 'lps',
     oracleId: 'crona-busd-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retiredReason: 'tvl',
     platform: 'CronaSwap',
     assets: ['BNB', 'BUSD'],
     risks: [
@@ -1124,7 +1123,7 @@ export const cronosPools = [
     createdAt: 1637149838,
   },
   {
-    id: 'crona-wbtc-cro',
+    id: 'crona-wbtc-cro-eol',
     name: 'WBTC-CRO',
     token: 'WBTC-CRO LP',
     tokenDescription: 'CronaSwap',
@@ -1139,8 +1138,9 @@ export const cronosPools = [
     oracle: 'lps',
     oracleId: 'crona-wbtc-cro',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retiredReason: 'tvl',
     platform: 'CronaSwap',
     assets: ['WBTC', 'CRO'],
     risks: [
