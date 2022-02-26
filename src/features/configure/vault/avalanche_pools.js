@@ -105,7 +105,7 @@ export const avalanchePools = [
     createdAt: 1645197575,
   },
   {
-    id: 'curve-avax-ren-eol',
+    id: 'curve-avax-ren',
     logo: 'single-assets/renBTC.png',
     name: 'WBTC/renBTC',
     token: 'btcCRV',
@@ -121,8 +121,8 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'curve-avax-ren',
     oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
+    depositsPaused: false,
+    status: 'active',
     platform: 'Curve',
     assets: ['WBTC', 'renBTC'],
     risks: [
@@ -136,8 +136,7 @@ export const avalanchePools = [
     stratType: 'StratLP',
     withdrawalFee: '0.01%',
     addLiquidityUrl: 'https://avax.curve.fi/ren/deposit',
-    createdAt: 1626964654,
-    retiredReason: 'tvl',
+    createdAt: 1645435034,
   },
   {
     id: 'joe-wavax-savax',
