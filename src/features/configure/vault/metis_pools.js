@@ -63,8 +63,7 @@ export const metisPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
-    addLiquidityUrl:
-      'https://netswap.io/#/add/METIS/0xa5B55ab1dAF0F8e1EFc0eB1931a957fd89B918f4',
+    addLiquidityUrl: 'https://netswap.io/#/add/METIS/0xa5B55ab1dAF0F8e1EFc0eB1931a957fd89B918f4',
     buyTokenUrl:
       'https://netswap.io/#/swap?inputCurrency=METIS&outputCurrency=0xa5B55ab1dAF0F8e1EFc0eB1931a957fd89B918f4',
     createdAt: 1645533903,
@@ -400,7 +399,7 @@ export const metisPools = [
     oracle: 'lps',
     oracleId: 'netswap-nett-m.usdc',
     oraclePrice: 0,
-    depositsPaused: true,
+    depositsPaused: false,
     status: 'active',
     platform: 'Netswap',
     assets: ['mUSDC', 'NETT'],
