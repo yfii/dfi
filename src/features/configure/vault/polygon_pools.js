@@ -681,7 +681,7 @@ export const polygonPools = [
     createdAt: 1640281502,
   },
   {
-    id: 'quick-hbar[0x]-mimatic',
+    id: 'quick-hbar[0x]-mimatic-eol',
     name: 'HBAR-MAI LP',
     token: 'HBAR-MAI LP',
     tokenDescription: 'QuickSwap',
@@ -695,8 +695,9 @@ export const polygonPools = [
     tvl: 0,
     oracle: 'lps',
     oracleId: 'quick-hbar[0x]-mimatic',
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'QuickSwap',
     assets: ['HBAR', 'MAI'],
     risks: [
