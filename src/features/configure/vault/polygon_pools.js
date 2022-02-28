@@ -360,7 +360,7 @@ export const polygonPools = [
     createdAt: 1643755752,
   },
   {
-    id: 'quick-sand-matic',
+    id: 'quick-sand-matic-eol',
     name: 'SAND-MATIC LP',
     token: 'SAND-MATIC LP',
     tokenDescription: 'QuickSwap',
@@ -374,9 +374,10 @@ export const polygonPools = [
     tvl: 0,
     oracle: 'lps',
     oracleId: 'quick-sand-matic',
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'QuickSwap',
+    retireReason: 'rewards',
     assets: ['SAND', 'MATIC'],
     risks: [
       'COMPLEXITY_LOW',
@@ -643,7 +644,7 @@ export const polygonPools = [
     createdAt: 1640691348,
   },
   {
-    id: 'quick-tomb-mimatic',
+    id: 'quick-tomb-mimatic-eol',
     name: 'TOMB-MAI LP',
     token: 'TOMB-MAI LP',
     tokenDescription: 'QuickSwap',
@@ -657,8 +658,9 @@ export const polygonPools = [
     tvl: 0,
     oracle: 'lps',
     oracleId: 'quick-tomb-mimatic',
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'QuickSwap',
     assets: ['TOMB', 'MAI'],
     risks: [
@@ -715,7 +717,7 @@ export const polygonPools = [
     createdAt: 1640281632,
   },
   {
-    id: 'quick-mimatic-clam',
+    id: 'quick-mimatic-clam-eol',
     name: 'CLAM-MAI LP',
     token: 'CLAM-MAI LP',
     tokenDescription: 'QuickSwap',
@@ -729,8 +731,9 @@ export const polygonPools = [
     tvl: 0,
     oracle: 'lps',
     oracleId: 'quick-mimatic-clam',
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'QuickSwap',
     assets: ['CLAM', 'MAI'],
     risks: [
@@ -1368,7 +1371,7 @@ export const polygonPools = [
     createdAt: 1623949163,
   },
   {
-    id: 'ape-wmatic-crystl',
+    id: 'ape-wmatic-crystl-eol',
     name: 'CRYSTL-WMATIC LP',
     token: 'CRYSTL-WMATIC LP',
     tokenDescription: 'ApeSwap',
@@ -1383,8 +1386,8 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'ape-wmatic-crystl',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'ApeSwap',
     assets: ['CRYSTL', 'MATIC'],
     withdrawalFee: '0%',
@@ -1392,6 +1395,7 @@ export const polygonPools = [
       'https://app.apeswap.finance/add/ETH/0x76bF0C28e604CC3fE9967c83b3C3F31c213cfE64',
     buyTokenUrl: 'https://app.apeswap.finance/swap',
     createdAt: 1634055850,
+    retiredReason: 'tvl',
   },
   {
     id: 'kyber-usdc-jgbp',
@@ -1551,7 +1555,7 @@ export const polygonPools = [
     createdAt: 1633808533,
   },
   {
-    id: 'cafe-pbrew-matic',
+    id: 'cafe-pbrew-matic-eol',
     name: 'pBREW-MATIC LP',
     token: 'pBREW-MATIC LP',
     tokenDescription: 'CafeSwap',
@@ -1566,8 +1570,8 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'cafe-pbrew-matic',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['pBREW', 'MATIC'],
     addLiquidityUrl:
@@ -1575,9 +1579,10 @@ export const polygonPools = [
     buyTokenUrl:
       'https://polygondex.cafeswap.finance/#/swap?outputCurrency=0xb5106a3277718ecad2f20ab6b86ce0fee7a21f09',
     createdAt: 1633695157,
+    retiredReason: 'tvl',
   },
   {
-    id: 'cafe-pbrew-usdc',
+    id: 'cafe-pbrew-usdc-eol',
     name: 'pBREW-USDC LP',
     token: 'pBREW-USDC LP',
     tokenDescription: 'CafeSwap',
@@ -1592,8 +1597,8 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'cafe-pbrew-usdc',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['pBREW', 'USDC'],
     addLiquidityUrl:
@@ -1601,9 +1606,10 @@ export const polygonPools = [
     buyTokenUrl:
       'https://polygondex.cafeswap.finance/#/swap?outputCurrency=0xb5106a3277718ecad2f20ab6b86ce0fee7a21f09',
     createdAt: 1633695451,
+    retiredReason: 'tvl',
   },
   {
-    id: 'sing-usdc-sing',
+    id: 'sing-usdc-sing-eol',
     name: 'SING-USDC LP',
     token: 'SING-USDC ALP',
     tokenDescription: 'ApeSwap (Singular)',
@@ -1618,8 +1624,8 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'sing-usdc-sing',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['SING', 'USDC'],
     addLiquidityUrl:
@@ -1627,6 +1633,7 @@ export const polygonPools = [
     buyTokenUrl:
       'https://app.apeswap.finance/#/swap?outputCurrency=0xCB898b0eFb084Df14dd8E018dA37B4d0f06aB26D',
     createdAt: 1633615462,
+    retiredReason: 'tvl',
   },
   {
     id: 'ape-banana-matic',
@@ -1700,7 +1707,7 @@ export const polygonPools = [
     createdAt: 1630045733,
   },
   {
-    id: 'sushi-fox-eth',
+    id: 'sushi-fox-eth-eol',
     name: 'FOX-ETH SLP',
     token: 'FOX-ETH SLP',
     tokenDescription: 'SushiSwap',
@@ -1715,8 +1722,8 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'sushi-fox-eth',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'SushiSwap',
     assets: ['FOX', 'ETH'],
     risks: [
@@ -1735,6 +1742,7 @@ export const polygonPools = [
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619&outputCurrency=0x65a05db8322701724c197af82c9cae41195b0aa8',
     createdAt: 1633700993,
+    retiredReason: 'tvl',
   },
   {
     id: 'sushi-wmatic-ghst',
@@ -2308,7 +2316,7 @@ export const polygonPools = [
     createdAt: 1630168878,
   },
   {
-    id: 'ironswap-ice-iron',
+    id: 'ironswap-ice-iron-eol',
     name: 'ICE-IRON LP',
     token: 'ICE-IRON LP',
     tokenDescription: 'IronSwap (DFYN)',
@@ -2323,8 +2331,8 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'ironswap-ice-iron',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'IronFinance',
     assets: ['ironICE', 'IRON'],
     addLiquidityUrl:
@@ -2332,6 +2340,7 @@ export const polygonPools = [
     buyTokenUrl:
       'https://exchange.dfyn.network/#/swap?inputCurrency=0xD86b5923F3AD7b585eD81B448170ae026c65ae9a&outputCurrency=0x4A81f8796e0c6Ad4877A51C86693B0dE8093F2ef',
     createdAt: 1630075988,
+    retiredReason: 'tvl',
   },
   {
     id: 'ape-usdc-dai',
@@ -2717,7 +2726,7 @@ export const polygonPools = [
     createdAt: 1628607888,
   },
   {
-    id: 'polygonfarm-spade-matic',
+    id: 'polygonfarm-spade-matic-eol',
     name: 'SPADE-MATIC LP',
     token: 'SPADE-MATIC LP',
     tokenDescription: 'SushiSwap (PolygonFarm)',
@@ -2732,9 +2741,10 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'polygonfarm-spade-matic',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
+    retireReason: 'rewards',
     assets: ['SPADE', 'MATIC'],
     addLiquidityUrl: 'https://app.sushi.com/add/ETH/0xf5EA626334037a2cf0155D49eA6462fDdC6Eff19',
     buyTokenUrl:
@@ -2742,7 +2752,7 @@ export const polygonPools = [
     createdAt: 1628592682,
   },
   {
-    id: 'polygonfarm-spade-usdc',
+    id: 'polygonfarm-spade-usdc-eol',
     name: 'SPADE-USDC LP',
     token: 'SPADE-USDC LP',
     tokenDescription: 'SushiSwap (PolygonFarm)',
@@ -2757,10 +2767,11 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'polygonfarm-spade-usdc',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['SPADE', 'USDC'],
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://app.sushi.com/add/0x2791bca1f2de4661ed88a30c99a7a9449aa84174/0xf5EA626334037a2cf0155D49eA6462fDdC6Eff19',
     buyTokenUrl:
@@ -3094,7 +3105,7 @@ export const polygonPools = [
     createdAt: 1627489669,
   },
   {
-    id: 'farmhero-quick-usdc-honor',
+    id: 'farmhero-quick-usdc-honor-eol',
     name: 'HONOR-USDC QLP',
     token: 'HONOR-USDC QLP',
     tokenDescription: 'FarmHero (Quickswap)',
@@ -3109,8 +3120,8 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'farmhero-quick-usdc-honor',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['HONOR', 'USDC'],
     addLiquidityUrl:
@@ -3118,9 +3129,10 @@ export const polygonPools = [
     buyTokenUrl:
       'https://quickswap.exchange/#/swap?inputCurrency=0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174&outputCurrency=0xb82A20B4522680951F11c94c54B8800c1C237693',
     createdAt: 1627447004,
+    retiredReason: 'tvl',
   },
   {
-    id: 'farmhero-wault-usdc-honor',
+    id: 'farmhero-wault-usdc-honor-eol',
     name: 'HONOR-USDC WLP',
     token: 'HONOR-USDC WLP',
     tokenDescription: 'FarmHero (Wault)',
@@ -3135,8 +3147,8 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'farmhero-wault-usdc-honor',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['HONOR', 'USDC'],
     addLiquidityUrl:
@@ -3144,6 +3156,7 @@ export const polygonPools = [
     buyTokenUrl:
       'https://swap.wault.finance/polygon/#/swap?inputCurrency=0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174&outputCurrency=0xb82A20B4522680951F11c94c54B8800c1C237693',
     createdAt: 1627447222,
+    retiredReason: 'tvl',
   },
   {
     id: 'dfyn-matic-dfyn-eol',
@@ -3252,33 +3265,6 @@ export const polygonPools = [
     buyTokenUrl:
       'https://exchange.dfyn.network/#/swap?inputCurrency=0x172370d5Cd63279eFa6d502DAB29171933a610AF&outputCurrency=0xc168e40227e4ebd8c1cae80f7a55a4f0e6d66c97',
     createdAt: 1627605878,
-  },
-  {
-    id: 'quick-yamp-usdc-eol',
-    name: 'YAMP-USDC LP',
-    token: 'YAMP-USDC LP',
-    tokenDescription: 'Quickswap',
-    tokenAddress: '0x87d68f797623590E45982AD0f21228557207FdDa',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooQuickYAMP-USDC',
-    earnedTokenAddress: '0x72eF74242Ac0bf0802c0e938B7A397001Ab34C06',
-    earnContractAddress: '0x72eF74242Ac0bf0802c0e938B7A397001Ab34C06',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'quick-yamp-usdc',
-    oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    platform: 'QuickSwap',
-    assets: ['YAMP', 'USDC'],
-    retireReason: 'tvl',
-    addLiquidityUrl:
-      'https://quickswap.exchange/#/add/0x2791bca1f2de4661ed88a30c99a7a9449aa84174/0x87f654c4b347230c60cad8d7ea9cf0d7238bcc79',
-    buyTokenUrl:
-      'https://quickswap.exchange/#/swap?inputCurrency=0x2791bca1f2de4661ed88a30c99a7a9449aa84174&outputCurrency=0x87f654c4b347230c60cad8d7ea9cf0d7238bcc79',
-    createdAt: 1627480842,
   },
   {
     id: 'polyyeld-xyeld-quick-wmatic-xyeld-eol',
@@ -3865,7 +3851,7 @@ export const polygonPools = [
     createdAt: 1626270600,
   },
   {
-    id: 'ironswap-ice-eth',
+    id: 'ironswap-ice-eth-eol',
     name: 'ICE-ETH LP',
     token: 'ICE-ETH LP',
     tokenDescription: 'IronSwap (Firebird)',
@@ -3880,17 +3866,18 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'ironswap-ice-eth',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'IronFinance',
     assets: ['ironICE', 'ETH'],
     addLiquidityUrl: 'https://app.firebird.finance/add/0xf1ee78544a1118f2efb87f7eacd9f1e6e80e1ea5',
     buyTokenUrl:
       'https://app.firebird.finance/swap?outputCurrency=0x4A81f8796e0c6Ad4877A51C86693B0dE8093F2ef',
     createdAt: 1626155225,
+    retiredReason: 'tvl',
   },
   {
-    id: 'ironswap-ice-usdc',
+    id: 'ironswap-ice-usdc-eol',
     name: 'ICE-USDC LP',
     token: 'ICE-USDC LP',
     tokenDescription: 'IronSwap (DFYN)',
@@ -3905,8 +3892,8 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'ironswap-ice-usdc',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'IronFinance',
     assets: ['ironICE', 'USDC'],
     addLiquidityUrl:
@@ -3914,6 +3901,7 @@ export const polygonPools = [
     buyTokenUrl:
       'https://exchange.dfyn.network/#/swap?outputCurrency=0x4A81f8796e0c6Ad4877A51C86693B0dE8093F2ef',
     createdAt: 1626164436,
+    retiredReason: 'tvl',
   },
   {
     id: 'ironswap-3usd',
@@ -4005,7 +3993,7 @@ export const polygonPools = [
     createdAt: 1625919162,
   },
   {
-    id: 'jetswap-poly-pwings',
+    id: 'jetswap-poly-pwings-eol',
     logo: 'single-assets/pWINGS.png',
     name: 'pWINGS',
     token: 'pWINGS',
@@ -4021,13 +4009,14 @@ export const polygonPools = [
     oracle: 'tokens',
     oracleId: 'pWINGS',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'JetSwap',
     assets: ['pWINGS'],
     buyTokenUrl:
       'https://polygon-exchange.jetswap.finance/#/swap?outputCurrency=0x845E76A8691423fbc4ECb8Dd77556Cb61c09eE25',
     createdAt: 1625919720,
+    retiredReason: 'tvl',
   },
   {
     id: 'jetswap-poly-pwings-usdc-eol',
@@ -4056,7 +4045,7 @@ export const polygonPools = [
     createdAt: 1625844034,
   },
   {
-    id: 'jetswap-poly-pwings-matic',
+    id: 'jetswap-poly-pwings-matic-eol',
     name: 'pWINGS-MATIC LP',
     token: 'pWINGS-MATIC LP',
     tokenDescription: 'JetSwap',
@@ -4071,8 +4060,8 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'jetswap-poly-pwings-matic',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'JetSwap',
     assets: ['pWINGS', 'MATIC'],
     addLiquidityUrl:
@@ -4080,6 +4069,7 @@ export const polygonPools = [
     buyTokenUrl:
       'https://polygon-exchange.jetswap.finance/#/swap?outputCurrency=0x845E76A8691423fbc4ECb8Dd77556Cb61c09eE25',
     createdAt: 1625845966,
+    retiredReason: 'tvl',
   },
   {
     id: 'mai-qi-mimatic-eol',
@@ -5922,7 +5912,7 @@ export const polygonPools = [
     createdAt: 1623016533,
   },
   {
-    id: 'aave-wbtc',
+    id: 'aave-wbtc-eol',
     logo: 'single-assets/BTCB.svg',
     name: 'WBTC',
     token: 'WBTC',
@@ -5938,9 +5928,10 @@ export const polygonPools = [
     oracle: 'tokens',
     oracleId: 'WBTC',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Aave',
+    retireReason: 'rewards',
     assets: ['WBTC'],
     risks: [
       'COMPLEXITY_MID',
@@ -5958,7 +5949,7 @@ export const polygonPools = [
     createdAt: 1620900077,
   },
   {
-    id: 'aave-eth',
+    id: 'aave-eth-eol',
     logo: 'single-assets/ETH.svg',
     name: 'ETH',
     token: 'ETH',
@@ -5974,9 +5965,10 @@ export const polygonPools = [
     oracle: 'tokens',
     oracleId: 'ETH',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Aave',
+    retireReason: 'rewards',
     assets: ['ETH'],
     risks: [
       'COMPLEXITY_MID',
@@ -6733,7 +6725,7 @@ export const polygonPools = [
     createdAt: 1621903565,
   },
   {
-    id: 'pzap-pzap-usdc',
+    id: 'pzap-pzap-usdc-eol',
     logo: 'polygon/PZAP-USDC.png',
     name: 'PZAP-USDC LP',
     token: 'PZAP-USDC LP',
@@ -6749,8 +6741,8 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'pzap-pzap-usdc',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['PZAP', 'USDC'],
     addLiquidityUrl:
@@ -6758,9 +6750,10 @@ export const polygonPools = [
     buyTokenUrl:
       'https://polyzap.app/#/swap?outputCurrency=0xeb2778f74E5ee038E67AA6c77f0F0451ABd748FD',
     createdAt: 1621345663,
+    retiredReason: 'tvl',
   },
   {
-    id: 'pzap-pzap-matic',
+    id: 'pzap-pzap-matic-eol',
     logo: 'polygon/PZAP-MATIC.png',
     name: 'PZAP-MATIC LP',
     token: 'PZAP-MATIC LP',
@@ -6776,14 +6769,15 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'pzap-pzap-matic',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['PZAP', 'MATIC'],
     addLiquidityUrl: 'https://polyzap.app/#/add/ETH/0xeb2778f74E5ee038E67AA6c77f0F0451ABd748FD',
     buyTokenUrl:
       'https://polyzap.app/#/swap?outputCurrency=0xeb2778f74E5ee038E67AA6c77f0F0451ABd748FD',
     createdAt: 1621425966,
+    retiredReason: 'tvl',
   },
   {
     id: 'cometh-bifi-eth',
@@ -6858,7 +6852,7 @@ export const polygonPools = [
     createdAt: 1621260031,
   },
   {
-    id: 'aave-matic',
+    id: 'aave-matic-eol',
     logo: 'single-assets/MATIC.svg',
     name: 'MATIC',
     token: 'MATIC',
@@ -6873,9 +6867,10 @@ export const polygonPools = [
     oracle: 'tokens',
     oracleId: 'WMATIC',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Aave',
+    retireReason: 'rewards',
     assets: ['MATIC'],
     risks: [
       'COMPLEXITY_MID',
@@ -6893,7 +6888,7 @@ export const polygonPools = [
     createdAt: 1621100435,
   },
   {
-    id: 'aave-aave',
+    id: 'aave-aave-eol',
     logo: 'single-assets/AAVE.svg',
     name: 'AAVE',
     token: 'AAVE',
@@ -6909,9 +6904,10 @@ export const polygonPools = [
     oracle: 'tokens',
     oracleId: 'AAVE',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Aave',
+    retireReason: 'rewards',
     assets: ['AAVE'],
     risks: [
       'COMPLEXITY_MID',
@@ -6929,7 +6925,7 @@ export const polygonPools = [
     createdAt: 1621097202,
   },
   {
-    id: 'aave-dai',
+    id: 'aave-dai-eol',
     logo: 'single-assets/DAI.svg',
     name: 'DAI',
     token: 'DAI',
@@ -6945,9 +6941,10 @@ export const polygonPools = [
     oracle: 'tokens',
     oracleId: 'DAI',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Aave',
+    retireReason: 'rewards',
     assets: ['DAI'],
     risks: [
       'COMPLEXITY_MID',
@@ -6965,7 +6962,7 @@ export const polygonPools = [
     createdAt: 1620900737,
   },
   {
-    id: 'aave-usdc',
+    id: 'aave-usdc-eol',
     logo: 'single-assets/USDC.svg',
     name: 'USDC',
     token: 'USDC',
@@ -6981,9 +6978,10 @@ export const polygonPools = [
     oracle: 'tokens',
     oracleId: 'USDC',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Aave',
+    retireReason: 'rewards',
     assets: ['USDC'],
     risks: [
       'COMPLEXITY_MID',

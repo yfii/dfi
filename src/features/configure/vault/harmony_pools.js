@@ -287,7 +287,7 @@ export const harmonyPools = [
     createdAt: 1631279474,
   },
   {
-    id: 'sushi-one-1eth-1dai',
+    id: 'sushi-one-1eth-1dai-eol',
     name: '1DAI-1ETH LP',
     token: '1DAI-1ETH LP',
     tokenDescription: 'Sushi',
@@ -302,8 +302,8 @@ export const harmonyPools = [
     oracle: 'lps',
     oracleId: 'sushi-one-1eth-1dai',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'SushiSwap',
     assets: ['DAI', 'ETH'],
     callFee: 0.25,
@@ -322,9 +322,10 @@ export const harmonyPools = [
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=0x6983D1E6DEf3690C4d616b13597A09e6193EA013&outputCurrency=0xEf977d2f931C1978Db5F6747666fa1eACB0d0339',
     createdAt: 1631282246,
+    retiredReason: 'tvl',
   },
   {
-    id: 'sushi-one-1usdt-1eth',
+    id: 'sushi-one-1usdt-1eth-eol',
     name: '1USDT-1ETH LP',
     token: '1USDT-1ETH LP',
     tokenDescription: 'Sushi',
@@ -339,8 +340,8 @@ export const harmonyPools = [
     oracle: 'lps',
     oracleId: 'sushi-one-1usdt-1eth',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'SushiSwap',
     assets: ['USDT', 'ETH'],
     callFee: 0.25,
@@ -359,6 +360,7 @@ export const harmonyPools = [
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=0x6983D1E6DEf3690C4d616b13597A09e6193EA013&outputCurrency=0x3C2B8Be99c50593081EAA2A724F0B8285F5aba8f',
     createdAt: 1631282425,
+    retiredReason: 'tvl',
   },
   {
     id: 'sushi-one-1eth-1frax',
@@ -545,7 +547,7 @@ export const harmonyPools = [
     createdAt: 1631283673,
   },
   {
-    id: 'sushi-one-sushi-one',
+    id: 'sushi-one-sushi-one-eol',
     name: 'SUSHI-ONE LP',
     token: 'SUSHI-ONE LP',
     tokenDescription: 'Sushi',
@@ -560,8 +562,8 @@ export const harmonyPools = [
     oracle: 'lps',
     oracleId: 'sushi-one-sushi-one',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'SushiSwap',
     assets: ['SUSHI', 'ONE'],
     callFee: 0.25,
@@ -579,6 +581,7 @@ export const harmonyPools = [
     buyTokenUrl:
       'https://app.sushi.com/swap?inputCurrency=&outputCurrency=0xBEC775Cb42AbFa4288dE81F387a9b1A3c4Bc552A',
     createdAt: 1631197145,
+    retiredReason: 'tvl',
   },
   {
     id: 'sushi-one-busd-one',
