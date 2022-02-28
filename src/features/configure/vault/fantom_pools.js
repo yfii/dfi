@@ -420,7 +420,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Other',
+    platform: 'Ripae',
     assets: ['pFTM', 'FTM'],
     risks: [
       'COMPLEXITY_LOW',
@@ -456,7 +456,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Other',
+    platform: 'Ripae',
     assets: ['PAE', 'FTM'],
     risks: [
       'COMPLEXITY_LOW',
