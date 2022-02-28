@@ -69,7 +69,7 @@ export const bscPools = [
     createdAt: 1644816966,
   },
   {
-    id: 'charge-static-busd',
+    id: 'charge-static-busd-eol',
     name: 'Static-BUSD LP',
     token: 'Static-BUSD LP',
     tokenDescription: 'Pancake (Charge)',
@@ -84,8 +84,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'charge-static-busd',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Other',
     assets: ['STATIC', 'BUSD'],
     risks: [
