@@ -35,6 +35,76 @@ export const fantomStakePools = [
   },
 
   {
+    id: 'moo_beFTM',
+    name: 'Beefy',
+    logo: 'single-assets/BIFI.png',
+    token: 'beFTM',
+    tokenDecimals: 18,
+    tokenAddress: '0x7381eD41F6dE418DdE5e84B55590422a57917886',
+    tokenOracle: 'tokens',
+    tokenOracleId: 'beFTM',
+    earnedToken: 'FTM',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83',
+    earnContractAddress: '0xE00D25938671525C2542A689e42D1cfA56De5888',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'FTM',
+    partnership: false,
+    status: 'active',
+    fixedStatus: true,
+    partners: [
+      {
+        logo: 'stake/beefy/beefyfinance.png',
+        background: 'stake/beefy/background.png',
+        text: 'beFTM simply means Beefy Escrowed Fantom. The token is pegged to FTM and can be staked on the Beefy platform and farms on major DEXs. beFTM gives stakers access to maximized validator rewards that typically aren’t available to the individual investor without locking FTM for 1 year.',
+        website: 'https://app.beefy.finance',
+        social: {
+          telegram: 'http://t.me/beefyfinance',
+          twitter: 'https://twitter.com/beefyfinance',
+        },
+      },
+    ],
+  },
+
+  {
+    id: 'moo_binSPIRIT-wigoswap',
+    name: 'WigoSwap',
+    logo: 'single-assets/binSPIRIT.svg',
+    token: 'mooBinSPIRIT',
+    tokenDecimals: 18,
+    tokenAddress: '0x7345a537A975d9Ca588eE631BEFdDfEF34fD5e8f',
+    tokenOracle: 'tokens',
+    tokenOracleId: 'binSPIRIT',
+    earnedToken: 'WIGO',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xE992bEAb6659BFF447893641A378FbbF031C5bD6',
+    earnContractAddress: '0x80F442b0207Fbc58efBd55da37F2fCc134CAEE7B',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'WIGO',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1647602312,
+    partners: [
+      {
+        logo: 'stake/wigoswap/logo.png',
+        background: 'stake/wigoswap/bg.png',
+        text:
+          'DeFi hub with LIFETIME farming earnings powered by Gamified Burning Mechanism (GBM). \n' +
+          'GBM comes in by utilizing burning function through increasing activities on platform and boosts the burning process.\n' +
+          'It means that WigoSwap is able to continue minting tokens by constantly and automatically de-minting them. With the help of this mechanism, we will never reach the 2B hard-cap.',
+        website: 'https://wigoswap.io/',
+        social: {
+          telegram: 'https://t.me/wigoswap',
+          twitter: 'https://twitter.com/wigoswap',
+        },
+      },
+    ],
+  },
+
+  {
     id: 'moo_curve-ftm-geist-ripae',
     name: 'Ripae.Finance',
     logo: 'uncategorized/3CRV.png',
@@ -66,39 +136,6 @@ export const fantomStakePools = [
         social: {
           telegram: 'https://discord.gg/6zq53FB4TS',
           twitter: 'https://twitter.com/ripaefinance',
-        },
-      },
-    ],
-  },
-
-  {
-    id: 'moo_beFTM',
-    name: 'Beefy',
-    logo: 'single-assets/BIFI.png',
-    token: 'beFTM',
-    tokenDecimals: 18,
-    tokenAddress: '0x7381eD41F6dE418DdE5e84B55590422a57917886',
-    tokenOracle: 'tokens',
-    tokenOracleId: 'beFTM',
-    earnedToken: 'FTM',
-    earnedTokenDecimals: 18,
-    earnedTokenAddress: '0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83',
-    earnContractAddress: '0xE00D25938671525C2542A689e42D1cfA56De5888',
-    earnContractAbi: govPoolABI,
-    earnedOracle: 'tokens',
-    earnedOracleId: 'FTM',
-    partnership: false,
-    status: 'active',
-    fixedStatus: true,
-    partners: [
-      {
-        logo: 'stake/beefy/beefyfinance.png',
-        background: 'stake/beefy/background.png',
-        text: 'beFTM simply means Beefy Escrowed Fantom. The token is pegged to FTM and can be staked on the Beefy platform and farms on major DEXs. beFTM gives stakers access to maximized validator rewards that typically aren’t available to the individual investor without locking FTM for 1 year.',
-        website: 'https://app.beefy.finance',
-        social: {
-          telegram: 'http://t.me/beefyfinance',
-          twitter: 'https://twitter.com/beefyfinance',
         },
       },
     ],
