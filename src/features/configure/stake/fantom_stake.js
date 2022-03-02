@@ -72,6 +72,39 @@ export const fantomStakePools = [
   },
 
   {
+    id: 'moo_beFTM',
+    name: 'Beefy',
+    logo: 'single-assets/BIFI.png',
+    token: 'beFTM',
+    tokenDecimals: 18,
+    tokenAddress: '0x7381eD41F6dE418DdE5e84B55590422a57917886',
+    tokenOracle: 'tokens',
+    tokenOracleId: 'beFTM',
+    earnedToken: 'FTM',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83',
+    earnContractAddress: '0xE00D25938671525C2542A689e42D1cfA56De5888',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'FTM',
+    partnership: false,
+    status: 'active',
+    fixedStatus: true,
+    partners: [
+      {
+        logo: 'stake/beefy/beefyfinance.png',
+        background: 'stake/beefy/background.png',
+        text: 'beFTM simply means Beefy Escrowed Fantom. The token is pegged to FTM and can be staked on the Beefy platform and farms on major DEXs. beFTM gives stakers access to maximized validator rewards that typically aren’t available to the individual investor without locking FTM for 1 year.',
+        website: 'https://app.beefy.finance',
+        social: {
+          telegram: 'http://t.me/beefyfinance',
+          twitter: 'https://twitter.com/beefyfinance',
+        },
+      },
+    ],
+  },
+
+  {
     id: 'moo_spirit-binspirit-spirit-spirit',
     name: 'SpiritSwap',
     assets: ['binSPIRIT', 'SPIRIT'],
