@@ -35,6 +35,43 @@ export const fantomStakePools = [
   },
 
   {
+    id: 'moo_binSPIRIT-wigoswap',
+    name: 'WigoSwap',
+    logo: 'single-assets/binSPIRIT.svg',
+    token: 'mooBinSPIRIT',
+    tokenDecimals: 18,
+    tokenAddress: '0x7345a537A975d9Ca588eE631BEFdDfEF34fD5e8f',
+    tokenOracle: 'tokens',
+    tokenOracleId: 'binSPIRIT',
+    earnedToken: 'WIGO',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xE992bEAb6659BFF447893641A378FbbF031C5bD6',
+    earnContractAddress: '0x80F442b0207Fbc58efBd55da37F2fCc134CAEE7B',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'WIGO',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1647602312,
+    partners: [
+      {
+        logo: 'stake/wigoswap/logo.png',
+        background: 'stake/wigoswap/bg.png',
+        text:
+          'DeFi hub with LIFETIME farming earnings powered by Gamified Burning Mechanism (GBM). \n' +
+          'GBM comes in by utilizing burning function through increasing activities on platform and boosts the burning process.\n' +
+          'It means that WigoSwap is able to continue minting tokens by constantly and automatically de-minting them. With the help of this mechanism, we will never reach the 2B hard-cap.',
+        website: 'https://wigoswap.io/',
+        social: {
+          telegram: 'https://t.me/wigoswap',
+          twitter: 'https://twitter.com/wigoswap',
+        },
+      },
+    ],
+  },
+
+  {
     id: 'moo_curve-ftm-geist-ripae',
     name: 'Ripae.Finance',
     logo: 'uncategorized/3CRV.png',
