@@ -1033,7 +1033,7 @@ export const bscPools = [
     createdAt: 1638803879,
   },
   {
-    id: 'cakev2-quidd-wbnb',
+    id: 'cakev2-quidd-wbnb-eol',
     name: 'QUIDD-BNB LP',
     token: 'QUIDD-BNB LP2',
     tokenDescription: 'PancakeSwap',
@@ -1048,8 +1048,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cakev2-quidd-wbnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'PancakeSwap',
     assets: ['QUIDD', 'BNB'],
     risks: [
