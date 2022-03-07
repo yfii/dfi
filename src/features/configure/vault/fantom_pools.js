@@ -1630,7 +1630,7 @@ export const fantomPools = [
     earnContractAddress: '0x90aa5be46B99eA5fF9aEa1C8115cB13caca20d04',
     pricePerFullShare: 1,
     tvl: 0,
-    oracle: 'tokens',
+    oracle: 'lps',
     oracleId: 'boo-font-ftm',
     oraclePrice: 0,
     depositsPaused: false,
