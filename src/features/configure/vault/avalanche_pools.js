@@ -64,7 +64,7 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://traderjoexyz.com/pool/0xf4003f4efbe8691b60249e6afbd307abe7758adb/AVAX',
+      'https://traderjoexyz.com/farm/0xf4003F4efBE8691B60249E6afbD307aBE7758adb-0x188bED1968b795d5c9022F6a0bb5931Ac4c18F00',
     buyTokenUrl:
       'https://traderjoexyz.com/trade?outputCurrency=0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E',
     createdAt: 1646426309,
@@ -100,7 +100,7 @@ export const avalanchePools = [
     stratType: 'StratLP',
     withdrawalFee: '0%',
     addLiquidityUrl:
-      'https://traderjoexyz.com/pool/0x3052a75dfd7a9d9b0f81e510e01d3fe80a9e7ec7/AVAX',
+      'https://traderjoexyz.com/farm/0x3052a75dfD7A9D9B0F81E510E01d3Fe80A9e7ec7-0x188bED1968b795d5c9022F6a0bb5931Ac4c18F00',
     buyTokenUrl:
       'https://traderjoexyz.com/trade?outputCurrency=0x7761e2338b35bceb6bda6ce477ef012bde7ae611',
     createdAt: 1646787205,
