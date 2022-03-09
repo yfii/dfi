@@ -78,8 +78,8 @@ export const avalanchePools = [
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooJoeEGG-AVAX',
-    earnedTokenAddress: '0x6Ea4b98EAeB7c9187cE23a8c1841db93aff0a4D8',
-    earnContractAddress: '0x6Ea4b98EAeB7c9187cE23a8c1841db93aff0a4D8',
+    earnedTokenAddress: '0x491E09Eb736c0c4CD85DF694A22D1C0dec8c4C25',
+    earnContractAddress: '0x491E09Eb736c0c4CD85DF694A22D1C0dec8c4C25',
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
@@ -98,6 +98,7 @@ export const avalanchePools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    withdrawalFee: '0%',
     addLiquidityUrl:
       'https://traderjoexyz.com/pool/0x3052a75dfd7a9d9b0f81e510e01d3fe80a9e7ec7/AVAX',
     buyTokenUrl:
