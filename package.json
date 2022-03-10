@@ -18,7 +18,7 @@
     "@walletconnect/web3-provider": "^1.6.5",
     "axios": "^0.21.1",
     "bignumber.js": "^9.0.1",
-    "blockchain-addressbook": "^0.19.1",
+    "blockchain-addressbook": "^0.21.1",
     "classnames": "^2.2.6",
     "connected-react-router": "^6.8.0",
     "deficonnect": "^1.1.5",
@@ -51,7 +51,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "echo 'DO NOT disable validation here, fix specific issue' && yarn validate && react-scripts build",
     "validate": "node ./scripts/validatePools.js",
     "launchpool": "node ./scripts/launchpool.js",
     "test": "react-scripts test",

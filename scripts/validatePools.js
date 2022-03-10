@@ -186,7 +186,7 @@ const validatePools = async () => {
 
 // Validation helpers. These only log for now, could throw error if desired.
 const isKeeperCorrect = (pool, chain, chainKeeper, updates) => {
-  if (pool.keeper !== undefined && pool.keeper !== chainKeeper) {
+  if (pool.status !== 'eol' && pool.keeper !== undefined && pool.keeper !== chainKeeper) {
     console.log(`Pool ${pool.id} should update keeper. From: ${pool.keeper} To: ${chainKeeper}`);
 
     if (!('keeper' in updates)) updates['keeper'] = {};

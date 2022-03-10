@@ -35,6 +35,150 @@ export const moonbeamPools = [
     createdAt: 1644700692,
   },
   {
+    id: 'solarflare-ust-wglmr',
+    name: 'UST-GLMR LP',
+    token: 'UST-GLMR SLP',
+    tokenDescription: 'Solarflare',
+    tokenAddress: '0xa2844004Ce6336007f09D6Bf959B5602ABbf19fb',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooSolarflareUST-GLMR',
+    earnedTokenAddress: '0x9D55cAEE108aBdd4C47E42088C97ecA43510E969',
+    earnContractAddress: '0x9D55cAEE108aBdd4C47E42088C97ecA43510E969',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'solarflare-ust-wglmr',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Solarflare',
+    assets: ['UST', 'GLMR'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_HIGH',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
+    withdrawalFee: '0%',
+    addLiquidityUrl:
+      'https://app.solarflare.io/exchange/add/0x085416975fe14C2A731a97eC38B9bF8135231F62/0xAcc15dC74880C9944775448304B263D191c6077F',
+    buyTokenUrl:
+      'https://app.solarflare.io/exchange/swap?inputCurrency=0x085416975fe14C2A731a97eC38B9bF8135231F62&outputCurrency=0xAcc15dC74880C9944775448304B263D191c6077F',
+    createdAt: 1646427456,
+  },
+  {
+    id: 'solarflare-luna-flare',
+    name: 'LUNA-FLARE LP',
+    token: 'LUNA-FLARE SLP',
+    tokenDescription: 'Solarflare',
+    tokenAddress: '0xAc69fa960b5fcc90559BF39284C00946e7d8Eb78',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooSolarflareLUNA-FLARE',
+    earnedTokenAddress: '0x9584e368355D4634f1bdD7b0e7B08fFEa38ED0b0',
+    earnContractAddress: '0x9584e368355D4634f1bdD7b0e7B08fFEa38ED0b0',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'solarflare-luna-flare',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Solarflare',
+    assets: ['LUNA', 'FLARE'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
+    withdrawalFee: '0%',
+    addLiquidityUrl:
+      'https://app.solarflare.io/exchange/add/0xE3e43888fa7803cDC7BEA478aB327cF1A0dc11a7/0x31DAB3430f3081dfF3Ccd80F17AD98583437B213',
+    buyTokenUrl:
+      'https://app.solarflare.io/exchange/swap?inputCurrency=0x31DAB3430f3081dfF3Ccd80F17AD98583437B213&outputCurrency=0xE3e43888fa7803cDC7BEA478aB327cF1A0dc11a7',
+    createdAt: 1646426436,
+  },
+  {
+    id: 'solarflare-wglmr-flare',
+    name: 'FLARE-GLMR LP',
+    token: 'FLARE-GLMR SLP',
+    tokenDescription: 'Solarflare',
+    tokenAddress: '0x26A2abD79583155EA5d34443b62399879D42748A',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooSolarflareFLARE-GLMR',
+    earnedTokenAddress: '0x37A8b016EF27fBCF73F73Fb9Dc1C09C47A5d7E48',
+    earnContractAddress: '0x37A8b016EF27fBCF73F73Fb9Dc1C09C47A5d7E48',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'solarflare-wglmr-flare',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Solarflare',
+    assets: ['FLARE', 'GLMR'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
+    withdrawalFee: '0%',
+    addLiquidityUrl:
+      'https://app.solarflare.io/exchange/add/0xE3e43888fa7803cDC7BEA478aB327cF1A0dc11a7/0xAcc15dC74880C9944775448304B263D191c6077F',
+    buyTokenUrl:
+      'https://app.solarflare.io/exchange/swap?inputCurrency=0xAcc15dC74880C9944775448304B263D191c6077F&outputCurrency=0xE3e43888fa7803cDC7BEA478aB327cF1A0dc11a7',
+    createdAt: 1646421834,
+  },
+  {
+    id: 'solarflare-usdc-wglmr',
+    name: 'USDC-GLMR LP',
+    token: 'USDC-GLMR SLP',
+    tokenDescription: 'Solarflare',
+    tokenAddress: '0xAb89eD43D10c7CE0f4D6F21616556AeCb71b9c5f',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooSolarflareUSDC-GLMR',
+    earnedTokenAddress: '0xf26607237355D7c6183ea66EC908729E9c6eEB6b',
+    earnContractAddress: '0xf26607237355D7c6183ea66EC908729E9c6eEB6b',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'solarflare-usdc-wglmr',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Solarflare',
+    assets: ['USDCs', 'GLMR'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MEDIUM',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
+    withdrawalFee: '0%',
+    addLiquidityUrl:
+      'https://app.solarflare.io/exchange/add/0x595c8481c48894771CE8FaDE54ac6Bf59093F9E8/0xAcc15dC74880C9944775448304B263D191c6077F',
+    buyTokenUrl:
+      'https://app.solarflare.io/exchange/swap?inputCurrency=0xAcc15dC74880C9944775448304B263D191c6077F&outputCurrency=0x595c8481c48894771CE8FaDE54ac6Bf59093F9E8',
+    createdAt: 1646424684,
+  },
+  {
     id: 'beamswap-bifi-wglmr',
     name: 'BIFI-GLMR LP',
     token: 'BIFI-GLMR TLP',
@@ -63,6 +207,7 @@ export const moonbeamPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    withdrawalFee: '0%',
     addLiquidityUrl:
       'https://app.beamswap.io/exchange/add/0x595c8481c48894771CE8FaDE54ac6Bf59093F9E8/0xacc15dc74880c9944775448304b263d191c6077f3',
     buyTokenUrl:
@@ -98,6 +243,7 @@ export const moonbeamPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    withdrawalFee: '0%',
     addLiquidityUrl:
       'https://app.beamswap.io/exchange/add/0x818ec0a7fe18ff94269904fced6ae3dae6d6dc0b/0xC19281F22A075E0F10351cd5D6Ea9f0AC63d4327',
     buyTokenUrl:
@@ -133,6 +279,7 @@ export const moonbeamPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    withdrawalFee: '0%',
     addLiquidityUrl:
       'https://app.beamswap.io/exchange/add/0x818ec0a7fe18ff94269904fced6ae3dae6d6dc0b/0xacc15dc74880c9944775448304b263d191c6077f3',
     buyTokenUrl:
@@ -168,6 +315,7 @@ export const moonbeamPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    withdrawalFee: '0%',
     addLiquidityUrl:
       'https://app.beamswap.io/exchange/add/0x818ec0a7fe18ff94269904fced6ae3dae6d6dc0b/0x765277EebeCA2e31912C9946eAe1021199B39C61',
     buyTokenUrl:
@@ -203,6 +351,7 @@ export const moonbeamPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    withdrawalFee: '0%',
     addLiquidityUrl:
       'https://app.beamswap.io/exchange/add/0x818ec0a7fe18ff94269904fced6ae3dae6d6dc0b/0x765277EebeCA2e31912C9946eAe1021199B39C61',
     buyTokenUrl:
@@ -238,6 +387,7 @@ export const moonbeamPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    withdrawalFee: '0%',
     addLiquidityUrl:
       'https://app.beamswap.io/exchange/add/0xc9BAA8cfdDe8E328787E29b4B078abf2DaDc2055/0xA649325Aa7C5093d12D6F98EB4378deAe68CE23F',
     buyTokenUrl:
@@ -273,6 +423,7 @@ export const moonbeamPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    withdrawalFee: '0%',
     addLiquidityUrl:
       'https://app.beamswap.io/exchange/add/0xA649325Aa7C5093d12D6F98EB4378deAe68CE23F/0x818ec0A7Fe18Ff94269904fCED6AE3DaE6d6dC0b',
     buyTokenUrl:
@@ -308,6 +459,7 @@ export const moonbeamPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    withdrawalFee: '0%',
     addLiquidityUrl:
       'https://app.beamswap.io/exchange/add/0xfA9343C3897324496A05fC75abeD6bAC29f8A40f/0x818ec0A7Fe18Ff94269904fCED6AE3DaE6d6dC0b',
     buyTokenUrl:
@@ -343,6 +495,7 @@ export const moonbeamPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    withdrawalFee: '0%',
     addLiquidityUrl:
       'https://app.beamswap.io/exchange/add/0xeFAeeE334F0Fd1712f9a8cc375f427D9Cdd40d73/0x818ec0A7Fe18Ff94269904fCED6AE3DaE6d6dC0b',
     buyTokenUrl:
