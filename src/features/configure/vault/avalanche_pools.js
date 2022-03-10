@@ -73,7 +73,7 @@ export const avalanchePools = [
     name: 'JOE-USDC LP',
     token: 'JOE-USDC LP',
     tokenDescription: 'Trader Joe',
-    tokenAddress: '0x3bc40d4307cd946157447cd55d70ee7495ba6140',
+    tokenAddress: '0x3bc40d4307cD946157447CD55d70ee7495bA6140',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooJoeJOE-USDC',
