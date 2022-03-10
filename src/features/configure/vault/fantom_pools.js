@@ -71,7 +71,7 @@ export const fantomPools = [
     createdAt: 1646162527,
   },
   {
-    id: 'spirit-beftm-ftm',
+    id: 'spirit-ftm-beftm',
     name: 'beFTM-FTM LP',
     token: 'beFTM-FTM SLP',
     tokenDescription: 'SpiritSwap',
