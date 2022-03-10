@@ -51,7 +51,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "echo 'DO NOT disable validation here, fix specific issue' && yarn validate && react-scripts build",
     "validate": "node ./scripts/validatePools.js",
     "launchpool": "node ./scripts/launchpool.js",
     "test": "react-scripts test",
