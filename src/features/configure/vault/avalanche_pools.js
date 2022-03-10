@@ -2348,7 +2348,7 @@ export const avalanchePools = [
     createdAt: 1634117214,
   },
   {
-    id: 'joe-mai-wavax-v2',
+    id: 'joe-mai-wavax-v2-eol',
     name: 'MAI-AVAX LP',
     token: 'MAI-AVAX JLP',
     tokenDescription: 'Trader Joe',
@@ -2364,7 +2364,7 @@ export const avalanchePools = [
     oracleId: 'joe-mai-wavax-v2',
     oraclePrice: 0,
     depositsPaused: false,
-    status: 'active',
+    status: 'eol',
     platform: 'Trader Joe',
     assets: ['MAI', 'AVAX'],
     risks: [
@@ -2376,6 +2376,7 @@ export const avalanchePools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://traderjoexyz.com/pool/AVAX/0x5c49b268c9841AFF1Cc3B0a418ff5c3442eE3F3b',
     buyTokenUrl: 'https://www.traderjoexyz.com/trade',
@@ -2695,7 +2696,7 @@ export const avalanchePools = [
     createdAt: 1631011023,
   },
   {
-    id: 'joe-joe-usdc.e',
+    id: 'joe-joe-usdc.e-eol',
     name: 'JOE-USDC.e LP',
     token: 'JOE-USDC.e JLP',
     tokenDescription: 'Trader Joe',
@@ -2711,7 +2712,7 @@ export const avalanchePools = [
     oracleId: 'joe-joe-usdc.e',
     oraclePrice: 0,
     depositsPaused: false,
-    status: 'active',
+    status: 'eol',
     platform: 'Trader Joe',
     assets: ['JOE', 'USDCe'],
     risks: [
@@ -2723,6 +2724,7 @@ export const avalanchePools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    retireReason: 'rewards',
     addLiquidityUrl:
       'https://www.traderjoexyz.com/pool/0x6e84a6216ea6dacc71ee8e6b0a5b7322eebc0fdd/0xa7d7079b0fead91f3e65f86e8915cb59c1a4c664',
     buyTokenUrl: 'https://www.traderjoexyz.com/trade',
