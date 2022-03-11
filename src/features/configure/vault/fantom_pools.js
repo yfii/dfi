@@ -109,7 +109,7 @@ export const fantomPools = [
     id: 'tomb-tomb-mai',
     name: 'TOMB-MAI LP',
     token: 'TOMB-MAI LP',
-    tokenDescription: 'SpookySwap (Tomb)',
+    tokenDescription: 'TombSwap (Tomb)',
     tokenAddress: '0x45f4682B560d4e3B8FF1F1b3A38FDBe775C7177b',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
