@@ -7138,7 +7138,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Ester',
+    platform: 'Other',
     assets: ['EST', 'FTM'],
     risks: [
       'COMPLEXITY_LOW',
@@ -7175,7 +7175,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Ester',
+    platform: 'Other',
     assets: ['EST'],
     risks: [
       'COMPLEXITY_LOW',
@@ -7281,7 +7281,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Froyo',
+    platform: 'Other',
     assets: ['USDT', 'DAI', 'USDC'],
     risks: [
       'COMPLEXITY_LOW',
@@ -7314,7 +7314,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'Froyo',
+    platform: 'Other',
     assets: ['FROYO', 'FTM'],
     risks: [
       'COMPLEXITY_LOW',
