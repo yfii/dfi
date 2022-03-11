@@ -561,7 +561,7 @@ export const avalanchePools = [
     createdAt: 1643668967,
   },
   {
-    id: 'joe-wavax-pefi2',
+    id: 'joe-wavax-pefi2-eol',
     name: 'PEFI-AVAX LP',
     token: 'PEFI-AVAX JLP',
     tokenDescription: 'Trader Joe',
@@ -576,8 +576,9 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'joe-wavax-pefi2',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Trader Joe',
     assets: ['PEFI', 'AVAX'],
     risks: [
