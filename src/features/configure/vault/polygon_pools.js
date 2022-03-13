@@ -720,7 +720,7 @@ export const polygonPools = [
     createdAt: 1641761360,
   },
   {
-    id: 'jarvis-2jpy',
+    id: 'jarvis-2jpy-paused',
     logo: 'single-assets/2JPY.svg',
     name: 'jJPY-JPYC',
     token: '2jpy',
@@ -736,7 +736,7 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'jarvis-2jpy',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Other',
     assets: ['jJPY', 'JPYC'],
