@@ -52,7 +52,7 @@ export const fuseStakePools = [
     earnedOracle: 'lps',
     earnedOracleId: 'voltage-wfuse-elon',
     partnership: true,
-    status: 'closed',
+    status: 'active',
     isMooStaked: true,
     periodFinish: 1652625028,
     partners: [

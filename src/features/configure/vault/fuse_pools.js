@@ -35,7 +35,7 @@ export const fusePools = [
     createdAt: 1644690600,
   },
   {
-    id: 'voltage-wfuse-elon-eol',
+    id: 'voltage-wfuse-elon',
     name: 'ELON-FUSE LP',
     token: 'ELON-FUSE LP',
     tokenDescription: 'Voltage',
@@ -51,9 +51,8 @@ export const fusePools = [
     oracleId: 'voltage-wfuse-elon',
     oraclePrice: 0,
     withdrawalFee: '0%',
-    depositsPaused: true,
-    status: 'eol',
-    retireReason: 'rewards',
+    depositsPaused: false,
+    status: 'active',
     platform: 'Voltage',
     assets: ['ELON', 'FUSE'],
     risks: [
@@ -66,7 +65,7 @@ export const fusePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://app.voltage.finance/#/add/FUSE/0x5DD8015cec49F4dB01fd228F688BF30337d3e0A9',
+      'https://app-v1.voltage.finance/#/add/FUSE/0x5DD8015cec49F4dB01fd228F688BF30337d3e0A9',
     buyTokenUrl:
       'https://app.fuse.fi/#/swap?inputCurrency=FUSE&outputCurrency=0x5DD8015cec49F4dB01fd228F688BF30337d3e0A9',
     createdAt: 1644603605,
