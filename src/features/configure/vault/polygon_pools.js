@@ -2735,7 +2735,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'DinoSwap',
+    platform: 'Other',
     assets: ['ROUTE', 'ETH'],
     addLiquidityUrl:
       'https://exchange.dfyn.network/#/add/0x7ceb23fd6bc0add59e62ac25578270cff1b9f619/0xeBC4f9B1cE66258AC3A48578FFEEba1330dDB68B',
@@ -3096,7 +3096,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'DinoSwap',
+    platform: 'Other',
     assets: ['DINO', 'ETH'],
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x7ceb23fd6bc0add59e62ac25578270cff1b9f619/0xAa9654BECca45B5BDFA5ac646c939C62b527D394',
@@ -3123,7 +3123,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'DinoSwap',
+    platform: 'Other',
     assets: ['UST', 'USDT'],
     withdrawalFee: '0.01%',
     risks: [
@@ -3161,7 +3161,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'DinoSwap',
+    platform: 'Other',
     assets: ['DFYN', 'ETH'],
     addLiquidityUrl:
       'https://exchange.dfyn.network/#/add/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619/0xC168E40227E4ebD8C1caE80F7a55a4F0e6D66C97',
@@ -3508,7 +3508,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'DinoSwap',
+    platform: 'Other',
     assets: ['xMARK', 'USDC'],
     addLiquidityUrl:
       'https://app.sushi.com/add/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174/0xf153eff70dc0bf3b085134928daeea248d9b30d0',
@@ -3535,7 +3535,7 @@ export const polygonPools = [
     depositsPaused: true,
     status: 'eol',
     retireReason: 'rewards',
-    platform: 'DinoSwap',
+    platform: 'Other',
     assets: ['DINO', 'USDC'],
     addLiquidityUrl:
       'https://app.sushi.com/add/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174/0xAa9654BECca45B5BDFA5ac646c939C62b527D394',
@@ -3561,7 +3561,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'DinoSwap',
+    platform: 'Other',
     assets: ['MAI', 'USDC'],
     withdrawalFee: '0.01%',
     retireReason: 'rewards',
@@ -3599,7 +3599,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    platform: 'DinoSwap',
+    platform: 'Other',
     assets: ['USDC', 'USDT'],
     withdrawalFee: '0.01%',
     retireReason: 'rewards',

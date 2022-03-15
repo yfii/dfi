@@ -210,7 +210,7 @@ export const cronosPools = [
     createdAt: 1637045082,
   },
   {
-    id: 'vvs-tonic-usdc',
+    id: 'vvs-tonic-usdc-eol',
     name: 'TONIC-USDC',
     token: 'TONIC-USDC LP',
     tokenDescription: 'VVS',
@@ -225,8 +225,9 @@ export const cronosPools = [
     oracle: 'lps',
     oracleId: 'vvs-tonic-usdc',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'VVS',
     assets: ['TONIC', 'USDC'],
     risks: [

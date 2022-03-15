@@ -34,4 +34,11 @@ export const fantomZaps = [
     ammFactory: '0xC831A5cBfb4aC2Da5ed5B194385DFD9bF5bFcBa7',
     ammPairInitHash: '0x55c39e9406ff3c89a193882b4752879e73c8a0ce1222fe1de34c5e8f6482d9b6',
   },
+  {
+    // TombSwap
+    zapAddress: '0xf12FEe3837492D8fc09D4D0dbbA72919Ea76d19B',
+    ammRouter: '0x6D0176C5ea1e44b08D3dd001b0784cE42F47a3A7',
+    ammFactory: '0xE236f6890F1824fa0a7ffc39b1597A5A6077Cfe9',
+    ammPairInitHash: '0x2dfbcf1b907f911bc66d083d103a1d7de0b8b21a6cb2a66a78d1f1559018fba4',
+  },
 ];
