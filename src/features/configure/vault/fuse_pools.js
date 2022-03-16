@@ -68,7 +68,7 @@ export const fusePools = [
       'https://app.voltage.finance/index.html#/add/0x0BE9e53fd7EDaC9F859882AfdDa116645287C629/0x0D58a44be3dCA0aB449965dcc2c46932547Fea2f',
     buyTokenUrl:
       'https://app.voltage.finance/index.html#/swap?inputCurrency=0x0BE9e53fd7EDaC9F859882AfdDa116645287C629&outputCurrency=0x0D58a44be3dCA0aB449965dcc2c46932547Fea2f',
-    createdAt: 1647375943,
+    createdAt: 1647365195,
   },
   {
     id: 'voltage-volt-bnb',
@@ -104,7 +104,7 @@ export const fusePools = [
       'https://app.voltage.finance/index.html#/add/0x34Ef2Cc892a88415e9f02b91BfA9c91fC0bE6bD4/0x6acb34b1Df86E254b544189Ec32Cf737e2482058',
     buyTokenUrl:
       'https://app.voltage.finance/index.html#/swap?inputCurrency=0x34Ef2Cc892a88415e9f02b91BfA9c91fC0bE6bD4&outputCurrency=0x6acb34b1Df86E254b544189Ec32Cf737e2482058',
-    createdAt: 1647375943,
+    createdAt: 1647180880,
   },
   {
     id: 'voltage-wfuse-gdollar',
@@ -140,7 +140,7 @@ export const fusePools = [
       'https://app.voltage.finance/index.html#/add/0x0BE9e53fd7EDaC9F859882AfdDa116645287C629/0x495d133B938596C9984d462F007B676bDc57eCEC',
     buyTokenUrl:
       'https://app.voltage.finance/index.html#/swap?inputCurrency=0x0BE9e53fd7EDaC9F859882AfdDa116645287C629&outputCurrency=0x495d133B938596C9984d462F007B676bDc57eCEC',
-    createdAt: 1647375943,
+    createdAt: 1647365540,
   },
   {
     id: 'voltage-wfuse-elon',
