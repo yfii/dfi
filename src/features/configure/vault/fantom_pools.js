@@ -128,8 +128,8 @@ export const fantomPools = [
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
-      'IL_HIGH',
-      'MCAP_SMALL',
+      'IL_LOW',
+      'MCAP_LARGE',
       'AUDIT',
       'CONTRACTS_VERIFIED',
     ],
