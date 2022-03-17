@@ -361,7 +361,7 @@ export const polygonPools = [
     createdAt: 1645091761,
   },
   {
-    id: 'quick-fodl-matic',
+    id: 'quick-fodl-matic-eol',
     name: 'FODL-MATIC LP',
     token: 'FODL-MATIC LP',
     tokenDescription: 'QuickSwap',
@@ -375,8 +375,9 @@ export const polygonPools = [
     tvl: 0,
     oracle: 'lps',
     oracleId: 'quick-fodl-matic',
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'QuickSwap',
     assets: ['FODL', 'MATIC'],
     risks: [
