@@ -176,5 +176,8 @@
       ]
     }
   ],
-  "InsurAce-Button": "Insure Vaults"
+  "InsurAce-Button": "Insure Vaults",
+  "V2Banner-Title": "This app will soon be replaced with Beefy’s updated v2 interface.",
+  "V2Banner-Text": "No user actions are required. You can try the new version now.",
+  "V2Banner-Button": "Try the Beta"
 }

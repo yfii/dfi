@@ -26,6 +26,7 @@ const createThemeMode = isNightMode =>
       text: {
         primary: isNightMode ? '#fff' : '#000',
         secondary: isNightMode ? '#B0B0DD' : '#00000066',
+        flipped: isNightMode ? '#000' : '#fff',
       },
     },
     overrides: {
