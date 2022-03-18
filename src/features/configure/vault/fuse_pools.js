@@ -126,7 +126,7 @@ export const fusePools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Voltage',
-    assets: ['BTC', 'ETH'],
+    assets: ['WBTC', 'WETH'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
@@ -162,7 +162,7 @@ export const fusePools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Voltage',
-    assets: ['ETH', 'FUSE'],
+    assets: ['WETH', 'FUSE'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
