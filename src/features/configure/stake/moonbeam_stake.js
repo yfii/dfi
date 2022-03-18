@@ -42,7 +42,7 @@ export const moonbeamStakePools = [
     token: 'mooStellaswapSTELLA-GLMR',
     tokenDecimals: 18,
     tokenAddress: '0x515989A9Add6Bb3Ab78b59a2AE30E398E740886F',
-    tokenOracle: 'tokens',
+    tokenOracle: 'lps',
     tokenOracleId: 'stellaswap-stella-wglmr',
     earnedToken: 'STELLA',
     earnedTokenDecimals: 18,
