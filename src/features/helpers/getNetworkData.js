@@ -423,6 +423,8 @@ export const getNetworkStables = () => {
         'JPYC',
         'jCAD',
         'CADC',
+        'jSGD',
+        'XSGD',
       ];
     case 250:
       return [
