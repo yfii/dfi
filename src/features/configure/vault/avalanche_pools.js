@@ -2556,7 +2556,7 @@ export const avalanchePools = [
     createdAt: 1636461424,
   },
   {
-    id: 'bankerjoe-link.e',
+    id: 'bankerjoe-link.e-eol',
     logo: 'single-assets/LINK.png',
     name: 'LINK.e',
     token: 'LINK.e',
@@ -2572,8 +2572,9 @@ export const avalanchePools = [
     oracle: 'tokens',
     oracleId: 'LINK.e',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'tvl',
     platform: 'Banker Joe',
     assets: ['LINKe'],
     risks: [

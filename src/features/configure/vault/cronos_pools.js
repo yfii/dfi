@@ -422,7 +422,7 @@ export const cronosPools = [
     createdAt: 1639129150,
   },
   {
-    id: 'crona-wbtc-usdc',
+    id: 'crona-wbtc-usdc-eol',
     name: 'WBTC-USDC',
     token: 'WBTC-USDC CLP',
     tokenDescription: 'CronaSwap',
@@ -437,8 +437,9 @@ export const cronosPools = [
     oracle: 'lps',
     oracleId: 'crona-wbtc-usdc',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'tvl',
     platform: 'CronaSwap',
     assets: ['WBTC', 'USDC'],
     risks: [

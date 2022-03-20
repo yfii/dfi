@@ -3159,7 +3159,7 @@ export const fantomPools = [
     createdAt: 1642291662,
   },
   {
-    id: 'boo-kek-ftm',
+    id: 'boo-kek-ftm-eol',
     name: 'KEK-FTM LP',
     token: 'KEK-FTM LP',
     tokenDescription: 'SpookySwap',
@@ -3174,8 +3174,9 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'boo-kek-ftm',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retiredReason: 'tvl',
     platform: 'SpookySwap',
     assets: ['KEK', 'FTM'],
     risks: [
@@ -3195,7 +3196,7 @@ export const fantomPools = [
     createdAt: 1642139577,
   },
   {
-    id: 'boo-inv-wftm',
+    id: 'boo-inv-wftm-eol',
     name: 'INV-FTM LP',
     token: 'INV-FTM LP',
     tokenDescription: 'SpookySwap',
@@ -3210,8 +3211,9 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'boo-inv-wftm',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retiredReason: 'tvl',
     platform: 'SpookySwap',
     assets: ['INV', 'FTM'],
     risks: [
@@ -3442,7 +3444,7 @@ export const fantomPools = [
     createdAt: 1641548990,
   },
   {
-    id: 'spartacadabra-charm-usdc',
+    id: 'spartacadabra-charm-usdc-eol',
     name: 'CHARM-USDC',
     token: 'CHARM-USDC LP',
     tokenDescription: 'SpookySwap (Spartacadabra)',
@@ -3457,8 +3459,9 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'spartacadabra-charm-usdc',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retiredReason: 'tvl',
     platform: 'Spartacadabra',
     assets: ['CHARM', 'USDC'],
     risks: [
@@ -5461,7 +5464,7 @@ export const fantomPools = [
     createdAt: 1634118092,
   },
   {
-    id: 'spirit-link-ftm',
+    id: 'spirit-link-ftm-eol',
     name: 'LINK-FTM LP',
     token: 'LINK-FTM SLP',
     tokenDescription: 'SpiritSwap',
@@ -5476,8 +5479,9 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'spirit-link-ftm',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retiredReason: 'tvl',
     platform: 'SpiritSwap',
     assets: ['LINK', 'FTM'],
     withdrawalFee: '0%',
@@ -5850,7 +5854,7 @@ export const fantomPools = [
     retiredReason: 'tvl',
   },
   {
-    id: 'jetswap-fantom-eth-usdc',
+    id: 'jetswap-fantom-eth-usdc-eol',
     name: 'ETH-USDC LP',
     token: 'ETH-USDC LP',
     tokenDescription: 'JetSwap',
@@ -5865,8 +5869,9 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'jetswap-fantom-eth-usdc',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retiredReason: 'tvl',
     platform: 'JetSwap',
     assets: ['ETH', 'USDC'],
     risks: [
@@ -6492,7 +6497,7 @@ export const fantomPools = [
     createdAt: 1631055499,
   },
   {
-    id: 'boo-wftm-foo',
+    id: 'boo-wftm-foo-eol',
     name: 'FOO-FTM LP',
     token: 'FOO-FTM LP',
     tokenDescription: 'SpookySwap',
@@ -6507,8 +6512,9 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'boo-wftm-foo',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retiredReason: 'tvl',
     platform: 'SpookySwap',
     assets: ['FOO', 'FTM'],
     risks: [
@@ -7247,6 +7253,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
+    retiredReason: 'tvl',
     platform: 'Other',
     assets: ['EST', 'FTM'],
     risks: [
@@ -7263,7 +7270,6 @@ export const fantomPools = [
     buyTokenUrl:
       'https://swap.spiritswap.finance/#/exchange/swap/0x181F3F22C9a751E2ce673498A03E1FDFC0ebBFB6',
     createdAt: 1621505384,
-    retiredReason: 'tvl',
   },
   {
     id: 'ester-est-eol',
