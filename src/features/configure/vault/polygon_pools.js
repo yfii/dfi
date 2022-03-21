@@ -1404,7 +1404,7 @@ export const polygonPools = [
     createdAt: 1638099468,
   },
   {
-    id: 'quick-matic-mana',
+    id: 'quick-matic-mana-eol',
     name: 'MANA-MATIC LP',
     token: 'MANA-MATIC LP',
     tokenDescription: 'QuickSwap',
@@ -1418,8 +1418,9 @@ export const polygonPools = [
     tvl: 0,
     oracle: 'lps',
     oracleId: 'quick-matic-mana',
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'QuickSwap',
     assets: ['MANA', 'MATIC'],
     risks: [
@@ -5300,7 +5301,7 @@ export const polygonPools = [
     createdAt: 1623985582,
   },
   {
-    id: 'quick-dai-usdt',
+    id: 'quick-dai-usdt-eol',
     name: 'DAI-USDT LP',
     token: 'DAI-USDT QLP',
     tokenDescription: 'QuickSwap',
@@ -5315,8 +5316,9 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'quick-dai-usdt',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'QuickSwap',
     assets: ['DAI', 'USDT'],
     risks: [
@@ -7031,7 +7033,7 @@ export const polygonPools = [
     retiredReason: 'tvl',
   },
   {
-    id: 'cometh-bifi-eth',
+    id: 'cometh-bifi-eth-eol',
     logo: 'polygon/BIFI-ETH.png',
     name: 'BIFI-ETH LP',
     token: 'BIFI-ETH LP',
@@ -7047,8 +7049,9 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'cometh-bifi-eth',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Cometh',
     assets: ['BIFI', 'ETH'],
     risks: [
@@ -8011,7 +8014,7 @@ export const polygonPools = [
     createdAt: 1619797482,
   },
   {
-    id: 'quick-link-eth',
+    id: 'quick-link-eth-eol',
     logo: 'polygon/LINK-ETH.png',
     name: 'LINK-ETH LP',
     token: 'LINK-ETH QLP',
@@ -8027,8 +8030,9 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'quick-link-eth',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'QuickSwap',
     assets: ['LINK', 'ETH'],
     risks: [
