@@ -1483,7 +1483,7 @@ export const moonriverPools = [
     createdAt: 1635792936,
   },
   {
-    id: 'solarbeam-busd-usdc',
+    id: 'solarbeam-busd-usdc-eol',
     name: 'BUSD-USDC',
     token: 'BUSD-USDC LP',
     tokenDescription: 'SolarBeam',
@@ -1498,8 +1498,9 @@ export const moonriverPools = [
     oracle: 'lps',
     oracleId: 'solarbeam-busd-usdc',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'SolarBeam',
     assets: ['BUSD', 'USDC'],
     risks: [
@@ -1627,7 +1628,7 @@ export const moonriverPools = [
     createdAt: 1635800359,
   },
   {
-    id: 'solarbeam-usdt-usdc',
+    id: 'solarbeam-usdt-usdc-eol',
     name: 'USDT-USDC',
     token: 'USDT-USDC LP',
     tokenDescription: 'SolarBeam',
@@ -1642,8 +1643,9 @@ export const moonriverPools = [
     oracle: 'lps',
     oracleId: 'solarbeam-usdt-usdc',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'SolarBeam',
     assets: ['USDT', 'USDC'],
     risks: [
