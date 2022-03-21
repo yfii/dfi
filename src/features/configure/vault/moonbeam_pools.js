@@ -162,7 +162,7 @@ export const moonbeamPools = [
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
-      'IL_LOW',
+      'IL_NONE',
       'MCAP_HIGH',
       'AUDIT',
       'CONTRACTS_VERIFIED',
