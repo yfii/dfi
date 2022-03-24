@@ -1,6 +1,6 @@
 export const moonbeamPools = [
   {
-    id: 'moonbeam-bifi-maxi', 
+    id: 'moonbeam-bifi-maxi',
     logo: 'single-assets/BIFI.png',
     name: 'BIFI Maxi',
     token: 'BIFI',
@@ -67,7 +67,7 @@ export const moonbeamPools = [
     addLiquidityUrl:
       'https://app.stellaswap.com/exchange/add/0x0E358838ce72d5e61E0018a2ffaC4bEC5F4c88d2/ETH',
     buyTokenUrl: 'https://app.stellaswap.com/exchange/swap',
-    createdAt: 1647368211,
+    createdAt: 1647351540,
   },
   {
     id: 'stellaswap-ust-wglmr',
@@ -102,7 +102,7 @@ export const moonbeamPools = [
     addLiquidityUrl:
       'https://app.stellaswap.com/exchange/add/0x085416975fe14C2A731a97eC38B9bF8135231F62/ETH',
     buyTokenUrl: 'https://app.stellaswap.com/exchange/swap',
-    createdAt: 1647967056,
+    createdAt: 1647958278,
   },
   {
     id: 'stellaswap-dai-usdc',
@@ -137,7 +137,7 @@ export const moonbeamPools = [
     addLiquidityUrl:
       'https://app.stellaswap.com/exchange/add/0x765277EebeCA2e31912C9946eAe1021199B39C61/0x818ec0A7Fe18Ff94269904fCED6AE3DaE6d6dC0b',
     buyTokenUrl: 'https://app.stellaswap.com/exchange/swap',
-    createdAt: 1647967056,
+    createdAt: 1647958428,
   },
   {
     id: 'stellaswap-usdc-eth',
@@ -172,7 +172,7 @@ export const moonbeamPools = [
     addLiquidityUrl:
       'https://app.stellaswap.com/exchange/add/0x818ec0A7Fe18Ff94269904fCED6AE3DaE6d6dC0b/0xfA9343C3897324496A05fC75abeD6bAC29f8A40f',
     buyTokenUrl: 'https://app.stellaswap.com/exchange/swap',
-    createdAt: 1647967056,
+    createdAt: 1647958674,
   },
   {
     id: 'stellaswap-wglmr-eth',
@@ -207,7 +207,7 @@ export const moonbeamPools = [
     addLiquidityUrl:
       'https://app.stellaswap.com/exchange/add/ETH/0xfA9343C3897324496A05fC75abeD6bAC29f8A40f',
     buyTokenUrl: 'https://app.stellaswap.com/exchange/swap',
-    createdAt: 1647967056,
+    createdAt: 1647958770,
   },
   {
     id: 'stellaswap-stella-usdc',
@@ -242,7 +242,7 @@ export const moonbeamPools = [
     addLiquidityUrl:
       'https://app.stellaswap.com/exchange/add/0x0E358838ce72d5e61E0018a2ffaC4bEC5F4c88d2/0x818ec0A7Fe18Ff94269904fCED6AE3DaE6d6dC0b',
     buyTokenUrl: 'https://app.stellaswap.com/exchange/swap',
-    createdAt: 1647368211,
+    createdAt: 1647359160,
   },
   {
     id: 'stellaswap-usdc-wglmr',
@@ -277,7 +277,7 @@ export const moonbeamPools = [
     addLiquidityUrl:
       'https://app.stellaswap.com/exchange/add/0x818ec0A7Fe18Ff94269904fCED6AE3DaE6d6dC0b/ETH',
     buyTokenUrl: 'https://app.stellaswap.com/exchange/swap',
-    createdAt: 1647368211,
+    createdAt: 1647355452,
   },
   {
     id: 'stellaswap-usdc-usdt',
@@ -312,7 +312,7 @@ export const moonbeamPools = [
     addLiquidityUrl:
       'https://app.stellaswap.com/exchange/add/0x818ec0A7Fe18Ff94269904fCED6AE3DaE6d6dC0b/0xeFAeeE334F0Fd1712f9a8cc375f427D9Cdd40d73',
     buyTokenUrl: 'https://app.stellaswap.com/exchange/swap',
-    createdAt: 1647530983,
+    createdAt: 1647522606,
   },
   {
     id: 'stellaswap-usdc-bnb',
@@ -347,7 +347,7 @@ export const moonbeamPools = [
     addLiquidityUrl:
       'https://app.stellaswap.com/exchange/add/0x818ec0A7Fe18Ff94269904fCED6AE3DaE6d6dC0b/0xc9BAA8cfdDe8E328787E29b4B078abf2DaDc2055',
     buyTokenUrl: 'https://app.stellaswap.com/exchange/swap',
-    createdAt: 1647530983,
+    createdAt: 1647524406,
   },
   {
     id: 'stellaswap-busd-wglmr',
@@ -382,7 +382,7 @@ export const moonbeamPools = [
     addLiquidityUrl:
       'https://app.stellaswap.com/exchange/add/0xA649325Aa7C5093d12D6F98EB4378deAe68CE23F/0xAcc15dC74880C9944775448304B263D191c6077F',
     buyTokenUrl: 'https://app.stellaswap.com/exchange/swap',
-    createdAt: 1647530983,
+    createdAt: 1647525054,
   },
   {
     id: 'solarflare-ust-wglmr',
@@ -418,7 +418,7 @@ export const moonbeamPools = [
       'https://app.solarflare.io/exchange/add/0x085416975fe14C2A731a97eC38B9bF8135231F62/0xAcc15dC74880C9944775448304B263D191c6077F',
     buyTokenUrl:
       'https://app.solarflare.io/exchange/swap?inputCurrency=0x085416975fe14C2A731a97eC38B9bF8135231F62&outputCurrency=0xAcc15dC74880C9944775448304B263D191c6077F',
-    createdAt: 1646427456,
+    createdAt: 1647958278,
   },
   {
     id: 'solarflare-luna-flare',
