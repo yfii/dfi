@@ -1,6 +1,6 @@
 export const moonbeamPools = [
   {
-    id: 'moonbeam-bifi-maxi',
+    id: 'moonbeam-bifi-maxi', 
     logo: 'single-assets/BIFI.png',
     name: 'BIFI Maxi',
     token: 'BIFI',
