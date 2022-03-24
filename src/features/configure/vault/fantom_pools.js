@@ -114,8 +114,8 @@ export const fantomPools = [
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooBasedBASED-BSHARE',
-    earnedTokenAddress: '0xaC16fd4821e1Bf39148c374f02874e642E6CB8FA',
-    earnContractAddress: '0xaC16fd4821e1Bf39148c374f02874e642E6CB8FA',
+    earnedTokenAddress: '0x3a7ec503CD55A153bC3A3Ec5a2ee340136C005Ff',
+    earnContractAddress: '0x3a7ec503CD55A153bC3A3Ec5a2ee340136C005Ff',
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
@@ -140,7 +140,7 @@ export const fantomPools = [
       'https://spookyswap.finance/add/0x8D7d3409881b51466B483B11Ea1B8A03cdEd89ae/0x49C290Ff692149A4E16611c694fdED42C954ab7a',
     buyTokenUrl:
       'https://spookyswap.finance/swap?inputCurrency=0x8D7d3409881b51466B483B11Ea1B8A03cdEd89ae&outputCurrency=0x49C290Ff692149A4E16611c694fdED42C954ab7a',
-    createdAt: 1647978405,
+    createdAt: 1648136284,
   },
   {
     id: 'beets-boomer-beets',
