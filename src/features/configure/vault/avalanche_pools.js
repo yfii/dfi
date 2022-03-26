@@ -98,9 +98,9 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://app.pangolin.exchange/#/add/AVAX/0x0802d66f029c46E042b74d543fC43B6705ccb4ba',
+      'https://traderjoexyz.com/pool/0x0802d66f029c46E042b74d543fC43B6705ccb4ba/AVAX',
     buyTokenUrl:
-      'https://app.pangolin.exchange/#/swap?outputCurrency=0x0802d66f029c46E042b74d543fC43B6705ccb4ba',
+      'https://traderjoexyz.com/trade?outputCurrency=0x0802d66f029c46E042b74d543fC43B6705ccb4ba',
     createdAt: 1648112467,
   },
   {
@@ -133,9 +133,9 @@ export const avalanchePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://app.pangolin.exchange/#/add/AVAX/0x78Ea3fef1c1f07348199Bf44f45b803b9B0Dbe28',
+      'https://traderjoexyz.com/pool/0x78Ea3fef1c1f07348199Bf44f45b803b9B0Dbe28/AVAX',
     buyTokenUrl:
-      'https://app.pangolin.exchange/#/swap?outputCurrency=0x78Ea3fef1c1f07348199Bf44f45b803b9B0Dbe28',
+      'https://traderjoexyz.com/trade?outputCurrency=0x78Ea3fef1c1f07348199Bf44f45b803b9B0Dbe28',
     createdAt: 1648112061,
   },
   {
