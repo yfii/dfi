@@ -7486,7 +7486,7 @@ export const polygonPools = [
     createdAt: 1620418656,
   },
   {
-    id: 'sushi-eth-dai',
+    id: 'polygon-sushi-eth-dai',
     logo: 'polygon/ETH-DAI.png',
     name: 'ETH-DAI LP',
     token: 'ETH-DAI SLP',
@@ -7523,7 +7523,7 @@ export const polygonPools = [
     createdAt: 1620653470,
   },
   {
-    id: 'sushi-btc-eth',
+    id: 'polygon-sushi-btc-eth',
     logo: 'polygon/ETH-BTC.png',
     name: 'WBTC-ETH LP',
     token: 'WBTC-ETH SLP',
