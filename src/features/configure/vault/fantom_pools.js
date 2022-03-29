@@ -162,6 +162,7 @@ export const fantomPools = [
     depositsPaused: false,
     platform: 'WigoSwap',
     assets: ['WIGO'],
+    status: 'active',
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
