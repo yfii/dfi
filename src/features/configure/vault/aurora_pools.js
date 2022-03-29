@@ -70,7 +70,7 @@ export const auroraPools = [
     createdAt: 1647626968,
   },
   {
-    id: 'tri-mecha-near',
+    id: 'tri-mecha-near-eol',
     name: 'MECHA-NEAR LP',
     token: 'MECHA-NEAR LP',
     tokenDescription: 'Trisolaris',
@@ -85,8 +85,9 @@ export const auroraPools = [
     oracle: 'lps',
     oracleId: 'tri-mecha-near',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Trisolaris',
     assets: ['MECHA', 'NEAR'],
     risks: [
@@ -140,7 +141,7 @@ export const auroraPools = [
     createdAt: 1644674036,
   },
   {
-    id: 'tri-avax-near',
+    id: 'tri-avax-near-eol',
     name: 'AVAX-NEAR LP',
     token: 'AVAX-NEAR LP',
     tokenDescription: 'Trisolaris',
@@ -155,8 +156,9 @@ export const auroraPools = [
     oracle: 'lps',
     oracleId: 'tri-avax-near',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Trisolaris',
     assets: ['AVAX', 'NEAR'],
     risks: [
@@ -175,7 +177,7 @@ export const auroraPools = [
     createdAt: 1644673733,
   },
   {
-    id: 'tri-matic-near',
+    id: 'tri-matic-near-eol',
     name: 'MATIC-NEAR LP',
     token: 'MATIC-NEAR LP',
     tokenDescription: 'Trisolaris',
@@ -190,8 +192,9 @@ export const auroraPools = [
     oracle: 'lps',
     oracleId: 'tri-matic-near',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'Rewards',
     platform: 'Trisolaris',
     assets: ['MATIC', 'NEAR'],
     risks: [
@@ -210,7 +213,7 @@ export const auroraPools = [
     createdAt: 1644673492,
   },
   {
-    id: 'tri-bnb-near',
+    id: 'tri-bnb-near-eol',
     name: 'BNB-NEAR LP',
     token: 'BNB-NEAR LP',
     tokenDescription: 'Trisolaris',
@@ -225,8 +228,9 @@ export const auroraPools = [
     oracle: 'lps',
     oracleId: 'tri-bnb-near',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'Rewards',
     platform: 'Trisolaris',
     assets: ['BNB', 'NEAR'],
     risks: [
