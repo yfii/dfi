@@ -105,6 +105,7 @@ export const fantomPools = [
     buyTokenUrl: 'https://swap.spiritswap.finance/#/exchange/swap/SPIRIT/binSPIRIT',
     createdAt: 1643754413,
   },
+  /* wait for tomb
   {
     id: 'tomb-tshare-mai',
     name: 'TSHARE-MAI LP',
@@ -141,6 +142,7 @@ export const fantomPools = [
       'https://swap.tomb.com/#/swap?inputCurrency=0xfB98B335551a418cD0737375a2ea0ded62Ea213b&outputCurrency=0x4cdF39285D7Ca8eB3f090fDA0C069ba5F4145B37',
     createdAt: 1648564274,
   },
+  */
   {
     id: 'based-based-bshare',
     name: 'BASED-BSHARE LP',
