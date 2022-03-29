@@ -1,0 +1,17 @@
+name: Sync CI
+
+on: 
+  push:
+    branches: 
+      - 'prod'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: seguido/beefy-app-sync@v0.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.SYNC_GITHUB_TOKEN }}
+          GITHUB_USER: 'chebiN'
+          GITHUB_EMAIL: 'chebiN@beefy.com'

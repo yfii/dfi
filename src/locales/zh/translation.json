@@ -59,10 +59,14 @@
   "Vault-DepositsPausedTitle": "存入已暂停",
   "Vault-DepositsPausedMsg": "该金库目前暂停存入.",
   "Vault-DepositsRetiredTitle": "已废弃",
+  "Vault-DepositsRetiredUpgradeTitle": "已退役 - 我们已升级此金库，请移至新的改进版本",
   "Vault-DepositsRetiredRewardsTitle": "已退役 - 底层平台终止奖励。",
   "Vault-DepositsRetiredExploitTitle": "已退役 - 代币已被利用，资金在金库中是安全的。",
   "Vault-DepositsRetiredTVLTitle": "已退役 - 总锁仓量太低了。",
   "Vault-DepositsRetiredMsg": "该金库已退役,请儘速提出您的资金",
+  "Vault-LiquidityWarningTitle": "{{name}} 超额借贷，请查看 {{platform}} 以了解何时可以提款。",
+  "Vault-LendingWarningTitle": "此金库使用杠杆，请在存款前阅读文档。",
+  "Vault-GeneralWarningTitle": "存款前请自行研究。",
   "Vault-Staked": "已质押",
   "Vault-Description": "使用: {{vault}}",
   "Vault-Network": "选取网路",
@@ -85,6 +89,7 @@
   "Vault-Banner-CakeV2-SmarterValue": "{{count}}+ 年复投",
   "Vault-Banner-CakeV2-FairerLabel": "更公平",
   "Vault-Banner-CakeV2-FairerValue": "费用减少 {{percent}}%",
+  "Vault-Withdrawal-Platform-Notice-Geist": "尝试提款时，请将您的 gas 限制设置为 9.9M。任何 10M 或以上的设置都会失败。",
   "Vaults-Back": "回到金库",
   "Hide-Zero-Balances": "隐藏零余额资产",
   "Hide-Zero-Vault-Balances": "已存入金库",
@@ -102,7 +107,7 @@
   "Confirm": "确认",
   "Cancel": "取消",
   "No-Results": "无结果",
-  "docs": "文件",
+  "docs": "文档",
   "news": "最新消息",
   "source": "来源",
   "gov": "自理",
@@ -111,6 +116,7 @@
   "app": "app",
   "socials": "社群",
   "buy": "购买",
+  "insure": "保险",
   "products": "产品",
   "Powered-By": "技术支持来自",
   "IFO-Guide": "IFO 教程",
@@ -146,5 +152,29 @@
   "Wrap-BNB": "Wrap BNB",
   "Boost": "强化",
   "Experimental": "试验版",
-  "Select-Network": "选择网路"
+  "Select-Network": "选择网路",
+  "InsurAce-Title": "InsurAce 金库保险",
+  "InsurAce-Sections": [
+    {
+      "title": "什么是 InsurAce?",
+      "content": [
+        "InsurAce.io 是一个跨多个区块链运行的去中心化保险协议。 它为 DeFi 用户提供保险服务，以保护他们的投资免受智能合约风险的影响。"
+      ]
+    },
+    {
+      "title": "它是怎么运作的？",
+      "content": [
+        "Beefy 的合约帮您将代币存入底层平台，例如 Pancakeswap、TraderJoe 或 Spookyswap。如果 Beefy 的智能合约之一失败（例如我们的金库合约或策略合约）而您已支付保险费用，InsurAce 将承担您的损失。",
+        "相反，如果智能合约的漏洞属于底层平台（Pancakeswap、Traderjoe、Spookyswap），您的存款将不予支付。"
+      ]
+    },
+    {
+      "title": "溢价是多少？",
+      "content": ["每年 2.9%。 使用我们的自定义 Beefy 链接以享受 10% 的折扣（以Insur 代币支付）。"]
+    }
+  ],
+  "InsurAce-Button": "投保金库",
+  "V2Banner-Title": "此应用程序很快就会被 Beefy 的更新版 v2 界面所取代。",
+  "V2Banner-Text": "无需用户操作。您现在可以尝试新版本了。",
+  "V2Banner-Button": "试用测试版"
 }

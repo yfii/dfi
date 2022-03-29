@@ -15,7 +15,7 @@ export const bscPools = [
     oracle: 'tokens',
     oracleId: 'BIFI',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Beefy.Finance',
     assets: ['BIFI'],

@@ -50,10 +50,11 @@ const validatePools = async () => {
 
   let updates = {};
 
+  const uniquePoolId = new Set();
+
   for (let [chain, pools] of Object.entries(chainPools)) {
     console.log(`Validating ${pools.length} pools in ${chain}...`);
 
-    const uniquePoolId = new Set();
     const uniqueEarnedToken = new Set();
     const uniqueEarnedTokenAddress = new Set();
     const uniqueOracleId = new Set();
