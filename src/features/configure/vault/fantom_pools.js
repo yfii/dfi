@@ -210,7 +210,7 @@ export const fantomPools = [
   {
     id: 'beets-exploding-shrapnel',
     logo: 'fantom/Exploding Shrapnel.png',
-    name: 'Exploding Shrapnel!',
+    name: 'Exploding Shrapnel',
     token: 'Exploding Shrapnel',
     tokenDescription: 'Beethoven X',
     tokenAddress: '0x2Ba4953C75860e70Cd70f15a2D5Fe07DE832Bcd1',
