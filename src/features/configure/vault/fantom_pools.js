@@ -108,7 +108,7 @@ export const fantomPools = [
   {
     id: 'stargate-fantom-usdc',
     name: 'USDC',
-    token: 'USDC',
+    token: 'S*USDC',
     logo: 'single-assets/USDC.svg',
     tokenDescription: 'Stargate',
     tokenAddress: '0x12edeA9cd262006cC3C4E77c90d2CD2DD4b1eb97',
