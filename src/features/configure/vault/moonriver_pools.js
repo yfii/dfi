@@ -1160,7 +1160,7 @@ export const moonriverPools = [
     createdAt: 1637698536,
   },
   {
-    id: 'finn-dot-finn',
+    id: 'finn-dot-finn-eol',
     name: 'FINN-DOT',
     token: 'FINN-DOT LP',
     tokenDescription: 'Huckleberry',
@@ -1175,8 +1175,9 @@ export const moonriverPools = [
     oracle: 'lps',
     oracleId: 'finn-dot-finn',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Huckleberry',
     assets: ['FINN', 'DOT'],
     risks: [
