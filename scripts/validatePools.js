@@ -29,6 +29,8 @@ const oldValidOwners = [
   addressBook.fantom.platforms.beefyfinance.devMultisig,
   addressBook.polygon.platforms.beefyfinance.devMultisig,
   addressBook.arbitrum.platforms.beefyfinance.devMultisig,
+  // TODO delete
+  '0xEE546A2D2922C72441c5a0F23871901cB12f6D9B',
 ];
 
 const oldValidFeeRecipients = {};
@@ -286,7 +288,7 @@ const populateVaultsData = async (chain, pools, web3) => {
     return {
       ...pool,
       strategy: results[i].strategy,
-      owner: results[i].owner,
+      vaultOwner: results[i].owner,
       totalSupply: results[i].totalSupply,
     };
   });
