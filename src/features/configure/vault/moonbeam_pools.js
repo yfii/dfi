@@ -102,7 +102,7 @@ export const moonbeamPools = [
     addLiquidityUrl:
       'https://app.stellaswap.com/exchange/add/0x818ec0A7Fe18Ff94269904fCED6AE3DaE6d6dC0b/0xC19281F22A075E0F10351cd5D6Ea9f0AC63d4327',
     buyTokenUrl: 'https://app.stellaswap.com/exchange/swap',
-    createdAt: 1648745970,
+    createdAt: 1648745802,
   },
   {
     id: 'stellaswap-wglmr-ftm',
