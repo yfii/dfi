@@ -161,7 +161,7 @@ export const fantomPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Stargate',
-    assets: ['USDC'],
+    assets: ['sfUSDC'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
