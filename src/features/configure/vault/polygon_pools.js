@@ -200,6 +200,7 @@ export const polygonPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    withdrawalFee: '0%',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619/0xfe4546feFe124F30788c4Cc1BB9AA6907A7987F9',
     buyTokenUrl:
@@ -236,6 +237,7 @@ export const polygonPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    withdrawalFee: '0%',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x64875Aaa68d1d5521666C67d692Ee0B926b08b2F/0xfe4546feFe124F30788c4Cc1BB9AA6907A7987F9',
     buyTokenUrl:
@@ -272,6 +274,7 @@ export const polygonPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
+    withdrawalFee: '0%',
     addLiquidityUrl:
       'https://quickswap.exchange/#/add/0x9Bd9aD490dD3a52f096D229af4483b94D63BE618/0xfe4546feFe124F30788c4Cc1BB9AA6907A7987F9',
     buyTokenUrl:
