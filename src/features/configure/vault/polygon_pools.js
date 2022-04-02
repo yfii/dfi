@@ -819,7 +819,7 @@ export const polygonPools = [
     createdAt: 1641144218,
   },
   {
-    id: 'jarvis-5eur',
+    id: 'jarvis-5eur-eol',
     name: 'agEUR-4EUR',
     token: 'ag5eur',
     tokenDescription: 'Curve (Jarvis)',
@@ -834,8 +834,9 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'jarvis-5eur',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Other',
     assets: ['agEUR', '4EUR'],
     risks: [
@@ -7901,7 +7902,7 @@ export const polygonPools = [
     createdAt: 1620048408,
   },
   {
-    id: 'quick-aave-eth',
+    id: 'quick-aave-eth-eol',
     logo: 'polygon/AAVE-ETH.png',
     name: 'AAVE-ETH LP',
     token: 'AAVE-ETH QLP',
@@ -7917,8 +7918,9 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'quick-aave-eth',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'QuickSwap',
     assets: ['AAVE', 'ETH'],
     risks: [

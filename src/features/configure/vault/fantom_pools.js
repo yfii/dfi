@@ -3715,7 +3715,7 @@ export const fantomPools = [
     createdAt: 1641992405,
   },
   {
-    id: 'boo-hnd-wftm',
+    id: 'boo-hnd-wftm-eol',
     name: 'HND-FTM LP',
     token: 'HND-FTM LP',
     tokenDescription: 'SpookySwap',
@@ -3730,8 +3730,9 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'boo-hnd-wftm',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'SpookySwap',
     assets: ['HND', 'FTM'],
     risks: [
