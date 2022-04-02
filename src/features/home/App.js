@@ -84,7 +84,7 @@ export default function App({ children }) {
             />
             <div className={classes.container}>
               <div className={classes.children}>
-                <V2Banner />
+                {/*<V2Banner />*/}
                 <NetworkConnectNotice
                   web3={web3}
                   address={address}

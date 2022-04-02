@@ -67,8 +67,6 @@ async function generateLaunchpool() {
     periodFinish: periodFinish,
     partners: [
       {
-        logo: `stake/${partnerId}/logo.png`,
-        background: `stake/${partnerId}/bg.png`,
         text: '',
         website: '',
         social: {

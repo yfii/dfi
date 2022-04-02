@@ -75,7 +75,6 @@ export const bscStakePools = [
       },
     ],
   },
-
   {
     id: 'bifi-bnb-eol',
     name: 'BIFI',
