@@ -559,7 +559,6 @@ export const moonbeamPools = [
     buyTokenUrl: 'https://app.stellaswap.com/exchange/swap',
     createdAt: 1647525054,
   },
-
   {
     id: 'stellaswap-ape-wglmr',
     name: 'APE-GLMR LP',
