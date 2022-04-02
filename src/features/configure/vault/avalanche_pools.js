@@ -274,6 +274,7 @@ export const avalanchePools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'SingleStake',
+    depositFee: '1%',
     buyTokenUrl:
       'https://traderjoexyz.com/trade?outputCurrency=0x6e84a6216eA6dACC71eE8E6b0a5B7322EEbC0fDd',
     createdAt: 1631011023,
@@ -806,7 +807,7 @@ export const avalanchePools = [
     createdAt: 1645972427,
   },
   {
-    id: 'png-fire-wavax',
+    id: 'png-fire-wavax-eol',
     name: 'FIRE-AVAX LP',
     token: 'FIRE-AVAX LP',
     tokenDescription: 'Pangolin',
@@ -821,8 +822,9 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'png-fire-wavax',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Pangolin',
     assets: ['FIRE', 'AVAX'],
     risks: [
