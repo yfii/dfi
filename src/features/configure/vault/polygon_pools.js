@@ -315,7 +315,7 @@ export const polygonPools = [
     createdAt: 1642000487,
   },
   {
-    id: 'quick-genesis-quick',
+    id: 'quick-genesis-quick-eol',
     name: 'GENESIS-QUICK LP',
     token: 'GENESIS-QUICK LP',
     tokenDescription: 'QuickSwap',
@@ -329,8 +329,9 @@ export const polygonPools = [
     tvl: 0,
     oracle: 'lps',
     oracleId: 'quick-genesis-quick',
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'QuickSwap',
     assets: ['GENESIS', 'QUICK'],
     risks: [
