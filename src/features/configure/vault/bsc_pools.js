@@ -873,7 +873,7 @@ export const bscPools = [
     createdAt: 1633961805,
   },
   {
-    id: 'cakev2-insur-wbnb',
+    id: 'cakev2-insur-wbnb-eol',
     name: 'INSUR-BNB LP',
     token: 'INSUR-BNB LP2',
     tokenDescription: 'PancakeSwap',
@@ -888,8 +888,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cakev2-insur-wbnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'PancakeSwap',
     assets: ['INSUR', 'BNB'],
     risks: [
