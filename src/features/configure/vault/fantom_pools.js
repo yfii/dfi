@@ -185,7 +185,7 @@ export const fantomPools = [
     tokenAddress: '0xB5512e3fA8304d33Cdae4a40C21F1d3f70Eba45a',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
-    earnedToken: 'mooBooBeFTM-FTM',
+    earnedToken: 'mooBooFTM-BeFTM',
     earnedTokenAddress: '0xdC72257947bb8C154Ffaf94D9E7C60ed54fEd380',
     earnContractAddress: '0xdC72257947bb8C154Ffaf94D9E7C60ed54fEd380',
     pricePerFullShare: 1,
