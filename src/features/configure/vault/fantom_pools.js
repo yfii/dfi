@@ -757,7 +757,7 @@ export const fantomPools = [
     createdAt: 1646866226,
   },
   {
-    id: 'beets-beefy-tale-pause',
+    id: 'beets-beefy-tale',
     name: 'Beefy Tale Of Two Fantom Sisters',
     token: 'Beefy Tale Of Two Fantom Sisters',
     tokenDescription: 'Beethoven X',
@@ -772,7 +772,7 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'beets-beefy-tale',
     oraclePrice: 0,
-    depositsPaused: true,
+    depositsPaused: false,
     status: 'active',
     platform: 'Beethoven X',
     assets: ['beFTM', 'FTM'],
