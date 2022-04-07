@@ -211,7 +211,7 @@ export const fantomPools = [
       'https://spookyswap.finance/add/0x7381eD41F6dE418DdE5e84B55590422a57917886/FTM',
     buyTokenUrl:
       'https://spookyswap.finance/swap?outputCurrency=0x7381eD41F6dE418DdE5e84B55590422a57917886',
-    createdAt: 1648778213627,
+    createdAt: 1648777474,
   },
   {
     id: 'tomb-tomb-wftm',
