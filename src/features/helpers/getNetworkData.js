@@ -397,6 +397,7 @@ export const getNetworkStables = () => {
         'MIM',
         'USDC',
         'UST',
+        'USTw',
       ];
     case 137:
       return [
@@ -409,6 +410,7 @@ export const getNetworkStables = () => {
         'FRAX',
         'rUSD',
         'UST',
+        'USTw',
         'WUSD',
         'jEUR',
         'jGBP',
@@ -438,6 +440,7 @@ export const getNetworkStables = () => {
         'DOLA',
         'TUSD',
         'UST',
+        'USTw',
         'asUSDC',
         'LAMBDA',
         'DEI',
