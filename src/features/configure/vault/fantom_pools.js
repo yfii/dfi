@@ -2473,7 +2473,7 @@ export const fantomPools = [
     createdAt: 1644011850,
   },
   {
-    id: '2omb-2omb-2share',
+    id: '2omb-2omb-2share-eol',
     name: '2OMB-2SHARE LP',
     token: '2OMB-2SHARE LP',
     tokenDescription: 'SpookySwap (2omb)',
@@ -2488,8 +2488,9 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: '2omb-2omb-2share',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Other',
     assets: ['2OMB', '2SHARES'],
     risks: [
@@ -3463,7 +3464,7 @@ export const fantomPools = [
     createdAt: 1642560383,
   },
   {
-    id: '2omb-2omb-ftm',
+    id: '2omb-2omb-ftm-eol',
     name: '2OMB-FTM LP',
     token: '2OMB-FTM LP',
     tokenDescription: 'SpookySwap (2omb)',
@@ -3478,8 +3479,9 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: '2omb-2omb-ftm',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Other',
     assets: ['2OMB', 'FTM'],
     risks: [
@@ -3499,7 +3501,7 @@ export const fantomPools = [
     createdAt: 1642150805,
   },
   {
-    id: '2omb-2share-ftm',
+    id: '2omb-2share-ftm-eol',
     name: '2SHARES-FTM LP',
     token: '2SHARES-FTM LP',
     tokenDescription: 'SpookySwap (2omb)',
@@ -3514,8 +3516,9 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: '2omb-2share-ftm',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Other',
     assets: ['2SHARES', 'FTM'],
     risks: [
