@@ -105,7 +105,7 @@ export const avalanchePools = [
     stratType: 'StratSingle',
     buyTokenUrl:
       'https://www.traderjoexyz.com/trade?outputCurrency=0x6e84a6216eA6dACC71eE8E6b0a5B7322EEbC0fDd',
-    createdAt: 1633521927,
+    createdAt: 1649422919,
   },
   {
     id: 'curve-avax-f-avaxl',
@@ -509,6 +509,7 @@ export const avalanchePools = [
     oracleId: 'JOE',
     oraclePrice: 0,
     depositsPaused: false,
+    withdrawalFee: '0.0%',
     status: 'active',
     platform: 'Trader Joe',
     assets: ['JOE'],
