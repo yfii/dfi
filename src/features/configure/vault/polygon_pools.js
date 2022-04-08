@@ -715,7 +715,7 @@ export const polygonPools = [
     createdAt: 1641937774,
   },
   {
-    id: 'quick-psp-matic',
+    id: 'quick-psp-matic-eol',
     name: 'PSP-MATIC LP',
     token: 'PSP-MATIC LP',
     tokenDescription: 'QuickSwap',
@@ -729,8 +729,9 @@ export const polygonPools = [
     tvl: 0,
     oracle: 'lps',
     oracleId: 'quick-psp-matic',
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'QuickSwap',
     assets: ['PSP', 'MATIC'],
     risks: [

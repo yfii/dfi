@@ -13904,7 +13904,7 @@ export const bscPools = [
     createdAt: 1617017395,
   },
   {
-    id: 'ellipsis-eps-bnb',
+    id: 'ellipsis-eps-bnb-eol',
     logo: 'uncategorized/epsBNB.png',
     name: 'EPS-BNB LP',
     token: 'EPS-BNB LP',
@@ -13920,8 +13920,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'ellipsis-eps-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Ellipsis',
     assets: ['EPS', 'BNB'],
     addLiquidityUrl:

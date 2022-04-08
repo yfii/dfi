@@ -1299,7 +1299,7 @@ export const avalanchePools = [
     createdAt: 1643975317,
   },
   {
-    id: 'png-mim-usdc.e',
+    id: 'png-mim-usdc.e-eol',
     name: 'MIM-USDC.e LP',
     token: 'MIM-USDC.e LP',
     tokenDescription: 'Pangolin',
@@ -1314,8 +1314,9 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'png-mim-usdc.e',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Pangolin',
     assets: ['MIM', 'USDCe'],
     risks: [
@@ -2601,7 +2602,7 @@ export const avalanchePools = [
     createdAt: 1637589059,
   },
   {
-    id: 'joe-wavax-boo',
+    id: 'joe-wavax-boo-eol',
     name: 'BOO-AVAX LP',
     token: 'BOO-AVAX JLP',
     tokenDescription: 'Trader Joe',
@@ -2616,8 +2617,9 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'joe-wavax-boo',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Trader Joe',
     assets: ['BOO', 'AVAX'],
     risks: [
@@ -3439,7 +3441,7 @@ export const avalanchePools = [
     createdAt: 1632848062,
   },
   {
-    id: 'joe-weth.e-usdc.e',
+    id: 'joe-weth.e-usdc.e-eol',
     name: 'WETH.e-USDC.e LP',
     token: 'WETH.e-USDC.e JLP',
     tokenDescription: 'Trader Joe',
@@ -3454,8 +3456,9 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'joe-weth.e-usdc.e',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Trader Joe',
     assets: ['WETHe', 'USDCe'],
     risks: [
@@ -3473,7 +3476,7 @@ export const avalanchePools = [
     createdAt: 1632849037,
   },
   {
-    id: 'joe-wbtc.e-usdc.e',
+    id: 'joe-wbtc.e-usdc.e-eol',
     name: 'WBTC.e-USDC.e LP',
     token: 'WBTC.e-USDC.e JLP',
     tokenDescription: 'Trader Joe',
@@ -3488,8 +3491,9 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'joe-wbtc.e-usdc.e',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Trader Joe',
     assets: ['WBTCe', 'USDCe'],
     risks: [
