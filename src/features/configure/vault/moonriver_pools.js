@@ -69,7 +69,7 @@ export const moonriverPools = [
     createdAt: 1649369063,
   },
   {
-    id: 'solarbeam-xcKSM-stKSM',
+    id: 'solarbeam-xcksm-stksm',
     name: 'xcKSM-stKSM',
     token: 'xcKSM-stKSM',
     tokenDescription: 'SolarBeam',
@@ -82,7 +82,7 @@ export const moonriverPools = [
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
-    oracleId: 'solarbeam-xcKSM-stKSM',
+    oracleId: 'solarbeam-xcksm-stksm',
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
