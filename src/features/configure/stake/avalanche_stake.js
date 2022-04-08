@@ -43,7 +43,7 @@ export const avalancheStakePools = [
     tokenDecimals: 18,
     tokenAddress: '0x1F2A8034f444dc55F963fb5925A9b6eb744EeE2c',
     tokenOracle: 'tokens',
-    tokenOracleId: 'JOE',
+    tokenOracleId: 'beJOE',
     earnedToken: 'JOE',
     earnedTokenDecimals: 18,
     earnedTokenAddress: '0x6e84a6216eA6dACC71eE8E6b0a5B7322EEbC0fDd',

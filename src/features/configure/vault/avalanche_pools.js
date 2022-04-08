@@ -86,7 +86,7 @@ export const avalanchePools = [
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'tokens',
-    oracleId: 'JOE',
+    oracleId: 'beJOE',
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
