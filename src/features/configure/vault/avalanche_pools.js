@@ -76,7 +76,7 @@ export const avalanchePools = [
     logo: 'single-assets/beJOE.png',
     name: 'beJOE',
     token: 'beJOE',
-    tokenDescription: 'Beefy JOE',
+    tokenDescription: 'Beefy.Finance',
     tokenAddress: '0x1F2A8034f444dc55F963fb5925A9b6eb744EeE2c',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
@@ -90,7 +90,7 @@ export const avalanchePools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Beefy',
+    platform: 'Beefy.Finance',
     assets: ['beJOE'],
     withdrawalFee: '0.1%',
     risks: [
