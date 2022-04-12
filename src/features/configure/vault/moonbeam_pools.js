@@ -245,7 +245,7 @@ export const moonbeamPools = [
     createdAt: 1648746234,
   },
   {
-    id: 'stellaswap-ust-wglmr-eol',
+    id: 'stellaswap-axlust-wglmr',
     name: 'UST-GLMR LP',
     token: 'UST-GLMR LP',
     tokenDescription: 'Stellaswap',
@@ -258,11 +258,10 @@ export const moonbeamPools = [
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
-    oracleId: 'stellaswap-ust-wglmr',
+    oracleId: 'stellaswap-axlust-wglmr',
     oraclePrice: 0,
-    depositsPaused: true,
-    status: 'eol',
-    retireReason: 'rewards',
+    depositsPaused: false,
+    status: 'active',
     platform: 'Stellaswap',
     assets: ['UST', 'GLMR'],
     risks: [
