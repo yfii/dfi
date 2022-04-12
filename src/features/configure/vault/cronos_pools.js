@@ -52,6 +52,7 @@ export const cronosPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
+    withdrawalFee: '0.0%',
     platform: 'VVS',
     assets: ['ALI', 'CRO'],
     risks: [
