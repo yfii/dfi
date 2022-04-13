@@ -439,7 +439,6 @@ export const bscPools = [
       'CONTRACTS_VERIFIED',
     ],
     stratType: 'StratLP',
-    withdrawalFee: '0%',
     addLiquidityUrl:
       'https://exchange.babyswap.finance/#/add/0x1CE0c2827e2eF14D5C4f29a091d735A204794041/0x55d398326f99059fF775485246999027B3197955',
     buyTokenUrl:
@@ -2263,7 +2262,7 @@ export const bscPools = [
     createdAt: 1629635688,
   },
   {
-    id: 'cakev2-bmon-wbnb',
+    id: 'cakev2-bmon-wbnb-eol',
     name: 'BMON-BNB LP',
     token: 'BMON-BNB LP2',
     tokenDescription: 'PancakeSwap',
@@ -2278,8 +2277,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cakev2-bmon-wbnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'PancakeSwap',
     assets: ['BMON', 'BNB'],
     risks: [
