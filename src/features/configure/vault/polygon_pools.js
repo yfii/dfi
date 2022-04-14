@@ -2498,7 +2498,7 @@ export const polygonPools = [
     createdAt: 1630426679,
   },
   {
-    id: 'sushi-axs-eth',
+    id: 'sushi-axs-eth-eol',
     name: 'AXS-ETH SLP',
     token: 'AXS-ETH SLP',
     tokenDescription: 'SushiSwap',
@@ -2513,8 +2513,9 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'sushi-axs-eth',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'SushiSwap',
     assets: ['AXS', 'ETH'],
     risks: [
