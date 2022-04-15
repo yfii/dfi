@@ -1559,7 +1559,7 @@ export const moonriverPools = [
     createdAt: 1635794634,
   },
   {
-    id: 'solarbeam-bnb-busd',
+    id: 'solarbeam-bnb-busd-eol',
     name: 'BNB-BUSD',
     token: 'BNB-BUSD LP',
     tokenDescription: 'SolarBeam',
@@ -1574,8 +1574,9 @@ export const moonriverPools = [
     oracle: 'lps',
     oracleId: 'solarbeam-bnb-busd',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'SolarBeam',
     assets: ['BNB', 'BUSD'],
     risks: [
@@ -1742,7 +1743,7 @@ export const moonriverPools = [
     retiredReason: 'tvl',
   },
   {
-    id: 'solarbeam-avax-wmovr',
+    id: 'solarbeam-avax-wmovr-eol',
     name: 'AVAX-MOVR',
     token: 'AVAX-MOVR LP',
     tokenDescription: 'SolarBeam',
@@ -1757,8 +1758,9 @@ export const moonriverPools = [
     oracle: 'lps',
     oracleId: 'solarbeam-avax-wmovr',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'SolarBeam',
     assets: ['AVAX', 'MOVR'],
     risks: [
