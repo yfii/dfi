@@ -4998,7 +4998,7 @@ export const avalanchePools = [
     status: 'eol',
     retireReason: 'rewards',
     platform: 'Lydia',
-    assets: ['LYD', 'USDTo'],
+    assets: ['LYD', 'USDT'],
     addLiquidityUrl:
       'https://www.lydia.finance/#/add/0x4c9b4e1ac6f24cde3660d5e4ef1ebf77c710c084/0xde3a24028580884448a5397872046a019649b084',
     buyTokenUrl:
@@ -5088,7 +5088,7 @@ export const avalanchePools = [
     depositsPaused: true,
     status: 'eol',
     platform: 'OliveSwap',
-    assets: ['OLIVE', 'USDTo'],
+    assets: ['OLIVE', 'USDT'],
     addLiquidityUrl:
       'https://swap.olive.cash/#/add/0xde3A24028580884448a5397872046a019649b084/0x617724974218A18769020A70162165A539c07E8a',
     buyTokenUrl:
@@ -5359,7 +5359,7 @@ export const avalanchePools = [
     status: 'eol',
     retireReason: 'rewards',
     platform: 'Pangolin',
-    assets: ['USDTo', 'PNG'],
+    assets: ['USDT', 'PNG'],
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/0x60781C2586D68229fde47564546784ab3fACA982/0xde3A24028580884448a5397872046a019649b084',
     buyTokenUrl:
@@ -5413,7 +5413,7 @@ export const avalanchePools = [
     status: 'eol',
     retireReason: 'rewards',
     platform: 'Pangolin',
-    assets: ['USDTo', 'AVAX'],
+    assets: ['USDT', 'AVAX'],
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0xde3A24028580884448a5397872046a019649b084',
     buyTokenUrl:
