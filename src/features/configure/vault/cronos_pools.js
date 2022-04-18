@@ -54,6 +54,7 @@ export const cronosPools = [
     status: 'active',
     platform: 'VVS',
     assets: ['VVS', 'VERSA'],
+    withdrawalFee: '0.0%',
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
@@ -89,6 +90,7 @@ export const cronosPools = [
     status: 'active',
     platform: 'VVS',
     assets: ['VVS', 'TONIC'],
+    withdrawalFee: '0.0%',
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
