@@ -72,8 +72,8 @@ export const avalanchePools = [
   },
   {
     id: 'joe-usdt-wavax',
-    name: 'USDt-AVAX LP',
-    token: 'USDt-AVAX JLP',
+    name: 'USDT-AVAX LP',
+    token: 'USDT-AVAX JLP',
     tokenDescription: 'Trader Joe',
     tokenAddress: '0xbb4646a764358ee93c2a9c4a147d5aDEd527ab73',
     tokenDecimals: 18,
@@ -89,7 +89,7 @@ export const avalanchePools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Trader Joe',
-    assets: ['USDt', 'AVAX'],
+    assets: ['USDT', 'AVAX'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
