@@ -1258,7 +1258,7 @@ export const bscPools = [
     createdAt: 1641217338,
   },
   {
-    id: 'mdex-lac-busd',
+    id: 'mdex-lac-busd-eol',
     name: 'LAC-BUSD LP',
     token: 'LAC-BUSD LP',
     tokenDescription: 'Mdex',
@@ -1273,8 +1273,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'mdex-lac-busd',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Mdex',
     assets: ['LAC', 'BUSD'],
     risks: [
