@@ -246,7 +246,7 @@ export const avalanchePools = [
     createdAt: 1649323990,
   },
   {
-    id: 'pangolin-lost-wavax',
+    id: 'png-wavax-lost',
     name: 'LOST-AVAX LP',
     token: 'LOST-AVAX LP',
     tokenDescription: 'Pangolin',
@@ -259,7 +259,7 @@ export const avalanchePools = [
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
-    oracleId: 'pangolin-lost-wavax',
+    oracleId: 'png-wavax-lost',
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
@@ -276,7 +276,8 @@ export const avalanchePools = [
     stratType: 'StratLP',
     addLiquidityUrl:
       'https://app.pangolin.exchange/#/add/AVAX/0x449674B82F05d498E126Dd6615a1057A9c088f2C',
-    buyTokenUrl: 'https://app.pangolin.exchange/#/swap',
+    buyTokenUrl:
+      'https://app.pangolin.exchange/#/swap?outputCurrency=0x449674B82F05d498E126Dd6615a1057A9c088f2C',
     createdAt: 1650093205,
   },
   {
