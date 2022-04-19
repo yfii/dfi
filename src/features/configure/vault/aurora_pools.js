@@ -370,7 +370,7 @@ export const auroraPools = [
     createdAt: 1644438518,
   },
   {
-    id: 'tri-atust-near',
+    id: 'tri-atust-near-eol',
     name: 'atUST-NEAR LP',
     token: 'atUST-NEAR LP',
     tokenDescription: 'Trisolaris',
@@ -385,8 +385,9 @@ export const auroraPools = [
     oracle: 'lps',
     oracleId: 'tri-atust-near',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Trisolaris',
     assets: ['UST', 'NEAR'],
     risks: [
@@ -405,7 +406,7 @@ export const auroraPools = [
     createdAt: 1644000794,
   },
   {
-    id: 'tri-near-atluna',
+    id: 'tri-near-atluna-eol',
     name: 'atLUNA-NEAR LP',
     token: 'atLUNA-NEAR LP',
     tokenDescription: 'Trisolaris',
@@ -420,8 +421,9 @@ export const auroraPools = [
     oracle: 'lps',
     oracleId: 'tri-near-atluna',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Trisolaris',
     assets: ['LUNA', 'NEAR'],
     risks: [
