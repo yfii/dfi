@@ -198,7 +198,7 @@ export const avalanchePools = [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
       'IL_NONE',
-      'MCAP_MICRO',
+      'MCAP_LARGE',
       'AUDIT',
       'CONTRACTS_VERIFIED',
     ],
