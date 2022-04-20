@@ -2178,7 +2178,7 @@ export const avalanchePools = [
   },
   {
     id: 'png-png',
-    logo: 'single-assets/PNG.svg',
+    logo: 'single-assets/PNG.png',
     name: 'PNG',
     token: 'PNG',
     tokenDescription: 'Pangolin',
@@ -4034,7 +4034,7 @@ export const avalanchePools = [
   },
   {
     id: 'pangolin-png-pause-eol',
-    logo: 'single-assets/PNG.svg',
+    logo: 'single-assets/PNG.png',
     name: 'PNG',
     token: 'PNG',
     tokenDescription: 'Pangolin',
