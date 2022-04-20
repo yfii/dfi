@@ -1450,7 +1450,7 @@ export const moonriverPools = [
     createdAt: 1635789990,
   },
   {
-    id: 'solarbeam-dai-usdc',
+    id: 'solarbeam-dai-usdc-eol',
     name: 'DAI-USDC',
     token: 'DAI-USDC LP',
     tokenDescription: 'SolarBeam',
@@ -1465,8 +1465,9 @@ export const moonriverPools = [
     oracle: 'lps',
     oracleId: 'solarbeam-dai-usdc',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'SolarBeam',
     assets: ['DAI', 'USDC'],
     risks: [
