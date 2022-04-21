@@ -119,6 +119,7 @@ export const bscPools = [
     status: 'active',
     platform: 'Valas',
     assets: ['BTCB'],
+    withdrawalFee: '0.01%',
     risks: [
       'COMPLEXITY_MEDIUM',
       'BATTLE_TESTED',
@@ -154,6 +155,7 @@ export const bscPools = [
     status: 'active',
     platform: 'Valas',
     assets: ['ETH'],
+    withdrawalFee: '0.01%',
     risks: [
       'COMPLEXITY_MEDIUM',
       'BATTLE_TESTED',
@@ -189,6 +191,7 @@ export const bscPools = [
     status: 'active',
     platform: 'Valas',
     assets: ['BUSD'],
+    withdrawalFee: '0.01%',
     risks: [
       'COMPLEXITY_MEDIUM',
       'BATTLE_TESTED',
@@ -224,6 +227,7 @@ export const bscPools = [
     status: 'active',
     platform: 'Valas',
     assets: ['USDT'],
+    withdrawalFee: '0.01%',
     risks: [
       'COMPLEXITY_MEDIUM',
       'BATTLE_TESTED',
@@ -259,6 +263,7 @@ export const bscPools = [
     status: 'active',
     platform: 'Valas',
     assets: ['USDC'],
+    withdrawalFee: '0.01%',
     risks: [
       'COMPLEXITY_MEDIUM',
       'BATTLE_TESTED',
@@ -294,6 +299,7 @@ export const bscPools = [
     status: 'active',
     platform: 'Valas',
     assets: ['DAI'],
+    withdrawalFee: '0.01%',
     risks: [
       'COMPLEXITY_MEDIUM',
       'BATTLE_TESTED',
@@ -329,6 +335,7 @@ export const bscPools = [
     status: 'active',
     platform: 'Valas',
     assets: ['TUSD'],
+    withdrawalFee: '0.01%',
     risks: [
       'COMPLEXITY_MEDIUM',
       'BATTLE_TESTED',
