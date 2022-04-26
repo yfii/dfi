@@ -5,6 +5,10 @@ const appStyle = theme => ({
     'html,body': {
       backgroundColor: theme.palette.background.default,
     },
+    '#WEB3_CONNECT_MODAL_ID': {
+      position: 'relative',
+      zIndex: 2100,
+    },
   },
   page: {
     backgroundColor: theme.palette.background.default,
