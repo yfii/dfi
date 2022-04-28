@@ -36,6 +36,39 @@ export const avalancheStakePools = [
   },
 
   {
+    id: 'moo_beJOE',
+    name: 'Beefy',
+    logo: 'single-assets/beJOE.png',
+    token: 'beJOE',
+    tokenDecimals: 18,
+    tokenAddress: '0x1F2A8034f444dc55F963fb5925A9b6eb744EeE2c',
+    tokenOracle: 'tokens',
+    tokenOracleId: 'beJOE',
+    earnedToken: 'JOE',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x6e84a6216eA6dACC71eE8E6b0a5B7322EEbC0fDd',
+    earnContractAddress: '0x2E360492120cebeB2527c41BAE1a4f21992D86Ec',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'JOE',
+    partnership: false,
+    status: 'active',
+    fixedStatus: true,
+    partners: [
+      {
+        logo: 'stake/beefy/beefyfinance.png',
+        background: 'stake/beefy/background.png',
+        text: 'beJOE is Beefy Staked JOE. The token is pegged to JOE and can be staked on the Beefy platform to earn JOE or more beJOE. beJOE gives stakers access to 5% of all Beefy Trader Joe Boosted farm rewards. You can burn beJOE for JOE if there is available JOE reserves.',
+        website: 'https://beefy.com',
+        social: {
+          telegram: 'http://t.me/beefyfinance',
+          twitter: 'https://twitter.com/beefyfinance',
+        },
+      },
+    ],
+  },
+
+  {
     id: 'moo_AVAX-nitro',
     name: 'Nitro Network',
     logo: 'single-assets/AVAX.svg',

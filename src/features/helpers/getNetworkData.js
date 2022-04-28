@@ -602,6 +602,15 @@ export const getNetworkConnectors = t => {
               return provider;
             },
           },
+          'custom-bitkeep': {
+            display: {
+              name: 'BitKeep Wallet',
+              description: 'Connect your BitKeep Wallet',
+              logo: require(`images/wallets/bitkeep-wallet.png`),
+            },
+            package: 'bitkeep',
+            connector: connectors.injected,
+          },
         },
       };
     case 128:
@@ -646,6 +655,15 @@ export const getNetworkConnectors = t => {
               logo: require(`images/wallets/math-wallet.svg`),
             },
             package: 'math',
+            connector: connectors.injected,
+          },
+          'custom-bitkeep': {
+            display: {
+              name: 'BitKeep Wallet',
+              description: 'Connect your BitKeep Wallet',
+              logo: require(`images/wallets/bitkeep-wallet.png`),
+            },
+            package: 'bitkeep',
             connector: connectors.injected,
           },
         },
@@ -706,6 +724,15 @@ export const getNetworkConnectors = t => {
               return provider;
             },
           },
+          'custom-bitkeep': {
+            display: {
+              name: 'BitKeep Wallet',
+              description: 'Connect your BitKeep Wallet',
+              logo: require(`images/wallets/bitkeep-wallet.png`),
+            },
+            package: 'bitkeep',
+            connector: connectors.injected,
+          },
         },
       };
     case 137:
@@ -765,6 +792,15 @@ export const getNetworkConnectors = t => {
 
               return provider;
             },
+          },
+          'custom-bitkeep': {
+            display: {
+              name: 'BitKeep Wallet',
+              description: 'Connect your BitKeep Wallet',
+              logo: require(`images/wallets/bitkeep-wallet.png`),
+            },
+            package: 'bitkeep',
+            connector: connectors.injected,
           },
         },
       };
@@ -837,6 +873,15 @@ export const getNetworkConnectors = t => {
               return provider;
             },
           },
+          'custom-bitkeep': {
+            display: {
+              name: 'BitKeep Wallet',
+              description: 'Connect your BitKeep Wallet',
+              logo: require(`images/wallets/bitkeep-wallet.png`),
+            },
+            package: 'bitkeep',
+            connector: connectors.injected,
+          },
         },
       };
     case 1666600000:
@@ -869,6 +914,15 @@ export const getNetworkConnectors = t => {
 
               return provider;
             },
+          },
+          'custom-bitkeep': {
+            display: {
+              name: 'BitKeep Wallet',
+              description: 'Connect your BitKeep Wallet',
+              logo: require(`images/wallets/bitkeep-wallet.png`),
+            },
+            package: 'bitkeep',
+            connector: connectors.injected,
           },
         },
       };
@@ -924,6 +978,15 @@ export const getNetworkConnectors = t => {
 
               return provider;
             },
+          },
+          'custom-bitkeep': {
+            display: {
+              name: 'BitKeep Wallet',
+              description: 'Connect your BitKeep Wallet',
+              logo: require(`images/wallets/bitkeep-wallet.png`),
+            },
+            package: 'bitkeep',
+            connector: connectors.injected,
           },
         },
       };
@@ -1125,6 +1188,15 @@ export const getNetworkConnectors = t => {
 
               return provider;
             },
+          },
+          'custom-bitkeep': {
+            display: {
+              name: 'BitKeep Wallet',
+              description: 'Connect your BitKeep Wallet',
+              logo: require(`images/wallets/bitkeep-wallet.png`),
+            },
+            package: 'bitkeep',
+            connector: connectors.injected,
           },
         },
       };

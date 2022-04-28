@@ -36,6 +36,38 @@ export const moonbeamStakePools = [
   },
 
   {
+    id: 'moo_stellaswap-stella-usdc-stellaswap',
+    name: 'StellaSwap',
+    assets: ['STELLA', 'USDC'],
+    token: 'mooStellaswapSTELLA-USDC',
+    tokenDecimals: 18,
+    tokenAddress: '0xfb47EC2f215D579cc4Cb0B19ec21AD58749518ad',
+    tokenOracle: 'lps',
+    tokenOracleId: 'stellaswap-stella-usdc',
+    earnedToken: 'STELLA',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x0E358838ce72d5e61E0018a2ffaC4bEC5F4c88d2',
+    earnContractAddress: '0xc3a4fdcba79DB04b4C3e352b1C467B3Ba909D84A',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'STELLA',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1653228930,
+    partners: [
+      {
+        text: "StellaSwap is the first and leading Moonbeam DEX that offers an integrated gateway to the DeFi world. Users can swap, earn, yield farm, bridge assets, explore new projects and engage in NFT trading all from a single unified platform. StellaSwap's products are structured in such a way that facilitates decentralized governance of STELLA holders, while continuing to innovate on the collective foundations by design.",
+        website: 'https://stellaswap.com/',
+        social: {
+          telegram: '',
+          twitter: '',
+        },
+      },
+    ],
+  },
+
+  {
     id: 'moo_stellaswap-stella-wglmr-stellaswap',
     name: 'StellaSwap',
     assets: ['STELLA', 'GLMR'],

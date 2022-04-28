@@ -65,10 +65,118 @@ export const fusePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://app-v1.voltage.finance/#/add/FUSE/0x5DD8015cec49F4dB01fd228F688BF30337d3e0A9',
+      'https://app-v1.voltage.finance/#/add/fuse/0x5DD8015cec49F4dB01fd228F688BF30337d3e0A9',
     buyTokenUrl:
-      'https://app.fuse.fi/#/swap?inputCurrency=FUSE&outputCurrency=0x5DD8015cec49F4dB01fd228F688BF30337d3e0A9',
+      'https://app.fuse.fi/#/swap?outputCurrency=0x5DD8015cec49F4dB01fd228F688BF30337d3e0A9',
     createdAt: 1644603605,
+  },
+  {
+    id: 'voltagev2-xvolt',
+    name: 'xVOLT',
+    token: 'xVOLT',
+    logo: 'single-assets/xVOLT.svg',
+    tokenDescription: 'Voltage',
+    tokenAddress: '0x97a6e78c9208c21afaDa67e7E61d7ad27688eFd1',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooVoltagexVOLT',
+    earnedTokenAddress: '0x49E9d6f4BbD8c51d92f163837fffdb611d705392',
+    earnContractAddress: '0x49E9d6f4BbD8c51d92f163837fffdb611d705392',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'tokens',
+    oracleId: 'xVOLT',
+    oraclePrice: 0,
+    withdrawalFee: '0%',
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Voltage',
+    assets: ['xVOLT'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_MICRO',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'SingleStake',
+    addLiquidityUrl: 'https://app.voltage.finance/#/stake',
+    buyTokenUrl:
+      'https://app.voltage.finance/index.html#/swap?outputCurrency=0x34Ef2Cc892a88415e9f02b91BfA9c91fC0bE6bD4',
+    createdAt: 1649322250,
+  },
+  {
+    id: 'sushi-fuse-usdc-usdt',
+    name: 'USDC-USDT LP',
+    token: 'USDC-USDT LP',
+    tokenDescription: 'SushiSwap',
+    tokenAddress: '0x00E485d833099679eD7D121CE46a9557ea8aDa1e',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooSushiUSDC-USDT',
+    earnedTokenAddress: '0x4D3988B5dc8267fB5FE6dB87681aDA8AC6732113',
+    earnContractAddress: '0x4D3988B5dc8267fB5FE6dB87681aDA8AC6732113',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'sushi-fuse-usdc-usdt',
+    oraclePrice: 0,
+    withdrawalFee: '0%',
+    depositsPaused: false,
+    status: 'active',
+    platform: 'SushiSwap',
+    assets: ['USDC', 'USDT'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
+    addLiquidityUrl:
+      'https://app.sushi.com/add/0x620fd5fa44BE6af63715Ef4E65DDFA0387aD13F5/0xFaDbBF8Ce7D5b7041bE672561bbA99f79c532e10',
+    buyTokenUrl:
+      'https://app.sushi.com/swap?inputCurrency=0x620fd5fa44BE6af63715Ef4E65DDFA0387aD13F5&outputCurrency=0xFaDbBF8Ce7D5b7041bE672561bbA99f79c532e10',
+    createdAt: 1649176980,
+  },
+  {
+    id: 'voltagev2-wfuse-ageur',
+    name: 'agEUR-FUSE LP',
+    token: 'agEUR-FUSE LP',
+    tokenDescription: 'Voltage',
+    tokenAddress: '0xeeD7A28eEd4E768fCD46dE3642AB73488De77e11',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooVoltageagEUR-FUSE',
+    earnedTokenAddress: '0xfD410441D8727401B9047d9E1cF8b8260Ac10526',
+    earnContractAddress: '0xfD410441D8727401B9047d9E1cF8b8260Ac10526',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'voltagev2-wfuse-ageur',
+    oraclePrice: 0,
+    withdrawalFee: '0%',
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Voltage',
+    assets: ['agEUR', 'FUSE'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
+    addLiquidityUrl:
+      'https://app.voltage.finance/index.html#/add/fuse/0xeFAeeE334F0Fd1712f9a8cc375f427D9Cdd40d73/',
+    buyTokenUrl:
+      'https://app.voltage.finance/index.html#/swap?outputCurrency=0xeFAeeE334F0Fd1712f9a8cc375f427D9Cdd40d73',
+    createdAt: 1649336945,
   },
   {
     id: 'voltagev2-fusd-bnb',
@@ -173,9 +281,9 @@ export const fusePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://app.voltage.finance/index.html#/add/0x0BE9e53fd7EDaC9F859882AfdDa116645287C629/0xa722c13135930332Eb3d749B2F0906559D2C5b99',
+      'https://app.voltage.finance/index.html#/add/fuse/0xa722c13135930332Eb3d749B2F0906559D2C5b99',
     buyTokenUrl:
-      'https://app.voltage.finance/index.html#/swap?inputCurrency=0x0BE9e53fd7EDaC9F859882AfdDa116645287C629&outputCurrency=0xa722c13135930332Eb3d749B2F0906559D2C5b99',
+      'https://app.voltage.finance/index.html#/swap?outputCurrency=0xa722c13135930332Eb3d749B2F0906559D2C5b99',
     createdAt: 1647458875,
   },
   {
@@ -209,9 +317,9 @@ export const fusePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://app.voltage.finance/index.html#/add/0x0BE9e53fd7EDaC9F859882AfdDa116645287C629/0x620fd5fa44BE6af63715Ef4E65DDFA0387aD13F5',
+      'https://app.voltage.finance/index.html#/add/fuse/0x6a5F6A8121592BeCd6747a38d67451B310F7f156',
     buyTokenUrl:
-      'https://app.voltage.finance/index.html#/swap?inputCurrency=0x0BE9e53fd7EDaC9F859882AfdDa116645287C629&outputCurrency=0x620fd5fa44BE6af63715Ef4E65DDFA0387aD13F5',
+      'https://app.voltage.finance/index.html#/swap?outputCurrency=0x6a5F6A8121592BeCd6747a38d67451B310F7f156',
     createdAt: 1647505250,
   },
   {
@@ -245,9 +353,9 @@ export const fusePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://app.voltage.finance/index.html#/add/0x0BE9e53fd7EDaC9F859882AfdDa116645287C629/0x620fd5fa44BE6af63715Ef4E65DDFA0387aD13F5',
+      'https://app.voltage.finance/index.html#/add/fuse/0x620fd5fa44BE6af63715Ef4E65DDFA0387aD13F5',
     buyTokenUrl:
-      'https://app.voltage.finance/index.html#/swap?inputCurrency=0x0BE9e53fd7EDaC9F859882AfdDa116645287C629&outputCurrency=0x620fd5fa44BE6af63715Ef4E65DDFA0387aD13F5',
+      'https://app.voltage.finance/index.html#/swap?outputCurrency=0x620fd5fa44BE6af63715Ef4E65DDFA0387aD13F5',
     createdAt: 1647505440,
   },
   {
@@ -281,9 +389,9 @@ export const fusePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://app.voltage.finance/index.html#/add/0x0BE9e53fd7EDaC9F859882AfdDa116645287C629/0x249BE57637D8B013Ad64785404b24aeBaE9B098B',
+      'https://app.voltage.finance/index.html#/add/fuse/0x249BE57637D8B013Ad64785404b24aeBaE9B098B',
     buyTokenUrl:
-      'https://app.voltage.finance/index.html#/swap?inputCurrency=0x0BE9e53fd7EDaC9F859882AfdDa116645287C629&outputCurrency=0x249BE57637D8B013Ad64785404b24aeBaE9B098B',
+      'https://app.voltage.finance/index.html#/swap?outputCurrency=0x249BE57637D8B013Ad64785404b24aeBaE9B098B',
     createdAt: 1647505595,
   },
   {
@@ -317,9 +425,9 @@ export const fusePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://app.voltage.finance/index.html#/add/0x0BE9e53fd7EDaC9F859882AfdDa116645287C629/0x34Ef2Cc892a88415e9f02b91BfA9c91fC0bE6bD4',
+      'https://app.voltage.finance/index.html#/add/fuse/0x34Ef2Cc892a88415e9f02b91BfA9c91fC0bE6bD4',
     buyTokenUrl:
-      'https://app.voltage.finance/index.html#/swap?inputCurrency=0x0BE9e53fd7EDaC9F859882AfdDa116645287C629&outputCurrency=0x34Ef2Cc892a88415e9f02b91BfA9c91fC0bE6bD4',
+      'https://app.voltage.finance/index.html#/swap?outputCurrency=0x34Ef2Cc892a88415e9f02b91BfA9c91fC0bE6bD4',
     createdAt: 1647365195,
   },
   {
@@ -389,9 +497,9 @@ export const fusePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://app.voltage.finance/index.html#/add/0x0BE9e53fd7EDaC9F859882AfdDa116645287C629/0x0D58a44be3dCA0aB449965dcc2c46932547Fea2f',
+      'https://app.voltage.finance/index.html#/add/fuse/0x0D58a44be3dCA0aB449965dcc2c46932547Fea2f',
     buyTokenUrl:
-      'https://app.voltage.finance/index.html#/swap?inputCurrency=0x0BE9e53fd7EDaC9F859882AfdDa116645287C629&outputCurrency=0x0D58a44be3dCA0aB449965dcc2c46932547Fea2f',
+      'https://app.voltage.finance/index.html#/swap?outputCurrency=0x0D58a44be3dCA0aB449965dcc2c46932547Fea2f',
     createdAt: 1647365195,
   },
   {
@@ -461,9 +569,9 @@ export const fusePools = [
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
-      'https://app.voltage.finance/index.html#/add/0x0BE9e53fd7EDaC9F859882AfdDa116645287C629/0x495d133B938596C9984d462F007B676bDc57eCEC',
+      'https://app.voltage.finance/index.html#/add/fuse/0x495d133B938596C9984d462F007B676bDc57eCEC',
     buyTokenUrl:
-      'https://app.voltage.finance/index.html#/swap?inputCurrency=0x0BE9e53fd7EDaC9F859882AfdDa116645287C629&outputCurrency=0x495d133B938596C9984d462F007B676bDc57eCEC',
+      'https://app.voltage.finance/index.html#/swap?outputCurrency=0x495d133B938596C9984d462F007B676bDc57eCEC',
     createdAt: 1647365540,
   },
   {
@@ -537,43 +645,6 @@ export const fusePools = [
     buyTokenUrl:
       'https://app.fuse.fi/#/swap?inputCurrency=FUSE&outputCurrency=0x0D58a44be3dCA0aB449965dcc2c46932547Fea2f',
     createdAt: 1643810650,
-  },
-  {
-    id: 'voltage-luna-ust-eol',
-    name: 'LUNA-UST LP',
-    token: 'LUNA-UST LP',
-    tokenDescription: 'Voltage',
-    tokenAddress: '0x44cB3a602AE57b60A5dc808a44544Ab9ec8dDB36',
-    tokenDecimals: 18,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'mooVoltageLUNA-UST',
-    earnedTokenAddress: '0x9814b2BDe7b2874C5124B0D6b8C741E81BcEE829',
-    earnContractAddress: '0x9814b2BDe7b2874C5124B0D6b8C741E81BcEE829',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'lps',
-    oracleId: 'voltage-luna-ust',
-    oraclePrice: 0,
-    withdrawalFee: '0%',
-    depositsPaused: true,
-    status: 'eol',
-    retireReason: 'rewards',
-    platform: 'Voltage',
-    assets: ['LUNA', 'UST'],
-    risks: [
-      'COMPLEXITY_LOW',
-      'BATTLE_TESTED',
-      'IL_HIGH',
-      'MCAP_LARGE',
-      'AUDIT',
-      'CONTRACTS_VERIFIED',
-    ],
-    stratType: 'StratLP',
-    addLiquidityUrl:
-      'https://app.fuse.fi/#/add/0x588e24DEd8f850b14BB2e62E9c50A7Cd5Ee13Da9/0x0D58a44be3dCA0aB449965dcc2c46932547Fea2f',
-    buyTokenUrl:
-      'https://app.fuse.fi/#/swap?inputCurrency=0x0D58a44be3dCA0aB449965dcc2c46932547Fea2f&outputCurrency=0x588e24DEd8f850b14BB2e62E9c50A7Cd5Ee13Da9',
-    createdAt: 1643819850,
   },
   // {
   //   id: 'sushi-sushi-weth',

@@ -36,6 +36,39 @@ export const polygonStakePools = [
   },
 
   {
+    id: 'moo_beQI',
+    name: 'Beefy',
+    logo: 'single-assets/beQI.png',
+    token: 'beQI',
+    tokenDecimals: 18,
+    tokenAddress: '0x97bfa4b212A153E15dCafb799e733bc7d1b70E72',
+    tokenOracle: 'tokens',
+    tokenOracleId: 'beQI',
+    earnedToken: 'QI',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x580A84C73811E1839F75d86d75d88cCa0c241fF4',
+    earnContractAddress: '0x5D060698F179E7D2233480A44d6D3979e4Ae9e7f',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'QI',
+    partnership: false,
+    status: 'active',
+    fixedStatus: true,
+    partners: [
+      {
+        logo: 'stake/beefy/beefyfinance.png',
+        background: 'stake/beefy/background.png',
+        text: 'beQI is Beefy Staked QI. The token is pegged to QI and can be staked on the Beefy platform to earn QI or more beQI. beQI gives stakers access to max lock rewards of staking QI for eQI. You can burn beQI for QI if there is available QI reserves.',
+        website: 'https://beefy.com',
+        social: {
+          telegram: 'http://t.me/beefyfinance',
+          twitter: 'https://twitter.com/beefyfinance',
+        },
+      },
+    ],
+  },
+
+  {
     id: 'moo_sushi-jrt-eth-jarvis',
     name: 'Jarvis',
     assets: ['JRT', 'ETH'],
