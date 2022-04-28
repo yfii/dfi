@@ -69,7 +69,7 @@ export const moonriverPools = [
     createdAt: 1645031166,
   },
   {
-    id: 'finn-finn-xcrmrk',
+    id: 'finn-finn-xcrmrk-eol',
     name: 'xcRMRK-FINN LP',
     token: 'xcRMRK-FINN LP',
     tokenDescription: 'Huckleberry',
@@ -84,8 +84,9 @@ export const moonriverPools = [
     oracle: 'lps',
     oracleId: 'finn-finn-xcrmrk',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'tvl',
     platform: 'Huckleberry',
     assets: ['xcRMRK', 'FINN'],
     risks: [
@@ -104,7 +105,7 @@ export const moonriverPools = [
     createdAt: 1643391756,
   },
   {
-    id: 'finn-finn-xcksm',
+    id: 'finn-finn-xcksm-eol',
     name: 'xcKSM-FINN LP',
     token: 'xcKSM-FINN LP',
     tokenDescription: 'Huckleberry',
@@ -119,8 +120,9 @@ export const moonriverPools = [
     oracle: 'lps',
     oracleId: 'finn-finn-xcksm',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'tvl',
     platform: 'Huckleberry',
     assets: ['xcKSM', 'FINN'],
     risks: [
@@ -139,7 +141,7 @@ export const moonriverPools = [
     createdAt: 1643391960,
   },
   {
-    id: 'finn-usdc.m-wmovr',
+    id: 'finn-usdc.m-wmovr-eol',
     name: 'USDC.m-MOVR LP',
     token: 'USDC.m-MOVR LP',
     tokenDescription: 'Huckleberry',
@@ -154,8 +156,9 @@ export const moonriverPools = [
     oracle: 'lps',
     oracleId: 'finn-usdc.m-wmovr',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'tvl',
     platform: 'Huckleberry',
     assets: ['USDC', 'MOVR'],
     risks: [
@@ -1127,7 +1130,7 @@ export const moonriverPools = [
     createdAt: 1638053202,
   },
   {
-    id: 'finn-usdc-finn',
+    id: 'finn-usdc-finn-eol',
     name: 'FINN-USDC',
     token: 'FINN-USDC LP',
     tokenDescription: 'Huckleberry',
@@ -1142,8 +1145,9 @@ export const moonriverPools = [
     oracle: 'lps',
     oracleId: 'finn-usdc-finn',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'tvl',
     platform: 'Huckleberry',
     assets: ['FINN', 'USDC'],
     risks: [

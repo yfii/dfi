@@ -715,7 +715,7 @@ export const polygonPools = [
     createdAt: 1644238771,
   },
   {
-    id: 'quick-quick-tel',
+    id: 'quick-quick-tel-eol',
     name: 'QUICK-TEL LP',
     token: 'QUICK-TEL LP',
     tokenDescription: 'QuickSwap',
@@ -729,8 +729,9 @@ export const polygonPools = [
     tvl: 0,
     oracle: 'lps',
     oracleId: 'quick-quick-tel',
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'tvl',
     platform: 'QuickSwap',
     assets: ['QUICK', 'TEL'],
     risks: [
