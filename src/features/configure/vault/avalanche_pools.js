@@ -78,8 +78,8 @@ export const avalanchePools = [
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooJoeAVAX-BPT',
-    earnedTokenAddress: '0x3cD0bCffF160fF331a170832219E82355189528f',
-    earnContractAddress: '0x3cD0bCffF160fF331a170832219E82355189528f',
+    earnedTokenAddress: '0x93AADd13324FD724afe13E9930f5A466A4590853',
+    earnContractAddress: '0x93AADd13324FD724afe13E9930f5A466A4590853',
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
@@ -102,7 +102,7 @@ export const avalanchePools = [
       'https://traderjoexyz.com/pool/0x1111111111182587795ef1098ac7da81a108c97a/AVAX',
     buyTokenUrl:
       'https://traderjoexyz.com/trade?outputCurrency=0x1111111111182587795ef1098ac7da81a108c97a#/',
-    createdAt: 1651052876,
+    createdAt: 1650788892,
   },
   {
     id: 'png-axlatom-wavax',
