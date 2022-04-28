@@ -68,6 +68,38 @@ export const fantomStakePools = [
   },
 
   {
+    id: 'moo_beFTM-orkan',
+    name: 'Orkan',
+    logo: 'single-assets/beFTM.svg',
+    token: 'moobeFTM',
+    tokenDecimals: 18,
+    tokenAddress: '0x185647c55633A5706aAA3278132537565c925078',
+    tokenOracle: 'tokens',
+    tokenOracleId: 'beFTM',
+    earnedToken: 'ORKAN',
+    earnedTokenDecimals: 9,
+    earnedTokenAddress: '0xfB66e49e303A186a4c57414Ceeed651a7a78161a',
+    earnContractAddress: '0xB0728F251c08c0DdB8777918B2593f9422BeB023',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'ORKAN',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1652528259,
+    partners: [
+      {
+        text: "Orkan is a meta-governance protocol over liquidity flow within the FTM ecosystem. Orkan utilizes perpetual bond issuance to acquire governance tokens from protocols on FTM employing liquidity gauges and locking mechanisms as exchange incentives. Orkan's other plan is to enable deep liquidity and usage of wrapped BTC assets within the ecosystem.",
+        website: 'https://orkan.finance/#/dashboard',
+        social: {
+          telegram: 'https://discord.com/invite/mqd2ZaXeEB',
+          twitter: 'https://twitter.com/EnterTheStrudel',
+        },
+      },
+    ],
+  },
+
+  {
     id: 'moo_beFTM-based',
     name: 'Based',
     logo: 'single-assets/beFTM.svg',
