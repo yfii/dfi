@@ -70,6 +70,42 @@ export const bscPools = [
   },
 
   {
+    id: 'bomb-bomb-btcb',
+    name: 'BOMB-BTCB LP',
+    token: 'BOMB-BTCB LP',
+    tokenDescription: 'PancakeSwap (Bomb)',
+    tokenAddress: '0x84392649eb0bC1c1532F2180E58Bae4E1dAbd8D6',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooBombBOMB-BTCB',
+    earnedTokenAddress: '0xfc0c5878cc34B534eb4D4169Cbcd3c5c8B88716a',
+    earnContractAddress: '0xfc0c5878cc34B534eb4D4169Cbcd3c5c8B88716a',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'bomb-bomb-btcb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Bomb.Money',
+    assets: ['BOMB', 'BTCB'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_LOW',
+      'MCAP_MICRO',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
+    addLiquidityUrl:
+      'https://pancakeswap.finance/add/0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c/0x522348779DCb2911539e76A1042aA922F9C47Ee3',
+    buyTokenUrl:
+      'https://pancakeswap.finance/swap?inputCurrency=0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c&outputCurrency=0x522348779DCb2911539e76A1042aA922F9C47Ee3',
+    createdAt: 1651177327,
+  },
+
+  {
     id: 'valas-valas-bnb',
     name: 'VALAS-BNB LP',
     token: 'VALAS-BNB LP',
