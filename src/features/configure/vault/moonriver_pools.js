@@ -66,7 +66,7 @@ export const moonriverPools = [
     withdrawalFee: '0%',
     buyTokenUrl: 'https://app.solarbeam.io/exchange/swap',
     addLiquidityUrl: 'https://app.solarbeam.io/exchange/stable-pool/add/frax-3pool',
-    createdAt: 1649369063,
+    createdAt: 1651221200,
   },
   {
     id: 'solarbeam-xcksm-stksm',
@@ -101,7 +101,7 @@ export const moonriverPools = [
     buyTokenUrl:
       'https://app.solarbeam.io/exchange/swap?outputCurrency=0xFfFFfFff1FcaCBd218EDc0EbA20Fc2308C778080',
     addLiquidityUrl: 'https://app.solarbeam.io/exchange/stable-pool/add/stksm',
-    createdAt: 1649369063,
+    createdAt: 1651221199,
   },
   {
     id: 'solarbeam-wmovr-xcksm',
@@ -137,7 +137,7 @@ export const moonriverPools = [
       'https://app.solarbeam.io/exchange/swap?outputCurrency=0xFfFFfFff1FcaCBd218EDc0EbA20Fc2308C778080',
     addLiquidityUrl:
       'https://app.solarbeam.io/exchange/add/ETH/0xFfFFfFff1FcaCBd218EDc0EbA20Fc2308C778080',
-    createdAt: 1649369063,
+    createdAt: 1651221198,
   },
   {
     id: 'solarbeam-3pool',
@@ -172,7 +172,7 @@ export const moonriverPools = [
     withdrawalFee: '0%',
     buyTokenUrl: 'https://app.solarbeam.io/exchange/swap',
     addLiquidityUrl: 'https://app.solarbeam.io/exchange/stable-pool/add/3pool',
-    createdAt: 1649369063,
+    createdAt: 1651221197,
   },
   {
     id: 'finn-usdc.m-usdc',
