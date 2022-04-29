@@ -70,6 +70,43 @@ export const bscPools = [
   },
 
   {
+    id: 'bomb-bshare-wbnb',
+    name: 'BSHARE-BNB LP',
+    token: 'BSHARE-BNB LP',
+    logo: 'bnb-pairs/BSHARE-BNB.png',
+    tokenDescription: 'PancakeSwap (Bomb)',
+    tokenAddress: '0x1303246855b5B5EbC71F049Fdb607494e97218f8',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooBombBSHARE-BNB',
+    earnedTokenAddress: '0xd86D7D2D335954095E5ccc0d823B8ABc65Ac35B2',
+    earnContractAddress: '0xd86D7D2D335954095E5ccc0d823B8ABc65Ac35B2',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'bomb-bshare-wbnb',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'Bomb.Money',
+    assets: ['BSHARE', 'BNB'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
+    addLiquidityUrl:
+      'https://pancakeswap.finance/add/BNB/0x531780FAcE85306877D7e1F05d713D1B50a37F7A',
+    buyTokenUrl:
+      'https://pancakeswap.finance/swap?outputCurrency=0x531780FAcE85306877D7e1F05d713D1B50a37F7A',
+    createdAt: 1651236072,
+  },
+
+  {
     id: 'bomb-bomb-btcb',
     name: 'BOMB-BTCB LP',
     token: 'BOMB-BTCB LP',
