@@ -34,6 +34,147 @@ export const moonriverPools = [
     createdAt: 1636638042,
   },
   {
+    id: 'solarbeam-frax-3pool',
+    logo: 'uncategorized/frax-3pool.png',
+    name: 'FRAX/USDC/BUSD/USDT',
+    token: 'FRAX-3pool',
+    tokenDescription: 'SolarBeam',
+    tokenAddress: '0x884609A4D86BBA8477112E36e27f7A4ACecB3575',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooSolarFRAX-3pool',
+    earnedTokenAddress: '0xE7123285680632E9d17a254Ec7adf405559c1CbC',
+    earnContractAddress: '0xE7123285680632E9d17a254Ec7adf405559c1CbC',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'solarbeam-frax-3pool',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'SolarBeam',
+    assets: ['FRAX', 'USDC', 'BUSD', 'USDT'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratMultiLP',
+    withdrawalFee: '0%',
+    buyTokenUrl: 'https://app.solarbeam.io/exchange/swap',
+    addLiquidityUrl: 'https://app.solarbeam.io/exchange/stable-pool/add/frax-3pool',
+    createdAt: 1651221200,
+  },
+  {
+    id: 'solarbeam-xcksm-stksm',
+    name: 'xcKSM-stKSM',
+    token: 'xcKSM-stKSM',
+    tokenDescription: 'SolarBeam',
+    tokenAddress: '0x493147C85Fe43F7B056087a6023dF32980Bcb2D1',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooSolarxcKSM-stKSM',
+    earnedTokenAddress: '0x8cA1De404d12A9C5Be365ac555F4355F7fC0772B',
+    earnContractAddress: '0x8cA1De404d12A9C5Be365ac555F4355F7fC0772B',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'solarbeam-xcksm-stksm',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'SolarBeam',
+    assets: ['xcKSM', 'stKSM'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_MICRO',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratMultiLP',
+    withdrawalFee: '0%',
+    buyTokenUrl:
+      'https://app.solarbeam.io/exchange/swap?outputCurrency=0xFfFFfFff1FcaCBd218EDc0EbA20Fc2308C778080',
+    addLiquidityUrl: 'https://app.solarbeam.io/exchange/stable-pool/add/stksm',
+    createdAt: 1651221199,
+  },
+  {
+    id: 'solarbeam-wmovr-xcksm',
+    name: 'xcKSM-MOVR',
+    token: 'xcKSM-MOVR LP',
+    tokenDescription: 'SolarBeam',
+    tokenAddress: '0xea3d1E9e69ADDFA1ee5BBb89778Decd862F1F7C5',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooSolarxcKSM-MOVR',
+    earnedTokenAddress: '0xd5f5D054a4F90Aa9faa71065b505c40e5166cd4F',
+    earnContractAddress: '0xd5f5D054a4F90Aa9faa71065b505c40e5166cd4F',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'solarbeam-wmovr-xcksm',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'SolarBeam',
+    assets: ['xcKSM', 'MOVR'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_HIGH',
+      'MCAP_MICRO',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratLP',
+    withdrawalFee: '0%',
+    buyTokenUrl:
+      'https://app.solarbeam.io/exchange/swap?outputCurrency=0xFfFFfFff1FcaCBd218EDc0EbA20Fc2308C778080',
+    addLiquidityUrl:
+      'https://app.solarbeam.io/exchange/add/ETH/0xFfFFfFff1FcaCBd218EDc0EbA20Fc2308C778080',
+    createdAt: 1651221198,
+  },
+  {
+    id: 'solarbeam-3pool',
+    logo: 'uncategorized/solar-3pool.png',
+    name: 'USDC/BUSD/USDT',
+    token: '3pool',
+    tokenDescription: 'SolarBeam',
+    tokenAddress: '0xfb29918d393AaAa7dD118B51A8b7fCf862F5f336',
+    tokenDecimals: 18,
+    tokenDescriptionUrl: '#',
+    earnedToken: 'mooSolar3pool',
+    earnedTokenAddress: '0x82435D82A2ba87516827312Fc9F8BCF72CFAB602',
+    earnContractAddress: '0x82435D82A2ba87516827312Fc9F8BCF72CFAB602',
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: 'lps',
+    oracleId: 'solarbeam-3pool',
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: 'active',
+    platform: 'SolarBeam',
+    assets: ['USDC', 'BUSD', 'USDT'],
+    risks: [
+      'COMPLEXITY_LOW',
+      'BATTLE_TESTED',
+      'IL_NONE',
+      'MCAP_LARGE',
+      'AUDIT',
+      'CONTRACTS_VERIFIED',
+    ],
+    stratType: 'StratMultiLP',
+    withdrawalFee: '0%',
+    buyTokenUrl: 'https://app.solarbeam.io/exchange/swap',
+    addLiquidityUrl: 'https://app.solarbeam.io/exchange/stable-pool/add/3pool',
+    createdAt: 1651221197,
+  },
+  {
     id: 'finn-usdc.m-usdc',
     name: 'USDC.m-USDC LP',
     token: 'USDC.m-USDC LP',
@@ -209,7 +350,7 @@ export const moonriverPools = [
     buyTokenUrl:
       'https://app.sushi.com/swap?outputCurrency=0xf50225a84382c74CbdeA10b0c176f71fc3DE0C4d',
     createdAt: 1639683150,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'sushi-mr-frax-usdc',
@@ -346,7 +487,7 @@ export const moonriverPools = [
     buyTokenUrl:
       'https://app.sushi.com/swap?outputCurrency=0x868892CCcEdbfF0B028F3b3595205Ea91b99376B',
     createdAt: 1640141208,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'sushi-mr-eth-wbtc-eol',
@@ -381,7 +522,7 @@ export const moonriverPools = [
     buyTokenUrl:
       'https://app.sushi.com/swap?outputCurrency=0xE6a991Ffa8CfE62B0bf6BF72959A3d4f11B2E0f5',
     createdAt: 1640142678,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'sushi-mr-eth-dai-eol',
@@ -416,7 +557,7 @@ export const moonriverPools = [
     buyTokenUrl:
       'https://app.sushi.com/swap?outputCurrency=0x80A16016cC4A2E6a2CACA8a4a498b1699fF0f844',
     createdAt: 1640143548,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'solarbeam-mim-wmovr-eol',
@@ -490,7 +631,7 @@ export const moonriverPools = [
     addLiquidityUrl:
       'https://app.solarbeam.io/exchange/add/0x1A93B23281CC1CDE4C4741353F3064709A16197d/0x4a436073552044D5f2f49B176853ad3Ad473d9d6',
     createdAt: 1639145934,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'solarbeam-wmovr-mai-eol',
@@ -732,7 +873,7 @@ export const moonriverPools = [
     addLiquidityUrl:
       'https://www.huckleberry.finance/#/add/MOVR/0x78F811A431D248c1EDcF6d95ec8551879B2897C3',
     createdAt: 1638046680,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'finn-usdc-usdt',
@@ -803,7 +944,7 @@ export const moonriverPools = [
     addLiquidityUrl:
       'https://www.huckleberry.finance/#/add/MOVR/0x41562ae242d194247389152aCAa7a9397136b09F',
     createdAt: 1637920962,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'finn-eth-finn-eol',
@@ -911,7 +1052,7 @@ export const moonriverPools = [
     addLiquidityUrl:
       'https://www.huckleberry.finance/#/add/0xE936CAA7f6d9F5C9e907111FCAf7c351c184CDA7/0x9A92B5EBf1F6F6f7d93696FCD44e5Cf75035A756',
     createdAt: 1638049728,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'finn-finn-avax-eol',
@@ -947,7 +1088,7 @@ export const moonriverPools = [
     addLiquidityUrl:
       'https://www.huckleberry.finance/#/add/0xc005A7A1502c9DE16CCDaBA7CDA0cee4Ac304993/0x9A92B5EBf1F6F6f7d93696FCD44e5Cf75035A756',
     createdAt: 1638048906,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'finn-finn-ftm-eol',
@@ -983,7 +1124,7 @@ export const moonriverPools = [
     addLiquidityUrl:
       'https://www.huckleberry.finance/#/add/0xd924f195C6012C301f42290cf0fdE385A66039DE/0x9A92B5EBf1F6F6f7d93696FCD44e5Cf75035A756',
     createdAt: 1638053964,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'finn-finn-bnb-eol',
@@ -1019,7 +1160,7 @@ export const moonriverPools = [
     addLiquidityUrl:
       'https://www.huckleberry.finance/#/add/0xf47002E6151E06554b8f16E9Cc704edD3fC078b8/0x9A92B5EBf1F6F6f7d93696FCD44e5Cf75035A756',
     createdAt: 1638055338,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'finn-finn-xrp-eol',
@@ -1055,7 +1196,7 @@ export const moonriverPools = [
     addLiquidityUrl:
       'https://www.huckleberry.finance/#/add/0x9D5bc9B873AeD984e2B6A64d4792249D68BbA2Fe/0x9A92B5EBf1F6F6f7d93696FCD44e5Cf75035A756',
     createdAt: 1638048018,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'finn-wan-finn-eol',
@@ -1217,7 +1358,7 @@ export const moonriverPools = [
     oracle: 'lps',
     oracleId: 'solarbeam-wbtc-wmovr',
     oraclePrice: 0,
-    depositsPaused: true,
+    depositsPaused: false,
     status: 'active',
     platform: 'SolarBeam',
     assets: ['WBTC', 'MOVR'],
@@ -1253,7 +1394,7 @@ export const moonriverPools = [
     oracle: 'lps',
     oracleId: 'solarbeam-eth-wmovr',
     oraclePrice: 0,
-    depositsPaused: true,
+    depositsPaused: false,
     status: 'active',
     platform: 'SolarBeam',
     assets: ['ETH', 'MOVR'],
@@ -1361,7 +1502,7 @@ export const moonriverPools = [
     oracle: 'lps',
     oracleId: 'solarbeam-solar-wmovr',
     oraclePrice: 0,
-    depositsPaused: true,
+    depositsPaused: false,
     status: 'active',
     platform: 'SolarBeam',
     assets: ['SOLAR', 'MOVR'],
@@ -1433,7 +1574,7 @@ export const moonriverPools = [
     oracle: 'lps',
     oracleId: 'solarbeam-wmovr-usdc',
     oraclePrice: 0,
-    depositsPaused: true,
+    depositsPaused: false,
     status: 'active',
     platform: 'SolarBeam',
     assets: ['MOVR', 'USDC'],
@@ -1581,7 +1722,6 @@ export const moonriverPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    retireReason: 'rewards',
     platform: 'SolarBeam',
     assets: ['BNB', 'BUSD'],
     risks: [
@@ -1594,6 +1734,7 @@ export const moonriverPools = [
     ],
     stratType: 'StratLP',
     withdrawalFee: '0%',
+    retireReason: 'tvl',
     buyTokenUrl:
       'https://app.solarbeam.io/exchange/swap?inputCurrency=0x2bF9b864cdc97b08B6D79ad4663e71B8aB65c45c&outputCurrency=0x5D9ab5522c64E1F6ef5e3627ECCc093f56167818',
     addLiquidityUrl:
@@ -1745,7 +1886,7 @@ export const moonriverPools = [
     addLiquidityUrl:
       'https://app.solarbeam.io/exchange/add/ETH/0x682F81e57EAa716504090C3ECBa8595fB54561D8',
     createdAt: 1635802614,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'solarbeam-avax-wmovr-eol',
@@ -1765,7 +1906,6 @@ export const moonriverPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    retireReason: 'rewards',
     platform: 'SolarBeam',
     assets: ['AVAX', 'MOVR'],
     risks: [
@@ -1778,6 +1918,7 @@ export const moonriverPools = [
     ],
     stratType: 'StratLP',
     withdrawalFee: '0%',
+    retireReason: 'tvl',
     buyTokenUrl:
       'https://app.solarbeam.io/exchange/swap?inputCurrency=ETH&outputCurrency=0x14a0243C333A5b238143068dC3A7323Ba4C30ECB',
     addLiquidityUrl:
@@ -1855,7 +1996,7 @@ export const moonriverPools = [
     addLiquidityUrl:
       'https://app.solarbeam.io/exchange/add/ETH/0xbD90A6125a84E5C512129D622a75CDDE176aDE5E',
     createdAt: 1635789006,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'solarbeam-wmovr-relay-eol',
@@ -1892,7 +2033,7 @@ export const moonriverPools = [
     addLiquidityUrl:
       'https://app.solarbeam.io/exchange/add/ETH/0xAd7F1844696652ddA7959a49063BfFccafafEfe7',
     createdAt: 1635803946,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'solarbeam-pets-wmovr-eol',
@@ -1929,7 +2070,7 @@ export const moonriverPools = [
     addLiquidityUrl:
       'https://app.solarbeam.io/exchange/add/ETH/0x1e0F2A75Be02c025Bd84177765F89200c04337Da',
     createdAt: 1635808950,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'solarbeam-solar-rib-eol',
