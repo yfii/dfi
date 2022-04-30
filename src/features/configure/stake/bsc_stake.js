@@ -110,6 +110,38 @@ export const bscStakePools = [
   },
 
   {
+    id: 'moo_biswap-eth-btcb-bomb',
+    name: 'Bomb.money',
+    assets: ['BTCB', 'ETH'],
+    token: 'mooBiSwapETH-BTCB',
+    tokenDecimals: 18,
+    tokenAddress: '0xEeB87e7bAbF17cA97F0Eb897F24Bf475e0A9Aef7',
+    tokenOracle: 'lps',
+    tokenOracleId: 'biswap-eth-btcb',
+    earnedToken: 'BOMB',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x522348779DCb2911539e76A1042aA922F9C47Ee3',
+    earnContractAddress: '0x6c335C7FC07cD5e5d3d0a16a1C9E0611f5a9d76C',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'BOMB',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1652622288,
+    partners: [
+      {
+        text: 'Bomb Money is a high-yielding algorithmic stablecoin protocol on Binance Smart Chain (BSC) that utilizes seigniorage mechanisms to maintain a 10,000:1 peg of its native $BOMB token to Bitcoin (BTC). Through this protocol, Bomb Money aims to provide attractive yield earning opportunities for Bitcoin holders while still maintaining significant Bitcoin exposure.',
+        website: 'https://www.bomb.money/',
+        social: {
+          telegram: 'https://t.me/bombmoneybsc',
+          twitter: 'https://twitter.com/BombMoneyBSC',
+        },
+      },
+    ],
+  },
+
+  {
     id: 'moo_biswap-usdt-busd-biswap',
     name: 'Biswap',
     assets: ['USDT', 'BUSD'],

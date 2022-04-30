@@ -13,13 +13,13 @@ const explorerApiUrls = {
   celo: 'https://explorer.celo.org/',
   moonriver: 'https://api-moonriver.moonscan.io/api',
   arbitrum: 'https://api.arbiscan.io/api',
-  aurora: 'https://explorer.mainnet.aurora.dev/',
+  aurora: 'https://api.aurorascan.dev/api',
   metis: 'https://andromeda-explorer.metis.io/',
   one: 'https://explorer.harmony.one/',
   fuse: 'https://explorer.fuse.io/',
 };
 
-const blockScoutChainsTimeout = new Set(['fuse', 'aurora', 'metis', 'celo']);
+const blockScoutChainsTimeout = new Set(['fuse', 'metis', 'celo']);
 const harmonyRpcChains = new Set(['one']);
 
 const getCreationTimestamp = async (vaultAddress, explorerUrl) => {
