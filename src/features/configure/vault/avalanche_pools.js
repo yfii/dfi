@@ -452,7 +452,7 @@ export const avalanchePools = [
       'https://app.pangolin.exchange/#/add/AVAX/0x449674B82F05d498E126Dd6615a1057A9c088f2C',
     buyTokenUrl:
       'https://app.pangolin.exchange/#/swap?outputCurrency=0x449674B82F05d498E126Dd6615a1057A9c088f2C',
-    createdAt: 1650093205,
+    createdAt: 1651186444,
   },
   {
     id: 'curve-avax-f-avaxl',
