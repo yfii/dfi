@@ -231,7 +231,7 @@ export const polygonPools = [
     oracleId: 'quick-wone-matic',
     depositsPaused: true,
     status: 'eol',
-    retireReason: 'tvl',
+    retireReason: 'rewards',
     platform: 'QuickSwap',
     assets: ['ONE', 'MATIC'],
     risks: [
@@ -769,7 +769,7 @@ export const polygonPools = [
     oracleId: 'quick-bnb-usdc',
     depositsPaused: true,
     status: 'eol',
-    retireReason: 'tvl',
+    retireReason: 'rewards',
     platform: 'QuickSwap',
     assets: ['BNB', 'USDC'],
     risks: [
@@ -1571,7 +1571,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    retireReason: 'tvl',
+    retireReason: 'rewards',
     platform: 'Kyber',
     assets: ['jEUR', 'USDC'],
     withdrawalFee: '0%',
@@ -1790,7 +1790,7 @@ export const polygonPools = [
     oracleId: 'quick-ftm-matic',
     depositsPaused: true,
     status: 'eol',
-    retireReason: 'tvl',
+    retireReason: 'rewards',
     platform: 'QuickSwap',
     assets: ['FTM', 'MATIC'],
     risks: [
@@ -1926,7 +1926,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    retireReason: 'tvl',
+    retireReason: 'rewards',
     platform: 'Kyber',
     assets: ['jGBP', 'USDC'],
     risks: [
@@ -1962,7 +1962,7 @@ export const polygonPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    retireReason: 'tvl',
+    retireReason: 'rewards',
     platform: 'Kyber',
     assets: ['jCHF', 'USDC'],
     risks: [

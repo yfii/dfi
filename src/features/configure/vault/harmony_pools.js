@@ -268,7 +268,7 @@ export const harmonyPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    retireReason: 'tvl',
+    retireReason: 'rewards',
     platform: 'SushiSwap',
     assets: ['AXS', 'ETH'],
     callFee: 0.25,

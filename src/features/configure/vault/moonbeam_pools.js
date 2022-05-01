@@ -647,7 +647,7 @@ export const moonbeamPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    retireReason: 'tvl',
+    retireReason: 'rewards',
     platform: 'Stellaswap',
     assets: ['APE', 'GLMR'],
     risks: [
