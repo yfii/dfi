@@ -630,7 +630,7 @@ export const moonbeamPools = [
     createdAt: 1647525054,
   },
   {
-    id: 'stellaswap-ape-wglmr',
+    id: 'stellaswap-ape-wglmr-eol',
     name: 'APE-GLMR LP',
     token: 'APE-GLMR LP',
     tokenDescription: 'Stellaswap',
@@ -645,8 +645,9 @@ export const moonbeamPools = [
     oracle: 'lps',
     oracleId: 'stellaswap-ape-wglmr',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Stellaswap',
     assets: ['APE', 'GLMR'],
     risks: [
