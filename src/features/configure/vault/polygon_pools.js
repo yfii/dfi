@@ -387,7 +387,7 @@ export const polygonPools = [
     createdAt: 1647601851,
   },
   {
-    id: 'quick-eth-fuse',
+    id: 'quick-eth-fuse-eol',
     name: 'FUSE-ETH LP',
     token: 'FUSE-ETH LP',
     tokenDescription: 'QuickSwap',
@@ -401,8 +401,9 @@ export const polygonPools = [
     tvl: 0,
     oracle: 'lps',
     oracleId: 'quick-eth-fuse',
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'QuickSwap',
     assets: ['FUSE', 'ETH'],
     risks: [
@@ -3085,7 +3086,7 @@ export const polygonPools = [
     createdAt: 1629158545,
   },
   {
-    id: 'quick-wmatic-avax',
+    id: 'quick-wmatic-avax-eol',
     name: 'AVAX-MATIC LP',
     token: 'AVAX-MATIC LP',
     tokenDescription: 'Quickswap',
@@ -3100,8 +3101,9 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'quick-wmatic-avax',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'QuickSwap',
     assets: ['AVAX', 'MATIC'],
     risks: [
