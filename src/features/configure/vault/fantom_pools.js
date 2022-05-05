@@ -112,8 +112,8 @@ export const fantomPools = [
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
     earnedToken: 'mooBeetDaiabolicalBalance',
-    earnedTokenAddress: '0xFAD79d556e1142d5cA52D1Baa693E7A60c42c9Be',
-    earnContractAddress: '0xFAD79d556e1142d5cA52D1Baa693E7A60c42c9Be',
+    earnedTokenAddress: '0x971423A9A45A1A2DeB0bEe48C92d3859D793e73B',
+    earnContractAddress: '0x971423A9A45A1A2DeB0bEe48C92d3859D793e73B',
     pricePerFullShare: 1,
     tvl: 0,
     oracle: 'lps',
@@ -135,7 +135,7 @@ export const fantomPools = [
     withdrawalFee: '0%',
     addLiquidityUrl:
       'https://beets.fi/#/pool/0xd5e946b5619fff054c40d38c976f1d06c1e2fa820002000000000000000003ac',
-    createdAt: 1650640471,
+    createdAt: 1651660702,
   },
   {
     id: 'beets-gelato-genesis',
