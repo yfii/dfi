@@ -1188,7 +1188,7 @@ export const avalanchePools = [
     createdAt: 1646825243,
   },
   {
-    id: 'joe-wavax-fief',
+    id: 'joe-wavax-fief-eol',
     name: 'FIEF-AVAX LP',
     token: 'FIEF-AVAX JLP',
     tokenDescription: 'Trader Joe',
@@ -1203,8 +1203,9 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'joe-wavax-fief',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Trader Joe',
     assets: ['FIEF', 'AVAX'],
     risks: [
@@ -3762,7 +3763,7 @@ export const avalanchePools = [
     createdAt: 1632845828,
   },
   {
-    id: 'joe-wavax-aave.e',
+    id: 'joe-wavax-aave.e-eol',
     name: 'AAVE.e-AVAX LP',
     token: 'AAVE.e-AVAX JLP',
     tokenDescription: 'Trader Joe',
@@ -3777,8 +3778,9 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'joe-wavax-aave.e',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Trader Joe',
     assets: ['AAVEe', 'AVAX'],
     risks: [
@@ -4558,7 +4560,7 @@ export const avalanchePools = [
     createdAt: 1630085264,
   },
   {
-    id: 'joe-usdc.e-wavax',
+    id: 'joe-usdc.e-wavax-eol',
     name: 'USDC.e-AVAX LP',
     token: 'USDC.e-AVAX JLP',
     tokenDescription: 'Trader Joe',
@@ -4573,8 +4575,9 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'joe-usdc.e-wavax',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Trader Joe',
     assets: ['USDCe', 'AVAX'],
     risks: [
