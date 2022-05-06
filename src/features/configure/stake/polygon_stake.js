@@ -36,6 +36,73 @@ export const polygonStakePools = [
   },
 
   {
+    id: 'moo_beQI',
+    name: 'Beefy',
+    logo: 'single-assets/beQI.png',
+    token: 'beQI',
+    tokenDecimals: 18,
+    tokenAddress: '0x97bfa4b212A153E15dCafb799e733bc7d1b70E72',
+    tokenOracle: 'tokens',
+    tokenOracleId: 'beQI',
+    earnedToken: 'QI',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0x580A84C73811E1839F75d86d75d88cCa0c241fF4',
+    earnContractAddress: '0x5D060698F179E7D2233480A44d6D3979e4Ae9e7f',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'QI',
+    partnership: false,
+    status: 'active',
+    fixedStatus: true,
+    partners: [
+      {
+        logo: 'stake/beefy/beefyfinance.png',
+        background: 'stake/beefy/background.png',
+        text: 'beQI is Beefy Staked QI. The token is pegged to QI and can be staked on the Beefy platform to earn QI or more beQI. beQI gives stakers access to max lock rewards of staking QI for eQI. You can burn beQI for QI if there is available QI reserves.',
+        website: 'https://beefy.com',
+        social: {
+          telegram: 'http://t.me/beefyfinance',
+          twitter: 'https://twitter.com/beefyfinance',
+        },
+      },
+    ],
+  },
+
+  {
+    id: 'moo_quick-stmatic-matic-lido',
+    name: 'Lido on Polygon',
+    assets: ['stMATIC', 'MATIC'],
+    token: 'mooQuickSwapstMATIC-MATIC',
+    tokenDecimals: 18,
+    tokenAddress: '0x8829ADf1a9a7facE44c8FAb3Bc454f93F330E492',
+    tokenOracle: 'lps',
+    tokenOracleId: 'quick-stmatic-matic',
+    earnedToken: 'LDO',
+    earnedTokenDecimals: 18,
+    earnedTokenAddress: '0xC3C7d422809852031b44ab29EEC9F1EfF2A58756',
+    earnContractAddress: '0x20E504E52476cc0d84981b6F0562D19e33f0F188',
+    earnContractAbi: govPoolABI,
+    earnedOracle: 'tokens',
+    earnedOracleId: 'LDO',
+    partnership: true,
+    status: 'active',
+    isMooStaked: true,
+    periodFinish: 1654349605,
+    partners: [
+      {
+        text:
+          'Lido on Polygon is a liquid staking solution for MATIC backed by industry-leading staking providers. With Lido on Polygon you can stake your MATIC tokens in a decentralized and secure way and use your stMATIC on the secondary market.\n' +
+          'Lido on Polygon is brought to you by Shard Labs, a new generation of blockchain architects who are building a borderless, transparent, and democratic world.',
+        website: 'https://polygon.lido.fi/',
+        social: {
+          telegram: 'https://discord.com/invite/vgdPfhZ',
+          twitter: 'https://twitter.com/LidoOnPolygon',
+        },
+      },
+    ],
+  },
+
+  {
     id: 'moo_sushi-jrt-eth-jarvis',
     name: 'Jarvis',
     assets: ['JRT', 'ETH'],

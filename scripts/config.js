@@ -15,7 +15,7 @@ import { moonbeamPools } from '../src/features/configure/vault/moonbeam_pools.js
 
 export const chainPools = {
   bsc: bscPools,
-  heco: hecoPools,
+  // heco: hecoPools,
   avax: avalanchePools,
   polygon: polygonPools,
   fantom: fantomPools,
@@ -32,7 +32,7 @@ export const chainPools = {
 
 export const chainRpcs = {
   bsc: process.env.BSC_RPC || 'https://bsc-dataseed.binance.org/',
-  heco: process.env.HECO_RPC || 'https://http-mainnet.hecochain.com',
+  // heco: process.env.HECO_RPC || 'https://http-mainnet.hecochain.com',
   avax: process.env.AVAX_RPC || 'https://api.avax.network/ext/bc/C/rpc',
   polygon: process.env.POLYGON_RPC || 'https://polygon-rpc.com',
   fantom: process.env.FANTOM_RPC || 'https://rpc.ftm.tools/',
