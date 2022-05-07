@@ -1248,7 +1248,7 @@ export const bscPools = [
     logo: 'single-assets/BIFI.png',
     name: 'BIFI Maxi Old',
     token: 'BIFI',
-    tokenDescription: 'Please migrate to the new BIFI Maxi',
+    tokenDescription: 'Beefy.Finance',
     tokenAddress: '0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
     tokenDecimals: 18,
     earnedToken: 'mooBIFI',
@@ -1275,6 +1275,7 @@ export const bscPools = [
     withdrawalFee: '0.05%',
     buyTokenUrl: 'https://app.1inch.io/#/56/swap/BNB/BIFI',
     createdAt: 1606511757,
+    retireReason: 'upgrade',
   },
   {
     id: 'stargate-bsc-busd',
