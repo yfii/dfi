@@ -444,12 +444,13 @@ export const getNetworkStables = () => {
         'asUSDC',
         'LAMBDA',
         'DEI',
+        'TOR',
         'USDB',
       ];
     case 1666600000:
       return ['BUSD', 'bscBUSD', 'USDC', 'USDT', 'UST', 'DAI', 'FRAX'];
     case 42161:
-      return ['USDC', 'USDT', 'MIM'];
+      return ['USDC', 'USDT', 'MIM', 'FRAX', 'UST', 'USTw', 'EURS'];
     case 42220:
       return ['cUSD', 'cEUR', 'DAI', 'USDC', 'USDT'];
     case 1285:
