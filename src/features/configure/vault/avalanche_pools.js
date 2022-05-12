@@ -488,6 +488,7 @@ export const avalanchePools = [
       'MCAP_MICRO',
       'PLATFORM_ESTABLISHED',
       'CONTRACTS_VERIFIED',
+      'ALGO_STABLE',
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
@@ -589,10 +590,10 @@ export const avalanchePools = [
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
-      'IL_NONE',
       'MCAP_LARGE',
       'AUDIT',
       'CONTRACTS_VERIFIED',
+      'ALGO_STABLE',
     ],
     stratType: 'StratLP',
     withdrawalFee: '0%',
@@ -663,6 +664,7 @@ export const avalanchePools = [
       'MCAP_LARGE',
       'PLATFORM_ESTABLISHED',
       'CONTRACTS_VERIFIED',
+      'ALGO_STABLE',
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
@@ -834,10 +836,10 @@ export const avalanchePools = [
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
-      'IL_NONE',
       'MCAP_LARGE',
       'PLATFORM_ESTABLISHED',
       'CONTRACTS_VERIFIED',
+      'ALGO_STABLE',
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
@@ -873,6 +875,7 @@ export const avalanchePools = [
       'MCAP_LARGE',
       'PLATFORM_ESTABLISHED',
       'CONTRACTS_VERIFIED',
+      'ALGO_STABLE',
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
@@ -2034,6 +2037,7 @@ export const avalanchePools = [
       'MCAP_LARGE',
       'PLATFORM_ESTABLISHED',
       'CONTRACTS_VERIFIED',
+      'ALGO_STABLE',
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
@@ -2065,10 +2069,10 @@ export const avalanchePools = [
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
-      'IL_NONE',
       'MCAP_LARGE',
       'PLATFORM_ESTABLISHED',
       'CONTRACTS_VERIFIED',
+      'ALGO_STABLE',
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
@@ -2525,10 +2529,10 @@ export const avalanchePools = [
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
-      'IL_LOW',
       'MCAP_LARGE',
       'PLATFORM_ESTABLISHED',
       'CONTRACTS_VERIFIED',
+      'ALGO_STABLE',
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
