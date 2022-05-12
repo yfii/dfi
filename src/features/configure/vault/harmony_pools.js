@@ -429,6 +429,7 @@ export const harmonyPools = [
       'MCAP_LARGE',
       'AUDIT',
       'CONTRACTS_VERIFIED',
+      'ALGO_STABLE',
     ],
     stratType: 'StratLP',
     withdrawalFee: '0%',

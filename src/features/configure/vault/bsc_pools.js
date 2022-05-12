@@ -11842,10 +11842,10 @@ export const bscPools = [
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
-      'IL_NONE',
       'MCAP_LARGE',
       'AUDIT',
       'CONTRACTS_VERIFIED',
+      'ALGO_STABLE',
     ],
     addLiquidityUrl:
       'https://pancakeswap.finance/add/0x23396cF899Ca06c4472205fC903bDB4de249D6fC/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',

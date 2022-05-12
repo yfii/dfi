@@ -221,7 +221,7 @@ export const auroraPools = [
     status: 'active',
     platform: 'Rose',
     assets: ['atUST', 'USDT', 'USDC', 'DAI'],
-    risks: ['COMPLEXITY_LOW', 'BATTLE_TESTED', 'IL_NONE', 'MCAP_HIGH', 'CONTRACTS_VERIFIED'],
+    risks: ['COMPLEXITY_LOW', 'BATTLE_TESTED', 'MCAP_HIGH', 'CONTRACTS_VERIFIED', 'ALGO_STABLE'],
     stratType: 'StratLP',
     addLiquidityUrl: 'https://app.rose.fi/#/farms/ust',
     createdAt: 1649955343,
