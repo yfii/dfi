@@ -84,6 +84,12 @@ export const allNetworks = [
     id: 1284,
     hash: '/moonbeam',
   },
+  {
+    name: 'EMERALD',
+    asset: 'EMERALD',
+    id: 42262,
+    hash: '/emerald',
+  },
 ];
 
 const network = allNetworks.find(n => window.location.hash.startsWith('#' + n.hash));

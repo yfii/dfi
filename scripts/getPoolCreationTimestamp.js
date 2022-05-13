@@ -17,9 +17,10 @@ const explorerApiUrls = {
   metis: 'https://andromeda-explorer.metis.io/',
   one: 'https://explorer.harmony.one/',
   fuse: 'https://explorer.fuse.io/',
+  emerald: 'https://explorer.emerald.oasis.dev/',
 };
 
-const blockScoutChainsTimeout = new Set(['fuse', 'metis', 'celo']);
+const blockScoutChainsTimeout = new Set(['fuse', 'metis', 'celo', 'emerald']);
 const harmonyRpcChains = new Set(['one']);
 
 const getCreationTimestamp = async (vaultAddress, explorerUrl) => {

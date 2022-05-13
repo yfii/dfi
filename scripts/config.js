@@ -12,6 +12,7 @@ import { auroraPools } from '../src/features/configure/vault/aurora_pools.js';
 import { fusePools } from '../src/features/configure/vault/fuse_pools.js';
 import { metisPools } from '../src/features/configure/vault/metis_pools.js';
 import { moonbeamPools } from '../src/features/configure/vault/moonbeam_pools.js';
+import { emeraldPools } from '../src/features/configure/vault/emerald_pools.js';
 
 export const chainPools = {
   bsc: bscPools,
@@ -28,6 +29,7 @@ export const chainPools = {
   fuse: fusePools,
   metis: metisPools,
   moonbeam: moonbeamPools,
+  emerald: emeraldPools,
 };
 
 export const chainRpcs = {
@@ -45,4 +47,5 @@ export const chainRpcs = {
   fuse: process.env.FUSE_RPC || 'https://rpc.fuse.io',
   metis: process.env.METIS_RPC || 'https://andromeda.metis.io/?owner=1088',
   moonbeam: process.env.MOONBEAM_RPC || 'https://rpc.api.moonbeam.network',
+  emerald: process.env.EMERALD_RPC || 'https://emerald.oasis.dev',
 };

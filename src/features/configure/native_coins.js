@@ -119,4 +119,12 @@ export const nativeCoins = [
     wrappedSymbol: 'WGLMR',
     allowance: Infinity,
   },
+  {
+    chainId: 42262,
+    name: 'Oasis Emerald',
+    symbol: 'ROSE',
+    decimals: 18,
+    wrappedSymbol: 'WROSE',
+    allowance: Infinity,
+  },
 ];

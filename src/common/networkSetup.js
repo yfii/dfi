@@ -153,6 +153,17 @@ export const networkSettings = {
     rpcUrls: ['https://rpc.api.moonbeam.network'],
     blockExplorerUrls: ['https://moonscan.io/'],
   },
+  42262: {
+    chainId: `0x${parseInt(42262, 10).toString(16)}`,
+    chainName: 'Oasis Emerald',
+    nativeCurrency: {
+      name: 'Oasis Protocol',
+      symbol: 'ROSE',
+      decimals: 18,
+    },
+    rpcUrls: ['https://emerald.oasis.dev'],
+    blockExplorerUrls: ['https://explorer.emerald.oasis.dev/'],
+  },
 };
 
 export const networkSetup = chainId => {
