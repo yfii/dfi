@@ -483,7 +483,7 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'jarvis-2sgd',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Other',
     assets: ['jSGD', 'XSGD'],
@@ -1058,7 +1058,7 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'jarvis-2cad',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Other',
     assets: ['jCAD', 'CADC'],
@@ -1188,7 +1188,7 @@ export const polygonPools = [
     createdAt: 1641761360,
   },
   {
-    id: 'jarvis-2jpy',
+    id: 'jarvis-2jpy-eol',
     logo: 'single-assets/2JPY.svg',
     name: 'jJPY-JPYC',
     token: '2jpy',
@@ -1204,8 +1204,8 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'jarvis-2jpy',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Other',
     assets: ['jJPY', 'JPYC'],
     risks: [
@@ -1219,6 +1219,7 @@ export const polygonPools = [
     ],
     stratType: 'StratMultiLP',
     withdrawalFee: '0%',
+    retireReason: 'rewards',
     addLiquidityUrl: 'https://polygon.curve.fi/factory/85/deposit',
     createdAt: 1641144218,
   },
@@ -1609,7 +1610,7 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'jarvis-4eur',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Other',
     assets: ['jEUR', 'PAR', 'EURS', 'EURt'],
@@ -2016,7 +2017,7 @@ export const polygonPools = [
       'https://app.apeswap.finance/add/ETH/0x76bF0C28e604CC3fE9967c83b3C3F31c213cfE64',
     buyTokenUrl: 'https://app.apeswap.finance/swap',
     createdAt: 1634055850,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'kyber-usdc-jgbp-eol',
@@ -2202,7 +2203,7 @@ export const polygonPools = [
     buyTokenUrl:
       'https://polygondex.cafeswap.finance/#/swap?outputCurrency=0xb5106a3277718ecad2f20ab6b86ce0fee7a21f09',
     createdAt: 1633695157,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'cafe-pbrew-usdc-eol',
@@ -2229,7 +2230,7 @@ export const polygonPools = [
     buyTokenUrl:
       'https://polygondex.cafeswap.finance/#/swap?outputCurrency=0xb5106a3277718ecad2f20ab6b86ce0fee7a21f09',
     createdAt: 1633695451,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'sing-usdc-sing-eol',
@@ -2256,7 +2257,7 @@ export const polygonPools = [
     buyTokenUrl:
       'https://app.apeswap.finance/#/swap?outputCurrency=0xCB898b0eFb084Df14dd8E018dA37B4d0f06aB26D',
     createdAt: 1633615462,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'ape-banana-matic',
@@ -2924,7 +2925,7 @@ export const polygonPools = [
     buyTokenUrl:
       'https://exchange.dfyn.network/#/swap?inputCurrency=0xD86b5923F3AD7b585eD81B448170ae026c65ae9a&outputCurrency=0x4A81f8796e0c6Ad4877A51C86693B0dE8093F2ef',
     createdAt: 1630075988,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'ape-usdc-dai',
@@ -3689,7 +3690,7 @@ export const polygonPools = [
     buyTokenUrl:
       'https://quickswap.exchange/#/swap?inputCurrency=0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174&outputCurrency=0xb82A20B4522680951F11c94c54B8800c1C237693',
     createdAt: 1627447004,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'farmhero-wault-usdc-honor-eol',
@@ -3716,7 +3717,7 @@ export const polygonPools = [
     buyTokenUrl:
       'https://swap.wault.finance/polygon/#/swap?inputCurrency=0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174&outputCurrency=0xb82A20B4522680951F11c94c54B8800c1C237693',
     createdAt: 1627447222,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'dfyn-matic-dfyn-eol',
@@ -4433,7 +4434,7 @@ export const polygonPools = [
     buyTokenUrl:
       'https://app.firebird.finance/swap?outputCurrency=0x4A81f8796e0c6Ad4877A51C86693B0dE8093F2ef',
     createdAt: 1626155225,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'ironswap-ice-usdc-eol',
@@ -4460,7 +4461,7 @@ export const polygonPools = [
     buyTokenUrl:
       'https://exchange.dfyn.network/#/swap?outputCurrency=0x4A81f8796e0c6Ad4877A51C86693B0dE8093F2ef',
     createdAt: 1626164436,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'ironswap-3usd',
@@ -4575,7 +4576,7 @@ export const polygonPools = [
     buyTokenUrl:
       'https://polygon-exchange.jetswap.finance/#/swap?outputCurrency=0x845E76A8691423fbc4ECb8Dd77556Cb61c09eE25',
     createdAt: 1625919720,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'jetswap-poly-pwings-usdc-eol',
@@ -4628,7 +4629,7 @@ export const polygonPools = [
     buyTokenUrl:
       'https://polygon-exchange.jetswap.finance/#/swap?outputCurrency=0x845E76A8691423fbc4ECb8Dd77556Cb61c09eE25',
     createdAt: 1625845966,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'mai-qi-mimatic-eol',
@@ -7310,7 +7311,7 @@ export const polygonPools = [
     buyTokenUrl:
       'https://polyzap.app/#/swap?outputCurrency=0xeb2778f74E5ee038E67AA6c77f0F0451ABd748FD',
     createdAt: 1621345663,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'pzap-pzap-matic-eol',
@@ -7337,7 +7338,7 @@ export const polygonPools = [
     buyTokenUrl:
       'https://polyzap.app/#/swap?outputCurrency=0xeb2778f74E5ee038E67AA6c77f0F0451ABd748FD',
     createdAt: 1621425966,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'cometh-bifi-eth-eol',
