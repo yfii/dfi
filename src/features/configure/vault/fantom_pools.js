@@ -456,7 +456,7 @@ export const fantomPools = [
     createdAt: 1649878298,
   },
   {
-    id: 'beets-clair-de-lune',
+    id: 'beets-clair-de-lune-eol',
     logo: 'fantom/Clair de Lune.png',
     name: 'Clair de Lune',
     token: 'Clair de Lune',
@@ -472,8 +472,9 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'beets-clair-de-lune',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Beethoven X',
     assets: ['FTM', 'LUNAw', 'USTw'],
     risks: [
@@ -596,7 +597,7 @@ export const fantomPools = [
     createdAt: 1649341331,
   },
   {
-    id: 'beets-ust-ust',
+    id: 'beets-ust-ust-eol',
     name: 'UST (Axelar) - UST (Wormhole) LP',
     token: 'UST (Axelar) - UST (Wormhole) LP',
     tokenDescription: 'Beethoven X',
@@ -611,8 +612,9 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'beets-ust-ust',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Beethoven X',
     assets: ['USTw', 'USTaxl'],
     risks: [
@@ -4218,7 +4220,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
     platform: 'SpookySwap',
     assets: ['KEK', 'FTM'],
     risks: [
@@ -4254,7 +4256,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
     platform: 'SpookySwap',
     assets: ['INV', 'FTM'],
     risks: [
@@ -4501,7 +4503,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
     platform: 'Spartacadabra',
     assets: ['CHARM', 'USDC'],
     risks: [
@@ -4793,7 +4795,7 @@ export const fantomPools = [
     createdAt: 1640092257,
   },
   {
-    id: 'beets-battle-bands',
+    id: 'beets-battle-bands-eol',
     logo: 'fantom/Battle Bands.png',
     name: 'Battle Of The Bands',
     token: 'Battle Of The Bands',
@@ -4809,8 +4811,9 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'beets-battle-bands',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Beethoven X',
     assets: ['FTM', 'MATIC', 'SOL', 'AVAX', 'LUNA', 'BNB'],
     risks: ['COMPLEXITY_LOW', 'NEW_STRAT', 'IL_LOW', 'MCAP_LARGE', 'AUDIT', 'CONTRACTS_VERIFIED'],
@@ -5575,7 +5578,7 @@ export const fantomPools = [
     buyTokenUrl:
       'https://spooky.fi/#/swap?outputCurrency=0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E',
     createdAt: 1636100990,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'beets-song-ice-fire',
@@ -6518,7 +6521,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
     platform: 'SpiritSwap',
     assets: ['LINK', 'FTM'],
     withdrawalFee: '0%',
@@ -6635,7 +6638,7 @@ export const fantomPools = [
     buyTokenUrl:
       'https://spooky.fi/#/swap?outputCurrency=0x53D831e1db0947c74e8a52618f662209ec5dE0cE',
     createdAt: 1634116608,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'spirit-ftm-usdc',
@@ -6887,7 +6890,7 @@ export const fantomPools = [
     addLiquidityUrl:
       'https://fantom-exchange.jetswap.finance/#/add/0x74b23882a30290451A17c44f4F05243b6b58C76d/0x321162Cd933E2Be498Cd2267a90534A804051b11',
     createdAt: 1632980637,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'jetswap-fantom-eth-usdc-eol',
@@ -6907,7 +6910,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
     platform: 'JetSwap',
     assets: ['ETH', 'USDC'],
     risks: [
@@ -6990,7 +6993,7 @@ export const fantomPools = [
     buyTokenUrl:
       'https://fantom-exchange.jetswap.finance/#/swap?outputCurrency=0x3D8f1ACCEe8e263F837138829B6C4517473d0688',
     createdAt: 1632906330,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'jetswap-fantom-fwings-usdc-eol',
@@ -7026,7 +7029,7 @@ export const fantomPools = [
     buyTokenUrl:
       'https://fantom-exchange.jetswap.finance/#/swap?outputCurrency=0x3D8f1ACCEe8e263F837138829B6C4517473d0688',
     createdAt: 1632906651,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'jetswap-fantom-fwings-eol',
@@ -7062,7 +7065,7 @@ export const fantomPools = [
     buyTokenUrl:
       'https://fantom-exchange.jetswap.finance/#/swap?outputCurrency=0x3D8f1ACCEe8e263F837138829B6C4517473d0688',
     createdAt: 1632911389,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'tomb-tshare-ftm',
@@ -7512,7 +7515,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
     platform: 'SpookySwap',
     assets: ['FOO', 'FTM'],
     risks: [
@@ -7563,7 +7566,7 @@ export const fantomPools = [
     buyTokenUrl:
       'https://spooky.fi/#/swap?outputCurrency=0xe0654C8e6fd4D733349ac7E09f6f23DA256bF475',
     createdAt: 1630352068,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'boo-zoo-ftm-eol',
@@ -8239,7 +8242,7 @@ export const fantomPools = [
     oraclePrice: 0,
     depositsPaused: true,
     status: 'eol',
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
     platform: 'Other',
     assets: ['EST', 'FTM'],
     risks: [
@@ -8290,7 +8293,7 @@ export const fantomPools = [
     buyTokenUrl:
       'https://swap.spiritswap.finance/#/exchange/swap/0x181F3F22C9a751E2ce673498A03E1FDFC0ebBFB6',
     createdAt: 1621508945,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'boo-woofy-ftm-eol',
@@ -8393,7 +8396,7 @@ export const fantomPools = [
     stratType: 'StratMultiLP',
     addLiquidityUrl: 'https://frozenyogurt.finance/pool',
     createdAt: 1620633860,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'froyo-froyo-ftm-eol',
@@ -8428,7 +8431,7 @@ export const fantomPools = [
     buyTokenUrl:
       'https://app.sushi.com/swap?outputCurrency=0xA92d41Ab8eFeE617d80a829CD9F5683c5F793ADA',
     createdAt: 1620626525,
-    retiredReason: 'tvl',
+    retireReason: 'tvl',
   },
   {
     id: 'boo-link-ftm',
