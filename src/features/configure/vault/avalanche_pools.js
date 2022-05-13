@@ -3036,7 +3036,7 @@ export const avalanchePools = [
     createdAt: 1637768693,
   },
   {
-    id: 'blizz-avax',
+    id: 'blizz-avax-pause',
     logo: 'single-assets/AVAX.svg',
     name: 'AVAX',
     token: 'AVAX',
@@ -3070,7 +3070,7 @@ export const avalanchePools = [
     createdAt: 1637579519,
   },
   {
-    id: 'blizz-eth',
+    id: 'blizz-eth-pause',
     logo: 'single-assets/ETH.svg',
     name: 'WETH.e',
     token: 'WETH.e',
@@ -3105,7 +3105,7 @@ export const avalanchePools = [
     createdAt: 1637587754,
   },
   {
-    id: 'blizz-wbtc',
+    id: 'blizz-wbtc-pause',
     logo: 'single-assets/WBTC.svg',
     name: 'WBTC.e',
     token: 'WBTC.e',
