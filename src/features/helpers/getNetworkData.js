@@ -86,7 +86,7 @@ const networkTxUrls = {
   122: hash => `https://explorer.fuse.io/tx/${hash}`,
   1088: hash => `https://andromeda-explorer.metis.io/tx/${hash}`,
   1284: hash => `https://moonscan.io/tx/${hash}`,
-  42262: hash => `https://explorer.emerald.oasis.dev/${hash}`,
+  42262: hash => `https://explorer.emerald.oasis.dev/tx/${hash}`,
 };
 
 const networkFriendlyName = {
