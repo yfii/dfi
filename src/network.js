@@ -85,10 +85,10 @@ export const allNetworks = [
     hash: '/moonbeam',
   },
   {
-    name: 'EMERALD',
+    name: 'OASIS',
     asset: 'EMERALD',
     id: 42262,
-    hash: '/emerald',
+    hash: '/oasis',
   },
 ];
 
