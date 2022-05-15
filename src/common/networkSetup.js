@@ -106,7 +106,7 @@ export const networkSettings = {
       symbol: 'CRO',
       decimals: 18,
     },
-    rpcUrls: ['https://evm-cronos.crypto.org'],
+    rpcUrls: ['https://evm.cronos.org'],
     blockExplorerUrls: ['https://cronos.crypto.org/explorer/'],
   },
   122: {

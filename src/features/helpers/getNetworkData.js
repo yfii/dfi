@@ -1121,7 +1121,7 @@ export const getNetworkConnectors = t => {
             options: {
               supportedChainIds: [25],
               rpc: {
-                25: 'https://evm-cronos.crypto.org/', // cronos mainet
+                25: 'https://evm.cronos.org', // cronos mainet
               },
               pollingInterval: 15000,
             },
@@ -1148,8 +1148,8 @@ export const getNetworkConnectors = t => {
             package: WalletConnectProvider,
             options: {
               rpc: {
-                1: 'https://evm-cronos.crypto.org/',
-                25: 'https://evm-cronos.crypto.org/',
+                1: 'https://evm.cronos.org',
+                25: 'https://evm.cronos.org',
               },
             },
             connector: async (ProviderPackage, options) => {
