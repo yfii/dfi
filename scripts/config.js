@@ -42,7 +42,7 @@ export const chainRpcs = {
   arbitrum: process.env.ARBITRUM_RPC || 'https://arb1.arbitrum.io/rpc',
   celo: process.env.CELO_RPC || 'https://forno.celo.org',
   moonriver: process.env.MOONRIVER_RPC || 'https://moonriver.api.onfinality.io/public',
-  cronos: process.env.CRONOS_RPC || 'https://evm-cronos.crypto.org',
+  cronos: process.env.CRONOS_RPC || 'https://evm.cronos.org',
   aurora: process.env.AURORA_RPC || 'https://mainnet.aurora.dev/',
   fuse: process.env.FUSE_RPC || 'https://rpc.fuse.io',
   metis: process.env.METIS_RPC || 'https://andromeda.metis.io/?owner=1088',
