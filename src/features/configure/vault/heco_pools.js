@@ -4,7 +4,7 @@ export const hecoPools = [
     logo: 'single-assets/BIFI.png',
     name: 'BIFI Maxi',
     token: 'BIFI',
-    tokenDescription: 'Beefy.Finance',
+    tokenDescription: 'Beefy',
     tokenAddress: '0x765277EebeCA2e31912C9946eAe1021199B39C61',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
@@ -18,7 +18,7 @@ export const hecoPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Beefy.Finance',
+    platform: 'Beefy',
     assets: ['BIFI'],
     withdrawalFee: '0.05%',
     risks: [

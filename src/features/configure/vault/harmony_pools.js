@@ -4,7 +4,7 @@ export const harmonyPools = [
     logo: 'single-assets/BIFI.png',
     name: 'BIFI Maxi',
     token: 'BIFI',
-    tokenDescription: 'Beefy.Finance',
+    tokenDescription: 'Beefy',
     tokenAddress: '0x6aB6d61428fde76768D7b45D8BFeec19c6eF91A8',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
@@ -18,7 +18,7 @@ export const harmonyPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Beefy.Finance',
+    platform: 'Beefy',
     assets: ['BIFI'],
     risks: [
       'COMPLEXITY_LOW',

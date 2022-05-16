@@ -4,7 +4,7 @@ export const auroraPools = [
     logo: 'single-assets/BIFI.png',
     name: 'BIFI Maxi',
     token: 'BIFI',
-    tokenDescription: 'Beefy.Finance',
+    tokenDescription: 'Beefy',
     tokenAddress: '0x218c3c3D49d0E7B37aff0D8bB079de36Ae61A4c0',
     tokenDecimals: 18,
     tokenDescriptionUrl: '#',
@@ -18,7 +18,7 @@ export const auroraPools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'Beefy.Finance',
+    platform: 'Beefy',
     assets: ['BIFI'],
     risks: [
       'COMPLEXITY_LOW',
