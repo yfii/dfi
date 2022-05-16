@@ -1021,7 +1021,7 @@ export const avalanchePools = [
     stratType: 'StratMultiLP',
     withdrawalFee: '0.01%',
     addLiquidityUrl: 'https://avax.curve.fi/atricrypto/deposit',
-    createdAt: 1634113377,
+    createdAt: 1652662923,
   },
   {
     id: 'joe-ape-wavax',
@@ -1760,7 +1760,7 @@ export const avalanchePools = [
     stratType: 'StratLP',
     withdrawalFee: '0.01%',
     addLiquidityUrl: 'https://avax.curve.fi/ren/deposit',
-    createdAt: 1645435034,
+    createdAt: 1652662923,
   },
   {
     id: 'joe-wavax-savax',
@@ -3630,7 +3630,7 @@ export const avalanchePools = [
     stratType: 'StratMultiLP',
     withdrawalFee: '0.01%',
     addLiquidityUrl: 'https://avax.curve.fi/aave/deposit',
-    createdAt: 1634117214,
+    createdAt: 1652662923,
   },
   {
     id: 'joe-mai-wavax-v2-eol',

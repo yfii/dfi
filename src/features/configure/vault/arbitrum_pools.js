@@ -310,7 +310,7 @@ export const arbitrumPools = [
     stratType: 'StratMultiLP',
     withdrawalFee: '0.01%',
     addLiquidityUrl: 'https://arbitrum.curve.fi/tricrypto/deposit',
-    createdAt: 1632215060,
+    createdAt: 1652662923,
   },
   {
     id: 'curve-arb-2pool',
@@ -344,7 +344,7 @@ export const arbitrumPools = [
     stratType: 'StratMultiLP',
     withdrawalFee: '0.01%',
     addLiquidityUrl: 'https://arbitrum.curve.fi/2pool/deposit',
-    createdAt: 1632224639,
+    createdAt: 1652662923,
   },
   {
     id: 'curve-arb-ren',
@@ -378,7 +378,7 @@ export const arbitrumPools = [
     stratType: 'StratMultiLP',
     withdrawalFee: '0.01%',
     addLiquidityUrl: 'https://arbitrum.curve.fi/ren/deposit',
-    createdAt: 1632226590,
+    createdAt: 1652662923,
   },
   {
     id: 'sushi-arb-wbtc-weth',
