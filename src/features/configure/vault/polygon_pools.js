@@ -1716,7 +1716,7 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'QuickSwap',
-    assets: ['CRO', 'MATIC'],
+    assets: ['WCRO', 'MATIC'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
