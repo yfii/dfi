@@ -53,6 +53,7 @@ export const bscPools = [
     status: 'active',
     platform: 'Ellipsis',
     assets: ['USDD', 'BUSD', 'USDT', 'USDC'],
+    withdrawalFee: '0%',
     risks: ['COMPLEXITY_LOW', 'NEW_STRAT', 'IL_NONE', 'MCAP_LARGE', 'AUDIT', 'CONTRACTS_VERIFIED'],
     stratType: 'StratMultiLP',
     addLiquidityUrl: 'https://ellipsis.finance/pool/0xC2cF01F785C587645440ccD488B188945C9505e7',
