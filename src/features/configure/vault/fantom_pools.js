@@ -6990,8 +6990,8 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'tomb-tomb-ftm',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
     platform: 'Tomb',
     assets: ['TOMB', 'FTM'],
     risks: [
