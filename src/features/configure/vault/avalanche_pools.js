@@ -68,7 +68,7 @@ export const avalanchePools = [
       'https://traderjoexyz.com/farm/0x565d20BD591b00EAD0C927e4b6D7DD8A33b0B319-0x188bED1968b795d5c9022F6a0bb5931Ac4c18F00#/',
     buyTokenUrl:
       'https://traderjoexyz.com/trade?inputCurrency=AVAX&outputCurrency=0xf693248f96fe03422fea95ac0afbbbc4a8fdd172',
-    createdAt: 1652694532,
+    createdAt: 1653320562,
   },
 
   {
@@ -104,7 +104,7 @@ export const avalanchePools = [
       'https://app.pangolin.exchange/#/add/AVAX/0xb27c8941a7Df8958A1778c0259f76D1F8B711C35',
     buyTokenUrl:
       'https://app.pangolin.exchange/#/swap?outputCurrency=0xb27c8941a7Df8958A1778c0259f76D1F8B711C35',
-    createdAt: 1652451001,
+    createdAt: 1653320561,
   },
 
   {
