@@ -385,7 +385,7 @@ export const moonbeamPools = [
     createdAt: 1648746150,
   },
   {
-    id: 'stellaswap-luna-wglmr',
+    id: 'stellaswap-luna-wglmr-eol',
     name: 'LUNA-GLMR LP',
     token: 'LUNA-GLMR LP',
     tokenDescription: 'Stellaswap',
@@ -400,8 +400,9 @@ export const moonbeamPools = [
     oracle: 'lps',
     oracleId: 'stellaswap-luna-wglmr',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Stellaswap',
     assets: ['LUNA', 'GLMR'],
     risks: [
@@ -420,7 +421,7 @@ export const moonbeamPools = [
     createdAt: 1648746234,
   },
   {
-    id: 'stellaswap-axlust-wglmr',
+    id: 'stellaswap-axlust-wglmr-eol',
     name: 'UST-GLMR LP',
     token: 'UST-GLMR LP',
     tokenDescription: 'Stellaswap',
@@ -435,8 +436,9 @@ export const moonbeamPools = [
     oracle: 'lps',
     oracleId: 'stellaswap-axlust-wglmr',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Stellaswap',
     assets: ['UST', 'GLMR'],
     risks: [
@@ -737,7 +739,7 @@ export const moonbeamPools = [
     createdAt: 1648601028,
   },
   {
-    id: 'solarflare-ust-wglmr',
+    id: 'solarflare-ust-wglmr-eol',
     name: 'UST-GLMR LP',
     token: 'UST-GLMR SLP',
     tokenDescription: 'Solarflare',
@@ -752,8 +754,9 @@ export const moonbeamPools = [
     oracle: 'lps',
     oracleId: 'solarflare-ust-wglmr',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Solarflare',
     assets: ['UST', 'GLMR'],
     risks: [
@@ -774,7 +777,7 @@ export const moonbeamPools = [
     createdAt: 1647958278,
   },
   {
-    id: 'solarflare-luna-flare',
+    id: 'solarflare-luna-flare-eol',
     name: 'LUNA-FLARE LP',
     token: 'LUNA-FLARE SLP',
     tokenDescription: 'Solarflare',
@@ -789,8 +792,9 @@ export const moonbeamPools = [
     oracle: 'lps',
     oracleId: 'solarflare-luna-flare',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Solarflare',
     assets: ['LUNA', 'FLARE'],
     risks: [

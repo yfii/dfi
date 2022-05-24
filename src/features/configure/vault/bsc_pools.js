@@ -427,7 +427,7 @@ export const bscPools = [
   },
 
   {
-    id: 'biswap-ust-busd',
+    id: 'biswap-ust-busd-eol',
     name: 'UST-BUSD LP',
     token: 'UST-BUSD BiLP',
     tokenDescription: 'BiSwap',
@@ -442,8 +442,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'biswap-ust-busd',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'BiSwap',
     assets: ['UST', 'BUSD'],
     risks: [
@@ -1907,7 +1908,7 @@ export const bscPools = [
     createdAt: 1619385194,
   },
   {
-    id: 'cakev2-ertha-wbnb',
+    id: 'cakev2-ertha-wbnb-eol',
     name: 'ERTHA-BNB LP',
     token: 'ERTHA-BNB LP',
     tokenDescription: 'PancakeSwap',
@@ -1922,8 +1923,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cakev2-ertha-wbnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'PancakeSwap',
     assets: ['ERTHA', 'BNB'],
     risks: [

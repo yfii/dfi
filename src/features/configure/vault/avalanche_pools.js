@@ -465,7 +465,7 @@ export const avalanchePools = [
     createdAt: 1651052876,
   },
   {
-    id: 'joe-bpt-wavax',
+    id: 'joe-bpt-wavax-eol',
     name: 'BPT-AVAX LP',
     token: 'BPT-AVAX JLP',
     tokenDescription: 'Trader Joe',
@@ -480,8 +480,9 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'joe-bpt-wavax',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Trader Joe',
     assets: ['BPT', 'AVAX'],
     risks: [
@@ -711,7 +712,7 @@ export const avalanchePools = [
     createdAt: 1649422919,
   },
   {
-    id: 'joe-ustw-wavax',
+    id: 'joe-ustw-wavax-eol',
     name: 'USTw-AVAX LP',
     token: 'USTw-AVAX JLP',
     tokenDescription: 'Trader Joe',
@@ -726,8 +727,9 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'joe-ustw-wavax',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Trader Joe',
     assets: ['USTw', 'AVAX'],
     risks: [
@@ -1941,7 +1943,7 @@ export const avalanchePools = [
     createdAt: 1644407428,
   },
   {
-    id: 'joe-wavax-ime',
+    id: 'joe-wavax-ime-eol',
     name: 'IME-AVAX LP',
     token: 'IME-AVAX JLP',
     tokenDescription: 'Trader Joe',
@@ -1956,8 +1958,9 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'joe-wavax-ime',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Trader Joe',
     assets: ['IME', 'AVAX'],
     risks: [
@@ -2968,7 +2971,7 @@ export const avalanchePools = [
     createdAt: 1639411464,
   },
   {
-    id: 'joe-craft-wavax',
+    id: 'joe-craft-wavax-eol',
     name: 'CRAFT-AVAX LP',
     token: 'CRAFT-AVAX JLP',
     tokenDescription: 'Trader Joe',
@@ -2983,8 +2986,9 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'joe-craft-wavax',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Trader Joe',
     assets: ['CRAFT', 'AVAX'],
     risks: [

@@ -696,7 +696,7 @@ export const fantomPools = [
     createdAt: 1649509772,
   },
   {
-    id: 'boo-wftm-luna',
+    id: 'boo-wftm-luna-eol',
     name: 'LUNA-FTM LP',
     token: 'LUNA-FTM LP',
     tokenDescription: 'SpookySwap',
@@ -711,8 +711,9 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'boo-wftm-luna',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'SpookySwap',
     assets: ['LUNA', 'FTM'],
     risks: [
@@ -731,7 +732,7 @@ export const fantomPools = [
     createdAt: 1649436436,
   },
   {
-    id: 'boo-wftm-ust',
+    id: 'boo-wftm-ust-eol',
     name: 'UST-FTM LP',
     token: 'UST-FTM LP',
     tokenDescription: 'SpookySwap',
@@ -746,8 +747,9 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'boo-wftm-ust',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'SpookySwap',
     assets: ['USTw', 'FTM'],
     risks: [
@@ -7126,7 +7128,7 @@ export const fantomPools = [
     retireReason: 'tvl',
   },
   {
-    id: 'tomb-tshare-ftm',
+    id: 'tomb-tshare-ftm-eol',
     logo: 'fantom/TSHARE-FTM.png',
     name: 'TSHARE-FTM LP',
     token: 'TSHARE-FTM LP',
@@ -7142,8 +7144,9 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'tomb-tshare-ftm',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Tomb',
     assets: ['TSHARE', 'FTM'],
     risks: [

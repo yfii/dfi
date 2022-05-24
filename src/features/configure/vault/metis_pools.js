@@ -559,7 +559,7 @@ export const metisPools = [
     createdAt: 1642363788,
   },
   {
-    id: 'netswap-bnb-nett',
+    id: 'netswap-bnb-nett-eol',
     name: 'BNB-NETT LP',
     token: 'BNB-NETT LP',
     tokenDescription: 'Netswap',
@@ -574,8 +574,9 @@ export const metisPools = [
     oracle: 'lps',
     oracleId: 'netswap-bnb-nett',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Netswap',
     assets: ['BNB', 'NETT'],
     risks: [
@@ -664,7 +665,7 @@ export const metisPools = [
     createdAt: 1642364450,
   },
   {
-    id: 'netswap-m.usdt-metis',
+    id: 'netswap-m.usdt-metis-eol',
     name: 'm.USDT-METIS LP',
     token: 'm.USDT-METIS LP',
     tokenDescription: 'Netswap',
@@ -679,8 +680,9 @@ export const metisPools = [
     oracle: 'lps',
     oracleId: 'netswap-m.usdt-metis',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Netswap',
     assets: ['mUSDT', 'METIS'],
     risks: [
@@ -734,7 +736,7 @@ export const metisPools = [
     createdAt: 1642365277,
   },
   {
-    id: 'netswap-weth-m.usdt',
+    id: 'netswap-weth-m.usdt-eol',
     name: 'm.USDT-WETH LP',
     token: 'm.USDT-WETH LP',
     tokenDescription: 'Netswap',
@@ -749,8 +751,9 @@ export const metisPools = [
     oracle: 'lps',
     oracleId: 'netswap-weth-m.usdt',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Netswap',
     assets: ['mUSDT', 'WETH'],
     risks: [
