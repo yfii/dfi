@@ -1978,7 +1978,7 @@ export const bscPools = [
     createdAt: 1643275444,
   },
   {
-    id: 'cakev2-fuse-wbnb',
+    id: 'cakev2-fuse-wbnb-eol',
     name: 'FUSE-BNB LP',
     token: 'FUSE-BNB LP',
     tokenDescription: 'PancakeSwap',
@@ -1993,8 +1993,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cakev2-fuse-wbnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'PancakeSwap',
     assets: ['FUSE', 'BNB'],
     risks: [
@@ -6297,7 +6298,7 @@ export const bscPools = [
     createdAt: 1627911930,
   },
   {
-    id: 'pera-pera-bnb',
+    id: 'pera-pera-bnb-eol',
     name: 'PERA-BNB LP',
     token: 'PERA-BNB LP',
     tokenDescription: 'PancakeSwap (Pera)',
@@ -6312,8 +6313,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'pera-pera-bnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Other',
     assets: ['PERA', 'BNB'],
     addLiquidityUrl:
