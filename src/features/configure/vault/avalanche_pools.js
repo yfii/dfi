@@ -53,7 +53,7 @@ export const avalanchePools = [
     oraclePrice: 0,
     depositsPaused: false,
     status: 'active',
-    platform: 'TraderJoe',
+    platform: 'Trader Joe',
     assets: ['TUS', 'AVAX'],
     risks: [
       'COMPLEXITY_LOW',
