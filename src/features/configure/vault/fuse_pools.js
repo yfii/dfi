@@ -467,7 +467,7 @@ export const fusePools = [
     createdAt: 1647505730,
   },
   {
-    id: 'voltagev2-wfuse-atust',
+    id: 'voltagev2-wfuse-atust-eol',
     name: 'atUST-FUSE LP',
     token: 'atUST-FUSE LP',
     tokenDescription: 'Voltage',
@@ -483,8 +483,9 @@ export const fusePools = [
     oracleId: 'voltagev2-wfuse-atust',
     oraclePrice: 0,
     withdrawalFee: '0%',
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Voltage',
     assets: ['UST', 'FUSE'],
     risks: [

@@ -641,7 +641,7 @@ export const fantomPools = [
     oracle: 'lps',
     oracleId: 'beets-two-gods-one-pool',
     oraclePrice: 0,
-    depositsPaused: false,
+    depositsPaused: true,
     status: 'active',
     platform: 'Beethoven X',
     assets: ['DEUS', 'DEI'],

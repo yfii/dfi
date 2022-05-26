@@ -36,7 +36,7 @@ export const avalanchePools = [
   },
 
   {
-    id: 'joe-tus-wavax',
+    id: 'joe-tus-wavax-eol',
     name: 'TUS-AVAX LP',
     token: 'TUS-AVAX JLP',
     tokenDescription: 'TraderJoe',
@@ -51,9 +51,10 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'joe-tus-wavax',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
-    platform: 'TraderJoe',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
+    platform: 'Trader Joe',
     assets: ['TUS', 'AVAX'],
     risks: [
       'COMPLEXITY_LOW',
@@ -430,7 +431,7 @@ export const avalanchePools = [
     createdAt: 1651836382,
   },
   {
-    id: 'joe-dby-wavax',
+    id: 'joe-dby-wavax-eol',
     name: 'DBY-AVAX LP',
     token: 'DBY-AVAX JLP',
     tokenDescription: 'Trader Joe',
@@ -445,8 +446,9 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'joe-dby-wavax',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Trader Joe',
     assets: ['DBY', 'AVAX'],
     risks: [
@@ -2441,7 +2443,7 @@ export const avalanchePools = [
     createdAt: 1643387033,
   },
   {
-    id: 'joe-wavax-hec',
+    id: 'joe-wavax-hec-eol',
     name: 'HEC-AVAX LP',
     token: 'HEC-AVAX JLP',
     tokenDescription: 'Trader Joe',
@@ -2456,8 +2458,9 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'joe-wavax-hec',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Trader Joe',
     assets: ['HEC', 'AVAX'],
     risks: [
@@ -4196,7 +4199,7 @@ export const avalanchePools = [
     createdAt: 1632133345,
   },
   {
-    id: 'joe-wavax-usdt.e',
+    id: 'joe-wavax-usdt.e-eol',
     name: 'USDT.e-AVAX LP',
     token: 'USDT.e-AVAX JLP',
     tokenDescription: 'Trader Joe',
@@ -4211,8 +4214,9 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'joe-wavax-usdt.e',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Trader Joe',
     assets: ['USDTe', 'AVAX'],
     risks: [
@@ -4543,7 +4547,7 @@ export const avalanchePools = [
     createdAt: 1630670273,
   },
   {
-    id: 'joe-qi-wavax',
+    id: 'joe-qi-wavax-eol',
     name: 'QI-AVAX LP',
     token: 'QI-AVAX JLP',
     tokenDescription: 'Trader Joe',
@@ -4558,8 +4562,9 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'joe-qi-wavax',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Trader Joe',
     assets: ['aQI', 'AVAX'],
     risks: [

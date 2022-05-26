@@ -723,7 +723,7 @@ export const auroraPools = [
     createdAt: 1643737307,
   },
   {
-    id: 'trisolaris-usdt-near',
+    id: 'trisolaris-usdt-near-eol',
     name: 'NEAR-USDT LP',
     token: 'NEAR-USDT LP',
     tokenDescription: 'Trisolaris',
@@ -738,8 +738,9 @@ export const auroraPools = [
     oracle: 'lps',
     oracleId: 'trisolaris-usdt-near',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Trisolaris',
     assets: ['NEAR', 'USDT'],
     risks: [
@@ -758,7 +759,7 @@ export const auroraPools = [
     createdAt: 1643740691,
   },
   {
-    id: 'trisolaris-usdc-near',
+    id: 'trisolaris-usdc-near-eol',
     name: 'NEAR-USDC LP',
     token: 'NEAR-USDC LP',
     tokenDescription: 'Trisolaris',
@@ -773,8 +774,9 @@ export const auroraPools = [
     oracle: 'lps',
     oracleId: 'trisolaris-usdc-near',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Trisolaris',
     assets: ['NEAR', 'USDC'],
     risks: [
