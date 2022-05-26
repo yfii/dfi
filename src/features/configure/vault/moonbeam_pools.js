@@ -53,7 +53,7 @@ export const moonbeamPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Stellaswap',
-    assets: ['GLMR', 'ETH'],
+    assets: ['GLMR', 'ETHs'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
@@ -88,7 +88,7 @@ export const moonbeamPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'Stellaswap',
-    assets: ['GLMR', 'USDC'],
+    assets: ['GLMR', 'USDCs'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
