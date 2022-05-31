@@ -3091,7 +3091,7 @@ export const bscPools = [
     retiredReason: 'tvl',
   },
   {
-    id: 'cakev2-qi-wbnb',
+    id: 'cakev2-qi-wbnb-eol',
     name: 'QI-BNB LP',
     token: 'QI-BNB LP2',
     tokenDescription: 'PancakeSwap',
@@ -3106,8 +3106,9 @@ export const bscPools = [
     oracle: 'lps',
     oracleId: 'cakev2-qi-wbnb',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'PancakeSwap',
     assets: ['bQI', 'BNB'],
     risks: [
