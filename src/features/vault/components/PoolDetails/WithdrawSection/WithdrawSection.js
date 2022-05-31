@@ -388,31 +388,42 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
               </div>
             ) : (
               <div className={classes.showDetailButtonCon}>
-                <Button
-                  className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
-                  type="button"
-                  color="primary"
-                  disabled={
-                    withdrawSettings.amount.isZero() || fetchZapEstimatePending[pool.tokenAddress]
-                  }
-                  onClick={handleWithdraw}
-                >
-                  {fetchWithdrawPending[index]
-                    ? `${t('Vault-Withdrawing')}`
-                    : `${t('Vault-WithdrawButton')}`}
-                </Button>
-                {!withdrawSettings.isSwap && (
-                  <Button
-                    className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
-                    type="button"
-                    color="primary"
-                    disabled={sharesBalance.isZero()}
-                    onClick={handleWithdrawAll}
-                  >
-                    {fetchWithdrawPending[index]
-                      ? `${t('Vault-Withdrawing')}`
-                      : `${t('Vault-WithdrawButtonAll')}`}
-                  </Button>
+                {pool.id === 'scream-tusd' ? (
+                  <div className={classes.showPausedMsg}>
+                    {t(
+                      'There is no liquidity in the underlying protocol to withdraw. Withdrawals will be activated once more liquidity is available.'
+                    )}
+                  </div>
+                ) : (
+                  <>
+                    <Button
+                      className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
+                      type="button"
+                      color="primary"
+                      disabled={
+                        withdrawSettings.amount.isZero() ||
+                        fetchZapEstimatePending[pool.tokenAddress]
+                      }
+                      onClick={handleWithdraw}
+                    >
+                      {fetchWithdrawPending[index]
+                        ? `${t('Vault-Withdrawing')}`
+                        : `${t('Vault-WithdrawButton')}`}
+                    </Button>
+                    {!withdrawSettings.isSwap && (
+                      <Button
+                        className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
+                        type="button"
+                        color="primary"
+                        disabled={sharesBalance.isZero()}
+                        onClick={handleWithdrawAll}
+                      >
+                        {fetchWithdrawPending[index]
+                          ? `${t('Vault-Withdrawing')}`
+                          : `${t('Vault-WithdrawButtonAll')}`}
+                      </Button>
+                    )}
+                  </>
                 )}
               </div>
             )}

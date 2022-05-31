@@ -88,6 +88,17 @@ const styles = theme => ({
       content: 'none',
     },
   },
+  showPausedMsg: {
+    display: 'flex',
+    margin: '12px 5px',
+    padding: '15px',
+    fontSize: '14px',
+    fontWeight: 'bold',
+    borderRadius: '5px',
+    background: `${theme.palette.background.paused}`,
+    border: `1px solid ${theme.palette.primary.main}`,
+    textAlign: 'center',
+  },
 });
 
 export default styles;
