@@ -428,7 +428,7 @@ export const polygonPools = [
     createdAt: 1650557677,
   },
   {
-    id: 'sushi-jrt-eth',
+    id: 'sushi-jrt-eth-eol',
     name: 'JRT-ETH SLP',
     token: 'JRT-ETH SLP',
     tokenDescription: 'SushiSwap',
@@ -443,8 +443,9 @@ export const polygonPools = [
     oracle: 'lps',
     oracleId: 'sushi-jrt-eth',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'SushiSwap',
     assets: ['JRT', 'ETH'],
     risks: [

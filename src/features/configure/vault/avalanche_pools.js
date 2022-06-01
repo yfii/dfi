@@ -1347,7 +1347,7 @@ export const avalanchePools = [
     createdAt: 1646470439,
   },
   {
-    id: 'joe-egg-wavax',
+    id: 'joe-egg-wavax-eol',
     name: 'EGG-AVAX JLP',
     token: 'EGG-AVAX JLP',
     tokenDescription: 'Trader Joe',
@@ -1362,8 +1362,9 @@ export const avalanchePools = [
     oracle: 'lps',
     oracleId: 'joe-egg-wavax',
     oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
+    depositsPaused: true,
+    status: 'eol',
+    retireReason: 'rewards',
     platform: 'Trader Joe',
     assets: ['EGG', 'AVAX'],
     risks: [
