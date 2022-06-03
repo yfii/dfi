@@ -23,9 +23,6 @@ const overrides = {
   'aurora-bifi-maxi': { beefyFeeRecipient: undefined }, // 0x0
   'fuse-bifi-maxi': { beefyFeeRecipient: undefined }, // 0x0
   'moonbeam-bifi-maxi': { beefyFeeRecipient: undefined }, // 0x0
-  // TODO delete after updating beefyFeeRecipient
-  'stargate-bsc-busd': { beefyFeeRecipient: undefined }, // 0x0
-  'stargate-bsc-usdt': { beefyFeeRecipient: undefined }, // 0x0
 };
 
 const oldValidOwners = [
