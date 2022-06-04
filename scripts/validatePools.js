@@ -23,6 +23,7 @@ const overrides = {
   'aurora-bifi-maxi': { beefyFeeRecipient: undefined }, // 0x0
   'fuse-bifi-maxi': { beefyFeeRecipient: undefined }, // 0x0
   'moonbeam-bifi-maxi': { beefyFeeRecipient: undefined }, // 0x0
+  'scream-frax': { vaultOwner: undefined }, // Rescue
 };
 
 const oldValidOwners = [
