@@ -1,7 +1,7 @@
 export const emeraldPools = [
   {
     id: 'valley-usdt-vs-pause',
-    name: 'VS-USDT LP',
+    name: 'VS-evoUSDT LP',
     token: 'USDT-VS VSLP',
     tokenDescription: 'ValleySwap',
     tokenAddress: '0x9a91Bc3Ed7d0d6422C7599CcdD8C2200bfD4A8eA',
@@ -18,7 +18,7 @@ export const emeraldPools = [
     depositsPaused: true,
     status: 'active',
     platform: 'ValleySwap',
-    assets: ['VS', 'USDT'],
+    assets: ['VS', 'evoUSDT'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
@@ -37,7 +37,7 @@ export const emeraldPools = [
   },
   {
     id: 'valley-usdt-usdc-pause',
-    name: 'USDC-USDT LP',
+    name: 'evoUSDC-evoUSDT LP',
     token: 'USDT-USDC VSLP',
     tokenDescription: 'ValleySwap',
     tokenAddress: '0x6755347199f6a2864936Cd467a1A2b03fBdeB9f9',
@@ -54,7 +54,7 @@ export const emeraldPools = [
     depositsPaused: true,
     status: 'active',
     platform: 'ValleySwap',
-    assets: ['USDC', 'USDT'],
+    assets: ['evoUSDC', 'evoUSDT'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
@@ -73,7 +73,7 @@ export const emeraldPools = [
   },
   {
     id: 'valley-btc-usdt-pause',
-    name: 'BTC-USDT LP',
+    name: 'evoBTC-evoUSDT LP',
     token: 'BTC-USDT VSLP',
     tokenDescription: 'ValleySwap',
     tokenAddress: '0x061b31c4af2E1338224CB46A15Fec86f509fcA00',
@@ -90,7 +90,7 @@ export const emeraldPools = [
     depositsPaused: true,
     status: 'active',
     platform: 'ValleySwap',
-    assets: ['BTC', 'USDT'],
+    assets: ['evoBTC', 'evoUSDT'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
@@ -109,7 +109,7 @@ export const emeraldPools = [
   },
   {
     id: 'valley-usdt-eth-pause',
-    name: 'ETH-USDT LP',
+    name: 'evoETH-evoUSDT LP',
     token: 'USDT-ETH VSLP',
     tokenDescription: 'ValleySwap',
     tokenAddress: '0x9de37Ccf7d908D91d29931417374cC76bAc72e73',
@@ -126,7 +126,7 @@ export const emeraldPools = [
     depositsPaused: true,
     status: 'active',
     platform: 'ValleySwap',
-    assets: ['ETH', 'USDT'],
+    assets: ['evoETH', 'evoUSDT'],
     risks: [
       'COMPLEXITY_LOW',
       'BATTLE_TESTED',
