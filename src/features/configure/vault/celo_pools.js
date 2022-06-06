@@ -135,6 +135,7 @@ export const celoPools = [
       'MCAP_LARGE',
       'AUDIT',
       'CONTRACTS_VERIFIED',
+      'OVER_COLLAT_ALGO_STABLECOIN',
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
@@ -353,6 +354,7 @@ export const celoPools = [
       'MCAP_MEDIUM',
       'AUDIT',
       'CONTRACTS_VERIFIED',
+      'OVER_COLLAT_ALGO_STABLECOIN',
     ],
     stratType: 'StratLP',
     addLiquidityUrl:

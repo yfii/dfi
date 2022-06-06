@@ -1096,6 +1096,7 @@ export const bscPools = [
       'MCAP_HIGH',
       'ADMIN_WITH_TIMELOCK',
       'CONTRACTS_VERIFIED',
+      'OVER_COLLAT_ALGO_STABLECOIN',
     ],
     stratType: 'Lending',
     buyTokenUrl:
@@ -4467,6 +4468,7 @@ export const bscPools = [
       'MCAP_LARGE',
       'AUDIT',
       'CONTRACTS_VERIFIED',
+      'OVER_COLLAT_ALGO_STABLECOIN',
     ],
     stratType: 'StratMultiLP',
     withdrawalFee: '0.01%',

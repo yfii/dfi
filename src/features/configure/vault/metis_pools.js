@@ -131,6 +131,7 @@ export const metisPools = [
       'MCAP_HIGH',
       'AUDIT',
       'CONTRACTS_VERIFIED',
+      'OVER_COLLAT_ALGO_STABLECOIN',
     ],
     stratType: 'StratLP',
     addLiquidityUrl:

@@ -132,6 +132,7 @@ export const arbitrumPools = [
       'MCAP_MEDIUM',
       'AUDIT',
       'CONTRACTS_VERIFIED',
+      'OVER_COLLAT_ALGO_STABLECOIN',
     ],
     stratType: 'StratMultiLP',
     withdrawalFee: '0.01%',
@@ -200,6 +201,7 @@ export const arbitrumPools = [
       'MCAP_MEDIUM',
       'AUDIT',
       'CONTRACTS_VERIFIED',
+      'OVER_COLLAT_ALGO_STABLECOIN',
     ],
     stratType: 'StratLP',
     addLiquidityUrl:
